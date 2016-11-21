@@ -1,0 +1,29 @@
+@import '_mixins';
+
+.block-width-0{
+  display: none;
+}
+.block-width-1{
+  width:24.5%;
+  @include screen('laptop'){
+    width: 28.5%;
+  }
+}
+
+.block-width-2{
+  width: 49.5%;
+  @include screen('laptop'){
+    width: 40.5%;
+  }
+}
+
+.block-width-3{
+  width: 74.5%;
+  @include screen('laptop'){
+    width: 69.85%;
+  }
+}
+
+.block-width-4{
+  width: 99%;
+}

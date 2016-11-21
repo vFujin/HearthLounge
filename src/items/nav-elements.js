@@ -3,13 +3,17 @@ export const navItems = [
     name: "Start",
     className: "home",
     icon: "icon-hs_logo",
-    url: 'strona-glowna'
+    url: 'strona-glowna',
+    homepage_order: null,
+    homepage_block_width: 0
   },
   {
     name: "Talie kart",
     className: "decks",
     icon: "icon-deck",
     url: 'talie-kart',
+    homepage_order: 1,
+    homepage_block_width: 3,
     submenu: [
       {
         icon: "",
@@ -59,45 +63,67 @@ export const navItems = [
     ]
   },
   {
+    name: "Karty",
+    className: "cards",
+    icon: "icon-card",
+    url: 'karty',
+    homepage_order: 10,
+    homepage_block_width: 1
+  },
+  {
     name: "Arena Picker",
     className: "arena-picker",
     icon: "icon-arena-picker",
-    url: 'arena-picker'
+    url: 'arena-picker',
+    homepage_order: 2,
+    homepage_block_width: 1
   },
   {
     name: "Dodatki",
     className: "expansions",
     icon: "icon-expansions",
-    url: 'dodatki'
+    url: 'dodatki',
+    homepage_order: 3,
+    homepage_block_width: 2
   },
   {
     name: "Stwórz talię",
     className: "create-deck",
     icon: "icon-create-deck",
-    url: 'stworz-talie-kart'
+    url: 'stworz-talie-kart',
+    homepage_order: 4,
+    homepage_block_width: 1
   },
   {
     name: "Forum",
     className: "forum",
     icon: "icon-forum",
-    url: 'forum'
+    url: 'forum',
+    homepage_order: 5,
+    homepage_block_width: 1
   },
   {
     name: "Turnieje",
     className: "tournaments",
     icon: "icon-trophy",
-    url: 'turnieje'
+    url: 'turnieje',
+    homepage_order: 6,
+    homepage_block_width: 1
   },
   {
     name: "Streamerzy",
     className: "streams",
     icon: "icon-twitch",
-    url: 'streamerzy'
+    url: 'streamerzy',
+    homepage_order: 7,
+    homepage_block_width: 1
   },
   {
     name: "Logowanie",
     className: "login",
     icon: "icon-login",
-    url: 'logowanie'
+    url: 'logowanie',
+    homepage_order: null,
+    homepage_block_width: 0
   }
 ];

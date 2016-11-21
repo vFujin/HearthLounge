@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-export class DeckWarlock extends Component {
+export class DeckDruid extends Component
+{
   render() {
     return (
-        <div>Warlock decks</div>
+        <div>Druid decks</div>
     );
   }
 }

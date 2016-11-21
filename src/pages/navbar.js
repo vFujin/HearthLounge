@@ -3,20 +3,20 @@ import { Link } from 'react-router'
 import { navItems } from '../items/nav-elements';
 
 export class Navbar extends Component {
-  _dropdown(el){
+  _dropdown(el, index){
     if(!el.hasOwnProperty('submenu')) return;
     return (
         <ul className="submenu">
-          {navItems.map((items, id) =>
+          {navItems[index].submenu.map( (item, id) =>
             <li key={id}>
               <Link to={'/' + el.url + '/' + el.submenu[id].hs_class_url}>
                 <div>{el.submenu[id].hs_class}</div>
+                {console.log(item)}
               </Link>
             </li>
           )}
         </ul>
     )
-
   }
   render() {
     return (
@@ -27,7 +27,7 @@ export class Navbar extends Component {
                   <Link to={'/' + element.url} activeClassName="active">
                     <span className={element.icon}></span>
                     <div>{element.name}</div>
-                    {this._dropdown(element)}
+                    {this._dropdown(element, index)}
                   </Link>
                 </li>
             )}
