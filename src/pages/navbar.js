@@ -9,7 +9,9 @@ export class Navbar extends Component {
         <ul className="submenu">
           {navItems.map((items, id) =>
             <li key={id}>
-              <div>{el.submenu[id].hs_class}</div>
+              <Link to={'/' + el.url + '/' + el.submenu[id].hs_class_url}>
+                <div>{el.submenu[id].hs_class}</div>
+              </Link>
             </li>
           )}
         </ul>
