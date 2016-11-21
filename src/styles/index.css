@@ -47,7 +47,7 @@ a:active, a:hover, a:link, a:visited {
 
 @font-face {
   font-family: 'Hearthstone';
-  src: url("../nav-icons/Hearthstone.ttf?sjdqmo") format("truetype"), url("../nav-icons/Hearthstone.woff?sjdqmo") format("woff"), url("../nav-icons/Hearthstone.svg?sjdqmo#Hearthstone") format("svg");
+  src: url("../icons/Hearthstone.ttf?sjdqmo") format("truetype"), url("../icons/Hearthstone.woff?sjdqmo") format("woff"), url("../icons/Hearthstone.svg?sjdqmo#Hearthstone") format("svg");
   font-weight: normal;
   font-style: normal; }
 .icon {
