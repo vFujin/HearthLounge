@@ -150,7 +150,7 @@ nav {
       nav ul li a span {
         font-family: "Hearthstone";
         font-size: 41px; }
-    nav ul li .is-active {
+    nav ul li .active {
       background-color: #E7E2DA;
       color: #474143; }
 
