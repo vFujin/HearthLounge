@@ -5,7 +5,7 @@ export class Streams extends Component {
     return (
         <div>
           <Navbar/>
-          <div>streams</div>
+          <div className="pageContainer">streams</div>
         </div>
     );
   }

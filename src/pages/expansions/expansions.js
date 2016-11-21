@@ -5,7 +5,7 @@ export class Expansions extends Component {
     return (
         <div>
           <Navbar/>
-          <div>expansions</div>
+          <div className="pageContainer">expansions</div>
         </div>
     );
   }

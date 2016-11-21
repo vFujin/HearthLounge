@@ -6,7 +6,7 @@ export class Home extends Component {
         return (
             <div>
               <Navbar/>
-              <div>home</div>
+              <div className="pageContainer">home</div>
             </div>
         );
     }

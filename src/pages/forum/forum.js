@@ -5,7 +5,7 @@ export class Forum extends Component {
     return (
         <div>
           <Navbar/>
-          <div>forum</div>
+          <div className="pageContainer">forum</div>
         </div>
     );
   }

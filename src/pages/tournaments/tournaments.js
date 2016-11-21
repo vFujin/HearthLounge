@@ -5,7 +5,7 @@ export class Tournaments extends Component {
     return (
         <div>
           <Navbar/>
-          <div>tournaments</div>
+          <div className="pageContainer">tournaments</div>
         </div>
     );
   }

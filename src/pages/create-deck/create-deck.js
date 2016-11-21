@@ -5,7 +5,7 @@ export class CreateDeck extends Component {
     return (
         <div>
           <Navbar/>
-          <div>create deck</div>
+          <div className="pageContainer">create deck</div>
         </div>
     );
   }

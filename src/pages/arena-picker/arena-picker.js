@@ -5,7 +5,7 @@ export class ArenaPicker extends Component {
     return (
         <div>
           <Navbar/>
-          <div>arena picker</div>
+          <div className="pageContainer">arena picker</div>
         </div>
     );
   }

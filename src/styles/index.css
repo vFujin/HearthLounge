@@ -127,31 +127,58 @@ nav {
   background-color: #474143;
   text-align: right; }
   nav ul li {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
     color: #fff;
     display: inline-block;
     text-transform: uppercase;
     width: 9.7%;
-    border-right: 1px solid #666;
-    -webkit-transition: all ease .4s;
-    -moz-transition: all ease .4s;
-    -ms-transition: all ease .4s;
-    -o-transition: all ease .4s;
-    transition: all ease .4s; }
+    border-right: 1px solid #666; }
+    nav ul li ul {
+      background-color: #474143;
+      display: none;
+      position: absolute;
+      width: 9.7%;
+      margin-top: 15px; }
+      nav ul li ul li {
+        display: block;
+        width: 100%;
+        border: none; }
+        nav ul li ul li:first-child {
+          border-left: none; }
+        nav ul li ul li:last-child {
+          background-color: inherit; }
     nav ul li:first-child {
       border-left: 1px solid #666; }
     nav ul li:last-child {
       background-color: #00a99c; }
     nav ul li:hover {
       background-color: #00a99c; }
+      nav ul li:hover ul {
+        display: block; }
     nav ul li a {
       display: block;
       text-align: center;
       padding: 16px 0; }
       nav ul li a span {
-        font-family: "Hearthstone";
+        font-family: 'Hearthstone';
         font-size: 41px; }
     nav ul li .active {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
       background-color: #E7E2DA;
       color: #474143; }
+      nav ul li .active:hover {
+        color: #E7E2DA;
+        background-color: #00a99c; }
+
+.pageContainer {
+  margin-top: 10px; }
 
 /*# sourceMappingURL=index.css.map */

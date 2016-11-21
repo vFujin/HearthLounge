@@ -9,7 +9,45 @@ export const navItems = [
     name: "Talie kart",
     className: "decks",
     icon: "icon-deck",
-    url: 'talie-kart'
+    url: 'talie-kart',
+    submenu: [
+      {
+        icon: "",
+        hs_class: "Czarnoksiężnik"
+      },
+      {
+        icon: "",
+        hs_class: "Druid"
+      },
+      {
+        icon: "",
+        hs_class: "Kapłan"
+      },
+      {
+        icon: "",
+        hs_class: "Łotr"
+      },
+      {
+        icon: "",
+        hs_class: "Łowca"
+      },
+      {
+        icon: "",
+        hs_class: "Mag"
+      },
+      {
+        icon: "",
+        hs_class: "Paladyn"
+      },
+      {
+        icon: "",
+        hs_class: "Szaman"
+      },
+      {
+        icon: "",
+        hs_class: "Wojownik"
+      }
+    ]
   },
   {
     name: "Arena Picker",

@@ -14,15 +14,15 @@ class App extends Component {
   render() {
     return (
         <Router history={browserHistory}>
-          <Route path="/" component={Home} />
-          <Route path="strona-glowna" component={Home} />
-          <Route path="talie-kart" component={Decks} />
-          <Route path="arena-picker" component={ArenaPicker} />
-          <Route path="dodatki" component={Expansions} />
+          <Route path="/"                 component={Home} />
+          <Route path="strona-glowna"     component={Home} />
+          <Route path="talie-kart"        component={Decks} />
+          <Route path="arena-picker"      component={ArenaPicker} />
+          <Route path="dodatki"           component={Expansions} />
           <Route path="stworz-talie-kart" component={CreateDeck} />
-          <Route path="forum" component={Forum} />
-          <Route path="turnieje" component={Tournaments} />
-          <Route path="streamerzy" component={Streams} />
+          <Route path="forum"             component={Forum} />
+          <Route path="turnieje"          component={Tournaments} />
+          <Route path="streamerzy"        component={Streams} />
         </Router>
     );
   }
