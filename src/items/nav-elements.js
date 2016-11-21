@@ -116,7 +116,7 @@ export const navItems = [
     icon: "icon-twitch",
     url: 'streamerzy',
     homepage_order: 7,
-    homepage_block_width: 1
+    homepage_block_width: 2
   },
   {
     name: "Logowanie",

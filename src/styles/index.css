@@ -147,6 +147,9 @@ a:active, a:hover, a:link, a:visited {
 body {
   font-family: 'Roboto', sans-serif; }
 
+/*
+  Layout
+ */
 nav {
   background-color: #474143;
   text-align: right; }
@@ -202,9 +205,19 @@ nav {
         color: #E7E2DA;
         background-color: #00a99c; }
 
+footer {
+  width: 100%;
+  height: 44px;
+  background-color: #474143;
+  position: fixed;
+  bottom: 0; }
+
 .pageContainer {
   margin-top: 10px; }
 
+/*
+  Pages
+ */
 .home ul {
   display: flex;
   width: inherit;
