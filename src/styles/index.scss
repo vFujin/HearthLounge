@@ -5,3 +5,44 @@
 body{
   font-family: 'Roboto', sans-serif;
 }
+
+nav {
+  background-color: $dark-grey;
+  text-align: right;
+  ul {
+    li {
+      color: $primary-font-color;
+      display: inline-block;
+      text-transform: uppercase;
+      width: 9.7%;
+      border-right: 1px solid #666;
+      -webkit-transition: all ease .4s;
+      -moz-transition: all ease .4s;
+      -ms-transition: all ease .4s;
+      -o-transition: all ease .4s;
+      transition: all ease .4s;
+      &:first-child {
+        border-left: 1px solid #666;
+      }
+      &:last-child {
+        background-color: #00a99c;
+      }
+      &:hover {
+        background-color: #00a99c;
+      }
+      a {
+        display: block;
+        text-align: center;
+        padding: 16px 0;
+        span {
+          font-family: 'Hearthstone' ;
+          font-size: 41px;
+        }
+      }
+      .is-active {
+        background-color: $pearl;
+        color: $dark-grey
+      }
+    }
+  }
+}
