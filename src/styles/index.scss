@@ -3,6 +3,7 @@
 @import '_fonts';
 @import '_grid';
 @import '_mixins';
+@import '_submenu';
 body{
   font-family: 'Roboto', sans-serif;
 }
@@ -10,9 +11,18 @@ body{
   Layout
  */
 nav {
+  position: relative;
+  z-index: 100;
   background-color: $dark-grey;
   text-align: right;
+  display: inline-flex;
+  width: 100%;
+  .logo{
+    width: 30%;
+    height:50px;
+  }
   ul {
+    width: 70%;
     li {
       @include transition(all ease .4s);
       color: $primary-font-color;
@@ -20,42 +30,25 @@ nav {
       text-transform: uppercase;
       width: 9.7%;
       border-right: 1px solid #666;
-      ul{
-        background-color: $dark-grey;
-        display: none;
-        position: absolute;
-        width: 9.7%;
-        margin-top: 15px;
-        li{
-          display: block;
-          width:100%;
-          border:none;
-          &:first-child{
-            border-left: none;
-          }
-          &:last-child{
-            background-color: inherit;
-          }
-        }
-      }
       &:first-child {
         border-left: 1px solid #666;
       }
       &:last-child {
         background-color: #00a99c;
       }
-
       &:hover {
         background-color: #00a99c;
-        ul{
+        .submenu{
           display: block;
         }
       }
-
       a {
         display: block;
         text-align: center;
         padding: 16px 0;
+        div{
+          margin-top: 8px;
+        }
         span {
           font-family: 'Hearthstone';
           font-size: 41px;
@@ -81,7 +74,16 @@ footer{
   bottom:0;
 }
 .pageContainer{
+  position: relative;
+  z-index: 1;
   margin-top: 10px;
+  height: 809px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  &::-webkit-scrollbar{width: 13px;}
+  &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0;}
+  &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
+  &::-webkit-scrollbar-track{background-color: $light-grey;}
 }
 
 
@@ -100,6 +102,7 @@ footer{
        margin-bottom: 10px;
        position: relative;
        color: black;
+       height: 400px;
        background-color: $light-grey;
        &:nth-last-child(1),
        &:nth-last-child(2),
@@ -129,4 +132,3 @@ footer{
      }
    }
  }
-

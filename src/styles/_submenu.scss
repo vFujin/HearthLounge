@@ -1,0 +1,74 @@
+@import '_colors';
+.submenu{
+  max-width: 100%;
+  background-color: $pearl;
+  display: none;
+  position: absolute;
+  width: 9.7%;
+  margin-top: 16px;
+  padding-top: 10px;
+  margin-left: -1px;
+  li{
+    display: block;
+    width:100%;
+    border:none;
+    &:first-child{
+      border-left: none;
+    }
+    &:last-child{
+      background-color: inherit;
+    }
+    div{
+      margin-top: 0;
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    a{
+      @include transition(all ease .4s);
+      filter: grayscale(100%);
+      &:hover{
+        filter: grayscale(0%);
+      }
+      .submenu-active{
+        filter: grayscale(0%);
+      }
+    }
+  }
+  .warlock{
+    background: url('../images/submenu/warlock_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+  .druid{
+    background: url('../images/submenu/druid_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+  .priest{
+    background: url('../images/submenu/priest_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+  .rogue{
+    background: url('../images/submenu/rogue_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+  .hunter{
+    background: url('../images/submenu/hunter_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+  .mage{
+    background: url('../images/submenu/mage_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+  .paladin{
+    background: url('../images/submenu/paladin_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+  .shaman{
+    background: url('../images/submenu/shaman_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+  .warrior{
+    background: url('../images/submenu/warrior_background.jpg') no-repeat center center;
+    background-size: 100%;
+  }
+}

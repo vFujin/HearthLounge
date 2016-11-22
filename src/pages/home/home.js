@@ -9,7 +9,6 @@ export class Home extends Component {
           {navItems.map((element, index) =>
               <li key={index} className={`${element.className} block-width-${element.homepage_block_width}`}>
                 <Link to={'/' + element.url}>
-                  <span className={element.icon}></span>
                   <div>{element.name}</div>
                 </Link>
               </li>
