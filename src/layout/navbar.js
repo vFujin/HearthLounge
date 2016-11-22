@@ -4,14 +4,14 @@ import { navItems } from '../items/nav-elements';
 
 export class Navbar extends Component {
   _dropdown(el, index){
-
+    let sub = el.submenu;
     if(!el.hasOwnProperty('submenu')) return;
     return (
         <ul className="submenu">
           {navItems[index].submenu.map( (item, id) =>
             <li key={id}>
-              <Link  className={el.submenu[id].hs_className} to={'/' + el.url + '/' + el.submenu[id].hs_class_url} activeClassName="submenu-active">
-                <div>{el.submenu[id].hs_class}</div>
+              <Link  className={sub[id].submenu_li_className} to={'/' + el.url + '/' + sub[id].submenu_url} activeClassName="submenu-active">
+                <div>{sub[id].submenu_li_title}</div>
               </Link>
             </li>
           )}

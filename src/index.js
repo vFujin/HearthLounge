@@ -7,6 +7,7 @@ import {Decks} from './pages/decks/decks';
 import {Cards} from './pages/cards/cards';
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
 import {Expansions} from './pages/expansions/expansions';
+import {Adventures} from './pages/adventures/adventures';
 import {CreateDeck} from './pages/create-deck/create-deck';
 import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
@@ -29,6 +30,7 @@ ReactDOM.render((
         <Route path="karty"             component={Cards} />
         <Route path="arena-picker"      component={ArenaPicker} />
         <Route path="dodatki"           component={Expansions} />
+        <Route path="przygody"          component={Adventures} />
         <Route path="stworz-talie-kart" component={CreateDeck} />
         <Route path="forum"             component={Forum} />
         <Route path="turnieje"          component={Tournaments} />

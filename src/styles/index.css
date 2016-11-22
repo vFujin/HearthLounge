@@ -218,10 +218,10 @@ nav {
   display: inline-flex;
   width: 100%; }
   nav .logo {
-    width: 30%;
+    width: 20%;
     height: 50px; }
   nav ul {
-    width: 70%; }
+    width: 80%; }
     nav ul li {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
@@ -231,7 +231,7 @@ nav {
       color: #fff;
       display: inline-block;
       text-transform: uppercase;
-      width: 9.7%;
+      width: 8.7%;
       border-right: 1px solid #666; }
       nav ul li:first-child {
         border-left: 1px solid #666; }

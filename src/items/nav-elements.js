@@ -16,58 +16,49 @@ export const navItems = [
     homepage_block_width: 3,
     submenu: [
       {
-        icon: "",
-        hs_class: "Czarnoksiężnik",
-        hs_class_url: "czarnoksieznik",
-        hs_className: "warlock"
+        submenu_li_title: "Czarnoksiężnik",
+        submenu_url: "czarnoksieznik",
+        submenu_li_className: "warlock"
       },
       {
-        icon: "",
-        hs_class: "Druid",
-        hs_class_url: "druid",
-        hs_className: "druid"
+        submenu_li_title: "Druid",
+        submenu_url: "druid",
+        submenu_li_className: "druid"
       },
       {
-        icon: "",
-        hs_class: "Kapłan",
-        hs_class_url: "kaplan",
-        hs_className: "priest"
+        submenu_li_title: "Kapłan",
+        submenu_url: "kaplan",
+        submenu_li_className: "priest"
       },
       {
-        icon: "",
-        hs_class: "Łotr",
-        hs_class_url: "lotr",
-        hs_className: "rogue"
+        submenu_li_title: "Łotr",
+        submenu_url: "lotr",
+        submenu_li_className: "rogue"
       },
       {
-        icon: "",
-        hs_class: "Łowca",
-        hs_class_url: "lowca",
-        hs_className: "hunter"
+        submenu_li_title: "Łowca",
+        submenu_url: "lowca",
+        submenu_li_className: "hunter"
       },
       {
-        icon: "",
-        hs_class: "Mag",
-        hs_class_url: "mag",
-        hs_className: "mage"
+        submenu_li_title: "Mag",
+        submenu_url: "mag",
+        submenu_li_className: "mage"
       },
       {
-        icon: "",
-        hs_class: "Paladyn",
-        hs_class_url: "paladyn",
-        hs_className: "paladin"
+        submenu_li_title: "Paladyn",
+        submenu_url: "paladyn",
+        submenu_li_className: "paladin"
       },
       {
-        icon: "",
-        hs_class: "Szaman",
-        hs_class_url: "szaman",
-        hs_className: "shaman"
+        submenu_li_title: "Szaman",
+        submenu_url: "szaman",
+        submenu_li_className: "shaman"
       },
       {
-        icon: "",
-        hs_class: "Wojownik",
-        hs_class_url: "wojownik",
-        hs_className: "warrior"
+        submenu_li_title: "Wojownik",
+        submenu_url: "wojownik",
+        submenu_li_className: "warrior"
       }
     ]
   },
@@ -94,8 +85,57 @@ export const navItems = [
     url: 'dodatki',
     homepage_order: 3,
     homepage_block_width: 2,
-    submenu:[
-
+    submenu: [
+      {
+        submenu_li_title: "Gobliny vs Gnomy",
+        submenu_url: "gobliny-vs-gnomy",
+        submenu_li_className: "goblins-vs-gnomes",
+      },
+      {
+        submenu_li_title: "Wielki Turniej",
+        submenu_url: "wielki-turniej",
+        submenu_li_className: "the-grand-tournament",
+      },
+      {
+        submenu_li_title: "Przedwieczni Bogowie",
+        submenu_url: "przedwieczni-bogowie",
+        submenu_li_className: "whispers-of-the-old-gods",
+      },
+      {
+        submenu_li_title: "Ciemne Zaułki Gadżetonu",
+        submenu_url: "ciemne-zaulki-gadzetonu",
+        submenu_li_className: "mean-streets-of-gadgetzan",
+      }
+    ]
+  },
+  {
+    name: "Przygody",
+    className: "adventures",
+    icon: "icon-expansions",
+    url: 'przygody',
+    homepage_order: 3,
+    homepage_block_width: 0,
+    submenu: [
+      {
+        submenu_li_title: "Klątwa Naxxramas",
+        submenu_url: "klatwa-naxxramas",
+        submenu_li_className: "curse-of-naxxramas",
+      },
+      {
+        submenu_li_title: "Czarna góra",
+        submenu_url: "czarna-gora",
+        submenu_li_className: "blackrock-mountain",
+      },
+      {
+        submenu_li_title: "Liga odkrywców",
+        submenu_url: "liga-odkrywcow",
+        submenu_li_className: "the-league-of-explorers",
+      },
+      {
+        submenu_li_title: "Pewnej nocy w Karazhanie",
+        submenu_url: "pewnej-nocy-w-karazhanie",
+        submenu_li_className: "one-night-in-karazhan",
+      }
     ]
   },
   {

@@ -18,17 +18,17 @@ nav {
   display: inline-flex;
   width: 100%;
   .logo{
-    width: 30%;
+    width: 20%;
     height:50px;
   }
   ul {
-    width: 70%;
+    width: 80%;
     li {
       @include transition(all ease .4s);
       color: $primary-font-color;
       display: inline-block;
       text-transform: uppercase;
-      width: 9.7%;
+      width: 8.7%;
       border-right: 1px solid #666;
       &:first-child {
         border-left: 1px solid #666;
