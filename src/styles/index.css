@@ -144,12 +144,17 @@ a:active, a:hover, a:link, a:visited {
 .block-width-4 {
   width: 99%; }
 
+.decks .submenu {
+  width: 9.7%; }
+
+.expansions .submenu, .adventures .submenu {
+  width: 16%; }
+
 .submenu {
-  max-width: 100%;
   background-color: #E7E2DA;
   display: none;
   position: absolute;
-  width: 9.7%;
+  width: 10%;
   margin-top: 16px;
   padding-top: 10px;
   margin-left: -1px; }
