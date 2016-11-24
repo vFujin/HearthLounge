@@ -11,6 +11,7 @@ export class Navbar extends Component {
           {navItems[index].submenu.map( (item, id) =>
             <li key={id}>
               <Link  className={sub[id].submenu_li_className} to={'/' + el.url + '/' + sub[id].submenu_url} activeClassName="submenu-active">
+                <span className={sub[id].icon}></span>
                 <div>{sub[id].submenu_li_title}</div>
               </Link>
             </li>

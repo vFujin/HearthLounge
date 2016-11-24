@@ -87,6 +87,7 @@ export const navItems = [
     homepage_block_width: 2,
     submenu: [
       {
+        icon: "icon-gvg",
         submenu_li_title: "Gobliny vs Gnomy",
         submenu_url: "gobliny-vs-gnomy",
         submenu_li_className: "goblins-vs-gnomes",
@@ -111,7 +112,7 @@ export const navItems = [
   {
     name: "Przygody",
     className: "adventures",
-    icon: "icon-expansions",
+    icon: "icon-adventures",
     url: 'przygody',
     homepage_order: 3,
     homepage_block_width: 0,

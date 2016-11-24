@@ -2,9 +2,9 @@
 @font-face {
   font-family: 'Hearthstone';
   src:
-          url('../icons/Hearthstone.ttf?sjdqmo') format('truetype'),
-          url('../icons/Hearthstone.woff?sjdqmo') format('woff'),
-          url('../icons/Hearthstone.svg?sjdqmo#Hearthstone') format('svg');
+          url('../icons/Hearthstone.ttf?5jh10q') format('truetype'),
+          url('../icons/Hearthstone.woff?5jh10q') format('woff'),
+          url('../icons/Hearthstone.svg?5jh10q#Hearthstone') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,60 +24,103 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-expansions:before {
-  content: "\e907";
-}
-.icon-login:before {
-  content: "\e912";
-}
-.icon-the_grand_tournament:before {
+.icon-the-grand-tournament:before {
   content: "\e900";
 }
-.icon-hs_logo:before {
+.icon-adventures:before {
   content: "\e901";
 }
-.icon-deck:before {
+.icon-arena-picker:before {
   content: "\e902";
 }
-.icon-create-deck:before {
+.icon-blackrock:before {
   content: "\e903";
 }
-.icon-arena-picker:before {
+.icon-card:before {
   content: "\e904";
 }
-.icon-blackrock:before {
+.icon-create-deck:before {
   content: "\e905";
 }
-.icon-card:before {
+.icon-deck:before {
   content: "\e906";
 }
-.icon-explorers-league:before {
+.icon-druid:before {
+  content: "\e907";
+}
+.icon-expansions:before {
   content: "\e908";
 }
-.icon-forum:before {
+.icon-explorers-league:before {
   content: "\e909";
 }
-.icon-gvg:before {
+.icon-forum:before {
   content: "\e90a";
 }
-.icon-karazhan:before {
+.icon-gadgetzan:before {
   content: "\e90b";
 }
-.icon-kraken:before {
+.icon-grimy-goons:before {
   content: "\e90c";
 }
-.icon-naxxramas:before {
+.icon-gvg:before {
   content: "\e90d";
 }
-.icon-old-gods:before {
+.icon-hs_logo:before {
   content: "\e90e";
 }
-.icon-trophy:before {
+.icon-hunter:before {
   content: "\e90f";
 }
-.icon-twitch:before {
+.icon-kabal:before {
   content: "\e910";
 }
-.icon-wild:before {
+.icon-karazhan:before {
   content: "\e911";
 }
+.icon-kraken:before {
+  content: "\e912";
+}
+.icon-login:before {
+  content: "\e913";
+}
+.icon-lotus:before {
+  content: "\e914";
+}
+.icon-mage:before {
+  content: "\e915";
+}
+.icon-naxxramas:before {
+  content: "\e916";
+}
+.icon-old-gods:before {
+  content: "\e917";
+}
+.icon-paladin:before {
+  content: "\e918";
+}
+.icon-priest:before {
+  content: "\e919";
+}
+.icon-rogue:before {
+  content: "\e91a";
+}
+.icon-shaman:before {
+  content: "\e91b";
+}
+.icon-trophy:before {
+  content: "\e91c";
+}
+.icon-twitch:before {
+  content: "\e91d";
+}
+.icon-warlock:before {
+  content: "\e91e";
+}
+.icon-warrior:before {
+  content: "\e91f";
+}
+.icon-wild:before {
+  content: "\e920";
+}
+
