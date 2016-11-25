@@ -434,7 +434,7 @@ nav {
       nav ul li:hover {
         background-color: #00a99c; }
         nav ul li:hover .submenu {
-          overflow: hidden; }
+          display: block; }
       nav ul li a {
         display: block;
         text-align: center;
