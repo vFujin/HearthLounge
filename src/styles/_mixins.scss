@@ -72,3 +72,17 @@
   line-height: $height;
   height: $height;
 }
+
+@mixin submenu_class_color($color){
+  color: $color;
+  span{
+    border-color: $color;
+  }
+  &:hover{
+    background-color: $color;
+    color: $dark-grey;
+    span{
+      border-color: $dark-grey;
+    }
+  }
+}

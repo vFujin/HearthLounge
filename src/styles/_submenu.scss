@@ -1,8 +1,6 @@
-@import '_colors';
-
 .decks{
   .submenu{
-    width: 9.7%;
+    width: 12%;
   }
 }
 
@@ -20,66 +18,68 @@
   padding-top: 10px;
   margin-left: -1px;
   li{
+    @include transition(all ease .4s);
     display: block;
     width:100%;
     border:none;
+    background-color: $dark-grey;
+    padding: 10px 0;
     &:first-child{
       border-left: none;
     }
-    &:last-child{
-      background-color: inherit;
+    span{
+      font-size: 28px;
+      float: left;
+      margin-top: -20px;
+      border-width: 2px;
+      border-style: solid;
+      padding: 5px;
+      border-radius: 50%;
+
     }
     div{
       margin-top: 0;
-      text-align: right;
+      float: right;
       padding-right: 10px;
+      line-height: 0;
     }
-
     a{
-      @include transition(all ease .4s);
-      filter: grayscale(100%);
-      &:hover{
-        filter: grayscale(0%);
-      }
-      .submenu-active{
-        filter: grayscale(0%);
-      }
+      clear: both;
+      padding: 20px 5px;
     }
   }
-  .warlock{
-    background: url('../images/submenu/decks/warlock_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
-  .druid{
-    background: url('../images/submenu/decks/druid_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
-  .priest{
-    background: url('../images/submenu/decks/priest_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
-  .rogue{
-    background: url('../images/submenu/decks/rogue_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
-  .hunter{
-    background: url('../images/submenu/decks/hunter_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
-  .mage{
-    background: url('../images/submenu/decks/mage_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
-  .paladin{
-    background: url('../images/submenu/decks/paladin_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
-  .shaman{
-    background: url('../images/submenu/decks/shaman_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
-  .warrior{
-    background: url('../images/submenu/decks/warrior_background.jpg') no-repeat center center;
-    background-size: 100%;
-  }
+}
+.druid{
+  @include submenu_class_color($druid);
+}
+
+.hunter{
+  @include submenu_class_color($hunter);
+}
+
+.mage{
+  @include submenu_class_color($mage);
+}
+.paladin{
+  @include submenu_class_color($paladin);
+}
+
+.priest{
+  @include submenu_class_color($priest);
+}
+
+.rogue{
+  @include submenu_class_color($rogue);
+}
+
+.shaman{
+  @include submenu_class_color($shaman);
+}
+
+.warlock{
+  @include submenu_class_color($warlock);
+}
+
+.warrior{
+  @include submenu_class_color($warrior);
 }

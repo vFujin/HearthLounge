@@ -135,7 +135,7 @@ export const navItems = [
       {
         submenu_li_title: "Pewnej nocy w Karazhanie",
         submenu_url: "pewnej-nocy-w-karazhanie",
-        submenu_li_className: "one-night-in-karazhan",
+        submenu_li_className: "one-night-at-karazhan",
       }
     ]
   },

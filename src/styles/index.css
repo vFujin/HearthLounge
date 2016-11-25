@@ -72,7 +72,7 @@ a:active, a:hover, a:link, a:visited {
 .icon-arena-picker:before {
   content: "\e902"; }
 
-.icon-blackrock:before {
+.icon-blackrock-mountain:before {
   content: "\e903"; }
 
 .icon-card:before {
@@ -90,19 +90,19 @@ a:active, a:hover, a:link, a:visited {
 .icon-expansions:before {
   content: "\e908"; }
 
-.icon-explorers-league:before {
+.icon-the-league-of-explorers:before {
   content: "\e909"; }
 
 .icon-forum:before {
   content: "\e90a"; }
 
-.icon-gadgetzan:before {
+.icon-mean-streets-of-gadgetzan:before {
   content: "\e90b"; }
 
 .icon-grimy-goons:before {
   content: "\e90c"; }
 
-.icon-gvg:before {
+.icon-goblins-vs-gnomes:before {
   content: "\e90d"; }
 
 .icon-hs_logo:before {
@@ -114,7 +114,7 @@ a:active, a:hover, a:link, a:visited {
 .icon-kabal:before {
   content: "\e910"; }
 
-.icon-karazhan:before {
+.icon-one-night-at-karazhan:before {
   content: "\e911"; }
 
 .icon-kraken:before {
@@ -129,10 +129,10 @@ a:active, a:hover, a:link, a:visited {
 .icon-mage:before {
   content: "\e915"; }
 
-.icon-naxxramas:before {
+.icon-curse-of-naxxramas:before {
   content: "\e916"; }
 
-.icon-old-gods:before {
+.icon-whispers-of-the-old-gods:before {
   content: "\e917"; }
 
 .icon-paladin:before {
@@ -187,7 +187,7 @@ a:active, a:hover, a:link, a:visited {
   width: 99%; }
 
 .decks .submenu {
-  width: 9.7%; }
+  width: 12%; }
 
 .expansions .submenu, .adventures .submenu {
   width: 16%; }
@@ -201,55 +201,124 @@ a:active, a:hover, a:link, a:visited {
   padding-top: 10px;
   margin-left: -1px; }
   .submenu li {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
     display: block;
     width: 100%;
-    border: none; }
+    border: none;
+    background-color: #474143;
+    padding: 10px 0; }
     .submenu li:first-child {
       border-left: none; }
-    .submenu li:last-child {
-      background-color: inherit; }
+    .submenu li span {
+      font-size: 28px;
+      float: left;
+      margin-top: -20px;
+      border-width: 2px;
+      border-style: solid;
+      padding: 5px;
+      border-radius: 50%; }
     .submenu li div {
       margin-top: 0;
-      text-align: right;
-      padding-right: 10px; }
+      float: right;
+      padding-right: 10px;
+      line-height: 0; }
     .submenu li a {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
-      transition: all ease 0.4s;
-      filter: grayscale(100%); }
-      .submenu li a:hover {
-        filter: grayscale(0%); }
-      .submenu li a .submenu-active {
-        filter: grayscale(0%); }
-  .submenu .warlock {
-    background: url("../images/submenu/decks/warlock_background.jpg") no-repeat center center;
-    background-size: 100%; }
-  .submenu .druid {
-    background: url("../images/submenu/decks/druid_background.jpg") no-repeat center center;
-    background-size: 100%; }
-  .submenu .priest {
-    background: url("../images/submenu/decks/priest_background.jpg") no-repeat center center;
-    background-size: 100%; }
-  .submenu .rogue {
-    background: url("../images/submenu/decks/rogue_background.jpg") no-repeat center center;
-    background-size: 100%; }
-  .submenu .hunter {
-    background: url("../images/submenu/decks/hunter_background.jpg") no-repeat center center;
-    background-size: 100%; }
-  .submenu .mage {
-    background: url("../images/submenu/decks/mage_background.jpg") no-repeat center center;
-    background-size: 100%; }
-  .submenu .paladin {
-    background: url("../images/submenu/decks/paladin_background.jpg") no-repeat center center;
-    background-size: 100%; }
-  .submenu .shaman {
-    background: url("../images/submenu/decks/shaman_background.jpg") no-repeat center center;
-    background-size: 100%; }
-  .submenu .warrior {
-    background: url("../images/submenu/decks/warrior_background.jpg") no-repeat center center;
-    background-size: 100%; }
+      clear: both;
+      padding: 20px 5px; }
+
+.druid {
+  color: #FF7D0A; }
+  .druid span {
+    border-color: #FF7D0A; }
+  .druid:hover {
+    background-color: #FF7D0A;
+    color: #474143; }
+    .druid:hover span {
+      border-color: #474143; }
+
+.hunter {
+  color: #ABD473; }
+  .hunter span {
+    border-color: #ABD473; }
+  .hunter:hover {
+    background-color: #ABD473;
+    color: #474143; }
+    .hunter:hover span {
+      border-color: #474143; }
+
+.mage {
+  color: #69CCF0; }
+  .mage span {
+    border-color: #69CCF0; }
+  .mage:hover {
+    background-color: #69CCF0;
+    color: #474143; }
+    .mage:hover span {
+      border-color: #474143; }
+
+.paladin {
+  color: #F58CBA; }
+  .paladin span {
+    border-color: #F58CBA; }
+  .paladin:hover {
+    background-color: #F58CBA;
+    color: #474143; }
+    .paladin:hover span {
+      border-color: #474143; }
+
+.priest {
+  color: #FFFFFF; }
+  .priest span {
+    border-color: #FFFFFF; }
+  .priest:hover {
+    background-color: #FFFFFF;
+    color: #474143; }
+    .priest:hover span {
+      border-color: #474143; }
+
+.rogue {
+  color: #FFF569; }
+  .rogue span {
+    border-color: #FFF569; }
+  .rogue:hover {
+    background-color: #FFF569;
+    color: #474143; }
+    .rogue:hover span {
+      border-color: #474143; }
+
+.shaman {
+  color: #0070DE; }
+  .shaman span {
+    border-color: #0070DE; }
+  .shaman:hover {
+    background-color: #0070DE;
+    color: #474143; }
+    .shaman:hover span {
+      border-color: #474143; }
+
+.warlock {
+  color: #9482C9; }
+  .warlock span {
+    border-color: #9482C9; }
+  .warlock:hover {
+    background-color: #9482C9;
+    color: #474143; }
+    .warlock:hover span {
+      border-color: #474143; }
+
+.warrior {
+  color: #C79C6E; }
+  .warrior span {
+    border-color: #C79C6E; }
+  .warrior:hover {
+    background-color: #C79C6E;
+    color: #474143; }
+    .warrior:hover span {
+      border-color: #474143; }
 
 body {
   font-family: 'Roboto', sans-serif; }
@@ -282,8 +351,6 @@ nav {
       border-right: 1px solid #666; }
       nav ul li:first-child {
         border-left: 1px solid #666; }
-      nav ul li:last-child {
-        background-color: #00a99c; }
       nav ul li:hover {
         background-color: #00a99c; }
         nav ul li:hover .submenu {
@@ -308,6 +375,8 @@ nav {
         nav ul li .active:hover {
           color: #E7E2DA;
           background-color: #00a99c; }
+    nav ul .login {
+      background-color: #00a99c; }
 
 footer {
   width: 100%;

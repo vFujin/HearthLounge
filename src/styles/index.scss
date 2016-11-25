@@ -33,11 +33,9 @@ nav {
       &:first-child {
         border-left: 1px solid #666;
       }
-      &:last-child {
-        background-color: #00a99c;
-      }
+
       &:hover {
-        background-color: #00a99c;
+        background-color: $sea-color;
         .submenu{
           display: block;
         }
@@ -60,9 +58,12 @@ nav {
         color: $dark-grey;
         &:hover{
           color: $pearl;
-          background-color: #00a99c;
+          background-color: $sea-color;
         }
       }
+    }
+    .login{
+      background-color: $sea-color;
     }
   }
 }

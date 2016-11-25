@@ -9,10 +9,10 @@ export class Navbar extends Component {
     return (
         <ul className="submenu">
           {navItems[index].submenu.map( (item, id) =>
-            <li key={id}>
-              <Link  className={sub[id].submenu_li_className} to={'/' + el.url + '/' + sub[id].submenu_url} activeClassName="submenu-active">
-                <span className={sub[id].icon}></span>
-                <div>{sub[id].submenu_li_title}</div>
+            <li className={sub[id].submenu_li_className} key={id}>
+              <Link to={'/' + el.url + '/' + sub[id].submenu_url} activeClassName="submenu-active">
+                <span className={`icon-${sub[id].submenu_li_className}`}></span>
+                <div className="icon-label">{sub[id].submenu_li_title}</div>
               </Link>
             </li>
           )}
