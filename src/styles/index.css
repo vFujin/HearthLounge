@@ -320,6 +320,86 @@ a:active, a:hover, a:link, a:visited {
     .warrior:hover span {
       border-color: #474143; }
 
+.curse-of-naxxramas {
+  color: #b5de3f; }
+  .curse-of-naxxramas span {
+    border-color: #b5de3f; }
+  .curse-of-naxxramas:hover {
+    background-color: #b5de3f;
+    color: #474143; }
+    .curse-of-naxxramas:hover span {
+      border-color: #474143; }
+
+.blackrock-mountain {
+  color: #fa5210; }
+  .blackrock-mountain span {
+    border-color: #fa5210; }
+  .blackrock-mountain:hover {
+    background-color: #fa5210;
+    color: #474143; }
+    .blackrock-mountain:hover span {
+      border-color: #474143; }
+
+.the-league-of-explorers {
+  color: #14a9a1; }
+  .the-league-of-explorers span {
+    border-color: #14a9a1; }
+  .the-league-of-explorers:hover {
+    background-color: #14a9a1;
+    color: #474143; }
+    .the-league-of-explorers:hover span {
+      border-color: #474143; }
+
+.one-night-at-karazhan {
+  color: #e2b4df; }
+  .one-night-at-karazhan span {
+    border-color: #e2b4df; }
+  .one-night-at-karazhan:hover {
+    background-color: #e2b4df;
+    color: #474143; }
+    .one-night-at-karazhan:hover span {
+      border-color: #474143; }
+
+.goblins-vs-gnomes {
+  color: #fae43f; }
+  .goblins-vs-gnomes span {
+    border-color: #fae43f; }
+  .goblins-vs-gnomes:hover {
+    background-color: #fae43f;
+    color: #474143; }
+    .goblins-vs-gnomes:hover span {
+      border-color: #474143; }
+
+.the-grand-tournament {
+  color: #f00; }
+  .the-grand-tournament span {
+    border-color: #f00; }
+  .the-grand-tournament:hover {
+    background-color: #f00;
+    color: #474143; }
+    .the-grand-tournament:hover span {
+      border-color: #474143; }
+
+.whispers-of-the-old-gods {
+  color: #cc00ff; }
+  .whispers-of-the-old-gods span {
+    border-color: #cc00ff; }
+  .whispers-of-the-old-gods:hover {
+    background-color: #cc00ff;
+    color: #474143; }
+    .whispers-of-the-old-gods:hover span {
+      border-color: #474143; }
+
+.mean-streets-of-gadgetzan {
+  color: #d2cac5; }
+  .mean-streets-of-gadgetzan span {
+    border-color: #d2cac5; }
+  .mean-streets-of-gadgetzan:hover {
+    background-color: #d2cac5;
+    color: #474143; }
+    .mean-streets-of-gadgetzan:hover span {
+      border-color: #474143; }
+
 body {
   font-family: 'Roboto', sans-serif; }
 
@@ -354,7 +434,7 @@ nav {
       nav ul li:hover {
         background-color: #00a99c; }
         nav ul li:hover .submenu {
-          display: block; }
+          overflow: hidden; }
       nav ul li a {
         display: block;
         text-align: center;

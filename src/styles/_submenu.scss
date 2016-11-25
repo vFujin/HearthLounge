@@ -49,37 +49,61 @@
     }
   }
 }
+
+//Classes
 .druid{
   @include submenu_class_color($druid);
 }
-
 .hunter{
   @include submenu_class_color($hunter);
 }
-
 .mage{
   @include submenu_class_color($mage);
 }
 .paladin{
   @include submenu_class_color($paladin);
 }
-
 .priest{
   @include submenu_class_color($priest);
 }
-
 .rogue{
   @include submenu_class_color($rogue);
 }
-
 .shaman{
   @include submenu_class_color($shaman);
 }
-
 .warlock{
   @include submenu_class_color($warlock);
 }
-
 .warrior{
   @include submenu_class_color($warrior);
+}
+
+
+//Adventures
+.curse-of-naxxramas{
+  @include submenu_class_color($naxx);
+}
+.blackrock-mountain{
+  @include submenu_class_color($bm);
+}
+.the-league-of-explorers{
+  @include submenu_class_color($loe);
+}
+.one-night-at-karazhan{
+  @include submenu_class_color($karazhan);
+}
+
+//Expansions{
+.goblins-vs-gnomes{
+  @include submenu_class_color($gvg);
+}
+.the-grand-tournament{
+  @include submenu_class_color($tgt);
+}
+.whispers-of-the-old-gods{
+  @include submenu_class_color($wotog);
+}
+.mean-streets-of-gadgetzan{
+  @include submenu_class_color($msog);
 }
