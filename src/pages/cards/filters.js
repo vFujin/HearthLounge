@@ -1,6 +1,3 @@
-/**
- * Created by TERMINATOR on 25.11.2016.
- */
 export const statistics = [
   {
     value: 'attack', label: 'Atak'
@@ -46,5 +43,77 @@ export const race = [
   },
   {
     value: 'totem', label: "Totem"
+  }
+];
+
+export const dust = [
+  {
+    value: 'dust-cost', label: 'Koszt Tajemniczego Pyłu'
+  },
+  {
+    value: 'golden-dust-cost', label: 'Koszt Tajemniczego Pyłu złotej karty'
+  },
+  {
+    value: 'disenchant-card-dust-gain', label: 'Zysk Tajemniczego Pyłu po odczarowaniu'
+  },
+  {
+    value: 'disenchant-golden-card-dust-gain', label: 'Zysk Tajemniczego Pyłu po odczarowaniu złotej karty'
+  }
+];
+
+export const mechanics = [
+  {
+    value: 'deathrattle', label: 'Agonia'
+  },
+  {
+    value: 'divine-shield', label: 'Boska Tarcza'
+  },
+  {
+    value: 'windfury', label: 'Furia Wichru'
+  },
+  {
+    value: 'inspire', label: 'Inspiracja'
+  },
+  {
+    value: 'combo', label: 'Kombinacja'
+  },
+  {
+    value: 'immune', label: 'Niewrażliwość'
+  },
+  {
+    value: 'spell-damage', label: 'Obrażenia zaklęć'
+  },
+  {
+    value: 'discover', label: 'Odkrywanie'
+  },
+  {
+    value: 'battlecry', label: 'Okrzyk Bojowy'
+  },
+  {
+    value: 'taunt', label: 'Prowokacja'
+  },
+  {
+    value: 'overload', label: 'Przeciążenie'
+  },
+  {
+    value: 'secret', label: 'Sekret'
+  },
+  {
+    value: 'enrage', label: 'Szał'
+  },
+  {
+    value: 'charge', label: 'Szarża'
+  },
+  {
+    value: 'stealth', label: 'Ukrycie'
+  },
+  {
+    value: 'choose-one', label: 'Wybierz Jedno'
+  },
+  {
+    value: 'silence', label: 'Wyciszenie'
+  },
+  {
+    value: 'freeze', label: 'Zamrożenie'
   }
 ];
