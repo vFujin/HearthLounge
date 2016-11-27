@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {race} from '../filters';
+import {race} from '../data.filters';
 
 export class RaceFilter extends Component {
   constructor(props) {

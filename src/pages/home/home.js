@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
-import {navItems} from '../../items/nav-elements';
+import {navItems} from '../../items/data.nav-elements';
 export class Home extends Component {
   render() {
     return (

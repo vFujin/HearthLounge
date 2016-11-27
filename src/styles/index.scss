@@ -135,7 +135,19 @@ footer{
  }
 
 .cards{
-
+  ul{
+    li{
+      @include transition(all ease .4s);
+      display: inline-block;
+      margin-right: 10px;
+      color: $dark-grey;
+      cursor: pointer;
+      span{
+        font-family: 'Hearthstone';
+        font-size: 41px;
+      }
+    }
+  }
   .sidebar-filters{
     padding-top:60px;
     background-color: $light-grey;
@@ -149,14 +161,7 @@ footer{
     ul{
       display: inline-flex;
       li {
-        @include transition(all ease .4s);
-        display: inline-block;
-        margin-right: 10px;
-        color: $dark-grey;
-        cursor: pointer;
         span{
-          font-family: 'Hearthstone';
-          font-size: 41px;
           line-height: 60px;
         }
         &:last-child {

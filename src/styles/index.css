@@ -546,6 +546,19 @@ footer {
     background-color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase; }
 
+.cards ul li {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  display: inline-block;
+  margin-right: 10px;
+  color: #474143;
+  cursor: pointer; }
+  .cards ul li span {
+    font-family: 'Hearthstone';
+    font-size: 41px; }
 .cards .sidebar-filters {
   padding-top: 60px;
   background-color: #A69E9D;
@@ -557,22 +570,10 @@ footer {
   height: 60px; }
   .cards .topbar-filters ul {
     display: inline-flex; }
-    .cards .topbar-filters ul li {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
-      transition: all ease 0.4s;
-      display: inline-block;
-      margin-right: 10px;
-      color: #474143;
-      cursor: pointer; }
-      .cards .topbar-filters ul li span {
-        font-family: 'Hearthstone';
-        font-size: 41px;
-        line-height: 60px; }
-      .cards .topbar-filters ul li:last-child {
-        margin-right: 0; }
+    .cards .topbar-filters ul li span {
+      line-height: 60px; }
+    .cards .topbar-filters ul li:last-child {
+      margin-right: 0; }
   .cards .topbar-filters .topbar-left li:hover {
     color: navy; }
   .cards .topbar-filters .topbar-right {

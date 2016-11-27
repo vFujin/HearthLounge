@@ -163,3 +163,17 @@ export const hs_class = [
     'shaman',
     'warrior'
 ];
+
+export const expansions = [
+    'goblins-vs-gnomes',
+    'the-grand-tournament',
+    'whispers-of-the-old-gods',
+    'mean-streets-of-gadgetzan'
+];
+
+export const adventures = [
+  'curse-of-naxxramas',
+  'blackrock-mountain',
+  'the-league-of-explorers',
+  'one-night-at-karazhan'
+];

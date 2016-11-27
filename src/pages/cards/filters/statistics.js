@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {statistics} from '../filters';
+import {statistics} from '../data.filters';
 
 export class StatisticsFilter extends Component {
   constructor(props) {
