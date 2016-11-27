@@ -16,6 +16,7 @@ export class RaceFilter extends Component {
   render() {
     return (
         <Select
+            placeholder="Rasa..."
             value={this.state.value}
             options={race}
             onChange={this.handleChange}

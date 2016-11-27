@@ -47,7 +47,7 @@ a:active, a:hover, a:link, a:visited {
 
 @font-face {
   font-family: 'Hearthstone';
-  src: url("../icons/Hearthstone.ttf?5jh10q") format("truetype"), url("../icons/Hearthstone.woff?5jh10q") format("woff"), url("../icons/Hearthstone.svg?5jh10q#Hearthstone") format("svg");
+  src: url("../icons/Hearthstone.ttf") format("truetype"), url("../icons/Hearthstone.woff") format("woff"), url("../icons/Hearthstone.svg#Hearthstone") format("svg");
   font-weight: normal;
   font-style: normal; }
 .icon {
@@ -161,6 +161,39 @@ a:active, a:hover, a:link, a:visited {
 
 .icon-wild:before {
   content: "\e920"; }
+
+.icon-mana-0:before {
+  content: "\e921"; }
+
+.icon-mana-1:before {
+  content: "\e922"; }
+
+.icon-mana-2:before {
+  content: "\e923"; }
+
+.icon-mana-3:before {
+  content: "\e924"; }
+
+.icon-mana-4:before {
+  content: "\e925"; }
+
+.icon-mana-5:before {
+  content: "\e926"; }
+
+.icon-mana-6:before {
+  content: "\e927"; }
+
+.icon-mana-7:before {
+  content: "\e928"; }
+
+.icon-mana-8:before {
+  content: "\e929"; }
+
+.icon-mana-9:before {
+  content: "\e92a"; }
+
+.icon-mana-10:before {
+  content: "\e92b"; }
 
 .block-width-0 {
   display: none; }
@@ -468,10 +501,10 @@ footer {
 .pageContainer {
   position: relative;
   z-index: 1;
-  margin-top: 10px;
   height: 809px;
   overflow-y: auto;
-  margin-bottom: 10px; }
+  margin: 10px 0;
+  display: flex; }
   .pageContainer::-webkit-scrollbar {
     width: 13px; }
   .pageContainer::-webkit-scrollbar-thumb {
@@ -512,5 +545,23 @@ footer {
     padding: 0 10px;
     background-color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase; }
+
+.cards .filters {
+  padding-top: 60px;
+  background-color: #A69E9D;
+  width: 20%;
+  height: calc(100% - 60px); }
+.cards .cost-filter {
+  width: 80%;
+  background-color: #A69E9D;
+  height: 60px; }
+  .cards .cost-filter ul {
+    display: inline-flex; }
+    .cards .cost-filter ul .hs {
+      display: inline-block;
+      font-family: 'Hearthstone';
+      font-size: 41px;
+      line-height: 60px;
+      margin-left: 10px; }
 
 /*# sourceMappingURL=index.css.map */

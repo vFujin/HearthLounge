@@ -117,3 +117,37 @@ export const mechanics = [
     value: 'freeze', label: 'Zamrożenie'
   }
 ];
+
+export const mana_cost = [
+  {
+    mana_cost: '0'
+  },
+  {
+    mana_cost: '1'
+  },
+  {
+    mana_cost: '2'
+  },
+  {
+    mana_cost: '3'
+  },
+  {
+    mana_cost: '4'
+  },
+  {
+    mana_cost: '5'
+  },
+  {
+    mana_cost: '6'
+  },
+  {
+    mana_cost: '7'
+  },
+  {
+    mana_cost: '8'
+  },
+  {
+    mana_cost: '10'
+  }
+
+];

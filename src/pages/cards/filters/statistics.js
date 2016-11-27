@@ -16,6 +16,7 @@ export class StatisticsFilter extends Component {
   render() {
     return (
           <Select
+              placeholder="Statystyki..."
               value={this.state.value}
               options={statistics}
               onChange={this.handleChange}

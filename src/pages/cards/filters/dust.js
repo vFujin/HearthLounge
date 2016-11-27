@@ -16,6 +16,7 @@ export class DustFilter extends Component {
   render() {
     return (
         <Select
+            placeholder="Tajemniczy Pył..."
             value={this.state.value}
             options={dust}
             onChange={this.handleChange}

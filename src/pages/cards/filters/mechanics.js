@@ -16,6 +16,7 @@ export class MechanicsFilter extends Component {
   render() {
     return (
         <Select
+            placeholder="Mechaniki..."
             value={this.state.value}
             options={mechanics}
             onChange={this.handleChange}

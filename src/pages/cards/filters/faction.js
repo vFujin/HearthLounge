@@ -16,6 +16,7 @@ export class FactionFilter extends Component {
   render() {
     return (
         <Select
+            placeholder="Frakcja..."
             value={this.state.value}
             options={faction}
             onChange={this.handleChange}
