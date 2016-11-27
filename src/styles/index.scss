@@ -136,26 +136,47 @@ footer{
 
 .cards{
 
-  .filters{
+  .sidebar-filters{
     padding-top:60px;
     background-color: $light-grey;
     width: 20%;
     height: calc(100% - 60px);
   }
-  .cost-filter{
+  .topbar-filters{
     width: 80%;
     background-color: $light-grey;
     height:60px;
     ul{
       display: inline-flex;
-      .hs{
+      li {
+        @include transition(all ease .4s);
         display: inline-block;
-        font-family: 'Hearthstone';
-        font-size: 41px;
-        line-height: 60px;
-        margin-left: 10px;
+        margin-right: 10px;
+        color: $dark-grey;
+        cursor: pointer;
+        span{
+          font-family: 'Hearthstone';
+          font-size: 41px;
+          line-height: 60px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
-
+    .topbar-left{
+      li{
+        &:hover{
+          color: navy;
+        }
+      }
+    }
+    .topbar-right{
+      float: right;
+      li{
+        width: 60px;
+        text-align: center;;
+      }
+    }
   }
 }

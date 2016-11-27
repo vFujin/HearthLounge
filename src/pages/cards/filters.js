@@ -151,3 +151,15 @@ export const mana_cost = [
   }
 
 ];
+
+export const hs_class = [
+    'warlock',
+    'druid',
+    'priest',
+    'rogue',
+    'hunter',
+    'mage',
+    'paladin',
+    'shaman',
+    'warrior'
+];
