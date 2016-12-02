@@ -242,8 +242,7 @@ a:active, a:hover, a:link, a:visited {
     display: block;
     width: 100%;
     border: none;
-    background-color: #474143;
-    padding: 10px 0; }
+    background-color: #474143; }
     .submenu li:first-child {
       border-left: none; }
     .submenu li span {
@@ -261,7 +260,7 @@ a:active, a:hover, a:link, a:visited {
       line-height: 0; }
     .submenu li a {
       clear: both;
-      padding: 20px 5px; }
+      padding: 30px 5px; }
 
 .druid {
   color: #FF7D0A; }
@@ -617,6 +616,8 @@ footer {
       .cards .sidebar-filters .Select .Select-option:hover {
         background-color: #00a99c;
         color: #E7E2DA; }
+  .cards .sidebar-filters .hs {
+    padding: 10px; }
 .cards .topbar-filters {
   width: 80%;
   background-color: #A69E9D;
@@ -634,5 +635,9 @@ footer {
     .cards .topbar-filters .topbar-right li {
       width: 60px;
       text-align: center; }
+.cards .not-active {
+  background-color: #474143; }
+.cards .mana-active {
+  color: navy; }
 
 /*# sourceMappingURL=index.css.map */

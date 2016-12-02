@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'react-select/dist/react-select.css';
+import {NameFilter} from './filters/name';
 import {StatisticsFilter} from './filters/statistics';
 import {FactionFilter} from './filters/faction';
 import {RaceFilter} from './filters/race';
@@ -11,6 +12,7 @@ export class Sidebar extends Component {
   render() {
     return (
         <div className="sidebar-filters">
+          <NameFilter/>
           <StatisticsFilter/>
           <FactionFilter/>
           <RaceFilter/>

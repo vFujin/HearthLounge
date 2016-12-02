@@ -219,6 +219,9 @@ footer{
 
       }
     }
+    .hs{
+      padding:10px;
+    }
 
   }
   .topbar-filters{
@@ -250,5 +253,12 @@ footer{
         text-align: center;;
       }
     }
+  }
+
+  .not-active{
+    background-color: $dark-grey;
+  }
+  .mana-active{
+    color: navy;
   }
 }

@@ -177,3 +177,11 @@ export const adventures = [
   'the-league-of-explorers',
   'one-night-at-karazhan'
 ];
+
+export const rarity = [
+    'Darmowa',
+    'Zwykła',
+    'Rzadka',
+    'Epicka',
+    'Legendarna'
+];
