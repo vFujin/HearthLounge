@@ -179,9 +179,24 @@ export const adventures = [
 ];
 
 export const rarity = [
-    'Darmowa',
-    'Zwykła',
-    'Rzadka',
-    'Epicka',
-    'Legendarna'
+  {
+    className: 'free',
+    rarity: 'Darmowa'
+  },
+  {
+    className: 'common',
+    rarity: 'Zwykła'
+  },
+  {
+    className: 'rare',
+    rarity: 'Rzadka'
+  },
+  {
+    className: 'epic',
+    rarity: 'Epicka'
+  },
+  {
+    className: 'legendary',
+    rarity: 'Legendarna'
+  }
 ];

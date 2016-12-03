@@ -1,0 +1,70 @@
+//Classes
+.druid{
+  @include icon_color($druid);
+}
+.hunter{
+  @include icon_color($hunter);
+}
+.mage{
+  @include icon_color($mage);
+}
+.paladin{
+  @include icon_color($paladin);
+}
+.priest{
+  @include icon_color($priest);
+}
+.rogue{
+  @include icon_color($rogue);
+}
+.shaman{
+  @include icon_color($shaman);
+}
+.warlock{
+  @include icon_color($warlock);
+}
+.warrior{
+  @include icon_color($warrior);
+}
+
+//Adventures
+.curse-of-naxxramas{
+  @include icon_color($naxx);
+}
+.blackrock-mountain{
+  @include icon_color($bm);
+}
+.the-league-of-explorers{
+  @include icon_color($loe);
+}
+.one-night-at-karazhan{
+  @include icon_color($karazhan);
+}
+
+//Expansions{
+.goblins-vs-gnomes{
+  @include icon_color($gvg);
+}
+.the-grand-tournament{
+  @include icon_color($tgt);
+}
+.whispers-of-the-old-gods{
+  @include icon_color($wotog);
+}
+.mean-streets-of-gadgetzan{
+  @include icon_color($msog);
+}
+
+//Rarity
+.common{
+  @include icon_color($common);
+}
+.rare{
+  @include icon_color($rare);
+}
+.epic{
+  @include icon_color($epic);
+}
+.legendary{
+  @include icon_color($legendary);
+}

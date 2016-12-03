@@ -73,7 +73,7 @@
   height: $height;
 }
 
-@mixin submenu_class_color($color){
+@mixin icon_color($color){
   color: $color;
   span{
     border-color: $color;
@@ -85,7 +85,10 @@
       border-color: $dark-grey;
     }
   }
-  &.icon-active{
+  &.icon-background-active{
     background-color: $color;
+  }
+  &.icon-font-active{
+    color: $color;
   }
 }

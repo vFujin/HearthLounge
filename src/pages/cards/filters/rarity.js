@@ -21,8 +21,9 @@ export class RarityFilter extends Component {
           <h3>Rzadkość</h3>
           <ul className="sidebar-icons">
             {rarity.map((element, index) =>
-                <li onClick={this.handleClick.bind(this, index)} className={`${element} ${this.state.active === index && 'icon-active'}`} value={element} key={index}>
-                  <span className={`hs icon-rarity`}></span>
+                <li onClick={this.handleClick.bind(this, index)} className={element.className} value={element[index]} key={index}>
+                  <span className={`hs icon-rarity ${this.state.active === index && 'icon-font-active'}`}></span>
+                  <p>{element.rarity}</p>
                 </li>
             )}
           </ul>

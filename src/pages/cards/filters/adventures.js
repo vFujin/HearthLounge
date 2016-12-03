@@ -18,7 +18,7 @@ export class AdventureFilter extends Component {
           <h3>Przygody</h3>
           <ul className="sidebar-icons">
             {adventures.map((element, index) =>
-                <li onClick={this.handleClick.bind(this, index)} className={`${element} ${this.state.active === index && 'icon-active'}`} value={element} key={index}>
+                <li onClick={this.handleClick.bind(this, index)} className={`${element} ${this.state.active === index && 'icon-background-active'}`} value={element} key={index}>
                   <span className={`hs icon-${element}`}></span>
                 </li>
             )}

@@ -219,6 +219,300 @@ a:active, a:hover, a:link, a:visited {
 .block-width-4 {
   width: 99%; }
 
+.druid {
+  color: #FF7D0A; }
+  .druid span {
+    border-color: #FF7D0A; }
+  .druid:hover {
+    background-color: #FF7D0A;
+    color: #474143; }
+    .druid:hover span {
+      border-color: #474143; }
+  .druid.icon-background-active {
+    background-color: #FF7D0A; }
+  .druid.icon-font-active {
+    color: #FF7D0A; }
+
+.hunter {
+  color: #ABD473; }
+  .hunter span {
+    border-color: #ABD473; }
+  .hunter:hover {
+    background-color: #ABD473;
+    color: #474143; }
+    .hunter:hover span {
+      border-color: #474143; }
+  .hunter.icon-background-active {
+    background-color: #ABD473; }
+  .hunter.icon-font-active {
+    color: #ABD473; }
+
+.mage {
+  color: #69CCF0; }
+  .mage span {
+    border-color: #69CCF0; }
+  .mage:hover {
+    background-color: #69CCF0;
+    color: #474143; }
+    .mage:hover span {
+      border-color: #474143; }
+  .mage.icon-background-active {
+    background-color: #69CCF0; }
+  .mage.icon-font-active {
+    color: #69CCF0; }
+
+.paladin {
+  color: #F58CBA; }
+  .paladin span {
+    border-color: #F58CBA; }
+  .paladin:hover {
+    background-color: #F58CBA;
+    color: #474143; }
+    .paladin:hover span {
+      border-color: #474143; }
+  .paladin.icon-background-active {
+    background-color: #F58CBA; }
+  .paladin.icon-font-active {
+    color: #F58CBA; }
+
+.priest {
+  color: #FFFFFF; }
+  .priest span {
+    border-color: #FFFFFF; }
+  .priest:hover {
+    background-color: #FFFFFF;
+    color: #474143; }
+    .priest:hover span {
+      border-color: #474143; }
+  .priest.icon-background-active {
+    background-color: #FFFFFF; }
+  .priest.icon-font-active {
+    color: #FFFFFF; }
+
+.rogue {
+  color: #FFF569; }
+  .rogue span {
+    border-color: #FFF569; }
+  .rogue:hover {
+    background-color: #FFF569;
+    color: #474143; }
+    .rogue:hover span {
+      border-color: #474143; }
+  .rogue.icon-background-active {
+    background-color: #FFF569; }
+  .rogue.icon-font-active {
+    color: #FFF569; }
+
+.shaman {
+  color: #0070DE; }
+  .shaman span {
+    border-color: #0070DE; }
+  .shaman:hover {
+    background-color: #0070DE;
+    color: #474143; }
+    .shaman:hover span {
+      border-color: #474143; }
+  .shaman.icon-background-active {
+    background-color: #0070DE; }
+  .shaman.icon-font-active {
+    color: #0070DE; }
+
+.warlock {
+  color: #9482C9; }
+  .warlock span {
+    border-color: #9482C9; }
+  .warlock:hover {
+    background-color: #9482C9;
+    color: #474143; }
+    .warlock:hover span {
+      border-color: #474143; }
+  .warlock.icon-background-active {
+    background-color: #9482C9; }
+  .warlock.icon-font-active {
+    color: #9482C9; }
+
+.warrior {
+  color: #C79C6E; }
+  .warrior span {
+    border-color: #C79C6E; }
+  .warrior:hover {
+    background-color: #C79C6E;
+    color: #474143; }
+    .warrior:hover span {
+      border-color: #474143; }
+  .warrior.icon-background-active {
+    background-color: #C79C6E; }
+  .warrior.icon-font-active {
+    color: #C79C6E; }
+
+.curse-of-naxxramas {
+  color: #b5de3f; }
+  .curse-of-naxxramas span {
+    border-color: #b5de3f; }
+  .curse-of-naxxramas:hover {
+    background-color: #b5de3f;
+    color: #474143; }
+    .curse-of-naxxramas:hover span {
+      border-color: #474143; }
+  .curse-of-naxxramas.icon-background-active {
+    background-color: #b5de3f; }
+  .curse-of-naxxramas.icon-font-active {
+    color: #b5de3f; }
+
+.blackrock-mountain {
+  color: #fa5210; }
+  .blackrock-mountain span {
+    border-color: #fa5210; }
+  .blackrock-mountain:hover {
+    background-color: #fa5210;
+    color: #474143; }
+    .blackrock-mountain:hover span {
+      border-color: #474143; }
+  .blackrock-mountain.icon-background-active {
+    background-color: #fa5210; }
+  .blackrock-mountain.icon-font-active {
+    color: #fa5210; }
+
+.the-league-of-explorers {
+  color: #14a9a1; }
+  .the-league-of-explorers span {
+    border-color: #14a9a1; }
+  .the-league-of-explorers:hover {
+    background-color: #14a9a1;
+    color: #474143; }
+    .the-league-of-explorers:hover span {
+      border-color: #474143; }
+  .the-league-of-explorers.icon-background-active {
+    background-color: #14a9a1; }
+  .the-league-of-explorers.icon-font-active {
+    color: #14a9a1; }
+
+.one-night-at-karazhan {
+  color: #e2b4df; }
+  .one-night-at-karazhan span {
+    border-color: #e2b4df; }
+  .one-night-at-karazhan:hover {
+    background-color: #e2b4df;
+    color: #474143; }
+    .one-night-at-karazhan:hover span {
+      border-color: #474143; }
+  .one-night-at-karazhan.icon-background-active {
+    background-color: #e2b4df; }
+  .one-night-at-karazhan.icon-font-active {
+    color: #e2b4df; }
+
+.goblins-vs-gnomes {
+  color: #fae43f; }
+  .goblins-vs-gnomes span {
+    border-color: #fae43f; }
+  .goblins-vs-gnomes:hover {
+    background-color: #fae43f;
+    color: #474143; }
+    .goblins-vs-gnomes:hover span {
+      border-color: #474143; }
+  .goblins-vs-gnomes.icon-background-active {
+    background-color: #fae43f; }
+  .goblins-vs-gnomes.icon-font-active {
+    color: #fae43f; }
+
+.the-grand-tournament {
+  color: #f00; }
+  .the-grand-tournament span {
+    border-color: #f00; }
+  .the-grand-tournament:hover {
+    background-color: #f00;
+    color: #474143; }
+    .the-grand-tournament:hover span {
+      border-color: #474143; }
+  .the-grand-tournament.icon-background-active {
+    background-color: #f00; }
+  .the-grand-tournament.icon-font-active {
+    color: #f00; }
+
+.whispers-of-the-old-gods {
+  color: #cc00ff; }
+  .whispers-of-the-old-gods span {
+    border-color: #cc00ff; }
+  .whispers-of-the-old-gods:hover {
+    background-color: #cc00ff;
+    color: #474143; }
+    .whispers-of-the-old-gods:hover span {
+      border-color: #474143; }
+  .whispers-of-the-old-gods.icon-background-active {
+    background-color: #cc00ff; }
+  .whispers-of-the-old-gods.icon-font-active {
+    color: #cc00ff; }
+
+.mean-streets-of-gadgetzan {
+  color: #d2cac5; }
+  .mean-streets-of-gadgetzan span {
+    border-color: #d2cac5; }
+  .mean-streets-of-gadgetzan:hover {
+    background-color: #d2cac5;
+    color: #474143; }
+    .mean-streets-of-gadgetzan:hover span {
+      border-color: #474143; }
+  .mean-streets-of-gadgetzan.icon-background-active {
+    background-color: #d2cac5; }
+  .mean-streets-of-gadgetzan.icon-font-active {
+    color: #d2cac5; }
+
+.common {
+  color: #fff; }
+  .common span {
+    border-color: #fff; }
+  .common:hover {
+    background-color: #fff;
+    color: #474143; }
+    .common:hover span {
+      border-color: #474143; }
+  .common.icon-background-active {
+    background-color: #fff; }
+  .common.icon-font-active {
+    color: #fff; }
+
+.rare {
+  color: blue; }
+  .rare span {
+    border-color: blue; }
+  .rare:hover {
+    background-color: blue;
+    color: #474143; }
+    .rare:hover span {
+      border-color: #474143; }
+  .rare.icon-background-active {
+    background-color: blue; }
+  .rare.icon-font-active {
+    color: blue; }
+
+.epic {
+  color: purple; }
+  .epic span {
+    border-color: purple; }
+  .epic:hover {
+    background-color: purple;
+    color: #474143; }
+    .epic:hover span {
+      border-color: #474143; }
+  .epic.icon-background-active {
+    background-color: purple; }
+  .epic.icon-font-active {
+    color: purple; }
+
+.legendary {
+  color: orange; }
+  .legendary span {
+    border-color: orange; }
+  .legendary:hover {
+    background-color: orange;
+    color: #474143; }
+    .legendary:hover span {
+      border-color: #474143; }
+  .legendary.icon-background-active {
+    background-color: orange; }
+  .legendary.icon-font-active {
+    color: orange; }
+
 .decks .submenu {
   width: 12%; }
 
@@ -261,210 +555,6 @@ a:active, a:hover, a:link, a:visited {
     .submenu li a {
       clear: both;
       padding: 30px 5px; }
-
-.druid {
-  color: #FF7D0A; }
-  .druid span {
-    border-color: #FF7D0A; }
-  .druid:hover {
-    background-color: #FF7D0A;
-    color: #474143; }
-    .druid:hover span {
-      border-color: #474143; }
-  .druid.icon-active {
-    background-color: #FF7D0A; }
-
-.hunter {
-  color: #ABD473; }
-  .hunter span {
-    border-color: #ABD473; }
-  .hunter:hover {
-    background-color: #ABD473;
-    color: #474143; }
-    .hunter:hover span {
-      border-color: #474143; }
-  .hunter.icon-active {
-    background-color: #ABD473; }
-
-.mage {
-  color: #69CCF0; }
-  .mage span {
-    border-color: #69CCF0; }
-  .mage:hover {
-    background-color: #69CCF0;
-    color: #474143; }
-    .mage:hover span {
-      border-color: #474143; }
-  .mage.icon-active {
-    background-color: #69CCF0; }
-
-.paladin {
-  color: #F58CBA; }
-  .paladin span {
-    border-color: #F58CBA; }
-  .paladin:hover {
-    background-color: #F58CBA;
-    color: #474143; }
-    .paladin:hover span {
-      border-color: #474143; }
-  .paladin.icon-active {
-    background-color: #F58CBA; }
-
-.priest {
-  color: #FFFFFF; }
-  .priest span {
-    border-color: #FFFFFF; }
-  .priest:hover {
-    background-color: #FFFFFF;
-    color: #474143; }
-    .priest:hover span {
-      border-color: #474143; }
-  .priest.icon-active {
-    background-color: #FFFFFF; }
-
-.rogue {
-  color: #FFF569; }
-  .rogue span {
-    border-color: #FFF569; }
-  .rogue:hover {
-    background-color: #FFF569;
-    color: #474143; }
-    .rogue:hover span {
-      border-color: #474143; }
-  .rogue.icon-active {
-    background-color: #FFF569; }
-
-.shaman {
-  color: #0070DE; }
-  .shaman span {
-    border-color: #0070DE; }
-  .shaman:hover {
-    background-color: #0070DE;
-    color: #474143; }
-    .shaman:hover span {
-      border-color: #474143; }
-  .shaman.icon-active {
-    background-color: #0070DE; }
-
-.warlock {
-  color: #9482C9; }
-  .warlock span {
-    border-color: #9482C9; }
-  .warlock:hover {
-    background-color: #9482C9;
-    color: #474143; }
-    .warlock:hover span {
-      border-color: #474143; }
-  .warlock.icon-active {
-    background-color: #9482C9; }
-
-.warrior {
-  color: #C79C6E; }
-  .warrior span {
-    border-color: #C79C6E; }
-  .warrior:hover {
-    background-color: #C79C6E;
-    color: #474143; }
-    .warrior:hover span {
-      border-color: #474143; }
-  .warrior.icon-active {
-    background-color: #C79C6E; }
-
-.curse-of-naxxramas {
-  color: #b5de3f; }
-  .curse-of-naxxramas span {
-    border-color: #b5de3f; }
-  .curse-of-naxxramas:hover {
-    background-color: #b5de3f;
-    color: #474143; }
-    .curse-of-naxxramas:hover span {
-      border-color: #474143; }
-  .curse-of-naxxramas.icon-active {
-    background-color: #b5de3f; }
-
-.blackrock-mountain {
-  color: #fa5210; }
-  .blackrock-mountain span {
-    border-color: #fa5210; }
-  .blackrock-mountain:hover {
-    background-color: #fa5210;
-    color: #474143; }
-    .blackrock-mountain:hover span {
-      border-color: #474143; }
-  .blackrock-mountain.icon-active {
-    background-color: #fa5210; }
-
-.the-league-of-explorers {
-  color: #14a9a1; }
-  .the-league-of-explorers span {
-    border-color: #14a9a1; }
-  .the-league-of-explorers:hover {
-    background-color: #14a9a1;
-    color: #474143; }
-    .the-league-of-explorers:hover span {
-      border-color: #474143; }
-  .the-league-of-explorers.icon-active {
-    background-color: #14a9a1; }
-
-.one-night-at-karazhan {
-  color: #e2b4df; }
-  .one-night-at-karazhan span {
-    border-color: #e2b4df; }
-  .one-night-at-karazhan:hover {
-    background-color: #e2b4df;
-    color: #474143; }
-    .one-night-at-karazhan:hover span {
-      border-color: #474143; }
-  .one-night-at-karazhan.icon-active {
-    background-color: #e2b4df; }
-
-.goblins-vs-gnomes {
-  color: #fae43f; }
-  .goblins-vs-gnomes span {
-    border-color: #fae43f; }
-  .goblins-vs-gnomes:hover {
-    background-color: #fae43f;
-    color: #474143; }
-    .goblins-vs-gnomes:hover span {
-      border-color: #474143; }
-  .goblins-vs-gnomes.icon-active {
-    background-color: #fae43f; }
-
-.the-grand-tournament {
-  color: #f00; }
-  .the-grand-tournament span {
-    border-color: #f00; }
-  .the-grand-tournament:hover {
-    background-color: #f00;
-    color: #474143; }
-    .the-grand-tournament:hover span {
-      border-color: #474143; }
-  .the-grand-tournament.icon-active {
-    background-color: #f00; }
-
-.whispers-of-the-old-gods {
-  color: #cc00ff; }
-  .whispers-of-the-old-gods span {
-    border-color: #cc00ff; }
-  .whispers-of-the-old-gods:hover {
-    background-color: #cc00ff;
-    color: #474143; }
-    .whispers-of-the-old-gods:hover span {
-      border-color: #474143; }
-  .whispers-of-the-old-gods.icon-active {
-    background-color: #cc00ff; }
-
-.mean-streets-of-gadgetzan {
-  color: #d2cac5; }
-  .mean-streets-of-gadgetzan span {
-    border-color: #d2cac5; }
-  .mean-streets-of-gadgetzan:hover {
-    background-color: #d2cac5;
-    color: #474143; }
-    .mean-streets-of-gadgetzan:hover span {
-      border-color: #474143; }
-  .mean-streets-of-gadgetzan.icon-active {
-    background-color: #d2cac5; }
 
 body {
   font-family: 'Roboto', sans-serif; }
