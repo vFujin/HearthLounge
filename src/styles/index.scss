@@ -142,6 +142,9 @@ footer{
       margin-right: 10px;
       color: $dark-grey;
       cursor: pointer;
+      &:last-child{
+        margin-right: 0;
+      }
       span{
         font-family: 'Hearthstone';
         font-size: 41px;
@@ -150,16 +153,23 @@ footer{
   }
 
   .sidebar-filters{
-    padding-top:60px;
     background-color: $light-grey;
     width: 20%;
-    height: calc(100% - 60px);
+    height: 100%;
+    h3{
+      background-color: $dark-grey;
+      padding: 5px;
+      color: $pearl;
 
+    }
+    .filter-header{
+      padding: 19px 5px;
+      margin-bottom:0;
+    }
     .Select{
       &:focus{
         outline:none;
       }
-      margin-bottom: 15px;
       .Select-control{
         background-color: $light-grey;
         border:none;
@@ -223,6 +233,16 @@ footer{
       padding:10px;
     }
 
+    ul.sidebar-icons {
+      margin-bottom:1em;
+      text-align: center;
+      li {
+        padding: 5px;
+        span{
+          padding: 0;
+        }
+      }
+    }
   }
   .topbar-filters{
     width: 80%;

@@ -15,7 +15,7 @@ export class ExpansionFilter extends Component {
     return (
         <div>
           <h3>Dodatki</h3>
-          <ul className="">
+          <ul className="sidebar-icons">
             {expansions.map((element, index) =>
                 <li onClick={this.handleClick.bind(this, index)} className={`${element} ${this.state.active === index && 'icon-active'}`} value={element} key={index}>
                   <span className={`hs icon-${element}`}></span>
