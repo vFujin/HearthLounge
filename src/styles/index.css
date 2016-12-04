@@ -748,12 +748,12 @@ footer {
       color: #E7E2DA; }
   .cards .sidebar-filters .hs {
     padding: 10px; }
-  .cards .sidebar-filters ul.sidebar-icons {
+  .cards .sidebar-filters .sidebar-icons {
     margin-bottom: 1em;
     text-align: center; }
-    .cards .sidebar-filters ul.sidebar-icons li {
+    .cards .sidebar-filters .sidebar-icons li {
       padding: 5px; }
-      .cards .sidebar-filters ul.sidebar-icons li span {
+      .cards .sidebar-filters .sidebar-icons li span {
         padding: 0; }
 .cards .topbar-filters {
   width: 80%;
@@ -765,8 +765,10 @@ footer {
       line-height: 60px; }
     .cards .topbar-filters ul li:last-child {
       margin-right: 0; }
-  .cards .topbar-filters .topbar-left li:hover {
-    color: navy; }
+  .cards .topbar-filters .topbar-left {
+    margin-left: 5px; }
+    .cards .topbar-filters .topbar-left li:hover {
+      color: navy; }
   .cards .topbar-filters .topbar-right {
     float: right; }
     .cards .topbar-filters .topbar-right li {

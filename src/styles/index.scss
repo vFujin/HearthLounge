@@ -233,8 +233,7 @@ footer{
     .hs{
       padding:10px;
     }
-
-    ul.sidebar-icons {
+    .sidebar-icons {
       margin-bottom:1em;
       text-align: center;
       li {
@@ -261,6 +260,7 @@ footer{
       }
     }
     .topbar-left{
+      margin-left: 5px;
       li{
         &:hover{
           color: navy;

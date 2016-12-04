@@ -4,7 +4,7 @@ export const navItems = [
     className: "home",
     icon: "icon-hs_logo",
     url: 'strona-glowna',
-    homepage_order: null,
+    homepage_order: 0,
     homepage_block_width: 0
   },
   {
@@ -114,7 +114,7 @@ export const navItems = [
     className: "adventures",
     icon: "icon-adventures",
     url: 'przygody',
-    homepage_order: 3,
+    homepage_order: 9,
     homepage_block_width: 0,
     submenu: [
       {
@@ -176,7 +176,7 @@ export const navItems = [
     className: "login",
     icon: "icon-login",
     url: 'logowanie',
-    homepage_order: null,
+    homepage_order: 8,
     homepage_block_width: 0
   }
 ];

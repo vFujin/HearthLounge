@@ -9,6 +9,7 @@ import {MechanicsFilter} from './filters/mechanics';
 import {ExpansionFilter} from './filters/expansions';
 import {AdventureFilter} from './filters/adventures';
 import {RarityFilter} from './filters/rarity';
+import {IsGoldenFilter} from './filters/is-golden';
 export class Sidebar extends Component {
   render() {
     return (
@@ -23,6 +24,7 @@ export class Sidebar extends Component {
           <ExpansionFilter/>
           <AdventureFilter/>
           <RarityFilter />
+          <IsGoldenFilter />
         </div>
     );
   }
