@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import {ExpansionSlider} from './home.expansions/home.expansion-slider';
 export class ExpansionsBlock extends Component {
   render() {
     return (
@@ -7,6 +8,7 @@ export class ExpansionsBlock extends Component {
           <Link to={'/dodatki'}>
             <div>Dodatki</div>
           </Link>
+          <ExpansionSlider />
         </li>
     );
   }
