@@ -1,0 +1,88 @@
+@import '_mixins.scss';
+@include screen('laptop') {
+  nav {
+    ul {
+      li {
+        a {
+          span {
+            font-size: 37px; //icon size
+          }
+          div {
+            font-size: 13px; //label size
+          }
+        }
+        ul {
+
+        }
+      }
+      .decks {
+        .submenu {
+          width: 14%;
+        }
+      }
+      .expansions, .adventures {
+        .submenu {
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  .submenu {
+    li {
+      div {
+        padding-right: 5px;
+      }
+      span {
+        margin-top: -19.5px;
+      }
+    }
+  }
+
+  .pageContainer {
+    height: 504px;
+  }
+
+  .home {
+    ul {
+      li {
+        height: 247px;
+      }
+    }
+  }
+  .cards {
+    ul {
+      li {
+        span {
+          font-size: 26px;
+        }
+      }
+    }
+    .sidebar-filters{
+      h3{
+        font-size: 14px;
+      }
+      .filter-header{
+        padding: 14px 5px;
+      }
+    }
+    .topbar-filters {
+      height: 45px;
+      ul{
+        li{
+          span{
+            line-height: 45px;
+          }
+        }
+      }
+      .topbar-left{
+
+      }
+      .topbar-right {
+        li{
+          width: 45px;
+        }
+      }
+    }
+  }
+}

@@ -17,6 +17,7 @@ import {DeckWarlock} from './pages/decks/deck_warlock';
 import {DeckDruid} from './pages/decks/deck_druid';
 
 import './styles/index.css';
+import './styles/mobile.css';
 
 ReactDOM.render((
     <Router history={browserHistory}>

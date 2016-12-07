@@ -201,19 +201,19 @@ a:active, a:hover, a:link, a:visited {
 
 .block-width-1 {
   width: 24.5%; }
-  @media only screen and (min-width: 1024px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
     .block-width-1 {
       width: 28.5%; } }
 
 .block-width-2 {
   width: 49.5%; }
-  @media only screen and (min-width: 1024px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
     .block-width-2 {
       width: 40.5%; } }
 
 .block-width-3 {
   width: 74.5%; }
-  @media only screen and (min-width: 1024px) and (max-width: 1600px) {
+  @media only screen and (min-width: 1366px) and (max-width: 1600px) {
     .block-width-3 {
       width: 69.85%; } }
 
