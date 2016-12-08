@@ -16,7 +16,7 @@ export class HsClassFilter extends Component {
     return (
        <ul className="topbar-right">
           {hs_class.map((element, index) =>
-              <li onClick={this.handleClick.bind(this, index)} className={``} value={element.en} key={index}>
+              <li onClick={this.handleClick.bind(this, index)} value={element.en} key={index}>
                 <span className={`${this.state.active === index && 'icon-background-active'} hs icon-${element.en} ${element.en}`}></span>
                 <div className="tooltip">
                   <div className="caret-up"></div>

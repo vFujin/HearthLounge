@@ -232,7 +232,7 @@ a:active, a:hover, a:link, a:visited {
   .druid.icon-background-active {
     background-color: #FF7D0A; }
   .druid.icon-font-active {
-    color: #FF7D0A; }
+    color: #474143; }
 
 .hunter {
   color: #ABD473; }
@@ -246,7 +246,7 @@ a:active, a:hover, a:link, a:visited {
   .hunter.icon-background-active {
     background-color: #ABD473; }
   .hunter.icon-font-active {
-    color: #ABD473; }
+    color: #474143; }
 
 .mage {
   color: #69CCF0; }
@@ -260,7 +260,7 @@ a:active, a:hover, a:link, a:visited {
   .mage.icon-background-active {
     background-color: #69CCF0; }
   .mage.icon-font-active {
-    color: #69CCF0; }
+    color: #474143; }
 
 .paladin {
   color: #F58CBA; }
@@ -274,7 +274,7 @@ a:active, a:hover, a:link, a:visited {
   .paladin.icon-background-active {
     background-color: #F58CBA; }
   .paladin.icon-font-active {
-    color: #F58CBA; }
+    color: #474143; }
 
 .priest {
   color: #FFFFFF; }
@@ -288,7 +288,7 @@ a:active, a:hover, a:link, a:visited {
   .priest.icon-background-active {
     background-color: #FFFFFF; }
   .priest.icon-font-active {
-    color: #FFFFFF; }
+    color: #474143; }
 
 .rogue {
   color: #FFF569; }
@@ -302,7 +302,7 @@ a:active, a:hover, a:link, a:visited {
   .rogue.icon-background-active {
     background-color: #FFF569; }
   .rogue.icon-font-active {
-    color: #FFF569; }
+    color: #474143; }
 
 .shaman {
   color: #0070DE; }
@@ -316,7 +316,7 @@ a:active, a:hover, a:link, a:visited {
   .shaman.icon-background-active {
     background-color: #0070DE; }
   .shaman.icon-font-active {
-    color: #0070DE; }
+    color: #474143; }
 
 .warlock {
   color: #9482C9; }
@@ -330,7 +330,7 @@ a:active, a:hover, a:link, a:visited {
   .warlock.icon-background-active {
     background-color: #9482C9; }
   .warlock.icon-font-active {
-    color: #9482C9; }
+    color: #474143; }
 
 .warrior {
   color: #C79C6E; }
@@ -344,7 +344,7 @@ a:active, a:hover, a:link, a:visited {
   .warrior.icon-background-active {
     background-color: #C79C6E; }
   .warrior.icon-font-active {
-    color: #C79C6E; }
+    color: #474143; }
 
 .curse-of-naxxramas {
   color: #b5de3f; }
@@ -358,7 +358,7 @@ a:active, a:hover, a:link, a:visited {
   .curse-of-naxxramas.icon-background-active {
     background-color: #b5de3f; }
   .curse-of-naxxramas.icon-font-active {
-    color: #b5de3f; }
+    color: #474143; }
 
 .blackrock-mountain {
   color: #fa5210; }
@@ -372,7 +372,7 @@ a:active, a:hover, a:link, a:visited {
   .blackrock-mountain.icon-background-active {
     background-color: #fa5210; }
   .blackrock-mountain.icon-font-active {
-    color: #fa5210; }
+    color: #474143; }
 
 .the-league-of-explorers {
   color: #14a9a1; }
@@ -386,7 +386,7 @@ a:active, a:hover, a:link, a:visited {
   .the-league-of-explorers.icon-background-active {
     background-color: #14a9a1; }
   .the-league-of-explorers.icon-font-active {
-    color: #14a9a1; }
+    color: #474143; }
 
 .one-night-at-karazhan {
   color: #e2b4df; }
@@ -400,7 +400,7 @@ a:active, a:hover, a:link, a:visited {
   .one-night-at-karazhan.icon-background-active {
     background-color: #e2b4df; }
   .one-night-at-karazhan.icon-font-active {
-    color: #e2b4df; }
+    color: #474143; }
 
 .goblins-vs-gnomes {
   color: #fae43f; }
@@ -414,7 +414,7 @@ a:active, a:hover, a:link, a:visited {
   .goblins-vs-gnomes.icon-background-active {
     background-color: #fae43f; }
   .goblins-vs-gnomes.icon-font-active {
-    color: #fae43f; }
+    color: #474143; }
 
 .the-grand-tournament {
   color: #f00; }
@@ -428,7 +428,7 @@ a:active, a:hover, a:link, a:visited {
   .the-grand-tournament.icon-background-active {
     background-color: #f00; }
   .the-grand-tournament.icon-font-active {
-    color: #f00; }
+    color: #474143; }
 
 .whispers-of-the-old-gods {
   color: #cc00ff; }
@@ -442,7 +442,7 @@ a:active, a:hover, a:link, a:visited {
   .whispers-of-the-old-gods.icon-background-active {
     background-color: #cc00ff; }
   .whispers-of-the-old-gods.icon-font-active {
-    color: #cc00ff; }
+    color: #474143; }
 
 .mean-streets-of-gadgetzan {
   color: #d2cac5; }
@@ -456,7 +456,7 @@ a:active, a:hover, a:link, a:visited {
   .mean-streets-of-gadgetzan.icon-background-active {
     background-color: #d2cac5; }
   .mean-streets-of-gadgetzan.icon-font-active {
-    color: #d2cac5; }
+    color: #474143; }
 
 .common {
   color: #fff; }
@@ -470,7 +470,7 @@ a:active, a:hover, a:link, a:visited {
   .common.icon-background-active {
     background-color: #fff; }
   .common.icon-font-active {
-    color: #fff; }
+    color: #474143; }
 
 .rare {
   color: blue; }
@@ -484,7 +484,7 @@ a:active, a:hover, a:link, a:visited {
   .rare.icon-background-active {
     background-color: blue; }
   .rare.icon-font-active {
-    color: blue; }
+    color: #474143; }
 
 .epic {
   color: purple; }
@@ -498,7 +498,7 @@ a:active, a:hover, a:link, a:visited {
   .epic.icon-background-active {
     background-color: purple; }
   .epic.icon-font-active {
-    color: purple; }
+    color: #474143; }
 
 .legendary {
   color: orange; }
@@ -512,7 +512,7 @@ a:active, a:hover, a:link, a:visited {
   .legendary.icon-background-active {
     background-color: orange; }
   .legendary.icon-font-active {
-    color: orange; }
+    color: #474143; }
 
 .decks .submenu {
   width: 12%; }
@@ -1029,10 +1029,41 @@ footer {
   .cards .sidebar-filters .sidebar-icons {
     margin-bottom: 1em;
     text-align: center; }
-    .cards .sidebar-filters .sidebar-icons li {
-      padding: 5px; }
-      .cards .sidebar-filters .sidebar-icons li span {
-        padding: 0; }
+    .cards .sidebar-filters .sidebar-icons li span {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      padding: 5px;
+      color: #474143; }
+    .cards .sidebar-filters .sidebar-icons li .tooltip {
+      position: absolute;
+      width: 200px;
+      display: none;
+      margin-left: -82px;
+      margin-top: 5px; }
+      .cards .sidebar-filters .sidebar-icons li .tooltip .caret-up {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 5px 5px 5px;
+        border-color: transparent transparent #E7E2DA transparent;
+        position: relative;
+        left: calc(50% - 5px); }
+      .cards .sidebar-filters .sidebar-icons li .tooltip p {
+        font-size: 12px;
+        text-transform: uppercase;
+        padding: 5px 0;
+        background-color: #474143;
+        color: #E7E2DA;
+        border: 1px solid #E7E2DA; }
+    .cards .sidebar-filters .sidebar-icons li:hover div {
+      display: block; }
+    .cards .sidebar-filters .sidebar-icons li:first-child .tooltip {
+      margin-left: -38px; }
+      .cards .sidebar-filters .sidebar-icons li:first-child .tooltip .caret-up {
+        left: calc(27% - 5px); }
 .cards .topbar-filters {
   width: 80%;
   background-color: #A69E9D;

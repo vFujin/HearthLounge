@@ -192,10 +192,22 @@ export const hs_class = [
 ];
 
 export const expansions = [
-    'goblins-vs-gnomes',
-    'the-grand-tournament',
-    'whispers-of-the-old-gods',
-    'mean-streets-of-gadgetzan'
+  {
+    en: 'goblins-vs-gnomes',
+    pl: 'Gobliny kontra Gnomy'
+  },
+  {
+    en: 'the-grand-tournament',
+    pl: 'Wielki Turniej'
+  },
+  {
+    en: 'whispers-of-the-old-gods',
+    pl: 'Przedwieczni Bogowie'
+  },
+  {
+    en: 'mean-streets-of-gadgetzan',
+    pl: 'Ciemne zaułki gadżetonu'
+  }
 ];
 
 export const adventures = [
