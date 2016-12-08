@@ -278,6 +278,32 @@ footer{
           color: $dark-grey;
           padding: 9.5px;
         }
+        .tooltip {
+          display: none;
+          width: 120px;
+          margin-left: -38px;
+          .caret-up {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 5px 5px;
+            border-color: transparent transparent $dark-grey transparent;
+            position: relative;
+            left: calc(50% - 5px);
+          }
+          p{
+            font-size: 12px;
+            text-transform: uppercase;
+            padding: 5px 0;
+            background-color: $dark-grey;
+            color: $pearl;
+          }
+        }
+        &:hover{
+          div{
+            display: block;
+          }
+        }
       }
     }
   }

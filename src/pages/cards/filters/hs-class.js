@@ -18,7 +18,10 @@ export class HsClassFilter extends Component {
           {hs_class.map((element, index) =>
               <li onClick={this.handleClick.bind(this, index)} className={``} value={element.en} key={index}>
                 <span className={`${this.state.active === index && 'icon-background-active'} hs icon-${element.en} ${element.en}`}></span>
-                <p>{element.pl}</p>
+                <div className="tooltip">
+                  <div className="caret-up"></div>
+                  <p>{element.pl}</p>
+                </div>
               </li>
           )}
         </ul>
