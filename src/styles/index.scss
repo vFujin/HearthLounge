@@ -272,7 +272,12 @@ footer{
       float: right;
       li{
         width: 60px;
-        text-align: center;;
+        text-align: center;
+        span{
+          @include transition(all ease .4s);
+          color: $dark-grey;
+          padding: 9.5px;
+        }
       }
     }
   }

@@ -14,10 +14,11 @@ export class HsClassFilter extends Component {
 
   render() {
     return (
-        <ul className="topbar-right">
+       <ul className="topbar-right">
           {hs_class.map((element, index) =>
-              <li onClick={this.handleClick.bind(this, index)} className={`${element} ${this.state.active === index && 'icon-background-active'}`} value={element} key={index}>
-                <span className={`hs icon-${element}`}></span>
+              <li onClick={this.handleClick.bind(this, index)} className={``} value={element.en} key={index}>
+                <span className={`${this.state.active === index && 'icon-background-active'} hs icon-${element.en} ${element.en}`}></span>
+                <p>{element.pl}</p>
               </li>
           )}
         </ul>

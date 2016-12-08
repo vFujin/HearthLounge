@@ -73,22 +73,22 @@
   height: $height;
 }
 
-@mixin icon_color($color){
+@mixin icon_color($color) {
   color: $color;
-  span{
+  span {
     border-color: $color;
   }
-  &:hover{
+  &:hover {
     background-color: $color;
     color: $dark-grey;
-    span{
+    span {
       border-color: $dark-grey;
     }
   }
-  &.icon-background-active{
-    background-color: $color;
+  &.icon-background-active {
+      background-color: $color;
   }
-  &.icon-font-active{
-    color: $color;
+  &.icon-font-active {
+      color: $color;
   }
 }
