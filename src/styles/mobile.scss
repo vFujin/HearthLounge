@@ -62,29 +62,33 @@
         }
       }
     }
-    .sidebar-filters{
-      h3{
-        font-size: 14px;
-      }
-      .filter-header{
-        padding: 14px 5px;
-      }
-    }
-    .topbar-filters {
-      height: 45px;
-      ul{
-        li{
-          span{
-            line-height: 45px;
-          }
+    .left-container {
+      .sidebar-filters {
+        h3 {
+          font-size: 14px;
+        }
+        .filter-header {
+          padding: 14px 5px;
         }
       }
-      .topbar-left{
+    }
+    .right-container {
+      .topbar-filters {
+        height: 45px;
+        ul {
+          li {
+            span {
+              line-height: 45px;
+            }
+          }
+        }
+        .topbar-left {
 
-      }
-      .topbar-right {
-        li{
-          width: 45px;
+        }
+        .topbar-right {
+          li {
+            width: 45px;
+          }
         }
       }
     }

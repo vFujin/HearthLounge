@@ -154,194 +154,206 @@ footer{
     }
   }
 
-  .sidebar-filters{
-    background-color: $light-grey;
+  .left-container{
     width: 20%;
+    background-color: $light-grey;
     height: 100%;
-    h3{
-      background-color: $dark-grey;
-      padding: 5px;
-      color: $pearl;
+    .sidebar-filters{
+      h3{
+        background-color: $dark-grey;
+        padding: 5px;
+        color: $pearl;
 
-    }
-    .filter-header{
-      padding: 19px 5px;
-      margin-bottom:0;
-    }
-    .Select{
-      &:focus{
-        outline:none;
       }
-      .Select-control{
-        background-color: $light-grey;
-        border:none;
-        border-radius: 0;
-        border-bottom: 1px solid black;
+      .filter-header{
+        padding: 19px 5px;
+        margin-bottom:0;
       }
-
-      .Select-placeholder{
-        color: $dark-grey;
-      }
-      .Select-arrow {
-        border-color: $dark-grey transparent transparent;
-      }
-      .Select-value{
-        color: $dark-grey;
-        border: 1px solid $dark-grey;
-        background-color: $pearl;
-        .Select-value-icon{
-          border-right: 1px solid $dark-grey;
-          &:hover{
-            color: $dark-grey;
-          }
-          &:focus{
-            background-color: yellow;
-          }
+      .Select{
+        &:focus{
+          outline:none;
         }
-      }
-      .Select-clear-zone{
-        color: $dark-grey;
-
-      }
-      .Select-menu{
-        &::-webkit-scrollbar{width: 13px;}
-        &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0;}
-        &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
-        &::-webkit-scrollbar-track{background-color: $light-grey;}
-      }
-      .Select-menu-outer{
-        background-color: $pearl;
-        border-radius: 0;
-        border: 0;
-
-      }
-      .Select-option{
-        @include transition(all ease .4s);
-        background-color: $pearl;
-        border-bottom:1px solid $dark-grey;
-        border-right: 1px solid $light-grey;
-        &:last-child{
+        .Select-control{
+          background-color: $light-grey;
+          border:none;
           border-radius: 0;
-          border-bottom:0;
-        }
-        &:hover{
-          background-color: $sea-color;
-          color: $pearl;
+          border-bottom: 1px solid black;
         }
 
-      }
-    }
-    .hs{
-      padding:10px;
-    }
-    .sidebar-icons {
-      margin-bottom:1em;
-      text-align: center;
-      li {
-        span{
-          @include transition(all ease .4s);
-          padding: 5px;
+        .Select-placeholder{
           color: $dark-grey;
         }
-        .tooltip {
-          position: absolute;
-          width: 200px;
-          display: none;
-          margin-left: -82px;
-          margin-top:5px;
-          .caret-up {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 5px 5px 5px;
-            border-color: transparent transparent $pearl transparent;
-            position: relative;
-            left: calc(50% - 5px);
+        .Select-arrow {
+          border-color: $dark-grey transparent transparent;
+        }
+        .Select-value{
+          color: $dark-grey;
+          border: 1px solid $dark-grey;
+          background-color: $pearl;
+          .Select-value-icon{
+            border-right: 1px solid $dark-grey;
+            &:hover{
+              color: $dark-grey;
+            }
+            &:focus{
+              background-color: yellow;
+            }
           }
-          p{
-            font-size: 12px;
-            text-transform: uppercase;
-            padding: 5px 0;
-            background-color: $dark-grey;
+        }
+        .Select-clear-zone{
+          color: $dark-grey;
+
+        }
+        .Select-menu{
+          &::-webkit-scrollbar{width: 13px;}
+          &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0;}
+          &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
+          &::-webkit-scrollbar-track{background-color: $light-grey;}
+        }
+        .Select-menu-outer{
+          background-color: $pearl;
+          border-radius: 0;
+          border: 0;
+
+        }
+        .Select-option{
+          @include transition(all ease .4s);
+          background-color: $pearl;
+          border-bottom:1px solid $dark-grey;
+          border-right: 1px solid $light-grey;
+          &:last-child{
+            border-radius: 0;
+            border-bottom:0;
+          }
+          &:hover{
+            background-color: $sea-color;
             color: $pearl;
-            border: 1px solid $pearl ;
           }
+
         }
-        &:hover{
-          div{
-            display: block;
+      }
+      .hs{
+        padding:10px;
+      }
+      .sidebar-icons {
+        margin-bottom:1em;
+        text-align: center;
+        li {
+          span{
+            @include transition(all ease .4s);
+            padding: 5px;
+            color: $dark-grey;
           }
-        }
-        &:first-child{
           .tooltip {
-            margin-left: -38px;
+            position: absolute;
+            width: 200px;
+            display: none;
+            margin-left: -82px;
+            margin-top:5px;
             .caret-up {
-              left: calc(27% - 5px);
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 0 5px 5px 5px;
+              border-color: transparent transparent $pearl transparent;
+              position: relative;
+              left: calc(50% - 5px);
+            }
+            p{
+              font-size: 12px;
+              text-transform: uppercase;
+              padding: 5px 0;
+              background-color: $dark-grey;
+              color: $pearl;
+              border: 1px solid $pearl ;
+            }
+          }
+          &:hover{
+            div{
+              display: block;
+            }
+          }
+          &:first-child{
+            .tooltip {
+              margin-left: -38px;
+              .caret-up {
+                left: calc(27% - 5px);
+              }
             }
           }
         }
       }
     }
   }
-  .topbar-filters{
-    width: 80%;
-    background-color: $light-grey;
-    height:60px;
-    ul{
-      display: inline-flex;
-      li {
-        span{
-          line-height: 60px;
+  .right-container{
+    width:80%;
+    .topbar-filters{
+      background-color: $light-grey;
+      height:60px;
+      ul{
+        display: inline-flex;
+        li {
+          span{
+            line-height: 60px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
         }
-        &:last-child {
-          margin-right: 0;
+      }
+      .topbar-left{
+        margin-left: 5px;
+        li{
+          &:hover{
+            color: navy;
+          }
+        }
+      }
+      .topbar-right{
+        float: right;
+        li{
+          width: 60px;
+          text-align: center;
+          span{
+            @include transition(all ease .4s);
+            color: $dark-grey;
+            padding: 9.5px;
+          }
+          .tooltip {
+            display: none;
+            width: 120px;
+            margin-left: -38px;
+            .caret-up {
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 0 5px 5px 5px;
+              border-color: transparent transparent $dark-grey transparent;
+              position: relative;
+              left: calc(50% - 5px);
+            }
+            p{
+              font-size: 12px;
+              text-transform: uppercase;
+              padding: 5px 0;
+              background-color: $dark-grey;
+              color: $pearl;
+            }
+          }
+          &:hover{
+            div{
+              display: block;
+            }
+          }
         }
       }
     }
-    .topbar-left{
-      margin-left: 5px;
-      li{
-        &:hover{
-          color: navy;
-        }
-      }
-    }
-    .topbar-right{
-      float: right;
-      li{
-        width: 60px;
-        text-align: center;
-        span{
-          @include transition(all ease .4s);
-          color: $dark-grey;
-          padding: 9.5px;
-        }
-        .tooltip {
-          display: none;
-          width: 120px;
-          margin-left: -38px;
-          .caret-up {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 5px 5px 5px;
-            border-color: transparent transparent $dark-grey transparent;
-            position: relative;
-            left: calc(50% - 5px);
-          }
-          p{
-            font-size: 12px;
-            text-transform: uppercase;
-            padding: 5px 0;
-            background-color: $dark-grey;
-            color: $pearl;
-          }
-        }
-        &:hover{
-          div{
-            display: block;
-          }
-        }
+    .cards-container{
+      margin: 10px;
+      .card{
+        width: 150px;
+        height: 200px;
+        background-color: blue;
       }
     }
   }
