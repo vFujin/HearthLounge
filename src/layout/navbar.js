@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
-import { navItems } from '../items/data.nav-elements';
+import { navItems } from '../data/nav';
 
 export class Navbar extends Component {
   dropdown(el, index){

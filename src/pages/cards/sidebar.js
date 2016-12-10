@@ -13,7 +13,7 @@ import {IsGoldenFilter} from './filters/is-golden';
 export class Sidebar extends Component {
   render() {
     return (
-        <div className="sidebar-filters">
+        <div className="sidebar">
           <h3 className="filter-header">Filtry</h3>
           <NameFilter/>
           <StatisticsFilter/>
