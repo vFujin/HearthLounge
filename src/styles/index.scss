@@ -84,10 +84,24 @@ footer{
   overflow-y: auto;
   margin: 10px 0;
   display: flex;
+  .hs-icon{
+    font-family: 'Hearthstone';
+  }
   .left-container {
     width: 20%;
     background-color: $light-grey;
     height: 100%;
+    .sidebar{
+      .filter-header{
+        padding: 19px 5px;
+        margin-bottom:0;
+      }
+      h3{
+        background-color: $dark-grey;
+        padding: 5px;
+        color: $pearl;
+      }
+    }
   }
   .right-container {
     width: 80%;
@@ -165,16 +179,6 @@ footer{
 
   .left-container{
     .sidebar{
-      h3{
-        background-color: $dark-grey;
-        padding: 5px;
-        color: $pearl;
-
-      }
-      .filter-header{
-        padding: 19px 5px;
-        margin-bottom:0;
-      }
       .Select{
         &:focus{
           outline:none;
@@ -375,5 +379,38 @@ footer{
 
   .mana-active{
     color: navy;
+  }
+}
+
+.arena-picker{
+  .left-container{
+    .sidebar{
+      .graph{
+        padding: 10px;
+        width: calc(100% - 20px);
+        text-align: center;
+        display: inline-flex;
+        li {
+          width: 100%;
+          .bar {
+            height:100px;
+            margin: 2px auto;
+            width:15px;
+            background-color: $dark-grey;
+          }
+          .hs-icon{
+            font-size: 25px;
+          }
+        }
+      }
+      table{
+        width: 100%;
+        tr{
+          td:last-child{
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }
