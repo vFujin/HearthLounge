@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-
+import unirest from 'unirest';
 export class ServiceCards extends Component {
-    render() {
-        return (
-            <div className="cards-container">
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-                <p className="card">test</p>
-            </div>
-        );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      cards: []
+    };
+
+  }
+
+  componentDidMount() {
+    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1")
+        .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
+        .end(res => {
+          this.setState({
+            cards: res.body['Basic']
+          });
+
+        });
+  }
+
+
+  render() {
+    return (
+        <ul className="cards-container">
+          {this.state.cards.map((card, i)=>
+            <li key={i}>
+              <img src={card.img} alt={`${card.name}`}/>
+            </li>
+          )}
+        </ul>
+    );
+  }
 }
