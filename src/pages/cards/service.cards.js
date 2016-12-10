@@ -10,7 +10,8 @@ export class ServiceCards extends Component {
   }
 
   componentDidMount() {
-    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1")
+    console.log('mounted');
+    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?locale=plPL")
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
           this.setState({
@@ -18,6 +19,12 @@ export class ServiceCards extends Component {
           });
 
         });
+  }
+  componentWillUnmount(){
+    console.log('unmounted');
+    this.state = {
+      cards: []
+    }
   }
 
 

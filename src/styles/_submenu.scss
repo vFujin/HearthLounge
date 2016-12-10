@@ -18,7 +18,7 @@
   padding-top: 10px;
   margin-left: -1px;
   li{
-    @include transition(all ease .4s);
+    @include transition(all .4s ease);
     display: block;
     width:100%;
     border:none;
@@ -27,6 +27,7 @@
       border-left: none;
     }
     span{
+      @include transition(border .4s ease);
       font-size: 28px;
       float: left;
       margin-top: -20px;
