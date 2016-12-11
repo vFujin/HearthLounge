@@ -16,6 +16,8 @@ import {Streams} from './pages/streams/streams';
 import {DeckWarlock} from './pages/decks/deck_warlock';
 import {DeckDruid} from './pages/decks/deck_druid';
 
+import {PickedClass} from './pages/arena-picker/picked-class';
+
 import './styles/index.css';
 import './styles/mobile.css';
 
@@ -29,7 +31,10 @@ ReactDOM.render((
           <Route path="druid"           component={DeckDruid} />
         </Route>
         <Route path="karty"             component={Cards} />
-        <Route path="arena-picker"      component={ArenaPicker} />
+        <Route path="arena-picker"      component={ArenaPicker}>
+          <Route path="czarnoksieznik"  component={PickedClass} />
+          <Route path="druid"           component={PickedClass} />
+        </Route>
         <Route path="dodatki"           component={Expansions} />
         <Route path="przygody"          component={Adventures} />
         <Route path="stworz-talie-kart" component={CreateDeck} />

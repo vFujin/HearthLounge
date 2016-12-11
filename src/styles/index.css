@@ -46,6 +46,9 @@ a:active, a:hover, a:link, a:visited {
 .displayNone {
   display: none; }
 
+.displayInlineFlex {
+  display: inline-flex; }
+
 @font-face {
   font-family: 'Hearthstone';
   src: url("../icons/Hearthstone.ttf") format("truetype"), url("../icons/Hearthstone.woff") format("woff"), url("../icons/Hearthstone.svg#Hearthstone") format("svg");
@@ -1177,6 +1180,8 @@ footer {
           font-size: 65px; }
         .arena-picker .pick-class tr td a div p {
           margin-top: 20px; }
+.arena-picker .arena-picker-wrapper {
+  width: 100%; }
 .arena-picker .left-container .sidebar .graph {
   padding: 10px;
   width: calc(100% - 20px);
