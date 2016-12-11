@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class ChoosenCards extends Component {
   render() {
     return (
-        <table>
+        <table border={1}>
           <tr>
             <th>Karty</th>
             <th>Koszt</th>
