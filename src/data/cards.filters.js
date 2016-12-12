@@ -220,10 +220,22 @@ export const expansions = [
 ];
 
 export const adventures = [
-  'curse-of-naxxramas',
-  'blackrock-mountain',
-  'the-league-of-explorers',
-  'one-night-at-karazhan'
+  {
+    en: 'curse-of-naxxramas',
+    pl: 'Klątwa Naxxramas'
+  },
+  {
+    en: 'blackrock-mountain',
+    pl: 'Czarna Góra'
+  },
+  {
+    en: 'the-league-of-explorers',
+    pl: 'Liga Odkrywców'
+  },
+  {
+    en: 'one-night-at-karazhan',
+    pl: 'Pewnej Nocy w Karazhanie'
+  }
 ];
 
 export const rarity = [

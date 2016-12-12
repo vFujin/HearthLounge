@@ -17,12 +17,13 @@ export class PickedClass extends Component {
               <li>x</li>
               <li>x</li>
             </ul>
+            <button
+                className="button icon-left"
+                onClick={browserHistory.goBack}>
+              Back
+            </button>
           </div>
-          <button
-              className="button icon-left"
-              onClick={browserHistory.goBack}>
-            Back
-          </button>
+
         </div>
     );
   }

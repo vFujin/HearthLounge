@@ -30,10 +30,19 @@ ReactDOM.render((
           <Route path="czarnoksieznik"  component={DeckWarlock} />
           <Route path="druid"           component={DeckDruid} />
         </Route>
-        <Route path="karty"             component={Cards} />
+        <Route path="karty"             component={Cards}>
+          <Route path="/karta/:idKarty" component={Cards} />
+        </Route>
         <Route path="arena-picker"      component={ArenaPicker}>
           <Route path="czarnoksieznik"  component={PickedClass} />
           <Route path="druid"           component={PickedClass} />
+          <Route path="kaplan"          component={PickedClass} />
+          <Route path="lotr"            component={PickedClass} />
+          <Route path="lowca"           component={PickedClass} />
+          <Route path="mag"             component={PickedClass} />
+          <Route path="paladyn"         component={PickedClass} />
+          <Route path="szaman"          component={PickedClass} />
+          <Route path="wojownik"        component={PickedClass} />
         </Route>
         <Route path="dodatki"           component={Expansions} />
         <Route path="przygody"          component={Adventures} />

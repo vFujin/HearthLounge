@@ -384,6 +384,7 @@ footer{
 
 .arena-picker{
   .pick-class{
+    padding: 0 40px;
     @include box-shadow(0px, 0px, 70px, black);
     background-color: $dark-grey;
     margin:auto;
