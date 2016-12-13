@@ -10,7 +10,22 @@ import {ExpansionFilter} from './filters/expansions';
 import {AdventureFilter} from './filters/adventures';
 import {RarityFilter} from './filters/rarity';
 import {IsGoldenFilter} from './filters/is-golden';
+import unirest from "unirest";
+
 export class Sidebar extends Component {
+  constructor(){
+    super();
+    this.state = null;
+    this.race = '';
+  }
+
+  handleRace(v){
+    this.setState({race: v});
+  }
+  handleRaceChange(){
+    var lang = this.refs.dropdown.value;
+    this.props.onRaceChange(lang);
+  }
   render() {
     return (
         <div className="sidebar">
@@ -18,7 +33,7 @@ export class Sidebar extends Component {
           <NameFilter/>
           <StatisticsFilter/>
           <FactionFilter/>
-          <RaceFilter/>
+          <RaceFilter onRaceChange={this.handleRace}/>
           <MechanicsFilter/>
           <DustFilter/>
           <ExpansionFilter/>

@@ -20,12 +20,6 @@ export class ServiceCards extends Component {
 
         });
   }
-  componentWillUnmount(){
-    console.log('unmounted');
-    this.state = {
-      cards: []
-    }
-  }
 
 
   render() {
