@@ -15,6 +15,13 @@ import {Streams} from './pages/streams/streams';
 
 import {DeckWarlock} from './pages/decks/deck_warlock';
 import {DeckDruid} from './pages/decks/deck_druid';
+import {DeckPriest} from './pages/decks/deck_priest';
+import {DeckRogue} from './pages/decks/deck_rogue';
+import {DeckHunter} from './pages/decks/deck_hunter';
+import {DeckMage} from './pages/decks/deck_mage';
+import {DeckPaladin} from './pages/decks/deck_paladin';
+import {DeckShaman} from './pages/decks/deck_shaman';
+import {DeckWarrior} from './pages/decks/deck_warrior';
 
 import {PickedClass} from './pages/arena-picker/picked-class';
 
@@ -29,6 +36,13 @@ ReactDOM.render((
         <Route path="talie-kart"        component={Decks}>
           <Route path="czarnoksieznik"  component={DeckWarlock} />
           <Route path="druid"           component={DeckDruid} />
+          <Route path="kaplan"           component={DeckPriest} />
+          <Route path="lotr"           component={DeckRogue} />
+          <Route path="lowca"           component={DeckHunter} />
+          <Route path="mag"           component={DeckMage} />
+          <Route path="paladyn"           component={DeckPaladin} />
+          <Route path="szaman"           component={DeckShaman} />
+          <Route path="wojownik"           component={DeckWarrior} />
         </Route>
         <Route path="karty"             component={Cards}>
           <Route path="/karta/:idKarty" component={Cards} />
