@@ -9,6 +9,7 @@ export class ExpansionsBlock extends Component {
             <div>Dodatki</div>
           </Link>
           <ExpansionSlider />
+          test
         </li>
     );
   }
