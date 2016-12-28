@@ -13,15 +13,15 @@ import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 import {Streams} from './pages/streams/streams';
 
-import {DeckWarlock} from './pages/decks/deck_warlock';
-import {DeckDruid} from './pages/decks/deck_druid';
-import {DeckPriest} from './pages/decks/deck_priest';
-import {DeckRogue} from './pages/decks/deck_rogue';
-import {DeckHunter} from './pages/decks/deck_hunter';
-import {DeckMage} from './pages/decks/deck_mage';
-import {DeckPaladin} from './pages/decks/deck_paladin';
-import {DeckShaman} from './pages/decks/deck_shaman';
-import {DeckWarrior} from './pages/decks/deck_warrior';
+import {DeckWarlock} from './pages/decks/warlock';
+import {DeckDruid} from './pages/decks/druid';
+import {DeckPriest} from './pages/decks/priest';
+import {DeckRogue} from './pages/decks/rogue';
+import {DeckHunter} from './pages/decks/hunter';
+import {DeckMage} from './pages/decks/mage';
+import {DeckPaladin} from './pages/decks/paladin';
+import {DeckShaman} from './pages/decks/shaman';
+import {DeckWarrior} from './pages/decks/warrior';
 
 import {PickedClass} from './pages/arena-picker/picked-class';
 

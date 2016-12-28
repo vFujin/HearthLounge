@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { DecksBlock } from './blocks/block_decks';
+import { DecksBlock } from './blocks/decks/decks';
 import { ArenaPickerBlock } from './blocks/block_arena-picker';
 import { CardsBlock } from './blocks/block_cards';
-import { ExpansionsBlock } from './blocks/block_expansions';
+import { ExpansionsBlock } from './blocks/expansions/expansions';
 import { TournamentsBlock } from './blocks/block_tournaments';
 import { CreateDeckBlock } from './blocks/block_create-deck';
 import { StreamersBlock } from './blocks/block_streams';
