@@ -151,35 +151,51 @@ footer{
     }
 
     .decks{
-      .class-selection{
-        text-align:center;
-        padding-top: 10px;
-        padding-left:10px;
-        li{
-          display: inline-block;
-          margin-right: 25px;
-          span{
-            font-size: 36px;
-          }
-          &:last-child{
-            margin-right:0;
+
+      .topbar{
+        background-color: $dark-grey;
+        padding: 7px;
+        .class-selection{
+          text-align:center;
+          li{
+            @include transition(all ease .4s);
+            display: inline-block;
+            margin-right: 25px;
+            span{
+              font-size: 34px;
+            }
+            &:last-child{
+              margin-right:0;
+            }
           }
         }
       }
-      .mode-selection{
-        li{
 
-          display: flex;
-          span{
-            font-size: 36px;
-          }
-          p{
-            text-transform: uppercase;
-            height: 40px;
-            line-height: 40px;
-            margin: 0 0 0 10px;
+      .sidebar {
+        float: left;
+        padding-left: 10px;
+        width:15%;
+        background-color: $dark-grey;
+        height:calc(100% - 50px);
+        .mode-selection {
+          li {
+            color: $light-grey;
+            display: flex;
+            span {
+              font-size: 34px;
+            }
+            p {
+              text-transform: uppercase;
+              height: 40px;
+              line-height: 40px;
+              margin: 0 0 0 10px;
+            }
           }
         }
+      }
+      .hot-decks{
+        float: right;
+        width: calc(85% - 10px);
       }
     }
   }
