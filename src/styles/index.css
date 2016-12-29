@@ -972,11 +972,20 @@ footer {
     padding-left: 10px; }
     .home ul.home__list .decks .class-selection li {
       display: inline-block;
-      margin-right: 5px; }
+      margin-right: 25px; }
       .home ul.home__list .decks .class-selection li span {
         font-size: 36px; }
       .home ul.home__list .decks .class-selection li:last-child {
         margin-right: 0; }
+  .home ul.home__list .decks .mode-selection li {
+    display: flex; }
+    .home ul.home__list .decks .mode-selection li span {
+      font-size: 36px; }
+    .home ul.home__list .decks .mode-selection li p {
+      text-transform: uppercase;
+      height: 40px;
+      line-height: 40px;
+      margin: 0 0 0 10px; }
 
 .cards ul li {
   -webkit-transition: all ease 0.4s;

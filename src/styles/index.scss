@@ -166,6 +166,21 @@ footer{
           }
         }
       }
+      .mode-selection{
+        li{
+
+          display: flex;
+          span{
+            font-size: 36px;
+          }
+          p{
+            text-transform: uppercase;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 0 0 10px;
+          }
+        }
+      }
     }
   }
 }
