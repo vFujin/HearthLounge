@@ -4,7 +4,7 @@ import {ExpansionSlider} from './slider';
 export class ExpansionsBlock extends Component {
   render() {
     return (
-        <li className={'expansions block-width-2'}>
+        <li className={'home__block expansions block-width-2'}>
           <Link to={'/dodatki'}>
             <div>Dodatki</div>
           </Link>

@@ -11,7 +11,7 @@ export class Home extends Component {
   render() {
     return (
         <div className="pageContainer home">
-          <ul>
+          <ul className="home__list">
             <DecksBlock />
             <ArenaPickerBlock />
             <TournamentsBlock />

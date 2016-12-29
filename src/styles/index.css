@@ -844,6 +844,9 @@ a:active, a:hover, a:link, a:visited {
 
 body {
   font-family: 'Roboto', sans-serif; }
+  body span.hs-icon {
+    font-family: 'Hearthstone';
+    font-size: 41px; }
 
 /*
   Layout
@@ -945,33 +948,35 @@ footer {
 /*
   Pages
  */
-.home ul {
+.home ul.home__list {
   display: flex;
   width: inherit;
   justify-content: space-around;
   flex-grow: 1;
   flex-wrap: wrap; }
-  .home ul li {
+  .home ul.home__list li.home__block {
     margin-bottom: 10px;
     position: relative;
     color: black;
     height: 400px;
     background-color: #A69E9D; }
-    .home ul li:nth-last-child(1), .home ul li:nth-last-child(2), .home ul li:nth-last-child(3), .home ul li:nth-last-child(4) {
+    .home ul.home__list li.home__block:nth-last-child(1), .home ul.home__list li.home__block:nth-last-child(2), .home ul.home__list li.home__block:nth-last-child(3), .home ul.home__list li.home__block:nth-last-child(4) {
       margin-bottom: 0; }
-  .home ul .image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block; }
-.home .block__element {
-  position: relative; }
-  .home .block__element .block__element--title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase; }
+    .home ul.home__list li.home__block .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block; }
+  .home ul.home__list .decks .class-selection {
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 10px; }
+    .home ul.home__list .decks .class-selection li {
+      display: inline-block;
+      margin-right: 5px; }
+      .home ul.home__list .decks .class-selection li span {
+        font-size: 36px; }
+      .home ul.home__list .decks .class-selection li:last-child {
+        margin-right: 0; }
 
 .cards ul li {
   -webkit-transition: all ease 0.4s;

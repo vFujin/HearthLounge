@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 export class CreateDeckBlock extends Component {
   render() {
     return (
-        <li className={'create-deck block-width-1'}>
+        <li className={'home__block create-deck block-width-1'}>
           <Link to={'/stworz-talie-kart'}>
             <div>Stwórz talię</div>
           </Link>
