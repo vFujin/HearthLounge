@@ -1001,7 +1001,93 @@ footer {
         margin: 0 0 0 10px; }
   .home ul.home__list .decks .hot-decks {
     float: right;
-    width: calc(85% - 10px); }
+    width: calc(85% - 30px);
+    padding: 10px; }
+    .home ul.home__list .decks .hot-decks .upper-row, .home ul.home__list .decks .hot-decks .bottom-row {
+      width: 100%;
+      display: flex; }
+    .home ul.home__list .decks .hot-decks .bottom-row {
+      margin-top: 10px; }
+    .home ul.home__list .decks .hot-decks .deck {
+      background-color: #E7E2DA;
+      width: 31%;
+      padding: 10px;
+      margin-right: 10px; }
+      .home ul.home__list .decks .hot-decks .deck:last-child {
+        margin-right: 0; }
+      .home ul.home__list .decks .hot-decks .deck .background-icon {
+        position: absolute;
+        font-size: 130px;
+        color: #999999;
+        opacity: 0.2;
+        padding-left: 235px;
+        padding-top: 8px; }
+      .home ul.home__list .decks .hot-decks .deck .header {
+        display: flex;
+        padding-bottom: 4.5px;
+        border-bottom: 1px solid #474143; }
+        .home ul.home__list .decks .hot-decks .deck .header .hs-class span {
+          font-size: 35px;
+          position: relative;
+          top: 5px;
+          padding: 5px;
+          border: 2px solid black;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%; }
+        .home ul.home__list .decks .hot-decks .deck .header .about {
+          margin-left: 10px; }
+          .home ul.home__list .decks .hot-decks .deck .header .about .title {
+            font-weight: bold;
+            font-size: 16px; }
+          .home ul.home__list .decks .hot-decks .deck .header .about .author, .home ul.home__list .decks .hot-decks .deck .header .about .created {
+            font-size: 12px; }
+      .home ul.home__list .decks .hot-decks .deck .body {
+        margin-top: 4.5px; }
+        .home ul.home__list .decks .hot-decks .deck .body .body-header {
+          display: flex; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-header .mode {
+            width: 10%;
+            text-align: center; }
+            .home ul.home__list .decks .hot-decks .deck .body .body-header .mode span {
+              font-size: 25px; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-header .mana-curve {
+            width: 14%;
+            display: flex; }
+            .home ul.home__list .decks .hot-decks .deck .body .body-header .mana-curve li {
+              width: 5px;
+              background-color: #474143;
+              height: 100%;
+              margin-right: 2px; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-header .deck-type, .home ul.home__list .decks .hot-decks .deck .body .body-header .dust-needed {
+            height: 27px;
+            line-height: 27px; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-header .deck-type {
+            width: 55%; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-header .dust-needed {
+            width: 21%;
+            text-align: right; }
+        .home ul.home__list .decks .hot-decks .deck .body .body-body {
+          margin-top: 10px;
+          display: flex; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-body div {
+            text-align: left;
+            border-right: 1px solid #A69E9D;
+            padding: 0 5px; }
+            .home ul.home__list .decks .hot-decks .deck .body .body-body div:first-child {
+              padding-left: 0; }
+            .home ul.home__list .decks .hot-decks .deck .body .body-body div:last-child {
+              padding-right: 0;
+              border-right: 0; }
+        .home ul.home__list .decks .hot-decks .deck .body .body-footer {
+          margin-top: 7px;
+          display: flex; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-footer div {
+            width: 33.33%; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-footer .comments {
+            text-align: center; }
+          .home ul.home__list .decks .hot-decks .deck .body .body-footer .votes {
+            text-align: right; }
 
 .cards ul li {
   -webkit-transition: all ease 0.4s;
