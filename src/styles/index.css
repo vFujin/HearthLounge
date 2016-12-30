@@ -974,24 +974,35 @@ footer {
       width: 15%;
       height: 100%; }
       .home ul.home__list .decks .left-container .sidebar .search-decks {
-        padding-top: 10px; }
+        padding-top: 10px;
+        width: calc(100% - 10px); }
         .home ul.home__list .decks .left-container .sidebar .search-decks input {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          -ms-transition: all ease 0.4s;
+          -o-transition: all ease 0.4s;
+          transition: all ease 0.4s;
+          outline: 0;
           font-size: 15px;
           background-color: rgba(231, 226, 218, 0.1);
           padding: 5px;
           height: 29px;
-          border-bottom: 1px solid #E7E2DA;
+          border-bottom: 1px solid #A69E9D;
           color: #E7E2DA; }
-      .home ul.home__list .decks .left-container .sidebar .mode-selection li {
-        color: #A69E9D;
-        display: flex; }
-        .home ul.home__list .decks .left-container .sidebar .mode-selection li span {
-          font-size: 34px; }
-        .home ul.home__list .decks .left-container .sidebar .mode-selection li p {
-          text-transform: uppercase;
-          height: 40px;
-          line-height: 40px;
-          margin: 0 0 0 10px; }
+          .home ul.home__list .decks .left-container .sidebar .search-decks input:focus {
+            border-bottom: 1px solid #E7E2DA; }
+      .home ul.home__list .decks .left-container .sidebar .mode-selection {
+        margin-top: 10px; }
+        .home ul.home__list .decks .left-container .sidebar .mode-selection li {
+          color: #A69E9D;
+          display: flex; }
+          .home ul.home__list .decks .left-container .sidebar .mode-selection li span {
+            font-size: 34px; }
+          .home ul.home__list .decks .left-container .sidebar .mode-selection li p {
+            text-transform: uppercase;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 0 0 10px; }
     .home ul.home__list .decks .right-container {
       width: 85%; }
       .home ul.home__list .decks .right-container .class-filter {
@@ -1006,7 +1017,8 @@ footer {
           transition: all ease 0.4s;
           margin-right: 25px;
           display: inline-block;
-          padding: 3px; }
+          padding: 3px;
+          cursor: pointer; }
           .home ul.home__list .decks .right-container .class-filter .class-selection li span {
             font-size: 34px; }
           .home ul.home__list .decks .right-container .class-filter .class-selection li:last-child {
@@ -1029,8 +1041,7 @@ footer {
           .home ul.home__list .decks .right-container .hot-decks .deck .background-icon {
             position: absolute;
             font-size: 130px;
-            color: #999999;
-            opacity: 0.2;
+            opacity: 0.05;
             padding-left: 235px;
             padding-top: 8px; }
           .home ul.home__list .decks .right-container .hot-decks .deck .header {
@@ -1061,6 +1072,7 @@ footer {
                 width: 10%;
                 text-align: center; }
                 .home ul.home__list .decks .right-container .hot-decks .deck .body .body-header .mode span {
+                  color: darkgreen;
                   font-size: 25px; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-header .mana-curve {
                 width: 14%;
@@ -1095,10 +1107,45 @@ footer {
               display: flex; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer div {
                 width: 33.33%; }
+              .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .views {
+                opacity: .6; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .comments {
                 text-align: center; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .votes {
                 text-align: right; }
+  .home ul.home__list .forum .header {
+    background-color: #474143;
+    color: #E7E2DA;
+    padding: 15px 10px;
+    text-transform: uppercase; }
+  .home ul.home__list .forum .post {
+    background-color: #E7E2DA;
+    margin: 11px;
+    padding: 12px 10px;
+    color: #474143;
+    display: flex;
+    cursor: pointer; }
+    .home ul.home__list .forum .post .about {
+      width: 80%; }
+      .home ul.home__list .forum .post .about .topic {
+        font-weight: bold;
+        font-size: 16px; }
+      .home ul.home__list .forum .post .about .details {
+        display: flex; }
+        .home ul.home__list .forum .post .about .details .author, .home ul.home__list .forum .post .about .details .created {
+          font-size: 12px; }
+    .home ul.home__list .forum .post .answers {
+      width: 20%; }
+      .home ul.home__list .forum .post .answers .answer-count {
+        text-align: center;
+        font-weight: bold; }
+        .home ul.home__list .forum .post .answers .answer-count span {
+          padding: 0 5px;
+          background-color: #474143;
+          color: #E7E2DA; }
+      .home ul.home__list .forum .post .answers .answer-label {
+        font-size: 12px;
+        text-align: center; }
 
 .cards ul li {
   -webkit-transition: all ease 0.4s;
