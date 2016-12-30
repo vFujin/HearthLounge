@@ -151,166 +151,184 @@ footer{
     }
 
     .decks{
-      .topbar{
+      display: flex;
+      .left-container{
+        padding-left: 10px;
         background-color: $dark-grey;
-        padding: 7px;
-        .class-selection{
-          text-align:center;
-          li{
-            @include transition(all ease .4s);
-            display: inline-block;
-            margin-right: 25px;
-            span{
-              font-size: 34px;
+        width: 15%;
+        height: 100%;
+        .sidebar {
+          .search-decks{
+            padding-top:10px;
+            input{
+              font-size: 15px;
+              background-color: rgba(231, 226, 218, .1);
+              padding: 5px;
+              height: 29px;
+              border-bottom: 1px solid $pearl;
+              color: $pearl;
             }
+          }
+          .mode-selection {
+            li {
+              color: $light-grey;
+              display: flex;
+              span {
+                font-size: 34px;
+              }
+              p {
+                text-transform: uppercase;
+                height: 40px;
+                line-height: 40px;
+                margin: 0 0 0 10px;
+              }
+            }
+          }
+        }
+      }
+      .right-container{
+        width: 85%;
+        .class-filter {
+          padding: 4px 0;
+          background-color: $dark-grey;
+          text-align: center;
+          .class-selection {
+            li {
+              @include transition(all ease .4s);
+              margin-right: 25px;
+              display: inline-block;
+              padding:3px;
+
+              span {
+                font-size: 34px;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+        .hot-decks{
+          width: calc(100% - 20px);
+          padding: 10px;
+          .upper-row, .bottom-row{
+            width: 100%;
+            display: flex;
+          }
+          .bottom-row{
+            margin-top:10px;
+          }
+          .deck{
+            background-color: $pearl;
+            width: 31%;
+            padding: 10px;
+            margin-right: 10px;
             &:last-child{
               margin-right:0;
+            }
+            .background-icon{
+              position: absolute;
+              font-size: 130px;
+              color: #999999;
+              opacity: 0.2;
+              padding-left: 235px;
+              padding-top: 8px;
+            }
+            .header{
+              display: flex;
+              padding-bottom: 4.5px;
+              border-bottom: 1px solid $dark-grey;
+              .hs-class {
+                span {
+                  font-size: 35px;
+                  position: relative;
+                  top: 5px;
+                  padding: 5px;
+                  border: 2px solid black;
+                  -webkit-border-radius: 50%;
+                  -moz-border-radius: 50%;
+                  border-radius: 50%;
+                }
+              }
+              .about{
+                margin-left: 10px;
+                .title{
+                  font-weight: bold;
+                  font-size: 16px;
+                }
+                .author, .created{
+                  font-size:12px;
+                }
+              }
+            }
+            .body{
+              margin-top: 4.5px;
+              .body-header{
+                display: flex;
+                .mode {
+                  width: 10%;
+                  text-align: center;
+                  span {
+                    font-size: 25px;
+                  }
+                }
+                .mana-curve{
+                  width:14%;
+                  display: flex;
+                  li{
+                    width: 5px;
+                    background-color: $dark-grey;
+                    height: 100%;
+                    margin-right: 2px;
+                  }
+                }
+                .deck-type, .dust-needed{
+                  height:27px;
+                  line-height: 27px;
+                }
+                .deck-type{
+                  width: 55%;
+                }
+                .dust-needed{
+                  width: 21%;
+                  text-align: right;
+                }
+              }
+              .body-body{
+                margin-top: 10px;
+                display: flex;
+                div{
+                  text-align: left;
+                  border-right: 1px solid $light-grey;
+                  padding: 0 5px;
+                  &:first-child{
+                    padding-left:0;
+                  }
+                  &:last-child{
+                    padding-right:0;
+                    border-right:0;
+                  }
+                }
+              }
+              .body-footer{
+                margin-top:7px;
+                display: flex;
+                div{
+                  width: 33.33%;
+                }
+                .comments{
+                  text-align: center;
+                }
+                .votes{
+                  text-align: right;
+                }
+              }
             }
           }
         }
       }
 
-      .sidebar {
-        float: left;
-        padding-left: 10px;
-        width:15%;
-        background-color: $dark-grey;
-        height:calc(100% - 50px);
-        .mode-selection {
-          li {
-            color: $light-grey;
-            display: flex;
-            span {
-              font-size: 34px;
-            }
-            p {
-              text-transform: uppercase;
-              height: 40px;
-              line-height: 40px;
-              margin: 0 0 0 10px;
-            }
-          }
-        }
-      }
-      .hot-decks{
-        float: right;
-        width: calc(85% - 30px);
-        padding: 10px;
-        .upper-row, .bottom-row{
-          width: 100%;
-          display: flex;
-        }
-        .bottom-row{
-          margin-top:10px;
-        }
-        .deck{
-          background-color: $pearl;
-          width: 31%;
-          padding: 10px;
-          margin-right: 10px;
-          &:last-child{
-            margin-right:0;
-          }
-          .background-icon{
-            position: absolute;
-            font-size: 130px;
-            color: #999999;
-            opacity: 0.2;
-            padding-left: 235px;
-            padding-top: 8px;
-          }
-          .header{
-            display: flex;
-            padding-bottom: 4.5px;
-            border-bottom: 1px solid $dark-grey;
-            .hs-class {
-              span {
-                font-size: 35px;
-                position: relative;
-                top: 5px;
-                padding: 5px;
-                border: 2px solid black;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                border-radius: 50%;
-              }
-            }
-            .about{
-              margin-left: 10px;
-              .title{
-                font-weight: bold;
-                font-size: 16px;
-              }
-              .author, .created{
-                font-size:12px;
-              }
-            }
-          }
-          .body{
-            margin-top: 4.5px;
-            .body-header{
-              display: flex;
-              .mode {
-                width: 10%;
-                text-align: center;
-                span {
-                  font-size: 25px;
-                }
-              }
-              .mana-curve{
-                width:14%;
-                display: flex;
-                li{
-                  width: 5px;
-                  background-color: $dark-grey;
-                  height: 100%;
-                  margin-right: 2px;
-                }
-              }
-              .deck-type, .dust-needed{
-                height:27px;
-                line-height: 27px;
-              }
-              .deck-type{
-                width: 55%;
-              }
-              .dust-needed{
-                width: 21%;
-                text-align: right;
-              }
-            }
-            .body-body{
-              margin-top: 10px;
-              display: flex;
-              div{
-                text-align: left;
-                border-right: 1px solid $light-grey;
-                padding: 0 5px;
-                &:first-child{
-                  padding-left:0;
-                }
-                &:last-child{
-                  padding-right:0;
-                  border-right:0;
-                }
-              }
-            }
-            .body-footer{
-              margin-top:7px;
-              display: flex;
-              div{
-                width: 33.33%;
-              }
-              .comments{
-                text-align: center;
-              }
-              .votes{
-                text-align: right;
-              }
-            }
-          }
-        }
-      }
+
     }
   }
 }
