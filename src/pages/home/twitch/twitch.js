@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { TwitchIframe } from './twtch-iframe';
-import { TwitchLiveBroadcasters } from './twitch-live-broadcasters';
+import { TwitchIframe } from './twitch-snippet/twtch-iframe';
+import { TwitchLiveBroadcasters } from './twitch-snippet/twitch-live-broadcasters';
 export class TwitchBlock extends Component {
   render() {
     return (
