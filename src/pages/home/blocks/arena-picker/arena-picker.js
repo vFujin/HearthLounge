@@ -5,8 +5,9 @@ export class ArenaPickerBlock extends Component {
     return (
         <li className={'home__block arena-picker block-width-1'}>
           <Link to={'/arena-picker'}>
-            <div>Arena Picker</div>
+            <div className="header">Arena Picker</div>
           </Link>
+          (filmik)
         </li>
     );
   }

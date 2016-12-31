@@ -140,7 +140,15 @@ footer{
       &:nth-last-child(4){
         margin-bottom: 0;
       }
-
+      a{
+        .header{
+          background-color: $dark-grey;
+          color: $pearl;
+          font-size: 16px;
+          padding: 15.5px 10px ;
+          text-transform: uppercase;
+        }
+      }
       .image-container{
         img{
           max-width:100%;
@@ -343,17 +351,10 @@ footer{
     }
 
     .forum{
-      .header{
-        background-color: $dark-grey;
-        color: $pearl;
-        padding: 15px 10px;
-        text-transform: uppercase;
-      }
-
       .post{
         background-color: $pearl;
-        margin: 11px;
-        padding: 12px 10px;
+        margin: 12.45px 10px;
+        padding: 11px 10px;
         color: $dark-grey;
         display: flex;
         cursor: pointer;
@@ -387,6 +388,44 @@ footer{
           }
         }
       }
+    }
+
+    .streams {
+      .streams-body {
+        display: flex;
+        height: calc(100% - 50px);
+        .live-broadcasters {
+          width: 20% ;
+          background-color: $dark-grey;
+          .streamer{
+            display: flex;
+            margin: 11px;
+            padding: 10px;
+            background-color: $pearl;
+            &:first-child{
+              margin-top:0;
+            }
+            .name{
+              flex-grow: 8;
+            }
+            .viewers{
+              flex-grow: 2;
+              text-align: center;
+            }
+          }
+        }
+        .iframe-container {
+          width: calc(80% - 20px);
+          padding: 10px;
+          iframe{
+            border:none;
+          }
+        }
+      }
+    }
+
+    .arena-picker{
+
     }
   }
 }
