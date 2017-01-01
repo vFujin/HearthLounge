@@ -842,6 +842,9 @@ a:active, a:hover, a:link, a:visited {
       font-size: .8em;
       padding: 5px 10px; } }
 
+html, body {
+  height: 100%; }
+
 body {
   font-family: 'Roboto', sans-serif; }
   body span.hs-icon {
@@ -911,6 +914,7 @@ footer {
   bottom: 0; }
 
 .pageContainer {
+  padding: 0 10px;
   position: relative;
   z-index: 1;
   height: 809px;
@@ -1119,6 +1123,39 @@ footer {
                 text-align: center; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .votes {
                 text-align: right; }
+  .home ul.home__list .cards span {
+    position: absolute;
+    font-size: 250px;
+    padding: 10px; }
+    .home ul.home__list .cards span:first-child {
+      left: 0; }
+    .home ul.home__list .cards span:nth-child(2) {
+      left: 100px; }
+    .home ul.home__list .cards span:last-child {
+      left: 200px; }
+  .home ul.home__list .streams .streams-body {
+    display: flex;
+    height: calc(100% - 50px); }
+    .home ul.home__list .streams .streams-body .live-broadcasters {
+      width: 20%;
+      background-color: #474143; }
+      .home ul.home__list .streams .streams-body .live-broadcasters .streamer {
+        display: flex;
+        margin: 11px;
+        padding: 10px;
+        background-color: #E7E2DA; }
+        .home ul.home__list .streams .streams-body .live-broadcasters .streamer:first-child {
+          margin-top: 0; }
+        .home ul.home__list .streams .streams-body .live-broadcasters .streamer .name {
+          flex-grow: 8; }
+        .home ul.home__list .streams .streams-body .live-broadcasters .streamer .viewers {
+          flex-grow: 2;
+          text-align: center; }
+    .home ul.home__list .streams .streams-body .iframe-container {
+      width: calc(80% - 20px);
+      padding: 10px; }
+      .home ul.home__list .streams .streams-body .iframe-container iframe {
+        border: none; }
   .home ul.home__list .forum .post {
     background-color: #E7E2DA;
     margin: 12.45px 10px;
@@ -1147,29 +1184,6 @@ footer {
       .home ul.home__list .forum .post .answers .answer-label {
         font-size: 12px;
         text-align: center; }
-  .home ul.home__list .streams .streams-body {
-    display: flex;
-    height: calc(100% - 50px); }
-    .home ul.home__list .streams .streams-body .live-broadcasters {
-      width: 20%;
-      background-color: #474143; }
-      .home ul.home__list .streams .streams-body .live-broadcasters .streamer {
-        display: flex;
-        margin: 11px;
-        padding: 10px;
-        background-color: #E7E2DA; }
-        .home ul.home__list .streams .streams-body .live-broadcasters .streamer:first-child {
-          margin-top: 0; }
-        .home ul.home__list .streams .streams-body .live-broadcasters .streamer .name {
-          flex-grow: 8; }
-        .home ul.home__list .streams .streams-body .live-broadcasters .streamer .viewers {
-          flex-grow: 2;
-          text-align: center; }
-    .home ul.home__list .streams .streams-body .iframe-container {
-      width: calc(80% - 20px);
-      padding: 10px; }
-      .home ul.home__list .streams .streams-body .iframe-container iframe {
-        border: none; }
 
 .cards ul li {
   -webkit-transition: all ease 0.4s;
@@ -1399,5 +1413,37 @@ footer {
   width: 100%; }
   .arena-picker .left-container .sidebar table tr td:last-child {
     text-align: center; }
+
+.pageContainer.forum {
+  width: calc(100% - 20px); }
+  .pageContainer.forum .caption {
+    width: 50%;
+    background-color: #A69E9D; }
+    .pageContainer.forum .caption h4 {
+      background-color: #474143;
+      color: #E7E2DA;
+      font-weight: normal;
+      text-align: center;
+      padding: 10px;
+      margin: 0; }
+  .pageContainer.forum table {
+    width: 100%;
+    padding: 10px; }
+    .pageContainer.forum table tr {
+      width: 100%;
+      background-color: #E7E2DA; }
+      .pageContainer.forum table tr td {
+        padding: 10px; }
+        .pageContainer.forum table tr td h5 {
+          font-size: 16px;
+          margin: 0; }
+        .pageContainer.forum table tr td p {
+          font-size: 12px;
+          margin: 0; }
+        .pageContainer.forum table tr td:nth-child(3), .pageContainer.forum table tr td:nth-child(4) {
+          text-align: center; }
+      .pageContainer.forum table tr:first-child td {
+        font-weight: bold;
+        text-align: center; }
 
 /*# sourceMappingURL=index.css.map */

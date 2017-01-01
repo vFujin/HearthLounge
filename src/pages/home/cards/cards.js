@@ -5,8 +5,11 @@ export class CardsBlock extends Component {
     return (
         <li className={'home__block cards block-width-1'}>
           <Link to={'/karty'}>
-            <div>Karty</div>
+            <div className="header">Karty</div>
           </Link>
+          <div className="cards">
+            <span className="hs-icon icon-card"></span>
+          </div>
         </li>
     );
   }

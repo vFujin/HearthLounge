@@ -6,6 +6,9 @@
 @import '_icons';
 @import '_submenu';
 @import "../../node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+html, body{
+  height: 100%;
+}
 body {
   font-family: 'Roboto', sans-serif;
   span.hs-icon {
@@ -81,6 +84,7 @@ footer{
   bottom:0;
 }
 .pageContainer{
+  padding: 0 10px;
   @include scrollbar;
   position: relative;
   z-index: 1;
@@ -350,6 +354,68 @@ footer{
 
     }
 
+    .arena-picker{
+
+    }
+
+    .tournaments{}
+
+    .expansions{}
+
+    .cards{
+      span{
+        position: absolute;
+        font-size: 250px;
+        padding:10px;
+        &:first-child{
+          left: 0;
+        }
+        &:nth-child(2){
+          left: 100px;
+        }
+        &:last-child{
+          left: 200px;
+        }
+        
+      }
+    }
+
+    .create-deck{}
+
+    .streams {
+      .streams-body {
+        display: flex;
+        height: calc(100% - 50px);
+        .live-broadcasters {
+          width: 20% ;
+          background-color: $dark-grey;
+          .streamer{
+            display: flex;
+            margin: 11px;
+            padding: 10px;
+            background-color: $pearl;
+            &:first-child{
+              margin-top:0;
+            }
+            .name{
+              flex-grow: 8;
+            }
+            .viewers{
+              flex-grow: 2;
+              text-align: center;
+            }
+          }
+        }
+        .iframe-container {
+          width: calc(80% - 20px);
+          padding: 10px;
+          iframe{
+            border:none;
+          }
+        }
+      }
+    }
+
     .forum{
       .post{
         background-color: $pearl;
@@ -390,43 +456,6 @@ footer{
       }
     }
 
-    .streams {
-      .streams-body {
-        display: flex;
-        height: calc(100% - 50px);
-        .live-broadcasters {
-          width: 20% ;
-          background-color: $dark-grey;
-          .streamer{
-            display: flex;
-            margin: 11px;
-            padding: 10px;
-            background-color: $pearl;
-            &:first-child{
-              margin-top:0;
-            }
-            .name{
-              flex-grow: 8;
-            }
-            .viewers{
-              flex-grow: 2;
-              text-align: center;
-            }
-          }
-        }
-        .iframe-container {
-          width: calc(80% - 20px);
-          padding: 10px;
-          iframe{
-            border:none;
-          }
-        }
-      }
-    }
-
-    .arena-picker{
-
-    }
   }
 }
 
@@ -719,6 +748,53 @@ footer{
           td:last-child{
             text-align: center;
           }
+        }
+      }
+    }
+  }
+}
+
+.pageContainer.forum{
+  width: calc(100% - 20px);
+  .caption{
+    width: 50%;
+    background-color: $light-grey;
+    h4{
+      background-color: $dark-grey;
+      color: $pearl;
+      font-weight: normal;
+      text-align: center;
+      padding: 10px;
+      margin:0;
+    }
+  }
+  table{
+    width:100%;
+    padding: 10px;
+    tr{
+      width: 100%;
+      background-color: $pearl;
+      td{
+        padding: 10px;
+        h5{
+          font-size: 16px;
+          margin:0;
+        }
+        p{
+          font-size: 12px;
+          margin:0;
+        }
+        &:nth-child(3),
+        &:nth-child(4){
+          text-align: center;
+        }
+
+
+      }
+      &:first-child{
+        td{
+          font-weight: bold;
+          text-align: center;
         }
       }
     }
