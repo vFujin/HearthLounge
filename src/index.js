@@ -25,6 +25,11 @@ import {DeckWarrior} from './pages/decks/warrior';
 
 import {PickedClass} from './pages/arena-picker/picked-class';
 
+import {GoblinsVsGnomes} from './pages/expansions/goblins-vs-gnomes';
+import {MeanStreetsOfGadgetzan} from './pages/expansions/mean-streets-of-gadgetzan';
+import {TheGrandTournament} from './pages/expansions/the-grand-tournament';
+import {WhispersOfTheOldGods} from './pages/expansions/whispers-of-the-old-gods';
+
 import './styles/index.css';
 import './styles/mobile.css';
 
@@ -36,13 +41,13 @@ ReactDOM.render((
         <Route path="talie-kart"        component={Decks}>
           <Route path="czarnoksieznik"  component={DeckWarlock} />
           <Route path="druid"           component={DeckDruid} />
-          <Route path="kaplan"           component={DeckPriest} />
-          <Route path="lotr"           component={DeckRogue} />
+          <Route path="kaplan"          component={DeckPriest} />
+          <Route path="lotr"            component={DeckRogue} />
           <Route path="lowca"           component={DeckHunter} />
-          <Route path="mag"           component={DeckMage} />
-          <Route path="paladyn"           component={DeckPaladin} />
-          <Route path="szaman"           component={DeckShaman} />
-          <Route path="wojownik"           component={DeckWarrior} />
+          <Route path="mag"             component={DeckMage} />
+          <Route path="paladyn"         component={DeckPaladin} />
+          <Route path="szaman"          component={DeckShaman} />
+          <Route path="wojownik"        component={DeckWarrior} />
         </Route>
         <Route path="karty"             component={Cards}>
           <Route path="/karta/:idKarty" component={Cards} />
@@ -58,8 +63,18 @@ ReactDOM.render((
           <Route path="szaman"          component={PickedClass} />
           <Route path="wojownik"        component={PickedClass} />
         </Route>
-        <Route path="dodatki"           component={Expansions} />
-        <Route path="przygody"          component={Adventures} />
+        <Route path="dodatki"           component={Expansions}>
+          <Route path="gobliny-kontra-gnomy"     component={GoblinsVsGnomes} />
+          <Route path="wielki-turniej"           component={TheGrandTournament} />
+          <Route path="przedwieczni-bogowie"     component={WhispersOfTheOldGods} />
+          <Route path="ciemne-zaulki-gadzetonu"  component={MeanStreetsOfGadgetzan} />
+        </Route>
+        <Route path="przygody"          component={Adventures}>
+          <Route path="klatwa-naxxramas"          component={CurseOfNaxxramas} />
+          <Route path="czarna-gora"               component={BlackrockMountain} />
+          <Route path="liga-odkrywcow"            component={TheLeagueOfExplerores} />
+          <Route path="pewnej-nocy-w-karazhanie"  component={OneNightAtKarazhan} />
+        </Route>
         <Route path="stworz-talie-kart" component={CreateDeck} />
         <Route path="forum"             component={Forum} />
         <Route path="turnieje"          component={Tournaments} />
