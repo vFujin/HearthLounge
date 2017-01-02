@@ -30,6 +30,11 @@ import {MeanStreetsOfGadgetzan} from './pages/expansions/mean-streets-of-gadgetz
 import {TheGrandTournament} from './pages/expansions/the-grand-tournament';
 import {WhispersOfTheOldGods} from './pages/expansions/whispers-of-the-old-gods';
 
+import {CurseOfNaxxramas} from './pages/adventures/curse-of-naxxramas';
+import {BlackrockMountain} from './pages/adventures/blackrock-mountain';
+import {TheLeagueOfExplorers} from './pages/adventures/the-league-of-explorers';
+import {OneNightAtKarazhan} from './pages/adventures/one-night-at-karazhan';
+
 import './styles/index.css';
 import './styles/mobile.css';
 
@@ -72,7 +77,7 @@ ReactDOM.render((
         <Route path="przygody"          component={Adventures}>
           <Route path="klatwa-naxxramas"          component={CurseOfNaxxramas} />
           <Route path="czarna-gora"               component={BlackrockMountain} />
-          <Route path="liga-odkrywcow"            component={TheLeagueOfExplerores} />
+          <Route path="liga-odkrywcow"            component={TheLeagueOfExplorers} />
           <Route path="pewnej-nocy-w-karazhanie"  component={OneNightAtKarazhan} />
         </Route>
         <Route path="stworz-talie-kart" component={CreateDeck} />
