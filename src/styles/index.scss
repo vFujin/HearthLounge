@@ -360,7 +360,59 @@ footer{
 
     .tournaments{}
 
-    .expansions{}
+    .expansions{
+      .slider{
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        padding: 10px;
+        height:100%;
+        ul{
+          height:100%;
+          li{
+            height:100%;
+            img{
+              width:100%;
+              height: calc(100% - 70px);
+            }
+          }
+        }
+        .slider-nav{
+          position: absolute;
+          top: calc(50% - 25px);
+          width: calc(100% - 20px);
+          display: flex;
+          font-size: 50px;
+          border: 0;
+          outline:none;
+          .prev, .next{
+            @include transition(all ease .4s);
+            position: absolute;
+            padding: 0 15px;
+            background-color: rgba(255,255,255,.4);
+            cursor: pointer;
+            &:hover{
+              background-color: $sea-color;
+              color: $pearl;
+            }
+          }
+          .prev{
+            left: 0;
+          }
+          .next{
+            right: 0
+          }
+          .bullets{
+            position: absolute;
+            background-color: rgba(255,255,255,.4);
+            left: calc(50% - 20px);
+            position: absolute;
+            top: 140px;
+          }
+        }
+      }
+    }
 
     .cards{
       span{

@@ -1123,6 +1123,51 @@ footer {
                 text-align: center; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .votes {
                 text-align: right; }
+  .home ul.home__list .expansions .slider {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 10px;
+    height: 100%; }
+    .home ul.home__list .expansions .slider ul {
+      height: 100%; }
+      .home ul.home__list .expansions .slider ul li {
+        height: 100%; }
+        .home ul.home__list .expansions .slider ul li img {
+          width: 100%;
+          height: calc(100% - 70px); }
+    .home ul.home__list .expansions .slider .slider-nav {
+      position: absolute;
+      top: calc(50% - 25px);
+      width: calc(100% - 20px);
+      display: flex;
+      font-size: 50px;
+      border: 0;
+      outline: none; }
+      .home ul.home__list .expansions .slider .slider-nav .prev, .home ul.home__list .expansions .slider .slider-nav .next {
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        -ms-transition: all ease 0.4s;
+        -o-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+        position: absolute;
+        padding: 0 15px;
+        background-color: rgba(255, 255, 255, 0.4);
+        cursor: pointer; }
+        .home ul.home__list .expansions .slider .slider-nav .prev:hover, .home ul.home__list .expansions .slider .slider-nav .next:hover {
+          background-color: #00a99c;
+          color: #E7E2DA; }
+      .home ul.home__list .expansions .slider .slider-nav .prev {
+        left: 0; }
+      .home ul.home__list .expansions .slider .slider-nav .next {
+        right: 0; }
+      .home ul.home__list .expansions .slider .slider-nav .bullets {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.4);
+        left: calc(50% - 20px);
+        position: absolute;
+        top: 140px; }
   .home ul.home__list .cards span {
     position: absolute;
     font-size: 250px;
