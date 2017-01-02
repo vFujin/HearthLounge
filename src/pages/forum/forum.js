@@ -57,6 +57,64 @@ export class Forum extends Component {
               </tbody>
             </table>
           </div>
+          <div className="caption">
+            <h4>Klasy</h4>
+            <table>
+              <tbody>
+              <tr className="forum-nav">
+                <td>Forum</td>
+                <td>Ostatnia Odpowiedź</td>
+                <td>Tematów</td>
+                <td>Odpowiedzi</td>
+              </tr>
+              <ForumRow title="Czarnoksiężnik"
+                        title_details="Dyskusja o wszystkim i o niczym!"
+                        latest_post="{ nazwa tematu }"
+                        threads="1337"
+                        posts="3123"/>
+              <ForumRow title="Druid"
+                        title_details="Dyskusja na temat trybu standardowego."
+                        latest_post="{ nazwa tematu }"
+                        threads="1337"
+                        posts="3123"/>
+              <ForumRow title="Kapłan"
+                        title_details="Dyskusja na temat trybu dziczy."
+                        latest_post="{ nazwa tematu }"
+                        threads="1337"
+                        posts="3123"/>
+              <ForumRow title="Łotr"
+                        title_details="Dyskusja na temat karczemnej bójki."
+                        latest_post="{ nazwa tematu }."
+                        threads="1337"
+                        posts="3123"/>
+              <ForumRow title="Łowca"
+                        title_details="Dyskusja na temat przygód."
+                        latest_post="{ nazwa tematu }"
+                        threads="1337"
+                        posts="3123"/>
+              <ForumRow title="Mag"
+                        title_details="Dyskusja na temat kart."
+                        latest_post="{ nazwa tematu }"
+                        threads="1337"
+                        posts="3123"/>
+              <ForumRow title="Paladyn"
+                        title_details="Dyskusja na temat budowania swojej Talii kart."
+                        latest_post="{ nazwa tematu }"
+                        threads="1337"
+                        posts="3123"/>
+              <ForumRow title="Szaman"
+                        title_details="Dyskusja na temat streamów i filmów związanych z HS."
+                        latest_post="{ nazwa tematu }"
+                        threads="1337"
+                        posts="3123"/>
+              <ForumRow title="Wojownik"
+                        title_details="Dyskusja na temat streamów i filmów związanych z HS."
+                        latest_post="{ nazwa tematu }"
+                        threads="1337"
+                        posts="3123"/>
+              </tbody>
+            </table>
+          </div>
         </div>
     );
   }

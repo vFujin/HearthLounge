@@ -1418,20 +1418,30 @@ footer {
   width: calc(100% - 20px); }
   .pageContainer.forum .caption {
     width: 50%;
-    background-color: #A69E9D; }
+    background-color: #A69E9D;
+    margin-right: 1%; }
     .pageContainer.forum .caption h4 {
       background-color: #474143;
       color: #E7E2DA;
       font-weight: normal;
       text-align: center;
       padding: 10px;
-      margin: 0; }
+      margin: 0;
+      text-transform: uppercase; }
+    .pageContainer.forum .caption:last-child {
+      margin-right: 0; }
   .pageContainer.forum table {
     width: 100%;
     padding: 10px; }
     .pageContainer.forum table tr {
+      -webkit-transition: all 400ms ease;
+      -moz-transition: all 400ms ease;
+      -ms-transition: all 400ms ease;
+      -o-transition: all 400ms ease;
+      transition: all 400ms ease;
       width: 100%;
-      background-color: #E7E2DA; }
+      background-color: #E7E2DA;
+      cursor: pointer; }
       .pageContainer.forum table tr td {
         padding: 10px; }
         .pageContainer.forum table tr td h5 {
@@ -1445,5 +1455,9 @@ footer {
       .pageContainer.forum table tr:first-child td {
         font-weight: bold;
         text-align: center; }
+      .pageContainer.forum table tr:first-child:hover {
+        background-color: #E7E2DA; }
+      .pageContainer.forum table tr:hover {
+        background-color: #00a99c; }
 
 /*# sourceMappingURL=index.css.map */

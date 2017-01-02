@@ -759,6 +759,7 @@ footer{
   .caption{
     width: 50%;
     background-color: $light-grey;
+    margin-right: 1%;
     h4{
       background-color: $dark-grey;
       color: $pearl;
@@ -766,14 +767,20 @@ footer{
       text-align: center;
       padding: 10px;
       margin:0;
+      text-transform: uppercase;
+    }
+    &:last-child{
+      margin-right:0 ;
     }
   }
   table{
     width:100%;
     padding: 10px;
     tr{
+      @include transition(all 400ms ease);
       width: 100%;
       background-color: $pearl;
+      cursor: pointer;
       td{
         padding: 10px;
         h5{
@@ -796,7 +803,13 @@ footer{
           font-weight: bold;
           text-align: center;
         }
+        &:hover{
+          background-color: $pearl;
+        }
       }
-    }
+      &:hover{
+        background-color: $sea-color;
+  }
+}
   }
 }
