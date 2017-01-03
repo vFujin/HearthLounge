@@ -203,38 +203,46 @@ export const hs_class = [
 export const expansions = [
   {
     en: 'goblins-vs-gnomes',
-    pl: 'Gobliny kontra Gnomy'
+    pl: 'Gobliny kontra Gnomy',
+    url: 'gobliny-kontra-gnomy'
   },
   {
     en: 'the-grand-tournament',
-    pl: 'Wielki Turniej'
+    pl: 'Wielki Turniej',
+    url: 'wielki-turniej'
   },
   {
     en: 'whispers-of-the-old-gods',
-    pl: 'Przedwieczni Bogowie'
+    pl: 'Przedwieczni Bogowie',
+    url: 'przedwieczni-bogowie'
   },
   {
     en: 'mean-streets-of-gadgetzan',
-    pl: 'Ciemne zaułki gadżetonu'
+    pl: 'Ciemne zaułki gadżetonu',
+    url: 'ciemne-zaulki-gadzetonu'
   }
 ];
 
 export const adventures = [
   {
     en: 'curse-of-naxxramas',
-    pl: 'Klątwa Naxxramas'
+    pl: 'Klątwa Naxxramas',
+    url: 'klatwa-naxxramas'
   },
   {
     en: 'blackrock-mountain',
-    pl: 'Czarna Góra'
+    pl: 'Czarna Góra',
+    url: 'czarna-gora'
   },
   {
     en: 'the-league-of-explorers',
-    pl: 'Liga Odkrywców'
+    pl: 'Liga Odkrywców',
+    url: 'liga-odkrywcow'
   },
   {
     en: 'one-night-at-karazhan',
-    pl: 'Pewnej Nocy w Karazhanie'
+    pl: 'Pewnej Nocy w Karazhanie',
+    url: 'pewnej-nocy-w-karazhanie'
   }
 ];
 
