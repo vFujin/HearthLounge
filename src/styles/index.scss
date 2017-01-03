@@ -815,14 +815,16 @@ footer{
           margin: 10px;
           background-color: $pearl;
           padding: 10px;
-          display: flex;
-          span{
-            font-size: 50px;
-          }
-          p{
-            margin-left: 10px;
-            margin-bottom:0;
-            line-height: 50px;
+          a{
+            display: flex;
+            span{
+              font-size: 50px;
+            }
+            p{
+              margin-left: 10px;
+              margin-bottom:0;
+              line-height: 50px;
+            }
           }
         }
       }

@@ -1464,14 +1464,15 @@ footer {
     color: #474143;
     margin: 10px;
     background-color: #E7E2DA;
-    padding: 10px;
-    display: flex; }
-    .adventures .left-container .sidebar ul li span {
-      font-size: 50px; }
-    .adventures .left-container .sidebar ul li p {
-      margin-left: 10px;
-      margin-bottom: 0;
-      line-height: 50px; }
+    padding: 10px; }
+    .adventures .left-container .sidebar ul li a {
+      display: flex; }
+      .adventures .left-container .sidebar ul li a span {
+        font-size: 50px; }
+      .adventures .left-container .sidebar ul li a p {
+        margin-left: 10px;
+        margin-bottom: 0;
+        line-height: 50px; }
 .adventures .right-container .topbar .adventure-content-navigation {
   display: inline-flex; }
   .adventures .right-container .topbar .adventure-content-navigation li {
