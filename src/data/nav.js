@@ -87,8 +87,8 @@ export const navItems = [
     homepage_block_width: 2,
     submenu: [
       {
-        submenu_li_title: "Gobliny vs Gnomy",
-        submenu_url: "gobliny-vs-gnomy",
+        submenu_li_title: "Gobliny kontra Gnomy",
+        submenu_url: "gobliny-kontra-gnomy",
         submenu_li_className: "goblins-vs-gnomes",
       },
       {
