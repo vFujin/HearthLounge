@@ -806,6 +806,28 @@ footer{
 }
 
 .adventures{
+  .left-container{
+    background: $dark-grey;
+    .sidebar{
+      ul{
+        li{
+          color: $dark-grey;
+          margin: 10px;
+          background-color: $pearl;
+          padding: 10px;
+          display: flex;
+          span{
+            font-size: 50px;
+          }
+          p{
+            margin-left: 10px;
+            margin-bottom:0;
+            line-height: 50px;
+          }
+        }
+      }
+    }
+  }
   .right-container{
     .topbar{
       .adventure-content-navigation{
@@ -813,7 +835,6 @@ footer{
         li{
           @include transition(all ease .4s);
           cursor: pointer;
-          text-transform: uppercase;
           border-right: 1px solid $dark-grey;
           a{
             display: block;

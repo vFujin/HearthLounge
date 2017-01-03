@@ -18,7 +18,7 @@ export class Sidebar extends Component {
           <h3 className="filter-header">Przygody</h3>
           <ul className="sidebar-icons">
             {adventures.map((element, index) =>
-                <li onClick={this.handleClick.bind(this, index)} value={element.en} key={index}>
+                <li onClick={this.handleClick.bind(this, index)} data-adventure={element.en} key={index}>
                   <span className={`hs-icon icon-${element.en} ${this.state.active === this.state.index && 'icon-background-active'}`}></span>
                   <p>{element.pl}</p>
                 </li>

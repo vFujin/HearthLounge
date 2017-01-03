@@ -1458,6 +1458,20 @@ footer {
   .arena-picker .left-container .sidebar table tr td:last-child {
     text-align: center; }
 
+.adventures .left-container {
+  background: #474143; }
+  .adventures .left-container .sidebar ul li {
+    color: #474143;
+    margin: 10px;
+    background-color: #E7E2DA;
+    padding: 10px;
+    display: flex; }
+    .adventures .left-container .sidebar ul li span {
+      font-size: 50px; }
+    .adventures .left-container .sidebar ul li p {
+      margin-left: 10px;
+      margin-bottom: 0;
+      line-height: 50px; }
 .adventures .right-container .topbar .adventure-content-navigation {
   display: inline-flex; }
   .adventures .right-container .topbar .adventure-content-navigation li {
@@ -1467,7 +1481,6 @@ footer {
     -o-transition: all ease 0.4s;
     transition: all ease 0.4s;
     cursor: pointer;
-    text-transform: uppercase;
     border-right: 1px solid #474143; }
     .adventures .right-container .topbar .adventure-content-navigation li a {
       display: block;
