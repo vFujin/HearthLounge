@@ -4,7 +4,7 @@ export class Topbar extends Component {
   render() {
     return (
         <div className="topbar">
-          <ul className="adventure-content">
+          <ul className="adventure-content-navigation">
             <li><Link to={`/przygody/${this.props.adventure}/karty`}>Karty</Link></li>
             <li><Link to={`/przygody/${this.props.adventure}/koszt`}>Koszt</Link></li>
             <li><Link to={`/przygody/${this.props.adventure}/struktura`}>Struktura</Link></li>

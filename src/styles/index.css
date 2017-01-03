@@ -1166,7 +1166,6 @@ footer {
         position: absolute;
         background-color: rgba(255, 255, 255, 0.4);
         left: calc(50% - 20px);
-        position: absolute;
         top: 140px; }
   .home ul.home__list .cards span {
     position: absolute;
@@ -1459,9 +1458,9 @@ footer {
   .arena-picker .left-container .sidebar table tr td:last-child {
     text-align: center; }
 
-.adventures .right-container .topbar .adventure-content {
+.adventures .right-container .topbar .adventure-content-navigation {
   display: inline-flex; }
-  .adventures .right-container .topbar .adventure-content li {
+  .adventures .right-container .topbar .adventure-content-navigation li {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
     -ms-transition: all ease 0.4s;
@@ -1469,12 +1468,17 @@ footer {
     transition: all ease 0.4s;
     cursor: pointer;
     text-transform: uppercase;
-    line-height: 30px;
-    padding: 10px;
     border-right: 1px solid #474143; }
-    .adventures .right-container .topbar .adventure-content li:hover {
+    .adventures .right-container .topbar .adventure-content-navigation li a {
+      display: block;
+      padding: 15.4px; }
+    .adventures .right-container .topbar .adventure-content-navigation li:hover {
       background-color: #00a99c;
       color: #E7E2DA; }
+.adventures .right-container .adventure-content {
+  margin: 10px 0px 0px 10px;
+  padding: 10px;
+  background-color: #A69E9D; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }

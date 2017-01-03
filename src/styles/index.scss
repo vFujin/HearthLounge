@@ -407,7 +407,6 @@ footer{
             position: absolute;
             background-color: rgba(255,255,255,.4);
             left: calc(50% - 20px);
-            position: absolute;
             top: 140px;
           }
         }
@@ -809,21 +808,28 @@ footer{
 .adventures{
   .right-container{
     .topbar{
-      .adventure-content{
+      .adventure-content-navigation{
         display: inline-flex;
         li{
           @include transition(all ease .4s);
           cursor: pointer;
           text-transform: uppercase;
-          line-height: 30px;
-          padding: 10px;
           border-right: 1px solid $dark-grey;
+          a{
+            display: block;
+            padding:15.4px;
+          }
           &:hover{
             background-color: $sea-color;
             color: $pearl;
           }
         }
       }
+    }
+    .adventure-content{
+      margin: 10px 0px 0px 10px;
+      padding: 10px;
+      background-color: $light-grey;
     }
   }
 }

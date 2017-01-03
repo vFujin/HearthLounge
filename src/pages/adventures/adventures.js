@@ -14,10 +14,12 @@ export class Adventures extends Component {
           </div>
           <div className="right-container">
             <Topbar adventure="klatwa-naxxramas"/>
-            <BlackrockMountain/>
-            <CurseOfNaxxramas/>
-            <OneNightAtKarazhan/>
-            <TheLeagueOfExplorers/>
+            <div className="adventure-content">
+              <BlackrockMountain/>
+              <CurseOfNaxxramas/>
+              <OneNightAtKarazhan/>
+              <TheLeagueOfExplorers/>
+            </div>
           </div>
 
 
