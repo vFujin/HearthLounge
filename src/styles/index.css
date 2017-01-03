@@ -937,7 +937,7 @@ footer {
     background-color: #A69E9D;
     height: 100%; }
     .pageContainer .left-container .sidebar .filter-header {
-      padding: 19px 5px;
+      padding: 14px 5px;
       margin-bottom: 0; }
     .pageContainer .left-container .sidebar h3 {
       background-color: #474143;
@@ -947,7 +947,7 @@ footer {
     width: 80%; }
     .pageContainer .right-container .topbar {
       background-color: #A69E9D;
-      height: 60px; }
+      height: 50px; }
 
 /*
   Pages
@@ -1339,7 +1339,7 @@ footer {
 .cards .right-container .topbar ul {
   display: inline-flex; }
   .cards .right-container .topbar ul li span {
-    line-height: 60px; }
+    line-height: 50px; }
   .cards .right-container .topbar ul li:last-child {
     margin-right: 0; }
 .cards .right-container .topbar .topbar-left {
@@ -1358,12 +1358,12 @@ footer {
       -o-transition: all ease 0.4s;
       transition: all ease 0.4s;
       color: #474143;
-      padding: 9.5px; }
+      padding: 5px; }
     .cards .right-container .topbar .topbar-right li .tooltip {
       position: absolute;
       display: none;
       width: 120px;
-      margin-left: -38px; }
+      margin-left: -30px; }
       .cards .right-container .topbar .topbar-right li .tooltip .caret-up {
         width: 0;
         height: 0;
@@ -1458,6 +1458,23 @@ footer {
   width: 100%; }
   .arena-picker .left-container .sidebar table tr td:last-child {
     text-align: center; }
+
+.adventures .right-container .topbar .adventure-content {
+  display: inline-flex; }
+  .adventures .right-container .topbar .adventure-content li {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    text-transform: uppercase;
+    line-height: 30px;
+    padding: 10px;
+    border-right: 1px solid #474143; }
+    .adventures .right-container .topbar .adventure-content li:hover {
+      background-color: #00a99c;
+      color: #E7E2DA; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }

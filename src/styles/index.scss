@@ -101,7 +101,7 @@ footer{
     height: 100%;
     .sidebar{
       .filter-header{
-        padding: 19px 5px;
+        padding: 14px 5px;
         margin-bottom:0;
       }
       h3{
@@ -115,7 +115,7 @@ footer{
     width: 80%;
     .topbar{
       background-color: $light-grey;
-      height:60px;
+      height:50px;
     }
   }
 }
@@ -653,7 +653,7 @@ footer{
         display: inline-flex;
         li {
           span{
-            line-height: 60px;
+            line-height: 50px;
           }
           &:last-child {
             margin-right: 0;
@@ -676,13 +676,13 @@ footer{
           span{
             @include transition(all ease .4s);
             color: $dark-grey;
-            padding: 9.5px;
+            padding: 5px;
           }
           .tooltip {
             position: absolute;
             display: none;
             width: 120px;
-            margin-left: -38px;
+            margin-left: -30px;
             .caret-up {
               width: 0;
               height: 0;
@@ -799,6 +799,28 @@ footer{
         tr{
           td:last-child{
             text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.adventures{
+  .right-container{
+    .topbar{
+      .adventure-content{
+        display: inline-flex;
+        li{
+          @include transition(all ease .4s);
+          cursor: pointer;
+          text-transform: uppercase;
+          line-height: 30px;
+          padding: 10px;
+          border-right: 1px solid $dark-grey;
+          &:hover{
+            background-color: $sea-color;
+            color: $pearl;
           }
         }
       }

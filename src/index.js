@@ -35,6 +35,12 @@ import {BlackrockMountain} from './pages/adventures/blackrock-mountain';
 import {TheLeagueOfExplorers} from './pages/adventures/the-league-of-explorers';
 import {OneNightAtKarazhan} from './pages/adventures/one-night-at-karazhan';
 
+import {AdventureBosses} from './pages/adventures/assets/bosses';
+import {AdventureCards} from './pages/adventures/assets/cards';
+import {AdventureClassChallanges} from './pages/adventures/assets/class-challanges';
+import {AdventureCost} from './pages/adventures/assets/cost';
+import {AdventureStructure} from './pages/adventures/assets/structure';
+
 import './styles/index.css';
 import './styles/mobile.css';
 
@@ -74,8 +80,14 @@ ReactDOM.render((
           <Route path="przedwieczni-bogowie"     component={WhispersOfTheOldGods} />
           <Route path="ciemne-zaulki-gadzetonu"  component={MeanStreetsOfGadgetzan} />
         </Route>
-        <Route path="przygody"          component={Adventures}>
-          <Route path="klatwa-naxxramas"          component={CurseOfNaxxramas} />
+        <Route path="przygody"              component={Adventures}>
+          <Route path="klatwa-naxxramas"    component={CurseOfNaxxramas}>
+            <Route path="karty"             component={AdventureCards}/>
+            <Route path="koszt"             component={AdventureCost}/>
+            <Route path="struktura"         component={AdventureStructure}/>
+            <Route path="bossy"             component={AdventureBosses}/>
+            <Route path="wyzwania-klasowe"  component={AdventureClassChallanges}/>
+          </Route>
           <Route path="czarna-gora"               component={BlackrockMountain} />
           <Route path="liga-odkrywcow"            component={TheLeagueOfExplorers} />
           <Route path="pewnej-nocy-w-karazhanie"  component={OneNightAtKarazhan} />
