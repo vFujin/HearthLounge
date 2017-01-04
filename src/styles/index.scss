@@ -5,7 +5,6 @@
 @import '_mixins';
 @import '_icons';
 @import '_submenu';
-@import "../../node_modules/react-image-gallery/styles/scss/image-gallery.scss";
 html, body{
   height: 100%;
 }
@@ -814,8 +813,9 @@ footer{
           color: $dark-grey;
           margin: 10px;
           background-color: $pearl;
-          padding: 10px;
+
           a{
+            padding: 10px ;
             display: flex;
             span{
               font-size: 50px;

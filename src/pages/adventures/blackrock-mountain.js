@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-export class BlackrockMountain extends Component {
+import { adventure_details } from '../../data/adventure-details';
+export class AdventureDetails extends Component {
   render() {
     return (
-        <div className={`blackrock-mountain ${this.props.display}`}>
-          BM
+        <div className={`${this.props.onChange}`}>
+            {adventure_details.map( (element, index)=>
+                <div>{element.cost.description}</div>
+            )}
         </div>
     );
   }

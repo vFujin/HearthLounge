@@ -31,7 +31,7 @@ import {TheGrandTournament} from './pages/expansions/the-grand-tournament';
 import {WhispersOfTheOldGods} from './pages/expansions/whispers-of-the-old-gods';
 
 import {CurseOfNaxxramas} from './pages/adventures/curse-of-naxxramas';
-import {BlackrockMountain} from './pages/adventures/blackrock-mountain';
+import {AdventureDetails} from './pages/adventures/blackrock-mountain';
 import {TheLeagueOfExplorers} from './pages/adventures/the-league-of-explorers';
 import {OneNightAtKarazhan} from './pages/adventures/one-night-at-karazhan';
 
@@ -88,7 +88,7 @@ ReactDOM.render((
             <Route path="bossy"             component={AdventureBosses}/>
             <Route path="wyzwania-klasowe"  component={AdventureClassChallanges}/>
           </Route>
-          <Route path="czarna-gora"               component={BlackrockMountain} />
+          <Route path="czarna-gora"               component={AdventureDetails} />
           <Route path="liga-odkrywcow"            component={TheLeagueOfExplorers} />
           <Route path="pewnej-nocy-w-karazhanie"  component={OneNightAtKarazhan} />
         </Route>
