@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 export class Topbar extends Component {
   render() {
     return (
-        <div className="topbar">
+        <div className={`topbar ${this.props.adventure}`}>
           <ul className="adventure-content-navigation">
             <li><Link to={`/przygody/${this.props.adventure}/karty`}>Karty</Link></li>
             <li><Link to={`/przygody/${this.props.adventure}/koszt`}>Koszt</Link></li>

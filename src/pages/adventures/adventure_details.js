@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { adventure_details } from '../../data/adventure-details';
+// import {AdventureCards} from './assets/cards';
 export class AdventureDetails extends Component {
   render() {
     return (
         <div className={`${this.props.onChange}`}>
             {adventure_details.map( (element, index)=>
-                <div>{element.cost.description}</div>
+                <div key={index}>{element.cost.description}</div>
             )}
+          {/*<AdventureCards onCardsClick={this.props.onChange} />*/}
         </div>
+
     );
   }
 }

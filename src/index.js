@@ -30,10 +30,7 @@ import {MeanStreetsOfGadgetzan} from './pages/expansions/mean-streets-of-gadgetz
 import {TheGrandTournament} from './pages/expansions/the-grand-tournament';
 import {WhispersOfTheOldGods} from './pages/expansions/whispers-of-the-old-gods';
 
-import {CurseOfNaxxramas} from './pages/adventures/curse-of-naxxramas';
-import {AdventureDetails} from './pages/adventures/blackrock-mountain';
-import {TheLeagueOfExplorers} from './pages/adventures/the-league-of-explorers';
-import {OneNightAtKarazhan} from './pages/adventures/one-night-at-karazhan';
+import {AdventureDetails} from './pages/adventures/adventure_details';
 
 import {AdventureBosses} from './pages/adventures/assets/bosses';
 import {AdventureCards} from './pages/adventures/assets/cards';
@@ -81,7 +78,7 @@ ReactDOM.render((
           <Route path="ciemne-zaulki-gadzetonu"  component={MeanStreetsOfGadgetzan} />
         </Route>
         <Route path="przygody"              component={Adventures}>
-          <Route path="klatwa-naxxramas"    component={CurseOfNaxxramas}>
+          <Route path=":adventure"          component={AdventureDetails}>
             <Route path="karty"             component={AdventureCards}/>
             <Route path="koszt"             component={AdventureCost}/>
             <Route path="struktura"         component={AdventureStructure}/>
@@ -89,8 +86,6 @@ ReactDOM.render((
             <Route path="wyzwania-klasowe"  component={AdventureClassChallanges}/>
           </Route>
           <Route path="czarna-gora"               component={AdventureDetails} />
-          <Route path="liga-odkrywcow"            component={TheLeagueOfExplorers} />
-          <Route path="pewnej-nocy-w-karazhanie"  component={OneNightAtKarazhan} />
         </Route>
         <Route path="stworz-talie-kart" component={CreateDeck} />
         <Route path="forum"             component={Forum} />

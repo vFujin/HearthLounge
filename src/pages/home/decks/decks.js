@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
 import { ClassSelection } from './filters/class-selection';
 import { ModeSelection } from './filters/mode-selection';
 import { DeckSnippet } from './deck-snippet/deck-snippet';

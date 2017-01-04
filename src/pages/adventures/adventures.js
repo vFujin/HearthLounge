@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {Sidebar} from './sidebar';
 import {Topbar} from './topbar';
-import {AdventureDetails} from './blackrock-mountain';
+import {AdventureDetails} from './adventure_details';
 export class Adventures extends Component {
   constructor(props){
     super(props);
     this.state = {
       adventure: 'displayNone',
-      selected_adventure: null
+      selected_adventure: 'displayNone'
     }
   }
 
@@ -23,13 +23,13 @@ export class Adventures extends Component {
 
   render() {
     return (
-        <div className="pageContainer adventures">r
+        <div className="pageContainer adventures">
           <div className="left-container">
             <Sidebar isSelected={this.state.adventure} onChange={this.handleClick.bind(this)}/>
           </div>
           <div className="right-container">
-            <Topbar adventure="klatwa-naxxramas"/>
-            <div className="adventure-content">
+            <Topbar adventure={this.state.selected_adventure}/>
+            <div className={`adventure-content ${this.state.selected_adventure}`}>
               <AdventureDetails display={this.state.selected_adventure} />
             </div>
           </div>

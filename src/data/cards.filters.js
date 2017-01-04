@@ -225,24 +225,29 @@ export const expansions = [
 
 export const adventures = [
   {
-    en: 'curse-of-naxxramas',
+
     pl: 'Klątwa Naxxramas',
+    en: 'Naxxramas',
+    en_url: 'curse-of-naxxramas',
     url: 'klatwa-naxxramas'
   },
   {
-    en: 'blackrock-mountain',
+    en: 'Blackrock Mountain',
     pl: 'Czarna Góra',
-    url: 'czarna-gora'
+    url: 'czarna-gora',
+    en_url: 'blackrock-mountain'
   },
   {
-    en: 'the-league-of-explorers',
+    en: 'The League of Explorers',
     pl: 'Liga Odkrywców',
-    url: 'liga-odkrywcow'
+    url: 'liga-odkrywcow',
+    en_url: 'the-league-of-explorers'
   },
   {
-    en: 'one-night-at-karazhan',
+    en: 'Karazhan',
     pl: 'Pewnej Nocy w Karazhanie',
-    url: 'pewnej-nocy-w-karazhanie'
+    url: 'pewnej-nocy-w-karazhanie',
+    en_url: 'one-night-at-karazhan',
   }
 ];
 

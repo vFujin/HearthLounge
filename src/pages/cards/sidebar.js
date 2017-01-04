@@ -10,7 +10,6 @@ import {ExpansionFilter} from './filters/expansions';
 import {AdventureFilter} from './filters/adventures';
 import {RarityFilter} from './filters/rarity';
 import {IsGoldenFilter} from './filters/is-golden';
-import unirest from "unirest";
 
 export class Sidebar extends Component {
   constructor(){

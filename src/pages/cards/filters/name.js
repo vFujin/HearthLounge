@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import unirest from 'unirest';
-import {race} from '../../../data/cards.filters'
 
 export class NameFilter extends Component {
   constructor(props) {

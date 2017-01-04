@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import {ExpansionSlider} from './slider';
 export class ExpansionsBlock extends Component {
   render() {
     return (
