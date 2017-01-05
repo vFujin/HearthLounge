@@ -8,7 +8,9 @@ export class Adventures extends Component {
     this.state = {
       adventure: 'displayNone',
       selected_adventure: 'displayNone',
-      selected_adventure_url: ''
+      selected_adventure_url: null,
+
+      isTopbarTabActive: 'not-active'
     }
   }
 
@@ -16,6 +18,7 @@ export class Adventures extends Component {
     let isSelected = this.state.adventure === "displayNone" ? "displayBlock" : "displayBlock";
     let selectedAdventure = event.target.dataset['adventure'];
     let selectedAdventureUrl = event.target.dataset['url'];
+    console.log(selectedAdventure)
     this.setState({
       adventure: isSelected,
       selected_adventure: selectedAdventure,
@@ -23,10 +26,13 @@ export class Adventures extends Component {
     })
   }
 
-  handleTopClick(event){
+  handleTopbarClick(event){
+    let isActive = this.state.isTopbarTabActive === 'not-active' ? 'active' : 'not-active';
     let selectedAdventureUrl = event.target.dataset['url'];
+
     this.setState({
-      selected_adventure_url: selectedAdventureUrl
+      selected_adventure_url: selectedAdventureUrl,
+      isTopbarTabActive: isActive
     })
   }
 
@@ -36,10 +42,10 @@ export class Adventures extends Component {
           <div className="left-container">
             <Sidebar isSelected={this.state.adventure} onAdventureChange={this.handleClick.bind(this)}/>
           </div>
-          <div className="right-container">
-            <Topbar onDetailsChange={this.handleClick.bind(this)} selectedAdventureUrl={this.state.selected_adventure_url}/>
+          <div className={`right-container ${this.state.selected_adventure}`}>
+            <Topbar onDetailsChange={this.handleTopbarClick.bind(this)} selectedAdventureUrl={this.state.selected_adventure_url} isActive={this.state.isTopbarTabActive} />
             <div className={`adventure-content ${this.state.selected_adventure_url}`}>
-              <AdventureDetails adventure={this.state.selected_adventure} />
+              <AdventureDetails selectedAdventure={this.state.selected_adventure} />
             </div>
           </div>
 

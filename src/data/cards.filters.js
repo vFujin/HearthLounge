@@ -202,24 +202,28 @@ export const hs_class = [
 
 export const expansions = [
   {
-    en: 'goblins-vs-gnomes',
+    en: 'Goblins vs Gnomes',
     pl: 'Gobliny kontra Gnomy',
-    url: 'gobliny-kontra-gnomy'
+    url: 'gobliny-kontra-gnomy',
+    en_url: 'goblins-vs-gnomes'
   },
   {
-    en: 'the-grand-tournament',
+    en: 'The Grand Tournament',
     pl: 'Wielki Turniej',
-    url: 'wielki-turniej'
+    url: 'wielki-turniej',
+    en_url: 'the-grand-tournament'
   },
   {
-    en: 'whispers-of-the-old-gods',
+    en: 'Whispers of The Old Gods',
     pl: 'Przedwieczni Bogowie',
-    url: 'przedwieczni-bogowie'
+    url: 'przedwieczni-bogowie',
+    en_url: 'whispers-of-the-old-gods'
   },
   {
-    en: 'mean-streets-of-gadgetzan',
+    en: 'Mean Streets of Gadgetzan',
     pl: 'Ciemne zaułki gadżetonu',
-    url: 'ciemne-zaulki-gadzetonu'
+    url: 'ciemne-zaulki-gadzetonu',
+    en_url: 'mean-streets-of-gadgetzan',
   }
 ];
 
