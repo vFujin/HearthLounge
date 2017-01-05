@@ -1,3 +1,26 @@
+export const topbar_tabs = [
+  {
+    tab: 'Karty',
+    url: 'karty'
+  },
+  {
+    tab: 'Koszt',
+    url: 'koszt'
+  },
+  {
+    tab: 'Struktura',
+    url: 'struktura'
+  },
+  {
+    tab: 'Bossy',
+    url: 'bossy'
+  },
+  {
+    tab: 'Wyzwania Klasowe',
+    url: 'wyzwania-klasowe'
+  }
+];
+
 export const adventure_details = [
     {
         adventure: "curse-of-naxxramas",

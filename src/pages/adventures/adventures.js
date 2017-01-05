@@ -7,17 +7,26 @@ export class Adventures extends Component {
     super(props);
     this.state = {
       adventure: 'displayNone',
-      selected_adventure: 'displayNone'
+      selected_adventure: 'displayNone',
+      selected_adventure_url: ''
     }
   }
 
   handleClick(event){
     let isSelected = this.state.adventure === "displayNone" ? "displayBlock" : "displayBlock";
     let selectedAdventure = event.target.dataset['adventure'];
-    console.log(selectedAdventure);
+    let selectedAdventureUrl = event.target.dataset['url'];
     this.setState({
       adventure: isSelected,
-      selected_adventure: selectedAdventure
+      selected_adventure: selectedAdventure,
+      selected_adventure_url: selectedAdventureUrl
+    })
+  }
+
+  handleTopClick(event){
+    let selectedAdventureUrl = event.target.dataset['url'];
+    this.setState({
+      selected_adventure_url: selectedAdventureUrl
     })
   }
 
@@ -25,12 +34,12 @@ export class Adventures extends Component {
     return (
         <div className="pageContainer adventures">
           <div className="left-container">
-            <Sidebar isSelected={this.state.adventure} onChange={this.handleClick.bind(this)}/>
+            <Sidebar isSelected={this.state.adventure} onAdventureChange={this.handleClick.bind(this)}/>
           </div>
           <div className="right-container">
-            <Topbar adventure={this.state.selected_adventure}/>
-            <div className={`adventure-content ${this.state.selected_adventure}`}>
-              <AdventureDetails display={this.state.selected_adventure} />
+            <Topbar onDetailsChange={this.handleClick.bind(this)} selectedAdventureUrl={this.state.selected_adventure_url}/>
+            <div className={`adventure-content ${this.state.selected_adventure_url}`}>
+              <AdventureDetails adventure={this.state.selected_adventure} />
             </div>
           </div>
 

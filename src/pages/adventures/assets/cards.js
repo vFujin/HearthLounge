@@ -9,14 +9,14 @@ export class AdventureCards extends Component {
 
   }
 
-  componentDidMount() {
+  componentWillReceiveProps() {
     console.log('mounted');
     unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?locale=plPL")
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
-          console.log(res.body);
+          let adventure = this.props.adventure;
           this.setState({
-            cards: res.body['basic']
+            cards: res.body[adventure]
           });
 
         });
