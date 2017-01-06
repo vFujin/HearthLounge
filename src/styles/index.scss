@@ -830,9 +830,9 @@ footer{
     .sidebar{
       ul{
         li{
+          background-color: $pearl;
           color: $dark-grey;
           margin: 10px;
-          background-color: $pearl;
 
           a{
             @include transition(all ease .4s);

@@ -1213,9 +1213,9 @@ footer {
 .adventures .left-container {
   background: #474143; }
   .adventures .left-container .sidebar ul li {
+    background-color: #E7E2DA;
     color: #474143;
-    margin: 10px;
-    background-color: #E7E2DA; }
+    margin: 10px; }
     .adventures .left-container .sidebar ul li a {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
