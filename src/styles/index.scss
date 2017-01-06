@@ -855,6 +855,11 @@ footer{
     .topbar{
       .adventure-content-navigation{
         display: inline-flex;
+        @include transition(all ease .4s);
+        .active{
+          background-color: $sea-color;
+          color: $pearl;
+        }
         li{
           @include transition(all ease .4s);
           cursor: pointer;

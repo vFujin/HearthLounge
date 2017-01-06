@@ -10,8 +10,8 @@ export class Adventures extends Component {
       selected_adventure: 'displayNone',
       selected_adventure_url: null,
 
-      isTopbarTabActive: 'not-active',
-      isSidebarTabActive: null
+      topbarActiveTab: null,
+      sidebarActiveTab: null
     }
   }
 
@@ -20,23 +20,23 @@ export class Adventures extends Component {
     let selectedAdventure = event.target.dataset['api'];
     let selectedAdventureUrl = event.target.dataset['url'];
     let selectedAdventureClass = event.target.dataset['adventure'];
-    let isActive = this.state.isSidebarTabActive === null ?  selectedAdventureClass: selectedAdventureClass;
-    console.log(selectedAdventureClass, isActive);
+    let activeTab = this.state.sidebarActiveTab === null ?  selectedAdventureClass: selectedAdventureClass;
+
     this.setState({
       adventure: isSelected,
       selected_adventure: selectedAdventure,
       selected_adventure_url: selectedAdventureUrl,
-      isSidebarTabActive: isActive
+      sidebarActiveTab: activeTab
     })
   }
 
   handleTopbarClick(event){
-    let isActive = this.state.isTopbarTabActive === 'not-active' ? 'active' : 'not-active';
-    let selectedAdventureUrl = event.target.dataset['url'];
-
+    let activeTab = event.target.dataset['tab'];
+    let isActive = this.state.topbarActiveTab === null ? activeTab : activeTab;
+    console.log(activeTab);
     this.setState({
-      selected_adventure_url: selectedAdventureUrl,
-      isTopbarTabActive: isActive
+      selected_adventure_url: this.state.selected_adventure_url,
+      topbarActiveTab: isActive
     })
   }
 
@@ -44,10 +44,10 @@ export class Adventures extends Component {
     return (
         <div className="pageContainer adventures">
           <div className="left-container">
-            <Sidebar isSelected={this.state.adventure} isActive={this.state.isSidebarTabActive} onAdventureChange={this.handleSidebarClick.bind(this)}/>
+            <Sidebar isSelected={this.state.adventure} isActive={this.state.sidebarActiveTab} onAdventureChange={this.handleSidebarClick.bind(this)}/>
           </div>
           <div className={`right-container ${this.state.selected_adventure}`}>
-            <Topbar onDetailsChange={this.handleTopbarClick.bind(this)} selectedAdventureUrl={this.state.selected_adventure_url} isActive={this.state.isTopbarTabActive} />
+            <Topbar onDetailsChange={this.handleTopbarClick.bind(this)} selectedAdventureUrl={this.state.selected_adventure_url} isActive={this.state.topbarActiveTab} />
             <div className={`adventure-content ${this.state.selected_adventure_url}`}>
               <AdventureDetails selectedAdventure={this.state.selected_adventure} />
             </div>

@@ -1231,7 +1231,15 @@ footer {
         margin-bottom: 0;
         line-height: 50px; }
 .adventures .right-container .topbar .adventure-content-navigation {
-  display: inline-flex; }
+  display: inline-flex;
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .adventures .right-container .topbar .adventure-content-navigation .active {
+    background-color: #00a99c;
+    color: #E7E2DA; }
   .adventures .right-container .topbar .adventure-content-navigation li {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
