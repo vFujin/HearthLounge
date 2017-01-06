@@ -8,7 +8,10 @@ export class DeckSnippetBody extends Component {
             <div className="mode"><span className="hs-icon icon-kraken"></span></div>
             <ManaCurve/>
             <div className="deck-type">Renohunter</div>
-            <div className="dust-needed">8910</div>
+            <div className="dust-needed">
+              <span className="hs-icon icon-dust"></span>
+              <p>8910</p>
+            </div>
           </div>
           <div className="body-body">
             <div className="minions">10 minionów</div>
@@ -16,7 +19,10 @@ export class DeckSnippetBody extends Component {
             <div className="weapons">6 broni</div>
           </div>
           <div className="body-footer">
-            <div className="views">10tyś.</div>
+            <div className="views">
+              <span className="hs-icon icon-views"></span>
+              <p>10tyś.</p>
+            </div>
             <div className="comments">14 komentarzy</div>
             <div className="votes">↑ 14</div>
           </div>

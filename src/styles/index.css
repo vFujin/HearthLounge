@@ -66,6 +66,18 @@ a:active, a:hover, a:link, a:visited {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-mana-7-plus:before {
+  content: "\e92d"; }
+
+.icon-tavern-brawl:before {
+  content: "\e92e"; }
+
+.icon-dust:before {
+  content: "\e92f"; }
+
+.icon-views:before {
+  content: "\e930"; }
+
 .icon-rarity:before {
   content: "\e92a"; }
 
@@ -98,6 +110,9 @@ a:active, a:hover, a:link, a:visited {
 
 .icon-mana-8:before {
   content: "\e929"; }
+
+.icon-mana-9:before {
+  content: "\e92c"; }
 
 .icon-the-grand-tournament:before {
   content: "\e900"; }
@@ -713,7 +728,7 @@ footer {
           text-transform: uppercase;
           font-size: 16px;
           font-weight: normal;
-          margin: 0 0 10px 0px; }
+          margin: 0 0 10px 0; }
         .home ul.home__list .decks .left-container .sidebar .search-decks input {
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
@@ -812,6 +827,12 @@ footer {
                 .home ul.home__list .decks .right-container .hot-decks .deck .body .body-header .mode span {
                   color: darkgreen;
                   font-size: 25px; }
+                .home ul.home__list .decks .right-container .hot-decks .deck .body .body-header .mode p {
+                  margin-left: 5px; }
+              .home ul.home__list .decks .right-container .hot-decks .deck .body .body-header .dust-needed {
+                display: flex; }
+                .home ul.home__list .decks .right-container .hot-decks .deck .body .body-header .dust-needed span {
+                  font-size: 25px; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-header .mana-curve {
                 width: 14%;
                 display: flex; }
@@ -846,7 +867,10 @@ footer {
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer div {
                 width: 33.33%; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .views {
+                display: flex;
                 opacity: .6; }
+                .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .views span {
+                  font-size: 10px; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .comments {
                 text-align: center; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .votes {
@@ -1193,6 +1217,11 @@ footer {
     margin: 10px;
     background-color: #E7E2DA; }
     .adventures .left-container .sidebar ul li a {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
       padding: 10px;
       display: flex; }
       .adventures .left-container .sidebar ul li a span {
@@ -1218,7 +1247,7 @@ footer {
       background-color: #00a99c;
       color: #E7E2DA; }
 .adventures .right-container .adventure-content {
-  margin: 10px 0px 0px 10px;
+  margin: 10px 0 0 10px;
   background-color: #A69E9D; }
   .adventures .right-container .adventure-content .cards-container {
     text-align: center;

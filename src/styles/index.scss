@@ -177,7 +177,7 @@ footer{
               text-transform: uppercase;
               font-size: 16px;
               font-weight: normal;
-              margin: 0 0 10px 0px;
+              margin: 0 0 10px 0;
             }
             input{
               @include transition(all ease .4s);
@@ -297,6 +297,15 @@ footer{
                     color: darkgreen;
                     font-size: 25px;
                   }
+                  p{
+                    margin-left: 5px ;
+                  }
+                }
+                .dust-needed{
+                  display: flex;
+                  span{
+                    font-size:25px;
+                  }
                 }
                 .mana-curve{
                   width:14%;
@@ -343,7 +352,11 @@ footer{
                   width: 33.33%;
                 }
                 .views{
+                  display: flex;
                   opacity: .6;
+                  span{
+                    font-size: 10px;
+                  }
                 }
                 .comments{
                   text-align: center;
@@ -822,6 +835,7 @@ footer{
           background-color: $pearl;
 
           a{
+            @include transition(all ease .4s);
             padding: 10px ;
             display: flex;
             span{
@@ -857,7 +871,7 @@ footer{
       }
     }
     .adventure-content{
-      margin: 10px 0px 0px 10px;
+      margin: 10px 0 0 10px;
       background-color: $light-grey;
       .cards-container{
         @include scrollbar;

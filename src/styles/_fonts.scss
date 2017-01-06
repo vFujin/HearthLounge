@@ -24,6 +24,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-mana-7-plus:before {
+  content: "\e92d";
+}
+.icon-tavern-brawl:before {
+  content: "\e92e";
+}
+.icon-dust:before {
+  content: "\e92f";
+}
+.icon-views:before {
+  content: "\e930";
+}
 .icon-rarity:before {
   content: "\e92a";
 }
@@ -56,6 +68,9 @@
 }
 .icon-mana-8:before {
   content: "\e929";
+}
+.icon-mana-9:before {
+  content: "\e92c";
 }
 .icon-the-grand-tournament:before {
   content: "\e900";
