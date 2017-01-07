@@ -72,38 +72,89 @@ export const adventure_details = [
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
-          wing_pic: "",
           wing_title: "Rewir Arachnidów",
           bosses: [
             {
-              boss_img: '',
+              img: '',
               boss: "Anub'Rekhan"
             },
             {
-              boss_img: '',
+              img: '',
               boss: "Wielka Wdowa Ferlina"
             },
             {
-              boss_img: '',
+              img: '',
               boss:"Maexxna"
             }
           ]
         },
         {
           wing_title: "Rewir Zarazy",
-          bosses: ["Nicz Siewca Zarazy", "Heigan Nieczysty", "Ohydziarz"]
+          bosses: [
+            {
+              img: '',
+              boss: "Nicz Siewca Zarazy"
+            },
+            {
+              img: '',
+              boss: "Heigan Nieczysty"
+            },
+            {
+              img: '',
+              boss: "Ohydziarz"
+            }
+          ]
         },
         {
           wing_title: "Rewir Zbrojnych",
-          bosses: ["Instruktor Razuwiusz", "Gotyk Żniwiarz", "Czterech Jeźdźców"]
+          bosses: [
+            {
+              img: '',
+              boss: "Instruktor Razuwiusz"
+            },
+            {
+              img: '',
+              boss: "Gotyk Żniwiarz"
+            },
+            {
+              img: '',
+              boss: "Czterech Jeźdźców"
+            }
+          ]
         },
         {
           wing_title: "Rewir Konstruktorów",
-          bosses: ["Łacior", "Grobulus", "Glut", "Thadius"]
+          bosses: [
+            {
+              img: '',
+              boss: "Łacior"
+            },
+            {
+              img: '',
+              boss: "Grobulus"
+            },
+            {
+              img: '',
+              boss: "Glut"
+            },
+            {
+              img: '',
+              boss: "Thadius"
+            }
+          ]
         },
         {
           wing_title: "Leże Żmija Mrozu",
-          bosses: ["Szafiron", "Kel'Thuzad"]
+          bosses: [
+            {
+              img: '',
+              boss: "Szafiron"
+            },
+            {
+              img: '',
+              boss: "Kel'Thuzad"
+            }
+          ]
         }
       ]
     },
