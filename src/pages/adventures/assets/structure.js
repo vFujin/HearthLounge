@@ -5,7 +5,7 @@ export class AdventureStructure extends Component {
     return (
         <div className={`structure inner-container ${this.props.active === 'structure' && 'active'}-view`}>
           {adventure_details.map((element, index)=>
-              <div key={index}>
+              <div className={`${this.props.adventure === element.adventure && 'active'}-view`} key={index}>
                 <ul>
                   <li>{element.structure.wing_amount} skrzydeł</li>
                   <li>

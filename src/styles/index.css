@@ -1295,6 +1295,8 @@ footer {
   .adventures .right-container .content .adventure-content .active-view {
     color: black;
     display: block; }
+  .adventures .right-container .content .adventure-content .active-adventure {
+    display: block; }
   .adventures .right-container .content .adventure-content .inner-container {
     padding: 10px; }
   .adventures .right-container .content .adventure-content .cards.cards-container {

@@ -5,7 +5,7 @@ export class AdventureBosses extends Component {
     return (
         <div className={`bosses inner-container ${this.props.active === 'bosses' && 'active'}-view`}>
           {adventure_details.map((element, index)=>
-            <div key={index}>
+            <div className={`${this.props.adventure === element.adventure && 'active'}-view`} key={index}>
               <p>{element.bosses.description}</p>
               <table>
                 <tbody>

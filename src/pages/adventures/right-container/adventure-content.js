@@ -10,9 +10,9 @@ export class AdventureContent extends Component {
       <div className={`adventure-content ${this.props.sidebarActiveTab} ${this.props.details} `}>
         <AdventureBosses adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl} />
         <AdventureCards adventure={this.props.adventure} active={this.props.topbarActiveTabUrl}/>
-        <AdventureClassChallanges active={this.props.topbarActiveTabUrl}/>
-        <AdventureCost active={this.props.topbarActiveTabUrl}/>
-        <AdventureStructure active={this.props.topbarActiveTabUrl}/>
+        <AdventureClassChallanges adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
+        <AdventureCost adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
+        <AdventureStructure adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
       </div>
     )
   }
