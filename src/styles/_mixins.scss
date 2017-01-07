@@ -85,8 +85,9 @@
       border-color: $dark-grey;
     }
   }
-  &.icon-background-active {
+  &.active {
       background-color: $color;
+      color: $dark-grey;
   }
   &.icon-font-active {
       color: $dark-grey;

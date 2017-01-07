@@ -16,13 +16,15 @@ export class AdventureCost extends Component {
               <p>PS. W grze nie można kupić całej przygody za pomocą złota, lecz zaprezentowaliśmy sumę złota tylko i wyłącznie w celu porównania cen.</p>
             </div>
             <table key={index}>
-              <tbody>
+              <thead>
                 <tr>
                   <th>Zakup Skrzydła</th>
                   <th>Złoto</th>
                   <th>EUR</th>
                   <th>PLN</th>
                 </tr>
+              </thead>
+              <tbody>
                 {element.cost.wings.map((element,i)=>
                   <tr key={i}>
                     <th>{element.desc}</th>

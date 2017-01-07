@@ -8,7 +8,7 @@ export class AdventureContent extends Component {
   render(){
     return (
       <div className={`adventure-content ${this.props.sidebarActiveTab} ${this.props.details} `}>
-        <AdventureBosses active={this.props.topbarActiveTabUrl} />
+        <AdventureBosses adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl} />
         <AdventureCards adventure={this.props.adventure} active={this.props.topbarActiveTabUrl}/>
         <AdventureClassChallanges active={this.props.topbarActiveTabUrl}/>
         <AdventureCost active={this.props.topbarActiveTabUrl}/>

@@ -11,7 +11,7 @@ export class AdventureStructure extends Component {
                   <li>
                     <ul>
                       {element.structure.wing_details.map((element,index)=>
-                        <li>{element}</li>
+                        <li key={index}>{element}</li>
                       )}
                     </ul>
                   </li>

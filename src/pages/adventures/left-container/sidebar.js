@@ -11,7 +11,7 @@ export class Sidebar extends Component {
           <ul className="sidebar-icons">
             {adventures.map((element, index) =>
                 <li onClick={this.props.onAdventureChange} key={index}>
-                  <Link to={`/przygody/${element.url}/${this.props.activeTopbarTab}`} className={`${element.en_url} ${this.props.isActive === element.en_url && 'icon-background-active'}`} data-api={element.en} data-url={element.url} data-adventure={element.en_url}>
+                  <Link to={`/przygody/${element.url}/${this.props.activeTopbarTab}`} className={`${element.en_url} ${this.props.isActive === element.en_url && 'active'}`} data-api={element.en} data-url={element.url} data-adventure={element.en_url}>
                     <span data-api={element.en} data-url={element.url} data-adventure={element.en_url} className={`hs-icon icon-${element.en_url}`}></span>
                     <p data-api={element.en} data-url={element.url} data-adventure={element.en_url}>{element.pl}</p>
                   </Link>

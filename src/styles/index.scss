@@ -874,21 +874,14 @@ footer{
         .adventure-content-navigation {
           display: inline-flex;
           @include transition(all ease .4s);
-          .active {
-            background-color: $sea-color;
-            color: $pearl;
-          }
           li {
             @include transition(all ease .4s);
             cursor: pointer;
             border-right: 1px solid $dark-grey;
             a {
+              color: $dark-grey;
               display: block;
               padding: 15.4px;
-            }
-            &:hover {
-              background-color: $sea-color;
-              color: $pearl;
             }
           }
         }
@@ -903,6 +896,17 @@ footer{
       .adventure-content {
         margin: 10px 0 0 10px;
         background-color: $light-grey;
+        .false-view{
+          display: none;
+        }
+        .active-view{
+          color: black;
+          display: block;
+        }
+        .inner-container{
+          padding: 10px;
+        }
+
         .cards.cards-container {
           @include scrollbar;
           text-align: center;
@@ -918,9 +922,7 @@ footer{
             }
           }
         }
-        .inner-container{
-          padding: 10px;
-        }
+
         .cost{
           .cost-description{
             span{
@@ -940,20 +942,79 @@ footer{
                 padding: 10px;
               }
               &:nth-child(odd){
-                background-color: rgba(255,255,255,.6);
+                background-color: $odd-row;
               }
               &:nth-child(even){
-                background-color: rgba(255,255,255,.5);
+                background-color: $even-row;
               }
             }
           }
         }
-        .false-view{
-          display: none;
+
+        .structure{
+
         }
-        .active-view{
-          color: black;
-          display: block;
+        .bosses{
+          p{
+            padding:5px;
+            background-color: $odd-row;
+          }
+          table{
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+            tbody{
+              tr{
+                th{
+                  border:1px solid $dark-grey;
+                }
+                td{
+                  @include transition(all ease .4s);
+                  padding:10px;
+                  cursor: pointer;
+                  border: 1px solid $dark-grey;
+                  div{
+                    display: flex;
+                    img{
+                      @include box-shadow(0, 0, 10px, black);
+                      @include transition(all ease .4s);
+                      width:70px;
+                      height:70px;
+                    }
+                    p{
+                      line-height: 70px;
+                      margin: 0 0 0 10px;
+                      background: transparent;
+                    }
+                  }
+                  &:hover{
+                    background-color: $sea-color;
+                    color: $pearl;
+                    img{
+                      @include box-shadow(0, 0, 10px, $pearl);
+                    }
+                  }
+                }
+                &:nth-child(odd){
+                  background-color: $odd-row;
+                }
+                &:nth-child(even){
+                  background-color: $even-row;
+                }
+                &:hover{
+                  td{
+                    &:first-child{
+                      background-color: $sea-color;
+                      color: $pearl;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .class-challanges{
+
         }
       }
     }

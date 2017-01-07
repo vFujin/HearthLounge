@@ -66,7 +66,10 @@ export class Adventures extends Component {
           <div className='right-container'>
             <PreAdventureSelect preSelect={this.state.preSelected}/>
             <div className={`content ${this.state.selected}`}>
-              <Topbar onDetailsChange={this.handleTopbarClick.bind(this)} selectedAdventureUrl={this.state.selectedAdventureUrl} isActive={this.state.topbarActiveTab} />
+              <Topbar onDetailsChange={this.handleTopbarClick.bind(this)}
+                      selectedAdventureUrl={this.state.selectedAdventureUrl}
+                      isActive={this.state.topbarActiveTab}
+                      sidebarActiveTab={this.state.sidebarActiveTab}/>
               <AdventureOverview adventureOverview={this.state.adventureOverview} />
               <AdventureContent sidebarActiveTab={this.state.sidebarActiveTab}
                                 details={this.state.details}

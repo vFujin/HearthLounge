@@ -75,15 +75,15 @@ export const adventure_details = [
           wing_title: "Rewir Arachnidów",
           bosses: [
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/anub-rekhan.jpg',
               boss: "Anub'Rekhan"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/faerlina.jpg',
               boss: "Wielka Wdowa Ferlina"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/maexxna.jpg',
               boss:"Maexxna"
             }
           ]
@@ -92,15 +92,15 @@ export const adventure_details = [
           wing_title: "Rewir Zarazy",
           bosses: [
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/noth.jpg',
               boss: "Nicz Siewca Zarazy"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/heigan.jpg',
               boss: "Heigan Nieczysty"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/loatheb.jpg',
               boss: "Ohydziarz"
             }
           ]
@@ -109,15 +109,15 @@ export const adventure_details = [
           wing_title: "Rewir Zbrojnych",
           bosses: [
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/razuvious.jpg',
               boss: "Instruktor Razuwiusz"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/gothik.jpg',
               boss: "Gotyk Żniwiarz"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/rivendare.jpg',
               boss: "Czterech Jeźdźców"
             }
           ]
@@ -126,19 +126,19 @@ export const adventure_details = [
           wing_title: "Rewir Konstruktorów",
           bosses: [
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/patchwerk.jpg',
               boss: "Łacior"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/grobbulus.jpg',
               boss: "Grobulus"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/gluth.jpg',
               boss: "Glut"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/thaddius.jpg',
               boss: "Thadius"
             }
           ]
@@ -147,11 +147,11 @@ export const adventure_details = [
           wing_title: "Leże Żmija Mrozu",
           bosses: [
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/sapphiron.jpg',
               boss: "Szafiron"
             },
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
               boss: "Kel'Thuzad"
             }
           ]

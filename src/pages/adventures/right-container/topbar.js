@@ -8,7 +8,7 @@ export class Topbar extends Component {
         <div className='topbar'>
           <ul className="adventure-content-navigation">
             {topbar_tabs.map( (element, index)=>
-              <li onClick={this.props.onDetailsChange} key={index} className={this.props.isActive === element.url && 'active'}>
+              <li onClick={this.props.onDetailsChange} key={index} className={`${this.props.isActive === element.url && 'active'} ${this.props.sidebarActiveTab}`}>
                 <Link data-tab={element.url} data-url={element.en_url} to={`/przygody/${this.props.selectedAdventureUrl}/${element.url}`}>
                   {element.tab}
                 </Link>
