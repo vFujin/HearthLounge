@@ -25,7 +25,7 @@ export class AdventureCards extends Component {
 
   render() {
     return (
-        <ul className={`cards-container ${this.props.active === 'cards' && 'active'}-view`}>
+        <ul className={`cards cards-container ${this.props.active === 'cards' && 'active'}-view`}>
           {this.state.cards.map((card, i)=>
               <li key={i}>
                 <img src={card.img} alt={`${card.name}`}/>

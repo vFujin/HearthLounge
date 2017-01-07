@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import unirest from 'unirest';
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
 import {PreAdventureSelect} from './right-container/pre-adventure-select';
@@ -19,9 +18,7 @@ export class Adventures extends Component {
       topbarActiveTab: '',
       topbarActiveTabUrl: '',
       sidebarActiveTab: null,
-      details: 'displayNone',
-
-      cards: []
+      details: 'displayNone'
     }
   }
 

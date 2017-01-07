@@ -903,7 +903,7 @@ footer{
       .adventure-content {
         margin: 10px 0 0 10px;
         background-color: $light-grey;
-        .cards-container {
+        .cards.cards-container {
           @include scrollbar;
           text-align: center;
           overflow: auto;
@@ -918,10 +918,39 @@ footer{
             }
           }
         }
+        .cost{
+          .cost-description{
+            padding: 10px;
+            span{
+              color: $pearl;
+            }
+          }
+          table{
+            width: 60%;
+            padding: 10px;
+            margin: 0 auto;
+            tr{
+              text-align: center;
+              //background-color: rgba(255,255,255,.5);
+              text-transform: uppercase;
+              td, th{
+                font-size: 14px;
+                padding: 10px;
+              }
+              &:nth-child(odd){
+                background-color: rgba(255,255,255,.6);
+              }
+              &:nth-child(even){
+                background-color: rgba(255,255,255,.5);
+              }
+            }
+          }
+        }
         .false-view{
           display: none;
         }
         .active-view{
+          color: black;
           display: block;
         }
       }
