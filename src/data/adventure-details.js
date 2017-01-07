@@ -1,27 +1,27 @@
 export const topbar_tabs = [
   {
-    en: 'cards',
+    en_url: 'cards',
     tab: 'Karty',
     url: 'karty'
 
   },
   {
-    en: 'cost',
+    en_url: 'cost',
     tab: 'Koszt',
     url: 'koszt'
   },
   {
-    en: 'structure',
+    en_url: 'structure',
     tab: 'Struktura',
     url: 'struktura'
   },
   {
-    en: 'bosses',
+    en_url: 'bosses',
     tab: 'Bossy',
     url: 'bossy'
   },
   {
-    en: 'class-challanges',
+    en_url: 'class-challanges',
     tab: 'Wyzwania Klasowe',
     url: 'wyzwania-klasowe'
   }
@@ -30,6 +30,8 @@ export const topbar_tabs = [
 export const adventure_details = [
     {
         adventure: "curse-of-naxxramas",
+        description: 'Klątwa Naxxramas jest pięcio skrzydłową przygodą, gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Naxxramas w World of Warcraft. Gracz pokonując skrzydła może dostać 30 nowych kart dodanych w tej przygodzie.',
+        img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/klatwa_naxxramas.jpg',
         cost: {
             description: "Przygoda Klątwa Naxxramas jest dodatkową płatną zawartością do Hearthsone'a. Jest możliwość kupna zawartości za pomocą zdobytego w grze złota oraz prawdziwej gotówki." +
             "Przygoda jest podzielona na 5 skrzydeł; każde skrzydło kosztuje 700 złota lub 5.99 euro (~25zł, w zależności od kursu Euro). Kupując całą przygodę (wszystkie skrzydła), koszt jednego skrzydła" +

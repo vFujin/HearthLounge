@@ -30,7 +30,7 @@ import {MeanStreetsOfGadgetzan} from './pages/expansions/mean-streets-of-gadgetz
 import {TheGrandTournament} from './pages/expansions/the-grand-tournament';
 import {WhispersOfTheOldGods} from './pages/expansions/whispers-of-the-old-gods';
 
-import {AdventureDetails} from './pages/adventures/right-container/adventure_details';
+import {AdventureContent} from './pages/adventures/right-container/adventure-content';
 
 import {AdventureBosses} from './pages/adventures/assets/bosses';
 import {AdventureCards} from './pages/adventures/assets/cards';
@@ -78,14 +78,13 @@ ReactDOM.render((
           <Route path="ciemne-zaulki-gadzetonu"  component={MeanStreetsOfGadgetzan} />
         </Route>
         <Route path="przygody"              component={Adventures}>
-          <Route path=":adventure"          component={AdventureDetails}>
+          <Route path=":adventure"          component={AdventureContent}>
             <Route path="karty"             component={AdventureCards}/>
             <Route path="koszt"             component={AdventureCost}/>
             <Route path="struktura"         component={AdventureStructure}/>
             <Route path="bossy"             component={AdventureBosses}/>
             <Route path="wyzwania-klasowe"  component={AdventureClassChallanges}/>
           </Route>
-          <Route path="czarna-gora"               component={AdventureDetails} />
         </Route>
         <Route path="stworz-talie-kart" component={CreateDeck} />
         <Route path="forum"             component={Forum} />

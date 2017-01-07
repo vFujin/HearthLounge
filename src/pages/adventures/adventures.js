@@ -4,18 +4,22 @@ import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
 import {PreAdventureSelect} from './right-container/pre-adventure-select';
 import {AdventureContent} from './right-container/adventure-content';
+import {AdventureOverview} from './right-container/adventure-overwiev'
 export class Adventures extends Component {
   constructor(props){
     super(props);
     this.state = {
       preSelected: 'displayBlock',
+      adventureOverview: 'displayBlock',
       selected: 'displayNone',
       adventure: 'displayNone',
-      details: 'displayNone',
-      selected_adventure_url: null,
+
+      selectedAdventureUrl: null,
 
       topbarActiveTab: '',
+      topbarActiveTabUrl: '',
       sidebarActiveTab: null,
+      details: 'displayNone',
 
       cards: []
     }
@@ -27,30 +31,36 @@ export class Adventures extends Component {
     let selectedAdventure = event.target.dataset['api'];
     let selectedAdventureUrl = event.target.dataset['url'];
     let selectedAdventureClass = event.target.dataset['adventure'];
-    let activeTab = this.state.sidebarActiveTab === null ?  selectedAdventureClass: selectedAdventureClass;
+    let activeTab = this.state.sidebarActiveTab === null ? selectedAdventureClass: selectedAdventureClass;
 
     this.setState({
       preSelected: preSelected,
       selected: isSelected,
       adventure: selectedAdventure,
-      selected_adventure_url: selectedAdventureUrl,
+      selectedAdventureUrl: selectedAdventureUrl,
       sidebarActiveTab: activeTab
     })
   }
 
   handleTopbarClick(event){
     let activeTab = event.target.dataset['tab'];
+    let activeTabUrl = event.target.dataset['url'];
     let isActive = this.state.topbarActiveTab === '' ? activeTab : activeTab;
-    let areDetailsActive = this.state.topbarActiveTab === 'displayNull' ? 'displayBlock' : 'displayBlock';
-    console.log(activeTab);
+    let isActiveUrl = this.state.topbarActiveTabUrl === '' ? activeTabUrl : activeTabUrl;
+    let areDetailsShown = this.state.topbarActiveTab === 'displayNone' ? 'displayBlock' : 'displayBlock';
+    let adventureOverview = this.state.adventureOverview === "displayBlock" ? "displayNone" : "displayNone";
+
     this.setState({
-      selected_adventure_url: this.state.selected_adventure_url,
+      adventureOverview: adventureOverview,
       topbarActiveTab: isActive,
-      details: areDetailsActive
+      topbarActiveTabUrl: isActiveUrl,
+      details: areDetailsShown
+
     })
   }
 
   render() {
+
     return (
         <div className="pageContainer adventures">
           <div className="left-container">
@@ -59,8 +69,13 @@ export class Adventures extends Component {
           <div className='right-container'>
             <PreAdventureSelect preSelect={this.state.preSelected}/>
             <div className={`content ${this.state.selected}`}>
-              <Topbar onDetailsChange={this.handleTopbarClick.bind(this)} selectedAdventureUrl={this.state.selected_adventure_url} isActive={this.state.topbarActiveTab} />
-              <AdventureContent sidebarActiveTab={this.state.sidebarActiveTab} details={this.state.details} topbarActiveTab={this.state.topbarActiveTab} adventure={this.state.adventure} />
+              <Topbar onDetailsChange={this.handleTopbarClick.bind(this)} selectedAdventureUrl={this.state.selectedAdventureUrl} isActive={this.state.topbarActiveTab} />
+              <AdventureOverview adventureOverview={this.state.adventureOverview} />
+              <AdventureContent sidebarActiveTab={this.state.sidebarActiveTab}
+                                details={this.state.details}
+                                topbarActiveTab={this.state.topbarActiveTab}
+                                adventure={this.state.adventure}
+                                topbarActiveTabUrl={this.state.topbarActiveTabUrl} />
             </div>
           </div>
 

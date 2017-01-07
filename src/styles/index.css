@@ -1243,17 +1243,17 @@ footer {
     text-transform: uppercase;
     opacity: .4;
     padding-top: 64px; }
-.adventures .right-container .topbar .adventure-content-navigation {
+.adventures .right-container .content .topbar .adventure-content-navigation {
   display: inline-flex;
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .adventures .right-container .topbar .adventure-content-navigation .active {
+  .adventures .right-container .content .topbar .adventure-content-navigation .active {
     background-color: #00a99c;
     color: #E7E2DA; }
-  .adventures .right-container .topbar .adventure-content-navigation li {
+  .adventures .right-container .content .topbar .adventure-content-navigation li {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
     -ms-transition: all ease 0.4s;
@@ -1261,35 +1261,43 @@ footer {
     transition: all ease 0.4s;
     cursor: pointer;
     border-right: 1px solid #474143; }
-    .adventures .right-container .topbar .adventure-content-navigation li a {
+    .adventures .right-container .content .topbar .adventure-content-navigation li a {
       display: block;
       padding: 15.4px; }
-    .adventures .right-container .topbar .adventure-content-navigation li:hover {
+    .adventures .right-container .content .topbar .adventure-content-navigation li:hover {
       background-color: #00a99c;
       color: #E7E2DA; }
-.adventures .right-container .adventure-content {
+.adventures .right-container .content .about-adventure div {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px; }
+.adventures .right-container .content .adventure-content {
   margin: 10px 0 0 10px;
   background-color: #A69E9D; }
-  .adventures .right-container .adventure-content .cards-container {
+  .adventures .right-container .content .adventure-content .cards-container {
     text-align: center;
     overflow: auto;
     width: 100%;
     height: 749px; }
-    .adventures .right-container .adventure-content .cards-container::-webkit-scrollbar {
+    .adventures .right-container .content .adventure-content .cards-container::-webkit-scrollbar {
       width: 13px; }
-    .adventures .right-container .adventure-content .cards-container::-webkit-scrollbar-thumb {
+    .adventures .right-container .content .adventure-content .cards-container::-webkit-scrollbar-thumb {
       background-color: #474143;
       border-radius: 0; }
-    .adventures .right-container .adventure-content .cards-container::-webkit-scrollbar-thumb:hover {
+    .adventures .right-container .content .adventure-content .cards-container::-webkit-scrollbar-thumb:hover {
       background-color: #474143; }
-    .adventures .right-container .adventure-content .cards-container::-webkit-scrollbar-track {
+    .adventures .right-container .content .adventure-content .cards-container::-webkit-scrollbar-track {
       background-color: #A69E9D; }
-    .adventures .right-container .adventure-content .cards-container li {
+    .adventures .right-container .content .adventure-content .cards-container li {
       width: 16%;
       display: inline-block; }
-      .adventures .right-container .adventure-content .cards-container li img {
+      .adventures .right-container .content .adventure-content .cards-container li img {
         width: 100%;
         height: 100%; }
+  .adventures .right-container .content .adventure-content .false-view {
+    display: none; }
+  .adventures .right-container .content .adventure-content .active-view {
+    display: block; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }
