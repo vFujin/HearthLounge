@@ -30,7 +30,7 @@ import {MeanStreetsOfGadgetzan} from './pages/expansions/mean-streets-of-gadgetz
 import {TheGrandTournament} from './pages/expansions/the-grand-tournament';
 import {WhispersOfTheOldGods} from './pages/expansions/whispers-of-the-old-gods';
 
-import {AdventureDetails} from './pages/adventures/adventure_details';
+import {AdventureDetails} from './pages/adventures/right-container/adventure_details';
 
 import {AdventureBosses} from './pages/adventures/assets/bosses';
 import {AdventureCards} from './pages/adventures/assets/cards';

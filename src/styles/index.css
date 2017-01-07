@@ -871,6 +871,9 @@ footer {
                 opacity: .6; }
                 .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .views span {
                   font-size: 10px; }
+                .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .views p {
+                  padding: 0;
+                  margin: 0; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .comments {
                 text-align: center; }
               .home ul.home__list .decks .right-container .hot-decks .deck .body .body-footer .votes {
@@ -1230,6 +1233,16 @@ footer {
         margin-left: 10px;
         margin-bottom: 0;
         line-height: 50px; }
+.adventures .right-container .before-adventure-pick {
+  width: calc(100% - 10px);
+  height: 100%;
+  margin: 0 10px; }
+  .adventures .right-container .before-adventure-pick p {
+    width: 100%;
+    font-size: 40px;
+    text-transform: uppercase;
+    opacity: .4;
+    padding-top: 64px; }
 .adventures .right-container .topbar .adventure-content-navigation {
   display: inline-flex;
   -webkit-transition: all ease 0.4s;
