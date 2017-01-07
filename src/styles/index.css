@@ -1294,10 +1294,10 @@ footer {
       .adventures .right-container .content .adventure-content .cards.cards-container li img {
         width: 100%;
         height: 100%; }
-  .adventures .right-container .content .adventure-content .cost .cost-description {
+  .adventures .right-container .content .adventure-content .inner-container {
     padding: 10px; }
-    .adventures .right-container .content .adventure-content .cost .cost-description span {
-      color: #E7E2DA; }
+  .adventures .right-container .content .adventure-content .cost .cost-description span {
+    color: #E7E2DA; }
   .adventures .right-container .content .adventure-content .cost table {
     width: 60%;
     padding: 10px;

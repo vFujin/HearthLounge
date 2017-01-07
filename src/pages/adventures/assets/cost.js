@@ -5,7 +5,7 @@ export class AdventureCost extends Component {
     let countWings = adventure_details[0].cost.wings.length;
     console.log(countWings);
     return (
-        <div className={`cost ${this.props.active === 'cost' && 'active'}-view`}>
+        <div className={`cost inner-container ${this.props.active === 'cost' && 'active'}-view`}>
           {adventure_details.map( (element, index)=>
           <div key={index}>
             <div className="cost-description">

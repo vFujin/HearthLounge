@@ -72,8 +72,22 @@ export const adventure_details = [
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
+          wing_pic: "",
           wing_title: "Rewir Arachnidów",
-          bosses: ["Anub'Rekhan", "Wielka Wdowa Ferlina", "Maexxna"]
+          bosses: [
+            {
+              boss_img: '',
+              boss: "Anub'Rekhan"
+            },
+            {
+              boss_img: '',
+              boss: "Wielka Wdowa Ferlina"
+            },
+            {
+              boss_img: '',
+              boss:"Maexxna"
+            }
+          ]
         },
         {
           wing_title: "Rewir Zarazy",
@@ -96,7 +110,9 @@ export const adventure_details = [
     structure: {
       wing_amount: 5,
       wing_details: [
-        "Każde skrzydło jest udostępniane"
+        "Każde skrzydło było otwierane raz na tydzień przez 5 tygodni",
+        "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
+        "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
       ],
       bosses_amount: 15,
       class_challanges: 9,
