@@ -1300,6 +1300,7 @@ footer {
   .adventures .right-container .content .adventure-content .inner-container {
     padding: 10px; }
   .adventures .right-container .content .adventure-content .cards.cards-container {
+    background: #E7E2DA;
     text-align: center;
     overflow: auto;
     width: 100%;

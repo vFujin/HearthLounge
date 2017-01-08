@@ -912,6 +912,7 @@ footer{
 
         .cards.cards-container {
           @include scrollbar;
+          background: $pearl;
           text-align: center;
           overflow: auto;
           width: 100%;

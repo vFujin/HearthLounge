@@ -166,6 +166,7 @@ export const adventure_details = [
         "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
       ],
       bosses_amount: 15,
+      bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
       class_challanges: 9,
       class_challanges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
     },
@@ -208,7 +209,9 @@ export const adventure_details = [
       }
     ],
     cards: {
-      card_amount: 30
+      card_amount: 30,
+      legendary: 5,
+      class_ones: 18
     }
   },
   {
@@ -255,87 +258,95 @@ export const adventure_details = [
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
-          wing_title: "Rewir Arachnidów",
+          wing_title: "Otchłań Czarnej Góry",
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/anub-rekhan.jpg',
-              boss: "Anub'Rekhan"
+              boss: "Ponury Opój"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/faerlina.jpg',
-              boss: "Wielka Wdowa Ferlina"
+              boss: "Arena Czarnorytnych"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/maexxna.jpg',
-              boss:"Maexxna"
+              boss:"Imperator Thaurissan"
             }
           ]
         },
         {
-          wing_title: "Rewir Zarazy",
+          wing_title: "Ognista Czeluść",
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/noth.jpg',
-              boss: "Nicz Siewca Zarazy"
+              boss: "Garr"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/heigan.jpg',
-              boss: "Heigan Nieczysty"
+              boss: "Baron Geddon"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/loatheb.jpg',
-              boss: "Ohydziarz"
+              boss: "Ragnaros Władca Ognia"
             }
           ]
         },
         {
-          wing_title: "Rewir Zbrojnych",
+          wing_title: "Iglica Czarnej Góry",
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/razuvious.jpg',
-              boss: "Instruktor Razuwiusz"
+              boss: "Nadzorca Omokk"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/gothik.jpg',
-              boss: "Gotyk Żniwiarz"
+              boss: "Generał Drakkisat"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/rivendare.jpg',
-              boss: "Czterech Jeźdźców"
+              boss: "Rwij Czarnoręki"
             }
           ]
         },
         {
-          wing_title: "Rewir Konstruktorów",
+          wing_title: "Leże Czarnoskrzydłego",
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/patchwerk.jpg',
-              boss: "Łacior"
+              boss: "Brzytworóg Nieokiełznany"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/grobbulus.jpg',
-              boss: "Grobulus"
+              boss: "Vaelastraz Plugawy"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/gluth.jpg',
-              boss: "Glut"
+              boss: "Chromagus"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/thaddius.jpg',
-              boss: "Thadius"
+              boss: "Lord Viktor Nefarius"
             }
           ]
         },
         {
-          wing_title: "Leże Żmija Mrozu",
+          wing_title: "Ukryte Laboratorium",
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/sapphiron.jpg',
-              boss: "Szafiron"
+              boss: "Omnotron"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
-              boss: "Kel'Thuzad"
+              boss: "Maloriak"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
+              boss: "Atramedes"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
+              boss: "Nefarian"
             }
           ]
         }
@@ -348,50 +359,53 @@ export const adventure_details = [
         "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
         "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
       ],
-      bosses_amount: 15,
+      bosses_amount: 17,
+      bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
       class_challanges: 9,
       class_challanges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
     },
     class_challanges: [
       {
         class: 'druid',
-        card_reward: "Mounted Raptor"
+        card_reward: "Volcanic Lumberer"
       },
       {
         class: 'hunter',
-        card_reward: "Dart Trap"
+        card_reward: "Quick Shot"
       },
       {
         class: 'mage',
-        card_reward: "Animated Armor"
+        card_reward: "Dragon's Breath"
       },
       {
         class: 'paladin',
-        card_reward: "Keeper of Uldaman"
+        card_reward: "Solemn Vigil"
       },
       {
         class: 'priest',
-        card_reward: "Entomb"
+        card_reward: "Twilight Whelp"
       },
       {
         class: 'rogue',
-        card_reward: "Tomb Pillager"
+        card_reward: "Dark Iron Skulker"
       },
       {
         class: 'shaman',
-        card_reward: "Everyfin is Awesome"
+        card_reward: "Lava Shock"
       },
       {
         class: 'warlock',
-        card_reward: "Dark Peddler"
+        card_reward: "Demonwrath"
       },
       {
         class: 'warrior',
-        card_reward: "Obsidian Destroyer"
+        card_reward: "Axe Flinger"
       }
     ],
     cards: {
-      card_amount: 30
+      card_amount: 31,
+      legendary: 5,
+      class_ones: 18
     }
   }
 ];
