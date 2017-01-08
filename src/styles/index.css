@@ -1283,6 +1283,11 @@ footer {
       color: #474143;
       display: block;
       padding: 15.4px; }
+.adventures .right-container .content .about-adventure .false-view {
+  display: none; }
+.adventures .right-container .content .about-adventure .active-view {
+  color: black;
+  display: block; }
 .adventures .right-container .content .about-adventure div {
   width: 100%;
   text-align: center;

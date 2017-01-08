@@ -70,7 +70,7 @@ export class Adventures extends Component {
                       selectedAdventureUrl={this.state.selectedAdventureUrl}
                       isActive={this.state.topbarActiveTab}
                       sidebarActiveTab={this.state.sidebarActiveTab}/>
-              <AdventureOverview adventureOverview={this.state.adventureOverview} />
+              <AdventureOverview adventureOverview={this.state.adventureOverview} sidebarActiveTab={this.state.sidebarActiveTab} />
               <AdventureContent sidebarActiveTab={this.state.sidebarActiveTab}
                                 details={this.state.details}
                                 topbarActiveTab={this.state.topbarActiveTab}

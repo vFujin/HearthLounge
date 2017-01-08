@@ -218,8 +218,8 @@ export const adventure_details = [
     adventure: "blackrock-mountain",
     singular_adventure_name: "Czarna Góra",
     plural_aventure_name: "Czarnej Góry",
-    description: 'Czarna góra jest cztero skrzydłową przygodą, gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Blackrock w World of Warcraft. Gracz pokonując skrzydła może dostać 30 nowych kart dodanych w tej przygodzie.',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/klatwa_naxxramas.jpg',
+    description: 'gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Blackrock w World of Warcraft',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/czarna_gora.jpg',
     cost: {
       wings: [
         {
@@ -406,6 +406,177 @@ export const adventure_details = [
       card_amount: 31,
       legendary: 5,
       class_ones: 18
+    }
+  },
+  {
+    adventure: "the-league-of-explorers",
+    singular_adventure_name: "Liga Eksplorerów",
+    plural_aventure_name: "Ligi Eksplorerów",
+    description: '',
+    img: '',
+    cost: {
+      wings: [
+        {
+          desc: 'Pierwsze',
+          gold: 700,
+          eur: 5.99,
+          pln: 25.19
+        },
+        {
+          desc: 'Drugie',
+          gold: 1400,
+          eur: 8.99,
+          pln: 37.75
+        },
+        {
+          desc: 'Trzecie',
+          gold: 2100,
+          eur: 13.99,
+          pln: 58.75
+        },
+        {
+          desc: 'Czwarte',
+          gold: 2800,
+          eur: 17.99,
+          pln: 75.55
+        },
+        {
+          desc: 'Piąte',
+          gold: 3500,
+          eur: 21.99,
+          pln: 92.35
+        }
+      ],
+    },
+    bosses: {
+      description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
+      details: [
+        {
+          wing_title: "Świątynia Ozyrysa",
+          bosses: [
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/zinaar.jpg',
+              boss: "Zinaar"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/sun-raider-phaerix.jpg',
+              boss: "Słoneczny Grabieżca Faeriks"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/temple-escape.jpg',
+              boss:"Ucieczka ze świątyni"
+            }
+          ]
+        },
+        {
+          wing_title: "Uldaman",
+          bosses: [
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/chieftain-scarvash.jpg',
+              boss: "Wódz"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/mine-cart-rush.jpg',
+              boss: "Wagonik Górniczy"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/archaedas.jpg',
+              boss: "Archaedas"
+            }
+          ]
+        },
+        {
+          wing_title: "Zrójnowane Miasto",
+          bosses: [
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lord-slitherspear.jpg',
+              boss: "Lord Ślizgodzid"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/giantfin.jpg',
+              boss: "Wielkopłetw"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lady-naz-jar.jpg',
+              boss: "Lady Naz'Jar"
+            }
+          ]
+        },
+        {
+          wing_title: "Sala Odkrywców",
+          bosses: [
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/skelesaurus-hex.jpg',
+              boss: "Szkielezaurus Hex"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/the-steel-sentinel.jpg',
+              boss: "Stalowy Watrownik"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/arch-thief-rafaam.jpg',
+              boss: "Arcyzłodziej Rafaam"
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/rafaam-unleashed.jpg',
+              boss: "Wyzwolony Rafaam"
+            }
+          ]
+        }
+      ]
+    },
+    structure: {
+      wing_amount: 4,
+      wing_details: [
+        "Każde skrzydło było otwierane raz na tydzień przez 4 tygodnie",
+        "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
+        "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+      ],
+      bosses_amount: 13,
+      bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+      class_challanges: 9,
+      class_challanges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+    },
+    class_challanges: [
+      {
+        class: 'druid',
+        card_reward: "Volcanic Lumberer"
+      },
+      {
+        class: 'hunter',
+        card_reward: "Quick Shot"
+      },
+      {
+        class: 'mage',
+        card_reward: "Dragon's Breath"
+      },
+      {
+        class: 'paladin',
+        card_reward: "Solemn Vigil"
+      },
+      {
+        class: 'priest',
+        card_reward: "Twilight Whelp"
+      },
+      {
+        class: 'rogue',
+        card_reward: "Dark Iron Skulker"
+      },
+      {
+        class: 'shaman',
+        card_reward: "Lava Shock"
+      },
+      {
+        class: 'warlock',
+        card_reward: "Demonwrath"
+      },
+      {
+        class: 'warrior',
+        card_reward: "Axe Flinger"
+      }
+    ],
+    cards: {
+      card_amount: 45
     }
   }
 ];
