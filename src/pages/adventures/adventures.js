@@ -22,7 +22,11 @@ export class Adventures extends Component {
       details: 'displayNone',
 
       //Bosses
-      activeBoss: null
+      activeBoss: null,
+      activeBossUrl: null,
+      activeBossImg: null,
+      activeTableView: 'displayBlock',
+      activeBossView: 'displayNone'
     }
   }
 
@@ -61,8 +65,16 @@ export class Adventures extends Component {
 
   handleBossClick(event){
     let activeBoss = event.target.dataset['boss'];
+    let activeBossUrl = event.target.dataset['url'];
+    let activeBossImg = event.target.dataset['img'];
+    let activeTableView = this.state.activeBossView === 'displayBlock' ? 'displayNone' : 'displayNone';
+    let activeBossView = this.state.activeBossView === 'displayNone' ? 'displayBlock' : 'displayBlock';
     this.setState({
-      activeBoss: activeBoss
+      activeBoss: activeBoss,
+      activeBossUrl: activeBossUrl,
+      activeBossImg: activeBossImg,
+      activeTableView: activeTableView,
+      activeBossView: activeBossView
     })
   }
 
@@ -82,13 +94,17 @@ export class Adventures extends Component {
                       sidebarActiveTab={this.state.sidebarActiveTab}/>
               <AdventureOverview adventureOverview={this.state.adventureOverview} sidebarActiveTab={this.state.sidebarActiveTab} />
               <AdventureContent sidebarActiveTab={this.state.sidebarActiveTab}
-                                details={this.state.details}
-                                topbarActiveTab={this.state.topbarActiveTab}
                                 adventure={this.state.adventure}
+                                details={this.state.details}
                                 topbarActiveTabUrl={this.state.topbarActiveTabUrl}
+                                selectedTopbarTab={this.state.topbarActiveTab}
                                 selectedAdventureUrl={this.state.selectedAdventureUrl}
                                 handleBossClick={this.handleBossClick.bind(this)}
-                                activeBoss={this.state.activeBoss}/>
+                                activeTableView={this.state.activeTableView}
+                                activeBoss={this.state.activeBoss}
+                                activeBossUrl={this.state.activeBossUrl}
+                                activeBossImg={this.state.activeBossImg}
+                                activeBossView={this.state.activeBossView}/>
             </div>
           </div>
 

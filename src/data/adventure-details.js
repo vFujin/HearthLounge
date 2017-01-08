@@ -629,7 +629,7 @@ export const adventure_details = [
     singular_adventure_name: "Pewnej Nocy w Karazhanie",
     plural_aventure_name: "Pewnej Nocy w Karazhanie",
     description: '',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/karazhan.jpg',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/pewnej_nocy_w_karazhanie.jpg',
     cost: {
       wings: [
         {
@@ -751,9 +751,9 @@ export const adventure_details = [
           wing_title: "Prolog",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/ne-night-at-karazhan/prologue/an-uninvited-guest.jpg',
-              boss: 'Malkezar',
-              url: 'malkezar'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/prologue/an-uninvited-guest.jpg',
+              boss: 'Nieproszony Gość',
+              url: 'nieproszony-gosc'
             }
           ]
         }

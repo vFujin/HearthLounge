@@ -584,7 +584,7 @@ a:active, a:hover, a:link, a:visited {
       -ms-transition: border 0.4s ease;
       -o-transition: border 0.4s ease;
       transition: border 0.4s ease;
-      font-size: 28px;
+      font-size: 26px;
       float: left;
       margin-top: -20px;
       border-width: 2px;
@@ -598,7 +598,7 @@ a:active, a:hover, a:link, a:visited {
       line-height: 0; }
     .submenu li a {
       clear: both;
-      padding: 30px 5px; }
+      padding: 25px 5px; }
 
 html, body {
   height: 100%; }
@@ -1304,6 +1304,36 @@ footer {
     display: block; }
   .adventures .right-container .content .adventure-content .inner-container {
     padding: 10px; }
+    .adventures .right-container .content .adventure-content .inner-container .boss-guide-header {
+      display: flex;
+      margin-bottom: 10px; }
+      .adventures .right-container .content .adventure-content .inner-container .boss-guide-header p {
+        background: transparent;
+        width: 20%;
+        text-align: center;
+        margin: 0;
+        border-bottom: 1px solid #474143; }
+      .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul {
+        width: 80%;
+        display: flex;
+        justify-content: flex-end; }
+        .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          -ms-transition: all ease 0.4s;
+          -o-transition: all ease 0.4s;
+          transition: all ease 0.4s;
+          cursor: pointer;
+          width: 10%;
+          text-align: center;
+          border-bottom: 1px solid #474143;
+          margin-right: 20px; }
+          .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child {
+            width: 20%;
+            margin-right: 0; }
+          .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:hover {
+            color: #E7E2DA;
+            border-color: #E7E2DA; }
   .adventures .right-container .content .adventure-content .cards.cards-container {
     background: #E7E2DA;
     text-align: center;
@@ -1363,9 +1393,9 @@ footer {
       .adventures .right-container .content .adventure-content .bosses table tbody tr td a {
         display: flex; }
         .adventures .right-container .content .adventure-content .bosses table tbody tr td a img {
-          -webkit-box-shadow: inset 0 0 10px black;
-          -moz-box-shadow: inset 0 0 10px black;
-          box-shadow: inset 0 0 10px black;
+          -webkit-box-shadow: 0 0 10px black;
+          -moz-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
           -ms-transition: all ease 0.4s;

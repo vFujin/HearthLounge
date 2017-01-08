@@ -38,7 +38,8 @@ import {AdventureClassChallanges} from './pages/adventures/assets/class-challang
 import {AdventureCost} from './pages/adventures/assets/cost';
 import {AdventureStructure} from './pages/adventures/assets/structure';
 
-import {BossGuides} from './pages/adventures/assets/bosses/bosses'
+import {BossGuide} from './pages/adventures/assets/bosses/boss-guide';
+import {BossGuideNav} from './pages/adventures/assets/bosses/boss-guide-nav';
 
 import './styles/index.css';
 import './styles/mobile.css';
@@ -85,7 +86,9 @@ ReactDOM.render((
             <Route path="koszt"             component={AdventureCost}/>
             <Route path="struktura"         component={AdventureStructure}/>
             <Route path="bossy"             component={AdventureBosses}>
-              <Route path=":bossy"          component={BossGuides}/>
+              <Route path=":bossy"          component={BossGuide}>
+                <Route path=":boss"         component={BossGuideNav} />
+              </Route>
             </Route>
             <Route path="wyzwania-klasowe"  component={AdventureClassChallanges}/>
           </Route>

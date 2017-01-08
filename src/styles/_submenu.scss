@@ -28,7 +28,7 @@
     }
     span{
       @include transition(border .4s ease);
-      font-size: 28px;
+      font-size: 26px;
       float: left;
       margin-top: -20px;
       border-width: 2px;
@@ -45,7 +45,7 @@
     }
     a{
       clear: both;
-      padding: 30px 5px;
+      padding: 25px 5px;
     }
   }
 }
