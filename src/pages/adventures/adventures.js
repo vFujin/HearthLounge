@@ -8,17 +8,21 @@ export class Adventures extends Component {
   constructor(props){
     super(props);
     this.state = {
+      //Sidebar
       preSelected: 'displayBlock',
       adventureOverview: 'displayBlock',
       selected: 'displayNone',
       adventure: 'displayNone',
-
       selectedAdventureUrl: null,
 
+      //Topbar
       topbarActiveTab: '',
       topbarActiveTabUrl: '',
       sidebarActiveTab: null,
-      details: 'displayNone'
+      details: 'displayNone',
+
+      //Bosses
+      activeBoss: null
     }
   }
 
@@ -55,6 +59,13 @@ export class Adventures extends Component {
     })
   }
 
+  handleBossClick(event){
+    let activeBoss = event.target.dataset['boss'];
+    this.setState({
+      activeBoss: activeBoss
+    })
+  }
+
   render() {
 
     return (
@@ -74,7 +85,10 @@ export class Adventures extends Component {
                                 details={this.state.details}
                                 topbarActiveTab={this.state.topbarActiveTab}
                                 adventure={this.state.adventure}
-                                topbarActiveTabUrl={this.state.topbarActiveTabUrl} />
+                                topbarActiveTabUrl={this.state.topbarActiveTabUrl}
+                                selectedAdventureUrl={this.state.selectedAdventureUrl}
+                                handleBossClick={this.handleBossClick.bind(this)}
+                                activeBoss={this.state.activeBoss}/>
             </div>
           </div>
 

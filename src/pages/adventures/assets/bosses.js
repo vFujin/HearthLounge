@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 import {adventure_details} from '../../../data/adventure-details';
+import {BossGuide} from './bosses/bosses';
 export class AdventureBosses extends Component {
   render() {
     return (
@@ -13,20 +15,21 @@ export class AdventureBosses extends Component {
                 <tr key={index}>
                   <th className={`${this.props.adventure} active`}>{element.wing_title}</th>
                   {element.bosses.map((element, index)=>
-                    <td key={index}>
-                      <div>
-                        <img src={element.img} alt={`${element.img}'s image`}/>
-                        <p key={index}>{element.boss}</p>
-                      </div>
+                    <td key={index} onClick={this.props.handleBossClick} data-boss={element.boss}>
+                      <Link data-boss={element.boss} to={`/przygody/${this.props.selectedAdventureUrl}/${this.props.selectedTopbarTab}/${element.url}`}>
+                        <img data-boss={element.boss} src={element.img} alt={`${element.boss}'s illustration`}/>
+                        <p data-boss={element.boss} key={index}>{element.boss}</p>
+                      </Link>
                     </td>
                   )}
                 </tr>
                 )}
-
                 </tbody>
               </table>
+              <BossGuide activeBoss={this.props.activeBoss}/>
             </div>
           )}
+
         </div>
     );
   }

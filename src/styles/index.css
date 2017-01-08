@@ -1349,6 +1349,7 @@ footer {
     text-align: center;
     border-collapse: collapse; }
     .adventures .right-container .content .adventure-content .bosses table tbody tr th {
+      width: 15%;
       border: 1px solid #474143; }
     .adventures .right-container .content .adventure-content .bosses table tbody tr td {
       -webkit-transition: all ease 0.4s;
@@ -1359,12 +1360,12 @@ footer {
       padding: 10px;
       cursor: pointer;
       border: 1px solid #474143; }
-      .adventures .right-container .content .adventure-content .bosses table tbody tr td div {
+      .adventures .right-container .content .adventure-content .bosses table tbody tr td a {
         display: flex; }
-        .adventures .right-container .content .adventure-content .bosses table tbody tr td div img {
-          -webkit-box-shadow: 0 0 10px black;
-          -moz-box-shadow: 0 0 10px black;
-          box-shadow: 0 0 10px black;
+        .adventures .right-container .content .adventure-content .bosses table tbody tr td a img {
+          -webkit-box-shadow: inset 0 0 10px black;
+          -moz-box-shadow: inset 0 0 10px black;
+          box-shadow: inset 0 0 10px black;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
           -ms-transition: all ease 0.4s;
@@ -1372,8 +1373,8 @@ footer {
           transition: all ease 0.4s;
           width: 70px;
           height: 70px; }
-        .adventures .right-container .content .adventure-content .bosses table tbody tr td div p {
-          line-height: 70px;
+        .adventures .right-container .content .adventure-content .bosses table tbody tr td a p {
+          line-height: 60px;
           margin: 0 0 0 10px;
           background: transparent; }
       .adventures .right-container .content .adventure-content .bosses table tbody tr td:hover {

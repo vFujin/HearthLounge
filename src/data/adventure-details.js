@@ -76,15 +76,18 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/anub-rekhan.jpg',
-              boss: "Anub'Rekhan"
+              boss: "Anub'Rekhan",
+              url: 'anubrekhan'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/faerlina.jpg',
-              boss: "Wielka Wdowa Ferlina"
+              boss: "Wielka Wdowa Ferlina",
+              url: 'wielka-wdowa-ferlina'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/maexxna.jpg',
-              boss:"Maexxna"
+              boss:"Maexxna",
+              url: 'maexxna'
             }
           ]
         },
@@ -93,15 +96,18 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/noth.jpg',
-              boss: "Nicz Siewca Zarazy"
+              boss: "Nicz Siewca Zarazy",
+              url: 'nicz-siewca-zarazy'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/heigan.jpg',
-              boss: "Heigan Nieczysty"
+              boss: "Heigan Nieczysty",
+              url: 'heigan-nieczysty'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/loatheb.jpg',
-              boss: "Ohydziarz"
+              boss: "Ohydziarz",
+              url: 'ohydziarz'
             }
           ]
         },
@@ -110,15 +116,18 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/razuvious.jpg',
-              boss: "Instruktor Razuwiusz"
+              boss: "Instruktor Razuwiusz",
+              url: 'instruktor-razuwiusz'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/gothik.jpg',
-              boss: "Gotyk Żniwiarz"
+              boss: "Gotyk Żniwiarz",
+              url: 'gotyk-zwniwiarz'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/rivendare.jpg',
-              boss: "Czterech Jeźdźców"
+              boss: "Czterech Jeźdźców",
+              url: 'czterech-jezdzcow'
             }
           ]
         },
@@ -127,19 +136,23 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/patchwerk.jpg',
-              boss: "Łacior"
+              boss: "Łacior",
+              url: 'lacior'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/grobbulus.jpg',
-              boss: "Grobulus"
+              boss: "Grobulus",
+              url: 'grobulus'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/gluth.jpg',
-              boss: "Glut"
+              boss: "Glut",
+              url: 'glut'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/thaddius.jpg',
-              boss: "Thadius"
+              boss: "Thadius",
+              url: 'thadius'
             }
           ]
         },
@@ -148,11 +161,13 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/sapphiron.jpg',
-              boss: "Szafiron"
+              boss: "Szafiron",
+              url: 'szafiron'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
-              boss: "Kel'Thuzad"
+              boss: "Kel'Thuzad",
+              url: 'kelthuzad'
             }
           ]
         }
@@ -261,16 +276,19 @@ export const adventure_details = [
           wing_title: "Otchłań Czarnej Góry",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/anub-rekhan.jpg',
-              boss: "Ponury Opój"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-depths/grim-guzzler.jpg',
+              boss: "Ponury Opój",
+              url: 'ponury-opoj'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/faerlina.jpg',
-              boss: "Arena Czarnorytnych"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-depths/dark-iron-arena.jpg',
+              boss: "Arena Czarnorytnych",
+              url: 'arena-czarnorytnych'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/maexxna.jpg',
-              boss:"Imperator Thaurissan"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-depths/emperor-thaurissan.jpg',
+              boss:"Imperator Thaurissan",
+              url: 'imperator-thaurissan'
             }
           ]
         },
@@ -278,16 +296,19 @@ export const adventure_details = [
           wing_title: "Ognista Czeluść",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/noth.jpg',
-              boss: "Garr"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/molten-core/garr.jpg',
+              boss: "Garr",
+              url: 'garr'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/heigan.jpg',
-              boss: "Baron Geddon"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/molten-core/baron-geddon.jpg',
+              boss: "Baron Geddon",
+              url: 'baron-geddon'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/loatheb.jpg',
-              boss: "Ragnaros Władca Ognia"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/molten-core/ragnaros.jpg',
+              boss: "Ragnaros Władca Ognia",
+              url: 'ragnaros-wladca-ognia'
             }
           ]
         },
@@ -295,16 +316,19 @@ export const adventure_details = [
           wing_title: "Iglica Czarnej Góry",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/razuvious.jpg',
-              boss: "Nadzorca Omokk"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-spire/highlord-omokk.jpg',
+              boss: "Nadzorca Omokk",
+              url: 'nadzorca-omokk'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/gothik.jpg',
-              boss: "Generał Drakkisat"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-spire/general-drakkisath.jpg',
+              boss: "Generał Drakkisat",
+              url: 'general-drakkisat'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/rivendare.jpg',
-              boss: "Rwij Czarnoręki"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-spire/rend-blackhand.jpg',
+              boss: "Rwij Czarnoręki",
+              url: 'rwij-czarnoreki'
             }
           ]
         },
@@ -312,20 +336,24 @@ export const adventure_details = [
           wing_title: "Leże Czarnoskrzydłego",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/patchwerk.jpg',
-              boss: "Brzytworóg Nieokiełznany"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackwing-lair/razorgore.jpg',
+              boss: "Brzytworóg Nieokiełznany",
+              url: 'brzytworog-nieokielznany'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/grobbulus.jpg',
-              boss: "Vaelastraz Plugawy"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackwing-lair/vaelastrasz.jpg',
+              boss: "Vaelastraz Plugawy",
+              url: 'vaelastraz-plugawy'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/gluth.jpg',
-              boss: "Chromagus"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackwing-lair/chromaggus.jpg',
+              boss: "Chromagus",
+              url: 'chromagus'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/thaddius.jpg',
-              boss: "Lord Viktor Nefarius"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackwing-lair/nefarius.jpg',
+              boss: "Lord Viktor Nefarius",
+              url: 'lord-viktor-nefarius'
             }
           ]
         },
@@ -333,20 +361,24 @@ export const adventure_details = [
           wing_title: "Ukryte Laboratorium",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/sapphiron.jpg',
-              boss: "Omnotron"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/hidden-laboratory/omnotron.jpg',
+              boss: "Omnotron",
+              url: 'omnotron'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
-              boss: "Maloriak"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/hidden-laboratory/maloriak.jpg',
+              boss: "Maloriak",
+              url: 'maloriak'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
-              boss: "Atramedes"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/hidden-laboratory/atramedes.jpg',
+              boss: "Atramedes",
+              url: 'atramedes'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
-              boss: "Nefarian"
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/hidden-laboratory/nefarian.jpg',
+              boss: "Nefarian",
+              url: 'nefarian'
             }
           ]
         }
@@ -456,15 +488,18 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/zinaar.jpg',
-              boss: "Zinaar"
+              boss: "Zinaar",
+              url: 'zinaar'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/sun-raider-phaerix.jpg',
-              boss: "Słoneczny Grabieżca Faeriks"
+              boss: "Słoneczny Grabieżca Faeriks",
+              url: 'sloneczny-grabiezca-faeriks'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/temple-escape.jpg',
-              boss:"Ucieczka ze świątyni"
+              boss:"Ucieczka ze świątyni",
+              url: 'ucieczka-ze-swiatyni'
             }
           ]
         },
@@ -473,15 +508,18 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/chieftain-scarvash.jpg',
-              boss: "Wódz Skarwosz"
+              boss: "Wódz Skarwosz",
+              url: 'wodz-skarwosz'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/mine-cart-rush.jpg',
-              boss: "Wagonik Górniczy"
+              boss: "Wagonik Górniczy",
+              url: 'wagonik-gorniczy'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/archaedas.jpg',
-              boss: "Archaedas"
+              boss: "Archaedas",
+              url: 'archaedas'
             }
           ]
         },
@@ -490,15 +528,18 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lord-slitherspear.jpg',
-              boss: "Lord Ślizgodzid"
+              boss: "Lord Ślizgodzid",
+              url: 'lord-slizgodzid'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/giantfin.jpg',
-              boss: "Wielkopłetw"
+              boss: "Wielkopłetw",
+              url: 'wielkopletw'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lady-naz-jar.jpg',
-              boss: "Lady Naz'Jar"
+              boss: "Lady Naz'Jar",
+              url: 'lady-nazjar'
             }
           ]
         },
@@ -507,19 +548,23 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/skelesaurus-hex.jpg',
-              boss: "Szkielezaurus Hex"
+              boss: "Szkielezaurus Hex",
+              url: 'szhielezaurus-hex'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/the-steel-sentinel.jpg',
-              boss: "Stalowy Watrownik"
+              boss: "Stalowy Wartownik",
+              url: 'stalowy-wartownik'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/arch-thief-rafaam.jpg',
-              boss: "Arcyzłodziej Rafaam"
+              boss: "Arcyzłodziej Rafaam",
+              url: 'arcyzlodziej-rafaam'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/rafaam-unleashed.jpg',
-              boss: "Wyzwolony Rafaam"
+              boss: "Wyzwolony Rafaam",
+              url: 'wyzwolony-rafaam'
             }
           ]
         }

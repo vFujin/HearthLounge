@@ -977,6 +977,7 @@ footer{
             tbody{
               tr{
                 th{
+                  width: 15%;
                   border:1px solid $dark-grey;
                 }
                 td{
@@ -984,16 +985,16 @@ footer{
                   padding:10px;
                   cursor: pointer;
                   border: 1px solid $dark-grey;
-                  div{
+                  a{
                     display: flex;
                     img{
-                      @include box-shadow(0, 0, 10px, black);
+                      @include box-shadow(0, 0, 10px, black, inset);
                       @include transition(all ease .4s);
                       width:70px;
                       height:70px;
                     }
                     p{
-                      line-height: 70px;
+                      line-height: 60px;
                       margin: 0 0 0 10px;
                       background: transparent;
                     }

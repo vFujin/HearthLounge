@@ -26,7 +26,7 @@ export class AdventureClassChallanges extends Component {
     return (
         <div className={`class-challanges inner-container ${this.props.active === 'class-challanges' && 'active'}-view`}>
           {adventure_details.map((element, index)=>
-          <div className={`${this.props.adventure === element.adventure && 'active'}-view key={$index}`}>
+          <div className={`${this.props.adventure === element.adventure && 'active'}-view `} key={index}>
               <ul key={index}>
                 {element.class_challanges.map((element, index)=>
                   <li key={index}>
