@@ -623,5 +623,194 @@ export const adventure_details = [
     cards: {
       card_amount: 45
     }
+  },
+  {
+    adventure: "one-night-at-karazhan",
+    singular_adventure_name: "Pewnej Nocy w Karazhanie",
+    plural_aventure_name: "Pewnej Nocy w Karazhanie",
+    description: '',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/karazhan.jpg',
+    cost: {
+      wings: [
+        {
+          desc: 'Pierwsze',
+          gold: 700,
+          eur: 5.99,
+          pln: 25.19
+        },
+        {
+          desc: 'Drugie',
+          gold: 1400,
+          eur: 8.99,
+          pln: 37.75
+        },
+        {
+          desc: 'Trzecie',
+          gold: 2100,
+          eur: 13.99,
+          pln: 58.75
+        },
+        {
+          desc: 'Czwarte',
+          gold: 2800,
+          eur: 17.99,
+          pln: 75.55
+        },
+        {
+          desc: 'Piąte',
+          gold: 3500,
+          eur: 21.99,
+          pln: 92.35
+        }
+      ],
+    },
+    bosses: {
+      description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
+      details: [
+        {
+          wing_title: "Iglica",
+          bosses: [
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/skelesaurus-hex.jpg',
+              boss: "Widmo Arana",
+              url: 'widmo-arana'
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/the-steel-sentinel.jpg',
+              boss: "Otchłarion",
+              url: 'otchlarion'
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/arch-thief-rafaam.jpg',
+              boss: "Uwolnij Medivha!",
+              url: 'uwolnij-medivha'
+            }
+          ]
+        },
+        {
+          wing_title: "Menażeria",
+          bosses: [
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lord-slitherspear.jpg',
+              boss: "Kustosz",
+              url: 'kustosz'
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/giantfin.jpg',
+              boss: "Pożeracz Nocy",
+              url: 'pozeracz-nocy'
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lady-naz-jar.jpg',
+              boss: "Terestian Podłokopytny",
+              url: 'terestian-podlokopytny'
+            }
+          ]
+        },
+        {
+          wing_title: "Opera",
+          bosses: [
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/chieftain-scarvash.jpg',
+              boss: "Juliana",
+              url: 'juliana'
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/mine-cart-rush.jpg',
+              boss: "Wielki Zły Wilk",
+              url: 'wielki-zly-wilk'
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/archaedas.jpg',
+              boss: "Jędza",
+              url: 'jedza'
+            }
+          ]
+        },
+        {
+          wing_title: "Salon",
+          bosses: [
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/zinaar.jpg',
+              boss: "Sztućcowy Golem",
+              url: 'sztuccowy-golem'
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/sun-raider-phaerix.jpg',
+              boss: "Magiczne Zwierciadło",
+              url: 'magiczne-zwierciadlo'
+            },
+            {
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/temple-escape.jpg',
+              boss: "Szachy",
+              url: 'szachy'
+            }
+          ]
+        },
+        {
+          wing_title: "Prolog",
+          bosses: [
+            {
+              img: '',
+              boss: 'Malkezar',
+              url: 'malkezar'
+            }
+          ]
+        }
+      ]
+    },
+    structure: {
+      wing_amount: 4,
+      wing_details: [
+        "Każde skrzydło było otwierane raz na tydzień przez 4 tygodnie",
+        "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
+        "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+      ],
+      bosses_amount: 13,
+      bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+      class_challanges: 9,
+      class_challanges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+    },
+    class_challanges: [
+      {
+        class: 'druid',
+        card_reward: "Volcanic Lumberer"
+      },
+      {
+        class: 'hunter',
+        card_reward: "Quick Shot"
+      },
+      {
+        class: 'mage',
+        card_reward: "Dragon's Breath"
+      },
+      {
+        class: 'paladin',
+        card_reward: "Solemn Vigil"
+      },
+      {
+        class: 'priest',
+        card_reward: "Twilight Whelp"
+      },
+      {
+        class: 'rogue',
+        card_reward: "Dark Iron Skulker"
+      },
+      {
+        class: 'shaman',
+        card_reward: "Lava Shock"
+      },
+      {
+        class: 'warlock',
+        card_reward: "Demonwrath"
+      },
+      {
+        class: 'warrior',
+        card_reward: "Axe Flinger"
+      }
+    ],
+    cards: {
+      card_amount: 45
+    }
   }
 ];
