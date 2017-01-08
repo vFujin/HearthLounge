@@ -671,17 +671,17 @@ export const adventure_details = [
           wing_title: "Iglica",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/skelesaurus-hex.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/spire/shade-of-aran.jpg',
               boss: "Widmo Arana",
               url: 'widmo-arana'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/the-steel-sentinel.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/spire/netherspite.jpg',
               boss: "Otchłarion",
               url: 'otchlarion'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/arch-thief-rafaam.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/spire/free-medivh.jpg',
               boss: "Uwolnij Medivha!",
               url: 'uwolnij-medivha'
             }
@@ -691,17 +691,17 @@ export const adventure_details = [
           wing_title: "Menażeria",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lord-slitherspear.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/menagerie/curator.jpg',
               boss: "Kustosz",
               url: 'kustosz'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/giantfin.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/menagerie/nightbane.jpg',
               boss: "Pożeracz Nocy",
               url: 'pozeracz-nocy'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lady-naz-jar.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/menagerie/terestian-illhoof.jpg',
               boss: "Terestian Podłokopytny",
               url: 'terestian-podlokopytny'
             }
@@ -711,17 +711,17 @@ export const adventure_details = [
           wing_title: "Opera",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/chieftain-scarvash.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/opera/julianne.jpg',
               boss: "Juliana",
               url: 'juliana'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/mine-cart-rush.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/opera/big-bad-wolf.jpg',
               boss: "Wielki Zły Wilk",
               url: 'wielki-zly-wilk'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/archaedas.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/opera/the-crone.jpg',
               boss: "Jędza",
               url: 'jedza'
             }
@@ -731,17 +731,17 @@ export const adventure_details = [
           wing_title: "Salon",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/zinaar.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/parlor/silverware-golem.jpg',
               boss: "Sztućcowy Golem",
               url: 'sztuccowy-golem'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/sun-raider-phaerix.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/parlor/magic-mirror.jpg',
               boss: "Magiczne Zwierciadło",
               url: 'magiczne-zwierciadlo'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/temple-escape.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/parlor/chess.jpg',
               boss: "Szachy",
               url: 'szachy'
             }
@@ -751,7 +751,7 @@ export const adventure_details = [
           wing_title: "Prolog",
           bosses: [
             {
-              img: '',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/ne-night-at-karazhan/prologue/an-uninvited-guest.jpg',
               boss: 'Malkezar',
               url: 'malkezar'
             }
