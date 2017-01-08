@@ -38,12 +38,19 @@ export class Adventures extends Component {
     let selectedAdventureClass = event.target.dataset['adventure'];
     let activeTab = this.state.sidebarActiveTab === null ? selectedAdventureClass: selectedAdventureClass;
 
+    let activeTableView = this.state.activeBossView === 'displayNone' ? 'displayBlock' : 'displayBlock';
+    let activeBossView = this.state.activeBossView === 'displayBlock' ? 'displayNone' : 'displayNone';
+
     this.setState({
       preSelected: preSelected,
       selected: isSelected,
       adventure: selectedAdventure,
       selectedAdventureUrl: selectedAdventureUrl,
-      sidebarActiveTab: activeTab
+      sidebarActiveTab: activeTab,
+
+      //Bosses view after choosing adventure
+      activeTableView: activeTableView,
+      activeBossView: activeBossView
     })
   }
 
@@ -55,11 +62,18 @@ export class Adventures extends Component {
     let areDetailsShown = this.state.topbarActiveTab === 'displayNone' ? 'displayBlock' : 'displayBlock';
     let adventureOverview = this.state.adventureOverview === "displayBlock" ? "displayNone" : "displayNone";
 
+
+    let activeTableView = this.state.activeBossView === 'displayNone' ? 'displayBlock' : 'displayBlock';
+    let activeBossView = this.state.activeBossView === 'displayBlock' ? 'displayNone' : 'displayNone';
     this.setState({
       adventureOverview: adventureOverview,
       topbarActiveTab: isActive,
       topbarActiveTabUrl: isActiveUrl,
-      details: areDetailsShown
+      details: areDetailsShown,
+
+      //Bosses view after choosing adventure
+      activeTableView: activeTableView,
+      activeBossView: activeBossView
     })
   }
 

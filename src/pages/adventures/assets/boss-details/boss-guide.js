@@ -38,7 +38,7 @@ export class BossGuide extends Component {
             </div>
 
             <div className="cards-container">
-              <img src={this.props.activeBossImg} alt=""/>
+              {/*<img src={this.props.activeBossImg} alt=""/>*/}
             </div>
            </div>
       );

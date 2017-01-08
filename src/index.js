@@ -38,8 +38,8 @@ import {AdventureClassChallanges} from './pages/adventures/assets/class-challang
 import {AdventureCost} from './pages/adventures/assets/cost';
 import {AdventureStructure} from './pages/adventures/assets/structure';
 
-import {BossGuide} from './pages/adventures/assets/bosses/boss-guide';
-import {BossGuideNav} from './pages/adventures/assets/bosses/boss-guide-nav';
+import {BossGuide} from './pages/adventures/assets/boss-details/boss-guide';
+import {BossGuideNav} from './pages/adventures/assets/boss-details/boss-guide-nav';
 
 import './styles/index.css';
 import './styles/mobile.css';
