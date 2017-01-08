@@ -52,7 +52,6 @@ export class Adventures extends Component {
       topbarActiveTab: isActive,
       topbarActiveTabUrl: isActiveUrl,
       details: areDetailsShown
-
     })
   }
 

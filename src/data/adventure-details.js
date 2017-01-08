@@ -413,7 +413,7 @@ export const adventure_details = [
     singular_adventure_name: "Liga Eksplorerów",
     plural_aventure_name: "Ligi Eksplorerów",
     description: '',
-    img: '',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/liga_odkrywcow.jpg',
     cost: {
       wings: [
         {
@@ -473,7 +473,7 @@ export const adventure_details = [
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/chieftain-scarvash.jpg',
-              boss: "Wódz"
+              boss: "Wódz Skarwosz"
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/mine-cart-rush.jpg',
