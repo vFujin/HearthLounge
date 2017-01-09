@@ -202,10 +202,10 @@ export const hs_class = [
 
 export const expansions = [
   {
-    en: 'Goblins vs Gnomes',
     pl: 'Gobliny kontra Gnomy',
-    url: 'gobliny-kontra-gnomy',
-    en_url: 'goblins-vs-gnomes'
+    en: 'Goblins vs Gnomes',
+    en_url: 'goblins-vs-gnomes',
+    url: 'gobliny-kontra-gnomy'
   },
   {
     en: 'The Grand Tournament',
@@ -229,7 +229,6 @@ export const expansions = [
 
 export const adventures = [
   {
-
     pl: 'Klątwa Naxxramas',
     en: 'Naxxramas',
     en_url: 'curse-of-naxxramas',

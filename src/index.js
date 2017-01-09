@@ -25,11 +25,7 @@ import {DeckWarrior} from './pages/decks/warrior';
 
 import {PickedClass} from './pages/arena-picker/picked-class';
 
-import {GoblinsVsGnomes} from './pages/expansions/goblins-vs-gnomes';
-import {MeanStreetsOfGadgetzan} from './pages/expansions/mean-streets-of-gadgetzan';
-import {TheGrandTournament} from './pages/expansions/the-grand-tournament';
-import {WhispersOfTheOldGods} from './pages/expansions/whispers-of-the-old-gods';
-
+import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
 import {AdventureContent} from './pages/adventures/right-container/adventure-content';
 
 import {AdventureBosses} from './pages/adventures/assets/bosses';
@@ -39,7 +35,6 @@ import {AdventureCost} from './pages/adventures/assets/cost';
 import {AdventureStructure} from './pages/adventures/assets/structure';
 
 import {BossGuide} from './pages/adventures/assets/boss-details/boss-guide';
-import {BossGuideNav} from './pages/adventures/assets/boss-details/boss-guide-nav';
 
 import './styles/index.css';
 import './styles/mobile.css';
@@ -75,10 +70,7 @@ ReactDOM.render((
           <Route path="wojownik"        component={PickedClass} />
         </Route>
         <Route path="dodatki"           component={Expansions}>
-          <Route path="gobliny-kontra-gnomy"     component={GoblinsVsGnomes} />
-          <Route path="wielki-turniej"           component={TheGrandTournament} />
-          <Route path="przedwieczni-bogowie"     component={WhispersOfTheOldGods} />
-          <Route path="ciemne-zaulki-gadzetonu"  component={MeanStreetsOfGadgetzan} />
+          <Route path=":expansion"      component={ExpansionContent} />
         </Route>
         <Route path="przygody"              component={Adventures}>
           <Route path=":adventure"          component={AdventureContent}>
@@ -86,9 +78,7 @@ ReactDOM.render((
             <Route path="koszt"             component={AdventureCost}/>
             <Route path="struktura"         component={AdventureStructure}/>
             <Route path="bossy"             component={AdventureBosses}>
-              <Route path=":bossy"          component={BossGuide}>
-                <Route path=":boss"         component={BossGuideNav} />
-              </Route>
+              <Route path=":bossy"          component={BossGuide}/>
             </Route>
             <Route path="wyzwania-klasowe"  component={AdventureClassChallanges}/>
           </Route>

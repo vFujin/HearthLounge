@@ -62,7 +62,6 @@ export class Adventures extends Component {
     let areDetailsShown = this.state.topbarActiveTab === 'displayNone' ? 'displayBlock' : 'displayBlock';
     let adventureOverview = this.state.adventureOverview === "displayBlock" ? "displayNone" : "displayNone";
 
-
     let activeTableView = this.state.activeBossView === 'displayNone' ? 'displayBlock' : 'displayBlock';
     let activeBossView = this.state.activeBossView === 'displayBlock' ? 'displayNone' : 'displayNone';
     this.setState({

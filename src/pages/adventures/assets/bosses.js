@@ -16,7 +16,12 @@ export class AdventureBosses extends Component {
                   <tr key={index}>
                     <th className={`${this.props.sidebarActiveTab} active`}>{element.wing_title}</th>
                     {element.bosses.map((element, index)=>
-                      <td key={index} onClick={this.props.handleBossClick} data-boss={element.boss} data-url={element.url} data-img={element.img}>
+                      <td key={index}
+                          onClick={this.props.handleBossClick}
+                          data-boss={element.boss}
+                          data-url={element.url}
+                          data-img={element.img}
+                          className={`${this.props.sidebarActiveTab} active-on-hover`}>
                         <Link data-boss={element.boss} data-img={element.img} data-url={element.url} to={`/przygody/${this.props.selectedAdventureUrl}/${this.props.selectedTopbarTab}/${element.url}`}>
                           <img data-boss={element.boss}
                                data-url={element.url}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import unirest from 'unirest';
-import {BossGuideNav} from './boss-guide-nav';
+import {boss_details} from '../../../../data/boss_details';
+import {DeckSnippet} from './deck-snippet/deck-snippet';
 export class BossGuide extends Component {
   // constructor(props) {
   //   super(props);
@@ -26,21 +27,45 @@ export class BossGuide extends Component {
   //       });
   // }
 
-  render() {
-      return (
-          <div className={this.props.activeBossView}>
-            <div className="boss-guide-header">
-              <p>{this.props.activeBoss}</p>
-              <BossGuideNav selectedAdventureUrl={this.props.selectedAdventureUrl}
-                            selectedTopbarTab={this.props.selectedTopbarTab}
-                            activeBoss={this.props.activeBoss}
-                            activeBossUrl={this.props.activeBossUrl}/>
-            </div>
 
-            <div className="cards-container">
-              {/*<img src={this.props.activeBossImg} alt=""/>*/}
-            </div>
-           </div>
-      );
+  render() {
+    function ifHasImg(index, boss, rewards){
+      if(index===0){
+        return <img src={boss} alt={`${boss}'s illustration`}/>;
+      }
+      if(index===2){
+        return <img src={rewards} alt={`${rewards}'s illustration`}/>;
+      }
+    }
+    return (
+      <div className={this.props.activeBossView}>
+        <div className="boss-guide-header">
+          <p>{this.props.activeBoss}</p>
+          <ul>
+            {boss_details.slice(0,4).map((element, index)=>
+              <li key={index}>
+                <div>
+                  <p className="boss-details-nav-el">{element.title}</p>
+                  {ifHasImg(index, this.props.activeBossImg, 'x')}
+                  <p>{element.content}</p>
+                </div>
+              </li>
+            )}
+            {boss_details.slice(4,5).map((element, index)=>
+              <li key={index}>
+                <div>
+                  <p className="boss-details-nav-el">{element.title}</p>
+                  <div className="top-boss-decks">
+                    <DeckSnippet />
+                    <DeckSnippet />
+                    <DeckSnippet />
+                  </div>
+                </div>
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
+    );
   }
 }

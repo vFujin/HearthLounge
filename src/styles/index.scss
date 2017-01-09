@@ -373,8 +373,6 @@ footer{
           }
         }
       }
-
-
     }
 
     .arena-picker{
@@ -828,33 +826,12 @@ footer{
   }
 }
 
-.adventures{
-  .left-container{
-    background: $dark-grey;
-    .sidebar{
-      ul{
-        li{
-          background-color: $pearl;
-          color: $dark-grey;
-          margin: 10px;
-
-          a{
-            @include transition(all ease .4s);
-            padding: 10px ;
-            display: flex;
-            span{
-              font-size: 50px;
-            }
-            p{
-              margin-left: 10px;
-              margin-bottom:0;
-              line-height: 50px;
-            }
-          }
-        }
-      }
-    }
+.expansions{
+  .right-container{
   }
+}
+
+.adventures{
   .right-container{
     .before-adventure-pick{
       width: calc(100% - 10px);
@@ -870,28 +847,12 @@ footer{
     }
 
     .content {
-      .topbar {
-        .adventure-content-navigation {
-          display: inline-flex;
-          @include transition(all ease .4s);
-          li {
-            @include transition(all ease .4s);
-            cursor: pointer;
-            border-right: 1px solid $dark-grey;
-            a {
-              color: $dark-grey;
-              display: block;
-              padding: 15.4px;
-            }
-          }
-        }
-      }
       .about-adventure{
         .false-view{
           display: none;
         }
         .active-view{
-          color: black;
+          color: $dark-grey;
           display: block;
         }
         div{
@@ -916,6 +877,114 @@ footer{
         .inner-container{
           padding: 10px;
           height: 729px;
+        }
+
+        .cards.cards-container {
+          @include scrollbar;
+          background: $pearl;
+          text-align: center;
+          overflow: auto;
+          width: 100%;
+          height: 749px;
+          li {
+            width: 16%;
+            display: inline-block;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        .cost{
+          .cost-description{
+            span{
+              color: $pearl;
+            }
+          }
+          table{
+            width: 60%;
+            padding: 10px;
+            margin: 0 auto;
+            tr{
+              text-align: center;
+              //background-color: rgba(255,255,255,.5);
+              text-transform: uppercase;
+              td, th{
+                font-size: 14px;
+                padding: 10px;
+              }
+              &:nth-child(odd){
+                background-color: $odd-row;
+              }
+              &:nth-child(even){
+                background-color: $even-row;
+              }
+            }
+          }
+        }
+
+        .structure{
+
+        }
+        .bosses{
+          p{
+            padding:5px;
+            background-color: $odd-row;
+          }
+          table{
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+            tbody{
+              tr{
+                th{
+                  width: 15%;
+                  border:1px solid $dark-grey;
+                }
+                td{
+                  @include transition(all ease .4s);
+                  padding:10px;
+                  cursor: pointer;
+                  border: 1px solid $dark-grey;
+                  a{
+                    display: flex;
+                    img{
+                      @include box-shadow(0, 0, 10px, black);
+                      @include transition(all ease .4s);
+                      width:70px;
+                      height:70px;
+                    }
+                    p{
+                      line-height: 60px;
+                      margin: 0 0 0 10px;
+                      background: transparent;
+                    }
+                  }
+                  &:hover{
+                    img{
+                      @include box-shadow(0, 0, 10px, $dark-grey);
+                    }
+                  }
+                }
+                &:nth-child(odd){
+                  background-color: $odd-row;
+                }
+                &:nth-child(even){
+                  background-color: $even-row;
+                }
+                &:hover{
+                  td{
+                    &:first-child{
+                      background-color: $sea-color;
+                      color: $pearl;
+                    }
+                  }
+                }
+              }
+            }
+          }
           .boss-guide-header{
             p{
               background: transparent;
@@ -928,7 +997,7 @@ footer{
                 height: 335px;
                 background-color: rgba(255,255,255,.4);
                 display: inline-flex;
-                a{
+                div{
                   width: 100%;
                   .boss-details-nav-el{
                     padding:0;
@@ -942,7 +1011,7 @@ footer{
                 &:last-child{
                   width: calc(100% - 20px);
                   display: flex;
-                  a {
+                  div {
                     .top-boss-decks {
                       display: inline-flex;
                       width: 100%;
@@ -1080,118 +1149,57 @@ footer{
             }
           }
         }
-
-        .cards.cards-container {
-          @include scrollbar;
-          background: $pearl;
-          text-align: center;
-          overflow: auto;
-          width: 100%;
-          height: 749px;
-          li {
-            width: 16%;
-            display: inline-block;
-            img {
-              width: 100%;
-              height: 100%;
-            }
-          }
-        }
-
-        .cost{
-          .cost-description{
-            span{
-              color: $pearl;
-            }
-          }
-          table{
-            width: 60%;
-            padding: 10px;
-            margin: 0 auto;
-            tr{
-              text-align: center;
-              //background-color: rgba(255,255,255,.5);
-              text-transform: uppercase;
-              td, th{
-                font-size: 14px;
-                padding: 10px;
-              }
-              &:nth-child(odd){
-                background-color: $odd-row;
-              }
-              &:nth-child(even){
-                background-color: $even-row;
-              }
-            }
-          }
-        }
-
-        .structure{
-
-        }
-        .bosses{
-          p{
-            padding:5px;
-            background-color: $odd-row;
-          }
-          table{
-            margin-top: 10px;
-            width: 100%;
-            text-align: center;
-            border-collapse: collapse;
-            tbody{
-              tr{
-                th{
-                  width: 15%;
-                  border:1px solid $dark-grey;
-                }
-                td{
-                  @include transition(all ease .4s);
-                  padding:10px;
-                  cursor: pointer;
-                  border: 1px solid $dark-grey;
-                  a{
-                    display: flex;
-                    img{
-                      @include box-shadow(0, 0, 10px, black);
-                      @include transition(all ease .4s);
-                      width:70px;
-                      height:70px;
-                    }
-                    p{
-                      line-height: 60px;
-                      margin: 0 0 0 10px;
-                      background: transparent;
-                    }
-                  }
-                  &:hover{
-                    background-color: $sea-color;
-                    color: $pearl;
-                    img{
-                      @include box-shadow(0, 0, 10px, $pearl);
-                    }
-                  }
-                }
-                &:nth-child(odd){
-                  background-color: $odd-row;
-                }
-                &:nth-child(even){
-                  background-color: $even-row;
-                }
-                &:hover{
-                  td{
-                    &:first-child{
-                      background-color: $sea-color;
-                      color: $pearl;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
         .class-challanges{
 
+        }
+      }
+    }
+  }
+}
+
+.expansions, .adventures{
+  .left-container{
+    background: $dark-grey;
+    .sidebar{
+      ul{
+        li{
+          background-color: $pearl;
+          color: $dark-grey;
+          margin: 10px;
+
+          a{
+            @include transition(all ease .4s);
+            padding: 10px ;
+            display: flex;
+            span{
+              font-size: 50px;
+            }
+            p{
+              margin-left: 10px;
+              margin-bottom:0;
+              line-height: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .right-container{
+    .content{
+      .topbar{
+        .content-navigation {
+          display: inline-flex;
+          @include transition(all ease .4s);
+          li {
+            @include transition(all ease .4s);
+            cursor: pointer;
+            border-right: 1px solid $dark-grey;
+            a {
+              color: $dark-grey;
+              display: block;
+              padding: 15.4px;
+            }
+          }
         }
       }
     }

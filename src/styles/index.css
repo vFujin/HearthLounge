@@ -249,6 +249,11 @@ a:active, a:hover, a:link, a:visited {
   .druid.active {
     background-color: #FF7D0A;
     color: #474143; }
+  .druid.active-on-hover {
+    color: #474143; }
+    .druid.active-on-hover:hover {
+      background-color: #FF7D0A;
+      color: #474143; }
   .druid.icon-font-active {
     color: #474143; }
 
@@ -264,6 +269,11 @@ a:active, a:hover, a:link, a:visited {
   .hunter.active {
     background-color: #ABD473;
     color: #474143; }
+  .hunter.active-on-hover {
+    color: #474143; }
+    .hunter.active-on-hover:hover {
+      background-color: #ABD473;
+      color: #474143; }
   .hunter.icon-font-active {
     color: #474143; }
 
@@ -279,6 +289,11 @@ a:active, a:hover, a:link, a:visited {
   .mage.active {
     background-color: #69CCF0;
     color: #474143; }
+  .mage.active-on-hover {
+    color: #474143; }
+    .mage.active-on-hover:hover {
+      background-color: #69CCF0;
+      color: #474143; }
   .mage.icon-font-active {
     color: #474143; }
 
@@ -294,6 +309,11 @@ a:active, a:hover, a:link, a:visited {
   .paladin.active {
     background-color: #F58CBA;
     color: #474143; }
+  .paladin.active-on-hover {
+    color: #474143; }
+    .paladin.active-on-hover:hover {
+      background-color: #F58CBA;
+      color: #474143; }
   .paladin.icon-font-active {
     color: #474143; }
 
@@ -309,6 +329,11 @@ a:active, a:hover, a:link, a:visited {
   .priest.active {
     background-color: #FFFFFF;
     color: #474143; }
+  .priest.active-on-hover {
+    color: #474143; }
+    .priest.active-on-hover:hover {
+      background-color: #FFFFFF;
+      color: #474143; }
   .priest.icon-font-active {
     color: #474143; }
 
@@ -324,6 +349,11 @@ a:active, a:hover, a:link, a:visited {
   .rogue.active {
     background-color: #FFF569;
     color: #474143; }
+  .rogue.active-on-hover {
+    color: #474143; }
+    .rogue.active-on-hover:hover {
+      background-color: #FFF569;
+      color: #474143; }
   .rogue.icon-font-active {
     color: #474143; }
 
@@ -339,6 +369,11 @@ a:active, a:hover, a:link, a:visited {
   .shaman.active {
     background-color: #0070DE;
     color: #474143; }
+  .shaman.active-on-hover {
+    color: #474143; }
+    .shaman.active-on-hover:hover {
+      background-color: #0070DE;
+      color: #474143; }
   .shaman.icon-font-active {
     color: #474143; }
 
@@ -354,6 +389,11 @@ a:active, a:hover, a:link, a:visited {
   .warlock.active {
     background-color: #9482C9;
     color: #474143; }
+  .warlock.active-on-hover {
+    color: #474143; }
+    .warlock.active-on-hover:hover {
+      background-color: #9482C9;
+      color: #474143; }
   .warlock.icon-font-active {
     color: #474143; }
 
@@ -369,6 +409,11 @@ a:active, a:hover, a:link, a:visited {
   .warrior.active {
     background-color: #C79C6E;
     color: #474143; }
+  .warrior.active-on-hover {
+    color: #474143; }
+    .warrior.active-on-hover:hover {
+      background-color: #C79C6E;
+      color: #474143; }
   .warrior.icon-font-active {
     color: #474143; }
 
@@ -384,6 +429,11 @@ a:active, a:hover, a:link, a:visited {
   .curse-of-naxxramas.active {
     background-color: #b5de3f;
     color: #474143; }
+  .curse-of-naxxramas.active-on-hover {
+    color: #474143; }
+    .curse-of-naxxramas.active-on-hover:hover {
+      background-color: #b5de3f;
+      color: #474143; }
   .curse-of-naxxramas.icon-font-active {
     color: #474143; }
 
@@ -399,6 +449,11 @@ a:active, a:hover, a:link, a:visited {
   .blackrock-mountain.active {
     background-color: #fa5210;
     color: #474143; }
+  .blackrock-mountain.active-on-hover {
+    color: #474143; }
+    .blackrock-mountain.active-on-hover:hover {
+      background-color: #fa5210;
+      color: #474143; }
   .blackrock-mountain.icon-font-active {
     color: #474143; }
 
@@ -414,6 +469,11 @@ a:active, a:hover, a:link, a:visited {
   .the-league-of-explorers.active {
     background-color: #14a9a1;
     color: #474143; }
+  .the-league-of-explorers.active-on-hover {
+    color: #474143; }
+    .the-league-of-explorers.active-on-hover:hover {
+      background-color: #14a9a1;
+      color: #474143; }
   .the-league-of-explorers.icon-font-active {
     color: #474143; }
 
@@ -429,6 +489,11 @@ a:active, a:hover, a:link, a:visited {
   .one-night-at-karazhan.active {
     background-color: #e2b4df;
     color: #474143; }
+  .one-night-at-karazhan.active-on-hover {
+    color: #474143; }
+    .one-night-at-karazhan.active-on-hover:hover {
+      background-color: #e2b4df;
+      color: #474143; }
   .one-night-at-karazhan.icon-font-active {
     color: #474143; }
 
@@ -444,6 +509,11 @@ a:active, a:hover, a:link, a:visited {
   .goblins-vs-gnomes.active {
     background-color: #fae43f;
     color: #474143; }
+  .goblins-vs-gnomes.active-on-hover {
+    color: #474143; }
+    .goblins-vs-gnomes.active-on-hover:hover {
+      background-color: #fae43f;
+      color: #474143; }
   .goblins-vs-gnomes.icon-font-active {
     color: #474143; }
 
@@ -459,6 +529,11 @@ a:active, a:hover, a:link, a:visited {
   .the-grand-tournament.active {
     background-color: #f00;
     color: #474143; }
+  .the-grand-tournament.active-on-hover {
+    color: #474143; }
+    .the-grand-tournament.active-on-hover:hover {
+      background-color: #f00;
+      color: #474143; }
   .the-grand-tournament.icon-font-active {
     color: #474143; }
 
@@ -474,6 +549,11 @@ a:active, a:hover, a:link, a:visited {
   .whispers-of-the-old-gods.active {
     background-color: #cc00ff;
     color: #474143; }
+  .whispers-of-the-old-gods.active-on-hover {
+    color: #474143; }
+    .whispers-of-the-old-gods.active-on-hover:hover {
+      background-color: #cc00ff;
+      color: #474143; }
   .whispers-of-the-old-gods.icon-font-active {
     color: #474143; }
 
@@ -489,6 +569,11 @@ a:active, a:hover, a:link, a:visited {
   .mean-streets-of-gadgetzan.active {
     background-color: #d2cac5;
     color: #474143; }
+  .mean-streets-of-gadgetzan.active-on-hover {
+    color: #474143; }
+    .mean-streets-of-gadgetzan.active-on-hover:hover {
+      background-color: #d2cac5;
+      color: #474143; }
   .mean-streets-of-gadgetzan.icon-font-active {
     color: #474143; }
 
@@ -504,6 +589,11 @@ a:active, a:hover, a:link, a:visited {
   .common.active {
     background-color: #fff;
     color: #474143; }
+  .common.active-on-hover {
+    color: #474143; }
+    .common.active-on-hover:hover {
+      background-color: #fff;
+      color: #474143; }
   .common.icon-font-active {
     color: #474143; }
 
@@ -519,6 +609,11 @@ a:active, a:hover, a:link, a:visited {
   .rare.active {
     background-color: blue;
     color: #474143; }
+  .rare.active-on-hover {
+    color: #474143; }
+    .rare.active-on-hover:hover {
+      background-color: blue;
+      color: #474143; }
   .rare.icon-font-active {
     color: #474143; }
 
@@ -534,6 +629,11 @@ a:active, a:hover, a:link, a:visited {
   .epic.active {
     background-color: purple;
     color: #474143; }
+  .epic.active-on-hover {
+    color: #474143; }
+    .epic.active-on-hover:hover {
+      background-color: purple;
+      color: #474143; }
   .epic.icon-font-active {
     color: #474143; }
 
@@ -549,6 +649,11 @@ a:active, a:hover, a:link, a:visited {
   .legendary.active {
     background-color: orange;
     color: #474143; }
+  .legendary.active-on-hover {
+    color: #474143; }
+    .legendary.active-on-hover:hover {
+      background-color: orange;
+      color: #474143; }
   .legendary.icon-font-active {
     color: #474143; }
 
@@ -1234,26 +1339,6 @@ footer {
   .arena-picker .left-container .sidebar table tr td:last-child {
     text-align: center; }
 
-.adventures .left-container {
-  background: #474143; }
-  .adventures .left-container .sidebar ul li {
-    background-color: #E7E2DA;
-    color: #474143;
-    margin: 10px; }
-    .adventures .left-container .sidebar ul li a {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
-      transition: all ease 0.4s;
-      padding: 10px;
-      display: flex; }
-      .adventures .left-container .sidebar ul li a span {
-        font-size: 50px; }
-      .adventures .left-container .sidebar ul li a p {
-        margin-left: 10px;
-        margin-bottom: 0;
-        line-height: 50px; }
 .adventures .right-container .before-adventure-pick {
   width: calc(100% - 10px);
   height: 100%;
@@ -1264,29 +1349,10 @@ footer {
     text-transform: uppercase;
     opacity: .4;
     padding-top: 64px; }
-.adventures .right-container .content .topbar .adventure-content-navigation {
-  display: inline-flex;
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s; }
-  .adventures .right-container .content .topbar .adventure-content-navigation li {
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
-    transition: all ease 0.4s;
-    cursor: pointer;
-    border-right: 1px solid #474143; }
-    .adventures .right-container .content .topbar .adventure-content-navigation li a {
-      color: #474143;
-      display: block;
-      padding: 15.4px; }
 .adventures .right-container .content .about-adventure .false-view {
   display: none; }
 .adventures .right-container .content .about-adventure .active-view {
-  color: black;
+  color: #474143;
   display: block; }
 .adventures .right-container .content .about-adventure div {
   width: 100%;
@@ -1305,124 +1371,6 @@ footer {
   .adventures .right-container .content .adventure-content .inner-container {
     padding: 10px;
     height: 729px; }
-    .adventures .right-container .content .adventure-content .inner-container .boss-guide-header p {
-      background: transparent;
-      text-align: center; }
-    .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li {
-      width: 24%;
-      margin: 7px;
-      height: 335px;
-      background-color: rgba(255, 255, 255, 0.4);
-      display: inline-flex; }
-      .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li a {
-        width: 100%; }
-        .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li a .boss-details-nav-el {
-          padding: 0;
-          line-height: 40px;
-          height: 40px;
-          background: #474143;
-          color: #E7E2DA;
-          text-align: center; }
-      .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child {
-        width: calc(100% - 20px);
-        display: flex; }
-        .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks {
-          display: inline-flex;
-          width: 100%; }
-          .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck {
-            background-color: #E7E2DA;
-            width: 25%;
-            padding: 10px;
-            margin-right: 10px; }
-            .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck:last-child {
-              margin-right: 0; }
-            .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .background-icon {
-              position: absolute;
-              font-size: 130px;
-              opacity: 0.05;
-              padding-left: 235px;
-              padding-top: 8px; }
-            .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .header {
-              display: flex;
-              padding-bottom: 4.5px;
-              border-bottom: 1px solid #474143; }
-              .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .header .hs-class span {
-                font-size: 35px;
-                position: relative;
-                top: 5px;
-                padding: 5px;
-                border: 2px solid black;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                border-radius: 50%; }
-              .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .header .about {
-                margin-left: 10px; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .header .about .title {
-                  font-weight: bold;
-                  font-size: 16px; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .header .about .author, .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .header .about .created {
-                  font-size: 12px; }
-            .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body {
-              margin-top: 4.5px; }
-              .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header {
-                display: flex; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .mode {
-                  width: 10%;
-                  text-align: center; }
-                  .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .mode span {
-                    color: darkgreen;
-                    font-size: 25px; }
-                  .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .mode p {
-                    margin-left: 5px; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .dust-needed {
-                  display: flex; }
-                  .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .dust-needed span {
-                    font-size: 25px; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .mana-curve {
-                  width: 14%;
-                  display: flex; }
-                  .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .mana-curve li {
-                    width: 5px;
-                    background-color: #474143;
-                    height: 100%;
-                    margin-right: 2px; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .deck-type, .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .dust-needed {
-                  height: 27px;
-                  line-height: 27px; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .deck-type {
-                  width: 55%; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-header .dust-needed {
-                  width: 21%;
-                  text-align: right; }
-              .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-body {
-                margin-top: 10px;
-                display: flex; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-body div {
-                  text-align: left;
-                  border-right: 1px solid #A69E9D;
-                  padding: 0 5px; }
-                  .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-body div:first-child {
-                    padding-left: 0; }
-                  .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-body div:last-child {
-                    padding-right: 0;
-                    border-right: 0; }
-              .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-footer {
-                margin-top: 7px;
-                display: flex; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-footer div {
-                  width: 33.33%; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-footer .views {
-                  display: flex;
-                  opacity: .6; }
-                  .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-footer .views span {
-                    font-size: 10px; }
-                  .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-footer .views p {
-                    padding: 0;
-                    margin: 0; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-footer .comments {
-                  text-align: center; }
-                .adventures .right-container .content .adventure-content .inner-container .boss-guide-header ul li:last-child a .top-boss-decks .deck .body .body-footer .votes {
-                  text-align: right; }
   .adventures .right-container .content .adventure-content .cards.cards-container {
     background: #E7E2DA;
     text-align: center;
@@ -1497,13 +1445,10 @@ footer {
           line-height: 60px;
           margin: 0 0 0 10px;
           background: transparent; }
-      .adventures .right-container .content .adventure-content .bosses table tbody tr td:hover {
-        background-color: #00a99c;
-        color: #E7E2DA; }
-        .adventures .right-container .content .adventure-content .bosses table tbody tr td:hover img {
-          -webkit-box-shadow: 0 0 10px #E7E2DA;
-          -moz-box-shadow: 0 0 10px #E7E2DA;
-          box-shadow: 0 0 10px #E7E2DA; }
+      .adventures .right-container .content .adventure-content .bosses table tbody tr td:hover img {
+        -webkit-box-shadow: 0 0 10px #474143;
+        -moz-box-shadow: 0 0 10px #474143;
+        box-shadow: 0 0 10px #474143; }
     .adventures .right-container .content .adventure-content .bosses table tbody tr:nth-child(odd) {
       background-color: rgba(255, 255, 255, 0.6); }
     .adventures .right-container .content .adventure-content .bosses table tbody tr:nth-child(even) {
@@ -1511,6 +1456,164 @@ footer {
     .adventures .right-container .content .adventure-content .bosses table tbody tr:hover td:first-child {
       background-color: #00a99c;
       color: #E7E2DA; }
+  .adventures .right-container .content .adventure-content .bosses .boss-guide-header p {
+    background: transparent;
+    text-align: center; }
+  .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li {
+    width: 24%;
+    margin: 7px;
+    height: 335px;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: inline-flex; }
+    .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li div {
+      width: 100%; }
+      .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li div .boss-details-nav-el {
+        padding: 0;
+        line-height: 40px;
+        height: 40px;
+        background: #474143;
+        color: #E7E2DA;
+        text-align: center; }
+    .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child {
+      width: calc(100% - 20px);
+      display: flex; }
+      .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks {
+        display: inline-flex;
+        width: 100%; }
+        .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck {
+          background-color: #E7E2DA;
+          width: 25%;
+          padding: 10px;
+          margin-right: 10px; }
+          .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck:last-child {
+            margin-right: 0; }
+          .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .background-icon {
+            position: absolute;
+            font-size: 130px;
+            opacity: 0.05;
+            padding-left: 235px;
+            padding-top: 8px; }
+          .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header {
+            display: flex;
+            padding-bottom: 4.5px;
+            border-bottom: 1px solid #474143; }
+            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .hs-class span {
+              font-size: 35px;
+              position: relative;
+              top: 5px;
+              padding: 5px;
+              border: 2px solid black;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              border-radius: 50%; }
+            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about {
+              margin-left: 10px; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .title {
+                font-weight: bold;
+                font-size: 16px; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .author, .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .created {
+                font-size: 12px; }
+          .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body {
+            margin-top: 4.5px; }
+            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header {
+              display: flex; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode {
+                width: 10%;
+                text-align: center; }
+                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode span {
+                  color: darkgreen;
+                  font-size: 25px; }
+                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode p {
+                  margin-left: 5px; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
+                display: flex; }
+                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed span {
+                  font-size: 25px; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mana-curve {
+                width: 14%;
+                display: flex; }
+                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mana-curve li {
+                  width: 5px;
+                  background-color: #474143;
+                  height: 100%;
+                  margin-right: 2px; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .deck-type, .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
+                height: 27px;
+                line-height: 27px; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .deck-type {
+                width: 55%; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
+                width: 21%;
+                text-align: right; }
+            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body {
+              margin-top: 10px;
+              display: flex; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div {
+                text-align: left;
+                border-right: 1px solid #A69E9D;
+                padding: 0 5px; }
+                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div:first-child {
+                  padding-left: 0; }
+                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div:last-child {
+                  padding-right: 0;
+                  border-right: 0; }
+            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer {
+              margin-top: 7px;
+              display: flex; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer div {
+                width: 33.33%; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views {
+                display: flex;
+                opacity: .6; }
+                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views span {
+                  font-size: 10px; }
+                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views p {
+                  padding: 0;
+                  margin: 0; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .comments {
+                text-align: center; }
+              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .votes {
+                text-align: right; }
+
+.expansions .left-container, .adventures .left-container {
+  background: #474143; }
+  .expansions .left-container .sidebar ul li, .adventures .left-container .sidebar ul li {
+    background-color: #E7E2DA;
+    color: #474143;
+    margin: 10px; }
+    .expansions .left-container .sidebar ul li a, .adventures .left-container .sidebar ul li a {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      padding: 10px;
+      display: flex; }
+      .expansions .left-container .sidebar ul li a span, .adventures .left-container .sidebar ul li a span {
+        font-size: 50px; }
+      .expansions .left-container .sidebar ul li a p, .adventures .left-container .sidebar ul li a p {
+        margin-left: 10px;
+        margin-bottom: 0;
+        line-height: 50px; }
+.expansions .right-container .content .topbar .content-navigation, .adventures .right-container .content .topbar .content-navigation {
+  display: inline-flex;
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .expansions .right-container .content .topbar .content-navigation li, .adventures .right-container .content .topbar .content-navigation li {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    border-right: 1px solid #474143; }
+    .expansions .right-container .content .topbar .content-navigation li a, .adventures .right-container .content .topbar .content-navigation li a {
+      color: #474143;
+      display: block;
+      padding: 15.4px; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }

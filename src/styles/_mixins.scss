@@ -89,6 +89,13 @@
       background-color: $color;
       color: $dark-grey;
   }
+  &.active-on-hover{
+    color: $dark-grey;
+    &:hover{
+      background-color: $color;
+      color: $dark-grey;
+    }
+  }
   &.icon-font-active {
       color: $dark-grey;
   }
