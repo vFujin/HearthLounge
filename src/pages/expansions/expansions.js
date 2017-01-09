@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
+import {ExpansionContent} from './right-container/expansion-content';
+import {ExpansionOverview} from './right-container/expansion-overview';
 export class Expansions extends Component {
   constructor(props){
     super(props);
@@ -47,10 +49,10 @@ export class Expansions extends Component {
     let isActive = this.state.topbarActiveTab === '' ? activeTab : activeTab;
     let isActiveUrl = this.state.topbarActiveTabUrl === '' ? activeTabUrl : activeTabUrl;
     let areDetailsShown = this.state.topbarActiveTab === 'displayNone' ? 'displayBlock' : 'displayBlock';
-    let adventureOverview = this.state.expansionOverview === "displayBlock" ? "displayNone" : "displayNone";
+    let expansionOverview = this.state.expansionOverview === "displayBlock" ? "displayNone" : "displayNone";
 
     this.setState({
-      expansionOverview: adventureOverview,
+      expansionOverview: expansionOverview,
       topbarActiveTab: isActive,
       topbarActiveTabUrl: isActiveUrl,
       details: areDetailsShown
@@ -72,6 +74,8 @@ export class Expansions extends Component {
                       isActive={this.state.topbarActiveTab}
                       sidebarActiveTab={this.state.sidebarActiveTab}
                       selectedExpansionClass={this.state.selectedExpansionClass}/>
+              <ExpansionOverview expansionOverview={this.state.expansionOverview} sidebarActiveTab={this.state.sidebarActiveTab} />
+              <ExpansionContent expansion={this.state.expansion} topbarActiveTabUrl={this.state.topbarActiveTabUrl}/>
             </div>
           </div>
         </div>

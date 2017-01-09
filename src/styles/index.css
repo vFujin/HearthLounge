@@ -1378,6 +1378,38 @@ footer {
       color: #474143;
       display: block;
       padding: 15.4px; }
+.expansions .right-container .content .extension-content, .adventures .right-container .content .extension-content {
+  margin: 10px 0 0 10px;
+  background-color: #A69E9D; }
+  .expansions .right-container .content .extension-content .false-view, .adventures .right-container .content .extension-content .false-view {
+    display: none; }
+  .expansions .right-container .content .extension-content .active-view, .adventures .right-container .content .extension-content .active-view {
+    color: #474143;
+    display: block; }
+  .expansions .right-container .content .extension-content .inner-container, .adventures .right-container .content .extension-content .inner-container {
+    padding: 10px;
+    height: 729px; }
+  .expansions .right-container .content .extension-content .cards.cards-container, .adventures .right-container .content .extension-content .cards.cards-container {
+    background: #E7E2DA;
+    text-align: center;
+    overflow: auto;
+    width: 100%;
+    height: 749px; }
+    .expansions .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar, .adventures .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar {
+      width: 13px; }
+    .expansions .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar-thumb, .adventures .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar-thumb {
+      background-color: #474143;
+      border-radius: 0; }
+    .expansions .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar-thumb:hover, .adventures .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar-thumb:hover {
+      background-color: #474143; }
+    .expansions .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar-track, .adventures .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar-track {
+      background-color: #A69E9D; }
+    .expansions .right-container .content .extension-content .cards.cards-container li, .adventures .right-container .content .extension-content .cards.cards-container li {
+      width: 16%;
+      display: inline-block; }
+      .expansions .right-container .content .extension-content .cards.cards-container li img, .adventures .right-container .content .extension-content .cards.cards-container li img {
+        width: 100%;
+        height: 100%; }
 
 .expansions .right-container .content .topbar .false-view {
   display: none; }
@@ -1404,222 +1436,190 @@ footer {
   width: 100%;
   text-align: center;
   padding-top: 10px; }
-.adventures .right-container .content .adventure-content {
-  margin: 10px 0 0 10px;
-  background-color: #A69E9D; }
-  .adventures .right-container .content .adventure-content .false-view {
-    display: none; }
-  .adventures .right-container .content .adventure-content .active-view {
-    color: black;
-    display: block; }
-  .adventures .right-container .content .adventure-content .active-adventure {
-    display: block; }
-  .adventures .right-container .content .adventure-content .inner-container {
-    padding: 10px;
-    height: 729px; }
-  .adventures .right-container .content .adventure-content .cards.cards-container {
-    background: #E7E2DA;
+.adventures .right-container .content .extension-content .active-adventure {
+  display: block; }
+.adventures .right-container .content .extension-content .cost .cost-description span {
+  color: #E7E2DA; }
+.adventures .right-container .content .extension-content .cost table {
+  width: 60%;
+  padding: 10px;
+  margin: 0 auto; }
+  .adventures .right-container .content .extension-content .cost table tr {
     text-align: center;
-    overflow: auto;
-    width: 100%;
-    height: 749px; }
-    .adventures .right-container .content .adventure-content .cards.cards-container::-webkit-scrollbar {
-      width: 13px; }
-    .adventures .right-container .content .adventure-content .cards.cards-container::-webkit-scrollbar-thumb {
-      background-color: #474143;
-      border-radius: 0; }
-    .adventures .right-container .content .adventure-content .cards.cards-container::-webkit-scrollbar-thumb:hover {
-      background-color: #474143; }
-    .adventures .right-container .content .adventure-content .cards.cards-container::-webkit-scrollbar-track {
-      background-color: #A69E9D; }
-    .adventures .right-container .content .adventure-content .cards.cards-container li {
-      width: 16%;
-      display: inline-block; }
-      .adventures .right-container .content .adventure-content .cards.cards-container li img {
-        width: 100%;
-        height: 100%; }
-  .adventures .right-container .content .adventure-content .cost .cost-description span {
-    color: #E7E2DA; }
-  .adventures .right-container .content .adventure-content .cost table {
-    width: 60%;
-    padding: 10px;
-    margin: 0 auto; }
-    .adventures .right-container .content .adventure-content .cost table tr {
-      text-align: center;
-      text-transform: uppercase; }
-      .adventures .right-container .content .adventure-content .cost table tr td, .adventures .right-container .content .adventure-content .cost table tr th {
-        font-size: 14px;
-        padding: 10px; }
-      .adventures .right-container .content .adventure-content .cost table tr:nth-child(odd) {
-        background-color: rgba(255, 255, 255, 0.6); }
-      .adventures .right-container .content .adventure-content .cost table tr:nth-child(even) {
-        background-color: rgba(255, 255, 255, 0.5); }
-  .adventures .right-container .content .adventure-content .bosses p {
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.6); }
-  .adventures .right-container .content .adventure-content .bosses table {
-    margin-top: 10px;
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse; }
-    .adventures .right-container .content .adventure-content .bosses table tbody tr th {
-      width: 15%;
-      border: 1px solid #474143; }
-    .adventures .right-container .content .adventure-content .bosses table tbody tr td {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
-      transition: all ease 0.4s;
-      padding: 10px;
-      cursor: pointer;
-      border: 1px solid #474143; }
-      .adventures .right-container .content .adventure-content .bosses table tbody tr td a {
-        display: flex; }
-        .adventures .right-container .content .adventure-content .bosses table tbody tr td a img {
-          -webkit-box-shadow: 0 0 10px black;
-          -moz-box-shadow: 0 0 10px black;
-          box-shadow: 0 0 10px black;
-          -webkit-transition: all ease 0.4s;
-          -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
-          transition: all ease 0.4s;
-          width: 70px;
-          height: 70px; }
-        .adventures .right-container .content .adventure-content .bosses table tbody tr td a p {
-          line-height: 60px;
-          margin: 0 0 0 10px;
-          background: transparent; }
-      .adventures .right-container .content .adventure-content .bosses table tbody tr td:hover img {
-        -webkit-box-shadow: 0 0 10px #474143;
-        -moz-box-shadow: 0 0 10px #474143;
-        box-shadow: 0 0 10px #474143; }
-    .adventures .right-container .content .adventure-content .bosses table tbody tr:nth-child(odd) {
+    text-transform: uppercase; }
+    .adventures .right-container .content .extension-content .cost table tr td, .adventures .right-container .content .extension-content .cost table tr th {
+      font-size: 14px;
+      padding: 10px; }
+    .adventures .right-container .content .extension-content .cost table tr:nth-child(odd) {
       background-color: rgba(255, 255, 255, 0.6); }
-    .adventures .right-container .content .adventure-content .bosses table tbody tr:nth-child(even) {
+    .adventures .right-container .content .extension-content .cost table tr:nth-child(even) {
       background-color: rgba(255, 255, 255, 0.5); }
-    .adventures .right-container .content .adventure-content .bosses table tbody tr:hover td:first-child {
-      background-color: #00a99c;
-      color: #E7E2DA; }
-  .adventures .right-container .content .adventure-content .bosses .boss-guide-header p {
-    background: transparent;
-    text-align: center; }
-  .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li {
-    width: 24%;
-    margin: 7px;
-    height: 335px;
-    background-color: rgba(255, 255, 255, 0.4);
-    display: inline-flex; }
-    .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li div {
-      width: 100%; }
-      .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li div .boss-details-nav-el {
-        padding: 0;
-        line-height: 40px;
-        height: 40px;
-        background: #474143;
-        color: #E7E2DA;
-        text-align: center; }
-    .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child {
-      width: calc(100% - 20px);
+.adventures .right-container .content .extension-content .bosses p {
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.6); }
+.adventures .right-container .content .extension-content .bosses table {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse; }
+  .adventures .right-container .content .extension-content .bosses table tbody tr th {
+    width: 15%;
+    border: 1px solid #474143; }
+  .adventures .right-container .content .extension-content .bosses table tbody tr td {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid #474143; }
+    .adventures .right-container .content .extension-content .bosses table tbody tr td a {
       display: flex; }
-      .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks {
-        display: inline-flex;
-        width: 100%; }
-        .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck {
-          background-color: #E7E2DA;
-          width: 25%;
-          padding: 10px;
-          margin-right: 10px; }
-          .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck:last-child {
-            margin-right: 0; }
-          .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .background-icon {
-            position: absolute;
-            font-size: 130px;
-            opacity: 0.05;
-            padding-left: 235px;
-            padding-top: 8px; }
-          .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header {
-            display: flex;
-            padding-bottom: 4.5px;
-            border-bottom: 1px solid #474143; }
-            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .hs-class span {
-              font-size: 35px;
-              position: relative;
-              top: 5px;
-              padding: 5px;
-              border: 2px solid black;
-              -webkit-border-radius: 50%;
-              -moz-border-radius: 50%;
-              border-radius: 50%; }
-            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about {
-              margin-left: 10px; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .title {
-                font-weight: bold;
-                font-size: 16px; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .author, .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .created {
-                font-size: 12px; }
-          .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body {
-            margin-top: 4.5px; }
-            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header {
+      .adventures .right-container .content .extension-content .bosses table tbody tr td a img {
+        -webkit-box-shadow: 0 0 10px black;
+        -moz-box-shadow: 0 0 10px black;
+        box-shadow: 0 0 10px black;
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        -ms-transition: all ease 0.4s;
+        -o-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+        width: 70px;
+        height: 70px; }
+      .adventures .right-container .content .extension-content .bosses table tbody tr td a p {
+        line-height: 60px;
+        margin: 0 0 0 10px;
+        background: transparent; }
+    .adventures .right-container .content .extension-content .bosses table tbody tr td:hover img {
+      -webkit-box-shadow: 0 0 10px #474143;
+      -moz-box-shadow: 0 0 10px #474143;
+      box-shadow: 0 0 10px #474143; }
+  .adventures .right-container .content .extension-content .bosses table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.6); }
+  .adventures .right-container .content .extension-content .bosses table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.5); }
+  .adventures .right-container .content .extension-content .bosses table tbody tr:hover td:first-child {
+    background-color: #00a99c;
+    color: #E7E2DA; }
+.adventures .right-container .content .extension-content .bosses .boss-guide-header p {
+  background: transparent;
+  text-align: center; }
+.adventures .right-container .content .extension-content .bosses .boss-guide-header ul li {
+  width: 24%;
+  margin: 7px;
+  height: 335px;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-flex; }
+  .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li div {
+    width: 100%; }
+    .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li div .boss-details-nav-el {
+      padding: 0;
+      line-height: 40px;
+      height: 40px;
+      background: #474143;
+      color: #E7E2DA;
+      text-align: center; }
+  .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child {
+    width: calc(100% - 20px);
+    display: flex; }
+    .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks {
+      display: inline-flex;
+      width: 100%; }
+      .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck {
+        background-color: #E7E2DA;
+        width: 25%;
+        padding: 10px;
+        margin-right: 10px; }
+        .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck:last-child {
+          margin-right: 0; }
+        .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .background-icon {
+          position: absolute;
+          font-size: 130px;
+          opacity: 0.05;
+          padding-left: 235px;
+          padding-top: 8px; }
+        .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header {
+          display: flex;
+          padding-bottom: 4.5px;
+          border-bottom: 1px solid #474143; }
+          .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .hs-class span {
+            font-size: 35px;
+            position: relative;
+            top: 5px;
+            padding: 5px;
+            border: 2px solid black;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%; }
+          .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about {
+            margin-left: 10px; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .title {
+              font-weight: bold;
+              font-size: 16px; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .author, .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .header .about .created {
+              font-size: 12px; }
+        .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body {
+          margin-top: 4.5px; }
+          .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header {
+            display: flex; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode {
+              width: 10%;
+              text-align: center; }
+              .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode span {
+                color: darkgreen;
+                font-size: 25px; }
+              .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode p {
+                margin-left: 5px; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
               display: flex; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode {
-                width: 10%;
-                text-align: center; }
-                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode span {
-                  color: darkgreen;
-                  font-size: 25px; }
-                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mode p {
-                  margin-left: 5px; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
-                display: flex; }
-                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed span {
-                  font-size: 25px; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mana-curve {
-                width: 14%;
-                display: flex; }
-                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mana-curve li {
-                  width: 5px;
-                  background-color: #474143;
-                  height: 100%;
-                  margin-right: 2px; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .deck-type, .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
-                height: 27px;
-                line-height: 27px; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .deck-type {
-                width: 55%; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
-                width: 21%;
-                text-align: right; }
-            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body {
-              margin-top: 10px;
+              .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed span {
+                font-size: 25px; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mana-curve {
+              width: 14%;
               display: flex; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div {
-                text-align: left;
-                border-right: 1px solid #A69E9D;
-                padding: 0 5px; }
-                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div:first-child {
-                  padding-left: 0; }
-                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div:last-child {
-                  padding-right: 0;
-                  border-right: 0; }
-            .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer {
-              margin-top: 7px;
-              display: flex; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer div {
-                width: 33.33%; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views {
-                display: flex;
-                opacity: .6; }
-                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views span {
-                  font-size: 10px; }
-                .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views p {
-                  padding: 0;
-                  margin: 0; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .comments {
-                text-align: center; }
-              .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .votes {
-                text-align: right; }
+              .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .mana-curve li {
+                width: 5px;
+                background-color: #474143;
+                height: 100%;
+                margin-right: 2px; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .deck-type, .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
+              height: 27px;
+              line-height: 27px; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .deck-type {
+              width: 55%; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-header .dust-needed {
+              width: 21%;
+              text-align: right; }
+          .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body {
+            margin-top: 10px;
+            display: flex; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div {
+              text-align: left;
+              border-right: 1px solid #A69E9D;
+              padding: 0 5px; }
+              .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div:first-child {
+                padding-left: 0; }
+              .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-body div:last-child {
+                padding-right: 0;
+                border-right: 0; }
+          .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer {
+            margin-top: 7px;
+            display: flex; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer div {
+              width: 33.33%; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views {
+              display: flex;
+              opacity: .6; }
+              .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views span {
+                font-size: 10px; }
+              .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .views p {
+                padding: 0;
+                margin: 0; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .comments {
+              text-align: center; }
+            .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .votes {
+              text-align: right; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }

@@ -7,7 +7,7 @@ import {AdventureStructure} from '../assets/structure';
 export class AdventureContent extends Component {
   render(){
     return (
-      <div className={`adventure-content ${this.props.sidebarActiveTab} ${this.props.details} `}>
+      <div className={`extension-content ${this.props.sidebarActiveTab} ${this.props.details} `}>
         <AdventureBosses handleBossClick={this.props.handleBossClick}
                          adventure={this.props.adventure}
                          sidebarActiveTab={this.props.sidebarActiveTab}

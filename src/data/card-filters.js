@@ -214,7 +214,7 @@ export const expansions = [
     en_url: 'the-grand-tournament'
   },
   {
-    en: 'Whispers of The Old Gods',
+    en: 'Whispers of the Old Gods',
     pl: 'Przedwieczni Bogowie',
     url: 'przedwieczni-bogowie',
     en_url: 'whispers-of-the-old-gods'
