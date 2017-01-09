@@ -3,7 +3,7 @@ import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
 import {PreAdventureSelect} from './right-container/pre-adventure-select';
 import {AdventureContent} from './right-container/adventure-content';
-import {AdventureOverview} from './right-container/adventure-overwiev'
+import {AdventureOverview} from './right-container/adventure-overview'
 export class Adventures extends Component {
   constructor(props){
     super(props);

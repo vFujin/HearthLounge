@@ -7,19 +7,20 @@ export class Topbar extends Component {
 
     return (
         <div className='topbar'>
-          <ul className="content-navigation">
-            {topbar_tabs.map( (element, index)=>
-              element.expansion_topbar_tabs.map((element,index)=>
+          {topbar_tabs.map( (element, index) =>
+          <ul className={`${this.props.selectedExpansionClass === element.expansion && 'active'}-view content-navigation`} key={index}>
+            {element.expansion_topbar_tabs.map((element, index) =>
                 <li onClick={this.props.onTabChange}
                     key={index}
                     className={`${this.props.isActive === element.url && 'active'} ${this.props.sidebarActiveTab}`}>
-                  <Link data-tab={element.url} data-url={element.en_url} to={`/dodatki/${this.props.sidebarActiveTab}/${element.url}`}>
+                  <Link data-tab={element.url} data-url={element.en_url}
+                        to={`/dodatki/${this.props.sidebarActiveTab}/${element.url}`}>
                     {element.tab}
                   </Link>
                 </li>
-              )
             )}
           </ul>
+          )}
         </div>
     );
   }

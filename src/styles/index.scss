@@ -826,8 +826,68 @@ footer{
   }
 }
 
+.expansions, .adventures{
+  .left-container{
+    background: $dark-grey;
+    .sidebar{
+      ul{
+        li{
+          background-color: $pearl;
+          color: $dark-grey;
+          margin: 10px;
+
+          a{
+            @include transition(all ease .4s);
+            padding: 10px ;
+            display: flex;
+            span{
+              font-size: 50px;
+            }
+            p{
+              margin-left: 10px;
+              margin-bottom:0;
+              line-height: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .right-container{
+    .content{
+      .topbar{
+        .content-navigation {
+          display: flex;
+          @include transition(all ease .4s);
+          li {
+            @include transition(all ease .4s);
+            cursor: pointer;
+            border-right: 1px solid $dark-grey;
+            a {
+              color: $dark-grey;
+              display: block;
+              padding: 15.4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .expansions{
   .right-container{
+    .content {
+      .topbar {
+        .false-view{
+          display: none;
+        }
+        .active-view {
+          color: $dark-grey;
+          display: flex;
+        }
+      }
+    }
   }
 }
 
@@ -1157,54 +1217,7 @@ footer{
   }
 }
 
-.expansions, .adventures{
-  .left-container{
-    background: $dark-grey;
-    .sidebar{
-      ul{
-        li{
-          background-color: $pearl;
-          color: $dark-grey;
-          margin: 10px;
 
-          a{
-            @include transition(all ease .4s);
-            padding: 10px ;
-            display: flex;
-            span{
-              font-size: 50px;
-            }
-            p{
-              margin-left: 10px;
-              margin-bottom:0;
-              line-height: 50px;
-            }
-          }
-        }
-      }
-    }
-  }
-  .right-container{
-    .content{
-      .topbar{
-        .content-navigation {
-          display: inline-flex;
-          @include transition(all ease .4s);
-          li {
-            @include transition(all ease .4s);
-            cursor: pointer;
-            border-right: 1px solid $dark-grey;
-            a {
-              color: $dark-grey;
-              display: block;
-              padding: 15.4px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
 .pageContainer.forum{
   width: calc(100% - 20px);

@@ -10,14 +10,14 @@ export class Expansions extends Component {
       preSelected: 'displayBlock',
       expansionOverview: 'displayBlock',
       selected: 'displayNone',
-      expansion: 'displayNone',
+      expansion: 'displayBlock',
+      selectedExpansionClass: null,
 
       //Topbar
       topbarActiveTab: '',
       topbarActiveTabUrl: '',
       sidebarActiveTab: null,
-      details: 'displayNone',
-      matchesPickedExpansion: 'displayNone'
+      details: 'displayNone'
     }
   }
 
@@ -26,6 +26,7 @@ export class Expansions extends Component {
     let isSelected = this.state.selected === "displayNone" ? "displayBlock" : "displayBlock";
     let selectedExpansion = event.target.dataset['api'];
     let selectedExpansionUrl = event.target.dataset['url'];
+    let selectedExpansionClass= event.target.dataset['expansion'];
 
     let activeTab = this.state.sidebarActiveTab === null ? selectedExpansionUrl : selectedExpansionUrl;
 
@@ -35,7 +36,8 @@ export class Expansions extends Component {
       selected: isSelected,
       expansion: selectedExpansion,
       selectedAdventureUrl: selectedExpansionUrl,
-      sidebarActiveTab: activeTab
+      sidebarActiveTab: activeTab,
+      selectedExpansionClass: selectedExpansionClass
     })
   }
 
@@ -46,14 +48,12 @@ export class Expansions extends Component {
     let isActiveUrl = this.state.topbarActiveTabUrl === '' ? activeTabUrl : activeTabUrl;
     let areDetailsShown = this.state.topbarActiveTab === 'displayNone' ? 'displayBlock' : 'displayBlock';
     let adventureOverview = this.state.expansionOverview === "displayBlock" ? "displayNone" : "displayNone";
-    let matchesExpansionPick = this.state.matchesPickedExpansion === 'displayNone' ? 'displayBlock' : 'displayBlock';
 
     this.setState({
       expansionOverview: adventureOverview,
       topbarActiveTab: isActive,
       topbarActiveTabUrl: isActiveUrl,
-      details: areDetailsShown,
-      matchesExpansionPick: matchesExpansionPick
+      details: areDetailsShown
     })
   }
 
@@ -71,7 +71,7 @@ export class Expansions extends Component {
               <Topbar onTabChange={this.handleTopbarClick.bind(this)}
                       isActive={this.state.topbarActiveTab}
                       sidebarActiveTab={this.state.sidebarActiveTab}
-                      matchesExpansionPick={this.state.matchesPickedExpansion} />
+                      selectedExpansionClass={this.state.selectedExpansionClass}/>
             </div>
           </div>
         </div>

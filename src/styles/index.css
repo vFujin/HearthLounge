@@ -1339,6 +1339,52 @@ footer {
   .arena-picker .left-container .sidebar table tr td:last-child {
     text-align: center; }
 
+.expansions .left-container, .adventures .left-container {
+  background: #474143; }
+  .expansions .left-container .sidebar ul li, .adventures .left-container .sidebar ul li {
+    background-color: #E7E2DA;
+    color: #474143;
+    margin: 10px; }
+    .expansions .left-container .sidebar ul li a, .adventures .left-container .sidebar ul li a {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      padding: 10px;
+      display: flex; }
+      .expansions .left-container .sidebar ul li a span, .adventures .left-container .sidebar ul li a span {
+        font-size: 50px; }
+      .expansions .left-container .sidebar ul li a p, .adventures .left-container .sidebar ul li a p {
+        margin-left: 10px;
+        margin-bottom: 0;
+        line-height: 50px; }
+.expansions .right-container .content .topbar .content-navigation, .adventures .right-container .content .topbar .content-navigation {
+  display: flex;
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .expansions .right-container .content .topbar .content-navigation li, .adventures .right-container .content .topbar .content-navigation li {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    border-right: 1px solid #474143; }
+    .expansions .right-container .content .topbar .content-navigation li a, .adventures .right-container .content .topbar .content-navigation li a {
+      color: #474143;
+      display: block;
+      padding: 15.4px; }
+
+.expansions .right-container .content .topbar .false-view {
+  display: none; }
+.expansions .right-container .content .topbar .active-view.content-navigation {
+  color: #474143;
+  display: flex; }
+
 .adventures .right-container .before-adventure-pick {
   width: calc(100% - 10px);
   height: 100%;
@@ -1574,46 +1620,6 @@ footer {
                 text-align: center; }
               .adventures .right-container .content .adventure-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .votes {
                 text-align: right; }
-
-.expansions .left-container, .adventures .left-container {
-  background: #474143; }
-  .expansions .left-container .sidebar ul li, .adventures .left-container .sidebar ul li {
-    background-color: #E7E2DA;
-    color: #474143;
-    margin: 10px; }
-    .expansions .left-container .sidebar ul li a, .adventures .left-container .sidebar ul li a {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
-      transition: all ease 0.4s;
-      padding: 10px;
-      display: flex; }
-      .expansions .left-container .sidebar ul li a span, .adventures .left-container .sidebar ul li a span {
-        font-size: 50px; }
-      .expansions .left-container .sidebar ul li a p, .adventures .left-container .sidebar ul li a p {
-        margin-left: 10px;
-        margin-bottom: 0;
-        line-height: 50px; }
-.expansions .right-container .content .topbar .content-navigation, .adventures .right-container .content .topbar .content-navigation {
-  display: inline-flex;
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s; }
-  .expansions .right-container .content .topbar .content-navigation li, .adventures .right-container .content .topbar .content-navigation li {
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
-    transition: all ease 0.4s;
-    cursor: pointer;
-    border-right: 1px solid #474143; }
-    .expansions .right-container .content .topbar .content-navigation li a, .adventures .right-container .content .topbar .content-navigation li a {
-      color: #474143;
-      display: block;
-      padding: 15.4px; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }
