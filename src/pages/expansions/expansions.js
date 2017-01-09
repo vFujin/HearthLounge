@@ -75,7 +75,7 @@ export class Expansions extends Component {
                       sidebarActiveTab={this.state.sidebarActiveTab}
                       selectedExpansionClass={this.state.selectedExpansionClass}/>
               <ExpansionOverview expansionOverview={this.state.expansionOverview} sidebarActiveTab={this.state.sidebarActiveTab} />
-              <ExpansionContent expansion={this.state.expansion} topbarActiveTabUrl={this.state.topbarActiveTabUrl}/>
+              <ExpansionContent expansion={this.state.expansion} topbarActiveTabUrl={this.state.topbarActiveTabUrl} content={this.state.details}/>
             </div>
           </div>
         </div>
