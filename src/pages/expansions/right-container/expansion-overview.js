@@ -1,3 +1,12 @@
-/**
- * Created by TERMINATOR on 09.01.2017.
- */
+import React, { Component } from 'react';
+
+export class ExpansionOverview extends Component {
+
+  render() {
+    return (
+        <div className="expansion-overview">
+
+        </div>
+    );
+  }
+}

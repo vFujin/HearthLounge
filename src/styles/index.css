@@ -1381,7 +1381,7 @@ footer {
 
 .expansions .right-container .content .topbar .false-view {
   display: none; }
-.expansions .right-container .content .topbar .active-view.content-navigation {
+.expansions .right-container .content .topbar .active-view {
   color: #474143;
   display: flex; }
 

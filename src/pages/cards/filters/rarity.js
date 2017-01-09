@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {rarity} from '../../../data/cards.filters'
+import {rarity} from '../../../data/card-filters'
 import {IconsWrapper} from './icons-wrapper';
 export class RarityFilter extends Component {
   constructor(props) {

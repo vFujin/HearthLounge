@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {faction} from '../../../data/cards.filters';
+import {faction} from '../../../data/card-filters';
 
 export class FactionFilter extends Component {
   constructor(props) {

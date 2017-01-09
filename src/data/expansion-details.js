@@ -53,5 +53,60 @@ export const topbar_tabs = [
         url: 'arena'
       }
     ]
+  },
+  {
+    expansion: 'whispers-of-the-old-gods',
+    expansion_topbar_tabs: [
+      {
+        en_url: 'cards',
+        tab: 'Karty',
+        url: 'karty'
+      },
+      {
+        en_url: 'pre-purchase',
+        tab: 'Przedzakup',
+        url: 'przedzakup'
+      },
+      {
+        en_url: 'arena',
+        tab: 'Arena',
+        url: 'arena'
+      },
+      {
+        en_url: 'standard-mode',
+        tab: 'Tryb Standard',
+        url: 'tryb-standard'
+      }
+    ]
+  },
+  {
+    expansion: 'mean-streets-of-gadgetzan',
+    expansion_topbar_tabs: [
+      {
+        en_url: 'cards',
+        tab: 'Karty',
+        url: 'karty'
+      },
+      {
+        en_url: 'pre-purchase',
+        tab: 'Przedzakup',
+        url: 'przedzakup'
+      },
+      {
+        en_url: 'multiclass-cards',
+        tab: 'Wieloklasowe Karty',
+        url: 'wieloklasowe-karty'
+      },
+      {
+        en_url: 'jade-golem-mechanic',
+        tab: 'Mechanika Nefrytowego Golema',
+        url: 'mechanika-nefrytowego-golema'
+      },
+      {
+        en_url: 'standard-mode',
+        tab: 'Tryb Standard',
+        url: 'tryb-standard'
+      }
+    ]
   }
 ];

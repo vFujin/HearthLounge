@@ -25,6 +25,7 @@ import {DeckWarrior} from './pages/decks/warrior';
 
 import {PickedClass} from './pages/arena-picker/picked-class';
 
+import {ExpansionOverview} from './pages/expansions/right-container/expansion-overview';
 import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
 import {AdventureContent} from './pages/adventures/right-container/adventure-content';
 
@@ -70,7 +71,9 @@ ReactDOM.render((
           <Route path="wojownik"        component={PickedClass} />
         </Route>
         <Route path="dodatki"           component={Expansions}>
-          <Route path=":expansion"      component={ExpansionContent} />
+          <Route path=":expansion"      component={ExpansionOverview}>
+            <Route path=":details"      component={ExpansionContent} />
+          </Route>
         </Route>
         <Route path="przygody"              component={Adventures}>
           <Route path=":adventure"          component={AdventureContent}>

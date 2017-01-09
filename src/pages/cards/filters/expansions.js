@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {IconsWrapper} from './icons-wrapper';
-import {expansions} from '../../../data/cards.filters';
+import {expansions} from '../../../data/card-filters';
 
 export class ExpansionFilter extends Component {
   constructor(props) {

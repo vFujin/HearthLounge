@@ -12,9 +12,8 @@ export class Topbar extends Component {
             {element.expansion_topbar_tabs.map((element, index) =>
                 <li onClick={this.props.onTabChange}
                     key={index}
-                    className={`${this.props.isActive === element.url && 'active'} ${this.props.sidebarActiveTab}`}>
-                  <Link data-tab={element.url} data-url={element.en_url}
-                        to={`/dodatki/${this.props.sidebarActiveTab}/${element.url}`}>
+                    className={`${this.props.isActive === element.url && 'active'} ${this.props.selectedExpansionClass}`}>
+                  <Link data-tab={element.url} data-url={element.en_url} to={`/dodatki/${this.props.sidebarActiveTab}/${element.url}`}>
                     {element.tab}
                   </Link>
                 </li>

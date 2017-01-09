@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import unirest from 'unirest';
-import {boss_details} from '../../../../data/boss_details';
+import {boss_details} from '../../../../data/boss-details';
 import {DeckSnippet} from './deck-snippet/deck-snippet';
 export class BossGuide extends Component {
   // constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {mechanics} from '../../../data/cards.filters';
+import {mechanics} from '../../../data/card-filters';
 
 export class MechanicsFilter extends Component {
   constructor(props) {
