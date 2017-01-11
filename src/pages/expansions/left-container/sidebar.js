@@ -13,7 +13,7 @@ export class Sidebar extends Component {
             {expansions.map((element, index) =>
                 <li key={index}>
                   <Link onClick={this.props.onExpansionChange} to={`/dodatki/${element.url}`}
-                        className={`${element.en_url} ${this.props.isActive} ${element.url} ${this.props.isActive === element.url && 'active'}`}
+                        className={`${element.en_url} ${this.props.isActive === element.url && 'active'}`}
                         data-api={element.en}
                         data-url={element.url}
                         data-expansion={element.en_url}>

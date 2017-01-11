@@ -1388,6 +1388,15 @@ footer {
       color: #474143;
       display: block;
       padding: 15.4px; }
+.expansions .right-container .content .about-extension .false-view, .adventures .right-container .content .about-extension .false-view {
+  display: none; }
+.expansions .right-container .content .about-extension .active-view, .adventures .right-container .content .about-extension .active-view {
+  color: #474143;
+  display: block; }
+.expansions .right-container .content .about-extension div, .adventures .right-container .content .about-extension div {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px; }
 .expansions .right-container .content .extension-content, .adventures .right-container .content .extension-content {
   margin: 10px 0 0 10px;
   background-color: #A69E9D; }
@@ -1429,15 +1438,6 @@ footer {
 .expansions .right-container .content .extension-content .active-expansion {
   display: block; }
 
-.adventures .right-container .content .about-adventure .false-view {
-  display: none; }
-.adventures .right-container .content .about-adventure .active-view {
-  color: #474143;
-  display: block; }
-.adventures .right-container .content .about-adventure div {
-  width: 100%;
-  text-align: center;
-  padding-top: 10px; }
 .adventures .right-container .content .extension-content .active-adventure {
   display: block; }
 .adventures .right-container .content .extension-content .cost .cost-description span {

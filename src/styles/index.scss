@@ -883,6 +883,20 @@ footer{
           }
         }
       }
+      .about-extension{
+        .false-view{
+          display: none;
+        }
+        .active-view{
+          color: $dark-grey;
+          display: block;
+        }
+        div{
+          width: 100%;
+          text-align: center;
+          padding-top: 10px;
+        }
+      }
       .extension-content {
         margin: 10px 0 0 10px;
         background-color: $light-grey;
@@ -941,22 +955,7 @@ footer{
 
 .adventures{
   .right-container{
-
     .content {
-      .about-adventure{
-        .false-view{
-          display: none;
-        }
-        .active-view{
-          color: $dark-grey;
-          display: block;
-        }
-        div{
-          width: 100%;
-          text-align: center;
-          padding-top: 10px;
-        }
-      }
       .extension-content {
         .active-adventure{
           display: block;

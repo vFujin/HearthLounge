@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {HearthstoneOnAndroid} from './hs-on-android';
-import {SpectatorMode} from './spectator-mode';
+import {HearthstoneOnAndroid} from './gvg/hs-on-android';
+import {SpectatorMode} from './gvg/spectator-mode';
 export class GoblinsVsGnomes extends Component {
   render() {
     return (
