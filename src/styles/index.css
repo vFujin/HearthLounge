@@ -1426,6 +1426,8 @@ footer {
 .expansions .right-container .content .topbar .active-view {
   color: #474143;
   display: flex; }
+.expansions .right-container .content .extension-content .active-expansion {
+  display: block; }
 
 .adventures .right-container .content .about-adventure .false-view {
   display: none; }

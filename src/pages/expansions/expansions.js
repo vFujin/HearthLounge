@@ -32,7 +32,7 @@ export class Expansions extends Component {
     let selectedExpansionClass= event.target.dataset['expansion'];
 
     let activeTab = this.state.sidebarActiveTab === null ? selectedExpansionUrl : selectedExpansionUrl;
-
+    // let activeTopbarTab = this.state.topbarActiveTabUrl ===
 
     this.setState({
       preSelected: preSelected,
@@ -77,7 +77,10 @@ export class Expansions extends Component {
                       sidebarActiveTab={this.state.sidebarActiveTab}
                       selectedExpansionClass={this.state.selectedExpansionClass}/>
               <ExpansionOverview expansionOverview={this.state.expansionOverview} sidebarActiveTab={this.state.sidebarActiveTab} />
-              <ExpansionContent expansion={this.state.expansion} topbarActiveTabUrl={this.state.topbarActiveTabUrl} content={this.state.details}/>
+              <ExpansionContent expansion={this.state.expansion}
+                                topbarActiveTabUrl={this.state.topbarActiveTabUrl}
+                                selectedExpansionClass={this.state.selectedExpansionClass}
+                                content={this.state.details}/>
             </div>
           </div>
         </div>

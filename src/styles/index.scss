@@ -930,6 +930,11 @@ footer{
           display: flex;
         }
       }
+      .extension-content{
+        .active-expansion{
+          display: block;
+        }
+      }
     }
   }
 }

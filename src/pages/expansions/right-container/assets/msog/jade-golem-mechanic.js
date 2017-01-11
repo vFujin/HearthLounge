@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-export class JadeGolemMechanics extends Component {
+export class JadeGolemMechanic extends Component {
   render() {
     return (
-        <div>
-          jade golem mechanics
+        <div className={`jade-golem-mechanic ${(this.props.topbarActiveTabUrl === 'jade-golem-mechanic' && this.props.selectedExpansionClass === 'mean-streets-of-gadgetzan') && 'active'}-view`}>
+          jade golem
         </div>
     );
   }
