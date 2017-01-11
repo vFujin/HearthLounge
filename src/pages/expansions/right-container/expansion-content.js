@@ -3,6 +3,9 @@ import {ExpansionCards}  from './assets/cards';
 import {Arena}  from './assets/arena';
 import {Preorder}  from './assets/preorder';
 import {StandardMode}  from './assets/standard-mode';
+
+import {SpectatorMode} from './assets/gvg/spectator-mode';
+import {HearthstoneOnAndroid} from './assets/gvg/hs-on-android';
 export class ExpansionContent extends Component {
 
   render() {
@@ -12,6 +15,8 @@ export class ExpansionContent extends Component {
           <Arena topbarActiveTabUrl={this.props.topbarActiveTabUrl}/>
           <Preorder topbarActiveTabUrl={this.props.topbarActiveTabUrl}/>
           <StandardMode topbarActiveTabUrl={this.props.topbarActiveTabUrl}/>
+          <SpectatorMode topbarActiveTabUrl={this.props.topbarActiveTabUrl}/>
+          <HearthstoneOnAndroid topbarActiveTabUrl={this.props.topbarActiveTabUrl} />
         </div>
     );
   }

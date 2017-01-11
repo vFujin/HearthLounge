@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
+import {PreExpansionSelect} from './right-container/pre-expansion-select';
 import {ExpansionContent} from './right-container/expansion-content';
 import {ExpansionOverview} from './right-container/expansion-overview';
 export class Expansions extends Component {
@@ -69,6 +70,7 @@ export class Expansions extends Component {
                      isActive={this.state.sidebarActiveTab} />
           </div>
           <div className="right-container">
+            <PreExpansionSelect preSelect={this.state.preSelected} />
             <div className={`content ${this.state.selected}`}>
               <Topbar onTabChange={this.handleTopbarClick.bind(this)}
                       isActive={this.state.topbarActiveTab}

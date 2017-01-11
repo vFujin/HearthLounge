@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-export class PreAdventureSelect extends Component {
+export class PreExpansionSelect extends Component {
   render() {
     return (
         <div className={`before-extension-pick ${this.props.preSelect}`}>
-          <p>&#10094; Wybierz przygodę</p>
+          <p>&#10094; Wybierz dodatek</p>
         </div>
     )
   }

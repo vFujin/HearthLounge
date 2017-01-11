@@ -854,6 +854,18 @@ footer{
     }
   }
   .right-container{
+    .before-extension-pick{
+      width: calc(100% - 10px);
+      height: 100%;
+      margin: 0 10px;
+      p{
+        width: 100%;
+        font-size: 40px;
+        text-transform: uppercase;
+        opacity: .4;
+        padding-top: 64px;
+      }
+    }
     .content{
       .topbar{
         .content-navigation {
@@ -924,18 +936,6 @@ footer{
 
 .adventures{
   .right-container{
-    .before-adventure-pick{
-      width: calc(100% - 10px);
-      height: 100%;
-      margin: 0 10px;
-      p{
-        width: 100%;
-        font-size: 40px;
-        text-transform: uppercase;
-        opacity: .4;
-        padding-top: 64px;
-      }
-    }
 
     .content {
       .about-adventure{

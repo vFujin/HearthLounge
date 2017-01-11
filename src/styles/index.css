@@ -1359,6 +1359,16 @@ footer {
         margin-left: 10px;
         margin-bottom: 0;
         line-height: 50px; }
+.expansions .right-container .before-extension-pick, .adventures .right-container .before-extension-pick {
+  width: calc(100% - 10px);
+  height: 100%;
+  margin: 0 10px; }
+  .expansions .right-container .before-extension-pick p, .adventures .right-container .before-extension-pick p {
+    width: 100%;
+    font-size: 40px;
+    text-transform: uppercase;
+    opacity: .4;
+    padding-top: 64px; }
 .expansions .right-container .content .topbar .content-navigation, .adventures .right-container .content .topbar .content-navigation {
   display: flex;
   -webkit-transition: all ease 0.4s;
@@ -1417,16 +1427,6 @@ footer {
   color: #474143;
   display: flex; }
 
-.adventures .right-container .before-adventure-pick {
-  width: calc(100% - 10px);
-  height: 100%;
-  margin: 0 10px; }
-  .adventures .right-container .before-adventure-pick p {
-    width: 100%;
-    font-size: 40px;
-    text-transform: uppercase;
-    opacity: .4;
-    padding-top: 64px; }
 .adventures .right-container .content .about-adventure .false-view {
   display: none; }
 .adventures .right-container .content .about-adventure .active-view {
