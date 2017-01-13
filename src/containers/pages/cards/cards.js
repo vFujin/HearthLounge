@@ -5,6 +5,14 @@ import {Topbar} from './topbar';
 import {ServiceCards} from './service.cards';
 
 export class Cards extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+
+    }
+
+  }
   render() {
     return (
         <div className="pageContainer cards">

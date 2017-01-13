@@ -1179,7 +1179,7 @@ footer {
 .cards .left-container .sidebar .hs {
   padding: 10px; }
 .cards .left-container .sidebar .sidebar-icons {
-  margin-bottom: 1em;
+  margin: 1em 0;
   text-align: center; }
   .cards .left-container .sidebar .sidebar-icons li span {
     -webkit-transition: all ease 0.4s;

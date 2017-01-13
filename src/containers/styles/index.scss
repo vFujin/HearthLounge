@@ -1,10 +1,10 @@
-@import '_reset';
-@import '_colors';
-@import '_fonts';
-@import '_grid';
-@import '_mixins';
-@import '_icons';
-@import '_submenu';
+@import 'reset';
+@import 'colors';
+@import 'fonts';
+@import 'grid';
+@import 'mixins';
+@import 'icons';
+@import 'submenu';
 html, body{
   height: 100%;
 }
@@ -618,7 +618,7 @@ footer{
         padding:10px;
       }
       .sidebar-icons {
-        margin-bottom:1em;
+        margin: 1em 0;
         text-align: center;
         li {
           span{

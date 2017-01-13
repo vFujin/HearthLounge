@@ -31,9 +31,19 @@ export const topbar_tabs = [
         url: 'karty'
       },
       {
+        en_url: 'pre-purchase',
+        tab: 'Przedzakup',
+        url: 'przedzakup'
+      },
+      {
         en_url: 'arena',
         tab: 'Arena',
         url: 'arena'
+      },
+      {
+        en_url: 'standard-mode',
+        tab: 'Tryb Standard',
+        url: 'tryb-standard'
       },
       {
         en_url: 'spectator-mode',
@@ -64,6 +74,11 @@ export const topbar_tabs = [
         en_url: 'arena',
         tab: 'Arena',
         url: 'arena'
+      },
+      {
+        en_url: 'standard-mode',
+        tab: 'Tryb Standard',
+        url: 'tryb-standard'
       }
     ]
   },
@@ -106,6 +121,16 @@ export const topbar_tabs = [
         url: 'przedzakup'
       },
       {
+        en_url: 'arena',
+        tab: 'Arena',
+        url: 'arena'
+      },
+      {
+        en_url: 'standard-mode',
+        tab: 'Tryb Standard',
+        url: 'tryb-standard'
+      },
+      {
         en_url: 'multiclass-cards',
         tab: 'Wieloklasowe Karty',
         url: 'wieloklasowe-karty'
@@ -114,11 +139,6 @@ export const topbar_tabs = [
         en_url: 'jade-golem-mechanic',
         tab: 'Mechanika Nefrytowego Golema',
         url: 'mechanika-nefrytowego-golema'
-      },
-      {
-        en_url: 'standard-mode',
-        tab: 'Tryb Standard',
-        url: 'tryb-standard'
       }
     ]
   }

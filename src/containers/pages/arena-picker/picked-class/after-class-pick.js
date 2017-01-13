@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Sidebar} from './picked-class/sidebar';
-import {Topbar} from './picked-class/topbar';
-import * as browserHistory from "react-router";
+import {Sidebar} from './sidebar';
+import {Topbar} from './topbar';
 export class PickedClass extends Component {
 
   render() {
@@ -12,16 +11,14 @@ export class PickedClass extends Component {
           </div>
           <div className="right-container">
             <Topbar/>
-            <ul>
-              <li>x</li>
-              <li>x</li>
-              <li>x</li>
+            <ul className="card-selection">
+              <li>
+                <div className="card">
+                  {/*api*/}
+                </div>
+                <input type="text" placeholder="Podaj nazwę pierwszej karty..."/>
+              </li>
             </ul>
-            <button
-                className="button icon-left"
-                onClick={browserHistory.goBack}>
-              Back
-            </button>
           </div>
 
         </div>
