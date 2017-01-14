@@ -22,7 +22,7 @@ import {DeckPaladin} from './decks/paladin';
 import {DeckShaman} from './decks/shaman';
 import {DeckWarrior} from './decks/warrior';
 
-import {PickedClass} from './pages/arena-picker/picked-class/after-class-pick';
+import {PickedClass} from './pages/arena-picker/picked-class/right-container/after-class-pick';
 
 import {ExpansionOverview} from './pages/expansions/right-container/expansion-overview';
 import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
@@ -39,11 +39,8 @@ import {Main} from './Main';
 import {BossGuide} from './pages/adventures/assets/boss-details/boss-guide';
 export class App extends Component {
   render() {
-    const createElement = (Component, props) => {
-      return <Component actions={this.props.actions} {...props}/>
-    };
     return (
-        <Router history={browserHistory} createElement={createElement}>
+        <Router history={browserHistory}>
           <Route path="/"                   component={Main}>
             <IndexRoute                     component={Home} />
             <Route path="strona-glowna"     component={Home} />

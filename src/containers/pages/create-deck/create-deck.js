@@ -1,18 +1,9 @@
-import React, { Component } from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
 
-export const CreateDeck = (props) => {
+export const CreateDeck = () => {
 
     return (
         <div className="pageContainer"></div>
     );
 
 };
-
-const mapStateToProps = (state) => {
-  return {
-    currentTime: state.currentTime
-  }
-};
-
-export default connect(mapStateToProps)(CreateDeck)

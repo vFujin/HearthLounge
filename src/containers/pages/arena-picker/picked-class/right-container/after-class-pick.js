@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Sidebar} from './sidebar';
+import {Sidebar} from '../left-container/sidebar';
 import {Topbar} from './topbar';
+import {Card} from './card-selection/card';
 export class PickedClass extends Component {
 
   render() {
@@ -12,12 +13,9 @@ export class PickedClass extends Component {
           <div className="right-container">
             <Topbar/>
             <ul className="card-selection">
-              <li>
-                <div className="card">
-                  {/*api*/}
-                </div>
-                <input type="text" placeholder="Podaj nazwę pierwszej karty..."/>
-              </li>
+              <Card placeholder="pierwszej" />
+              <Card placeholder="drugiej" />
+              <Card placeholder="trzeciej" />
             </ul>
           </div>
 

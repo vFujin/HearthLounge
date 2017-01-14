@@ -793,6 +793,116 @@ footer{
   }
   .arena-picker-wrapper{
     width: 100%;
+    .right-container{
+      ul{
+        display: flex;
+        width: 80%;
+        margin:0 auto;
+        justify-content: space-around;
+        height: calc(100% - 50px);
+        align-items: center;
+        li{
+          cursor: pointer;
+          width: 23%;
+          .card{
+            @include transition(all ease .4s);
+            height: 400px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            font-size: 150px;
+            border:5px solid $dark-grey;
+            color: $dark-grey;
+            //background: rgba(0,0,0,.1);
+            background: $light-grey;
+            &:hover{
+                @include box-shadow(0, 0, 10px, $dark-grey);
+                color: $pearl;
+            }
+          }
+          //input{
+          //  @include transition(all ease .4s);
+          //  width: calc(100% - 20px);
+          //  font-size: 16px;
+          //  padding: 10px;
+          //  margin-top: 10px;
+          //  background: transparent;
+          //  border-bottom: 2px solid $dark-grey;
+          //  color: $dark-grey;
+          //  &:focus{
+          //    border-color: $sea-color;
+          //  }
+          //}
+          .Select{
+            margin-top: 10px;
+            &:focus{
+              outline:none;
+            }
+            .Select-control{
+              background-color: transparent;
+              border:none;
+              border-radius: 0;
+              border-bottom: 2px solid $dark-grey;
+            }
+
+            .Select-placeholder{
+              color: $dark-grey;
+            }
+            .Select-arrow {
+              border-color: $dark-grey transparent transparent;
+            }
+            .Select-value{
+              color: $dark-grey;
+              border: 2px solid $dark-grey;
+              background-color: $light-grey;
+              .Select-value-icon{
+                border-right: 1px solid $dark-grey;
+                &:hover{
+                  color: $dark-grey;
+                }
+                &:focus{
+                  background-color: yellow;
+                }
+              }
+            }
+            .Select-clear-zone{
+              color: $dark-grey;
+
+            }
+            .Select-menu{
+              &::-webkit-scrollbar{width: 13px;}
+              &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0;}
+              &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
+              &::-webkit-scrollbar-track{background-color: $light-grey;}
+            }
+            .Select-menu-outer{
+              margin-top:0;
+              background-color: $light-grey;
+              border-radius: 0;
+              border:0;
+            }
+            .Select-noresults{
+              color: $pearl;
+            }
+            .Select-option{
+              @include transition(all ease .4s);
+              background-color: $pearl;
+              border-bottom:1px solid $dark-grey;
+              border-right: 1px solid $light-grey;
+              &:last-child{
+                border-radius: 0;
+                border-bottom:0;
+              }
+              &:hover{
+                background-color: $sea-color;
+                color: $pearl;
+              }
+
+            }
+          }
+        }
+      }
+    }
   }
   .left-container{
     .sidebar{
