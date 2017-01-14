@@ -705,68 +705,68 @@ footer{
   }
 }
 
-.decks{
-  .left-container{
-    ul{
-      li{
+.decks {
+  .left-container {
+    ul {
+      li {
         @include transition(all ease .4s);
         display: inline-block;
         color: $dark-grey;
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
-        span{
+        span {
           font-family: 'Hearthstone';
           font-size: 41px;
         }
       }
     }
   }
-  .right-container{
-    .topbar{
-      .topbar-left{
-          display: flex;
-          li{
-            width: 60px;
-            text-align: center;
-            span{
-              @include transition(all ease .4s);
-              color: $dark-grey;
-              padding: 5px;
-              line-height: 50px;
+  .right-container {
+    .topbar {
+      .topbar-left {
+        display: flex;
+        li {
+          width: 60px;
+          text-align: center;
+          span {
+            @include transition(all ease .4s);
+            color: $dark-grey;
+            padding: 5px;
+            line-height: 50px;
+          }
+          .tooltip {
+            position: absolute;
+            display: none;
+            width: 120px;
+            margin-left: -30px;
+            .caret-up {
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 0 5px 5px 5px;
+              border-color: transparent transparent $dark-grey transparent;
+              position: relative;
+              left: calc(50% - 5px);
             }
-            .tooltip {
-              position: absolute;
-              display: none;
-              width: 120px;
-              margin-left: -30px;
-              .caret-up {
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 0 5px 5px 5px;
-                border-color: transparent transparent $dark-grey transparent;
-                position: relative;
-                left: calc(50% - 5px);
-              }
-              p{
-                font-size: 12px;
-                text-transform: uppercase;
-                padding: 5px 0;
-                background-color: $dark-grey;
-                color: $pearl;
-              }
-            }
-            &:hover{
-              div{
-                display: block;
-              }
+            p {
+              font-size: 12px;
+              text-transform: uppercase;
+              padding: 5px 0;
+              background-color: $dark-grey;
+              color: $pearl;
             }
           }
+          &:hover {
+            div {
+              display: block;
+            }
+          }
+        }
       }
-      .create-deck{
+      .create-deck {
         margin-right: 10px;
-        span{
+        span {
           line-height: 50px;
         }
         .tooltip {
@@ -795,6 +795,63 @@ footer{
         &:hover {
           div {
             display: block;
+          }
+        }
+      }
+    }
+    .top-decks {
+      display: flex;
+      table {
+        margin-right: 20px;
+        border-collapse: collapse;
+        tr {
+          @include transition(all ease .4s);
+          &:nth-child(odd) {
+            background-color: rgba(0, 0, 0, .1);
+          }
+          &:first-child{
+            td{
+              background: $dark-grey;
+              color: $pearl;
+            }
+          }
+          td{
+            padding: 5px 10px;
+            border: 1px solid black;
+            text-align: center;
+          }
+          .name {
+            text-align: left;
+            span, div {
+              display: inline-block;
+            }
+            span {
+              padding: 5px;
+              font-size: 30px;
+              border: 2px solid $dark-grey;
+              border-radius: 50%;
+              margin-right: 5px;
+            }
+            .title {
+              font-weight: bold;
+            }
+            .author {
+              font-size: 10px;
+            }
+          }
+          .mana-curve {
+            ul {
+              display: flex;
+              li {
+                width: 4px;
+                background: $dark-grey;
+                height: 20px;
+                margin-right: 2px;
+                &:last-child {
+                  margin-right: 0;
+                }
+              }
+            }
           }
         }
       }

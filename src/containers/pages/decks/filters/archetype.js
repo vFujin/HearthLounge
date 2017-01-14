@@ -16,7 +16,7 @@ export class ArchetypeFilter extends Component {
   render() {
     return (
         <Select
-            placeholder="Mechaniki..."
+            placeholder="Archetyp talii..."
             value={this.state.value}
             options={archetype}
             onChange={this.handleChange}
