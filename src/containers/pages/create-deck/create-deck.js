@@ -7,3 +7,5 @@ export const CreateDeck = () => {
     );
 
 };
+
+export default CreateDeck;

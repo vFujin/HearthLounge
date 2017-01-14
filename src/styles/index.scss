@@ -531,6 +531,54 @@ footer{
   }
 }
 
+.decks{
+  .left-container{}
+  .right-container{
+    .topbar{
+      ul{
+        display: flex;
+        li{
+          width: 60px;
+          text-align: center;
+          span{
+            @include transition(all ease .4s);
+            color: $dark-grey;
+            padding: 5px;
+            line-height: 50px;
+          }
+          .tooltip {
+            position: absolute;
+            display: none;
+            width: 120px;
+            margin-left: -30px;
+            .caret-up {
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 0 5px 5px 5px;
+              border-color: transparent transparent $dark-grey transparent;
+              position: relative;
+              left: calc(50% - 5px);
+            }
+            p{
+              font-size: 12px;
+              text-transform: uppercase;
+              padding: 5px 0;
+              background-color: $dark-grey;
+              color: $pearl;
+            }
+          }
+          &:hover{
+            div{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .cards{
   ul{
     li{
@@ -732,7 +780,7 @@ footer{
       @include scrollbar;
       text-align:center;
       margin-top:10px;
-      height: 739px;
+      height: 749px ;
       overflow: auto;
       li{
         width: 248px;

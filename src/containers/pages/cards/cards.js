@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import 'react-select/dist/react-select.css';
-import {Sidebar} from './sidebar';
-import {Topbar} from './topbar';
-import {ServiceCards} from './service.cards';
+import {Sidebar} from './left-container/sidebar';
+import {Topbar} from './right-container/topbar';
+import {ServiceCards} from './right-container/service.cards';
 
 export class Cards extends Component {
   constructor(props){

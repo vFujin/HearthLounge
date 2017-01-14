@@ -1110,6 +1110,42 @@ footer {
         font-size: 12px;
         text-align: center; }
 
+.decks .right-container .topbar ul {
+  display: flex; }
+  .decks .right-container .topbar ul li {
+    width: 60px;
+    text-align: center; }
+    .decks .right-container .topbar ul li span {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      color: #474143;
+      padding: 5px;
+      line-height: 50px; }
+    .decks .right-container .topbar ul li .tooltip {
+      position: absolute;
+      display: none;
+      width: 120px;
+      margin-left: -30px; }
+      .decks .right-container .topbar ul li .tooltip .caret-up {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 5px 5px 5px;
+        border-color: transparent transparent #474143 transparent;
+        position: relative;
+        left: calc(50% - 5px); }
+      .decks .right-container .topbar ul li .tooltip p {
+        font-size: 12px;
+        text-transform: uppercase;
+        padding: 5px 0;
+        background-color: #474143;
+        color: #E7E2DA; }
+    .decks .right-container .topbar ul li:hover div {
+      display: block; }
+
 .cards ul li {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
@@ -1263,7 +1299,7 @@ footer {
 .cards .right-container .cards-container {
   text-align: center;
   margin-top: 10px;
-  height: 739px;
+  height: 749px;
   overflow: auto; }
   .cards .right-container .cards-container::-webkit-scrollbar {
     width: 13px; }
