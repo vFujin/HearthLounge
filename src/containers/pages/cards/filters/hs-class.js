@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {hs_class} from '../../../data/card-filters';
+import {hs_class} from '../../../data/filters';
 import {IconsWrapper} from './icons-wrapper';
 
 export class HsClassFilter extends Component {

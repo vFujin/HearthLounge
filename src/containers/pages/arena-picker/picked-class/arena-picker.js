@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {hs_class} from '../../../data/card-filters';
+import {hs_class} from '../../../data/filters';
 import { Link } from 'react-router'
 import {PickedClass} from './right-container/after-class-pick';
 export class ArenaPicker extends Component {

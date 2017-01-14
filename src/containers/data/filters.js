@@ -276,3 +276,30 @@ export const rarity = [
     pl: 'Legendarna'
   }
 ];
+
+export const archetype = [
+  {
+    value: 'renolock', label: 'Renolock'
+  },
+  {
+    value: 'dragonpriest', label: 'Dragon Priest'
+  },
+  {
+    value: 'cancerlock', label: 'Cancer Lock'
+  }
+];
+
+export const deck_type = [
+  {
+    value: 'adventure', label: 'Przygoda'
+  },
+  {
+    value: 'tavern-brawl', label: 'Karczemna Bójka'
+  },
+  {
+    value: 'ranked', label: 'Rankingowy'
+  },
+  {
+    value: 'tournament', label: 'Turniej'
+  },
+];

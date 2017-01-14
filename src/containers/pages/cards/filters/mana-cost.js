@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {mana_cost} from '../../../data/card-filters';
+import {mana_cost} from '../../../data/filters';
 
 export class ManaCostFilter extends Component {
   constructor(props) {

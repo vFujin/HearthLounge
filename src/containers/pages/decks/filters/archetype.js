@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {race} from '../../../data/filters';
+import {archetype} from '../../../data/filters';
 
-export class RaceFilter extends Component {
+export class ArchetypeFilter extends Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -16,9 +16,9 @@ export class RaceFilter extends Component {
   render() {
     return (
         <Select
-            placeholder="Rasa..."
+            placeholder="Mechaniki..."
             value={this.state.value}
-            options={race}
+            options={archetype}
             onChange={this.handleChange}
             multi={true}
         />

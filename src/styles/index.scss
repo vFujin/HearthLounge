@@ -531,72 +531,7 @@ footer{
   }
 }
 
-.decks{
-  .left-container{}
-  .right-container{
-    .topbar{
-      ul{
-        display: flex;
-        li{
-          width: 60px;
-          text-align: center;
-          span{
-            @include transition(all ease .4s);
-            color: $dark-grey;
-            padding: 5px;
-            line-height: 50px;
-          }
-          .tooltip {
-            position: absolute;
-            display: none;
-            width: 120px;
-            margin-left: -30px;
-            .caret-up {
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 0 5px 5px 5px;
-              border-color: transparent transparent $dark-grey transparent;
-              position: relative;
-              left: calc(50% - 5px);
-            }
-            p{
-              font-size: 12px;
-              text-transform: uppercase;
-              padding: 5px 0;
-              background-color: $dark-grey;
-              color: $pearl;
-            }
-          }
-          &:hover{
-            div{
-              display: block;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.cards{
-  ul{
-    li{
-      @include transition(all ease .4s);
-      display: inline-block;
-      margin-right: 10px;
-      color: $dark-grey;
-      cursor: pointer;
-      &:last-child{
-        margin-right: 0;
-      }
-      span{
-        font-family: 'Hearthstone';
-        font-size: 41px;
-      }
-    }
-  }
-
+.decks, .cards{
   .left-container{
     .sidebar{
       .Select{
@@ -717,34 +652,24 @@ footer{
   }
   .right-container{
     .topbar{
-      ul{
-        display: inline-flex;
-        li {
+      display: flex;
+      justify-content: space-between;
+      .topbar-left{
+        li{
+          cursor: pointer;
           span{
             line-height: 50px;
           }
-          &:last-child {
-            margin-right: 0;
-          }
         }
       }
-      .topbar-left{
-        margin-left: 5px;
-        li{
-          &:hover{
-            color: navy;
-          }
-        }
-      }
-      .topbar-right{
-        float: right;
-        li{
-          width: 60px;
-          text-align: center;
-          span{
+      .topbar-right {
+        li {
+          cursor: pointer;
+          span {
             @include transition(all ease .4s);
             color: $dark-grey;
             padding: 5px;
+            line-height: 50px;
           }
           .tooltip {
             position: absolute;
@@ -760,7 +685,7 @@ footer{
               position: relative;
               left: calc(50% - 5px);
             }
-            p{
+            p {
               font-size: 12px;
               text-transform: uppercase;
               padding: 5px 0;
@@ -768,11 +693,203 @@ footer{
               color: $pearl;
             }
           }
+          &:hover {
+            div {
+              display: block;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.decks{
+  .left-container{
+    ul{
+      li{
+        @include transition(all ease .4s);
+        display: inline-block;
+        color: $dark-grey;
+        &:last-child{
+          margin-right: 0;
+        }
+        span{
+          font-family: 'Hearthstone';
+          font-size: 41px;
+        }
+      }
+    }
+  }
+  .right-container{
+    .topbar{
+      .topbar-left{
+          display: flex;
+          li{
+            width: 60px;
+            text-align: center;
+            span{
+              @include transition(all ease .4s);
+              color: $dark-grey;
+              padding: 5px;
+              line-height: 50px;
+            }
+            .tooltip {
+              position: absolute;
+              display: none;
+              width: 120px;
+              margin-left: -30px;
+              .caret-up {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 5px 5px 5px;
+                border-color: transparent transparent $dark-grey transparent;
+                position: relative;
+                left: calc(50% - 5px);
+              }
+              p{
+                font-size: 12px;
+                text-transform: uppercase;
+                padding: 5px 0;
+                background-color: $dark-grey;
+                color: $pearl;
+              }
+            }
+            &:hover{
+              div{
+                display: block;
+              }
+            }
+          }
+      }
+      .create-deck{
+        margin-right: 10px;
+        span{
+          line-height: 50px;
+        }
+        .tooltip {
+          position: absolute;
+          display: none;
+          width: 140px;
+          text-align: center;
+          margin-left: -89px;
+          .caret-up {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 5px 5px;
+            border-color: transparent transparent $dark-grey transparent;
+            position: relative;
+            left: calc(79% - 5px);
+          }
+          p {
+            font-size: 12px;
+            text-transform: uppercase;
+            padding: 5px 0;
+            background-color: $dark-grey;
+            color: $pearl;
+          }
+        }
+        &:hover {
+          div {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cards{
+  ul{
+    li{
+      @include transition(all ease .4s);
+      display: inline-block;
+      color: $dark-grey;
+      &:last-child{
+        margin-right: 0;
+      }
+      span{
+        font-family: 'Hearthstone';
+        font-size: 41px;
+      }
+    }
+  }
+
+  .left-container{
+    .sidebar{
+      .hs{
+        padding:10px;
+      }
+      .sidebar-icons {
+        margin: 1em 0;
+        text-align: center;
+        li {
+          span{
+            @include transition(all ease .4s);
+            padding: 5px;
+            color: $dark-grey;
+          }
+          .tooltip {
+            position: absolute;
+            width: 200px;
+            display: none;
+            margin-left: -82px;
+            margin-top:5px;
+            .caret-up {
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 0 5px 5px 5px;
+              border-color: transparent transparent $pearl transparent;
+              position: relative;
+              left: calc(50% - 5px);
+            }
+            p{
+              font-size: 12px;
+              text-transform: uppercase;
+              padding: 5px 0;
+              background-color: $dark-grey;
+              color: $pearl;
+              border: 1px solid $pearl ;
+            }
+          }
           &:hover{
             div{
               display: block;
             }
           }
+          &:first-child{
+            .tooltip {
+              margin-left: -38px;
+              .caret-up {
+                left: calc(27% - 5px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .right-container{
+    .topbar{
+      .topbar-left{
+        li{
+          &:hover{
+            span {
+              color: navy;
+            }
+          }
+        }
+      }
+      .topbar-right{
+        li{
+          width: 60px;
+          text-align: center;
+
+
         }
       }
     }

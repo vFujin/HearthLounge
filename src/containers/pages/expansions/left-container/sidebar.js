@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {expansions} from '../../../data/card-filters';
+import {expansions} from '../../../data/filters';
 
 export class Sidebar extends Component {
 
