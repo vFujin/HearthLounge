@@ -26,7 +26,7 @@ export class Decks extends Component {
     let isDecksViewActive = this.state.decksView === 'display-block' ? 'display-none' : 'display-none';
 
     let isChoosenDeckSidebarActive = this.state.choosenDeckSidebar === 'display-none' ? 'display-block' : 'display-block';
-    let isChoosenDeckTopbarActive= this.state.choosenDeckTopbar === 'display-none' ? 'display-block' : 'display-block';
+    let isChoosenDeckTopbarActive= this.state.choosenDeckTopbar === 'display-none' ? 'display-flex' : 'display-flex';
     let isChoosenDeckViewActive = this.state.choosenDeckView === 'display-none' ? 'display-block' : 'display-block';
     this.setState({
       decksSidebar: isDecksSidebarActive,
@@ -46,28 +46,10 @@ export class Decks extends Component {
             <Sidebar decksSidebar={this.state.decksSidebar} choosenDeckSidebar={this.state.choosenDeckSidebar}/>
           </div>
           <div className="right-container">
-            <Topbar decksTopbar={this.state.decksTopbar}/>
+            <Topbar decksTopbar={this.state.decksTopbar} choosenDeckTopbar={this.state.choosenDeckTopbar}/>
             <DecksTable handleTableRowClick={this.handleTableRowClick.bind(this)} decksView={this.state.decksView}/>
-            <div className="picked-deck">
-            {/*
-                mana curve
-                rating
-                class icon
-                title
-                author
-                mode (standard / wild)
-                time when created
-                type
-                archetype
-                crafting cost / dust cost
-                patch when created?
-                --------
-                card list
-                description
-                comment section
+            <div className="choosen-deck-view">
 
-
-            */}
             </div>
           </div>
         </div>

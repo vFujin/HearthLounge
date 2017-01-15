@@ -1608,6 +1608,8 @@ footer {
       color: #E7E2DA; }
   .decks .right-container .topbar .create-deck:hover div {
     display: block; }
+.decks .right-container .topbar .choosen-deck-topbar {
+  display: flex; }
 .decks .right-container .top-decks {
   display: flex;
   margin: 10px 10px 0 10px;

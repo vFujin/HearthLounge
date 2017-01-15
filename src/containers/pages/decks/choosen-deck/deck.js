@@ -4,19 +4,19 @@ export class Deck extends Component {
     return (
       <div className="choosen-deck">
         {/*
-         mana curve
-         rating
+         //mana curve - in sidebar
+         //rating - in topbar
          class icon
-         title
+         //title - atm in sidebar, might consider to change the place for it
          author
-         mode (standard / wild)
+         //mode (standard / wild) - in topbar
          time when created
-         type
-         archetype
-         crafting cost / dust cost
+         //type - in topbar
+         //archetype - in topbar
+         //crafting cost / dust cost - in topbar
          patch when created?
          --------
-         card list
+         //card list - in sidebar
          description
          comment section
 
