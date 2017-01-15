@@ -6,13 +6,13 @@ export class DecksTable extends Component {
         <table>
           <tbody>
           <tr>
-            <td className="name">Deck Name</td>
-            <td className="class">Class</td>
-            <td className="rating">Rating</td>
-            <td className="views">Views</td>
+            <td className="name">Nazwa talii kart</td>
+            <td className="class">Klasa</td>
+            <td className="rating">Głosy</td>
+            <td className="views">Wyświetlenia</td>
             <td className="mana-curve">Mana</td>
-            <td className="type">Type</td>
-            <td className="created">Created</td>
+            <td className="type">Typ</td>
+            <td className="created">Stworzony</td>
           </tr>
           <DeckSnippet class="warlock"/>
           <DeckSnippet class="hunter"/>

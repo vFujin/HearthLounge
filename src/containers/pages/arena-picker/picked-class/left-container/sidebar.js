@@ -14,7 +14,7 @@ export class Sidebar extends Component {
             <DeckGraph cost="4"/>
             <DeckGraph cost="5"/>
             <DeckGraph cost="6"/>
-            <DeckGraph cost="7"/>
+            <DeckGraph cost="7-plus"/>
           </ul>
           <h3>Wybrane karty</h3>
           <ChoosenCards/>

@@ -15,7 +15,27 @@ export class Decks extends Component {
             <div className="top-decks">
                 {/*<h3>Top standard decks</h3>*/}
                 <DecksTable/>
+            </div>
+            <div className="picked-deck">
+            {/*
+                mana curve
+                rating
+                class icon
+                title
+                author
+                mode (standard / wild)
+                time when created
+                type
+                archetype
+                crafting cost / dust cost
+                patch when created?
+                --------
+                card list
+                description
+                comment section
 
+
+            */}
             </div>
           </div>
         </div>

@@ -13,12 +13,14 @@ export class Card extends Component {
           <div className="symbol">+</div>
           {/*api*/}
         </div>
-        <Select
-            placeholder={`Podaj nazwę ${this.props.placeholder} karty...`}
-            value={this.state.value}
-            options=''
-            onChange=''
-        />
+        <span className="select2-wrapper">
+          <Select
+              placeholder={`Podaj nazwę ${this.props.placeholder} karty...`}
+              value={this.state.value}
+              options=''
+              onChange=''
+          />
+        </span>
       </li>
     );
   }

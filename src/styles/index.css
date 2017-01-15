@@ -1581,7 +1581,7 @@ footer {
   .decks .right-container .topbar .create-deck:hover div {
     display: block; }
 .decks .right-container .top-decks {
-  display: flex;
+  display: none;
   margin: 10px 10px 0 10px;
   padding-right: 10px;
   height: calc(100% - 60px);
@@ -1612,6 +1612,7 @@ footer {
         color: #E7E2DA;
         padding: 20px; }
       .decks .right-container .top-decks table tr td {
+        cursor: pointer;
         padding: 5px 10px;
         border: 1px solid #474143;
         border-right: 0;
@@ -1638,7 +1639,8 @@ footer {
       .decks .right-container .top-decks table tr .class {
         text-transform: capitalize; }
       .decks .right-container .top-decks table tr .mana-curve ul {
-        display: flex; }
+        display: flex;
+        justify-content: center; }
         .decks .right-container .top-decks table tr .mana-curve ul li {
           width: 4px;
           background: #474143;
@@ -1792,6 +1794,10 @@ footer {
           -moz-box-shadow: 0 0 10px #474143;
           box-shadow: 0 0 10px #474143;
           color: #E7E2DA; }
+      .arena-picker .arena-picker-wrapper .right-container ul li:hover .select2-wrapper {
+        -webkit-box-shadow: 0 0 0 black;
+        -moz-box-shadow: 0 0 0 black;
+        box-shadow: 0 0 0 black; }
       .arena-picker .arena-picker-wrapper .right-container ul li .Select {
         margin-top: 10px; }
         .arena-picker .arena-picker-wrapper .right-container ul li .Select:focus {

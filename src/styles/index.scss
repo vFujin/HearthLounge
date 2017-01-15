@@ -819,7 +819,7 @@ footer{
     }
     .top-decks {
       @include scrollbar;
-      display: flex;
+      display: none;
       margin: 10px 10px 0 10px;
       padding-right: 10px;
       height: calc(100% - 60px);
@@ -841,6 +841,7 @@ footer{
             }
           }
           td{
+            cursor: pointer;
             padding: 5px 10px;
             border: 1px solid $dark-grey;
             border-right:0;
@@ -878,6 +879,7 @@ footer{
           .mana-curve {
             ul {
               display: flex;
+              justify-content: center;
               li {
                 width: 4px;
                 background: $dark-grey;
@@ -1073,6 +1075,11 @@ footer{
             &:hover{
                 @include box-shadow(0, 0, 10px, $dark-grey);
                 color: $pearl;
+            }
+          }
+          &:hover{
+            .select2-wrapper{
+              @include box-shadow(0, 0, 0, black);
             }
           }
           //input{

@@ -2,24 +2,28 @@ import React, { Component } from 'react';
 
 import { Router, Route, browserHistory, IndexRoute} from 'react-router';
 import {Home} from './pages/home/home';
-import {Decks} from './pages/decks/decks';
+
 import {Cards} from './pages/cards/cards';
 import {ArenaPicker} from './pages/arena-picker/picked-class/arena-picker';
-import {Expansions} from './pages/expansions/expansions';
-import {Adventures} from './pages/adventures/adventures';
+
+
 import CreateDeck from './pages/create-deck/create-deck';
 import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 import {Streams} from './pages/streams/streams';
 
+import {Decks} from './pages/decks/decks';
 import {ClassDeck} from './pages/decks/class-deck';
+import {Deck} from './pages/decks/deck/deck';
 
 import {PickedClass} from './pages/arena-picker/picked-class/right-container/after-class-pick';
 
+import {Expansions} from './pages/expansions/expansions';
 import {ExpansionOverview} from './pages/expansions/right-container/expansion-overview';
 import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
 import {AdventureContent} from './pages/adventures/right-container/adventure-content';
 
+import {Adventures} from './pages/adventures/adventures';
 import {AdventureBosses} from './pages/adventures/assets/bosses';
 import {AdventureCards} from './pages/adventures/assets/cards';
 import {AdventureClassChallanges} from './pages/adventures/assets/class-challanges';
@@ -37,7 +41,9 @@ export class App extends Component {
             <IndexRoute                     component={Home} />
             <Route path="strona-glowna"     component={Home} />
             <Route path="talie-kart"        component={Decks}>
-              <Route path=":class"          component={ClassDeck} />
+              <Route path=":class"          component={ClassDeck}>
+                <Route path=":id"           component={Deck} />
+              </Route>
             </Route>
             <Route path="karty"             component={Cards}>
               <Route path="/karta/:idKarty" component={Cards} />
