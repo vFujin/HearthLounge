@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ClassSelection } from './filters/class-selection';
 import { ModeSelection } from './filters/mode-selection';
-import { DeckSnippet } from './deck-snippet/deck-snippet';
+import { DeckSnippet } from '../../../shared-assets/deck-snippet/deck-snippet';
 import { SearchDecks } from './filters/search-decks';
 export class DecksBlock extends Component {
   render() {
