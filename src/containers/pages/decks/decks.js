@@ -1,41 +1,41 @@
 import React, { Component } from 'react';
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
-import {DecksTable} from './right-container/decks-table';
+import {DecksTable} from './right-container/cards-list/decks-table';
 export class Decks extends Component {
   constructor(props){
     super(props);
 
     this.state = {
       //main decks view {change to true / false}
-      sidebarFilters: 'display-block',
-      topbarFilters: 'display-flex',
-      deckList: 'display-block',
+      decksSidebar: 'display-block',
+      decksTopbar: 'display-flex',
+      decksView: 'display-block',
 
       //deck view
-      deckSidebar: 'display-none',
-      deckTopbar: 'display-none',
-      deckView: 'display-none'
+      choosenDeckSidebar: 'display-none',
+      choosenDeckTopbar: 'display-none',
+      choosenDeckView: 'display-none'
 
     }
   }
 
   handleTableRowClick(){
-    let isSidebarFilterActive = this.state.sidebarFilters === 'display-block' ? 'display-none' : 'display-none';
-    let isTopbarFilterActive = this.state.topbarFilters === 'display-flex' ? 'display-none' : 'display-none';
-    let isDeckListActive = this.state.deckList === 'display-block' ? 'display-none' : 'display-none';
+    let isDecksSidebarActive = this.state.decksSidebar === 'display-block' ? 'display-none' : 'display-none';
+    let isDecksTopbarActive = this.state.decksTopbar === 'display-flex' ? 'display-none' : 'display-none';
+    let isDecksViewActive = this.state.decksView === 'display-block' ? 'display-none' : 'display-none';
 
-    let isDeckSidebarActive = this.state.deckSidebar === 'display-none' ? 'display-block' : 'display-block';
-    let isDeckTopbarActive= this.state.deckTopbar === 'display-none' ? 'display-block' : 'display-block';
-    let isDeckViewActive = this.state.deckView === 'display-none' ? 'display-block' : 'display-block';
+    let isChoosenDeckSidebarActive = this.state.choosenDeckSidebar === 'display-none' ? 'display-block' : 'display-block';
+    let isChoosenDeckTopbarActive= this.state.choosenDeckTopbar === 'display-none' ? 'display-block' : 'display-block';
+    let isChoosenDeckViewActive = this.state.choosenDeckView === 'display-none' ? 'display-block' : 'display-block';
     this.setState({
-      sidebarFilters: isSidebarFilterActive,
-      topbarFilters: isTopbarFilterActive,
-      deckList: isDeckListActive,
+      decksSidebar: isDecksSidebarActive,
+      decksTopbar: isDecksTopbarActive,
+      decksView: isDecksViewActive,
 
-      deckSidebar: isDeckSidebarActive,
-      deckTopbar: isDeckTopbarActive,
-      deckView: isDeckViewActive
+      choosenDeckSidebar: isChoosenDeckSidebarActive,
+      choosenDeckTopbar: isChoosenDeckTopbarActive,
+      choosenDeckView: isChoosenDeckViewActive
     })
   }
 
@@ -43,11 +43,11 @@ export class Decks extends Component {
     return (
         <div className="pageContainer decks">
           <div className="left-container">
-            <Sidebar sidebarFilters={this.state.sidebarFilters} deckSidebar={this.state.deckSidebar}/>
+            <Sidebar decksSidebar={this.state.decksSidebar} choosenDeckSidebar={this.state.choosenDeckSidebar}/>
           </div>
           <div className="right-container">
-            <Topbar topbarFilters={this.state.topbarFilters}/>
-            <DecksTable handleTableRowClick={this.handleTableRowClick.bind(this)} deckList={this.state.deckList}/>
+            <Topbar decksTopbar={this.state.decksTopbar}/>
+            <DecksTable handleTableRowClick={this.handleTableRowClick.bind(this)} decksView={this.state.decksView}/>
             <div className="picked-deck">
             {/*
                 mana curve

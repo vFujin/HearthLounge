@@ -19,6 +19,6 @@ export class IconsWrapper extends Component{
         </div>
     );
   }
-};
+}
 
 export default IconsWrapper;

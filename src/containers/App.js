@@ -14,7 +14,7 @@ import {Streams} from './pages/streams/streams';
 
 import {Decks} from './pages/decks/decks';
 import {ClassDeck} from './pages/decks/class-deck';
-import {Deck} from './pages/decks/deck/deck';
+import {Deck} from './pages/decks/choosen-deck/deck';
 
 import {PickedClass} from './pages/arena-picker/picked-class/right-container/after-class-pick';
 

@@ -740,6 +740,17 @@ footer{
       }
     }
     .sidebar{
+      .deck-details{
+        table{
+          tr{
+            td{
+              span{
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
       .graph{
         padding: 10px;
         width: calc(100% - 20px);

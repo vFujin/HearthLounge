@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {deck_type} from '../../../data/filters';
+import {archetype} from '../../../../data/filters';
 
-export class DeckType extends Component {
+export class ArchetypeFilter extends Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
@@ -16,9 +16,9 @@ export class DeckType extends Component {
   render() {
     return (
         <Select
-            placeholder="Typ talii..."
+            placeholder="Archetyp talii..."
             value={this.state.value}
-            options={deck_type}
+            options={archetype}
             onChange={this.handleChange}
             multi={true}
         />
