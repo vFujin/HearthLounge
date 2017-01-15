@@ -13,10 +13,8 @@ export class Decks extends Component {
             <Topbar/>
 
             <div className="top-decks">
-              <div className="standard">
-                <h3>Top standard decks</h3>
+                {/*<h3>Top standard decks</h3>*/}
                 <DecksTable/>
-              </div>
 
             </div>
           </div>

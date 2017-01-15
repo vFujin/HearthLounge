@@ -248,14 +248,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .druid.active {
     background-color: #FF7D0A;
-    color: #474143; }
+    color: #474143;
+    border-color: #FF7D0A; }
   .druid.active-on-hover {
     color: #474143; }
     .druid.active-on-hover:hover {
       background-color: #FF7D0A;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .druid.icon-font-active {
     color: #474143; }
+  .druid.table-row {
+    color: #474143; }
+    .druid.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .druid.table-row:nth-child(odd):hover {
+        background: #FF7D0A; }
+    .druid.table-row:hover {
+      background-color: #FF7D0A;
+      color: #474143;
+      border: #474143; }
 
 .hunter {
   color: #ABD473; }
@@ -268,14 +280,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .hunter.active {
     background-color: #ABD473;
-    color: #474143; }
+    color: #474143;
+    border-color: #ABD473; }
   .hunter.active-on-hover {
     color: #474143; }
     .hunter.active-on-hover:hover {
       background-color: #ABD473;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .hunter.icon-font-active {
     color: #474143; }
+  .hunter.table-row {
+    color: #474143; }
+    .hunter.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .hunter.table-row:nth-child(odd):hover {
+        background: #ABD473; }
+    .hunter.table-row:hover {
+      background-color: #ABD473;
+      color: #474143;
+      border: #474143; }
 
 .mage {
   color: #69CCF0; }
@@ -288,14 +312,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .mage.active {
     background-color: #69CCF0;
-    color: #474143; }
+    color: #474143;
+    border-color: #69CCF0; }
   .mage.active-on-hover {
     color: #474143; }
     .mage.active-on-hover:hover {
       background-color: #69CCF0;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .mage.icon-font-active {
     color: #474143; }
+  .mage.table-row {
+    color: #474143; }
+    .mage.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .mage.table-row:nth-child(odd):hover {
+        background: #69CCF0; }
+    .mage.table-row:hover {
+      background-color: #69CCF0;
+      color: #474143;
+      border: #474143; }
 
 .paladin {
   color: #F58CBA; }
@@ -308,14 +344,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .paladin.active {
     background-color: #F58CBA;
-    color: #474143; }
+    color: #474143;
+    border-color: #F58CBA; }
   .paladin.active-on-hover {
     color: #474143; }
     .paladin.active-on-hover:hover {
       background-color: #F58CBA;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .paladin.icon-font-active {
     color: #474143; }
+  .paladin.table-row {
+    color: #474143; }
+    .paladin.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .paladin.table-row:nth-child(odd):hover {
+        background: #F58CBA; }
+    .paladin.table-row:hover {
+      background-color: #F58CBA;
+      color: #474143;
+      border: #474143; }
 
 .priest {
   color: #FFFFFF; }
@@ -328,14 +376,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .priest.active {
     background-color: #FFFFFF;
-    color: #474143; }
+    color: #474143;
+    border-color: #FFFFFF; }
   .priest.active-on-hover {
     color: #474143; }
     .priest.active-on-hover:hover {
       background-color: #FFFFFF;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .priest.icon-font-active {
     color: #474143; }
+  .priest.table-row {
+    color: #474143; }
+    .priest.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .priest.table-row:nth-child(odd):hover {
+        background: #FFFFFF; }
+    .priest.table-row:hover {
+      background-color: #FFFFFF;
+      color: #474143;
+      border: #474143; }
 
 .rogue {
   color: #FFF569; }
@@ -348,14 +408,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .rogue.active {
     background-color: #FFF569;
-    color: #474143; }
+    color: #474143;
+    border-color: #FFF569; }
   .rogue.active-on-hover {
     color: #474143; }
     .rogue.active-on-hover:hover {
       background-color: #FFF569;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .rogue.icon-font-active {
     color: #474143; }
+  .rogue.table-row {
+    color: #474143; }
+    .rogue.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .rogue.table-row:nth-child(odd):hover {
+        background: #FFF569; }
+    .rogue.table-row:hover {
+      background-color: #FFF569;
+      color: #474143;
+      border: #474143; }
 
 .shaman {
   color: #0070DE; }
@@ -368,14 +440,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .shaman.active {
     background-color: #0070DE;
-    color: #474143; }
+    color: #474143;
+    border-color: #0070DE; }
   .shaman.active-on-hover {
     color: #474143; }
     .shaman.active-on-hover:hover {
       background-color: #0070DE;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .shaman.icon-font-active {
     color: #474143; }
+  .shaman.table-row {
+    color: #474143; }
+    .shaman.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .shaman.table-row:nth-child(odd):hover {
+        background: #0070DE; }
+    .shaman.table-row:hover {
+      background-color: #0070DE;
+      color: #474143;
+      border: #474143; }
 
 .warlock {
   color: #9482C9; }
@@ -388,14 +472,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .warlock.active {
     background-color: #9482C9;
-    color: #474143; }
+    color: #474143;
+    border-color: #9482C9; }
   .warlock.active-on-hover {
     color: #474143; }
     .warlock.active-on-hover:hover {
       background-color: #9482C9;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .warlock.icon-font-active {
     color: #474143; }
+  .warlock.table-row {
+    color: #474143; }
+    .warlock.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .warlock.table-row:nth-child(odd):hover {
+        background: #9482C9; }
+    .warlock.table-row:hover {
+      background-color: #9482C9;
+      color: #474143;
+      border: #474143; }
 
 .warrior {
   color: #C79C6E; }
@@ -408,14 +504,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .warrior.active {
     background-color: #C79C6E;
-    color: #474143; }
+    color: #474143;
+    border-color: #C79C6E; }
   .warrior.active-on-hover {
     color: #474143; }
     .warrior.active-on-hover:hover {
       background-color: #C79C6E;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .warrior.icon-font-active {
     color: #474143; }
+  .warrior.table-row {
+    color: #474143; }
+    .warrior.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .warrior.table-row:nth-child(odd):hover {
+        background: #C79C6E; }
+    .warrior.table-row:hover {
+      background-color: #C79C6E;
+      color: #474143;
+      border: #474143; }
 
 .curse-of-naxxramas {
   color: #b5de3f; }
@@ -428,14 +536,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .curse-of-naxxramas.active {
     background-color: #b5de3f;
-    color: #474143; }
+    color: #474143;
+    border-color: #b5de3f; }
   .curse-of-naxxramas.active-on-hover {
     color: #474143; }
     .curse-of-naxxramas.active-on-hover:hover {
       background-color: #b5de3f;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .curse-of-naxxramas.icon-font-active {
     color: #474143; }
+  .curse-of-naxxramas.table-row {
+    color: #474143; }
+    .curse-of-naxxramas.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .curse-of-naxxramas.table-row:nth-child(odd):hover {
+        background: #b5de3f; }
+    .curse-of-naxxramas.table-row:hover {
+      background-color: #b5de3f;
+      color: #474143;
+      border: #474143; }
 
 .blackrock-mountain {
   color: #fa5210; }
@@ -448,14 +568,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .blackrock-mountain.active {
     background-color: #fa5210;
-    color: #474143; }
+    color: #474143;
+    border-color: #fa5210; }
   .blackrock-mountain.active-on-hover {
     color: #474143; }
     .blackrock-mountain.active-on-hover:hover {
       background-color: #fa5210;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .blackrock-mountain.icon-font-active {
     color: #474143; }
+  .blackrock-mountain.table-row {
+    color: #474143; }
+    .blackrock-mountain.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .blackrock-mountain.table-row:nth-child(odd):hover {
+        background: #fa5210; }
+    .blackrock-mountain.table-row:hover {
+      background-color: #fa5210;
+      color: #474143;
+      border: #474143; }
 
 .the-league-of-explorers {
   color: #14a9a1; }
@@ -468,14 +600,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .the-league-of-explorers.active {
     background-color: #14a9a1;
-    color: #474143; }
+    color: #474143;
+    border-color: #14a9a1; }
   .the-league-of-explorers.active-on-hover {
     color: #474143; }
     .the-league-of-explorers.active-on-hover:hover {
       background-color: #14a9a1;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .the-league-of-explorers.icon-font-active {
     color: #474143; }
+  .the-league-of-explorers.table-row {
+    color: #474143; }
+    .the-league-of-explorers.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .the-league-of-explorers.table-row:nth-child(odd):hover {
+        background: #14a9a1; }
+    .the-league-of-explorers.table-row:hover {
+      background-color: #14a9a1;
+      color: #474143;
+      border: #474143; }
 
 .one-night-at-karazhan {
   color: #e2b4df; }
@@ -488,14 +632,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .one-night-at-karazhan.active {
     background-color: #e2b4df;
-    color: #474143; }
+    color: #474143;
+    border-color: #e2b4df; }
   .one-night-at-karazhan.active-on-hover {
     color: #474143; }
     .one-night-at-karazhan.active-on-hover:hover {
       background-color: #e2b4df;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .one-night-at-karazhan.icon-font-active {
     color: #474143; }
+  .one-night-at-karazhan.table-row {
+    color: #474143; }
+    .one-night-at-karazhan.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .one-night-at-karazhan.table-row:nth-child(odd):hover {
+        background: #e2b4df; }
+    .one-night-at-karazhan.table-row:hover {
+      background-color: #e2b4df;
+      color: #474143;
+      border: #474143; }
 
 .goblins-vs-gnomes {
   color: #fae43f; }
@@ -508,14 +664,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .goblins-vs-gnomes.active {
     background-color: #fae43f;
-    color: #474143; }
+    color: #474143;
+    border-color: #fae43f; }
   .goblins-vs-gnomes.active-on-hover {
     color: #474143; }
     .goblins-vs-gnomes.active-on-hover:hover {
       background-color: #fae43f;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .goblins-vs-gnomes.icon-font-active {
     color: #474143; }
+  .goblins-vs-gnomes.table-row {
+    color: #474143; }
+    .goblins-vs-gnomes.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .goblins-vs-gnomes.table-row:nth-child(odd):hover {
+        background: #fae43f; }
+    .goblins-vs-gnomes.table-row:hover {
+      background-color: #fae43f;
+      color: #474143;
+      border: #474143; }
 
 .the-grand-tournament {
   color: #f00; }
@@ -528,14 +696,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .the-grand-tournament.active {
     background-color: #f00;
-    color: #474143; }
+    color: #474143;
+    border-color: #f00; }
   .the-grand-tournament.active-on-hover {
     color: #474143; }
     .the-grand-tournament.active-on-hover:hover {
       background-color: #f00;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .the-grand-tournament.icon-font-active {
     color: #474143; }
+  .the-grand-tournament.table-row {
+    color: #474143; }
+    .the-grand-tournament.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .the-grand-tournament.table-row:nth-child(odd):hover {
+        background: #f00; }
+    .the-grand-tournament.table-row:hover {
+      background-color: #f00;
+      color: #474143;
+      border: #474143; }
 
 .whispers-of-the-old-gods {
   color: #cc00ff; }
@@ -548,14 +728,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .whispers-of-the-old-gods.active {
     background-color: #cc00ff;
-    color: #474143; }
+    color: #474143;
+    border-color: #cc00ff; }
   .whispers-of-the-old-gods.active-on-hover {
     color: #474143; }
     .whispers-of-the-old-gods.active-on-hover:hover {
       background-color: #cc00ff;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .whispers-of-the-old-gods.icon-font-active {
     color: #474143; }
+  .whispers-of-the-old-gods.table-row {
+    color: #474143; }
+    .whispers-of-the-old-gods.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .whispers-of-the-old-gods.table-row:nth-child(odd):hover {
+        background: #cc00ff; }
+    .whispers-of-the-old-gods.table-row:hover {
+      background-color: #cc00ff;
+      color: #474143;
+      border: #474143; }
 
 .mean-streets-of-gadgetzan {
   color: #d2cac5; }
@@ -568,14 +760,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .mean-streets-of-gadgetzan.active {
     background-color: #d2cac5;
-    color: #474143; }
+    color: #474143;
+    border-color: #d2cac5; }
   .mean-streets-of-gadgetzan.active-on-hover {
     color: #474143; }
     .mean-streets-of-gadgetzan.active-on-hover:hover {
       background-color: #d2cac5;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .mean-streets-of-gadgetzan.icon-font-active {
     color: #474143; }
+  .mean-streets-of-gadgetzan.table-row {
+    color: #474143; }
+    .mean-streets-of-gadgetzan.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .mean-streets-of-gadgetzan.table-row:nth-child(odd):hover {
+        background: #d2cac5; }
+    .mean-streets-of-gadgetzan.table-row:hover {
+      background-color: #d2cac5;
+      color: #474143;
+      border: #474143; }
 
 .common {
   color: #fff; }
@@ -588,14 +792,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .common.active {
     background-color: #fff;
-    color: #474143; }
+    color: #474143;
+    border-color: #fff; }
   .common.active-on-hover {
     color: #474143; }
     .common.active-on-hover:hover {
       background-color: #fff;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .common.icon-font-active {
     color: #474143; }
+  .common.table-row {
+    color: #474143; }
+    .common.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .common.table-row:nth-child(odd):hover {
+        background: #fff; }
+    .common.table-row:hover {
+      background-color: #fff;
+      color: #474143;
+      border: #474143; }
 
 .rare {
   color: blue; }
@@ -608,14 +824,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .rare.active {
     background-color: blue;
-    color: #474143; }
+    color: #474143;
+    border-color: blue; }
   .rare.active-on-hover {
     color: #474143; }
     .rare.active-on-hover:hover {
       background-color: blue;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .rare.icon-font-active {
     color: #474143; }
+  .rare.table-row {
+    color: #474143; }
+    .rare.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .rare.table-row:nth-child(odd):hover {
+        background: blue; }
+    .rare.table-row:hover {
+      background-color: blue;
+      color: #474143;
+      border: #474143; }
 
 .epic {
   color: purple; }
@@ -628,14 +856,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .epic.active {
     background-color: purple;
-    color: #474143; }
+    color: #474143;
+    border-color: purple; }
   .epic.active-on-hover {
     color: #474143; }
     .epic.active-on-hover:hover {
       background-color: purple;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .epic.icon-font-active {
     color: #474143; }
+  .epic.table-row {
+    color: #474143; }
+    .epic.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .epic.table-row:nth-child(odd):hover {
+        background: purple; }
+    .epic.table-row:hover {
+      background-color: purple;
+      color: #474143;
+      border: #474143; }
 
 .legendary {
   color: orange; }
@@ -648,14 +888,26 @@ a:active, a:hover, a:link, a:visited {
       border-color: #474143; }
   .legendary.active {
     background-color: orange;
-    color: #474143; }
+    color: #474143;
+    border-color: orange; }
   .legendary.active-on-hover {
     color: #474143; }
     .legendary.active-on-hover:hover {
       background-color: orange;
-      color: #474143; }
+      color: #474143;
+      border: #474143; }
   .legendary.icon-font-active {
     color: #474143; }
+  .legendary.table-row {
+    color: #474143; }
+    .legendary.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .legendary.table-row:nth-child(odd):hover {
+        background: orange; }
+    .legendary.table-row:hover {
+      background-color: orange;
+      color: #474143;
+      border: #474143; }
 
 .decks .submenu {
   width: 12%; }
@@ -1329,25 +1581,46 @@ footer {
   .decks .right-container .topbar .create-deck:hover div {
     display: block; }
 .decks .right-container .top-decks {
-  display: flex; }
+  display: flex;
+  margin: 10px 10px 0 10px;
+  padding-right: 10px;
+  height: calc(100% - 60px);
+  justify-content: center;
+  width: calc(100% - 20px);
+  overflow: auto; }
+  .decks .right-container .top-decks::-webkit-scrollbar {
+    width: 13px; }
+  .decks .right-container .top-decks::-webkit-scrollbar-thumb {
+    background-color: #474143;
+    border-radius: 0; }
+  .decks .right-container .top-decks::-webkit-scrollbar-thumb:hover {
+    background-color: #474143; }
+  .decks .right-container .top-decks::-webkit-scrollbar-track {
+    background-color: #A69E9D; }
   .decks .right-container .top-decks table {
     margin-right: 20px;
-    border-collapse: collapse; }
+    border-collapse: collapse;
+    width: 100%; }
     .decks .right-container .top-decks table tr {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
       -ms-transition: all ease 0.4s;
       -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
-      .decks .right-container .top-decks table tr:nth-child(odd) {
-        background-color: rgba(0, 0, 0, 0.1); }
       .decks .right-container .top-decks table tr:first-child td {
-        background: #474143;
-        color: #E7E2DA; }
+        background: rgba(0, 0, 0, 0.5);
+        color: #E7E2DA;
+        padding: 20px; }
       .decks .right-container .top-decks table tr td {
         padding: 5px 10px;
-        border: 1px solid black;
+        border: 1px solid #474143;
+        border-right: 0;
+        border-left: 0;
         text-align: center; }
+        .decks .right-container .top-decks table tr td:first-child {
+          border-left: 1px solid #474143; }
+        .decks .right-container .top-decks table tr td:last-child {
+          border-right: 1px solid #474143; }
       .decks .right-container .top-decks table tr .name {
         text-align: left; }
         .decks .right-container .top-decks table tr .name span, .decks .right-container .top-decks table tr .name div {
@@ -1362,6 +1635,8 @@ footer {
           font-weight: bold; }
         .decks .right-container .top-decks table tr .name .author {
           font-size: 10px; }
+      .decks .right-container .top-decks table tr .class {
+        text-transform: capitalize; }
       .decks .right-container .top-decks table tr .mana-curve ul {
         display: flex; }
         .decks .right-container .top-decks table tr .mana-curve ul li {

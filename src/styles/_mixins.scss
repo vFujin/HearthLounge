@@ -88,17 +88,35 @@
   &.active {
       background-color: $color;
       color: $dark-grey;
+      border-color: $color;
   }
   &.active-on-hover{
     color: $dark-grey;
     &:hover{
       background-color: $color;
       color: $dark-grey;
+      border: $dark-grey;
     }
   }
   &.icon-font-active {
       color: $dark-grey;
   }
+
+  &.table-row{
+    &:nth-child(odd) {
+      background-color: rgba(0, 0, 0, .1);
+      &:hover{
+        background: $color;
+      }
+    }
+  color: $dark-grey;
+    &:hover{
+      background-color: $color;
+      color: $dark-grey;
+      border: $dark-grey;
+    }
+  }
+
 }
 
 @mixin scrollbar{
