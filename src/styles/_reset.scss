@@ -40,8 +40,11 @@ a{
   }
 }
 
-.displayNone{
+.displayNone, .display-none{
   display: none;
+}
+.display-flex{
+  display: flex ;
 }
 .displayInlineFlex{
   display: inline-flex;

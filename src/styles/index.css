@@ -42,8 +42,11 @@ a:active, a:hover, a:link, a:visited {
   color: inherit;
   text-decoration: none; }
 
-.displayNone {
+.displayNone, .display-none {
   display: none; }
+
+.display-flex {
+  display: flex; }
 
 .displayInlineFlex {
   display: inline-flex; }
@@ -1519,6 +1522,29 @@ footer {
   .decks .left-container ul li span {
     font-family: 'Hearthstone';
     font-size: 41px; }
+.decks .left-container .sidebar .graph {
+  padding: 10px;
+  width: calc(100% - 20px);
+  text-align: center;
+  display: inline-flex; }
+  .decks .left-container .sidebar .graph li {
+    width: 100%; }
+    .decks .left-container .sidebar .graph li .bar {
+      height: 100px;
+      margin: 2px auto;
+      width: 15px;
+      background-color: #474143; }
+    .decks .left-container .sidebar .graph li .hs-icon {
+      font-size: 25px; }
+.decks .left-container .sidebar table {
+  width: 100%; }
+  .decks .left-container .sidebar table tr td:last-child {
+    text-align: center; }
+.decks .right-container .topbar .filters {
+  justify-content: space-between;
+  width: 100%; }
+  .decks .right-container .topbar .filters .create-deck {
+    cursor: pointer; }
 .decks .right-container .topbar .topbar-left {
   display: flex; }
   .decks .right-container .topbar .topbar-left li {
@@ -1581,7 +1607,7 @@ footer {
   .decks .right-container .topbar .create-deck:hover div {
     display: block; }
 .decks .right-container .top-decks {
-  display: none;
+  display: flex;
   margin: 10px 10px 0 10px;
   padding-right: 10px;
   height: calc(100% - 60px);
@@ -1612,14 +1638,21 @@ footer {
         color: #E7E2DA;
         padding: 20px; }
       .decks .right-container .top-decks table tr td {
+        padding: 0;
         cursor: pointer;
-        padding: 5px 10px;
         border: 1px solid #474143;
         border-right: 0;
         border-left: 0;
         text-align: center; }
+        .decks .right-container .top-decks table tr td a {
+          display: block;
+          padding: 10px 0;
+          width: 100%;
+          height: 100%; }
         .decks .right-container .top-decks table tr td:first-child {
           border-left: 1px solid #474143; }
+          .decks .right-container .top-decks table tr td:first-child a {
+            padding-left: 10px; }
         .decks .right-container .top-decks table tr td:last-child {
           border-right: 1px solid #474143; }
       .decks .right-container .top-decks table tr .name {
@@ -1765,6 +1798,24 @@ footer {
           margin-top: 20px; }
 .arena-picker .arena-picker-wrapper {
   width: 100%; }
+  .arena-picker .arena-picker-wrapper .left-container .sidebar .graph {
+    padding: 10px;
+    width: calc(100% - 20px);
+    text-align: center;
+    display: inline-flex; }
+    .arena-picker .arena-picker-wrapper .left-container .sidebar .graph li {
+      width: 100%; }
+      .arena-picker .arena-picker-wrapper .left-container .sidebar .graph li .bar {
+        height: 100px;
+        margin: 2px auto;
+        width: 15px;
+        background-color: #474143; }
+      .arena-picker .arena-picker-wrapper .left-container .sidebar .graph li .hs-icon {
+        font-size: 25px; }
+  .arena-picker .arena-picker-wrapper .left-container .sidebar table {
+    width: 100%; }
+    .arena-picker .arena-picker-wrapper .left-container .sidebar table tr td:last-child {
+      text-align: center; }
   .arena-picker .arena-picker-wrapper .right-container ul {
     display: flex;
     width: 80%;
@@ -1854,24 +1905,6 @@ footer {
           .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-option:hover {
             background-color: #00a99c;
             color: #E7E2DA; }
-.arena-picker .left-container .sidebar .graph {
-  padding: 10px;
-  width: calc(100% - 20px);
-  text-align: center;
-  display: inline-flex; }
-  .arena-picker .left-container .sidebar .graph li {
-    width: 100%; }
-    .arena-picker .left-container .sidebar .graph li .bar {
-      height: 100px;
-      margin: 2px auto;
-      width: 15px;
-      background-color: #474143; }
-    .arena-picker .left-container .sidebar .graph li .hs-icon {
-      font-size: 25px; }
-.arena-picker .left-container .sidebar table {
-  width: 100%; }
-  .arena-picker .left-container .sidebar table tr td:last-child {
-    text-align: center; }
 
 .expansions .left-container, .adventures .left-container {
   background: #474143; }
