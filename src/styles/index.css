@@ -1938,7 +1938,7 @@ footer {
 .cards .mana-active {
   color: navy; }
 
-.arena-picker .pick-class {
+.arena-picker .pick-class, .create-deck .pick-class {
   padding: 0 40px;
   -webkit-box-shadow: 0px 0px 70px black;
   -moz-box-shadow: 0px 0px 70px black;
@@ -1947,11 +1947,11 @@ footer {
   margin: auto;
   text-transform: uppercase;
   text-align: center; }
-  .arena-picker .pick-class tr th {
+  .arena-picker .pick-class tr th, .create-deck .pick-class tr th {
     padding: 40px 0;
     font-size: 26px;
     color: #E7E2DA; }
-  .arena-picker .pick-class tr td {
+  .arena-picker .pick-class tr td, .create-deck .pick-class tr td {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -ms-transition: all 0.4s ease;
@@ -1960,126 +1960,127 @@ footer {
     cursor: pointer;
     width: 200px;
     height: 200px; }
-    .arena-picker .pick-class tr td a {
+    .arena-picker .pick-class tr td a, .create-deck .pick-class tr td a {
       width: 100%;
       height: 100%;
       display: block; }
-      .arena-picker .pick-class tr td a div {
+      .arena-picker .pick-class tr td a div, .create-deck .pick-class tr td a div {
         position: relative;
         top: calc(50% - 52px); }
-        .arena-picker .pick-class tr td a div span {
+        .arena-picker .pick-class tr td a div span, .create-deck .pick-class tr td a div span {
           font-size: 65px; }
-        .arena-picker .pick-class tr td a div p {
+        .arena-picker .pick-class tr td a div p, .create-deck .pick-class tr td a div p {
           margin-top: 20px; }
-.arena-picker .arena-picker-wrapper {
+.arena-picker .choosen-class-view, .create-deck .choosen-class-view {
   width: 100%; }
-  .arena-picker .arena-picker-wrapper .left-container .sidebar .graph {
+  .arena-picker .choosen-class-view .left-container .sidebar .graph, .create-deck .choosen-class-view .left-container .sidebar .graph {
     padding: 10px;
     width: calc(100% - 20px);
     text-align: center;
     display: inline-flex; }
-    .arena-picker .arena-picker-wrapper .left-container .sidebar .graph li {
+    .arena-picker .choosen-class-view .left-container .sidebar .graph li, .create-deck .choosen-class-view .left-container .sidebar .graph li {
       width: 100%; }
-      .arena-picker .arena-picker-wrapper .left-container .sidebar .graph li .bar {
+      .arena-picker .choosen-class-view .left-container .sidebar .graph li .bar, .create-deck .choosen-class-view .left-container .sidebar .graph li .bar {
         height: 100px;
         margin: 2px auto;
         width: 15px;
         background-color: #474143; }
-      .arena-picker .arena-picker-wrapper .left-container .sidebar .graph li .hs-icon {
+      .arena-picker .choosen-class-view .left-container .sidebar .graph li .hs-icon, .create-deck .choosen-class-view .left-container .sidebar .graph li .hs-icon {
         font-size: 25px; }
-  .arena-picker .arena-picker-wrapper .left-container .sidebar table {
+  .arena-picker .choosen-class-view .left-container .sidebar table, .create-deck .choosen-class-view .left-container .sidebar table {
     width: 100%; }
-    .arena-picker .arena-picker-wrapper .left-container .sidebar table tr td:last-child {
+    .arena-picker .choosen-class-view .left-container .sidebar table tr td:last-child, .create-deck .choosen-class-view .left-container .sidebar table tr td:last-child {
       text-align: center; }
-  .arena-picker .arena-picker-wrapper .right-container ul {
-    display: flex;
-    width: 80%;
-    margin: 0 auto;
-    justify-content: space-around;
-    height: calc(100% - 50px);
-    align-items: center; }
-    .arena-picker .arena-picker-wrapper .right-container ul li {
-      cursor: pointer;
-      width: 23%; }
-      .arena-picker .arena-picker-wrapper .right-container ul li .card {
+
+.arena-picker .choosen-class-view .right-container ul {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-around;
+  height: calc(100% - 50px);
+  align-items: center; }
+  .arena-picker .choosen-class-view .right-container ul li {
+    cursor: pointer;
+    width: 23%; }
+    .arena-picker .choosen-class-view .right-container ul li .card {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      height: 400px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      font-size: 150px;
+      border: 5px solid #474143;
+      color: #474143;
+      background: #A69E9D; }
+      .arena-picker .choosen-class-view .right-container ul li .card:hover {
+        -webkit-box-shadow: 0 0 10px #474143;
+        -moz-box-shadow: 0 0 10px #474143;
+        box-shadow: 0 0 10px #474143;
+        color: #E7E2DA; }
+    .arena-picker .choosen-class-view .right-container ul li:hover .select2-wrapper {
+      -webkit-box-shadow: 0 0 0 black;
+      -moz-box-shadow: 0 0 0 black;
+      box-shadow: 0 0 0 black; }
+    .arena-picker .choosen-class-view .right-container ul li .Select {
+      margin-top: 10px; }
+      .arena-picker .choosen-class-view .right-container ul li .Select:focus {
+        outline: none; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-control {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        border-bottom: 2px solid #474143; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-placeholder {
+        color: #474143; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-arrow {
+        border-color: #474143 transparent transparent; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-value {
+        color: #474143;
+        border: 2px solid #474143;
+        background-color: #A69E9D; }
+        .arena-picker .choosen-class-view .right-container ul li .Select .Select-value .Select-value-icon {
+          border-right: 1px solid #474143; }
+          .arena-picker .choosen-class-view .right-container ul li .Select .Select-value .Select-value-icon:hover {
+            color: #474143; }
+          .arena-picker .choosen-class-view .right-container ul li .Select .Select-value .Select-value-icon:focus {
+            background-color: yellow; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-clear-zone {
+        color: #474143; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-menu::-webkit-scrollbar {
+        width: 13px; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-menu::-webkit-scrollbar-thumb {
+        background-color: #474143;
+        border-radius: 0; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-menu::-webkit-scrollbar-thumb:hover {
+        background-color: #474143; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-menu::-webkit-scrollbar-track {
+        background-color: #A69E9D; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-menu-outer {
+        margin-top: 0;
+        background-color: #A69E9D;
+        border-radius: 0;
+        border: 0; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-noresults {
+        color: #E7E2DA; }
+      .arena-picker .choosen-class-view .right-container ul li .Select .Select-option {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
         -ms-transition: all ease 0.4s;
         -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
-        height: 400px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        font-size: 150px;
-        border: 5px solid #474143;
-        color: #474143;
-        background: #A69E9D; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .card:hover {
-          -webkit-box-shadow: 0 0 10px #474143;
-          -moz-box-shadow: 0 0 10px #474143;
-          box-shadow: 0 0 10px #474143;
-          color: #E7E2DA; }
-      .arena-picker .arena-picker-wrapper .right-container ul li:hover .select2-wrapper {
-        -webkit-box-shadow: 0 0 0 black;
-        -moz-box-shadow: 0 0 0 black;
-        box-shadow: 0 0 0 black; }
-      .arena-picker .arena-picker-wrapper .right-container ul li .Select {
-        margin-top: 10px; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select:focus {
-          outline: none; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-control {
-          background-color: transparent;
-          border: none;
+        background-color: #E7E2DA;
+        border-bottom: 1px solid #474143;
+        border-right: 1px solid #A69E9D; }
+        .arena-picker .choosen-class-view .right-container ul li .Select .Select-option:last-child {
           border-radius: 0;
-          border-bottom: 2px solid #474143; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-placeholder {
-          color: #474143; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-arrow {
-          border-color: #474143 transparent transparent; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-value {
-          color: #474143;
-          border: 2px solid #474143;
-          background-color: #A69E9D; }
-          .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-value .Select-value-icon {
-            border-right: 1px solid #474143; }
-            .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-value .Select-value-icon:hover {
-              color: #474143; }
-            .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-value .Select-value-icon:focus {
-              background-color: yellow; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-clear-zone {
-          color: #474143; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-menu::-webkit-scrollbar {
-          width: 13px; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-menu::-webkit-scrollbar-thumb {
-          background-color: #474143;
-          border-radius: 0; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-menu::-webkit-scrollbar-thumb:hover {
-          background-color: #474143; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-menu::-webkit-scrollbar-track {
-          background-color: #A69E9D; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-menu-outer {
-          margin-top: 0;
-          background-color: #A69E9D;
-          border-radius: 0;
-          border: 0; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-noresults {
+          border-bottom: 0; }
+        .arena-picker .choosen-class-view .right-container ul li .Select .Select-option:hover {
+          background-color: #00a99c;
           color: #E7E2DA; }
-        .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-option {
-          -webkit-transition: all ease 0.4s;
-          -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
-          transition: all ease 0.4s;
-          background-color: #E7E2DA;
-          border-bottom: 1px solid #474143;
-          border-right: 1px solid #A69E9D; }
-          .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-option:last-child {
-            border-radius: 0;
-            border-bottom: 0; }
-          .arena-picker .arena-picker-wrapper .right-container ul li .Select .Select-option:hover {
-            background-color: #00a99c;
-            color: #E7E2DA; }
 
 .expansions .left-container, .adventures .left-container {
   background: #474143; }
@@ -2364,6 +2365,28 @@ footer {
               text-align: center; }
             .adventures .right-container .content .extension-content .bosses .boss-guide-header ul li:last-child div .top-boss-decks .deck .body .body-footer .votes {
               text-align: right; }
+
+.create-deck .cards-container {
+  text-align: center;
+  margin-top: 10px;
+  height: 749px;
+  overflow: auto; }
+  .create-deck .cards-container::-webkit-scrollbar {
+    width: 13px; }
+  .create-deck .cards-container::-webkit-scrollbar-thumb {
+    background-color: #474143;
+    border-radius: 0; }
+  .create-deck .cards-container::-webkit-scrollbar-thumb:hover {
+    background-color: #474143; }
+  .create-deck .cards-container::-webkit-scrollbar-track {
+    background-color: #A69E9D; }
+  .create-deck .cards-container li {
+    width: 241px;
+    margin: 0;
+    display: inline-block; }
+    .create-deck .cards-container li img {
+      width: 100%;
+      height: 100%; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }

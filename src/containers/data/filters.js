@@ -155,46 +155,55 @@ export const mana_cost = [
 export const hs_class = [
   {
     en: 'warlock',
+    api: 'Warlock',
     pl: 'Czarnoksiężnik',
     url: 'czarnoksieznik'
   },
   {
     en: 'druid',
+    api: 'Druid',
     pl: 'Druid',
     url: 'druid'
   },
   {
     en: 'priest',
+    api: 'Priest',
     pl: 'Kapłan',
     url: 'kaplan'
   },
   {
     en: 'rogue',
+    api: 'Rogue',
     pl: 'Łotr',
     url: 'lotr'
   },
   {
     en: 'hunter',
+    api: 'Hunter',
     pl: 'Łowca',
     url: 'lowca'
   },
   {
     en: 'mage',
+    api: 'Mage',
     pl: 'Mag',
     url: 'mag'
   },
   {
     en: 'paladin',
+    api: 'Paladin',
     pl: 'Paladyn',
     url: 'paladyn'
   },
   {
     en: 'shaman',
+    api: 'Shaman',
     pl: 'Szaman',
     url: 'szaman'
   },
   {
     en: 'warrior',
+    api: 'Warrior',
     pl: 'Wojownik',
     url: 'wojownik'
   }

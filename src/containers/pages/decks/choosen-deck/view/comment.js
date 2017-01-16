@@ -5,6 +5,7 @@ export const Comment = () => {
       <div className="user-details">
         <div className="comment-avatar">
           <img src="http://lorempixel.com/50/50/cats/" alt="user avatar"/>
+          {/*img must be 50x50*/}
         </div>
         <div className="comment-author">Joe</div>
       </div>

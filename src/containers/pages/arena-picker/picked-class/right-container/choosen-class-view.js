@@ -6,7 +6,7 @@ export class PickedClass extends Component {
 
   render() {
     return (
-        <div className={`${this.props.display} arena-picker-wrapper`}>
+        <div className={`${this.props.display} choosen-class-view`}>
           <div className="left-container">
             <Sidebar/>
           </div>
