@@ -3,8 +3,8 @@ import DeckSnippet from './deck-snippet';
 export class DecksTable extends Component {
   render() {
     return (
-        <div className={`top-decks `}>
-          <table className={this.props.decksView}>
+        <div className={`top-decks ${this.props.decksView}`}>
+          <table>
             <tbody>
             <tr>
               <td className="name">Nazwa talii kart</td>

@@ -13,7 +13,7 @@ import {Tournaments} from './pages/tournaments/tournaments';
 import {Streams} from './pages/streams/streams';
 
 import {Decks} from './pages/decks/decks';
-import {ClassDeck} from './pages/decks/class-deck';
+import {ChoosenDeckView} from './pages/decks/choosen-deck/view/choosen-deck-view';
 import {Deck} from './pages/decks/choosen-deck/deck';
 
 import {PickedClass} from './pages/arena-picker/picked-class/right-container/after-class-pick';
@@ -41,7 +41,7 @@ export class App extends Component {
             <IndexRoute                     component={Home} />
             <Route path="strona-glowna"     component={Home} />
             <Route path="talie-kart"        component={Decks}>
-              <Route path=":class"          component={ClassDeck}>
+              <Route path=":class"          component={ChoosenDeckView}>
                 <Route path=":id"           component={Deck} />
               </Route>
             </Route>

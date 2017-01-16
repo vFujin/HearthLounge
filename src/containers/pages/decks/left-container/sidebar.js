@@ -25,7 +25,7 @@ export class Sidebar extends Component {
             <AdventureFilter/>
           </div>
           <div className={`deck-sidebar deck-details ${this.props.choosenDeckSidebar}`}>
-            <h3 className="filter-header">(deck title)</h3>
+            <h3 className="filter-header">Krzywa Many?</h3>
             <ul className="graph">
               <DeckGraph cost="0"/>
               <DeckGraph cost="1"/>

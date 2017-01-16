@@ -528,6 +528,102 @@ a:active, a:hover, a:link, a:visited {
       color: #474143;
       border: #474143; }
 
+.death-knight {
+  color: #C41F3B; }
+  .death-knight span {
+    border-color: #C41F3B; }
+  .death-knight:hover {
+    background-color: #C41F3B;
+    color: #474143; }
+    .death-knight:hover span {
+      border-color: #474143; }
+  .death-knight.active {
+    background-color: #C41F3B;
+    color: #474143;
+    border-color: #C41F3B; }
+  .death-knight.active-on-hover {
+    color: #474143; }
+    .death-knight.active-on-hover:hover {
+      background-color: #C41F3B;
+      color: #474143;
+      border: #474143; }
+  .death-knight.icon-font-active {
+    color: #474143; }
+  .death-knight.table-row {
+    color: #474143; }
+    .death-knight.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .death-knight.table-row:nth-child(odd):hover {
+        background: #C41F3B; }
+    .death-knight.table-row:hover {
+      background-color: #C41F3B;
+      color: #474143;
+      border: #474143; }
+
+.monk {
+  color: #00FF96; }
+  .monk span {
+    border-color: #00FF96; }
+  .monk:hover {
+    background-color: #00FF96;
+    color: #474143; }
+    .monk:hover span {
+      border-color: #474143; }
+  .monk.active {
+    background-color: #00FF96;
+    color: #474143;
+    border-color: #00FF96; }
+  .monk.active-on-hover {
+    color: #474143; }
+    .monk.active-on-hover:hover {
+      background-color: #00FF96;
+      color: #474143;
+      border: #474143; }
+  .monk.icon-font-active {
+    color: #474143; }
+  .monk.table-row {
+    color: #474143; }
+    .monk.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .monk.table-row:nth-child(odd):hover {
+        background: #00FF96; }
+    .monk.table-row:hover {
+      background-color: #00FF96;
+      color: #474143;
+      border: #474143; }
+
+.demon-hunter {
+  color: #A330C9; }
+  .demon-hunter span {
+    border-color: #A330C9; }
+  .demon-hunter:hover {
+    background-color: #A330C9;
+    color: #474143; }
+    .demon-hunter:hover span {
+      border-color: #474143; }
+  .demon-hunter.active {
+    background-color: #A330C9;
+    color: #474143;
+    border-color: #A330C9; }
+  .demon-hunter.active-on-hover {
+    color: #474143; }
+    .demon-hunter.active-on-hover:hover {
+      background-color: #A330C9;
+      color: #474143;
+      border: #474143; }
+  .demon-hunter.icon-font-active {
+    color: #474143; }
+  .demon-hunter.table-row {
+    color: #474143; }
+    .demon-hunter.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .demon-hunter.table-row:nth-child(odd):hover {
+        background: #A330C9; }
+    .demon-hunter.table-row:hover {
+      background-color: #A330C9;
+      color: #474143;
+      border: #474143; }
+
 .curse-of-naxxramas {
   color: #b5de3f; }
   .curse-of-naxxramas span {
@@ -1609,13 +1705,25 @@ footer {
   .decks .right-container .topbar .create-deck:hover div {
     display: block; }
 .decks .right-container .topbar .choosen-deck-topbar {
-  display: flex; }
-.decks .right-container .top-decks {
   display: flex;
+  align-items: center; }
+  .decks .right-container .topbar .choosen-deck-topbar .mode, .decks .right-container .topbar .choosen-deck-topbar .cards, .decks .right-container .topbar .choosen-deck-topbar .dust-cost {
+    display: flex;
+    align-items: center; }
+  .decks .right-container .topbar .choosen-deck-topbar span {
+    font-size: 20px; }
+  .decks .right-container .topbar .choosen-deck-topbar li {
+    margin-left: 10px; }
+  .decks .right-container .topbar .choosen-deck-topbar .rating, .decks .right-container .topbar .choosen-deck-topbar .dust-cost {
+    height: 100%;
+    padding: 0 10px; }
+  .decks .right-container .topbar .choosen-deck-topbar .rating {
+    display: flex;
+    align-items: center; }
+.decks .right-container .top-decks {
   margin: 10px 10px 0 10px;
   padding-right: 10px;
   height: calc(100% - 60px);
-  justify-content: center;
   width: calc(100% - 20px);
   overflow: auto; }
   .decks .right-container .top-decks::-webkit-scrollbar {
@@ -1685,6 +1793,69 @@ footer {
           margin-right: 2px; }
           .decks .right-container .top-decks table tr .mana-curve ul li:last-child {
             margin-right: 0; }
+.decks .right-container .choosen-deck-view .choosen-deck-details {
+  display: flex; }
+  .decks .right-container .choosen-deck-view .choosen-deck-details .section {
+    width: 50%;
+    height: 749px;
+    margin: 10px;
+    margin-bottom: 0;
+    overflow: auto;
+    justify-content: space-around; }
+    .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-header h1 {
+      width: 100%;
+      border-bottom: 1px solid black;
+      line-height: 0.1px;
+      margin: 0.67em 0; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-header h1 span {
+        background: #E7E2DA;
+        padding: 0 10px 0 0; }
+    .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body {
+      height: 716px;
+      overflow: auto; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar {
+        width: 13px; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-thumb {
+        background-color: #474143;
+        border-radius: 0; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-thumb:hover {
+        background-color: #474143; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-track {
+        background-color: #A69E9D; }
+  .decks .right-container .choosen-deck-view .choosen-deck-details .description .section-body {
+    padding: 0 10px 0 0; }
+    .decks .right-container .choosen-deck-view .choosen-deck-details .description .section-body p {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 10px; }
+  .decks .right-container .choosen-deck-view .choosen-deck-details .comments {
+    background: transparent;
+    margin-right: 0; }
+    .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment {
+      display: flex;
+      margin: 10px;
+      border-bottom: 1px solid black;
+      padding: 15px 0; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .user-details {
+        display: flex; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .user-details .comment-author {
+          width: 140px;
+          margin-left: 5px;
+          font-size: 14px; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details {
+        margin-left: 10px; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_header, .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer {
+          display: flex; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_header {
+          justify-content: space-between;
+          font-size: 14px; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_body {
+          margin: 10px 0; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer {
+          justify-content: flex-start; }
+          .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer div {
+            margin-right: 10px; }
+            .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer div:last-child {
+              margin-right: 0; }
 
 .cards ul li {
   -webkit-transition: all ease 0.4s;

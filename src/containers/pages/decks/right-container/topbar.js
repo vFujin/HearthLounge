@@ -10,8 +10,8 @@ export class Topbar extends Component {
             <HsClassFilter/>
             <CreateDeck/>
           </div>
-          <div className={`deck ${this.props.choosenDeckTopbar}`}>
-            <ChoosenDeckTopbar/>
+          <div className={this.props.choosenDeckTopbar}>
+            <ChoosenDeckTopbar />
           </div>
         </div>
     );

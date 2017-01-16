@@ -27,6 +27,18 @@
   @include icon_color($warrior);
 }
 
+.death-knight{
+  @include icon_color($death_knight);
+}
+
+.monk{
+  @include icon_color($monk);
+}
+
+.demon-hunter{
+  @include icon_color($demon_hunter);
+}
+
 //Adventures
 .curse-of-naxxramas{
   @include icon_color($naxx);

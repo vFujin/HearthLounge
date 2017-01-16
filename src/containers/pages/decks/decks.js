@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
 import {DecksTable} from './right-container/cards-list/decks-table';
+import {ChoosenDeckView} from './choosen-deck/view/choosen-deck-view';
 export class Decks extends Component {
   constructor(props){
     super(props);
@@ -48,8 +49,8 @@ export class Decks extends Component {
           <div className="right-container">
             <Topbar decksTopbar={this.state.decksTopbar} choosenDeckTopbar={this.state.choosenDeckTopbar}/>
             <DecksTable handleTableRowClick={this.handleTableRowClick.bind(this)} decksView={this.state.decksView}/>
-            <div className="choosen-deck-view">
-
+            <div className={`choosen-deck-view ${this.state.choosenDeckView}`}>
+              <ChoosenDeckView />
             </div>
           </div>
         </div>

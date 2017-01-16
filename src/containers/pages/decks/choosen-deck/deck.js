@@ -17,8 +17,8 @@ export class Deck extends Component {
          patch when created?
          --------
          //card list - in sidebar
-         description
-         comment section
+         //description - in deck view
+         //comment section - in deck view
 
 
          */}
