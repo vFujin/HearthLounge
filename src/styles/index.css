@@ -2434,4 +2434,7 @@ footer {
       .pageContainer.forum table tr:hover {
         background-color: #00a99c; }
 
+.tournaments iframe html body {
+  background: transparent; }
+
 /*# sourceMappingURL=index.css.map */

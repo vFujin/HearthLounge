@@ -15,7 +15,7 @@ export class AdventureCards extends Component {
         .end(res => {
           let adventure = this.props.adventure;
           this.setState({
-            cards: res.body[adventure]
+            cards: res.body[adventure].slice(0, 10)
           });
 
         });

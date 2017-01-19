@@ -12,11 +12,14 @@ export class CreateDeck extends Component{
       displayInlineFlex: 'displayInlineFlex',
       cards: [],
       choosen_class: ''
+
     };
+    console.log("Choosen class state (state should be empty): " +this.state.choosen_class);
   }
   handleClassSelectionClick() {
+    //For switching views
     let displayNone = this.state.displayNone === 'displayNone' ? 'displayInlineFlex' : 'displayNone';
-    let displayInlineFlex = this.state.displayInlineFlex=== 'displayInlineFlex' ? 'displayNone' : 'displayInlineFlex';
+    let displayInlineFlex = this.state.displayInlineFlex === 'displayInlineFlex' ? 'displayNone' : 'displayInlineFlex';
     this.setState({
       displayNone: displayNone,
       displayInlineFlex: displayInlineFlex
@@ -24,25 +27,26 @@ export class CreateDeck extends Component{
   }
 
   handleChoosenClassClick(event){
+    //For taking choosen class data
+    console.log("Click event launched (state should receive data-class attribute): " + this.state.choosen_class);
     let choosenClass = event.target.dataset['api'];
-    console.log("Taken data: " + choosenClass);
+
     this.setState({
       choosen_class: choosenClass
     });
   }
 
-  componentWillReceiveProps() {
-    console.log("Before response: " + this.state.choosen_class);
+  componentWillReceiveProps()  {
+    console.log("Component mounted (state should be set before mounting): " + this.state.choosen_class);
     unirest.get(`https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/${this.state.choosen_class}?collectible=1&locale=plPL`)
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
-          console.log("After response: " + this.state.choosen_class);
+          console.log("GET https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/{class}?collectible=1&locale=plPL <- should be like this");
+          console.log("State should be ({class}): " + this.state.choosen_class, res.body);
           this.setState({
-            cards: res.body.slice(0, 12)
+            cards: res.body.slice(0, 18)
           });
-
         });
-
   }
 
   render(){
