@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
 import {PreAdventureSelect} from './right-container/pre-adventure-select';
@@ -96,7 +97,10 @@ export class Adventures extends Component {
     return (
         <div className="pageContainer adventures">
           <div className="left-container">
-            <Sidebar isSelected={this.state.selected} isActive={this.state.sidebarActiveTab} activeTopbarTab={this.state.topbarActiveTab} onAdventureChange={this.handleSidebarClick.bind(this)}/>
+            <Sidebar isSelected={this.state.selected}
+                     isActive={this.state.sidebarActiveTab}
+                     activeTopbarTab={this.state.topbarActiveTab}
+                     onAdventureChange={this.handleSidebarClick.bind(this)}/>
           </div>
           <div className='right-container'>
             <PreAdventureSelect preSelect={this.state.preSelected}/>
@@ -127,3 +131,11 @@ export class Adventures extends Component {
     );
   }
 }
+
+function mapStateToProps(state){
+  return{
+    preSelected: state.preSelected
+  };
+}
+
+export default connect(mapStateToProps)(Adventures);

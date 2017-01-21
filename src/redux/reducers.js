@@ -1,9 +1,7 @@
-import {combineReducers, createStore} from 'redux';
+import {combineReducers} from 'redux';
 import {adventureReducer} from './reducers/adventures';
 
-const reducers = combineReducers({
+export const reducers = combineReducers({
   adventure: adventureReducer
 });
-
-const store = createStore(reducers);
-console.log(store);
+export default reducers;

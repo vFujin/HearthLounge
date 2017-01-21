@@ -3,6 +3,11 @@ import { Link } from 'react-router'
 import { navItems } from '../data/nav';
 
 export class Navbar extends Component {
+  constructor(props){
+    super(props);
+
+
+  }
   dropdown(el, index){
     let sub = el.submenu;
     if(!el.hasOwnProperty('submenu')) return;

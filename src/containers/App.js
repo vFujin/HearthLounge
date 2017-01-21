@@ -40,7 +40,7 @@ export class App extends Component {
   render() {
     return (
         <Router history={browserHistory}>
-          <Route path="/"                   component={Main}>
+          <Route path="/"                   component={Main} >
             <IndexRoute                     component={Home} />
             <Route path="strona-glowna"     component={Home} />
             <Route path="talie-kart"        component={Decks}>
