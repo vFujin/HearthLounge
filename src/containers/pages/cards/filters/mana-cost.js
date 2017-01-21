@@ -6,7 +6,7 @@ export class ManaCostFilter extends Component {
     return (
         <ul className="topbar-left">
           {mana_cost.map((element, i) =>
-              <li onClick={this.props.handleManaFilterClick.bind(this, i)} value={`mana-cost-${element.mana_cost}`} key={i}>
+              <li onClick={this.props.handleFilterClick.bind(this, i, 'manaFilter')} value={`mana-cost-${element.mana_cost}`} key={i}>
                   <span className={`hs icon-mana-${element.mana_cost} ${this.props.manaFilter === i && 'mana-active'}`}></span>
               </li>
           )}

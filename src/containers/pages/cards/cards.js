@@ -32,22 +32,22 @@ export class Cards extends Component {
     }
   }
 
-  handleManaFilterClick(i){
-    let isActive = this.state.manaFilter === i ? null : i;
+  handleFilterClick(i, filter){
+    let isActive = this.state[filter] === i ? null : i;
+    console.log(filter);
     this.setState({
-      manaFilter: isActive
+      [filter]: isActive
     })
   }
 
   componentDidMount() {
     console.log('mounted');
-    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?locale=plPL")
+    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?cost=7?locale=plPL")
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
           this.setState({
             cards: res.body['Basic'].slice(0, 10)
           });
-
         });
   }
 
@@ -58,8 +58,9 @@ export class Cards extends Component {
                 <Sidebar/>
             </div>
             <div className="right-container">
-                <Topbar handleManaFilterClick={this.handleManaFilterClick.bind(this)}
-                        manaFilter={this.state.manaFilter}/>
+                <Topbar handleFilterClick={this.handleFilterClick.bind(this)}
+                        manaFilter={this.state.manaFilter}
+                        hsClass={this.state.hsClass}/>
                 <ServiceCards cards={this.state.cards}/>
             </div>
         </div>
