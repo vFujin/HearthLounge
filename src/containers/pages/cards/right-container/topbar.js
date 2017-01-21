@@ -6,7 +6,8 @@ export class Topbar extends Component {
   render() {
     return (
         <div className="topbar">
-          <ManaCostFilter/>
+          <ManaCostFilter handleManaFilterClick={this.props.handleManaFilterClick}
+                          manaFilter={this.props.manaFilter}/>
           <HsClassFilter/>
         </div>
     );
