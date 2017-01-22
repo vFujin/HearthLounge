@@ -35,10 +35,11 @@ export class Sidebar extends Component {
           <RaceFilter onRaceChange={this.handleRace}/>
           <MechanicsFilter/>
           <DustFilter/>
-          <ExpansionFilter/>
-          <AdventureFilter/>
-          <RarityFilter />
-          <IsGoldenFilter />
+
+          <ExpansionFilter  handleFilterClick={this.props.handleFilterClick} expansion={this.props.expansion}/>
+          <AdventureFilter  handleFilterClick={this.props.handleFilterClick} adventure={this.props.adventure}/>
+          <RarityFilter     handleFilterClick={this.props.handleFilterClick} rarity={this.props.rarity}/>
+          <IsGoldenFilter/>
         </div>
     );
   }

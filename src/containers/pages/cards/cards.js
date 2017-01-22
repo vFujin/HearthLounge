@@ -11,20 +11,20 @@ export class Cards extends Component {
 
     this.state = {
       //Sidebar
-      cardName: '',
-      statistics: '',
-      faction: '',
-      race: '',
-      mechanics: '',
-      dust: '',
-      expansions: '',
-      adventures: '',
-      rarity: '',
-      goldenCards: '',
+      cardName: null,
+      statistics: null,
+      faction: null,
+      race: null,
+      mechanics: null,
+      dust: null,
+      expansion: null,
+      adventure: null,
+      rarity: null,
+      goldenCards: null,
 
       //Topbar
       manaFilter: null,
-      hsClass: '',
+      hsClass: null,
 
       //Cards
       cards: []
@@ -32,9 +32,10 @@ export class Cards extends Component {
     }
   }
 
-  handleFilterClick(i, filter){
+  handleFilterClick(i, filter, event){
     let isActive = this.state[filter] === i ? null : i;
-    console.log(filter);
+    let dataAtt = event.target.dataset['filter'];
+    console.log(dataAtt);
     this.setState({
       [filter]: isActive
     })
@@ -45,6 +46,7 @@ export class Cards extends Component {
     unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?cost=7?locale=plPL")
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
+          console.log(res.body);
           this.setState({
             cards: res.body['Basic'].slice(0, 10)
           });
@@ -55,7 +57,10 @@ export class Cards extends Component {
     return (
         <div className="pageContainer cards">
             <div className="left-container">
-                <Sidebar/>
+                <Sidebar handleFilterClick={this.handleFilterClick.bind(this)}
+                         expansion={this.state.expansion}
+                         adventure={this.state.adventure}
+                         rarity={this.state.rarity}/>
             </div>
             <div className="right-container">
                 <Topbar handleFilterClick={this.handleFilterClick.bind(this)}

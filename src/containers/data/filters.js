@@ -265,23 +265,23 @@ export const adventures = [
 
 export const rarity = [
   {
-    en: 'free',
+    en: 'Free',
     pl: 'Darmowa'
   },
   {
-    en: 'common',
+    en: 'Common',
     pl: 'Zwykła'
   },
   {
-    en: 'rare',
+    en: 'Rare',
     pl: 'Rzadka'
   },
   {
-    en: 'epic',
+    en: 'Epic',
     pl: 'Epicka'
   },
   {
-    en: 'legendary',
+    en: 'Legendary',
     pl: 'Legendarna'
   }
 ];

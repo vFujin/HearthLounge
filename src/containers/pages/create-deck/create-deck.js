@@ -14,7 +14,6 @@ export class CreateDeck extends Component{
       choosen_class: ''
 
     };
-    console.log("Choosen class state (state should be empty): " +this.state.choosen_class);
   }
   handleClassSelectionClick() {
     //For switching views
@@ -28,7 +27,6 @@ export class CreateDeck extends Component{
 
   handleChoosenClassClick(event){
     //For taking choosen class data
-    console.log("Click event launched (state should receive data-class attribute): " + this.state.choosen_class);
     let choosenClass = event.target.dataset['api'];
 
     this.setState({
@@ -36,15 +34,13 @@ export class CreateDeck extends Component{
     });
   }
 
-  componentWillReceiveProps()  {
-    console.log("Component mounted (state should be set before mounting): " + this.state.choosen_class);
+  componentWillUpdate()  {
     unirest.get(`https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/${this.state.choosen_class}?collectible=1&locale=plPL`)
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
-          console.log("GET https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/{class}?collectible=1&locale=plPL <- should be like this");
-          console.log("State should be ({class}): " + this.state.choosen_class, res.body);
+
           this.setState({
-            cards: res.body.slice(0, 18)
+            cards: res.body
           });
         });
   }
