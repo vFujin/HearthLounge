@@ -31,7 +31,7 @@ export class Sidebar extends Component {
           <h3 className="filter-header">Filtry</h3>
           <NameFilter/>
           <StatisticsFilter/>
-          <FactionFilter/>
+          <FactionFilter handleInputFilter={this.props.handleInputFilter} faction={this.props.faction}/>
           <RaceFilter onRaceChange={this.handleRace}/>
           <MechanicsFilter/>
           <DustFilter/>

@@ -11,8 +11,8 @@ export class Streams extends Component {
   }
 
   componentDidMount() {
-    unirest.get("https://api.twitch.tv/kraken/games/")
-        .header("Client-ID", "jupouny3vvr7kl38jlsj7ssnyww80z")
+    unirest.get("http://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/games/")
+        .header({"Client-ID": "jupouny3vvr7kl38jlsj7ssnyww80z"})
         .end(res => {
           console.log(res);
           this.setState({

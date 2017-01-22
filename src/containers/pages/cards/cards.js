@@ -27,37 +27,54 @@ export class Cards extends Component {
       hsClass: null,
 
       //Cards
-      cards: []
-
+      cards: [],
+      filters: []
     }
   }
 
+  handleInputFilter(selector, val){
+    this.setState({
+      [selector]: val
+    });
+  }
+
   handleFilterClick(i, filter, event){
-    let isActive = this.state[filter] === i ? null : i;
     let dataAtt = event.target.dataset['filter'];
+    let isActive = this.state[filter] === i ? null : i;
     console.log(dataAtt);
     this.setState({
-      [filter]: isActive
+      [filter]: isActive,
+      filters: this.state.filters.concat([dataAtt])
     })
   }
 
+
+
   componentDidMount() {
     console.log('mounted');
-    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?cost=7?locale=plPL")
-        .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
+    unirest.get("https://api.hearthstonejson.com/v1/15590/plPL/cards.collectible.json")
+        .headers({
+          'Accept': 'application/json',
+          "Access-Control-Allow-Headers": "x-requested-with, x-requested-by"
+        })
         .end(res => {
-          console.log(res.body);
+          console.log('Response: ' + JSON.stringify(res));
           this.setState({
-            cards: res.body['Basic'].slice(0, 10)
+            // cards: res.body
           });
         });
+
   }
+
 
   render() {
     return (
+
         <div className="pageContainer cards">
             <div className="left-container">
                 <Sidebar handleFilterClick={this.handleFilterClick.bind(this)}
+                         handleInputFilter={this.handleInputFilter.bind(this)}
+                         faction={this.state.faction}
                          expansion={this.state.expansion}
                          adventure={this.state.adventure}
                          rarity={this.state.rarity}/>

@@ -3,23 +3,13 @@ import Select from 'react-select';
 import {faction} from '../../../data/filters';
 
 export class FactionFilter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(value) {
-    this.setState({value});
-  }
-
   render() {
     return (
         <Select
             placeholder="Frakcja..."
-            value={this.state.value}
+            value={this.props.faction}
             options={faction}
-            onChange={this.handleChange}
+            onChange={this.props.handleInputFilter.bind(this, 'faction')}
             multi={true}
         />
     );
