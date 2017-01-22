@@ -3,23 +3,13 @@ import Select from 'react-select';
 import {mechanics} from '../../../data/filters';
 
 export class MechanicsFilter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(value) {
-    this.setState({value});
-  }
-
   render() {
     return (
         <Select
             placeholder="Mechaniki..."
-            value={this.state.value}
+            value={this.props.mechanics}
             options={mechanics}
-            onChange={this.handleChange}
+            onChange={this.props.handleInputFilter.bind(this, 'mechanics')}
             multi={true}
         />
     );

@@ -12,29 +12,16 @@ import {RarityFilter} from '../filters/rarity';
 import {IsGoldenFilter} from '../filters/is-golden';
 
 export class Sidebar extends Component {
-  constructor(){
-    super();
-    this.state = null;
-    this.race = '';
-  }
-
-  handleRace(v){
-    this.setState({race: v});
-  }
-  handleRaceChange(){
-    var lang = this.refs.dropdown.value;
-    this.props.onRaceChange(lang);
-  }
   render() {
     return (
         <div className="sidebar">
           <h3 className="filter-header">Filtry</h3>
           <NameFilter/>
-          <StatisticsFilter/>
-          <FactionFilter handleInputFilter={this.props.handleInputFilter} faction={this.props.faction}/>
-          <RaceFilter onRaceChange={this.handleRace}/>
-          <MechanicsFilter/>
-          <DustFilter/>
+          <StatisticsFilter handleInputFilter={this.props.handleInputFilter} statistics={this.props.statistics}/>
+          <FactionFilter    handleInputFilter={this.props.handleInputFilter} faction={this.props.faction}/>
+          <RaceFilter       handleInputFilter={this.props.handleInputFilter} race={this.props.race}/>
+          <MechanicsFilter  handleInputFilter={this.props.handleInputFilter} mechanics={this.props.mechanics}/>
+          <DustFilter       handleInputFilter={this.props.handleInputFilter} dust={this.props.dust}/>
 
           <ExpansionFilter  handleFilterClick={this.props.handleFilterClick} expansion={this.props.expansion}/>
           <AdventureFilter  handleFilterClick={this.props.handleFilterClick} adventure={this.props.adventure}/>

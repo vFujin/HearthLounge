@@ -74,6 +74,11 @@ export class Cards extends Component {
             <div className="left-container">
                 <Sidebar handleFilterClick={this.handleFilterClick.bind(this)}
                          handleInputFilter={this.handleInputFilter.bind(this)}
+                         statistics={this.state.statistics}
+                         race={this.state.race}
+                         mechanics={this.state.mechanics}
+                         dust={this.state.dust}
+
                          faction={this.state.faction}
                          expansion={this.state.expansion}
                          adventure={this.state.adventure}
