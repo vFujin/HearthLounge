@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+// import Select from 'react-select';
 
 export class Sidebar extends Component {
   render() {
@@ -23,10 +23,18 @@ export class Sidebar extends Component {
                 <input id="firstname" type="text" value="Joe"/>
               </label>
               <label htmlFor="lastname">
-                <p>First name:</p>
+                <p>Last name:</p>
                 <input id="lastname" type="text" value="Smith"/>
               </label>
-              <div className="gender">Male</div>
+              <label htmlFor="gender">
+                <p>Gender:</p>
+                {/*<Select*/}
+                    {/*placeholder="Mechaniki..."*/}
+                    {/*value={this.props.mechanics}*/}
+                    {/*options={mechanics}*/}
+                    {/*onChange={this.props.handleInputFilter.bind(this, 'mechanics')}*/}
+                {/*/>*/}
+              </label>
               <div className="country">'Murica</div>
               <div className="signature">random text</div>
             </li>
