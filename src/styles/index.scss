@@ -228,23 +228,27 @@ footer{
       display: flex;
       div{
         width: 33.33%;
+        align-items: center;
+        display: flex;
+        span{
+          font-size: 16px;
+          margin-right: 5px;
+        }
       }
       .deck-snippet-views{
         display: flex;
         opacity: .6;
-        span{
-          font-size: 10px;
-        }
         p{
           padding:0;
           margin: 0;
         }
       }
       .deck-snippet-comments{
-        text-align: center;
+        justify-content:center;
       }
       .deck-snippet-votes{
-        text-align: right;
+        justify-content: flex-end;
+
       }
     }
   }

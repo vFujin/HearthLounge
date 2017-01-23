@@ -12,7 +12,7 @@ export class ModeSelection extends Component {
             <p>Dzicz</p>
           </li>
           <li>
-            <span className="hs-icon icon-tavern-brawl"></span>
+            <span className="hs-icon icon-brawl"></span>
             <p>Karczemna Bójka</p>
           </li>
           <li>

@@ -10,7 +10,7 @@ export class DustFilter extends Component {
             value={this.props.dust}
             options={dust}
             onChange={this.props.handleInputFilter.bind(this, 'dust')}
-            multi={true}
+            multi={false}
         />
     );
   }

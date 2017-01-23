@@ -20,11 +20,11 @@ export const DeckSnippetBody = (props) => {
         </div>
         <div className={`${prefix}-body-footer`}>
           <div className={`${prefix}-views`}>
-            <span className="hs-icon icon-views"></span>
+            <span className="hs-icon icon-eye"></span>
             <p>10tyś.</p>
           </div>
           <div className={`${prefix}-comments`}>14 komentarzy</div>
-          <div className={`${prefix}-votes`}>↑ 14</div>
+          <div className={`${prefix}-votes`}><span className="hs-icon icon-circle-up"></span> 14</div>
         </div>
       </div>
   );

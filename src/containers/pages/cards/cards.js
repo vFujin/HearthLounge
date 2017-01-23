@@ -55,7 +55,8 @@ export class Cards extends Component {
     unirest.get("https://api.hearthstonejson.com/v1/15590/plPL/cards.collectible.json")
         .headers({
           'Accept': 'application/json',
-          "Access-Control-Allow-Headers": "x-requested-with, x-requested-by"
+          "Access-Control-Allow-Headers": "x-requested-with, x-requested-by",
+          "Access-Control-Allow-Origin" : "*"
         })
         .end(res => {
           console.log('Response: ' + JSON.stringify(res));

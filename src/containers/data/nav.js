@@ -149,7 +149,7 @@ export const navItems = [
   {
     name: "Forum",
     className: "forum",
-    icon: "icon-forum",
+    icon: "icon-bubbles2",
     url: 'forum',
     homepage_order: 5,
     homepage_block_width: 1

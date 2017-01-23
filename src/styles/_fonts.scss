@@ -24,17 +24,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-grid:before {
+  content: "\e90a";
+}
+.icon-battlenet:before {
+  content: "\e92e";
+}
+.icon-brawl:before {
+  content: "\e930";
+}
 .icon-mana-7-plus:before {
   content: "\e92d";
 }
-.icon-tavern-brawl:before {
-  content: "\e92e";
-}
 .icon-dust:before {
   content: "\e92f";
-}
-.icon-views:before {
-  content: "\e930";
 }
 .icon-rarity:before {
   content: "\e92a";
@@ -102,9 +105,6 @@
 .icon-the-league-of-explorers:before {
   content: "\e909";
 }
-.icon-forum:before {
-  content: "\e90a";
-}
 .icon-mean-streets-of-gadgetzan:before {
   content: "\e90b";
 }
@@ -170,4 +170,25 @@
 }
 .icon-wild:before {
   content: "\e920";
+}
+.icon-bubbles2:before {
+  content: "\e96d";
+}
+.icon-stats-dots:before {
+  content: "\e99b";
+}
+.icon-eye:before {
+  content: "\e9ce";
+}
+.icon-circle-up:before {
+  content: "\ea41";
+}
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-youtube:before {
+  content: "\ea9d";
 }

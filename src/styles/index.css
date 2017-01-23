@@ -69,17 +69,20 @@ a:active, a:hover, a:link, a:visited {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-grid:before {
+  content: "\e90a"; }
+
+.icon-battlenet:before {
+  content: "\e92e"; }
+
+.icon-brawl:before {
+  content: "\e930"; }
+
 .icon-mana-7-plus:before {
   content: "\e92d"; }
 
-.icon-tavern-brawl:before {
-  content: "\e92e"; }
-
 .icon-dust:before {
   content: "\e92f"; }
-
-.icon-views:before {
-  content: "\e930"; }
 
 .icon-rarity:before {
   content: "\e92a"; }
@@ -147,9 +150,6 @@ a:active, a:hover, a:link, a:visited {
 .icon-the-league-of-explorers:before {
   content: "\e909"; }
 
-.icon-forum:before {
-  content: "\e90a"; }
-
 .icon-mean-streets-of-gadgetzan:before {
   content: "\e90b"; }
 
@@ -215,6 +215,27 @@ a:active, a:hover, a:link, a:visited {
 
 .icon-wild:before {
   content: "\e920"; }
+
+.icon-bubbles2:before {
+  content: "\e96d"; }
+
+.icon-stats-dots:before {
+  content: "\e99b"; }
+
+.icon-eye:before {
+  content: "\e9ce"; }
+
+.icon-circle-up:before {
+  content: "\ea41"; }
+
+.icon-facebook:before {
+  content: "\ea90"; }
+
+.icon-twitter:before {
+  content: "\ea96"; }
+
+.icon-youtube:before {
+  content: "\ea9d"; }
 
 .block-width-0 {
   display: none; }
@@ -1247,19 +1268,22 @@ footer {
       margin-top: 7px;
       display: flex; }
       .deck-snippet .deck-snippet-body .deck-snippet-body-footer div {
-        width: 33.33%; }
+        width: 33.33%;
+        align-items: center;
+        display: flex; }
+        .deck-snippet .deck-snippet-body .deck-snippet-body-footer div span {
+          font-size: 16px;
+          margin-right: 5px; }
       .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-views {
         display: flex;
         opacity: .6; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-views span {
-          font-size: 10px; }
         .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-views p {
           padding: 0;
           margin: 0; }
       .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-comments {
-        text-align: center; }
+        justify-content: center; }
       .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-votes {
-        text-align: right; }
+        justify-content: flex-end; }
 
 /*
   Pages

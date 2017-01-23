@@ -6,7 +6,6 @@ import {Home} from './pages/home/home';
 import {Cards} from './pages/cards/cards';
 
 
-
 import {CreateDeck} from './pages/create-deck/create-deck';
 import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
@@ -30,12 +29,15 @@ import {AdventureCards} from './pages/adventures/assets/cards';
 import {AdventureClassChallanges} from './pages/adventures/assets/class-challanges';
 import {AdventureCost} from './pages/adventures/assets/cost';
 import {AdventureStructure} from './pages/adventures/assets/structure';
+import {BossGuide} from './pages/adventures/assets/boss-details/boss-guide';
 
 import {ChoosenClassView} from './pages/create-deck/picked-class/right-container/choosen-class-selection/choosen-class-view';
 
+import {Dashboard} from './pages/dashboard/dashboard';
+
 import {Main} from './Main';
 
-import {BossGuide} from './pages/adventures/assets/boss-details/boss-guide';
+
 export class App extends Component {
   render() {
     return (
@@ -49,7 +51,7 @@ export class App extends Component {
               </Route>
             </Route>
             <Route path="karty"             component={Cards}>
-              <Route path="/karta/:idKarty" component={Cards} />
+              <Route path="/karta/:id" component={Cards} />
             </Route>
             <Route path="arena-picker"      component={ArenaPicker}>
               <Route path=":class"          component={PickedClass} />
@@ -76,6 +78,7 @@ export class App extends Component {
             <Route path="forum"             component={Forum} />
             <Route path="turnieje"          component={Tournaments} />
             <Route path="streamerzy"        component={Streams} />
+            <Route path="logowanie"         component={Dashboard} />
           </Route>
         </Router>
     );

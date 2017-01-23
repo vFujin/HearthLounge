@@ -5,6 +5,8 @@ import {Topbar} from './right-container/topbar';
 import {PreAdventureSelect} from './right-container/pre-adventure-select';
 import {AdventureContent} from './right-container/adventure-content';
 import {AdventureOverview} from './right-container/adventure-overview'
+
+// import {showBossDetails} from '../../../redux/actions/adventures';
 export class Adventures extends Component {
   constructor(props){
     super(props);
@@ -90,6 +92,7 @@ export class Adventures extends Component {
       activeTableView: activeTableView,
       activeBossView: activeBossView
     })
+    // dispatch(showBossDetails);
   }
 
   render() {
