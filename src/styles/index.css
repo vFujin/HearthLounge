@@ -1183,7 +1183,50 @@ footer {
     width: 80%; }
     .pageContainer .right-container .topbar {
       background-color: #A69E9D;
-      height: 50px; }
+      height: 50px;
+      display: flex;
+      align-items: center; }
+      .pageContainer .right-container .topbar .false-view {
+        display: none; }
+      .pageContainer .right-container .topbar .active-view {
+        color: #474143;
+        display: flex; }
+      .pageContainer .right-container .topbar.has-icons {
+        cursor: pointer;
+        position: relative; }
+        .pageContainer .right-container .topbar.has-icons span {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          -ms-transition: all ease 0.4s;
+          -o-transition: all ease 0.4s;
+          transition: all ease 0.4s;
+          color: #474143;
+          padding: 5px;
+          line-height: 50px; }
+        .pageContainer .right-container .topbar.has-icons .tooltip {
+          position: absolute;
+          display: none;
+          transform: translateX(-50%);
+          left: 50%;
+          text-align: center; }
+          .pageContainer .right-container .topbar.has-icons .tooltip .caret-up {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 5px 5px 5px;
+            border-color: transparent transparent #474143 transparent;
+            position: relative;
+            left: calc(50% - 5px); }
+          .pageContainer .right-container .topbar.has-icons .tooltip p {
+            font-size: 12px;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            background-color: #474143;
+            color: #E7E2DA; }
+        .pageContainer .right-container .topbar.has-icons li {
+          position: relative; }
+          .pageContainer .right-container .topbar.has-icons li:hover div {
+            display: block; }
 
 .deck-snippet {
   position: relative;
@@ -2196,11 +2239,6 @@ footer {
         width: 100%;
         height: 100%; }
 
-.expansions .right-container .content .topbar .false-view {
-  display: none; }
-.expansions .right-container .content .topbar .active-view {
-  color: #474143;
-  display: flex; }
 .expansions .right-container .content .extension-content .active-expansion {
   display: block; }
 
@@ -2459,5 +2497,12 @@ footer {
 
 .tournaments iframe html body {
   background: transparent; }
+
+.dashboard .right-container .topbar li {
+  margin-right: 10px; }
+  .dashboard .right-container .topbar li:first-child {
+    margin-left: 10px; }
+  .dashboard .right-container .topbar li:last-child {
+    margin-right: 0; }
 
 /*# sourceMappingURL=index.css.map */
