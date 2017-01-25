@@ -1186,11 +1186,6 @@ footer {
       height: 50px;
       display: flex;
       align-items: center; }
-      .pageContainer .right-container .topbar .false-view {
-        display: none; }
-      .pageContainer .right-container .topbar .active-view {
-        color: #474143;
-        display: flex; }
       .pageContainer .right-container .topbar.has-icons {
         cursor: pointer;
         position: relative; }
@@ -1227,6 +1222,11 @@ footer {
           position: relative; }
           .pageContainer .right-container .topbar.has-icons li:hover div {
             display: block; }
+      .pageContainer .right-container .topbar .false-view {
+        display: none; }
+      .pageContainer .right-container .topbar .active-view {
+        color: #474143;
+        display: flex; }
 
 .deck-snippet {
   position: relative;
@@ -1341,7 +1341,7 @@ footer {
     margin-bottom: 10px;
     position: relative;
     color: black;
-    height: 400px;
+    height: 41vh;
     background-color: #A69E9D; }
     .home ul.home__list li.home__block:nth-last-child(1), .home ul.home__list li.home__block:nth-last-child(2), .home ul.home__list li.home__block:nth-last-child(3), .home ul.home__list li.home__block:nth-last-child(4) {
       margin-bottom: 0; }
@@ -2197,6 +2197,11 @@ footer {
       color: #474143;
       display: block;
       padding: 15.4px; }
+.expansions .right-container .content .topbar .false-view, .adventures .right-container .content .topbar .false-view {
+  display: none; }
+.expansions .right-container .content .topbar .active-view, .adventures .right-container .content .topbar .active-view {
+  color: #474143;
+  display: flex; }
 .expansions .right-container .content .about-extension .false-view, .adventures .right-container .content .about-extension .false-view {
   display: none; }
 .expansions .right-container .content .about-extension .active-view, .adventures .right-container .content .about-extension .active-view {

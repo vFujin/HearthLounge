@@ -118,13 +118,6 @@ footer{
       height:50px;
       display: flex;
       align-items: center;
-      .false-view{
-        display: none;
-      }
-      .active-view {
-        color: $dark-grey;
-        display: flex;
-      }
       &.has-icons {
         cursor: pointer;
         position: relative;
@@ -166,6 +159,13 @@ footer{
           }
         }
 
+      }
+      .false-view{
+        display: none;
+      }
+      .active-view {
+        color: $dark-grey;
+        display: flex;
       }
     }
   }
@@ -321,7 +321,7 @@ footer{
       margin-bottom: 10px;
       position: relative;
       color: black;
-      height: 400px;
+      height: 41vh;
       background-color: $light-grey;
       &:nth-last-child(1),
       &:nth-last-child(2),
@@ -1476,6 +1476,13 @@ footer{
             }
           }
         }
+        .false-view{
+          display: none;
+        }
+        .active-view {
+          color: $dark-grey;
+          display: flex;
+        }
       }
       .about-extension{
         .false-view{
@@ -1528,6 +1535,7 @@ footer{
 
 .expansions{
   .right-container{
+
     .content {
       .extension-content{
         .active-expansion{
