@@ -40,11 +40,11 @@ export class BossGuide extends Component {
     return (
       <div className={this.props.activeBossView}>
         <div className="boss-guide-header">
-          <p>{this.props.activeBoss}</p>
+          <p className="boss-details-nav-el">{this.props.activeBoss}</p>
           <ul>
             {boss_details.slice(0,4).map((element, index)=>
-              <li key={index}>
-                <div>
+              <li className="block" key={index}>
+                <div className="block-content">
                   <p className="boss-details-nav-el">{element.title}</p>
                   {ifHasImg(index, this.props.activeBossImg, 'x')}
                   <p>{element.content}</p>
@@ -52,8 +52,8 @@ export class BossGuide extends Component {
               </li>
             )}
             {boss_details.slice(4,5).map((element, index)=>
-              <li key={index}>
-                <div>
+              <li className="block" key={index}>
+                <div className="block-content">
                   <p className="boss-details-nav-el">{element.title}</p>
                   <div className="top-boss-decks">
                     <DeckSnippet />
