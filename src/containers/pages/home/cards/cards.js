@@ -6,10 +6,11 @@ export class CardsBlock extends Component {
         <li className={'home__block cards block-width-1'}>
           <Link to={'/karty'}>
             <div className="header">Karty</div>
+            <div className="icon">
+              <span className="hs-icon icon-card"></span>
+            </div>
           </Link>
-          <div className="cards">
-            <span className="hs-icon icon-card"></span>
-          </div>
+
         </li>
     );
   }

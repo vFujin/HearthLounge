@@ -4,7 +4,7 @@ import { ArenaPickerBlock } from './arena-picker/arena-picker';
 import { CardsBlock } from './cards/cards';
 import { ExpansionsBlock } from './expansions/expansions';
 import { TournamentsBlock } from './tournament/tournaments';
-import { CreateDeckBlock } from './create-deck/block_create-deck';
+import { CreateDeckBlock } from './create-deck/create-deck';
 import { TwitchBlock } from './twitch/twitch';
 import { ForumBlock } from './forum/forum';
 export class Home extends Component {

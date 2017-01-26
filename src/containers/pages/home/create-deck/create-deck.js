@@ -5,8 +5,12 @@ export class CreateDeckBlock extends Component {
     return (
         <li className={'home__block create-deck block-width-1'}>
           <Link to={'/stworz-talie-kart'}>
-            <div>Stwórz talię</div>
+            <div className="header">Stwórz talię</div>
+            <div className="icon">
+              <span className="hs-icon icon-create-deck"></span>
+            </div>
           </Link>
+
         </li>
     );
   }

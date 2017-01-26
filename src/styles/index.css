@@ -1149,6 +1149,65 @@ footer {
   position: fixed;
   bottom: 0; }
 
+.shared-table {
+  margin-right: 20px;
+  border-collapse: collapse;
+  width: 100%; }
+  .shared-table tr {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .shared-table tr:first-child td {
+      background: rgba(0, 0, 0, 0.5);
+      color: #E7E2DA;
+      padding: 20px; }
+    .shared-table tr td {
+      padding: 0;
+      cursor: pointer;
+      border: 1px solid #474143;
+      border-right: 0;
+      border-left: 0;
+      text-align: center; }
+      .shared-table tr td a {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+        height: 100%; }
+      .shared-table tr td:first-child {
+        border-left: 1px solid #474143; }
+        .shared-table tr td:first-child a {
+          padding-left: 10px; }
+      .shared-table tr td:last-child {
+        border-right: 1px solid #474143; }
+    .shared-table tr .name {
+      text-align: left; }
+      .shared-table tr .name span, .shared-table tr .name div {
+        display: inline-block; }
+      .shared-table tr .name span {
+        padding: 5px;
+        font-size: 30px;
+        border: 2px solid #474143;
+        border-radius: 50%;
+        margin-right: 5px; }
+      .shared-table tr .name .title {
+        font-weight: bold; }
+      .shared-table tr .name .author {
+        font-size: 10px; }
+    .shared-table tr .class {
+      text-transform: capitalize; }
+    .shared-table tr .mana-curve ul {
+      display: flex;
+      justify-content: center; }
+      .shared-table tr .mana-curve ul li {
+        width: 4px;
+        background: #474143;
+        height: 20px;
+        margin-right: 2px; }
+        .shared-table tr .mana-curve ul li:last-child {
+          margin-right: 0; }
+
 .pageContainer {
   padding: 0 10px;
   position: relative;
@@ -1470,14 +1529,20 @@ footer {
         background-color: rgba(255, 255, 255, 0.4);
         left: calc(50% - 20px);
         top: 140px; }
-  .home ul.home__list .cards span {
-    position: absolute;
-    font-size: 250px;
-    padding: 10px; }
-    .home ul.home__list .cards span:first-child {
-      left: 0; }
-    .home ul.home__list .cards span:nth-child(2) {
-      left: 100px; }
+  .home ul.home__list .cards .icon, .home ul.home__list .create-deck .icon {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 50px); }
+    .home ul.home__list .cards .icon span, .home ul.home__list .create-deck .icon span {
+      font-size: 15vw; }
+  .home ul.home__list .cards:hover .icon, .home ul.home__list .create-deck:hover .icon {
+    color: #E7E2DA; }
   .home ul.home__list .streams .streams-body {
     display: flex;
     height: calc(100% - 50px); }
@@ -1485,6 +1550,7 @@ footer {
       width: 20%;
       background-color: #474143; }
       .home ul.home__list .streams .streams-body .live-broadcasters .streamer {
+        font-size: .8vw;
         display: flex;
         margin: 11px;
         padding: 10px;
@@ -1801,64 +1867,6 @@ footer {
     background-color: #474143; }
   .decks .right-container .top-decks::-webkit-scrollbar-track {
     background-color: #A69E9D; }
-  .decks .right-container .top-decks table {
-    margin-right: 20px;
-    border-collapse: collapse;
-    width: 100%; }
-    .decks .right-container .top-decks table tr {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
-      transition: all ease 0.4s; }
-      .decks .right-container .top-decks table tr:first-child td {
-        background: rgba(0, 0, 0, 0.5);
-        color: #E7E2DA;
-        padding: 20px; }
-      .decks .right-container .top-decks table tr td {
-        padding: 0;
-        cursor: pointer;
-        border: 1px solid #474143;
-        border-right: 0;
-        border-left: 0;
-        text-align: center; }
-        .decks .right-container .top-decks table tr td a {
-          display: block;
-          padding: 10px 0;
-          width: 100%;
-          height: 100%; }
-        .decks .right-container .top-decks table tr td:first-child {
-          border-left: 1px solid #474143; }
-          .decks .right-container .top-decks table tr td:first-child a {
-            padding-left: 10px; }
-        .decks .right-container .top-decks table tr td:last-child {
-          border-right: 1px solid #474143; }
-      .decks .right-container .top-decks table tr .name {
-        text-align: left; }
-        .decks .right-container .top-decks table tr .name span, .decks .right-container .top-decks table tr .name div {
-          display: inline-block; }
-        .decks .right-container .top-decks table tr .name span {
-          padding: 5px;
-          font-size: 30px;
-          border: 2px solid #474143;
-          border-radius: 50%;
-          margin-right: 5px; }
-        .decks .right-container .top-decks table tr .name .title {
-          font-weight: bold; }
-        .decks .right-container .top-decks table tr .name .author {
-          font-size: 10px; }
-      .decks .right-container .top-decks table tr .class {
-        text-transform: capitalize; }
-      .decks .right-container .top-decks table tr .mana-curve ul {
-        display: flex;
-        justify-content: center; }
-        .decks .right-container .top-decks table tr .mana-curve ul li {
-          width: 4px;
-          background: #474143;
-          height: 20px;
-          margin-right: 2px; }
-          .decks .right-container .top-decks table tr .mana-curve ul li:last-child {
-            margin-right: 0; }
 .decks .right-container .choosen-deck-view .choosen-deck-details {
   display: flex; }
   .decks .right-container .choosen-deck-view .choosen-deck-details .section {
@@ -2471,18 +2479,12 @@ footer {
     .pageContainer.forum .caption:last-child {
       margin-right: 0; }
   .pageContainer.forum table {
-    width: 100%;
-    padding: 10px; }
+    margin: 10px;
+    width: calc(100% - 20px); }
     .pageContainer.forum table tr {
-      -webkit-transition: all 400ms ease;
-      -moz-transition: all 400ms ease;
-      -ms-transition: all 400ms ease;
-      -o-transition: all 400ms ease;
-      transition: all 400ms ease;
-      width: 100%;
-      background-color: #E7E2DA;
-      cursor: pointer; }
+      background-color: #E7E2DA; }
       .pageContainer.forum table tr td {
+        text-align: left;
         padding: 10px; }
         .pageContainer.forum table tr td h5 {
           font-size: 16px;

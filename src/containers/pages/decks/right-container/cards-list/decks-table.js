@@ -4,7 +4,7 @@ export class DecksTable extends Component {
   render() {
     return (
         <div className={`top-decks ${this.props.decksView}`}>
-          <table>
+          <table className="shared-table">
             <tbody>
             <tr>
               <td className="name">Nazwa talii kart</td>

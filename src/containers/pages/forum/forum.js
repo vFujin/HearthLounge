@@ -6,7 +6,7 @@ export class Forum extends Component {
         <div className="pageContainer forum">
           <div className="caption">
             <h4>Generalnie o HS</h4>
-            <table>
+            <table className="shared-table">
               <tbody>
               <tr className="forum-nav">
                 <td>Forum</td>
@@ -59,7 +59,7 @@ export class Forum extends Component {
           </div>
           <div className="caption">
             <h4>Klasy</h4>
-            <table>
+            <table className="shared-table">
               <tbody>
               <tr className="forum-nav">
                 <td>Forum</td>

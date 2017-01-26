@@ -11,7 +11,7 @@ export class TournamentsBlock extends Component {
                   style={{border: 'none', margin: '10px'}}
                   width="95%"
                   height="82%"
-                  frameborder="0"
+                  frameBorder="0"
                   scrolling="no"></iframe>
         </li>
     );
