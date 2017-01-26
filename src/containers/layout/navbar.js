@@ -64,7 +64,12 @@ export class Navbar extends Component {
             )}
           </ul>
           <div className={`login-popup ${this.state.loginPopup}`}>
-              <span className="login"></span>
+              <div className="login">
+                <label htmlFor="login">
+                  <input type="text" value="login"/>
+                </label>
+
+              </div>
           </div>
         </nav>
 

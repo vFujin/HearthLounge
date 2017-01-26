@@ -174,7 +174,7 @@ export const navItems = [
     name: "Logowanie",
     className: "login",
     icon: "icon-login",
-    url: 'logowanie',
+    url: '',
     homepage_order: 8,
     homepage_block_width: 0
   }

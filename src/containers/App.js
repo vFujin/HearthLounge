@@ -78,7 +78,7 @@ export class App extends Component {
             <Route path="forum"             component={Forum} />
             <Route path="turnieje"          component={Tournaments} />
             <Route path="streamerzy"        component={Streams} />
-            <Route path="logowanie"         component={Dashboard} />
+            {/*<Route path="logowanie"         component={} />*/}
           </Route>
         </Router>
     );

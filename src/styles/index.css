@@ -1152,8 +1152,7 @@ nav {
     justify-content: center; }
     nav .login-popup.display-block .login {
       height: 100px;
-      background-color: white;
-      width: 100px; }
+      background-color: white; }
 
 footer {
   width: 100%;
