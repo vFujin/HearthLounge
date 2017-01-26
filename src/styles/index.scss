@@ -19,12 +19,12 @@ body {
   Layout
  */
 nav {
-  position: relative;
-  z-index: 100;
   background-color: $dark-grey;
   text-align: right;
   display: inline-flex;
   width: 100%;
+  position: relative;
+  z-index: 100;
   .logo{
     width: 20%;
     height:50px;
@@ -75,6 +75,21 @@ nav {
       background-color: $sea-color;
     }
   }
+  .login-popup.display-block{
+    position: absolute;
+    z-index: 1000;
+    background: rgba(0,0,0,.4);
+    display: flex;
+    width: 100%;
+    height:100vh;
+    align-items:center;
+    justify-content: center;
+    .login{
+      height: 100px;
+      background-color: white;
+      width: 100px;
+    }
+  }
 }
 footer{
   width: 100%;
@@ -83,6 +98,8 @@ footer{
   position: fixed;
   bottom:0;
 }
+
+
 
 .shared-table {
   margin-right: 20px;
@@ -161,6 +178,142 @@ footer{
   }
 }
 
+
+.deck-snippet{
+  position: relative;
+  background-color: $pearl;
+  width: 37.4vh;
+  padding: 1vh;
+  margin-right: 1vh;
+  &:last-child{
+    margin-right:0;
+  }
+  .background-icon{
+    position: absolute;
+    font-size: 130px;
+    opacity: 0.05;
+    padding-left: 57%;
+    padding-top: 8px;
+  }
+  .deck-snippet-header{
+    display: flex;
+    padding-bottom: 4.5px;
+    border-bottom: 1px solid $dark-grey;
+    .deck-snippet-hs-class {
+      span {
+        font-size: 35px;
+        position: relative;
+        top: 5px;
+        padding: 5px;
+        border: 2px solid black;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+    }
+    .deck-snippet-about{
+      margin-left: 10px;
+      .deck-snippet-title{
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .deck-snippet-author, .deck-snippet-created{
+        font-size:12px;
+      }
+    }
+  }
+  .deck-snippet-body{
+    margin-top: 4.5px;
+    height: calc(9.5vh - 10px);
+    .deck-snippet-body-header{
+      display: flex;
+      .deck-snippet-mode {
+        width: 10%;
+        text-align: center;
+        span {
+          color: darkgreen;
+          font-size: 25px;
+        }
+        p{
+          margin-left: 5px ;
+        }
+      }
+      .deck-snippet-dust-needed{
+        display: flex;
+        span{
+          font-size:25px;
+        }
+      }
+      .deck-snippet-mana-curve{
+        width:14%;
+        display: flex;
+        li{
+          width: 5px;
+          background-color: $dark-grey;
+          height: 100%;
+          margin-right: 2px;
+        }
+      }
+      .deck-snippet-type, .deck-snippet-dust-needed{
+        height:27px;
+        line-height: 27px;
+      }
+      .deck-snippet-type{
+        width: 55%;
+      }
+      .deck-snippet-dust-needed{
+        width: 21%;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    .deck-snippet-body-body{
+      margin-top: 10px;
+      display: flex;
+      div{
+        text-align: left;
+        border-right: 1px solid $light-grey;
+        padding: 0 5px;
+        &:first-child{
+          padding-left:0;
+        }
+        &:last-child{
+          padding-right:0;
+          border-right:0;
+        }
+      }
+    }
+    .deck-snippet-body-footer{
+      margin-top:7px;
+      display: flex;
+      div{
+        width: 33.33%;
+        align-items: center;
+        display: flex;
+        span{
+          font-size: 16px;
+          margin-right: 5px;
+        }
+      }
+      .deck-snippet-views{
+        display: flex;
+        opacity: .6;
+        p{
+          padding:0;
+          margin: 0;
+        }
+      }
+      .deck-snippet-comments{
+        justify-content:center;
+      }
+      .deck-snippet-votes{
+        justify-content: flex-end;
+
+      }
+    }
+  }
+}
+
 .pageContainer{
   padding: 0 10px;
   @include scrollbar;
@@ -191,6 +344,7 @@ footer{
   }
   .right-container {
     width: 80%;
+    height:100%;
     .topbar{
       background-color: $light-grey;
       height:50px;
@@ -246,6 +400,19 @@ footer{
         display: flex;
       }
     }
+    .display-block{
+      height: calc(100% - 50px);
+      .choosen-deck-details{
+        height: 100%;
+        .section{
+          height:calc(100% - 10px);
+          .section-body{
+            height: calc(100% - 33px);
+          }
+        }
+      }
+    }
+
   }
 }
 
@@ -902,10 +1069,8 @@ footer{
         display: flex;
         .section {
           width: 50%;
-          height: 749px;
           margin: 10px;
           margin-bottom: 0;
-          overflow: auto;
           justify-content: space-around;
           .section-header {
             h1 {
@@ -921,7 +1086,6 @@ footer{
           }
           .section-body {
             @include scrollbar;
-            height: 716px;
             overflow: auto;
           }
         }
@@ -1075,7 +1239,6 @@ footer{
       @include scrollbar;
       text-align:center;
       margin-top:10px;
-      height: 748px ;
       overflow: auto;
       li{
         width: 248px;
@@ -1331,6 +1494,7 @@ footer{
       }
     }
     .content{
+      height:100%;
       .topbar{
         .content-navigation {
           display: flex;
@@ -1371,6 +1535,7 @@ footer{
       .extension-content {
         margin: 10px 0 0 10px;
         background-color: $light-grey;
+        height: calc(100% - 60px);
         .false-view{
           display: none;
         }
@@ -1380,7 +1545,6 @@ footer{
         }
         .inner-container{
           padding: 10px;
-          height: 729px;
         }
         .cards.cards-container {
           @include scrollbar;
@@ -1388,7 +1552,7 @@ footer{
           text-align: center;
           overflow: auto;
           width: 100%;
-          height: 749px;
+          height: calc(100% - 50px);
           li {
             width: 16%;
             display: inline-block;
@@ -1405,7 +1569,6 @@ footer{
 
 .expansions{
   .right-container{
-
     .content {
       .extension-content{
         .active-expansion{
@@ -1689,7 +1852,6 @@ footer{
     @include scrollbar;
     text-align:center;
     margin-top:10px;
-    height: 749px ;
     overflow: auto;
     li{
       width: 241px;
@@ -1814,139 +1976,3 @@ footer{
   }
 }
 
-
-.deck-snippet{
-  position: relative;
-  background-color: $pearl;
-  width: 37.4vh;
-  padding: 1vh;
-  margin-right: 1vh;
-  height: 14.4vh;
-  &:last-child{
-    margin-right:0;
-  }
-  .background-icon{
-    position: absolute;
-    font-size: 130px;
-    opacity: 0.05;
-    padding-left: 57%;
-    padding-top: 8px;
-  }
-  .deck-snippet-header{
-    display: flex;
-    padding-bottom: 4.5px;
-    border-bottom: 1px solid $dark-grey;
-    .deck-snippet-hs-class {
-      span {
-        font-size: 35px;
-        position: relative;
-        top: 5px;
-        padding: 5px;
-        border: 2px solid black;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-      }
-    }
-    .deck-snippet-about{
-      margin-left: 10px;
-      .deck-snippet-title{
-        font-weight: bold;
-        font-size: 16px;
-      }
-      .deck-snippet-author, .deck-snippet-created{
-        font-size:12px;
-      }
-    }
-  }
-  .deck-snippet-body{
-    margin-top: 4.5px;
-    height: calc(9.5vh - 10px);
-    .deck-snippet-body-header{
-      display: flex;
-      .deck-snippet-mode {
-        width: 10%;
-        text-align: center;
-        span {
-          color: darkgreen;
-          font-size: 25px;
-        }
-        p{
-          margin-left: 5px ;
-        }
-      }
-      .deck-snippet-dust-needed{
-        display: flex;
-        span{
-          font-size:25px;
-        }
-      }
-      .deck-snippet-mana-curve{
-        width:14%;
-        display: flex;
-        li{
-          width: 5px;
-          background-color: $dark-grey;
-          height: 100%;
-          margin-right: 2px;
-        }
-      }
-      .deck-snippet-type, .deck-snippet-dust-needed{
-        height:27px;
-        line-height: 27px;
-      }
-      .deck-snippet-type{
-        width: 55%;
-      }
-      .deck-snippet-dust-needed{
-        width: 21%;
-        display: flex;
-        justify-content: flex-end;
-      }
-    }
-    .deck-snippet-body-body{
-      margin-top: 10px;
-      display: flex;
-      div{
-        text-align: left;
-        border-right: 1px solid $light-grey;
-        padding: 0 5px;
-        &:first-child{
-          padding-left:0;
-        }
-        &:last-child{
-          padding-right:0;
-          border-right:0;
-        }
-      }
-    }
-    .deck-snippet-body-footer{
-      margin-top:7px;
-      display: flex;
-      div{
-        width: 33.33%;
-        align-items: center;
-        display: flex;
-        span{
-          font-size: 16px;
-          margin-right: 5px;
-        }
-      }
-      .deck-snippet-views{
-        display: flex;
-        opacity: .6;
-        p{
-          padding:0;
-          margin: 0;
-        }
-      }
-      .deck-snippet-comments{
-        justify-content:center;
-      }
-      .deck-snippet-votes{
-        justify-content: flex-end;
-
-      }
-    }
-  }
-}
