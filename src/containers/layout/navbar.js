@@ -3,34 +3,34 @@ import { Link } from 'react-router'
 import { navItems } from '../data/nav';
 
 export class Navbar extends Component {
-  constructor(props){
-    super(props);
-
-    this.state={
-      loginPopup: 'display-none'
-    }
-  }
-
-  handleNavigationLoginClick(i){
-    let isActive = i === 10 ? 'display-block' : 'display-none';
-
-    console.log(i);
-    this.setState({
-      loginPopup: isActive
-    });
-  }
-
-  handleEscKeyPress(e){
-    if(e.keyCode === 27){
-      this.setState({
-        loginPopup: 'display-none'
-      })
-    }
-  }
-
-  componentDidMount(){
-    document.addEventListener('keydown', this.handleEscKeyPress.bind(this))
-  }
+  // constructor(props){
+  //   super(props);
+  //
+  //   this.state={
+  //     loginPopup: 'display-none'
+  //   }
+  // }
+  //
+  // handleNavigationLoginClick(i){
+  //   let isActive = i === 10 ? 'display-block' : 'display-none';
+  //
+  //   console.log(i);
+  //   this.setState({
+  //     loginPopup: isActive
+  //   });
+  // }
+  //
+  // handleEscKeyPress(e){
+  //   if(e.keyCode === 27){
+  //     this.setState({
+  //       loginPopup: 'display-none'
+  //     })
+  //   }
+  // }
+  //
+  // componentDidMount(){
+  //   document.addEventListener('keydown', this.handleEscKeyPress.bind(this))
+  // }
 
   dropdown(el, index){
     let sub = el.submenu;
@@ -54,7 +54,7 @@ export class Navbar extends Component {
           <div className="logo"></div>
           <ul>
             {navItems.map((element, index) =>
-                <li key={index} className={element.className} onClick={this.handleNavigationLoginClick.bind(this, index)}>
+                <li key={index} className={element.className}>
                   <Link to={'/' + element.url} activeClassName="active">
                     <span className={element.icon}></span>
                     <div>{element.name}</div>
@@ -63,14 +63,14 @@ export class Navbar extends Component {
                 </li>
             )}
           </ul>
-          <div className={`login-popup ${this.state.loginPopup}`}>
-              <div className="login">
-                <label htmlFor="login">
-                  <input type="text" value="login"/>
-                </label>
+          {/*<div className={`login-popup ${this.state.loginPopup}`}>*/}
+              {/*<div className="login">*/}
+                {/*<label htmlFor="login">*/}
+                  {/*<input type="text" value="login"/>*/}
+                {/*</label>*/}
 
-              </div>
-          </div>
+              {/*</div>*/}
+          {/*</div>*/}
         </nav>
 
     );
