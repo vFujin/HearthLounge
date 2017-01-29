@@ -2,22 +2,22 @@ export const expansion_details = [
   {
     expansion: "goblins-vs-gnomes",
     description: 'GvG',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/containers/images/home.expansion-slider/gobliny_vs_gnomy.jpg',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/gobliny_vs_gnomy.jpg',
   },
   {
     expansion: "the-grand-tournament",
     description: 'TGT',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/containers/images/home.expansion-slider/wielki_turniej.jpg',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/wielki_turniej.jpg',
   },
   {
     expansion: "whispers-of-the-old-gods",
     description: 'wotog',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/containers/images/home.expansion-slider/przedwieczni_bogowie.jpg',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/przedwieczni_bogowie.jpg',
   },
   {
     expansion: "mean-streets-of-gadgetzan",
     description: 'msog',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/containers/images/home.expansion-slider/ciemne_zaulki_gadzetonu.jpg',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/ciemne_zaulki_gadzetonu.jpg',
   }
 ];
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router'
 import {bindActionCreators} from 'redux';
-import {navbarSelectedClass} from '../../redux/actions/navbar/index';
+import {navbarSelectedClass} from '../../redux/actions/navbar';
 
 class Navbar extends Component {
   constructor(props){

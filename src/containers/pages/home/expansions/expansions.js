@@ -10,7 +10,7 @@ export class ExpansionsBlock extends Component {
           <div className="slider">
             <ul>
               <li>
-                <img src="https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/containers/images/home.expansion-slider/czarna_gora.jpg" alt="bm"/>
+                <img src="https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/czarna_gora.jpg" alt="bm"/>
               </li>
             </ul>
             <div className="slider-nav">

@@ -31,7 +31,7 @@ export class ExpansionSlider extends Component {
     //
     // const images = [
     //   {
-    //     original: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/containers/images/home.expansion-slider/czarna_gora.jpg',
+    //     original: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/czarna_gora.jpg',
     //     originalClass: 'featured-slide',
     //     thumbnailClass: 'featured-thumb',
     //     originalAlt: 'original-alt',
@@ -39,10 +39,10 @@ export class ExpansionSlider extends Component {
     //     sizes: 'Optional sizes (image sizes relative to the breakpoint)'
     //   },
     //   {
-    //     original: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/containers/images/home.expansion-slider/klatwa_naxxramas.jpg'
+    //     original: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/klatwa_naxxramas.jpg'
     //   },
     //   {
-    //     original: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/containers/images/home.expansion-slider/pewnej_nocy_w_karazhanie.jpg',
+    //     original: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/pewnej_nocy_w_karazhanie.jpg',
     //   }
     // ];
     //
