@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { adventure_details } from '../../../data/adventure-details';
+import { adventure_details } from '../../../../data/adventure-details';
 export class AdventureCost extends Component {
   render() {
     let countWings = adventure_details[0].cost.wings.length;

@@ -1,47 +1,35 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import { Link } from 'react-router'
-import { navItems } from '../data/nav';
+import {bindActionCreators} from 'redux';
+import {navbarSelectedClass} from '../../redux/actions/navbar/index';
 
-export class Navbar extends Component {
-  // constructor(props){
-  //   super(props);
-  //
-  //   this.state={
-  //     loginPopup: 'display-none'
-  //   }
-  // }
-  //
-  // handleNavigationLoginClick(i){
-  //   let isActive = i === 10 ? 'display-block' : 'display-none';
-  //
-  //   console.log(i);
-  //   this.setState({
-  //     loginPopup: isActive
-  //   });
-  // }
-  //
-  // handleEscKeyPress(e){
-  //   if(e.keyCode === 27){
-  //     this.setState({
-  //       loginPopup: 'display-none'
-  //     })
-  //   }
-  // }
-  //
-  // componentDidMount(){
-  //   document.addEventListener('keydown', this.handleEscKeyPress.bind(this))
-  // }
+class Navbar extends Component {
+  constructor(props){
+    super(props);
+
+
+  }
+
+  handleSubmenuClick(event){
+     let activeSubmenuItem = event.target.dataset['submenuitem'];
+     let x = this.props.navbarSelectedClass(activeSubmenuItem);
+     console.log(x);
+  }
 
   dropdown(el, index){
     let sub = el.submenu;
     if(!el.hasOwnProperty('submenu')) return;
     return (
         <ul className="submenu">
-          {navItems[index].submenu.map( (item, id) =>
-            <li data-adventure={item.submenu_url} className={sub[id].submenu_li_className} key={id}>
-              <Link to={'/' + el.url + '/' + sub[id].submenu_url} activeClassName="submenu-active">
-                <span className={`icon-${sub[id].submenu_li_className}`}></span>
-                <div className="icon-label">{sub[id].submenu_li_title}</div>
+          {this.props.navbar[index].submenu.map( (item, id) =>
+            <li data-adventure={item.submenu_url}
+                data-submenuitem={item.submenu_url}
+                className={sub[id].submenu_li_className}
+                key={id}>
+              <Link to={'/' + el.url + '/' + item.submenu_url} activeClassName="submenu-active" data-submenuitem={item.submenu_url} onClick={this.handleSubmenuClick.bind(this)}>
+                <span data-submenuitem={item.submenu_url} className={`icon-${sub[id].submenu_li_className}`}></span>
+                <div data-submenuitem={item.submenu_url} className="icon-label">{sub[id].submenu_li_title}</div>
               </Link>
             </li>
           )}
@@ -53,7 +41,7 @@ export class Navbar extends Component {
         <nav>
           <div className="logo"></div>
           <ul>
-            {navItems.map((element, index) =>
+            {this.props.navbar.map((element, index) =>
                 <li key={index} className={element.className}>
                   <Link to={'/' + element.url} activeClassName="active">
                     <span className={element.icon}></span>
@@ -76,3 +64,14 @@ export class Navbar extends Component {
     );
   }
 }
+
+function mapStateToProps(state){
+  return{
+    navbar: state.navbar
+  };
+}
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({navbarSelectedClass}, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

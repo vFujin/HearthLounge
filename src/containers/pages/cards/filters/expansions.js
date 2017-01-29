@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {expansions} from '../../../data/filters';
+import {expansions} from '../../../../data/filters';
 import {IconsWrapper} from './icons-wrapper';
 
 export class ExpansionFilter extends Component {

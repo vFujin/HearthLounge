@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {expansion_details} from '../../../data/expansion-details';
+import {expansion_details} from '../../../../data/expansion-details';
 export class ExpansionOverview extends Component {
   render(){
     return (

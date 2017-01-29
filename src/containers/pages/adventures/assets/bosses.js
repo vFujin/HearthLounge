@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {adventure_details} from '../../../data/adventure-details';
+import {adventure_details} from '../../../../data/adventure-details';
 import {BossGuide} from './boss-details/boss-guide';
 export class AdventureBosses extends Component {
   render() {

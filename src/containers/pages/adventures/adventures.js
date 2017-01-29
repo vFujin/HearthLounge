@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
+// import {bindActionCreators} from 'redux';
+// import {showAdventure} from '../../../redux/actions/adventures/index';
+
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
 import {PreAdventureSelect} from './right-container/pre-adventure-select';
 import {AdventureContent} from './right-container/adventure-content';
 import {AdventureOverview} from './right-container/adventure-overview'
 
-// import {showBossDetails} from '../../../redux/actions/adventures';
 export class Adventures extends Component {
+
   constructor(props){
     super(props);
     this.state = {
@@ -91,12 +94,11 @@ export class Adventures extends Component {
       activeBossImg: activeBossImg,
       activeTableView: activeTableView,
       activeBossView: activeBossView
-    })
+    });
     // dispatch(showBossDetails);
   }
 
   render() {
-
     return (
         <div className="pageContainer adventures">
           <div className="left-container">
@@ -134,11 +136,3 @@ export class Adventures extends Component {
     );
   }
 }
-
-function mapStateToProps(state){
-  return{
-    preSelected: state.preSelected
-  };
-}
-
-export default connect(mapStateToProps)(Adventures);

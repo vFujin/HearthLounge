@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { adventure_details } from '../../../data/adventure-details';
+import { adventure_details } from '../../../../data/adventure-details';
 export class AdventureStructure extends Component {
   render() {
     return (

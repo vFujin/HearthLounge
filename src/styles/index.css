@@ -53,7 +53,7 @@ a:active, a:hover, a:link, a:visited {
 
 @font-face {
   font-family: 'Hearthstone';
-  src: url("../containers/icons/Hearthstone.ttf") format("truetype"), url("../containers/icons/Hearthstone.woff") format("woff"), url("../containers/icons/Hearthstone.svg#Hearthstone") format("svg");
+  src: url("../icons/Hearthstone.ttf") format("truetype"), url("../icons/Hearthstone.woff") format("woff"), url("../icons/Hearthstone.svg#Hearthstone") format("svg");
   font-weight: normal;
   font-style: normal; }
 .icon {
@@ -1139,20 +1139,9 @@ nav {
         nav ul li .active:hover {
           color: #E7E2DA;
           background-color: #00a99c; }
-    nav ul .login {
-      background-color: #00a99c; }
-  nav .login-popup.display-block {
-    position: absolute;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center; }
-    nav .login-popup.display-block .login {
-      height: 100px;
-      background-color: white; }
+    nav ul .login a {
+      background-color: #00a99c;
+      color: #E7E2DA; }
 
 footer {
   width: 100%;

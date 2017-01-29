@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {adventures} from '../../../../data/filters';
+import {adventures} from '../../../../../data/filters';
 import {IconsWrapper} from './icons-wrapper';
 
 export class AdventureFilter extends Component {

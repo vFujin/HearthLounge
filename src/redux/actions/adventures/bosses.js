@@ -1,5 +1,0 @@
-export const ACTIVE_BOSS = 'ACTIVE_BOSS';
-export const ACTIVE_BOSS_URL = 'ACTIVE_BOSS_URL';
-export const ACTIVE_BOSS_IMG = 'ACTIVE_BOSS_IMG';
-export const ACTIVE_BOSS_VIEW = 'ACTIVE_BOSS_VIEW';
-export const ACTIVE_TABLE_VIEW = 'ACTIVE_TABLE_VIEW';

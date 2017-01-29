@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { adventure_details } from '../../../data/adventure-details';
+import { adventure_details } from '../../../../data/adventure-details';
 import unirest from 'unirest';
 export class AdventureClassChallanges extends Component {
   constructor(props) {

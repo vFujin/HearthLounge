@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {deck_type} from '../../../../data/filters';
+import {deck_type} from '../../../../../data/filters';
 
 export class DeckType extends Component {
   constructor(props) {

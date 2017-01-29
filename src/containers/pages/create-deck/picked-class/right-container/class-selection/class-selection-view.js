@@ -1,6 +1,6 @@
 import React from 'react';
 import ClassSelectionRow from './row';
-import {hs_class} from '../../../../../data/filters';
+import {hs_class} from '../../../../../../data/filters';
 export const ClassSelectionView = (props) => {
   return (
       <table onClick={props.handleClassSelectionClick} className={`pick-class ${props.displayInlineFlex}`}>

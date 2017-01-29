@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {dust} from '../../../data/filters';
+import {dust} from '../../../../data/filters';
 
 export class DustFilter extends Component {
   render() {

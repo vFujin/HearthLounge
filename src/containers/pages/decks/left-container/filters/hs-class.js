@@ -1,5 +1,5 @@
 import React from 'react';
-import {hs_class} from '../../../../data/filters';
+import {hs_class} from '../../../../../data/filters';
 import IconsWrapper from './icons-wrapper';
 
 export const HsClassFilter = () => {

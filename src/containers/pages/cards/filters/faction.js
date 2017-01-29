@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {faction} from '../../../data/filters';
+import {faction} from '../../../../data/filters';
 
 export class FactionFilter extends Component {
   render() {

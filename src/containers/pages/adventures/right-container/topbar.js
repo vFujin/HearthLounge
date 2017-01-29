@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { topbar_tabs } from '../../../data/adventure-details';
+import { topbar_tabs } from '../../../../data/adventure-details';
 export class Topbar extends Component {
 
   render() {

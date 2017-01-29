@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import {archetype} from '../../../../data/filters';
+import {archetype} from '../../../../../data/filters';
 
 export class ArchetypeFilter extends Component {
   constructor(props) {
