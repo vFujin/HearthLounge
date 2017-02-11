@@ -23,7 +23,7 @@ import {ExpansionOverview} from './pages/expansions/right-container/expansion-ov
 import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
 import {AdventureContent} from './pages/adventures/right-container/adventure-content';
 
-import {Adventures} from './pages/adventures/adventures';
+import Adventures from './pages/adventures/adventures';
 import {AdventureBosses} from './pages/adventures/assets/bosses';
 import {AdventureCards} from './pages/adventures/assets/cards';
 import {AdventureClassChallanges} from './pages/adventures/assets/class-challanges';
@@ -44,24 +44,24 @@ export class App extends Component {
         <Router history={browserHistory}>
           <Route path="/"                   component={Main} >
             <IndexRoute                     component={Home} />
-            <Route path="strona-glowna"     component={Home} />
-            <Route path="talie-kart"        component={Decks}>
+            <Route path="home"              component={Home} />
+            <Route path="decks"             component={Decks}>
               <Route path=":class"          component={ChoosenDeckView}>
                 <Route path=":id"           component={Deck} />
               </Route>
             </Route>
-            <Route path="karty"             component={Cards}>
-              <Route path="/karta/:id" component={Cards} />
+            <Route path="cards"             component={Cards}>
+              <Route path="/karta/:id"      component={Cards} />
             </Route>
             <Route path="arena-picker"      component={ArenaPicker}>
               <Route path=":class"          component={PickedClass} />
             </Route>
-            <Route path="dodatki"           component={Expansions}>
+            <Route path="expansions"        component={Expansions}>
               <Route path=":expansion"      component={ExpansionOverview}>
                 <Route path=":details"      component={ExpansionContent} />
               </Route>
             </Route>
-            <Route path="przygody"              component={Adventures}>
+            <Route path="adventures"            component={Adventures}>
               <Route path=":adventure"          component={AdventureContent}>
                 <Route path="karty"             component={AdventureCards}/>
                 <Route path="koszt"             component={AdventureCost}/>
@@ -72,12 +72,12 @@ export class App extends Component {
                 <Route path="wyzwania-klasowe"  component={AdventureClassChallanges}/>
               </Route>
             </Route>
-            <Route path="stworz-talie-kart" component={CreateDeck}>
+            <Route path="create-deck"       component={CreateDeck}>
               <Route path=":class"          component={ChoosenClassView} />
             </Route>
             <Route path="forum"             component={Forum} />
-            <Route path="turnieje"          component={Tournaments} />
-            <Route path="streamerzy"        component={Streams} />
+            <Route path="tournaments"       component={Tournaments} />
+            <Route path="streamers"         component={Streams} />
             {/*<Route path="logowanie"         component={} />*/}
           </Route>
         </Router>
