@@ -5,14 +5,8 @@ import {bindActionCreators} from 'redux';
 import {navbarSelectedClass} from '../../redux/actions/navbar';
 
 class Navbar extends Component {
-  constructor(props){
-    super(props);
-
-
-  }
-
   handleSubmenuClick(event){
-     let activeSubmenuItem = event.target.dataset['submenuitem'];
+     let activeSubmenuItem = event.currentTarget.dataset['submenu_item'];
      let x = this.props.navbarSelectedClass(activeSubmenuItem);
      console.log(x);
   }
@@ -23,13 +17,13 @@ class Navbar extends Component {
     return (
         <ul className="submenu">
           {this.props.navbar[index].submenu.map( (item, id) =>
-            <li data-adventure={item.submenu_url}
-                data-submenuitem={item.submenu_url}
-                className={sub[id].submenu_li_className}
+            <li onClick={this.handleSubmenuClick.bind(this)}
+                data-submenu_item={item.url}
+                className={sub[id].url}
                 key={id}>
-              <Link to={'/' + el.url + '/' + item.submenu_url} activeClassName="submenu-active" data-submenuitem={item.submenu_url} onClick={this.handleSubmenuClick.bind(this)}>
-                <span data-submenuitem={item.submenu_url} className={`icon-${sub[id].submenu_li_className}`}></span>
-                <div data-submenuitem={item.submenu_url} className="icon-label">{sub[id].submenu_li_title}</div>
+              <Link to={'/' + el.url + '/' + item.url} activeClassName="submenu-active">
+                <span className={`icon-${sub[id].url}`}></span>
+                <div className="icon-label">{sub[id].url}</div>
               </Link>
             </li>
           )}
@@ -42,7 +36,7 @@ class Navbar extends Component {
           <div className="logo"></div>
           <ul>
             {this.props.navbar.map((element, index) =>
-                <li key={index} className={element.className}>
+                <li key={index} className={element.url}>
                   <Link to={'/' + element.url} activeClassName="active">
                     <span className={element.icon}></span>
                     <div>{element.name}</div>

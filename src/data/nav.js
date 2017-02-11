@@ -1,181 +1,143 @@
 export const navItems = [
   {
-    name: "Home",
-    className: "home",
+    name: "home",
+    url: "home",
     icon: "icon-hs_logo",
-    url: 'home',
-    homepage_order: 0,
     homepage_block_width: 0
   },
   {
-    name: "Decks",
-    className: "decks",
+    name: "decks",
+    url: "decks",
     icon: "icon-deck",
-    url: 'decks',
-    homepage_order: 1,
     homepage_block_width: 3,
     submenu: [
+      //url has to be in case if blizzard adds demon hunter / death knight classes
       {
-        submenu_li_title: "Warlock",
-        submenu_url: "czarnoksieznik",
-        submenu_li_className: "warlock"
+        name: "warlock",
+        url: "warlock"
       },
       {
-        submenu_li_title: "Druid",
-        submenu_url: "druid",
-        submenu_li_className: "druid"
+        name: "druid",
+        url: "druid"
       },
       {
-        submenu_li_title: "Priest",
-        submenu_url: "kaplan",
-        submenu_li_className: "priest"
+        name: "priest",
+        url: "priest"
       },
       {
-        submenu_li_title: "Rogue",
-        submenu_url: "lotr",
-        submenu_li_className: "rogue"
+        name: "rogue",
+        url: "rogue"
       },
       {
-        submenu_li_title: "Hunter",
-        submenu_url: "lowca",
-        submenu_li_className: "hunter"
+        name: "hunter",
+        url: "hunter"
       },
       {
-        submenu_li_title: "Mage",
-        submenu_url: "mag",
-        submenu_li_className: "mage"
+        name: "mage",
+        url: "mage"
       },
       {
-        submenu_li_title: "Paladin",
-        submenu_url: "paladyn",
-        submenu_li_className: "paladin"
+        name: "paladin",
+        url: "paladin"
       },
       {
-        submenu_li_title: "Shaman",
-        submenu_url: "szaman",
-        submenu_li_className: "shaman"
+        name: "shaman",
+        url: "shaman"
       },
       {
-        submenu_li_title: "Warrior",
-        submenu_url: "wojownik",
-        submenu_li_className: "warrior"
+        name: "warrior",
+        url: "warrior"
       }
     ]
   },
   {
-    name: "Cards",
-    className: "cards",
+    name: "cards",
+    url: "cards",
     icon: "icon-card",
-    url: 'cards',
-    homepage_order: 10,
     homepage_block_width: 1
   },
   {
     name: "Arena Picker",
-    className: "arena-picker",
+    url: "arena-picker",
     icon: "icon-arena-picker",
-    url: 'arena-picker',
-    homepage_order: 2,
     homepage_block_width: 1
   },
   {
     name: "Expansions",
-    className: "expansions",
-    icon: "icon-expansions",
     url: 'expansions',
-    homepage_order: 3,
+    icon: "icon-expansions",
     homepage_block_width: 2,
     submenu: [
       {
-        submenu_li_title: "Goblins vs Gnomes",
-        submenu_url: "gobliny-kontra-gnomy",
-        submenu_li_className: "goblins-vs-gnomes",
+        name: "Goblins vs Gnomes",
+        url: "goblins-vs-gnomes"
       },
       {
-        submenu_li_title: "The Grand Tournament",
-        submenu_url: "wielki-turniej",
-        submenu_li_className: "the-grand-tournament",
+        name: "The Grand Tournament",
+        url: "the-grand-tournament"
       },
       {
-        submenu_li_title: "Whispers of the Old Gods",
-        submenu_url: "przedwieczni-bogowie",
-        submenu_li_className: "whispers-of-the-old-gods",
+        name: "Whispers of the Old Gods",
+        url: "whispers-of-the-old-gods"
       },
       {
-        submenu_li_title: "Mean Streets of Gadgetzan",
-        submenu_url: "ciemne-zaulki-gadzetonu",
-        submenu_li_className: "mean-streets-of-gadgetzan",
+        name: "Mean Streets of Gadgetzan",
+        url: "mean-streets-of-gadgetzan"
       }
     ]
   },
   {
-    name: "Adventures",
-    className: "adventures",
-    icon: "icon-adventures",
+    name: "adventures",
     url: 'adventures',
-    homepage_order: 9,
+    icon: "icon-adventures",
     homepage_block_width: 0,
     submenu: [
       {
-        submenu_li_title: "Curse of Naxxramas",
-        submenu_url: "klatwa-naxxramas",
-        submenu_li_className: "curse-of-naxxramas",
+        name: "Curse of Naxxramas",
+        url: "curse-of-naxxramas"
       },
       {
-        submenu_li_title: "Blackrock Mountain",
-        submenu_url: "czarna-gora",
-        submenu_li_className: "blackrock-mountain",
+        name: "Blackrock Mountain",
+        url: "blackrock-mountain"
       },
       {
-        submenu_li_title: "The Leage of Explorers",
-        submenu_url: "liga-odkrywcow",
-        submenu_li_className: "the-league-of-explorers",
+        name: "The Leage of Explorers",
+        url: "the-league-of-explorers"
       },
       {
-        submenu_li_title: "One Night at Karazhan",
-        submenu_url: "pewnej-nocy-w-karazhanie",
-        submenu_li_className: "one-night-at-karazhan",
+        name: "One Night at Karazhan",
+        url: "one-night-at-karazhan",
       }
     ]
   },
   {
-    name: "Create Deck",
-    className: "create-deck",
+    name: "create deck",
+    url: "create-deck",
     icon: "icon-create-deck",
-    url: 'stworz-talie-kart',
-    homepage_order: 4,
     homepage_block_width: 1
   },
   {
-    name: "Forum",
-    className: "forum",
-    icon: "icon-bubbles2",
+    name: "forum",
     url: 'forum',
-    homepage_order: 5,
+    icon: "icon-bubbles2",
     homepage_block_width: 1
   },
   {
     name: "Tournaments",
-    className: "tournaments",
+    url: 'tournaments',
     icon: "icon-trophy",
-    url: 'turnieje',
-    homepage_order: 6,
     homepage_block_width: 1
   },
   {
     name: "Streamers",
-    className: "streams",
+    url: 'streamers',
     icon: "icon-twitch",
-    url: 'streamerzy',
-    homepage_order: 7,
     homepage_block_width: 2
   },
   {
     name: "Login",
-    className: "login",
+    url: "login",
     icon: "icon-login",
-    url: '',
-    homepage_order: 8,
     homepage_block_width: 0
   }
 ];
