@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import {connect} from 'react-redux';
-// import {bindActionCreators} from 'redux';
-// import {showAdventure} from '../../../redux/actions/adventures/index';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {adventureSelected} from '../../../redux/actions/adventure/adventure';
 
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar';
@@ -9,47 +9,42 @@ import {PreAdventureSelect} from './right-container/pre-adventure-select';
 import {AdventureContent} from './right-container/adventure-content';
 import {AdventureOverview} from './right-container/adventure-overview'
 
-export class Adventures extends Component {
+class Adventures extends Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      //Sidebar
-      preSelected: 'displayBlock',
-      adventureOverview: 'displayBlock',
-      selected: 'displayNone',
-      adventure: 'displayNone',
-      selectedAdventureUrl: null,
-
-      //Topbar
-      topbarActiveTab: '',
-      topbarActiveTabUrl: '',
-      sidebarActiveTab: null,
-      details: 'displayNone',
-
-      //Bosses
-      activeBoss: null,
-      activeBossUrl: null,
-      activeBossImg: null,
-      activeTableView: 'displayBlock',
-      activeBossView: 'displayNone'
-    }
+    // this.state = {
+    //   //Topbar
+    //   topbarActiveTab: '',
+    //   topbarActiveTabUrl: '',
+    //   sidebarActiveTab: null,
+    //   details: 'displayNone',
+    //
+    //   //Bosses
+    //   activeBoss: null,
+    //   activeBossUrl: null,
+    //   activeBossImg: null,
+    //   activeTableView: 'displayBlock',
+    //   activeBossView: 'displayNone'
+    // }
   }
 
   handleSidebarClick(event){
-    let preSelected = this.state.preSelected === "displayBlock" ? "displayNone" : "displayNone";
-    let isSelected = this.state.selected === "displayNone" ? "displayBlock" : "displayBlock";
-    let selectedAdventure = event.target.dataset['api'];
-    let selectedAdventureUrl = event.target.dataset['url'];
-    let selectedAdventureClass = event.target.dataset['adventure'];
-    let activeTab = this.state.sidebarActiveTab === null ? selectedAdventureClass: selectedAdventureClass;
+    let adventure = this.props.adventure;
+    let preSelected = adventure.preSelected === "displayBlock" ? "displayNone" : "displayNone";
+    let isSelected = adventure.selected === "displayNone" ? "displayBlock" : "displayBlock";
+    let selectedAdventure = event.currentTarget.dataset['api'];
+    let selectedAdventureUrl = event.currentTarget.dataset['url'];
+    let selectedAdventureClass = event.currentTarget.dataset['adventure'];
+    let activeTab = adventure.sidebarActiveTab === null ? selectedAdventureClass: selectedAdventureClass;
 
-    let activeTableView = this.state.activeBossView === 'displayNone' ? 'displayBlock' : 'displayBlock';
-    let activeBossView = this.state.activeBossView === 'displayBlock' ? 'displayNone' : 'displayNone';
+    let activeTableView = adventure.activeBossView === 'displayNone' ? 'displayBlock' : 'displayBlock';
+    let activeBossView = adventure.activeBossView === 'displayBlock' ? 'displayNone' : 'displayNone';
 
+    this.props.adventureSelected(preSelected, selectedAdventure);
     this.setState({
-      preSelected: preSelected,
-      selected: isSelected,
+      // preSelected: preSelected,
+      // selected: isSelected,
       adventure: selectedAdventure,
       selectedAdventureUrl: selectedAdventureUrl,
       sidebarActiveTab: activeTab,
@@ -83,9 +78,9 @@ export class Adventures extends Component {
   }
 
   handleBossClick(event){
-    let activeBoss = event.target.dataset['boss'];
-    let activeBossUrl = event.target.dataset['url'];
-    let activeBossImg = event.target.dataset['img'];
+    let activeBoss = event.currentTarget.dataset['boss'];
+    let activeBossUrl = event.currentTarget.dataset['url'];
+    let activeBossImg = event.currentTarget.dataset['img'];
     let activeTableView = this.state.activeBossView === 'displayBlock' ? 'displayNone' : 'displayNone';
     let activeBossView = this.state.activeBossView === 'displayNone' ? 'displayBlock' : 'displayBlock';
     this.setState({
@@ -136,3 +131,18 @@ export class Adventures extends Component {
     );
   }
 }
+
+function mapStateToProps(state){
+  return{
+    adventure: state.adventure
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  console.log(dispatch);
+  return bindActionCreators({
+    adventureSelected
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Adventures);

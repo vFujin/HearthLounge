@@ -4,53 +4,45 @@ import {Topbar} from './right-container/topbar';
 import {PreExpansionSelect} from './right-container/pre-expansion-select';
 import {ExpansionContent} from './right-container/expansion-content';
 import {ExpansionOverview} from './right-container/expansion-overview';
-export class Expansions extends Component {
+
+import {connect} from 'react-redux';
+import {bindActionCreators, dispatch} from 'redux';
+import {selectExpansion} from '../../../redux/actions/expansions';
+
+class Expansions extends Component {
+
   constructor(props){
     super(props);
-
-    this.state = {
-      //Sidebar
-      preSelected: 'displayBlock',
-      expansionOverview: 'displayBlock',
-      selected: 'displayNone',
-      expansion: 'displayBlock',
-      selectedExpansionClass: null,
-
-      //Topbar
-      topbarActiveTab: '',
-      topbarActiveTabUrl: '',
-      sidebarActiveTab: null,
-      details: 'displayNone'
-    }
   }
 
   handleSidebarClick(event){
-    let preSelected = this.state.preSelected === "displayBlock" ? "displayNone" : "displayNone";
-    let isSelected = this.state.selected === "displayNone" ? "displayBlock" : "displayBlock";
-    let selectedExpansion = event.target.dataset['api'];
-    let selectedExpansionUrl = event.target.dataset['url'];
-    let selectedExpansionClass= event.target.dataset['expansion'];
-
-    let activeTab = this.state.sidebarActiveTab === null ? selectedExpansionUrl : selectedExpansionUrl;
-    // let activeTopbarTab = this.state.topbarActiveTabUrl ===
-
-    this.setState({
-      preSelected: preSelected,
-      selected: isSelected,
-      expansion: selectedExpansion,
-      selectedAdventureUrl: selectedExpansionUrl,
-      sidebarActiveTab: activeTab,
-      selectedExpansionClass: selectedExpansionClass
-    })
+    // let arr = {
+    //   preSelected: this.props.expansion.preSelected === "displayBlock" ? "displayNone" : "displayNone",
+    //   isSelected: this.props.expansion.selected === "displayNone" ? "displayBlock" : "displayBlock",
+    //   selectedExpansion: event.target.dataset['api'],
+    //   selectedExpansionUrl: event.target.dataset['url'],
+    //   selectedExpansionClass: event.target.dataset['expansion'],
+    //
+    //   activeTab: this.props.expansion.sidebarActiveTab === '' ? this.selectedExpansionUrl : this.selectedExpansionUrl
+    // };
+    // this.setState({
+    //   preSelected: preSelected,
+    //   selected: isSelected,
+    //   expansion: selectedExpansion,
+    //   selectedAdventureUrl: selectedExpansionUrl,
+    //   sidebarActiveTab: activeTab,
+    //   selectedExpansionClass: selectedExpansionClass
+    // })
   }
 
   handleTopbarClick(event){
+    let expansion = this.props.expansion;
     let activeTab = event.target.dataset['tab'];
     let activeTabUrl = event.target.dataset['url'];
-    let isActive = this.state.topbarActiveTab === '' ? activeTab : activeTab;
-    let isActiveUrl = this.state.topbarActiveTabUrl === '' ? activeTabUrl : activeTabUrl;
-    let areDetailsShown = this.state.topbarActiveTab === 'displayNone' ? 'displayBlock' : 'displayBlock';
-    let expansionOverview = this.state.expansionOverview === "displayBlock" ? "displayNone" : "displayNone";
+    let isActive = expansion.topbarActiveTab === '' ? activeTab : activeTab;
+    let isActiveUrl = expansion.topbarActiveTabUrl === '' ? activeTabUrl : activeTabUrl;
+    let areDetailsShown = expansion.topbarActiveTab === 'displayNone' ? 'displayBlock' : 'displayBlock';
+    let expansionOverview = expansion.expansionOverview === "displayBlock" ? "displayNone" : "displayNone";
 
     this.setState({
       expansionOverview: expansionOverview,
@@ -61,30 +53,49 @@ export class Expansions extends Component {
   }
 
   render() {
+    let expansion = this.props.expansion;
     return (
         <div className="pageContainer expansions">
           <div className="left-container">
             <Sidebar onExpansionChange={this.handleSidebarClick.bind(this)}
-                     activeTopbarTab={this.state.topbarActiveTab}
-                     isSelected={this.state.selected}
-                     isActive={this.state.sidebarActiveTab} />
+                     activeTopbarTab={expansion.topbarActiveTab}
+                     isSelected={expansion.selected}
+                     isActive={expansion.sidebarActiveTab} />
           </div>
           <div className="right-container">
-            <PreExpansionSelect preSelect={this.state.preSelected} />
-            <div className={`content ${this.state.selected}`}>
+            <PreExpansionSelect preSelect={expansion.preSelected} />
+            <div className={`content ${expansion.selected}`}>
               <Topbar onTabChange={this.handleTopbarClick.bind(this)}
-                      isActive={this.state.topbarActiveTab}
-                      sidebarActiveTab={this.state.sidebarActiveTab}
-                      selectedExpansionClass={this.state.selectedExpansionClass}/>
-              <ExpansionOverview expansionOverview={this.state.expansionOverview} sidebarActiveTab={this.state.sidebarActiveTab} selectedExpansionClass={this.state.selectedExpansionClass}/>
-              <ExpansionContent expansion={this.state.expansion}
-                                topbarActiveTabUrl={this.state.topbarActiveTabUrl}
-                                topbarActiveTab={this.state.topbarActiveTab}
-                                selectedExpansionClass={this.state.selectedExpansionClass}
-                                content={this.state.details}/>
+                      isActive={expansion.topbarActiveTab}
+                      sidebarActiveTab={expansion.sidebarActiveTab}
+                      selectedExpansionClass={expansion.selectedExpansionClass}/>
+
+              <ExpansionOverview expansionOverview={expansion.expansionOverview}
+                                 sidebarActiveTab={expansion.sidebarActiveTab}
+                                 selectedExpansionClass={expansion.selectedExpansionClass}/>
+
+              <ExpansionContent expansion={expansion.expansion}
+                                topbarActiveTabUrl={expansion.topbarActiveTabUrl}
+                                topbarActiveTab={expansion.topbarActiveTab}
+                                selectedExpansionClass={expansion.selectedExpansionClass}
+                                content={expansion.details}/>
             </div>
           </div>
         </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  console.log("Expansion state: ", state.expansion);
+  return {
+    expansion: state.expansion
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    selectExpansion
+  }, dispatch)
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Expansions);

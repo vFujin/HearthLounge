@@ -22,13 +22,9 @@ export class AdventureBosses extends Component {
                           data-url={element.url}
                           data-img={element.img}
                           className={`${this.props.sidebarActiveTab} active-on-hover`}>
-                        <Link data-boss={element.boss} data-img={element.img} data-url={element.url} to={`/przygody/${this.props.selectedAdventureUrl}/${this.props.selectedTopbarTab}/${element.url}`}>
-                          <img data-boss={element.boss}
-                               data-url={element.url}
-                               data-img={element.img}
-                               src={element.img}
-                               alt={`${element.boss}'s illustration`}/>
-                          <p key={index} data-boss={element.boss} data-img={element.img} data-url={element.url}>{element.boss}</p>
+                        <Link to={`/przygody/${this.props.selectedAdventureUrl}/${this.props.selectedTopbarTab}/${element.url}`}>
+                          <img src={element.img} alt={`${element.boss}'s illustration`}/>
+                          <p key={index}>{element.boss}</p>
                         </Link>
                       </td>
                     )}

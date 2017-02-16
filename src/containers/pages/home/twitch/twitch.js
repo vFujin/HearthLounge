@@ -19,7 +19,7 @@ export class TwitchBlock extends Component {
               <TwitchLiveBroadcasters/>
               <TwitchLiveBroadcasters/>
             </div>
-            <TwitchIframe/>
+            {/*<TwitchIframe/>*/}
           </div>
         </li>
     );

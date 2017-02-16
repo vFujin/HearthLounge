@@ -1,11 +1,12 @@
 import React from 'react';
-import {App} from './App';
+import {App} from './Router';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import {reducers} from '../redux/reducers/index';
 import '../styles/index.css';
+const store = createStore(reducers);
 const Root = () => (
-    <Provider store={createStore(reducers)}>
+    <Provider store={store}>
       <App/>
     </Provider>
 );

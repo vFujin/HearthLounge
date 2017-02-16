@@ -7,8 +7,7 @@ import {navbarSelectedClass} from '../../redux/actions/navbar';
 class Navbar extends Component {
   handleSubmenuClick(event){
      let activeSubmenuItem = event.currentTarget.dataset['submenu_item'];
-     let x = this.props.navbarSelectedClass(activeSubmenuItem);
-     console.log(x);
+     this.props.navbarSelectedClass(activeSubmenuItem);
   }
 
   dropdown(el, index){
@@ -60,6 +59,7 @@ class Navbar extends Component {
 }
 
 function mapStateToProps(state){
+  console.log(state.navbar);
   return{
     navbar: state.navbar
   };

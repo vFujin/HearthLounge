@@ -3,6 +3,7 @@ export const ADVENTURE_DETAILS_SELECTED = 'ADVENTURE_DETAILS_SELECTED';
 export const ADVENTURE_ACTIVE_BOSS = 'ADVENTURE_DETAILS_SELECTED';
 
 export function adventureSelected(adventure){
+  console.log(adventure);
   return {
     type: ADVENTURE_SELECTED,
     payload: adventure

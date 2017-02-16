@@ -18,7 +18,7 @@ import {Deck} from './pages/decks/choosen-deck/deck';
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
 import {PickedClass} from './pages/arena-picker/picked-class/right-container/choosen-class-view';
 
-import {Expansions} from './pages/expansions/expansions';
+import Expansions from './pages/expansions/expansions';
 import {ExpansionOverview} from './pages/expansions/right-container/expansion-overview';
 import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
 import {AdventureContent} from './pages/adventures/right-container/adventure-content';
@@ -33,7 +33,7 @@ import {BossGuide} from './pages/adventures/assets/boss-details/boss-guide';
 
 import {ChoosenClassView} from './pages/create-deck/picked-class/right-container/choosen-class-selection/choosen-class-view';
 
-import {Dashboard} from './pages/dashboard/dashboard';
+// import {Dashboard} from './pages/dashboard/dashboard';
 
 import {Main} from './Main';
 
@@ -44,7 +44,7 @@ export class App extends Component {
         <Router history={browserHistory}>
           <Route path="/"                   component={Main} >
             <IndexRoute                     component={Home} />
-            <Route path="home"              component={Home} />
+            <Route path=""              component={Home} />
             <Route path="decks"             component={Decks}>
               <Route path=":class"          component={ChoosenDeckView}>
                 <Route path=":id"           component={Deck} />
