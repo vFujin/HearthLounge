@@ -8,11 +8,11 @@ export class SharedTopbarTabs extends Component {
 
   render() {
     return (
-        <div className={`${this.props.expansion} ${this.props.topbarActiveTab}`}>
-          <ExpansionCards expansion={this.props.expansion} topbarActiveTabUrl={this.props.topbarActiveTabUrl}/>
-          <Arena topbarActiveTabUrl={this.props.topbarActiveTabUrl}/>
-          <Preorder topbarActiveTabUrl={this.props.topbarActiveTabUrl}/>
-          <StandardMode topbarActiveTabUrl={this.props.topbarActiveTabUrl}/>
+        <div className={`${this.props.expansion} ${this.props.details}`}>
+          <ExpansionCards expansion={this.props.expansion} details={this.props.details}/>
+          <Arena topbarActiveTabUrl={this.props.details}/>
+          <Preorder topbarActiveTabUrl={this.props.details}/>
+          <StandardMode topbarActiveTabUrl={this.props.details}/>
         </div>
     );
   }

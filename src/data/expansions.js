@@ -26,6 +26,10 @@ export const topbar_tabs = [
     expansion: 'goblins-vs-gnomes',
     expansion_topbar_tabs: [
       {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
         name: 'Cards',
         url: 'cards'
       },
@@ -55,6 +59,10 @@ export const topbar_tabs = [
     expansion: 'the-grand-tournament',
     expansion_topbar_tabs: [
       {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
         name: 'Cards',
         url: 'cards',
       },
@@ -76,6 +84,10 @@ export const topbar_tabs = [
     expansion: 'whispers-of-the-old-gods',
     expansion_topbar_tabs: [
       {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
         name: 'Cards',
         url: 'cards'
       },
@@ -96,6 +108,10 @@ export const topbar_tabs = [
   {
     expansion: 'mean-streets-of-gadgetzan',
     expansion_topbar_tabs: [
+      {
+        name: 'Overview',
+        url: 'overview'
+      },
       {
         name: 'Cards',
         url: 'cards'

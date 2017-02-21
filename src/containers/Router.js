@@ -20,7 +20,7 @@ import {PickedClass} from './pages/arena-picker/picked-class/right-container/cho
 
 import {Expansions} from './pages/expansions/expansions';
 import {Expansion} from './pages/expansions/right-container/expansion';
-// import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
+import {ExpansionDetails} from './pages/expansions/right-container/details';
 import {AdventureContent} from './pages/adventures/right-container/adventure-content';
 
 import Adventures from './pages/adventures/adventures';
@@ -58,7 +58,7 @@ export class App extends Component {
             </Route>
             <Route path="expansions"        component={Expansions}>
               <Route path=":expansion"      component={Expansion}>
-                {/*<Route path=":details"      component={ExpansionContent} />*/}
+                <Route path=":details"      component={ExpansionDetails} />
               </Route>
             </Route>
             <Route path="adventures"            component={Adventures}>

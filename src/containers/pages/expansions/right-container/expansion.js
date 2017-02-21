@@ -7,9 +7,9 @@ export class Expansion extends Component{
   render() {
     return (
         <div className="content">
-          {/*{this.props.expansion}*/}
-          <Topbar expansion={this.props.location.pathname.slice(12)}/>
-          x
+          <Topbar expansion={this.props.location.pathname.split('/')[2]}
+                  details={this.props.location.pathname.split('/')[3]}/>
+          {this.props.children}
         </div>
     )
   }

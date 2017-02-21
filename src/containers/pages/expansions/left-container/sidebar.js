@@ -10,15 +10,12 @@ export class Sidebar extends Component {
   render() {
     return (
         <div className="sidebar">
-          {console.log(this.props.expansion)}
           <h3 className="filter-header">Expansions</h3>
           <ul className="sidebar-icons">
             {expansions.map((expansion, index) =>
                 <li key={index}>
-                  <Link onClick={this.props.onExpansionChange}
-                        to={`/expansions/${expansion.url}`}
-                        className={`${expansion.url} ${this.props.expansion === expansion.url && 'active'}`}
-                        data-expansion={expansion.url}>
+                  <Link to={`/expansions/${expansion.url}/overview`}
+                        className={`${expansion.url} ${this.props.expansion === expansion.url && 'active'}`}>
                     <span className={`hs-icon icon-${expansion.url}`}></span>
                     <p>{expansion.name}</p>
                   </Link>

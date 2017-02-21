@@ -14,7 +14,7 @@ export class ExpansionCards extends Component {
     unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?locale=plPL")
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
-          let expansion = this.props.expansion;
+          let expansion = 'Goblins vs Gnomes';
           // console.log(res.body);
           this.setState({
             cards: res.body[expansion]
@@ -26,7 +26,7 @@ export class ExpansionCards extends Component {
 
   render() {
     return (
-        <ul className={`cards cards-container ${this.props.topbarActiveTabUrl} ${this.props.topbarActiveTabUrl === 'cards' && 'active'}-view`}>
+        <ul className={`cards cards-container ${this.props.details === 'cards' && 'active'}-view`}>
           {this.state.cards.map((card, i)=>
               <li key={i}>
                 <img src={card.img} alt={`${card.name}`}/>
