@@ -3,10 +3,6 @@ import {Link} from 'react-router';
 import {expansions} from '../../../../data/filters';
 
 export class Sidebar extends Component {
-  constructor(props){
-    super(props);
-  }
-
   render() {
     return (
         <div className="sidebar">

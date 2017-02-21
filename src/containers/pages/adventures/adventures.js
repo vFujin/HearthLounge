@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import {Sidebar} from './left-container/sidebar';
 
 export class Adventures extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+   render() {
     return (
         <div className="pageContainer adventures">
           <div className="left-container">

@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {SharedTopbarTabs} from './assets/shared-topbar-tabs'
 export class ExpansionDetails extends Component{
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
         <div className="extension-content">
