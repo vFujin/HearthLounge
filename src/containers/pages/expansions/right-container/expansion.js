@@ -6,7 +6,7 @@ export class Expansion extends Component{
   }
   render() {
     return (
-        <div>
+        <div className="content">
           {/*{this.props.expansion}*/}
           <Topbar expansion={this.props.location.pathname.slice(12)}/>
           x

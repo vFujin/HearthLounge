@@ -10,11 +10,10 @@ export class Topbar extends Component {
           {topbar_tabs.map( (element, index) =>
               <ul className={`${this.props.expansion === element.expansion && 'active'}-view content-navigation`} key={index}>
                 {element.expansion_topbar_tabs.map((element, index) =>
-                    <li onClick={this.props.onTabChange}
-                        key={index}
-                        className={`${this.props.isActive === element.url && 'active'} ${this.props.selectedExpansionClass}`}>
-                      <Link data-tab={element.url} data-url={element.en_url} to={`/expansions/${this.props.expansion}/${element.url}`}>
-                        {element.tab}
+                    <li key={index}
+                        className={`${this.props.isActive === element.url && 'active'}`}>
+                      <Link to={`/expansions/${this.props.expansion}/${element.url}`}>
+                        {element.name}
                       </Link>
                     </li>
                 )}

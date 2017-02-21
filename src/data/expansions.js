@@ -26,34 +26,28 @@ export const topbar_tabs = [
     expansion: 'goblins-vs-gnomes',
     expansion_topbar_tabs: [
       {
-        en_url: 'cards',
-        tab: 'Karty',
-        url: 'karty'
+        name: 'Cards',
+        url: 'cards'
       },
       {
-        en_url: 'pre-purchase',
-        tab: 'Przedzakup',
-        url: 'przedzakup'
+        name: 'Pre-order',
+        url: 'pre-order'
       },
       {
-        en_url: 'arena',
-        tab: 'Arena',
+        name: 'Arena',
         url: 'arena'
       },
       {
-        en_url: 'standard-mode',
-        tab: 'Tryb Standard',
-        url: 'tryb-standard'
+        name: 'Standard Mode',
+        url: 'standard-mode'
       },
       {
-        en_url: 'spectator-mode',
-        tab: 'Tryb Obserwatora',
-        url: 'tryb-obserwatora'
+        name: 'Spectator Mode',
+        url: 'spectator-mode'
       },
       {
-        en_url: 'hs-android',
-        tab: 'Hearthstone na Androida',
-        url: 'hearthstone-na-androida'
+        name: 'Hearthstone on Android',
+        url: 'hs-android'
       }
     ]
   },
@@ -61,24 +55,20 @@ export const topbar_tabs = [
     expansion: 'the-grand-tournament',
     expansion_topbar_tabs: [
       {
-        en_url: 'cards',
-        tab: 'Karty',
-        url: 'karty'
+        name: 'Cards',
+        url: 'cards',
       },
       {
-        en_url: 'pre-purchase',
-        tab: 'Przedzakup',
-        url: 'przedzakup'
+        name: 'Pre-order',
+        url: 'pre-order',
       },
       {
-        en_url: 'arena',
-        tab: 'Arena',
-        url: 'arena'
+        name: 'Arena',
+        url: 'arena',
       },
       {
-        en_url: 'standard-mode',
-        tab: 'Tryb Standard',
-        url: 'tryb-standard'
+        name: 'Standard Mode',
+        url: 'standard-mode',
       }
     ]
   },
@@ -86,24 +76,20 @@ export const topbar_tabs = [
     expansion: 'whispers-of-the-old-gods',
     expansion_topbar_tabs: [
       {
-        en_url: 'cards',
-        tab: 'Karty',
-        url: 'karty'
+        name: 'Cards',
+        url: 'cards'
       },
       {
-        en_url: 'pre-purchase',
-        tab: 'Przedzakup',
-        url: 'przedzakup'
+        name: 'Pre-order',
+        url: 'pre-order'
       },
       {
-        en_url: 'arena',
-        tab: 'Arena',
+        name: 'Arena',
         url: 'arena'
       },
       {
-        en_url: 'standard-mode',
-        tab: 'Tryb Standard',
-        url: 'tryb-standard'
+        name: 'Standard Mode',
+        url: 'standard-mode'
       }
     ]
   },
@@ -111,34 +97,28 @@ export const topbar_tabs = [
     expansion: 'mean-streets-of-gadgetzan',
     expansion_topbar_tabs: [
       {
-        en_url: 'cards',
-        tab: 'Karty',
-        url: 'karty'
+        name: 'Cards',
+        url: 'cards'
       },
       {
-        en_url: 'pre-purchase',
-        tab: 'Przedzakup',
-        url: 'przedzakup'
+        name: 'Pre-order',
+        url: 'pre-order'
       },
       {
-        en_url: 'arena',
-        tab: 'Arena',
+        name: 'Arena',
         url: 'arena'
       },
       {
-        en_url: 'standard-mode',
-        tab: 'Tryb Standard',
-        url: 'tryb-standard'
+        name: 'Standard Mode',
+        url: 'standard-mode'
       },
       {
-        en_url: 'multiclass-cards',
-        tab: 'Wieloklasowe Karty',
-        url: 'wieloklasowe-karty'
+        name: 'Multiclass Cards',
+        url: 'multiclass-cards'
       },
       {
-        en_url: 'jade-golem-mechanic',
-        tab: 'Mechanika Nefrytowego Golema',
-        url: 'mechanika-nefrytowego-golema'
+        name: 'Jade Golem Mechanic',
+        url: 'jade-golem-mechanic'
       }
     ]
   }

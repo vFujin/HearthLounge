@@ -226,7 +226,7 @@ export const expansions = [
     img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/przedwieczni_bogowie.jpg'
   },
   {
-    en: 'Mean Streets of Gadgetzan',
+    name: 'Mean Streets of Gadgetzan',
     url: 'mean-streets-of-gadgetzan',
     img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/ciemne_zaulki_gadzetonu.jpg'
   }
