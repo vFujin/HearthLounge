@@ -9,6 +9,7 @@ export class SharedTopbarTabs extends Component {
   render() {
     return (
         <div className={`${this.props.expansion} ${this.props.details}`}>
+          <Overview expansion={this.props.expansion} topbarActiveTabUrl={this.props.details}/>
           <ExpansionCards expansion={this.props.expansion} details={this.props.details}/>
           <Arena topbarActiveTabUrl={this.props.details}/>
           <Preorder topbarActiveTabUrl={this.props.details}/>
