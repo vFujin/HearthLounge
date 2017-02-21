@@ -1,29 +1,27 @@
 export const topbar_tabs = [
   {
-    en_url: 'cards',
-    tab: 'Karty',
-    url: 'karty'
-
+    name: 'Overview',
+    url: 'overview'
   },
   {
-    en_url: 'cost',
-    tab: 'Koszt',
-    url: 'koszt'
+    name: 'Cards',
+    url: 'cards'
   },
   {
-    en_url: 'structure',
-    tab: 'Struktura',
-    url: 'struktura'
+    name: 'Cost',
+    url: 'cost'
   },
   {
-    en_url: 'bosses',
-    tab: 'Bossy',
-    url: 'bossy'
+    name: 'Structure',
+    url: 'structure'
   },
   {
-    en_url: 'class-challanges',
-    tab: 'Wyzwania Klasowe',
-    url: 'wyzwania-klasowe'
+    name: 'Bosses',
+    url: 'bosses'
+  },
+  {
+    name: 'Class Challanges',
+    url: 'class-challanges'
   }
 ];
 

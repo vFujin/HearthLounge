@@ -10,7 +10,7 @@ export class Sidebar extends Component {
           <ul className="sidebar-icons">
             {adventures.map((adventure, index) =>
                 <li key={index}>
-                  <Link to={`/adventures/${adventure.url}`}
+                  <Link to={`/adventures/${adventure.url}/overview`}
                         className={`${adventure.url} ${this.props.adventure === adventure.url && 'active'}`}>
                     <span className={`hs-icon icon-${adventure.url}`}></span>
                     <p>{adventure.name}</p>
