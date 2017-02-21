@@ -7,7 +7,6 @@ export class AdventureCost extends Component {
         <div className={`cost inner-container ${this.props.details === 'cost' && 'active'}-view `}>
           {adventure_details.map( (adventure, index)=>
           <div className={`${this.props.adventure === adventure.adventure && 'active'}-view`} key={index}>
-            {console.log(this.props.adventure, adventure.adventure)}
             <div className="cost-description">
               <p>Przygoda {adventure.singular_adventure_name} jest dodatkową płatną zawartością do Hearthsone'a. Jest możliwość kupna zawartości za pomocą zdobytego w grze złota oraz prawdziwej gotówki.</p>
               <p>Przygoda jest podzielona na <span>{countWings}</span> skrzydeł; każde skrzydło kosztuje <span>{adventure.cost.wings[0].gold}</span> złota lub <span>{adventure.cost.wings[0].eur}</span>€ (~25zł, w zależności od kursu Euro).</p>

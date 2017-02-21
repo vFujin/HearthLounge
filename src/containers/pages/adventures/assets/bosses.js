@@ -16,8 +16,8 @@ export class AdventureBosses extends Component {
                     <th className={`${this.props.adventure} active`}>{wing.wing_title}</th>
                     {wing.bosses.map((boss, index)=>
                       <td key={index} className={`${this.props.adventure} active-on-hover`}>
-                        <Link to={`/adventures/${this.props.adventure}/${this.props.details}/${wing.url}/${boss.url}`}>
-                          <img src={boss.img} alt={`${boss.boss}'s illustration`}/>
+                        <Link to={`/adventures/${this.props.adventure}/boss/${boss.url}`}>
+                          <img src={boss.img} alt={boss.boss}/>
                           <p key={index}>{boss.boss}</p>
                         </Link>
                       </td>
