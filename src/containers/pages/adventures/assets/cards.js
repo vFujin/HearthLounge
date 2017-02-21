@@ -10,7 +10,7 @@ export class AdventureCards extends Component {
   }
 
   componentWillReceiveProps() {
-    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?locale=plPL")
+    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1")
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
           let adventure = 'Blackrock Mountain';
@@ -24,7 +24,7 @@ export class AdventureCards extends Component {
 
   render() {
     return (
-        <ul className={`cards cards-container ${this.props.active === 'cards' && 'active'}-view`}>
+        <ul className={`cards cards-container ${this.props.details === 'cards' && 'active'}-view`}>
           {this.state.cards.map((card, i)=>
               <li key={i}>
                 <img src={card.img} alt={`${card.name}`}/>

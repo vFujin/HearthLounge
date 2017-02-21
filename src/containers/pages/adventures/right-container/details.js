@@ -12,9 +12,8 @@ export class AdventureDetails extends Component {
     return (
       <div className={`extension-content ${this.props.sidebarActiveTab} ${this.props.details} `}>
         <AdventureBosses adventure={adventureUrl} details={detailsUrl}/>
-
-
         <AdventureCards adventure={adventureUrl} details={detailsUrl}/>
+
         <AdventureClassChallanges adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
         <AdventureCost adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
         <AdventureStructure adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
