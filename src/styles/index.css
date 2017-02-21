@@ -2231,7 +2231,17 @@ footer {
   .expansions .right-container .content .extension-content, .adventures .right-container .content .extension-content {
     margin: 10px 0 0 10px;
     background-color: #A69E9D;
-    height: calc(100% - 60px); }
+    height: calc(100% - 60px);
+    overflow: auto; }
+    .expansions .right-container .content .extension-content::-webkit-scrollbar, .adventures .right-container .content .extension-content::-webkit-scrollbar {
+      width: 13px; }
+    .expansions .right-container .content .extension-content::-webkit-scrollbar-thumb, .adventures .right-container .content .extension-content::-webkit-scrollbar-thumb {
+      background-color: #474143;
+      border-radius: 0; }
+    .expansions .right-container .content .extension-content::-webkit-scrollbar-thumb:hover, .adventures .right-container .content .extension-content::-webkit-scrollbar-thumb:hover {
+      background-color: #474143; }
+    .expansions .right-container .content .extension-content::-webkit-scrollbar-track, .adventures .right-container .content .extension-content::-webkit-scrollbar-track {
+      background-color: #A69E9D; }
     .expansions .right-container .content .extension-content .false-view, .adventures .right-container .content .extension-content .false-view {
       display: none; }
     .expansions .right-container .content .extension-content .active-view, .adventures .right-container .content .extension-content .active-view {
@@ -2244,7 +2254,7 @@ footer {
       text-align: center;
       overflow: auto;
       width: 100%;
-      height: calc(100% - 50px); }
+      height: 100%; }
       .expansions .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar, .adventures .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar {
         width: 13px; }
       .expansions .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar-thumb, .adventures .right-container .content .extension-content .cards.cards-container::-webkit-scrollbar-thumb {

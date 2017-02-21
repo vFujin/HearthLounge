@@ -1536,9 +1536,11 @@ footer{
         }
       }
       .extension-content {
+        @include scrollbar;
         margin: 10px 0 0 10px;
         background-color: $light-grey;
         height: calc(100% - 60px);
+        overflow: auto;
         .false-view{
           display: none;
         }
@@ -1555,7 +1557,7 @@ footer{
           text-align: center;
           overflow: auto;
           width: 100%;
-          height: calc(100% - 50px);
+          height: 100% ;
           li {
             width: 16%;
             display: inline-block;

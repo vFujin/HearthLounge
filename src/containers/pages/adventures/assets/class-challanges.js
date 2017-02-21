@@ -10,38 +10,35 @@ export class AdventureClassChallanges extends Component {
 
   }
 
-  s() {
+  componentDidMount() {
     unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/Loatheb")
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
-          let adventure = this.props.adventure;
-          console.log(adventure);
+          // let adventure = 'Blackrock Mountain';
           this.setState({
-            cards: res.body['basic']
+            // cards: res.body['Blackrock Mountain']
           });
 
         });
   }
+
   render() {
     return (
-        <div className={`class-challanges inner-container ${this.props.active === 'class-challanges' && 'active'}-view`}>
-          {adventure_details.map((element, index)=>
-          <div className={`${this.props.adventure === element.adventure && 'active'}-view `} key={index}>
-              <ul key={index}>
-                {element.class_challanges.map((element, index)=>
-                  <li key={index}>
-                    <p>{element.class}</p>
-                    {this.state.cards.map((card, i)=>
-                      <div key={i}><img src={card.img} alt={`${card.name}`}/></div>
-                    )}
-                  </li>
+        <div className={`class-challanges inner-container ${this.props.details === 'class-challanges' && 'active'}-view`}>
+          {adventure_details.map((element, index) =>
+              <div className={`${this.props.adventure === element.adventure && 'active'}-view `} key={index}>
+                <ul key={index}>
+                  {element.class_challanges.map((element, index) =>
+                      <li key={index}>
+                        <p>{element.class}</p>
+                        {this.state.cards.map((card, i) =>
+                            <div key={i}><img src={card.img} alt={`${card.name}`}/></div>
+                        )}
+                      </li>
                   )}
-
-              </ul>
-
-          </div>
+                </ul>
+              </div>
           )}
-
         </div>
     );
   }
