@@ -21,14 +21,11 @@ import {PickedClass} from './pages/arena-picker/picked-class/right-container/cho
 import {Expansions} from './pages/expansions/expansions';
 import {Expansion} from './pages/expansions/right-container/expansion';
 import {ExpansionDetails} from './pages/expansions/right-container/details';
-import {AdventureContent} from './pages/adventures/right-container/adventure-content';
 
-import Adventures from './pages/adventures/adventures';
-import {AdventureBosses} from './pages/adventures/assets/bosses';
-import {AdventureCards} from './pages/adventures/assets/cards';
-import {AdventureClassChallanges} from './pages/adventures/assets/class-challanges';
-import {AdventureCost} from './pages/adventures/assets/cost';
-import {AdventureStructure} from './pages/adventures/assets/structure';
+import {AdventureDetails} from './pages/adventures/right-container/details';
+
+import {Adventures} from './pages/adventures/adventures';
+import {Adventure} from './pages/adventures/right-container/adventure';
 import {BossGuide} from './pages/adventures/assets/boss-details/boss-guide';
 
 import {ChoosenClassView} from './pages/create-deck/picked-class/right-container/choosen-class-selection/choosen-class-view';
@@ -63,15 +60,11 @@ export class App extends Component {
               </Route>
 
             </Route>
-            <Route path="adventures"            component={Adventures}>
-              <Route path=":adventure"          component={AdventureContent}>
-                <Route path="karty"             component={AdventureCards}/>
-                <Route path="koszt"             component={AdventureCost}/>
-                <Route path="struktura"         component={AdventureStructure}/>
-                <Route path="bossy"             component={AdventureBosses}>
-                  <Route path=":bossy"          component={BossGuide}/>
+            <Route path="adventures"    component={Adventures}>
+              <Route path=":adventure"  component={Adventure}>
+                <Route path=":details"  component={AdventureDetails}>
+                  <Route path=":bosses" component={BossGuide}/>
                 </Route>
-                <Route path="wyzwania-klasowe"  component={AdventureClassChallanges}/>
               </Route>
             </Route>
             <Route path="create-deck"       component={CreateDeck}>

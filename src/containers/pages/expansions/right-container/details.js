@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SharedTopbarTabs} from './assets/shared-expansion-tabs'
+import {SharedTopbarTabs} from './assets/shared-topbar-tabs'
 export class ExpansionDetails extends Component{
   constructor(props){
     super(props);
