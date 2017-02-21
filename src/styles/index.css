@@ -2263,6 +2263,8 @@ footer {
 
 .expansions .right-container .content .extension-content .active-expansion {
   display: block; }
+.expansions .right-container .content .extension-content div:hover {
+  background-color: transparent; }
 
 .adventures .right-container .content .extension-content .active-adventure {
   display: block; }

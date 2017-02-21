@@ -20,7 +20,7 @@ class Navbar extends Component {
                 data-submenu_item={item.url}
                 className={sub[id].url}
                 key={id}>
-              <Link to={'/' + el.url + '/' + item.url} activeClassName="submenu-active">
+              <Link to={`/${el.url}/${item.url}/overview`}>
                 <span className={`icon-${sub[id].url}`}></span>
                 <div className="icon-label">{sub[id].url}</div>
               </Link>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Router, Route, browserHistory, IndexRoute} from 'react-router';
+import { Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router';
 import {Home} from './pages/home/home';
 
 import {Cards} from './pages/cards/cards';
@@ -57,9 +57,11 @@ export class App extends Component {
               <Route path=":class"          component={PickedClass} />
             </Route>
             <Route path="expansions"        component={Expansions}>
+              <Redirect from=":expansion" to=":expansion/overview"/>
               <Route path=":expansion"      component={Expansion}>
                 <Route path=":details"      component={ExpansionDetails} />
               </Route>
+
             </Route>
             <Route path="adventures"            component={Adventures}>
               <Route path=":adventure"          component={AdventureContent}>

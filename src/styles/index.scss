@@ -1577,6 +1577,11 @@ footer{
         .active-expansion{
           display: block;
         }
+        div{
+          &:hover{
+            background-color: transparent;
+          }
+        }
       }
     }
   }
