@@ -1,30 +1,24 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 import {adventure_details} from '../../../../data/adventure-details';
-import {BossGuide} from './boss-details/boss-guide';
 export class AdventureBosses extends Component {
   render() {
     return (
-        <div className={`bosses inner-container ${this.props.active === 'bosses' && 'active'}-view`}>
-          {adventure_details.map((element, index)=>
-            <div className={`${this.props.sidebarActiveTab === element.adventure && 'active'}-view`} key={index}>
+        <div className={`bosses inner-container ${this.props.details === 'bosses' && 'active'}-view`}>
+          {adventure_details.map((adventure, index)=>
+            <div className={`${this.props.adventure === adventure.adventure && 'active'}-view`} key={index}>
               <div className={this.props.activeTableView}>
-                <p>{element.bosses.description}</p>
+                <p>{adventure.bosses.description}</p>
                 <table>
                   <tbody>
-                  {element.bosses.details.map((element,index)=>
+                  {adventure.bosses.details.map((wing,index)=>
                   <tr key={index}>
-                    <th className={`${this.props.sidebarActiveTab} active`}>{element.wing_title}</th>
-                    {element.bosses.map((element, index)=>
-                      <td key={index}
-                          onClick={this.props.handleBossClick}
-                          data-boss={element.boss}
-                          data-url={element.url}
-                          data-img={element.img}
-                          className={`${this.props.sidebarActiveTab} active-on-hover`}>
-                        <Link to={`/przygody/${this.props.selectedAdventureUrl}/${this.props.selectedTopbarTab}/${element.url}`}>
-                          <img src={element.img} alt={`${element.boss}'s illustration`}/>
-                          <p key={index}>{element.boss}</p>
+                    <th className={`${this.props.adventure} active`}>{wing.wing_title}</th>
+                    {wing.bosses.map((boss, index)=>
+                      <td key={index} className={`${this.props.adventure} active-on-hover`}>
+                        <Link to={`/adventures/${this.props.adventure}/${this.props.details}/${boss.url}`}>
+                          <img src={boss.img} alt={`${boss.boss}'s illustration`}/>
+                          <p key={index}>{boss.boss}</p>
                         </Link>
                       </td>
                     )}
@@ -33,13 +27,6 @@ export class AdventureBosses extends Component {
                   </tbody>
                 </table>
               </div>
-              <BossGuide selectedAdventureUrl={this.props.selectedAdventureUrl}
-                         adventure={this.props.adventure}
-                         selectedTopbarTab={this.props.selectedTopbarTab}
-                         activeBossView={this.props.activeBossView}
-                         activeBoss={this.props.activeBoss}
-                         activeBossUrl={this.props.activeBossUrl}
-                         activeBossImg={this.props.activeBossImg} />
             </div>
           )}
         </div>

@@ -5,14 +5,20 @@ import {AdventureClassChallanges} from '../assets/class-challanges';
 import {AdventureCost} from '../assets/cost';
 import {AdventureStructure} from '../assets/structure';
 export class AdventureDetails extends Component {
+
   render(){
+    let adventureUrl = this.props.location.pathname.split('/')[2];
+    let detailsUrl = this.props.location.pathname.split('/')[3];
     return (
       <div className={`extension-content ${this.props.sidebarActiveTab} ${this.props.details} `}>
-        <AdventureBosses />
-        <AdventureCards adventure={this.props.adventure} active={this.props.topbarActiveTabUrl}/>
+        <AdventureBosses adventure={adventureUrl} details={detailsUrl}/>
+
+
+        <AdventureCards adventure={adventureUrl} details={detailsUrl}/>
         <AdventureClassChallanges adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
         <AdventureCost adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
         <AdventureStructure adventure={this.props.sidebarActiveTab} active={this.props.topbarActiveTabUrl}/>
+        {this.props.children}
       </div>
     )
   }
