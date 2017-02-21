@@ -61,6 +61,7 @@ export class App extends Component {
 
             </Route>
             <Route path="adventures"    component={Adventures}>
+              <Redirect from=":adventure" to=":adventure/overview"/>
               <Route path=":adventure"  component={Adventure}>
                 <Route path=":details"  component={AdventureDetails}>
                   <Route path=":bosses" component={BossGuide}/>
