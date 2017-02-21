@@ -7,7 +7,7 @@ export class AdventureBosses extends Component {
         <div className={`bosses inner-container ${this.props.details === 'bosses' && 'active'}-view`}>
           {adventure_details.map((adventure, index)=>
             <div className={`${this.props.adventure === adventure.adventure && 'active'}-view`} key={index}>
-              <div className={this.props.activeTableView}>
+              <div>
                 <p>{adventure.bosses.description}</p>
                 <table>
                   <tbody>
@@ -16,7 +16,7 @@ export class AdventureBosses extends Component {
                     <th className={`${this.props.adventure} active`}>{wing.wing_title}</th>
                     {wing.bosses.map((boss, index)=>
                       <td key={index} className={`${this.props.adventure} active-on-hover`}>
-                        <Link to={`/adventures/${this.props.adventure}/${this.props.details}/${boss.url}`}>
+                        <Link to={`/adventures/${this.props.adventure}/${this.props.details}/${wing.url}/${boss.url}`}>
                           <img src={boss.img} alt={`${boss.boss}'s illustration`}/>
                           <p key={index}>{boss.boss}</p>
                         </Link>

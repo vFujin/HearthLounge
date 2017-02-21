@@ -26,7 +26,8 @@ import {AdventureDetails} from './pages/adventures/right-container/details';
 
 import {Adventures} from './pages/adventures/adventures';
 import {Adventure} from './pages/adventures/right-container/adventure';
-import {BossGuide} from './pages/adventures/assets/boss-details/boss-guide';
+import {AdventureBosses} from './pages/adventures/assets/bosses';
+import {AdventureBoss} from './pages/adventures/assets/adventure-boss';
 
 import {ChoosenClassView} from './pages/create-deck/picked-class/right-container/choosen-class-selection/choosen-class-view';
 
@@ -64,7 +65,10 @@ export class App extends Component {
               <Redirect from=":adventure" to=":adventure/overview"/>
               <Route path=":adventure"  component={Adventure}>
                 <Route path=":details"  component={AdventureDetails}>
-                  <Route path=":bosses" component={BossGuide}/>
+                  <Route path="bosses/:wing"  component={AdventureBosses}>
+
+                  </Route>
+                  <Route path=":boss"  component={AdventureBoss}/>
                 </Route>
               </Route>
             </Route>

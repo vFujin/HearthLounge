@@ -70,17 +70,18 @@ export const adventure_details = [
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
-          wing_title: "Rewir Arachnidów",
+          wing_title: "The Arachnid Quarter",
+          url: 'the-arachnid-quarter',
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/anub-rekhan.jpg',
               boss: "Anub'Rekhan",
-              url: 'anubrekhan'
+              url: 'anub-rekhan'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/faerlina.jpg',
-              boss: "Wielka Wdowa Ferlina",
-              url: 'wielka-wdowa-ferlina'
+              boss: "Grand Widow Faerlina",
+              url: 'grand-widow-faerlina'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/maexxna.jpg',
@@ -90,22 +91,23 @@ export const adventure_details = [
           ]
         },
         {
-          wing_title: "Rewir Zarazy",
+          wing_title: "The Plague Quarter",
+          url: "the-plague-quarter",
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/noth.jpg',
-              boss: "Nicz Siewca Zarazy",
-              url: 'nicz-siewca-zarazy'
+              boss: "Noth the Plaguebringer",
+              url: 'noth-the-plaguebringer'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/heigan.jpg',
-              boss: "Heigan Nieczysty",
-              url: 'heigan-nieczysty'
+              boss: "Heigan the Unclean",
+              url: 'heigan-the-unclean'
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/loatheb.jpg',
-              boss: "Ohydziarz",
-              url: 'ohydziarz'
+              boss: "Loatheb",
+              url: 'loatheb'
             }
           ]
         },
