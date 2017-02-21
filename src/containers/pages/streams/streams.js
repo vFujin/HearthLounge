@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+// import 'whatwg-fetch'
+
+// https://github.com/github/fetch
+
 import unirest from 'unirest';
 
 export class Streams extends Component {
   constructor(props) {
+
     super(props);
     this.state = {
       cards: []
@@ -11,8 +16,11 @@ export class Streams extends Component {
   }
 
   componentDidMount() {
-    unirest.get("http://cors-anywhere.herokuapp.com/https://api.twitch.tv/kraken/games/")
-        .header({"Client-ID": "jupouny3vvr7kl38jlsj7ssnyww80z"})
+    unirest.get("https://api.twitch.tv/kraken/users?login=dallas,dallasnchains")
+        .header({
+          "Accept": 'application/vnd.twitchtv.v5+json',
+          "Client-ID": "jupouny3vvr7kl38jlsj7ssnyww80z"
+        })
         .end(res => {
           console.log(res);
           this.setState({

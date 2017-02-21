@@ -211,28 +211,24 @@ export const hs_class = [
 
 export const expansions = [
   {
-    pl: 'Gobliny kontra Gnomy',
-    en: 'Goblins vs Gnomes',
-    en_url: 'goblins-vs-gnomes',
-    url: 'gobliny-kontra-gnomy'
+    name: 'Goblins vs Gnomes',
+    url: 'goblins-vs-gnomes',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/gobliny_vs_gnomy.jpg'
   },
   {
-    en: 'The Grand Tournament',
-    pl: 'Wielki Turniej',
-    url: 'wielki-turniej',
-    en_url: 'the-grand-tournament'
+    name: 'The Grand Tournament',
+    url: 'the-grand-tournament',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/wielki_turniej.jpg'
   },
   {
-    en: 'Whispers of the Old Gods',
-    pl: 'Przedwieczni Bogowie',
-    url: 'przedwieczni-bogowie',
-    en_url: 'whispers-of-the-old-gods'
+    name: 'Whispers of the Old Gods',
+    url: 'whispers-of-the-old-gods',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/przedwieczni_bogowie.jpg'
   },
   {
     en: 'Mean Streets of Gadgetzan',
-    pl: 'Ciemne zaułki gadżetonu',
-    url: 'ciemne-zaulki-gadzetonu',
-    en_url: 'mean-streets-of-gadgetzan',
+    url: 'mean-streets-of-gadgetzan',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/ciemne_zaulki_gadzetonu.jpg'
   }
 ];
 

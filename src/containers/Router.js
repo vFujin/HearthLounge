@@ -18,9 +18,9 @@ import {Deck} from './pages/decks/choosen-deck/deck';
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
 import {PickedClass} from './pages/arena-picker/picked-class/right-container/choosen-class-view';
 
-import Expansions from './pages/expansions/expansions';
-import {ExpansionOverview} from './pages/expansions/right-container/expansion-overview';
-import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
+import {Expansions} from './pages/expansions/expansions';
+import {Expansion} from './pages/expansions/right-container/expansion';
+// import {ExpansionContent} from './pages/expansions/right-container/expansion-content';
 import {AdventureContent} from './pages/adventures/right-container/adventure-content';
 
 import Adventures from './pages/adventures/adventures';
@@ -44,21 +44,21 @@ export class App extends Component {
         <Router history={browserHistory}>
           <Route path="/"                   component={Main} >
             <IndexRoute                     component={Home} />
-            <Route path=""              component={Home} />
+            <Route path=""                  component={Home} />
             <Route path="decks"             component={Decks}>
               <Route path=":class"          component={ChoosenDeckView}>
                 <Route path=":id"           component={Deck} />
               </Route>
             </Route>
             <Route path="cards"             component={Cards}>
-              <Route path="/karta/:id"      component={Cards} />
+              <Route path="/card/:id"       component={Cards} />
             </Route>
             <Route path="arena-picker"      component={ArenaPicker}>
               <Route path=":class"          component={PickedClass} />
             </Route>
             <Route path="expansions"        component={Expansions}>
-              <Route path=":expansion"      component={ExpansionOverview}>
-                <Route path=":details"      component={ExpansionContent} />
+              <Route path=":expansion"      component={Expansion}>
+                {/*<Route path=":details"      component={ExpansionContent} />*/}
               </Route>
             </Route>
             <Route path="adventures"            component={Adventures}>

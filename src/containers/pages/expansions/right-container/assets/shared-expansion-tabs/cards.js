@@ -10,11 +10,12 @@ export class ExpansionCards extends Component {
   }
 
   componentWillReceiveProps() {
+    console.log('foobar');
     unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1?locale=plPL")
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
           let expansion = this.props.expansion;
-          console.log(res.body);
+          // console.log(res.body);
           this.setState({
             cards: res.body[expansion]
           });

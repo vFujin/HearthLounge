@@ -3,22 +3,24 @@ import {Link} from 'react-router';
 import {expansions} from '../../../../data/filters';
 
 export class Sidebar extends Component {
+  constructor(props){
+    super(props);
+  }
 
   render() {
-
     return (
         <div className="sidebar">
-          <h3 className="filter-header">Dodatki</h3>
+          {console.log(this.props.expansion)}
+          <h3 className="filter-header">Expansions</h3>
           <ul className="sidebar-icons">
-            {expansions.map((element, index) =>
+            {expansions.map((expansion, index) =>
                 <li key={index}>
-                  <Link onClick={this.props.onExpansionChange} to={`/expansions/${element.en_url}`}
-                        className={`${element.en_url} ${this.props.isActive === element.url && 'active'}`}
-                        data-api={element.en}
-                        data-url={element.url}
-                        data-expansion={element.en_url}>
-                    <span data-api={element.en} data-url={element.url} data-expansion={element.en_url} className={`hs-icon icon-${element.en_url}`}></span>
-                    <p data-api={element.en} data-url={element.url} data-expansion={element.en_url}>{element.pl}</p>
+                  <Link onClick={this.props.onExpansionChange}
+                        to={`/expansions/${expansion.url}`}
+                        className={`${expansion.url} ${this.props.expansion === expansion.url && 'active'}`}
+                        data-expansion={expansion.url}>
+                    <span className={`hs-icon icon-${expansion.url}`}></span>
+                    <p>{expansion.name}</p>
                   </Link>
                 </li>
             )}

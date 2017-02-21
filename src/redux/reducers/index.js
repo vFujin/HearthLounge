@@ -16,7 +16,7 @@ export const reducers = combineReducers({
   //Adventure
   adventure: AdventureReducer,
   adventureDetails: AdventureDetailsReducer,
-  adventureActiveBoss: AdventureActiveBossReducer
+  adventureActiveBoss: AdventureActiveBossReducer,
 });
 
 export default reducers;
