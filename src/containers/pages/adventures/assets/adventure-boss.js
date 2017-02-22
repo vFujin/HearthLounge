@@ -8,7 +8,8 @@ export class AdventureBoss extends Component {
     function ifHasImg(index, adventure, boss, rewards){
       if(index===0){
         console.log(adventure, boss);
-        return <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${boss}.jpg`} alt={boss}/>;
+        if(adventure && boss !== undefined) return <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${boss}.jpg`} alt={boss}/>;
+        if(adventure || boss === undefined) return;
       }
       if(index===2){
         return <img src={rewards} alt={`${rewards}'s illustration`}/>;

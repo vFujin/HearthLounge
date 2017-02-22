@@ -160,6 +160,7 @@ export const adventure_details = [
         },
         {
           wing_title: "Frostwyrm Lair",
+          url: 'frostwyrm-lair',
           bosses: [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/sapphiron.jpg',
@@ -278,17 +279,17 @@ export const adventure_details = [
           wing_title: "Otchłań Czarnej Góry",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-depths/grim-guzzler.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/grim-guzzler.jpg',
               boss: "Ponury Opój",
               url: 'ponury-opoj'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-depths/dark-iron-arena.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/dark-iron-arena.jpg',
               boss: "Arena Czarnorytnych",
               url: 'arena-czarnorytnych'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-depths/emperor-thaurissan.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/emperor-thaurissan.jpg',
               boss:"Imperator Thaurissan",
               url: 'imperator-thaurissan'
             }
@@ -298,17 +299,17 @@ export const adventure_details = [
           wing_title: "Ognista Czeluść",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/molten-core/garr.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/garr.jpg',
               boss: "Garr",
               url: 'garr'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/molten-core/baron-geddon.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/baron-geddon.jpg',
               boss: "Baron Geddon",
               url: 'baron-geddon'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/molten-core/ragnaros.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/ragnaros.jpg',
               boss: "Ragnaros Władca Ognia",
               url: 'ragnaros-wladca-ognia'
             }
@@ -318,17 +319,17 @@ export const adventure_details = [
           wing_title: "Iglica Czarnej Góry",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-spire/highlord-omokk.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/highlord-omokk.jpg',
               boss: "Nadzorca Omokk",
               url: 'nadzorca-omokk'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-spire/general-drakkisath.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/general-drakkisath.jpg',
               boss: "Generał Drakkisat",
               url: 'general-drakkisat'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackrock-spire/rend-blackhand.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/rend-blackhand.jpg',
               boss: "Rwij Czarnoręki",
               url: 'rwij-czarnoreki'
             }
@@ -338,22 +339,22 @@ export const adventure_details = [
           wing_title: "Leże Czarnoskrzydłego",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackwing-lair/razorgore.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/razorgore.jpg',
               boss: "Brzytworóg Nieokiełznany",
               url: 'brzytworog-nieokielznany'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackwing-lair/vaelastrasz.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/vaelastrasz.jpg',
               boss: "Vaelastraz Plugawy",
               url: 'vaelastraz-plugawy'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackwing-lair/chromaggus.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/chromaggus.jpg',
               boss: "Chromagus",
               url: 'chromagus'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/blackwing-lair/nefarius.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/nefarius.jpg',
               boss: "Lord Viktor Nefarius",
               url: 'lord-viktor-nefarius'
             }
@@ -363,22 +364,22 @@ export const adventure_details = [
           wing_title: "Ukryte Laboratorium",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/hidden-laboratory/omnotron.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/omnotron.jpg',
               boss: "Omnotron",
               url: 'omnotron'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/hidden-laboratory/maloriak.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/maloriak.jpg',
               boss: "Maloriak",
               url: 'maloriak'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/hidden-laboratory/atramedes.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/atramedes.jpg',
               boss: "Atramedes",
               url: 'atramedes'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/hidden-laboratory/nefarian.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/nefarian.jpg',
               boss: "Nefarian",
               url: 'nefarian'
             }
