@@ -59,7 +59,6 @@ export class App extends Component {
               <Route path=":expansion"      component={Expansion}>
                 <Route path=":details"      component={ExpansionDetails} />
               </Route>
-
             </Route>
             <Route path="adventures"    component={Adventures}>
               <Redirect from=":adventure" to=":adventure/overview"/>
@@ -67,9 +66,11 @@ export class App extends Component {
                 <Route path=":details"  component={AdventureDetails}>
                   <Route path="bosses"  component={AdventureBosses}/>
                   <Route path=":boss"  component={AdventureBoss}/>
+
                 </Route>
               </Route>
             </Route>
+
             <Route path="create-deck"       component={CreateDeck}>
               <Route path=":class"          component={ChoosenClassView} />
             </Route>
