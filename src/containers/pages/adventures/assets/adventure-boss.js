@@ -5,9 +5,10 @@ import {DeckSnippet} from '../../../shared-assets/deck-snippet/deck-snippet';
 export class AdventureBoss extends Component {
 
   render() {
-    function ifHasImg(index, boss, rewards){
+    function ifHasImg(index, adventure, boss, rewards){
       if(index===0){
-        return <img src={boss} alt={boss}/>;
+        console.log(adventure, boss);
+        return <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${boss}.jpg`} alt={boss}/>;
       }
       if(index===2){
         return <img src={rewards} alt={`${rewards}'s illustration`}/>;
@@ -22,7 +23,7 @@ export class AdventureBoss extends Component {
                   <li className="block" key={index}>
                     <div className="block-content">
                       <p className="boss-details-nav-el">{element.title}</p>
-                      {ifHasImg(index, this.props.boss, 'x')}
+                      {ifHasImg(index, this.props.adventure, this.props.boss, 'x')}
                       <p>{element.content}</p>
                     </div>
                   </li>

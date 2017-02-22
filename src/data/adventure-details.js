@@ -74,17 +74,17 @@ export const adventure_details = [
           url: 'the-arachnid-quarter',
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/anub-rekhan.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/anub-rekhan.jpg',
               boss: "Anub'Rekhan",
               url: 'anub-rekhan'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/faerlina.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/grand-widow-faerlina.jpg',
               boss: "Grand Widow Faerlina",
               url: 'grand-widow-faerlina'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/arachnid/maexxna.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/maexxna.jpg',
               boss:"Maexxna",
               url: 'maexxna'
             }
@@ -95,79 +95,81 @@ export const adventure_details = [
           url: "the-plague-quarter",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/noth.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/noth-the-plaguebringer.jpg',
               boss: "Noth the Plaguebringer",
               url: 'noth-the-plaguebringer'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/heigan.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/heigan-the-unclean.jpg',
               boss: "Heigan the Unclean",
               url: 'heigan-the-unclean'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/plague/loatheb.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/loatheb.jpg',
               boss: "Loatheb",
               url: 'loatheb'
             }
           ]
         },
         {
-          wing_title: "Rewir Zbrojnych",
+          wing_title: "The Military Quarter",
+          url: 'the-military-quarter',
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/razuvious.jpg',
-              boss: "Instruktor Razuwiusz",
-              url: 'instruktor-razuwiusz'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/instructor-razuvious.jpg',
+              boss: "Instructor Razuvious",
+              url: 'instructor-razuvious'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/gothik.jpg',
-              boss: "Gotyk Żniwiarz",
-              url: 'gotyk-zwniwiarz'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/gothik-the-harvester.jpg',
+              boss: "Gothik the Harvester",
+              url: 'gothik-the-harvester'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/military/rivendare.jpg',
-              boss: "Czterech Jeźdźców",
-              url: 'czterech-jezdzcow'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/the-four-horsemen.jpg',
+              boss: "The Four Horsemen",
+              url: 'the-four-horsemen'
             }
           ]
         },
         {
-          wing_title: "Rewir Konstruktorów",
+          wing_title: "The Construct Quarter",
+          url: 'the-construct-quarter',
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/patchwerk.jpg',
-              boss: "Łacior",
-              url: 'lacior'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/patchwerk.jpg',
+              boss: "Patchwerk",
+              url: 'patchwerk'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/grobbulus.jpg',
-              boss: "Grobulus",
-              url: 'grobulus'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/grobbulus.jpg',
+              boss: "Grobbulus",
+              url: 'grobbulus'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/gluth.jpg',
-              boss: "Glut",
-              url: 'glut'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/gluth.jpg',
+              boss: "Gluth",
+              url: 'gluth'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/construct/thaddius.jpg',
-              boss: "Thadius",
-              url: 'thadius'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/thaddius.jpg',
+              boss: "Thaddius",
+              url: 'thaddius'
             }
           ]
         },
         {
-          wing_title: "Leże Żmija Mrozu",
+          wing_title: "Frostwyrm Lair",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/sapphiron.jpg',
-              boss: "Szafiron",
-              url: 'szafiron'
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/sapphiron.jpg',
+              boss: "Sapphiron",
+              url: 'sapphiron'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/frostwyrm-lair/kel-thuzad.jpg',
+              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/kel-thuzad.jpg',
               boss: "Kel'Thuzad",
-              url: 'kelthuzad'
+              url: 'kel-thuzad'
             }
           ]
         }
