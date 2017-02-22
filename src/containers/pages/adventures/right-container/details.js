@@ -17,8 +17,10 @@ export class AdventureDetails extends Component {
       case 'cost':              return <AdventureCost             adventure={adventureUrl} details={detailsUrl}/>;
       case 'structure':         return <AdventureStructure        adventure={adventureUrl} details={detailsUrl}/>;
       case 'boss':              return <AdventureBoss             adventure={adventureUrl} details={detailsUrl} boss={bossUrl}/>;
+      default:                  return <AdventureOverview         adventure={adventureUrl} details={detailsUrl}/>;
     }
   }
+
   render(){
     let adventureUrl = this.props.params.adventure;
     let detailsUrl = this.props.params.details;

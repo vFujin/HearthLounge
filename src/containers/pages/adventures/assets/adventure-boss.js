@@ -20,19 +20,19 @@ export class AdventureBoss extends Component {
           <div className="boss-guide-header">
             <p className="boss-details-nav-el">{this.props.boss}</p>
             <ul>
-              {boss_details.slice(0,4).map((element, index)=>
+              {boss_details.slice(0,4).map((boss, index)=>
                   <li className="block" key={index}>
                     <div className="block-content">
-                      <p className="boss-details-nav-el">{element.title}</p>
+                      <p className="boss-details-nav-el">{boss.name}</p>
                       {ifHasImg(index, this.props.adventure, this.props.boss, 'x')}
-                      <p>{element.content}</p>
+                      <p>{this.props.boss} is a (#) boss in (wing)</p>
                     </div>
                   </li>
               )}
-              {boss_details.slice(4,5).map((element, index)=>
+              {boss_details.slice(4,5).map((boss, index)=>
                   <li className="block" key={index}>
                     <div className="block-content">
-                      <p className="boss-details-nav-el">{element.title}</p>
+                      <p className="boss-details-nav-el">{boss.name}</p>
                       <div className="top-boss-decks">
                         <DeckSnippet />
                         <DeckSnippet />

@@ -1,32 +1,22 @@
 export const boss_details = [
   {
-    title: 'Opis Bossa',
-    en: 'boss-overview',
-    url: 'opis-bossa',
-    content: 'test'
+    name: 'Overview',
+    url: 'overview'
   },
   {
-    title: 'Strategie',
-    en: 'boss-strategy',
-    url: 'strategie',
-    content: ''
+    name: 'Strategy',
+    en: 'strategy'
   },
   {
-    title: 'Nagrody',
-    en: 'boss-rewards',
-    url: 'nagrody',
-    content: ''
+    name: 'Rewards',
+    url: 'rewards',
   },
   {
-    title: 'Pozostałe Bossy w skrzydle',
-    en: 'rest-wing-bosses',
-    url: 'pozostale-bossy',
-    content: ''
+    name: 'Rest wing bosses',
+    url: 'rest-wing-bosses'
   },
   {
-    title: 'Talie Kart',
-    en: 'boss-winning-decks',
-    url: 'talie-kart',
-    content: ''
+    title: 'Winning decks',
+    url: 'winning-decks',
   }
 ];

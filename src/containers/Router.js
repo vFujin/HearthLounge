@@ -31,6 +31,8 @@ import {AdventureBoss} from './pages/adventures/assets/adventure-boss';
 
 import {ChoosenClassView} from './pages/create-deck/picked-class/right-container/choosen-class-selection/choosen-class-view';
 
+import {NotFound} from './shared-assets/not-found';
+
 // import {Dashboard} from './pages/dashboard/dashboard';
 
 import {Main} from './Main';
@@ -65,8 +67,8 @@ export class App extends Component {
               <Route path=":adventure"  component={Adventure}>
                 <Route path=":details"  component={AdventureDetails}>
                   <Route path="bosses"  component={AdventureBosses}/>
-                  <Route path=":boss"  component={AdventureBoss}/>
-
+                  <Route path=":boss"  component={AdventureBoss}>
+                  </Route>
                 </Route>
               </Route>
             </Route>
@@ -78,6 +80,7 @@ export class App extends Component {
             <Route path="tournaments"       component={Tournaments} />
             <Route path="streamers"         component={Streams} />
             {/*<Route path="logowanie"         component={} />*/}
+            <Route path="*" component={NotFound} />
           </Route>
         </Router>
     );
