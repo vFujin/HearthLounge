@@ -5,7 +5,7 @@ import {adventure_details} from '../../../../data/adventure-details';
 import {DeckSnippet} from '../../../shared-assets/deck-snippet/deck-snippet';
 export class AdventureBoss extends Component {
 
-    blocks(index, adventure, wing, bossName, bossUrl){
+    blocks(index, adventure, wing, bossName, bossUrl, bossReward){
       switch(index){
         /**
            * Case:
@@ -30,7 +30,7 @@ export class AdventureBoss extends Component {
         case 2:
           return (
             <div>
-              <p>Card reward</p>
+              <p>{bossReward}</p>
             </div>
           );
         case 3:
@@ -42,12 +42,12 @@ export class AdventureBoss extends Component {
       }
     }
 
-    firstRow(bossName, wingName){
+    firstRow(bossName, wingName, bossReward){
      return boss_details.slice(0,4).map((boss, index)=>
           <li className="block" key={index}>
             <div className="block-content">
               <p className="boss-details-nav-el">{boss.name}</p>
-              {this.blocks(index, this.props.adventure, wingName, bossName, this.props.boss)}
+              {this.blocks(index, this.props.adventure, wingName, bossName, this.props.boss, bossReward)}
             </div>
           </li>)
     }
@@ -68,18 +68,22 @@ export class AdventureBoss extends Component {
     }
 
     getDetailsFromUrl(detail){
-      let filterArray = adventure_details.map(x=>x.bosses.details.filter(x=>x.url===this.props.details)[0]).filter(x=>x)[0];
+      let detailsArr = adventure_details.map(x=>x.bosses.details.filter(x=>x.url===this.props.details)[0]).filter(x=>x)[0];
+      let bossArr = detailsArr.bosses.filter(x=>x.url===this.props.boss)[0];
       switch(detail){
         case 'boss':
-          return filterArray.bosses.filter(x=>x.url===this.props.boss)[0].boss;
+          return bossArr.boss;
         case 'wing':
-          return filterArray.wing_title;
+          return detailsArr.wing_title;
+        case 'reward':
+          return bossArr.reward
       }
     }
 
   render() {
     let boss = this.getDetailsFromUrl('boss');
     let wing = this.getDetailsFromUrl('wing');
+    let reward = this.getDetailsFromUrl('reward');
 
     return (
       <div className={`boss inner-container ${this.props.details && 'active'}-view`}>
@@ -87,7 +91,7 @@ export class AdventureBoss extends Component {
           <div key={i} className="boss-guide-header">
             <p className="boss-details-nav-el">{boss}</p>
             <ul>
-              {this.firstRow(boss, wing)}
+              {this.firstRow(boss, wing, reward)}
               {this.secondRow()}
             </ul>
           </div>

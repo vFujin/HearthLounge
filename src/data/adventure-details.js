@@ -31,7 +31,6 @@ export const adventure_details = [
     singular_adventure_name: "Klątwa Naxxramas",
     plural_aventure_name: "Klątwy Naxxramas",
     description: 'Klątwa Naxxramas jest pięcio skrzydłową przygodą, gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Naxxramas w World of Warcraft. Gracz pokonując skrzydła może dostać 30 nowych kart dodanych w tej przygodzie.',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/klatwa_naxxramas.jpg',
     cost: {
       wings: [
         {
@@ -74,19 +73,19 @@ export const adventure_details = [
           url: 'the-arachnid-quarter',
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/anub-rekhan.jpg',
               boss: "Anub'Rekhan",
-              url: 'anub-rekhan'
+              url: 'anub-rekhan',
+              reward: 'Haunted Creeper'
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/grand-widow-faerlina.jpg',
               boss: "Grand Widow Faerlina",
-              url: 'grand-widow-faerlina'
+              url: "grand-widow-faerlina",
+              reward: "Nerub'ar Weblord"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/maexxna.jpg',
               boss:"Maexxna",
-              url: 'maexxna'
+              url: 'maexxna',
+              reward: "Nerubian Egg"
             }
           ]
         },
@@ -95,19 +94,19 @@ export const adventure_details = [
           url: "the-plague-quarter",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/noth-the-plaguebringer.jpg',
               boss: "Noth the Plaguebringer",
-              url: 'noth-the-plaguebringer'
+              url: 'noth-the-plaguebringer',
+              reward: "Stoneskin Gargoyle"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/heigan-the-unclean.jpg',
               boss: "Heigan the Unclean",
-              url: 'heigan-the-unclean'
+              url: 'heigan-the-unclean',
+              reward: "Unstable Ghoul"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/loatheb.jpg',
               boss: "Loatheb",
-              url: 'loatheb'
+              url: 'loatheb',
+              reward: "Sludge Belcher"
             }
           ]
         },
@@ -116,19 +115,20 @@ export const adventure_details = [
           url: 'the-military-quarter',
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/instructor-razuvious.jpg',
               boss: "Instructor Razuvious",
-              url: 'instructor-razuvious'
+              url: 'instructor-razuvious',
+              reward: "Dancing Swords"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/gothik-the-harvester.jpg',
               boss: "Gothik the Harvester",
-              url: 'gothik-the-harvester'
+              url: 'gothik-the-harvester',
+              reward: "Spectral Knight"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/the-four-horsemen.jpg',
               boss: "The Four Horsemen",
-              url: 'the-four-horsemen'
+              url: 'the-four-horsemen',
+              reward: "Deathlord"
+
             }
           ]
         },
@@ -137,24 +137,24 @@ export const adventure_details = [
           url: 'the-construct-quarter',
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/patchwerk.jpg',
               boss: "Patchwerk",
-              url: 'patchwerk'
+              url: 'patchwerk',
+              reward: "Undertaker"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/grobbulus.jpg',
               boss: "Grobbulus",
-              url: 'grobbulus'
+              url: 'grobbulus',
+              reward: "Mad Scientist"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/gluth.jpg',
               boss: "Gluth",
-              url: 'gluth'
+              url: 'gluth',
+              reward: "Zombie Chow"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/thaddius.jpg',
               boss: "Thaddius",
-              url: 'thaddius'
+              url: 'thaddius',
+              reward: "Wailing Soul"
             }
           ]
         },
@@ -163,14 +163,14 @@ export const adventure_details = [
           url: 'frostwyrm-lair',
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/sapphiron.jpg',
               boss: "Sapphiron",
-              url: 'sapphiron'
+              url: 'sapphiron',
+              reward: "Echoing Ooze"
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/curse-of-naxxramas/kel-thuzad.jpg',
               boss: "Kel'Thuzad",
-              url: 'kel-thuzad'
+              url: 'kel-thuzad',
+              reward: "Shade of Naxxramas"
             }
           ]
         }
@@ -281,7 +281,8 @@ export const adventure_details = [
           bosses: [
             {
               boss: "Grim Guzzler",
-              url: 'grim-guzzler'
+              url: 'grim-guzzler',
+              reward: ''
             },
             {
               boss: "Dark Iron Arena",
