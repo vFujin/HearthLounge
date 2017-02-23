@@ -6,6 +6,17 @@ export class AdventureBosses extends Component {
     super(props);
   }
 
+  tableData(wing, adventure){
+    return wing.bosses.map((boss, index)=>
+        <td key={index} className={`${adventure} active-on-hover`}>
+          <Link to={`/adventures/${adventure}/${wing.url}/${boss.url}`}>
+            <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${boss.url}.jpg`} alt={boss.boss}/>
+            <p>{boss.boss}</p>
+          </Link>
+        </td>
+    )
+  }
+
   render(){
     return (
         <div className={`bosses inner-container ${this.props.adventure && 'active'}-view`}>
@@ -18,15 +29,7 @@ export class AdventureBosses extends Component {
                   {adventure.bosses.details.map((wing,i)=>
                   <tr key={i}>
                     <th className={`${this.props.adventure} active`}>{wing.wing_title}</th>
-                    {wing.bosses.map((boss, index)=>
-
-                      <td key={index} className={`${this.props.adventure} active-on-hover`}>
-                        <Link to={`/adventures/${this.props.adventure}/${wing.url}/${boss.url}`}>
-                          <img src={boss.img} alt={boss.boss}/>
-                          <p>{boss.boss}</p>
-                        </Link>
-                      </td>
-                    )}
+                    {this.tableData(wing, this.props.adventure)}
                   </tr>
                   )}
                   </tbody>
