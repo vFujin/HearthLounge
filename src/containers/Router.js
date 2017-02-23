@@ -70,6 +70,7 @@ export class App extends Component {
                 <Route path=":details"  component={AdventureDetails}>
                   <Route path="bosses"  component={AdventureBosses}/>
                   <Route path=":boss"   component={AdventureBoss}/>
+                  <Route path="*" component={NotFound} />
                 </Route>
               </Route>
             </Route>

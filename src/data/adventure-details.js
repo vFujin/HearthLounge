@@ -238,7 +238,6 @@ export const adventure_details = [
     singular_adventure_name: "Czarna Góra",
     plural_aventure_name: "Czarnej Góry",
     description: 'gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Blackrock w World of Warcraft',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/czarna_gora.jpg',
     cost: {
       wings: [
         {
@@ -292,8 +291,8 @@ export const adventure_details = [
             },
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/emperor-thaurissan.jpg',
-              boss:"Imperator Thaurissan",
-              url: 'imperator-thaurissan'
+              boss:"Emperor Thaurissan",
+              url: 'emperor-thaurissan'
             }
           ]
         },
@@ -314,7 +313,7 @@ export const adventure_details = [
             {
               img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/blackrock-mountain/ragnaros.jpg',
               boss: "Ragnaros the Firelord",
-              url: 'ragnaros-the-fire-lord'
+              url: 'ragnaros-the-firelord'
             }
           ]
         },
