@@ -640,7 +640,6 @@ export const adventure_details = [
     singular_adventure_name: "Pewnej Nocy w Karazhanie",
     plural_aventure_name: "Pewnej Nocy w Karazhanie",
     description: '',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/pewnej_nocy_w_karazhanie.jpg',
     cost: {
       wings: [
         {
@@ -679,92 +678,97 @@ export const adventure_details = [
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
-          wing_title: "Iglica",
+          wing_title: "The Spire",
+          url: "the-spire",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/spire/shade-of-aran.jpg',
-              boss: "Widmo Arana",
-              url: 'widmo-arana'
+              boss: "Shade of Aran",
+              url: "shade-of-aran",
+              reward: ["Medivh's Valet", "Spirit Claws"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/spire/netherspite.jpg',
-              boss: "Otchłarion",
-              url: 'otchlarion'
+              boss: "Netherspite",
+              url: 'netherspite',
+              reward: ["Netherspite Historian", "Book Wyrm"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/spire/free-medivh.jpg',
-              boss: "Uwolnij Medivha!",
-              url: 'uwolnij-medivha'
+              boss: "Free Medivh!",
+              url: 'free-medivh',
+              reward: ["Malchezaar's Imp", "Ironforge Portal"]
             }
           ]
         },
         {
-          wing_title: "Menażeria",
+          wing_title: "The Menagerie",
+          url: "the-menagerie",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/menagerie/curator.jpg',
-              boss: "Kustosz",
-              url: 'kustosz'
+              boss: "Curator",
+              url: "curator",
+              reward: ["Zoobot", "Menagerie Warden"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/menagerie/nightbane.jpg',
-              boss: "Pożeracz Nocy",
-              url: 'pozeracz-nocy'
+              boss: "Nightbane",
+              url: 'nightbane',
+              reward: ["Nightbane Templar", "Runic Egg"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/menagerie/terestian-illhoof.jpg',
-              boss: "Terestian Podłokopytny",
-              url: 'terestian-podlokopytny'
+              boss: "Teresian Illhoof",
+              url: 'terestoam-illhoof',
+              reward: ["Purify", "Avian Watcher"]
             }
           ]
         },
         {
-          wing_title: "Opera",
+          wing_title: "The Opera",
+          url: "the-opera",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/opera/julianne.jpg',
-              boss: "Juliana",
-              url: 'juliana'
+              boss: "Julianne",
+              url: 'julianne',
+              reward: ["Pompous Thespian", "Onyx Bishop"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/opera/big-bad-wolf.jpg',
-              boss: "Wielki Zły Wilk",
-              url: 'wielki-zly-wilk'
+              boss: "Big Bad Wolf",
+              url: 'big-bad-wolf',
+              reward: ["Kindly Grandmother", "Arcane Giant"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/opera/the-crone.jpg',
-              boss: "Jędza",
-              url: 'jedza'
+              boss: "The Crone",
+              url: 'the-crone',
+              reward: ["Wicked Witchdoctor", "Moat Lurker"]
             }
           ]
         },
         {
-          wing_title: "Salon",
+          wing_title: "The Parlor",
+          url: "the-parlor",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/parlor/silverware-golem.jpg',
-              boss: "Sztućcowy Golem",
-              url: 'sztuccowy-golem'
+              boss: "Silverware Golem",
+              url: 'silverware-golem',
+              reward: ["Deadly Fork", "Silverware Golem"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/parlor/magic-mirror.jpg',
-              boss: "Magiczne Zwierciadło",
-              url: 'magiczne-zwierciadlo'
+              boss: "Magic Mirror",
+              url: 'magic-mirror',
+              reward: ["Arcane Anomaly", "Pantry Spider"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/parlor/chess.jpg',
-              boss: "Szachy",
-              url: 'szachy'
+              boss: "Chess",
+              url: 'chess',
+              reward: ["Ivory Knight", "Protect the King!"]
             }
           ]
         },
         {
-          wing_title: "Prolog",
+          wing_title: "The Prologue",
+          url: "the-prologue",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/one-night-at-karazhan/prologue/an-uninvited-guest.jpg',
-              boss: 'Nieproszony Gość',
-              url: 'nieproszony-gosc'
+              boss: "An Uninvited Guest",
+              url: "an-uninvited-guest",
+              reward: ["Enchanted Raven", "Firelands Portal"]
             }
           ]
         }
