@@ -22,12 +22,14 @@ import {Expansions} from './pages/expansions/expansions';
 import {Expansion} from './pages/expansions/right-container/expansion';
 import {ExpansionDetails} from './pages/expansions/right-container/details';
 
-import {AdventureDetails} from './pages/adventures/right-container/details';
+
 
 import {Adventures} from './pages/adventures/adventures';
 import {Adventure} from './pages/adventures/right-container/adventure';
+import {AdventureDetails} from './pages/adventures/right-container/details';
 import {AdventureBosses} from './pages/adventures/assets/bosses';
 import {AdventureBoss} from './pages/adventures/assets/adventure-boss';
+
 
 import {ChoosenClassView} from './pages/create-deck/picked-class/right-container/choosen-class-selection/choosen-class-view';
 
@@ -67,8 +69,7 @@ export class App extends Component {
               <Route path=":adventure"  component={Adventure}>
                 <Route path=":details"  component={AdventureDetails}>
                   <Route path="bosses"  component={AdventureBosses}/>
-                  <Route path=":boss"  component={AdventureBoss}>
-                  </Route>
+                  <Route path=":boss"   component={AdventureBoss}/>
                 </Route>
               </Route>
             </Route>

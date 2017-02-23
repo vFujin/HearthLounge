@@ -16,8 +16,9 @@ export class AdventureDetails extends Component {
       case 'class-challanges':  return <AdventureClassChallanges  adventure={adventureUrl} details={detailsUrl}/>;
       case 'cost':              return <AdventureCost             adventure={adventureUrl} details={detailsUrl}/>;
       case 'structure':         return <AdventureStructure        adventure={adventureUrl} details={detailsUrl}/>;
-      case 'boss':              return <AdventureBoss             adventure={adventureUrl} details={detailsUrl} boss={bossUrl}/>;
+      case detailsUrl:          return <AdventureBoss             adventure={adventureUrl} details={detailsUrl} boss={bossUrl}/>;
       default:                  return <AdventureOverview         adventure={adventureUrl} details={detailsUrl}/>;
+
     }
   }
 
@@ -25,9 +26,8 @@ export class AdventureDetails extends Component {
     let adventureUrl = this.props.params.adventure;
     let detailsUrl = this.props.params.details;
     let bossUrl = this.props.params.boss;
-
     return (
-      <div className={`extension-content ${this.props.sidebarActiveTab} ${this.props.details} `}>
+      <div className={`extension-content ${this.props.adventure} ${this.props.details} `}>
         {this.activeDetailsContent(adventureUrl, detailsUrl, bossUrl)}
       </div>
     )
