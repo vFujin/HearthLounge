@@ -5,8 +5,9 @@ import {adventure_details} from '../../../../data/adventure-details';
 import {DeckSnippet} from '../../../shared-assets/deck-snippet/deck-snippet';
 export class AdventureBoss extends Component {
 
-    blocks(index, adventure, wing, bossName, bossUrl, bossReward){
+    blocks(index, adventure, wing, wingUrl, bossName, bossUrl, bossReward){
       switch(index){
+
         /**
            * Case:
            * 0 - Overview
@@ -17,7 +18,8 @@ export class AdventureBoss extends Component {
         case 0:
           return (
             <div>
-              <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${bossUrl}.jpg`} alt={bossName}/>
+              {console.log(wingUrl)}
+              <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${wingUrl}/${bossUrl}.jpg`} alt={bossName}/>
               <p>{bossName} is a (#) boss in {wing}</p>
             </div>
         );
@@ -43,11 +45,14 @@ export class AdventureBoss extends Component {
     }
 
     firstRow(bossName, wingName, bossReward){
+      let adventure = this.props.adventure;
+      let wingUrl = this.props.details;
+      let bossUrl = this.props.boss;
      return boss_details.slice(0,4).map((boss, index)=>
           <li className="block" key={index}>
             <div className="block-content">
               <p className="boss-details-nav-el">{boss.name}</p>
-              {this.blocks(index, this.props.adventure, wingName, bossName, this.props.boss, bossReward)}
+              {this.blocks(index, adventure, wingName, wingUrl, bossName, bossUrl, bossReward)}
             </div>
           </li>)
     }

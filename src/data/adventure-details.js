@@ -282,15 +282,17 @@ export const adventure_details = [
             {
               boss: "Grim Guzzler",
               url: 'grim-guzzler',
-              reward: ''
+              reward: "Grim Patron"
             },
             {
               boss: "Dark Iron Arena",
-              url: 'dark-iron-arena'
+              url: 'dark-iron-arena',
+              reward: "Gang Up"
             },
             {
               boss:"Emperor Thaurissan",
-              url: 'emperor-thaurissan'
+              url: 'emperor-thaurissan',
+              reward: "Resurrect"
             }
           ]
         },
@@ -300,15 +302,18 @@ export const adventure_details = [
           bosses: [
             {
               boss: "Garr",
-              url: 'garr'
+              url: 'garr',
+              reward: "Druid of the Flame"
             },
             {
               boss: "Baron Geddon",
-              url: 'baron-geddon'
+              url: 'baron-geddon',
+              reward: "Blackwing Technican"
             },
             {
               boss: "Ragnaros the Firelord",
-              url: 'ragnaros-the-firelord'
+              url: 'ragnaros-the-firelord',
+              reward: "Imp Gang Boss"
             }
           ]
         },
@@ -318,15 +323,18 @@ export const adventure_details = [
           bosses: [
             {
               boss: "Highlord Omokk",
-              url: 'highlord-omokk'
+              url: 'highlord-omokk',
+              reward: "Core Rager"
             },
             {
               boss: "General Drakkisath",
-              url: 'general-drakkisath'
+              url: 'general-drakkisath',
+              reward: "Dragon Consort"
             },
             {
               boss: "Rend Blackhand",
-              url: "rend-blackhand"
+              url: "rend-blackhand",
+              reward: "Dragon Egg"
             }
           ]
         },
@@ -336,19 +344,23 @@ export const adventure_details = [
           bosses: [
             {
               boss: "Razorgore the Untamed",
-              url: 'razorgore-the-untamed'
+              url: 'razorgore-the-untamed',
+              reward: "Revenge"
             },
             {
               boss: "Vaelastrasz the Corrupt",
-              url: 'vaelastrasz-the-corrupt'
+              url: 'vaelastrasz-the-corrupt',
+              reward: "Flamewaker"
             },
             {
               boss: "Chromaggus",
-              url: 'chromaggus'
+              url: 'chromaggus',
+              reward: "Hungry Dragon"
             },
             {
               boss: "Lord Victor Nefarius",
-              url: 'lord-victor-nefarius'
+              url: 'lord-victor-nefarius',
+              reward: "Fireguard Destroyer"
             }
           ]
         },
@@ -358,19 +370,23 @@ export const adventure_details = [
           bosses: [
             {
               boss: "Omnotron Defense System",
-              url: 'omnotron-defense-system'
+              url: 'omnotron-defense-system',
+              reward: "Volcanic Drake"
             },
             {
               boss: "Maloriak",
-              url: 'maloriak'
+              url: 'maloriak',
+              reward: "Blackwing Corruptor"
             },
             {
               boss: "Atramedes",
-              url: 'atramedes'
+              url: 'atramedes',
+              reward: "Drakonid Crusher"
             },
             {
               boss: "Nefarian",
-              url: 'nefarian'
+              url: 'nefarian',
+              reward: "Dragonkin Sorcerer"
             }
           ]
         }
@@ -436,8 +452,7 @@ export const adventure_details = [
     adventure: "the-league-of-explorers",
     singular_adventure_name: "Liga Eksplorerów",
     plural_aventure_name: "Ligi Eksplorerów",
-    description: '',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/liga_odkrywcow.jpg',
+    description: '',img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/liga_odkrywcow.jpg',
     cost: {
       wings: [
         {
@@ -476,87 +491,91 @@ export const adventure_details = [
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
-          wing_title: "Świątynia Ozyrysa",
+          wing_title: "Temple of Orsis",
+          url: "temple-of-orsis",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/zinaar.jpg',
               boss: "Zinaar",
-              url: 'zinaar'
+              url: 'zinaar',
+              reward: ["Djinni of Zephyrs", "Jeweled Scarab"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/sun-raider-phaerix.jpg',
-              boss: "Słoneczny Grabieżca Faeriks",
-              url: 'sloneczny-grabiezca-faeriks'
+              boss: "Sun Raider Phaerix",
+              url: 'sun-raider-phaerix',
+              reward: ["Anubisath Sentinel", "Summoning Stone"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/temple-of-osiris/temple-escape.jpg',
-              boss:"Ucieczka ze świątyni",
-              url: 'ucieczka-ze-swiatyni'
+              boss:"Temple Escape",
+              url: 'temple-escape',
+              reward: ["Rumbling Elemental", "Sacred Trial"]
             }
           ]
         },
         {
           wing_title: "Uldaman",
+          url: "uldaman",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/chieftain-scarvash.jpg',
-              boss: "Wódz Skarwosz",
-              url: 'wodz-skarwosz'
+              boss: "Chieftain Scarvash",
+              url: 'chieftain-scarvash',
+              reward: ["Tunnel Trogg", "Ethereal Conjurer"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/mine-cart-rush.jpg',
-              boss: "Wagonik Górniczy",
-              url: 'wagonik-gorniczy'
+              boss: "Mine Cart Rush",
+              url: 'mine-cart-rush',
+              reward: ["Tomb Spider", "Unearthed Raptor"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/uldaman/archaedas.jpg',
               boss: "Archaedas",
-              url: 'archaedas'
+              url: 'archaedas',
+              reward: ["Fierce Monkey", "Reliquary Seeker"]
             }
           ]
         },
         {
-          wing_title: "Zrójnowane Miasto",
+          wing_title: "The Ruined City",
+          url: "the-ruined-city",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lord-slitherspear.jpg',
-              boss: "Lord Ślizgodzid",
-              url: 'lord-slizgodzid'
+              boss: "Lord Slitherspear",
+              url: 'lord-slitherspear',
+              reward: ["Huge Toad", "Gorillabot A-3"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/giantfin.jpg',
-              boss: "Wielkopłetw",
-              url: 'wielkopletw'
+              boss: "Giantfin",
+              url: 'giantfin',
+              reward: ["Anyfin Can Happen", "Murloc Tinyfin"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/the-ruined-city/lady-naz-jar.jpg',
               boss: "Lady Naz'Jar",
-              url: 'lady-nazjar'
+              url: 'lady-nazjar',
+              reward: ["Pit Snake", "Naga Sea Witch"]
             }
           ]
         },
         {
-          wing_title: "Sala Odkrywców",
+          wing_title: "Hall of Explorers",
+          url: "hall-of-explorers",
           bosses: [
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/skelesaurus-hex.jpg',
-              boss: "Szkielezaurus Hex",
-              url: 'szhielezaurus-hex'
+              boss: "Skelesaurus Hex",
+              url: 'skelesaurus-hex',
+              reward: ["Fossilized Devilsaur", "Raven Idol"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/the-steel-sentinel.jpg',
-              boss: "Stalowy Wartownik",
-              url: 'stalowy-wartownik'
+              boss: "The Steel Sentinel",
+              url: 'the-steel-sentinel',
+              reward: ["Cursed Blade", "Museum Curator"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/arch-thief-rafaam.jpg',
-              boss: "Arcyzłodziej Rafaam",
-              url: 'arcyzlodziej-rafaam'
+              boss: "Arch-Thief Rafaam",
+              url: 'arch-thief-rafaam',
+              reward: ["Curse of Rafaam", "Wobbling Runts"]
             },
             {
-              img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/the-league-of-explorers/hall-of-explorers/rafaam-unleashed.jpg',
-              boss: "Wyzwolony Rafaam",
-              url: 'wyzwolony-rafaam'
+              boss: "Rafaam Unleashed",
+              url: 'rafaam-unleashed',
+              reward: ["Desert Camel", "Eerie Statue"]
             }
           ]
         }
