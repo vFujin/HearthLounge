@@ -67,33 +67,32 @@ export class AdventureBoss extends Component {
       )
     }
 
-  getBossDetailsFromUrl(){
-    let boss = adventure_details.map(x=>x.bosses.details.filter(x=>x.url===this.props.details)[0]).filter(x=>x)[0].bosses.filter(x=>x.url===this.props.boss)[0].boss;
-    console.log(boss);
-    return boss;
-  }
-
-  getWingDetailsFromUrl(){
-    let wing = adventure_details.map(x=>x.bosses.details.filter(x=>x.url===this.props.details)[0]).filter(x=>x)[0].wing_title;
-    console.log(wing);
-    return wing;
-  }
+    getDetailsFromUrl(detail){
+      let filterArray = adventure_details.map(x=>x.bosses.details.filter(x=>x.url===this.props.details)[0]).filter(x=>x)[0];
+      switch(detail){
+        case 'boss':
+          return filterArray.bosses.filter(x=>x.url===this.props.boss)[0].boss;
+        case 'wing':
+          return filterArray.wing_title;
+      }
+    }
 
   render() {
-    let bossName = this.getBossDetailsFromUrl();
-    let wing = this.getWingDetailsFromUrl();
+    let boss = this.getDetailsFromUrl('boss');
+    let wing = this.getDetailsFromUrl('wing');
+
     return (
-        <div className={`boss inner-container ${this.props.details && 'active'}-view`}>
-          {adventure_details.slice(0,1).map((adventure, i)=>
-            <div key={i} className="boss-guide-header">
-              <p className="boss-details-nav-el">{bossName}</p>
-              <ul>
-                {this.firstRow(bossName, wing)}
-                {this.secondRow()}
-              </ul>
-            </div>
-          )}
-        </div>
+      <div className={`boss inner-container ${this.props.details && 'active'}-view`}>
+        {adventure_details.slice(0,1).map((adventure, i)=>
+          <div key={i} className="boss-guide-header">
+            <p className="boss-details-nav-el">{boss}</p>
+            <ul>
+              {this.firstRow(boss, wing)}
+              {this.secondRow()}
+            </ul>
+          </div>
+        )}
+      </div>
     );
   }
 }
