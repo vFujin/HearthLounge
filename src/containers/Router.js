@@ -47,6 +47,7 @@ export class App extends Component {
         <Router history={browserHistory}>
           <Route path="/"                   component={Main} >
             <IndexRoute                     component={Home} />
+            <Redirect from="home" to="/" />
             <Route path=""                  component={Home} />
 
             <Route path="decks"             component={Decks}>

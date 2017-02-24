@@ -1,4 +1,4 @@
-export const topbar_tabs = [
+export const adventure_detail_tabs = [
   {
     name: 'Overview',
     url: 'overview'
@@ -22,6 +22,29 @@ export const topbar_tabs = [
   {
     name: 'Class Challanges',
     url: 'class-challanges'
+  }
+];
+
+export const boss_details = [
+  {
+    name: 'Overview',
+    url: 'overview'
+  },
+  {
+    name: 'Strategy',
+    en: 'strategy'
+  },
+  {
+    name: 'Rewards',
+    url: 'rewards',
+  },
+  {
+    name: 'Rest wing bosses',
+    url: 'rest-wing-bosses'
+  },
+  {
+    title: 'Winning decks',
+    url: 'winning-decks',
   }
 ];
 

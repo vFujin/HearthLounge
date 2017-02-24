@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import {boss_details} from '../../../../data/boss-details';
-import {adventure_details} from '../../../../data/adventure-details';
+import {adventure_details, boss_details} from '../../../../data/adventure-details';
 import {DeckSnippet} from '../../../shared-assets/deck-snippet/deck-snippet';
 export class AdventureBoss extends Component {
 
