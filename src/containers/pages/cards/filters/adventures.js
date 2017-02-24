@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 import {adventures} from '../../../../data/filters';
-import {IconsWrapper} from './icons-wrapper';
 
 export class AdventureFilter extends Component {
   render() {
     return (
         <div>
-          <h3>Przygody</h3>
+          <h3>Adventures</h3>
           <ul className="sidebar-icons">
             {adventures.map((element, index) =>
-                <li value={element.en_url} key={index}>
-
-                  <IconsWrapper icon_name={element.en_url} element_name={element.en_url} label={element.pl} index={index} data={element.en}/>
+                <li key={index}>
+                  <Link to={`cards?adventure=${element.url}`}>
+                    <span className={`hs icon-${element.url}`}></span>
+                  </Link>
                 </li>
             )}
           </ul>

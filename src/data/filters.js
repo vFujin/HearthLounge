@@ -212,23 +212,19 @@ export const hs_class = [
 export const expansions = [
   {
     name: 'Goblins vs Gnomes',
-    url: 'goblins-vs-gnomes',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/gobliny_vs_gnomy.jpg'
+    url: 'goblins-vs-gnomes'
   },
   {
     name: 'The Grand Tournament',
-    url: 'the-grand-tournament',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/wielki_turniej.jpg'
+    url: 'the-grand-tournament'
   },
   {
     name: 'Whispers of the Old Gods',
-    url: 'whispers-of-the-old-gods',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/przedwieczni_bogowie.jpg'
+    url: 'whispers-of-the-old-gods'
   },
   {
     name: 'Mean Streets of Gadgetzan',
-    url: 'mean-streets-of-gadgetzan',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/ciemne_zaulki_gadzetonu.jpg'
+    url: 'mean-streets-of-gadgetzan'
   }
 ];
 

@@ -16,6 +16,7 @@ export class Sidebar extends Component {
     return (
         <div className="sidebar">
           <h3 className="filter-header">Filters</h3>
+          {this.props.children}
           <NameFilter/>
           {/*<StatisticsFilter handleInputFilter={this.props.handleInputFilter} statistics={this.props.statistics}/>*/}
           {/*<FactionFilter    handleInputFilter={this.props.handleInputFilter} faction={this.props.faction}/>*/}
@@ -23,8 +24,8 @@ export class Sidebar extends Component {
           {/*<MechanicsFilter  handleInputFilter={this.props.handleInputFilter} mechanics={this.props.mechanics}/>*/}
           {/*<DustFilter       handleInputFilter={this.props.handleInputFilter} dust={this.props.dust}/>*/}
 
-          {/*// <ExpansionFilter  handleFilterClick={this.props.handleFilterClick} expansion={this.props.expansion}/>*/}
-          {/*<AdventureFilter  handleFilterClick={this.props.handleFilterClick} adventure={this.props.adventure}/>*/}
+          <ExpansionFilter />
+          <AdventureFilter />
           {/*<RarityFilter     handleFilterClick={this.props.handleFilterClick} rarity={this.props.rarity}/>*/}
           {/*<IsGoldenFilter/>*/}
         </div>
