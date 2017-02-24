@@ -300,3 +300,22 @@ export const deck_type = [
     value: 'tournament', label: 'Turniej'
   },
 ];
+
+export const mode = [
+  {
+    name: "standard",
+    icon: "kraken"
+  },
+  {
+    name: "wild",
+    icon: "wild"
+  },
+  {
+    name: "tavern brawl",
+    icon: "brawl"
+  },
+  {
+    name: "adventures",
+    icon: "adventures"
+  }
+];

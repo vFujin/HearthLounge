@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
+import {mode} from '../../../../../data/filters';
 export class ModeSelection extends Component {
+
+  listModes(){
+    return mode.map(mode=>
+      <li key={mode.name}>
+        {console.log(mode)}
+        <span className={`hs-icon icon-${mode.icon}`}></span>
+        <p>{mode.name}</p>
+      </li>
+    )
+  }
+
   render() {
     return (
         <ul className="mode-selection">
-          <li>
-            <span className="hs-icon icon-kraken"></span>
-            <p>Standard</p>
-          </li>
-          <li>
-            <span className="hs-icon icon-wild"></span>
-            <p>Dzicz</p>
-          </li>
-          <li>
-            <span className="hs-icon icon-brawl"></span>
-            <p>Karczemna Bójka</p>
-          </li>
-          <li>
-            <span className="hs-icon icon-adventures"></span>
-            <p>Przygoda</p>
-          </li>
+          {this.listModes()}
         </ul>
     );
   }
