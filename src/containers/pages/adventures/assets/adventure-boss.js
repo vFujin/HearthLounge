@@ -41,6 +41,7 @@ export class AdventureBoss extends Component {
               <p>List of rest bosses in a wing</p>
             </div>
           );
+        default: return null;
       }
     }
 
@@ -81,7 +82,9 @@ export class AdventureBoss extends Component {
         case 'wing':
           return detailsArr.wing_title;
         case 'reward':
-          return bossArr.reward
+          return bossArr.reward;
+        default:
+          return null;
       }
     }
 

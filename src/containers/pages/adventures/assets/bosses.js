@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import {adventure_details} from '../../../../data/adventure-details';
 export class AdventureBosses extends Component {
-  constructor(props){
-    super(props);
-  }
-
   tableData(wing, adventure){
     let adventureDetailsFromUrl = adventure_details.filter(x=>x.adventure===adventure).map(x=>x.bosses.details.map(x=>x.url).some(x=>x === wing.url))[0];
 
