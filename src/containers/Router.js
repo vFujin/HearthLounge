@@ -6,6 +6,7 @@ import {Home} from './pages/home/home';
 import {Cards} from './pages/cards/cards';
 import {CardsTopbarFilters} from './pages/cards/right-container/topbar';
 import {ManaCostFilter} from './pages/cards/filters/mana-cost'
+import {HsClassFilter} from './pages/cards/filters/hs-class'
 import {ServiceCards} from './pages/cards/right-container/service.cards';
 
 
@@ -60,12 +61,12 @@ export class App extends Component {
             </Route>
 
             {/*<Redirect from="cards" to="cards/all" />*/}
-            <Route path="cards"               component={Cards}>
+            <Route path="cards"                 component={Cards}>
               <Route path="cards"               component={ServiceCards}/>
-              <Route path="cards?cost="  component={CardsTopbarFilters}>
-                <Route path=":cost"      component={ManaCostFilter}/>
+              <Route path="cards?"              component={CardsTopbarFilters}>
+                <Route path=":cost"             component={ManaCostFilter}/>
+                <Route path=":class"            component={HsClassFilter}/>
               </Route>
-              <Route path="card/:id"        component={Cards} />
             </Route>
 
             <Redirect from="arena-picker" to="arena-picker/class-selection" />
