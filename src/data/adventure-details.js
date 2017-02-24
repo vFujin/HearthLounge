@@ -714,7 +714,7 @@ export const adventure_details = [
             },
             {
               boss: "Teresian Illhoof",
-              url: 'terestoam-illhoof',
+              url: 'terestian-illhoof',
               reward: ["Purify", "Avian Watcher"]
             }
           ]

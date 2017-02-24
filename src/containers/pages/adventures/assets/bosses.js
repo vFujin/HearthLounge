@@ -7,21 +7,17 @@ export class AdventureBosses extends Component {
   }
 
   tableData(wing, adventure){
-    // let adventureDetailsFromUrl = adventure_details.map(x=>x.adventure === adventure)[0];
-    let adventureDetailsFromUrl = adventure_details.map(x=>x.bosses.details);
+    let adventureDetailsFromUrl = adventure_details.filter(x=>x.adventure===adventure).map(x=>x.bosses.details.map(x=>x.url).some(x=>x === wing.url))[0];
 
     function checkAdventure(adventure, boss){
-      console.log(adventure, adventureDetailsFromUrl, wing.url);
-
+      if(adventureDetailsFromUrl === true) {
         return <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${wing.url}/${boss.url}.jpg`} alt={boss.boss}/>
-
+      }
     }
-    console.log(adventureDetailsFromUrl);
     return wing.bosses.map((boss, index)=>
         <td key={index} className={`${adventure} active-on-hover`}>
           <Link to={`/adventures/${adventure}/${wing.url}/${boss.url}`}>
-            <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${wing.url}/${boss.url}.jpg`} alt={boss.boss}/>
-
+            {checkAdventure(adventure, boss)}
             <p>{boss.boss}</p>
           </Link>
         </td>
