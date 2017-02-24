@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   expansion: 'displayBlock',
   selectedExpansionClass: null,
 
-  //Topbar
+  //CardsTopbarFilters
   topbarActiveTab: '',
   topbarActiveTabUrl: '',
   sidebarActiveTab: '',

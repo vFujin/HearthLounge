@@ -7,7 +7,7 @@ export default function (){
     adventure: 'displayNone',
     selectedAdventureUrl: null,
 
-    //Topbar
+    //CardsTopbarFilters
     topbarActiveTab: '',
     topbarActiveTabUrl: '',
     sidebarActiveTab: null,

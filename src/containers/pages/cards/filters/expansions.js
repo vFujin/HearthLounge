@@ -9,7 +9,7 @@ export class ExpansionFilter extends Component {
           <h3>Dodatki</h3>
           <ul className="sidebar-icons">
           {expansions.map((element, index) =>
-              <li onClick={this.props.handleFilterClick.bind(this, index, 'expansion')} value={element.en_url} key={index}>
+              <li value={element.en_url} key={index}>
                 <IconsWrapper active={this.props.expansion} icon_name={element.en_url} element_name={element.en_url} label={element.pl} index={index} data={element.en}/>
               </li>
           )}

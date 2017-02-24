@@ -4,6 +4,9 @@ import { Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router
 import {Home} from './pages/home/home';
 
 import {Cards} from './pages/cards/cards';
+import {CardsTopbarFilters} from './pages/cards/right-container/topbar';
+import {ManaCostFilter} from './pages/cards/filters/mana-cost'
+import {ServiceCards} from './pages/cards/right-container/service.cards';
 
 
 import {CreateDeck} from './pages/create-deck/create-deck';
@@ -56,17 +59,20 @@ export class App extends Component {
               </Route>
             </Route>
 
-            <Route path="cards"             component={Cards}>
-              <Route path="/card/:id"       component={Cards} />
+            {/*<Redirect from="cards" to="cards/all" />*/}
+            <Route path="cards"               component={Cards}>
+              <Route path="cards"               component={ServiceCards}/>
+              <Route path="cards?cost="  component={CardsTopbarFilters}>
+                <Route path=":cost"      component={ManaCostFilter}/>
+              </Route>
+              <Route path="card/:id"        component={Cards} />
             </Route>
 
             <Redirect from="arena-picker" to="arena-picker/class-selection" />
             <Route path="arena-picker"      component={ArenaPicker}>
               <Route path="class-selection" component={ClassSelection} />
               <Route path=":class"          component={PickedClass} />
-
             </Route>
-
 
             <Route path="expansions"        component={Expansions}>
               <Redirect from=":expansion" to=":expansion/overview"/>

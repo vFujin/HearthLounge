@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   adventure: 'displayNone',
   selectedAdventureUrl: null,
 
-  //Topbar
+  //CardsTopbarFilters
   topbarActiveTab: '',
   topbarActiveTabUrl: '',
   sidebarActiveTab: null,
