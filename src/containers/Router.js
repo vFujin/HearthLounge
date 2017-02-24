@@ -16,6 +16,7 @@ import {ChoosenDeckView} from './pages/decks/choosen-deck/view/choosen-deck-view
 import {Deck} from './pages/decks/choosen-deck/deck';
 
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
+import {ClassSelection} from './pages/arena-picker/class-selection';
 import {PickedClass} from './pages/arena-picker/picked-class/right-container/choosen-class-view';
 
 import {Expansions} from './pages/expansions/expansions';
@@ -47,23 +48,32 @@ export class App extends Component {
           <Route path="/"                   component={Main} >
             <IndexRoute                     component={Home} />
             <Route path=""                  component={Home} />
+
             <Route path="decks"             component={Decks}>
               <Route path=":class"          component={ChoosenDeckView}>
                 <Route path=":id"           component={Deck} />
               </Route>
             </Route>
+
             <Route path="cards"             component={Cards}>
               <Route path="/card/:id"       component={Cards} />
             </Route>
+
+            <Redirect from="arena-picker" to="arena-picker/class-selection" />
             <Route path="arena-picker"      component={ArenaPicker}>
+              <Route path="class-selection" component={ClassSelection} />
               <Route path=":class"          component={PickedClass} />
+
             </Route>
+
+
             <Route path="expansions"        component={Expansions}>
               <Redirect from=":expansion" to=":expansion/overview"/>
               <Route path=":expansion"      component={Expansion}>
                 <Route path=":details"      component={ExpansionDetails} />
               </Route>
             </Route>
+
             <Route path="adventures"    component={Adventures}>
               <Redirect from=":adventure" to=":adventure/overview"/>
               <Route path=":adventure"  component={Adventure}>
@@ -78,6 +88,7 @@ export class App extends Component {
             <Route path="create-deck"       component={CreateDeck}>
               <Route path=":class"          component={ChoosenClassView} />
             </Route>
+
             <Route path="forum"             component={Forum} />
             <Route path="tournaments"       component={Tournaments} />
             <Route path="streamers"         component={Streams} />
