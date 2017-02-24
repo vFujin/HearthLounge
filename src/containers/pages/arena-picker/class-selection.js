@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 export class ClassSelection extends Component {
   render() {
     return (
-        <div>
+        <div className="class-selection">
           <table className={`pick-class`}>
             <tbody>
             <tr>

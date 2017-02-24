@@ -1336,7 +1336,12 @@ footer{
 }
 
 .arena-picker{
+  .class-selection{
+    width:100%;
+    display: flex;
+  }
   .choosen-class-view{
+    display: flex;
     .right-container{
       ul{
         display: flex;
