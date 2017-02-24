@@ -1501,15 +1501,19 @@ footer{
       .topbar{
         .content-navigation {
           display: flex;
+          height: 100%;
           @include transition(all ease .4s);
           li {
+            height:100%;
             @include transition(all ease .4s);
             cursor: pointer;
             border-right: 1px solid $dark-grey;
             a {
+              padding: 0 15px;
               color: $dark-grey;
-              display: block;
-              padding: 15.4px;
+              display: flex;
+              height: 100%;
+              align-items: center;
             }
           }
         }

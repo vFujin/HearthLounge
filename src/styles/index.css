@@ -2197,12 +2197,14 @@ footer {
   height: 100%; }
   .expansions .right-container .content .topbar .content-navigation, .adventures .right-container .content .topbar .content-navigation {
     display: flex;
+    height: 100%;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
     -ms-transition: all ease 0.4s;
     -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .expansions .right-container .content .topbar .content-navigation li, .adventures .right-container .content .topbar .content-navigation li {
+      height: 100%;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
       -ms-transition: all ease 0.4s;
@@ -2211,9 +2213,11 @@ footer {
       cursor: pointer;
       border-right: 1px solid #474143; }
       .expansions .right-container .content .topbar .content-navigation li a, .adventures .right-container .content .topbar .content-navigation li a {
+        padding: 0 15px;
         color: #474143;
-        display: block;
-        padding: 15.4px; }
+        display: flex;
+        height: 100%;
+        align-items: center; }
   .expansions .right-container .content .topbar .false-view, .adventures .right-container .content .topbar .false-view {
     display: none; }
   .expansions .right-container .content .topbar .active-view, .adventures .right-container .content .topbar .active-view {
