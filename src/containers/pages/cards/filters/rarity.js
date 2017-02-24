@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 import {rarity} from '../../../../data/filters'
-import {IconsWrapper} from './icons-wrapper';
 export class RarityFilter extends Component {
   render() {
     return (
         <div>
-          <h3>Rzadkość</h3>
+          <h3>Rarity</h3>
           <ul className="sidebar-icons rarity">
             {rarity.map((element, index) =>
-                <li onClick={this.props.handleFilterClick.bind(this, index, 'rarity')} className={element.en_url} value={element[index]} key={index} >
-                  <IconsWrapper active={this.props.rarity} icon_name="rarity" element_name={element.en_url} label={element.pl} index={index} data={element.en}/>
-                </li>
+              <li className={element.name.toLowerCase()} key={index}>
+                <Link to={`cards?rarity=${element.name.toLowerCase()}`}>
+                  <span className={`hs icon-rarity`}></span>
+                  <div className="tooltip">
+                    <div className="caret-up"></div>
+                    <p>{element.name}</p>
+                  </div>
+                </Link>
+              </li>
             )}
           </ul>
         </div>

@@ -12,6 +12,10 @@ export class AdventureFilter extends Component {
                 <li key={index}>
                   <Link to={`cards?adventure=${element.url}`}>
                     <span className={`hs icon-${element.url}`}></span>
+                    <div className="tooltip">
+                      <div className="caret-up"></div>
+                      <p>{element.name}</p>
+                    </div>
                   </Link>
                 </li>
             )}

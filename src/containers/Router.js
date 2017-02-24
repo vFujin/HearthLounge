@@ -61,13 +61,10 @@ export class App extends Component {
               </Route>
             </Route>
 
-            {/*<Redirect from="cards" to="cards/all" />*/}
+            <Redirect from="cards" to="cards/all" />
             <Route path="cards"                 component={Cards}>
               <Route path="all"             component={ServiceCards}/>
               <Route path=":"               component={ServiceCards}>
-                <Route path=":cost"             component={ManaCostFilter}/>
-                <Route path=":class"            component={HsClassFilter}/>
-                <Route path=":name"            component={NameFilter}/>
               </Route>
             </Route>
 

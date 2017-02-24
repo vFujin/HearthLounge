@@ -12,6 +12,10 @@ export class ExpansionFilter extends Component {
               <li value={element.url} key={index}>
                 <Link to={`cards?expansion=${element.url}`}>
                   <span className={`hs icon-${element.url}`}></span>
+                  <div className="tooltip">
+                    <div className="caret-up"></div>
+                    <p>{element.name}</p>
+                  </div>
                 </Link>
               </li>
           )}

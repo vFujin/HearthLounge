@@ -9,6 +9,7 @@ import {MechanicsFilter} from '../filters/mechanics';
 import {ExpansionFilter} from '../filters/expansions';
 import {AdventureFilter} from '../filters/adventures';
 import {RarityFilter} from '../filters/rarity';
+import {IconFilterSnippet} from '../filters/icon-filter-snippet'
 import {IsGoldenFilter} from '../filters/is-golden';
 
 export class Sidebar extends Component {
@@ -18,6 +19,7 @@ export class Sidebar extends Component {
           <h3 className="filter-header">Filters</h3>
           {this.props.children}
           <NameFilter/>
+
           {/*<StatisticsFilter handleInputFilter={this.props.handleInputFilter} statistics={this.props.statistics}/>*/}
           {/*<FactionFilter    handleInputFilter={this.props.handleInputFilter} faction={this.props.faction}/>*/}
           {/*<RaceFilter       handleInputFilter={this.props.handleInputFilter} race={this.props.race}/>*/}
@@ -26,7 +28,7 @@ export class Sidebar extends Component {
 
           <ExpansionFilter />
           <AdventureFilter />
-          {/*<RarityFilter     handleFilterClick={this.props.handleFilterClick} rarity={this.props.rarity}/>*/}
+          <RarityFilter />
           {/*<IsGoldenFilter/>*/}
         </div>
     );
