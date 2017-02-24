@@ -4,10 +4,6 @@ import { Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router
 import {Home} from './pages/home/home';
 
 import {Cards} from './pages/cards/cards';
-import {CardsTopbarFilters} from './pages/cards/right-container/topbar';
-import {ManaCostFilter} from './pages/cards/filters/mana-cost'
-import {HsClassFilter} from './pages/cards/filters/hs-class'
-import {NameFilter} from './pages/cards/filters/name';
 import {ServiceCards} from './pages/cards/right-container/service.cards';
 
 
@@ -61,10 +57,10 @@ export class App extends Component {
               </Route>
             </Route>
 
-            <Redirect from="cards" to="cards/all" />
+            {/*<Redirect from="cards" to="cards/all" />*/}
             <Route path="cards"                 component={Cards}>
               <Route path="all"             component={ServiceCards}/>
-              <Route path=":"               component={ServiceCards}>
+              <Route path="cards/(:?)"               component={ServiceCards}>
               </Route>
             </Route>
 
@@ -84,11 +80,13 @@ export class App extends Component {
             <Route path="adventures"    component={Adventures}>
               <Redirect from=":adventure" to=":adventure/overview"/>
               <Route path=":adventure"  component={Adventure}>
+
                 <Route path=":details"  component={AdventureDetails}>
                   <Route path="bosses"  component={AdventureBosses}/>
                   <Route path=":boss"   component={AdventureBoss}/>
-                  <Route path="*" component={NotFound} />
+
                 </Route>
+                <Route path="*" component={NotFound} />
               </Route>
             </Route>
 

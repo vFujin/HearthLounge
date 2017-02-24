@@ -1,12 +1,12 @@
 export const statistics = [
   {
-    value: 'attack', label: 'Atak'
+    value: 'attack', label: 'Attack'
   },
   {
-    value: 'cost', label: 'Koszt'
+    value: 'cost', label: 'Cost'
   },
   {
-    value: 'hp', label: 'Życie'
+    value: 'health', label: 'Health'
   }
 ];
 

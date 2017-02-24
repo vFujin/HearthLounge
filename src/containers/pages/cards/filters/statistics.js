@@ -4,9 +4,10 @@ import {statistics} from '../../../../data/filters';
 
 export class StatisticsFilter extends Component {
   render() {
+
     return (
           <Select
-              placeholder="Statystyki..."
+              placeholder="Statistics..."
               value={this.props.statistics}
               options={statistics}
               onChange={this.props.handleInputFilter.bind(this, 'statistics')}

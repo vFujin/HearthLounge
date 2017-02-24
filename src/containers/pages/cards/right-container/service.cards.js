@@ -33,7 +33,7 @@ export class ServiceCards extends Component {
   render() {
     return (
         <ul className="cards-container">
-          {console.log("x", )}
+
           {this.state.cards.slice(9, 19).map(x=>x).filter(x=>x.artist).map(card=>
             <li key={card.cardId}>
               <img src={card.img} />

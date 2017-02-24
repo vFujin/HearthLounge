@@ -9,7 +9,7 @@ export class RarityFilter extends Component {
           <ul className="sidebar-icons rarity">
             {rarity.map((element, index) =>
               <li className={element.name.toLowerCase()} key={index}>
-                <Link to={`cards?rarity=${element.name.toLowerCase()}`}>
+                <Link to={`&rarity=${element.name.toLowerCase()}`}>
                   <span className={`hs icon-rarity`}></span>
                   <div className="tooltip">
                     <div className="caret-up"></div>

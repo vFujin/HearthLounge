@@ -4,7 +4,7 @@ export class IsGoldenFilter extends Component {
   render() {
     return (
         <div>
-          <h3>Złote karty</h3>
+          <h3>Golden Cards</h3>
           <p>true / false</p>
         </div>
     );
