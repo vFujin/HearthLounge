@@ -34,8 +34,7 @@ export class Navbar extends Component {
                 </li>
             )}
             <li className="login">
-              {console.log(this.props.url)}
-              <Link to={`${this.props.url}/login`}>
+              <Link to={`/login`}>
                 <span className="icon-login"></span>
                 <div>Login</div>
               </Link>
