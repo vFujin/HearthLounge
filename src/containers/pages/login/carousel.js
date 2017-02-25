@@ -16,16 +16,20 @@ let carousel = [
 ];
 
 export class Carousel extends Component {
-
+  constructor(props){
+    super(props);
+  }
   componentDidMount() {
+    let currentDot = this.props.handleCurrentDotChange;
     let slides = document.querySelectorAll('.slides .slide');
     let currentSlide = 0;
     slides[0].className = 'slide active';
-    setInterval(nextSlide, 5000);
+    setInterval(()=>nextSlide(currentDot), 1000);
 
-    function nextSlide() {
+    function nextSlide(currentDot) {
       slides[currentSlide].className = 'slide';
       currentSlide = (currentSlide + 1) % slides.length;
+      currentDot(currentSlide);
       slides[currentSlide].className = 'slide active';
     }
   }
@@ -35,10 +39,10 @@ export class Carousel extends Component {
         <div className="carousel">
           <ul className="slides">
             {carousel.map((slide, index) =>
-                <li className="slide">
-                  <p>{slide.text}</p>
-                  <span className={`hs hs-icon icon-${slide.icon}`}></span>
-                </li>
+              <li className="slide" key={index}>
+                <p>{slide.text}</p>
+                <span className={`hs hs-icon icon-${slide.icon}`}></span>
+              </li>
             )}
           </ul>
         </div>

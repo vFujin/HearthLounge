@@ -6,8 +6,15 @@ export class Login extends Component {
     super(props);
 
     this.state = {
-      active_dot: 1
+      current_dot: 0
     }
+  }
+
+  handleCurrentDotChange(current_dot){
+    console.log(this.state.current_dot);
+    this.setState({
+      current_dot: current_dot
+    })
   }
   render() {
     console.log(this.props.location.pathname);
@@ -23,7 +30,7 @@ export class Login extends Component {
               </ul>
             </div>
             <div className="breakline h-breakline"></div>
-            <Carousel/>
+            <Carousel handleCurrentDotChange={this.handleCurrentDotChange.bind(this)} />
           </div>
           <div className="right-container">
             <div className="breakline-wrapper">
