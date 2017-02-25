@@ -1311,6 +1311,7 @@ footer{
     display: flex;
   }
   .choosen-class-view{
+    display: flex;
     width: 100%;
     .left-container{
       .sidebar{
@@ -1347,7 +1348,6 @@ footer{
 
 .arena-picker{
   .choosen-class-view{
-    display: flex;
     .right-container{
       ul{
         display: flex;
@@ -1878,6 +1878,7 @@ footer{
     text-align:center;
     margin-top:10px;
     overflow: auto;
+    height: calc(100% - 60px);
     li{
       width: 241px;
       margin: 0;
