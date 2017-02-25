@@ -78,21 +78,6 @@ nav {
       }
     }
   }
-  //.login-popup.display-block{
-  //  position: absolute;
-  //  z-index: 1000;
-  //  background: rgba(0,0,0,.4);
-  //  display: flex;
-  //  width: 100%;
-  //  height:100vh;
-  //  align-items:center;
-  //  justify-content: center;
-  //  .login{
-  //
-  //    background-color: white;
-  //
-  //  }
-  //}
 }
 footer{
   width: 100%;
@@ -1996,6 +1981,169 @@ footer{
         }
         &:last-child{
           margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.pageContainer.login{
+  justify-content: center;
+  align-items: center;
+  .wrapper{
+
+    display: flex;
+    width: 50vw;
+    height: 70vh;
+    .left-container, .right-container{
+      background-color: $dark-grey;
+      width: 50%;
+      height: 100%;
+      .topbar{
+        height: 50px;
+        background-color: $dark-grey;
+        justify-content: flex-end;
+      }
+      .breakline{
+        background-color: $light-grey;
+        &.v-breakline{
+          position: absolute;
+          width: 1px;
+          height: 95%;
+        }
+        &.h-breakline{
+          margin: 0 auto;
+          width: 90%;
+          height:1px;
+        }
+      }
+    }
+    .left-container{
+      .topbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $light-grey;
+        font-size: 30px;
+        ul{
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 40%;
+          li{
+            &.active{
+              color: $pearl;
+            }
+          }
+        }
+      }
+      .soon-to-be-carousel{
+        color: $pearl;
+        height: calc(100% - 100px);
+        display: flex;
+        align-items: center;
+        .carousel-wrapper{
+          width: 100%;
+          text-align: center;
+          div{
+            font-size: 40px;
+          }
+          span{
+            font-size: 200px;
+          }
+        }
+      }
+    }
+    .right-container {
+      position: relative;
+      color: $pearl;
+      .breakline-wrapper{
+        position: absolute;
+        height: inherit;
+        display: flex;
+        align-items: center;
+      }
+
+      .topbar{
+        p{
+          @include transition(all ease .4s);
+          color: $light-grey;
+          cursor: pointer;
+          border: 1px solid $light-grey;
+          padding: 5px;
+          margin-right: 9.5px;
+          &.active{
+            color: $pearl;
+            border: 1px solid $pearl;
+          }
+          &:hover{
+            @include box-shadow(0, 0, 5px, $pearl);
+            color: $pearl;
+            border: 1px solid $pearl;
+          }
+        }
+      }
+
+      .sign {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 50px);
+        form {
+          label, input, select {
+            display: block;
+          }
+          input, select {
+            @include transition(all ease .4s);
+            margin-bottom: 30px;
+            padding: 5px;
+            background: transparent;
+            &:last-child{
+              margin-bottom:0;
+            }
+
+          }
+          input{
+            color: $sea-color;
+            width: 70%;
+            border-bottom: 1px solid $light-grey;
+            &:focus{
+              border-bottom:1px solid $pearl;
+            }
+          }
+          select{
+            outline: 0;
+            color: $light-grey;
+            border: 1px solid $light-grey;
+            &:focus{
+              border:1px solid $pearl;
+            }
+            option{
+              background-color: $pearl;
+              color: $dark-grey;
+              &:hover{
+                background-color: $sea-color;
+              }
+            }
+          }
+          .button-wrapper {
+            display: flex;
+            justify-content: center;
+            button {
+              @include transition(all ease .4s);
+              cursor: pointer;
+              background: transparent;
+              border: 1px solid $pearl;
+              color: $pearl;
+              outline: 0;
+              padding: 5px 10px;
+              &:hover{
+                @include box-shadow(0, 0, 5px, $sea-color);
+                border-color: $sea-color;
+                color: $sea-color;
+              }
+            }
+          }
         }
       }
     }

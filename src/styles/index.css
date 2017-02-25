@@ -2567,4 +2567,139 @@ footer {
   .dashboard .right-container .topbar li:last-child {
     margin-right: 0; }
 
+.pageContainer.login {
+  justify-content: center;
+  align-items: center; }
+  .pageContainer.login .wrapper {
+    display: flex;
+    width: 50vw;
+    height: 70vh; }
+    .pageContainer.login .wrapper .left-container, .pageContainer.login .wrapper .right-container {
+      background-color: #474143;
+      width: 50%;
+      height: 100%; }
+      .pageContainer.login .wrapper .left-container .topbar, .pageContainer.login .wrapper .right-container .topbar {
+        height: 50px;
+        background-color: #474143;
+        justify-content: flex-end; }
+      .pageContainer.login .wrapper .left-container .breakline, .pageContainer.login .wrapper .right-container .breakline {
+        background-color: #A69E9D; }
+        .pageContainer.login .wrapper .left-container .breakline.v-breakline, .pageContainer.login .wrapper .right-container .breakline.v-breakline {
+          position: absolute;
+          width: 1px;
+          height: 95%; }
+        .pageContainer.login .wrapper .left-container .breakline.h-breakline, .pageContainer.login .wrapper .right-container .breakline.h-breakline {
+          margin: 0 auto;
+          width: 90%;
+          height: 1px; }
+    .pageContainer.login .wrapper .left-container .topbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #A69E9D;
+      font-size: 30px; }
+      .pageContainer.login .wrapper .left-container .topbar ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 40%; }
+        .pageContainer.login .wrapper .left-container .topbar ul li.active {
+          color: #E7E2DA; }
+    .pageContainer.login .wrapper .left-container .soon-to-be-carousel {
+      color: #E7E2DA;
+      height: calc(100% - 100px);
+      display: flex;
+      align-items: center; }
+      .pageContainer.login .wrapper .left-container .soon-to-be-carousel .carousel-wrapper {
+        width: 100%;
+        text-align: center; }
+        .pageContainer.login .wrapper .left-container .soon-to-be-carousel .carousel-wrapper div {
+          font-size: 40px; }
+        .pageContainer.login .wrapper .left-container .soon-to-be-carousel .carousel-wrapper span {
+          font-size: 200px; }
+    .pageContainer.login .wrapper .right-container {
+      position: relative;
+      color: #E7E2DA; }
+      .pageContainer.login .wrapper .right-container .breakline-wrapper {
+        position: absolute;
+        height: inherit;
+        display: flex;
+        align-items: center; }
+      .pageContainer.login .wrapper .right-container .topbar p {
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        -ms-transition: all ease 0.4s;
+        -o-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+        color: #A69E9D;
+        cursor: pointer;
+        border: 1px solid #A69E9D;
+        padding: 5px;
+        margin-right: 9.5px; }
+        .pageContainer.login .wrapper .right-container .topbar p.active {
+          color: #E7E2DA;
+          border: 1px solid #E7E2DA; }
+        .pageContainer.login .wrapper .right-container .topbar p:hover {
+          -webkit-box-shadow: 0 0 5px #E7E2DA;
+          -moz-box-shadow: 0 0 5px #E7E2DA;
+          box-shadow: 0 0 5px #E7E2DA;
+          color: #E7E2DA;
+          border: 1px solid #E7E2DA; }
+      .pageContainer.login .wrapper .right-container .sign {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 50px); }
+        .pageContainer.login .wrapper .right-container .sign form label, .pageContainer.login .wrapper .right-container .sign form input, .pageContainer.login .wrapper .right-container .sign form select {
+          display: block; }
+        .pageContainer.login .wrapper .right-container .sign form input, .pageContainer.login .wrapper .right-container .sign form select {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          -ms-transition: all ease 0.4s;
+          -o-transition: all ease 0.4s;
+          transition: all ease 0.4s;
+          margin-bottom: 30px;
+          padding: 5px;
+          background: transparent; }
+          .pageContainer.login .wrapper .right-container .sign form input:last-child, .pageContainer.login .wrapper .right-container .sign form select:last-child {
+            margin-bottom: 0; }
+        .pageContainer.login .wrapper .right-container .sign form input {
+          color: #00a99c;
+          width: 70%;
+          border-bottom: 1px solid #A69E9D; }
+          .pageContainer.login .wrapper .right-container .sign form input:focus {
+            border-bottom: 1px solid #E7E2DA; }
+        .pageContainer.login .wrapper .right-container .sign form select {
+          outline: 0;
+          color: #A69E9D;
+          border: 1px solid #A69E9D; }
+          .pageContainer.login .wrapper .right-container .sign form select:focus {
+            border: 1px solid #E7E2DA; }
+          .pageContainer.login .wrapper .right-container .sign form select option {
+            background-color: #E7E2DA;
+            color: #474143; }
+            .pageContainer.login .wrapper .right-container .sign form select option:hover {
+              background-color: #00a99c; }
+        .pageContainer.login .wrapper .right-container .sign form .button-wrapper {
+          display: flex;
+          justify-content: center; }
+          .pageContainer.login .wrapper .right-container .sign form .button-wrapper button {
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+            transition: all ease 0.4s;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid #E7E2DA;
+            color: #E7E2DA;
+            outline: 0;
+            padding: 5px 10px; }
+            .pageContainer.login .wrapper .right-container .sign form .button-wrapper button:hover {
+              -webkit-box-shadow: 0 0 5px #00a99c;
+              -moz-box-shadow: 0 0 5px #00a99c;
+              box-shadow: 0 0 5px #00a99c;
+              border-color: #00a99c;
+              color: #00a99c; }
+
 /*# sourceMappingURL=index.css.map */
