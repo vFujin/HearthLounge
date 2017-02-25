@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class ChoosenDeckTopbar extends Component {
+export class DeckTopbar extends Component {
   render() {
     return (
       <ul className='choosen-deck-topbar'>

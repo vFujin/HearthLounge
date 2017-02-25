@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import DeckSnippet from './deck-snippet';
-export class DecksTable extends Component {
+import DeckSnippet from '../right-container/cards-list/deck-snippet';
+export class DeckSelection extends Component {
   render() {
     return (
-        <div className={`top-decks ${this.props.decksView}`}>
+        <div className="top-decks">
           <table className="shared-table">
             <tbody>
             <tr>
-              <td className="name">Nazwa talii kart</td>
-              <td className="class">Klasa</td>
-              <td className="rating">Głosy</td>
-              <td className="views">Wyświetlenia</td>
+              <td className="name">Name</td>
+              <td className="class">Class</td>
+              <td className="rating">Rating</td>
+              <td className="views">Views</td>
               <td className="mana-curve">Mana</td>
-              <td className="type">Typ</td>
-              <td className="created">Stworzony</td>
+              <td className="type">Type</td>
+              <td className="created">Created</td>
             </tr>
             <DeckSnippet handleTableRowClick={this.props.handleTableRowClick} class="warlock"/>
             <DeckSnippet handleTableRowClick={this.props.handleTableRowClick} class="hunter"/>

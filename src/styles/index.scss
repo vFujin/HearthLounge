@@ -1068,8 +1068,10 @@ footer{
       overflow: auto;
     }
     .choosen-deck-view {
+      height: calc(100% - 50px);
       .choosen-deck-details {
         display: flex;
+        height: 100%;
         .section {
           width: 50%;
           margin: 10px;
@@ -1093,7 +1095,9 @@ footer{
           }
         }
         .description {
+          height: calc(100% - 10px);
           .section-body {
+            height: calc(100% - 1.34em - 12px);
             padding: 0 10px 0 0;
             p {
               background: rgba(0, 0, 0, .2);
@@ -1105,8 +1109,10 @@ footer{
         .comments {
           background: transparent;
           margin-right: 0;
+          height: calc(100% - 10px);
 
           .section-body {
+            height: calc(100% - 1.34em - 12px);
             .comment {
               display: flex;
               margin: 10px;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {rarity} from '../../../../data/filters'
+import {rarity} from '../../../data/filters'
 export class RarityFilter extends Component {
   render() {
     return (

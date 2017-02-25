@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {ManaCostFilter} from '../filters/mana-cost';
-import {HsClassFilter} from  '../filters/hs-class';
+import {ManaCostFilter} from '../../../shared-assets/filters/mana-cost';
+import {HsClassFilter} from  '../../../shared-assets/filters/hs-class';
 
 export class CardsTopbarFilters extends Component {
   render() {
@@ -8,7 +8,7 @@ export class CardsTopbarFilters extends Component {
         <div className="topbar">
           {this.props.children}
           <ManaCostFilter />
-          <HsClassFilter />
+          <HsClassFilter align="right"/>
         </div>
     );
   }

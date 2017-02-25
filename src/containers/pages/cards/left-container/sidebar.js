@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import 'react-select/dist/react-select.css';
-import {NameFilter} from '../filters/name';
-import {StatisticsFilter} from '../filters/statistics';
-import {FactionFilter} from '../filters/faction';
-import {RaceFilter} from '../filters/race';
-import {DustFilter} from '../filters/dust';
-import {MechanicsFilter} from '../filters/mechanics';
-import {ExpansionFilter} from '../filters/expansions';
-import {AdventureFilter} from '../filters/adventures';
-import {RarityFilter} from '../filters/rarity';
+import {NameFilter} from '../../../shared-assets/filters/name';
+import {StatisticsFilter} from '../../../shared-assets/filters/statistics';
+import {FactionFilter} from '../../../shared-assets/filters/faction';
+import {RaceFilter} from '../../../shared-assets/filters/race';
+import {DustFilter} from '../../../shared-assets/filters/dust';
+import {MechanicsFilter} from '../../../shared-assets/filters/mechanics';
+import {ExpansionFilter} from '../../../shared-assets/filters/expansions';
+import {AdventureFilter} from '../../../shared-assets/filters/adventures';
+import {RarityFilter} from '../../../shared-assets/filters/rarity';
 // import {IconFilterSnippet} from '../filters/icon-filter-snippet'
-import {IsGoldenFilter} from '../filters/is-golden';
+import {IsGoldenFilter} from '../../../shared-assets/filters/is-golden';
 
 export class Sidebar extends Component {
   render() {

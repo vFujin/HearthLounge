@@ -12,9 +12,13 @@ import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 import {Streams} from './pages/streams/streams';
 
-import {Decks} from './pages/decks/decks';
-import {ChoosenDeckView} from './pages/decks/choosen-deck/view/choosen-deck-view';
-import {Deck} from './pages/decks/choosen-deck/deck';
+import {Decks} from './pages/decks/deck-selection/decks';
+import {Deck} from './pages/decks/deck/deck';
+import {DeckSidebar} from './pages/decks/deck/sidebar';
+import {DeckTopbar} from './pages/decks/deck/topbar';
+import {DeckSelection} from "./pages/decks/deck-selection/deck-selection";
+import {DeckSelectionSidebar} from "./pages/decks/deck-selection/sidebar";
+import {DeckSelectionTopbar} from "./pages/decks/deck-selection/topbar";
 
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
 import {ClassSelection} from './pages/arena-picker/class-selection';
@@ -42,6 +46,7 @@ import {NotFound} from './shared-assets/not-found';
 import {Main} from './Main';
 
 
+
 export class App extends Component {
   render() {
     return (
@@ -51,10 +56,10 @@ export class App extends Component {
             <Redirect from="home" to="/" />
             <Route path=""                  component={Home} />
 
+            {/*<Redirect from="decks" to="decks/all " />*/}
             <Route path="decks"             component={Decks}>
-              <Route path=":class"          component={ChoosenDeckView}>
-                <Route path=":id"           component={Deck} />
-              </Route>
+              <Route path="all"             components={{main: DeckSelection, sidebar: DeckSelectionSidebar, topbar: DeckSelectionTopbar}}/>
+              <Route path=":class/:deckId"  components={{main: Deck, sidebar: DeckSidebar, topbar: DeckTopbar}}/>
             </Route>
 
             {/*<Redirect from="cards" to="cards/all" />*/}

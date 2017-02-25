@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {mana_cost} from '../../../../data/filters';
+import {mana_cost} from '../../../data/filters';
 
 export class ManaCostFilter extends Component {
   render() {

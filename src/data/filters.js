@@ -279,17 +279,17 @@ export const archetype = [
 
 export const deck_type = [
   {
-    value: 'adventure', label: 'Przygoda'
+    value: 'adventure', label: 'Adventure'
   },
   {
-    value: 'tavern-brawl', label: 'Karczemna Bójka'
+    value: 'tavern-brawl', label: 'Tavern Brawl'
   },
   {
-    value: 'ranked', label: 'Rankingowy'
+    value: 'ranked', label: 'Ranked'
   },
   {
-    value: 'tournament', label: 'Turniej'
-  },
+    value: 'tournament', label: 'Tournament'
+  }
 ];
 
 export const mode = [

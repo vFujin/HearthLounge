@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {expansions} from '../../../../data/filters';
+import {expansions} from '../../../data/filters';
 import {Link} from 'react-router';
 
 export class ExpansionFilter extends Component {

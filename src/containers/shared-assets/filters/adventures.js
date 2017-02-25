@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {adventures} from '../../../../data/filters';
+import {adventures} from '../../../data/filters';
 
 export class AdventureFilter extends Component {
   render() {

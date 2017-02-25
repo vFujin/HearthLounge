@@ -1878,66 +1878,75 @@ footer {
     background-color: #474143; }
   .decks .right-container .top-decks::-webkit-scrollbar-track {
     background-color: #A69E9D; }
-.decks .right-container .choosen-deck-view .choosen-deck-details {
-  display: flex; }
-  .decks .right-container .choosen-deck-view .choosen-deck-details .section {
-    width: 50%;
-    margin: 10px;
-    margin-bottom: 0;
-    justify-content: space-around; }
-    .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-header h1 {
-      width: 100%;
-      border-bottom: 1px solid black;
-      line-height: 0.1px;
-      margin: 0.67em 0; }
-      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-header h1 span {
-        background: #E7E2DA;
-        padding: 0 10px 0 0; }
-    .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body {
-      overflow: auto; }
-      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar {
-        width: 13px; }
-      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-thumb {
-        background-color: #474143;
-        border-radius: 0; }
-      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-thumb:hover {
-        background-color: #474143; }
-      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-track {
-        background-color: #A69E9D; }
-  .decks .right-container .choosen-deck-view .choosen-deck-details .description .section-body {
-    padding: 0 10px 0 0; }
-    .decks .right-container .choosen-deck-view .choosen-deck-details .description .section-body p {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 10px; }
-  .decks .right-container .choosen-deck-view .choosen-deck-details .comments {
-    background: transparent;
-    margin-right: 0; }
-    .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment {
-      display: flex;
+.decks .right-container .choosen-deck-view {
+  height: calc(100% - 50px); }
+  .decks .right-container .choosen-deck-view .choosen-deck-details {
+    display: flex;
+    height: 100%; }
+    .decks .right-container .choosen-deck-view .choosen-deck-details .section {
+      width: 50%;
       margin: 10px;
-      border-bottom: 1px solid black;
-      padding: 15px 0; }
-      .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .user-details {
-        display: flex; }
-        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .user-details .comment-author {
-          width: 140px;
-          margin-left: 5px;
-          font-size: 14px; }
-      .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details {
-        margin-left: 10px; }
-        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_header, .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer {
-          display: flex; }
-        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_header {
-          justify-content: space-between;
-          font-size: 14px; }
-        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_body {
-          margin: 10px 0; }
-        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer {
-          justify-content: flex-start; }
-          .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer div {
-            margin-right: 10px; }
-            .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer div:last-child {
-              margin-right: 0; }
+      margin-bottom: 0;
+      justify-content: space-around; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-header h1 {
+        width: 100%;
+        border-bottom: 1px solid black;
+        line-height: 0.1px;
+        margin: 0.67em 0; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-header h1 span {
+          background: #E7E2DA;
+          padding: 0 10px 0 0; }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body {
+        overflow: auto; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar {
+          width: 13px; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-thumb {
+          background-color: #474143;
+          border-radius: 0; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-thumb:hover {
+          background-color: #474143; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .section .section-body::-webkit-scrollbar-track {
+          background-color: #A69E9D; }
+    .decks .right-container .choosen-deck-view .choosen-deck-details .description {
+      height: calc(100% - 10px); }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .description .section-body {
+        height: calc(100% - 1.34em - 12px);
+        padding: 0 10px 0 0; }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .description .section-body p {
+          background: rgba(0, 0, 0, 0.2);
+          padding: 10px; }
+    .decks .right-container .choosen-deck-view .choosen-deck-details .comments {
+      background: transparent;
+      margin-right: 0;
+      height: calc(100% - 10px); }
+      .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body {
+        height: calc(100% - 1.34em - 12px); }
+        .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment {
+          display: flex;
+          margin: 10px;
+          border-bottom: 1px solid black;
+          padding: 15px 0; }
+          .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .user-details {
+            display: flex; }
+            .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .user-details .comment-author {
+              width: 140px;
+              margin-left: 5px;
+              font-size: 14px; }
+          .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details {
+            margin-left: 10px; }
+            .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_header, .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer {
+              display: flex; }
+            .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_header {
+              justify-content: space-between;
+              font-size: 14px; }
+            .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_body {
+              margin: 10px 0; }
+            .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer {
+              justify-content: flex-start; }
+              .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer div {
+                margin-right: 10px; }
+                .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer div:last-child {
+                  margin-right: 0; }
 
 .cards ul li {
   -webkit-transition: all ease 0.4s;

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Comment from './comment';
-export class ChoosenDeckView extends Component {
+import Comment from './view/comment';
+export class Deck extends Component {
   render() {
     return (
+        <div className="choosen-deck-view">
         <div className='choosen-deck-details'>
             <div className="section description">
               <div className="section-header">
@@ -39,6 +40,7 @@ export class ChoosenDeckView extends Component {
                 <Comment/>
               </div>
             </div>
+        </div>
         </div>
     );
   }
