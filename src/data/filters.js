@@ -153,59 +153,42 @@ export const mana_cost = [
 ];
 
 export const hs_class = [
+  //adding url in case if blizzard adds death knight / demon hunter classes in future
   {
-    en: 'warlock',
-    api: 'Warlock',
-    pl: 'Czarnoksiężnik',
-    url: 'czarnoksieznik'
+    name: 'warlock',
+    url: 'warlock'
   },
   {
-    en: 'druid',
-    api: 'Druid',
-    pl: 'Druid',
+    name: 'druid',
     url: 'druid'
   },
   {
-    en: 'priest',
-    api: 'Priest',
-    pl: 'Kapłan',
-    url: 'kaplan'
+    name: 'priest',
+    url: 'priest'
   },
   {
-    en: 'rogue',
-    api: 'Rogue',
-    pl: 'Łotr',
-    url: 'lotr'
+    name: 'rogue',
+    url: 'rogue'
   },
   {
-    en: 'hunter',
-    api: 'Hunter',
-    pl: 'Łowca',
-    url: 'lowca'
+    name: 'hunter',
+    url: 'hunter'
   },
   {
-    en: 'mage',
-    api: 'Mage',
-    pl: 'Mag',
-    url: 'mag'
+    name: 'mage',
+    url: 'mage'
   },
   {
-    en: 'paladin',
-    api: 'Paladin',
-    pl: 'Paladyn',
-    url: 'paladyn'
+    name: 'paladin',
+    url: 'paladin',
   },
   {
-    en: 'shaman',
-    api: 'Shaman',
-    pl: 'Szaman',
-    url: 'szaman'
+    name: 'shaman',
+    url: 'shaman'
   },
   {
-    en: 'warrior',
-    api: 'Warrior',
-    pl: 'Wojownik',
-    url: 'wojownik'
+    name: 'warrior',
+    url: 'warrior'
   }
 ];
 

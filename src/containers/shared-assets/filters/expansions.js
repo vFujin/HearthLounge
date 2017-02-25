@@ -10,7 +10,7 @@ export class ExpansionFilter extends Component {
           <ul className="sidebar-icons">
           {expansions.map((element, index) =>
               <li value={element.url} key={index}>
-                <Link to={`cards?expansion=${element.url}`}>
+                <Link to={`${this.props.page}?expansion=${element.url}`}>
                   <span className={`hs icon-${element.url}`}></span>
                   <div className="tooltip">
                     <div className="caret-up"></div>

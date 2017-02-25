@@ -56,8 +56,9 @@ export class App extends Component {
             <Redirect from="home" to="/" />
             <Route path=""                  component={Home} />
 
-            {/*<Redirect from="decks" to="decks/all " />*/}
+
             <Route path="decks"             component={Decks}>
+              <Redirect from="all/:class" to="decks/:class"/>
               <Route path="all"             components={{main: DeckSelection, sidebar: DeckSelectionSidebar, topbar: DeckSelectionTopbar}}/>
               <Route path=":class/:deckId"  components={{main: Deck, sidebar: DeckSidebar, topbar: DeckTopbar}}/>
             </Route>

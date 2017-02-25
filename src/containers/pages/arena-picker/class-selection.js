@@ -8,29 +8,27 @@ export class ClassSelection extends Component {
           <table className={`pick-class`}>
             <tbody>
             <tr>
-              <th colSpan="3">Wybierz klasę</th>
+              <th colSpan="3">Choose class</th>
             </tr>
             <tr>
               {hs_class.slice(0, 3).map((element, index) =>
-
-                  <td key={index} className={element.en}>
+                  <td key={index} className={element.url}>
                     <Link to={`/arena-picker/${element.url}`}>
                       <div className="wrapper">
-                        <span className={`hs-icon icon-${element.en}`}></span>
-                        <p>{element.pl}</p>
+                        <span className={`hs-icon icon-${element.url}`}></span>
+                        <p>{element.name}</p>
                       </div>
                     </Link>
                   </td>
-
               )}
             </tr>
             <tr>
               {hs_class.slice(3, 6).map((element, index) =>
-                  <td key={index} className={element.en}>
+                  <td key={index} className={element.url}>
                     <Link to={`/arena-picker/${element.url}`}>
                       <div>
-                        <span className={`hs-icon icon-${element.en}`}></span>
-                        <p>{element.pl}</p>
+                        <span className={`hs-icon icon-${element.url}`}></span>
+                        <p>{element.name}</p>
                       </div>
                     </Link>
                   </td>
@@ -38,11 +36,11 @@ export class ClassSelection extends Component {
             </tr>
             <tr>
               {hs_class.slice(6, 9).map((element, index) =>
-                  <td key={index} className={element.en}>
+                  <td key={index} className={element.url}>
                     <Link to={`/arena-picker/${element.url}`}>
                       <div>
-                        <span className={`hs-icon icon-${element.en}`}></span>
-                        <p>{element.pl}</p>
+                        <span className={`hs-icon icon-${element.url}`}></span>
+                        <p>{element.name}</p>
                       </div>
                     </Link>
                   </td>

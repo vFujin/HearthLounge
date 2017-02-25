@@ -27,7 +27,7 @@ export class Sidebar extends Component {
           <DustFilter       handleInputFilter={this.props.handleInputFilter} dust={this.props.dust}/>
 
           <ExpansionFilter />
-          <AdventureFilter />
+          <AdventureFilter page="cards" />
           <RarityFilter />
           <IsGoldenFilter/>
         </div>

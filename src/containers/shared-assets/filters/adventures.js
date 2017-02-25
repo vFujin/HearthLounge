@@ -10,7 +10,7 @@ export class AdventureFilter extends Component {
           <ul className="sidebar-icons">
             {adventures.map((element, index) =>
                 <li key={index}>
-                  <Link to={`cards?adventure=${element.url}`}>
+                  <Link to={`/${this.props.page}?adventure=${element.url}`}>
                     <span className={`hs icon-${element.url}`}></span>
                     <div className="tooltip">
                       <div className="caret-up"></div>

@@ -16,7 +16,7 @@ export class DeckSelectionSidebar extends Component {
           <ArchetypeFilter/>
           <DeckType/>
           <ExpansionFilter/>
-          <AdventureFilter/>
+          <AdventureFilter page="decks"/>
         </div>
     );
   }
