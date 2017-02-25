@@ -11,7 +11,8 @@ export class Cards extends Component {
       faction: null,
       race: null,
       mechanics: null,
-      dust: null
+      dust: null,
+      url: ''
     }
   }
 
@@ -21,6 +22,7 @@ export class Cards extends Component {
       [selector]: val
     });
   }
+
 
   render() {
     return (

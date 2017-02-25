@@ -12,30 +12,30 @@ export const ClassSelectionView = (props) => {
           {hs_class.slice(0, 3).map((element, index) =>
               <ClassSelectionRow key={index}
                                  handleChoosenClassClick={props.handleChoosenClassClick}
-                                 elementEn={element.en}
+                                 elementEn={element.url}
                                  elementUrl={element.url}
-                                 elementPl={element.pl}
-                                 elementApi={element.api}/>
+                                 elementPl={element.name}
+                                 elementApi={element.url}/>
           )}
         </tr>
         <tr>
           {hs_class.slice(3, 6).map((element, index) =>
               <ClassSelectionRow key={index}
                                  handleChoosenClassClick={props.handleChoosenClassClick}
-                                 elementEn={element.en}
+                                 elementEn={element.url}
                                  elementUrl={element.url}
-                                 elementPl={element.pl}
-                                 elementApi={element.api}/>
+                                 elementPl={element.name}
+                                 elementApi={element.url}/>
           )}
         </tr>
         <tr>
           {hs_class.slice(6, 9).map((element, index) =>
               <ClassSelectionRow key={index}
                                  handleChoosenClassClick={props.handleChoosenClassClick}
-                                 elementEn={element.en}
+                                 elementEn={element.url}
                                  elementUrl={element.url}
-                                 elementPl={element.pl}
-                                 elementApi={element.api}/>
+                                 elementPl={element.name}
+                                 elementApi={element.url}/>
           )}
         </tr>
         </tbody>
