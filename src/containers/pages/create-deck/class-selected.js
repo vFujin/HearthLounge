@@ -12,7 +12,10 @@ export class CreateDeckClassSelected extends Component {
   }
 
   componentDidMount()  {
-    unirest.get(`https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/Druid?collectible=1`)
+    let hs_class = this.props.params.class;
+    let capitalized_class = hs_class.charAt(0).toUpperCase()+hs_class.slice(1);
+    console.log(capitalized_class);
+    unirest.get(`https://omgvamp-hearthstone-v1.p.mashape.com/cards/classes/${capitalized_class}?collectible=1`)
         .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
         .end(res => {
 
