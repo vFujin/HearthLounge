@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import {Carousel} from './carousel';
 export class Login extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      active_dot: 1
+    }
+  }
   render() {
     console.log(this.props.location.pathname);
     return (
@@ -15,12 +23,7 @@ export class Login extends Component {
               </ul>
             </div>
             <div className="breakline h-breakline"></div>
-            <div className="soon-to-be-carousel">
-              <div className="carousel-wrapper">
-                <div>Create your own decks!</div>
-                <span className="hs hs-icon icon-create-deck"></span>
-              </div>
-            </div>
+            <Carousel/>
           </div>
           <div className="right-container">
             <div className="breakline-wrapper">

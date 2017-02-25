@@ -2605,18 +2605,35 @@ footer {
         width: 40%; }
         .pageContainer.login .wrapper .left-container .topbar ul li.active {
           color: #E7E2DA; }
-    .pageContainer.login .wrapper .left-container .soon-to-be-carousel {
+    .pageContainer.login .wrapper .left-container .carousel {
+      position: relative;
       color: #E7E2DA;
       height: calc(100% - 100px);
       display: flex;
       align-items: center; }
-      .pageContainer.login .wrapper .left-container .soon-to-be-carousel .carousel-wrapper {
-        width: 100%;
+      .pageContainer.login .wrapper .left-container .carousel .slides {
+        height: 100%;
+        display: flex;
+        align-items: center;
         text-align: center; }
-        .pageContainer.login .wrapper .left-container .soon-to-be-carousel .carousel-wrapper div {
-          font-size: 40px; }
-        .pageContainer.login .wrapper .left-container .soon-to-be-carousel .carousel-wrapper span {
-          font-size: 200px; }
+        .pageContainer.login .wrapper .left-container .carousel .slides .slide {
+          -webkit-transition: opacity 1s;
+          -moz-transition: opacity 1s;
+          -ms-transition: opacity 1s;
+          -o-transition: opacity 1s;
+          transition: opacity 1s;
+          position: absolute;
+          width: 100%;
+          opacity: 0;
+          z-index: 1; }
+          .pageContainer.login .wrapper .left-container .carousel .slides .slide.active {
+            opacity: 1;
+            z-index: 2; }
+          .pageContainer.login .wrapper .left-container .carousel .slides .slide p {
+            font-size: 30px;
+            margin-bottom: 10px; }
+          .pageContainer.login .wrapper .left-container .carousel .slides .slide span {
+            font-size: 150px; }
     .pageContainer.login .wrapper .right-container {
       position: relative;
       color: #E7E2DA; }
