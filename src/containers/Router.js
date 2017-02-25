@@ -22,7 +22,7 @@ import {DeckSelectionTopbar} from "./pages/decks/deck-selection/topbar";
 
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
 import {ArenaPickerClassSelection} from './pages/arena-picker/class-selection';
-import {PickedClass} from './pages/arena-picker/picked-class/right-container/choosen-class-view';
+import {ArenaPickerClassSelected} from './pages/arena-picker/class-selected';
 
 import {Expansions} from './pages/expansions/expansions';
 import {Expansion} from './pages/expansions/right-container/expansion';
@@ -38,6 +38,7 @@ import {AdventureBoss} from './pages/adventures/assets/adventure-boss';
 
 import {CreateDeck} from './pages/create-deck/create-deck';
 import {CreateDeckClassSelection} from './pages/create-deck/class-selection';
+import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 
 import {NotFound} from './shared-assets/not-found';
 
@@ -73,7 +74,7 @@ export class App extends Component {
             <Redirect from="arena-picker" to="arena-picker/class-selection" />
             <Route path="arena-picker"      component={ArenaPicker}>
               <Route path="class-selection" component={ArenaPickerClassSelection} />
-              <Route path=":class"          component={PickedClass} />
+              <Route path=":class"          component={ArenaPickerClassSelected} />
             </Route>
 
             <Route path="expansions"        component={Expansions}>
@@ -99,6 +100,7 @@ export class App extends Component {
             <Redirect from="create-deck" to="create-deck/class-selection" />
             <Route path="create-deck"         component={CreateDeck}>
               <Route path="class-selection"   component={CreateDeckClassSelection} />
+              <Route path=":class"            component={CreateDeckClassSelected} />
             </Route>
 
             <Route path="forum"             component={Forum} />

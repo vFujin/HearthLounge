@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {Sidebar} from '../left-container/sidebar';
-import {Topbar} from './topbar';
-import {Card} from './card-selection/card';
-export class PickedClass extends Component {
+import {Sidebar} from './picked-class/left-container/sidebar';
+import {Topbar} from './picked-class/right-container/topbar';
+import {Card} from './picked-class/right-container/card-selection/card';
+export class ArenaPickerClassSelected extends Component {
 
   render() {
     return (
