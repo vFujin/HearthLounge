@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
 import {Carousel} from './carousel';
+import {carousel} from './data';
 export class Login extends Component {
   constructor(props){
     super(props);
@@ -16,18 +17,24 @@ export class Login extends Component {
       current_dot: current_dot
     })
   }
+
+  dots(){
+    return (
+      <ul>
+        {carousel.map((active,index)=>
+          <li className={this.state.current_dot === index ? 'active' : index}>{active.dot}</li>
+        )}
+      </ul>
+    )
+  }
+
   render() {
-    console.log(this.props.location.pathname);
     return (
       <div className="pageContainer login">
         <div className="wrapper">
           <div className="left-container">
             <div className="topbar">
-              <ul>
-                <li className="active">◈</li>
-                <li>◈</li>
-                <li>◈</li>
-              </ul>
+              {this.dots()}
             </div>
             <div className="breakline h-breakline"></div>
             <Carousel handleCurrentDotChange={this.handleCurrentDotChange.bind(this)} />

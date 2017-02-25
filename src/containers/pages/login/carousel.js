@@ -1,20 +1,5 @@
 import React, {Component} from 'react';
-
-let carousel = [
-  {
-    text: "Create your own decks and share with (site) community!",
-    icon: "create-deck"
-  },
-  {
-    text: "Participate in the forum discussion!",
-    icon: "bubbles2"
-  },
-  {
-    text: "Create your own decks!",
-    icon: "create-deck"
-  }
-];
-
+import {carousel} from './data';
 export class Carousel extends Component {
   constructor(props){
     super(props);
