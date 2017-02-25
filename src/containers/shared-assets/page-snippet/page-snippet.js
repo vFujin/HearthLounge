@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-
-export class Decks extends Component {
+export class PageSnippet extends Component {
   render() {
     return (
-        <div className="pageContainer decks">
+        <div className={`pageContainer ${this.props.page}`}>
           {this.props.children}
           <div className="left-container">
             <div className="sidebar">
+              <h3 className="filter-header">{this.props.sidebar_header}</h3>
               {this.props.sidebar}
             </div>
           </div>

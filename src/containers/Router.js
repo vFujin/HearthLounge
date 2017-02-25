@@ -7,7 +7,7 @@ import {Cards} from './pages/cards/cards';
 import {ServiceCards} from './pages/cards/right-container/service.cards';
 
 
-import {CreateDeck} from './pages/create-deck/create-deck';
+
 import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 import {Streams} from './pages/streams/streams';
@@ -21,7 +21,7 @@ import {DeckSelectionSidebar} from "./pages/decks/deck-selection/sidebar";
 import {DeckSelectionTopbar} from "./pages/decks/deck-selection/topbar";
 
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
-import {ClassSelection} from './pages/arena-picker/class-selection';
+import {ArenaPickerClassSelection} from './pages/arena-picker/class-selection';
 import {PickedClass} from './pages/arena-picker/picked-class/right-container/choosen-class-view';
 
 import {Expansions} from './pages/expansions/expansions';
@@ -36,8 +36,8 @@ import {AdventureDetails} from './pages/adventures/right-container/details';
 import {AdventureBosses} from './pages/adventures/assets/bosses';
 import {AdventureBoss} from './pages/adventures/assets/adventure-boss';
 
-
-import {ChoosenClassView} from './pages/create-deck/picked-class/right-container/choosen-class-selection/choosen-class-view';
+import {CreateDeck} from './pages/create-deck/create-deck';
+import {CreateDeckClassSelection} from './pages/create-deck/class-selection';
 
 import {NotFound} from './shared-assets/not-found';
 
@@ -64,15 +64,15 @@ export class App extends Component {
             </Route>
 
             {/*<Redirect from="cards" to="cards/all" />*/}
-            <Route path="cards"                 component={Cards}>
+            <Route path="cards"             component={Cards}>
               <Route path="all"             component={ServiceCards}/>
-              <Route path="cards/(:)"               component={ServiceCards}>
+              <Route path="cards/(:)"       component={ServiceCards}>
               </Route>
             </Route>
 
             <Redirect from="arena-picker" to="arena-picker/class-selection" />
             <Route path="arena-picker"      component={ArenaPicker}>
-              <Route path="class-selection" component={ClassSelection} />
+              <Route path="class-selection" component={ArenaPickerClassSelection} />
               <Route path=":class"          component={PickedClass} />
             </Route>
 
@@ -96,8 +96,9 @@ export class App extends Component {
               </Route>
             </Route>
 
-            <Route path="create-deck"       component={CreateDeck}>
-              <Route path=":class"          component={ChoosenClassView} />
+            <Redirect from="create-deck" to="create-deck/class-selection" />
+            <Route path="create-deck"         component={CreateDeck}>
+              <Route path="class-selection"   component={CreateDeckClassSelection} />
             </Route>
 
             <Route path="forum"             component={Forum} />

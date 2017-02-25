@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {hs_class} from '../../../data/filters';
 import { Link } from 'react-router'
 const ClassSelectionRow = (props) =>{

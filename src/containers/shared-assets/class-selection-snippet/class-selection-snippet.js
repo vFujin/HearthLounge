@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ClassSelectionRow from './class-selection-row';
 const ClassSelectionSnippet = (props) =>{
   return (

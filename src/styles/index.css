@@ -2061,6 +2061,9 @@ footer {
           font-size: 65px; }
         .arena-picker .pick-class tr td a div p, .create-deck .pick-class tr td a div p {
           margin-top: 20px; }
+.arena-picker .class-selection, .create-deck .class-selection {
+  width: 100%;
+  display: flex; }
 .arena-picker .choosen-class-view, .create-deck .choosen-class-view {
   width: 100%; }
   .arena-picker .choosen-class-view .left-container .sidebar .graph, .create-deck .choosen-class-view .left-container .sidebar .graph {
@@ -2082,9 +2085,6 @@ footer {
     .arena-picker .choosen-class-view .left-container .sidebar table tr td:last-child, .create-deck .choosen-class-view .left-container .sidebar table tr td:last-child {
       text-align: center; }
 
-.arena-picker .class-selection {
-  width: 100%;
-  display: flex; }
 .arena-picker .choosen-class-view {
   display: flex; }
   .arena-picker .choosen-class-view .right-container ul {
