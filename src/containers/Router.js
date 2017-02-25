@@ -40,6 +40,8 @@ import {CreateDeck} from './pages/create-deck/create-deck';
 import {CreateDeckClassSelection} from './pages/create-deck/class-selection';
 import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 
+import {Reddit} from './pages/reddit/reddit';
+
 import {Login} from './pages/login/login';
 import {SignUp} from './pages/login/sign-up';
 import {SignIn} from './pages/login/sign-in';
@@ -61,9 +63,9 @@ export class App extends Component {
             <Redirect from="home" to="/" />
             <Route path=""                  component={Home} />
 
-
+            <Redirect from="decks" to="decks/all"/>
             <Route path="decks"             component={Decks}>
-              <Redirect from="decks" to="decks/all"/>
+
               <Route path="all"             components={{main: DeckSelection, sidebar: DeckSelectionSidebar, topbar: DeckSelectionTopbar}}/>
               <Route path=":class/:deckId"  components={{main: Deck, sidebar: DeckSidebar, topbar: DeckTopbar}}/>
             </Route>
@@ -110,6 +112,9 @@ export class App extends Component {
             <Route path="forum"             component={Forum} />
             <Route path="tournaments"       component={Tournaments} />
             <Route path="streamers"         component={Streams} />
+
+            <Route path="reddit" component={Reddit}/>
+
             <Route path="login"            component={Login}>
               <Route path="/sign-in"          component={SignIn} />
               <Route path="/sign-up"          component={SignUp} />

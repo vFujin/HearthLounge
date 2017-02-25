@@ -237,6 +237,9 @@ a:active, a:hover, a:link, a:visited {
 .icon-youtube:before {
   content: "\ea9d"; }
 
+.icon-reddit:before {
+  content: "\eac6"; }
+
 .block-width-0 {
   display: none; }
 
@@ -1097,10 +1100,10 @@ nav {
   position: relative;
   z-index: 100; }
   nav .logo {
-    width: 20%;
+    width: 18%;
     height: 50px; }
   nav ul {
-    width: 80%; }
+    width: 82%; }
     nav ul li {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
@@ -1110,7 +1113,7 @@ nav {
       color: #fff;
       display: inline-block;
       text-transform: uppercase;
-      width: 8.7%;
+      width: 7.7%;
       border-right: 1px solid #666; }
       nav ul li:first-child {
         border-left: 1px solid #666; }
@@ -2603,14 +2606,22 @@ footer {
         justify-content: space-around;
         align-items: center;
         width: 40%; }
-        .pageContainer.login .wrapper .left-container .topbar ul li.active {
-          color: #E7E2DA; }
+        .pageContainer.login .wrapper .left-container .topbar ul li {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          -ms-transition: all ease 0.4s;
+          -o-transition: all ease 0.4s;
+          transition: all ease 0.4s; }
+          .pageContainer.login .wrapper .left-container .topbar ul li.active {
+            color: #E7E2DA; }
     .pageContainer.login .wrapper .left-container .carousel {
       position: relative;
       color: #E7E2DA;
       height: calc(100% - 100px);
       display: flex;
-      align-items: center; }
+      align-items: center;
+      width: 90%;
+      margin: auto; }
       .pageContainer.login .wrapper .left-container .carousel .slides {
         height: 100%;
         display: flex;

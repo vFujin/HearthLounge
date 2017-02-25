@@ -133,5 +133,11 @@ export const navItems = [
     url: 'streamers',
     icon: "icon-twitch",
     homepage_block_width: 2
+  },
+  {
+    name: "Reddit",
+    url: 'reddit',
+    icon: "icon-reddit",
+    homepage_block_width: 2
   }
 ];
