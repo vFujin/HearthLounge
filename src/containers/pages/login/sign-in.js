@@ -9,6 +9,10 @@ export class SignIn extends Component {
 
           <label htmlFor="password">Password:</label>
           <input type="password" id="password"/>
+
+          <div className="button-wrapper">
+            <button>Submit</button>
+          </div>
         </form>
       </div>
     );

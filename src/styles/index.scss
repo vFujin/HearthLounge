@@ -2092,8 +2092,9 @@ footer{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100% - 50px);
+        height: calc(100% - 51px);
         form {
+          width: 90%;
           label, input, select {
             display: block;
           }
@@ -2109,7 +2110,7 @@ footer{
           }
           input{
             color: $sea-color;
-            width: 70%;
+            width: 60%;
             border-bottom: 1px solid $light-grey;
             &:focus{
               border-bottom:1px solid $pearl;
@@ -2132,7 +2133,7 @@ footer{
           }
           .button-wrapper {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             button {
               @include transition(all ease .4s);
               cursor: pointer;
@@ -2149,6 +2150,9 @@ footer{
             }
           }
         }
+      }
+      .sign-in{
+        height: calc(100% - 101px);
       }
     }
   }
