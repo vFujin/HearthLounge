@@ -133,11 +133,5 @@ export const navItems = [
     url: 'streamers',
     icon: "icon-twitch",
     homepage_block_width: 2
-  },
-  {
-    name: "Login",
-    url: "login",
-    icon: "icon-login",
-    homepage_block_width: 0
   }
 ];

@@ -33,6 +33,13 @@ export class Navbar extends Component {
                   </Link>
                 </li>
             )}
+            <li className="login">
+              {console.log(this.props.url)}
+              <Link to={`${this.props.url}/login`}>
+                <span className="icon-login"></span>
+                <div>Login</div>
+              </Link>
+            </li>
           </ul>
           {/*<div className={`login-popup ${this.state.loginPopup}`}>*/}
               {/*<div className="login">*/}

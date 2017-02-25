@@ -40,6 +40,8 @@ import {CreateDeck} from './pages/create-deck/create-deck';
 import {CreateDeckClassSelection} from './pages/create-deck/class-selection';
 import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 
+import {Login} from './pages/login/login';
+
 import {NotFound} from './shared-assets/not-found';
 
 // import {Dashboard} from './pages/dashboard/dashboard';
@@ -106,7 +108,7 @@ export class App extends Component {
             <Route path="forum"             component={Forum} />
             <Route path="tournaments"       component={Tournaments} />
             <Route path="streamers"         component={Streams} />
-            {/*<Route path="logowanie"         component={} />*/}
+            <Route path="login"            component={Login} />
             <Route path="*" component={NotFound} />
           </Route>
         </Router>

@@ -3,9 +3,10 @@ import {Navbar} from './layout/navbar';
 import {Footer} from './layout/footer';
 export class Main extends Component {
   render() {
+    let url = this.props.location.pathname;
     return (
         <div>
-          <Navbar />
+          <Navbar url={url}/>
           {this.props.children}
           <Footer/>
         </div>
