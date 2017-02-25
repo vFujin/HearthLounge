@@ -34,7 +34,7 @@ export class Navbar extends Component {
                 </li>
             )}
             <li className="login">
-              <Link to={`/login`}>
+              <Link to={`/sign-up`}>
                 <span className="icon-login"></span>
                 <div>Login</div>
               </Link>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {SignUp} from './sign-up';
+import {Link} from 'react-router';
 export class Login extends Component {
   render() {
+    console.log(this.props.location.pathname);
     return (
       <div className="pageContainer login">
         <div className="wrapper">
@@ -26,22 +27,15 @@ export class Login extends Component {
               <div className="breakline v-breakline"></div>
             </div>
             <div className="topbar">
-              <p>Sign In</p>
-              <p className="active">Sign Up</p>
+              <Link to="sign-in" activeClassName="active">
+                <p>Sign In</p>
+              </Link>
+              <Link to="sign-up" activeClassName="active">
+                <p className="active">Sign Up</p>
+              </Link>
             </div>
             <div className="breakline h-breakline"></div>
-            {/*<div className="sign sign-in">*/}
-              {/*<form>*/}
-                {/*<label htmlFor="username-email">Username or E-mail:</label>*/}
-                {/*<input type="text" id="username-email"/>*/}
-
-                {/*<label htmlFor="password">Password:</label>*/}
-                {/*<input type="password" id="password"/>*/}
-              {/*</form>*/}
-
-            {/*</div>*/}
-
-            <SignUp/>
+            {this.props.children}
           </div>
         </div>
       </div>

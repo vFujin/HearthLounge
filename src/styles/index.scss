@@ -2064,22 +2064,26 @@ footer{
         align-items: center;
       }
 
-      .topbar{
-        p{
-          @include transition(all ease .4s);
-          color: $light-grey;
-          cursor: pointer;
-          border: 1px solid $light-grey;
-          padding: 5px;
-          margin-right: 9.5px;
-          &.active{
-            color: $pearl;
-            border: 1px solid $pearl;
+      .topbar {
+        a {
+          p {
+            @include transition(all ease .4s);
+            color: $light-grey;
+            cursor: pointer;
+            border: 1px solid $light-grey;
+            padding: 5px;
+            margin-right: 9.5px;
+            &:hover {
+              @include box-shadow(0, 0, 5px, $pearl);
+              color: $pearl;
+              border: 1px solid $pearl;
+            }
           }
-          &:hover{
-            @include box-shadow(0, 0, 5px, $pearl);
-            color: $pearl;
-            border: 1px solid $pearl;
+          &.active {
+            p {
+              color: $pearl;
+              border: 1px solid $pearl;
+            }
           }
         }
       }
