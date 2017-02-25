@@ -5,7 +5,7 @@ export class DeckSelectionTopbar extends Component {
   render() {
     return (
         <div className={`filters display-flex`}>
-          <HsClassFilter align="left"/>
+          <HsClassFilter align="left" page="decks"/>
           <CreateDeck/>
         </div>
     );

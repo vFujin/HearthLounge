@@ -8,7 +8,7 @@ export class CardsTopbarFilters extends Component {
         <div className="topbar">
           {this.props.children}
           <ManaCostFilter />
-          <HsClassFilter align="right"/>
+          <HsClassFilter align="right" page="cards"/>
         </div>
     );
   }
