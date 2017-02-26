@@ -23,7 +23,21 @@ export class RedditPosts extends Component{
   //       });
   // }
 
-
+  returnIcon(post){
+    if(post.domain != "self.hearthstone"){
+      let icon = post.domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
+      return <span className={`hs hs-icon icon-${icon}`}></span>;
+    }
+    if(post.domain == "youtu.be"){
+      return <span className={`hs hs-icon icon-youtube`}></span>;
+    }
+    if(post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() != "tournament") {
+      return <span className={`hs hs-icon icon-bubbles2`}></span>;
+    }
+    if(post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() == "tournament") {
+      return <span className={`hs hs-icon icon-trophy`}></span>;
+    }
+  }
 
 
   stripRedditURL(url){
@@ -39,15 +53,15 @@ export class RedditPosts extends Component{
         <tbody>
         <tr>
           <th>Upvotes</th>
+          <th>Domain</th>
           <th>Title</th>
-          <td>Domain</td>
         </tr>
         {this.props.posts.map(post=>(
           <tr key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
-            {/*{console.log(this.props.posts)}*/}
             <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{post.ups}</Link></td>
+            <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{this.returnIcon(post)}</Link></td>
             <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{post.title}</Link></td>
-            <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{post.domain}</Link></td>
+
           </tr>
           )
         )}
