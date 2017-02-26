@@ -21,16 +21,16 @@ export class RedditPost extends Component {
     return(
         <div>
           {
-            this.props.posts.filter(x => x.id === this.props.params.id).map(obj=> {
+            this.props.posts.filter(x => x.id === this.props.params.id).map((obj, index)=> {
               let replacedYTUrl = obj.url.replace("watch?v=", "embed/");
               let replacedYTShortenerUrl = obj.url.replace("youtu.be/", "youtube.com/embed/");
               let replacedTwitchUrl = obj.url.replace("https://clips.twitch.tv/", "");
               switch(obj.domain){
-                case 'self.hearthstone':  return <div>{obj.selftext}</div>;
-                case 'twitter':           return <iframe height="400" width="500" src={`https://publish.twitter.com/oembed?format=json&url=${obj.url}`}></iframe>;
-                case 'youtube.com':       return <iframe height="400" width="600" src={replacedYTShortenerUrl}></iframe>;
-                case 'youtu.be':          return <iframe height="400" width="600" src={replacedYTUrl}></iframe>;
-                case 'clips.twitch.tv':   return <iframe autoPlay={false} height="400" width="600" src={`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`}></iframe>;
+                case 'self.hearthstone':  return <div key={index}>{obj.selftext}</div>;
+                case 'twitter':           return <iframe key={index} height="400" width="500" src={`https://publish.twitter.com/oembed?format=json&url=${obj.url}`}></iframe>;
+                case 'youtube.com':       return <iframe key={index} height="400" width="600" src={replacedYTUrl}></iframe>;
+                case 'youtu.be':          return <iframe key={index} height="400" width="600" src={replacedYTShortenerUrl}></iframe>;
+                case 'clips.twitch.tv':   return <iframe key={index} height="400" width="600" src={`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`}></iframe>;
               }
 
             })
