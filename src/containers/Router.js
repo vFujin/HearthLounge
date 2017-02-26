@@ -118,7 +118,8 @@ export class App extends Component {
             <Redirect from="reddit" to="reddit/posts" />
             <Route path="reddit" component={Reddit}>
               <Route path="posts" component={RedditPosts} />
-              <Route path="/post/:post" component={RedditPost} />
+              <Route path="post/:id/:post" component={RedditPost} />
+              <Route path="post/:id" component={RedditPost} />
             </Route>
 
             <Route path="login"            component={Login}>
