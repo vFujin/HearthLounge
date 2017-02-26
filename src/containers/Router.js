@@ -42,6 +42,7 @@ import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 
 import {Reddit} from './pages/reddit/reddit';
 import {RedditPost} from './pages/reddit/reddit-post';
+import {RedditPosts} from './pages/reddit/reddit-posts';
 
 import {Login} from './pages/login/login';
 import {SignUp} from './pages/login/sign-up';
@@ -114,8 +115,10 @@ export class App extends Component {
             <Route path="tournaments"       component={Tournaments} />
             <Route path="streamers"         component={Streams} />
 
+            <Redirect from="reddit" to="reddit/posts" />
             <Route path="reddit" component={Reddit}>
-              <Route path=":post" component={RedditPost} />
+              <Route path="posts" component={RedditPosts} />
+              <Route path="/post/:post" component={RedditPost} />
             </Route>
 
             <Route path="login"            component={Login}>
