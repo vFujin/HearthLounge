@@ -2688,11 +2688,9 @@ footer {
             -ms-transition: all ease 0.4s;
             -o-transition: all ease 0.4s;
             transition: all ease 0.4s;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             padding: 5px;
             background: transparent; }
-            .pageContainer.login .wrapper .right-container .sign form input:last-child, .pageContainer.login .wrapper .right-container .sign form select:last-child {
-              margin-bottom: 0; }
           .pageContainer.login .wrapper .right-container .sign form input {
             color: #00a99c;
             width: 60%;
@@ -2710,6 +2708,45 @@ footer {
               color: #474143; }
               .pageContainer.login .wrapper .right-container .sign form select option:hover {
                 background-color: #00a99c; }
+          .pageContainer.login .wrapper .right-container .sign form .tos {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 12px;
+            color: #A69E9D;
+            margin-bottom: 20px; }
+            .pageContainer.login .wrapper .right-container .sign form .tos input[type=checkbox] {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 30px;
+              height: 0;
+              font-size: 10px;
+              visibility: hidden;
+              margin-bottom: 0;
+              padding: 0;
+              margin-right: 2px; }
+              .pageContainer.login .wrapper .right-container .sign form .tos input[type=checkbox]:after {
+                content: " ";
+                background-color: transparent;
+                color: #A69E9D;
+                border: 1px solid #A69E9D;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 10px;
+                height: 10px;
+                visibility: visible;
+                margin-bottom: 5px;
+                margin-left: 3px;
+                padding: 3px 3px 4px 4px; }
+              .pageContainer.login .wrapper .right-container .sign form .tos input[type=checkbox]:checked:after {
+                content: '\2714';
+                color: #E7E2DA;
+                border-color: #E7E2DA; }
+            .pageContainer.login .wrapper .right-container .sign form .tos label a {
+              color: #E7E2DA;
+              text-decoration: underline; }
           .pageContainer.login .wrapper .right-container .sign form .button-wrapper {
             display: flex;
             justify-content: flex-start; }

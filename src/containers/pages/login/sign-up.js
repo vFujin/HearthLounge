@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 export class SignUp extends Component {
   render() {
     return (
@@ -30,6 +31,10 @@ export class SignUp extends Component {
           <label htmlFor="secret_answer">Secret answer:</label>
           <input type="text" id="secret_answer"/>
 
+          <div className="tos">
+            <input id="tos" type="checkbox"/>
+            <label htmlFor="tos">I agree to the <Link to="terms-of-service">terms of service</Link></label>
+          </div>
           {/*place for captcha*/}
 
           <div className="button-wrapper">
