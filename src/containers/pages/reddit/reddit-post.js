@@ -8,7 +8,7 @@ export class RedditPost extends Component {
     html = html.replace(/&lt;/g, '<')
         .replace(/&gt;/g, '>')
         .replace(/&quot;/g, '"')
-        .replace(/&#39;/g, "'")
+        .replace(/&amp;#39;/g, "'")
         .replace('<!-- SC_OFF -->', '')
         .replace('<!-- SC_ON -->', '')
         .replace('class', 'className');
