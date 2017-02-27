@@ -5,16 +5,18 @@ export class Decks extends Component {
     return (
         <div className="pageContainer decks">
           {this.props.children}
-          <div className="left-container">
-            <div className="sidebar">
-              {this.props.sidebar}
+          <div className="wrapper">
+            <div className="left-container">
+              <div className="sidebar">
+                {this.props.sidebar}
+              </div>
             </div>
-          </div>
-          <div className="right-container">
-            <div className="topbar">
-              {this.props.topbar}
+            <div className="right-container">
+              <div className="topbar">
+                {this.props.topbar}
+              </div>
+              {this.props.main}
             </div>
-            {this.props.main}
           </div>
         </div>
     );

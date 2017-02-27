@@ -43,7 +43,7 @@ export class RedditPosts extends Component{
           <tr key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
             <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{post.ups}</Link></td>
             <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{this.icon(post)}</Link></td>
-            <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{post.title}</Link></td>
+            <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{post.title.replace('&amp;', '&')}</Link></td>
           </tr>
           )
         )}
