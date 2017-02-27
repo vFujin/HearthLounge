@@ -92,10 +92,10 @@ export class App extends Component {
               </Route>
             </Route>
 
-            <Route path="adventures"    component={Adventures}>
+            <Route path="adventures/"    component={Adventures}>
               <Redirect from=":adventure" to=":adventure/overview"/>
               <Route path=":adventure"  component={Adventure}>
-
+                {/*<Route path="*" component={NotFound} />*/}
                 <Route path=":details"  component={AdventureDetails}>
                   <Route path="bosses"  component={AdventureBosses}/>
                   <Route path=":boss"   component={AdventureBoss}/>

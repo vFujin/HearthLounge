@@ -1,6 +1,18 @@
 import React, {Component} from 'react';
 import {Topbar} from './topbar';
+
+// class AppDynamicComponent extends Component {
+//   validateUrl() {
+//
+//   }
+// }
+
 export class Adventure extends Component{
+
+  componentWillMount() {
+    console.log('before render', this.props.params.adventure);
+  }
+
   render() {
     let adventureUrl = this.props.params.adventure;
     let detailsUrl   = this.props.params.details;

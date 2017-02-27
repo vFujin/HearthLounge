@@ -16,8 +16,21 @@ export class RedditPost extends Component {
     }
   }
 
+  createMarkup(obj){
+   let html = '';
+    html = obj.selftext_html;
+    html = html.replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace('<!-- SC_OFF -->', '')
+        .replace('<!-- SC_ON -->', '')
+        .replace('class', 'className');
+    console.log(html);
+    return {__html: html};
+  }
 
-  render(){
+  render() {
+
+
     return(
         <div>
           {
@@ -26,7 +39,7 @@ export class RedditPost extends Component {
               let replacedYTShortenerUrl = obj.url.replace("youtu.be/", "youtube.com/embed/");
               let replacedTwitchUrl = obj.url.replace("https://clips.twitch.tv/", "");
               switch(obj.domain){
-                case 'self.hearthstone':  return <div key={index}>{obj.selftext}</div>;
+                case 'self.hearthstone':  return <div id="x" key={index}><div dangerouslySetInnerHTML={this.createMarkup(obj)} /> </div>;
                 case 'twitter':           return <iframe key={index} height="400" width="500" src={`https://publish.twitter.com/oembed?format=json&url=${obj.url}`}></iframe>;
                 case 'youtube.com':       return <iframe key={index} height="400" width="600" src={replacedYTUrl}></iframe>;
                 case 'youtu.be':          return <iframe key={index} height="400" width="600" src={replacedYTShortenerUrl}></iframe>;
