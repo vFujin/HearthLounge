@@ -1,18 +1,17 @@
 export const SELECT_EXPANSION = 'SELECT_EXPANSION';
 export const SELECT_EXPANSION_DETAILS = 'SELECT_EXPANSION_DETAILS';
 
-export function selectExpansion(event, props){
-  console.log(props);
+export function selectExpansion(event){
   return {
-    type: SELECT_EXPANSION,
-    expansion: {
-      preSelected: props.preSelected === "displayBlock" ? "displayNone" : "displayNone",
-      isSelected: props.selected === "displayNone" ? "displayBlock" : "displayBlock",
-      selectedExpansion: event.target.dataset['api'],
-      selectedExpansionUrl: event.target.dataset['url'],
-      selectedExpansionClass: event.target.dataset['expansion'],
-      activeTab: props.sidebarActiveTab === '' ? this.selectedExpansionUrl : this.selectedExpansionUrl
-    }
+      type: SELECT_EXPANSION,
+      expansion: {
+          preSelected: "displayNone",
+          isSelected: "displayBlock",
+          selectedExpansion: event.currentTarget.dataset['api'],
+          selectedExpansionUrl: event.currentTarget.dataset['url'],
+          selectedExpansionClass: event.currentTarget.dataset['expansion'],
+          activeTab: this.sidebarActiveTab === this.selectedExpansionUrl
+      }
   }
 }
 
