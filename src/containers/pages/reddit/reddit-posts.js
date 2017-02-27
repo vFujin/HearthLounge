@@ -3,18 +3,22 @@ import {Link} from 'react-router';
 export class RedditPosts extends Component{
 
   icon(post){
-    if(post.domain != "self.hearthstone"){
-      let icon = post.domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
+    function iconTemplate(icon){
       return <span className={`hs hs-icon icon-${icon}`}></span>;
     }
+
+    if(post.domain != "self.hearthstone"){
+      let icon = post.domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
+      return iconTemplate(icon);
+    }
     if(post.domain == "youtu.be"){
-      return <span className={`hs hs-icon icon-youtube`}></span>;
+      return iconTemplate('youtube');
     }
     if(post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() != "tournament") {
-      return <span className={`hs hs-icon icon-bubbles2`}></span>;
+      return iconTemplate('bubbles2');
     }
     if(post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() == "tournament") {
-      return <span className={`hs hs-icon icon-trophy`}></span>;
+      return iconTemplate('trophy');
     }
   }
 
