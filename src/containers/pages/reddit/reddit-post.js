@@ -47,7 +47,7 @@ export class RedditPost extends Component {
                     let replacedTwitchUrl = obj.url.replace("https://clips.twitch.tv/", "");
                     switch(obj.domain){
                       case 'self.hearthstone':  return <div id="x" key={index}><div dangerouslySetInnerHTML={this.createMarkup(obj)} /> </div>;
-                      case 'twitter.com':           return this.tweet(obj.url);
+                      case 'twitter.com':       return this.tweet(obj.url);
                       case 'youtube.com':       return <iframe key={index} height="400" width="600" src={replacedYTUrl}></iframe>;
                       case 'youtu.be':          return <iframe key={index} height="400" width="600" src={replacedYTShortenerUrl}></iframe>;
                       case 'clips.twitch.tv':   return <iframe key={index} height="400" width="600" src={`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`}></iframe>;

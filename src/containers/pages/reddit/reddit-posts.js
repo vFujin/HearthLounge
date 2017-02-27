@@ -29,8 +29,22 @@ export class RedditPosts extends Component{
     return postUrl;
   }
 
-  render(){
+  checkDomain(post){
     let postURL = this.stripRedditURL;
+    let selfURL = `/reddit/post/${post.id}/${postURL(post.permalink)}`;
+
+    switch(post.domain){
+      case 'self.hearthstone':
+      case 'twitter.com':
+      case 'youtube.com':
+      case 'youtu.be':
+      case 'clips.twitch.tv':
+        return selfURL;
+      default: return post.url;
+    }
+  }
+
+  render(){
     return (
       <table>
         <tbody>
@@ -41,9 +55,9 @@ export class RedditPosts extends Component{
         </tr>
         {this.props.posts.map(post=>(
           <tr key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
-            <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{post.ups}</Link></td>
-            <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{this.icon(post)}</Link></td>
-            <td><Link to={`/reddit/post/${post.id}/${postURL(post.permalink)}`}>{post.title.replace('&amp;', '&')}</Link></td>
+            <td><Link to={this.checkDomain(post)}>{post.ups}</Link></td>
+            <td><Link to={this.checkDomain(post)}>{this.icon(post)}</Link></td>
+            <td><Link to={this.checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
           </tr>
           )
         )}

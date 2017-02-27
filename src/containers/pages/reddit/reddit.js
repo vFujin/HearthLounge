@@ -24,7 +24,6 @@ export class Reddit extends Component{
   }
 
   handleRedditPostClick(active_post) {
-    console.log(active_post.permalink);
     this.setState({
       active_post: active_post.selftext,
       post: active_post,
