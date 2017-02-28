@@ -5,10 +5,10 @@ import {HsClassFilter} from  '../../../shared-assets/filters/hs-class';
 export class CardsTopbarFilters extends Component {
   render() {
     return (
-        <div className="topbar topbar__left topbar__right">
+        <div className="topbar">
           {this.props.children}
-          <ManaCostFilter />
-          <HsClassFilter align="right" page="cards"/>
+            <ManaCostFilter />
+            <HsClassFilter align="right" page="cards"/>
         </div>
     );
   }

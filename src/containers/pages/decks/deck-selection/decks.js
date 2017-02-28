@@ -12,7 +12,7 @@ export class Decks extends Component {
             </div>
           </div>
           <div className="right-container">
-            <div className="topbar topbar__left topbar__right">
+            <div className="topbar">
               {topbar}
             </div>
             {main}

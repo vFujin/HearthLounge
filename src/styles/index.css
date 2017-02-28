@@ -1032,6 +1032,15 @@ a:active, a:hover, a:link, a:visited {
       color: #474143;
       border: #474143; }
 
+html, body {
+  height: 100%; }
+
+body {
+  font-family: 'Roboto', sans-serif; }
+  body span.hs-icon {
+    font-family: 'Hearthstone';
+    font-size: 41px; }
+
 .deck-snippet {
   position: relative;
   background-color: #E7E2DA;
@@ -1175,27 +1184,35 @@ a:active, a:hover, a:link, a:visited {
 .topbar {
   display: flex;
   justify-content: space-between; }
-  .topbar__left li {
-    cursor: pointer;
-    margin-right: 5px; }
-    .topbar__left li:first-child {
-      margin-left: 5px; }
-    .topbar__left li:last-child {
-      margin-right: 0; }
-    .topbar__left li span {
-      line-height: 50px; }
-  .topbar__right li {
-    cursor: pointer; }
-    .topbar__right li span {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
-      transition: all ease 0.4s;
-      color: #474143;
-      line-height: 50px; }
-    .topbar__right li:hover div {
-      display: block; }
+  .topbar .topbar-left {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start; }
+    .topbar .topbar-left li {
+      cursor: pointer;
+      margin-right: 5px; }
+      .topbar .topbar-left li:first-child {
+        margin-left: 5px; }
+      .topbar .topbar-left li:last-child {
+        margin-right: 0; }
+      .topbar .topbar-left li span {
+        line-height: 50px; }
+  .topbar .topbar-right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end; }
+    .topbar .topbar-right li {
+      cursor: pointer; }
+      .topbar .topbar-right li span {
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        -ms-transition: all ease 0.4s;
+        -o-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+        color: #474143;
+        line-height: 50px; }
+      .topbar .topbar-right li:hover div {
+        display: block; }
 
 .Select:focus {
   outline: none; }
@@ -1296,15 +1313,6 @@ a:active, a:hover, a:link, a:visited {
     .submenu li a {
       clear: both;
       padding: 25px 5px; }
-
-html, body {
-  height: 100%; }
-
-body {
-  font-family: 'Roboto', sans-serif; }
-  body span.hs-icon {
-    font-family: 'Hearthstone';
-    font-size: 41px; }
 
 /*
   Layout
@@ -1731,8 +1739,19 @@ footer {
   margin-right: 10px; }
   .decks .left-container li:last-child, .cards .left-container li:last-child {
     margin-right: 0; }
-.decks .left-container .sidebar .hs, .cards .left-container .sidebar .hs {
-  padding: 10px; }
+.decks .left-container .sidebar ul li, .cards .left-container .sidebar ul li {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  display: inline-block;
+  color: #474143; }
+  .decks .left-container .sidebar ul li span, .cards .left-container .sidebar ul li span {
+    font-family: 'Hearthstone';
+    font-size: 41px; }
+    .decks .left-container .sidebar ul li span.hs, .cards .left-container .sidebar ul li span.hs {
+      padding: 10px; }
 .decks .left-container .sidebar .sidebar-icons, .cards .left-container .sidebar .sidebar-icons {
   margin: 1em 0;
   text-align: center; }
@@ -1750,6 +1769,10 @@ footer {
     margin-left: -38px; }
     .decks .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up, .cards .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up {
       left: calc(27% - 5px); }
+.decks .right-container .topbar .filters, .cards .right-container .topbar .filters {
+  display: flex;
+  justify-content: space-around;
+  width: 100%; }
 
 .decks .left-container .sidebar .deck-details table tr td span {
   font-size: 20px; }
@@ -1771,11 +1794,8 @@ footer {
   width: 100%; }
   .decks .left-container .sidebar table tr td:last-child {
     text-align: center; }
-.decks .right-container .topbar .filters {
-  justify-content: space-between;
-  width: 100%; }
-  .decks .right-container .topbar .filters .create-deck {
-    cursor: pointer; }
+.decks .right-container .topbar .create-deck {
+  cursor: pointer; }
 .decks .right-container .topbar .topbar-left {
   display: flex; }
   .decks .right-container .topbar .topbar-left li {
@@ -1790,25 +1810,6 @@ footer {
       color: #474143;
       padding: 5px;
       line-height: 50px; }
-    .decks .right-container .topbar .topbar-left li .tooltip {
-      position: absolute;
-      display: none;
-      width: 120px;
-      margin-left: -30px; }
-      .decks .right-container .topbar .topbar-left li .tooltip .caret-up {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 5px 5px 5px;
-        border-color: transparent transparent #474143 transparent;
-        position: relative;
-        left: calc(50% - 5px); }
-      .decks .right-container .topbar .topbar-left li .tooltip p {
-        font-size: 12px;
-        text-transform: uppercase;
-        padding: 5px 0;
-        background-color: #474143;
-        color: #E7E2DA; }
     .decks .right-container .topbar .topbar-left li:hover div {
       display: block; }
 .decks .right-container .topbar .create-deck {
@@ -1938,17 +1939,6 @@ footer {
                 .decks .right-container .choosen-deck-view .choosen-deck-details .comments .section-body .comment .comment-details_footer div:last-child {
                   margin-right: 0; }
 
-.cards ul li {
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s;
-  display: inline-block;
-  color: #474143; }
-  .cards ul li span {
-    font-family: 'Hearthstone';
-    font-size: 41px; }
 .cards .left-container .sidebar .hs {
   padding: 10px; }
 .cards .left-container .sidebar .sidebar-icons {
@@ -1962,27 +1952,6 @@ footer {
     transition: all ease 0.4s;
     padding: 5px;
     color: #474143; }
-  .cards .left-container .sidebar .sidebar-icons li .tooltip {
-    position: absolute;
-    width: 200px;
-    display: none;
-    margin-left: -82px;
-    margin-top: 5px; }
-    .cards .left-container .sidebar .sidebar-icons li .tooltip .caret-up {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 5px 5px 5px;
-      border-color: transparent transparent #E7E2DA transparent;
-      position: relative;
-      left: calc(50% - 5px); }
-    .cards .left-container .sidebar .sidebar-icons li .tooltip p {
-      font-size: 12px;
-      text-transform: uppercase;
-      padding: 5px 0;
-      background-color: #474143;
-      color: #E7E2DA;
-      border: 1px solid #E7E2DA; }
   .cards .left-container .sidebar .sidebar-icons li:hover div {
     display: block; }
   .cards .left-container .sidebar .sidebar-icons li:first-child .tooltip {

@@ -1,3 +1,14 @@
+html, body{
+  height: 100%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  span.hs-icon {
+    font-family: 'Hearthstone';
+    font-size: 41px;
+  }
+}
+
 .deck-snippet{
   position: relative;
   background-color: $pearl;
@@ -189,7 +200,10 @@
 .topbar {
   display: flex;
   justify-content: space-between;
-  &__left {
+  .topbar-left {
+    width: 50%;
+    display: flex;
+    justify-content:flex-start;
     li {
       cursor: pointer;
       margin-right: 5px;
@@ -204,7 +218,10 @@
       }
     }
   }
-  &__right {
+  .topbar-right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
     li {
       cursor: pointer;
       span {

@@ -6,16 +6,6 @@
 @import 'icons';
 @import 'shared';
 @import 'submenu';
-html, body{
-  height: 100%;
-}
-body {
-  font-family: 'Roboto', sans-serif;
-  span.hs-icon {
-    font-family: 'Hearthstone';
-    font-size: 41px;
-  }
-}
 /*
   Layout
  */
@@ -567,9 +557,21 @@ footer{
       }
     }
     .sidebar{
-      .hs{
-        padding:10px;
+      ul{
+        li{
+          @include transition(all ease .4s);
+          display: inline-block;
+          color: $dark-grey;
+          span{
+            font-family: 'Hearthstone';
+            font-size: 41px;
+            &.hs{
+              padding:10px;
+            }
+          }
+        }
       }
+
       .sidebar-icons {
         margin: 1em 0;
         text-align: center;
@@ -593,6 +595,15 @@ footer{
             }
           }
         }
+      }
+    }
+  }
+  .right-container{
+    .topbar{
+      .filters{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
       }
     }
   }
@@ -642,12 +653,8 @@ footer{
   }
   .right-container {
     .topbar {
-      .filters {
-        justify-content: space-between;
-        width: 100%;
         .create-deck {
           cursor: pointer;
-        }
       }
       .topbar-left {
         display: flex;
@@ -659,28 +666,6 @@ footer{
             color: $dark-grey;
             padding: 5px;
             line-height: 50px;
-          }
-          .tooltip {
-            position: absolute;
-            display: none;
-            width: 120px;
-            margin-left: -30px;
-            .caret-up {
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 0 5px 5px 5px;
-              border-color: transparent transparent $dark-grey transparent;
-              position: relative;
-              left: calc(50% - 5px);
-            }
-            p {
-              font-size: 12px;
-              text-transform: uppercase;
-              padding: 5px 0;
-              background-color: $dark-grey;
-              color: $pearl;
-            }
           }
           &:hover {
             div {
@@ -846,18 +831,6 @@ footer{
 }
 
 .cards{
-  ul{
-    li{
-      @include transition(all ease .4s);
-      display: inline-block;
-      color: $dark-grey;
-      span{
-        font-family: 'Hearthstone';
-        font-size: 41px;
-      }
-    }
-  }
-
   .left-container{
     .sidebar{
       .hs{
@@ -871,30 +844,6 @@ footer{
             @include transition(all ease .4s);
             padding: 5px;
             color: $dark-grey;
-          }
-          .tooltip {
-            position: absolute;
-            width: 200px;
-            display: none;
-            margin-left: -82px;
-            margin-top:5px;
-            .caret-up {
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 0 5px 5px 5px;
-              border-color: transparent transparent $pearl transparent;
-              position: relative;
-              left: calc(50% - 5px);
-            }
-            p{
-              font-size: 12px;
-              text-transform: uppercase;
-              padding: 5px 0;
-              background-color: $dark-grey;
-              color: $pearl;
-              border: 1px solid $pearl ;
-            }
           }
           &:hover{
             div{
@@ -928,8 +877,6 @@ footer{
         li{
           width: 60px;
           text-align: center;
-
-
         }
       }
     }

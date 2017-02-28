@@ -34,7 +34,7 @@ export class Reddit extends Component{
   render(){
     const {main, sidebar, topbar} = this.props;
     return (
-      <div className="pageContainer decks list-with-filters-layout">
+      <div className="pageContainer reddit list-with-filters-layout">
         {this.props.children}
           <div className="left-container">
             <div className="sidebar">
