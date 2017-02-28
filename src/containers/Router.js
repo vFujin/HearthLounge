@@ -43,6 +43,8 @@ import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 import {Reddit} from './pages/reddit/reddit';
 import {RedditPost} from './pages/reddit/reddit-post';
 import {RedditPosts} from './pages/reddit/posts/posts';
+import {RedditPostsSidebar} from './pages/reddit/posts/sidebar';
+import {RedditPostsTopbar} from './pages/reddit/posts/topbar';
 
 import {Login} from './pages/login/login';
 import {SignUp} from './pages/login/sign-up';
@@ -117,7 +119,7 @@ export class App extends Component {
 
             <Redirect from="reddit" to="reddit/posts" />
             <Route path="reddit" component={Reddit}>
-              <Route path="posts" component={RedditPosts} />
+              <Route path="posts" components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}} />
               <Route path="post/:id/:post" component={RedditPost} />
               <Route path="post/:id" component={RedditPost} />
             </Route>

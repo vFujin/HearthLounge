@@ -35,7 +35,8 @@ export class Reddit extends Component{
     const {main, sidebar, topbar} = this.props;
     return (
         <div className="pageContainer decks">
-          {React.cloneElement(this.props.children, {posts: this.state.posts, post_permalink: this.state.post_permalink, handleRedditPostClick: this.handleRedditPostClick.bind(this)})}
+          {this.props.children}
+
           <div className="wrapper">
             <div className="left-container">
               <div className="sidebar">
@@ -46,7 +47,7 @@ export class Reddit extends Component{
               <div className="topbar">
                 {topbar}
               </div>
-              {main}
+              {React.cloneElement(main, {posts: this.state.posts, post_permalink: this.state.post_permalink, handleRedditPostClick: this.handleRedditPostClick.bind(this)})}
             </div>
           </div>
         </div>

@@ -50,31 +50,23 @@ export class RedditPosts extends Component{
 
   render(){
     return (
-    <div className="wrapper">
-      <div className="left-container">
-        <div className="sidebar"></div>
-      </div>
-      <div className="right-container">
-        <div className="topbar"></div>
-        <table>
-          <tbody>
-          <tr>
-            <th>Upvotes</th>
-            <th>Domain</th>
-            <th>Title</th>
-          </tr>
-          {this.props.posts.map(post=>(
-                  <tr key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
-                    <td><Link to={this.checkDomain(post)}>{post.ups}</Link></td>
-                    <td><Link to={this.checkDomain(post)}>{this.icon(post)}</Link></td>
-                    <td><Link to={this.checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
-                  </tr>
-              )
-          )}
-          </tbody>
+      <table>
+        <tbody>
+        <tr>
+          <th>Upvotes</th>
+          <th>Domain</th>
+          <th>Title</th>
+        </tr>
+        {this.props.posts.map(post=>(
+                <tr key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
+                  <td><Link to={this.checkDomain(post)}>{post.ups}</Link></td>
+                  <td><Link to={this.checkDomain(post)}>{this.icon(post)}</Link></td>
+                  <td><Link to={this.checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
+                </tr>
+            )
+        )}
+        </tbody>
         </table>
-      </div>
-    </div>
     )
   }
 }
