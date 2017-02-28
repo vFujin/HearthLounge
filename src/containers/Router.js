@@ -28,8 +28,6 @@ import {Expansions} from './pages/expansions/expansions';
 import {Expansion} from './pages/expansions/right-container/expansion';
 import {ExpansionDetails} from './pages/expansions/right-container/details';
 
-
-
 import {Adventures} from './pages/adventures/adventures';
 import {Adventure} from './pages/adventures/right-container/adventure';
 import {AdventureDetails} from './pages/adventures/right-container/details';
@@ -41,7 +39,9 @@ import {CreateDeckClassSelection} from './pages/create-deck/class-selection';
 import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 
 import {Reddit} from './pages/reddit/reddit';
-import {RedditPost} from './pages/reddit/reddit-post';
+import {RedditPost} from './pages/reddit/post/post';
+import {RedditPostSidebar} from './pages/reddit/post/sidebar';
+import {RedditPostTopbar} from './pages/reddit/post/topbar';
 import {RedditPosts} from './pages/reddit/posts/posts';
 import {RedditPostsSidebar} from './pages/reddit/posts/sidebar';
 import {RedditPostsTopbar} from './pages/reddit/posts/topbar';
@@ -97,11 +97,9 @@ export class App extends Component {
             <Route path="adventures/"    component={Adventures}>
               <Redirect from=":adventure" to=":adventure/overview"/>
               <Route path=":adventure"  component={Adventure}>
-                {/*<Route path="*" component={NotFound} />*/}
                 <Route path=":details"  component={AdventureDetails}>
                   <Route path="bosses"  component={AdventureBosses}/>
                   <Route path=":boss"   component={AdventureBoss}/>
-
                 </Route>
                 <Route path="*" component={NotFound} />
               </Route>
@@ -118,15 +116,15 @@ export class App extends Component {
             <Route path="streamers"         component={Streams} />
 
             <Redirect from="reddit" to="reddit/posts" />
-            <Route path="reddit" component={Reddit}>
-              <Route path="posts" components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}} />
-              <Route path="post/:id/:post" component={RedditPost} />
-              <Route path="post/:id" component={RedditPost} />
+            <Route path="reddit"              component={Reddit}>
+              <Route path="posts"             components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}} />
+              <Route path="post/:id/:post"    components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
+              <Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
             </Route>
 
-            <Route path="login"            component={Login}>
-              <Route path="/sign-in"          component={SignIn} />
-              <Route path="/sign-up"          component={SignUp} />
+            <Route path="login"      component={Login}>
+              <Route path="/sign-in" component={SignIn} />
+              <Route path="/sign-up" component={SignUp} />
             </Route>
             <Route path="*" component={NotFound} />
           </Route>
