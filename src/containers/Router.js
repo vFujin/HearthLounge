@@ -39,7 +39,7 @@ import {CreateDeckClassSelection} from './pages/create-deck/class-selection';
 import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 
 import {Reddit} from './pages/reddit/reddit';
-import {RedditPost} from './pages/reddit/post/post';
+import RedditPost from './pages/reddit/post/post';
 import {RedditPostSidebar} from './pages/reddit/post/sidebar';
 import {RedditPostTopbar} from './pages/reddit/post/topbar';
 import {RedditPosts} from './pages/reddit/posts/posts';
