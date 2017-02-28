@@ -24,7 +24,12 @@ const RedditPosts = (props) => {
 
   const checkIfStickied = (post) =>{
     let sticky = post.stickied;
-    return  sticky === true ? "hunter active" : sticky;
+    return sticky === true ? "hunter active" : sticky;
+  };
+
+  const checkIfBlizzardPost = (post) =>{
+    let flair_text = post.link_flair_text.toLowerCase();
+    return flair_text === "blizzard" ? "mage blizzard-official" : flair_text;
   };
 
   const stripRedditURL = (url) => {
@@ -75,7 +80,7 @@ const RedditPosts = (props) => {
             <th>Created</th>
           </tr>
           {props.posts.map(post => (
-              <tr className={`${checkIfStickied(post)} ${stripDomains(post)}`}
+              <tr className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)}`}
                   key={post.id}
                   onClick={props.handleRedditPostClick.bind(this, post)}>
                 <td className="upvotes"><Link to={checkDomain(post)}><span>{post.ups}</span></Link></td>

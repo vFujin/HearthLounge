@@ -4,6 +4,11 @@ export class RedditPostsSidebar extends Component {
     return (
         <div>
           <h3 className="filter-header">Filters</h3>
+          <button>Hot</button>
+          <button>New</button>
+          <button>Rising</button>
+          <button>Controversial</button>
+          <button>Top</button>
         </div>
     )
   }

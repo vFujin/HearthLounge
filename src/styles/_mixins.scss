@@ -117,13 +117,9 @@
     }
   }
 
-  &.table-row-active{
-    &:nth-child(odd) {
-      background-color: $color;
-      &:hover{
-        background: $color;
-      }
-    }
+  &.blizzard-official{
+    background-color: $color;
+    color: #000;
   }
 
 }

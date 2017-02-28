@@ -1562,9 +1562,21 @@ footer{
 .subreddit{
   .left-container{
     width: 10%;
+    background-color: $light-grey;
+    button{
+      width: calc(100% - 20px);
+      outline: 0;
+      background: transparent;
+      border:1px solid $dark-grey;
+      color: $pearl;
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
   }
   .right-container{
     width: 90%;
+
     .posts{
       @include scrollbar();
       height:calc(100% - 60px);

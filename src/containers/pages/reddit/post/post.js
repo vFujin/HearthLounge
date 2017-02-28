@@ -55,10 +55,9 @@ const RedditPost = (props) => {
   )
 };
 
+export default RedditPost;
+
 RedditPost.propTypes = {
   posts: React.PropTypes.array,
   params: React.PropTypes.object
 };
-
-export default RedditPost;
-

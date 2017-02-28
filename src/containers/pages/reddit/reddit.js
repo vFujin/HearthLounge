@@ -13,7 +13,7 @@ export class Reddit extends Component{
   }
 
   componentDidMount() {
-    axios.get('https://www.reddit.com/r/hearthstone.json')
+    axios.get('https://www.reddit.com/r/hearthstone/hot.json')
         .then(res => {
           const posts = res.data.data.children.map(obj => obj.data);
           console.log(posts);
