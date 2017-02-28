@@ -11,6 +11,9 @@ export class RedditPosts extends Component{
       console.log(post.domain);
       return iconTemplate('youtube');
     }
+    if(post.domain.includes("battle.net")){
+      return iconTemplate('battlenet');
+    }
 
     if(post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() != "tournament") {
       return iconTemplate('bubbles2');
