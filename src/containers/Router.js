@@ -42,7 +42,7 @@ import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 
 import {Reddit} from './pages/reddit/reddit';
 import {RedditPost} from './pages/reddit/reddit-post';
-import {RedditPosts} from './pages/reddit/reddit-posts';
+import {RedditPosts} from './pages/reddit/posts/posts';
 
 import {Login} from './pages/login/login';
 import {SignUp} from './pages/login/sign-up';
