@@ -1570,9 +1570,60 @@ footer{
       height:calc(100% - 60px);
       overflow: auto;
       margin: 10px 0 0 10px;
+      padding-right: 10px;
       table{
         height:100%;
+        width:100%;
+        border: 1px solid $dark-grey;
+        border-collapse: collapse;
+        tr{
+          border-bottom:1px solid black;
+          td, th{
+            a{
+              display: block;
+              padding: 10px;
+              span{
+                font-size: 20px;
+              }
+            }
 
+          }
+          .upvotes, .domain, .created{
+            a{
+              text-align: center;
+            }
+          }
+          .upvotes{
+            a{
+              span{
+                background-color: $dark-grey;
+                width: 20%;
+                padding:5px;
+                font-size:14px;
+                color: $pearl;
+              }
+
+            }
+          }
+          .domain{
+            color: $dark-grey;
+          }
+          &:nth-child(odd){
+            //background-color: $black-010;
+          }
+          &:first-child{
+            background-color: $black-050;
+            color: $pearl;
+            th{
+              padding: 20px;
+              font-weight: normal;
+              span{
+                font-size: 20px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
       }
     }
   }

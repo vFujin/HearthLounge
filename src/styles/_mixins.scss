@@ -117,6 +117,15 @@
     }
   }
 
+  &.table-row-active{
+    &:nth-child(odd) {
+      background-color: $color;
+      &:hover{
+        background: $color;
+      }
+    }
+  }
+
 }
 
 @mixin scrollbar{

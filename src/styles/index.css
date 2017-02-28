@@ -295,6 +295,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #FF7D0A;
       color: #474143;
       border: #474143; }
+  .druid.table-row-active:nth-child(odd) {
+    background-color: #FF7D0A; }
+    .druid.table-row-active:nth-child(odd):hover {
+      background: #FF7D0A; }
 
 .hunter {
   color: #ABD473; }
@@ -327,6 +331,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #ABD473;
       color: #474143;
       border: #474143; }
+  .hunter.table-row-active:nth-child(odd) {
+    background-color: #ABD473; }
+    .hunter.table-row-active:nth-child(odd):hover {
+      background: #ABD473; }
 
 .mage {
   color: #69CCF0; }
@@ -359,6 +367,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #69CCF0;
       color: #474143;
       border: #474143; }
+  .mage.table-row-active:nth-child(odd) {
+    background-color: #69CCF0; }
+    .mage.table-row-active:nth-child(odd):hover {
+      background: #69CCF0; }
 
 .paladin {
   color: #F58CBA; }
@@ -391,6 +403,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #F58CBA;
       color: #474143;
       border: #474143; }
+  .paladin.table-row-active:nth-child(odd) {
+    background-color: #F58CBA; }
+    .paladin.table-row-active:nth-child(odd):hover {
+      background: #F58CBA; }
 
 .priest {
   color: #FFFFFF; }
@@ -423,6 +439,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #FFFFFF;
       color: #474143;
       border: #474143; }
+  .priest.table-row-active:nth-child(odd) {
+    background-color: #FFFFFF; }
+    .priest.table-row-active:nth-child(odd):hover {
+      background: #FFFFFF; }
 
 .rogue {
   color: #FFF569; }
@@ -455,6 +475,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #FFF569;
       color: #474143;
       border: #474143; }
+  .rogue.table-row-active:nth-child(odd) {
+    background-color: #FFF569; }
+    .rogue.table-row-active:nth-child(odd):hover {
+      background: #FFF569; }
 
 .shaman {
   color: #0070DE; }
@@ -487,6 +511,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #0070DE;
       color: #474143;
       border: #474143; }
+  .shaman.table-row-active:nth-child(odd) {
+    background-color: #0070DE; }
+    .shaman.table-row-active:nth-child(odd):hover {
+      background: #0070DE; }
 
 .warlock {
   color: #9482C9; }
@@ -519,6 +547,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #9482C9;
       color: #474143;
       border: #474143; }
+  .warlock.table-row-active:nth-child(odd) {
+    background-color: #9482C9; }
+    .warlock.table-row-active:nth-child(odd):hover {
+      background: #9482C9; }
 
 .warrior {
   color: #C79C6E; }
@@ -551,6 +583,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #C79C6E;
       color: #474143;
       border: #474143; }
+  .warrior.table-row-active:nth-child(odd) {
+    background-color: #C79C6E; }
+    .warrior.table-row-active:nth-child(odd):hover {
+      background: #C79C6E; }
 
 .death-knight {
   color: #C41F3B; }
@@ -583,6 +619,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #C41F3B;
       color: #474143;
       border: #474143; }
+  .death-knight.table-row-active:nth-child(odd) {
+    background-color: #C41F3B; }
+    .death-knight.table-row-active:nth-child(odd):hover {
+      background: #C41F3B; }
 
 .monk {
   color: #00FF96; }
@@ -615,6 +655,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #00FF96;
       color: #474143;
       border: #474143; }
+  .monk.table-row-active:nth-child(odd) {
+    background-color: #00FF96; }
+    .monk.table-row-active:nth-child(odd):hover {
+      background: #00FF96; }
 
 .demon-hunter {
   color: #A330C9; }
@@ -647,6 +691,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #A330C9;
       color: #474143;
       border: #474143; }
+  .demon-hunter.table-row-active:nth-child(odd) {
+    background-color: #A330C9; }
+    .demon-hunter.table-row-active:nth-child(odd):hover {
+      background: #A330C9; }
 
 .curse-of-naxxramas {
   color: #b5de3f; }
@@ -679,6 +727,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #b5de3f;
       color: #474143;
       border: #474143; }
+  .curse-of-naxxramas.table-row-active:nth-child(odd) {
+    background-color: #b5de3f; }
+    .curse-of-naxxramas.table-row-active:nth-child(odd):hover {
+      background: #b5de3f; }
 
 .blackrock-mountain {
   color: #fa5210; }
@@ -711,6 +763,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #fa5210;
       color: #474143;
       border: #474143; }
+  .blackrock-mountain.table-row-active:nth-child(odd) {
+    background-color: #fa5210; }
+    .blackrock-mountain.table-row-active:nth-child(odd):hover {
+      background: #fa5210; }
 
 .the-league-of-explorers {
   color: #14a9a1; }
@@ -743,6 +799,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #14a9a1;
       color: #474143;
       border: #474143; }
+  .the-league-of-explorers.table-row-active:nth-child(odd) {
+    background-color: #14a9a1; }
+    .the-league-of-explorers.table-row-active:nth-child(odd):hover {
+      background: #14a9a1; }
 
 .one-night-at-karazhan {
   color: #e2b4df; }
@@ -775,6 +835,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #e2b4df;
       color: #474143;
       border: #474143; }
+  .one-night-at-karazhan.table-row-active:nth-child(odd) {
+    background-color: #e2b4df; }
+    .one-night-at-karazhan.table-row-active:nth-child(odd):hover {
+      background: #e2b4df; }
 
 .goblins-vs-gnomes {
   color: #fae43f; }
@@ -807,6 +871,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #fae43f;
       color: #474143;
       border: #474143; }
+  .goblins-vs-gnomes.table-row-active:nth-child(odd) {
+    background-color: #fae43f; }
+    .goblins-vs-gnomes.table-row-active:nth-child(odd):hover {
+      background: #fae43f; }
 
 .the-grand-tournament {
   color: #f00; }
@@ -839,6 +907,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #f00;
       color: #474143;
       border: #474143; }
+  .the-grand-tournament.table-row-active:nth-child(odd) {
+    background-color: #f00; }
+    .the-grand-tournament.table-row-active:nth-child(odd):hover {
+      background: #f00; }
 
 .whispers-of-the-old-gods {
   color: #cc00ff; }
@@ -871,6 +943,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #cc00ff;
       color: #474143;
       border: #474143; }
+  .whispers-of-the-old-gods.table-row-active:nth-child(odd) {
+    background-color: #cc00ff; }
+    .whispers-of-the-old-gods.table-row-active:nth-child(odd):hover {
+      background: #cc00ff; }
 
 .mean-streets-of-gadgetzan {
   color: #d2cac5; }
@@ -903,6 +979,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #d2cac5;
       color: #474143;
       border: #474143; }
+  .mean-streets-of-gadgetzan.table-row-active:nth-child(odd) {
+    background-color: #d2cac5; }
+    .mean-streets-of-gadgetzan.table-row-active:nth-child(odd):hover {
+      background: #d2cac5; }
 
 .common {
   color: #fff; }
@@ -935,6 +1015,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #fff;
       color: #474143;
       border: #474143; }
+  .common.table-row-active:nth-child(odd) {
+    background-color: #fff; }
+    .common.table-row-active:nth-child(odd):hover {
+      background: #fff; }
 
 .rare {
   color: blue; }
@@ -967,6 +1051,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: blue;
       color: #474143;
       border: #474143; }
+  .rare.table-row-active:nth-child(odd) {
+    background-color: blue; }
+    .rare.table-row-active:nth-child(odd):hover {
+      background: blue; }
 
 .epic {
   color: purple; }
@@ -999,6 +1087,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: purple;
       color: #474143;
       border: #474143; }
+  .epic.table-row-active:nth-child(odd) {
+    background-color: purple; }
+    .epic.table-row-active:nth-child(odd):hover {
+      background: purple; }
 
 .legendary {
   color: orange; }
@@ -1031,6 +1123,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: orange;
       color: #474143;
       border: #474143; }
+  .legendary.table-row-active:nth-child(odd) {
+    background-color: orange; }
+    .legendary.table-row-active:nth-child(odd):hover {
+      background: orange; }
 
 html, body {
   height: 100%; }
@@ -2478,7 +2574,8 @@ footer {
   .reddit .right-container .posts {
     height: calc(100% - 60px);
     overflow: auto;
-    margin: 10px 0 0 10px; }
+    margin: 10px 0 0 10px;
+    padding-right: 10px; }
     .reddit .right-container .posts::-webkit-scrollbar {
       width: 13px; }
     .reddit .right-container .posts::-webkit-scrollbar-thumb {
@@ -2489,7 +2586,36 @@ footer {
     .reddit .right-container .posts::-webkit-scrollbar-track {
       background-color: #A69E9D; }
     .reddit .right-container .posts table {
-      height: 100%; }
+      height: 100%;
+      width: 100%;
+      border: 1px solid #474143;
+      border-collapse: collapse; }
+      .reddit .right-container .posts table tr {
+        border-bottom: 1px solid black; }
+        .reddit .right-container .posts table tr td a, .reddit .right-container .posts table tr th a {
+          display: block;
+          padding: 10px; }
+          .reddit .right-container .posts table tr td a span, .reddit .right-container .posts table tr th a span {
+            font-size: 20px; }
+        .reddit .right-container .posts table tr .upvotes a, .reddit .right-container .posts table tr .domain a, .reddit .right-container .posts table tr .created a {
+          text-align: center; }
+        .reddit .right-container .posts table tr .upvotes a span {
+          background-color: #474143;
+          width: 20%;
+          padding: 5px;
+          font-size: 14px;
+          color: #E7E2DA; }
+        .reddit .right-container .posts table tr .domain {
+          color: #474143; }
+        .reddit .right-container .posts table tr:first-child {
+          background-color: rgba(0, 0, 0, 0.5);
+          color: #E7E2DA; }
+          .reddit .right-container .posts table tr:first-child th {
+            padding: 20px;
+            font-weight: normal; }
+            .reddit .right-container .posts table tr:first-child th span {
+              font-size: 20px;
+              margin-right: 5px; }
 
 .pageContainer.login {
   justify-content: center;

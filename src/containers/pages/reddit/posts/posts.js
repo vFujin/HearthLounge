@@ -7,20 +7,20 @@ export class RedditPosts extends Component {
       return <span className={`hs hs-icon icon-${icon}`}></span>;
     }
 
-    if (post.domain == "youtu.be") {
+    if (post.domain === "youtu.be") {
       console.log(post.domain);
       return iconTemplate('youtube');
     }
     if (post.domain.includes("battle.net")) {
       return iconTemplate('battlenet');
     }
-    if (post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() != "tournament") {
+    if (post.domain === "self.hearthstone" && post.link_flair_text.toLowerCase() !== "tournament") {
       return iconTemplate('bubbles2');
     }
-    if (post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() == "tournament") {
+    if (post.domain === "self.hearthstone" && post.link_flair_text.toLowerCase() === "tournament") {
       return iconTemplate('trophy');
     }
-    if (post.domain != "self.hearthstone") {
+    if (post.domain !== "self.hearthstone") {
       let icon = post.domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
       return iconTemplate(icon);
     }
@@ -58,14 +58,15 @@ export class RedditPosts extends Component {
               <th>Upvotes</th>
               <th>Domain</th>
               <th>Title</th>
+              <th>Created</th>
             </tr>
           {this.props.posts.map(post => (
-              <tr key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
-                <td><Link to={this.checkDomain(post)}>{post.ups}</Link></td>
-                <td><Link to={this.checkDomain(post)}>{this.icon(post)}</Link></td>
-                <td><Link to={this.checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link>
-                </td>
-              </tr>
+              <tr className={post.stickied === true ? "hunter active" : post.stickied} key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
+                <td className="upvotes"><Link to={this.checkDomain(post)}><span>{post.ups}</span></Link></td>
+                <td className="domain"><Link to={this.checkDomain(post)}>{this.icon(post)}</Link></td>
+                <td className="title"><Link to={this.checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
+                <td className="created"><Link to={this.checkDomain(post)}>{post.created}</Link></td>
+              </tr >
               )
           )}
           </tbody>
