@@ -7,17 +7,17 @@ const HsClassFilter = (props) => {
 
   function listClasses() {
     return (
-      hs_class.map((hs_class, index) =>
-        <li key={index}>
-          <Link to={{pathname: 'cards', query: Object.assign({}, props.query, {hs_class: hs_class.url})}}>
-            <span className={`hs-icon ${hs_class.name} icon-${hs_class.url}`}></span>
-            <div className="tooltip">
-              <div className="caret-up"></div>
-              <p>{hs_class.name}</p>
-            </div>
-          </Link>
-        </li>
-      ))
+        hs_class.map((hs_class, index) =>
+            <li key={index}>
+              <Link to={{pathname: 'cards', query: Object.assign({}, props.query, {hs_class: hs_class.url})}}>
+                <span className={`hs-icon ${hs_class.name} icon-${hs_class.url}`}></span>
+                <div className="tooltip">
+                  <div className="caret-up"></div>
+                  <p>{hs_class.name}</p>
+                </div>
+              </Link>
+            </li>
+        ))
   }
 
   return (

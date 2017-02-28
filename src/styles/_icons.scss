@@ -101,6 +101,6 @@
 .twitch{
   @include social_media_icon_color($twitch_logo, $twitch_background);
 }
-.false.hearthstone{
+.false.hearthstone, .false.default{
   @include social_media_icon_color($dark-grey, $black-020);
 }

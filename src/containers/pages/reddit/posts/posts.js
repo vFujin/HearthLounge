@@ -37,12 +37,19 @@ export class RedditPosts extends Component {
   }
 
   stripDomains(post){
-    if(post.domain.includes("battle.net")){
-      return post.domain.split('.')[1]+"net";
+    let domain = post.domain;
+    if(domain.includes("battle.net")){
+      return domain.split('.')[1]+"net";
     }
-    else {
-      return post.domain.replace(/self.|.com|clips.|.tv/g, "");
+    else if(domain === "self.hearthstone" ||
+        domain ===  "youtube.com" ||
+        domain ===  "clips.twitch.tv" ||
+        domain ===  "reddit.com" ||
+        domain ===  "youtu.be" ||
+        domain === "twitter.com") {
+      return domain.replace(/self.|.com|clips.|.tv/g, "");
     }
+    else return "default";
   }
 
   checkDomain(post) {

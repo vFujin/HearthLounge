@@ -1200,16 +1200,16 @@ a:active, a:hover, a:link, a:visited {
     .twitch.active .domain a, .twitch:hover .domain a {
       color: #fff; }
 
-.false.hearthstone {
+.false.hearthstone, .false.default {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .false.hearthstone.active, .false.hearthstone:hover {
+  .false.hearthstone.active, .false.hearthstone:hover, .false.default.active, .false.default:hover {
     color: #474143;
     background-color: rgba(0, 0, 0, 0.2); }
-    .false.hearthstone.active .domain a, .false.hearthstone:hover .domain a {
+    .false.hearthstone.active .domain a, .false.hearthstone:hover .domain a, .false.default.active .domain a, .false.default:hover .domain a {
       color: #474143; }
 
 html, body {
