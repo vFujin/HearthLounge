@@ -1128,6 +1128,30 @@ a:active, a:hover, a:link, a:visited {
     .legendary.table-row-active:nth-child(odd):hover {
       background: orange; }
 
+.facebook.active {
+  color: #fff;
+  background-color: #3b5998; }
+
+.twitter.active {
+  color: #55acee;
+  background-color: #fff; }
+
+.youtube.active {
+  color: #fff;
+  background-color: #bb0000; }
+
+.reddit.active {
+  color: #fff;
+  background-color: #ff4006; }
+
+.battlenet.active {
+  color: #01a0d6;
+  background-color: #01a0d6; }
+
+.twitch.active {
+  color: #fff;
+  background-color: #6441a4; }
+
 html, body {
   height: 100%; }
 

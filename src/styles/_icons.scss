@@ -80,3 +80,24 @@
 .legendary{
   @include icon_color($legendary);
 }
+
+
+//Social Media
+.facebook{
+  @include social_media_icon_color($fb_logo, $fb_background);
+}
+.twitter{
+  @include social_media_icon_color($twitter_logo, $twitter_background);
+}
+.youtube{
+  @include social_media_icon_color($yt_logo, $yt_background);
+}
+.reddit{
+  @include social_media_icon_color($reddit_logo, $reddit_background);
+}
+.battlenet{
+  @include social_media_icon_color($battlenet_logo, $battlenet_background);
+}
+.twitch{
+  @include social_media_icon_color($twitch_logo, $twitch_background);
+}

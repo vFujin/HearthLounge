@@ -128,6 +128,13 @@
 
 }
 
+@mixin social_media_icon_color($color, $background_color){
+  &.active{
+    color: $color;
+    background-color: $background_color;
+  }
+}
+
 @mixin scrollbar{
   &::-webkit-scrollbar{width: 13px;}
   &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0;}
