@@ -31,6 +31,8 @@ export class Reddit extends Component{
     });
   }
 
+
+
   render(){
     const {main, sidebar, topbar} = this.props;
     return (
@@ -45,9 +47,18 @@ export class Reddit extends Component{
             <div className="topbar">
               {topbar}
             </div>
-            {React.cloneElement(main, {posts: this.state.posts, post_permalink: this.state.post_permalink, handleRedditPostClick: this.handleRedditPostClick.bind(this)})}
+            {React.cloneElement(main, {posts: this.state.posts,
+                                       post_permalink: this.state.post_permalink,
+                                       handleRedditPostClick: this.handleRedditPostClick.bind(this)})}
           </div>
       </div>
     )
   }
 }
+
+Reddit.propTypes = {
+  posts: React.PropTypes.array,
+  post_permalink: React.PropTypes.string,
+  active_post: React.PropTypes.string,
+  handleReditPostClick: React.PropTypes.func
+};

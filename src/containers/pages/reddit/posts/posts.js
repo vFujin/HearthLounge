@@ -1,60 +1,56 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-export class RedditPosts extends Component {
 
-  icon(post) {
-    function iconTemplate(icon) {
-      return <span className={`hs hs-icon icon-${icon}`}></span>;
-    }
+const RedditPosts = (props) => {
+  const icon = (post) => {
+    let domain = post.domain;
+    let flair_text = post.link_flair_text.toLowerCase();
 
-    if (post.domain === "youtu.be") {
-      console.log(post.domain);
+    const iconTemplate = (icon) => <span className={`hs hs-icon icon-${icon}`}></span>;
+
+    if (domain === "youtu.be")
       return iconTemplate('youtube');
-    }
-    if (post.domain.includes("battle.net")) {
+    if (domain.includes("battle.net"))
       return iconTemplate('battlenet');
-    }
-    if (post.domain === "self.hearthstone" && post.link_flair_text.toLowerCase() !== "tournament") {
+    if (domain === "self.hearthstone" && flair_text !== "tournament")
       return iconTemplate('bubbles2');
-    }
-    if (post.domain === "self.hearthstone" && post.link_flair_text.toLowerCase() === "tournament") {
+    if (domain === "self.hearthstone" && flair_text === "tournament")
       return iconTemplate('trophy');
-    }
-    if (post.domain !== "self.hearthstone") {
-      let icon = post.domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
+    if (domain !== "self.hearthstone") {
+      let icon = domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
       return iconTemplate(icon);
     }
-  }
+  };
 
-  stripRedditURL(url) {
+  const checkIfStickied = (post) =>{
+    let sticky = post.stickied;
+    return  sticky === true ? "hunter active" : sticky;
+  };
+
+  const stripRedditURL = (url) => {
     let split = url.split('/');
-    let postUrl = split[split.length - 2];
-    return postUrl;
-  }
+    return split[split.length - 2];
+  };
 
-  checkIfStickied(post){
-    return post.stickied === true ? "hunter active" : post.stickied;
-  }
-
-  stripDomains(post){
+  const stripDomains = (post) =>{
     let domain = post.domain;
-    if(domain.includes("battle.net")){
+
+    if(domain.includes("battle.net"))
       return domain.split('.')[1]+"net";
-    }
+
     else if(domain === "self.hearthstone" ||
-        domain ===  "youtube.com" ||
-        domain ===  "clips.twitch.tv" ||
-        domain ===  "reddit.com" ||
-        domain ===  "youtu.be" ||
-        domain === "twitter.com") {
+            domain ===  "youtube.com" ||
+            domain ===  "clips.twitch.tv" ||
+            domain ===  "reddit.com" ||
+            domain ===  "youtu.be" ||
+            domain === "twitter.com") {
       return domain.replace(/self.|.com|clips.|.tv/g, "");
     }
     else return "default";
-  }
+  };
 
-  checkDomain(post) {
-    let postURL = this.stripRedditURL;
-    let selfURL = `/reddit/post/${post.id}/${postURL(post.permalink)}`;
+  const checkDomain = (post) =>{
+    let selfURL = `/reddit/post/${post.id}/${stripRedditURL(post.permalink)}`;
 
     switch (post.domain) {
       case 'self.hearthstone':
@@ -66,31 +62,50 @@ export class RedditPosts extends Component {
       default:
         return post.url;
     }
-  }
+  };
 
-  render() {
+  const mapPosts = () =>{
     return (
-      <div className="posts">
         <table>
           <tbody>
-            <tr>
-              <th>Upvotes</th>
-              <th>Domain</th>
-              <th>Title</th>
-              <th>Created</th>
-            </tr>
-          {this.props.posts.map(post => (
-              <tr className={`${this.checkIfStickied(post)} ${this.stripDomains(post)}`} key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
-                <td className="upvotes"><Link to={this.checkDomain(post)}><span>{post.ups}</span></Link></td>
-                <td className="domain"><Link to={this.checkDomain(post)}>{this.icon(post)}</Link></td>
-                <td className="title"><Link to={this.checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
-                <td className="created"><Link to={this.checkDomain(post)}>{post.created}</Link></td>
+          <tr>
+            <th>Upvotes</th>
+            <th>Domain</th>
+            <th>Title</th>
+            <th>Created</th>
+          </tr>
+          {props.posts.map(post => (
+              <tr className={`${checkIfStickied(post)} ${stripDomains(post)}`}
+                  key={post.id}
+                  onClick={props.handleRedditPostClick.bind(this, post)}>
+                <td className="upvotes"><Link to={checkDomain(post)}><span>{post.ups}</span></Link></td>
+                <td className="domain"><Link to={checkDomain(post)}>{icon(post)}</Link></td>
+                <td className="title"><Link to={checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
+                <td className="created"><Link to={checkDomain(post)}>{post.created}</Link></td>
               </tr >
-              )
-          )}
+          ))}
           </tbody>
         </table>
-      </div>
     )
-  }
-}
+  };
+
+  const ifPostsLoaded = () =>{
+    if(props.posts.length < 1){
+      return <div>Loading...</div>
+    }
+    else return mapPosts();
+  };
+
+  return (
+    <div className="posts">
+      {ifPostsLoaded()}
+    </div>
+  )
+};
+
+export default RedditPosts;
+
+RedditPosts.propTypes = {
+  handleRedditPostClick: React.PropTypes.func,
+  posts: React.PropTypes.array
+};

@@ -21,33 +21,44 @@ const RedditPost = (props) => {
     return <iframe key={index} height={height} width={width} src={src}></iframe>
   };
 
+  const filterPosts = () => {
+    return posts.filter(p => p.id === params.id).map((obj, index) => {
+      let url = obj.url;
+      let replacedYTUrl = url.replace("watch?v=", "embed/");
+      let replacedYTShortenerUrl = url.replace("youtu.be/", "youtube.com/embed/");
+      let replacedTwitchUrl = url.replace("https://clips.twitch.tv/", "");
+
+      switch (obj.domain) {
+        case 'self.hearthstone':
+          return <div key={index}>
+            <div dangerouslySetInnerHTML={createMarkup(obj)}/>
+          </div>;
+        case 'youtube.com':
+          return iframe(replacedYTUrl, index);
+        case 'youtu.be':
+          return iframe(replacedYTShortenerUrl, index);
+        case 'clips.twitch.tv':
+          return iframe(`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`, index);
+        default:
+          window.open(url);
+          break;
+      }
+    })
+  };
+
   return(
     <div className="choosen-deck-view">
       <div className="choosen-deck-details">
-        {
-          posts.filter(p => p.id === params.id).map((obj, index)=> {
-            let url = obj.url;
-            let replacedYTUrl           = url.replace("watch?v=", "embed/");
-            let replacedYTShortenerUrl  = url.replace("youtu.be/", "youtube.com/embed/");
-            let replacedTwitchUrl       = url.replace("https://clips.twitch.tv/", "");
-
-            switch(obj.domain){
-              case 'self.hearthstone':  return <div key={index}><div dangerouslySetInnerHTML={createMarkup(obj)} /></div>;
-              case 'youtube.com':       return iframe(replacedYTUrl, index);
-              case 'youtu.be':          return iframe(replacedYTShortenerUrl, index);
-              case 'clips.twitch.tv':   return iframe(`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`, index);
-              default: window.open(url); break;
-            }
-          })
-        }
+        {filterPosts()}
       </div>
     </div>
   )
 };
 
-export default RedditPost;
-
 RedditPost.propTypes = {
   posts: React.PropTypes.array,
   params: React.PropTypes.object
 };
+
+export default RedditPost;
+
