@@ -7,18 +7,20 @@ export class RedditPosts extends Component{
       return <span className={`hs hs-icon icon-${icon}`}></span>;
     }
 
-    if(post.domain != "self.hearthstone"){
-      let icon = post.domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
-      return iconTemplate(icon);
-    }
     if(post.domain == "youtu.be"){
+      console.log(post.domain);
       return iconTemplate('youtube');
     }
+
     if(post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() != "tournament") {
       return iconTemplate('bubbles2');
     }
     if(post.domain == "self.hearthstone" && post.link_flair_text.toLowerCase() == "tournament") {
       return iconTemplate('trophy');
+    }
+    if(post.domain != "self.hearthstone" ){
+      let icon = post.domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
+      return iconTemplate(icon);
     }
   }
 
