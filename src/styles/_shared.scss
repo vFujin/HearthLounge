@@ -189,6 +189,7 @@ body {
     left: calc(50% - 5px);
   }
   p {
+    text-align: center;
     font-size: 12px;
     text-transform: uppercase;
     padding: 5px 0;
@@ -200,36 +201,23 @@ body {
 .topbar {
   display: flex;
   justify-content: space-between;
-  .topbar-left {
+  .topbar-left, .topbar-right{
     width: 50%;
     display: flex;
-    justify-content:flex-start;
     li {
       cursor: pointer;
       margin-right: 5px;
+      span {
+        line-height: 50px;
+        @include transition(all ease .4s);
+        color: $dark-grey;
+      }
       &:first-child {
         margin-left: 5px;
       }
       &:last-child {
         margin-right: 0;
       }
-      span {
-        line-height: 50px;
-      }
-    }
-  }
-  .topbar-right {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    li {
-      cursor: pointer;
-      span {
-        @include transition(all ease .4s);
-        color: $dark-grey;
-        line-height: 50px;
-      }
-
       &:hover {
         div {
           display: block;
@@ -237,7 +225,33 @@ body {
       }
     }
   }
+  .topbar-left {
+    justify-content:flex-start;
+  }
+  .topbar-right {
+    justify-content: flex-end;
+  }
+  .hs-class-filter{
+    li{
+      width: 60px;
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .Select{
   &:focus{

@@ -599,13 +599,7 @@ footer{
     }
   }
   .right-container{
-    .topbar{
-      .filters{
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-      }
-    }
+
   }
 }
 
@@ -653,62 +647,6 @@ footer{
   }
   .right-container {
     .topbar {
-        .create-deck {
-          cursor: pointer;
-      }
-      .topbar-left {
-        display: flex;
-        li {
-          width: 60px;
-          text-align: center;
-          span {
-            @include transition(all ease .4s);
-            color: $dark-grey;
-            padding: 5px;
-            line-height: 50px;
-          }
-          &:hover {
-            div {
-              display: block;
-            }
-          }
-        }
-      }
-      .create-deck {
-        margin-right: 10px;
-        span {
-          line-height: 50px;
-        }
-        .tooltip {
-          position: absolute;
-          display: none;
-          width: 140px;
-          text-align: center;
-          margin-left: -89px;
-          .caret-up {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 5px 5px 5px;
-            border-color: transparent transparent $dark-grey transparent;
-            position: relative;
-            left: calc(79% - 5px);
-          }
-          p {
-            font-size: 12px;
-            text-transform: uppercase;
-            padding: 5px 0;
-            background-color: $dark-grey;
-            color: $pearl;
-          }
-        }
-        &:hover {
-          div {
-            display: block;
-          }
-        }
-      }
-
       .choosen-deck-topbar {
         display: flex;
         align-items: center;
@@ -863,23 +801,6 @@ footer{
     }
   }
   .right-container{
-    .topbar{
-      .topbar-left{
-        li{
-          &:hover{
-            span {
-              color: navy;
-            }
-          }
-        }
-      }
-      .topbar-right{
-        li{
-          width: 60px;
-          text-align: center;
-        }
-      }
-    }
     .cards-container{
       @include scrollbar;
       text-align:center;

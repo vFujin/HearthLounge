@@ -4,7 +4,7 @@ import CreateDeck from '../right-container/cards-list/create-deck-icon';
 export class DeckSelectionTopbar extends Component {
   render() {
     return (
-        <div className={`filters display-flex`}>
+        <div>
           <HsClassFilter align="left" page="decks"/>
           <CreateDeck/>
         </div>

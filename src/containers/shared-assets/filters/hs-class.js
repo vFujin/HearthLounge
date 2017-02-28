@@ -3,23 +3,32 @@ import {Link} from 'react-router';
 import {hs_class} from '../../../data/filters';
 
 export class HsClassFilter extends Component {
+  listClasses(page){
+    return (
+        hs_class.map((hs_class, index) =>
+        <li key={index}>
+          <Link to={`${page}?class=${hs_class.url}`}>
+            <span className={`hs-icon icon-${hs_class.url}`}></span>
+            <div className="tooltip">
+              <div className="caret-up"></div>
+              <p>{hs_class.name}</p>
+            </div>
+          </Link>
+        </li>
+    ))
+  }
 
   render() {
+    const {align, page} = this.props;
     return (
-       <ul className={`topbar-${this.props.align}`}>
-         {console.log(this.props.params)}
-          {hs_class.map((element, index) =>
-              <li key={index}>
-                <Link to={`${this.props.page}?class=${element.url}`}>
-                  <span className={`hs-icon icon-${element.url}`}></span>
-                  <div className="tooltip">
-                    <div className="caret-up"></div>
-                    <p>{element.name}</p>
-                  </div>
-                </Link>
-              </li>
-          )}
+       <ul className={`topbar-${align} hs-class-filter`}>
+          {this.listClasses(page)}
         </ul>
     );
   }
 }
+
+HsClassFilter.propTypes = {
+  align: React.PropTypes.string,
+  page: React.PropTypes.string
+};

@@ -1175,6 +1175,7 @@ body {
     position: relative;
     left: calc(50% - 5px); }
   .tooltip p {
+    text-align: center;
     font-size: 12px;
     text-transform: uppercase;
     padding: 5px 0;
@@ -1184,35 +1185,32 @@ body {
 .topbar {
   display: flex;
   justify-content: space-between; }
-  .topbar .topbar-left {
+  .topbar .topbar-left, .topbar .topbar-right {
     width: 50%;
-    display: flex;
-    justify-content: flex-start; }
-    .topbar .topbar-left li {
+    display: flex; }
+    .topbar .topbar-left li, .topbar .topbar-right li {
       cursor: pointer;
       margin-right: 5px; }
-      .topbar .topbar-left li:first-child {
-        margin-left: 5px; }
-      .topbar .topbar-left li:last-child {
-        margin-right: 0; }
-      .topbar .topbar-left li span {
-        line-height: 50px; }
-  .topbar .topbar-right {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end; }
-    .topbar .topbar-right li {
-      cursor: pointer; }
-      .topbar .topbar-right li span {
+      .topbar .topbar-left li span, .topbar .topbar-right li span {
+        line-height: 50px;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
         -ms-transition: all ease 0.4s;
         -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
-        color: #474143;
-        line-height: 50px; }
-      .topbar .topbar-right li:hover div {
+        color: #474143; }
+      .topbar .topbar-left li:first-child, .topbar .topbar-right li:first-child {
+        margin-left: 5px; }
+      .topbar .topbar-left li:last-child, .topbar .topbar-right li:last-child {
+        margin-right: 0; }
+      .topbar .topbar-left li:hover div, .topbar .topbar-right li:hover div {
         display: block; }
+  .topbar .topbar-left {
+    justify-content: flex-start; }
+  .topbar .topbar-right {
+    justify-content: flex-end; }
+  .topbar .hs-class-filter li {
+    width: 60px; }
 
 .Select:focus {
   outline: none; }
@@ -1769,10 +1767,6 @@ footer {
     margin-left: -38px; }
     .decks .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up, .cards .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up {
       left: calc(27% - 5px); }
-.decks .right-container .topbar .filters, .cards .right-container .topbar .filters {
-  display: flex;
-  justify-content: space-around;
-  width: 100%; }
 
 .decks .left-container .sidebar .deck-details table tr td span {
   font-size: 20px; }
@@ -1794,50 +1788,6 @@ footer {
   width: 100%; }
   .decks .left-container .sidebar table tr td:last-child {
     text-align: center; }
-.decks .right-container .topbar .create-deck {
-  cursor: pointer; }
-.decks .right-container .topbar .topbar-left {
-  display: flex; }
-  .decks .right-container .topbar .topbar-left li {
-    width: 60px;
-    text-align: center; }
-    .decks .right-container .topbar .topbar-left li span {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
-      transition: all ease 0.4s;
-      color: #474143;
-      padding: 5px;
-      line-height: 50px; }
-    .decks .right-container .topbar .topbar-left li:hover div {
-      display: block; }
-.decks .right-container .topbar .create-deck {
-  margin-right: 10px; }
-  .decks .right-container .topbar .create-deck span {
-    line-height: 50px; }
-  .decks .right-container .topbar .create-deck .tooltip {
-    position: absolute;
-    display: none;
-    width: 140px;
-    text-align: center;
-    margin-left: -89px; }
-    .decks .right-container .topbar .create-deck .tooltip .caret-up {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 0 5px 5px 5px;
-      border-color: transparent transparent #474143 transparent;
-      position: relative;
-      left: calc(79% - 5px); }
-    .decks .right-container .topbar .create-deck .tooltip p {
-      font-size: 12px;
-      text-transform: uppercase;
-      padding: 5px 0;
-      background-color: #474143;
-      color: #E7E2DA; }
-  .decks .right-container .topbar .create-deck:hover div {
-    display: block; }
 .decks .right-container .topbar .choosen-deck-topbar {
   display: flex;
   align-items: center; }
@@ -1958,11 +1908,6 @@ footer {
     margin-left: -38px; }
     .cards .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up {
       left: calc(27% - 5px); }
-.cards .right-container .topbar .topbar-left li:hover span {
-  color: navy; }
-.cards .right-container .topbar .topbar-right li {
-  width: 60px;
-  text-align: center; }
 .cards .right-container .cards-container {
   text-align: center;
   margin-top: 10px;
