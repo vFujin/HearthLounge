@@ -113,7 +113,7 @@ export class App extends Component {
 
             <Route path="forum"             component={Forum} />
             <Route path="tournaments"       component={Tournaments} />
-            <Route path="streamers"         component={Streams} />
+            <Route path="twitch"         component={Streams} />
 
             <Redirect from="reddit" to="reddit/posts" />
             <Route path="reddit"              component={Reddit}>

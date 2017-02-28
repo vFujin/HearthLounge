@@ -16,18 +16,10 @@ export class RedditPost extends Component {
     return {__html: html};
   }
 
-  tweet(tweet){
-    console.log(tweet);
-    fetch(`https://publish.twitter.com/oembed?url=${tweet}`, {
-      headers: {
-        "Content-Type": "text/plain",
-        "Access-Control-Allow-Origin": "*"
-      }
-    })
-        .then(res=>{
-          console.log(res);
-          return <div>{res.author_name}</div>;
-        })
+  iframe(src, index){
+    const height= 500,
+          width= 500;
+    return <iframe key={index} height={height} width={width} src={src}></iframe>
   }
 
   render() {
@@ -41,12 +33,11 @@ export class RedditPost extends Component {
               let replacedTwitchUrl = obj.url.replace("https://clips.twitch.tv/", "");
               switch(obj.domain){
                 case 'self.hearthstone':  return <div id="x" key={index}><div dangerouslySetInnerHTML={this.createMarkup(obj)} /> </div>;
-                case 'twitter.com':       return this.tweet(obj.url);
-                case 'youtube.com':       return <iframe key={index} height="400" width="600" src={replacedYTUrl}></iframe>;
-                case 'youtu.be':          return <iframe key={index} height="400" width="600" src={replacedYTShortenerUrl}></iframe>;
-                case 'clips.twitch.tv':   return <iframe key={index} height="400" width="600" src={`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`}></iframe>;
+                case 'youtube.com':       return this.iframe(replacedYTUrl, index);
+                case 'youtu.be':          return this.iframe(replacedYTShortenerUrl, index);
+                case 'clips.twitch.tv':   return this.iframe(`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`, index);
+                default: return window.open(obj.url);
               }
-
             })
           }
         </div>
