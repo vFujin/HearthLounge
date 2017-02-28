@@ -34,23 +34,20 @@ export class Reddit extends Component{
   render(){
     const {main, sidebar, topbar} = this.props;
     return (
-        <div className="pageContainer decks">
-          {this.props.children}
-
-          <div className="wrapper">
-            <div className="left-container">
-              <div className="sidebar">
-                {sidebar}
-              </div>
-            </div>
-            <div className="right-container">
-              <div className="topbar">
-                {topbar}
-              </div>
-              {React.cloneElement(main, {posts: this.state.posts, post_permalink: this.state.post_permalink, handleRedditPostClick: this.handleRedditPostClick.bind(this)})}
+      <div className="pageContainer decks list-with-filters-layout">
+        {this.props.children}
+          <div className="left-container">
+            <div className="sidebar">
+              {sidebar}
             </div>
           </div>
-        </div>
+          <div className="right-container">
+            <div className="topbar">
+              {topbar}
+            </div>
+            {React.cloneElement(main, {posts: this.state.posts, post_permalink: this.state.post_permalink, handleRedditPostClick: this.handleRedditPostClick.bind(this)})}
+          </div>
+      </div>
     )
   }
 }
