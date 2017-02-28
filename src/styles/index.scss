@@ -1559,6 +1559,25 @@ footer{
   }
 }
 
+.reddit{
+  .left-container{
+    width: 10%;
+  }
+  .right-container{
+    width: 90%;
+    .posts{
+      @include scrollbar();
+      height:calc(100% - 60px);
+      overflow: auto;
+      margin: 10px 0 0 10px;
+      table{
+        height:100%;
+
+      }
+    }
+  }
+}
+
 .pageContainer.login{
   justify-content: center;
   align-items: center;
