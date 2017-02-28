@@ -26,11 +26,23 @@ export class RedditPosts extends Component {
     }
   }
 
-
   stripRedditURL(url) {
     let split = url.split('/');
     let postUrl = split[split.length - 2];
     return postUrl;
+  }
+
+  checkIfStickied(post){
+    return post.stickied === true ? "hunter active" : post.stickied;
+  }
+
+  stripDomains(post){
+    if(post.domain.includes("battle.net")){
+      return post.domain.split('.')[1]+"net";
+    }
+    else {
+      return post.domain.replace(/self.|.com|clips.|.tv/g, "");
+    }
   }
 
   checkDomain(post) {
@@ -61,7 +73,7 @@ export class RedditPosts extends Component {
               <th>Created</th>
             </tr>
           {this.props.posts.map(post => (
-              <tr className={post.stickied === true ? "hunter active" : post.stickied} key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
+              <tr className={`${this.checkIfStickied(post)} ${this.stripDomains(post)}`} key={post.id} onClick={this.props.handleRedditPostClick.bind(this, post)}>
                 <td className="upvotes"><Link to={this.checkDomain(post)}><span>{post.ups}</span></Link></td>
                 <td className="domain"><Link to={this.checkDomain(post)}>{this.icon(post)}</Link></td>
                 <td className="title"><Link to={this.checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>

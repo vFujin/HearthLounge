@@ -1128,29 +1128,89 @@ a:active, a:hover, a:link, a:visited {
     .legendary.table-row-active:nth-child(odd):hover {
       background: orange; }
 
-.facebook.active {
-  color: #fff;
-  background-color: #3b5998; }
+.facebook {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .facebook.active, .facebook:hover {
+    color: #fff;
+    background-color: #3b5998; }
+    .facebook.active .domain a, .facebook:hover .domain a {
+      color: #fff; }
 
-.twitter.active {
-  color: #55acee;
-  background-color: #fff; }
+.twitter {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .twitter.active, .twitter:hover {
+    color: #55acee;
+    background-color: #fff; }
+    .twitter.active .domain a, .twitter:hover .domain a {
+      color: #55acee; }
 
-.youtube.active {
-  color: #fff;
-  background-color: #bb0000; }
+.youtube {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .youtube.active, .youtube:hover {
+    color: #fff;
+    background-color: #bb0000; }
+    .youtube.active .domain a, .youtube:hover .domain a {
+      color: #fff; }
 
-.reddit.active {
-  color: #fff;
-  background-color: #ff4006; }
+.reddit {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .reddit.active, .reddit:hover {
+    color: #fff;
+    background-color: #ff4006; }
+    .reddit.active .domain a, .reddit:hover .domain a {
+      color: #fff; }
 
-.battlenet.active {
-  color: #01a0d6;
-  background-color: #01a0d6; }
+.battlenet {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .battlenet.active, .battlenet:hover {
+    color: #00c0f6;
+    background-color: #1e293f; }
+    .battlenet.active .domain a, .battlenet:hover .domain a {
+      color: #00c0f6; }
 
-.twitch.active {
-  color: #fff;
-  background-color: #6441a4; }
+.twitch {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .twitch.active, .twitch:hover {
+    color: #fff;
+    background-color: #6441a4; }
+    .twitch.active .domain a, .twitch:hover .domain a {
+      color: #fff; }
+
+.false.hearthstone {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .false.hearthstone.active, .false.hearthstone:hover {
+    color: #474143;
+    background-color: rgba(0, 0, 0, 0.2); }
+    .false.hearthstone.active .domain a, .false.hearthstone:hover .domain a {
+      color: #474143; }
 
 html, body {
   height: 100%; }
@@ -2591,53 +2651,59 @@ footer {
   .dashboard .right-container .topbar li:last-child {
     margin-right: 0; }
 
-.reddit .left-container {
+.subreddit .left-container {
   width: 10%; }
-.reddit .right-container {
+.subreddit .right-container {
   width: 90%; }
-  .reddit .right-container .posts {
+  .subreddit .right-container .posts {
     height: calc(100% - 60px);
     overflow: auto;
     margin: 10px 0 0 10px;
     padding-right: 10px; }
-    .reddit .right-container .posts::-webkit-scrollbar {
+    .subreddit .right-container .posts::-webkit-scrollbar {
       width: 13px; }
-    .reddit .right-container .posts::-webkit-scrollbar-thumb {
+    .subreddit .right-container .posts::-webkit-scrollbar-thumb {
       background-color: #474143;
       border-radius: 0; }
-    .reddit .right-container .posts::-webkit-scrollbar-thumb:hover {
+    .subreddit .right-container .posts::-webkit-scrollbar-thumb:hover {
       background-color: #474143; }
-    .reddit .right-container .posts::-webkit-scrollbar-track {
+    .subreddit .right-container .posts::-webkit-scrollbar-track {
       background-color: #A69E9D; }
-    .reddit .right-container .posts table {
+    .subreddit .right-container .posts table {
       height: 100%;
       width: 100%;
       border: 1px solid #474143;
       border-collapse: collapse; }
-      .reddit .right-container .posts table tr {
+      .subreddit .right-container .posts table tr {
         border-bottom: 1px solid black; }
-        .reddit .right-container .posts table tr td a, .reddit .right-container .posts table tr th a {
+        .subreddit .right-container .posts table tr td a, .subreddit .right-container .posts table tr th a {
           display: block;
           padding: 10px; }
-          .reddit .right-container .posts table tr td a span, .reddit .right-container .posts table tr th a span {
+          .subreddit .right-container .posts table tr td a span, .subreddit .right-container .posts table tr th a span {
             font-size: 20px; }
-        .reddit .right-container .posts table tr .upvotes a, .reddit .right-container .posts table tr .domain a, .reddit .right-container .posts table tr .created a {
+        .subreddit .right-container .posts table tr .upvotes a, .subreddit .right-container .posts table tr .domain a, .subreddit .right-container .posts table tr .created a {
           text-align: center; }
-        .reddit .right-container .posts table tr .upvotes a span {
+        .subreddit .right-container .posts table tr .upvotes a span {
           background-color: #474143;
           width: 20%;
           padding: 5px;
           font-size: 14px;
           color: #E7E2DA; }
-        .reddit .right-container .posts table tr .domain {
+        .subreddit .right-container .posts table tr .domain {
           color: #474143; }
-        .reddit .right-container .posts table tr:first-child {
+          .subreddit .right-container .posts table tr .domain a {
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+            transition: all ease 0.4s; }
+        .subreddit .right-container .posts table tr:first-child {
           background-color: rgba(0, 0, 0, 0.5);
           color: #E7E2DA; }
-          .reddit .right-container .posts table tr:first-child th {
+          .subreddit .right-container .posts table tr:first-child th {
             padding: 20px;
             font-weight: normal; }
-            .reddit .right-container .posts table tr:first-child th span {
+            .subreddit .right-container .posts table tr:first-child th span {
               font-size: 20px;
               margin-right: 5px; }
 

@@ -1559,7 +1559,7 @@ footer{
   }
 }
 
-.reddit{
+.subreddit{
   .left-container{
     width: 10%;
   }
@@ -1607,6 +1607,9 @@ footer{
           }
           .domain{
             color: $dark-grey;
+            a{
+              @include transition(all ease .4s);
+            }
           }
           &:nth-child(odd){
             //background-color: $black-010;
