@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ManaCostFilter} from '../../../shared-assets/filters/mana-cost';
-import {HsClassFilter} from  '../../../shared-assets/filters/hs-class';
+import HsClassFilter from  '../../../shared-assets/filters/hs-class';
 
 export class CardsTopbarFilters extends Component {
   render() {
