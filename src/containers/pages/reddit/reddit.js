@@ -10,13 +10,13 @@ export class Reddit extends Component{
       active_post: '',
       post_permalink: '',
       active_tabmenu: 'hot'
-    }
+    };
+
+    this.handleTabmenuClick = this.handleTabmenuClick.bind(this);
   }
 
   componentDidMount() {
-    let tabmenu = "hot" || this.state.active_tabmenu;
-    console.log(tabmenu);
-    axios.get(`https://www.reddit.com/r/hearthstone/${tabmenu}.json`)
+    axios.get(`https://www.reddit.com/r/hearthstone.json`)
         .then(res => {
           const posts = res.data.data.children.map(obj => obj.data);
           console.log(posts);
@@ -24,8 +24,6 @@ export class Reddit extends Component{
             posts: posts
           })
         });
-
-    this.handleTabmenuClick();
   }
 
   handleRedditPostClick(active_post) {
@@ -37,15 +35,30 @@ export class Reddit extends Component{
   }
 
 
-  handleTabmenuClick(tabmenu) {
+  handleTabmenuClick = (e) => {
+    e.preventDefault();
+    let tabmenu = e.currentTarget.value;
+    if(tabmenu !== this.state.active_tabmenu){
 
-}
+      axios.get(`https://www.reddit.com/r/hearthstone/${tabmenu}.json`)
+          .then(res => {
+            const posts = res.data.data.children.map(obj => obj.data);
+            console.log(posts);
+            this.setState({
+              posts: posts
+            })
+          });
+
+      this.setState({
+        active_tabmenu: tabmenu
+      });
+    }
+  };
 
   render(){
     const {main, sidebar, topbar} = this.props;
     return (
       <div className="pageContainer subreddit list-with-filters-layout">
-        {this.props.children}
           <div className="left-container">
             <div className="sidebar">
               {React.cloneElement(sidebar, {handleTabmenuClick: this.handleTabmenuClick.bind(this)})}

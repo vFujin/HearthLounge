@@ -2666,6 +2666,8 @@ footer {
   width: 10%;
   background-color: #A69E9D; }
   .subreddit .left-container button {
+    text-transform: capitalize;
+    cursor: pointer;
     width: calc(100% - 20px);
     outline: 0;
     background: transparent;

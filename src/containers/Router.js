@@ -117,7 +117,9 @@ export class App extends Component {
 
             <Redirect from="reddit" to="reddit/posts" />
             <Route path="reddit"              component={Reddit}>
-              <Route path="posts"             components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}} />
+              <Route path="posts"             components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}}>
+                <Route path=":category"       component={Reddit}/>
+              </Route>
               <Route path="post/:id/:post"    components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
               <Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
             </Route>

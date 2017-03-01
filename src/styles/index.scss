@@ -1564,6 +1564,8 @@ footer{
     width: 10%;
     background-color: $light-grey;
     button{
+      text-transform: capitalize;
+      cursor: pointer;
       width: calc(100% - 20px);
       outline: 0;
       background: transparent;
