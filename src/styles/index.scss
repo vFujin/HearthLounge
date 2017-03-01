@@ -598,8 +598,96 @@ footer{
       }
     }
   }
-  .right-container{
+}
 
+.decks, .subreddit{
+  .right-container{
+    .choosen-deck-view{
+      height: calc(100% - 50px);
+      .choosen-deck-details{
+        display: flex;
+        height: 100%;
+        .section {
+          width: 50%;
+          margin: 10px;
+          margin-bottom: 0;
+          justify-content: space-around;
+          .section-header {
+            h1 {
+              width: 100%;
+              border-bottom: 1px solid black;
+              line-height: 0.1px;
+              margin: 0.67em 0;
+              span {
+                background: $pearl;
+                padding: 0 10px 0 0;
+              }
+            }
+          }
+          .section-body {
+            @include scrollbar;
+            overflow: auto;
+          }
+        }
+        .description {
+          height: calc(100% - 10px);
+          .section-body {
+            height: calc(100% - 1.34em - 12px);
+            padding: 0 10px 0 0;
+            div {
+              background: rgba(0, 0, 0, .2);
+              padding: 10px;
+            }
+          }
+
+        }
+        .comments {
+          background: transparent;
+          margin-right: 0;
+          height: calc(100% - 10px);
+
+          .section-body {
+            height: calc(100% - 1.34em - 12px);
+            .comment {
+              display: flex;
+              margin: 10px;
+              border-bottom: 1px solid black;
+              padding: 15px 0;
+              .user-details {
+                display: flex;
+                .comment-author {
+                  width: 140px;
+                  margin-left: 5px;
+                  font-size: 14px;
+                }
+              }
+              .comment-details {
+                margin-left: 10px;
+                &_header, &_footer {
+                  display: flex;
+                }
+                &_header {
+                  justify-content: space-between;
+                  font-size: 14px;
+                }
+                &_body {
+                  margin: 10px 0;
+                }
+                &_footer {
+                  justify-content: flex-start;
+                  div {
+                    margin-right: 10px;
+                    &:last-child {
+                      margin-right: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -678,92 +766,6 @@ footer{
       height: calc(100% - 60px);
       width: calc(100% - 20px);
       overflow: auto;
-    }
-    .choosen-deck-view {
-      height: calc(100% - 50px);
-      .choosen-deck-details {
-        display: flex;
-        height: 100%;
-        .section {
-          width: 50%;
-          margin: 10px;
-          margin-bottom: 0;
-          justify-content: space-around;
-          .section-header {
-            h1 {
-              width: 100%;
-              border-bottom: 1px solid black;
-              line-height: 0.1px;
-              margin: 0.67em 0;
-              span {
-                background: $pearl;
-                padding: 0 10px 0 0;
-              }
-            }
-          }
-          .section-body {
-            @include scrollbar;
-            overflow: auto;
-          }
-        }
-        .description {
-          height: calc(100% - 10px);
-          .section-body {
-            height: calc(100% - 1.34em - 12px);
-            padding: 0 10px 0 0;
-            p {
-              background: rgba(0, 0, 0, .2);
-              padding: 10px;
-            }
-          }
-
-        }
-        .comments {
-          background: transparent;
-          margin-right: 0;
-          height: calc(100% - 10px);
-
-          .section-body {
-            height: calc(100% - 1.34em - 12px);
-            .comment {
-              display: flex;
-              margin: 10px;
-              border-bottom: 1px solid black;
-              padding: 15px 0;
-              .user-details {
-                display: flex;
-                .comment-author {
-                  width: 140px;
-                  margin-left: 5px;
-                  font-size: 14px;
-                }
-              }
-              .comment-details {
-                margin-left: 10px;
-                &_header, &_footer {
-                  display: flex;
-                }
-                &_header {
-                  justify-content: space-between;
-                  font-size: 14px;
-                }
-                &_body {
-                  margin: 10px 0;
-                }
-                &_footer {
-                  justify-content: flex-start;
-                  div {
-                    margin-right: 10px;
-                    &:last-child {
-                      margin-right: 0;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 }

@@ -31,7 +31,7 @@ const RedditPost = (props) => {
 
       switch (obj.domain) {
         case 'self.hearthstone':
-          return <div key={index}><div dangerouslySetInnerHTML={createMarkup(obj)}/></div>;
+          return <div key={index} className="section-body" dangerouslySetInnerHTML={createMarkup(obj)}/>;
         case 'youtube.com':
           return iframe(replacedYTUrl, index);
         case 'youtu.be':
@@ -48,8 +48,11 @@ const RedditPost = (props) => {
   return(
     <div className="choosen-deck-view">
       <div className="choosen-deck-details">
-        {filterPosts()}
-      </div>
+        <div className="section description">
+          {filterPosts()}
+        </div>
+
+        </div>
     </div>
   )
 };
