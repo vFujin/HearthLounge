@@ -1,7 +1,16 @@
 import React from 'react';
-import 'whatwg-fetch';
+import axios from 'axios';
 const RedditPost = (props) => {
   const{posts, params} = props;
+
+  const componentDidMount = () =>{
+    axios.get(`https://www.reddit.com/r/hearthstone/comments.json`)
+        .then(res => {
+          const posts = res.data.data.children.map(x=>x.data);
+          console.log(posts);
+        });
+  };
+  componentDidMount();
 
   const createMarkup = (obj) =>{
     let html = obj.selftext_html;
@@ -49,6 +58,7 @@ const RedditPost = (props) => {
     <div className="choosen-deck-view">
       <div className="choosen-deck-details">
         <div className="section description">
+          <div className="section-header"><h1><span>{props.posts.filter(x=>x.id === params.id).map(x=>x.title)[0]}</span></h1></div>
           {filterPosts()}
         </div>
 
