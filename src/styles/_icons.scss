@@ -66,6 +66,9 @@
 .mean-streets-of-gadgetzan{
   @include icon_color($msog);
 }
+.journey-to-ungoro{
+  @include icon_color($ungoro);
+}
 
 //Rarity
 .common{

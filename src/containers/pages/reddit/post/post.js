@@ -9,6 +9,7 @@ const RedditPost = (props) => {
         .replace(/&gt;/g, '>')
         .replace(/&quot;/g, '"')
         .replace(/&amp;#39;/g, "'")
+        .replace(/&amp;/g, "&")
         .replace('<!-- SC_OFF -->', '')
         .replace('<!-- SC_ON -->', '')
         .replace('class', 'className');
@@ -30,9 +31,7 @@ const RedditPost = (props) => {
 
       switch (obj.domain) {
         case 'self.hearthstone':
-          return <div key={index}>
-            <div dangerouslySetInnerHTML={createMarkup(obj)}/>
-          </div>;
+          return <div key={index}><div dangerouslySetInnerHTML={createMarkup(obj)}/></div>;
         case 'youtube.com':
           return iframe(replacedYTUrl, index);
         case 'youtu.be':

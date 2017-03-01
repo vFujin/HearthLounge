@@ -8,12 +8,15 @@ export class Reddit extends Component{
       posts: [],
       post: '',
       active_post: '',
-      post_permalink: ''
+      post_permalink: '',
+      active_tabmenu: 'hot'
     }
   }
 
   componentDidMount() {
-    axios.get('https://www.reddit.com/r/hearthstone/hot.json')
+    let tabmenu = "hot" || this.state.active_tabmenu;
+    console.log(tabmenu);
+    axios.get(`https://www.reddit.com/r/hearthstone/${tabmenu}.json`)
         .then(res => {
           const posts = res.data.data.children.map(obj => obj.data);
           console.log(posts);
@@ -21,6 +24,8 @@ export class Reddit extends Component{
             posts: posts
           })
         });
+
+    this.handleTabmenuClick();
   }
 
   handleRedditPostClick(active_post) {
@@ -32,6 +37,9 @@ export class Reddit extends Component{
   }
 
 
+  handleTabmenuClick(tabmenu) {
+
+}
 
   render(){
     const {main, sidebar, topbar} = this.props;
@@ -40,7 +48,7 @@ export class Reddit extends Component{
         {this.props.children}
           <div className="left-container">
             <div className="sidebar">
-              {sidebar}
+              {React.cloneElement(sidebar, {handleTabmenuClick: this.handleTabmenuClick.bind(this)})}
             </div>
           </div>
           <div className="right-container">
@@ -60,5 +68,7 @@ Reddit.propTypes = {
   posts: React.PropTypes.array,
   post_permalink: React.PropTypes.string,
   active_post: React.PropTypes.string,
-  handleReditPostClick: React.PropTypes.func
+  handleReditPostClick: React.PropTypes.func,
+  active_tabmenu: React.PropTypes.string,
+  handleTabmenuClick: React.PropTypes.func
 };

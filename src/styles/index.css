@@ -964,6 +964,41 @@ a:active, a:hover, a:link, a:visited {
     background-color: #d2cac5;
     color: #000; }
 
+.journey-to-ungoro {
+  color: #3d9e2c; }
+  .journey-to-ungoro span {
+    border-color: #3d9e2c; }
+  .journey-to-ungoro:hover {
+    background-color: #3d9e2c;
+    color: #474143; }
+    .journey-to-ungoro:hover span {
+      border-color: #474143; }
+  .journey-to-ungoro.active {
+    background-color: #3d9e2c;
+    color: #474143;
+    border-color: #3d9e2c; }
+  .journey-to-ungoro.active-on-hover {
+    color: #474143; }
+    .journey-to-ungoro.active-on-hover:hover {
+      background-color: #3d9e2c;
+      color: #474143;
+      border: #474143; }
+  .journey-to-ungoro.icon-font-active {
+    color: #474143; }
+  .journey-to-ungoro.table-row {
+    color: #474143; }
+    .journey-to-ungoro.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .journey-to-ungoro.table-row:nth-child(odd):hover {
+        background: #3d9e2c; }
+    .journey-to-ungoro.table-row:hover {
+      background-color: #3d9e2c;
+      color: #474143;
+      border: #474143; }
+  .journey-to-ungoro.blizzard-official {
+    background-color: #3d9e2c;
+    color: #000; }
+
 .common {
   color: #fff; }
   .common span {
