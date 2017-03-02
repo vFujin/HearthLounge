@@ -2871,6 +2871,8 @@ footer {
                 color: #474143; }
                 .pageContainer.login .wrapper .right-container .sign form .input-wrapper select option:hover {
                   background-color: #00a99c; }
+            .pageContainer.login .wrapper .right-container .sign form .input-wrapper label:first-letter {
+              text-transform: capitalize; }
             .pageContainer.login .wrapper .right-container .sign form .input-wrapper .tos {
               display: flex;
               justify-content: flex-start;

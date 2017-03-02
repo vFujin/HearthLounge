@@ -1809,6 +1809,11 @@ footer{
                 }
               }
             }
+            label{
+              &:first-letter {
+                text-transform: capitalize;
+              }
+            }
             .tos {
               display: flex;
               justify-content: flex-start;

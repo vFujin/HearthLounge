@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import FormTooltips from './form-tooltips';
+import Input from '../../shared-assets/form-assets/input';
 
 export class SignUp extends Component {
   constructor(props){
@@ -14,26 +14,29 @@ export class SignUp extends Component {
       password_confirm: "",
       secret_question: "",
       secret_answer: "",
-      tos: false,
-      tooltip: false
+      tos: false
     };
-    console.log(this.state.tooltip);
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
+    this.showTooltip = this.showTooltip.bind(this);
+    this.hideTooltip = this.hideTooltip.bind(this);
   }
 
   compareInputValues(input, confirm_input){
 
   }
 
-  showTooltip(){
+  showTooltip(e){
+    let target = e.target.id;
     this.setState({
-      tooltip: true
+      [`${target}_tooltip`]: true
     });
   }
-  hideTooltip(){
+  hideTooltip(e){
+    let target = e.target.id;
     this.setState({
-      tooltip: false
+      [`${target}_tooltip`]: false
     })
   }
 
@@ -58,35 +61,34 @@ export class SignUp extends Component {
     formSubmitEvent.preventDefault();
   };
 
+  input(id, label, placeholder, type){
+    return (
+        <Input id={id}
+               label={label}
+               placeholder={placeholder}
+               type={type}
+               tooltip={this.state[`${id}_tooltip`]}
+               handleInputChange={this.handleInputChange}
+               hideTooltip={this.hideTooltip}
+               showTooltip={this.showTooltip} />
+    )
+  }
+
   render() {
+    let username = "username",
+        email = "e-mail",
+        password = "password",
+        secret = "secret",
+        text = "text";
+
     return (
       <div className="sign sign-up active">
         <form onSubmit={this.handleFormSubmit}>
-          <div className="input-wrapper">
-            <label htmlFor="username">Username:</label>
-            <input onChange={this.handleInputChange} type="text" id="username" placeholder="xJoex"/>
-          </div>
-
-          <div className="input-wrapper" onBlur={this.hideTooltip.bind(this)} onFocus={this.showTooltip.bind(this)}>
-            <label htmlFor="email">E-mail:</label>
-            <input onChange={this.handleInputChange}  type="email" id="email" placeholder="example@example.com"/>
-            <FormTooltips display={this.state.tooltip}/>
-          </div>
-
-          <div className="input-wrapper">
-            <label htmlFor="email_confirm">Confirm e-mail:</label>
-            <input onChange={this.handleInputChange} type="email" id="email_confirm" placeholder="example@example.com"/>
-          </div>
-
-          <div className="input-wrapper">
-          <label htmlFor="password">Password:</label>
-          <input onChange={this.handleInputChange} type="password" id="password"/>
-          </div>
-
-          <div className="input-wrapper">
-            <label htmlFor="password_confirm">Confirm password:</label>
-            <input onChange={this.handleInputChange} type="password" id="confirm_password"/>
-          </div>
+          {this.input(username,               username,               "Joe",                  text)}
+          {this.input(email,                  email,                  "example@example.com",  email)}
+          {this.input(`confirm_${email}`,     `Confirm ${email}`,     "example@example.com",  email)}
+          {this.input(password,               password,               "",                     password)}
+          {this.input(`confirm_${password}`,  `Confirm ${password}`,  "",                     password)}
 
           <div className="input-wrapper">
             <label htmlFor="secret_question">Choose secret question:</label>
@@ -98,10 +100,7 @@ export class SignUp extends Component {
             </select>
           </div>
 
-          <div className="input-wrapper">
-            <label htmlFor="secret_answer">Secret answer:</label>
-            <input onChange={this.handleInputChange} type="text" id="secret_answer"/>
-          </div>
+          {this.input(secret,                `${secret} answer`,       "",                     text)}
 
           <div className="input-wrapper">
             <div className="tos">
