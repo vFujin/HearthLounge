@@ -9,15 +9,15 @@ export class AdventureFilter extends Component {
           <h3>Adventures</h3>
           <ul className="sidebar-icons">
             {adventures.map((element, index) =>
-                <li key={index}>
-                  <Link to={`/${this.props.page}?adventure=${element.url}`}>
-                    <span className={`hs icon-${element.url}`}></span>
-                    <div className="tooltip">
-                      <div className="caret-up"></div>
-                      <p>{element.name}</p>
-                    </div>
-                  </Link>
-                </li>
+              <li key={index}>
+                <Link to={`/${this.props.page}?adventure=${element.url}`}>
+                  <span className={`hs hs-icon icon-${element.url}`}></span>
+                  <div className="tooltip">
+                    <div className="caret-up"></div>
+                    <p>{element.name}</p>
+                  </div>
+                </Link>
+              </li>
             )}
           </ul>
         </div>

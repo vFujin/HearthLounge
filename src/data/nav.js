@@ -83,6 +83,10 @@ export const navItems = [
       {
         name: "Mean Streets of Gadgetzan",
         url: "mean-streets-of-gadgetzan"
+      },
+      {
+        name: "Journey to Un'Goro",
+        url: "journey-to-ungoro"
       }
     ]
   },
@@ -130,7 +134,7 @@ export const navItems = [
   },
   {
     name: "Streamers",
-    url: 'streamers',
+    url: 'twitch',
     icon: "icon-twitch",
     homepage_block_width: 2
   },

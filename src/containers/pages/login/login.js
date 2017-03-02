@@ -12,7 +12,6 @@ export class Login extends Component {
   }
 
   handleCurrentDotChange(current_dot){
-    console.log(this.state.current_dot);
     this.setState({
       current_dot: current_dot
     })
@@ -22,7 +21,7 @@ export class Login extends Component {
     return (
       <ul>
         {carousel.map((active,index)=>
-          <li className={this.state.current_dot === index ? 'active' : index}>{active.dot}</li>
+          <li key={index} className={this.state.current_dot === index ? 'active' : index}>{active.dot}</li>
         )}
       </ul>
     )

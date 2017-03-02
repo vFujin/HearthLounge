@@ -2,24 +2,34 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import {hs_class} from '../../../data/filters';
 
-export class HsClassFilter extends Component {
+const HsClassFilter = (props) => {
+  const {align, page} = props;
 
-  render() {
+  function listClasses() {
     return (
-       <ul className={`topbar-${this.props.align}`}>
-         {console.log(this.props.params)}
-          {hs_class.map((element, index) =>
-              <li key={index}>
-                <Link to={`${this.props.page}?class=${element.url}`}>
-                  <span className={`hs-icon icon-${element.url}`}></span>
-                  <div className="tooltip">
-                    <div className="caret-up"></div>
-                    <p>{element.name}</p>
-                  </div>
-                </Link>
-              </li>
-          )}
-        </ul>
-    );
+        hs_class.map((hs_class, index) =>
+            <li key={index}>
+              <Link to={{pathname: 'cards', query: Object.assign({}, props.query, {hs_class: hs_class.url})}}>
+                <span className={`hs-icon ${hs_class.name} icon-${hs_class.url}`}></span>
+                <div className="tooltip">
+                  <div className="caret-up"></div>
+                  <p>{hs_class.name}</p>
+                </div>
+              </Link>
+            </li>
+        ))
   }
-}
+
+  return (
+      <ul className={`topbar-${align} hs-class-filter`}>
+        {listClasses(page)}
+      </ul>
+  );
+};
+
+export default HsClassFilter;
+
+HsClassFilter.propTypes = {
+  align: React.PropTypes.string,
+  page: React.PropTypes.string
+};

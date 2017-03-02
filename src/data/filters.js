@@ -208,6 +208,10 @@ export const expansions = [
   {
     name: 'Mean Streets of Gadgetzan',
     url: 'mean-streets-of-gadgetzan'
+  },
+  {
+    name: "Journey to Un'Goro",
+    url: 'journey-to-ungoro'
   }
 ];
 

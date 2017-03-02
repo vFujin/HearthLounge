@@ -4,17 +4,8 @@
 @import 'grid';
 @import 'mixins';
 @import 'icons';
+@import 'shared';
 @import 'submenu';
-html, body{
-  height: 100%;
-}
-body {
-  font-family: 'Roboto', sans-serif;
-  span.hs-icon {
-    font-family: 'Hearthstone';
-    font-size: 41px;
-  }
-}
 /*
   Layout
  */
@@ -86,8 +77,6 @@ footer{
   position: fixed;
   bottom:0;
 }
-
-
 
 .shared-table {
   margin-right: 20px;
@@ -167,140 +156,6 @@ footer{
 }
 
 
-.deck-snippet{
-  position: relative;
-  background-color: $pearl;
-  width: 37.4vh;
-  padding: 1vh;
-  margin-right: 1vh;
-  &:last-child{
-    margin-right:0;
-  }
-  .background-icon{
-    position: absolute;
-    font-size: 130px;
-    opacity: 0.05;
-    padding-left: 57%;
-    padding-top: 8px;
-  }
-  .deck-snippet-header{
-    display: flex;
-    padding-bottom: 4.5px;
-    border-bottom: 1px solid $dark-grey;
-    .deck-snippet-hs-class {
-      span {
-        font-size: 35px;
-        position: relative;
-        top: 5px;
-        padding: 5px;
-        border: 2px solid black;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
-      }
-    }
-    .deck-snippet-about{
-      margin-left: 10px;
-      .deck-snippet-title{
-        font-weight: bold;
-        font-size: 16px;
-      }
-      .deck-snippet-author, .deck-snippet-created{
-        font-size:12px;
-      }
-    }
-  }
-  .deck-snippet-body{
-    margin-top: 4.5px;
-    height: calc(9.5vh - 10px);
-    .deck-snippet-body-header{
-      display: flex;
-      .deck-snippet-mode {
-        width: 10%;
-        text-align: center;
-        span {
-          color: darkgreen;
-          font-size: 25px;
-        }
-        p{
-          margin-left: 5px ;
-        }
-      }
-      .deck-snippet-dust-needed{
-        display: flex;
-        span{
-          font-size:25px;
-        }
-      }
-      .deck-snippet-mana-curve{
-        width:14%;
-        display: flex;
-        li{
-          width: 5px;
-          background-color: $dark-grey;
-          height: 100%;
-          margin-right: 2px;
-        }
-      }
-      .deck-snippet-type, .deck-snippet-dust-needed{
-        height:27px;
-        line-height: 27px;
-      }
-      .deck-snippet-type{
-        width: 55%;
-      }
-      .deck-snippet-dust-needed{
-        width: 21%;
-        display: flex;
-        justify-content: flex-end;
-      }
-    }
-    .deck-snippet-body-body{
-      margin-top: 10px;
-      display: flex;
-      div{
-        text-align: left;
-        border-right: 1px solid $light-grey;
-        padding: 0 5px;
-        &:first-child{
-          padding-left:0;
-        }
-        &:last-child{
-          padding-right:0;
-          border-right:0;
-        }
-      }
-    }
-    .deck-snippet-body-footer{
-      margin-top:7px;
-      display: flex;
-      div{
-        width: 33.33%;
-        align-items: center;
-        display: flex;
-        span{
-          font-size: 16px;
-          margin-right: 5px;
-        }
-      }
-      .deck-snippet-views{
-        display: flex;
-        opacity: .6;
-        p{
-          padding:0;
-          margin: 0;
-        }
-      }
-      .deck-snippet-comments{
-        justify-content:center;
-      }
-      .deck-snippet-votes{
-        justify-content: flex-end;
-
-      }
-    }
-  }
-}
 
 .pageContainer{
   padding: 0 10px;
@@ -702,72 +557,21 @@ footer{
       }
     }
     .sidebar{
-      .Select{
-        &:focus{
-          outline:none;
-        }
-        .Select-control{
-          background-color: $light-grey;
-          border:none;
-          border-radius: 0;
-          border-bottom: 1px solid black;
-        }
-
-        .Select-placeholder{
-          color: $dark-grey;
-        }
-        .Select-arrow {
-          border-color: $dark-grey transparent transparent;
-        }
-        .Select-value{
-          color: $dark-grey;
-          border: 1px solid $dark-grey;
-          background-color: $pearl;
-          .Select-value-icon{
-            border-right: 1px solid $dark-grey;
-            &:hover{
-              color: $dark-grey;
-            }
-            &:focus{
-              background-color: yellow;
-            }
-          }
-        }
-        .Select-clear-zone{
-          color: $dark-grey;
-
-        }
-        .Select-menu{
-          &::-webkit-scrollbar{width: 13px;}
-          &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0;}
-          &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
-          &::-webkit-scrollbar-track{background-color: $light-grey;}
-        }
-        .Select-menu-outer{
-          background-color: $pearl;
-          border-radius: 0;
-          border: 0;
-
-        }
-        .Select-option{
+      ul{
+        li{
           @include transition(all ease .4s);
-          background-color: $pearl;
-          border-bottom:1px solid $dark-grey;
-          border-right: 1px solid $light-grey;
-          &:last-child{
-            border-radius: 0;
-            border-bottom:0;
+          display: inline-block;
+          color: $dark-grey;
+          span{
+            font-family: 'Hearthstone';
+            font-size: 41px;
+            &.hs{
+              padding:10px;
+            }
           }
-          &:hover{
-            background-color: $sea-color;
-            color: $pearl;
-          }
-
         }
       }
-      .hs{
-        padding:10px;
-      }
+
       .sidebar-icons {
         margin: 1em 0;
         text-align: center;
@@ -776,30 +580,6 @@ footer{
             @include transition(all ease .4s);
             padding: 5px;
             color: $dark-grey;
-          }
-          .tooltip {
-            position: absolute;
-            width: 200px;
-            display: none;
-            margin-left: -82px;
-            margin-top:5px;
-            .caret-up {
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 0 5px 5px 5px;
-              border-color: transparent transparent $pearl transparent;
-              position: relative;
-              left: calc(50% - 5px);
-            }
-            p{
-              font-size: 12px;
-              text-transform: uppercase;
-              padding: 5px 0;
-              background-color: $dark-grey;
-              color: $pearl;
-              border: 1px solid $pearl ;
-            }
           }
           &:hover{
             div{
@@ -818,321 +598,87 @@ footer{
       }
     }
   }
-  .right-container{
-    .topbar{
-      display: flex;
-      justify-content: space-between;
-      .topbar-left{
-        li{
-          cursor: pointer;
-          margin-right: 5px;
-          &:first-child{
-            margin-left: 5px;
-          }
-          &:last-child{
-            margin-right: 0;
-          }
-          span{
-            line-height: 50px;
-          }
-        }
-      }
-      .topbar-right {
-        li {
-          cursor: pointer;
-          span {
-            @include transition(all ease .4s);
-            color: $dark-grey;
-            padding: 5px;
-            line-height: 50px;
-          }
-          .tooltip {
-            position: absolute;
-            display: none;
-            width: 120px;
-            margin-left: -30px;
-            .caret-up {
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 0 5px 5px 5px;
-              border-color: transparent transparent $dark-grey transparent;
-              position: relative;
-              left: calc(50% - 5px);
-            }
-            p {
-              font-size: 12px;
-              text-transform: uppercase;
-              padding: 5px 0;
-              background-color: $dark-grey;
-              color: $pearl;
-            }
-          }
-          &:hover {
-            div {
-              display: block;
-            }
-          }
-        }
-
-      }
-    }
-  }
 }
 
-.decks {
-  .wrapper {
-    display: flex;
-    width:100%;
-    .left-container {
-      ul {
-        li {
-          @include transition(all ease .4s);
-          display: inline-block;
-          color: $dark-grey;
-          &:last-child {
-            margin-right: 0;
-          }
-          span {
-            font-family: 'Hearthstone';
-            font-size: 41px;
-          }
-        }
-      }
-      .sidebar {
-        .deck-details {
-          table {
-            tr {
-              td {
-                span {
-                  font-size: 20px;
-                }
+.decks, .subreddit{
+  .right-container{
+    .choosen-deck-view{
+      height: calc(100% - 50px);
+      .choosen-deck-details{
+        display: flex;
+        height: 100%;
+        .section {
+          width: 50%;
+          margin: 10px;
+          margin-bottom: 0;
+          justify-content: space-around;
+          .section-header {
+            h1 {
+              width: 100%;
+              border-bottom: 1px solid black;
+              line-height: 0.1px;
+              margin: 0.67em 0;
+              span {
+                background: $pearl;
+                padding: 0 10px 0 0;
               }
             }
           }
-        }
-        .graph {
-          padding: 10px;
-          width: calc(100% - 20px);
-          text-align: center;
-          display: inline-flex;
-          li {
-            width: 100%;
-            .bar {
-              height: 100px;
-              margin: 2px auto;
-              width: 15px;
-              background-color: $dark-grey;
-            }
-            .hs-icon {
-              font-size: 25px;
-            }
+          .section-body {
+            @include scrollbar;
+            overflow: auto;
           }
         }
-        table {
-          width: 100%;
-          tr {
-            td:last-child {
-              text-align: center;
-            }
-          }
-        }
-      }
-    }
-    .right-container {
-      .topbar {
-        .filters {
-          justify-content: space-between;
-          width: 100%;
-          .create-deck {
-            cursor: pointer;
-          }
-        }
-        .topbar-left {
-          display: flex;
-          li {
-            width: 60px;
-            text-align: center;
-            span {
-              @include transition(all ease .4s);
-              color: $dark-grey;
-              padding: 5px;
-              line-height: 50px;
-            }
-            .tooltip {
-              position: absolute;
-              display: none;
-              width: 120px;
-              margin-left: -30px;
-              .caret-up {
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 0 5px 5px 5px;
-                border-color: transparent transparent $dark-grey transparent;
-                position: relative;
-                left: calc(50% - 5px);
-              }
-              p {
-                font-size: 12px;
-                text-transform: uppercase;
-                padding: 5px 0;
-                background-color: $dark-grey;
-                color: $pearl;
-              }
-            }
-            &:hover {
-              div {
-                display: block;
-              }
-            }
-          }
-        }
-        .create-deck {
-          margin-right: 10px;
-          span {
-            line-height: 50px;
-          }
-          .tooltip {
-            position: absolute;
-            display: none;
-            width: 140px;
-            text-align: center;
-            margin-left: -89px;
-            .caret-up {
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 0 5px 5px 5px;
-              border-color: transparent transparent $dark-grey transparent;
-              position: relative;
-              left: calc(79% - 5px);
-            }
-            p {
-              font-size: 12px;
-              text-transform: uppercase;
-              padding: 5px 0;
-              background-color: $dark-grey;
-              color: $pearl;
-            }
-          }
-          &:hover {
+        .description {
+          height: calc(100% - 10px);
+          .section-body {
+            height: calc(100% - 1.34em - 12px);
+            padding: 0 10px 0 0;
             div {
-              display: block;
+              background: rgba(0, 0, 0, .2);
+              padding: 10px;
             }
           }
+
         }
+        .comments {
+          background: transparent;
+          margin-right: 0;
+          height: calc(100% - 10px);
 
-        .choosen-deck-topbar {
-          display: flex;
-          align-items: center;
-          .mode, .cards, .dust-cost {
-            display: flex;
-            align-items: center;
-          }
-          span {
-            font-size: 20px;
-          }
-          li {
-            margin-left: 10px;
-          }
-          .rating, .dust-cost {
-            height: 100%;
-            padding: 0 10px;
-          }
-          .rating {
-            display: flex;
-            align-items: center;
-          }
-        }
-      }
-
-      .top-decks {
-        @include scrollbar;
-        margin: 10px 10px 0 10px;
-        padding-right: 10px;
-        height: calc(100% - 60px);
-        width: calc(100% - 20px);
-        overflow: auto;
-      }
-      .choosen-deck-view {
-        height: calc(100% - 50px);
-        .choosen-deck-details {
-          display: flex;
-          height: 100%;
-          .section {
-            width: 50%;
-            margin: 10px;
-            margin-bottom: 0;
-            justify-content: space-around;
-            .section-header {
-              h1 {
-                width: 100%;
-                border-bottom: 1px solid black;
-                line-height: 0.1px;
-                margin: 0.67em 0;
-                span {
-                  background: $pearl;
-                  padding: 0 10px 0 0;
-                }
-              }
-            }
-            .section-body {
-              @include scrollbar;
-              overflow: auto;
-            }
-          }
-          .description {
-            height: calc(100% - 10px);
-            .section-body {
-              height: calc(100% - 1.34em - 12px);
-              padding: 0 10px 0 0;
-              p {
-                background: rgba(0, 0, 0, .2);
-                padding: 10px;
-              }
-            }
-
-          }
-          .comments {
-            background: transparent;
-            margin-right: 0;
-            height: calc(100% - 10px);
-
-            .section-body {
-              height: calc(100% - 1.34em - 12px);
-              .comment {
+          .section-body {
+            height: calc(100% - 1.34em - 12px);
+            .comment {
+              display: flex;
+              margin: 10px;
+              border-bottom: 1px solid black;
+              padding: 15px 0;
+              .user-details {
                 display: flex;
-                margin: 10px;
-                border-bottom: 1px solid black;
-                padding: 15px 0;
-                .user-details {
-                  display: flex;
-                  .comment-author {
-                    width: 140px;
-                    margin-left: 5px;
-                    font-size: 14px;
-                  }
+                .comment-author {
+                  width: 140px;
+                  margin-left: 5px;
+                  font-size: 14px;
                 }
-                .comment-details {
-                  margin-left: 10px;
-                  &_header, &_footer {
-                    display: flex;
-                  }
-                  &_header {
-                    justify-content: space-between;
-                    font-size: 14px;
-                  }
-                  &_body {
-                    margin: 10px 0;
-                  }
-                  &_footer {
-                    justify-content: flex-start;
-                    div {
-                      margin-right: 10px;
-                      &:last-child {
-                        margin-right: 0;
-                      }
+              }
+              .comment-details {
+                margin-left: 10px;
+                &_header, &_footer {
+                  display: flex;
+                }
+                &_header {
+                  justify-content: space-between;
+                  font-size: 14px;
+                }
+                &_body {
+                  margin: 10px 0;
+                }
+                &_footer {
+                  justify-content: flex-start;
+                  div {
+                    margin-right: 10px;
+                    &:last-child {
+                      margin-right: 0;
                     }
                   }
                 }
@@ -1145,19 +691,86 @@ footer{
   }
 }
 
-.cards{
-  ul{
-    li{
-      @include transition(all ease .4s);
-      display: inline-block;
-      color: $dark-grey;
-      span{
-        font-family: 'Hearthstone';
-        font-size: 41px;
+.decks {
+  .left-container {
+    .sidebar {
+      .deck-details {
+        table {
+          tr {
+            td {
+              span {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+      .graph {
+        padding: 10px;
+        width: calc(100% - 20px);
+        text-align: center;
+        display: inline-flex;
+        li {
+          width: 100%;
+          .bar {
+            height: 100px;
+            margin: 2px auto;
+            width: 15px;
+            background-color: $dark-grey;
+          }
+          .hs-icon {
+            font-size: 25px;
+          }
+        }
+      }
+      table {
+        width: 100%;
+        tr {
+          td:last-child {
+            text-align: center;
+          }
+        }
       }
     }
   }
+  .right-container {
+    .topbar {
+      .choosen-deck-topbar {
+        display: flex;
+        align-items: center;
+        .mode, .cards, .dust-cost {
+          display: flex;
+          align-items: center;
+        }
+        span {
+          font-size: 20px;
+        }
+        li {
+          margin-left: 10px;
+        }
+        .rating, .dust-cost {
+          height: 100%;
+          padding: 0 10px;
+        }
+        .rating {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
 
+    .top-decks {
+      @include scrollbar;
+      margin: 10px 10px 0 10px;
+      padding-right: 10px;
+      height: calc(100% - 60px);
+      width: calc(100% - 20px);
+      overflow: auto;
+    }
+  }
+}
+
+.cards{
   .left-container{
     .sidebar{
       .hs{
@@ -1172,30 +785,6 @@ footer{
             padding: 5px;
             color: $dark-grey;
           }
-          .tooltip {
-            position: absolute;
-            width: 200px;
-            display: none;
-            margin-left: -82px;
-            margin-top:5px;
-            .caret-up {
-              width: 0;
-              height: 0;
-              border-style: solid;
-              border-width: 0 5px 5px 5px;
-              border-color: transparent transparent $pearl transparent;
-              position: relative;
-              left: calc(50% - 5px);
-            }
-            p{
-              font-size: 12px;
-              text-transform: uppercase;
-              padding: 5px 0;
-              background-color: $dark-grey;
-              color: $pearl;
-              border: 1px solid $pearl ;
-            }
-          }
           &:hover{
             div{
               display: block;
@@ -1214,25 +803,6 @@ footer{
     }
   }
   .right-container{
-    .topbar{
-      .topbar-left{
-        li{
-          &:hover{
-            span {
-              color: navy;
-            }
-          }
-        }
-      }
-      .topbar-right{
-        li{
-          width: 60px;
-          text-align: center;
-
-
-        }
-      }
-    }
     .cards-container{
       @include scrollbar;
       text-align:center;
@@ -1991,6 +1561,93 @@ footer{
   }
 }
 
+.subreddit{
+  .left-container{
+    width: 10%;
+    background-color: $light-grey;
+    button{
+      text-transform: capitalize;
+      cursor: pointer;
+      width: calc(100% - 20px);
+      outline: 0;
+      background: transparent;
+      border:1px solid $dark-grey;
+      color: $pearl;
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  }
+  .right-container{
+    width: 90%;
+
+    .posts{
+      @include scrollbar();
+      height:calc(100% - 60px);
+      overflow: auto;
+      margin: 10px 0 0 10px;
+      padding-right: 10px;
+      table{
+        height:100%;
+        width:100%;
+        border: 1px solid $dark-grey;
+        border-collapse: collapse;
+        tr{
+          border-bottom:1px solid black;
+          td, th{
+            a{
+              display: block;
+              padding: 10px;
+              span{
+                font-size: 20px;
+              }
+            }
+
+          }
+          .upvotes, .domain, .created{
+            a{
+              text-align: center;
+            }
+          }
+          .upvotes{
+            a{
+              span{
+                background-color: $dark-grey;
+                width: 20%;
+                padding:5px;
+                font-size:14px;
+                color: $pearl;
+              }
+
+            }
+          }
+          .domain{
+            color: $dark-grey;
+            a{
+              @include transition(all ease .4s);
+            }
+          }
+          &:nth-child(odd){
+            //background-color: $black-010;
+          }
+          &:first-child{
+            background-color: $black-050;
+            color: $pearl;
+            th{
+              padding: 20px;
+              font-weight: normal;
+              span{
+                font-size: 20px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .pageContainer.login{
   justify-content: center;
   align-items: center;
@@ -2117,81 +1774,103 @@ footer{
         height: calc(100% - 51px);
         form {
           width: 90%;
-          label, input, select {
-            display: block;
-          }
-          input, select {
-            @include transition(all ease .4s);
-            margin-bottom: 20px;
-            padding: 5px;
-            background: transparent;
-          }
-          input{
-            color: $sea-color;
-            width: 60%;
-            border-bottom: 1px solid $light-grey;
-            &:focus{
-              border-bottom:1px solid $pearl;
+          .input-wrapper {
+            position: relative;
+            label, input, select {
+              display: block;
             }
-          }
-          select{
-            outline: 0;
-            color: $light-grey;
-            border: 1px solid $light-grey;
-            &:focus{
-              border:1px solid $pearl;
+            input, select {
+              @include transition(all ease .4s);
+              margin-bottom: 20px;
+              padding: 5px;
+              background: transparent;
             }
-            option{
-              background-color: $pearl;
-              color: $dark-grey;
-              &:hover{
-                background-color: $sea-color;
+            input {
+              width: 60%;
+              color: $sea-color;
+              border-bottom: 1px solid $light-grey;
+              &:focus {
+                border-bottom: 1px solid $pearl;
               }
             }
-          }
-          .tos{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            font-size: 12px;
-            color: $light-grey;
-            margin-bottom: 20px;
-            input[type=checkbox]{
+            select {
+              outline: 0;
+              color: $light-grey;
+              border: 1px solid $light-grey;
+              &:focus {
+                border: 1px solid $pearl;
+              }
+              option {
+                background-color: $pearl;
+                color: $dark-grey;
+                &:hover {
+                  background-color: $sea-color;
+                }
+              }
+            }
+            .tos {
               display: flex;
-              justify-content: center;
+              justify-content: flex-start;
               align-items: center;
-              width: 30px;
-              height: 0;
-              font-size: 10px;
-              visibility: hidden;
-              margin-bottom: 0;
-              padding: 0;
-              margin-right: 2px;
-              &:after{
-                content: " ";
-                background-color: transparent;
-                color: $light-grey;
-                border: 1px solid $light-grey;
+              font-size: 12px;
+              color: $light-grey;
+              margin-bottom: 20px;
+              input[type=checkbox] {
                 display: flex;
                 justify-content: center;
-                align-items:center;
-                width:10px;
-                height: 10px;
-                visibility: visible;
-                margin-bottom: 5px;
-                margin-left: 3px;
-                padding: 3px 3px 4px 4px;
+                align-items: center;
+                width: 30px;
+                height: 0;
+                font-size: 10px;
+                visibility: hidden;
+                margin-bottom: 0;
+                padding: 0;
+                margin-right: 2px;
+                &:after {
+                  content: " ";
+                  background-color: transparent;
+                  color: $light-grey;
+                  border: 1px solid $light-grey;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 10px;
+                  height: 10px;
+                  visibility: visible;
+                  margin-bottom: 5px;
+                  margin-left: 3px;
+                  padding: 3px 3px 4px 4px;
+                }
+                &:checked:after {
+                  content: '\2714';
+                  color: $pearl;
+                  border-color: $pearl;
+                }
               }
-              &:checked:after{
-                content: '\2714';
-                color: $pearl;
-                border-color: $pearl;
+              label {
+                a {
+                  color: $pearl;
+                  text-decoration: underline;
+                }
               }
             }
-            label{
-              a{
-                color: $pearl;
-                text-decoration: underline;
+            .err{
+              color: $pearl;
+              text-align: center;
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: calc(35% - 10px);
+              font-size: 13px;
+              padding: 5px;
+              span{
+                position: absolute;
+                left: -6px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5.5px 6px 5.5px 0;
+                border-color: transparent $death_knight transparent transparent;
               }
             }
           }
@@ -2218,6 +1897,7 @@ footer{
       .sign-in{
         height: calc(100% - 101px);
       }
+
     }
   }
 }

@@ -117,6 +117,24 @@
     }
   }
 
+  &.blizzard-official{
+    background-color: $color;
+    color: #000;
+  }
+
+}
+
+@mixin social_media_icon_color($color, $background_color){
+  @include transition(all ease .4s);
+  &.active, &:hover{
+    color: $color;
+    background-color: $background_color;
+    .domain{
+      a {
+        color: $color;
+      }
+    }
+  }
 }
 
 @mixin scrollbar{

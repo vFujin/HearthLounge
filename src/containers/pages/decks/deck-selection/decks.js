@@ -2,21 +2,20 @@ import React, { Component } from 'react';
 
 export class Decks extends Component {
   render() {
+    const {sidebar, topbar, main} = this.props;
     return (
-        <div className="pageContainer decks">
-          {this.props.children}
-          <div className="wrapper">
-            <div className="left-container">
-              <div className="sidebar">
-                {this.props.sidebar}
-              </div>
+      <div className="pageContainer decks">
+        {this.props.children}
+          <div className="left-container">
+            <div className="sidebar">
+              {sidebar}
             </div>
-            <div className="right-container">
-              <div className="topbar">
-                {this.props.topbar}
-              </div>
-              {this.props.main}
+          </div>
+          <div className="right-container">
+            <div className="topbar">
+              {topbar}
             </div>
+            {main}
           </div>
         </div>
     );
