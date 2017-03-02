@@ -3,14 +3,6 @@ import FormTooltips from './form-tooltips';
 
 const Input = props =>{
 
-  // const type = () =>{
-  //   switch(props.type){
-  //     case 'e-mail':
-  //       return (type={props.type} placeholder={props.placeholder || "")
-  //       )
-  //   }
-  // };
-
   return (
       <div className="input-wrapper">
         <label htmlFor={props.id}>{props.label}:</label>
@@ -20,7 +12,7 @@ const Input = props =>{
                  type={props.type}
                  id={props.id}
                  placeholder={props.placeholder || ""}/>
-        <FormTooltips display={`${props.id}_tooltip`}/>
+        <FormTooltips id={props.id} tooltip={props.tooltip}/>
       </div>
   )
 };

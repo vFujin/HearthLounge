@@ -100,7 +100,7 @@ export class SignUp extends Component {
             </select>
           </div>
 
-          {this.input(secret,                `${secret} answer`,       "",                     text)}
+          {this.input(secret, `${secret} answer`, "", text)}
 
           <div className="input-wrapper">
             <div className="tos">

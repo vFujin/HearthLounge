@@ -1862,23 +1862,35 @@ footer{
             }
 
 
-            .err{
+            .input-tooltip {
               color: $pearl;
-              text-align: center;
               position: absolute;
               top: 0;
               right: 0;
               width: calc(35% - 10px);
-              font-size: 13px;
+              font-size: 11px;
               padding: 5px;
-              span{
+              border: 1px solid $pearl;
+              span {
                 position: absolute;
                 left: -6px;
                 width: 0;
                 height: 0;
                 border-style: solid;
                 border-width: 5.5px 6px 5.5px 0;
-                border-color: transparent $death_knight transparent transparent;
+                border-color: transparent $pearl transparent transparent;
+              }
+              li {
+
+                div{
+                  display: flex;
+                  align-items:center;
+                  padding-top: 5px;
+                  i {
+                    margin-right: 3px;
+                    font-style: normal;
+                  }
+                }
               }
             }
           }
