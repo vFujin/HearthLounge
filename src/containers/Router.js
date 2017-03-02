@@ -61,76 +61,76 @@ import {Main} from './Main';
 export class App extends Component {
   render() {
     return (
-        <Router history={browserHistory}>
-          <Route path="/"                   component={Main} >
-            <IndexRoute                     component={Home} />
-            <Redirect from="home" to="/" />
-            <Route path=""                  component={Home} />
+      <Router history={browserHistory}>
+        <Route path="/"                   component={Main} >
+          <IndexRoute                     component={Home} />
+          <Redirect from="home" to="/" />
+          <Route path=""                  component={Home} />
 
-            <Redirect from="decks" to="decks/all"/>
-            <Route path="decks"             component={Decks}>
+          <Redirect from="decks" to="decks/all"/>
+          <Route path="decks"             component={Decks}>
 
-              <Route path="all"             components={{main: DeckSelection, sidebar: DeckSelectionSidebar, topbar: DeckSelectionTopbar}}/>
-              <Route path=":class/:deckId"  components={{main: Deck, sidebar: DeckSidebar, topbar: DeckTopbar}}/>
-            </Route>
-
-            {/*<Redirect from="cards" to="cards/all" />*/}
-            <Route path="cards"             component={Cards}>
-              <Route path="all"             component={ServiceCards}/>
-              <Route path="cards/(:)"       component={ServiceCards}>
-              </Route>
-            </Route>
-
-            <Redirect from="arena-picker" to="arena-picker/class-selection" />
-            <Route path="arena-picker"      component={ArenaPicker}>
-              <Route path="class-selection" component={ArenaPickerClassSelection} />
-              <Route path=":class"          component={ArenaPickerClassSelected} />
-            </Route>
-
-            <Route path="expansions"        component={Expansions}>
-              <Redirect from=":expansion" to=":expansion/overview"/>
-              <Route path=":expansion"      component={Expansion}>
-                <Route path=":details"      component={ExpansionDetails} />
-              </Route>
-            </Route>
-
-            <Route path="adventures/"    component={Adventures}>
-              <Redirect from=":adventure" to=":adventure/overview"/>
-              <Route path=":adventure"  component={Adventure}>
-                <Route path=":details"  component={AdventureDetails}>
-                  <Route path="bosses"  component={AdventureBosses}/>
-                  <Route path=":boss"   component={AdventureBoss}/>
-                </Route>
-                <Route path="*" component={NotFound} />
-              </Route>
-            </Route>
-
-            <Redirect from="create-deck" to="create-deck/class-selection" />
-            <Route path="create-deck"         component={CreateDeck}>
-              <Route path="class-selection"   component={CreateDeckClassSelection} />
-              <Route path=":class"            component={CreateDeckClassSelected} />
-            </Route>
-
-            <Route path="forum"             component={Forum} />
-            <Route path="tournaments"       component={Tournaments} />
-            <Route path="twitch"         component={Streams} />
-
-            <Redirect from="reddit" to="reddit/posts" />
-            <Route path="reddit"              component={Reddit}>
-              <Route path="posts"             components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}}>
-                <Route path=":category"       component={Reddit}/>
-              </Route>
-              <Route path="post/:id/:post"    components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
-              <Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
-            </Route>
-
-            <Route path="login"      component={Login}>
-              <Route path="/sign-in" component={SignIn} />
-              <Route path="/sign-up" component={SignUp} />
-            </Route>
-            <Route path="*" component={NotFound} />
+            <Route path="all"             components={{main: DeckSelection, sidebar: DeckSelectionSidebar, topbar: DeckSelectionTopbar}}/>
+            <Route path=":class/:deckId"  components={{main: Deck, sidebar: DeckSidebar, topbar: DeckTopbar}}/>
           </Route>
-        </Router>
+
+          {/*<Redirect from="cards" to="cards/all" />*/}
+          <Route path="cards"             component={Cards}>
+            <Route path="all"             component={ServiceCards}/>
+            <Route path="cards/(:)"       component={ServiceCards}>
+            </Route>
+          </Route>
+
+          <Redirect from="arena-picker" to="arena-picker/class-selection" />
+          <Route path="arena-picker"      component={ArenaPicker}>
+            <Route path="class-selection" component={ArenaPickerClassSelection} />
+            <Route path=":class"          component={ArenaPickerClassSelected} />
+          </Route>
+
+          <Route path="expansions"        component={Expansions}>
+            <Redirect from=":expansion" to=":expansion/overview"/>
+            <Route path=":expansion"      component={Expansion}>
+              <Route path=":details"      component={ExpansionDetails} />
+            </Route>
+          </Route>
+
+          <Route path="adventures/"    component={Adventures}>
+            <Redirect from=":adventure" to=":adventure/overview"/>
+            <Route path=":adventure"  component={Adventure}>
+              <Route path=":details"  component={AdventureDetails}>
+                <Route path="bosses"  component={AdventureBosses}/>
+                <Route path=":boss"   component={AdventureBoss}/>
+              </Route>
+              <Route path="*" component={NotFound} />
+            </Route>
+          </Route>
+
+          <Redirect from="create-deck" to="create-deck/class-selection" />
+          <Route path="create-deck"         component={CreateDeck}>
+            <Route path="class-selection"   component={CreateDeckClassSelection} />
+            <Route path=":class"            component={CreateDeckClassSelected} />
+          </Route>
+
+          <Route path="forum"             component={Forum} />
+          <Route path="tournaments"       component={Tournaments} />
+          <Route path="twitch"         component={Streams} />
+
+          <Redirect from="reddit" to="reddit/posts" />
+          <Route path="reddit"              component={Reddit}>
+            <Route path="posts"             components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}}>
+              <Route path=":category"       component={Reddit}/>
+            </Route>
+            <Route path="post/:id/:post"    components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
+            <Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
+          </Route>
+
+          <Route path="login"      component={Login}>
+            <Route path="/sign-in" component={SignIn} />
+            <Route path="/sign-up" component={SignUp} />
+          </Route>
+          <Route path="*" component={NotFound} />
+        </Route>
+      </Router>
     );
   }
 }

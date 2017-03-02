@@ -43,11 +43,14 @@ const RedditPosts = (props) => {
     if(domain.includes("battle.net"))
       return domain.split('.')[1]+"net";
 
+    else if(domain ===  "youtu.be"){
+      return domain.replace("youtu.be", "youtube");
+    }
+
     else if(domain === "self.hearthstone" ||
             domain ===  "youtube.com" ||
             domain ===  "clips.twitch.tv" ||
             domain ===  "reddit.com" ||
-            domain ===  "youtu.be" ||
             domain === "twitter.com") {
       return domain.replace(/self.|.com|clips.|.tv/g, "");
     }
