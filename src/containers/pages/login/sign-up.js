@@ -9,14 +9,15 @@ export class SignUp extends Component {
     this.state = {
       username: "",
       email: "",
-      confirm_email: "",
+      email_confirm: "",
       password: "",
-      confirm_password: "",
+      password_confirm: "",
       secret_question: "",
       secret_answer: "",
-      tos: false
+      tos: false,
+      tooltip: false
     };
-
+    console.log(this.state.tooltip);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
   }
@@ -26,7 +27,14 @@ export class SignUp extends Component {
   }
 
   showTooltip(){
-    return <FormTooltips />
+    this.setState({
+      tooltip: true
+    });
+  }
+  hideTooltip(){
+    this.setState({
+      tooltip: false
+    })
   }
 
   handleInputChange(e){
@@ -59,13 +67,10 @@ export class SignUp extends Component {
             <input onChange={this.handleInputChange} type="text" id="username" placeholder="xJoex"/>
           </div>
 
-          <div className="input-wrapper">
+          <div className="input-wrapper" onBlur={this.hideTooltip.bind(this)} onFocus={this.showTooltip.bind(this)}>
             <label htmlFor="email">E-mail:</label>
-            <input onChange={this.handleInputChange} type="email" id="email" placeholder="example@example.com"/>
-            <div className="err death-knight active">
-              <span className="caret-left"></span>
-              <p>E-mail addresses do not match! E-mail addresses do not match! E-mail addresses do not match!</p>
-            </div>
+            <input onChange={this.handleInputChange}  type="email" id="email" placeholder="example@example.com"/>
+            <FormTooltips display={this.state.tooltip}/>
           </div>
 
           <div className="input-wrapper">
