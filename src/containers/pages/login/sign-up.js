@@ -51,9 +51,8 @@ export class SignUp extends Component {
   }
 
   handleCheckboxClick(){
-    let check = this.state.tos === false ? true : false;
     this.setState({
-      tos: check
+      tos: this.state.tos === false
     })
   }
 
