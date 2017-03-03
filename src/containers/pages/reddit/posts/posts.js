@@ -41,7 +41,12 @@ const RedditPosts = (props) => {
     let selfURL = `/reddit/post/${post.id}/${stripRedditURL(post.permalink)}`;
 
     switch (post.domain) {
-      case supported_domains.slice(1, 7):
+      case supported_domains[1]:
+      case supported_domains[2]:
+      case supported_domains[3]:
+      case supported_domains[4]:
+      case supported_domains[5]:
+      case supported_domains[6]:
         return selfURL;
       default:
         return post.url;

@@ -1229,6 +1229,7 @@ html, body {
 body {
   font-family: 'Roboto', sans-serif; }
   body span.hs-icon {
+    cursor: pointer;
     font-family: 'Hearthstone';
     font-size: 41px; }
 
@@ -2679,12 +2680,19 @@ footer {
     font-size: 16px; }
 .subreddit .right-container {
   width: 90%; }
-  .subreddit .right-container .topbar div ul {
-    display: flex; }
-    .subreddit .right-container .topbar div ul li {
-      margin-left: 15px; }
-      .subreddit .right-container .topbar div ul li span {
-        font-size: 25px; }
+  .subreddit .right-container .topbar .subreddit-posts-topbar {
+    display: flex;
+    align-items: center;
+    height: 100%; }
+    .subreddit .right-container .topbar .subreddit-posts-topbar ul {
+      display: flex;
+      margin-top: 2px; }
+      .subreddit .right-container .topbar .subreddit-posts-topbar ul li {
+        margin-left: 15px;
+        color: #474143; }
+        .subreddit .right-container .topbar .subreddit-posts-topbar ul li span {
+          font-size: 25px;
+          padding: 5px; }
   .subreddit .right-container .posts {
     height: calc(100% - 60px);
     overflow: auto;

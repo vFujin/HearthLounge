@@ -1581,14 +1581,19 @@ footer{
   .right-container{
     width: 90%;
     .topbar{
-      div{
+      .subreddit-posts-topbar{
+        display: flex;
+        align-items: center;
+        height: 100%;
         ul{
           display: flex;
+          margin-top: 2px;
           li{
             margin-left: 15px;
+            color: $dark-grey;
             span{
               font-size: 25px;
-
+              padding: 5px;
             }
           }
         }

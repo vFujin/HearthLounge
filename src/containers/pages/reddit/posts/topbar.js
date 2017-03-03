@@ -1,13 +1,20 @@
 import React from 'react';
+import {Link} from 'react-router';
 import {supported_domain_icons} from '../domain-icons';
 
-const RedditPostsTopbar = () => {
+const RedditPostsTopbar = props => {
   return (
-      <div>
+      <div className="subreddit-posts-topbar">
         <ul>
         {supported_domain_icons.map(domain =>
           <li key={domain}>
-            <span className={`hs-icon icon-${domain}`}></span>
+            <Link to={`reddit/posts/${props.location.pathname}?domain=${domain}`}>
+              <span className={`hs-icon icon-${domain} ${domain}`}></span>
+              <div className="tooltip">
+                <div className="caret-up"></div>
+                <p>{domain}</p>
+              </div>
+            </Link>
           </li>
         )}
         </ul>
