@@ -44,7 +44,7 @@ import {RedditPostSidebar} from './pages/reddit/post/sidebar';
 import {RedditPostTopbar} from './pages/reddit/post/topbar';
 import RedditPosts from './pages/reddit/posts/posts';
 import {RedditPostsSidebar} from './pages/reddit/posts/sidebar';
-import {RedditPostsTopbar} from './pages/reddit/posts/topbar';
+import RedditPostsTopbar from './pages/reddit/posts/topbar';
 
 import {Login} from './pages/login/login';
 import {SignUp} from './pages/login/sign-up';

@@ -1,10 +1,18 @@
-import React, {Component} from 'react';
-export class RedditPostsTopbar extends Component {
-  render() {
-    return (
-        <div>
+import React from 'react';
+import {supported_domain_icons} from '../domain-icons';
 
-        </div>
-    )
-  }
-}
+const RedditPostsTopbar = () => {
+  return (
+      <div>
+        <ul>
+        {supported_domain_icons.map(domain =>
+          <li key={domain}>
+            <span className={`hs-icon icon-${domain}`}></span>
+          </li>
+        )}
+        </ul>
+      </div>
+  )
+};
+
+export default RedditPostsTopbar;

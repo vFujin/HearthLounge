@@ -1580,7 +1580,20 @@ footer{
   }
   .right-container{
     width: 90%;
+    .topbar{
+      div{
+        ul{
+          display: flex;
+          li{
+            margin-left: 15px;
+            span{
+              font-size: 25px;
 
+            }
+          }
+        }
+      }
+    }
     .posts{
       @include scrollbar();
       height:calc(100% - 60px);
