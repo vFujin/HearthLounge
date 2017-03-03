@@ -1,22 +1,26 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 
+const supported_domains = ["youtu.be", "battle.net", "self.hearthstone", "twitter.com","youtube.com", "clips.twitch.tv", "reddit.com"];
+
+
 const RedditPosts = (props) => {
+  console.log(supported_domains.slice(2, 6));
   const icon = (post) => {
     let domain = post.domain;
     let flair_text = post.link_flair_text.toLowerCase();
 
     const iconTemplate = (icon) => <span className={`hs hs-icon icon-${icon}`}></span>;
 
-    if (domain === "youtu.be")
-      return iconTemplate('youtube');
-    if (domain.includes("battle.net"))
-      return iconTemplate('battlenet');
-    if (domain === "self.hearthstone" && flair_text !== "tournament")
-      return iconTemplate('bubbles2');
-    if (domain === "self.hearthstone" && flair_text === "tournament")
-      return iconTemplate('trophy');
-    if (domain !== "self.hearthstone") {
+    if (domain === supported_domains[0])
+      return iconTemplate("youtube");
+    if (domain.includes(supported_domains[1]))
+      return iconTemplate("battlenet");
+    if (domain === supported_domains[2] && flair_text !== "tournament")
+      return iconTemplate("bubbles2");
+    if (domain === supported_domains[2] && flair_text === "tournament")
+      return iconTemplate("trophy");
+    if (domain !== supported_domains[2]) {
       let icon = domain.replace(/.com|clips.|.tv/g, "").toLowerCase();
       return iconTemplate(icon);
     }
@@ -40,18 +44,14 @@ const RedditPosts = (props) => {
   const stripDomains = (post) =>{
     let domain = post.domain;
 
-    if(domain.includes("battle.net"))
+    if(domain.includes(supported_domains[1]))
       return domain.split('.')[1]+"net";
 
-    else if(domain ===  "youtu.be"){
-      return domain.replace("youtu.be", "youtube");
+    else if(domain ===  supported_domains[0]){
+      return domain.replace(supported_domains[0], "youtube");
     }
 
-    else if(domain === "self.hearthstone" ||
-            domain ===  "youtube.com" ||
-            domain ===  "clips.twitch.tv" ||
-            domain ===  "reddit.com" ||
-            domain === "twitter.com") {
+    else if(supported_domains.slice(2, 7).includes(domain)){
       return domain.replace(/self.|.com|clips.|.tv/g, "");
     }
     else return "default";
