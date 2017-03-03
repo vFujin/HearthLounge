@@ -3,24 +3,23 @@ import React from 'react';
 const requirementsObj = {
   list_symbol: "◇",
   username: ["start with letter", "be between 3-10 characters", "contain only [a-zA-Z] characters"],
-  email: ["look like: example@example.com"],
-  password: []
+  ['e-mail']: ["look like: example@example.com"],
+  ['confirm_e-mail']: ["be the same as e-mail address written above"],
+  password: ["be K"]
 };
 
 const FormTooltips = (props) => {
 
 
   function requirement(id){
-    if(requirementsObj[id]){
-      console.log(requirementsObj[id]);
-      return (
-        Object.values(requirementsObj[id].map((r,i)=>
-          <li key={i}>
-            <i>{requirementsObj.list_symbol}</i>
-            <p>{r}</p>
-          </li>
-      )))
-    }
+    return (
+      requirementsObj[id].map((r, i)=>
+        <li key={i}>
+          <i>{requirementsObj.list_symbol}</i>
+          <p>{r}</p>
+        </li>
+      )
+    );
   }
 
 
@@ -35,13 +34,12 @@ const FormTooltips = (props) => {
 
 
   function tooltip(id){
-    debugger;
     switch(id){
 
-      case 'username': return requirements(id);
-      case 'e-mail': return requirements(id);
-      case 'confirm_e-mail': return "";
-      case 'password': return "Password should contain:";
+      case 'username': return requirements('username');
+      case 'e-mail': return requirements('e-mail');
+      case 'confirm_e-mail': return requirements('confirm_e-mail');
+      case 'password': return requirements('password');
       case 'confirm_password': return "";
       case 'secret': return "Secret answer should";
     }
