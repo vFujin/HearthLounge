@@ -12,7 +12,9 @@ const Input = props =>{
                  type={props.type}
                  id={props.id}
                  placeholder={props.placeholder || ""}/>
-        <FormTooltips id={props.id} tooltip={props.tooltip}/>
+        <FormTooltips id={props.id}
+                      label={props.label}
+                      tooltip={props.tooltip}/>
       </div>
   )
 };

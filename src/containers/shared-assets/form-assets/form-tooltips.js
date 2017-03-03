@@ -25,9 +25,9 @@ const FormTooltips = (props) => {
   }
 
 
-  function requirements(id){
+  function requirements(id, label){
     return (
-        <ul className="input-tooltip-list"><i className="input-tooltip-header">{id}</i> should:
+        <ul className="input-tooltip-list"><i className="input-tooltip-header">{label}</i> should:
           {requirement(id)}
         </ul>
     )
@@ -35,16 +35,16 @@ const FormTooltips = (props) => {
 
 
 
-  function tooltip(id){
+  function tooltip(id, label){
     switch(id){
-      case id: return requirements(id);
+      case id: return requirements(id, label);
     }
   }
 
   return (
       <div className={`input-tooltip ${props.tooltip === true ? "active" : "display-none"}`}>
         <span className="input-tooltip-caret-left"></span>
-        {tooltip(props.id)}
+        {tooltip(props.id, props.label)}
       </div>
   )
 };
