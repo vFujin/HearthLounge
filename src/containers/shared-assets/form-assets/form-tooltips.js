@@ -1,41 +1,45 @@
 import React from 'react';
 
-const requirements = [
-  {
-    list_symbol: "◇",
-    username: ["start with letter", "be between 3-10 characters", "contain only [a-zA-Z] characters"],
-    email: [],
-    password: []
-  }
-];
+const requirementsObj = {
+  list_symbol: "◇",
+  username: ["start with letter", "be between 3-10 characters", "contain only [a-zA-Z] characters"],
+  email: ["look like: example@example.com"],
+  password: []
+};
 
 const FormTooltips = (props) => {
 
-  function requirement(req, id){
-    return(
-      req[id].map((requirement, i)=>
-          <div>
-            <i>{req.list_symbol}</i>
-            <p key={i}>{requirement}</p>
-          </div>
-      )
+
+  function requirement(id){
+    if(requirementsObj[id]){
+      console.log(requirementsObj[id]);
+      return (
+        Object.values(requirementsObj[id].map((r,i)=>
+          <li key={i}>
+            <i>{requirementsObj.list_symbol}</i>
+            <p>{r}</p>
+          </li>
+      )))
+    }
+  }
+
+
+  function requirements(id){
+    return (
+        <ul className="input-tooltip-list"><i className="input-tooltip-header">{id}</i> should:
+          {requirement(id)}
+        </ul>
     )
   }
 
-  function label(id){
-    switch(id){
-      case 'username':
-        return (
-            <ul className="input-tooltip-list">Username should:
-              {requirements.map((requirements, i)=>
-                  <li key={i}>
-                    {requirement(requirements, id)}
-                  </li>
 
-              )}
-            </ul>
-        );
-      case 'e-mail': return "E-mail address should contain:";
+
+  function tooltip(id){
+    debugger;
+    switch(id){
+
+      case 'username': return requirements(id);
+      case 'e-mail': return requirements(id);
       case 'confirm_e-mail': return "";
       case 'password': return "Password should contain:";
       case 'confirm_password': return "";
@@ -46,7 +50,7 @@ const FormTooltips = (props) => {
   return (
       <div className={`input-tooltip ${props.tooltip === true ? "active" : "display-none"}`}>
         <span className="input-tooltip-caret-left"></span>
-        {label(props.id)}
+        {tooltip(props.id)}
       </div>
   )
 };

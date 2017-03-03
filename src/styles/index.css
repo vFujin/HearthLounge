@@ -2929,11 +2929,14 @@ footer {
                 border-style: solid;
                 border-width: 5.5px 6px 5.5px 0;
                 border-color: transparent #E7E2DA transparent transparent; }
-              .pageContainer.login .wrapper .right-container .sign form .input-wrapper .input-tooltip li div {
+              .pageContainer.login .wrapper .right-container .sign form .input-wrapper .input-tooltip .input-tooltip-list .input-tooltip-header {
+                font-style: normal;
+                text-transform: capitalize; }
+              .pageContainer.login .wrapper .right-container .sign form .input-wrapper .input-tooltip .input-tooltip-list li {
                 display: flex;
                 align-items: center;
                 padding-top: 5px; }
-                .pageContainer.login .wrapper .right-container .sign form .input-wrapper .input-tooltip li div i {
+                .pageContainer.login .wrapper .right-container .sign form .input-wrapper .input-tooltip .input-tooltip-list li i {
                   margin-right: 3px;
                   font-style: normal; }
           .pageContainer.login .wrapper .right-container .sign form .button-wrapper {

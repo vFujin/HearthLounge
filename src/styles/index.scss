@@ -1880,11 +1880,14 @@ footer{
                 border-width: 5.5px 6px 5.5px 0;
                 border-color: transparent $pearl transparent transparent;
               }
-              li {
-
-                div{
+              .input-tooltip-list {
+                .input-tooltip-header {
+                  font-style: normal;
+                  text-transform: capitalize;
+                }
+                li {
                   display: flex;
-                  align-items:center;
+                  align-items: center;
                   padding-top: 5px;
                   i {
                     margin-right: 3px;
