@@ -18,5 +18,17 @@ export const events = {
     return this.setState({
       [key]: this.state[key] === false
     })
+  },
+  handleInputChange: function (e){
+    const target = e.target;
+    const value = e.target.value;
+    const id = target.id;
+
+    return this.setState({
+      [id]: value
+    });
+  },
+  handleFormSubmit: formSubmitEvent =>{
+    formSubmitEvent.preventDefault();
   }
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {events} from '../../shared-assets/form-assets/form-events';
+import {events} from '../../shared-assets/form-assets/form-events-data';
 import Input from '../../shared-assets/form-assets/input';
 
 export class SignUp extends Component {
@@ -18,33 +18,11 @@ export class SignUp extends Component {
       tos: false
     };
 
-    this.handleInputChange = this.handleInputChange.bind(this);
+    events.handleInputChange = events.handleInputChange.bind(this);
     events.handleCheckboxClick = events.handleCheckboxClick.bind(this, 'tos');
     events.hideTooltip = events.hideTooltip.bind(this);
     events.showTooltip = events.showTooltip.bind(this);
   }
-
-  compareInputValues(input, confirm_input){
-
-  }
-
-
-
-  handleInputChange(e){
-    const target = e.target;
-    const value = e.target.value;
-    const id = target.id;
-
-    this.setState({
-      [id]: value
-    });
-  }
-
-
-
-  handleFormSubmit = formSubmitEvent =>{
-    formSubmitEvent.preventDefault();
-  };
 
   input(id, label, placeholder, type){
     return (
@@ -53,7 +31,7 @@ export class SignUp extends Component {
                placeholder={placeholder}
                type={type}
                tooltip={this.state[`${id}_tooltip`]}
-               handleInputChange={this.handleInputChange}
+               handleInputChange={events.handleInputChange}
                hideTooltip={events.hideTooltip}
                showTooltip={events.showTooltip} />
     )
@@ -67,7 +45,7 @@ export class SignUp extends Component {
         text = "text";
     return (
       <div className="sign sign-up active">
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={events.handleFormSubmit}>
           {this.input(username,               username,               "Joe",                  text)}
           {this.input(email,                  email,                  "example@example.com",  email)}
           {this.input(`confirm_${email}`,     `Confirm ${email}`,     "example@example.com",  email)}
