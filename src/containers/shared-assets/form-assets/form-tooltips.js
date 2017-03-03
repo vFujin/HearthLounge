@@ -12,10 +12,9 @@ const requirementsObj = {
 
 const FormTooltips = (props) => {
 
-
-  function requirement(id){
+  function requirement(id) {
     return (
-      requirementsObj[id].map((r, i)=>
+      requirementsObj[id].map((r, i) =>
         <li key={i}>
           <i>{requirementsObj.list_symbol}</i>
           <p>{r}</p>
@@ -24,16 +23,13 @@ const FormTooltips = (props) => {
     );
   }
 
-
   function requirements(id, label){
     return (
-        <ul className="input-tooltip-list"><i className="input-tooltip-header">{label}</i> should:
+        <ul className="input-tooltip-list">{label} should:
           {requirement(id)}
         </ul>
     )
   }
-
-
 
   function tooltip(id, label){
     switch(id){

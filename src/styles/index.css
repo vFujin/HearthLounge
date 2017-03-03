@@ -2930,8 +2930,12 @@ footer {
                 border-width: 5.5px 6px 5.5px 0;
                 border-color: transparent #E7E2DA transparent transparent; }
               .pageContainer.login .wrapper .right-container .sign form .input-wrapper .input-tooltip .input-tooltip-list .input-tooltip-header {
-                font-style: normal;
-                text-transform: capitalize; }
+                position: relative;
+                border: none;
+                left: 0;
+                font-style: normal; }
+              .pageContainer.login .wrapper .right-container .sign form .input-wrapper .input-tooltip .input-tooltip-list:first-letter {
+                text-transform: uppercase; }
               .pageContainer.login .wrapper .right-container .sign form .input-wrapper .input-tooltip .input-tooltip-list li {
                 display: flex;
                 align-items: center;

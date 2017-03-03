@@ -1882,8 +1882,14 @@ footer{
               }
               .input-tooltip-list {
                 .input-tooltip-header {
+                  position: relative;
+                  border:none;
+                  left:0;
                   font-style: normal;
-                  text-transform: capitalize;
+
+                }
+                &:first-letter{
+                  text-transform: uppercase;
                 }
                 li {
                   display: flex;
