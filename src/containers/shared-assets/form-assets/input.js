@@ -11,7 +11,8 @@ const Input = props =>{
                  onFocus={props.showTooltip.bind(this)}
                  type={props.type}
                  id={props.id}
-                 placeholder={props.placeholder || ""}/>
+                 placeholder={props.placeholder}
+                 pattern={props.pattern || ""} />
         <FormTooltips id={props.id}
                       label={props.label}
                       tooltip={props.tooltip}/>
