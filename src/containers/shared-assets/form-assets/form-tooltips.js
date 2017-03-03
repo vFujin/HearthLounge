@@ -5,7 +5,9 @@ const requirementsObj = {
   username: ["start with letter", "be between 3-10 characters", "contain only [a-zA-Z] characters"],
   ['e-mail']: ["look like: example@example.com"],
   ['confirm_e-mail']: ["be the same as e-mail address written above"],
-  password: ["be K"]
+  password: ["be K"],
+  confirm_password: ["be the same as password written above"],
+  secret: ['be x']
 };
 
 const FormTooltips = (props) => {
@@ -35,13 +37,7 @@ const FormTooltips = (props) => {
 
   function tooltip(id){
     switch(id){
-
-      case 'username': return requirements('username');
-      case 'e-mail': return requirements('e-mail');
-      case 'confirm_e-mail': return requirements('confirm_e-mail');
-      case 'password': return requirements('password');
-      case 'confirm_password': return "";
-      case 'secret': return "Secret answer should";
+      case id: return requirements(id);
     }
   }
 
