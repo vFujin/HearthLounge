@@ -1,7 +1,7 @@
 import React from 'react';
 import {requirementsObj} from '../../../data/form-requirements';
 
-const FormTooltips = (props) => {
+const FormTooltips = props => {
 
   function requirement(id) {
     return (

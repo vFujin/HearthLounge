@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
+import {events} from '../../shared-assets/form-assets/form-events';
 import Input from '../../shared-assets/form-assets/input';
 
 export class SignUp extends Component {
@@ -18,27 +19,16 @@ export class SignUp extends Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
-    this.showTooltip = this.showTooltip.bind(this);
-    this.hideTooltip = this.hideTooltip.bind(this);
+    events.handleCheckboxClick = events.handleCheckboxClick.bind(this, 'tos');
+    events.hideTooltip = events.hideTooltip.bind(this);
+    events.showTooltip = events.showTooltip.bind(this);
   }
 
   compareInputValues(input, confirm_input){
 
   }
 
-  showTooltip(e){
-    let target = e.target.id;
-    this.setState({
-      [`${target}_tooltip`]: true
-    });
-  }
-  hideTooltip(e){
-    let target = e.target.id;
-    this.setState({
-      [`${target}_tooltip`]: false
-    })
-  }
+
 
   handleInputChange(e){
     const target = e.target;
@@ -50,11 +40,7 @@ export class SignUp extends Component {
     });
   }
 
-  handleCheckboxClick(){
-    this.setState({
-      tos: this.state.tos === false
-    })
-  }
+
 
   handleFormSubmit = formSubmitEvent =>{
     formSubmitEvent.preventDefault();
@@ -68,8 +54,8 @@ export class SignUp extends Component {
                type={type}
                tooltip={this.state[`${id}_tooltip`]}
                handleInputChange={this.handleInputChange}
-               hideTooltip={this.hideTooltip}
-               showTooltip={this.showTooltip} />
+               hideTooltip={events.hideTooltip}
+               showTooltip={events.showTooltip} />
     )
   }
 
@@ -79,7 +65,6 @@ export class SignUp extends Component {
         password = "password",
         secret = "secret",
         text = "text";
-
     return (
       <div className="sign sign-up active">
         <form onSubmit={this.handleFormSubmit}>
@@ -103,7 +88,7 @@ export class SignUp extends Component {
 
           <div className="input-wrapper">
             <div className="tos">
-              <input onClick={this.handleCheckboxClick} id="tos" type="checkbox"/>
+              <input onClick={events.handleCheckboxClick} id="tos" type="checkbox"/>
               <label htmlFor="tos">I agree to the <Link to="terms-of-service">terms of service</Link></label>
             </div>
           </div>
