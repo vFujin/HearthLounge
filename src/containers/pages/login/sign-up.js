@@ -7,21 +7,7 @@ export class SignUp extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      username: "",
-      email: "",
-      email_confirm: "",
-      password: "",
-      password_confirm: "",
-      secret_question: "",
-      secret_answer: "",
-      tos: false
-    };
 
-    events.handleInputChange = events.handleInputChange.bind(this);
-    events.handleCheckboxClick = events.handleCheckboxClick.bind(this, 'tos');
-    events.hideTooltip = events.hideTooltip.bind(this);
-    events.showTooltip = events.showTooltip.bind(this);
   }
 
   input(id, label, placeholder, type, pattern){
@@ -31,10 +17,11 @@ export class SignUp extends Component {
                placeholder={placeholder}
                type={type}
                pattern={pattern}
-               tooltip={this.state[`${id}_tooltip`]}
-               handleInputChange={events.handleInputChange}
-               hideTooltip={events.hideTooltip}
-               showTooltip={events.showTooltip} />
+               value={this.props[id]}
+               tooltip={this.props[`${id}_tooltip`]}
+               handleInputChange={this.props.handleInputChange}
+               hideTooltip={this.props.hideTooltip}
+               showTooltip={this.props.showTooltip} />
     )
   }
 
@@ -42,18 +29,18 @@ export class SignUp extends Component {
     let username = "username",
         email = "e-mail",
         password = "password",
-        secret = "secret",
-        text = "text";
-    let username_pattern = /^[A-Za-z]{3,10}$/;
+        secret_answer = "secret_answer",
+        text = "text",
+        username_pattern = /^[A-Za-z]{3,10}$/;
     return (
       <div className="sign sign-up active">
-        <form onSubmit={events.handleFormSubmit}>
+        <form onSubmit={this.props.handleFormSubmit}>
           {/*            id                     label                      placeholder        type          pattern    */}
           {this.input(username,               username,               "Joe",                  text,     username_pattern)}
-          {this.input(email,                  email,                  "example@example.com",  email)}
-          {this.input(`confirm_${email}`,     `Confirm ${email}`,     "example@example.com",  email)}
-          {this.input(password,               password,               "",                     password)}
-          {this.input(`confirm_${password}`,  `Confirm ${password}`,  "",                     password)}
+          {this.input(email,                  email,                  "example@example.com",  email, "")}
+          {this.input(`confirm_${email}`,     `Confirm ${email}`,     "example@example.com",  email, "")}
+          {this.input(password,               password,               "",                     password, "")}
+          {this.input(`confirm_${password}`,  `Confirm ${password}`,  "",                     password, "")}
 
           <div className="input-wrapper">
             <label htmlFor="secret_question">Choose secret question:</label>
@@ -65,11 +52,11 @@ export class SignUp extends Component {
             </select>
           </div>
 
-          {this.input(secret, `${secret} answer`, "", text)}
+          {this.input(secret_answer, `Secret answer`, "", text, "")}
 
           <div className="input-wrapper">
             <div className="tos">
-              <input onClick={events.handleCheckboxClick} id="tos" type="checkbox"/>
+              <input onClick={this.props.handleCheckboxClick} id="tos" type="checkbox"/>
               <label htmlFor="tos">I agree to the <Link to="terms-of-service">terms of service</Link></label>
             </div>
           </div>
@@ -83,18 +70,3 @@ export class SignUp extends Component {
     );
   }
 }
-
-SignUp.propTypes = {
-  username: React.PropTypes.string,
-  email: React.PropTypes.string,
-  email_confirm: React.PropTypes.string,
-  password: React.PropTypes.string,
-  password_confirm: React.PropTypes.string,
-  secret_question: React.PropTypes.string,
-  secret_answer: React.PropTypes.string,
-  tos: React.PropTypes.bool,
-  handleInputChange: React.PropTypes.func,
-  handleCheckboxClick: React.PropTypes.func,
-  hideTooltip: React.PropTypes.func,
-  showTooltip: React.PropTypes.func,
-};
