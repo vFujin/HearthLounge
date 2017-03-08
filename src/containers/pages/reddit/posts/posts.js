@@ -6,20 +6,20 @@ const RedditPosts = (props) => {
 
   const checkIfStickied = (post) =>{
     let sticky = post.stickied;
-    return sticky === true ? "hunter active" : sticky;
+    return sticky === true ? "hunter active" : "";
   };
 
-  const checkIfBlizzardPost = (post) =>{
+  const checkIfBlizzardPost = post =>{
     let flair_text = post.link_flair_text.toLowerCase();
     return flair_text === "blizzard" ? "mage blizzard-official" : flair_text;
   };
 
-  const stripRedditURL = (url) => {
+  const stripRedditURL = url => {
     let split = url.split('/');
     return split[split.length - 2];
   };
 
-  const stripDomains = (post) => {
+  const stripDomains = post => {
     let domain = post.domain;
 
     //Battle.net
@@ -34,10 +34,11 @@ const RedditPosts = (props) => {
     else if(supported_domains.slice(2, 7).includes(domain)){
       return domain.replace(/self\.|\.com|clips\.|\.tv/g, "");
     }
+
     else return "default";
   };
 
-  const checkDomain = (post) =>{
+  const checkDomain = post =>{
     let selfURL = `/reddit/post/${post.id}/${stripRedditURL(post.permalink)}`;
 
     switch (post.domain) {
@@ -54,6 +55,14 @@ const RedditPosts = (props) => {
     }
   };
 
+  const checkTopbarIconFilters = post =>{
+    let query = props.location.query.domain;
+    console.log(query);
+    if(query !== undefined) {
+      return stripDomains(post) === props.location.query.domain ? stripDomains(post) : "display-none";
+    }
+  };
+
   const mapPosts = () =>{
     return (
         <table>
@@ -65,7 +74,7 @@ const RedditPosts = (props) => {
             <th>Created</th>
           </tr>
           {props.posts.map(post => (
-              <tr className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)}`}
+              <tr className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} ${checkTopbarIconFilters(post)}`}
                   key={post.id}
                   onClick={props.handleRedditPostClick.bind(this, post)}>
                 <td className="upvotes"><Link to={checkDomain(post)}><span>{post.ups}</span></Link></td>

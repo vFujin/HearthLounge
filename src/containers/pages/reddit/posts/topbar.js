@@ -3,15 +3,21 @@ import {Link} from 'react-router';
 import {supported_domain_icons} from '../domain-icons';
 
 const RedditPostsTopbar = props => {
+  let query = props.location.query.domain;
 
-
+  function checkIcon(domain){
+    if(domain === "bubbles2"){
+      return "hearthstone"
+    }
+    else return domain;
+  }
   return (
       <div className="subreddit-posts-topbar">
         <ul>
         {supported_domain_icons.map((domain, index)=>
           <li key={domain}>
-            <Link to={{pathname: 'reddit', query: Object.assign({}, props.query, {...props.query, domain: domain})}}>
-              <span className={`hs-icon icon-${domain} ${domain} ${domain === props.location.query.domain ? "active" : ""}`}></span>
+            <Link to={{pathname: 'reddit', query: Object.assign({}, props.query, {...props.query, domain: checkIcon(domain)})}}>
+              <span className={`hs-icon icon-${domain} ${domain} ${domain === query ? "active" : ""}`}></span>
               <div className="tooltip">
                 <div className="caret-up"></div>
                 <p>{domain}</p>
