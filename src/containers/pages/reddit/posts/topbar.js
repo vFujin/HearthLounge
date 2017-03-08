@@ -16,7 +16,7 @@ const RedditPostsTopbar = props => {
         <ul>
         {supported_domain_icons.map((domain, index)=>
           <li key={domain}>
-            <Link to={{pathname: 'reddit', query: Object.assign({}, props.query, {...props.query, domain: checkIcon(domain)})}}>
+            <Link to={{pathname: '/reddit/posts', query: Object.assign({}, props.query, {...props.query, domain: checkIcon(domain)})}}>
               <span className={`hs-icon icon-${domain} ${domain} ${domain === query ? "active" : ""}`}></span>
               <div className="tooltip">
                 <div className="caret-up"></div>

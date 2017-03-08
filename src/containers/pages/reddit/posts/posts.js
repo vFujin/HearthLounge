@@ -6,7 +6,7 @@ const RedditPosts = (props) => {
 
   const checkIfStickied = (post) =>{
     let sticky = post.stickied;
-    return sticky === true ? "hunter active" : "";
+    return sticky === true ? "hunter active" : sticky;
   };
 
   const checkIfBlizzardPost = post =>{

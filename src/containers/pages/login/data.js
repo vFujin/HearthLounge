@@ -1,6 +1,6 @@
 export const carousel = [
   {
-    text: "Create your own decks and share with (site) community!",
+    text: "Create your own decks and share with HearthLounge community!",
     icon: "create-deck",
     dot: "◈"
   },
@@ -10,8 +10,13 @@ export const carousel = [
     dot: "◈"
   },
   {
-    text: "Create your own decks!",
-    icon: "create-deck",
+    text: "Struggling in Arena? Check our Arena Helper/Picker",
+    icon: "arena-picker",
+    dot: "◈"
+  },
+  {
+    text: "Check one of our Adventure guides or write your own!",
+    icon: "adventures",
     dot: "◈"
   }
 ];
