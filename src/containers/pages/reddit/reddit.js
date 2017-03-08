@@ -6,11 +6,11 @@ export class Reddit extends Component{
 
     this.state = {
       posts: [],
-      query: [],
       post: '',
       active_post: '',
       post_permalink: '',
-      active_tabmenu: 'hot'
+      active_tabmenu: 'hot',
+      active_domain_filter: ''
     };
 
     this.handleFilterClick = this.handleFilterClick.bind(this);
@@ -26,6 +26,7 @@ export class Reddit extends Component{
             posts: posts
           })
         });
+
   }
 
   handleRedditPostClick(active_post) {
@@ -39,9 +40,9 @@ export class Reddit extends Component{
 
   handleFilterClick = (e) => {
     e.preventDefault();
-    let tabmenu = e.currentTarget.value;
-    if(tabmenu !== this.state.active_tabmenu){
-      axios.get(`https://www.reddit.com/r/hearthstone/${tabmenu}.json`)
+    let filter = e.currentTarget.id;
+    if(filter !== this.state.active_tabmenu){
+      axios.get(`https://www.reddit.com/r/hearthstone/${filter}.json`)
           .then(res => {
             const posts = res.data.data.children.map(obj => obj.data);
             console.log(posts);
@@ -49,12 +50,13 @@ export class Reddit extends Component{
               posts: posts
             })
           });
-
       this.setState({
-        active_tabmenu: tabmenu
+        active_tabmenu: filter,
       });
     }
   };
+
+
 
   render(){
     const {main, sidebar, topbar} = this.props;
@@ -62,12 +64,15 @@ export class Reddit extends Component{
       <div className="pageContainer subreddit list-with-filters-layout">
           <div className="left-container">
             <div className="sidebar">
-              {React.cloneElement(sidebar, {handleTabmenuClick: this.handleFilterClick.bind(this)})}
+              {React.cloneElement(sidebar, {handleTabmenuClick: this.handleFilterClick.bind(this),
+                                            active_tabmenu: this.state.active_tabmenu,
+                                            active_domain_filter: this.state.active_domain_filter})}
             </div>
           </div>
           <div className="right-container">
             <div className="topbar">
-              {topbar}
+              {React.cloneElement(topbar, {active_tabmenu: this.state.active_tabmenu,
+                                           active_domain_filter: this.state.active_domain_filter})}
             </div>
             {React.cloneElement(main, {posts: this.state.posts,
                                        post_permalink: this.state.post_permalink,

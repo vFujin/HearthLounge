@@ -9,8 +9,8 @@ export class RedditPostsSidebar extends Component{
           <h3 className="filter-header">Filters</h3>
           {tabmenu.map(el=>{
             return (
-                <button key={el} onClick={(e) => this.props.handleTabmenuClick(e)} >
-                  <Link activeClassName="active" to={{pathname: 'reddit', query: Object.assign({}, this.props.query, {...this.props.query, category: el})}}>{el}</Link>
+                <button key={el} id={el} onClick={(e) => this.props.handleTabmenuClick(e)} >
+                  <Link activeClassName="active" to={{pathname: 'reddit', query: {category: el}}}>{el}</Link>
                 </button>
             )
           })}
