@@ -6,17 +6,19 @@ export class Reddit extends Component{
 
     this.state = {
       posts: [],
+      query: [],
       post: '',
       active_post: '',
       post_permalink: '',
       active_tabmenu: 'hot'
     };
 
-    this.handleTabmenuClick = this.handleTabmenuClick.bind(this);
+    this.handleFilterClick = this.handleFilterClick.bind(this);
   }
 
   componentDidMount() {
-    axios.get(`https://www.reddit.com/r/hearthstone.json`)
+    let query = this.props.location.query.category || "hot";
+    axios.get(`https://www.reddit.com/r/hearthstone/${query}.json`)
         .then(res => {
           const posts = res.data.data.children.map(obj => obj.data);
           console.log(posts);
@@ -35,11 +37,10 @@ export class Reddit extends Component{
   }
 
 
-  handleTabmenuClick = (e) => {
+  handleFilterClick = (e) => {
     e.preventDefault();
     let tabmenu = e.currentTarget.value;
     if(tabmenu !== this.state.active_tabmenu){
-
       axios.get(`https://www.reddit.com/r/hearthstone/${tabmenu}.json`)
           .then(res => {
             const posts = res.data.data.children.map(obj => obj.data);
@@ -61,7 +62,7 @@ export class Reddit extends Component{
       <div className="pageContainer subreddit list-with-filters-layout">
           <div className="left-container">
             <div className="sidebar">
-              {React.cloneElement(sidebar, {handleTabmenuClick: this.handleTabmenuClick.bind(this)})}
+              {React.cloneElement(sidebar, {handleTabmenuClick: this.handleFilterClick.bind(this)})}
             </div>
           </div>
           <div className="right-container">

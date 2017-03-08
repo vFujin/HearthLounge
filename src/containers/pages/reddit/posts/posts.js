@@ -43,11 +43,12 @@ const RedditPosts = (props) => {
     switch (post.domain) {
       case supported_domains[1]:
       case supported_domains[2]:
-      case supported_domains[3]:
       case supported_domains[4]:
       case supported_domains[5]:
       case supported_domains[6]:
         return selfURL;
+      case supported_domains[3]:
+        return post.url;
       default:
         return post.url;
     }

@@ -10,7 +10,7 @@ export class RedditPostsSidebar extends Component{
           {tabmenu.map(el=>{
             return (
                 <button key={el} onClick={(e) => this.props.handleTabmenuClick(e)} value={el}>
-                  <Link to={`posts/${el}`}>{el}</Link>
+                  <Link to={{pathname: 'reddit', query: Object.assign({}, this.props.query, {...this.props.query, category: el})}}>{el}</Link>
                 </button>
             )
           })}

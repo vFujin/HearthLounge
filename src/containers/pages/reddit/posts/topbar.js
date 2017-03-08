@@ -8,7 +8,8 @@ const RedditPostsTopbar = props => {
         <ul>
         {supported_domain_icons.map(domain =>
           <li key={domain}>
-            <Link to={`reddit/posts/${props.location.pathname}?domain=${domain}`}>
+
+            <Link to={{pathname: 'reddit', query: Object.assign({}, props.query, {...props.query, domain: domain})}}>
               <span className={`hs-icon icon-${domain} ${domain}`}></span>
               <div className="tooltip">
                 <div className="caret-up"></div>

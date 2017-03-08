@@ -11,6 +11,7 @@ export class SignUp extends Component {
   }
 
   input(id, label, placeholder, type, pattern){
+    console.log(id, this.props[`${id}_tooltip`])
     return (
         <Input id={id}
                label={label}
