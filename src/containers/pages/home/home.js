@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { DecksBlock } from './decks/decks';
-import { ArenaPickerBlock } from './arena-picker/arena-picker';
+import ArenaPickerBlock from './arena-picker/arena-picker';
 import { CardsBlock } from './cards/cards';
 import { ExpansionsBlock } from './expansions/expansions';
 import { TournamentsBlock } from './tournament/tournaments';

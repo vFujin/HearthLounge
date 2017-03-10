@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import {TwitchClientId} from '../../../keys';
-
-// import unirest from 'unirest';
 import 'whatwg-fetch';
+
 export class Streams extends Component {
   constructor(props) {
-
     super(props);
+
     this.state = {
       streams: []
     };

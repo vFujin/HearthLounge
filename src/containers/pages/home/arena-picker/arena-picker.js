@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-export class ArenaPickerBlock extends Component {
-  render() {
+const ArenaPickerBlock = () =>{
     return (
         <li className={'home__block arena-picker block-width-1'}>
           <Link to={'/arena-picker'}>
@@ -10,5 +9,6 @@ export class ArenaPickerBlock extends Component {
           (filmik)
         </li>
     );
-  }
-}
+};
+
+export default ArenaPickerBlock;
