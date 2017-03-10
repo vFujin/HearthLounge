@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import 'whatwg-fetch'
-
-// https://github.com/github/fetch
+import {TwitchClientId} from '../../../keys';
 
 // import unirest from 'unirest';
 import 'whatwg-fetch';
@@ -10,27 +8,25 @@ export class Streams extends Component {
 
     super(props);
     this.state = {
-      cards: []
+      streams: []
     };
 
   }
 
   componentDidMount() {
-    // unirest.get("https://api.twitch.tv/kraken/users?login=dallas,dallasnchains")
-    //     .header({
-    //       "Accept": 'application/vnd.twitchtv.v5+json',
-    //       "Client-ID": "jupouny3vvr7kl38jlsj7ssnyww80z"
-    //     })
-    //     .end(res => {
-    //       console.log(res);
-    //       this.setState({
-    //         cards: res.body
-    //       });
-    //
-    //     });
-    fetch('/streams').then(function (res) {
-      console.log(res)
+    fetch('https://api.twitch.tv/kraken/search/streams?query=hearthstone&limit=1', {
+      headers: {
+        "Accept": 'application/vnd.twitchtv.v5+json',
+        "Client-Id": TwitchClientId
+      }
     })
+        .then(r => r.json())
+        .then(data => {
+          console.log(data.streams);
+          this.setState({
+            streams: data.streams
+          })
+        })
   }
 
 
@@ -38,9 +34,16 @@ export class Streams extends Component {
     return (
         <div className="pageContainer streams">
           <ul className={`cards`}>
-            {this.state.cards.map((card, i)=>
+            {this.state.streams.map((stream, i)=>
                 <li key={i}>
-                  <img src={card} alt={`${card}`}/>
+                  <iframe
+                      src={`http://player.twitch.tv/?channel=${stream.channel.name}&muted=true`}
+                      height="400"
+                      width="600"
+                      frameBorder="0"
+                      scrolling="no"
+                      allowFullScreen="false">
+                  </iframe>
                 </li>
             )}
           </ul>
