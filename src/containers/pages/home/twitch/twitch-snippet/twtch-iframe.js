@@ -1,7 +1,9 @@
 import React from 'react';
+import Loader from '../../../../shared-assets/loader';
+
 const TwitchIframe = props => {
   if (props.streams < 1) {
-    return <p>Loading...</p>
+    return <Loader/>
   }
   else {
     return (

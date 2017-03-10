@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Loader from '../../../../shared-assets/loader'
 const TopLiveStreamersList = props => {
 
   const list = () =>{
@@ -19,7 +20,7 @@ const TopLiveStreamersList = props => {
   };
 
   if (props.streams < 1) {
-    return <p>Loading...</p>
+    return <Loader/>
   }
   else {
     return (

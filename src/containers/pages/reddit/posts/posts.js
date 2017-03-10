@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import Loader from '../../../shared-assets/loader';
 import Icon, {supported_domains} from '../domain-icons';
 
 const RedditPosts = (props) => {
@@ -106,7 +107,7 @@ const RedditPosts = (props) => {
 
   const ifPostsLoaded = () =>{
     if(props.posts.length < 1){
-      return <div>Loading...</div>
+      return <Loader/>
     }
     else return mapPosts();
   };

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import {TwitchClientId} from "../../../../keys";
+
 import TopLiveStreamersList from './twitch-snippet/top-livestreamers-list';
 import TwitchIframe from './twitch-snippet/twtch-iframe';
 
@@ -11,7 +12,7 @@ export class TwitchBlock extends Component {
     this.state = {
       streams: [],
       streamer: null,
-      activeStreamerTab: null
+      activeStreamerTab: "0"
     }
   }
 
@@ -49,7 +50,7 @@ export class TwitchBlock extends Component {
           <div className="streams-body">
             <div className="live-broadcasters">
               <TopLiveStreamersList streams={this.state.streams}
-                                    handleStreamerSelectionClick={(e)=>this.handleStreamerSelectionClick(e)}
+                                    handleStreamerSelectionClick={(e, index)=>this.handleStreamerSelectionClick(e, index)}
                                     activeStreamerTab={this.state.activeStreamerTab}/>
             </div>
             <div className="iframe-container">
