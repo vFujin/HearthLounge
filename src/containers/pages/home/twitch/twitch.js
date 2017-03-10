@@ -8,7 +8,8 @@ export class TwitchBlock extends Component {
 
     this.state = {
       streams: [],
-      streamer: null
+      streamer: null,
+      activeStreamerTab: null
     }
   }
 
@@ -29,26 +30,29 @@ export class TwitchBlock extends Component {
       })
   }
 
-  handleStreamerSelectionClick(e){
+  handleStreamerSelectionClick(e, index){
     // e.preventDefault();
+    console.log(e, index);
     let channelName = e.currentTarget.id;
+
     console.log(channelName);
     this.setState({
-      streamer: channelName
+      streamer: channelName,
+      activeStreamerTab: index
     })
   }
 
   listTopStreamers(){
     return (
-      this.state.streams.map(stream=>
+      this.state.streams.map((stream, index) =>
         <li key={stream["_id"]}
-            onClick={this.handleStreamerSelectionClick.bind(this)}
+            onClick={(e) => this.handleStreamerSelectionClick(e, index)}
             className="streamer"
             id={stream.channel.name}>
-          <a href="">
+          <Link to="" className={this.state.activeStreamerTab === index ? "active" : ""}>
             <div className="name">{stream.channel.name}</div>
             <div className="viewers">{stream.viewers}</div>
-          </a>
+          </Link>
         </li>
       )
     )
