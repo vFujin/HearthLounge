@@ -6,7 +6,7 @@ import ExtensionsBlock from './extensions/extensions';
 import TournamentsBlock from './tournament/tournaments';
 import CreateDeckBlock from './create-deck/create-deck';
 import { TwitchBlock } from './twitch/twitch';
-import { ForumBlock } from './forum/forum';
+import ForumBlock from './forum/forum';
 export class Home extends Component {
   render() {
     return (
