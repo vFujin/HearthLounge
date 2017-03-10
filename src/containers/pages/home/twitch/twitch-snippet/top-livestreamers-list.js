@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-const TopLiveStreamersList = (props) => {
+const TopLiveStreamersList = props => {
 
   const list = () =>{
     return (
@@ -18,11 +18,16 @@ const TopLiveStreamersList = (props) => {
     )
   };
 
-  return (
-      <ul className="live-broadcasters">
+  if (props.streams < 1) {
+    return <p>Loading...</p>
+  }
+  else {
+    return (
+        <ul>
           {list()}
-      </ul>
-  );
+        </ul>
+    )
+  }
 };
 
 export default TopLiveStreamersList;

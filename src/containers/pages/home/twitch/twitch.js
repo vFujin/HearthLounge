@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import {TwitchClientId} from "../../../../keys";
-import TopLiveStreamersList from './twitch-snippet/top-live-streamers-list';
+import TopLiveStreamersList from './twitch-snippet/top-livestreamers-list';
+import TwitchIframe from './twitch-snippet/twtch-iframe';
 
 export class TwitchBlock extends Component {
   constructor(props){
@@ -32,34 +33,12 @@ export class TwitchBlock extends Component {
   }
 
   handleStreamerSelectionClick(e, index){
-    // e.preventDefault();
-    console.log(e, index);
     let channelName = e.currentTarget.id;
-
-    console.log(channelName);
     this.setState({
       streamer: channelName,
       activeStreamerTab: index
     })
   }
-
-  showStream(){
-    if(this.state.streams < 1){
-      return <p>Loading...</p>
-    }
-    else{
-      return (
-          <iframe
-              src={`http://player.twitch.tv/?channel=${this.state.streamer}&muted=true`}
-              width="100%"
-              height="100%"
-              scrolling="no">
-          </iframe>
-      )
-    }
-  }
-
-
 
   render() {
     return (
@@ -68,13 +47,14 @@ export class TwitchBlock extends Component {
             <div className="header">Current Top HS Broadcasters</div>
           </Link>
           <div className="streams-body">
-            <TopLiveStreamersList streams={this.state.streams}
-                                  handleStreamerSelectionClick={this.handleStreamerSelectionClick}
-                                  activeStreamerTab={this.state.activeStreamerTab}/>
-
-
+            <div className="live-broadcasters">
+              <TopLiveStreamersList streams={this.state.streams}
+                                    handleStreamerSelectionClick={(e)=>this.handleStreamerSelectionClick(e)}
+                                    activeStreamerTab={this.state.activeStreamerTab}/>
+            </div>
             <div className="iframe-container">
-              {this.showStream()}
+              <TwitchIframe streams={this.state.streams}
+                            streamer={this.state.streamer}/>
 
             </div>
           </div>
@@ -85,5 +65,7 @@ export class TwitchBlock extends Component {
 
 TwitchBlock.propTypes = {
   streams: React.PropTypes.array,
-  streamer: React.PropTypes.string
+  streamer: React.PropTypes.string,
+  activeStreamerTab: React.PropTypes.number,
+  handleStreamerSelectionClick: React.PropTypes.func
 };

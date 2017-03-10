@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-export class TwitchIframe extends Component {
-  render() {
+import React from 'react';
+const TwitchIframe = props => {
+  if (props.streams < 1) {
+    return <p>Loading...</p>
+  }
+  else {
     return (
-      <div className="iframe-container">
         <iframe
-            src="http://player.twitch.tv/?channel=trumpsc"
+            src={`http://player.twitch.tv/?channel=${props.streamer}&muted=true`}
             width="100%"
             height="100%"
-            scrolling="no"
-            allowfullscreen="true">
+            scrolling="no">
         </iframe>
-      </div>
-    );
+    )
   }
-}
+};
+
+export default TwitchIframe;
