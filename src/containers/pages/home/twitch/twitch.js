@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import {TwitchClientId} from "../../../../keys";
+import TopLiveStreamersList from './twitch-snippet/top-live-streamers-list';
 
 export class TwitchBlock extends Component {
   constructor(props){
@@ -14,7 +15,7 @@ export class TwitchBlock extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.twitch.tv/kraken/search/streams?query=hearthstone&limit=7', {
+    fetch('https://api.twitch.tv/kraken/search/streams?query=hearthstone&limit=6', {
       headers: {
         "Accept": 'application/vnd.twitchtv.v5+json',
         "Client-Id": TwitchClientId
@@ -42,22 +43,6 @@ export class TwitchBlock extends Component {
     })
   }
 
-  listTopStreamers(){
-    return (
-      this.state.streams.map((stream, index) =>
-        <li key={stream["_id"]}
-            onClick={(e) => this.handleStreamerSelectionClick(e, index)}
-            className="streamer"
-            id={stream.channel.name}>
-          <Link to="" className={this.state.activeStreamerTab === index ? "active" : ""}>
-            <div className="name">{stream.channel.name}</div>
-            <div className="viewers">{stream.viewers}</div>
-          </Link>
-        </li>
-      )
-    )
-  }
-
   showStream(){
     if(this.state.streams < 1){
       return <p>Loading...</p>
@@ -83,9 +68,9 @@ export class TwitchBlock extends Component {
             <div className="header">Current Top HS Broadcasters</div>
           </Link>
           <div className="streams-body">
-            <ul className="live-broadcasters">
-              {this.listTopStreamers()}
-            </ul>
+            <TopLiveStreamersList streams={this.state.streams}
+                                  handleStreamerSelectionClick={this.handleStreamerSelectionClick}
+                                  activeStreamerTab={this.state.activeStreamerTab}/>
 
 
             <div className="iframe-container">
