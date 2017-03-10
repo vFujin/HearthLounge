@@ -19,13 +19,13 @@ export class Streams extends Component {
         "Client-Id": TwitchClientId
       }
     })
-        .then(r => r.json())
-        .then(data => {
-          console.log(data.streams);
-          this.setState({
-            streams: data.streams
-          })
+      .then(r => r.json())
+      .then(data => {
+        console.log(data.streams);
+        this.setState({
+          streams: data.streams
         })
+      })
   }
 
 
