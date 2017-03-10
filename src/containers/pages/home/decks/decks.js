@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import { ClassSelection } from './filters/class-selection';
-import { ModeSelection } from './filters/mode-selection';
-import { DeckSnippet } from '../../../shared-assets/deck-snippet/deck-snippet';
-import { SearchDecks } from './filters/search-decks';
-export class DecksBlock extends Component {
-  render() {
-    return (
+import React from 'react';
+import ClassSelection from './filters/class-selection';
+import ModeSelection from './filters/mode-selection';
+import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
+import SearchDecks from './filters/search-decks';
+const DecksBlock = () => {
+  return (
       <li className={'home__block decks block-width-3'}>
 
         <div className="left-container">
@@ -33,6 +32,7 @@ export class DecksBlock extends Component {
           </div>
         </div>
       </li>
-    );
-  }
-}
+  );
+};
+
+export default DecksBlock;

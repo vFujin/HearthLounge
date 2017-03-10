@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DecksBlock } from './decks/decks';
+import DecksBlock from './decks/decks';
 import ArenaPickerBlock from './arena-picker/arena-picker';
 import CardsBlock from './cards/cards';
 import ExtensionsBlock from './extensions/extensions';

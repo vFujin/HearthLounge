@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {mode} from '../../../../../data/filters';
-export class ModeSelection extends Component {
 
-  listModes(){
-    return mode.map(mode=>
-      <li key={mode.name}>
-        {console.log(mode)}
-        <span className={`hs-icon icon-${mode.icon}`}></span>
-        <p>{mode.name}</p>
-      </li>
+const ModeSelection  = () => {
+
+  const listModes = () => {
+    return mode.map(mode =>
+        <li key={mode.name}>
+          <span className={`hs-icon icon-${mode.icon}`}></span>
+          <p>{mode.name}</p>
+        </li>
     )
-  }
+  };
 
-  render() {
-    return (
-        <ul className="mode-selection">
-          {this.listModes()}
-        </ul>
-    );
-  }
-}
+  return (
+      <ul className="mode-selection">
+        {listModes()}
+      </ul>
+  );
+};
+
+export default ModeSelection;

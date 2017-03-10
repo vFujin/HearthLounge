@@ -1,5 +1,5 @@
 import React from 'react';
-import { ManaCurve } from './mana-curve';
+import ManaCurve from './mana-curve';
 export const DeckSnippetBody = (props) => {
   let prefix = props.prefix;
   return (
@@ -14,16 +14,16 @@ export const DeckSnippetBody = (props) => {
           </div>
         </div>
         <div className={`${prefix}-body-body`}>
-          <div className={`${prefix}-minions`}>10 minionów</div>
-          <div className={`${prefix}-spells`}>14 zaklęć</div>
-          <div className={`${prefix}-weapons`}>6 broni</div>
+          <div className={`${prefix}-minions`}>10 minions</div>
+          <div className={`${prefix}-spells`}>14 spells</div>
+          <div className={`${prefix}-weapons`}>6 weapons</div>
         </div>
         <div className={`${prefix}-body-footer`}>
           <div className={`${prefix}-views`}>
             <span className="hs-icon icon-eye"></span>
-            <p>10tyś.</p>
+            <p>10k.</p>
           </div>
-          <div className={`${prefix}-comments`}>14 komentarzy</div>
+          <div className={`${prefix}-comments`}>14 comments</div>
           <div className={`${prefix}-votes`}><span className="hs-icon icon-circle-up"></span> 14</div>
         </div>
       </div>

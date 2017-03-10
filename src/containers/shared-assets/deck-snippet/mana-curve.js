@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-export class ManaCurve extends Component {
-  render() {
-    return (
-      <ul className={`${this.props.prefix}-mana-curve`}>
+import React from 'react';
+const ManaCurve = (props) => {
+  return (
+      <ul className={`${props.prefix}-mana-curve`}>
         <li></li>
         <li></li>
         <li></li>
@@ -11,6 +10,7 @@ export class ManaCurve extends Component {
         <li></li>
         <li></li>
       </ul>
-    );
-  }
-}
+  );
+};
+
+export default ManaCurve;

@@ -6,8 +6,8 @@ export const DeckSnippetHeader = (props) => {
         <div className={`${prefix}-hs-class`}><span className="hs-icon icon-warlock"></span></div>
         <div className={`${prefix}-about`}>
           <div className={`${prefix}-title`}>Yada yada legend 1</div>
-          <div className={`${prefix}-author`}>zrobiony przez (authorname)</div>
-          <div className={`${prefix}-created`}>1 dzień temu</div>
+          <div className={`${prefix}-author`}>created by (authorname)</div>
+          <div className={`${prefix}-created`}>1 day ago</div>
         </div>
       </div>
   );
