@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { DecksBlock } from './decks/decks';
 import ArenaPickerBlock from './arena-picker/arena-picker';
-import { CardsBlock } from './cards/cards';
-import { ExpansionsBlock } from './expansions/expansions';
+import CardsBlock from './cards/cards';
+import ExtensionsBlock from './extensions/extensions';
 import { TournamentsBlock } from './tournament/tournaments';
 import { CreateDeckBlock } from './create-deck/create-deck';
 import { TwitchBlock } from './twitch/twitch';
@@ -15,7 +15,7 @@ export class Home extends Component {
             <DecksBlock />
             <ArenaPickerBlock />
             <TournamentsBlock />
-            <ExpansionsBlock />
+            <ExtensionsBlock />
             <CardsBlock />
             <CreateDeckBlock />
             <TwitchBlock />
