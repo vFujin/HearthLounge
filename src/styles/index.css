@@ -1986,7 +1986,10 @@ footer {
             border: 1px solid #E7E2DA;
             color: #E7E2DA; }
           .home ul.home__list .streams .streams-body .live-broadcasters li a .name {
-            flex-grow: 8; }
+            flex-grow: 8;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            margin-right: 10px; }
           .home ul.home__list .streams .streams-body .live-broadcasters li a .viewers {
             flex-grow: 2;
             text-align: center; }

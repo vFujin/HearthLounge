@@ -506,6 +506,9 @@ footer{
               }
               .name{
                 flex-grow: 8;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin-right: 10px;
               }
               .viewers{
                 flex-grow: 2;

@@ -11,8 +11,11 @@ const Sidebar = props => {
     else{
       return (
         props.streams.map(stream =>
-          <li className="preview" key={stream['_id']}>
-            <Link to="{stream_name}" >
+          <li onClick={props.handlePreviewClick}
+              className="preview"
+              id={stream.channel.name}
+              key={stream['_id']}>
+            <Link to={`/twitch/${stream.channel.name}`} >
               <div className="preview-info">
                 <div className="preview-topbar">
                   <div className="preview-name">{stream.channel.display_name}</div>

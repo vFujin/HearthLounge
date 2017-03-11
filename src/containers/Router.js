@@ -10,7 +10,7 @@ import {ServiceCards} from './pages/cards/right-container/service.cards';
 
 import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
-import {Streams} from './pages/streams/streams';
+
 
 import {Decks} from './pages/decks/deck-selection/decks';
 import {Deck} from './pages/decks/deck/deck';
@@ -37,6 +37,10 @@ import {AdventureBoss} from './pages/adventures/assets/adventure-boss';
 import {CreateDeck} from './pages/create-deck/create-deck';
 import {CreateDeckClassSelection} from './pages/create-deck/class-selection';
 import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
+
+import {Streams} from './pages/streams/streams';
+import Iframe from './pages/streams/iframe';
+
 
 import {Reddit} from './pages/reddit/reddit';
 import RedditPost from './pages/reddit/post/post';
@@ -113,12 +117,15 @@ export class App extends Component {
 
           <Route path="forum"             component={Forum} />
           <Route path="tournaments"       component={Tournaments} />
-          <Route path="twitch"         component={Streams} />
+
+          <Redirect from="twitch" to="twitch/all" />
+          <Route path="twitch"         component={Streams}>
+            <Route path=":channel"         component={Iframe}/>
+          </Route>
 
           <Redirect from="reddit" to="reddit/posts" />
           <Route path="reddit"              component={Reddit}>
-            <Route path="posts"             components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}}>
-            </Route>
+            <Route path="posts"             components={{main: RedditPosts, sidebar: RedditPostsSidebar, topbar: RedditPostsTopbar}} />
             <Route path="post/:id/:post"    components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
             <Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
           </Route>

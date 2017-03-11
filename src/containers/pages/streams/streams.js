@@ -10,9 +10,9 @@ export class Streams extends Component {
     super(props);
 
     this.state = {
-      streams: []
+      streams: [],
+      activeStreamer: null
     };
-
   }
 
   componentDidMount() {
@@ -26,44 +26,50 @@ export class Streams extends Component {
       .then(data => {
         console.log(data.streams);
         this.setState({
-          streams: data.streams
+          streams: data.streams,
+          activeStreamer: data.streams[0].channel.name
         })
       })
   }
 
   componentWillUnmount(){
     this.setState({
-      streams: []
+      streams: [],
+      activeStreamer: null
     })
   }
 
-  loadIframe(){
-    if(this.state.streams < 1){
+
+
+  handlePreviewClick(e){
+    let streamer = e.currentTarget.id;
+    console.log(streamer);
+    this.setState({
+      activeStreamer: streamer
+    })
+  }
+
+  loadIframe() {
+    if (this.state.streams < 1) {
       return <Loader/>;
     }
-    else{
-      return (
-        <iframe
-            src={`http://player.twitch.tv/?channel=${this.state.streams[0].channel.name}&muted=true`}
-            height="100%"
-            width="80%"
-            frameBorder="0"
-            scrolling="no"
-            allowFullScreen="false">
-        </iframe>
-      )
+    else {
+      console.log(this.state.activeStreamer);
+      return React.cloneElement(this.props.children, {activeStreamer: this.state.activeStreamer})
     }
-  }
+  };
 
 
   render() {
+    let path = this.props.params.channel;
     return (
         <div className="pageContainer streams">
+          {/*{console.log(this.props.location.pathname)}*/}
           <div className="left-container">
-            <Sidebar streams={this.state.streams} />
+            <Sidebar streams={this.state.streams} handlePreviewClick={(e)=>this.handlePreviewClick(e)}/>
           </div>
           <div className="right-container">
-            <Topbar streams={this.state.streams}/>
+            <Topbar streams={this.state.streams} activeStreamer={path}/>
             <div className="stream">
               {this.loadIframe()}
             </div>

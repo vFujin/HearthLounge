@@ -58,7 +58,7 @@ const RedditPost = (props) => {
     <div className="choosen-deck-view">
       <div className="choosen-deck-details">
         <div className="section description">
-          <div className="section-header"><h1><span>{props.posts.filter(x=>x.id === params.id).map(x=>x.title)[0]}</span></h1></div>
+          <div className="section-header"><h1><span>{posts.filter(x=>x.id === params.id).map(x=>x.title)[0]}</span></h1></div>
           {filterPosts()}
         </div>
 
