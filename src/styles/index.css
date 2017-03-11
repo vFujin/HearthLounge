@@ -2756,12 +2756,38 @@ footer {
     .streams .left-container .sidebar ul::-webkit-scrollbar-track {
       background-color: #A69E9D; }
     .streams .left-container .sidebar ul li {
-      margin-bottom: 10px; }
+      width: calc(100% - 20px);
+      margin: 0 auto 10px; }
       .streams .left-container .sidebar ul li a {
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        position: relative; }
+        .streams .left-container .sidebar ul li a .preview-info {
+          position: absolute;
+          height: 100%;
+          width: 100%; }
+          .streams .left-container .sidebar ul li a .preview-info .preview-topbar {
+            color: white;
+            background: linear-gradient(to bottom, black 0%, black 35%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            height: 15%;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            justify-content: space-between; }
+            .streams .left-container .sidebar ul li a .preview-info .preview-topbar .preview-viewers {
+              display: flex; }
+              .streams .left-container .sidebar ul li a .preview-info .preview-topbar .preview-viewers span {
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+                color: #C41F3B; }
+          .streams .left-container .sidebar ul li a .preview-info .preview-bottombar {
+            height: 85%;
+            display: flex;
+            align-items: flex-end; }
         .streams .left-container .sidebar ul li a img {
-          width: calc(100% - 20px);
+          width: 100%;
           height: 0%; }
       .streams .left-container .sidebar ul li:last-child {
         margin-bottom: 0; }

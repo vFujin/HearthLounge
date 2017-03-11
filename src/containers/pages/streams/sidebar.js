@@ -8,12 +8,21 @@ const Sidebar = props => {
           <h3 className="filter-header">Streamers</h3>
           <ul>
             {props.streams.map(stream =>
-              <li key={stream['_id']}>
+              <li className="preview" key={stream['_id']}>
                 <Link to="{stream_name}" >
+                  <div className="preview-info">
+                    <div className="preview-topbar">
+                      <div className="preview-name">{stream.channel.display_name}</div>
+                      <div className="preview-viewers">
+                        <span className="hs-icon icon-login"></span>
+                        <p>{stream.viewers}</p>
+                      </div>
 
+                    </div>
 
-
-                    <img src={stream.preview.large} alt={`${stream.channel.display_name}'s preview`}/>
+                    <div className="preview-bottombar preview-status">{stream.channel.status}</div>
+                  </div>
+                  <img src={stream.preview.large} alt={`${stream.channel.display_name}'s preview`}/>
                 </Link>
               </li>
             )}
