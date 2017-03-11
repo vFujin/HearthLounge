@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Iframe = props => {
-  console.log(props.activeStreamer);
   return (
       <iframe
           src={`http://player.twitch.tv/?channel=${props.activeStreamer}&muted=true`}

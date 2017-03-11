@@ -64,7 +64,7 @@ export class SignUp extends Component {
           {/*place for captcha*/}
 
           <div className="button-wrapper">
-            <button>Submit</button>
+            <button className="btn-pearl">Submit</button>
           </div>
         </form>
       </div>

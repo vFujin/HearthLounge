@@ -239,7 +239,20 @@ body {
   }
 }
 
-
+.btn-pearl{
+    @include transition(all ease .4s);
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid $pearl;
+    color: $pearl;
+    outline: 0;
+    padding: 5px 10px;
+    &:hover{
+      @include box-shadow(0, 0, 5px, $sea-color);
+      border-color: $sea-color;
+      color: $sea-color;
+    }
+}
 
 
 

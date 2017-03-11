@@ -11,7 +11,7 @@ export class SignIn extends Component {
           <input type="password" id="password"/>
 
           <div className="button-wrapper">
-            <button>Submit</button>
+            <button className="btn-pearl">Submit</button>
           </div>
         </form>
       </div>
