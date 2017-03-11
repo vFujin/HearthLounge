@@ -17,10 +17,12 @@ const Sidebar = props => {
                         <span className="hs-icon icon-login"></span>
                         <p>{stream.viewers}</p>
                       </div>
-
                     </div>
-
-                    <div className="preview-bottombar preview-status">{stream.channel.status}</div>
+                    <div className="preview-bottombar">
+                      <div className="preview-status">
+                        <p>{stream.channel.status}</p>
+                      </div>
+                    </div>
                   </div>
                   <img src={stream.preview.large} alt={`${stream.channel.display_name}'s preview`}/>
                 </Link>
