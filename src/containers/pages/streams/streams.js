@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {TwitchClientId} from '../../../keys';
+import Sidebar from './sidebar';
+import Loader from '../../shared-assets/loader';
 import 'whatwg-fetch';
 
 export class Streams extends Component {
@@ -13,7 +15,7 @@ export class Streams extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.twitch.tv/kraken/search/streams?query=hearthstone&limit=1', {
+    fetch('https://api.twitch.tv/kraken/search/streams?query=hearthstone&limit=10', {
       headers: {
         "Accept": 'application/vnd.twitchtv.v5+json',
         "Client-Id": TwitchClientId
@@ -28,24 +30,37 @@ export class Streams extends Component {
       })
   }
 
+  loadIframe(){
+    if(this.state.streams < 1){
+      return <Loader/>;
+    }
+    else{
+      return (
+        <iframe
+            src={`http://player.twitch.tv/?channel=${this.state.streams[0].channel.name}&muted=true`}
+            height="400"
+            width="600"
+            frameBorder="0"
+            scrolling="no"
+            allowFullScreen="false">
+        </iframe>
+      )
+    }
+  }
+
 
   render() {
     return (
         <div className="pageContainer streams">
-          <ul className={`cards`}>
-            {this.state.streams.map((stream, i)=>
-                <li key={i}>
-                  <iframe
-                      src={`http://player.twitch.tv/?channel=${stream.channel.name}&muted=true`}
-                      height="400"
-                      width="600"
-                      frameBorder="0"
-                      scrolling="no"
-                      allowFullScreen="false">
-                  </iframe>
-                </li>
-            )}
-          </ul>
+          <div className="left-container">
+            <Sidebar streams={this.state.streams} />
+          </div>
+          <div className="right-container">
+            <div className="topbar"></div>
+            <ul className={`cards`}>
+              {this.loadIframe()}
+            </ul>
+          </div>
         </div>
     );
   }
