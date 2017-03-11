@@ -30,6 +30,12 @@ export class Streams extends Component {
       })
   }
 
+  componentWillUnmount(){
+    this.setState({
+      streams: []
+    })
+  }
+
   loadIframe(){
     if(this.state.streams < 1){
       return <Loader/>;
