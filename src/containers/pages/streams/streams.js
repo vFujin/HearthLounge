@@ -57,9 +57,9 @@ export class Streams extends Component {
           </div>
           <div className="right-container">
             <div className="topbar"></div>
-            <ul className={`cards`}>
+            <div className="stream">
               {this.loadIframe()}
-            </ul>
+            </div>
           </div>
         </div>
     );

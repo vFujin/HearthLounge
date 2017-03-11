@@ -1536,47 +1536,37 @@ footer{
   }
 }
 
-.dashboard{
+.streams{
   .left-container{
     .sidebar{
+      height:100%;
       ul{
+        @include scrollbar();
+        overflow-y: scroll;
+        height: calc(100% - 70px);
+        margin: 10px 0;
         li{
-          h3{
-            background: transparent;
-            padding: 0;
-            color: #474143;
-            width: 95%;
-            border-bottom: 1px solid black;
-            line-height: 0.1px;
-            margin: 1em auto;
-            text-align: center;
-            span{
-              background-color: $light-grey;
-              padding: 0 10px;
-              text-align: center;
-            }
+          margin-bottom: 10px;
+          a{
+            display: flex;
+            justify-content: center;
+              img{
+                width: calc(100% - 20px);
+                height:0%;
+              }
+
           }
-        }
-        label{
-          display: flex;
-          span{
-            font-size:25px;
+          &:last-child{
+            margin-bottom:0;
           }
         }
       }
     }
   }
   .right-container{
-    .topbar{
-      li{
-        margin-right: 10px;
-        &:first-child{
-          margin-left: 10px;
-        }
-        &:last-child{
-          margin-right: 0;
-        }
-      }
+    .stream{
+      margin: 10px;
+
     }
   }
 }
@@ -1980,6 +1970,51 @@ footer{
         height: calc(100% - 101px);
       }
 
+    }
+  }
+}
+
+.dashboard{
+  .left-container{
+    .sidebar{
+      ul{
+        li{
+          h3{
+            background: transparent;
+            padding: 0;
+            color: #474143;
+            width: 95%;
+            border-bottom: 1px solid black;
+            line-height: 0.1px;
+            margin: 1em auto;
+            text-align: center;
+            span{
+              background-color: $light-grey;
+              padding: 0 10px;
+              text-align: center;
+            }
+          }
+        }
+        label{
+          display: flex;
+          span{
+            font-size:25px;
+          }
+        }
+      }
+    }
+  }
+  .right-container{
+    .topbar{
+      li{
+        margin-right: 10px;
+        &:first-child{
+          margin-left: 10px;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
     }
   }
 }
