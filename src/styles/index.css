@@ -2796,7 +2796,8 @@ footer {
       .streams .left-container .sidebar ul li:last-child {
         margin-bottom: 0; }
 .streams .right-container .stream {
-  margin: 10px; }
+  margin: 10px;
+  height: calc(100% - 70px); }
 
 .subreddit .left-container {
   width: 10%;

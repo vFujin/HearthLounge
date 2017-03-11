@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {TwitchClientId} from '../../../keys';
 import Sidebar from './sidebar';
+import Topbar from './topbar';
 import Loader from '../../shared-assets/loader';
 import 'whatwg-fetch';
 
@@ -44,8 +45,8 @@ export class Streams extends Component {
       return (
         <iframe
             src={`http://player.twitch.tv/?channel=${this.state.streams[0].channel.name}&muted=true`}
-            height="400"
-            width="600"
+            height="100%"
+            width="80%"
             frameBorder="0"
             scrolling="no"
             allowFullScreen="false">
@@ -62,7 +63,7 @@ export class Streams extends Component {
             <Sidebar streams={this.state.streams} />
           </div>
           <div className="right-container">
-            <div className="topbar"></div>
+            <Topbar streams={this.state.streams}/>
             <div className="stream">
               {this.loadIframe()}
             </div>
