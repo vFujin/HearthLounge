@@ -63,7 +63,7 @@ export const navItems = [
     homepage_block_width: 1
   },
   {
-    name: "Expansions",
+    name: "expansions",
     url: 'expansions',
     icon: "icon-expansions",
     homepage_block_width: 2,
