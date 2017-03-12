@@ -3184,6 +3184,8 @@ footer {
           margin-right: 0; }
     .not-found .wrapper .description {
       margin-top: 5vh; }
+      .not-found .wrapper .description p span {
+        color: #00a99c; }
     .not-found .wrapper button {
       margin-top: 5vh; }
 

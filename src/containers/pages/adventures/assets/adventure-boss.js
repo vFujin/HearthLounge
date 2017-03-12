@@ -1,12 +1,44 @@
 import React, { Component } from 'react';
-
 import {adventure_details, boss_details} from '../../../../data/adventure-details';
-import {DeckSnippet} from '../../../shared-assets/deck-snippet/deck-snippet';
+import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
+import NotFound from '../../../shared-assets/not-found';
+
 export class AdventureBoss extends Component {
 
-    blocks(index, adventure, wing, wingUrl, bossName, bossUrl, bossReward){
-      switch(index){
+  validateUrl(){
+    const {adventure, details, boss} = this.props;
+    let wing_path = adventure_details.filter(x=>x.adventure === adventure).map(x=>x.bosses.details)[0].map(x=>x.url).includes(details);
+    let wing_boss = adventure_details.filter(x=>x.adventure === adventure).map(x=>x.bosses.details)[0].filter(x=>x.url === details)[0].bosses.map(x=>x.url).includes(boss);
 
+    let boss_name = this.getBossDetailsFromUrl('boss', details, boss);
+    let wing = this.getBossDetailsFromUrl('wing', details, boss);
+    let reward = this.getBossDetailsFromUrl('reward', details, boss);
+
+    if(wing_path !== true && wing_boss === undefined){
+      return <NotFound page="boss" url="bosses"/>;
+    }
+    else{
+      return (
+          <div className={`boss inner-container ${this.props.details && 'active'}-view`}>
+            {adventure_details.slice(0,1).map((adventure, i)=>
+                <div key={i} className="boss-guide-header">
+                  <p className="boss-details-nav-el">{boss_name}</p>
+                  <ul>
+                    {this.firstRow(boss_name, wing, reward)}
+                    {this.secondRow()}
+                  </ul>
+                </div>
+            )}
+          </div>
+      );
+    }
+
+  }
+
+
+    blocks(index, adventure, wing, wingUrl, bossName, bossUrl, bossReward){
+
+      switch(index){
         /**
            * Case:
            * 0 - Overview
@@ -17,8 +49,7 @@ export class AdventureBoss extends Component {
         case 0:
           return (
             <div>
-              {console.log(wingUrl)}
-              <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${wingUrl}/${bossUrl}.jpg`} alt={bossName}/>
+              <img src={`https://raw.githubusercontent.com/xNehel/HearthLounge/master/src/images/adventures/${adventure}/${wingUrl}/${bossUrl}.jpg`} alt={bossName}/>
               <p>{bossName} is a (#) boss in {wing}</p>
             </div>
         );
@@ -72,9 +103,9 @@ export class AdventureBoss extends Component {
       )
     }
 
-    getDetailsFromUrl(detail){
-      let detailsArr = adventure_details.map(x=>x.bosses.details.filter(x=>x.url===this.props.details)[0]).filter(x=>x)[0];
-      let bossArr = detailsArr.bosses.filter(x=>x.url===this.props.boss)[0];
+    getBossDetailsFromUrl(detail, wing, boss){
+      let detailsArr = adventure_details.map(x=>x.bosses.details.filter(x=>x.url===wing)[0]).filter(x=>x)[0];
+      let bossArr = detailsArr.bosses.filter(x=>x.url===boss)[0];
       switch(detail){
         case 'boss':
           return bossArr.boss;
@@ -88,22 +119,6 @@ export class AdventureBoss extends Component {
     }
 
   render() {
-    let boss = this.getDetailsFromUrl('boss');
-    let wing = this.getDetailsFromUrl('wing');
-    let reward = this.getDetailsFromUrl('reward');
-
-    return (
-      <div className={`boss inner-container ${this.props.details && 'active'}-view`}>
-        {adventure_details.slice(0,1).map((adventure, i)=>
-          <div key={i} className="boss-guide-header">
-            <p className="boss-details-nav-el">{boss}</p>
-            <ul>
-              {this.firstRow(boss, wing, reward)}
-              {this.secondRow()}
-            </ul>
-          </div>
-        )}
-      </div>
-    );
+    return this.validateUrl();
   }
 }

@@ -2073,6 +2073,11 @@ footer{
     }
     .description{
       margin-top: 5vh;
+      p{
+        span{
+          color: $sea-color;
+        }
+      }
     }
     button{
       margin-top: 5vh;
