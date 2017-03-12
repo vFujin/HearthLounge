@@ -20,7 +20,6 @@ export class Expansion extends Component{
     let path       = this.props.location.pathname.split("/")[2],
         expansions = navItems.filter(x=>x.name === 'expansions').map(x=>x.submenu)[0].map(x=>x.url).includes(path);
 
-
     switch(args){
       case 'condition': return expansions;
       case 'content': return this.content(expansion, details);
@@ -30,6 +29,8 @@ export class Expansion extends Component{
 
   render() {
     return <ValidateURL condition={this.validateUrlProps('condition')}
-                        content={this.validateUrlProps('content')}/>
+                        content={this.validateUrlProps('content')}
+                        page="expansion"
+                        page_url="expansions"/>
   }
 }

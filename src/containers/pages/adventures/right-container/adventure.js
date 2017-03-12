@@ -30,6 +30,8 @@ export class Adventure extends Component{
 
   render() {
     return <ValidateURL condition={this.validateUrlProps('condition')}
-                        content={this.validateUrlProps('content')}/>
+                        content={this.validateUrlProps('content')}
+                        page="adventure"
+                        page_url="adventures"/>
   }
 }

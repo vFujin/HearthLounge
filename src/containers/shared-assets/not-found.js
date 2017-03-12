@@ -14,7 +14,7 @@ const NotFound = props => {
             <p>Sorry, the <span>{props.page}</span> page you are looking for doesn't exist.</p>
             <p>Take a run around the block or tap the button below.</p>
             <button className="btn-pearl">
-              <Link to={`/${props.url}`}>Go to the {props.url} page</Link>
+              <Link to={`/${props.page_url}`}>Go to the {props.page} page</Link>
             </button>
           </div>
         </div>
