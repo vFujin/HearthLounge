@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Topbar} from './topbar';
-import {navItems} from '../../../../data/nav';
-import ValidateURL from '../../../shared-assets/validateUrl';
 import 'whatwg-fetch';
+import {navItems} from '../../../../data/nav';
+import Topbar from './topbar';
+import ValidateURL from '../../../shared-assets/validateUrl';
 
 export class Expansion extends Component{
   constructor(props){

@@ -30,7 +30,7 @@ const Sidebar = props => {
 };
 
 Sidebar.propTypes = {
-  expansion: React.PropTypes.string.isRequired
+  expansion: React.PropTypes.string
 };
 
 export default Sidebar;
