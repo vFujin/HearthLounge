@@ -6,28 +6,10 @@ import {AdventureClassChallanges} from '../assets/class-challanges';
 import {AdventureCost} from '../assets/cost';
 import {AdventureStructure} from '../assets/structure';
 import {AdventureBoss} from '../assets/adventure-boss';
-import NotFound from '../../../shared-assets/not-found';
 import {adventure_detail_tabs, adventure_details} from '../../../../data/adventure-details';
+import ValidateURL from '../../../shared-assets/validateUrl';
 
 export class AdventureDetails extends Component {
-
-  validateUrl() {
-    const {adventure, details, boss} = this.props.params;
-    let details_path = adventure_detail_tabs.map(x => x.url).includes(details);
-    let wing_path = adventure_details.filter(x=>x.adventure === adventure).map(x=>x.bosses.details)[0].map(x=>x.url).includes(details);
-
-
-    if((details_path || wing_path) !== true){
-      return <NotFound page="adventure details" url={`adventures/${adventure}`}/>
-    }
-    else{
-      return (
-          <div className={`extension-content ${this.props.adventure} ${this.props.details} `}>
-            {this.activeDetailsContent(adventure, details, boss)}
-          </div>
-      )
-    }
-  }
 
   activeDetailsContent(adventureUrl, detailsUrl, bossUrl){
     switch(detailsUrl){
@@ -43,7 +25,28 @@ export class AdventureDetails extends Component {
     }
   }
 
+  content(adventure, details, boss){
+    return (
+      <div className={`extension-content`}>
+        {this.activeDetailsContent(adventure, details, boss)}
+      </div>
+    )
+  }
+
+  validateUrlProps(args){
+    const {adventure, details, boss} = this.props.params;
+    let details_path = adventure_detail_tabs.map(x => x.url).includes(details);
+    let wing_path = adventure_details.filter(x=>x.adventure === adventure).map(x=>x.bosses.details)[0].map(x=>x.url).includes(details);
+
+    switch(args){
+      case 'condition': return (details_path || wing_path);
+      case 'content': return this.content(adventure, details, boss);
+      default: return null;
+    }
+  }
+
   render(){
-    return this.validateUrl();
+    return <ValidateURL condition={this.validateUrlProps('condition')}
+                        content={this.validateUrlProps('content')}/>
   }
 }
