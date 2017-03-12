@@ -1,14 +1,14 @@
 import React from 'react';
 
 const ExpansionCards = props => {
-  const {cards, details} = props;
+  const {cards, topbarActiveTabUrl} = props;
 
   const listCards = () =>{
     return;
   };
 
   return (
-      <ul className={`cards cards-container ${details === 'cards' && 'active'}-view`}>
+      <ul className={`cards cards-container ${topbarActiveTabUrl === 'cards' && 'active'}-view`}>
         {listCards()}
       </ul>
   );
@@ -16,7 +16,7 @@ const ExpansionCards = props => {
 
 ExpansionCards.propTypes = {
   cards: React.PropTypes.array,
-  details: React.PropTypes.string.isRequired
+  topbarActiveTabUrl: React.PropTypes.string.isRequired
 };
 
 export default ExpansionCards;

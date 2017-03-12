@@ -26,7 +26,7 @@ import {ArenaPickerClassSelected} from './pages/arena-picker/class-selected';
 
 import Expansions from './pages/expansions/expansions';
 import {Expansion} from './pages/expansions/right-container/expansion';
-import {ExpansionDetails} from './pages/expansions/right-container/details';
+import ExpansionDetails from './pages/expansions/right-container/details';
 
 import Adventures from './pages/adventures/adventures';
 import Adventure from './pages/adventures/right-container/adventure';

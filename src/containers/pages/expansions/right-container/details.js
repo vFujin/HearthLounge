@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
-import {SharedTopbarTabs} from './assets/shared-topbar-tabs'
+import React from 'react';
 import {topbar_tabs} from '../../../../data/expansion-details'
+import SharedTopbarTabs from './assets/shared-topbar-tabs'
 import ValidateURL from '../../../shared-assets/validateUrl';
 
-export class ExpansionDetails extends Component{
+const ExpansionDetails = props => {
+  const {cards, details, expansion} = props.params;
 
-  content(cards, details, expansion){
+  const content = (cards, details, expansion) =>{
     return (
         <div className="extension-content">
           <SharedTopbarTabs expansion={expansion}
@@ -13,24 +14,28 @@ export class ExpansionDetails extends Component{
                             cards={cards}/>
         </div>
     )
-  }
+  };
 
-  validateUrlProps(args){
-    const {cards, details, expansion} = this.props.params;
-    let details_path = topbar_tabs.filter(x=>x.expansion === expansion)[0].expansion_topbar_tabs.map(x=>x.url).includes(details);
+  const validateUrlProps = args => {
+    let details_path = topbar_tabs.filter(x => x.expansion === expansion)[0].expansion_topbar_tabs.map(x => x.url).includes(details);
 
-    switch(args){
+    switch (args) {
       case 'condition': return details_path;
-      case 'content': return this.content(cards, details, expansion);
-      default: return null;
+      case 'content':   return content(cards, details, expansion);
+      default:          return null;
     }
-  }
+  };
 
-  render() {
-    const {expansion} = this.props.params;
-    return <ValidateURL condition={this.validateUrlProps('condition')}
-                        content={this.validateUrlProps('content')}
-                        page="expansion detail"
-                        redirect={`expansions/${expansion}`}/>
-  }
-}
+  return <ValidateURL condition={validateUrlProps('condition')}
+                      content={validateUrlProps('content')}
+                      page="expansion detail"
+                      redirect={`expansions/${expansion}`}/>
+};
+
+ExpansionDetails.propTypes = {
+  cards:     React.PropTypes.array,
+  details:   React.PropTypes.string.isRequired,
+  expansion: React.PropTypes.string.isRequired
+};
+
+export default ExpansionDetails;

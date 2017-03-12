@@ -1,22 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Overview  from './shared-expansion-tabs/overview';
 import ExpansionCards  from './shared-expansion-tabs/cards';
 import Arena  from './shared-expansion-tabs/arena';
 import Preorder  from './shared-expansion-tabs/preorder';
 import StandardMode  from './shared-expansion-tabs/standard-mode';
 
+const SharedTopbarTabs = props => {
+  const {cards, details, expansion} = props;
 
-export class SharedTopbarTabs extends Component {
+  return (
+      <div className={`${expansion} ${details}`}>
+        <Overview       topbarActiveTabUrl={details} expansion={expansion} />
+        <ExpansionCards topbarActiveTabUrl={details} expansion={expansion} cards={cards}/>
+        <Arena          topbarActiveTabUrl={details}/>
+        <Preorder       topbarActiveTabUrl={details}/>
+        <StandardMode   topbarActiveTabUrl={details}/>
+      </div>
+  );
+};
 
-  render() {
-    return (
-        <div className={`${this.props.expansion} ${this.props.details}`}>
-          <Overview expansion={this.props.expansion} topbarActiveTabUrl={this.props.details}/>
-          <ExpansionCards expansion={this.props.expansion} details={this.props.details} cards={this.props.cards}/>
-          <Arena topbarActiveTabUrl={this.props.details}/>
-          <Preorder topbarActiveTabUrl={this.props.details}/>
-          <StandardMode topbarActiveTabUrl={this.props.details}/>
-        </div>
-    );
-  }
-}
+SharedTopbarTabs.propTypes = {
+  cards:     React.PropTypes.array,
+  details:   React.PropTypes.string,
+  expansion: React.PropTypes.string
+};
+
+export default SharedTopbarTabs;
