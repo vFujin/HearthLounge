@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import 'whatwg-fetch';
 import AdventureOverview from '../assets/overview';
 import AdventureBosses from '../assets/bosses';
-import {AdventureCards} from '../assets/cards';
+import AdventureCards from '../assets/cards';
 import {AdventureClassChallanges} from '../assets/class-challanges';
 import {AdventureCost} from '../assets/cost';
 import {AdventureStructure} from '../assets/structure';
@@ -10,18 +11,32 @@ import {adventure_detail_tabs, adventure_details} from '../../../../data/adventu
 import ValidateURL from '../../../shared-assets/validateUrl';
 
 export class AdventureDetails extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      cards: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://api.hearthstonejson.com/v1/17994/enUS/cards.collectible.json')
+        .then(r=>r.json())
+        .then(cards=>{
+          this.setState({cards})
+        })
+  }
 
   activeDetailsContent(adventureUrl, detailsUrl, bossUrl){
     switch(detailsUrl){
       case 'overview':          return <AdventureOverview         adventure={adventureUrl} details={detailsUrl}/>;
       case 'bosses':            return <AdventureBosses           adventure={adventureUrl} details={detailsUrl}/>;
-      case 'cards':             return <AdventureCards            adventure={adventureUrl} details={detailsUrl}/>;
+      case 'cards':             return <AdventureCards            adventure={adventureUrl} details={detailsUrl} cards={this.state.cards}/>;
       case 'class-challanges':  return <AdventureClassChallanges  adventure={adventureUrl} details={detailsUrl}/>;
       case 'cost':              return <AdventureCost             adventure={adventureUrl} details={detailsUrl}/>;
       case 'structure':         return <AdventureStructure        adventure={adventureUrl} details={detailsUrl}/>;
       case detailsUrl:          return <AdventureBoss             adventure={adventureUrl} details={detailsUrl} boss={bossUrl}/>;
       default:                  return <AdventureOverview         adventure={adventureUrl} details={detailsUrl}/>;
-
     }
   }
 

@@ -1,36 +1,28 @@
-import React, { Component } from 'react';
-import unirest from 'unirest';
-export class AdventureCards extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cards: []
-    };
+import React from 'react';
 
-  }
+const AdventureCards = props => {
+  const {cards, details} = props;
 
-  componentWillReceiveProps() {
-    unirest.get("https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1")
-        .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
-        .end(res => {
-          let adventure = 'Blackrock Mountain';
-          this.setState({
-            cards: res.body[adventure].slice(0, 10)
-          });
-
-        });
-  }
-
-
-  render() {
+  const listCards = () =>{
     return (
-        <ul className={`cards cards-container ${this.props.details === 'cards' && 'active'}-view`}>
-          {this.state.cards.map((card, i)=>
-              <li key={i}>
-                <img src={card.img} alt={`${card.name}`}/>
-              </li>
-          )}
-        </ul>
-    );
-  }
-}
+      cards.map((card, i) =>
+          <li key={i}>
+            <img src={card.img} alt={`${card.name}`}/>
+          </li>
+      )
+    )
+  };
+
+  return (
+      <ul className={`cards cards-container ${details === 'cards' && 'active'}-view`}>
+        {listCards()}
+      </ul>
+  );
+};
+
+AdventureCards.propTypes = {
+  cards: React.PropTypes.array,
+  details: React.PropTypes.string.isRequired
+};
+
+export default AdventureCards;
