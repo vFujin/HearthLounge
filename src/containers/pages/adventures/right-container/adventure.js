@@ -1,30 +1,40 @@
 import React, {Component} from 'react';
 import {Topbar} from './topbar';
 import {navItems} from '../../../../data/nav';
-class AppDynamicComponent extends Component {
-  componentWillMount() {
-    console.log(navItems.map(x=>x), this.props.location.pathname);
-    if(this.props.location.pathname){
+import NotFound from '../../../shared-assets/not-found';
 
-    }
-  }
-}
+export class Adventure extends Component{
 
-export class Adventure extends AppDynamicComponent{
+  validateUrl(){
+    let path = this.props.location.pathname.split("/")[2];
+    let adventures = navItems.filter(x=>x.name === 'adventures').map(x=>x.submenu)[0].map(x=>x.url).includes(path);
 
-
-
-  render() {
     let adventureUrl = this.props.params.adventure;
     let detailsUrl   = this.props.params.details;
     let bossUrl      = this.props.params.boss;
-    return (
+
+    if(adventures !== true){
+      return <NotFound/>;
+    }
+    else{
+      return(
         <div className="content">
           <Topbar adventure={adventureUrl}
                   details={detailsUrl}
                   boss={bossUrl}/>
           {this.props.children}
         </div>
-    )
+      )
+    }
+  }
+
+
+  componentWillMount() {
+
+  }
+
+  render() {
+
+    return this.validateUrl()
   }
 }

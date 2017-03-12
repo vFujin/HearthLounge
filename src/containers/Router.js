@@ -54,7 +54,7 @@ import {Login} from './pages/login/login';
 import {SignUp} from './pages/login/sign-up';
 import {SignIn} from './pages/login/sign-in';
 
-import {NotFound} from './shared-assets/not-found';
+import NotFound from './shared-assets/not-found';
 
 // import {Dashboard} from './pages/dashboard/dashboard';
 
@@ -105,7 +105,6 @@ export class App extends Component {
                 <Route path="bosses"  component={AdventureBosses}/>
                 <Route path=":boss"   component={AdventureBoss}/>
               </Route>
-              <Route path="*" component={NotFound} />
             </Route>
           </Route>
 

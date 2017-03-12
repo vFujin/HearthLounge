@@ -3161,8 +3161,12 @@ footer {
     margin-right: 0; }
 
 .not-found {
+  display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  width: 50vw;
+  margin: auto;
+  height: 100%; }
   .not-found .wrapper {
     display: block;
     text-align: center;
