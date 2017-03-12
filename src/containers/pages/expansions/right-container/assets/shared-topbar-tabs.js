@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {Overview}  from './shared-expansion-tabs/overview';
+import Overview  from './shared-expansion-tabs/overview';
 import {ExpansionCards}  from './shared-expansion-tabs/cards';
-import {Arena}  from './shared-expansion-tabs/arena';
-import {Preorder}  from './shared-expansion-tabs/preorder';
-import {StandardMode}  from './shared-expansion-tabs/standard-mode';
+import Arena  from './shared-expansion-tabs/arena';
+import Preorder  from './shared-expansion-tabs/preorder';
+import StandardMode  from './shared-expansion-tabs/standard-mode';
 
 
 export class SharedTopbarTabs extends Component {

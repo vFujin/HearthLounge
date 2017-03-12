@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
-export class StandardMode extends Component {
-  render() {
-    return (
-        <div className={`standard-mode ${this.props.topbarActiveTabUrl  === 'standard-mode' && 'active'}-view`}>
-            StandardMode
-        </div>
-    );
-  }
-}
+import React from 'react';
+
+const StandardMode = props => {
+  const {topbarActiveTabUrl} = props;
+
+  return (
+      <div className={`standard-mode ${topbarActiveTabUrl === 'standard-mode' && 'active'}-view`}>
+        standard mode
+      </div>
+  );
+};
+
+StandardMode.propTypes = {
+  topbarActiveTabUrl: React.PropTypes.string.isRequired
+};
+
+export default StandardMode;
