@@ -1,5 +1,5 @@
 import React from 'react';
-import {Sidebar} from './left-container/sidebar';
+import Sidebar from './left-container/sidebar';
 
 const Adventures = props => {
   const {children, params} = props,
@@ -15,8 +15,6 @@ const Adventures = props => {
             {children}
           </div>
         </div>
-
-
       </div>
   );
 };

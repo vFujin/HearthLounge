@@ -1,24 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Link} from 'react-router';
 import {adventures} from '../../../../data/filters';
 
-export class Sidebar extends Component {
-  render() {
+const Sidebar = props => {
+  const {adventure} = props;
+
+  const listAdventures = () =>{
     return (
-        <div className="sidebar">
-          <h3 className="filter-header">Adventures</h3>
-          <ul className="sidebar-icons">
-            {adventures.map((adventure, index) =>
-                <li key={index}>
-                  <Link to={`/adventures/${adventure.url}/overview`}
-                        className={`${adventure.url} ${this.props.adventure === adventure.url && 'active'}`}>
-                    <span className={`hs-icon icon-${adventure.url}`}></span>
-                    <p>{adventure.name}</p>
-                  </Link>
-                </li>
-            )}
-          </ul>
-        </div>
-    );
-  }
-}
+      adventures.map((a, index) =>
+        <li key={index}>
+          <Link to={`/adventures/${a.url}/overview`}
+                className={`${a.url} ${adventure === a.url && 'active'}`}>
+            <span className={`hs-icon icon-${a.url}`}></span>
+            <p>{a.name}</p>
+          </Link>
+        </li>
+      )
+    )
+  };
+
+  return (
+      <div className="sidebar">
+        <h3 className="filter-header">Adventures</h3>
+        <ul className="sidebar-icons">
+          {listAdventures()}
+        </ul>
+      </div>
+  );
+};
+
+export default Sidebar;
