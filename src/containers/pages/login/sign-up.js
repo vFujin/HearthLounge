@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {events} from '../../shared-assets/form-assets/form-events-data';
 import Input from '../../shared-assets/form-assets/input';
 
 export class SignUp extends Component {
-  constructor(props){
-    super(props);
-
-
-  }
 
   input(id, label, placeholder, type, pattern){
-    console.log(id, this.props[`${id}_tooltip`])
     return (
         <Input id={id}
                label={label}

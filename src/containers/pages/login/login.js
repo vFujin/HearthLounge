@@ -41,8 +41,7 @@ export class Login extends Component {
   }
 
   targetID(e){
-    console.log(e.target.id);
-    return e.target.id;
+    return this.state[`${e.currentTarget.id}_tooltip`];
   }
 
   render() {
@@ -63,6 +62,7 @@ export class Login extends Component {
               </Link>
             </div>
             <div className="breakline h-breakline"></div>
+            {/*{console.log(this.targetID())}*/}
             {React.cloneElement((this.props.children), {
               //Sign Up
               username: this.state.username,
@@ -73,7 +73,13 @@ export class Login extends Component {
               secret_question: this.state.secret_question,
               secret_answer: this.state.secret_answer,
               tos: this.state.tos,
-              [`${this.targetID}_tooltip`]: this.state[`${this.targetID}_tooltip`],
+
+              username_tooltip: this.state.username_tooltip,
+              password_tooltip: this.state.password_tooltip,
+              confirm_password_tooltip: this.state.confirm_password_tooltip,
+              'e-mail_tooltip': this.state['e-mail_tooltip'],
+              'confirm_e-mail_tooltip': this.state['confirm_e-mail_tooltip'],
+              secret_answer_tooltip: this.state.secret_answer_tooltip,
 
               handleInputChange: events.handleInputChange,
               handleCheckboxClick: events.handleCheckboxClick,

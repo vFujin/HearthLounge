@@ -1,8 +1,4 @@
-import React from 'react';
-
 export const events = {
-
-
   hideTooltip: function(e){
       let target = e.target.id;
       return this.setState({

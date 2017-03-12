@@ -17,7 +17,6 @@ const Input = props =>{
         <FormTooltips id={props.id}
                       label={props.label}
                       tooltip={props.tooltip}/>
-        {console.log(props.tooltip)}
       </div>
   )
 };
