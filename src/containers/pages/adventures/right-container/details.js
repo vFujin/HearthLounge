@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {adventure_detail_tabs, adventure_details} from '../../../../data/adventure-details';
 import 'whatwg-fetch';
 import AdventureOverview from '../assets/overview';
 import AdventureBosses from '../assets/bosses';
@@ -6,8 +7,7 @@ import AdventureCards from '../assets/cards';
 import AdventureClassChallanges from '../assets/class-challanges';
 import AdventureCost from '../assets/cost';
 import AdventureStructure from '../assets/structure';
-import {AdventureBoss} from '../assets/adventure-boss';
-import {adventure_detail_tabs, adventure_details} from '../../../../data/adventure-details';
+import AdventureBoss from '../assets/adventure-boss';
 import ValidateURL from '../../../shared-assets/validateUrl';
 
 export class AdventureDetails extends Component {
