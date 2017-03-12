@@ -1,29 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { adventure_details } from '../../../../data/adventure-details';
-export class AdventureStructure extends Component {
-  render() {
-    return (
-        <div className={`structure inner-container ${this.props.details === 'structure' && 'active'}-view`}>
-          {adventure_details.map((adventure, index)=>
-              <div className={`${this.props.adventure === adventure.adventure && 'active'}-view`} key={index}>
 
-                <ul>
-                  <li>{adventure.structure.wing_amount} wings</li>
-                  <li>
-                    <ul>
-                      {adventure.structure.wing_details.map((element,index)=>
-                          <li key={index}>{element}</li>
-                      )}
-                    </ul>
-                  </li>
-                  <li>{adventure.structure.bosses_amount} bosses</li>
-                  <li>{adventure.structure.bosses_difficulty}</li>
-                  <li>{adventure.structure.class_challenges} class challanges</li>
-                  <li>{adventure.structure.class_challenges_details}</li>
-                </ul>
-              </div>
-          )}
-        </div>
-    );
-  }
-}
+const AdventureStructure = props => {
+  const {adventure, details} = props;
+
+  return (
+      <div className={`structure inner-container ${details === 'structure' && 'active'}-view`}>
+        {adventure_details.map((a, index) =>
+            <div className={`${adventure === a.adventure && 'active'}-view`} key={index}>
+              <ul>
+                <li>{a.structure.wing_amount} wings</li>
+                <li>
+                  <ul>
+                    {a.structure.wing_details.map((element, index) =>
+                        <li key={index}>{element}</li>
+                    )}
+                  </ul>
+                </li>
+                <li>{a.structure.bosses_amount} bosses</li>
+                <li>{a.structure.bosses_difficulty}</li>
+                <li>{a.structure.class_challenges} class challanges</li>
+                <li>{a.structure.class_challenges_details}</li>
+              </ul>
+            </div>
+        )}
+      </div>
+  );
+};
+
+AdventureStructure.propTypes = {
+  adventure: React.PropTypes.string.isRequired,
+  details: React.PropTypes.string.isRequired
+};
+
+export default AdventureStructure;

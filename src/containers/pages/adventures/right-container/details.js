@@ -5,7 +5,7 @@ import AdventureBosses from '../assets/bosses';
 import AdventureCards from '../assets/cards';
 import AdventureClassChallanges from '../assets/class-challanges';
 import AdventureCost from '../assets/cost';
-import {AdventureStructure} from '../assets/structure';
+import AdventureStructure from '../assets/structure';
 import {AdventureBoss} from '../assets/adventure-boss';
 import {adventure_detail_tabs, adventure_details} from '../../../../data/adventure-details';
 import ValidateURL from '../../../shared-assets/validateUrl';
