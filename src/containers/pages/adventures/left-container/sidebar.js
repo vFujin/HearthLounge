@@ -29,4 +29,8 @@ const Sidebar = props => {
   );
 };
 
+Sidebar.propTypes = {
+  adventure: React.PropTypes.string
+};
+
 export default Sidebar;
