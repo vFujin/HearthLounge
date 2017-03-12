@@ -91,6 +91,7 @@ export class App extends Component {
             <Route path=":class"          component={ArenaPickerClassSelected} />
           </Route>
 
+          <Redirect from="expansion" to="expansions"/>
           <Route path="expansions"        component={Expansions}>
             <Redirect from=":expansion" to=":expansion/overview"/>
             <Route path=":expansion"      component={Expansion}>
