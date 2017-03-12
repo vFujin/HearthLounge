@@ -5,11 +5,13 @@ const NotFound = props => {
   const{page, redirect} = props;
 
   const pluralize = () =>{
-    let last_letter = page.substr(-1);
-    console.log(page);
+    if(page) {
+      let last_letter = page.substr(-1);
+      console.log(page);
 
-    if("shhxz".indexOf(last_letter) != -1) return `${page}es`;
-    else return `${page}s`;
+      if ("shhxz".indexOf(last_letter) !== -1) return `${page}es`;
+      else return `${page}s`;
+    }
   };
 
   return (

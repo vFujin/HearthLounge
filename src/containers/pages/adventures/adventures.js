@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Sidebar} from './left-container/sidebar';
 
-export class Adventures extends Component {
-   render() {
-    let adventureUrl = this.props.params.adventure;
-    return (
-        <div className="pageContainer adventures">
-          <div className="left-container">
-            <Sidebar adventure={adventureUrl}/>
-          </div>
-          <div className='right-container'>
-            <div className={`content`}>
-              {this.props.children}
-            </div>
-          </div>
+const Adventures = props => {
+  const {children, params} = props,
+        {adventure} = params;
 
-
-
+  return (
+      <div className="pageContainer adventures">
+        <div className="left-container">
+          <Sidebar adventure={adventure}/>
         </div>
-    );
-  }
-}
+        <div className='right-container'>
+          <div className={`content`}>
+            {children}
+          </div>
+        </div>
+
+
+      </div>
+  );
+};
+
+export default Adventures;

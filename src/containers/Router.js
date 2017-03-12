@@ -28,7 +28,7 @@ import {Expansions} from './pages/expansions/expansions';
 import {Expansion} from './pages/expansions/right-container/expansion';
 import {ExpansionDetails} from './pages/expansions/right-container/details';
 
-import {Adventures} from './pages/adventures/adventures';
+import Adventures from './pages/adventures/adventures';
 import {Adventure} from './pages/adventures/right-container/adventure';
 import {AdventureDetails} from './pages/adventures/right-container/details';
 import {AdventureBosses} from './pages/adventures/assets/bosses';
