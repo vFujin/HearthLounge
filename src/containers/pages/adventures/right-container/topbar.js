@@ -1,21 +1,29 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { adventure_detail_tabs } from '../../../../data/adventure-details';
-export class Topbar extends Component {
+import React  from 'react';
+import {Link} from 'react-router';
+import {adventure_detail_tabs} from '../../../../data/adventure-details';
 
-  render() {
+const Topbar = props => {
+  const {adventure, details} = props;
+
+  const listDetails = () =>{
     return (
-        <div className='topbar'>
-          <ul className="content-navigation">
-            {adventure_detail_tabs.map( (element, index)=>
-              <li key={index} className={`${this.props.adventure} ${this.props.details === element.url && 'active'}`}>
-                <Link to={`/adventures/${this.props.adventure}/${element.url}`}>
-                  {element.name}
-                </Link>
-              </li>
-            )}
-          </ul>
-        </div>
-    );
-  }
-}
+      adventure_detail_tabs.map((d, index) =>
+          <li key={index} className={`${adventure} ${details === d.url && 'active'}`}>
+            <Link to={`/adventures/${adventure}/${d.url}`}>
+              {d.name}
+            </Link>
+          </li>
+      )
+    )
+  };
+
+  return (
+      <div className='topbar'>
+        <ul className="content-navigation">
+          {listDetails()}
+        </ul>
+      </div>
+  );
+};
+
+export default Topbar;
