@@ -2,8 +2,24 @@ import React, {Component} from 'react';
 import {Topbar} from './topbar';
 import {navItems} from '../../../../data/nav';
 import ValidateURL from '../../../shared-assets/validateUrl';
+import 'whatwg-fetch';
 
 export class Expansion extends Component{
+  constructor(props){
+    super(props);
+
+    this.setState({
+      cards: []
+    })
+  }
+
+  componentDidMount(){
+    fetch('https://api.hearthstonejson.com/v1/17994/enUS/cards.collectible.json')
+        .then(r=>r.json())
+        .then(cards=>
+            this.setState({cards})
+        )
+  }
 
   content(expansion, details){
     return (
