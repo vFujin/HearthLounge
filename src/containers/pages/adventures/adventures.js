@@ -19,4 +19,10 @@ const Adventures = props => {
   );
 };
 
+Adventures.propTypes = {
+  children:  React.PropTypes.element,
+  params:    React.PropTypes.object.isRequired,
+  adventure: React.PropTypes.string
+};
+
 export default Adventures;
