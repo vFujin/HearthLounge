@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {AdventureOverview} from '../assets/overview';
-import {AdventureBosses} from '../assets/bosses';
+import AdventureOverview from '../assets/overview';
+import AdventureBosses from '../assets/bosses';
 import {AdventureCards} from '../assets/cards';
 import {AdventureClassChallanges} from '../assets/class-challanges';
 import {AdventureCost} from '../assets/cost';
