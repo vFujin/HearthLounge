@@ -26,4 +26,9 @@ const Topbar = props => {
   );
 };
 
+Topbar.propTypes = {
+  adventure: React.PropTypes.string.isRequired,
+  details:   React.PropTypes.string.isRequired
+};
+
 export default Topbar;

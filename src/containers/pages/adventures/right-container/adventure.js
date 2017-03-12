@@ -1,6 +1,6 @@
 import React from 'react';
-import Topbar from './topbar';
 import {navItems} from '../../../../data/nav';
+import Topbar from './topbar';
 import ValidateURL from '../../../shared-assets/validateUrl';
 
 const Adventure = props => {
@@ -34,6 +34,15 @@ const Adventure = props => {
                       content={validateUrlProps('content')}
                       page="adventure"
                       redirect="adventures"/>
+};
+
+Adventure.propTypes = {
+  children:   React.PropTypes.element.isRequired,
+  location:   React.PropTypes.object.isRequired,
+  params:     React.PropTypes.object.isRequired,
+  adventure:  React.PropTypes.string,
+  details:    React.PropTypes.string,
+  boss:       React.PropTypes.string
 };
 
 export default Adventure;
