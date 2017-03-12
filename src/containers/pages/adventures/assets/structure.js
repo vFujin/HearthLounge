@@ -18,8 +18,8 @@ export class AdventureStructure extends Component {
                   </li>
                   <li>{adventure.structure.bosses_amount} bosses</li>
                   <li>{adventure.structure.bosses_difficulty}</li>
-                  <li>{adventure.structure.class_challanges} class challanges</li>
-                  <li>{adventure.structure.class_challanges_details}</li>
+                  <li>{adventure.structure.class_challenges} class challanges</li>
+                  <li>{adventure.structure.class_challenges_details}</li>
                 </ul>
               </div>
           )}

@@ -5,11 +5,11 @@ const AdventureCards = props => {
 
   const listCards = () =>{
     return (
-      cards.map((card, i) =>
-          <li key={i}>
-            <img src={card.img} alt={`${card.name}`}/>
-          </li>
-      )
+        cards.map((card, i) =>
+            <li key={i}>
+              <img src={card.img} alt={`${card.name}`}/>
+            </li>
+        )
     )
   };
 

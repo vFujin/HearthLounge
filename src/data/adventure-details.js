@@ -209,10 +209,10 @@ export const adventure_details = [
       ],
       bosses_amount: 15,
       bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
-      class_challanges: 9,
-      class_challanges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+      class_challenges: 9,
+      class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
     },
-    class_challanges: [
+    class_challenges: [
       {
         class: 'druid',
         card_reward: "Mounted Raptor"
@@ -424,10 +424,10 @@ export const adventure_details = [
       ],
       bosses_amount: 17,
       bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
-      class_challanges: 9,
-      class_challanges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+      class_challenges: 9,
+      class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
     },
-    class_challanges: [
+    class_challenges: [
       {
         class: 'druid',
         card_reward: "Volcanic Lumberer"
@@ -613,10 +613,10 @@ export const adventure_details = [
       ],
       bosses_amount: 13,
       bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
-      class_challanges: 9,
-      class_challanges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+      class_challenges: 9,
+      class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
     },
-    class_challanges: [
+    class_challenges: [
       {
         class: 'druid',
         card_reward: "Volcanic Lumberer"
@@ -806,10 +806,10 @@ export const adventure_details = [
       ],
       bosses_amount: 13,
       bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
-      class_challanges: 9,
-      class_challanges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+      class_challenges: 9,
+      class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
     },
-    class_challanges: [
+    class_challenges: [
       {
         class: 'druid',
         card_reward: "Volcanic Lumberer"
