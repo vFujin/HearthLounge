@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {adventure_details, boss_details} from '../../../../data/adventure-details';
 import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
-import NotFound from '../../../shared-assets/not-found';
+import ValidateURL from '../../../shared-assets/validateUrl';
 
 export class AdventureBoss extends Component {
 
@@ -85,18 +85,11 @@ export class AdventureBoss extends Component {
     }
   }
 
-  validateUrl() {
-    const {adventure, details, boss} = this.props;
-    let wing_boss = adventure_details.filter(x => x.adventure === adventure).map(x => x.bosses.details)[0].filter(x => x.url === details)[0].bosses.map(x => x.url).includes(boss);
-
-    if (wing_boss !== true) {
-      return <NotFound page="boss" url="adventures/curse-of-naxxramas/bosses"/>;
-    }
-    else {
+  content(details, boss, condition){
+    if(condition === true) {
       let boss_name = this.getBossDetailsFromUrl('boss', details, boss),
           wing = this.getBossDetailsFromUrl('wing', details, boss),
           reward = this.getBossDetailsFromUrl('reward', details, boss);
-
       return (
           <div className={`boss inner-container ${this.props.details && 'active'}-view`}>
             {adventure_details.slice(0, 1).map((adventure, i) =>
@@ -109,11 +102,23 @@ export class AdventureBoss extends Component {
                 </div>
             )}
           </div>
-      );
+      )
+    }
+  }
+
+  validateUrlProps(args){
+    const {adventure, details, boss} = this.props;
+    let wing_boss = adventure_details.filter(x => x.adventure === adventure).map(x => x.bosses.details)[0].filter(x => x.url === details)[0].bosses.map(x => x.url).includes(boss);
+
+    switch(args){
+      case 'condition': return wing_boss;
+      case 'content': return this.content(details, boss, wing_boss);
+      default: return null;
     }
   }
 
   render() {
-    return this.validateUrl();
+    return <ValidateURL condition={this.validateUrlProps('condition')}
+                        content={this.validateUrlProps('content')}/>
   }
 }
