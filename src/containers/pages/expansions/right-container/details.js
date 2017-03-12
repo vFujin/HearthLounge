@@ -5,22 +5,23 @@ import ValidateURL from '../../../shared-assets/validateUrl';
 
 export class ExpansionDetails extends Component{
 
-  content(expansion, details){
+  content(cards, details, expansion){
     return (
         <div className="extension-content">
           <SharedTopbarTabs expansion={expansion}
-                            details={details}/>
+                            details={details}
+                            cards={cards}/>
         </div>
     )
   }
 
   validateUrlProps(args){
-    const {expansion, details} = this.props.params;
+    const {cards, details, expansion} = this.props.params;
     let details_path = topbar_tabs.filter(x=>x.expansion === expansion)[0].expansion_topbar_tabs.map(x=>x.url).includes(details);
 
     switch(args){
       case 'condition': return details_path;
-      case 'content': return this.content(expansion, details);
+      case 'content': return this.content(cards, details, expansion);
       default: return null;
     }
   }
