@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router';
-import {Carousel} from './carousel';
-import {carousel} from './data';
+import {LeftContainer} from './left-container';
+
 import {events} from "../../shared-assets/form-assets/form-events-data";
 export class Login extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      current_dot: 0,
-
       //Sign up
       username: "",
       'e-mail': "",
@@ -42,41 +40,16 @@ export class Login extends Component {
     })
   }
 
-
-  handleCurrentDotChange(current_dot) {
-    this.setState({
-      current_dot: current_dot
-    })
-  }
-
   targetID(e){
     console.log(e.target.id);
     return e.target.id;
   }
 
-  dots() {
-  return (
-      <ul>
-        {carousel.map((active, index) =>
-            <li key={index} className={this.state.current_dot === index ? 'active' : index}>{active.dot}</li>
-        )}
-      </ul>
-  )
-}
-
-
   render() {
-    // debugger;
     return (
       <div className="pageContainer login">
         <div className="wrapper">
-          <div className="left-container">
-            <div className="topbar">
-              {this.dots()}
-            </div>
-            <div className="breakline h-breakline"></div>
-            <Carousel handleCurrentDotChange={this.handleCurrentDotChange.bind(this)} />
-          </div>
+          <LeftContainer/>
           <div className="right-container">
             <div className="breakline-wrapper">
               <div className="breakline v-breakline"></div>

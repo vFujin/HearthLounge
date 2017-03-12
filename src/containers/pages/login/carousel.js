@@ -10,7 +10,7 @@ export class Carousel extends Component {
     let slides = document.querySelectorAll('.slides .slide');
     let currentSlide = 0;
     slides[0].className = 'slide active';
-    let interval = setInterval(()=>nextSlide(currentDot), 5000);
+    let interval = setInterval(()=>nextSlide(currentDot), 1000);
     this.setState({interval});
 
     function nextSlide(currentDot) {
