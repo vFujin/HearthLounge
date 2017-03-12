@@ -40,10 +40,6 @@ export class Login extends Component {
     })
   }
 
-  targetID(e){
-    return this.state[`${e.currentTarget.id}_tooltip`];
-  }
-
   render() {
     return (
       <div className="pageContainer login">

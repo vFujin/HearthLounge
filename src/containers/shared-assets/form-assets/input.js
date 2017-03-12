@@ -3,20 +3,22 @@ import FormTooltips from './form-tooltips';
 
 const Input = props =>{
 
+  const {id, handleInputChange, hideTooltip, showTooltip, type, placeholder, value, pattern, label, tooltip} = props;
+
   return (
       <div className="input-wrapper">
-        <label htmlFor={props.id}>{props.label}:</label>
-          <input onChange={props.handleInputChange.bind(this)}
-                 onBlur={props.hideTooltip}
-                 onFocus={props.showTooltip}
-                 type={props.type}
-                 id={props.id}
-                 placeholder={props.placeholder}
-                 value={props.value}
-                 pattern={props.pattern || ""} />
-        <FormTooltips id={props.id}
-                      label={props.label}
-                      tooltip={props.tooltip}/>
+        <label htmlFor={id}>{label}:</label>
+          <input onChange={handleInputChange.bind(this)}
+                 onBlur={hideTooltip}
+                 onFocus={showTooltip}
+                 type={type}
+                 id={id}
+                 placeholder={placeholder}
+                 value={value}
+                 pattern={pattern || ""} />
+        <FormTooltips id={id}
+                      label={label}
+                      tooltip={tooltip}/>
       </div>
   )
 };
