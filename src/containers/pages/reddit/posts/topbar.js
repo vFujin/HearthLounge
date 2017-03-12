@@ -17,7 +17,7 @@ console.log(props);
         <ul>
         {supported_domain_icons.map((domain, index)=>
           <li key={domain}>
-            <Link to={{pathname: 'reddit', query: {category: props.active_tabmenu, domain: domain}}}>
+            <Link to={{pathname: 'reddit', query: {category: props.active_tabmenu, domain: checkIcon(domain)}}}>
               <span className={`hs-icon icon-${domain} ${domain} ${domain === query ? "active" : ""}`}></span>
               <div className="tooltip">
                 <div className="caret-up"></div>

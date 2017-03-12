@@ -25,6 +25,7 @@ const FormTooltips = props => {
   function tooltip(id, label){
     switch(id){
       case id: return requirements(id, label);
+      default: return ''
     }
   }
 

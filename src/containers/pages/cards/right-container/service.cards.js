@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import unirest from 'unirest';
+import 'whatwg-fetch';
 
 export class ServiceCards extends Component {
   constructor(props){
@@ -10,23 +10,14 @@ export class ServiceCards extends Component {
   }
 
   componentDidMount()  {
-    function getCardProps(res, state){
 
-    }
-
-    // let hsClass = this.props.params.class;
-
-    unirest.get(`https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1`)
-        .header("X-Mashape-Key", "d33SgqkTnSmshYMsQH4KAZvYyT96p1mORdSjsnYHknwZaVgraf")
-        .end(res => {
-          for(let prop in res.body){
-            for(let p in res.body[prop]) {
-              this.setState((prevState)=>({
-                cards: prevState.cards.concat(res.body[prop].map(x => x)[p])
-              }));
-            }
-          }
-
+    fetch(`https://api.hearthstonejson.com/v1/15590/enUS/cards.collectible.json`)
+    .then(r => r.json())
+    .then(data => {
+          console.log(data);
+          this.setState({
+            cards: data
+          });
         });
   }
 
@@ -34,9 +25,9 @@ export class ServiceCards extends Component {
     return (
         <ul className="cards-container">
 
-          {this.state.cards.slice(9, 19).map(x=>x).filter(x=>x.artist).map(card=>
-            <li key={card.cardId}>
-              <img src={card.img} />
+          {this.state.cards.slice(1, 9).map(x=>x).filter(x=>x.artist).map(card=>
+            <li key={card.id}>
+              <img src={`http://media.services.zam.com/v1/media/byName/hs/cards/enus/${card.id}.png`} alt="random" />
             </li>
           )}
         </ul>

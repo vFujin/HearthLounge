@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import {Topbar} from './topbar';
-
-// class AppDynamicComponent extends Component {
-//   validateUrl() {
-//
-//   }
-// }
-
-export class Adventure extends Component{
-
+import {navItems} from '../../../../data/nav';
+class AppDynamicComponent extends Component {
   componentWillMount() {
-    console.log('before render', this.props.params.adventure);
+    console.log(navItems.map(x=>x), this.props.location.pathname);
+    if(this.props.location.pathname){
+
+    }
   }
+}
+
+export class Adventure extends AppDynamicComponent{
+
+
 
   render() {
     let adventureUrl = this.props.params.adventure;

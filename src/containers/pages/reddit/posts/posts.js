@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link} from 'react-router';
 import Loader from '../../../shared-assets/loader';
 import Icon, {supported_domains} from '../domain-icons';
@@ -64,19 +64,19 @@ const RedditPosts = (props) => {
     }
   };
 
-  const convertUnixTimestamp = date =>{
-    let postCreated = new Date(date).getTime(),
-        currentDate = new Date().getTime();
-
-    let timeDifference = currentDate - postCreated;
-    console.log(currentDate, postCreated, timeDifference/(1000*3600*24));
-    let
-        days = `${timeDifference.getDate()}`,
-        hours   = `${timeDifference.getHours() < 10 ? "0" + timeDifference.getHours() : timeDifference.getHours()}`,
-        minutes = `0 + ${timeDifference.getMinutes() < 10 ? "0" + timeDifference.getMinutes() : timeDifference.getMinutes()}`,
-        seconds = `0 + ${timeDifference.getSeconds() < 10 ? "0" + timeDifference.getSeconds() : timeDifference.getSeconds()}`,
-        formattedTime = `Day of the month: ${days} - ${hours}:${minutes.substr(-2)}:${seconds.substr(-2)}`;
-  };
+  // const convertUnixTimestamp = date =>{
+  //   let postCreated = new Date(date).getTime(),
+  //       currentDate = new Date().getTime();
+  //
+  //   let timeDifference = currentDate - postCreated;
+  //   console.log(currentDate, postCreated, timeDifference/(1000*3600*24));
+  //   let
+  //       days = `${timeDifference.getDate()}`,
+  //       hours   = `${timeDifference.getHours() < 10 ? "0" + timeDifference.getHours() : timeDifference.getHours()}`,
+  //       minutes = `0 + ${timeDifference.getMinutes() < 10 ? "0" + timeDifference.getMinutes() : timeDifference.getMinutes()}`,
+  //       seconds = `0 + ${timeDifference.getSeconds() < 10 ? "0" + timeDifference.getSeconds() : timeDifference.getSeconds()}`,
+  //       formattedTime = `Day of the month: ${days} - ${hours}:${minutes.substr(-2)}:${seconds.substr(-2)}`;
+  // };
 
 
   const mapPosts = () =>{
