@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 
 const NotFound = props => {
+  console.log(props);
   return (
       <div className={`not-found`}>
         <div className="wrapper">
@@ -11,10 +12,10 @@ const NotFound = props => {
             <span className="hs-icon icon-mana-4"></span>
           </div>
           <div className="description">
-            <p>Sorry, the page you are looking for doesn't exist.</p>
+            <p>Sorry, the {props.page} you are looking for doesn't exist.</p>
             <p>Take a run around the block or tap the button below.</p>
             <button className="btn-pearl">
-              <Link to="/">Go to the home page</Link>
+              <Link to={`/${props.url}`}>Go to the {props.url} page</Link>
             </button>
           </div>
         </div>
