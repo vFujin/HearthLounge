@@ -118,7 +118,10 @@ export class AdventureBoss extends Component {
   }
 
   render() {
+    console.log(this.props);
     return <ValidateURL condition={this.validateUrlProps('condition')}
-                        content={this.validateUrlProps('content')}/>
+                        content={this.validateUrlProps('content')}
+                        page="boss"
+                        redirect={`adventures/${this.props.adventure}/bosses`}/>
   }
 }

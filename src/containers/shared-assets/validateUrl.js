@@ -5,7 +5,7 @@ const ValidateURL = props =>{
 
   const validate = () =>{
     if(props.condition !== true){
-      return <NotFound page={props.page} page_url={props.page_url}/>;
+      return <NotFound page={props.page} redirect={props.redirect}/>;
     }
     else{
       return props.content;

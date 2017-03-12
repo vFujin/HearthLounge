@@ -31,6 +31,6 @@ export class Expansion extends Component{
     return <ValidateURL condition={this.validateUrlProps('condition')}
                         content={this.validateUrlProps('content')}
                         page="expansion"
-                        page_url="expansions"/>
+                        redirect="expansions"/>
   }
 }
