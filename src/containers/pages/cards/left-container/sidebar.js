@@ -32,10 +32,10 @@ export class Sidebar extends Component {
           {/*<RarityFilter />*/}
           {/*<IsGoldenFilter/>*/}
 
-          <IconFilter header={true}
-                      filter="adventures"
-                      query={this.props.query}
-                      wrapper_class="sidebar-icons"/>
+          <IconFilter header={true} filter="expansions" query={this.props.query} wrapper_class="sidebar-icons"/>
+          <IconFilter header={true} filter="adventures" query={this.props.query} wrapper_class="sidebar-icons"/>
+          <IconFilter header={true} filter="rarity" query={this.props.query} wrapper_class="sidebar-icons"/>
+
 
         </div>
     );

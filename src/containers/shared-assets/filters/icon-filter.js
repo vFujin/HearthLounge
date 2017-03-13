@@ -6,18 +6,22 @@ const IconFilter = (props) => {
   const {filter, header, query, wrapper_class} = props;
 
   const queries = icon_url =>{
-    return Object.assign({}, query, {filter: icon_url}); // [filter]
+    return Object.assign({}, query, {[filter]: icon_url}); // [filter]
+  };
+
+  const isRarity = icon =>{
+    return filter === 'rarity' ? icon.name.toLowerCase() : icon.url;
   };
 
   const listIcons = () => {
     return (
-        icon_filters[filter].map((filter, index) =>
+        icon_filters[filter].map((icon, index) =>
             <li key={index}>
-              <Link to={{pathname: 'cards', query: queries(filter.url)}}>
-                <span className={`hs-icon ${filter.name} icon-${filter.url} ${query.class === filter.url ? 'active' : ''}`}></span>
+              <Link to={{pathname: 'cards', query: queries(isRarity(icon))}}>
+                <span className={`hs-icon ${isRarity(icon)} icon-${icon.url} ${query[icon] === icon.url ? 'active' : ''}`}></span>
                 <div className="tooltip">
                   <div className="caret-up"></div>
-                  <p>{filter.name}</p>
+                  <p>{icon.name}</p>
                 </div>
               </Link>
             </li>

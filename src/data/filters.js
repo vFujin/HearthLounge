@@ -261,23 +261,23 @@ export const icon_filters = {
   rarity: [
     {
       name: 'Free',
-      url: 'free'
+      url: 'rarity'
     },
     {
       name: 'Common',
-      url: 'common'
+      url: 'rarity'
     },
     {
       name: 'Rare',
-      url: 'rare'
+      url: 'rarity'
     },
     {
       name: 'Epic',
-      url: 'epic'
+      url: 'rarity'
     },
     {
       name: 'Legendary',
-      url: 'legendary'
+      url: 'rarity'
     }
   ]
 };
