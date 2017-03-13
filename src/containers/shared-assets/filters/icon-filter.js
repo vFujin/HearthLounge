@@ -72,5 +72,3 @@ IconFilter.propTypes = {
 };
 
 export default IconFilter;
-
-//<IconFilter filter="class" />
