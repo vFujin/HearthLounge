@@ -12,8 +12,7 @@ export class Cards extends Component {
       faction: null,
       race: null,
       mechanics: null,
-      dust: null,
-      url: ''
+      dust: null
     }
   }
 
@@ -26,6 +25,7 @@ export class Cards extends Component {
 
 
   render() {
+    let query = this.props.location.query;
     return (
         <div className="pageContainer cards">
             <div className="left-container">
@@ -33,10 +33,11 @@ export class Cards extends Component {
                          statistics={this.state.statistics}
                          race={this.state.race}
                          mechanics={this.state.mechanics}
-                         dust={this.state.dust}/>
+                         dust={this.state.dust}
+                         query={query}/>
             </div>
             <div className="right-container">
-                <CardsTopbarFilters query={this.props.location.query}/>
+                {/*<CardsTopbarFilters query={this.props.location.query}/>*/}
                 {this.props.children}
             </div>
         </div>

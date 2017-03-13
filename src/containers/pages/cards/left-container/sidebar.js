@@ -11,6 +11,7 @@ import {AdventureFilter} from '../../../shared-assets/filters/adventures';
 import {RarityFilter} from '../../../shared-assets/filters/rarity';
 // import {IconFilterSnippet} from '../filters/icon-filter-snippet'
 import {IsGoldenFilter} from '../../../shared-assets/filters/is-golden';
+import IconFilter from '../../../shared-assets/filters/icon-filter';
 
 export class Sidebar extends Component {
   render() {
@@ -26,10 +27,16 @@ export class Sidebar extends Component {
           <MechanicsFilter  handleInputFilter={this.props.handleInputFilter} mechanics={this.props.mechanics}/>
           <DustFilter       handleInputFilter={this.props.handleInputFilter} dust={this.props.dust}/>
 
-          <ExpansionFilter page="cards" />
-          <AdventureFilter page="cards" />
-          <RarityFilter />
-          <IsGoldenFilter/>
+          {/*<ExpansionFilter page="cards" />*/}
+          {/*<AdventureFilter page="cards" />*/}
+          {/*<RarityFilter />*/}
+          {/*<IsGoldenFilter/>*/}
+
+          <IconFilter header={true}
+                      filter="adventures"
+                      query={this.props.query}
+                      wrapper_class="sidebar-icons"/>
+
         </div>
     );
   }

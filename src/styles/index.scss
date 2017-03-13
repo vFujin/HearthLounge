@@ -181,9 +181,11 @@ footer{
         margin-bottom:0;
       }
       h3{
+        font-weight: normal;
         background-color: $dark-grey;
         padding: 5px;
         color: $pearl;
+        text-transform: capitalize;
       }
     }
   }
