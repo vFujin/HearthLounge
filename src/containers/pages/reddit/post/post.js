@@ -1,11 +1,12 @@
 import React from 'react';
-import axios from 'axios';
+import 'whatwg-fetch';
 const RedditPost = (props) => {
   const{posts, params} = props;
 
   const componentDidMount = () =>{
-    axios.get(`https://www.reddit.com/r/hearthstone/comments.json`)
-        .then(res => {
+    fetch(`https://www.reddit.com/r/hearthstone/comments.json`)
+          .then(res => res.json())
+          .then(res=>{
           const posts = res.data.data.children.map(x=>x.data);
           console.log(posts);
         });

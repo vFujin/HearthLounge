@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import 'whatwg-fetch';
 export class Reddit extends Component{
   constructor(props){
     super(props);
@@ -18,8 +18,9 @@ export class Reddit extends Component{
 
   componentDidMount() {
     let query = this.props.location.query.category || "hot";
-    axios.get(`https://www.reddit.com/r/hearthstone/${query}.json`)
-        .then(res => {
+    fetch(`https://www.reddit.com/r/hearthstone/${query}.json`)
+        .then(res => res.json())
+        .then(res=>{
           const posts = res.data.data.children.map(obj => obj.data);
           console.log(posts);
           this.setState({
@@ -42,8 +43,9 @@ export class Reddit extends Component{
     e.preventDefault();
     let filter = e.currentTarget.id;
     if(filter !== this.state.active_tabmenu){
-      axios.get(`https://www.reddit.com/r/hearthstone/${filter}.json`)
-          .then(res => {
+      fetch(`https://www.reddit.com/r/hearthstone/${filter}.json`)
+        .then(res => res.json())
+        .then(res=>{
             const posts = res.data.data.children.map(obj => obj.data);
             console.log(posts);
             this.setState({
