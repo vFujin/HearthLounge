@@ -7,7 +7,7 @@ const AdventureCards = props => {
     return (
         cards.map((card, i) =>
             <li key={i}>
-              <img src={card.img} alt={`${card.name}`}/>
+              <img src={`http://media.services.zam.com/v1/media/byName/hs/cards/enus/${card.id}.png`} alt={`${card.name}`}/>
             </li>
         )
     )

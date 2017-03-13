@@ -22,9 +22,9 @@ const ManaCostFilter = props =>{
     };
 
     return (
-        <ul className="topbar-left">
-          {listManaCrystals()}
-        </ul>
+      <ul className="topbar-left">
+        {listManaCrystals()}
+      </ul>
   );
 };
 
