@@ -1232,6 +1232,10 @@ body {
     cursor: pointer;
     font-family: 'Hearthstone';
     font-size: 41px; }
+  body .mana-crystal.active a span, body .mana-crystal.active:hover a span {
+    color: navy; }
+  body .mana-crystal:hover a span {
+    color: #0070DE; }
 
 .deck-snippet {
   position: relative;
@@ -2244,8 +2248,6 @@ footer {
       height: 100%; }
 .cards .not-active {
   background-color: #474143; }
-.cards .mana-active {
-  color: navy; }
 
 .arena-picker .pick-class, .create-deck .pick-class {
   padding: 0 40px;

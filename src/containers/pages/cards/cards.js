@@ -28,7 +28,6 @@ export class Cards extends Component {
   render() {
     return (
         <div className="pageContainer cards">
-          {console.log(this.props.location.query)}
             <div className="left-container">
                 <Sidebar handleInputFilter={this.handleInputFilter.bind(this)}
                          statistics={this.state.statistics}

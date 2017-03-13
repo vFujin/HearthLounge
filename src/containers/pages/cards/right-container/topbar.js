@@ -1,5 +1,5 @@
 import React from 'react';
-import {ManaCostFilter} from '../../../shared-assets/filters/mana-cost';
+import ManaCostFilter from '../../../shared-assets/filters/mana-cost';
 import HsClassFilter from  '../../../shared-assets/filters/hs-class';
 
 const CardsTopbarFilters = props => {
