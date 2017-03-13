@@ -34,8 +34,8 @@ const ExpansionDetails = props => {
 
 ExpansionDetails.propTypes = {
   cards:     React.PropTypes.array,
-  details:   React.PropTypes.string.isRequired,
-  expansion: React.PropTypes.string.isRequired
+  details:   React.PropTypes.string,
+  expansion: React.PropTypes.string
 };
 
 export default ExpansionDetails;

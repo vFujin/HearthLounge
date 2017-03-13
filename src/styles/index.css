@@ -3167,6 +3167,8 @@ footer {
   width: 50vw;
   margin: auto;
   height: 100%; }
+  .not-found.below-topbar {
+    height: calc(100% - 50px); }
   .not-found .wrapper {
     display: block;
     text-align: center;

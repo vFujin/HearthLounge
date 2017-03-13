@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import 'react-select/dist/react-select.css';
 import {Sidebar} from './left-container/sidebar';
-import {CardsTopbarFilters} from './right-container/topbar';
+import CardsTopbarFilters from './right-container/topbar';
+
 export class Cards extends Component {
   constructor(props){
     super(props);
@@ -27,7 +28,7 @@ export class Cards extends Component {
   render() {
     return (
         <div className="pageContainer cards">
-          {console.log(this.props.location.queries)}
+          {console.log(this.props.location.query)}
             <div className="left-container">
                 <Sidebar handleInputFilter={this.handleInputFilter.bind(this)}
                          statistics={this.state.statistics}
@@ -36,7 +37,7 @@ export class Cards extends Component {
                          dust={this.state.dust}/>
             </div>
             <div className="right-container">
-                <CardsTopbarFilters />
+                <CardsTopbarFilters query={this.props.location.query}/>
                 {this.props.children}
             </div>
         </div>

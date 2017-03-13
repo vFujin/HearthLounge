@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {ManaCostFilter} from '../../../shared-assets/filters/mana-cost';
 import HsClassFilter from  '../../../shared-assets/filters/hs-class';
 
-export class CardsTopbarFilters extends Component {
-  render() {
-    return (
-        <div className="topbar">
-          {this.props.children}
-            <ManaCostFilter />
-            <HsClassFilter align="right" page="cards"/>
-        </div>
-    );
-  }
-}
+const CardsTopbarFilters = props => {
+  const {children, query} = props;
+
+  return (
+      <div className="topbar">
+        {children}
+        <ManaCostFilter query={query}/>
+        <HsClassFilter align="right" page="cards" query={query}/>
+      </div>
+  );
+};
+
+CardsTopbarFilters.propTypes = {
+  children : React.PropTypes.element,
+  query: React.PropTypes.object
+};
+
+export default CardsTopbarFilters;

@@ -15,7 +15,7 @@ const NotFound = props => {
   };
 
   return (
-      <div className={`not-found`}>
+      <div className={`not-found ${props.below_topbar == true ? "below-topbar" : ""}`}>
         <div className="wrapper">
           <div className="lost">
             <span className="hs-icon icon-mana-4"></span>
