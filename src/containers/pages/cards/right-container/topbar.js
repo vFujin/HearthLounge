@@ -1,21 +1,18 @@
 import React from 'react';
-import ManaCostFilter from '../../../shared-assets/filters/mana-cost';
-import HsClassFilter from  '../../../shared-assets/filters/hs-class';
+import IconFilter from '../../../shared-assets/filters/icon-filter';
 
 const CardsTopbarFilters = props => {
-  const {children, query} = props;
+  const {query} = props;
 
   return (
       <div className="topbar">
-        {children}
-        <ManaCostFilter query={query}/>
-        <HsClassFilter align="right" page="cards" query={query}/>
+        <IconFilter header={false} filter="cost" query={query} tooltip={false} wrapper_class="topbar-left"/>
+        <IconFilter header={false} filter="class" query={query} tooltip={true} wrapper_class="topbar-right"/>
       </div>
   );
 };
 
 CardsTopbarFilters.propTypes = {
-  children : React.PropTypes.element,
   query: React.PropTypes.object
 };
 

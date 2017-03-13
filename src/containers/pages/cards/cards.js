@@ -37,7 +37,7 @@ export class Cards extends Component {
                          query={query}/>
             </div>
             <div className="right-container">
-                {/*<CardsTopbarFilters query={this.props.location.query}/>*/}
+                <CardsTopbarFilters query={query}/>
                 {this.props.children}
             </div>
         </div>

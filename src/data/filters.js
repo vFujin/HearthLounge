@@ -198,7 +198,7 @@ export const icon_filters = {
       url: 'journey-to-ungoro'
     }
   ],
-  mana_cost: [
+  cost: [
     {
       name: 0,
       url: 0

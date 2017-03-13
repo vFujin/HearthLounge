@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 import {ArchetypeFilter} from '../../../shared-assets/filters/archetype';
 import {NameFilter} from '../../../shared-assets/filters/name';
 import {DeckType} from '../../../shared-assets/filters/deck-type';
-import {ExpansionFilter} from '../../../shared-assets/filters/expansions';
-import {AdventureFilter} from '../../../shared-assets/filters/adventures';
 
 export class DeckSelectionSidebar extends Component {
   render() {
@@ -15,8 +13,6 @@ export class DeckSelectionSidebar extends Component {
           <NameFilter/>
           <ArchetypeFilter/>
           <DeckType/>
-          <ExpansionFilter/>
-          <AdventureFilter page="decks"/>
         </div>
     );
   }
