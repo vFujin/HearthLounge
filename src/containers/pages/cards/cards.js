@@ -11,10 +11,27 @@ export class Cards extends Component {
       statistics: null,
       faction: null,
       race: null,
-      mechanics: null,
+      mechanics: [],
       dust: null
     }
   }
+
+  getFilterValues(){
+
+    const filterAttribute = (data, attribute) =>{
+      return data.filter(x=>x[attribute]).map(x=>x[attribute]).map(x=>x[0]).filter((x, i, a)=>a.indexOf(x) == i);
+    };
+
+    fetch(`https://api.hearthstonejson.com/v1/17994/enUS/cards.collectible.json`)
+      .then(r=>r.json())
+      .then(data => {
+          this.setState({
+            mechanics: filterAttribute(data, 'mechanics')
+          })
+
+      })
+  }
+
 
 
   handleInputFilter(selector, val){
@@ -25,6 +42,7 @@ export class Cards extends Component {
 
 
   render() {
+    this.getFilterValues();
     let query = this.props.location.query;
     return (
         <div className="pageContainer cards">

@@ -14,7 +14,6 @@ const InputFilter = props => {
     }
   };
 
-  console.log(props.statistics, props.data);
   return (
       <Select.Async
           name="form-field-name"
