@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'antd/lib/select';
-import 'antd/dist/antd.min.css';
+import 'antd/lib/select/style/css';
 
 const InputFilter = props => {
 
@@ -15,13 +15,16 @@ const InputFilter = props => {
     return values;
   };
 
-
+  const placeholder = attribute.slice(0,3).map(x=>x).join(", ").toLowerCase();
   return (
-      <Select multiple
-              style={{width: "100%"}}
-              placeholder={filter} onChange={(e)=>handleClick(e)}>
-        {options}
-      </Select>
+      <div className="input-filter-wrapper">
+        <h4>{filter}</h4>
+        <Select multiple
+                style={{width: "100%"}}
+                placeholder={`${placeholder}...`} onChange={(e)=>handleClick(e)}>
+          {options}
+        </Select>
+      </div>
   );
 };
 

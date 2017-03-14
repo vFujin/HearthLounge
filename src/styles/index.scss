@@ -2013,3 +2013,41 @@ footer{
     }
   }
 }
+
+//Antd select
+.input-filter-wrapper{
+  text-transform: capitalize;
+  font-weight:normal;
+  padding: 0 10px;
+  margin: 10px 0;
+}
+.ant-select {
+  font-size:14px;
+  .ant-select-selection {
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+    border: none;
+    border-bottom: 1px solid $dark-grey;
+    background: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    &:hover, &:focus{
+      border-color: $pearl;
+      outline:none;
+    }
+    .ant-select-selection__rendered {
+      .ant-select-selection__placeholder, .ant-select-search__field__placeholder{
+        text-transform: capitalize;
+      }
+      ul {
+        .ant-select-selection__choice {
+          span {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
