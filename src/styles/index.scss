@@ -2043,7 +2043,14 @@ footer{
       }
       ul {
         .ant-select-selection__choice {
+          -webkit-border-radius:0;
+          -moz-border-radius:0;
+          border-radius:0;
+          background-color: transparent;
+          color: $pearl;
+          border: 1px solid $pearl;
           span {
+            color: $dark-grey;
             font-size: 12px;
           }
         }
