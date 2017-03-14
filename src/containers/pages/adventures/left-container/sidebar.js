@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {adventures} from '../../../../data/filters';
+import {icon_filters} from '../../../../data/filters';
 
 const Sidebar = props => {
   const {adventure} = props;
 
   const listAdventures = () =>{
     return (
-      adventures.map((a, index) =>
+      icon_filters.adventures.map((a, index) =>
         <li key={index}>
           <Link to={`/adventures/${a.url}/overview`}
                 className={`${a.url} ${adventure === a.url && 'active'}`}>

@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {expansions} from '../../../../data/filters';
+import {icon_filters} from '../../../../data/filters';
 
 const Sidebar = props => {
   const {expansion} = props;
 
   const listExpansions = () =>{
     return (
-      expansions.map((e, index) =>
+      icon_filters.expansions.map((e, index) =>
         <li key={index}>
           <Link to={`/expansions/${e.url}/overview`}
                 className={`${e.url} ${expansion === e.url && 'active'}`}>
