@@ -8,7 +8,7 @@ export class Cards extends Component {
     super(props);
     this.state = {
       cardName: null,
-      statistics: null,
+      type: [],
       faction: [],
       race: [],
       mechanics: [],
@@ -23,7 +23,8 @@ export class Cards extends Component {
 
       switch(attribute){
         case 'faction':
-        case 'race': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) == i);
+        case 'race':
+        case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) == i);
         case 'mechanics': return initialFiltering.map(x=>x[0]).filter((x, i, a)=>a.indexOf(x) == i);
       }
     };
@@ -34,7 +35,8 @@ export class Cards extends Component {
           this.setState({
             mechanics: filterAttribute(data, 'mechanics'),
             faction: filterAttribute(data, 'faction'),
-            race: filterAttribute(data, 'race')
+            race: filterAttribute(data, 'race'),
+            type: filterAttribute(data, 'type'),
           })
 
       })
