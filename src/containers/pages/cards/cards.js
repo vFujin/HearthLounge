@@ -49,6 +49,8 @@ export class Cards extends Component {
             <div className="left-container">
                 <Sidebar race={this.state.race}
                          mechanics={this.state.mechanics}
+                         type={this.state.type}
+                         faction={this.state.faction}
                          dust={this.state.dust}
                          query={query}/>
             </div>
