@@ -2058,3 +2058,20 @@ footer{
     }
   }
 }
+.ant-select-dropdown{
+
+  background: $light-grey;
+  color: $pearl;
+  border:1px solid $pearl;
+  ul{
+    @include scrollbar();
+    li{
+      background: $dark-grey;
+      color: $pearl;
+      border-bottom:1px dashed $light-grey;
+      &:last-child{
+        border-bottom: 0;
+      }
+    }
+  }
+}
