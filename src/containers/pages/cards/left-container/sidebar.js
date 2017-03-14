@@ -19,7 +19,6 @@ export class Sidebar extends Component {
       fetch(`https://api.hearthstonejson.com/v1/17994/enUS/cards.collectible.json`)
           .then(r=>r.json())
           .then(data => {
-            console.log(data.filter(x=>x.mechanics).map(x=>x.mechanics).map(x=>x[0]).filter((x, i, a)=>a.indexOf(x) == i));
             return {
               options: data.slice(1,10).map(x=> {
                 return {
