@@ -1,10 +1,10 @@
 import React from 'react';
-import {hs_class} from '../../../data/filters';
+import {icon_filters} from '../../../data/filters';
 import { Link } from 'react-router'
 const ClassSelectionRow = (props) =>{
   return (
     <tr>
-      {hs_class.slice(props.start, props.end).map(hs_class =>
+      {icon_filters.class.slice(props.start, props.end).map(hs_class =>
         <td key={hs_class.url} className={hs_class.url}>
           <Link to={`/${props.page}/${hs_class.url}`}>
             <div className="wrapper">

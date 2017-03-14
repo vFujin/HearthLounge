@@ -11,7 +11,7 @@ export class Sidebar extends Component {
         <div className="sidebar">
           <h3 className="filter-header">Filters</h3>
 
-          <InputFilter attribute={this.props.race} filter="race"/>
+          <InputFilter attribute={this.props.race} filter="race" query={this.props.query}/>
 
           <IconFilter header={true} filter="expansions" query={this.props.query} tooltip={true} wrapper_class="sidebar-icons"/>
           <IconFilter header={true} filter="adventures" query={this.props.query} tooltip={true} wrapper_class="sidebar-icons"/>
