@@ -14,12 +14,14 @@ const InputFilter = props => {
     }
   };
 
-
+  console.log(props.statistics, props.data);
   return (
       <Select.Async
           name="form-field-name"
-          value="one"
+          value={props.statistics}
           loadOptions={c()}
+          onChange={props.handleInputFilter.bind(this, 'statistics')}
+          multi={true}
       />
   );
 };

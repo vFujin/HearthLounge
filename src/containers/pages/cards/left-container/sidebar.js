@@ -10,7 +10,7 @@ export class Sidebar extends Component {
 
     this.state = {
       data: [],
-      val: ''
+      value: []
     }
   }
 
@@ -32,6 +32,12 @@ export class Sidebar extends Component {
   )
 };
 
+  handleInputChange(e){
+    let value = e.target.value;
+    console.log(value);
+    this.setState({value})
+  }
+
 
 
   render() {
@@ -39,7 +45,9 @@ export class Sidebar extends Component {
         <div className="sidebar">
           <h3 className="filter-header">Filters</h3>
 
-          <InputFilter data={this.getOptions.bind(this)}/>
+          <InputFilter data={this.getOptions.bind(this)}
+                       statistics={this.props.statistics}
+                       handleInputFilter={this.props.handleInputFilter}/>
 
           <IconFilter header={true} filter="expansions" query={this.props.query} tooltip={true} wrapper_class="sidebar-icons"/>
           <IconFilter header={true} filter="adventures" query={this.props.query} tooltip={true} wrapper_class="sidebar-icons"/>
