@@ -29,7 +29,7 @@ export class Cards extends Component {
       }
     };
 
-    fetch(`https://api.hearthstonejson.com/v1/17994/enUS/cards.collectible.json`)
+    fetch(`https://api.hearthstonejson.com/v1/17994/enUS/cards.json`)
       .then(r=>r.json())
       .then(data => {
           this.setState({
