@@ -21,7 +21,8 @@ export class Reddit extends Component{
     fetch(`https://www.reddit.com/r/hearthstone/${query}.json`)
         .then(res => res.json())
         .then(res=>{
-          const posts = res.data.data.children.map(obj => obj.data);
+          console.log(res)
+          const posts = res.data.children.map(obj => obj.data);
           console.log(posts);
           this.setState({
             posts: posts
@@ -46,7 +47,7 @@ export class Reddit extends Component{
       fetch(`https://www.reddit.com/r/hearthstone/${filter}.json`)
         .then(res => res.json())
         .then(res=>{
-            const posts = res.data.data.children.map(obj => obj.data);
+            const posts = res.data.children.map(obj => obj.data);
             console.log(posts);
             this.setState({
               posts: posts
