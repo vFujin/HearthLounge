@@ -42,23 +42,12 @@ export class Cards extends Component {
       })
   }
 
-
-
-  handleInputFilter(selector, val){
-    this.setState({
-      [selector]: val
-    });
-  }
-
-
   render() {
     let query = this.props.location.query;
     return (
         <div className="pageContainer cards">
             <div className="left-container">
-                <Sidebar handleInputFilter={this.handleInputFilter.bind(this)}
-                         statistics={this.state.statistics}
-                         race={this.state.race}
+                <Sidebar race={this.state.race}
                          mechanics={this.state.mechanics}
                          dust={this.state.dust}
                          query={query}/>

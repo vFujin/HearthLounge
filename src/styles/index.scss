@@ -955,11 +955,6 @@ footer{
                 color: $pearl;
             }
           }
-          &:hover{
-            .select2-wrapper{
-              @include box-shadow(0, 0, 0, black);
-            }
-          }
           //input{
           //  @include transition(all ease .4s);
           //  width: calc(100% - 20px);
@@ -973,73 +968,6 @@ footer{
           //    border-color: $sea-color;
           //  }
           //}
-          .Select{
-            margin-top: 10px;
-            &:focus{
-              outline:none;
-            }
-            .Select-control{
-              background-color: transparent;
-              border:none;
-              border-radius: 0;
-              border-bottom: 2px solid $dark-grey;
-            }
-
-            .Select-placeholder{
-              color: $dark-grey;
-            }
-            .Select-arrow {
-              border-color: $dark-grey transparent transparent;
-            }
-            .Select-value{
-              color: $dark-grey;
-              border: 2px solid $dark-grey;
-              background-color: $light-grey;
-              .Select-value-icon{
-                border-right: 1px solid $dark-grey;
-                &:hover{
-                  color: $dark-grey;
-                }
-                &:focus{
-                  background-color: yellow;
-                }
-              }
-            }
-            .Select-clear-zone{
-              color: $dark-grey;
-
-            }
-            .Select-menu{
-              &::-webkit-scrollbar{width: 13px;}
-              &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0;}
-              &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
-              &::-webkit-scrollbar-track{background-color: $light-grey;}
-            }
-            .Select-menu-outer{
-              margin-top:0;
-              background-color: $light-grey;
-              border-radius: 0;
-              border:0;
-            }
-            .Select-noresults{
-              color: $pearl;
-            }
-            .Select-option{
-              @include transition(all ease .4s);
-              background-color: $pearl;
-              border-bottom:1px solid $dark-grey;
-              border-right: 1px solid $light-grey;
-              &:last-child{
-                border-radius: 0;
-                border-bottom:0;
-              }
-              &:hover{
-                background-color: $sea-color;
-                color: $pearl;
-              }
-
-            }
-          }
         }
       }
     }
