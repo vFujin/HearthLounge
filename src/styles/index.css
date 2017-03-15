@@ -3136,6 +3136,9 @@ footer {
         font-size: 12px; }
 
 .ant-select-dropdown {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
   background: #A69E9D;
   color: #E7E2DA;
   border: 1px solid #E7E2DA; }
@@ -3159,12 +3162,14 @@ footer {
     background: #474143;
     color: #A69E9D;
     border-bottom: 1px dashed #A69E9D; }
-    .ant-select-dropdown ul li:last-child {
-      border-bottom: 0; }
     .ant-select-dropdown ul li:hover {
       background-color: #474143;
       color: #E7E2DA;
       border-bottom: 1px dashed #E7E2DA; }
+    .ant-select-dropdown ul li:last-child {
+      border-bottom: 0; }
+      .ant-select-dropdown ul li:last-child:hover {
+        border-bottom: 0; }
   .ant-select-dropdown ul .ant-select-dropdown-menu-item-selected,
   .ant-select-dropdown ul .ant-select-dropdown-menu-item-selected:hover {
     background: rgba(0, 0, 0, 0.4);

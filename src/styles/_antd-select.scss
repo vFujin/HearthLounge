@@ -42,7 +42,9 @@
   }
 }
 .ant-select-dropdown{
-
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
   background: $light-grey;
   color: $pearl;
   border:1px solid $pearl;
@@ -53,13 +55,16 @@
       background: $dark-grey;
       color: $light-grey;
       border-bottom:1px dashed $light-grey;
-      &:last-child{
-        border-bottom: 0;
-      }
       &:hover{
         background-color: $dark-grey;
         color: $pearl;
         border-bottom: 1px dashed$pearl;
+      }
+      &:last-child{
+        border-bottom: 0;
+        &:hover{
+          border-bottom: 0;
+        }
       }
     }
     .ant-select-dropdown-menu-item-selected,

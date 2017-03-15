@@ -7,11 +7,10 @@ export class Cards extends Component {
     super(props);
     this.state = {
       cardName: null,
-      type: [],
       faction: [],
-      race: [],
       mechanics: [],
-      dust: null
+      race: [],
+      type: []
     }
   }
 
@@ -50,7 +49,6 @@ export class Cards extends Component {
                          mechanics={this.state.mechanics}
                          type={this.state.type}
                          faction={this.state.faction}
-                         dust={this.state.dust}
                          query={query}/>
             </div>
             <div className="right-container">

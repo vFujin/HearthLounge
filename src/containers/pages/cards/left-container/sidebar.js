@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {IsGoldenFilter} from '../../../shared-assets/filters/is-golden';
 import IconFilter from '../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../shared-assets/filters/input-filter';
