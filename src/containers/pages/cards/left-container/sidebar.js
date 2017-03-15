@@ -9,7 +9,7 @@ const Sidebar = props => {
       <div className="sidebar">
         <h3 className="filter-header">Filters</h3>
 
-        <InputFilter attribute={race}      filter="race"/>
+        <InputFilter attribute={race}      filter="race"        handleInputChange={props.handleInputChange}/>
         <InputFilter attribute={mechanics} filter="mechanics"/>
         <InputFilter attribute={faction}   filter="faction"/>
         <InputFilter attribute={type}      filter="type"/>

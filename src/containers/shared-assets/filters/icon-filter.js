@@ -46,7 +46,6 @@ const IconFilter = (props) => {
       icon_filters[filter].map((icon, index) =>
         <li key={index}>
           <Link to={{pathname: 'cards', query: queries(iconName(icon))}}>
-            {console.log(query[filter], iconName(icon))}
             <span className={`hs-icon ${iconName(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
             {showTooltip(icon)}
           </Link>

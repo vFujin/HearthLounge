@@ -2200,12 +2200,14 @@ footer {
     background-color: #A69E9D;
     border-left: 1px solid #E7E2DA; }
   .cards .right-container .cards-container li {
-    width: 12x;
+    width: 12%;
     margin: 0;
     display: inline-block; }
     .cards .right-container .cards-container li img {
       width: 100%;
       height: 100%; }
+    .cards .right-container .cards-container li.display-none {
+      display: none; }
 .cards .not-active {
   background-color: #474143; }
 

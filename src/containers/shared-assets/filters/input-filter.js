@@ -11,17 +11,13 @@ const InputFilter = props => {
         <Option value={a} key={a}>{a}</Option>
       ));
 
-  const handleClick = (values) =>{
-    return values;
-  };
-
   const placeholder = attribute.slice(0,3).map(x=>x).join(", ").toLowerCase();
   return (
       <div className="input-filter-wrapper">
         <h4>{filter}</h4>
         <Select multiple
                 style={{width: "100%"}}
-                placeholder={`${placeholder}...`} onChange={(e)=>handleClick(e)}>
+                placeholder={`${placeholder}...`} onChange={(e)=>props.handleInputChange(e)}>
           {options}
         </Select>
       </div>

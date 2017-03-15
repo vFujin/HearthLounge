@@ -11,7 +11,10 @@ export class Cards extends Component {
       faction: [],
       mechanics: [],
       race: [],
-      type: []
+      type: [],
+
+      //Input filters
+      active_race: false
     }
   }
 
@@ -28,22 +31,56 @@ export class Cards extends Component {
       }
     };
 
-    fetch(`https://api.hearthstonejson.com/v1/17994/enUS/cards.json`)
+    fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/cards`, {
+      headers: {
+        'X-Mashape-Key': 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q',
+        'Cache-Control': 'max-age=60'
+      }
+    })
       .then(r=>r.json())
       .then(data => {
-          this.setState({
-            cards: data,
-            mechanics: filterAttribute(data, 'mechanics'),
-            faction: filterAttribute(data, 'faction'),
-            race: filterAttribute(data, 'race'),
-            type: filterAttribute(data, 'type'),
-          })
-
+        const collectible = data["Basic"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
+        this.setState({
+          cards: collectible,
+          mechanics: filterAttribute(data["Basic"], 'mechanics'),
+          faction: filterAttribute(data["Basic"], 'faction'),
+          race: filterAttribute(data["Basic"], 'race'),
+          type: filterAttribute(data["Basic"], 'type'),
+        })
       })
+  }
+
+  handleCardClick(e, card){
+    let target = e.target;
+    console.log(card);
+  }
+
+  handleInputChange(values) {
+    this.setState({
+      active_race: values < 1 ? false : true
+    })
+  };
+
+  listCards(){
+    if(this.state.cards < 1){
+      return <div>Loading</div>
+    }
+    else {
+      return (
+          this.state.cards.map(card=>
+
+          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!card.race && this.state.active_race === true ? "display-none" : ""}>
+            <img src={card.img} alt={card.name} />
+          </li>
+        )
+      )
+    }
   }
 
   render() {
     let query = this.props.location.query;
+    //
+    // console.log(this.state.active_race.map(x=>x)[0]);
     return (
         <div className="pageContainer cards">
             <div className="left-container">
@@ -51,17 +88,14 @@ export class Cards extends Component {
                          mechanics={this.state.mechanics}
                          type={this.state.type}
                          faction={this.state.faction}
-                         query={query}/>
+                         query={query}
+                         handleInputChange={(v)=>this.handleInputChange(v)}/>
             </div>
             <div className="right-container">
                 <CardsTopbarFilters query={query}/>
 
               <ul className="cards-container">
-                {this.state.cards.slice(1, 100).map(x=>x).filter(x=>x.artist).map(card=>
-                    <li key={card.id}>
-                      <img src={`http://media.services.zam.com/v1/media/byName/hs/cards/enus/${card.id}.png`} alt={card.name} />
-                    </li>
-                )}
+                {this.listCards()}
               </ul>
             </div>
         </div>
