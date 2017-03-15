@@ -50,23 +50,6 @@
   }
 }
 
-@mixin prefix($property, $value, $vendors: webkit moz ms o, $default: true) {
-  @if $vendors {
-    @each $vendor in $vendors {
-      #{"-" + $vendor + "-" + $property}: #{$value};
-    }
-  }
-  @if $default {
-    #{$property}: #{$value};
-  }
-}
-
-@mixin center-vertically {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
-}
 
 @mixin height-lineheight($height){
   line-height: $height;
