@@ -2066,12 +2066,31 @@ footer{
   ul{
     @include scrollbar();
     li{
+      @include transition(all ease .4s);
       background: $dark-grey;
-      color: $pearl;
+      color: $light-grey;
       border-bottom:1px dashed $light-grey;
       &:last-child{
         border-bottom: 0;
       }
+      &:hover{
+        background-color: $dark-grey;
+        color: $pearl;
+        border-bottom: 1px dashed$pearl;
+      }
+    }
+    .ant-select-dropdown-menu-item-selected,
+    .ant-select-dropdown-menu-item-selected:hover{
+      background: rgba(0, 0, 0, 0.4);
+      color: $pearl;
+      border-bottom:1px dashed $pearl;
     }
   }
+}
+
+
+
+.ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:after,
+.ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:hover:after{
+  color: $pearl;
 }
