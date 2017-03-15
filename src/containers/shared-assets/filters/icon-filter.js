@@ -9,12 +9,25 @@ const IconFilter = (props) => {
     return Object.assign({}, query, {[filter]: icon_url});
   };
 
-  const isRarity = icon =>{
-    return filter === 'rarity' ? icon.name.toLowerCase() : icon.url;
+
+  // const isManaCrystal = icon =>{
+  //   return filter === 'cost' ?  : icon.url;
+  // };
+
+  const iconUrl = icon =>{
+    switch(filter){
+      case 'rarity': return `rarity`;
+      case 'cost':   return `mana-${icon.url}`;
+      default: return icon.url;
+    }
   };
 
-  const isManaCrystal = icon =>{
-    return filter === 'cost' ? `mana-${icon.url}` : icon.url;
+  const iconName = icon =>{
+    switch(filter){
+      case 'rarity': return icon.name.toLowerCase();
+      case 'cost':   return icon.name;
+      default: return icon.url;
+    }
   };
 
   const showTooltip = icon =>{
@@ -32,8 +45,9 @@ const IconFilter = (props) => {
     return (
       icon_filters[filter].map((icon, index) =>
         <li key={index}>
-          <Link to={{pathname: 'cards', query: queries(isRarity(icon))}}>
-            <span className={`hs-icon ${isRarity(icon)} icon-${isManaCrystal(icon)} ${query[icon] === icon.url ? 'active' : ''}`}></span>
+          <Link to={{pathname: 'cards', query: queries(iconName(icon))}}>
+            {console.log(query[filter], iconName(icon))}
+            <span className={`hs-icon ${iconName(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
             {showTooltip(icon)}
           </Link>
         </li>
