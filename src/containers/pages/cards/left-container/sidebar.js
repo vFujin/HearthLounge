@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import 'react-select/dist/react-select.css';
 import {IsGoldenFilter} from '../../../shared-assets/filters/is-golden';
 import IconFilter from '../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../shared-assets/filters/input-filter';
 
-export class Sidebar extends Component {
+const Sidebar = props => {
+  const {faction, mechanics, query, race, type} = props;
+  return (
+      <div className="sidebar">
+        <h3 className="filter-header">Filters</h3>
 
-  render() {
-    return (
-        <div className="sidebar">
-          <h3 className="filter-header">Filters</h3>
+        <InputFilter attribute={race}      filter="race"/>
+        <InputFilter attribute={mechanics} filter="mechanics"/>
+        <InputFilter attribute={faction}   filter="faction"/>
+        <InputFilter attribute={type}      filter="type"/>
 
-          <InputFilter attribute={this.props.race} filter="race"/>
-          <InputFilter attribute={this.props.mechanics} filter="mechanics"/>
-          <InputFilter attribute={this.props.faction} filter="faction"/>
-          <InputFilter attribute={this.props.type} filter="type"/>
+        <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons"/>
+        <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons"/>
+        <IconFilter header={true} filter="rarity"     query={query} tooltip={true} wrapper_class="sidebar-icons"/>
 
-          <IconFilter header={true} filter="expansions" query={this.props.query} tooltip={true} wrapper_class="sidebar-icons"/>
-          <IconFilter header={true} filter="adventures" query={this.props.query} tooltip={true} wrapper_class="sidebar-icons"/>
-          <IconFilter header={true} filter="rarity"     query={this.props.query} tooltip={true} wrapper_class="sidebar-icons"/>
+        <IsGoldenFilter/>
 
-          <IsGoldenFilter/>
+      </div>
+  );
+};
 
-        </div>
-    );
-  }
-}
+Sidebar.propTypes = {
+  faction: React.PropTypes.string,
+  mechanics: React.PropTypes.string,
+  query: React.PropTypes.object,
+  race: React.PropTypes.string,
+  type: React.PropTypes.string,
+};
+
+export default Sidebar;
