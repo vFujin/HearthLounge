@@ -222,43 +222,43 @@ export const icon_filters = {
   ],
   cost: [
     {
-      name: 0,
+      name: '0',
       url: 0
     },
     {
-      name: 1,
+      name: '1',
       url: 1
     },
     {
-      name: 2,
+      name: '2',
       url: 2
     },
     {
-      name: 3,
+      name: '3',
       url: 3
     },
     {
-      name: 4,
+      name: '4',
       url: 4
     },
     {
-      name: 5,
+      name: '5',
       url: 5
     },
     {
-      name: 6,
+      name: '6',
       url: 6
     },
     {
-      name: 7,
+      name: '7',
       url: 7
     },
     {
-      name: 8,
+      name: '8',
       url: 8
     },
     {
-      name: 10,
+      name: '10',
       url: 10
     }
   ],

@@ -25,11 +25,11 @@ const Sidebar = props => {
 };
 
 Sidebar.propTypes = {
-  faction: React.PropTypes.string,
-  mechanics: React.PropTypes.string,
+  faction: React.PropTypes.array,
+  mechanics: React.PropTypes.array,
   query: React.PropTypes.object,
-  race: React.PropTypes.string,
-  type: React.PropTypes.string,
+  race: React.PropTypes.array,
+  type: React.PropTypes.array,
 };
 
 export default Sidebar;

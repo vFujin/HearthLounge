@@ -6,6 +6,7 @@ export class Cards extends Component {
   constructor(props){
     super(props);
     this.state = {
+      cards: [],
       cardName: null,
       faction: [],
       mechanics: [],
@@ -31,6 +32,7 @@ export class Cards extends Component {
       .then(r=>r.json())
       .then(data => {
           this.setState({
+            cards: data,
             mechanics: filterAttribute(data, 'mechanics'),
             faction: filterAttribute(data, 'faction'),
             race: filterAttribute(data, 'race'),
@@ -53,7 +55,14 @@ export class Cards extends Component {
             </div>
             <div className="right-container">
                 <CardsTopbarFilters query={query}/>
-                {this.props.children}
+
+              <ul className="cards-container">
+                {this.state.cards.slice(1, 100).map(x=>x).filter(x=>x.artist).map(card=>
+                    <li key={card.id}>
+                      <img src={`http://media.services.zam.com/v1/media/byName/hs/cards/enus/${card.id}.png`} alt={card.name} />
+                    </li>
+                )}
+              </ul>
             </div>
         </div>
     );

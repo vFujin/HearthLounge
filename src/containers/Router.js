@@ -80,9 +80,7 @@ export class App extends Component {
 
           {/*<Redirect from="cards" to="cards/all" />*/}
           <Route path="cards"             component={Cards}>
-            <Route path="all"             component={ServiceCards}/>
-            <Route path="cards/(:)"       component={ServiceCards}>
-            </Route>
+            <Route path=":filters"      component={ServiceCards}/>
           </Route>
 
           <Redirect from="arena-picker" to="arena-picker/class-selection" />
