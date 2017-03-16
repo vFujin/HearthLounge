@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
+import Loader from '../../shared-assets/loader';
 
 export class Cards extends Component {
   constructor(props){
@@ -39,6 +40,7 @@ export class Cards extends Component {
     })
       .then(r=>r.json())
       .then(data => {
+        let allData = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
         const collectible = data["Basic"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
         this.setState({
           cards: collectible,
@@ -49,6 +51,7 @@ export class Cards extends Component {
         })
       })
   }
+
 
   handleCardClick(e, card){
     let target = e.target;
@@ -63,12 +66,11 @@ export class Cards extends Component {
 
   listCards(){
     if(this.state.cards < 1){
-      return <div>Loading</div>
+      return <Loader/>
     }
     else {
       return (
-          this.state.cards.map(card=>
-
+        this.state.cards.map(card=>
           <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!card.race && this.state.active_race === true ? "display-none" : ""}>
             <img src={card.img} alt={card.name} />
           </li>
