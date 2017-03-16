@@ -9,11 +9,6 @@ const IconFilter = (props) => {
     return Object.assign({}, query, {[filter]: icon_url});
   };
 
-
-  // const isManaCrystal = icon =>{
-  //   return filter === 'cost' ?  : icon.url;
-  // };
-
   const iconUrl = icon =>{
     switch(filter){
       case 'rarity': return `rarity`;
@@ -44,9 +39,8 @@ const IconFilter = (props) => {
   const listIcons = () => {
     return (
       icon_filters[filter].map((icon, index) =>
-        <li key={index}>
+        <li onClick={(e)=>props.handleIconClick(e)} key={index} id={iconName(icon)}>
           <Link to={{pathname: 'cards', query: queries(iconName(icon))}}>
-            {console.log(query[filter], iconName(icon))}
             <span className={`hs-icon ${iconName(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
             {showTooltip(icon)}
           </Link>

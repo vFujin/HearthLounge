@@ -4,9 +4,8 @@ import 'antd/lib/select/style/css';
 
 const InputFilter = props => {
 
-  const {attribute, filter} = props;
+  const {attribute, filter, handleInputChange} = props;
   const Option = Select.Option;
-
   const options = attribute.map(a=> (
         <Option value={a} key={a}>{a}</Option>
       ));
@@ -17,7 +16,7 @@ const InputFilter = props => {
         <h4>{filter}</h4>
         <Select multiple
                 style={{width: "100%"}}
-                placeholder={`${placeholder}...`} onChange={(e)=>props.handleInputChange(e)}>
+                placeholder={`${placeholder}...`} onChange={(e)=>handleInputChange(e)}>
           {options}
         </Select>
       </div>

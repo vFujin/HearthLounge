@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
+
 let s = [];
+
 export class Cards extends Component {
   constructor(props){
     super(props);
     this.state = {
+      name: [],
       cards: [],
       cardName: null,
       faction: [],
@@ -27,6 +30,7 @@ export class Cards extends Component {
       let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
       console.log();
       switch(attribute){
+        case 'name':
         case 'faction':
         case 'race':
         case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
@@ -44,12 +48,13 @@ export class Cards extends Component {
     })
       .then(r=>r.json())
       .then(data => {
-        // let allData = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
+        // let d = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
         let d = data["Basic"];
-        const collectible = data["Basic"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
+        const collectible = d.filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
         console.log(collectible);
         this.setState({
           cards: collectible,
+          name: filterAttribute(d, 'name'),
           mechanics: filterAttribute(d, 'mechanics'),
           faction: filterAttribute(d, 'faction'),
           race: filterAttribute(d, 'race'),
@@ -66,17 +71,30 @@ export class Cards extends Component {
   }
 
   handleInputChange(values) {
-
     this.setState({
       active_input: values < 1 ? false : true,
-      // active_values: values
+      active_values: values
     });
-    console.log(values, s.push(values), s)
-    s.concat(values);
   };
 
+  handleIconClick(e){
+    this.setState({
+      active_input: true
+    })
+  }
+
   containAttr(card, attr){
-    return this.state.active_values.indexOf(card[attr]) > -1;
+    switch(attr){
+      case 'name':
+      case 'faction':
+      case 'race':
+      case 'type':
+      case 'mechanics': return this.state.active_values.indexOf(card[attr]) > -1;
+      case 'cost':
+      case 'adventures':
+      case 'expansions':
+      case 'rarity': if(this.props.location.query[attr] !== undefined) return this.props.location.query[attr].indexOf(card[attr]) > -1;
+    }
   }
 
 
@@ -85,9 +103,10 @@ export class Cards extends Component {
       return <Loader/>
     }
     else {
+
       return (
         this.state.cards.map(card=>
-          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, 'cost')) && this.state.active_input === true ? "display-none" : ""}>
+          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, 'name')) && this.state.active_input === true ? "display-none" : ""}>
             <img src={card.img} alt={card.name} />
           </li>
         )
@@ -97,18 +116,22 @@ export class Cards extends Component {
 
   render() {
     let query = this.props.location.query;
+
+    console.log("cards: " + this.state.name);
     return (
         <div className="pageContainer cards">
             <div className="left-container">
-                <Sidebar race={this.state.race}
+                <Sidebar name={this.state.name}
+                         race={this.state.race}
                          mechanics={this.state.mechanics}
                          type={this.state.type}
                          faction={this.state.faction}
                          query={query}
-                         handleInputChange={(v)=>this.handleInputChange(v)}/>
+                         handleInputChange={(v)=>this.handleInputChange(v)}
+                         handleIconClick={(e)=>this.handleIconClick(e)}/>
             </div>
             <div className="right-container">
-                <CardsTopbarFilters query={query}/>
+                <CardsTopbarFilters query={query}  handleIconClick={(e)=>this.handleIconClick(e)}/>
 
               <ul className="cards-container">
                 {this.listCards()}
