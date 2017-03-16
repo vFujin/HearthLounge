@@ -4,15 +4,15 @@ import IconFilter from '../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../shared-assets/filters/input-filter';
 
 const Sidebar = props => {
-  const {faction, mechanics, query, race, type} = props;
+  const {faction, handleInputChange, mechanics, query, race, type} = props;
   return (
       <div className="sidebar">
         <h3 className="filter-header">Filters</h3>
 
-        <InputFilter attribute={race}      filter="race"        handleInputChange={props.handleInputChange}/>
+        <InputFilter attribute={race}      filter="race"        handleInputChange={handleInputChange}/>
         <InputFilter attribute={mechanics} filter="mechanics"/>
-        <InputFilter attribute={faction}   filter="faction"/>
-        <InputFilter attribute={type}      filter="type"/>
+        <InputFilter attribute={faction}   filter="faction"     handleInputChange={handleInputchange}/>
+        <InputFilter attribute={type}      filter="type"        handleInputChange={handleInputchange}/>
 
         <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons"/>
         <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons"/>
@@ -26,6 +26,7 @@ const Sidebar = props => {
 
 Sidebar.propTypes = {
   faction: React.PropTypes.array,
+  handleInputChange: React.PropTypes.func,
   mechanics: React.PropTypes.array,
   query: React.PropTypes.object,
   race: React.PropTypes.array,
