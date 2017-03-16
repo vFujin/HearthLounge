@@ -3132,7 +3132,7 @@ footer {
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
-      background-color: transparent;
+      background-color: #A69E9D;
       color: #E7E2DA;
       border: 1px solid #E7E2DA; }
       .ant-select .ant-select-selection .ant-select-selection__rendered ul .ant-select-selection__choice span {
