@@ -2,7 +2,7 @@ import React from 'react';
 import { adventure_details } from '../../../../data/adventure-details';
 
 const AdventureClassChallanges = props => {
-  const {adventure, cards, details} = props;
+  const {adventure,  details} = props;
 
   const listClassChallengeCards = (adventure_details_element) =>{
     return (
@@ -30,7 +30,7 @@ const AdventureClassChallanges = props => {
 
 AdventureClassChallanges.propTypes = {
   adventure: React.PropTypes.string.isRequired,
-  cards: React.PropTypes.array,
+  // cards: React.PropTypes.array,
   details: React.PropTypes.string.isRequired
 };
 

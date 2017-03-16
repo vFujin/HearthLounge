@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ExpansionCards = props => {
-  const {cards, topbarActiveTabUrl} = props;
+  const {topbarActiveTabUrl} = props;
 
   const listCards = () =>{
     return;
@@ -15,7 +15,7 @@ const ExpansionCards = props => {
 };
 
 ExpansionCards.propTypes = {
-  cards: React.PropTypes.array,
+  // cards: React.PropTypes.array,
   topbarActiveTabUrl: React.PropTypes.string.isRequired
 };
 

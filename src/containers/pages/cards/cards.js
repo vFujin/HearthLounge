@@ -29,8 +29,9 @@ export class Cards extends Component {
       switch(attribute){
         case 'faction':
         case 'race':
-        case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) == i);
-        case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) == i);
+        case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
+        case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
+        default: return null;
       }
     };
 
@@ -42,7 +43,7 @@ export class Cards extends Component {
     })
       .then(r=>r.json())
       .then(data => {
-        let allData = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
+        // let allData = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
         const collectible = data["Blackrock Mountain"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
         console.log(collectible);
         this.setState({
@@ -57,7 +58,7 @@ export class Cards extends Component {
 
 
   handleCardClick(e, card){
-    let target = e.target;
+    // let target = e.target;
     console.log(card);
   }
 
