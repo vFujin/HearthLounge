@@ -11,8 +11,8 @@ const Sidebar = props => {
 
         <InputFilter attribute={race}      filter="race"        handleInputChange={handleInputChange}/>
         <InputFilter attribute={mechanics} filter="mechanics"/>
-        <InputFilter attribute={faction}   filter="faction"     handleInputChange={handleInputchange}/>
-        <InputFilter attribute={type}      filter="type"        handleInputChange={handleInputchange}/>
+        <InputFilter attribute={faction}   filter="faction"     handleInputChange={handleInputChange}/>
+        <InputFilter attribute={type}      filter="type"        handleInputChange={handleInputChange}/>
 
         <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons"/>
         <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons"/>

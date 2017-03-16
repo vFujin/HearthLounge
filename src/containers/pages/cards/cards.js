@@ -16,7 +16,7 @@ export class Cards extends Component {
 
       //Input filters
       active_input: false,
-      active_race: []
+      active_values: []
     }
   }
 
@@ -41,7 +41,9 @@ export class Cards extends Component {
       .then(r=>r.json())
       .then(data => {
         let allData = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
-        const collectible = data["Basic"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
+
+        const collectible = data["Blackrock Mountain"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
+        console.log(collectible);
         this.setState({
           cards: collectible,
           mechanics: filterAttribute(data["Basic"], 'mechanics'),
@@ -59,14 +61,17 @@ export class Cards extends Component {
   }
 
   handleInputChange(values) {
+    let s = []; let x = s.push(values);
+    console.log(x);
     this.setState({
       active_input: values < 1 ? false : true,
-      active_race: values
+      active_values: values
     })
+
   };
 
   containAttr(card, attr){
-    return this.state[`active_${attr}`].indexOf(card[attr]) > -1;
+    return this.state.active_values.indexOf(card[attr]) > -1;
   }
 
   listCards(){
@@ -74,6 +79,7 @@ export class Cards extends Component {
       return <Loader/>
     }
     else {
+      console.log(this.state.active_values)
       return (
         this.state.cards.map(card=>
           <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, 'race')) && this.state.active_input === true ? "display-none" : ""}>
