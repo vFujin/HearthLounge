@@ -63,8 +63,7 @@ export class Cards extends Component {
   }
 
   handleInputChange(values) {
-    let s = []; let x = s.push(values);
-    console.log(x);
+
     this.setState({
       active_input: values < 1 ? false : true,
       active_values: values
