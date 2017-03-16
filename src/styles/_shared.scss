@@ -231,6 +231,9 @@ body {
         @include transition(all ease .4s);
         color: $dark-grey;
       }
+      .mana.active{
+        color: navy;
+      }
       &:first-child {
         margin-left: 5px;
       }

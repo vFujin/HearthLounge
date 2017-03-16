@@ -1395,6 +1395,8 @@ body {
         -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         color: #474143; }
+      .topbar .topbar-left li .mana.active, .topbar .topbar-right li .mana.active {
+        color: navy; }
       .topbar .topbar-left li:first-child, .topbar .topbar-right li:first-child {
         margin-left: 5px; }
       .topbar .topbar-left li:last-child, .topbar .topbar-right li:last-child {

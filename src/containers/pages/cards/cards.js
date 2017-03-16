@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
-
+let s = [];
 export class Cards extends Component {
   constructor(props){
     super(props);
@@ -24,12 +24,13 @@ export class Cards extends Component {
 
 
     const filterAttribute = (data, attribute) =>{
-
       let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
+      console.log();
       switch(attribute){
         case 'faction':
         case 'race':
         case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
+        case 'cost': return data.filter(x=>x.cost).map(x=>x.cost).filter((x, i, a)=>a.indexOf(x) === i);
         case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
         default: return null;
       }
@@ -44,14 +45,16 @@ export class Cards extends Component {
       .then(r=>r.json())
       .then(data => {
         // let allData = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
-        const collectible = data["Blackrock Mountain"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
+        let d = data["Basic"];
+        const collectible = data["Basic"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
         console.log(collectible);
         this.setState({
           cards: collectible,
-          mechanics: filterAttribute(data["Basic"], 'mechanics'),
-          faction: filterAttribute(data["Basic"], 'faction'),
-          race: filterAttribute(data["Basic"], 'race'),
-          type: filterAttribute(data["Basic"], 'type'),
+          mechanics: filterAttribute(d, 'mechanics'),
+          faction: filterAttribute(d, 'faction'),
+          race: filterAttribute(d, 'race'),
+          type: filterAttribute(d, 'type'),
+          cost: filterAttribute(d, 'cost')
         })
       })
   }
@@ -66,14 +69,16 @@ export class Cards extends Component {
 
     this.setState({
       active_input: values < 1 ? false : true,
-      active_values: values
-    })
-
+      // active_values: values
+    });
+    console.log(values, s.push(values), s)
+    s.concat(values);
   };
 
   containAttr(card, attr){
     return this.state.active_values.indexOf(card[attr]) > -1;
   }
+
 
   listCards(){
     if(this.state.cards < 1){
@@ -82,7 +87,7 @@ export class Cards extends Component {
     else {
       return (
         this.state.cards.map(card=>
-          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, 'race')) && this.state.active_input === true ? "display-none" : ""}>
+          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, 'cost')) && this.state.active_input === true ? "display-none" : ""}>
             <img src={card.img} alt={card.name} />
           </li>
         )
