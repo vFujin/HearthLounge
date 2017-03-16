@@ -15,7 +15,8 @@ export class Cards extends Component {
       type: [],
 
       //Input filters
-      active_race: false
+      active_input: false,
+      active_race: []
     }
   }
 
@@ -34,8 +35,7 @@ export class Cards extends Component {
 
     fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/cards`, {
       headers: {
-        'X-Mashape-Key': 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q',
-        'Cache-Control': 'max-age=60'
+        'X-Mashape-Key': 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q'
       }
     })
       .then(r=>r.json())
@@ -60,9 +60,14 @@ export class Cards extends Component {
 
   handleInputChange(values) {
     this.setState({
-      active_race: values < 1 ? false : true
+      active_input: values < 1 ? false : true,
+      active_race: values
     })
   };
+
+  containAttr(card, attr){
+    return this.state[`active_${attr}`].indexOf(card[attr]) > -1;
+  }
 
   listCards(){
     if(this.state.cards < 1){
@@ -71,7 +76,7 @@ export class Cards extends Component {
     else {
       return (
         this.state.cards.map(card=>
-          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!card.race && this.state.active_race === true ? "display-none" : ""}>
+          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, 'race')) && this.state.active_input === true ? "display-none" : ""}>
             <img src={card.img} alt={card.name} />
           </li>
         )
