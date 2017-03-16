@@ -9,16 +9,18 @@ const Sidebar = props => {
       <div className="sidebar">
         <h3 className="filter-header">Filters</h3>
 
-        <InputFilter attribute={race}      filter="race"        handleInputChange={handleInputChange}/>
-        <InputFilter attribute={mechanics} filter="mechanics"/>
-        <InputFilter attribute={faction}   filter="faction"     handleInputChange={handleInputChange}/>
-        <InputFilter attribute={type}      filter="type"        handleInputChange={handleInputChange}/>
+
+        <InputFilter attribute={race}      filter="race"      handleInputChange={handleInputChange}/>
+        <InputFilter attribute={mechanics} filter="mechanics" handleInputChange={handleInputChange}/>
+        <InputFilter attribute={faction}   filter="faction"   handleInputChange={handleInputChange}/>
+        <InputFilter attribute={type}      filter="type"      handleInputChange={handleInputChange}/>
 
         <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons"/>
         <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons"/>
         <IconFilter header={true} filter="rarity"     query={query} tooltip={true} wrapper_class="sidebar-icons"/>
 
         <IsGoldenFilter/>
+
 
       </div>
   );

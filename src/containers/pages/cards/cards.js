@@ -22,16 +22,18 @@ export class Cards extends Component {
 
   componentDidMount(){
 
-    const filterAttribute = (data, attribute) =>{
-      let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
 
+    const filterAttribute = (data, attribute) =>{
+
+      let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
       switch(attribute){
         case 'faction':
         case 'race':
         case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) == i);
-        case 'mechanics': return initialFiltering.map(x=>x[0]).filter((x, i, a)=>a.indexOf(x) == i);
+        case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) == i);
       }
     };
+
 
     fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/cards`, {
       headers: {
@@ -41,7 +43,6 @@ export class Cards extends Component {
       .then(r=>r.json())
       .then(data => {
         let allData = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
-
         const collectible = data["Blackrock Mountain"].filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
         console.log(collectible);
         this.setState({
@@ -79,7 +80,6 @@ export class Cards extends Component {
       return <Loader/>
     }
     else {
-      console.log(this.state.active_values)
       return (
         this.state.cards.map(card=>
           <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, 'race')) && this.state.active_input === true ? "display-none" : ""}>
@@ -92,8 +92,6 @@ export class Cards extends Component {
 
   render() {
     let query = this.props.location.query;
-    //
-    // console.log(this.state.active_race.map(x=>x)[0]);
     return (
         <div className="pageContainer cards">
             <div className="left-container">
