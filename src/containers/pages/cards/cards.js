@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
-
-let s = [];
+import {browserHistory} from 'react-router';
 
 export class Cards extends Component {
   constructor(props){
@@ -51,7 +50,7 @@ export class Cards extends Component {
         // let d = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
         let d = data["Basic"];
         const collectible = d.filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
-        console.log(collectible);
+        // console.log(collectible);
         this.setState({
           cards: collectible,
           name: filterAttribute(d, 'name'),
@@ -83,6 +82,28 @@ export class Cards extends Component {
     })
   }
 
+  handleInputOptionDeselect(e, filter){
+    let queries = this.props.location.query;
+    switch(filter){
+      case 'name': {
+        const {name, ...destructedQueries} = queries;
+        console.log(queries, destructedQueries);
+        if(destructedQueries !== '') {
+          browserHistory.push('/cards?'+destructedQueries);
+        }
+        break;
+      }
+      case 'race': {
+        const {race, ...destructedQueries} = queries;
+        console.log(queries, destructedQueries);
+        if(destructedQueries !== '') {
+          browserHistory.push('/cards?'+destructedQueries);
+        }
+      }
+    }
+  }
+
+
   containAttr(card, attr){
     switch(attr){
       case 'name':
@@ -103,10 +124,10 @@ export class Cards extends Component {
       return <Loader/>
     }
     else {
-
+      const queries = Object.keys(this.props.location.query);
       return (
         this.state.cards.map(card=>
-          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, 'name')) && this.state.active_input === true ? "display-none" : ""}>
+          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, queries)) && this.state.active_input === true ? "display-none" : ""}>
             <img src={card.img} alt={card.name} />
           </li>
         )
@@ -117,7 +138,6 @@ export class Cards extends Component {
   render() {
     let query = this.props.location.query;
 
-    console.log("cards: " + this.state.name);
     return (
         <div className="pageContainer cards">
             <div className="left-container">
@@ -128,6 +148,7 @@ export class Cards extends Component {
                          faction={this.state.faction}
                          query={query}
                          handleInputChange={(v)=>this.handleInputChange(v)}
+                         handleInputOptionDeselect={(v, filter)=>this.handleInputOptionDeselect(v, filter)}
                          handleIconClick={(e)=>this.handleIconClick(e)}/>
             </div>
             <div className="right-container">

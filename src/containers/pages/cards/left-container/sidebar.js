@@ -10,11 +10,11 @@ const Sidebar = props => {
         <h3 className="filter-header">Filters</h3>
 
 
-        <InputFilter attribute={name}      filter="name"      handleInputChange={handleInputChange}/>
-        <InputFilter attribute={race}      filter="race"      handleInputChange={handleInputChange}/>
-        <InputFilter attribute={mechanics} filter="mechanics" handleInputChange={handleInputChange}/>
-        <InputFilter attribute={faction}   filter="faction"   handleInputChange={handleInputChange}/>
-        <InputFilter attribute={type}      filter="type"      handleInputChange={handleInputChange}/>
+        <InputFilter attribute={name}      filter="name"      query={query} handleInputChange={handleInputChange} handleInputOptionDeselect={props.handleInputOptionDeselect}/>
+        <InputFilter attribute={race}      filter="race"      query={query} handleInputChange={handleInputChange} handleInputOptionDeselect={props.handleInputOptionDeselect}/>
+        <InputFilter attribute={mechanics} filter="mechanics" query={query} handleInputChange={handleInputChange} handleInputOptionDeselect={props.handleInputOptionDeselect}/>
+        <InputFilter attribute={faction}   filter="faction"   query={query} handleInputChange={handleInputChange} handleInputOptionDeselect={props.handleInputOptionDeselect}/>
+        <InputFilter attribute={type}      filter="type"      query={query} handleInputChange={handleInputChange} handleInputOptionDeselect={props.handleInputOptionDeselect}/>
 
         <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
         <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
@@ -31,7 +31,7 @@ Sidebar.propTypes = {
   handleInputChange: React.PropTypes.func,
   handleIconClick: React.PropTypes.func,
   mechanics: React.PropTypes.array,
-  name: React.PropTypes.string,
+  name: React.PropTypes.array,
   query: React.PropTypes.object,
   race: React.PropTypes.array,
   type: React.PropTypes.array,
