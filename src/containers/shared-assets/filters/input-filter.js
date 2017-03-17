@@ -23,5 +23,10 @@ const InputFilter = props => {
   );
 };
 
+InputFilter.propTypes = {
+  attribute: React.PropTypes.array,
+  filter: React.PropTypes.string,
+  handleInputChange: React.PropTypes.func
+};
 
 export default InputFilter;
