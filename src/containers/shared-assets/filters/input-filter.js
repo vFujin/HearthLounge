@@ -1,7 +1,6 @@
 import React from 'react';
 import Select from 'antd/lib/select';
-import {Link} from 'react-router';
-import{removeQuery} from '../../../utils/utils-router';
+import{addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
 
 const InputFilter = props => {
@@ -14,10 +13,8 @@ const InputFilter = props => {
   };
 
   const options = attribute.map(a=> (
-        <Option value={a} key={a}>
-          <Link to={{pathname: 'cards', query: queries(a)}}>{a}</Link>
-        </Option>
-      ));
+      <Option optionIndex={a} option={a} value={a} key={a}>{a}</Option>
+  ));
 
   const placeholder = attribute.slice(0,3).map(x=>x).join(", ").toLowerCase();
   return (
@@ -25,7 +22,7 @@ const InputFilter = props => {
         <h4>{filter}</h4>
         <Select multiple
                 style={{width: "100%"}}
-                placeholder={`${placeholder}...`} onChange={(e)=>handleInputChange(e)} onDeselect={()=>removeQuery(filter)}>
+                placeholder={`${placeholder}...`} onChange={(e)=>handleInputChange(e, addQuery(queries(e)))} onDeselect={()=>removeQuery(filter)}>
           {options}
         </Select>
       </div>

@@ -69,7 +69,8 @@ export class Cards extends Component {
     console.log(card);
   }
 
-  handleInputChange(values) {
+  handleInputChange(values, queries) {
+    console.log(queries);
     this.setState({
       active_input: values < 1 ? false : true,
       active_values: values
@@ -126,7 +127,7 @@ export class Cards extends Component {
                          type={this.state.type}
                          faction={this.state.faction}
                          query={query}
-                         handleInputChange={(v)=>this.handleInputChange(v)}
+                         handleInputChange={(v, q)=>this.handleInputChange(v, q)}
                          handleIconClick={(e)=>this.handleIconClick(e)}/>
             </div>
             <div className="right-container">
