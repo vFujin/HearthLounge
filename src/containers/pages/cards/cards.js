@@ -82,27 +82,6 @@ export class Cards extends Component {
     })
   }
 
-  handleInputOptionDeselect(e, filter){
-    let queries = this.props.location.query;
-    switch(filter){
-      case 'name': {
-        const {name, ...destructedQueries} = queries;
-        console.log(queries, destructedQueries);
-        if(destructedQueries !== '') {
-          browserHistory.push('/cards?'+destructedQueries);
-        }
-        break;
-      }
-      case 'race': {
-        const {race, ...destructedQueries} = queries;
-        console.log(queries, destructedQueries);
-        if(destructedQueries !== '') {
-          browserHistory.push('/cards?'+destructedQueries);
-        }
-      }
-    }
-  }
-
 
   containAttr(card, attr){
     switch(attr){
@@ -148,7 +127,6 @@ export class Cards extends Component {
                          faction={this.state.faction}
                          query={query}
                          handleInputChange={(v)=>this.handleInputChange(v)}
-                         handleInputOptionDeselect={(v, filter)=>this.handleInputOptionDeselect(v, filter)}
                          handleIconClick={(e)=>this.handleIconClick(e)}/>
             </div>
             <div className="right-container">

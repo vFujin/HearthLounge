@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'antd/lib/select';
 import {Link} from 'react-router';
+import{removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
 
 const InputFilter = props => {
@@ -24,7 +25,7 @@ const InputFilter = props => {
         <h4>{filter}</h4>
         <Select multiple
                 style={{width: "100%"}}
-                placeholder={`${placeholder}...`} onChange={(e)=>handleInputChange(e)} onDeselect={(e)=>props.handleInputOptionDeselect(e, filter)}>
+                placeholder={`${placeholder}...`} onChange={(e)=>handleInputChange(e)} onDeselect={()=>removeQuery(filter)}>
           {options}
         </Select>
       </div>
