@@ -3179,6 +3179,7 @@ footer {
       .ant-select-dropdown ul li:last-child:hover {
         border-bottom: 0; }
   .ant-select-dropdown ul .ant-select-dropdown-menu-item-selected,
+  .ant-select-dropdown ul .ant-select-dropdown-menu-item-active,
   .ant-select-dropdown ul .ant-select-dropdown-menu-item-selected:hover {
     background: rgba(0, 0, 0, 0.4);
     color: #E7E2DA;

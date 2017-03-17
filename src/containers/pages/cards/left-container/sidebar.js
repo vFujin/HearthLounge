@@ -10,11 +10,11 @@ const Sidebar = props => {
         <h3 className="filter-header">Filters</h3>
 
 
-        <InputFilter attribute={name}      filter="name"      query={query} handleInputChange={handleInputChange}/>
-        <InputFilter attribute={race}      filter="race"      query={query} handleInputChange={handleInputChange}/>
-        <InputFilter attribute={mechanics} filter="mechanics" query={query} handleInputChange={handleInputChange}/>
-        <InputFilter attribute={faction}   filter="faction"   query={query} handleInputChange={handleInputChange}/>
-        <InputFilter attribute={type}      filter="type"      query={query} handleInputChange={handleInputChange}/>
+        <InputFilter attribute={name}      filter="name"      query={query} handleInputChange={handleInputChange} multiple={false}/>
+        <InputFilter attribute={race}      filter="race"      query={query} handleInputChange={handleInputChange} multiple={true}/>
+        <InputFilter attribute={mechanics} filter="mechanics" query={query} handleInputChange={handleInputChange} multiple={true}/>
+        <InputFilter attribute={faction}   filter="faction"   query={query} handleInputChange={handleInputChange} multiple={true}/>
+        <InputFilter attribute={type}      filter="type"      query={query} handleInputChange={handleInputChange} multiple={true}/>
 
         <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
         <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>

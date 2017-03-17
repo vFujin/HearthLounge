@@ -49,6 +49,12 @@ export class Cards extends Component {
         // let d = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
         let d = data["Basic"];
         const collectible = d.filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
+        let keys = Object.keys(this.props.location.query);
+        let values = Object.values(this.props.location.query);
+        // let k = Object.assign.apply({}, keys);
+        // let v = Object.assign.apply({}, values);
+        // console.log(k, v);
+        // console.log(this.props.location.query, collectible.filter(x=>x[k] === this.props.location[v]));
         // console.log(collectible);
         this.setState({
           cards: collectible,
@@ -61,6 +67,7 @@ export class Cards extends Component {
         })
       })
   }
+
 
 
   handleCardClick(e, card){
@@ -81,14 +88,18 @@ export class Cards extends Component {
     })
   }
 
+  cA(card){
+    let keys = Object.keys(this.props.location.query);
+    let values = Object.values(this.props.location.query);
+    console.log(keys, card.hasOwnProperty(keys));
+  }
 
   containAttr(card, attr){
+    const input_filters = ['name', 'faction', 'mechanics', 'race', 'type'];
+    const icon_filters = ['adventures', 'cost,', 'expansions', 'rarity'];
+
     switch(attr){
-      case 'name':
-      case 'faction':
-      case 'race':
-      case 'type':
-      case 'mechanics': return this.state.active_values.indexOf(card[attr]) > -1;
+      case input_filters.map(x=>x): return this.state.active_values.indexOf(card[attr]) > -1;
       case 'cost':
       case 'adventures':
       case 'expansions':
@@ -99,21 +110,21 @@ export class Cards extends Component {
 
   listCards(){
     const queries = Object.keys(this.props.location.query);
-
     if(this.state.cards < 1){
-      return <Loader/>
+      return <Loader/>;
     }
+    console.log(queries, Object.values(this.props.location.query));
     return (
       this.state.cards.map(card=>
         <li key={card.cardId}
             onClick={(e)=>this.handleCardClick(e, card)}
-            className={!(this.containAttr(card, queries)) && this.state.active_input === true ? "display-none" : ""}>
+            className={this.cA(card) ? "display-none" : ""}>
           <img src={card.img} alt={card.name} />
         </li>
       )
     )
-
   }
+
 
   render() {
     let query = this.props.location.query;

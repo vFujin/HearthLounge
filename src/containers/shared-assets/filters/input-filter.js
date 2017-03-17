@@ -19,11 +19,13 @@ const InputFilter = props => {
   return (
       <div className="input-filter-wrapper">
         <h4>{filter}</h4>
-        <Select multiple
+        <Select multiple={props.multiple}
+                showSearch={props.multiple === false ? true : false}
                 style={{width: "100%"}}
                 placeholder={`${placeholder}...`}
                 onChange={(e)=>addQuery(queries(e))}
-                onDeselect={()=>removeQuery(filter)}>
+                onDeselect={()=>removeQuery(filter)}
+                value={query[filter]}>
           {options}
         </Select>
       </div>
@@ -36,5 +38,6 @@ InputFilter.propTypes = {
   handleInputChange: React.PropTypes.func,
   query: React.PropTypes.object
 };
+
 
 export default InputFilter;
