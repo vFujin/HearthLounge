@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
-import {browserHistory} from 'react-router';
 
 export class Cards extends Component {
   constructor(props){
@@ -69,15 +68,14 @@ export class Cards extends Component {
     console.log(card);
   }
 
-  handleInputChange(values, queries) {
-    console.log(queries);
+  handleInputChange(values) {
     this.setState({
       active_input: values < 1 ? false : true,
       active_values: values
     });
   };
 
-  handleIconClick(e){
+  handleIconClick(){
     this.setState({
       active_input: true
     })
@@ -100,19 +98,21 @@ export class Cards extends Component {
 
 
   listCards(){
+    const queries = Object.keys(this.props.location.query);
+
     if(this.state.cards < 1){
       return <Loader/>
     }
-    else {
-      const queries = Object.keys(this.props.location.query);
-      return (
-        this.state.cards.map(card=>
-          <li key={card.cardId} onClick={(e)=>this.handleCardClick(e, card)} className={!(this.containAttr(card, queries)) && this.state.active_input === true ? "display-none" : ""}>
-            <img src={card.img} alt={card.name} />
-          </li>
-        )
+    return (
+      this.state.cards.map(card=>
+        <li key={card.cardId}
+            onClick={(e)=>this.handleCardClick(e, card)}
+            className={!(this.containAttr(card, queries)) && this.state.active_input === true ? "display-none" : ""}>
+          <img src={card.img} alt={card.name} />
+        </li>
       )
-    }
+    )
+
   }
 
   render() {
@@ -127,7 +127,7 @@ export class Cards extends Component {
                          type={this.state.type}
                          faction={this.state.faction}
                          query={query}
-                         handleInputChange={(v, q)=>this.handleInputChange(v, q)}
+                         handleInputChange={()=>this.handleInputChange()}
                          handleIconClick={(e)=>this.handleIconClick(e)}/>
             </div>
             <div className="right-container">
