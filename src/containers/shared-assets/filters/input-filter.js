@@ -4,7 +4,7 @@ import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
 
 const InputFilter = props => {
-  const {attribute, filter, handleInputChange, query} = props;
+  const {attribute, filter, query} = props;
   const Option = Select.Option;
 
   const queries = attr =>{
@@ -36,7 +36,6 @@ const InputFilter = props => {
 InputFilter.propTypes = {
   attribute: React.PropTypes.array,
   filter: React.PropTypes.string,
-  handleInputChange: React.PropTypes.func,
   query: React.PropTypes.object
 };
 

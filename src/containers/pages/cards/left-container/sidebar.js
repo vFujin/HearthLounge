@@ -4,7 +4,7 @@ import IconFilter from '../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../shared-assets/filters/input-filter';
 
 const Sidebar = props => {
-  const {faction, handleInputChange, handleIconClick, mechanics, name,  query, race, type} = props;
+  const {faction, handleInputChange, mechanics, name,  query, race, type} = props;
   return (
       <div className="sidebar">
         <h3 className="filter-header">Filters</h3>
@@ -16,9 +16,9 @@ const Sidebar = props => {
         <InputFilter attribute={faction}   filter="faction"   query={query} handleInputChange={handleInputChange} multiple={true}/>
         <InputFilter attribute={type}      filter="type"      query={query} handleInputChange={handleInputChange} multiple={true}/>
 
-        <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
-        <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
-        <IconFilter header={true} filter="rarity"     query={query} tooltip={true} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
+        <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons" />
+        <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons" />
+        <IconFilter header={true} filter="rarity"     query={query} tooltip={true} wrapper_class="sidebar-icons" />
 
         <IsGoldenFilter/>
 
@@ -29,7 +29,6 @@ const Sidebar = props => {
 Sidebar.propTypes = {
   faction: React.PropTypes.array,
   handleInputChange: React.PropTypes.func,
-  handleIconClick: React.PropTypes.func,
   mechanics: React.PropTypes.array,
   name: React.PropTypes.array,
   query: React.PropTypes.object,

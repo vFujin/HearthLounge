@@ -40,7 +40,7 @@ const IconFilter = (props) => {
   const listIcons = () => {
     return (
       icon_filters[filter].map((icon, index) =>
-        <li onClick={(e)=>props.handleIconClick(e)} key={index} id={iconName(icon)}>
+        <li key={index} id={iconName(icon)}>
           <Link to={{pathname: 'cards', query: queries(iconName(icon))}}>
             <span id={`${filter}-set`} className={`hs-icon ${iconName(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
             {showTooltip(icon)}

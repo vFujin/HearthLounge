@@ -14,17 +14,13 @@ export class Cards extends Component {
       mechanics: [],
       race: [],
       type: [],
-
-      //Input filters
-      active_input: false,
-      active_values: []
     }
   }
 
   componentDidMount(){
     const filterAttribute = (data, attribute) =>{
       let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
-      // console.log(lowered);
+
       switch(attribute){
         case 'name':
         case 'faction':
@@ -68,16 +64,9 @@ export class Cards extends Component {
 
   handleInputChange(values) {
     this.setState({
-      active_input: values < 1 ? false : true,
       active_values: values
     });
   };
-
-  handleIconClick(){
-    this.setState({
-      active_input: true
-    })
-  }
 
   listCards(query){
     if(this.state.cards < 1){
@@ -120,8 +109,7 @@ export class Cards extends Component {
                          type={this.state.type}
                          faction={this.state.faction}
                          query={query}
-                         handleInputChange={()=>this.handleInputChange()}
-                         handleIconClick={(e)=>this.handleIconClick(e)}/>
+                         handleInputChange={()=>this.handleInputChange()}/>
             </div>
             <div className="right-container">
                 <CardsTopbarFilters query={query}  handleIconClick={(e)=>this.handleIconClick(e)}/>
