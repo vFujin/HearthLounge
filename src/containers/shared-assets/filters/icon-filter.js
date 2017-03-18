@@ -22,7 +22,7 @@ const IconFilter = (props) => {
       case 'rarity': return icon.name.toLowerCase();
       case 'cost':   return icon.name;
       case 'expansions': return encodeURI(icon.name);
-      default: return icon.url;
+      default: return icon.url.toLowerCase();
     }
   };
 

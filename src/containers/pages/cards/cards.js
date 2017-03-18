@@ -65,23 +65,19 @@ export class Cards extends Component {
     }
     return (
       this.state.cards
-          .filter(function(card) {
-            return Object.keys(query).every(function(queryKey) {
-              if (Array.isArray(query[queryKey])){
-                return query[queryKey].some(function(queryValue) {
-                  return card[queryKey] == queryValue;
-                })
-              } else {
-                return card[queryKey] == query[queryKey]
-              }
-            });
-          })
-          .map(card=>
-              <li key={card.cardId}
-                  onClick={(e)=>this.handleCardClick(e, card)}>
-                <img src={card.img} alt={card.name} />
-              </li>
+        .filter(card=>
+          Object.keys(query).every(queryKey=>
+            Array.isArray(query[queryKey]) === true
+              ? query[queryKey].some(queryValue => card[queryKey] == queryValue)
+              : card[queryKey] == query[queryKey]
           )
+        )
+        .map(card=>
+          <li key={card.cardId}
+              onClick={(e)=>this.handleCardClick(e, card)}>
+            <img src={card.img} alt={card.name} />
+          </li>
+        )
     )
   }
 
@@ -89,7 +85,6 @@ export class Cards extends Component {
   render() {
     let query = this.props.location.query;
 
-    console.log(query);
     return (
         <div className="pageContainer cards">
             <div className="left-container">
@@ -101,7 +96,7 @@ export class Cards extends Component {
                          query={query}/>
             </div>
             <div className="right-container">
-                <CardsTopbarFilters query={query}  handleIconClick={(e)=>this.handleIconClick(e)}/>
+                <CardsTopbarFilters query={query}/>
 
               <ul className="cards-container">
                 {this.listCards(query)}
