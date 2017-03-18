@@ -4,11 +4,10 @@ import IconFilter from '../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../shared-assets/filters/input-filter';
 
 const Sidebar = props => {
-  const {faction, mechanics, name,  query, race, type} = props;
+  const {faction, mechanics, name, query, race, type} = props;
   return (
       <div className="sidebar">
         <h3 className="filter-header">Filters</h3>
-
 
         <InputFilter attribute={name}      filter="name"      query={query} multiple={false}/>
         <InputFilter attribute={race}      filter="race"      query={query} multiple={true}/>

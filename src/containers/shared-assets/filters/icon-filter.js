@@ -22,7 +22,7 @@ const IconFilter = (props) => {
       case 'rarity': return icon.name.toLowerCase();
       case 'cost':   return icon.name;
       case 'expansions': return encodeURI(icon.name);
-      default: return icon.url.toLowerCase();
+      default: return icon.name;
     }
   };
 
@@ -37,12 +37,13 @@ const IconFilter = (props) => {
     }
   };
 
+
   const listIcons = () => {
     return (
       icon_filters[filter].map((icon, index) =>
         <li key={index} id={iconName(icon)}>
           <Link to={{pathname: 'cards', query: queries(iconName(icon))}}>
-            <span id={`${filter}-set`} className={`hs-icon ${iconName(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
+            <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
             {showTooltip(icon)}
           </Link>
         </li>

@@ -7,7 +7,7 @@ const CardsTopbarFilters = props => {
   return (
       <div className="topbar">
         <IconFilter header={false} filter="cost"        query={query} tooltip={false} wrapper_class="topbar-left" />
-        <IconFilter header={false} filter="playerClass" query={query} tooltip={true} wrapper_class="topbar-right" />
+        <IconFilter header={false} filter="playerClass" query={query} tooltip={true}  wrapper_class="topbar-right" />
       </div>
   );
 };

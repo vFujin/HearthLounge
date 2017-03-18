@@ -19,39 +19,39 @@ export const icon_filters = {
   ],
   playerClass: [
     {
-      name: 'warlock',
-      url: 'Warlock'
+      name: 'Warlock',
+      url: 'warlock'
     },
     {
-      name: 'druid',
+      name: 'Druid',
       url: 'druid'
     },
     {
-      name: 'priest',
+      name: 'Priest',
       url: 'priest'
     },
     {
-      name: 'rogue',
+      name: 'Rogue',
       url: 'rogue'
     },
     {
-      name: 'hunter',
-      url: 'Hunter'
+      name: 'Hunter',
+      url: 'hunter'
     },
     {
-      name: 'mage',
+      name: 'Mage',
       url: 'mage'
     },
     {
-      name: 'paladin',
+      name: 'Paladin',
       url: 'paladin',
     },
     {
-      name: 'shaman',
+      name: 'Shaman',
       url: 'shaman'
     },
     {
-      name: 'warrior',
+      name: 'Warrior',
       url: 'warrior'
     }
   ],
