@@ -21,6 +21,7 @@ const InputFilter = props => {
         <h4>{filter}</h4>
         <Select multiple={props.multiple}
                 showSearch={props.multiple === false ? true : false}
+                allowClear={props.multiple === false ? true : false}
                 style={{width: "100%"}}
                 placeholder={`${placeholder}...`}
                 onChange={(e)=>addQuery(queries(e))}

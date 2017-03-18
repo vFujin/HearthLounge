@@ -3142,6 +3142,9 @@ footer {
         .ant-select .ant-select-selection .ant-select-selection__rendered ul .ant-select-selection__choice span {
           color: #474143;
           font-size: 12px; }
+    .ant-select .ant-select-selection .ant-select-selection__clear {
+      background: #A69E9D;
+      color: #474143; }
 
 .ant-select-dropdown {
   -webkit-border-radius: 0;

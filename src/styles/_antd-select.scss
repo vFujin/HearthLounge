@@ -40,6 +40,10 @@
         }
       }
     }
+    .ant-select-selection__clear{
+      background: $light-grey;
+      color: $dark-grey;
+    }
   }
 }
 .ant-select-dropdown{
