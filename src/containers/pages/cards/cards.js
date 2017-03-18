@@ -22,8 +22,6 @@ export class Cards extends Component {
   }
 
   componentDidMount(){
-
-
     const filterAttribute = (data, attribute) =>{
       let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
       console.log();
@@ -49,13 +47,7 @@ export class Cards extends Component {
         // let d = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
         let d = data["Basic"];
         const collectible = d.filter(x=>x.hasOwnProperty('collectible') === true).map(x=>x);
-        let keys = Object.keys(this.props.location.query);
-        let values = Object.values(this.props.location.query);
-        // let k = Object.assign.apply({}, keys);
-        // let v = Object.assign.apply({}, values);
-        // console.log(k, v);
-        // console.log(this.props.location.query, collectible.filter(x=>x[k] === this.props.location[v]));
-        // console.log(collectible);
+
         this.setState({
           cards: collectible,
           name: filterAttribute(d, 'name'),
@@ -88,34 +80,15 @@ export class Cards extends Component {
     })
   }
 
-  cA(card){
+  matchQueryWithObj(query, keys, values) {
+    return (Object.keys(query).length != keys.length) && keys.every((key, i) => query[key] == values[i]);
+  }
+
+  listCards(){
     let query = this.props.location.query;
     let keys = Object.keys(query);
     let values = Object.values(query);
-    // const keysMatch = Object.keys(query).every(k=>keys.include(k));
 
-    function identical(query, keys, values) {
-      return (Object.keys(query).length != keys.length) && keys.every((key, i) => query[key] == values[i]);
-    }
-    return identical(card, keys, values);
-  }
-
-  containAttr(card, attr){
-    const input_filters = ['name', 'faction', 'mechanics', 'race', 'type'];
-    const icon_filters = ['adventures', 'cost,', 'expansions', 'rarity'];
-
-    switch(attr){
-      case input_filters.map(x=>x): return this.state.active_values.indexOf(card[attr]) > -1;
-      case 'cost':
-      case 'adventures':
-      case 'expansions':
-      case 'rarity': if(this.props.location.query[attr] !== undefined) return this.props.location.query[attr].indexOf(card[attr]) > -1;
-    }
-  }
-
-
-
-  listCards(){
     if(this.state.cards < 1){
       return <Loader/>;
     }
@@ -124,7 +97,7 @@ export class Cards extends Component {
       this.state.cards.map(card=>
         <li key={card.cardId}
             onClick={(e)=>this.handleCardClick(e, card)}
-            className={ !(this.cA(card) === true) ? "display-none" : ""}>
+            className={ !(this.matchQueryWithObj(card, keys, values) === true) ? "display-none" : ""}>
           <img src={card.img} alt={card.name} />
         </li>
       )

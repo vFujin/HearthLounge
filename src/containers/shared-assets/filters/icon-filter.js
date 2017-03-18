@@ -6,6 +6,9 @@ const IconFilter = (props) => {
   const {filter, header, query, tooltip, wrapper_class} = props;
 
   const queries = icon_url =>{
+    if(filter === 'class'){
+      return 'playerClass';
+    }
     return Object.assign({}, query, {[filter]: icon_url});
   };
 
