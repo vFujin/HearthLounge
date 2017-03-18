@@ -1,3 +1,7 @@
+@import 'colors';
+/*
+ *  Select
+ */
 .input-filter-wrapper{
   text-transform: capitalize;
   font-weight:normal;
@@ -46,6 +50,9 @@
     }
   }
 }
+/*
+ *  Select dropdown
+ */
 .ant-select-dropdown{
   -webkit-border-radius:0;
   -moz-border-radius:0;
@@ -81,10 +88,22 @@
     }
   }
 }
-
-
-
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:after,
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:hover:after{
   color: $pearl;
+}
+/*
+ *  Slider
+ */
+.ant-slider{
+  border-color: $dark-grey;
+  border-radius: 0;
+  background-color: $dark-grey;
+  .ant-slider-handle{
+    border-color: $pearl;
+    background: $light-grey;
+  }
+  .ant-slider-track{
+    background: $light-grey;
+  }
 }

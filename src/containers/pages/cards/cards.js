@@ -14,6 +14,8 @@ export class Cards extends Component {
       mechanics: [],
       race: [],
       type: [],
+
+      sliderFirstValue: []
     }
   }
 

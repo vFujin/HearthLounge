@@ -37,7 +37,6 @@ const IconFilter = (props) => {
     }
   };
 
-
   const listIcons = () => {
     return (
       icon_filters[filter].map((icon, index) =>

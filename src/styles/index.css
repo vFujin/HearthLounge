@@ -3107,6 +3107,9 @@ footer {
     .not-found .wrapper button {
       margin-top: 5vh; }
 
+/*
+ *  Select
+ */
 .input-filter-wrapper {
   text-transform: capitalize;
   font-weight: normal;
@@ -3146,6 +3149,9 @@ footer {
       background: #A69E9D;
       color: #474143; }
 
+/*
+ *  Select dropdown
+ */
 .ant-select-dropdown {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -3191,5 +3197,18 @@ footer {
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:after,
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:hover:after {
   color: #E7E2DA; }
+
+/*
+ *  Slider
+ */
+.ant-slider {
+  border-color: #474143;
+  border-radius: 0;
+  background-color: #474143; }
+  .ant-slider .ant-slider-handle {
+    border-color: #E7E2DA;
+    background: #A69E9D; }
+  .ant-slider .ant-slider-track {
+    background: #A69E9D; }
 
 /*# sourceMappingURL=index.css.map */
