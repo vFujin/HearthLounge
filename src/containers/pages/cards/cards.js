@@ -36,7 +36,6 @@ export class Cards extends Component {
       }
     };
 
-
     fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/cards`, {
       headers: {
         'X-Mashape-Key': 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q'

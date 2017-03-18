@@ -6,8 +6,8 @@ const CardsTopbarFilters = props => {
 
   return (
       <div className="topbar">
-        <IconFilter header={false} filter="cost" query={query} tooltip={false} wrapper_class="topbar-left"  handleIconClick={handleIconClick}/>
-        <IconFilter header={false} filter="class" query={query} tooltip={true} wrapper_class="topbar-right" handleIconClick={handleIconClick}/>
+        <IconFilter header={false} filter="cost"        query={query} tooltip={false} wrapper_class="topbar-left"  handleIconClick={handleIconClick}/>
+        <IconFilter header={false} filter="playerClass" query={query} tooltip={true} wrapper_class="topbar-right" handleIconClick={handleIconClick}/>
       </div>
   );
 };
