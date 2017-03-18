@@ -41,24 +41,27 @@ const IconFilter = (props) => {
       icon_filters[filter].map((icon, index) =>
         <li onClick={(e)=>props.handleIconClick(e)} key={index} id={iconName(icon)}>
           <Link to={{pathname: 'cards', query: queries(iconName(icon))}}>
-            <span className={`hs-icon ${iconName(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
+            <span id={`${filter}-set`} className={`hs-icon ${iconName(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
             {showTooltip(icon)}
           </Link>
         </li>
       ))
   };
 
+
   const showHeader = () =>{
-    if(header === true) {
+    if(header === true && filter !== null) {
+      const span = document.getElementById(filter+'-set');
       return (
         <div className="icon-filter-wrapper">
-          <h3>{filter} <button className="btn-pearl btn-padding-small">x</button></h3>
+          <h3>{filter} <button className={`btn-pearl btn-padding-small ${span === true ? 'display-none' : ''}`}>x</button></h3>
           <ul className={`${wrapper_class} ${filter}`}>
             {listIcons()}
           </ul>
         </div>
       )
     }
+
     else{
       return (
         <ul className={`${wrapper_class} ${filter}`}>

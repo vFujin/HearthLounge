@@ -80,7 +80,7 @@ export class Cards extends Component {
   }
 
   matchQueryWithObj(query, keys, values) {
-    return (Object.keys(query).length != keys.length) && keys.every((key, i) => query[key] == values[i]);
+    return (Object.keys(query).length !== keys.length) && keys.every((key, i) => query[key] === values[i]);
   }
 
   listCards(){
