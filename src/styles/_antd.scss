@@ -96,14 +96,24 @@
  *  Slider
  */
 .ant-slider{
-  border-color: $dark-grey;
   border-radius: 0;
-  background-color: $dark-grey;
+  border:0 solid $dark-grey;
+  height:4px;
   .ant-slider-handle{
-    border-color: $pearl;
-    background: $light-grey;
+    border-color: $dark-grey;
+    background: $pearl;
+    margin-top:-7px;
   }
   .ant-slider-track{
+    background: $dark-grey;
+  }
+  .ant-slider-dot{
+    top: -3px;
+    width: 6px;
+    height: 6px;
     background: $light-grey;
+  }
+  .ant-slider-mark{
+    top: 12px;
   }
 }

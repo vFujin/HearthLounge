@@ -14,10 +14,14 @@ const SliderFilter = props => {
     console.log('onChange: ', value);
   }
 
-
   const marks = {
-    0: '0',
-    100: '50'
+    0: 0,
+    50: {
+      style: {
+        left: '100%'
+      },
+      label: 50
+    },
   };
 
   return (

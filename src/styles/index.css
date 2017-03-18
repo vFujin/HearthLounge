@@ -3202,13 +3202,21 @@ footer {
  *  Slider
  */
 .ant-slider {
-  border-color: #474143;
   border-radius: 0;
-  background-color: #474143; }
+  border: 0 solid #474143;
+  height: 4px; }
   .ant-slider .ant-slider-handle {
-    border-color: #E7E2DA;
-    background: #A69E9D; }
+    border-color: #474143;
+    background: #E7E2DA;
+    margin-top: -7px; }
   .ant-slider .ant-slider-track {
+    background: #474143; }
+  .ant-slider .ant-slider-dot {
+    top: -3px;
+    width: 6px;
+    height: 6px;
     background: #A69E9D; }
+  .ant-slider .ant-slider-mark {
+    top: 12px; }
 
 /*# sourceMappingURL=index.css.map */
