@@ -89,9 +89,15 @@ export class Cards extends Component {
   }
 
   cA(card){
-    let keys = Object.keys(this.props.location.query);
-    let values = Object.values(this.props.location.query);
-    console.log(keys, card.hasOwnProperty(keys));
+    let query = this.props.location.query;
+    let keys = Object.keys(query);
+    let values = Object.values(query);
+    // const keysMatch = Object.keys(query).every(k=>keys.include(k));
+
+    function identical(query, keys, values) {
+      return (Object.keys(query).length != keys.length) && keys.every((key, i) => query[key] == values[i]);
+    }
+    return identical(card, keys, values);
   }
 
   containAttr(card, attr){
@@ -108,17 +114,17 @@ export class Cards extends Component {
   }
 
 
+
   listCards(){
-    const queries = Object.keys(this.props.location.query);
     if(this.state.cards < 1){
       return <Loader/>;
     }
-    console.log(queries, Object.values(this.props.location.query));
+
     return (
       this.state.cards.map(card=>
         <li key={card.cardId}
             onClick={(e)=>this.handleCardClick(e, card)}
-            className={this.cA(card) ? "display-none" : ""}>
+            className={ !(this.cA(card) === true) ? "display-none" : ""}>
           <img src={card.img} alt={card.name} />
         </li>
       )
