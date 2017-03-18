@@ -32,7 +32,6 @@ export class Cards extends Component {
       }
     };
 
-
     fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1`, {
       headers: {
         'X-Mashape-Key': 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q'
@@ -55,43 +54,34 @@ export class Cards extends Component {
       })
   }
 
-
-
   handleCardClick(e, card){
     // let target = e.target;
     console.log(card);
   }
 
-  handleInputChange(values) {
-    this.setState({
-      active_values: values
-    });
-  };
-
   listCards(query){
     if(this.state.cards < 1){
       return <Loader/>;
     }
-
     return (
-        this.state.cards
-            .filter(function(card) {
-              return Object.keys(query).every(function(queryKey) {
-                if (Array.isArray(query[queryKey])){
-                  return query[queryKey].some(function(queryValue) {
-                    return card[queryKey] == queryValue;
-                  })
-                } else {
-                  return card[queryKey] == query[queryKey]
-                }
-              });
-            })
-            .map(card=>
-                <li key={card.cardId}
-                    onClick={(e)=>this.handleCardClick(e, card)}>
-                  <img src={card.img} alt={card.name} />
-                </li>
-            )
+      this.state.cards
+          .filter(function(card) {
+            return Object.keys(query).every(function(queryKey) {
+              if (Array.isArray(query[queryKey])){
+                return query[queryKey].some(function(queryValue) {
+                  return card[queryKey] == queryValue;
+                })
+              } else {
+                return card[queryKey] == query[queryKey]
+              }
+            });
+          })
+          .map(card=>
+              <li key={card.cardId}
+                  onClick={(e)=>this.handleCardClick(e, card)}>
+                <img src={card.img} alt={card.name} />
+              </li>
+          )
     )
   }
 
@@ -108,8 +98,7 @@ export class Cards extends Component {
                          mechanics={this.state.mechanics}
                          type={this.state.type}
                          faction={this.state.faction}
-                         query={query}
-                         handleInputChange={()=>this.handleInputChange()}/>
+                         query={query}/>
             </div>
             <div className="right-container">
                 <CardsTopbarFilters query={query}  handleIconClick={(e)=>this.handleIconClick(e)}/>
