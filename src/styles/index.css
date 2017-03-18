@@ -1429,6 +1429,9 @@ body {
     border-color: #00a99c;
     color: #00a99c; }
 
+.btn-padding-small {
+  padding: 1px 5px; }
+
 .decks .submenu {
   width: 12%; }
 
@@ -2009,36 +2012,33 @@ footer {
   margin-right: 10px; }
   .decks .left-container li:last-child, .cards .left-container li:last-child {
     margin-right: 0; }
-.decks .left-container .sidebar ul li, .cards .left-container .sidebar ul li {
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s;
-  display: inline-block;
-  color: #474143; }
-  .decks .left-container .sidebar ul li span, .cards .left-container .sidebar ul li span {
-    font-family: 'Hearthstone';
-    font-size: 41px; }
-    .decks .left-container .sidebar ul li span.hs, .cards .left-container .sidebar ul li span.hs {
-      padding: 10px; }
+.decks .left-container .sidebar h3, .cards .left-container .sidebar h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
 .decks .left-container .sidebar .sidebar-icons, .cards .left-container .sidebar .sidebar-icons {
   margin: 1em 0;
   text-align: center; }
-  .decks .left-container .sidebar .sidebar-icons li span, .cards .left-container .sidebar .sidebar-icons li span {
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
-    transition: all ease 0.4s;
-    padding: 5px;
-    color: #474143; }
-  .decks .left-container .sidebar .sidebar-icons li:hover div, .cards .left-container .sidebar .sidebar-icons li:hover div {
-    display: block; }
-  .decks .left-container .sidebar .sidebar-icons li:first-child .tooltip, .cards .left-container .sidebar .sidebar-icons li:first-child .tooltip {
-    margin-left: -38px; }
-    .decks .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up, .cards .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up {
-      left: calc(27% - 5px); }
+  .decks .left-container .sidebar .sidebar-icons li, .cards .left-container .sidebar .sidebar-icons li {
+    display: inline-block; }
+    .decks .left-container .sidebar .sidebar-icons li span, .cards .left-container .sidebar .sidebar-icons li span {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      padding: 5px;
+      color: #474143;
+      font-family: 'Hearthstone';
+      font-size: 41px; }
+      .decks .left-container .sidebar .sidebar-icons li span.hs, .cards .left-container .sidebar .sidebar-icons li span.hs {
+        padding: 10px; }
+    .decks .left-container .sidebar .sidebar-icons li:hover div, .cards .left-container .sidebar .sidebar-icons li:hover div {
+      display: block; }
+    .decks .left-container .sidebar .sidebar-icons li:first-child .tooltip, .cards .left-container .sidebar .sidebar-icons li:first-child .tooltip {
+      margin-left: -38px; }
+      .decks .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up, .cards .left-container .sidebar .sidebar-icons li:first-child .tooltip .caret-up {
+        left: calc(27% - 5px); }
 
 .decks .right-container .choosen-deck-view, .subreddit .right-container .choosen-deck-view {
   height: calc(100% - 50px); }

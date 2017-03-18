@@ -260,6 +260,8 @@ body {
   }
 }
 
+
+
 .btn-pearl{
     @include transition(all ease .4s);
     cursor: pointer;
@@ -275,4 +277,6 @@ body {
     }
 }
 
-
+.btn-padding-small{
+  padding: 1px 5px;
+}

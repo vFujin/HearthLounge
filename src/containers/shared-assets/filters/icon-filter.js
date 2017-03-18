@@ -52,7 +52,7 @@ const IconFilter = (props) => {
     if(header === true) {
       return (
         <div className="icon-filter-wrapper">
-          <h3>{filter}</h3>
+          <h3>{filter} <button className="btn-pearl btn-padding-small">x</button></h3>
           <ul className={`${wrapper_class} ${filter}`}>
             {listIcons()}
           </ul>
