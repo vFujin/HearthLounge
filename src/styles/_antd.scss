@@ -116,4 +116,14 @@
   .ant-slider-mark{
     top: 12px;
   }
+  .ant-tooltip-open{
+    padding: 0;
+  }
+}
+
+.ant-tooltip{
+  margin-top: 19px;
+  .ant-tooltip-inner{
+    min-height: 0;
+  }
 }

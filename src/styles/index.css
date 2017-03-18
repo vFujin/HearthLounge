@@ -3218,5 +3218,12 @@ footer {
     background: #A69E9D; }
   .ant-slider .ant-slider-mark {
     top: 12px; }
+  .ant-slider .ant-tooltip-open {
+    padding: 0; }
+
+.ant-tooltip {
+  margin-top: 19px; }
+  .ant-tooltip .ant-tooltip-inner {
+    min-height: 0; }
 
 /*# sourceMappingURL=index.css.map */
