@@ -6,7 +6,7 @@ const IconFilter = (props) => {
   const {filter, header, query, tooltip, wrapper_class} = props;
 
   const queries = icon_url =>{
-    return Object.assign({}, query, {[filter.toLowerCase()]: icon_url});
+    return Object.assign({}, query, {[filter]: icon_url});
   };
 
   const iconUrl = icon =>{
@@ -21,6 +21,7 @@ const IconFilter = (props) => {
     switch(filter){
       case 'rarity': return icon.name.toLowerCase();
       case 'cost':   return icon.name;
+      case 'expansions': return encodeURI(icon.name);
       default: return icon.url;
     }
   };

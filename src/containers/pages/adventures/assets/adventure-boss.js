@@ -111,7 +111,10 @@ const AdventureBoss = props => {
   };
 
   const validateUrlProps = args => {
-    let wing_boss = adventure_details.filter(x => x.adventure === adventure).map(x => x.bosses.details)[0].filter(x => x.url === details)[0].bosses.map(x => x.url).includes(boss);
+    let wing_boss = adventure_details
+        .filter(x => x.adventure === adventure)
+        .map(x => x.bosses.details)[0]
+        .filter(x => x.url === details)[0].bosses.map(x => x.url).includes(boss);
 
     switch (args) {
       case 'condition': return wing_boss;

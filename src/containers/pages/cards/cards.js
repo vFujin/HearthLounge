@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
-import _ from 'lodash';
 
 export class Cards extends Component {
   constructor(props){
@@ -25,18 +24,14 @@ export class Cards extends Component {
   componentDidMount(){
     const filterAttribute = (data, attribute) =>{
       let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
-      let lowered = [];
-      for(let i=0; i<initialFiltering.length; i++){
-        lowered[i]=initialFiltering[i].toLowerCase();
-      }
       // console.log(lowered);
       switch(attribute){
         case 'name':
         case 'faction':
         case 'race':
-        case 'type': return lowered.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
-        // case 'cost': return data.filter(x=>x.cost).map(x=>x.cost).filter((x, i, a)=>a.indexOf(x) === i);
-        // case 'mechanics': return lowered.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
+        case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
+        case 'cost': return data.filter(x=>x.cost).map(x=>x.cost).filter((x, i, a)=>a.indexOf(x) === i);
+        case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
         default: return null;
       }
     };
@@ -55,11 +50,11 @@ export class Cards extends Component {
         this.setState({
           cards: d,
           name: filterAttribute(d, 'name'),
-          // mechanics: filterAttribute(d, 'mechanics'),
+          mechanics: filterAttribute(d, 'mechanics'),
           faction: filterAttribute(d, 'faction'),
           race: filterAttribute(d, 'race'),
           type: filterAttribute(d, 'type'),
-          // cost: filterAttribute(d, 'cost')
+          cost: filterAttribute(d, 'cost')
         })
       })
   }
@@ -84,31 +79,30 @@ export class Cards extends Component {
     })
   }
 
-  matchQueryWithObj(obj, keys, values) {
-    let loweredCardsObj = _.transform(obj, (result, val, key)=>result[key.toLowerCase()] = val); //lower card obj keys
-    return (Object.keys(loweredCardsObj).length !== keys.length) && keys.every((key, i) => loweredCardsObj[key].toLowerCase() === values[i]);
-  }
-
-  listCards(){
-    let query = this.props.location.query;
-    let loweredQuery = _.transform(query, (result, val, key)=>result[key.toLowerCase()] = val); //lower query keys
-    let loweredValues = _.mapValues(loweredQuery, s=>_.isString(s) ? s.toLowerCase() : s); //lower query values
-    let keys = Object.keys(loweredQuery);
-    let values = Object.values(loweredValues);
-
+  listCards(query){
     if(this.state.cards < 1){
       return <Loader/>;
     }
 
     return (
-      this.state.cards.map(card=>
-        <li key={card.cardId}
-            onClick={(e)=>this.handleCardClick(e, card)}
-            className={ !(this.matchQueryWithObj(card, keys, values) === true) ? "display-none" : ""}>
-
-          <img src={card.img} alt={card.name} />
-        </li>
-      )
+        this.state.cards
+            .filter(function(card) {
+              return Object.keys(query).every(function(queryKey) {
+                if (Array.isArray(query[queryKey])){
+                  return query[queryKey].some(function(queryValue) {
+                    return card[queryKey] == queryValue;
+                  })
+                } else {
+                  return card[queryKey] == query[queryKey]
+                }
+              });
+            })
+            .map(card=>
+                <li key={card.cardId}
+                    onClick={(e)=>this.handleCardClick(e, card)}>
+                  <img src={card.img} alt={card.name} />
+                </li>
+            )
     )
   }
 
@@ -116,6 +110,7 @@ export class Cards extends Component {
   render() {
     let query = this.props.location.query;
 
+    console.log(query);
     return (
         <div className="pageContainer cards">
             <div className="left-container">
@@ -132,7 +127,7 @@ export class Cards extends Component {
                 <CardsTopbarFilters query={query}  handleIconClick={(e)=>this.handleIconClick(e)}/>
 
               <ul className="cards-container">
-                {this.listCards()}
+                {this.listCards(query)}
               </ul>
             </div>
         </div>

@@ -20,7 +20,7 @@ export const icon_filters = {
   playerClass: [
     {
       name: 'warlock',
-      url: 'warlock'
+      url: 'Warlock'
     },
     {
       name: 'druid',
@@ -36,7 +36,7 @@ export const icon_filters = {
     },
     {
       name: 'hunter',
-      url: 'hunter'
+      url: 'Hunter'
     },
     {
       name: 'mage',
@@ -79,11 +79,11 @@ export const icon_filters = {
   ],
   cost: [
     {
-      name: '0',
+      name: 0,
       url: 0
     },
     {
-      name: '1',
+      name: 1,
       url: 1
     },
     {
