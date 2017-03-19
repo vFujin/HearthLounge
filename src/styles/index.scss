@@ -589,7 +589,7 @@ footer{
         height:calc(100% - 60px);
         overflow-x: hidden;
         overflow-y: auto;
-        margin: 10px 0 10px 0;
+        margin: 10px 0 0 0;
         .input-filter-wrapper, .slider-filter-wrapper{
           text-transform: capitalize;
           font-weight:normal;
@@ -597,9 +597,13 @@ footer{
           margin: 10px 0;
         }
         .slider-filter-wrapper{
-          border: 1px solid black;
+          @include transition(all ease .4s);
+          border: 1px solid $dark-grey;
           margin: 20px 10px;
           position: relative;
+          &:hover{
+            border: 1px solid $pearl
+          }
           h3, h4 {
             position: absolute;
             top: -9.5px;

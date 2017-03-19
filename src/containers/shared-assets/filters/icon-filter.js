@@ -29,7 +29,7 @@ const IconFilter = (props) => {
   const showTooltip = icon =>{
     if(tooltip){
       return (
-        <div className="tooltip">
+        <div className="icon-tooltip">
           <div className="caret-up"></div>
           <p>{icon.name}</p>
         </div>
@@ -41,7 +41,7 @@ const IconFilter = (props) => {
     return (
       icon_filters[filter].map((icon, index) =>
         <li key={index} id={iconName(icon)}>
-          <Link to={{pathname: 'cards', query: queries(iconName(icon))}}>
+          <Link className="icon-tooltip-wrapper" to={{pathname: 'cards', query: queries(iconName(icon))}}>
             <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
             {showTooltip(icon)}
           </Link>
