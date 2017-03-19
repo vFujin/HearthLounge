@@ -3291,5 +3291,19 @@ footer {
   .ant-tooltip .ant-tooltip-inner {
     padding: 2px 10px;
     min-height: 0; }
+    .ant-tooltip .ant-tooltip-inner .card-details {
+      border-collapse: collapse; }
+      .ant-tooltip .ant-tooltip-inner .card-details tr {
+        border-bottom: 1px dotted #A69E9D;
+        color: #00a99c; }
+        .ant-tooltip .ant-tooltip-inner .card-details tr:last-child {
+          border: 0; }
+        .ant-tooltip .ant-tooltip-inner .card-details tr td {
+          padding: 5px 0; }
+          .ant-tooltip .ant-tooltip-inner .card-details tr td:first-child {
+            color: #E7E2DA;
+            width: 25%; }
+          .ant-tooltip .ant-tooltip-inner .card-details tr td:last-child {
+            padding-left: 5px; }
 
 /*# sourceMappingURL=index.css.map */

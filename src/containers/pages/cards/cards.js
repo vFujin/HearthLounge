@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {stringify, parse} from 'qs';
-import {browserHistory} from 'react-router';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
+import Tooltip from 'antd/lib/tooltip';
+import 'antd/lib/tooltip/style/css';
 
 export class Cards extends Component {
   constructor(props){
@@ -63,16 +63,45 @@ export class Cards extends Component {
     console.log(card);
   }
 
+  handleCardFocus(card){
+
+    function ifProp(prop){
+      const capitalize = {'textTransform': 'capitalize'};
+      if(card[prop]){
+        return <tr><td style={capitalize}>{prop}</td><td>{card[prop]}</td></tr>
+      }
+    }
+
+
+    return (
+        <table className="card-details">
+          <tbody>
+          <tr><td>Name</td><td>{card.name}</td></tr>
+          <tr><td>Artist</td><td>{card.artist}</td></tr>
+          <tr><td>Set</td><td>{card.cardSet}</td></tr>
+          <tr><td>Rarity</td><td>{card.rarity}</td></tr>
+          <tr><td>Cost</td><td>{card.cost}</td></tr>
+          <tr><td>Health</td><td>{card.health}</td></tr>
+          {ifProp('durability')}
+          {ifProp('faction')}
+          <tr><td>Type</td><td>{card.type}</td></tr>
+          <tr><td>Flavor</td><td>{card.flavor}</td></tr>
+          <tr><td>How to get gold</td><td>{card.howToGetGold}</td></tr>
+          {/*<p>Gold image: <img src={card.imgGold} alt={`Gold ${card.name}`} /></p>*/}
+          </tbody>
+        </table>
+    )
+  }
+
   listCards(query) {
     if (this.state.cards < 1) {
       return <Loader/>;
     }
     return (
-      this.state.cards
+      this.state.cards.slice(9)
         .filter(function (card) {
           return Object.keys(query).every(function (queryKey) {
             if (Array.isArray(query[queryKey])) {
-              console.log(queryKey)
               return query[queryKey].some(queryValue => card[queryKey] == queryValue);
             }
             else {
@@ -81,9 +110,10 @@ export class Cards extends Component {
           })
         })
         .map(card =>
-          <li key={card.cardId}
-              onClick={(e) => this.handleCardClick(e, card)}>
-            <img src={card.img} alt={card.name}/>
+          <li key={card.cardId} onClick={(e) => this.handleCardClick(e, card)}>
+            <Tooltip placement="left" title={this.handleCardFocus(card)}>
+              <img src={card.img} alt={card.name}/>
+            </Tooltip>
           </li>
         )
     )
