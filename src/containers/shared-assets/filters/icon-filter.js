@@ -4,7 +4,7 @@ import {icon_filters} from '../../../data/filters';
 import Tooltip from 'antd/lib/tooltip';
 
 const IconFilter = (props) => {
-  const {filter, header, query, tooltip, wrapper_class} = props;
+  const {filter, header, query, wrapper_class} = props;
 
   const queries = icon_url =>{
     return Object.assign({}, query, {[filter]: icon_url});
@@ -20,8 +20,6 @@ const IconFilter = (props) => {
 
   const iconName = icon =>{
     switch(filter){
-      case 'rarity': return icon.name.toLowerCase();
-      case 'cost':   return icon.name;
       case 'expansions': return encodeURI(icon.name);
       default: return icon.name;
     }
@@ -70,7 +68,6 @@ IconFilter.propTypes = {
   header: React.PropTypes.bool,
   filter: React.PropTypes.string,
   query: React.PropTypes.object,
-  tooltip: React.PropTypes.bool,
   wrapper_class: React.PropTypes.string,
 };
 
