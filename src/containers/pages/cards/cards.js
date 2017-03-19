@@ -67,11 +67,10 @@ export class Cards extends Component {
     }
     return (
       this.state.cards
-        .filter(card=>
-          Object.keys(query).every(queryKey=>
-            Array.isArray(query[queryKey]) === true
-              ? query[queryKey].some(queryValue => card[queryKey] == queryValue)
-              : card[queryKey] == query[queryKey]
+        .filter(card=> Object.keys(query).every(queryKey=>
+          Array.isArray(query[queryKey]) === true
+            ? query[queryKey].some(queryValue => card[queryKey] == queryValue)
+            : card[queryKey] == query[queryKey]
           )
         )
         .map(card=>

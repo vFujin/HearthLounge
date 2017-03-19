@@ -1417,7 +1417,7 @@ body {
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s;
   cursor: pointer;
-  background: transparent;
+  background: #474143;
   border: 1px solid #E7E2DA;
   color: #E7E2DA;
   outline: 0;
@@ -2012,7 +2012,7 @@ footer {
   margin-right: 10px; }
   .decks .left-container li:last-child, .cards .left-container li:last-child {
     margin-right: 0; }
-.decks .left-container .sidebar h3, .cards .left-container .sidebar h3 {
+.decks .left-container .sidebar h3, .decks .left-container .sidebar h4, .cards .left-container .sidebar h3, .cards .left-container .sidebar h4 {
   display: flex;
   align-items: center;
   justify-content: space-between; }

@@ -265,7 +265,7 @@ body {
 .btn-pearl{
     @include transition(all ease .4s);
     cursor: pointer;
-    background: transparent;
+    background: $dark-grey;
     border: 1px solid $pearl;
     color: $pearl;
     outline: 0;

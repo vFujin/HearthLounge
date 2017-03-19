@@ -7,8 +7,11 @@ const SliderFilter = props => {
   const {filter, query} = props;
 
   const queries = attr =>{
-    console.log(attr);
     return Object.assign({}, query, {[filter]: attr});
+  };
+
+  const checkHealthProp = () => {
+    if ('health' in query) return true;
   };
 
   const marks = {
@@ -20,10 +23,10 @@ const SliderFilter = props => {
       label: 50
     },
   };
-
+console.log(filter);
   return (
       <div className="input-filter-wrapper">
-        <h4>{filter}</h4>
+        <h4>{filter} <button className={`btn-pearl btn-padding-small ${checkHealthProp() !== true ? 'display-none' : ''}`}>x</button></h4>
           <Slider range marks={marks} defaultValue={[0, 30]} max={50} onChange={(e)=>addQuery(queries(e))}/>
       </div>
   );

@@ -16,7 +16,7 @@ const Sidebar = props => {
         <InputFilter attribute={faction}   filter="faction"   query={query} multiple={true}/>
         <InputFilter attribute={type}      filter="type"      query={query} multiple={true}/>
 
-        <SliderFilter filter="health"/>
+        <SliderFilter filter="health" query={query}/>
 
         <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons" />
         <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons" />
