@@ -4,6 +4,7 @@ import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
 import Tooltip from 'antd/lib/tooltip';
 import 'antd/lib/tooltip/style/css';
+import {CardDetails} from './right-container/card-details';
 
 export class Cards extends Component {
   constructor(props){
@@ -64,7 +65,6 @@ export class Cards extends Component {
   }
 
   handleCardFocus(card){
-
     function ifProp(prop){
       const capitalize = {'textTransform': 'capitalize'};
       if(card[prop]){
@@ -72,24 +72,28 @@ export class Cards extends Component {
       }
     }
 
-
     return (
-        <table className="card-details">
-          <tbody>
-          <tr><td>Name</td><td>{card.name}</td></tr>
-          <tr><td>Artist</td><td>{card.artist}</td></tr>
-          <tr><td>Set</td><td>{card.cardSet}</td></tr>
-          <tr><td>Rarity</td><td>{card.rarity}</td></tr>
-          <tr><td>Cost</td><td>{card.cost}</td></tr>
-          <tr><td>Health</td><td>{card.health}</td></tr>
-          {ifProp('durability')}
-          {ifProp('faction')}
-          <tr><td>Type</td><td>{card.type}</td></tr>
-          <tr><td>Flavor</td><td>{card.flavor}</td></tr>
-          <tr><td>How to get gold</td><td>{card.howToGetGold}</td></tr>
-          {/*<p>Gold image: <img src={card.imgGold} alt={`Gold ${card.name}`} /></p>*/}
-          </tbody>
-        </table>
+        <div className="card-tooltip-wrapper">
+          <table className="card-details">
+            <tbody>
+            <tr><td>Name</td><td>{card.name}</td></tr>
+            <tr><td>Artist</td><td>{card.artist}</td></tr>
+            <tr><td>Set</td><td>{card.cardSet}</td></tr>
+            <tr><td>Rarity</td><td>{card.rarity}</td></tr>
+            <tr><td>Cost</td><td>{card.cost}</td></tr>
+            {ifProp('health')}
+            {ifProp('durability')}
+            {ifProp('faction')}
+            <tr><td>Type</td><td>{card.type}</td></tr>
+            <tr><td>Flavor</td><td>{card.flavor}</td></tr>
+            <tr><td>How to get gold</td><td>{card.howToGetGold}</td></tr>
+            </tbody>
+          </table>
+          <div className="button-wrapper">
+            <button className="btn-pearl">Details</button>
+            <button className="btn-pearl">Golden</button>
+          </div>
+        </div>
     )
   }
 
@@ -111,7 +115,7 @@ export class Cards extends Component {
         })
         .map(card =>
           <li key={card.cardId} onClick={(e) => this.handleCardClick(e, card)}>
-            <Tooltip placement="left" title={this.handleCardFocus(card)}>
+            <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <img src={card.img} alt={card.name}/>
             </Tooltip>
           </li>
