@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {icon_filters} from '../../../data/filters';
+import Tooltip from 'antd/lib/tooltip';
 
 const IconFilter = (props) => {
   const {filter, header, query, tooltip, wrapper_class} = props;
@@ -26,24 +27,14 @@ const IconFilter = (props) => {
     }
   };
 
-  const showTooltip = icon =>{
-    if(tooltip){
-      return (
-        <div className="icon-tooltip">
-          <div className="caret-up"></div>
-          <p>{icon.name}</p>
-        </div>
-      )
-    }
-  };
-
   const listIcons = () => {
     return (
       icon_filters[filter].map((icon, index) =>
         <li key={index} id={iconName(icon)}>
           <Link className="icon-tooltip-wrapper" to={{pathname: 'cards', query: queries(iconName(icon))}}>
-            <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
-            {showTooltip(icon)}
+            <Tooltip title={icon.name} placement="bottom">
+              <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
+            </Tooltip>
           </Link>
         </li>
       ))

@@ -4,7 +4,6 @@ import Tooltip from 'antd/lib/tooltip';
 import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/slider/style/css';
 
-
 const SliderFilter = props => {
   const {defaultValue, marks, max, filter, query} = props;
 
