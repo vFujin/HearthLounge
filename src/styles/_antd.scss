@@ -2,12 +2,6 @@
 /*
  *  Select
  */
-.input-filter-wrapper{
-  text-transform: capitalize;
-  font-weight:normal;
-  padding: 0 10px;
-  margin: 10px 0;
-}
 .ant-select {
   font-size:14px;
   .ant-select-selection {
@@ -61,7 +55,7 @@
   color: $pearl;
   border:1px solid $pearl;
   ul{
-    @include scrollbar();
+    @include scrollbar($pearl);
     li{
       @include transition(all ease .4s);
       background: $dark-grey;
@@ -92,10 +86,15 @@
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:hover:after{
   color: $pearl;
 }
+.ant-slider-mark-text .ant-slider-mark-text-active{
+  width: 35%;
+  margin-left: -17.5%;
+}
 /*
  *  Slider
  */
 .ant-slider{
+  margin: 25px 10px 27px;
   border-radius: 0;
   border:0 solid $dark-grey;
   height:4px;

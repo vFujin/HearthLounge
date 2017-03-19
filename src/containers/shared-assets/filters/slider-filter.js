@@ -15,7 +15,7 @@ const SliderFilter = props => {
   };
 
   return (
-      <div className="input-filter-wrapper">
+      <div className="slider-filter-wrapper">
         <h4>{filter} <button onClick={(e)=>removeQuery(filter)} className={`btn-pearl btn-padding-small ${checkHealthProp() !== true ? 'display-none' : ''}`}>x</button></h4>
           <Slider range marks={marks} defaultValue={defaultValue} max={max} onChange={(e)=>addQuery(queries(e))}/>
       </div>

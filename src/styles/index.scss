@@ -161,7 +161,7 @@ footer{
 
 .pageContainer{
   padding: 0 10px;
-  @include scrollbar;
+  @include scrollbar($pearl);
   position: relative;
   z-index: 1;
   height: 83vh;
@@ -572,6 +572,7 @@ footer{
   }
 }
 
+
 .decks, .cards{
   .left-container{
     li{
@@ -581,37 +582,65 @@ footer{
         margin-right: 0;
       }
     }
-    .sidebar{
-      h3, h4{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .sidebar-icons {
-        margin: 1em 0;
-        text-align: center;
-        li {
-          display: inline-block;
-          span{
-            @include transition(all ease .4s);
-            padding: 5px;
-            color: $dark-grey;
-            font-family: 'Hearthstone';
-            font-size: 41px;
-            &.hs{
-              padding:10px;
-            }
+    .sidebar {
+      height:100%;
+      .filters-wrapper {
+        @include scrollbar($light-grey);
+        height:calc(100% - 60px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 10px 0 10px 0;
+        .input-filter-wrapper, .slider-filter-wrapper{
+          text-transform: capitalize;
+          font-weight:normal;
+          padding: 0 10px;
+          margin: 10px 0;
+        }
+        .slider-filter-wrapper{
+          border: 1px solid black;
+          margin: 20px 10px;
+          position: relative;
+          h3, h4 {
+            position: absolute;
+            top: -9.5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: $light-grey;
+            padding:0 4px;
           }
-          &:hover{
-            div{
-              display: block;
+        }
+        h3, h4 {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .sidebar-icons {
+          margin: 1em 0;
+          text-align: center;
+          li {
+            display: inline-block;
+            span {
+              @include transition(all ease .4s);
+              padding: 5px;
+              color: $dark-grey;
+              font-family: 'Hearthstone';
+              font-size: 41px;
+              &.hs {
+                padding: 10px;
+              }
             }
-          }
-          &:first-child{
-            .tooltip {
-              margin-left: -38px;
-              .caret-up {
-                left: calc(27% - 5px);
+            &:hover {
+              div {
+                display: block;
+              }
+            }
+            &:first-child {
+              .tooltip {
+                margin-left: -38px;
+                .caret-up {
+                  left: calc(27% - 5px);
+                }
               }
             }
           }
@@ -646,7 +675,7 @@ footer{
             }
           }
           .section-body {
-            @include scrollbar;
+            @include scrollbar($pearl);
             overflow: auto;
           }
         }
@@ -781,7 +810,7 @@ footer{
     }
 
     .top-decks {
-      @include scrollbar;
+      @include scrollbar($pearl);
       margin: 10px 10px 0 10px;
       padding-right: 10px;
       height: calc(100% - 60px);
@@ -825,7 +854,7 @@ footer{
   }
   .right-container{
     .cards-container{
-      @include scrollbar;
+      @include scrollbar($pearl);
       text-align:center;
       margin-top:10px;
       overflow: auto;
@@ -1061,7 +1090,7 @@ footer{
         }
       }
       .extension-content {
-        @include scrollbar;
+        @include scrollbar($pearl);
         margin: 10px 0 0 10px;
         background-color: $light-grey;
         height: calc(100% - 60px);
@@ -1077,7 +1106,7 @@ footer{
           padding: 10px;
         }
         .cards.cards-container {
-          @include scrollbar;
+          @include scrollbar($pearl);
           background: $pearl;
           text-align: center;
           overflow: auto;
@@ -1384,7 +1413,7 @@ footer{
 
 .create-deck{
   .cards-container{
-    @include scrollbar;
+    @include scrollbar($pearl);
     text-align:center;
     margin-top:10px;
     overflow: auto;
@@ -1472,7 +1501,7 @@ footer{
     .sidebar{
       height:100%;
       ul{
-        @include scrollbar();
+        @include scrollbar($pearl);
         overflow-y: scroll;
         height: calc(100% - 70px);
         margin: 10px 0;
@@ -1593,7 +1622,7 @@ footer{
       }
     }
     .posts{
-      @include scrollbar();
+      @include scrollbar($pearl);
       height:calc(100% - 60px);
       overflow: auto;
       margin: 10px 0 0 10px;

@@ -120,9 +120,9 @@
   }
 }
 
-@mixin scrollbar{
+@mixin scrollbar($border_color){
   &::-webkit-scrollbar{width: 13px;}
-  &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0; border-left: 1px solid $pearl;}
+  &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0; border-left: 1px solid $border_color;}
   &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
-  &::-webkit-scrollbar-track{background-color: $light-grey; border-left: 1px solid $pearl;}
+  &::-webkit-scrollbar-track{background-color: $light-grey; border-left: 1px solid $border_color;}
 }
