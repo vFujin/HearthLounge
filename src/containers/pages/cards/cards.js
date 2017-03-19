@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {stringify, parse} from 'qs';
+import {browserHistory} from 'react-router';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
@@ -70,7 +72,7 @@ export class Cards extends Component {
         .filter(function (card) {
           return Object.keys(query).every(function (queryKey) {
             if (Array.isArray(query[queryKey])) {
-              console.log(query[queryKey]);
+              console.log(queryKey)
               return query[queryKey].some(queryValue => card[queryKey] == queryValue);
             }
             else {
@@ -86,7 +88,6 @@ export class Cards extends Component {
         )
     )
   }
-
 
   render() {
     let query = this.props.location.query;

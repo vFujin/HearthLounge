@@ -1,7 +1,9 @@
 import React from 'react';
 import Slider from 'antd/lib/slider';
+import Tooltip from 'antd/lib/tooltip';
 import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/slider/style/css';
+import 'antd/lib/tooltip/style/css';
 
 const SliderFilter = props => {
   const {defaultValue, marks, max, filter, query} = props;
@@ -16,8 +18,13 @@ const SliderFilter = props => {
 
   return (
       <div className="slider-filter-wrapper">
-        <h4>{filter} <button onClick={(e)=>removeQuery(filter)} className={`btn-pearl btn-padding-small ${checkHealthProp() !== true ? 'display-none' : ''}`}>x</button></h4>
-          <Slider range marks={marks} defaultValue={defaultValue} max={max} onChange={(e)=>addQuery(queries(e))}/>
+        <div className="slider-filter-header">
+          <h4>{filter}</h4>
+          <Tooltip placement="left" title="Clear">
+            <button onClick={(e)=>removeQuery(filter)} className={`${checkHealthProp() !== true ? 'display-none' : ''}`}>✕</button>
+          </Tooltip>
+        </div>
+        <Slider range marks={marks} defaultValue={defaultValue} max={max} onChange={(e)=>addQuery(queries(e))}/>
       </div>
   );
 };

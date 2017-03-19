@@ -602,17 +602,39 @@ footer{
           margin: 20px 10px;
           position: relative;
           &:hover{
-            border: 1px solid $pearl
+            border: 1px solid $pearl;
+            .slider-filter-header{
+              button{
+                border-color: $pearl;
+              }
+            }
           }
-          h3, h4 {
+          .slider-filter-header{
+            width: calc(100% - 20px);
             position: absolute;
             top: -9.5px;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: $light-grey;
-            padding:0 4px;
+            justify-content:space-between;
+            h4 {
+              background: $light-grey;
+              padding:0 4px;
+            }
+            button{
+              @include transition(all ease .4s);
+              outline:none;
+              border:1px solid $dark-grey;
+              background: $light-grey;
+              font-size: 8px;
+              padding: 0 5px;
+              font-weight: bold;
+              cursor: pointer;
+              &:hover{
+                background: $dark-grey;
+                color: $pearl;
+              }
+            }
           }
+
         }
         h3, h4 {
           display: flex;
