@@ -61,22 +61,27 @@ export class Cards extends Component {
     console.log(card);
   }
 
-  listCards(query){
-    if(this.state.cards < 1){
+  listCards(query) {
+    if (this.state.cards < 1) {
       return <Loader/>;
     }
     return (
       this.state.cards
-        .filter(card=> Object.keys(query).every(queryKey=>
-          Array.isArray(query[queryKey]) === true
-            ? query[queryKey].some(queryValue => card[queryKey] == queryValue)
-            : card[queryKey] == query[queryKey]
-          )
-        )
-        .map(card=>
+        .filter(function (card) {
+          return Object.keys(query).every(function (queryKey) {
+            if (Array.isArray(query[queryKey])) {
+              console.log(query[queryKey]);
+              return query[queryKey].some(queryValue => card[queryKey] == queryValue);
+            }
+            else {
+              return card[queryKey] == query[queryKey];
+            }
+          })
+        })
+        .map(card =>
           <li key={card.cardId}
-              onClick={(e)=>this.handleCardClick(e, card)}>
-            <img src={card.img} alt={card.name} />
+              onClick={(e) => this.handleCardClick(e, card)}>
+            <img src={card.img} alt={card.name}/>
           </li>
         )
     )
