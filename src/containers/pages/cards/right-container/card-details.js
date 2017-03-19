@@ -51,6 +51,7 @@ export class CardDetails extends Component {
             {this.ifProp(card, 'faction')}
             <tr><td>Type</td><td>{card.type}</td></tr>
             <tr><td>Flavor</td><td>{this.flavor(card)}</td></tr>
+            <tr><td>How to get</td><td>{card.howToGet}</td></tr>
             <tr><td>How to get gold</td><td>{card.howToGetGold}</td></tr>
           </tbody>
           <tbody className={golden}>

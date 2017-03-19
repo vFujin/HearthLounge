@@ -44,8 +44,8 @@ export class Cards extends Component {
     })
       .then(r=>r.json())
       .then(data => {
-        // let d = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
-        let d = data["Naxxramas"];
+        let d = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
+        // let d = data["Naxxramas"];
 
         this.setState({
           cards: d,
@@ -69,11 +69,14 @@ export class Cards extends Component {
       return <Loader/>;
     }
     return (
-      this.state.cards.slice(9)
+      this.state.cards.slice(9, 30)
         .filter(function (card) {
           return Object.keys(query).every(function (queryKey) {
-            if (Array.isArray(query[queryKey])) {
-              return query[queryKey].some(queryValue => card[queryKey] == queryValue);
+            if (query[queryKey].constructor === Array) {
+              return query[queryKey].some(queryValue => {
+
+                return card[queryKey] == queryValue
+              });
             }
             else {
               return card[queryKey] == query[queryKey];
