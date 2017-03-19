@@ -8,6 +8,14 @@ export class CardDetails extends Component {
     }
   }
 
+  createMarkup(card) {
+    return {__html: card.flavor};
+  }
+
+  flavor(card) {
+    return <div dangerouslySetInnerHTML={this.createMarkup(card)} />;
+  }
+
   ifProp(card, prop){
     const capitalize = {textTransform: 'capitalize'};
     if(card[prop]){
@@ -42,7 +50,7 @@ export class CardDetails extends Component {
             {this.ifProp(card, 'durability')}
             {this.ifProp(card, 'faction')}
             <tr><td>Type</td><td>{card.type}</td></tr>
-            <tr><td>Flavor</td><td>{card.flavor}</td></tr>
+            <tr><td>Flavor</td><td>{this.flavor(card)}</td></tr>
             <tr><td>How to get gold</td><td>{card.howToGetGold}</td></tr>
           </tbody>
           <tbody className={golden}>

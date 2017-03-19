@@ -1410,6 +1410,8 @@ body {
     justify-content: flex-start; }
   .topbar .topbar-right {
     justify-content: flex-end; }
+    .topbar .topbar-right li span {
+      padding: 5px; }
   .topbar .hs-class-filter li {
     width: 60px; }
 

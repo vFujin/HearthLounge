@@ -256,6 +256,11 @@ body {
   }
   .topbar-right {
     justify-content: flex-end;
+    li{
+      span{
+        padding: 5px;
+      }
+    }
   }
   .hs-class-filter{
     li{
