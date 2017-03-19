@@ -64,39 +64,6 @@ export class Cards extends Component {
     console.log(card);
   }
 
-  handleCardFocus(card){
-    function ifProp(prop){
-      const capitalize = {'textTransform': 'capitalize'};
-      if(card[prop]){
-        return <tr><td style={capitalize}>{prop}</td><td>{card[prop]}</td></tr>
-      }
-    }
-
-    return (
-        <div className="card-tooltip-wrapper">
-          <table className="card-details">
-            <tbody>
-            <tr><td>Name</td><td>{card.name}</td></tr>
-            <tr><td>Artist</td><td>{card.artist}</td></tr>
-            <tr><td>Set</td><td>{card.cardSet}</td></tr>
-            <tr><td>Rarity</td><td>{card.rarity}</td></tr>
-            <tr><td>Cost</td><td>{card.cost}</td></tr>
-            {ifProp('health')}
-            {ifProp('durability')}
-            {ifProp('faction')}
-            <tr><td>Type</td><td>{card.type}</td></tr>
-            <tr><td>Flavor</td><td>{card.flavor}</td></tr>
-            <tr><td>How to get gold</td><td>{card.howToGetGold}</td></tr>
-            </tbody>
-          </table>
-          <div className="button-wrapper">
-            <button className="btn-pearl">Details</button>
-            <button className="btn-pearl">Golden</button>
-          </div>
-        </div>
-    )
-  }
-
   listCards(query) {
     if (this.state.cards < 1) {
       return <Loader/>;
