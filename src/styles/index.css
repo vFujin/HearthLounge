@@ -3220,6 +3220,8 @@ footer {
     top: 12px; }
   .ant-slider .ant-tooltip-open {
     padding: 0; }
+  .ant-slider .ant-slider-dot-active {
+    border-color: #E7E2DA; }
 
 .ant-tooltip {
   margin-top: 19px; }

@@ -119,6 +119,9 @@
   .ant-tooltip-open{
     padding: 0;
   }
+  .ant-slider-dot-active{
+    border-color: $pearl;
+  }
 }
 
 .ant-tooltip{
@@ -126,4 +129,5 @@
   .ant-tooltip-inner{
     min-height: 0;
   }
+
 }

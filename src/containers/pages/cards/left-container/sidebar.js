@@ -16,7 +16,9 @@ const Sidebar = props => {
         <InputFilter attribute={faction}   filter="faction"   query={query} multiple={true}/>
         <InputFilter attribute={type}      filter="type"      query={query} multiple={true}/>
 
-        <SliderFilter filter="health" query={query} defaultValue={[0, 30]} max={50}/>
+        <SliderFilter filter="health"     query={query} defaultValue={[0, 30]} max={50} marks={{0:0, 30:30, 50:50}}/>
+        <SliderFilter filter="attack"     query={query} defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}/>
+        <SliderFilter filter="durability" query={query} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}/>
 
         <IconFilter header={true} filter="expansions" query={query} tooltip={true} wrapper_class="sidebar-icons" />
         <IconFilter header={true} filter="adventures" query={query} tooltip={true} wrapper_class="sidebar-icons" />
