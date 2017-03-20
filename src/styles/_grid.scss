@@ -8,10 +8,19 @@
     .nav-list{
       display: grid;
       grid-template-columns: auto repeat(14, 6vw);
+      align-items: center;
+      height:100%;
       li{
+        height:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &:first-child{
           grid-column-start: 1;
           grid-column-end: 4;
+        }
+        a{
+
         }
       }
     }
