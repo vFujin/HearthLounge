@@ -1575,12 +1575,7 @@ body {
   Layout
  */
 nav {
-  background-color: #474143;
-  text-align: right;
-  display: inline-flex;
-  width: 100%;
-  position: relative;
-  z-index: 100; }
+  background-color: #474143; }
   nav .logo {
     width: 18%; }
   nav ul {
