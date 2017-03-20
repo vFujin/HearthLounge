@@ -11,6 +11,8 @@
 /*
   Layout
  */
+
+
 nav {
   background-color: $dark-grey;
   text-align: right;
@@ -20,7 +22,6 @@ nav {
   z-index: 100;
   .logo{
     width: 18%;
-    height:50px;
   }
   ul {
     width: 82%;
@@ -44,7 +45,6 @@ nav {
       a {
         display: block;
         text-align: center;
-        padding: 1.45vh 0;
         div{
           margin-top: 8px;
           font-size: 0.8vw;
@@ -74,10 +74,7 @@ nav {
 }
 footer{
   width: 100%;
-  height: 5vh;
   background-color: $dark-grey;
-  position: fixed;
-  bottom:0;
 }
 
 .shared-table {
@@ -160,13 +157,10 @@ footer{
 
 
 .pageContainer{
-  padding: 0 10px;
   @include scrollbar($pearl);
   position: relative;
   z-index: 1;
-  height: 83vh;
   overflow-y: auto;
-  margin: 1vh 0;
   display: flex;
   .hs-icon{
     font-family: 'Hearthstone';

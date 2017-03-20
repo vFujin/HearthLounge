@@ -1,5 +1,11 @@
 @import 'mixins';
 
+#container{
+  display: grid;
+  grid-template-rows: 12vh 81vh 5vh;
+  grid-row-gap: 1vh;
+}
+
 .block-width-0{
   display: none;
 }

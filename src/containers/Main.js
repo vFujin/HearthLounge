@@ -5,7 +5,7 @@ export class Main extends Component {
   render() {
     let url = this.props.location.pathname;
     return (
-        <div>
+        <div id="container">
           <Navbar url={url}/>
           {this.props.children}
           <Footer/>

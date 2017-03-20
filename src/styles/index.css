@@ -240,6 +240,11 @@ a:active, a:hover, a:link, a:visited {
 .icon-reddit:before {
   content: "\eac6"; }
 
+#container {
+  display: grid;
+  grid-template-rows: 12vh 81vh 5vh;
+  grid-row-gap: 1vh; }
+
 .block-width-0 {
   display: none; }
 
@@ -1577,8 +1582,7 @@ nav {
   position: relative;
   z-index: 100; }
   nav .logo {
-    width: 18%;
-    height: 50px; }
+    width: 18%; }
   nav ul {
     width: 82%; }
     nav ul li {
@@ -1600,8 +1604,7 @@ nav {
           display: block; }
       nav ul li a {
         display: block;
-        text-align: center;
-        padding: 1.45vh 0; }
+        text-align: center; }
         nav ul li a div {
           margin-top: 8px;
           font-size: 0.8vw; }
@@ -1625,10 +1628,7 @@ nav {
 
 footer {
   width: 100%;
-  height: 5vh;
-  background-color: #474143;
-  position: fixed;
-  bottom: 0; }
+  background-color: #474143; }
 
 .shared-table {
   margin-right: 20px;
@@ -1690,12 +1690,9 @@ footer {
           margin-right: 0; }
 
 .pageContainer {
-  padding: 0 10px;
   position: relative;
   z-index: 1;
-  height: 83vh;
   overflow-y: auto;
-  margin: 1vh 0;
   display: flex; }
   .pageContainer::-webkit-scrollbar {
     width: 13px; }
