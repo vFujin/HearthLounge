@@ -259,17 +259,9 @@ footer{
  */
 .home{
   ul.home__list {
-    display: flex;
-    width: inherit;
-    justify-content: space-around;
-    flex-grow: 1;
-    flex-wrap: wrap;
-
     li.home__block {
-      margin-bottom: 10px;
-      position: relative;
       color: black;
-      height: 41vh;
+      height: 40vh;
       background-color: $light-grey;
       &:nth-last-child(1),
       &:nth-last-child(2),

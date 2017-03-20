@@ -10,7 +10,7 @@ import ForumBlock from './forum/forum';
 export class Home extends Component {
   render() {
     return (
-        <div className="pageContainer home">
+        <div className="container__index home">
           <ul className="home__list">
             <DecksBlock />
             <ArenaPickerBlock />

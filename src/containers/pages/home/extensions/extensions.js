@@ -14,15 +14,6 @@ const ExtensionsBlock = () => {
                   alt="bm"/>
             </li>
           </ul>
-          <div className="slider-nav">
-            <div className="prev">&#10094;</div>
-            <div className="next">&#10095;</div>
-            <div className="bullets">
-              <ul>
-                <li>&#8226;</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </li>
   );
