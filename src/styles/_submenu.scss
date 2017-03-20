@@ -1,51 +1,39 @@
 .decks{
   .submenu{
-    width: 12%;
+    width: 12vw;
   }
 }
 
 .expansions, .adventures{
   .submenu{
-    width: 16%;
+    width: 16vw;
   }
 }
 .submenu{
   background-color: $pearl;
   display: none;
   position: absolute;
-  width: 10%;
-  margin-top: 1.5vh;
+  top: 10vh;
   padding-top: 1vh;
   margin-left: -1px;
+  z-index: 2;
   li{
     @include transition(all .4s ease);
     display: block;
-    width:100%;
-    border:none;
     background-color: $dark-grey;
-    &:first-child{
-      border-left: none;
-    }
+    padding: 0 .5vw 0 0;
     span{
       @include transition(border .4s ease);
-      font-size: 26px;
-      float: left;
-      margin-top: -20px;
       border-width: 2px;
       border-style: solid;
       padding: 5px;
-      border-radius: 50%;
-
-    }
-    div{
-      margin-top: 0;
-      float: right;
-      padding-right: 10px;
-      line-height: 0;
+      font-size:1.5vw;
     }
     a{
-      clear: both;
-      padding: 25px 5px;
+      display: flex;
+      padding: 5px;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }

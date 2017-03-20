@@ -22,7 +22,7 @@ export class Navbar extends Component {
   render() {
     return (
         <nav>
-          <ul className="nav-list">
+          <ul>
             <li className="logo"></li>
             {navItems.map((element, index) =>
                 <li key={index} className={element.url}>
@@ -33,23 +33,14 @@ export class Navbar extends Component {
                   </Link>
                 </li>
             )}
-            <li className="login">
+            <li>
               <Link to={`/sign-in`}>
                 <span className="icon-login"></span>
                 <div>Login</div>
               </Link>
             </li>
           </ul>
-          {/*<div className={`login-popup ${this.state.loginPopup}`}>*/}
-              {/*<div className="login">*/}
-                {/*<label htmlFor="login">*/}
-                  {/*<input type="text" value="login"/>*/}
-                {/*</label>*/}
-
-              {/*</div>*/}
-          {/*</div>*/}
         </nav>
-
     );
   }
 }
