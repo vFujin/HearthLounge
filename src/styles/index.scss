@@ -19,8 +19,8 @@
 
 nav {
   background-color: $dark-grey;
-  > ul {
-    > li {
+  .nav__list {
+    .nav__list--item {
       @include transition(all ease .4s);
       color: $primary-font-color;
       text-transform: uppercase;
@@ -29,18 +29,19 @@ nav {
         border-left: 1px solid #666;
       }
 
+
       &:hover {
         background-color: $sea-color;
         .submenu{
           display: block;
         }
       }
-      > a {
+      .nav__list--link {
         > div{
           margin-top: 8px;
           font-size: 0.8vw;
         }
-        span {
+         span {
           font-family: 'Hearthstone';
           font-size: 2.1vw;
         }

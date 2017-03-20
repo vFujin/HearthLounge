@@ -22,25 +22,26 @@ export class Navbar extends Component {
   render() {
     return (
         <nav>
-          <ul>
-            <li className="logo"></li>
+          <ul className="nav__list">
+            <li className="nav__list--item logo"></li>
             {navItems.map((element, index) =>
-                <li key={index} className={element.url}>
-                  <Link to={'/' + element.url} activeClassName="active">
+                <li key={index} className={`nav__list--item ${element.url}`}>
+                  <Link className="nav__list--link" to={'/' + element.url} activeClassName="active">
                     <span className={element.icon}></span>
                     <div>{element.name}</div>
                     {this.dropdown(element, index)}
                   </Link>
                 </li>
             )}
-            <li>
-              <Link to={`/sign-in`}>
+            <li className="nav__list--item login">
+              <Link className="nav__list--link" to={`/sign-in`}>
                 <span className="icon-login"></span>
                 <div>Login</div>
               </Link>
             </li>
           </ul>
         </nav>
+
     );
   }
 }

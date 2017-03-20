@@ -19,7 +19,6 @@
   z-index: 2;
   li{
     @include transition(all .4s ease);
-    display: block;
     background-color: $dark-grey;
     padding: 0 .5vw 0 0;
     span{
