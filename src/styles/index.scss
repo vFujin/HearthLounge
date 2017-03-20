@@ -15,17 +15,11 @@
 
 nav {
   background-color: $dark-grey;
-  .logo{
-    width: 18%;
-  }
   ul {
-    width: 82%;
     li {
       @include transition(all ease .4s);
       color: $primary-font-color;
-      display: inline-block;
       text-transform: uppercase;
-      width: 7.7%;
       border-right: 1px solid #666;
       &:first-child {
         border-left: 1px solid #666;
@@ -68,7 +62,6 @@ nav {
   }
 }
 footer{
-  width: 100%;
   background-color: $dark-grey;
 }
 
@@ -263,12 +256,6 @@ footer{
       color: black;
       height: 40vh;
       background-color: $light-grey;
-      &:nth-last-child(1),
-      &:nth-last-child(2),
-      &:nth-last-child(3),
-      &:nth-last-child(4){
-        margin-bottom: 0;
-      }
       a{
         .header{
           background-color: $dark-grey;

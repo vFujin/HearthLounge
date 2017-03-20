@@ -4,6 +4,19 @@
   display: grid;
   grid-template-rows: 12vh 81vh 5vh;
   grid-row-gap: 1vh;
+  nav{
+    .nav-list{
+      display: grid;
+      grid-template-columns: auto repeat(14, 6vw);
+      li{
+        &:first-child{
+          grid-column-start: 1;
+          grid-column-end: 4;
+        }
+      }
+    }
+  }
+
   .container__index{
     overflow-y: auto;
     .home__list{

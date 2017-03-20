@@ -46,7 +46,6 @@ export class Cards extends Component {
       .then(data => {
         let d = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
         // let d = data["Naxxramas"];
-
         this.setState({
           cards: d,
           name: filterAttribute(d, 'name'),

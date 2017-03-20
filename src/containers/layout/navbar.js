@@ -22,8 +22,8 @@ export class Navbar extends Component {
   render() {
     return (
         <nav>
-          <div className="logo"></div>
-          <ul>
+          <ul className="nav-list">
+            <li className="logo"></li>
             {navItems.map((element, index) =>
                 <li key={index} className={element.url}>
                   <Link to={'/' + element.url} activeClassName="active">
