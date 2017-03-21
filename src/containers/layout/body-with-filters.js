@@ -1,4 +1,6 @@
 import React from 'react';
+import Sidebar from "./assets/sidebar";
+import Topbar from "./assets/topbar";
 
 const BodyWithFilters = props => {
   const {main, page, sidebar, topbar} = props;
@@ -6,15 +8,10 @@ const BodyWithFilters = props => {
   return (
     <div className={`container__page ${page}`}>
       <div className="container__page--inner container__page--left">
-        <div className="sidebar">
-          <h3 className="filter-header">Filters</h3>
-          {sidebar}
-        </div>
+        <Sidebar/>
       </div>
       <div className="container__page--inner container__page--right">
-        <div className="topbar">
-          {topbar}
-        </div>
+        <Topbar/>
         {main}
       </div>
     </div>
