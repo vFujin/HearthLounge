@@ -67,6 +67,7 @@ export class Cards extends Component {
     if (this.state.cards < 1) {
       return <Loader/>;
     }
+
     return (
       this.state.cards.slice(9, 30)
         .filter(function (card) {

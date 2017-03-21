@@ -300,12 +300,11 @@ footer{
       }
     }
     .content{
+      @include scrollbar($pearl);
       margin: 1vh  0 0 0;
       overflow: auto;
       .container__cards{
-        @include scrollbar($pearl);
         justify-content: center;
-        overflow: auto;
         li{
           img{
             width:100%;
@@ -784,9 +783,6 @@ footer{
 .cards{
   .left-container{
     .sidebar{
-      .hs{
-        padding:10px;
-      }
       .sidebar-icons {
         margin: 1em 0;
         text-align: center;
@@ -796,18 +792,9 @@ footer{
             padding: 5px;
             color: $dark-grey;
           }
-          &:hover{
-            div{
-              display: block;
-            }
-          }
         }
       }
     }
-  }
-
-  .not-active{
-    background-color: $dark-grey;
   }
 }
 

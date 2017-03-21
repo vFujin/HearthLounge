@@ -1808,20 +1808,19 @@ footer {
   .container__page .container__page--right .content {
     margin: 1vh  0 0 0;
     overflow: auto; }
+    .container__page .container__page--right .content::-webkit-scrollbar {
+      width: 13px; }
+    .container__page .container__page--right .content::-webkit-scrollbar-thumb {
+      background-color: #474143;
+      border-radius: 0;
+      border-left: 1px solid #E7E2DA; }
+    .container__page .container__page--right .content::-webkit-scrollbar-thumb:hover {
+      background-color: #474143; }
+    .container__page .container__page--right .content::-webkit-scrollbar-track {
+      background-color: #A69E9D;
+      border-left: 1px solid #E7E2DA; }
     .container__page .container__page--right .content .container__cards {
-      justify-content: center;
-      overflow: auto; }
-      .container__page .container__page--right .content .container__cards::-webkit-scrollbar {
-        width: 13px; }
-      .container__page .container__page--right .content .container__cards::-webkit-scrollbar-thumb {
-        background-color: #474143;
-        border-radius: 0;
-        border-left: 1px solid #E7E2DA; }
-      .container__page .container__page--right .content .container__cards::-webkit-scrollbar-thumb:hover {
-        background-color: #474143; }
-      .container__page .container__page--right .content .container__cards::-webkit-scrollbar-track {
-        background-color: #A69E9D;
-        border-left: 1px solid #E7E2DA; }
+      justify-content: center; }
       .container__page .container__page--right .content .container__cards li img {
         width: 100%; }
 
@@ -2172,8 +2171,6 @@ footer {
     background-color: #A69E9D;
     border-left: 1px solid #E7E2DA; }
 
-.cards .left-container .sidebar .hs {
-  padding: 10px; }
 .cards .left-container .sidebar .sidebar-icons {
   margin: 1em 0;
   text-align: center; }
@@ -2185,10 +2182,6 @@ footer {
     transition: all ease 0.4s;
     padding: 5px;
     color: #474143; }
-  .cards .left-container .sidebar .sidebar-icons li:hover div {
-    display: block; }
-.cards .not-active {
-  background-color: #474143; }
 
 .arena-picker .pick-class, .create-deck .pick-class {
   padding: 0 40px;
