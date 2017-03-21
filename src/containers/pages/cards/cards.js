@@ -96,21 +96,24 @@ export class Cards extends Component {
     let query = this.props.location.query;
 
     return (
-        <div className="pageContainer cards">
-            <div className="left-container">
-                <Sidebar name={this.state.name}
-                         race={this.state.race}
-                         mechanics={this.state.mechanics}
-                         type={this.state.type}
-                         faction={this.state.faction}
-                         query={query}/>
+        <div className="container__page cards">
+            <div className="container__page--inner container__page--left">
+              <h3 className="sidebar__header">Filters</h3>
+              <Sidebar name={this.state.name}
+                       race={this.state.race}
+                       mechanics={this.state.mechanics}
+                       type={this.state.type}
+                       faction={this.state.faction}
+                       query={query}/>
             </div>
-            <div className="right-container">
-                <CardsTopbarFilters query={query}/>
+            <div className="container__page--inner container__page--right">
+              <CardsTopbarFilters query={query}/>
+              <div className="content">
+                <ul className="container__cards">
+                  {this.listCards(query)}
+                </ul>
+              </div>
 
-              <ul className="cards-container">
-                {this.listCards(query)}
-              </ul>
             </div>
         </div>
     );

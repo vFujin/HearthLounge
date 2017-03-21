@@ -6,7 +6,6 @@ const Sidebar = props => {
     <div className="sidebar">
       <h3 className="filter-header">Filters</h3>
       <div className="filters-wrapper">
-        {...props}
       </div>
     </div>
   );

@@ -49,4 +49,21 @@
       }
     }
   }
+
+  .container__page{
+    display: grid;
+    grid-template-columns: 20vw auto;
+    .container__page--inner{
+      display: grid;
+      grid-template-rows: 6vh auto;
+      .content{
+
+      }
+    }
+  }
+}
+
+.container__cards{
+  display: grid;
+  grid-template-columns: repeat(7, 11vw);
 }

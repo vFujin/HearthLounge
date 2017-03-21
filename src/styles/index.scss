@@ -12,6 +12,10 @@
   Layout
  */
 
+body{
+  overflow: hidden;
+}
+
 .container__index{
   @include scrollbar($pearl);
   overflow-y: auto;
@@ -148,41 +152,114 @@ footer{
 
 
 
-.pageContainer{
-  @include scrollbar($pearl);
-  position: relative;
+.container__page{
   z-index: 1;
-  overflow-y: auto;
-  display: flex;
   .hs-icon{
     font-family: 'Hearthstone';
   }
-  .left-container {
-    width: 20%;
+  .container__page--inner{
+    overflow: hidden
+  }
+  .container__page--left {
     background-color: $light-grey;
-    height: 100%;
-    .sidebar{
-      .filter-header{
-        padding: 14px 5px;
-        margin-bottom:0;
-      }
-      h3{
-        font-weight: normal;
-        background-color: $dark-grey;
-        padding: 5px;
-        color: $pearl;
+    .sidebar__header{
+      font-weight: normal;
+      background-color: $dark-grey;
+      padding: 5px;
+      color: $pearl;
+      text-transform: capitalize;
+    }
+    .sidebar__body {
+      @include scrollbar($light-grey);
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin: 10px 0 0 0;
+      .input-filter-wrapper, .slider-filter-wrapper{
         text-transform: capitalize;
+        font-weight:normal;
+        padding: 0 10px;
+        margin: 10px 0;
+      }
+      .slider-filter-wrapper{
+        @include transition(all ease .4s);
+        border: 1px solid $dark-grey;
+        margin: 20px 10px;
+        position: relative;
+        &:hover{
+          border: 1px solid $pearl;
+          .slider-filter-header{
+            button{
+              border-color: $pearl;
+            }
+          }
+        }
+        .slider-filter-header{
+          width: calc(100% - 20px);
+          position: absolute;
+          top: -9.5px;
+          display: flex;
+          justify-content:space-between;
+          h4 {
+            background: $light-grey;
+            padding:0 4px;
+          }
+          button{
+            @include transition(all ease .4s);
+            outline:none;
+            border:1px solid $dark-grey;
+            background: $light-grey;
+            font-size: 8px;
+            padding: 0 5px;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover{
+              background: $dark-grey;
+              color: $pearl;
+            }
+          }
+        }
+
+      }
+      h3, h4 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .sidebar-icons {
+        margin: 1em 0;
+        text-align: center;
+        li {
+          display: inline-block;
+          span {
+            @include transition(all ease .4s);
+            padding: 5px;
+            color: $dark-grey;
+            font-family: 'Hearthstone';
+            font-size: 41px;
+            &.hs {
+              padding: 10px;
+            }
+          }
+          &:hover {
+            div {
+              display: block;
+            }
+          }
+          &:first-child {
+            .tooltip {
+              margin-left: -38px;
+              .caret-up {
+                left: calc(27% - 5px);
+              }
+            }
+          }
+        }
       }
     }
   }
-  .right-container {
-    width: 80%;
-    height:100%;
+  .container__page--right {
     .topbar{
       background-color: $light-grey;
-      height:50px;
-      display: flex;
-      align-items: center;
       &.has-icons {
         cursor: pointer;
         position: relative;
@@ -191,29 +268,6 @@ footer{
           color: $dark-grey;
           padding: 5px;
           line-height: 50px;
-        }
-        .tooltip {
-          position: absolute;
-          display: none;
-          transform: translateX(-50%);
-          left: 50%;
-          text-align: center;
-          .caret-up {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 5px 5px 5px;
-            border-color: transparent transparent $dark-grey transparent;
-            position: relative;
-            left: calc(50% - 5px);
-          }
-          p {
-            font-size: 12px;
-            text-transform: uppercase;
-            padding: 5px 10px;
-            background-color: $dark-grey;
-            color: $pearl;
-          }
         }
         li{
           position: relative;
@@ -245,7 +299,20 @@ footer{
         }
       }
     }
-
+    .content{
+      margin: 1vh  0 0 0;
+      overflow: auto;
+      .container__cards{
+        @include scrollbar($pearl);
+        justify-content: center;
+        overflow: auto;
+        li{
+          img{
+            width:100%;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -544,110 +611,6 @@ footer{
   }
 }
 
-
-.decks, .cards{
-  .left-container{
-    li{
-      cursor: pointer;
-      margin-right: 10px;
-      &:last-child{
-        margin-right: 0;
-      }
-    }
-    .sidebar {
-      height:100%;
-      .filters-wrapper {
-        @include scrollbar($light-grey);
-        height:calc(100% - 60px);
-        overflow-x: hidden;
-        overflow-y: auto;
-        margin: 10px 0 0 0;
-        .input-filter-wrapper, .slider-filter-wrapper{
-          text-transform: capitalize;
-          font-weight:normal;
-          padding: 0 10px;
-          margin: 10px 0;
-        }
-        .slider-filter-wrapper{
-          @include transition(all ease .4s);
-          border: 1px solid $dark-grey;
-          margin: 20px 10px;
-          position: relative;
-          &:hover{
-            border: 1px solid $pearl;
-            .slider-filter-header{
-              button{
-                border-color: $pearl;
-              }
-            }
-          }
-          .slider-filter-header{
-            width: calc(100% - 20px);
-            position: absolute;
-            top: -9.5px;
-            display: flex;
-            justify-content:space-between;
-            h4 {
-              background: $light-grey;
-              padding:0 4px;
-            }
-            button{
-              @include transition(all ease .4s);
-              outline:none;
-              border:1px solid $dark-grey;
-              background: $light-grey;
-              font-size: 8px;
-              padding: 0 5px;
-              font-weight: bold;
-              cursor: pointer;
-              &:hover{
-                background: $dark-grey;
-                color: $pearl;
-              }
-            }
-          }
-
-        }
-        h3, h4 {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-        .sidebar-icons {
-          margin: 1em 0;
-          text-align: center;
-          li {
-            display: inline-block;
-            span {
-              @include transition(all ease .4s);
-              padding: 5px;
-              color: $dark-grey;
-              font-family: 'Hearthstone';
-              font-size: 41px;
-              &.hs {
-                padding: 10px;
-              }
-            }
-            &:hover {
-              div {
-                display: block;
-              }
-            }
-            &:first-child {
-              .tooltip {
-                margin-left: -38px;
-                .caret-up {
-                  left: calc(27% - 5px);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 .decks, .subreddit{
   .right-container{
     .choosen-deck-view{
@@ -838,36 +801,6 @@ footer{
               display: block;
             }
           }
-          &:first-child{
-            .tooltip {
-              margin-left: -38px;
-              .caret-up {
-                left: calc(27% - 5px);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .right-container{
-    .cards-container{
-      @include scrollbar($pearl);
-      text-align:center;
-      margin-top:10px;
-      overflow: auto;
-      height: calc(100% - 60px);
-
-      li{
-        width: 12%;
-        margin: 0;
-        display: inline-block;
-        img{
-          width:100%;
-          height: 100%;
-        }
-        &.display-none{
-          display: none;
         }
       }
     }

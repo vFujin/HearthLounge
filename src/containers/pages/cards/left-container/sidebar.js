@@ -7,9 +7,8 @@ import SliderFilter from '../../../shared-assets/filters/slider-filter';
 const Sidebar = props => {
   const {faction, mechanics, name, query, race, type} = props;
   return (
-      <div className="sidebar">
-        <h3 className="filter-header">Filters</h3>
-        <div className="filters-wrapper">
+
+        <div className="sidebar__body">
           <InputFilter attribute={name}      filter="name"      query={query} multiple={false}/>
           <InputFilter attribute={race}      filter="race"      query={query} multiple={true}/>
           <InputFilter attribute={mechanics} filter="mechanics" query={query} multiple={true}/>
@@ -26,7 +25,6 @@ const Sidebar = props => {
 
           <IsGoldenFilter/>
         </div>
-      </div>
   );
 };
 
