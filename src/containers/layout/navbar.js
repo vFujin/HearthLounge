@@ -11,7 +11,7 @@ export class Navbar extends Component {
           {navItems[index].submenu.map( (item, id) =>
             <li className={sub[id].url} key={id}>
               <Link to={`/${el.url}/${item.url}/overview`}>
-                <span className={`icon-${sub[id].url}`}></span>
+                <span className={`submenu__icon hs-icon icon-${sub[id].url}`}></span>
                 <div className="icon-label">{sub[id].name}</div>
               </Link>
             </li>
@@ -19,6 +19,7 @@ export class Navbar extends Component {
         </ul>
     )
   }
+
   render() {
     return (
         <nav>
@@ -27,7 +28,7 @@ export class Navbar extends Component {
             {navItems.map((element, index) =>
                 <li key={index} className={`nav__list--item ${element.url}`}>
                   <Link className="nav__list--link" to={'/' + element.url} activeClassName="active">
-                    <span className={element.icon}></span>
+                    <span className={`hs-icon ${element.icon}`}></span>
                     <div>{element.name}</div>
                     {this.dropdown(element, index)}
                   </Link>
@@ -35,7 +36,7 @@ export class Navbar extends Component {
             )}
             <li className="nav__list--item login">
               <Link className="nav__list--link" to={`/sign-in`}>
-                <span className="icon-login"></span>
+                <span className="hs-icon icon-login"></span>
                 <div>Login</div>
               </Link>
             </li>

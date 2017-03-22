@@ -21,12 +21,13 @@
     @include transition(all .4s ease);
     background-color: $dark-grey;
     padding: 0 .5vw 0 0;
-    span{
+    height: 5.5vh;
+    display: grid;
+    .submenu__icon {
       @include transition(border .4s ease);
       border-width: 2px;
       border-style: solid;
       padding: 5px;
-      font-size:1.5vw;
     }
     a{
       display: flex;

@@ -281,7 +281,7 @@ a:active, a:hover, a:link, a:visited {
     grid-template-columns: 20vw auto; }
     #container .container__page .container__page--inner {
       display: grid;
-      grid-template-rows: 6vh auto; }
+      grid-template-rows: 5.5vh auto; }
 
 .container__cards {
   display: grid;
@@ -1457,8 +1457,10 @@ body {
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
     background-color: #474143;
-    padding: 0 .5vw 0 0; }
-    .submenu li span {
+    padding: 0 .5vw 0 0;
+    height: 5.5vh;
+    display: grid; }
+    .submenu li .submenu__icon {
       -webkit-transition: border 0.4s ease;
       -moz-transition: border 0.4s ease;
       -ms-transition: border 0.4s ease;
@@ -1466,8 +1468,7 @@ body {
       transition: border 0.4s ease;
       border-width: 2px;
       border-style: solid;
-      padding: 5px;
-      font-size: 1.5vw; }
+      padding: 5px; }
     .submenu li a {
       display: flex;
       padding: 5px;
@@ -1596,8 +1597,9 @@ nav {
       margin-top: 8px;
       font-size: 0.8vw; }
     nav .nav__list .nav__list--item .nav__list--link span {
-      font-family: 'Hearthstone';
       font-size: 2.1vw; }
+    nav .nav__list .nav__list--item .nav__list--link .submenu__icon {
+      font-size: 1.5vw; }
     nav .nav__list .nav__list--item .active {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
