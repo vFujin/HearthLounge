@@ -16,7 +16,9 @@ export class Decks extends Component {
             <div className="topbar">
               {topbar}
             </div>
-            {main}
+            <div className="content">
+              {main}
+            </div>
           </div>
         </div>
     );

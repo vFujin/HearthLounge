@@ -50,22 +50,27 @@
     }
   }
 
-  .container__page{
+  .container__page {
     display: grid;
     grid-template-columns: 20vw auto;
-    .container__page--inner{
+    .container__page--inner {
       display: grid;
       grid-template-rows: 5.5vh auto;
-      .content{
+    }
+    .content {
 
+      .container__cards {
+        display: grid;
+        grid-template-columns: repeat(7, 11vw);
+      }
+
+      .container__details {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-column-gap: 1vh;
+        height: 100%;
       }
     }
   }
 }
 
-
-
-.container__cards{
-  display: grid;
-  grid-template-columns: repeat(7, 11vw);
-}
