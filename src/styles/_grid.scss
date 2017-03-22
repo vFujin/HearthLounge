@@ -66,9 +66,23 @@
 
       .container__details {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: repeat(2, calc(50% - .5vh));
         grid-column-gap: 1vh;
         height: 100%;
+        .container__details--section{
+          display: grid;
+          grid-template-rows: 6vh auto;
+        }
+        .container__details--comments{
+          .section__body {
+            .comment {
+              display: grid;
+              grid-template-columns: 20% auto;
+              grid-column-gap: 1vh;
+              .comment__details{}
+            }
+          }
+        }
       }
     }
   }

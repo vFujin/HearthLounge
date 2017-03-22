@@ -2,19 +2,19 @@ import React from 'react';
 export const Comment = () => {
   return (
     <div className="comment">
-      <div className="user-details">
-        <div className="comment-avatar">
+      <div className="author">
+        <div className="avatar">
           <img src="http://lorempixel.com/50/50/cats/" alt="user avatar"/>
           {/*img must be 50x50*/}
         </div>
-        <div className="comment-author">Joe</div>
+        <div className="name">Joe</div>
       </div>
-      <div className="comment-details">
-        <div className="comment-details_header">
-          <div className="comment-posted">1 godzinę temu</div>
-          <div className="comment-patch">Nerf Yogga</div>
+      <div className="details">
+        <div className="header">
+          <div className="posted">1 hour ago</div>
+          <div className="patch">Yogg Nerf</div>
         </div>
-        <div className="comment-details_body">
+        <div className="body">
           <p>
             Sed ut perspiciatis unde omnis iste natus error sit
             Sed ut perspiciatis unde omnis iste natus error sit
@@ -24,9 +24,9 @@ export const Comment = () => {
             Sed ut perspiciatis unde omnis iste natus error sit
           </p>
         </div>
-        <div className="comment-details_footer">
+        <div className="footer">
           <div className="up">+</div>
-          <div className="number">69</div>
+          <div className="votes">69</div>
           <div className="down">-</div>
         </div>
       </div>

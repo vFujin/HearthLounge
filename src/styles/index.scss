@@ -323,8 +323,9 @@ footer{
     }
     .content{
       @include scrollbar($pearl);
-      margin: 1vh  0 0 1vh;
-      padding-right:1vh;
+
+      margin: 1vh 1vh 0 1vh;
+      padding-right: 1vh;
       overflow: auto;
       .container__cards{
         justify-content: center;
@@ -335,10 +336,12 @@ footer{
         }
       }
       .container__details{
-        section {
-          margin: 0 10px;
+        width: calc(100% + 1vh);
+        .container__details--section {
+          overflow: hidden;
           .section__header {
             position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             .line{
@@ -354,10 +357,11 @@ footer{
               text-overflow: ellipsis;
               white-space: nowrap;
               overflow: hidden;
-              width: 90%;
+              max-width: 90%;
               &:hover{
                 white-space: normal;
                 overflow: visible;
+                max-width: 100%;
               }
             }
           }
@@ -368,54 +372,47 @@ footer{
         }
         .container__details--description {
           .section__body {
-            height: calc(100% - 1.34em - 12px);
-            padding: 0 10px 0 0;
+            padding-right: 1vh;
+            overflow: auto;
             div {
               background: rgba(0, 0, 0, .2);
-              padding: 10px;
+              padding: 1vh;
             }
           }
-
         }
         .container__details--comments {
-          background: transparent;
-          margin-right: 0;
-          height: calc(100% - 10px);
-
-          .comments {
-            height: calc(100% - 1.34em - 12px);
+          .section__body{
             .comment {
-              display: flex;
-              margin: 10px;
               border-bottom: 1px solid black;
-              padding: 15px 0;
-              .user-details {
+              margin: 1vh 1vh 0 0;
+              padding-bottom: 1vh;
+              &:first-child{
+                margin:0 1vh 0 0;
+              }
+              &:last-child{
+                border:0;
+              }
+              .author{
                 display: flex;
-                .comment-author {
-                  width: 140px;
-                  margin-left: 5px;
-                  font-size: 14px;
+                .name{
+                  margin-left:1vh;
                 }
               }
-              .comment-details {
-                margin-left: 10px;
-                &_header, &_footer {
+              .details{
+                .header, .footer{
                   display: flex;
+                  align-items: center;
                 }
-                &_header {
+                .header{
                   justify-content: space-between;
-                  font-size: 14px;
                 }
-                &_body {
-                  margin: 10px 0;
+                .body{
+                  padding: 1vh 0;
                 }
-                &_footer {
-                  justify-content: flex-start;
-                  div {
-                    margin-right: 10px;
-                    &:last-child {
-                      margin-right: 0;
-                    }
+                .footer{
+                  align-items: center;
+                  .votes{
+                    padding: 0 1vh;
                   }
                 }
               }
@@ -728,7 +725,6 @@ footer{
       .choosen-deck-details{
         display: flex;
         height: 100%;
-
       }
     }
   }
