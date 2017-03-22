@@ -11,12 +11,31 @@
 /*
   Layout
  */
-
+html, body{
+  height: 100%;
+}
 body{
+  font-family: 'Roboto', sans-serif;
   overflow: hidden;
   .hs-icon{
     font-family: 'Hearthstone';
-    font-size: 41px;
+    font-size: 2vw;
+  }
+  .mana-crystal{
+    &.active, &.active:hover {
+      a {
+        span {
+          color: navy;
+        }
+      }
+    }
+    &:hover{
+      a {
+        span {
+          color: $shaman;
+        }
+      }
+    }
   }
 }
 
@@ -164,9 +183,11 @@ footer{
   .container__page--left {
     background-color: $light-grey;
     .sidebar__header{
+      display: flex;
+      align-items: center;
       font-weight: normal;
       background-color: $dark-grey;
-      padding: 5px;
+      padding: .5vh;
       color: $pearl;
       text-transform: capitalize;
     }
@@ -174,17 +195,17 @@ footer{
       @include scrollbar($light-grey);
       overflow-y: auto;
       overflow-x: hidden;
-      margin: 10px 0 0 0;
+      margin: 1vh 0 0 0;
       .input-filter-wrapper, .slider-filter-wrapper{
         text-transform: capitalize;
         font-weight:normal;
-        padding: 0 10px;
-        margin: 10px 0;
+        padding: 0 1vh;
+        margin: 1vh 0;
       }
       .slider-filter-wrapper{
         @include transition(all ease .4s);
         border: 1px solid $dark-grey;
-        margin: 20px 10px;
+        margin: 2vh 1vh;
         position: relative;
         &:hover{
           border: 1px solid $pearl;
@@ -195,22 +216,22 @@ footer{
           }
         }
         .slider-filter-header{
-          width: calc(100% - 20px);
+          width: calc(100% - 2vh);
           position: absolute;
-          top: -9.5px;
+          top: -.95vh;
           display: flex;
           justify-content:space-between;
           h4 {
             background: $light-grey;
-            padding:0 4px;
+            padding:0 .4vh;
           }
           button{
             @include transition(all ease .4s);
             outline:none;
             border:1px solid $dark-grey;
             background: $light-grey;
-            font-size: 8px;
-            padding: 0 5px;
+            font-size: .8vh;
+            padding: 0 .5vh;
             font-weight: bold;
             cursor: pointer;
             &:hover{
@@ -226,22 +247,32 @@ footer{
         align-items: center;
         justify-content: space-between;
       }
-      .sidebar-icons {
-        margin: 1em 0;
-        text-align: center;
-        li {
-          display: inline-block;
-          span {
-            @include transition(all ease .4s);
-            padding: 5px;
-            color: $dark-grey;
-            &.hs {
-              padding: 10px;
+      .icon-filter-wrapper {
+        h3{
+          background: $dark-grey;
+          text-transform: capitalize;
+          font-weight:normal;
+          color: $pearl;
+          padding: .5vh;
+          font-size: .9vw;
+        }
+        .sidebar-icons {
+          margin: 2vh 0;
+          text-align: center;
+          li {
+            display: inline-block;
+            span {
+              @include transition(all ease .4s);
+              padding: .5vh;
+              color: $dark-grey;
+              &.hs {
+                padding: 1vh;
+              }
             }
-          }
-          &:hover {
-            div {
-              display: block;
+            &:hover {
+              div {
+                display: block;
+              }
             }
           }
         }

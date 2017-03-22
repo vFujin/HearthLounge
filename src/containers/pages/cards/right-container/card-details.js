@@ -18,10 +18,12 @@ export class CardDetails extends Component {
 
   ifProp(card, prop){
     const capitalize = {textTransform: 'capitalize'};
-    switch(prop){
-      case 'howToGet': return <tr><td>How to get</td><td>{card[prop]}</td></tr>;
-      case 'howToGetGold': return <tr><td>How to get gold</td><td>{card[prop]}</td></tr>;
-      default: return <tr><td style={capitalize}>{prop}</td><td>{card[prop]}</td></tr>
+    if(card[prop]) {
+      switch (prop) {
+        case 'howToGet':     return <tr><td>How to get</td><td>{card[prop]}</td></tr>;
+        case 'howToGetGold': return <tr><td>How to get gold</td><td>{card[prop]}</td></tr>;
+        default:             return <tr><td style={capitalize}>{prop}</td><td>{card[prop]}</td></tr>;
+      }
     }
   }
 

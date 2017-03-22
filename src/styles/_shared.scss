@@ -1,33 +1,4 @@
 @import '_colors';
-
-html, body{
-  height: 100%;
-}
-body {
-  font-family: 'Roboto', sans-serif;
-  span.hs-icon {
-    cursor: pointer;
-    font-family: 'Hearthstone';
-    font-size: 41px;
-  }
-  .mana-crystal{
-    &.active, &.active:hover {
-      a {
-        span {
-          color: navy;
-        }
-      }
-    }
-    &:hover{
-      a {
-        span {
-          color: $shaman;
-        }
-      }
-    }
-  }
-}
-
 .deck-snippet{
   position: relative;
   background-color: $pearl;
@@ -196,14 +167,15 @@ body {
 .topbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   .topbar-left, .topbar-right{
     width: 50%;
     display: flex;
     li {
       cursor: pointer;
-      margin-right: 5px;
+      margin-right: .5vh;
       span {
-        line-height: 50px;
+        line-height: 5.5vh;
         @include transition(all ease .4s);
         color: $dark-grey;
       }
@@ -211,7 +183,7 @@ body {
         color: navy;
       }
       &:first-child {
-        margin-left: 5px;
+        margin-left: .5vh;
       }
       &:last-child {
         margin-right: 0;
@@ -230,13 +202,8 @@ body {
     justify-content: flex-end;
     li{
       span{
-        padding: 5px;
+        padding: .5vh;
       }
-    }
-  }
-  .hs-class-filter{
-    li{
-      width: 60px;
     }
   }
 }
