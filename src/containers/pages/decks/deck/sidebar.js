@@ -8,9 +8,9 @@ export class DeckSidebar extends Component {
 
   render() {
     return (
-        <div className="sidebar">
-          <div className={`deck-sidebar deck-details`}>
-            <h3 className="filter-header">Krzywa Many?</h3>
+        <div>
+          <h3 className="sidebar__header">Mana Curve</h3>
+          <div className="container__mana-curve">
             <ul className="graph">
               <DeckGraph cost="0"/>
               <DeckGraph cost="1"/>
@@ -21,10 +21,13 @@ export class DeckSidebar extends Component {
               <DeckGraph cost="6"/>
               <DeckGraph cost="7-plus"/>
             </ul>
-            <h3>Lista kart</h3>
+            <h3 className="sidebar__header">Cards</h3>
             <ChoosenCards/>
           </div>
-        </div>
+      </div>
     );
   }
 }
+
+
+

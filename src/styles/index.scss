@@ -278,6 +278,36 @@ footer{
         }
       }
     }
+    .container__mana-curve {
+      .graph{
+        padding: 1vh;
+        width: calc(100% - 2vh);
+        text-align: center;
+        display: inline-flex;
+        li {
+          width: 100%;
+          .bar {
+            height: 10vh;
+            margin: .2vh auto;
+            width: 1.5vh;
+            background-color: $dark-grey;
+          }
+          .hs-icon{
+            font-size: 1.2vw;
+          }
+        }
+      }
+      table {
+        width:  100%;
+        tr {
+          td {
+            span {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
   }
   .container__page--right {
     .topbar{
@@ -718,50 +748,9 @@ footer{
   }
 }
 
-.decks, .subreddit{
-  .right-container{
-    .choosen-deck-view{
-      height: calc(100% - 50px);
-      .choosen-deck-details{
-        display: flex;
-        height: 100%;
-      }
-    }
-  }
-}
-
 .decks {
-  .left-container {
+  .container__page--left {
     .sidebar {
-      .deck-details {
-        table {
-          tr {
-            td {
-              span {
-                font-size: 20px;
-              }
-            }
-          }
-        }
-      }
-      .graph {
-        padding: 10px;
-        width: calc(100% - 20px);
-        text-align: center;
-        display: inline-flex;
-        li {
-          width: 100%;
-          .bar {
-            height: 100px;
-            margin: 2px auto;
-            width: 15px;
-            background-color: $dark-grey;
-          }
-          .hs-icon {
-            font-size: 25px;
-          }
-        }
-      }
       table {
         width: 100%;
         tr {
@@ -772,7 +761,7 @@ footer{
       }
     }
   }
-  .right-container {
+  .container__page--right {
     .topbar {
       .choosen-deck-topbar {
         display: flex;
@@ -873,24 +862,6 @@ footer{
     width: 100%;
     .left-container{
       .sidebar{
-        .graph{
-          padding: 10px;
-          width: calc(100% - 20px);
-          text-align: center;
-          display: inline-flex;
-          li {
-            width: 100%;
-            .bar {
-              height:100px;
-              margin: 2px auto;
-              width:15px;
-              background-color: $dark-grey;
-            }
-            .hs-icon{
-              font-size: 25px;
-            }
-          }
-        }
         table{
           width: 100%;
           tr{

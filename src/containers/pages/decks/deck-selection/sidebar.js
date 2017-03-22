@@ -6,9 +6,7 @@ import React, { Component } from 'react';
 export class DeckSelectionSidebar extends Component {
   render() {
     return (
-        <div className={`filter-sidebar`}>
-
-        </div>
+          <h3 className="sidebar__header">Filters</h3>
     );
   }
 }

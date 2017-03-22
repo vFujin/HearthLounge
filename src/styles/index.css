@@ -1784,6 +1784,24 @@ footer {
               padding: 1vh; }
           .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons li:hover div {
             display: block; }
+    .container__page .container__page--left .container__mana-curve .graph {
+      padding: 1vh;
+      width: calc(100% - 2vh);
+      text-align: center;
+      display: inline-flex; }
+      .container__page .container__page--left .container__mana-curve .graph li {
+        width: 100%; }
+        .container__page .container__page--left .container__mana-curve .graph li .bar {
+          height: 10vh;
+          margin: .2vh auto;
+          width: 1.5vh;
+          background-color: #474143; }
+        .container__page .container__page--left .container__mana-curve .graph li .hs-icon {
+          font-size: 1.2vw; }
+    .container__page .container__page--left .container__mana-curve table {
+      width: 100%; }
+      .container__page .container__page--left .container__mana-curve table tr td span {
+        font-size: 20px; }
   .container__page .container__page--right .topbar {
     background-color: #A69E9D; }
     .container__page .container__page--right .topbar.has-icons {
@@ -2124,63 +2142,41 @@ footer {
       font-size: 12px;
       text-align: center; }
 
-.decks .right-container .choosen-deck-view, .subreddit .right-container .choosen-deck-view {
-  height: calc(100% - 50px); }
-  .decks .right-container .choosen-deck-view .choosen-deck-details, .subreddit .right-container .choosen-deck-view .choosen-deck-details {
-    display: flex;
-    height: 100%; }
-
-.decks .left-container .sidebar .deck-details table tr td span {
-  font-size: 20px; }
-.decks .left-container .sidebar .graph {
-  padding: 10px;
-  width: calc(100% - 20px);
-  text-align: center;
-  display: inline-flex; }
-  .decks .left-container .sidebar .graph li {
-    width: 100%; }
-    .decks .left-container .sidebar .graph li .bar {
-      height: 100px;
-      margin: 2px auto;
-      width: 15px;
-      background-color: #474143; }
-    .decks .left-container .sidebar .graph li .hs-icon {
-      font-size: 25px; }
-.decks .left-container .sidebar table {
+.decks .container__page--left .sidebar table {
   width: 100%; }
-  .decks .left-container .sidebar table tr td:last-child {
+  .decks .container__page--left .sidebar table tr td:last-child {
     text-align: center; }
-.decks .right-container .topbar .choosen-deck-topbar {
+.decks .container__page--right .topbar .choosen-deck-topbar {
   display: flex;
   align-items: center; }
-  .decks .right-container .topbar .choosen-deck-topbar .mode, .decks .right-container .topbar .choosen-deck-topbar .cards, .decks .right-container .topbar .choosen-deck-topbar .dust-cost {
+  .decks .container__page--right .topbar .choosen-deck-topbar .mode, .decks .container__page--right .topbar .choosen-deck-topbar .cards, .decks .container__page--right .topbar .choosen-deck-topbar .dust-cost {
     display: flex;
     align-items: center; }
-  .decks .right-container .topbar .choosen-deck-topbar span {
+  .decks .container__page--right .topbar .choosen-deck-topbar span {
     font-size: 20px; }
-  .decks .right-container .topbar .choosen-deck-topbar li {
+  .decks .container__page--right .topbar .choosen-deck-topbar li {
     margin-left: 10px; }
-  .decks .right-container .topbar .choosen-deck-topbar .rating, .decks .right-container .topbar .choosen-deck-topbar .dust-cost {
+  .decks .container__page--right .topbar .choosen-deck-topbar .rating, .decks .container__page--right .topbar .choosen-deck-topbar .dust-cost {
     height: 100%;
     padding: 0 10px; }
-  .decks .right-container .topbar .choosen-deck-topbar .rating {
+  .decks .container__page--right .topbar .choosen-deck-topbar .rating {
     display: flex;
     align-items: center; }
-.decks .right-container .top-decks {
+.decks .container__page--right .top-decks {
   margin: 10px 10px 0 10px;
   padding-right: 10px;
   height: calc(100% - 60px);
   width: calc(100% - 20px);
   overflow: auto; }
-  .decks .right-container .top-decks::-webkit-scrollbar {
+  .decks .container__page--right .top-decks::-webkit-scrollbar {
     width: 13px; }
-  .decks .right-container .top-decks::-webkit-scrollbar-thumb {
+  .decks .container__page--right .top-decks::-webkit-scrollbar-thumb {
     background-color: #474143;
     border-radius: 0;
     border-left: 1px solid #E7E2DA; }
-  .decks .right-container .top-decks::-webkit-scrollbar-thumb:hover {
+  .decks .container__page--right .top-decks::-webkit-scrollbar-thumb:hover {
     background-color: #474143; }
-  .decks .right-container .top-decks::-webkit-scrollbar-track {
+  .decks .container__page--right .top-decks::-webkit-scrollbar-track {
     background-color: #A69E9D;
     border-left: 1px solid #E7E2DA; }
 
@@ -2235,20 +2231,6 @@ footer {
 .arena-picker .choosen-class-view, .create-deck .choosen-class-view {
   display: flex;
   width: 100%; }
-  .arena-picker .choosen-class-view .left-container .sidebar .graph, .create-deck .choosen-class-view .left-container .sidebar .graph {
-    padding: 10px;
-    width: calc(100% - 20px);
-    text-align: center;
-    display: inline-flex; }
-    .arena-picker .choosen-class-view .left-container .sidebar .graph li, .create-deck .choosen-class-view .left-container .sidebar .graph li {
-      width: 100%; }
-      .arena-picker .choosen-class-view .left-container .sidebar .graph li .bar, .create-deck .choosen-class-view .left-container .sidebar .graph li .bar {
-        height: 100px;
-        margin: 2px auto;
-        width: 15px;
-        background-color: #474143; }
-      .arena-picker .choosen-class-view .left-container .sidebar .graph li .hs-icon, .create-deck .choosen-class-view .left-container .sidebar .graph li .hs-icon {
-        font-size: 25px; }
   .arena-picker .choosen-class-view .left-container .sidebar table, .create-deck .choosen-class-view .left-container .sidebar table {
     width: 100%; }
     .arena-picker .choosen-class-view .left-container .sidebar table tr td:last-child, .create-deck .choosen-class-view .left-container .sidebar table tr td:last-child {

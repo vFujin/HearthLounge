@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CardRow from './card-row';
 export class ChoosenCards extends Component {
   render() {
     return (
@@ -9,21 +8,66 @@ export class ChoosenCards extends Component {
               <th>Karty</th>
               <th>Koszt</th>
             </tr>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
-            <CardRow/>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
+            <tr>
+              <td>Backstab</td>
+              <td><span className="hs-icon icon-mana-5"></span></td>
+            </tr>
           </tbody>
         </table>
     );

@@ -8,7 +8,6 @@ export class Decks extends Component {
         {this.props.children}
           <div className="container__page--inner container__page--left">
             <div className="sidebar">
-              <h3 className="filter-header">Filters</h3>
               {sidebar}
             </div>
           </div>
