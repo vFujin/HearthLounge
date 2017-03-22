@@ -14,6 +14,10 @@
 
 body{
   overflow: hidden;
+  .hs-icon{
+    font-family: 'Hearthstone';
+    font-size: 41px;
+  }
 }
 
 .container__index{
@@ -32,8 +36,6 @@ nav {
       &:first-child {
         border-left: 1px solid #666;
       }
-
-
       &:hover {
         background-color: $sea-color;
         .submenu{
@@ -156,9 +158,6 @@ footer{
 
 .container__page{
   z-index: 1;
-  .hs-icon{
-    font-family: 'Hearthstone';
-  }
   .container__page--inner{
     overflow: hidden
   }
@@ -236,8 +235,6 @@ footer{
             @include transition(all ease .4s);
             padding: 5px;
             color: $dark-grey;
-            font-family: 'Hearthstone';
-            font-size: 41px;
             &.hs {
               padding: 10px;
             }
@@ -245,14 +242,6 @@ footer{
           &:hover {
             div {
               display: block;
-            }
-          }
-          &:first-child {
-            .tooltip {
-              margin-left: -38px;
-              .caret-up {
-                left: calc(27% - 5px);
-              }
             }
           }
         }

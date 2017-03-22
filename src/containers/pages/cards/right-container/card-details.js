@@ -18,8 +18,10 @@ export class CardDetails extends Component {
 
   ifProp(card, prop){
     const capitalize = {textTransform: 'capitalize'};
-    if(card[prop]){
-      return <tr><td style={capitalize}>{prop}</td><td>{card[prop]}</td></tr>
+    switch(prop){
+      case 'howToGet': return <tr><td>How to get</td><td>{card[prop]}</td></tr>;
+      case 'howToGetGold': return <tr><td>How to get gold</td><td>{card[prop]}</td></tr>;
+      default: return <tr><td style={capitalize}>{prop}</td><td>{card[prop]}</td></tr>
     }
   }
 
@@ -50,9 +52,9 @@ export class CardDetails extends Component {
             {this.ifProp(card, 'durability')}
             {this.ifProp(card, 'faction')}
             <tr><td>Type</td><td>{card.type}</td></tr>
-            <tr><td>Flavor</td><td>{this.flavor(card)}</td></tr>
-            <tr><td>How to get</td><td>{card.howToGet}</td></tr>
-            <tr><td>How to get gold</td><td>{card.howToGetGold}</td></tr>
+            {this.ifProp(card, 'flavor')}
+            {this.ifProp(card, 'howToGet')}
+            {this.ifProp(card, 'howToGetGold')}
           </tbody>
           <tbody className={golden}>
             <tr><td style={{textAlign: 'center'}}><img src={card.imgGold} alt={`Golden ${card.name}`} /></td></tr>
