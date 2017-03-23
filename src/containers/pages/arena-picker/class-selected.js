@@ -6,17 +6,19 @@ export class ArenaPickerClassSelected extends Component {
 
   render() {
     return (
-        <div className={`choosen-class-view`}>
-          <div className="left-container">
+        <div>
+          <div className="container__page--left">
             <Sidebar/>
           </div>
-          <div className="right-container">
+          <div className="container__page--right">
             <Topbar/>
+            <div className="content">
             <ul className="card-selection">
               <Card placeholder="pierwszej" />
               <Card placeholder="drugiej" />
               <Card placeholder="trzeciej" />
             </ul>
+            </div>
           </div>
 
         </div>

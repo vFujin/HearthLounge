@@ -12,18 +12,18 @@ export class Cards extends Component {
     this.state = {
       name: [],
       cards: [],
-      cardName: null,
       faction: [],
       mechanics: [],
       race: [],
       type: [],
+      data: null,
 
       sliderFirstValue: []
     }
   }
 
   componentDidMount(){
-    const filterAttribute = (data, attribute) =>{
+    const getUniqueAttributes = (data, attribute) =>{
       let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
 
       switch(attribute){
@@ -48,12 +48,13 @@ export class Cards extends Component {
         // let d = data["Naxxramas"];
         this.setState({
           cards: d,
-          name: filterAttribute(d, 'name'),
-          mechanics: filterAttribute(d, 'mechanics'),
-          faction: filterAttribute(d, 'faction'),
-          race: filterAttribute(d, 'race'),
-          type: filterAttribute(d, 'type'),
-          cost: filterAttribute(d, 'cost')
+          data,
+          name: getUniqueAttributes(d, 'name'),
+          mechanics: getUniqueAttributes(d, 'mechanics'),
+          faction: getUniqueAttributes(d, 'faction'),
+          race: getUniqueAttributes(d, 'race'),
+          type: getUniqueAttributes(d, 'type'),
+          cost: getUniqueAttributes(d, 'cost')
         })
       })
   }
@@ -63,16 +64,41 @@ export class Cards extends Component {
     console.log(card);
   }
 
+
   listCards(query) {
     if (this.state.cards < 1) {
       return <Loader/>;
     }
 
+    //
+    // let predicates = [p1, p2, p3, p4];
+    //
+    // let filterCard = (card) => predicates.reduce((res, pr) => res && pr(card), true);
+    //
+    // (card) => card.race === this.state.value;
+    //
+    // this.state.card.filter(filterCard);
+    //
+    // this.state.card.filter(x=>x.mechanics)  //p1
+    // this.state.card.filter(x=>x.race)  //p2
+    // this.state.card.filter(x=>x.faction)  //p3
+    // this.state.card.filter(x=>x.mechanics)
+    // this.state.card.filter(x=>x.mechanics)
+
     return (
-      this.state.cards.slice(9, 30)
+      this.state.cards
         .filter(function (card) {
           return Object.keys(query).every(function (queryKey) {
-            if (query[queryKey].constructor === Array) {
+            // if (queryKey === 'mechanics') {
+            //   console.log(queryKey);
+            //   return query[queryKey].some(queryValue => {
+            //     console.log(queryValue, card[queryKey].indexOf(queryValue) > -1);
+            //     return card[queryKey].indexOf(queryValue) > -1;
+            //   });
+            // }
+            if (queryKey === 'health') {
+
+            } else if (query[queryKey].constructor === Array) {
               return query[queryKey].some(queryValue => {
 
                 return card[queryKey] == queryValue
@@ -105,10 +131,12 @@ export class Cards extends Component {
                        mechanics={this.state.mechanics}
                        type={this.state.type}
                        faction={this.state.faction}
+                       cards={this.state.cards}
+                       data={this.state.data}
                        query={query}/>
             </div>
             <div className="container__page--inner container__page--right">
-              <CardsTopbarFilters query={query}/>
+              <CardsTopbarFilters query={query} data={this.state.data}/>
               <div className="content">
                 <ul className="container__cards">
                   {this.listCards(query)}

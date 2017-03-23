@@ -1,4 +1,51 @@
 export const icon_filters = {
+  cardSet: [
+    {
+      name: 'Classic',
+      url: 'classic'
+    },
+    {
+      name: 'Promo',
+      url: 'promo'
+    },
+
+    {
+      name: 'Naxxramas',
+      url: 'curse-of-naxxramas'
+    },
+    {
+      name: 'Blackrock Mountain',
+      url: 'blackrock-mountain'
+    },
+    {
+      name: 'The League of Explorers',
+      url: 'the-league-of-explorers'
+    },
+    {
+      name: 'Karazhan',
+      url: 'one-night-at-karazhan'
+    },
+    {
+      name: 'Goblins vs Gnomes',
+      url: 'goblins-vs-gnomes'
+    },
+    {
+      name: 'The Grand Tournament',
+      url: 'the-grand-tournament'
+    },
+    {
+      name: 'Whispers of the Old Gods',
+      url: 'whispers-of-the-old-gods'
+    },
+    {
+      name: 'Mean Streets of Gadgetzan',
+      url: 'mean-streets-of-gadgetzan'
+    },
+    {
+      name: "Journey to Un'Goro",
+      url: 'journey-to-ungoro'
+    }
+  ],
   adventures: [
     {
       name: 'Curse of Naxxramas',
@@ -160,3 +207,25 @@ export const icon_filters = {
     }
   ]
 };
+
+// function (card) {
+//   return Object.keys(query).every(function (queryKey) {
+//     if (queryKey === 'mechanics') {
+//       let arr = [];
+//       return query[queryKey].some(queryValue => {
+//         return card[queryKey].indexOf(queryValue) > -1;
+//       });
+//     }
+//     if (queryKey === 'health') {
+//
+//     } else if (query[queryKey].constructor === Array) {
+//       return query[queryKey].some(queryValue => {
+//
+//         return card[queryKey] == queryValue
+//       });
+//     }
+//     else {
+//       return card[queryKey] == query[queryKey];
+//     }
+//   })
+// }

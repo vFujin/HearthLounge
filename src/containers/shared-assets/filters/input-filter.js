@@ -4,7 +4,7 @@ import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
 
 const InputFilter = props => {
-  const {attribute, filter, query} = props;
+  const {attribute, cards, filter, query} = props;
   const Option = Select.Option;
 
   const queries = attr =>{

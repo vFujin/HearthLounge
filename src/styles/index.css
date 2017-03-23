@@ -1802,6 +1802,10 @@ footer {
       width: 100%; }
       .container__page .container__page--left .container__mana-curve table tr td span {
         font-size: 20px; }
+    .container__page .container__page--left table {
+      width: 100%; }
+      .container__page .container__page--left table tr td:last-child {
+        text-align: center; }
   .container__page .container__page--right .topbar {
     background-color: #A69E9D; }
     .container__page .container__page--right .topbar.has-icons {
@@ -2228,13 +2232,6 @@ footer {
 .arena-picker .class-selection, .create-deck .class-selection {
   width: 100%;
   display: flex; }
-.arena-picker .choosen-class-view, .create-deck .choosen-class-view {
-  display: flex;
-  width: 100%; }
-  .arena-picker .choosen-class-view .left-container .sidebar table, .create-deck .choosen-class-view .left-container .sidebar table {
-    width: 100%; }
-    .arena-picker .choosen-class-view .left-container .sidebar table tr td:last-child, .create-deck .choosen-class-view .left-container .sidebar table tr td:last-child {
-      text-align: center; }
 
 .arena-picker .choosen-class-view .right-container ul {
   display: flex;

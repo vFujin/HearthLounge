@@ -308,6 +308,14 @@ footer{
         }
       }
     }
+    table{
+      width: 100%;
+      tr{
+        td:last-child{
+          text-align: center;
+        }
+      }
+    }
   }
   .container__page--right {
     .topbar{
@@ -856,22 +864,6 @@ footer{
   .class-selection{
     width:100%;
     display: flex;
-  }
-  .choosen-class-view{
-    display: flex;
-    width: 100%;
-    .left-container{
-      .sidebar{
-        table{
-          width: 100%;
-          tr{
-            td:last-child{
-              text-align: center;
-            }
-          }
-        }
-      }
-    }
   }
 }
 

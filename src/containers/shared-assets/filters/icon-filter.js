@@ -4,7 +4,7 @@ import {icon_filters} from '../../../data/filters';
 import Tooltip from 'antd/lib/tooltip';
 
 const IconFilter = (props) => {
-  const {filter, header, query, wrapper_class} = props;
+  const {cards, data, filter, header, query, wrapper_class} = props;
 
   const queries = icon_url =>{
     return Object.assign({}, query, {[filter]: icon_url});
@@ -18,9 +18,17 @@ const IconFilter = (props) => {
     }
   };
 
+  const checkData = data => {
+    if (data < 1) {
+      return null;
+    }
+    return Object.keys(data).filter(x=>x === filter);
+};
+
   const iconName = icon =>{
+
     switch(filter){
-      case 'expansions': return encodeURI(icon.name);
+      case 'cardSet': return encodeURI(checkData(data));
       default: return icon.name;
     }
   };
@@ -37,8 +45,6 @@ const IconFilter = (props) => {
         </li>
       ))
   };
-
-
   const showHeader = () =>{
     if(header === true && filter !== null) {
       const span = document.getElementById(filter+'-set');
@@ -65,6 +71,7 @@ const IconFilter = (props) => {
 };
 
 IconFilter.propTypes = {
+  cards: React.PropTypes.array,
   header: React.PropTypes.bool,
   filter: React.PropTypes.string,
   query: React.PropTypes.object,

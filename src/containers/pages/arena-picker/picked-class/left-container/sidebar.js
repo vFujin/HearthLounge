@@ -5,7 +5,8 @@ export class Sidebar extends Component {
   render() {
     return (
         <div className="sidebar">
-          <h3 className="filter-header">Twoja talia kart</h3>
+          <h3 className="sidebar__header">Twoja talia kart</h3>
+          <div className="container__mana-curve">
           <ul className="graph">
             <DeckGraph cost="0"/>
             <DeckGraph cost="1"/>
@@ -18,6 +19,7 @@ export class Sidebar extends Component {
           </ul>
           <h3>Wybrane karty</h3>
           <ChoosenCards/>
+          </div>
         </div>
     );
   }
