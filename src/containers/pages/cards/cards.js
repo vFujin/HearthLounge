@@ -5,6 +5,7 @@ import Loader from '../../shared-assets/loader';
 import Tooltip from 'antd/lib/tooltip';
 import 'antd/lib/tooltip/style/css';
 import {CardDetails} from './right-container/card-details';
+import {Data} from '../../../data/cards-data';
 
 export class Cards extends Component {
   constructor(props){
@@ -37,26 +38,20 @@ export class Cards extends Component {
       }
     };
 
-    fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1`, {
-      headers: {
-        'X-Mashape-Key': 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q'
-      }
-    })
-      .then(r=>r.json())
-      .then(data => {
-        let d = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
-        // let d = data["Naxxramas"];
-        this.setState({
-          cards: d,
-          data,
-          name: getUniqueAttributes(d, 'name'),
-          mechanics: getUniqueAttributes(d, 'mechanics'),
-          faction: getUniqueAttributes(d, 'faction'),
-          race: getUniqueAttributes(d, 'race'),
-          type: getUniqueAttributes(d, 'type'),
-          cost: getUniqueAttributes(d, 'cost')
-        })
-      })
+    const setState = (cards, data) =>{
+      this.setState({
+        cards,
+        data,
+        name: getUniqueAttributes(cards, 'name'),
+        mechanics: getUniqueAttributes(cards, 'mechanics'),
+        faction: getUniqueAttributes(cards, 'faction'),
+        race: getUniqueAttributes(cards, 'race'),
+        type: getUniqueAttributes(cards, 'type'),
+        cost: getUniqueAttributes(cards, 'cost')
+      });
+    };
+
+    Data.fetchData(setState);
   }
 
   handleCardClick(e, card){
