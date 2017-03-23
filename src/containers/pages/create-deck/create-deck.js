@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export class CreateDeck extends Component{
-  render(){
-    return(
-        <div className="container__page container__page--oneSided create-deck">
-          {this.props.children}
-        </div>
-    )
-  }
-}
+const CreateDeck = props =>{
+    return props.children;
+};
+
+CreateDeck.propTypes = {
+  children: React.PropTypes.element
+};
+
+export default CreateDeck;

@@ -14,14 +14,16 @@ const ClassSelectionSnippet = (props) =>{
             </li>
         )
     )
-  }
+  };
 
   return (
-    <div className="container__page--inner container__class-selection">
-      <h3>Choose class</h3>
-      <ul>
-        {listClasses()}
-      </ul>
+    <div className={`container__page container__page--oneSided create-deck`}>
+      <div className="container__page--inner container__class-selection">
+        <h3>Choose class</h3>
+        <ul>
+          {listClasses()}
+        </ul>
+      </div>
     </div>
   );
 };

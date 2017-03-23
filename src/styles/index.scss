@@ -498,6 +498,10 @@ footer{
     }
   }
 }
+.container__page--oneSided{
+  justify-content:center;
+  align-content: center;
+}
 
 
 /*
@@ -1355,8 +1359,6 @@ footer{
 }
 
 .create-deck{
-  justify-content: center;
-  align-content: center;
   .cards-container{
     @include scrollbar($pearl);
     text-align:center;

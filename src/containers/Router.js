@@ -34,7 +34,7 @@ import {AdventureDetails} from './pages/adventures/right-container/details';
 import AdventureBosses from './pages/adventures/assets/bosses';
 import AdventureBoss from './pages/adventures/assets/adventure-boss';
 
-import {CreateDeck} from './pages/create-deck/create-deck';
+import CreateDeck from './pages/create-deck/create-deck';
 import {CreateDeckClassSelection} from './pages/create-deck/class-selection';
 import {CreateDeckClassSelected} from './pages/create-deck/class-selected';
 
@@ -112,6 +112,7 @@ export class App extends Component {
           <Route path="create-deck"         component={CreateDeck}>
             <Route path="class-selection"   component={CreateDeckClassSelection} />
             <Route path=":class"            component={CreateDeckClassSelected} />
+
           </Route>
 
           <Route path="forum"             component={Forum} />
