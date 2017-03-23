@@ -123,8 +123,8 @@ export class Cards extends Component {
     let query = this.props.location.query;
 
     return (
-        <div className="container__page cards">
-            <div className="container__page--inner container__page--left">
+        <div className="container__page container__page--twoSided cards">
+            <div className="container__page--inner  container__page--left">
               <h3 className="sidebar__header">Filters</h3>
               <Sidebar name={this.state.name}
                        race={this.state.race}

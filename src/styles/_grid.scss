@@ -1,49 +1,49 @@
 @import 'mixins';
 
-#container{
+#container {
   display: grid;
   grid-template-rows: 10vh 83vh 5vh;
   grid-row-gap: 1vh;
-  nav{
-    .nav__list{
+  nav {
+    .nav__list {
       display: grid;
       grid-template-columns: auto repeat(14, 6vw);
-      height:100%;
+      height: 100%;
       align-items: center;
-      .nav__list--item{
-        height:100%;
-        &:first-child{
+      .nav__list--item {
+        height: 100%;
+        &:first-child {
           grid-column-start: 1;
           grid-column-end: 4;
         }
-        .nav__list--link{
+        .nav__list--link {
           display: grid;
           width: 100%;
           height: 100%;
           text-align: center;
           align-items: center;
-          align-content:center;
+          align-content: center;
         }
       }
     }
   }
 
-  .container__index{
-    .home__list{
+  .container__index {
+    .home__list {
       display: grid;
       grid-template-columns: repeat(4, 24.2vw);
       grid-template-rows: 42vh 40vh 42vh;
       grid-column-gap: 1vh;
       grid-row-gap: 1vh;
       margin: 0 1vh;
-      .home__block.decks{
+      .home__block.decks {
         grid-column-start: 1;
         grid-column-end: 4;
       }
-      .home__block.arena-picker{
+      .home__block.arena-picker {
         grid-column-start: 4;
       }
-      .home__block.expansions, .home__block.streams{
+      .home__block.expansions, .home__block.streams {
         grid-column-start: 2;
         grid-column-end: 4;
       }
@@ -52,39 +52,56 @@
 
   .container__page {
     display: grid;
-    grid-template-columns: 20vw auto;
     .container__page--inner {
       display: grid;
       grid-template-rows: 5.5vh auto;
     }
     .content {
-
       .container__cards {
         display: grid;
         grid-template-columns: repeat(7, 11vw);
       }
-
       .container__details {
         display: grid;
         grid-template-columns: repeat(2, calc(50% - .5vh));
         grid-column-gap: 1vh;
         height: 100%;
-        .container__details--section{
+        .container__details--section {
           display: grid;
           grid-template-rows: 6vh auto;
         }
-        .container__details--comments{
+        .container__details--comments {
           .section__body {
             .comment {
               display: grid;
               grid-template-columns: 20% auto;
               grid-column-gap: 1vh;
-              .comment__details{}
             }
           }
         }
       }
     }
+    .container__class-selection {
+      display: grid;
+      grid-template-rows: 4vh auto;
+
+      ul{
+        display: grid;
+        grid-template-columns: repeat(3, 10vw);
+        grid-auto-rows: 10vw;
+        grid-gap: 1vh;
+      }
+    }
+  }
+  .container__page--oneSided{
+
+  }
+  .container__page--twoSided{
+    grid-template-columns: 20vw auto;
+  }
+  .container__page--center{
+    display: grid;
   }
 }
+
 

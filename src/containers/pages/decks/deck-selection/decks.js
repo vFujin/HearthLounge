@@ -4,7 +4,7 @@ export class Decks extends Component {
   render() {
     const {sidebar, topbar, main} = this.props;
     return (
-      <div className="container__page decks">
+      <div className="container__page container__page--twoSided decks">
         {this.props.children}
           <div className="container__page--inner container__page--left">
             <div className="sidebar">

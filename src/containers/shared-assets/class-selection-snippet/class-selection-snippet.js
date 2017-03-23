@@ -1,20 +1,30 @@
 import React from 'react';
-import ClassSelectionRow from './class-selection-row';
+import {icon_filters} from '../../../data/filters';
+import { Link } from 'react-router'
 const ClassSelectionSnippet = (props) =>{
+
+  const listClasses = () =>{
+    return (
+        icon_filters.playerClass.map(hs_class =>
+            <li key={hs_class.url} className={hs_class.url}>
+              <Link to={`/${props.page}/${hs_class.url}`}>
+                <span className={`hs-icon icon-${hs_class.url}`}></span>
+                <p>{hs_class.name}</p>
+              </Link>
+            </li>
+        )
+    )
+  }
+
   return (
-    <div className="class-selection">
-      <table className="pick-class">
-        <tbody>
-        <tr>
-          <th colSpan="3">Choose class</th>
-        </tr>
-        <ClassSelectionRow start="0" end="3" page={props.page}/>
-        <ClassSelectionRow start="3" end="6" page={props.page}/>
-        <ClassSelectionRow start="6" end="9" page={props.page}/>
-        </tbody>
-      </table>
+    <div className="container__page--inner container__class-selection">
+      <h3>Choose class</h3>
+      <ul>
+        {listClasses()}
+      </ul>
     </div>
   );
 };
+
 
 export default ClassSelectionSnippet;
