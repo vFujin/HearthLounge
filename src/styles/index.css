@@ -299,6 +299,11 @@ a:active, a:hover, a:link, a:visited {
     #container .container__page .container__page--inner {
       display: grid;
       grid-template-rows: 5.5vh auto; }
+    #container .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      grid-column-gap: 1vh;
+      grid-auto-rows: 7vh; }
     #container .container__page .content .container__cards {
       display: grid;
       grid-template-columns: repeat(7, 11vw); }
@@ -1834,7 +1839,8 @@ footer {
         font-size: .9vw; }
       .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons {
         margin: 2vh 0;
-        text-align: center; }
+        justify-content: center;
+        align-items: center; }
         .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons li {
           display: inline-block; }
           .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons li span {

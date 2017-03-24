@@ -56,6 +56,21 @@
       display: grid;
       grid-template-rows: 5.5vh auto;
     }
+    .container__page--left{
+      .sidebar__body{
+        .icon-filter-wrapper{
+          .sidebar-icons{
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            grid-column-gap: 1vh;
+            grid-auto-rows: 7vh;
+          }
+        }
+      }
+    }
+    .container__page--right{
+
+    }
     .content {
       .container__cards {
         display: grid;

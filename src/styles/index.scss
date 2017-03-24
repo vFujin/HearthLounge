@@ -295,7 +295,8 @@ footer{
         }
         .sidebar-icons {
           margin: 2vh 0;
-          text-align: center;
+          justify-content: center;
+          align-items: center;
           li {
             display: inline-block;
             span {
