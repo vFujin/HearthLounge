@@ -10,10 +10,10 @@ const fetchData = (state) => {
   })
     .then(r=>r.json())
     .then(data => {
-      let cards = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
+      let cards = Object.values(data).reduce((a, b) => a.concat(b)).slice(9, 100); //all cards returned at once
       // let d = data["Naxxramas"];
     console.log(data);
-      state(cards, data);
+      state(cards);
     })
 };
 

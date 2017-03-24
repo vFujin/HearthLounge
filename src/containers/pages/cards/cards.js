@@ -18,7 +18,6 @@ export class Cards extends Component {
       race: [],
       type: [],
       cardSet: [],
-      data: null,
 
       sliderFirstValue: []
     }
@@ -40,10 +39,9 @@ export class Cards extends Component {
       }
     };
 
-    const setState = (cards, data) =>{
+    const setState = (cards) =>{
       this.setState({
         cards,
-        data,
         name: getUniqueAttributes(cards, 'name'),
         mechanics: getUniqueAttributes(cards, 'mechanics'),
         faction: getUniqueAttributes(cards, 'faction'),
@@ -132,12 +130,11 @@ export class Cards extends Component {
                        type={this.state.type}
                        faction={this.state.faction}
                        cards={this.state.cards}
-                       data={this.state.data}
                        cardSet={this.state.cardSet}
                        query={query}/>
             </div>
             <div className="container__page--inner container__page--right">
-              <CardsTopbarFilters query={query} data={this.state.data}/>
+              <CardsTopbarFilters query={query}/>
               <div className="content">
                 <ul className="container__cards">
                   {this.listCards(query)}
