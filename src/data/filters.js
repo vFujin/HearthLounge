@@ -11,7 +11,7 @@ export const icon_filters = {
 
     {
       name: 'Naxxramas',
-      url: 'curse-of-naxxramas'
+      url: 'naxxramas'
     },
     {
       name: 'Blackrock Mountain',
@@ -23,7 +23,7 @@ export const icon_filters = {
     },
     {
       name: 'Karazhan',
-      url: 'one-night-at-karazhan'
+      url: 'karazhan'
     },
     {
       name: 'Goblins vs Gnomes',
@@ -49,7 +49,7 @@ export const icon_filters = {
   adventures: [
     {
       name: 'Curse of Naxxramas',
-      url: 'curse-of-naxxramas'
+      url: 'naxxramas'
     },
     {
       name: 'Blackrock Mountain',
@@ -61,7 +61,7 @@ export const icon_filters = {
     },
     {
       name: 'One Night at Karazhan',
-      url: 'one-night-at-karazhan'
+      url: 'karazhan'
     }
   ],
   playerClass: [

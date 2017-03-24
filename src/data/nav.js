@@ -2,7 +2,7 @@ export const navItems = [
   {
     name: "home",
     url: "home",
-    icon: "icon-hs_logo",
+    icon: "icon-hs-logo",
     homepage_block_width: 0
   },
   {
@@ -98,7 +98,7 @@ export const navItems = [
     submenu: [
       {
         name: "Curse of Naxxramas",
-        url: "curse-of-naxxramas"
+        url: "naxxramas"
       },
       {
         name: "Blackrock Mountain",
@@ -110,7 +110,7 @@ export const navItems = [
       },
       {
         name: "One Night at Karazhan",
-        url: "one-night-at-karazhan",
+        url: "karazhan",
       }
     ]
   },
