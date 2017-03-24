@@ -99,7 +99,10 @@ export class Cards extends Component {
                 return card[queryKey] == queryValue
               });
             }
-            else {
+            else if(card[queryKey] != query[queryKey]){
+              return "Card not found"
+            }
+            else{
               return card[queryKey] == query[queryKey];
             }
           })
