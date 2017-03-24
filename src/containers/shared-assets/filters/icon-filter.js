@@ -24,7 +24,7 @@ const IconFilter = (props) => {
         <li key={index} id={icon.name}>
           <Link className="icon-tooltip-wrapper" to={{pathname: 'cards', query: queries(icon.name)}}>
             <Tooltip title={icon.name} placement="bottom">
-              <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[header_label] === icon.name ? 'active' : ''}`}></span>
+              <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[filter] === icon.name ? 'active' : ''}`}></span>
             </Tooltip>
           </Link>
         </li>

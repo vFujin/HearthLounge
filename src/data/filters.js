@@ -152,11 +152,11 @@ export const icon_filters = {
   ],
   cost: [
     {
-      name: 0,
+      name: '0',
       url: 0
     },
     {
-      name: 1,
+      name: '1',
       url: 1
     },
     {
