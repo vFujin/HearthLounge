@@ -10,7 +10,6 @@ export class Navbar extends Component {
         <ul className="submenu">
           {navItems[index].submenu.map( (item, id) =>
             <li className={sub[id].url} key={id}>
-              {console.log(item.url)}
               <Link to={`/${el.url}/${item.url}/overview`}>
                 <span className={`submenu__icon hs-icon icon-${sub[id].url}`}></span>
                 <div className="icon-label">{sub[id].name}</div>

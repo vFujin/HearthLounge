@@ -4,7 +4,7 @@ import {icon_filters} from '../../../data/filters';
 import Tooltip from 'antd/lib/tooltip';
 
 const IconFilter = (props) => {
-  const {cards, data, filter, header, query, wrapper_class} = props;
+  const {cards, filter, header, header_label, isStandard, query, wrapper_class} = props;
 
   const queries = icon_url =>{
     return Object.assign({}, query, {[filter]: icon_url});
@@ -18,28 +18,13 @@ const IconFilter = (props) => {
     }
   };
 
-  const checkData = data => {
-    if (data < 1) {
-      return null;
-    }
-    return Object.keys(data).filter(x=>x === filter);
-};
-
-  const iconName = icon =>{
-
-    switch(filter){
-      case 'cardSet': return encodeURI(checkData(data));
-      default: return icon.name;
-    }
-  };
-
   const listIcons = () => {
     return (
-      icon_filters[filter].map((icon, index) =>
-        <li key={index} id={iconName(icon)}>
-          <Link className="icon-tooltip-wrapper" to={{pathname: 'cards', query: queries(iconName(icon))}}>
+      icon_filters[filter].filter(icon => icon.isStandard === isStandard).map((icon, index) =>
+        <li key={index} id={icon.name}>
+          <Link className="icon-tooltip-wrapper" to={{pathname: 'cards', query: queries(icon.name)}}>
             <Tooltip title={icon.name} placement="bottom">
-              <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[filter] === iconName(icon) ? 'active' : ''}`}></span>
+              <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[header_label] === icon.name ? 'active' : ''}`}></span>
             </Tooltip>
           </Link>
         </li>
@@ -50,7 +35,7 @@ const IconFilter = (props) => {
       const span = document.getElementById(filter+'-set');
       return (
         <div className="icon-filter-wrapper">
-          <h3>{filter} <button className={`btn-pearl btn-padding-small ${span === true ? 'display-none' : ''}`}>x</button></h3>
+          <h3>{header_label} <button className={`btn-pearl btn-padding-small ${span === true ? 'display-none' : ''}`}>x</button></h3>
           <ul className={`${wrapper_class} ${filter}`}>
             {listIcons()}
           </ul>
@@ -73,6 +58,7 @@ const IconFilter = (props) => {
 IconFilter.propTypes = {
   cards: React.PropTypes.array,
   header: React.PropTypes.bool,
+  header_label: React.PropTypes.string,
   filter: React.PropTypes.string,
   query: React.PropTypes.object,
   wrapper_class: React.PropTypes.string,

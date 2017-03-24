@@ -5,7 +5,7 @@ import InputFilter from '../../../shared-assets/filters/input-filter';
 import SliderFilter from '../../../shared-assets/filters/slider-filter';
 
 const Sidebar = props => {
-  const {cards, data, faction, mechanics, name, query, race, type} = props;
+  const {data, faction, mechanics, name, query, race, type} = props;
   return (
 
         <div className="sidebar__body">
@@ -19,9 +19,9 @@ const Sidebar = props => {
           <SliderFilter filter="attack"     query={query} defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}/>
           <SliderFilter filter="durability" query={query} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}/>
 
-          <IconFilter header={true} filter="cardSet" query={query} wrapper_class="sidebar-icons" data={data}/>
-          {/*<IconFilter header={true} filter="adventures" query={query} wrapper_class="sidebar-icons" />*/}
-          <IconFilter header={true} filter="rarity"     query={query} wrapper_class="sidebar-icons" data={data}/>
+          <IconFilter header={true} header_label="standard sets" isStandard={true} filter="cardSet" query={query} wrapper_class="sidebar-icons" data={data}/>
+          <IconFilter header={true} header_label="wild sets"     isStandard={false} filter="cardSet" query={query} wrapper_class="sidebar-icons" data={data}/>
+          <IconFilter header={true} header_label="rarity"        filter="rarity" query={query} wrapper_class="sidebar-icons" data={data}/>
 
           <IsGoldenFilter/>
         </div>
@@ -30,7 +30,6 @@ const Sidebar = props => {
 
 
 Sidebar.propTypes = {
-  cards: React.PropTypes.array,
   faction: React.PropTypes.array,
   mechanics: React.PropTypes.array,
   name: React.PropTypes.array,

@@ -2,48 +2,74 @@ export const icon_filters = {
   cardSet: [
     {
       name: 'Classic',
-      url: 'classic'
+      url: 'classic',
+      isStandard: true
+    },
+    {
+      name: 'Basic',
+      url: 'basic',
+      isStandard: true
     },
     {
       name: 'Promo',
-      url: 'promo'
+      url: 'promo',
+      isStandard: true
+    },
+    {
+      name: 'Missions',
+      url: 'missions',
+      isStandard: true
+    },
+    {
+      name: 'Reward',
+      url: 'reward',
+      isStandard: true
     },
 
     {
       name: 'Naxxramas',
-      url: 'naxxramas'
+      url: 'naxxramas',
+      isStandard: false
     },
     {
       name: 'Blackrock Mountain',
-      url: 'blackrock-mountain'
+      url: 'blackrock-mountain',
+      isStandard: true
     },
     {
       name: 'The League of Explorers',
-      url: 'the-league-of-explorers'
+      url: 'the-league-of-explorers',
+      isStandard: true
     },
     {
       name: 'Karazhan',
-      url: 'karazhan'
+      url: 'karazhan',
+      isStandard: true
     },
     {
       name: 'Goblins vs Gnomes',
-      url: 'goblins-vs-gnomes'
+      url: 'goblins-vs-gnomes',
+      isStandard: false
     },
     {
       name: 'The Grand Tournament',
-      url: 'the-grand-tournament'
+      url: 'the-grand-tournament',
+      isStandard: true
     },
     {
       name: 'Whispers of the Old Gods',
-      url: 'whispers-of-the-old-gods'
+      url: 'whispers-of-the-old-gods',
+      isStandard: true
     },
     {
       name: 'Mean Streets of Gadgetzan',
-      url: 'mean-streets-of-gadgetzan'
+      url: 'mean-streets-of-gadgetzan',
+      isStandard: true
     },
     {
       name: "Journey to Un'Goro",
-      url: 'journey-to-ungoro'
+      url: 'journey-to-ungoro',
+      isStandard: true
     }
   ],
   adventures: [

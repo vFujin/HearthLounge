@@ -17,6 +17,7 @@ export class Cards extends Component {
       mechanics: [],
       race: [],
       type: [],
+      cardSet: [],
       data: null,
 
       sliderFirstValue: []
@@ -32,6 +33,7 @@ export class Cards extends Component {
         case 'faction':
         case 'race':
         case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
+        case 'cardSet':
         case 'cost': return data.filter(x=>x.cost).map(x=>x.cost).filter((x, i, a)=>a.indexOf(x) === i);
         case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
         default: return null;
@@ -47,7 +49,9 @@ export class Cards extends Component {
         faction: getUniqueAttributes(cards, 'faction'),
         race: getUniqueAttributes(cards, 'race'),
         type: getUniqueAttributes(cards, 'type'),
-        cost: getUniqueAttributes(cards, 'cost')
+        cost: getUniqueAttributes(cards, 'cost'),
+        cardSet: getUniqueAttributes(cards, 'cardSet')
+
       });
     };
 
@@ -99,9 +103,7 @@ export class Cards extends Component {
                 return card[queryKey] == queryValue
               });
             }
-            else if(card[queryKey] != query[queryKey]){
-              return "Card not found"
-            }
+
             else{
               return card[queryKey] == query[queryKey];
             }
@@ -131,6 +133,7 @@ export class Cards extends Component {
                        faction={this.state.faction}
                        cards={this.state.cards}
                        data={this.state.data}
+                       cardSet={this.state.cardSet}
                        query={query}/>
             </div>
             <div className="container__page--inner container__page--right">
