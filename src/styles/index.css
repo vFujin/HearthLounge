@@ -1717,6 +1717,7 @@ footer {
           margin-right: 0; }
 
 .container__page {
+  outline: 0;
   z-index: 1; }
   .container__page .container__page--inner {
     overflow: hidden; }
@@ -1763,6 +1764,7 @@ footer {
     .container__page .container__page--left .sidebar__header {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       font-weight: normal;
       background-color: #474143;
       padding: .5vh;

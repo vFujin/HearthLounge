@@ -176,6 +176,7 @@ footer{
 
 
 .container__page{
+  outline:0;
   z-index: 1;
   .container__page--inner{
     overflow: hidden
@@ -222,6 +223,7 @@ footer{
     .sidebar__header{
       display: flex;
       align-items: center;
+      justify-content: space-between;
       font-weight: normal;
       background-color: $dark-grey;
       padding: .5vh;

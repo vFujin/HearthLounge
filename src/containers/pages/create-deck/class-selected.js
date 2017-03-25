@@ -117,8 +117,6 @@ export class CreateDeckClassSelected extends Component {
   }
 
   handleSidebarHeaderClick(e){
-    let target = e.currentTarget;
-    console.log("target: ", target, "\n state: ", this.state.activeSidebar);
     let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
     let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
     this.setState({
@@ -127,13 +125,25 @@ export class CreateDeckClassSelected extends Component {
     });
   }
 
+  onCtrlKeyPress(e) {
+    if (e.ctrlKey) {
+      let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
+      let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
+      this.setState({
+        activeSidebar,
+        nextActiveSidebar
+      });
+    }
+  }
+
+
 
   render() {
     let query = this.props.location.query;
     return (
-        <div className={`container__page container__page--twoSided create-deck`}>
+        <div tabIndex="0" onKeyDown={(e)=>this.onCtrlKeyPress(e)} className={`container__page container__page--twoSided create-deck`}>
           <div className="container__page--inner container__page--left">
-            <h3 className="sidebar__header sidebar__header--withBtn">
+            <h3  className="sidebar__header">
               <span>{this.state.activeSidebar}</span>
               <button className="btn-pearl" onClick={(e)=>this.handleSidebarHeaderClick(e)}>Show {this.state.nextActiveSidebar}</button>
             </h3>
@@ -150,6 +160,7 @@ export class CreateDeckClassSelected extends Component {
           </div>
           <div className="container__page--inner container__page--right">
             <Topbar/>
+
               {/*<Card cards={this.state.cards}/>*/}
           </div>
         </div>
