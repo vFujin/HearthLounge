@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class ChoosenCards extends Component {
-  render() {
-    return (
-        <table className="cards-list">
-          <tbody>
-            <tr>
-              <th>Karty</th>
-              <th>Koszt</th>
-            </tr>
-            <tr>
-              <td>Backstab</td>
-              <td><span className="hs-icon icon-mana-8"></span></td>
-            </tr>
-            <tr>
-              <td>Backstab</td>
-              <td><span className="hs-icon icon-mana-5"></span></td>
-            </tr>
-          </tbody>
-        </table>
+const ChoosenCards = props => {
+  const listCards = () =>{
+    return props.deck.map(card=>
+      <tr>
+        <td>{card.name}</td>
+        <td><span className={`hs-icon icon-mana-${card.cost}`}></span></td>
+      </tr>
     );
-  }
-}
+  };
+  return (
+      <table className="cards-list">
+        <tbody>
+        <tr>
+          <th>Cards</th>
+          <th>Cost</th>
+        </tr>
+        {listCards()}
+        </tbody>
+      </table>
+  );
+};
+
+export default ChoosenCards;

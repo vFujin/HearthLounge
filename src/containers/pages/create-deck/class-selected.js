@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
 import FilterSidebar from './picked-class/left-container/filter-sidebar';
-import {DeckSidebar} from './picked-class/left-container/deck-sidebar';
+import DeckSidebar from './picked-class/left-container/deck-sidebar';
 import {Topbar} from './picked-class/right-container/topbar';
+import Loader from '../../shared-assets/loader';
 import {Data} from '../../../data/cards-data';
 export class CreateDeckClassSelected extends Component {
   constructor(props){
@@ -18,7 +19,8 @@ export class CreateDeckClassSelected extends Component {
       type: [],
       cardSet: [],
 
-      sliderFirstValue: []
+      sliderFirstValue: [],
+      deck: []
     }
   }
 
@@ -55,11 +57,14 @@ export class CreateDeckClassSelected extends Component {
     Data.fetchData(setState);
   }
 
-  handleCardClick(e, card){
-    // let target = e.target;
-    console.log(card);
-  }
+  handleCardClick(card){
+    console.log(card.name);
 
+    this.setState({
+      deck: this.state.deck.concat(card)
+    });
+    console.log(this.state.deck);
+  }
 
   listCards(query) {
     if (this.state.cards < 1) {
@@ -101,20 +106,19 @@ export class CreateDeckClassSelected extends Component {
                   });
                 }
 
-                else {
+                else{
                   return card[queryKey] == query[queryKey];
                 }
               })
             })
             .map(card =>
-                <li key={card.cardId} onClick={(e) => this.handleCardClick(e, card)}>
-                  <Tooltip placement="left" title={<CardDetails card={card}/>}>
+                <li key={card.cardId} onClick={() => this.handleCardClick(card)}>
                     <img src={card.img} alt={card.name}/>
-                  </Tooltip>
                 </li>
             )
     )
   }
+
 
   handleSidebarViewChange(e){
     if(e || e.ctrlKey) {
@@ -136,7 +140,7 @@ export class CreateDeckClassSelected extends Component {
               <span>{this.state.activeSidebar}</span>
               <button className="btn-pearl" onClick={(e)=>this.handleSidebarViewChange(e)}>Show {this.state.nextActiveSidebar}</button>
             </h3>
-            <DeckSidebar activeSidebar={this.state.activeSidebar}/>
+            <DeckSidebar activeSidebar={this.state.activeSidebar} deck={this.state.deck}/>
             <FilterSidebar activeSidebar={this.state.activeSidebar}
                            name={this.state.name}
                            race={this.state.race}
@@ -148,9 +152,12 @@ export class CreateDeckClassSelected extends Component {
                            query={query}/>
           </div>
           <div className="container__page--inner container__page--right">
-            <Topbar/>
-
-              {/*<Card cards={this.state.cards}/>*/}
+            <div className="topbar"></div>
+            <div className="content">
+              <ul className="container__cards">
+                {this.listCards(query)}
+              </ul>
+            </div>
           </div>
         </div>
     );
