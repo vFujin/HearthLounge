@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import {DeckGraph} from './sidebar/deck-graph';
 import {ChoosenCards} from './sidebar/choosen-cards';
-export class Sidebar extends Component {
+export class DeckSidebar extends Component {
   render() {
     return (
-        <div className="sidebar">
-          <h3 className="sidebar__header">Twoja talia kart</h3>
+        <div className={`sidebar__body ${this.props.activeSidebar === 'deck' ? 'active' : 'display-none'}`}>
+          <h3 className="sidebar__header">
+            Your deck
+            <button onClick={(e)=>this.props.handleSidebarHeaderClick(e)}>Show filters</button>
+          </h3>
           <div className="container__mana-curve">
             <ul className="graph">
               <DeckGraph cost="0"/>
