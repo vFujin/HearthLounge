@@ -5,10 +5,6 @@ export class DeckSidebar extends Component {
   render() {
     return (
         <div className={`sidebar__body ${this.props.activeSidebar === 'deck' ? 'active' : 'display-none'}`}>
-          <h3 className="sidebar__header">
-            Your deck
-            <button onClick={(e)=>this.props.handleSidebarHeaderClick(e)}>Show filters</button>
-          </h3>
           <div className="container__mana-curve">
             <ul className="graph">
               <DeckGraph cost="0"/>

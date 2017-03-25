@@ -9,7 +9,7 @@ export class CreateDeckClassSelected extends Component {
     super(props);
     this.state = {
       activeSidebar: 'deck',
-
+      nextActiveSidebar: 'filters',
       name: [],
       cards: [],
       faction: [],
@@ -120,8 +120,10 @@ export class CreateDeckClassSelected extends Component {
     let target = e.currentTarget;
     console.log("target: ", target, "\n state: ", this.state.activeSidebar);
     let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
+    let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
     this.setState({
-      activeSidebar: activeSidebar
+      activeSidebar,
+      nextActiveSidebar
     });
   }
 
@@ -131,9 +133,12 @@ export class CreateDeckClassSelected extends Component {
     return (
         <div className={`container__page container__page--twoSided create-deck`}>
           <div className="container__page--inner container__page--left">
-            <DeckSidebar handleSidebarHeaderClick={(e)=>this.handleSidebarHeaderClick(e)} activeSidebar={this.state.activeSidebar}/>
-            <FilterSidebar handleSidebarHeaderClick={(e)=>this.handleSidebarHeaderClick(e)}
-                           activeSidebar={this.state.activeSidebar}
+            <h3 className="sidebar__header sidebar__header--withBtn">
+              <span>{this.state.activeSidebar}</span>
+              <button className="btn-pearl" onClick={(e)=>this.handleSidebarHeaderClick(e)}>Show {this.state.nextActiveSidebar}</button>
+            </h3>
+            <DeckSidebar activeSidebar={this.state.activeSidebar}/>
+            <FilterSidebar activeSidebar={this.state.activeSidebar}
                            name={this.state.name}
                            race={this.state.race}
                            mechanics={this.state.mechanics}

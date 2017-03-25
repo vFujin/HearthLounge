@@ -9,10 +9,6 @@ const FilterSidebar = props => {
   return (
 
       <div className={`sidebar__body ${props.activeSidebar === 'filters' ? 'active' : 'display-none'}`}>
-        <h3 className="sidebar__header">
-          Your deck
-          <button onClick={(e)=>props.handleSidebarHeaderClick(e)}>Show filters</button>
-        </h3>
         <InputFilter attribute={name}      filter="name"      query={query} multiple={false}/>
         <InputFilter attribute={race}      filter="race"      query={query} multiple={true}/>
         <InputFilter attribute={mechanics} filter="mechanics" query={query} multiple={true}/>
