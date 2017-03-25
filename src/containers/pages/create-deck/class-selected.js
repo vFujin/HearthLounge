@@ -116,17 +116,8 @@ export class CreateDeckClassSelected extends Component {
     )
   }
 
-  handleSidebarHeaderClick(e){
-    let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
-    let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
-    this.setState({
-      activeSidebar,
-      nextActiveSidebar
-    });
-  }
-
-  onCtrlKeyPress(e) {
-    if (e.ctrlKey) {
+  handleSidebarViewChange(e){
+    if(e || e.ctrlKey) {
       let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
       let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
       this.setState({
@@ -136,16 +127,14 @@ export class CreateDeckClassSelected extends Component {
     }
   }
 
-
-
   render() {
     let query = this.props.location.query;
     return (
-        <div tabIndex="0" onKeyDown={(e)=>this.onCtrlKeyPress(e)} className={`container__page container__page--twoSided create-deck`}>
+        <div tabIndex="0" onKeyDown={(e)=>this.handleSidebarViewChange(e)} className={`container__page container__page--twoSided create-deck`}>
           <div className="container__page--inner container__page--left">
             <h3  className="sidebar__header">
               <span>{this.state.activeSidebar}</span>
-              <button className="btn-pearl" onClick={(e)=>this.handleSidebarHeaderClick(e)}>Show {this.state.nextActiveSidebar}</button>
+              <button className="btn-pearl" onClick={(e)=>this.handleSidebarViewChange(e)}>Show {this.state.nextActiveSidebar}</button>
             </h3>
             <DeckSidebar activeSidebar={this.state.activeSidebar}/>
             <FilterSidebar activeSidebar={this.state.activeSidebar}
