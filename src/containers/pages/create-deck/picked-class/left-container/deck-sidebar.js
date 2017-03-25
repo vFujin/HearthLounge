@@ -15,7 +15,7 @@ const DeckSidebar = props => {
             <DeckGraph cost="6"/>
             <DeckGraph cost="7-plus"/>
           </ul>
-          <h3>Wybrane karty</h3>
+          <h3>Choosen Cards</h3>
           <ChoosenCards deck={props.deck}/>
         </div>
       </div>

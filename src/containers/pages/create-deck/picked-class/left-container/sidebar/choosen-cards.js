@@ -1,9 +1,10 @@
 import React from 'react';
-
+import _ from 'lodash';
 const ChoosenCards = props => {
   const listCards = () =>{
     return props.deck.map(card=>
-      <tr>
+      <tr key={card.cardId}>
+        <td><span className={`hs-icon icon-${_.kebabCase(card.cardSet)}`}></span></td>
         <td>{card.name}</td>
         <td><span className={`hs-icon icon-mana-${card.cost}`}></span></td>
       </tr>
@@ -13,6 +14,7 @@ const ChoosenCards = props => {
       <table className="cards-list">
         <tbody>
         <tr>
+          <th>Set</th>
           <th>Cards</th>
           <th>Cost</th>
         </tr>
@@ -21,5 +23,6 @@ const ChoosenCards = props => {
       </table>
   );
 };
+
 
 export default ChoosenCards;
