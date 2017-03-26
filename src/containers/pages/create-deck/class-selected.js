@@ -5,6 +5,8 @@ import DeckSidebar from './picked-class/left-container/deck-sidebar';
 import {Topbar} from './picked-class/right-container/topbar';
 import Loader from '../../shared-assets/loader';
 import {Data} from '../../../data/cards-data';
+import _ from 'lodash';
+
 export class CreateDeckClassSelected extends Component {
   constructor(props){
     super(props);
@@ -20,7 +22,8 @@ export class CreateDeckClassSelected extends Component {
       cardSet: [],
 
       sliderFirstValue: [],
-      deck: []
+      deck: [],
+      filteredDeck: [],
     }
   }
 
@@ -57,26 +60,15 @@ export class CreateDeckClassSelected extends Component {
     Data.fetchData(setState);
   }
 
-  handleLeftClick(card){
-    let uniqueCardAmount = this.state[card.cardId];
-    let countCardAmount = uniqueCardAmount < 2 ? uniqueCardAmount + 1 : uniqueCardAmount || 1;
+  handleLeftClick(card) {
+    if (_.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
       this.setState({
-        [card.cardId]: countCardAmount,
-        deck: this.state.deck.concat(Object.assign({}, {card: card}, {count: countCardAmount}))
+        deck: this.state.deck.concat(card),
       });
-  }
-
-  handleRightClick(card){
-    this.setState({
-
-    })
+    }
   }
 
   listCards(query) {
-    const filterDuplicates = (card) =>{
-      return this.state.deck.filter(obj=>obj.card.cardId === card.cardId).map(obj=>obj.count);
-    };
-
     if (this.state.cards < 1) {
       return <Loader/>;
     }
@@ -121,8 +113,8 @@ export class CreateDeckClassSelected extends Component {
               })
             })
             .map(card =>
-                <li key={card.cardId} onClick={filterDuplicates(card) < 2 ? () => this.handleLeftClick(card) : null}>
-                  <div className={filterDuplicates(card) > 0 && filterDuplicates(card) < 3 ? 'count' : 'display-none'}>{this.state[card.cardId]}</div>
+                <li key={card.cardId} onClick={this.state.deck ? () => this.handleLeftClick(card) : null}>
+                  <div className={this.state.deck ? 'display-none' : 'count'}>{this.state[card.cardId]}</div>
                     <img src={card.img} alt={card.name}/>
                 </li>
             )
