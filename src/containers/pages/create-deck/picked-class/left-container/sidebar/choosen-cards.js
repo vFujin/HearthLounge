@@ -1,9 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
 const ChoosenCards = props => {
-  function countCards(){
-    console.log(props.deck)
-  }
+  const countCards = card =>{
+    return _.filter(props.deck, {cardId: card.cardId}).length;
+  };
   const listCards = () => {
     return _.uniqBy(props.deck).map(function (card, i) {
 
@@ -11,7 +11,7 @@ const ChoosenCards = props => {
           <tr key={i}>
             <td><span className={`hs-icon icon-${_.kebabCase(card.cardSet)}`}></span></td>
             <td>{card.name}</td>
-            <td>{countCards()}</td>
+            <td>{countCards(card)}</td>
             <td><span className={`hs-icon icon-mana-${card.cost}`}></span></td>
           </tr>
       );
