@@ -12,7 +12,6 @@ const fetchData = (state) => {
     .then(data => {
       let cards = Object.values(data).reduce((a, b) => a.concat(b)).slice(400, 800); //all cards returned at once
       // let d = data["Naxxramas"];
-    console.log(data);
       state(cards);
     })
 };

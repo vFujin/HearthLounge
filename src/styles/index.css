@@ -1868,7 +1868,14 @@ footer {
           height: 10vh;
           margin: .2vh auto;
           width: 1.5vh;
-          background-color: #474143; }
+          background-color: #474143;
+          position: relative; }
+          .container__page .container__page--left .container__mana-curve .graph li .bar span {
+            background: #69CCF0;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0; }
         .container__page .container__page--left .container__mana-curve .graph li .hs-icon {
           font-size: 1.2vw; }
     .container__page .container__page--left .container__mana-curve table {

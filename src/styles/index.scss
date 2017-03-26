@@ -331,6 +331,15 @@ footer{
             margin: .2vh auto;
             width: 1.5vh;
             background-color: $dark-grey;
+            position: relative;
+            span{
+
+              background: $mage;
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+            }
           }
           .hs-icon{
             font-size: 1.2vw;
