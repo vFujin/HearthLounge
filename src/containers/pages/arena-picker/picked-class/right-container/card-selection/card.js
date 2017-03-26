@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Select from 'react-select';
 export class Card extends Component {
   constructor(props) {
     super(props);
@@ -14,12 +13,7 @@ export class Card extends Component {
           {/*api*/}
         </div>
         <span className="select2-wrapper">
-          <Select
-              placeholder={`Podaj nazwę ${this.props.placeholder} karty...`}
-              value={this.state.value}
-              options=''
-              onChange=''
-          />
+
         </span>
       </li>
     );

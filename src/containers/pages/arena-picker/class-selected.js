@@ -6,11 +6,11 @@ export class ArenaPickerClassSelected extends Component {
 
   render() {
     return (
-        <div>
-          <div className="container__page--left">
+        <div className="container__page container__page--twoSided">
+          <div className="container__page--inner container__page--left">
             <Sidebar/>
           </div>
-          <div className="container__page--right">
+          <div className="container__page--inner container__page--right">
             <Topbar/>
             <div className="content">
             <ul className="card-selection">

@@ -156,7 +156,7 @@ export class CreateDeckClassSelected extends Component {
   render() {
     let query = this.props.location.query;
     return (
-        <div tabIndex="0" onKeyDown={(e)=>this.handleSidebarViewChange(e)} className={`container__page container__page--twoSided create-deck`}>
+        <div tabIndex="0" onKeyDown={(e)=>this.handleSidebarViewChange(e)} className="container__page container__page--twoSided create-deck">
           <div className="container__page--inner container__page--left">
             <h3  className="sidebar__header">
               <span>{this.state.activeSidebar}</span>
