@@ -22,8 +22,7 @@ export class CreateDeckClassSelected extends Component {
       cardSet: [],
 
       sliderFirstValue: [],
-      deck: [],
-      filteredDeck: [],
+      deck: []
     }
   }
 
@@ -65,15 +64,23 @@ export class CreateDeckClassSelected extends Component {
     if (e.button == 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
       this.setState({
         deck: this.state.deck.concat(card),
+        [`${card.cardId}_tooltip`]: true
       });
     }
 
     if (e.button == 2 && _.filter(this.state.deck, {cardId: card.cardId}).length > 0) {
       this.setState({
-        deck: this.state.deck.filter(c=>c.cardId !== card.cardId)
+        deck: this.state.deck.filter(function(c,i){return c.cardId !== card.cardId}),
+        [`${card.cardId}_tooltip`]: false
       });
     }
   }
+
+  countCards(card){
+    return _.filter(this.state.deck, {cardId: card.cardId}).length;
+  }
+
+
 
   listCards(query) {
     if (this.state.cards < 1) {
@@ -123,7 +130,7 @@ export class CreateDeckClassSelected extends Component {
                 <li key={card.cardId}
                     onContextMenu={this.state.deck ? (e) => this.handleClick(e, card) : null}
                     onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
-                  <div className={this.state.deck ? 'display-none' : 'count'}>{this.state[card.cardId]}</div>
+                    <div className={this.state[`${card.cardId}_tooltip`] === true ? 'tooltip-count' : 'display-none'}>{this.countCards(card)}/2</div>
                     <img src={card.img} alt={card.name}/>
                 </li>
             )
@@ -151,7 +158,9 @@ export class CreateDeckClassSelected extends Component {
               <span>{this.state.activeSidebar}</span>
               <button className="btn-pearl" onClick={(e)=>this.handleSidebarViewChange(e)}>Show {this.state.nextActiveSidebar}</button>
             </h3>
-            <DeckSidebar activeSidebar={this.state.activeSidebar} deck={this.state.deck}/>
+            <DeckSidebar activeSidebar={this.state.activeSidebar}
+                         deck={this.state.deck}
+                         countCards={(e)=>this.countCards(e)}/>
             <FilterSidebar activeSidebar={this.state.activeSidebar}
                            name={this.state.name}
                            race={this.state.race}
