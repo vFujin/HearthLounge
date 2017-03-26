@@ -64,22 +64,23 @@ export class Reddit extends Component{
   render(){
     const {main, sidebar, topbar} = this.props;
     return (
-      <div className="pageContainer subreddit list-with-filters-layout">
-          <div className="left-container">
-            <div className="sidebar">
+      <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
+          <div className="container__page--inner container__page--left">
+            <h3 className="sidebar__header">Filters</h3>
               {React.cloneElement(sidebar, {handleTabmenuClick: this.handleFilterClick.bind(this),
                                             active_tabmenu: this.state.active_tabmenu,
                                             active_domain_filter: this.state.active_domain_filter})}
-            </div>
           </div>
-          <div className="right-container">
+          <div className="container__page--inner container__page--right">
             <div className="topbar">
               {React.cloneElement(topbar, {active_tabmenu: this.state.active_tabmenu,
                                            active_domain_filter: this.state.active_domain_filter})}
             </div>
+            <div className="content">
             {React.cloneElement(main, {posts: this.state.posts,
                                        post_permalink: this.state.post_permalink,
                                        handleRedditPostClick: this.handleRedditPostClick.bind(this)})}
+            </div>
           </div>
       </div>
     )

@@ -4,6 +4,7 @@ export const supported_domains = ["battle.net", "youtu.be", "self.hearthstone", 
 export const supported_domain_icons = ["battlenet", "youtube", "bubbles2", "twitter", "twitch", "reddit"];
 
 const Icon = (post) => {
+  if(post.link_flair_text !== null) {
     let domain = post.domain;
     let flair_text = post.link_flair_text.toLowerCase();
     let self = domain.includes(supported_domains[2]);
@@ -21,6 +22,7 @@ const Icon = (post) => {
     if (domain !== supported_domains[2]) {
       let icon = domain.replace(/\.com|clips\.|\.tv/g, "").toLowerCase();
       return iconTemplate(icon);
+    }
   }
 };
 

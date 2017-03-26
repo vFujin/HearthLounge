@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 export class RedditPostSidebar extends Component {
   render() {
     return (
-        <div>post sidebar</div>
+        <div className="sidebar__body">post sidebar</div>
     )
   }
 }

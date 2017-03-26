@@ -5,16 +5,15 @@ const tabmenu = ["hot", "new", "rising", "controversial", "top"];
 export class RedditPostsSidebar extends Component{
   render() {
     return (
-        <div>
-          <h3 className="filter-header">Filters</h3>
-          {tabmenu.map(el=>{
-            return (
-                <button key={el} id={el} onClick={(e) => this.props.handleTabmenuClick(e)} >
-                  <Link activeClassName="active" to={{pathname: 'reddit', query: {category: el}}}>{el}</Link>
-                </button>
-            )
-          })}
-        </div>
+      <div className="sidebar__body">
+        {tabmenu.map(el=>{
+          return (
+              <button key={el} id={el} onClick={(e) => this.props.handleTabmenuClick(e)} >
+                <Link activeClassName="active" to={{pathname: 'reddit', query: {category: el}}}>{el}</Link>
+              </button>
+          )
+        })}
+    </div>
     )
   }
 }

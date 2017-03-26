@@ -1555,8 +1555,7 @@ footer{
 }
 
 .subreddit{
-  .left-container{
-    width: 10%;
+  .container__page--left{
     background-color: $light-grey;
     button{
       text-transform: capitalize;
@@ -1586,13 +1585,11 @@ footer{
       }
     }
   }
-  .right-container{
-    width: 90%;
+  .container__page--right{
     .topbar{
       .subreddit-posts-topbar{
         display: flex;
         align-items: center;
-        height: 100%;
         ul{
           display: flex;
           margin-top: 2px;
@@ -1609,7 +1606,6 @@ footer{
     }
     .posts{
       @include scrollbar($pearl);
-      height:calc(100% - 60px);
       overflow: auto;
       margin: 10px 0 0 10px;
       padding-right: 10px;

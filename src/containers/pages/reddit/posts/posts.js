@@ -11,8 +11,10 @@ const RedditPosts = (props) => {
   };
 
   const checkIfBlizzardPost = post =>{
-    let flair_text = post.link_flair_text.toLowerCase();
-    return flair_text === "blizzard" ? "mage blizzard-official" : flair_text;
+    if(post.link_flair_text !== null) {
+      let flair_text = post.link_flair_text.toLowerCase();
+      return flair_text === "blizzard" ? "mage blizzard-official" : flair_text;
+    }
   };
 
   const stripRedditURL = url => {
