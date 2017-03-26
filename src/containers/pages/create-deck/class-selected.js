@@ -80,7 +80,9 @@ export class CreateDeckClassSelected extends Component {
     return _.filter(this.state.deck, {cardId: card.cardId}).length;
   }
 
-
+  showCardCountTooltip(card, visible_class, callback){
+    return this.state[`${card.cardId}_tooltip`] === true ? visible_class : callback;
+  }
 
   listCards(query) {
     if (this.state.cards < 1) {
@@ -112,9 +114,7 @@ export class CreateDeckClassSelected extends Component {
                 //     return card[queryKey].indexOf(queryValue) > -1;
                 //   });
                 // }
-                if (queryKey === 'health') {
-
-                } else if (query[queryKey].constructor === Array) {
+                if (query[queryKey].constructor === Array) {
                   return query[queryKey].some(queryValue => {
 
                     return card[queryKey] == queryValue
@@ -130,8 +130,12 @@ export class CreateDeckClassSelected extends Component {
                 <li key={card.cardId}
                     onContextMenu={this.state.deck ? (e) => this.handleClick(e, card) : null}
                     onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
-                    <div className={this.state[`${card.cardId}_tooltip`] === true ? 'tooltip-count' : 'display-none'}>{this.countCards(card)}/2</div>
-                    <img src={card.img} alt={card.name}/>
+                    <div className={this.showCardCountTooltip(card, 'tooltip-count', 'display-none')}>
+                      <span>
+                        {this.countCards(card)}/2
+                      </span>
+                    </div>
+                    <img className={this.showCardCountTooltip(card, 'choosen', null)} src={card.img} alt={card.name}/>
                 </li>
             )
     )

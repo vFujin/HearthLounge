@@ -408,8 +408,25 @@ footer{
       .container__cards{
         justify-content: center;
         li{
+          cursor: pointer;
+          position: relative;
+          .tooltip-count{
+            position: absolute;
+            padding: .5vh;
+            width: calc(100% - 1vh);
+            text-align: center;
+            span{
+              background-color: $dark-grey;
+              color: $pearl;
+              padding: .5vh 1vh;
+            }
+          }
           img{
+            @include transition(all ease .4s);
             width:100%;
+          }
+          img.choosen{
+            opacity: .3;
           }
         }
       }
