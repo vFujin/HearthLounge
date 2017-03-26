@@ -286,7 +286,7 @@ footer{
         align-items: center;
         justify-content: space-between;
       }
-      .icon-filter-wrapper {
+      .icon-filter-wrapper, .container__mana-curve {
         h3{
           background: $dark-grey;
           text-transform: capitalize;
@@ -339,11 +339,28 @@ footer{
       }
       table {
         width:  100%;
+        border-collapse: collapse;
         tr {
-          td {
+          th{
+            font-weight:normal;
+          }
+          td, th {
+            padding:.5vh;
+            text-align: center;
             span {
               font-size: 20px;
             }
+            &:first-child, &:last-child{
+              width: 10%;
+            }
+            &:nth-child(3){
+              width: 20%;
+            }
+          }
+          &:first-child{
+            background: $dark-grey;
+            color: $pearl;
+            border-top:1px solid $pearl;
           }
         }
       }

@@ -5,7 +5,9 @@ export class DeckGraph extends Component {
     return (
           <li>
             <div className="count">0</div>
-            <div className="bar"></div>
+            <div className="bar">
+              <span></span>
+            </div>
             <div className={`hs-icon icon-mana-${this.props.cost}`}></div>
           </li>
     );
