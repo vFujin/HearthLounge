@@ -39,8 +39,6 @@ export class Streams extends Component {
     })
   }
 
-
-
   handlePreviewClick(e){
     let streamer = e.currentTarget.id;
     console.log(streamer);
@@ -63,14 +61,15 @@ export class Streams extends Component {
   render() {
     let path = this.props.params.channel;
     return (
-        <div className="pageContainer streams">
-          {/*{console.log(this.props.location.pathname)}*/}
-          <div className="left-container">
+        <div className="container__page container__page--twoSided streams">
+          <div className="container__page--inner  container__page--left">
+            <h3 className="sidebar__header">Filters</h3>
             <Sidebar streams={this.state.streams} handlePreviewClick={(e)=>this.handlePreviewClick(e)}/>
           </div>
-          <div className="right-container">
+
+          <div className="container__page--inner container__page--right">
             <Topbar streams={this.state.streams} activeStreamer={path}/>
-            <div className="stream">
+            <div className="content">
               {this.loadIframe()}
             </div>
           </div>

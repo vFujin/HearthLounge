@@ -6,11 +6,11 @@ const Expansions = props => {
   const {expansion} = params;
 
   return (
-      <div className="pageContainer expansions">
-        <div className="left-container">
+      <div className="container__page container__page--twoSided expansions">
+        <div className="container__page--inner container__page--left">
           <Sidebar expansion={expansion}/>
         </div>
-        <div className="right-container">
+        <div className="container__page--inner container__page--right">
           {children}
         </div>
       </div>

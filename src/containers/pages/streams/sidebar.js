@@ -39,12 +39,9 @@ const Sidebar = props => {
   };
 
     return (
-        <div className="sidebar">
-          <h3 className="filter-header">Streamers</h3>
-          <ul>
-            {loadPreviews()}
-          </ul>
-        </div>
+      <ul className="sidebar__body">
+        {loadPreviews()}
+      </ul>
     );
 };
 

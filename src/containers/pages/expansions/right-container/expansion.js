@@ -23,10 +23,13 @@ export class Expansion extends Component{
 
   content(details, expansion){
     return (
+        <div>
+    <Topbar expansion={expansion}
+            details={details}/>
         <div className="content">
-          <Topbar expansion={expansion}
-                  details={details}/>
+
           {React.cloneElement(this.props.children, {cards: this.state.cards})}
+        </div>
         </div>
     )
   }
