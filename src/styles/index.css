@@ -750,38 +750,38 @@ a:active, a:hover, a:link, a:visited {
     background-color: #A330C9;
     color: #000; }
 
-.curse-of-naxxramas {
+.naxxramas {
   color: #b5de3f; }
-  .curse-of-naxxramas span {
+  .naxxramas span {
     border-color: #b5de3f; }
-  .curse-of-naxxramas:hover {
+  .naxxramas:hover {
     background-color: #b5de3f;
     color: #474143; }
-    .curse-of-naxxramas:hover span {
+    .naxxramas:hover span {
       border-color: #474143; }
-  .curse-of-naxxramas.active {
+  .naxxramas.active {
     background-color: #b5de3f;
     color: #474143;
     border-color: #b5de3f; }
-  .curse-of-naxxramas.active-on-hover {
+  .naxxramas.active-on-hover {
     color: #474143; }
-    .curse-of-naxxramas.active-on-hover:hover {
+    .naxxramas.active-on-hover:hover {
       background-color: #b5de3f;
       color: #474143;
       border: #474143; }
-  .curse-of-naxxramas.icon-font-active {
+  .naxxramas.icon-font-active {
     color: #474143; }
-  .curse-of-naxxramas.table-row {
+  .naxxramas.table-row {
     color: #474143; }
-    .curse-of-naxxramas.table-row:nth-child(odd) {
+    .naxxramas.table-row:nth-child(odd) {
       background-color: rgba(0, 0, 0, 0.1); }
-      .curse-of-naxxramas.table-row:nth-child(odd):hover {
+      .naxxramas.table-row:nth-child(odd):hover {
         background: #b5de3f; }
-    .curse-of-naxxramas.table-row:hover {
+    .naxxramas.table-row:hover {
       background-color: #b5de3f;
       color: #474143;
       border: #474143; }
-  .curse-of-naxxramas.blizzard-official {
+  .naxxramas.blizzard-official {
     background-color: #b5de3f;
     color: #000; }
 
@@ -855,38 +855,38 @@ a:active, a:hover, a:link, a:visited {
     background-color: #14a9a1;
     color: #000; }
 
-.one-night-at-karazhan {
+.karazhan {
   color: #e2b4df; }
-  .one-night-at-karazhan span {
+  .karazhan span {
     border-color: #e2b4df; }
-  .one-night-at-karazhan:hover {
+  .karazhan:hover {
     background-color: #e2b4df;
     color: #474143; }
-    .one-night-at-karazhan:hover span {
+    .karazhan:hover span {
       border-color: #474143; }
-  .one-night-at-karazhan.active {
+  .karazhan.active {
     background-color: #e2b4df;
     color: #474143;
     border-color: #e2b4df; }
-  .one-night-at-karazhan.active-on-hover {
+  .karazhan.active-on-hover {
     color: #474143; }
-    .one-night-at-karazhan.active-on-hover:hover {
+    .karazhan.active-on-hover:hover {
       background-color: #e2b4df;
       color: #474143;
       border: #474143; }
-  .one-night-at-karazhan.icon-font-active {
+  .karazhan.icon-font-active {
     color: #474143; }
-  .one-night-at-karazhan.table-row {
+  .karazhan.table-row {
     color: #474143; }
-    .one-night-at-karazhan.table-row:nth-child(odd) {
+    .karazhan.table-row:nth-child(odd) {
       background-color: rgba(0, 0, 0, 0.1); }
-      .one-night-at-karazhan.table-row:nth-child(odd):hover {
+      .karazhan.table-row:nth-child(odd):hover {
         background: #e2b4df; }
-    .one-night-at-karazhan.table-row:hover {
+    .karazhan.table-row:hover {
       background-color: #e2b4df;
       color: #474143;
       border: #474143; }
-  .one-night-at-karazhan.blizzard-official {
+  .karazhan.blizzard-official {
     background-color: #e2b4df;
     color: #000; }
 

@@ -40,7 +40,7 @@
 }
 
 //Adventures
-.curse-of-naxxramas{
+.naxxramas{
   @include icon_color($naxx);
 }
 .blackrock-mountain{
@@ -49,7 +49,7 @@
 .the-league-of-explorers{
   @include icon_color($loe);
 }
-.one-night-at-karazhan{
+.karazhan{
   @include icon_color($karazhan);
 }
 
