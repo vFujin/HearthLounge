@@ -5,7 +5,6 @@ import SliderFilter from '../../../../shared-assets/filters/slider-filter';
 
 const FilterSidebar = props => {
   const {faction, mechanics, name, query, race, type} = props;
-  console.log(props.activeSidebar);
   return (
 
       <div className={`sidebar__body ${props.activeSidebar === 'filters' ? 'active' : 'display-none'}`}>

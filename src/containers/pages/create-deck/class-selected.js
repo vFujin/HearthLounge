@@ -57,16 +57,26 @@ export class CreateDeckClassSelected extends Component {
     Data.fetchData(setState);
   }
 
-  handleCardClick(card){
-    console.log(card.name);
+  handleLeftClick(card){
+    let uniqueCardAmount = this.state[card.cardId];
+    let countCardAmount = uniqueCardAmount < 2 ? uniqueCardAmount + 1 : uniqueCardAmount || 1;
+      this.setState({
+        [card.cardId]: countCardAmount,
+        deck: this.state.deck.concat(Object.assign({}, {card: card}, {count: countCardAmount}))
+      });
+  }
 
+  handleRightClick(card){
     this.setState({
-      deck: this.state.deck.concat(card)
-    });
-    console.log(this.state.deck);
+
+    })
   }
 
   listCards(query) {
+    const filterDuplicates = (card) =>{
+      return this.state.deck.filter(obj=>obj.card.cardId === card.cardId).map(obj=>obj.count);
+    };
+
     if (this.state.cards < 1) {
       return <Loader/>;
     }
@@ -85,7 +95,6 @@ export class CreateDeckClassSelected extends Component {
     // this.state.card.filter(x=>x.faction)  //p3
     // this.state.card.filter(x=>x.mechanics)
     // this.state.card.filter(x=>x.mechanics)
-
     return (
         this.state.cards
             .filter(function (card) {
@@ -112,7 +121,8 @@ export class CreateDeckClassSelected extends Component {
               })
             })
             .map(card =>
-                <li key={card.cardId} onClick={() => this.handleCardClick(card)}>
+                <li key={card.cardId} onClick={filterDuplicates(card) < 2 ? () => this.handleLeftClick(card) : null}>
+                  <div className={filterDuplicates(card) > 0 && filterDuplicates(card) < 3 ? 'count' : 'display-none'}>{this.state[card.cardId]}</div>
                     <img src={card.img} alt={card.name}/>
                 </li>
             )
