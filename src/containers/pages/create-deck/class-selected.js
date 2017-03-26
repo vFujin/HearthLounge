@@ -60,10 +60,17 @@ export class CreateDeckClassSelected extends Component {
     Data.fetchData(setState);
   }
 
-  handleLeftClick(card) {
-    if (_.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
+  handleClick(e, card) {
+    e.preventDefault();
+    if (e.button == 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
       this.setState({
         deck: this.state.deck.concat(card),
+      });
+    }
+
+    if (e.button == 2 && _.filter(this.state.deck, {cardId: card.cardId}).length > 0) {
+      this.setState({
+        deck: this.state.deck.filter(c=>c.cardId !== card.cardId)
       });
     }
   }
@@ -113,7 +120,9 @@ export class CreateDeckClassSelected extends Component {
               })
             })
             .map(card =>
-                <li key={card.cardId} onClick={this.state.deck ? () => this.handleLeftClick(card) : null}>
+                <li key={card.cardId}
+                    onContextMenu={this.state.deck ? (e) => this.handleClick(e, card) : null}
+                    onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
                   <div className={this.state.deck ? 'display-none' : 'count'}>{this.state[card.cardId]}</div>
                     <img src={card.img} alt={card.name}/>
                 </li>
