@@ -1596,9 +1596,13 @@ footer{
           li{
             margin-left: 15px;
             color: $dark-grey;
-            span{
-              font-size: 25px;
-              padding: 5px;
+            a {
+
+              span {
+                font-size: 25px;
+                padding: 5px;
+                text-transform: capitalize;
+              }
             }
           }
         }

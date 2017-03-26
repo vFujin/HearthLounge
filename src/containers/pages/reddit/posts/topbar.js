@@ -1,5 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router';
+import Tooltip from 'antd/lib/tooltip';
+import 'antd/lib/tooltip/style/css';
+import _ from 'lodash';
 import {supported_domain_icons} from '../domain-icons';
 
 const RedditPostsTopbar = props => {
@@ -18,11 +21,9 @@ console.log(props);
         {supported_domain_icons.map((domain, index)=>
           <li key={domain}>
             <Link to={{pathname: 'reddit', query: {category: props.active_tabmenu, domain: checkIcon(domain)}}}>
-              <span className={`hs-icon icon-${domain} ${domain} ${domain === query ? "active" : ""}`}></span>
-              <div className="tooltip">
-                <div className="caret-up"></div>
-                <p>{domain}</p>
-              </div>
+              <Tooltip title={_.upperFirst(checkIcon(domain))} placement="bottom">
+                <span className={`hs-icon icon-${domain} ${domain} ${domain === query ? "active" : ""}`}></span>
+              </Tooltip>
             </Link>
           </li>
         )}

@@ -2833,9 +2833,10 @@ footer {
     .subreddit .container__page--right .topbar .subreddit-posts-topbar ul li {
       margin-left: 15px;
       color: #474143; }
-      .subreddit .container__page--right .topbar .subreddit-posts-topbar ul li span {
+      .subreddit .container__page--right .topbar .subreddit-posts-topbar ul li a span {
         font-size: 25px;
-        padding: 5px; }
+        padding: 5px;
+        text-transform: capitalize; }
 .subreddit .container__page--right .posts {
   overflow: auto;
   margin: 10px 0 0 10px;
