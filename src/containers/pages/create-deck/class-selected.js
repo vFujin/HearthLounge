@@ -22,7 +22,15 @@ export class CreateDeckClassSelected extends Component {
       cardSet: [],
 
       sliderFirstValue: [],
-      deck: []
+      deck: [],
+      mana_cost_0: [],
+      mana_cost_1: [],
+      mana_cost_2: [],
+      mana_cost_3: [],
+      mana_cost_4: [],
+      mana_cost_5: [],
+      mana_cost_6: [],
+      mana_cost_7: []
     }
   }
 
@@ -61,16 +69,18 @@ export class CreateDeckClassSelected extends Component {
 
   handleClick(e, card) {
     e.preventDefault();
-    if (e.button == 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
+    if (e.button === 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
       this.setState({
         deck: this.state.deck.concat(card),
+       [`mana_${_.uniqBy(_.map(this.state.deck, 'cost'))}`]: '',
         [`${card.cardId}_tooltip`]: true
       });
     }
 
-    if (e.button == 2 && _.filter(this.state.deck, {cardId: card.cardId}).length > 0) {
+
+    if (e.button === 2 && _.filter(this.state.deck, {cardId: card.cardId}).length > 0) {
       this.setState({
-        deck: this.state.deck.filter(function(c,i){return c.cardId !== card.cardId}),
+        deck: this.state.deck.filter(function(c){return c.cardId !== card.cardId}),
         [`${card.cardId}_tooltip`]: false
       });
     }

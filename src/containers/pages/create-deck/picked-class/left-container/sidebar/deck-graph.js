@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import _ from 'lodash';
 
 const DeckGraph = props => {
-  function foo(c){
-    return props.deck.map(card=>card[c])
-  }
 
-  // console.log(_.map(props.deck, {cardId: foo('cardId')}).length) //deck length
-  console.log(props.deck.map(card=>card.cost));
+  const costBelowSeven = (number) =>{
+    return _.filter(props.deck, {cost: number}).length
+  };
+  let costSevenOrMore = props.deck.filter(card=>card.cost >= 7).length;
+
   return (
       <li>
-        <div className="count">0</div>
+        <div className="count">{props.cost < 7 ? costBelowSeven(props.cost) : costSevenOrMore}</div>
         <div className="bar">
-          <span></span>
+          <span style={{height: `10%`}}></span>
         </div>
-        <div className={`hs-icon icon-mana-${props.cost}`}></div>
+        <div className={`hs-icon icon-mana-${props.icon}`}></div>
       </li>
   );
 };

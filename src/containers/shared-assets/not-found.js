@@ -19,7 +19,7 @@ const NotFound = props => {
         <div className="wrapper">
           <div className="lost">
             <span className="hs-icon icon-mana-4"></span>
-            <span className="hs-icon icon-hs_logo"></span>
+            <span className="hs-icon icon-hs-logo"></span>
             <span className="hs-icon icon-mana-4"></span>
           </div>
           <div className="description">
