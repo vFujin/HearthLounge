@@ -1,8 +1,10 @@
 import React from 'react';
 import _ from 'lodash';
 const ChoosenCards = props => {
+  const {deck} = props;
+
   const listCards = () => {
-    return _.uniqBy(props.deck).map((card, i) =>
+    return _.uniqBy(_.sortBy(deck, ['cost', 'name'])).map((card, i) =>
         <tr key={i}>
           <td><span className={`hs-icon icon-${_.kebabCase(card.cardSet)}`}></span></td>
           <td>{card.name}</td>
@@ -11,6 +13,7 @@ const ChoosenCards = props => {
         </tr>
     );
   };
+
 
   return (
       <table className="cards-list">
