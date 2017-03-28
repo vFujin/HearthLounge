@@ -9,6 +9,7 @@ const DeckSidebar = props => {
   return (
       <div className={`sidebar__body ${props.activeSidebar === 'deck' ? 'active' : 'display-none'}`}>
         <div className="container__mana-curve">
+          <h3>Cards/Mana Cost</h3>
           <ul className="graph">
             {[...new Array(7)].map((bar, i)=>
                 <DeckGraph key={i} cost={i} icon={i} deck={props.deck} max={max} />

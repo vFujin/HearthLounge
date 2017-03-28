@@ -20,7 +20,7 @@ const ChoosenCards = props => {
         <tbody>
         <tr>
           <th>Set</th>
-          <th>Cards</th>
+          <th>Card</th>
           <th>Amount</th>
           <th>Cost</th>
         </tr>
