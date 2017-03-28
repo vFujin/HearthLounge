@@ -16,11 +16,12 @@ const DeckGraph = props => {
     return 0;
   };
   let s = cost < 7 ? costBelowSeven(cost) : costSevenOrMore;
+  console.log(props.max, s, (s/props.max)*100);
   return (
       <li>
         <div className="count">{s}</div>
         <div className="bar">
-          <span style={{height: `${drawBars()}%`}}></span>
+          <span style={{height: `${(s/props.max)*100}%`}}></span>
         </div>
         <div className={`hs-icon icon-mana-${icon}`}></div>
       </li>
