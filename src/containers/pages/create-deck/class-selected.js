@@ -153,7 +153,7 @@ export class CreateDeckClassSelected extends Component {
 
 
   handleSidebarViewChange(e){
-    if(e || e.ctrlKey) {
+    if(e.ctrlKey) {
       let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
       let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
       this.setState({

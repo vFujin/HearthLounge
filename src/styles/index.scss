@@ -333,7 +333,7 @@ footer{
             background-color: $dark-grey;
             position: relative;
             span{
-
+              @include transition(all ease .4s);
               background: $mage;
               width: 100%;
               position: absolute;

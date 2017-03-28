@@ -1871,6 +1871,11 @@ footer {
           background-color: #474143;
           position: relative; }
           .container__page .container__page--left .container__mana-curve .graph li .bar span {
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+            transition: all ease 0.4s;
             background: #69CCF0;
             width: 100%;
             position: absolute;
