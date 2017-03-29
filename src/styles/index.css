@@ -1760,7 +1760,16 @@ footer {
           .container__page .container__class-selection ul li a p {
             margin-top: 2vh; }
   .container__page .container__page--left {
-    background-color: #A69E9D; }
+    background-color: #A69E9D;
+    position: relative; }
+    .container__page .container__page--left .background {
+      position: absolute;
+      bottom: 5vh;
+      width: 100%;
+      text-align: center; }
+      .container__page .container__page--left .background span {
+        opacity: .2;
+        font-size: 20vh; }
     .container__page .container__page--left .sidebar__header {
       display: flex;
       align-items: center;
