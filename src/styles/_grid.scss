@@ -66,6 +66,10 @@
             grid-auto-rows: 7vh;
           }
         }
+        .container__mana-curve{
+          display: grid;
+          grid-template-rows: 3vh 16vh 3vh auto;
+        }
       }
     }
     .container__page--right{

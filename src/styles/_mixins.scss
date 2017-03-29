@@ -112,6 +112,7 @@
     background: linear-gradient(to right,  rgba($color,.4) 0%,rgba(0,0,0,0) 10%);
     color: $dark-grey;
     background-attachment: fixed;
+    border-left: 10px solid $color;
   }
 
 }

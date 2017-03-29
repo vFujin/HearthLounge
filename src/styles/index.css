@@ -304,6 +304,9 @@ a:active, a:hover, a:link, a:visited {
       grid-template-columns: repeat(5, auto);
       grid-column-gap: 1vh;
       grid-auto-rows: 7vh; }
+    #container .container__page .container__page--left .sidebar__body .container__mana-curve {
+      display: grid;
+      grid-template-rows: 3vh 16vh 3vh auto; }
     #container .container__page .content .container__cards {
       display: grid;
       grid-template-columns: repeat(7, 11vw); }
@@ -369,7 +372,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(255, 125, 10, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #FF7D0A; }
 
 .hunter {
   color: #ABD473; }
@@ -410,7 +414,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(171, 212, 115, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #ABD473; }
 
 .mage {
   color: #69CCF0; }
@@ -451,7 +456,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(105, 204, 240, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #69CCF0; }
 
 .paladin {
   color: #F58CBA; }
@@ -492,7 +498,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(245, 140, 186, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #F58CBA; }
 
 .priest {
   color: #FFFFFF; }
@@ -533,7 +540,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #FFFFFF; }
 
 .rogue {
   color: #FFF569; }
@@ -574,7 +582,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(255, 245, 105, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #FFF569; }
 
 .shaman {
   color: #0070DE; }
@@ -615,7 +624,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(0, 112, 222, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #0070DE; }
 
 .warlock {
   color: #9482C9; }
@@ -656,7 +666,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #9482C9; }
 
 .warrior {
   color: #C79C6E; }
@@ -697,7 +708,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(199, 156, 110, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #C79C6E; }
 
 .death-knight {
   color: #C41F3B; }
@@ -738,7 +750,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #C41F3B; }
 
 .monk {
   color: #00FF96; }
@@ -779,7 +792,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(0, 255, 150, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #00FF96; }
 
 .demon-hunter {
   color: #A330C9; }
@@ -820,7 +834,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(163, 48, 201, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #A330C9; }
 
 .naxxramas {
   color: #b5de3f; }
@@ -861,7 +876,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(181, 222, 63, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #b5de3f; }
 
 .blackrock-mountain {
   color: #fa5210; }
@@ -902,7 +918,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(250, 82, 16, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #fa5210; }
 
 .the-league-of-explorers {
   color: #14a9a1; }
@@ -943,7 +960,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(20, 169, 161, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #14a9a1; }
 
 .karazhan {
   color: #e2b4df; }
@@ -984,7 +1002,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(226, 180, 223, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #e2b4df; }
 
 .goblins-vs-gnomes {
   color: #fae43f; }
@@ -1025,7 +1044,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(250, 228, 63, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #fae43f; }
 
 .the-grand-tournament {
   color: #f00; }
@@ -1066,7 +1086,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(255, 0, 0, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #f00; }
 
 .whispers-of-the-old-gods {
   color: #cc00ff; }
@@ -1107,7 +1128,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(204, 0, 255, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #cc00ff; }
 
 .mean-streets-of-gadgetzan {
   color: #d2cac5; }
@@ -1148,7 +1170,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(210, 202, 197, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #d2cac5; }
 
 .journey-to-ungoro {
   color: #3d9e2c; }
@@ -1189,7 +1212,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(61, 158, 44, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #3d9e2c; }
 
 .common {
   color: #fff; }
@@ -1230,7 +1254,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid #fff; }
 
 .rare {
   color: blue; }
@@ -1271,7 +1296,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid blue; }
 
 .epic {
   color: purple; }
@@ -1312,7 +1338,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(128, 0, 128, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid purple; }
 
 .legendary {
   color: orange; }
@@ -1353,7 +1380,8 @@ a:active, a:hover, a:link, a:visited {
     background: -webkit-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 10%);
     background: linear-gradient(to right, rgba(255, 165, 0, 0.4) 0%, transparent 10%);
     color: #474143;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    border-left: 10px solid orange; }
 
 .facebook {
   -webkit-transition: all ease 0.4s;
@@ -2010,7 +2038,8 @@ footer {
             display: block; }
     .container__page .container__page--left .container__mana-curve {
       position: relative;
-      z-index: 1; }
+      z-index: 1;
+      height: 100%; }
       .container__page .container__page--left .container__mana-curve .graph {
         padding: 1vh;
         width: calc(100% - 2vh);
@@ -2038,27 +2067,49 @@ footer {
               background: -moz-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
               background: -webkit-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
               background: linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
-              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 ); }
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3b679e', endColorstr='#7db9e8', GradientType=1); }
           .container__page .container__page--left .container__mana-curve .graph li .hs-icon {
             font-size: 1.2vw; }
-      .container__page .container__page--left .container__mana-curve table {
-        width: 100%;
-        border-collapse: collapse; }
-        .container__page .container__page--left .container__mana-curve table tr th {
-          font-weight: normal; }
-        .container__page .container__page--left .container__mana-curve table tr td, .container__page .container__page--left .container__mana-curve table tr th {
-          padding: .5vh;
-          text-align: center; }
-          .container__page .container__page--left .container__mana-curve table tr td span, .container__page .container__page--left .container__mana-curve table tr th span {
-            font-size: 20px; }
-          .container__page .container__page--left .container__mana-curve table tr td:first-child, .container__page .container__page--left .container__mana-curve table tr td:last-child, .container__page .container__page--left .container__mana-curve table tr th:first-child, .container__page .container__page--left .container__mana-curve table tr th:last-child {
-            width: 10%; }
-          .container__page .container__page--left .container__mana-curve table tr td:nth-child(3), .container__page .container__page--left .container__mana-curve table tr th:nth-child(3) {
-            width: 20%; }
-        .container__page .container__page--left .container__mana-curve table tr:first-child {
-          background: #474143;
-          color: #E7E2DA;
-          border-top: 1px solid #E7E2DA; }
+      .container__page .container__page--left .container__mana-curve .cards-list {
+        position: relative;
+        overflow: hidden;
+        margin-top: 1px; }
+        .container__page .container__page--left .container__mana-curve .cards-list .table-scroll {
+          overflow: auto;
+          height: calc(100% - 30px);
+          margin-top: 30px; }
+          .container__page .container__page--left .container__mana-curve .cards-list .table-scroll::-webkit-scrollbar {
+            width: 13px; }
+          .container__page .container__page--left .container__mana-curve .cards-list .table-scroll::-webkit-scrollbar-thumb {
+            background-color: #474143;
+            border-radius: 0;
+            border-left: 1px solid #A69E9D; }
+          .container__page .container__page--left .container__mana-curve .cards-list .table-scroll::-webkit-scrollbar-thumb:hover {
+            background-color: #474143; }
+          .container__page .container__page--left .container__mana-curve .cards-list .table-scroll::-webkit-scrollbar-track {
+            background-color: #A69E9D;
+            border-left: 1px solid #A69E9D; }
+          .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table {
+            width: 100%;
+            border-collapse: collapse; }
+            .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table thead {
+              position: absolute;
+              top: 0; }
+              .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table thead tr {
+                background: #474143;
+                color: #E7E2DA;
+                font-size: .9vw; }
+            .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr th {
+              font-weight: normal; }
+            .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr td, .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr th {
+              padding: .5vh;
+              text-align: center; }
+              .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr td span, .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr th span {
+                font-size: 20px; }
+              .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr td:first-child, .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr td:last-child, .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr th:first-child, .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr th:last-child {
+                width: 10%; }
+              .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr td:nth-child(3), .container__page .container__page--left .container__mana-curve .cards-list .table-scroll table tr th:nth-child(3) {
+                width: 20%; }
     .container__page .container__page--left .background {
       position: absolute;
       bottom: 5vh;
@@ -2066,7 +2117,7 @@ footer {
       text-align: center;
       z-index: 0; }
       .container__page .container__page--left .background span {
-        opacity: .2;
+        opacity: .1;
         font-size: 20vh; }
     .container__page .container__page--left table {
       width: 100%; }

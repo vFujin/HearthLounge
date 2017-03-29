@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 
 
-
+let cards = [];
 const fetchData = (state) => {
   fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1`, {
     headers: {

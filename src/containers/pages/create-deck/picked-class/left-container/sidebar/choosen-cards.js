@@ -16,17 +16,23 @@ const ChoosenCards = props => {
 
 
   return (
-      <table className="cards-list">
-        <tbody>
-        <tr>
-          <th>Set</th>
-          <th>Card</th>
-          <th>Amount</th>
-          <th>Cost</th>
-        </tr>
-        {listCards()}
-        </tbody>
-      </table>
+      <div className={`cards-list ${props.deckDetails === true ? 'display-none' : ''} `}>
+        <div className="table-scroll">
+        <table>
+          <thead>
+          <tr>
+            <th>Set</th>
+            <th>Card</th>
+            <th>Amount</th>
+            <th>Cost</th>
+          </tr>
+          </thead>
+          <tbody>
+          {listCards()}
+          </tbody>
+        </table>
+      </div>
+      </div>
   );
 };
 

@@ -8,29 +8,24 @@ import {Data} from '../../../data/cards-data';
 import _ from 'lodash';
 
 export class CreateDeckClassSelected extends Component {
+
   constructor(props){
     super(props);
     this.state = {
+      deck: [],
       activeSidebar: 'deck',
       nextActiveSidebar: 'filters',
+      deckDetails: false,
+
       name: [],
       cards: [],
       faction: [],
       mechanics: [],
       race: [],
       type: [],
-      cardSet: [],
 
-      sliderFirstValue: [],
-      deck: [],
-      mana_cost_0: [],
-      mana_cost_1: [],
-      mana_cost_2: [],
-      mana_cost_3: [],
-      mana_cost_4: [],
-      mana_cost_5: [],
-      mana_cost_6: [],
-      mana_cost_7: []
+      cardSet: [],
+      sliderFirstValue: []
     }
   }
 
@@ -72,7 +67,6 @@ export class CreateDeckClassSelected extends Component {
     if (e.button === 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
       this.setState({
         deck: this.state.deck.concat(card),
-       [`mana_${_.uniqBy(_.map(this.state.deck, 'cost'))}`]: '',
         [`${card.cardId}_tooltip`]: true
       });
     }
@@ -83,6 +77,16 @@ export class CreateDeckClassSelected extends Component {
         deck: this.state.deck.filter(function(c){return c.cardId !== card.cardId}),
         [`${card.cardId}_tooltip`]: false
       });
+    }
+  }
+
+  handleDeckDetailsClick(e){
+    let isActive = this.state.deckDetails === false ? true : false;
+    console.log("alt", e.ctrlKey);
+    if(e || e.altKey) {
+      this.setState({
+        deckDetails: isActive
+      })
     }
   }
 
@@ -153,7 +157,7 @@ export class CreateDeckClassSelected extends Component {
 
 
   handleSidebarViewChange(e){
-    if(e.ctrlKey) {
+    if(e.button == 0 || e.ctrlKey) {
       let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
       let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
       this.setState({
@@ -174,9 +178,12 @@ export class CreateDeckClassSelected extends Component {
               <button className="btn-pearl" onClick={(e)=>this.handleSidebarViewChange(e)}>Show {this.state.nextActiveSidebar}</button>
             </h3>
             <DeckSidebar activeSidebar={this.state.activeSidebar}
+                         countCards={(e)=>this.countCards(e)}
                          deck={this.state.deck}
-                         params={params}
-                         countCards={(e)=>this.countCards(e)}/>
+                         deckDetails={this.state.deckDetails}
+                         handleDeckDetailClick={(e)=>this.handleDeckDetailsClick(e)}
+                         params={params}/>
+
             <FilterSidebar activeSidebar={this.state.activeSidebar}
                            name={this.state.name}
                            race={this.state.race}
