@@ -3,24 +3,31 @@ import DeckGraph from './sidebar/deck-graph';
 import ChoosenCards from './sidebar/choosen-cards';
 import _ from 'lodash';
 const DeckSidebar = props => {
-  let countByCost = _.countBy(props.deck, (value)=>value.cost < 7 ? value.cost : 7);
+  const {activeSidebar, countCards, deck} = props;
+  let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
 
   return (
-      <div className={`sidebar__body ${props.activeSidebar === 'deck' ? 'active' : 'display-none'}`}>
+      <div className={`sidebar__body ${activeSidebar === 'deck' ? 'active' : 'display-none'}`}>
         <div className="container__mana-curve">
           <h3>Cards/Mana Cost</h3>
           <ul className="graph">
             {[...new Array(7)].map((bar, i)=>
-                <DeckGraph key={i} cost={i} icon={i} deck={props.deck} max={max} />
+                <DeckGraph key={i} cost={i} icon={i} deck={deck} max={max} />
             )}
-            <DeckGraph cost={7} icon="7-plus" deck={props.deck}/>
+            <DeckGraph cost={7} icon="7-plus" deck={deck}/>
           </ul>
           <h3>Choosen Cards <button className="btn-pearl">More details</button></h3> {/* consider changing btn to icon*/}
-          <ChoosenCards deck={props.deck} countCards={props.countCards}/>
+          <ChoosenCards deck={deck} countCards={countCards}/>
         </div>
       </div>
   );
+};
+
+DeckSidebar.propTypes = {
+  activeSidebar: React.PropTypes.string,
+  countCards: React.PropTypes.func,
+  deck: React.PropTypes.array
 };
 
 export default DeckSidebar;
