@@ -165,19 +165,17 @@ export class CreateDeckClassSelected extends Component {
 
   render() {
     let query = this.props.location.query;
+    let params = this.props.params.class;
     return (
         <div tabIndex="0" onKeyDown={(e)=>this.handleSidebarViewChange(e)} className="container__page container__page--twoSided create-deck">
           <div className="container__page--inner container__page--left">
-            <div className="background">
-              {console.log()}
-              <span className={`hs-icon icon-${this.props.params.class}`}></span>
-            </div>
             <h3  className="sidebar__header">
               <span>{this.state.activeSidebar}</span>
               <button className="btn-pearl" onClick={(e)=>this.handleSidebarViewChange(e)}>Show {this.state.nextActiveSidebar}</button>
             </h3>
             <DeckSidebar activeSidebar={this.state.activeSidebar}
                          deck={this.state.deck}
+                         params={params}
                          countCards={(e)=>this.countCards(e)}/>
             <FilterSidebar activeSidebar={this.state.activeSidebar}
                            name={this.state.name}

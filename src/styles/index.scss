@@ -221,16 +221,6 @@ footer{
   .container__page--left {
     background-color: $light-grey;
     position: relative;
-    .background{
-      position: absolute;
-      bottom: 5vh;
-      width: 100%;
-      text-align: center;
-      span{
-        opacity: .2;
-        font-size: 20vh;
-      }
-    }
     .sidebar__header{
       display: flex;
       align-items: center;
@@ -330,6 +320,8 @@ footer{
       }
     }
     .container__mana-curve {
+      position: relative;
+      z-index: 1;
       .graph{
         padding: 1vh;
         width: calc(100% - 2vh);
@@ -387,6 +379,17 @@ footer{
             border-top:1px solid $pearl;
           }
         }
+      }
+    }
+    .background{
+      position: absolute;
+      bottom: 5vh;
+      width: 100%;
+      text-align: center;
+      z-index: 0;
+      span{
+        opacity: .2;
+        font-size: 20vh;
       }
     }
     table{

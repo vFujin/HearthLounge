@@ -3,7 +3,7 @@ import DeckGraph from './sidebar/deck-graph';
 import ChoosenCards from './sidebar/choosen-cards';
 import _ from 'lodash';
 const DeckSidebar = props => {
-  const {activeSidebar, countCards, deck} = props;
+  const {activeSidebar, countCards, deck, params} = props;
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
 
@@ -20,6 +20,9 @@ const DeckSidebar = props => {
           <h3>Choosen Cards <button className="btn-pearl">More details</button></h3> {/* consider changing btn to icon*/}
           <ChoosenCards deck={deck} countCards={countCards}/>
         </div>
+        <div className="background">
+          <span className={`hs-icon icon-${params}`}></span>
+        </div>
       </div>
   );
 };
@@ -27,7 +30,8 @@ const DeckSidebar = props => {
 DeckSidebar.propTypes = {
   activeSidebar: React.PropTypes.string,
   countCards: React.PropTypes.func,
-  deck: React.PropTypes.array
+  deck: React.PropTypes.array,
+  params: React.PropTypes.string
 };
 
 export default DeckSidebar;
