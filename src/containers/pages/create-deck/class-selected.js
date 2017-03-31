@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'whatwg-fetch';
 import FilterSidebar from './picked-class/left-container/filter-sidebar';
 import DeckSidebar from './picked-class/left-container/deck-sidebar';
-import {Topbar} from './picked-class/right-container/topbar';
+import {IconFilter} from '../../shared-assets/filters/icon-filter';
 import Loader from '../../shared-assets/loader';
 import {Data} from '../../../data/cards-data';
 import _ from 'lodash';
@@ -157,13 +157,20 @@ export class CreateDeckClassSelected extends Component {
 
 
   handleSidebarViewChange(e){
+    let isActive = this.state.deckDetails === false ? true : false;
+    let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
+    let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
+
     if(e.button == 0 || e.ctrlKey) {
-      let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
-      let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
       this.setState({
         activeSidebar,
         nextActiveSidebar
       });
+    }
+    if(e || e.altKey) {
+      this.setState({
+        deckDetails: isActive
+      })
     }
     // if(e.keyCode > 64 && e.keyCode <= 90){
     //   this.setState({
@@ -201,7 +208,9 @@ export class CreateDeckClassSelected extends Component {
                            query={query}/>
           </div>
           <div className="container__page--inner container__page--right">
-            <div className="topbar"></div>
+            <div className="topbar">
+              <IconFilter header={false} filter="cost" query={query} tooltip={false} wrapper_class="topbar-left" />
+            </div>
             <div className="content">
               <ul className="container__cards">
                 {this.listCards(query)}

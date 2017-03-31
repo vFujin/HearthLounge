@@ -401,11 +401,15 @@ footer{
         table{
           tbody{
             tr{
+              @include transition(all ease .4s);
               &:nth-child(odd){
                 background-color: rgba(0,0,0,.2);
               }
               td:first-child{
                 text-align: left;
+              }
+              &.has-mechanic{
+                background: rgba($mage, .4);
               }
             }
           }
