@@ -1810,13 +1810,15 @@ nav {
       background-color: #00a99c; }
       nav .nav__list .nav__list--item:hover .submenu {
         display: block; }
-    nav .nav__list .nav__list--item .nav__list--link > div {
-      margin-top: 8px;
-      font-size: 0.8vw; }
-    nav .nav__list .nav__list--item .nav__list--link span {
-      font-size: 2.1vw; }
-    nav .nav__list .nav__list--item .nav__list--link .submenu__icon {
-      font-size: 1.5vw; }
+    nav .nav__list .nav__list--item .nav__list--link {
+      position: relative; }
+      nav .nav__list .nav__list--item .nav__list--link > div {
+        margin-top: 8px;
+        font-size: 0.8vw; }
+      nav .nav__list .nav__list--item .nav__list--link span {
+        font-size: 2.1vw; }
+      nav .nav__list .nav__list--item .nav__list--link .submenu__icon {
+        font-size: 1.5vw; }
     nav .nav__list .nav__list--item .active {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;

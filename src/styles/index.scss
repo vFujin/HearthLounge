@@ -62,6 +62,7 @@ nav {
         }
       }
       .nav__list--link {
+        position: relative;
         > div{
           margin-top: 8px;
           font-size: 0.8vw;
