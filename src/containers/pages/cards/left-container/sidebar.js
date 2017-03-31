@@ -19,9 +19,10 @@ const Sidebar = props => {
           <SliderFilter filter="attack"     query={query} defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}/>
           <SliderFilter filter="durability" query={query} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}/>
 
-          <IconFilter header={true} header_label="standard sets" filter="cardSet" query={query} wrapper_class="sidebar-icons" isStandard={true}/>
-          <IconFilter header={true} header_label="wild sets"     filter="cardSet" query={query} wrapper_class="sidebar-icons" isStandard={false}/>
-          <IconFilter header={true} header_label="rarity"        filter="rarity"  query={query} wrapper_class="sidebar-icons"/>
+          <IconFilter header={true} header_label="standard sets" filter="cardSet"         query={query} wrapper_class="sidebar-icons" isStandard={true}/>
+          <IconFilter header={true} header_label="wild sets"     filter="cardSet"         query={query} wrapper_class="sidebar-icons" isStandard={false}/>
+          <IconFilter header={true} header_label="Family"        filter="multiClassGroup" query={query} wrapper_class="sidebar-icons"/>
+          <IconFilter header={true} header_label="rarity"        filter="rarity"          query={query} wrapper_class="sidebar-icons"/>
 
           <IsGoldenFilter/>
         </div>

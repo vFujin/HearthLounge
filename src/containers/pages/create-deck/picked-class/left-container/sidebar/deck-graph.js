@@ -5,7 +5,6 @@ const DeckGraph = ({cost, deck, icon, max}) => {
   const costBelowSeven = (number) =>{
     return _.filter(deck, {cost: number}).length
   };
-
   let costSevenOrMore = _.filter(deck, (value)=>value.cost >= 7).length;
   let s = cost < 7 ? costBelowSeven(cost) : costSevenOrMore;
 

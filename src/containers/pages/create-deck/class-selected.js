@@ -60,9 +60,11 @@ export class CreateDeckClassSelected extends Component {
     };
 
     Data.fetchData(setState);
+
   }
 
   handleClick(e, card) {
+    console.log(this.state.cards);
     e.preventDefault();
     if (e.button === 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
       this.setState({

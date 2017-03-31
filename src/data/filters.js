@@ -210,6 +210,20 @@ export const icon_filters = {
       url: "adventures"
     }
   ],
+  multiClassGroup:[
+    {
+      name: "Grimy Goons",
+      url: "grimygoons"
+    },
+    {
+      name: "Jade Lotus",
+      url: "lotus"
+    },
+    {
+      name: "Kabal",
+      url: "kabal"
+    }
+  ],
   rarity: [
     {
       name: 'Free',
