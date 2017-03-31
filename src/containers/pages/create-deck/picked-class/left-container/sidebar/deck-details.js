@@ -33,4 +33,10 @@ const DeckDetails = ({deck, deckDetails, mechanics}) => {
   );
 };
 
+DeckDetails.propTypes = {
+  deck: React.PropTypes.array,
+  deckDetails: React.PropTypes.bool,
+  mechanics: React.PropTypes.array
+};
+
 export default DeckDetails;

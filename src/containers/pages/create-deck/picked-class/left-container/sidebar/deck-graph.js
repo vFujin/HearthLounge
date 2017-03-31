@@ -23,7 +23,7 @@ const DeckGraph = ({cost, deck, icon, max}) => {
 DeckGraph.propTypes = {
   cost: React.PropTypes.number,
   deck: React.PropTypes.array,
-  icon: React.PropTypes.number,
+  icon: React.PropTypes.any, //either string or number
   max: React.PropTypes.number
 };
 
