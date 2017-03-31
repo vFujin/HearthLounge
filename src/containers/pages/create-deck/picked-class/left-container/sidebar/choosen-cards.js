@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
-const ChoosenCards = props => {
-  const {deck, countCards} = props;
+
+const ChoosenCards = ({countCards, deck, deckDetails}) => {
 
   const listCards = () => {
     return _.uniqBy(_.sortBy(deck, ['cost', 'name'])).map((card, i) =>
@@ -14,9 +14,8 @@ const ChoosenCards = props => {
     );
   };
 
-
   return (
-      <div className={`cards-list ${props.deckDetails === true ? 'display-none' : ''} `}>
+      <div className={`cards-list ${deckDetails === true ? 'display-none' : ''} `}>
         <div className="table-scroll">
         <table>
           <thead>
@@ -36,5 +35,10 @@ const ChoosenCards = props => {
   );
 };
 
+ChoosenCards.propTypes = {
+  countCards: React.PropTypes.func,
+  deck: React.PropTypes.array,
+  deckDetails: React.PropTypes.bool
+};
 
 export default ChoosenCards;
