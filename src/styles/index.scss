@@ -355,7 +355,7 @@ footer{
           }
         }
       }
-      .cards-list {
+      .list {
         position: relative;
         overflow: hidden;
         margin-top:1px;
@@ -392,6 +392,20 @@ footer{
                 &:nth-child(3) {
                   width: 20%;
                 }
+              }
+            }
+          }
+        }
+      }
+      .mechanics-list{
+        table{
+          tbody{
+            tr{
+              &:nth-child(odd){
+                background-color: rgba(0,0,0,.2);
+              }
+              td:first-child{
+                text-align: left;
               }
             }
           }

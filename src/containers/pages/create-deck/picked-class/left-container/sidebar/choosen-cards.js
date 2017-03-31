@@ -15,7 +15,7 @@ const ChoosenCards = ({countCards, deck, deckDetails}) => {
   };
 
   return (
-      <div className={`cards-list ${deckDetails === true ? 'display-none' : ''} `}>
+      <div className={`list cards-list ${deckDetails === true ? 'display-none' : ''} `}>
         <div className="table-scroll">
         <table>
           <thead>

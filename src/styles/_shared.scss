@@ -217,7 +217,8 @@
     border: 1px solid $pearl;
     color: $pearl;
     outline: 0;
-    padding: 5px 10px;
+    font-size: 1.2vh;
+    padding: .3vh .5vh;
     &:hover{
       @include box-shadow(0, 0, 5px, $sea-color);
       border-color: $sea-color;
