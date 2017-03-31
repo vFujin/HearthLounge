@@ -306,7 +306,7 @@ a:active, a:hover, a:link, a:visited {
       grid-auto-rows: 7vh; }
     #container .container__page .container__page--left .sidebar__body .container__mana-curve {
       display: grid;
-      grid-template-rows: 3vh 16vh 3vh auto; }
+      grid-template-rows: 3vh 18vh 3vh auto; }
     #container .container__page .content .container__cards {
       display: grid;
       grid-template-columns: repeat(7, 11vw); }
@@ -2047,7 +2047,8 @@ footer {
         padding: 1vh;
         width: calc(100% - 2vh);
         text-align: center;
-        display: inline-flex; }
+        display: inline-flex;
+        align-self: center; }
         .container__page .container__page--left .container__mana-curve .graph li {
           width: 100%; }
           .container__page .container__page--left .container__mana-curve .graph li .bar {

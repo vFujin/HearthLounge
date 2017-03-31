@@ -16,7 +16,7 @@ const DeckSidebar = ({activeSidebar, countCards, deck, deckDetails, handleDeckDe
             {[...new Array(7)].map((bar, i)=>
                 <DeckGraph key={i} cost={i} icon={i} deck={deck} max={max} />
             )}
-            <DeckGraph cost={7} icon="7-plus" deck={deck}/>
+            <DeckGraph cost={7} icon="7-plus" deck={deck} max={max}/>
           </ul>
           <h3>Choosen Cards <button className="btn-pearl" onClick={(e)=>handleDeckDetailClick(e)}>More details</button></h3> {/* consider changing btn to icon*/}
 

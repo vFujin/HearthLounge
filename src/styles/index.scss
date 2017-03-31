@@ -329,6 +329,7 @@ footer{
         width: calc(100% - 2vh);
         text-align: center;
         display: inline-flex;
+        align-self: center;
         li {
           width: 100%;
           .bar {
