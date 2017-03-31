@@ -165,6 +165,11 @@ export class CreateDeckClassSelected extends Component {
         nextActiveSidebar
       });
     }
+    // if(e.keyCode > 64 && e.keyCode <= 90){
+    //   this.setState({
+    //     cards: _.filter(Data, {name: e})
+    //   })
+    // }
   }
 
   render() {
@@ -182,6 +187,7 @@ export class CreateDeckClassSelected extends Component {
                          deck={this.state.deck}
                          deckDetails={this.state.deckDetails}
                          handleDeckDetailClick={(e)=>this.handleDeckDetailsClick(e)}
+                         mechanics={this.state.mechanics}
                          params={params}/>
 
             <FilterSidebar activeSidebar={this.state.activeSidebar}
