@@ -1443,6 +1443,20 @@ footer{
 
 .create-deck {
   .container__page--right {
+    .topbar__filters{
+      align-items: center;
+      display: flex;
+      width: 100%;
+
+      .topbar-right{
+        span{
+          color: $dark-grey;
+          font-size:1.5vw;
+          cursor: pointer;
+          margin-right:1vh;
+        }
+      }
+    }
     .topbar__deckDetails {
       div {
         display: flex;

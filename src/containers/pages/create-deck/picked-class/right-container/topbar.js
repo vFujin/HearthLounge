@@ -14,10 +14,18 @@ const Topbar = ({deck, filtersView, params, query}) => {
         <div className="topbar">
           <div className={filtersViewNotActive}>
             <IconFilter header={false} filter="cost" query={query} tooltip={false} wrapper_class="topbar-left" />
-            <div>
-              <span className="hs-icon icon-classic"></span>
-              <span className="hs-icon icon-basic"></span>
-              <span className={`hs-icon icon-${params}`}></span>
+            <div className="topbar-right">
+              <Tooltip title={_.upperFirst(params)} placement="bottom">
+                <span className={`hs-icon icon-${params}`}></span>
+              </Tooltip>
+              <Tooltip title="Classic" placement="bottom">
+                <span className="hs-icon icon-hs-logo"></span>
+              </Tooltip>
+              <Tooltip title="Basic" placement="bottom">
+                <span className="hs-icon icon-basic"></span>
+              </Tooltip>
+              <span className="hs-icon icon-journey-to-ungoro"></span>
+              <span className={`hs-icon icon-journey-to-ungoro`}></span>
             </div>
           </div>
           <div className={filtersViewActive}>
