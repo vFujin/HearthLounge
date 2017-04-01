@@ -24,9 +24,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arena-picker:before {
-  content: "\e900";
-}
+
 .icon-battlenet:before {
   content: "\e901";
 }
@@ -87,6 +85,9 @@
 .icon-adventures:before {
   content: "\e914";
 }
+.icon-arena_picker:before {
+  content: "\e900";
+}
 .icon-basic:before {
   content: "\e915";
 }
@@ -114,13 +115,13 @@
 .icon-mean-streets-of-gadgetzan:before {
   content: "\e91e";
 }
-.icon-grimygoons:before {
+.icon-grimy-goons:before {
   content: "\e91f";
 }
 .icon-goblins-vs-gnomes:before {
   content: "\e920";
 }
-.icon-hs-logo:before, .icon-classic:before {
+.icon-hs-logo:before {
   content: "\e921";
 }
 .icon-hunter:before {
@@ -138,7 +139,7 @@
 .icon-login:before {
   content: "\e926";
 }
-.icon-lotus:before {
+.icon-jade-lotus:before {
   content: "\e927";
 }
 .icon-mage:before {
@@ -186,6 +187,12 @@
 .icon-wild:before {
   content: "\e936";
 }
+.icon-copy:before {
+  content: "\e937";
+}
+.icon-download:before {
+  content: "\e960";
+}
 .icon-bubbles2:before {
   content: "\e96d";
 }
@@ -194,6 +201,9 @@
 }
 .icon-promo:before {
   content: "\e9b4";
+}
+.icon-link:before {
+  content: "\e9cb";
 }
 .icon-eye:before {
   content: "\e9ce";
@@ -209,6 +219,9 @@
 }
 .icon-youtube:before {
   content: "\ea9d";
+}
+.icon-github:before {
+  content: "\eab0";
 }
 .icon-reddit:before {
   content: "\eac6";

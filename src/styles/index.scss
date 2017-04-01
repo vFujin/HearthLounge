@@ -1441,20 +1441,22 @@ footer{
   }
 }
 
-.create-deck{
-  .cards-container{
-    @include scrollbar($pearl);
-    text-align:center;
-    margin-top:10px;
-    overflow: auto;
-    height: calc(100% - 60px);
-    li{
-      width: 241px;
-      margin: 0;
-      display: inline-block;
-      img{
-        width:100%;
-        height: 100%;
+.create-deck {
+  .container__page--right {
+    .topbar__deckDetails {
+      div{
+        display: flex;
+        align-items: center;
+        &:nth-child(2){
+          p {
+            position: relative;
+            left: calc(50% - 6vh);
+            font-size: 3vh;
+            background: $dark-grey;
+            color: $pearl;
+            padding:0 1vh;
+          }
+        }
       }
     }
   }

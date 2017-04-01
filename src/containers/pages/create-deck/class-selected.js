@@ -63,7 +63,6 @@ export class CreateDeckClassSelected extends Component {
   }
 
   handleClick(e, card) {
-    console.log(this.state.cards);
     e.preventDefault();
     if (e.button === 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
       this.setState({
@@ -209,7 +208,7 @@ export class CreateDeckClassSelected extends Component {
                            query={query}/>
           </div>
           <div className="container__page--inner container__page--right">
-            <Topbar filtersView={this.state.filtersView} query={query} />
+            <Topbar filtersView={this.state.filtersView} query={query} params={params} deck={this.state.deck} />
             <div className="content">
               <ul className="container__cards">
                 {this.listCards(query)}

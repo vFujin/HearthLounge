@@ -31,7 +31,7 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDeta
 };
 
 DeckSidebar.propTypes = {
-  filtersView: React.PropTypes.string,
+  filtersView: React.PropTypes.bool,
   countCards: React.PropTypes.func,
   deck: React.PropTypes.array,
   params: React.PropTypes.string
