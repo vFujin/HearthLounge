@@ -1444,17 +1444,32 @@ footer{
 .create-deck {
   .container__page--right {
     .topbar__deckDetails {
-      div{
+      div {
         display: flex;
         align-items: center;
-        &:nth-child(2){
+        &:nth-child(2) {
           p {
             position: relative;
             left: calc(50% - 6vh);
             font-size: 3vh;
             background: $dark-grey;
             color: $pearl;
-            padding:0 1vh;
+            padding: 0 1vh;
+          }
+        }
+        span {
+          @include transition(all ease .4s);
+          cursor: pointer;
+          font-size: 2vh;
+          padding: 1vh;
+        }
+        &:last-child{
+          span{
+            margin-right: 1vw;
+            &:hover {
+              color: $pearl;
+              background: $dark-grey;
+            }
           }
         }
       }

@@ -69,6 +69,9 @@ a:active, a:hover, a:link, a:visited {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-minions:before {
+  content: "\e91d"; }
+
 .icon-battlenet:before {
   content: "\e901"; }
 
@@ -129,7 +132,7 @@ a:active, a:hover, a:link, a:visited {
 .icon-adventures:before {
   content: "\e914"; }
 
-.icon-arena_picker:before {
+.icon-arena-picker:before {
   content: "\e900"; }
 
 .icon-basic:before {
@@ -242,6 +245,9 @@ a:active, a:hover, a:link, a:visited {
 
 .icon-stats-dots:before {
   content: "\e99b"; }
+
+.icon-fire:before {
+  content: "\e9a9"; }
 
 .icon-promo:before {
   content: "\e9b4"; }
@@ -2945,6 +2951,20 @@ footer {
     background: #474143;
     color: #E7E2DA;
     padding: 0 1vh; }
+  .create-deck .container__page--right .topbar__deckDetails div span {
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    cursor: pointer;
+    font-size: 2vh;
+    padding: 1vh; }
+  .create-deck .container__page--right .topbar__deckDetails div:last-child span {
+    margin-right: 1vw; }
+    .create-deck .container__page--right .topbar__deckDetails div:last-child span:hover {
+      color: #E7E2DA;
+      background: #474143; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }

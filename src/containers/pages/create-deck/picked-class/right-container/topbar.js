@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import Tooltip from 'antd/lib/tooltip';
 import {IconFilter} from '../../../../shared-assets/filters/icon-filter';
 const Topbar = ({deck, filtersView, params, query}) => {
     let filtersViewActive = filtersView === false ? 'topbar__deckDetails' : 'display-none';
@@ -21,16 +22,32 @@ const Topbar = ({deck, filtersView, params, query}) => {
           </div>
           <div className={filtersViewActive}>
             <div className="deck-cardTypes">
-              <p>Minion: {deckCardTypes('Minion')}</p>
-              <p>Spell: {deckCardTypes('Spell')}</p>
-              <p>Weapon: {deckCardTypes('Weapon')}</p>
+              <Tooltip title="Minions" placement="bottom">
+                <span className="hs-icon icon-minions"></span>
+                {deckCardTypes('Minion')}
+              </Tooltip>
+              <Tooltip title="Spell" placement="bottom">
+                <span className="hs-icon icon-fire"></span>
+                {deckCardTypes('Spell')}
+              </Tooltip>
+              <Tooltip title="Weapon" placement="bottom">
+                <span className="hs-icon icon-warrior"></span>
+                {deckCardTypes('Weapon')}
+              </Tooltip>
             </div>
             <div className="deck-length">
               <p>{deck.length} / 30</p>
             </div>
             <div className="options">
-              <p>Copy deck to clipboard</p>
-              <p>Save deck</p>
+              <Tooltip title="Copy deck URL" placement="bottom">
+                <span className="hs-icon icon-link"></span>
+              </Tooltip>
+              <Tooltip title="Copy deck to clipboard" placement="bottom">
+                <span className="hs-icon icon-copy"></span>
+              </Tooltip>
+              <Tooltip title="Save deck" placement="bottom">
+                <span className="hs-icon icon-download"></span>
+              </Tooltip>
             </div>
           </div>
         </div>

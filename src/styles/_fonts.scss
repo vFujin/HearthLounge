@@ -24,7 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.icon-minions:before {
+  content: "\e91d";
+}
 .icon-battlenet:before {
   content: "\e901";
 }
@@ -85,7 +87,7 @@
 .icon-adventures:before {
   content: "\e914";
 }
-.icon-arena_picker:before {
+.icon-arena-picker:before {
   content: "\e900";
 }
 .icon-basic:before {
@@ -198,6 +200,9 @@
 }
 .icon-stats-dots:before {
   content: "\e99b";
+}
+.icon-fire:before {
+  content: "\e9a9";
 }
 .icon-promo:before {
   content: "\e9b4";
