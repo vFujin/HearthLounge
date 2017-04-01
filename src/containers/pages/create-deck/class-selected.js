@@ -64,9 +64,14 @@ export class CreateDeckClassSelected extends Component {
 
   }
 
+
+
   handleClick(e, card) {
     e.preventDefault();
-    if (e.button === 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2 && this.state.deck.length < 30) {
+    let uniqueCard = _.filter(this.state.deck, {cardId: card.cardId});
+    let ifLegendary = card.rarity !== "Legendary" ? uniqueCard.length < 2 : uniqueCard.length < 1;
+
+    if (e.button === 0 && ifLegendary && this.state.deck.length < 30) {
       this.setState({
         deck: this.state.deck.concat(card),
         [`${card.cardId}_tooltip`]: true
@@ -101,41 +106,14 @@ export class CreateDeckClassSelected extends Component {
   }
 
   listCards(query) {
-    let styles = {
-      background: 'rgba(255, 0, 0, .5)',
-      opacity: '.5',
-      cursor: 'not-allowed'
-    };
-
     if (this.state.cards < 1) {
       return <Loader/>;
     }
 
-    //
-    // let predicates = [p1, p2, p3, p4];
-    //
-    // let filterCard = (card) => predicates.reduce((res, pr) => res && pr(card), true);
-    //
-    // (card) => card.race === this.state.value;
-    //
-    // this.state.card.filter(filterCard);
-    //
-    // this.state.card.filter(x=>x.mechanics)  //p1
-    // this.state.card.filter(x=>x.race)  //p2
-    // this.state.card.filter(x=>x.faction)  //p3
-    // this.state.card.filter(x=>x.mechanics)
-    // this.state.card.filter(x=>x.mechanics)
     return (
         this.state.cards
             .filter(function (card) {
               return Object.keys(query).every(function (queryKey) {
-                // if (queryKey === 'mechanics') {
-                //   console.log(queryKey);
-                //   return query[queryKey].some(queryValue => {
-                //     console.log(queryValue, card[queryKey].indexOf(queryValue) > -1);
-                //     return card[queryKey].indexOf(queryValue) > -1;
-                //   });
-                // }
                 if (query[queryKey].constructor === Array) {
                   return query[queryKey].some(queryValue => {
 
@@ -154,7 +132,7 @@ export class CreateDeckClassSelected extends Component {
                     onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
                     <div className={this.showCardCountTooltip(card, 'tooltip-count', 'display-none')}>
                       <span>
-                        {this.countCards(card)}/2
+                        {this.countCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
                       </span>
                     </div>
                     <img className={`${this.showCardCountTooltip(card, 'choosen', null)} ${this.state.deck.length >= 30 ? "disabled" : ''} `}
