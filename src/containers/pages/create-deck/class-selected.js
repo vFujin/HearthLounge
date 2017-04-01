@@ -4,6 +4,7 @@ import FilterSidebar from './picked-class/left-container/filter-sidebar';
 import DeckSidebar from './picked-class/left-container/deck-sidebar';
 import Topbar from './picked-class/right-container/topbar';
 import Loader from '../../shared-assets/loader';
+import Tooltip from 'antd/lib/tooltip';
 import 'antd/lib/tooltip/style/css';
 import {Data} from '../../../data/cards-data';
 import _ from 'lodash';
@@ -65,7 +66,7 @@ export class CreateDeckClassSelected extends Component {
 
   handleClick(e, card) {
     e.preventDefault();
-    if (e.button === 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2) {
+    if (e.button === 0 && _.filter(this.state.deck, {cardId: card.cardId}).length < 2 && this.state.deck.length < 30) {
       this.setState({
         deck: this.state.deck.concat(card),
         [`${card.cardId}_tooltip`]: true
@@ -100,6 +101,12 @@ export class CreateDeckClassSelected extends Component {
   }
 
   listCards(query) {
+    let styles = {
+      background: 'rgba(255, 0, 0, .5)',
+      opacity: '.5',
+      cursor: 'not-allowed'
+    };
+
     if (this.state.cards < 1) {
       return <Loader/>;
     }
@@ -150,7 +157,9 @@ export class CreateDeckClassSelected extends Component {
                         {this.countCards(card)}/2
                       </span>
                     </div>
-                    <img className={this.showCardCountTooltip(card, 'choosen', null)} src={card.img} alt={card.name}/>
+                    <img className={`${this.showCardCountTooltip(card, 'choosen', null)} ${this.state.deck.length >= 30 ? "disabled" : ''} `}
+                         src={card.img}
+                         alt={card.name}/>
                 </li>
             )
     )

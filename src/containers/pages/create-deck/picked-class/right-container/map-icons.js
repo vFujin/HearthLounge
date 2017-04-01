@@ -52,23 +52,30 @@ const MapIcons = ({deck, params, set, types}) => {
     ]
   };
 
+  const countTypes = _.countBy(deck, 'type');
+
   const deckCardTypes = (type) =>{
-    let types = _.countBy(deck, 'type');
-    return types[type] || 0;
+    return countTypes[type] || 0;
+  };
+
+  const checkSuffix = (title) =>{
+    let upperTitle = _.upperFirst(title);
+    return countTypes[upperTitle] > 1 ? `${upperTitle}s` : upperTitle;
   };
 
   const generateSet = () =>{
     return types === false
       ? topbar_icons[set].map(obj =>
-            <Tooltip key={obj.title} title={_.upperFirst(obj.title)} placement="bottom">
+            <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
               <span className={`hs-icon icon-${obj.icon}`}></span>
             </Tooltip>)
     : topbar_icons[set].map(obj =>
-        <Tooltip key={obj.title} title={_.upperFirst(obj.title)} placement="bottom">
+        <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
           <span className={`hs-icon icon-${obj.icon}`}></span>
           {deckCardTypes(_.upperFirst(obj.title))}
         </Tooltip>)
   };
+
 
   return(
       <div className={set}>

@@ -91,6 +91,7 @@
       .container__cards {
         display: grid;
         grid-template-columns: repeat(7, 11vw);
+        grid-column-gap: .4vh;
       }
       .container__details {
         display: grid;

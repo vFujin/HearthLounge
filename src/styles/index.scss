@@ -546,9 +546,17 @@ footer{
           img{
             @include transition(all ease .4s);
             width:100%;
-          }
-          img.choosen{
-            opacity: .3;
+            &.choosen{
+              opacity: .3;
+            }
+            &.disabled{
+              background: rgba(255, 0, 0, .3);
+              cursor: not-allowed;
+            }
+            &.choosen.disabled{
+              background: transparent;
+              cursor: pointer;
+            }
           }
         }
       }
@@ -1447,7 +1455,6 @@ footer{
       align-items: center;
       display: flex;
       width: 100%;
-
       .topbar-right{
         span{
           color: $dark-grey;
