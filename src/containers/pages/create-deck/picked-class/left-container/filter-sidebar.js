@@ -3,11 +3,10 @@ import {IconFilter} from '../../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../../shared-assets/filters/input-filter';
 import SliderFilter from '../../../../shared-assets/filters/slider-filter';
 
-const FilterSidebar = props => {
-  const {faction, mechanics, name, query, race, type} = props;
+const FilterSidebar = ({faction,filtersView, mechanics, name, query, race, type}) => {
   return (
 
-      <div className={`sidebar__body ${props.activeSidebar === 'filters' ? 'active' : 'display-none'}`}>
+      <div className={`sidebar__body ${filtersView === true ? 'active' : 'display-none'}`}>
         <InputFilter attribute={name}      filter="name"      query={query} multiple={false}/>
         <InputFilter attribute={race}      filter="race"      query={query} multiple={true}/>
         <InputFilter attribute={mechanics} filter="mechanics" query={query} multiple={true}/>

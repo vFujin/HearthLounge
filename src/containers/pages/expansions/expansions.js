@@ -1,9 +1,10 @@
 import React from 'react';
 import Sidebar from './left-container/sidebar';
+import Topbar from './right-container/topbar';
 
 const Expansions = props => {
   const {children, params} = props;
-  const {expansion} = params;
+  const {details, expansion} = params;
 
   return (
       <div className="container__page container__page--twoSided expansions">
@@ -11,6 +12,7 @@ const Expansions = props => {
           <Sidebar expansion={expansion}/>
         </div>
         <div className="container__page--inner container__page--right">
+          <Topbar expansion={expansion} details={details}/>
           {children}
         </div>
       </div>

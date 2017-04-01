@@ -13,8 +13,7 @@ export class CreateDeckClassSelected extends Component {
     super(props);
     this.state = {
       deck: [],
-      activeSidebar: 'deck',
-      nextActiveSidebar: 'filters',
+      filtersView: false,
       deckDetails: false,
 
       name: [],
@@ -159,17 +158,14 @@ export class CreateDeckClassSelected extends Component {
 
 
   handleSidebarViewChange(e){
-    let isActive = this.state.deckDetails === false ? true : false;
-    let activeSidebar = this.state.activeSidebar === 'deck' ? 'filters' : 'deck';
-    let nextActiveSidebar = this.state.nextActiveSidebar === 'filters' ? 'deck' : 'filters';
-
-    if(e.button == 0 || e.ctrlKey) {
+    if(e.button === 0 || e.ctrlKey) {
+      let isActive = this.state.filtersView === false ? true : false;
       this.setState({
-        activeSidebar,
-        nextActiveSidebar
+        filtersView: isActive
       });
     }
     if(e || e.altKey) {
+      let isActive = this.state.deckDetails === false ? true : false;
       this.setState({
         deckDetails: isActive
       })
@@ -181,17 +177,20 @@ export class CreateDeckClassSelected extends Component {
     // }
   }
 
+
   render() {
     let query = this.props.location.query;
     let params = this.props.params.class;
+    let ifDeck = this.state.filtersView === false ? 'deck' : "filters";
+    let ifFilter = this.state.filtersView === false ? 'filters' : "deck";
     return (
         <div tabIndex="0" onKeyDown={(e)=>this.handleSidebarViewChange(e)} className="container__page container__page--twoSided create-deck">
           <div className="container__page--inner container__page--left">
             <h3  className="sidebar__header">
-              <span>{this.state.activeSidebar}</span>
-              <button className="btn-pearl" onClick={(e)=>this.handleSidebarViewChange(e)}>Show {this.state.nextActiveSidebar}</button>
+              <span>{ifDeck}</span>
+              <button className="btn-pearl" onClick={(e)=>this.handleSidebarViewChange(e)}>Show {ifFilter}</button>
             </h3>
-            <DeckSidebar activeSidebar={this.state.activeSidebar}
+            <DeckSidebar filtersView={this.state.filtersView}
                          countCards={(e)=>this.countCards(e)}
                          deck={this.state.deck}
                          deckDetails={this.state.deckDetails}
@@ -199,7 +198,7 @@ export class CreateDeckClassSelected extends Component {
                          mechanics={this.state.mechanics}
                          params={params}/>
 
-            <FilterSidebar activeSidebar={this.state.activeSidebar}
+            <FilterSidebar filtersView={this.state.filtersView}
                            name={this.state.name}
                            race={this.state.race}
                            mechanics={this.state.mechanics}
@@ -211,7 +210,9 @@ export class CreateDeckClassSelected extends Component {
           </div>
           <div className="container__page--inner container__page--right">
             <div className="topbar">
-              <IconFilter header={false} filter="cost" query={query} tooltip={false} wrapper_class="topbar-left" />
+              <div className={`${this.state.filtersView === false ? 'display-none' : 'active'}`}>
+                <IconFilter header={false} filter="cost" query={query} tooltip={false} wrapper_class="topbar-left" />
+              </div>
             </div>
             <div className="content">
               <ul className="container__cards">

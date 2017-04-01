@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import 'whatwg-fetch';
 import {navItems} from '../../../../data/nav';
-import Topbar from './topbar';
 import ValidateURL from '../../../shared-assets/validateUrl';
 
 export class Expansion extends Component{
@@ -23,14 +22,9 @@ export class Expansion extends Component{
 
   content(details, expansion){
     return (
-        <div>
-    <Topbar expansion={expansion}
-            details={details}/>
-        <div className="content">
-
-          {React.cloneElement(this.props.children, {cards: this.state.cards})}
-        </div>
-        </div>
+      <div className="content">
+        {React.cloneElement(this.props.children, {cards: this.state.cards})}
+      </div>
     )
   }
 

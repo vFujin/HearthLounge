@@ -4,12 +4,12 @@ import ChoosenCards from './sidebar/choosen-cards';
 import DeckDetails from './sidebar/deck-details';
 
 import _ from 'lodash';
-const DeckSidebar = ({activeSidebar, countCards, deck, deckDetails, handleDeckDetailClick, mechanics, params}) => {
+const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDetailClick, mechanics, params}) => {
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
 
   return (
-      <div className={`sidebar__body ${activeSidebar === 'deck' ? 'active' : 'display-none'}`}>
+      <div className={`sidebar__body ${filtersView === false ? 'active' : 'display-none'}`}>
         <div className="container__mana-curve">
           <h3>Cards/Mana Cost</h3>
           <ul className="graph">
@@ -31,7 +31,7 @@ const DeckSidebar = ({activeSidebar, countCards, deck, deckDetails, handleDeckDe
 };
 
 DeckSidebar.propTypes = {
-  activeSidebar: React.PropTypes.string,
+  filtersView: React.PropTypes.string,
   countCards: React.PropTypes.func,
   deck: React.PropTypes.array,
   params: React.PropTypes.string

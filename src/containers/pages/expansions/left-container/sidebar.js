@@ -2,8 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import {icon_filters} from '../../../../data/filters';
 
-const Sidebar = props => {
-  const {expansion} = props;
+const Sidebar = ({expansion}) => {
 
   const listExpansions = () =>{
     return (
@@ -20,9 +19,9 @@ const Sidebar = props => {
   };
 
   return (
-      <div className="sidebar">
-        <h3 className="filter-header">Expansions</h3>
-        <ul className="sidebar-icons">
+      <div className="sidebar container__extension-list">
+        <h3 className="sidebar__header">Expansions</h3>
+        <ul className="sidebar__body">
           {listExpansions()}
         </ul>
       </div>

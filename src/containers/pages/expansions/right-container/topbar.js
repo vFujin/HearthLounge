@@ -21,7 +21,7 @@ const Topbar = props => {
   return (
       <div className='topbar'>
         {topbar_tabs.map((element, index) =>
-            <ul className={`${expansion === element.expansion && 'active'}-view content-navigation`}
+            <ul className={`${expansion === element.expansion && 'active'}-view topbar__extension-navigation`}
                 key={index}>
               {listExpansionDetailTabs(element)}
             </ul>

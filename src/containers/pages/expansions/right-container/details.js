@@ -8,7 +8,7 @@ const ExpansionDetails = props => {
 
   const content = (cards, details, expansion) =>{
     return (
-        <div className="extension-content">
+        <div className="container__extension">
           <SharedTopbarTabs expansion={expansion}
                             details={details}
                             cards={cards}/>
