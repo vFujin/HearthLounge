@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'whatwg-fetch';
 import FilterSidebar from './picked-class/left-container/filter-sidebar';
 import DeckSidebar from './picked-class/left-container/deck-sidebar';
-import {IconFilter} from '../../shared-assets/filters/icon-filter';
+import Topbar from './picked-class/right-container/topbar';
 import Loader from '../../shared-assets/loader';
 import {Data} from '../../../data/cards-data';
 import _ from 'lodash';
@@ -209,11 +209,7 @@ export class CreateDeckClassSelected extends Component {
                            query={query}/>
           </div>
           <div className="container__page--inner container__page--right">
-            <div className="topbar">
-              <div className={`${this.state.filtersView === false ? 'display-none' : 'active'}`}>
-                <IconFilter header={false} filter="cost" query={query} tooltip={false} wrapper_class="topbar-left" />
-              </div>
-            </div>
+            <Topbar filtersView={this.state.filtersView} query={query} />
             <div className="content">
               <ul className="container__cards">
                 {this.listCards(query)}

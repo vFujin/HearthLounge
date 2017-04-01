@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
-export class Topbar extends Component {
-  render() {
+import React from 'react';
+import {IconFilter} from '../../../../shared-assets/filters/icon-filter';
+const Topbar = ({filtersView, query}) => {
+    let filtersViewActive = filtersView === true ? 'topbar__deckDetails' : 'display-none';
+    let filtersViewNotActive = filtersView === false ? 'display-none' : 'topbar__filters';
     return (
         <div className="topbar">
-          {/*
+          <div className={filtersViewNotActive}>
+            <IconFilter header={false} filter="cost" query={query} tooltip={false} wrapper_class="topbar-left" />
+          </div>
+          <div className={filtersViewActive}>
 
-          search filter
-          cards filter - {class} || neutral || {latest expansion/adventure || expansion / adventure icons}
-          mana filter?
-          mode filer (either standard or wild)
-
-          */}
+          </div>
         </div>
     );
-  }
-}
+};
+
+export default Topbar;
