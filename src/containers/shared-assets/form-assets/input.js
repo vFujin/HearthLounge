@@ -1,10 +1,7 @@
 import React from 'react';
 import FormTooltips from './form-tooltips';
 
-const Input = props =>{
-
-  const {id, handleInputChange, hideTooltip, showTooltip, type, placeholder, value, pattern, label, tooltip} = props;
-
+const Input = ({id, handleInputChange, hideTooltip, showTooltip, type, placeholder, value, pattern, label, tooltip}) =>{
   return (
       <div className="input-wrapper">
         <label htmlFor={id}>{label}:</label>
@@ -15,7 +12,7 @@ const Input = props =>{
                  id={id}
                  placeholder={placeholder}
                  value={value}
-                 pattern={pattern || ""} />
+                 pattern={pattern || null} />
         <FormTooltips id={id}
                       label={label}
                       tooltip={tooltip}/>

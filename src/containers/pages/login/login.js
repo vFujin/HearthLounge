@@ -16,9 +16,14 @@ export class Login extends Component {
       confirm_password: "",
       secret_question: "",
       secret_answer: "",
-      tos: false
+      tos: false,
+
+      //Sign in
+      'sign_in-e-mail': "",
+      'sign_in-password': ""
     };
 
+    events.handleSignIn = events.handleSignIn.bind(this);
     events.handleInputChange = events.handleInputChange.bind(this);
     events.handleCheckboxClick = events.handleCheckboxClick.bind(this, 'tos');
     this.hideTooltip = this.hideTooltip.bind(this);
@@ -77,13 +82,17 @@ export class Login extends Component {
               'confirm_e-mail_tooltip': this.state['confirm_e-mail_tooltip'],
               secret_answer_tooltip: this.state.secret_answer_tooltip,
 
+
               handleInputChange: events.handleInputChange,
               handleCheckboxClick: events.handleCheckboxClick,
               hideTooltip: this.hideTooltip,
               showTooltip: this.showTooltip,
               handleFormSubmit: events.handleFormSubmit,
-            })
-            }
+              //Sign In
+              'sign_in-e-mail': this.state['sign_in-e-mail'],
+              'sign_in-password': this.state['sign_in-password'],
+              handleSignIn: events.handleSignIn
+            })}
           </div>
         </div>
       </div>
@@ -104,4 +113,6 @@ Login.propTypes = {
   handleCheckboxClick: React.PropTypes.func,
   hideTooltip: React.PropTypes.func,
   showTooltip: React.PropTypes.func,
+  handleFormSubmit: React.PropTypes.func,
+  handleSignIn: React.PropTypes.func
 };

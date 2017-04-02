@@ -10,7 +10,7 @@ export class SignUp extends Component {
                label={label}
                placeholder={placeholder}
                type={type}
-               pattern={pattern}
+
                value={this.props[id]}
                tooltip={this.props[`${id}_tooltip`]}
                handleInputChange={this.props.handleInputChange}
@@ -28,9 +28,9 @@ export class SignUp extends Component {
         username_pattern = /^[A-Za-z]{3,10}$/;
     return (
       <div className="sign sign-up active">
-        <form onSubmit={this.props.handleFormSubmit}>
+        <form onSubmit={(e)=>this.props.handleFormSubmit(e, this.props[email], this.props[password])}>
           {/*            id                     label                      placeholder        type          pattern    */}
-          {this.input(username,               username,               "Joe",                  text,     username_pattern)}
+          {this.input(username,               username,               "Joe",                  text,     null)}
           {this.input(email,                  email,                  "example@example.com",  email, "")}
           {this.input(`confirm_${email}`,     `Confirm ${email}`,     "example@example.com",  email, "")}
           {this.input(password,               password,               "",                     password, "")}

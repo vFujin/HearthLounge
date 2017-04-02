@@ -1,3 +1,4 @@
+import * as firebase from 'firebase'
 export const events = {
   hideTooltip: function(e){
       let target = e.target.id;
@@ -19,7 +20,33 @@ export const events = {
       [id]: value
     });
   },
-  handleFormSubmit: formSubmitEvent =>{
-    formSubmitEvent.preventDefault();
+  handleFormSubmit: function(e, email, pass){
+    e.preventDefault();
+    const auth = firebase.auth();
+    const promise = auth.createUserWithEmailAndPassword(email, pass);
+    promise.catch(e => console.log(e.message));
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      if(firebaseUser){
+        console.log(firebaseUser);
+      }
+      else{
+        console.log('not loggedi n')
+      }
+    })
+  },
+  handleSignIn: function (e, email, pass) {
+      e.preventDefault();
+      const auth = firebase.auth();
+      const promise = auth.signInWithEmailAndPassword(email, pass);
+      promise.catch(e => console.log(e.message));
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+      if(firebaseUser){
+        console.log(firebaseUser);
+      }
+      else{
+        console.log('not loggedi n')
+      }
+    })
   }
 };
