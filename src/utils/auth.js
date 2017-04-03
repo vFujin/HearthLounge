@@ -1,15 +1,19 @@
 import {ref, firebaseAuth} from '../keys';
 
 export function createUser(email, pass){
-  return firebaseAuth().createUserWithEmailAndPassword(email, pass).then(saveUser)
+  let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(saveUser);
+  promise.catch(e => console.log(e.message));
+  return promise;
 }
 
 export function logout(){
-  return firebaseAuth.signOut();
+  return firebaseAuth().signOut();
 }
 
-export function login(email, pass){
-  return firebaseAuth().signInWithEmailAndPassword(email, pass);
+export function signIn(email, pass){
+  let promise = firebaseAuth().signInWithEmailAndPassword(email, pass);
+  promise.catch(e => console.log(e.message));
+  return promise;
 }
 
 export function resetPassword(email) {

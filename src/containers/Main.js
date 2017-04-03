@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import {Navbar} from './layout/navbar';
+import React from 'react';
+import Navbar from './layout/navbar';
 import {Footer} from './layout/footer';
-export class Main extends Component {
-  render() {
-    let url = this.props.location.pathname;
-    return (
-        <div id="container">
-          <Navbar url={url}/>
-          {this.props.children}
-          <Footer/>
-        </div>
-    );
-  }
-}
+
+const Main = ({children, location, user}) => {
+  return (
+      <div id="container">
+        <Navbar url={location.pathname} user={user}/>
+        {children}
+        <Footer/>
+      </div>
+  );
+};
+
+Main.propTypes = {
+  children: React.PropTypes.element,
+  location: React.PropTypes.object,
+  user: React.PropTypes.string
+};
 export default Main;

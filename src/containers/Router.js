@@ -58,23 +58,39 @@ import NotFound from './shared-assets/not-found';
 
 import {Dashboard} from './pages/dashboard/dashboard';
 
-import {Main} from './Main';
-
-
-
+import Main from './Main';
+import { firebaseAuth } from '../utils/auth';
+import firebase from 'firebase';
 export class App extends Component {
   state = {
-    authed: false
+    authed: false,
+    user: null
   };
 
   componentDidMount(){
-
+    firebase.auth().onAuthStateChanged(user=>{
+      if(user){
+        console.log(user.email);
+        this.setState({
+          authed: true,
+          user: user.email
+        })
+      }
+      else{
+        this.setState({
+          authed: false,
+          user: null
+        })
+      }
+    })
   }
 
+
   render() {
+
     return (
       <Router history={browserHistory}>
-        <Route path="/"                   component={Main} >
+        <Route path="/"                   component={props => <Main {...props} user={this.state.user}/>} >
           <IndexRoute                     component={Home} />
           <Redirect from="home" to="/" />
           <Route path=""                  component={Home} />
@@ -143,7 +159,7 @@ export class App extends Component {
             <Route path="/sign-up" component={SignUp} />
           </Route>
 
-          <Route path="dashboard" component={Dashboard} />
+          <Route path="dashboard" component={props => <Dashboard {...props} authed={this.state.authed} />} />
           <Route path="*" component={NotFound} />
         </Route>
       </Router>

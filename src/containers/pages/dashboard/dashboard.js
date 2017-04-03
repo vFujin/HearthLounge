@@ -6,6 +6,7 @@ export class Dashboard extends Component {
     return (
         <div className="container__page container__page--twoSided dashboard">
           <div className="container__page--inner container__page--left">
+            {this.props.authed}
             <Sidebar/>
           </div>
           <div className="container__page--inner container__page--right">

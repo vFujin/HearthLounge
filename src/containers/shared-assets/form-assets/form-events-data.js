@@ -1,4 +1,4 @@
-import * as firebase from 'firebase'
+import {createUser, signIn} from '../../../utils/auth'
 export const events = {
   hideTooltip: function(e){
       let target = e.target.id;
@@ -22,23 +22,10 @@ export const events = {
   },
   handleFormSubmit: function(e, email, pass){
     e.preventDefault();
-    const auth = firebase.auth();
-    const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
-
-    firebase.auth().onAuthStateChanged(user => {
-      if(user){
-        console.log(user);
-      }
-      else{
-        console.log('not loggedi n')
-      }
-    })
+    createUser(email, pass);
   },
   handleSignIn: function (e, email, pass) {
-      e.preventDefault();
-      const auth = firebase.auth();
-      const promise = auth.signInWithEmailAndPassword(email, pass);
-      promise.catch(e => console.log(e.message));
+    e.preventDefault();
+    signIn(email, pass);
   }
 };
