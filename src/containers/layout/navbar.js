@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
 import {logout} from '../../utils/auth';
 const Navbar = ({user}) => {
 
-  const dropdown = (el, index) => {
-    let sub = el.submenu;
-    if (!el.hasOwnProperty('submenu')) return;
+  const listSubmenu = (index, el, sub) =>{
     return (
-        <ul className="submenu">
-          {navItems[index].submenu.map((item, id) =>
-              <li className={sub[id].url} key={id}>
-                <Link to={`/${el.url}/${item.url}/overview`}>
-                  <span className={`submenu__icon hs-icon icon-${sub[id].url}`}></span>
-                  <div className="icon-label">{sub[id].name}</div>
-                </Link>
-              </li>
-          )}
-        </ul>
+      navItems[index].submenu.map((item, id) =>
+          <li className={sub[id].url} key={id}>
+            <Link to={`/${el.url}/${item.url}/overview`}>
+              <span className={`submenu__icon hs-icon icon-${sub[id].url}`}></span>
+              <div className="icon-label">{sub[id].name}</div>
+            </Link>
+          </li>
+      )
     )
   };
 
-  const handleLogout = (e) => {
-    e.preventDefault();
-    logout();
+  const dropdown = (el, index) => {
+    if (!el.hasOwnProperty('submenu')) return;
+    return (
+        <ul className="submenu">
+          {listSubmenu(index, el, el.submenu)}
+        </ul>
+    )
   };
 
   return (
@@ -42,7 +42,7 @@ const Navbar = ({user}) => {
         <li className="nav__list--item login">
           <Link className="nav__list--link" to={`/sign-in`}>
             <span className="hs-icon icon-login"></span>
-            <div onClick={(e) => handleLogout(e)}>{user ? "Logout" : "Login"}</div>
+            <div onClick={(e) => logout(e)}>{user ? "Logout" : "Login"}</div>
           </Link>
         </li>
       </ul>

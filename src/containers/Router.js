@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-
+import firebase from 'firebase';
 import { Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router';
 import {Home} from './pages/home/home';
 
 import {Cards} from './pages/cards/cards';
 import {ServiceCards} from './pages/cards/right-container/service.cards';
-
-
 
 import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
@@ -59,8 +57,7 @@ import NotFound from './shared-assets/not-found';
 import {Dashboard} from './pages/dashboard/dashboard';
 
 import Main from './Main';
-import { firebaseAuth } from '../utils/auth';
-import firebase from 'firebase';
+
 export class App extends Component {
   state = {
     authed: false,
@@ -74,7 +71,7 @@ export class App extends Component {
         this.setState({
           authed: true,
           user: user.email
-        })
+        });
       }
       else{
         this.setState({
@@ -84,7 +81,6 @@ export class App extends Component {
       }
     })
   }
-
 
   render() {
 

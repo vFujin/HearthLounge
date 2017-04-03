@@ -31,6 +31,24 @@ export class Login extends Component {
     events.handleFormSubmit = events.handleFormSubmit.bind(this);
   }
 
+  componentWillUnmount(){
+    this.setState({
+      //Sign up
+      username: "",
+      'e-mail': "",
+      'confirm_e-mail': "",
+      password: "",
+      confirm_password: "",
+      secret_question: "",
+      secret_answer: "",
+      tos: false,
+
+      //Sign in
+      'sign_in-e-mail': "",
+      'sign_in-password': ""
+    });
+  }
+
   showTooltip(e){
     let target = e.target.id;
     this.setState({
@@ -47,7 +65,7 @@ export class Login extends Component {
 
   render() {
     return (
-      <div className="pageContainer login">
+      <div className={`pageContainer login`}>
         <div className="wrapper">
           <LeftContainer/>
           <div className="right-container">
