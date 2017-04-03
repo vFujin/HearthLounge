@@ -5,9 +5,9 @@ export class Sidebar extends Component {
   render() {
     return (
         <div className="sidebar">
-          <h3 className="filter-header">Profile</h3>
+          <h3 className="sidebar__header">Profile</h3>
 
-          <ul>
+          <ul className="sidebar__body">
             <li className="about">
               <div className="avatar"><img src="http://lorempixel.com/100/100/cats/" alt="cat"/></div>
               <div className="username">xx_Joe_xx</div>

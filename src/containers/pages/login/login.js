@@ -63,7 +63,6 @@ export class Login extends Component {
               </Link>
             </div>
             <div className="breakline h-breakline"></div>
-            {/*{console.log(this.targetID())}*/}
             {React.cloneElement((this.props.children), {
               //Sign Up
               username: this.state.username,

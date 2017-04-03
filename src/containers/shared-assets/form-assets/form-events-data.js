@@ -26,9 +26,9 @@ export const events = {
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
 
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-      if(firebaseUser){
-        console.log(firebaseUser);
+    firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        console.log(user);
       }
       else{
         console.log('not loggedi n')
@@ -40,13 +40,5 @@ export const events = {
       const auth = firebase.auth();
       const promise = auth.signInWithEmailAndPassword(email, pass);
       promise.catch(e => console.log(e.message));
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-      if(firebaseUser){
-        console.log(firebaseUser);
-      }
-      else{
-        console.log('not loggedi n')
-      }
-    })
   }
 };

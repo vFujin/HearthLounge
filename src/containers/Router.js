@@ -56,13 +56,21 @@ import {SignIn} from './pages/login/sign-in';
 
 import NotFound from './shared-assets/not-found';
 
-// import {Dashboard} from './pages/dashboard/dashboard';
+import {Dashboard} from './pages/dashboard/dashboard';
 
 import {Main} from './Main';
 
 
 
 export class App extends Component {
+  state = {
+    authed: false
+  };
+
+  componentDidMount(){
+
+  }
+
   render() {
     return (
       <Router history={browserHistory}>
@@ -134,6 +142,8 @@ export class App extends Component {
             <Route path="/sign-in" component={SignIn} />
             <Route path="/sign-up" component={SignUp} />
           </Route>
+
+          <Route path="dashboard" component={Dashboard} />
           <Route path="*" component={NotFound} />
         </Route>
       </Router>
