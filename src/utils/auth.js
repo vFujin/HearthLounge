@@ -8,21 +8,21 @@ export function createUser(email, pass){
 
 export function logout(e){
   e.preventDefault();
+  browserHistory.push('/forum');
   return firebaseAuth().signOut();
 }
 
 export function signIn(email, pass){
   let promise = firebaseAuth().signInWithEmailAndPassword(email, pass);
-  promise.catch(e => console.log(e.message));
-  browserHistory.push('/');
+  promise.catch(e => console.log(promise, e.message));
   return promise;
 }
 
-export function resetPassword(email) {
-  return firebaseAuth().sendPasswordResetEmail(email);
-}
+// export function resetPassword(email) {
+//   return firebaseAuth().sendPasswordResetEmail(email);
+// }
 
-export function saveUser(user){
+function saveUser(user){
   return ref.child(`users/${user.uid}`)
       .set({
         email: user.email,

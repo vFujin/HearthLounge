@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
-import {logout} from '../../utils/auth';
-const Navbar = ({user}) => {
+
+const Navbar = ({handleLogout, user}) => {
 
   const listSubmenu = (index, el, sub) =>{
     return (
@@ -40,9 +40,9 @@ const Navbar = ({user}) => {
             </li>
         )}
         <li className="nav__list--item login">
-          <Link className="nav__list--link" to={`/sign-in`}>
+          <Link className="nav__list--link" to={user ? '/dashboard' : '/sign-in'}>
             <span className="hs-icon icon-login"></span>
-            <div onClick={(e) => logout(e)}>{user ? "Logout" : "Login"}</div>
+            <div onClick={(e) => handleLogout(e)}>{user ? user : "Login"}</div>
           </Link>
         </li>
       </ul>

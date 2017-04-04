@@ -1,11 +1,5 @@
 import {createUser, signIn} from '../../../utils/auth'
 export const events = {
-  hideTooltip: function(e){
-      let target = e.target.id;
-      return this.setState({
-        [`${target}_tooltip`]: false
-      })
-    },
   handleCheckboxClick: function (key){
     return this.setState({
       [key]: this.state[key] === false
@@ -15,7 +9,6 @@ export const events = {
     const target = e.target;
     const value = e.target.value;
     const id = target.id;
-
     return this.setState({
       [id]: value
     });

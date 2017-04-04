@@ -31,7 +31,23 @@ export class Login extends Component {
     events.handleFormSubmit = events.handleFormSubmit.bind(this);
   }
 
+  foo (e){
+    const target = e.target;
+    const value = e.target.value;
+    const id = target.id;
+    return this.setState({
+      [id]: value
+    });
+  }
+
+  // componentWillMount(){
+  //   if(this.props.authed === true){
+  //     browserHistory.push('/dashboard');
+  //   }
+  // }
+
   componentWillUnmount(){
+    // console.log(this.state);
     this.setState({
       //Sign up
       username: "",
@@ -64,8 +80,9 @@ export class Login extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
-      <div className={`pageContainer login`}>
+      <div className={`container__page container__page--oneSided login`}>
         <div className="wrapper">
           <LeftContainer/>
           <div className="right-container">
@@ -91,7 +108,7 @@ export class Login extends Component {
               secret_question: this.state.secret_question,
               secret_answer: this.state.secret_answer,
               tos: this.state.tos,
-
+              // [`${id}_tooltip`]: this.state[`${id}_tooltip`]
               username_tooltip: this.state.username_tooltip,
               password_tooltip: this.state.password_tooltip,
               confirm_password_tooltip: this.state.confirm_password_tooltip,
@@ -100,11 +117,14 @@ export class Login extends Component {
               secret_answer_tooltip: this.state.secret_answer_tooltip,
 
 
-              handleInputChange: events.handleInputChange,
+              handleInputChange: this.foo.bind(this),
               handleCheckboxClick: events.handleCheckboxClick,
               hideTooltip: this.hideTooltip,
               showTooltip: this.showTooltip,
               handleFormSubmit: events.handleFormSubmit,
+
+              // sessionStorage, localStorage JSON.stringify
+
               //Sign In
               'sign_in-e-mail': this.state['sign_in-e-mail'],
               'sign_in-password': this.state['sign_in-password'],
