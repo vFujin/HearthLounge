@@ -14,8 +14,6 @@ export class Login extends Component {
       'confirm_e-mail': "",
       password: "",
       confirm_password: "",
-      secret_question: "",
-      secret_answer: "",
       tos: false,
 
       //Sign in
@@ -55,8 +53,6 @@ export class Login extends Component {
       'confirm_e-mail': "",
       password: "",
       confirm_password: "",
-      secret_question: "",
-      secret_answer: "",
       tos: false,
 
       //Sign in
@@ -80,7 +76,6 @@ export class Login extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className={`container__page container__page--oneSided login`}>
         <div className="wrapper">
@@ -105,16 +100,12 @@ export class Login extends Component {
               'confirm_e-mail': this.state['confirm_e-mail'],
               password: this.state.password,
               confirm_password: this.state.confirm_password,
-              secret_question: this.state.secret_question,
-              secret_answer: this.state.secret_answer,
               tos: this.state.tos,
-              // [`${id}_tooltip`]: this.state[`${id}_tooltip`]
               username_tooltip: this.state.username_tooltip,
               password_tooltip: this.state.password_tooltip,
               confirm_password_tooltip: this.state.confirm_password_tooltip,
               'e-mail_tooltip': this.state['e-mail_tooltip'],
               'confirm_e-mail_tooltip': this.state['confirm_e-mail_tooltip'],
-              secret_answer_tooltip: this.state.secret_answer_tooltip,
 
 
               handleInputChange: this.foo.bind(this),
@@ -143,8 +134,6 @@ Login.propTypes = {
   email_confirm: React.PropTypes.string,
   password: React.PropTypes.string,
   password_confirm: React.PropTypes.string,
-  secret_question: React.PropTypes.string,
-  secret_answer: React.PropTypes.string,
   tos: React.PropTypes.bool,
   handleInputChange: React.PropTypes.func,
   handleCheckboxClick: React.PropTypes.func,

@@ -23,7 +23,6 @@ export class SignUp extends Component {
     let username = "username",
         email = "e-mail",
         password = "password",
-        secret_answer = "secret_answer",
         text = "text",
         username_pattern = /^[A-Za-z]{3,10}$/;
     return (
@@ -35,18 +34,6 @@ export class SignUp extends Component {
           {this.input(`confirm_${email}`,     `Confirm ${email}`,     "example@example.com",  email, "")}
           {this.input(password,               password,               "",                     password, "")}
           {this.input(`confirm_${password}`,  `Confirm ${password}`,  "",                     password, "")}
-
-          <div className="input-wrapper">
-            <label htmlFor="secret_question">Choose secret question:</label>
-            <select id="secret_question">
-              <option>What was your childhood nickname?</option>
-              <option>In what city did you meet your spouse/significant other?</option>
-              <option>What is the name of your favorite childhood friend?</option>
-              <option>In what city or town did your mother and father meet?</option>
-            </select>
-          </div>
-
-          {this.input(secret_answer, `Secret answer`, "", text, "")}
 
           <div className="input-wrapper">
             <div className="tos">
