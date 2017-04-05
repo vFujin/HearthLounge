@@ -1,5 +1,7 @@
 import {ref, firebaseAuth} from '../keys';
 import {browserHistory} from 'react-router';
+
+
 export function createUser(email, pass){
   let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(saveUser);
   promise.catch(e => console.log(e.message));
@@ -8,14 +10,15 @@ export function createUser(email, pass){
 
 export function logout(e){
   e.preventDefault();
-  browserHistory.push('/forum');
-  return firebaseAuth().signOut();
+  return firebaseAuth().signOut()
+      .then(()=>browserHistory.push('/forum'))
+      .catch(e=>console.log(e.message));
 }
 
 export function signIn(email, pass){
-  let promise = firebaseAuth().signInWithEmailAndPassword(email, pass);
-  promise.catch(e => console.log(promise, e.message));
-  return promise;
+  return firebaseAuth().signInWithEmailAndPassword(email, pass)
+      .then(()=>browserHistory.push('/dashboard'))
+      .catch(e=>console.log(e.message));
 }
 
 // export function resetPassword(email) {

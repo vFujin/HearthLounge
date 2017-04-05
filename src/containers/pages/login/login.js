@@ -22,7 +22,6 @@ export class Login extends Component {
     };
 
     events.handleSignIn = events.handleSignIn.bind(this);
-    events.handleInputChange = events.handleInputChange.bind(this);
     events.handleCheckboxClick = events.handleCheckboxClick.bind(this, 'tos');
     this.hideTooltip = this.hideTooltip.bind(this);
     this.showTooltip = this.showTooltip.bind(this);
@@ -35,29 +34,6 @@ export class Login extends Component {
     const id = target.id;
     return this.setState({
       [id]: value
-    });
-  }
-
-  // componentWillMount(){
-  //   if(this.props.authed === true){
-  //     browserHistory.push('/dashboard');
-  //   }
-  // }
-
-  componentWillUnmount(){
-    // console.log(this.state);
-    this.setState({
-      //Sign up
-      username: "",
-      'e-mail': "",
-      'confirm_e-mail': "",
-      password: "",
-      confirm_password: "",
-      tos: false,
-
-      //Sign in
-      'sign_in-e-mail': "",
-      'sign_in-password': ""
     });
   }
 
@@ -107,19 +83,19 @@ export class Login extends Component {
               'e-mail_tooltip': this.state['e-mail_tooltip'],
               'confirm_e-mail_tooltip': this.state['confirm_e-mail_tooltip'],
 
-
-              handleInputChange: this.foo.bind(this),
-              handleCheckboxClick: events.handleCheckboxClick,
-              hideTooltip: this.hideTooltip,
-              showTooltip: this.showTooltip,
-              handleFormSubmit: events.handleFormSubmit,
-
               // sessionStorage, localStorage JSON.stringify
 
               //Sign In
               'sign_in-e-mail': this.state['sign_in-e-mail'],
               'sign_in-password': this.state['sign_in-password'],
-              handleSignIn: events.handleSignIn
+              handleSignIn: events.handleSignIn,
+
+              //Events
+              handleInputChange: this.foo.bind(this),
+              handleCheckboxClick: events.handleCheckboxClick,
+              hideTooltip: this.hideTooltip,
+              showTooltip: this.showTooltip,
+              handleFormSubmit: events.handleFormSubmit
             })}
           </div>
         </div>

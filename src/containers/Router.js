@@ -59,6 +59,7 @@ import {Dashboard} from './pages/dashboard/dashboard';
 import {Main} from './Main';
 
 export class App extends Component {
+
   render() {
     return (
       <Router history={browserHistory}>
