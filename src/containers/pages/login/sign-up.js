@@ -27,7 +27,7 @@ export class SignUp extends Component {
         username_pattern = /^[A-Za-z]{3,10}$/;
     return (
       <div className="sign sign-up active">
-        <form onSubmit={(e)=>this.props.handleFormSubmit(e, this.props[email], this.props[password])}>
+        <form onSubmit={(e)=>this.props.handleFormSubmit(e, this.props[email], this.props[password], this.props[username])}>
           {/*            id                     label                      placeholder        type          pattern    */}
           {this.input(username,               username,               "Joe",                  text,     null)}
           {this.input(email,                  email,                  "example@example.com",  email, "")}

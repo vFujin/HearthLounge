@@ -2,8 +2,8 @@ import {ref, firebaseAuth} from '../keys';
 import {browserHistory} from 'react-router';
 
 
-export function createUser(email, pass){
-  let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(saveUser);
+export function createUser(email, pass, username){
+  let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(user=>saveUser(user, username));
   promise.catch(e => console.log(e.message));
   return promise;
 }
@@ -25,11 +25,16 @@ export function signIn(email, pass){
 //   return firebaseAuth().sendPasswordResetEmail(email);
 // }
 
-function saveUser(user){
+function saveUser(user, username){
   return ref.child(`users/${user.uid}`)
       .set({
         email: user.email,
-        uid: user.uid
+        uid: user.uid,
+        username: username
       })
-      .then(() => user)
+      .then(() => ref.child(`usernames/${username}`)
+          .set({
+            [username]: user.uid
+          }))
+      .then(()=>user)
 }

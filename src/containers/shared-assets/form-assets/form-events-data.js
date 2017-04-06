@@ -1,5 +1,6 @@
 import {createUser, signIn} from '../../../utils/auth'
 export const events = {
+
   handleCheckboxClick: function (key){
     return this.setState({
       [key]: this.state[key] === false
@@ -13,9 +14,9 @@ export const events = {
       [id]: value
     });
   },
-  handleFormSubmit: function(e, email, pass){
+  handleFormSubmit: function(e, email, pass, username){
     e.preventDefault();
-    createUser(email, pass);
+    createUser(email, pass, username);
   },
   handleSignIn: function (e, email, pass) {
     e.preventDefault();
