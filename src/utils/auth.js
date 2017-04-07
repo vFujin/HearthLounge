@@ -1,7 +1,6 @@
 import {ref, firebaseAuth} from '../keys';
 import {browserHistory} from 'react-router';
 
-
 export function createUser(email, pass, username){
   let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(user=>saveUser(user, username));
   promise.catch(e => console.log(e.message));
@@ -32,9 +31,15 @@ function saveUser(user, username){
         uid: user.uid,
         username: username
       })
-      .then(() => ref.child(`usernames/${username}`)
+      .then(() => ref.child(`usernames`)
           .set({
             [username]: user.uid
           }))
       .then(()=>user)
+}
+
+export function getUserData(uid, key) {
+  return ref.once("value", (snapshot) => {
+    snapshot.child(`users/${uid}`).val()[key];
+  });
 }

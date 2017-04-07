@@ -34,12 +34,12 @@ export const icon_filters = {
     {
       name: 'Blackrock Mountain',
       url: 'blackrock-mountain',
-      isStandard: true
+      isStandard: false
     },
     {
       name: 'The League of Explorers',
       url: 'the-league-of-explorers',
-      isStandard: true
+      isStandard: false
     },
     {
       name: 'Karazhan',
@@ -54,7 +54,7 @@ export const icon_filters = {
     {
       name: 'The Grand Tournament',
       url: 'the-grand-tournament',
-      isStandard: true
+      isStandard: false
     },
     {
       name: 'Whispers of the Old Gods',

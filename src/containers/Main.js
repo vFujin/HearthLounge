@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import firebase from 'firebase';
 import Navbar from './layout/navbar';
 import {Footer} from './layout/footer';
-import {logout} from '../utils/auth';
+import {getUserData} from '../utils/auth';
 
 export class Main extends Component {
   constructor(props){
@@ -15,9 +15,13 @@ export class Main extends Component {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         console.log(user.email);
+        let data = getUserData(user.uid, 'displayName').then(v=>{
+          console.log(v)
+        });
+        console.log(data);
         this.setState({
           authed: true,
-          user: user.email
+          user: data
         });
       }
       else {
