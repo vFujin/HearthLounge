@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconFilter} from '../../../shared-assets/filters/icon-filter';
+import IconFilter from '../../../shared-assets/filters/icon-filter';
 
 const CardsTopbarFilters = props => {
   const {query} = props;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconFilter} from '../../../../shared-assets/filters/icon-filter';
+import IconFilter from '../../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../../shared-assets/filters/input-filter';
 import SliderFilter from '../../../../shared-assets/filters/slider-filter';
 

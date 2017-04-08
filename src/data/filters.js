@@ -25,7 +25,11 @@ export const icon_filters = {
       url: 'reward',
       isStandard: true
     },
-
+    {
+      name: 'Hall of Fame',
+      url: 'hall-of-fame',
+      isStandard: false
+    },
     {
       name: 'Naxxramas',
       url: 'naxxramas',
@@ -195,7 +199,7 @@ export const icon_filters = {
   mode: [
     {
       name: "standard",
-      url: "kraken"
+      url: "mammoth"
     },
     {
       name: "wild",
@@ -213,11 +217,11 @@ export const icon_filters = {
   multiClassGroup:[
     {
       name: "Grimy Goons",
-      url: "grimygoons"
+      url: "grimy-goons"
     },
     {
       name: "Jade Lotus",
-      url: "lotus"
+      url: "jade-lotus"
     },
     {
       name: "Kabal",

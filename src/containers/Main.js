@@ -21,7 +21,7 @@ export class Main extends Component {
         console.log(data);
         this.setState({
           authed: true,
-          user: data
+          user: user.email
         });
       }
       else {

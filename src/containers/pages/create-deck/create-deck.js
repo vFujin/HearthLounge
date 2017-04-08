@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CreateDeck = props =>{
-    return props.children;
+const CreateDeck = ({children}) =>{
+    return children;
 };
 
 CreateDeck.propTypes = {
