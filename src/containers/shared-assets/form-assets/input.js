@@ -8,7 +8,7 @@ const Input = ({id, type, placeholder, handleInputChange, value}) =>{
 
   return (
       <div className="input-wrapper">
-        <Tooltip title={<FormTooltipText id={id} label={label}/>} placement="right" trigger="focus">
+        <Tooltip visible={true} overlayClassName="form-tooltip" title={<FormTooltipText id={id} label={label}/>} placement="right" trigger="focus">
         <label htmlFor={id}>{label}:</label>
           <input id={id}
                  type={type}

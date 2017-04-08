@@ -1857,42 +1857,19 @@ footer{
         form {
           .input-wrapper {
             position: relative;
-            label, input, select {
+            label, input{
               display: block;
             }
-            input, select {
+            input{
               @include transition(all ease .4s);
               margin-bottom: 2vh;
               padding: 5px;
               background: transparent;
-            }
-            input {
               width: 60%;
               color: $sea-color;
               border-bottom: 1px solid $light-grey;
               &:focus {
                 border-bottom: 1px solid $pearl;
-
-              }
-            }
-            select {
-              outline: 0;
-              color: $light-grey;
-              border: 1px solid $light-grey;
-              &:focus {
-                border: 1px solid $pearl;
-              }
-              option {
-                background-color: $pearl;
-                color: $dark-grey;
-                &:hover {
-                  background-color: $sea-color;
-                }
-              }
-            }
-            label{
-              &:first-letter {
-                text-transform: capitalize;
               }
             }
             .tos {
@@ -1941,53 +1918,10 @@ footer{
                 }
               }
             }
-
-
-            .input-tooltip {
-              color: $pearl;
-              position: absolute;
-              top: 0;
-              right: 0;
-              width: calc(35% - 10px);
-              font-size: 11px;
-              padding: 5px;
-              border: 1px solid $pearl;
-              span {
-                position: absolute;
-                left: -6px;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 5.5px 6px 5.5px 0;
-                border-color: transparent $pearl transparent transparent;
-              }
-              .input-tooltip-list {
-                .input-tooltip-header {
-                  position: relative;
-                  border:none;
-                  left:0;
-                  font-style: normal;
-
-                }
-                &:first-letter{
-                  text-transform: uppercase;
-                }
-                li {
-                  display: flex;
-                  align-items: center;
-                  padding-top: 5px;
-                  i {
-                    margin-right: 3px;
-                    font-style: normal;
-                  }
-                }
-              }
-            }
           }
           .button-wrapper {
             display: flex;
             justify-content: flex-start;
-
           }
         }
       }

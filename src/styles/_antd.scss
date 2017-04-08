@@ -185,3 +185,34 @@
   }
 
 }
+
+.form-tooltip{
+  .ant-tooltip-content{
+
+    .ant-tooltip-arrow{
+      border-right-color: $pearl;
+    }
+    .ant-tooltip-inner{
+      color: $light-grey;
+      border: 1px solid $pearl;
+      p{
+        color: $pearl;
+      }
+      ul{
+        li{
+          display: flex;
+          align-items: center;
+          padding-top: 5px;
+          p{
+            color: $light-grey;
+            font-size: 1vh;
+          }
+          i{
+            margin-right: 3px;
+            font-style: normal;
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,21 +16,24 @@ const FormTooltipText = props => {
 
   const requirementsList = (id, label) =>{
     return (
-        <ul className="input-tooltip-list">{label} should:
-          {requirement(id)}
-        </ul>
+        <div>
+          <p className="tooltip-label">{label} should:</p>
+          <ul className="input-tooltip-list">
+            {requirement(id)}
+          </ul>
+        </div>
     )
   };
 
   const tooltipText = (id, label) => {
     switch(id){
       case id: return requirementsList(id, label);
-      default: return ''
+      default: return null;
     }
   };
 
   return (
-      <div>{tooltipText(props.id, props.label)}</div>
+      <div className="tooltip-text">{tooltipText(props.id, props.label)}</div>
   )
 };
 
