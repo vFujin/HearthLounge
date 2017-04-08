@@ -36,6 +36,7 @@ export class Main extends Component {
   }
 
   render(){
+    console.log(this.state.authed);
     const {children, location} = this.props;
     return (
         <div id="container">

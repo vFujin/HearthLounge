@@ -4,8 +4,8 @@ import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar'
 
 export class Dashboard extends Component {
-  componentWillReceiveProps(nextProps){
-    if(!nextProps.authed){
+  componentWillMount(){
+    if(this.props.authed === false){
       browserHistory.push('/sign-in');
     }
   }
@@ -25,3 +25,5 @@ export class Dashboard extends Component {
     )
   }
 }
+
+

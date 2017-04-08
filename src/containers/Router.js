@@ -49,7 +49,7 @@ import {RedditPostsSidebar} from './pages/reddit/posts/sidebar';
 import RedditPostsTopbar from './pages/reddit/posts/topbar';
 
 import {Login} from './pages/login/login';
-import {SignUp} from './pages/login/sign-up';
+import SignUp from './pages/login/sign-up';
 import SignIn from './pages/login/sign-in';
 
 import NotFound from './shared-assets/not-found';

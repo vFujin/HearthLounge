@@ -1,21 +1,18 @@
 import React from 'react';
 import FormTooltips from './form-tooltips';
+import _ from 'lodash';
 
-const Input = ({id, handleInputChange, hideTooltip, showTooltip, type, placeholder, value, pattern, label, tooltip}) =>{
+const Input = ({id, type, placeholder, handleInputChange, value}) =>{
+  const label = _.startCase(_.trimStart(id, 'signUp'));
+
   return (
       <div className="input-wrapper">
         <label htmlFor={id}>{label}:</label>
-          <input onChange={handleInputChange.bind(this)}
-                 onBlur={hideTooltip}
-                 onFocus={showTooltip}
+          <input id={id}
                  type={type}
-                 id={id}
                  placeholder={placeholder}
-                 value={value}
-                 pattern={pattern || null} />
-        <FormTooltips id={id}
-                      label={label}
-                      tooltip={tooltip}/>
+                 onChange={(e)=>handleInputChange(e)}
+                 value={value}/>
       </div>
   )
 };
