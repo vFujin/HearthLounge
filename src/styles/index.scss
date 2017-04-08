@@ -1755,45 +1755,40 @@ footer{
 
 .container__page.login{
   .wrapper{
-
     display: flex;
     width: 50vw;
     height: 70vh;
-    .left-container, .right-container{
+    .container__page--inner{
       background-color: $dark-grey;
       width: 50%;
       height: 100%;
       .topbar{
-        height: 50px;
         background-color: $dark-grey;
-        justify-content: flex-end;
-      }
-      .breakline{
-        background-color: $light-grey;
-        &.v-breakline{
+        justify-content: center;
+        position: relative;
+        width:100%;
+        &:after{
+          content: "";
           position: absolute;
-          width: 1px;
-          height: 95%;
-        }
-        &.h-breakline{
-          margin: 0 auto;
+          bottom:0;
+          background-color: $light-grey;
+          height: 1px;
           width: 90%;
-          height:1px;
         }
+      }
+      .carousel, .sign{
+        width: 90%;
+        margin: 0 auto;
       }
     }
-    .left-container{
+    .container__page--left{
       .topbar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
         color: $light-grey;
-        font-size: 30px;
+        font-size: 4vh;
         ul{
           display: flex;
-          justify-content: space-around;
-          align-items: center;
           width: 40%;
+          justify-content: space-around;
           li{
             @include transition(all ease .4s);
             &.active{
@@ -1803,13 +1798,7 @@ footer{
         }
       }
       .carousel{
-        position: relative;
         color: $pearl;
-        height: calc(100% - 100px);
-        display: flex;
-        align-items: center;
-        width: 90%;
-        margin: auto;
         .slides {
           height: 100%;
           display: flex;;
@@ -1818,7 +1807,7 @@ footer{
           .slide {
             @include transition(opacity 1s);
             position: absolute;
-            width: 100%;
+            width: 90%;
             opacity: 0;
             z-index: 1;
             &.active{
@@ -1826,26 +1815,19 @@ footer{
               z-index: 2;
             }
             p {
-              font-size: 30px;
-              margin-bottom: 10px;
+              font-size: 3vh;
+              margin-bottom: 1vh;
             }
             span {
-              font-size: 150px;
+              font-size: 12vh;
             }
           }
         }
       }
     }
-    .right-container {
+    .container__page--right {
       position: relative;
       color: $pearl;
-      .breakline-wrapper{
-        position: absolute;
-        height: inherit;
-        display: flex;
-        align-items: center;
-      }
-
       .topbar {
         a {
           p {
@@ -1853,10 +1835,10 @@ footer{
             color: $light-grey;
             cursor: pointer;
             border: 1px solid $light-grey;
-            padding: 5px;
-            margin-right: 9.5px;
+            padding: .5vh;
+            margin-right: 1vh;
             &:hover {
-              @include box-shadow(0, 0, 5px, $pearl);
+              @include box-shadow(0, 0, .5vh, $pearl);
               color: $pearl;
               border: 1px solid $pearl;
             }
@@ -1871,12 +1853,8 @@ footer{
       }
 
       .sign {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: calc(100% - 51px);
+        align-self: center;
         form {
-          width: 90%;
           .input-wrapper {
             position: relative;
             label, input, select {
@@ -1884,7 +1862,7 @@ footer{
             }
             input, select {
               @include transition(all ease .4s);
-              margin-bottom: 20px;
+              margin-bottom: 2vh;
               padding: 5px;
               background: transparent;
             }
@@ -2013,10 +1991,21 @@ footer{
           }
         }
       }
-      .sign-in{
-        height: calc(100% - 101px);
-      }
 
+    }
+    .breakline{
+      height: 100%;
+      width: 1px;
+      position: relative;
+      background: $dark-grey;
+      &:after {
+        position: absolute;
+        top: 2.5%;
+        height: 95%;
+        content: "";
+        background: $light-grey;
+        width: 1px;
+      }
     }
   }
 }

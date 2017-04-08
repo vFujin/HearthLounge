@@ -27,11 +27,10 @@ export class LeftContainer extends Component {
 
   render() {
     return (
-        <div className="left-container">
+        <div className="container__page--inner container__page--left">
           <div className="topbar">
             {this.dots()}
           </div>
-          <div className="breakline h-breakline"></div>
           <Carousel handleCurrentDotChange={this.handleCurrentDotChange.bind(this)} />
         </div>
     );

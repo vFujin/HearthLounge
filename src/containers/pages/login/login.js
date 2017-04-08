@@ -49,10 +49,8 @@ export class Login extends Component {
       <div className={`container__page container__page--oneSided login`}>
         <div className="wrapper">
           <LeftContainer/>
-          <div className="right-container">
-            <div className="breakline-wrapper">
-              <div className="breakline v-breakline"></div>
-            </div>
+          <div className="breakline v-breakline"></div>
+          <div className="container__page--inner container__page--right">
             <div className="topbar">
               <Link to="sign-in" activeClassName="active">
                 <p>Sign In</p>
@@ -61,7 +59,6 @@ export class Login extends Component {
                 <p>Sign Up</p>
               </Link>
             </div>
-            <div className="breakline h-breakline"></div>
             {React.cloneElement((this.props.children), {
               signUp_username: this.state.signUp_username,
               signUp_email: this.state.signUp_email,
