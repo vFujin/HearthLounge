@@ -1985,7 +1985,8 @@ footer {
       background-color: #474143;
       padding: .5vh;
       color: #E7E2DA;
-      text-transform: capitalize; }
+      text-transform: capitalize;
+      height: calc(100% - 1vh); }
     .container__page .container__page--left .sidebar__body {
       overflow-y: auto;
       overflow-x: hidden;

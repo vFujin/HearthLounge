@@ -17,8 +17,8 @@ export class Login extends Component {
       tos: false,
 
       //Sign in
-      'sign_in-e-mail': "",
-      'sign_in-password': ""
+      signIn_email: "",
+      signIn_password: ""
     };
 
     events.handleSignIn = events.handleSignIn.bind(this);
@@ -86,8 +86,8 @@ export class Login extends Component {
               // sessionStorage, localStorage JSON.stringify
 
               //Sign In
-              'sign_in-e-mail': this.state['sign_in-e-mail'],
-              'sign_in-password': this.state['sign_in-password'],
+              signIn_email: this.state.signIn_email,
+              signIn_password: this.state.signIn_password,
               handleSignIn: events.handleSignIn,
 
               //Events

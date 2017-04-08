@@ -231,6 +231,7 @@ footer{
       padding: .5vh;
       color: $pearl;
       text-transform: capitalize;
+      height: calc(100% - 1vh);
     }
     .sidebar__body {
       @include scrollbar($light-grey);
