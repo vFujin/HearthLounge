@@ -11,7 +11,7 @@
 
 .icon {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'Hearthstone' !important;
+  font-family: 'hearthstone' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -24,6 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-journey-to-ungoro:before {
+  content: "\e938";
+}
+.icon-hall-of-fame:before {
+  content: "\e939";
+}
 .icon-minions:before {
   content: "\e91d";
 }
