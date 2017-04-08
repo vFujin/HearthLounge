@@ -1,9 +1,9 @@
 import React from 'react';
 import {requirementsObj} from '../../../data/form-requirements';
 
-const FormTooltips = props => {
+const FormTooltipText = props => {
 
-  function requirement(id) {
+  const requirement = (id) =>{
     return (
       requirementsObj[id].map((r, i) =>
         <li key={i}>
@@ -12,29 +12,26 @@ const FormTooltips = props => {
         </li>
       )
     );
-  }
+  };
 
-  function requirements(id, label){
+  const requirementsList = (id, label) =>{
     return (
         <ul className="input-tooltip-list">{label} should:
           {requirement(id)}
         </ul>
     )
-  }
+  };
 
-  function tooltip(id, label){
+  const tooltipText = (id, label) => {
     switch(id){
-      case id: return requirements(id, label);
+      case id: return requirementsList(id, label);
       default: return ''
     }
-  }
+  };
 
   return (
-      <div className={`input-tooltip ${props.tooltip === true ? "active" : "display-none"}`}>
-        <span className="input-tooltip-caret-left"></span>
-        {tooltip(props.id, props.label)}
-      </div>
+      <div>{tooltipText(props.id, props.label)}</div>
   )
 };
 
-export default FormTooltips;
+export default FormTooltipText;

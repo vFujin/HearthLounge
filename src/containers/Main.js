@@ -3,6 +3,7 @@ import firebase from 'firebase';
 import Navbar from './layout/navbar';
 import {Footer} from './layout/footer';
 import {getUserData} from '../utils/auth';
+import 'antd/lib/tooltip/style/css';
 
 export class Main extends Component {
   constructor(props){

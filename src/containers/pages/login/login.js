@@ -39,7 +39,6 @@ export class Login extends Component {
     const target = e.target;
     const value = e.target.value;
     const id = target.id;
-    // sessionStorage.setItem(id, value);
     return this.setState({
       [id]: value
     });

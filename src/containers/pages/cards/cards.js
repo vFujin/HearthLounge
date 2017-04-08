@@ -3,7 +3,6 @@ import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../shared-assets/loader';
 import Tooltip from 'antd/lib/tooltip';
-import 'antd/lib/tooltip/style/css';
 import {CardDetails} from './right-container/card-details';
 import {Data} from '../../../data/cards-data';
 
