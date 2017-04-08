@@ -1,9 +1,7 @@
 import React from 'react';
 import IconFilter from '../../../shared-assets/filters/icon-filter';
 
-const CardsTopbarFilters = props => {
-  const {query} = props;
-
+const CardsTopbarFilters = ({query}) => {
   return (
       <div className="topbar">
         <IconFilter header={false} filter="cost"        query={query} tooltip={false} wrapper_class="topbar-left" />

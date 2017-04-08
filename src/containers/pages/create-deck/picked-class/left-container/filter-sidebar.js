@@ -3,9 +3,8 @@ import IconFilter from '../../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../../shared-assets/filters/input-filter';
 import SliderFilter from '../../../../shared-assets/filters/slider-filter';
 
-const FilterSidebar = ({faction,filtersView, mechanics, name, query, race, type}) => {
+const FilterSidebar = ({faction, filtersView, mechanics, name, query, race, type}) => {
   return (
-
       <div className={`sidebar__body ${filtersView === true ? 'active' : 'display-none'}`}>
         <InputFilter attribute={name}      filter="name"      query={query} multiple={false}/>
         <InputFilter attribute={race}      filter="race"      query={query} multiple={true}/>
@@ -23,7 +22,6 @@ const FilterSidebar = ({faction,filtersView, mechanics, name, query, race, type}
       </div>
   );
 };
-
 
 FilterSidebar.propTypes = {
   faction: React.PropTypes.array,

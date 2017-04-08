@@ -3,10 +3,15 @@ import _ from 'lodash';
 
 const ChoosenCards = ({countCards, deck, deckDetails}) => {
 
+  const removeApostrophe = (string) =>{
+    return _.replace(string.toLowerCase(), "'", "");
+  };
+
   const listCards = () => {
     return _.uniqBy(_.sortBy(deck, ['cost', 'name'])).map((card, i) =>
         <tr key={i} className={`${_.toLower(card.rarity)} gradient`}>
-          <td><span className={`hs-icon icon-${_.kebabCase(card.cardSet)}`}></span></td>
+          {console.log(_.trim(card.cardSet, " "))}
+          <td><span className={`hs-icon icon-${_.kebabCase(removeApostrophe(card.cardSet))}`}></span></td>
           <td>{card.name}</td>
           <td>{countCards(card)}</td>
           <td><span className={`hs-icon icon-mana-${card.cost}`}></span></td>

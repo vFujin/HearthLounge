@@ -29,7 +29,7 @@ function saveUser(user, username){
       .set({
         email: user.email,
         uid: user.uid,
-        username: username
+        username: username.toLowerCase()
       })
       .then(() => ref.child(`usernames`)
           .set({
@@ -38,8 +38,6 @@ function saveUser(user, username){
       .then(()=>user)
 }
 
-export function getUserData(uid, key) {
-  return ref.once("value", (snapshot) => {
-    snapshot.child(`users/${uid}`).val()[key];
-  });
+export function getUserData(uid, cb) {
+  return ref.once("value", (snapshot) =>cb(snapshot.child(`users/${uid}`).val()))
 }

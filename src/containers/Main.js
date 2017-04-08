@@ -14,14 +14,11 @@ export class Main extends Component {
 
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        console.log(user.email);
-        let data = getUserData(user.uid, 'displayName').then(v=>{
-          console.log(v)
-        });
-        console.log(data);
-        this.setState({
-          authed: true,
-          user: user.email
+        getUserData(user.uid, (v)=>{
+          this.setState({
+            authed: true,
+            user: v.username
+          });
         });
       }
       else {

@@ -1,6 +1,6 @@
 import React from 'react';
 import MapIcons from './map-icons';
-import {IconFilter} from '../../../../shared-assets/filters/icon-filter';
+import IconFilter from '../../../../shared-assets/filters/icon-filter';
 
 const Topbar = ({deck, filtersView, params, query}) => {
 
