@@ -4,9 +4,7 @@ import UserDetails from './details/user';
 import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
 
-
-const Sidebar = (props) => {
-
+const Sidebar = () => {
   return (
       <div className="sidebar">
         <h3 className="sidebar__header">Profile

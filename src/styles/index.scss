@@ -1954,14 +1954,14 @@ footer{
           margin-top: 2vh;
           border: 1px solid $dark-grey;
           position: relative;
-          div{
+          .details-content{
             margin: 2vh 1vh;
             label{
               margin-top: 1vh;
               display: flex;
               justify-content: space-between;
-              span{
-                font-size:25px;
+              .hs-icon{
+                font-size:20px;
               }
               input{
                 text-align: right;

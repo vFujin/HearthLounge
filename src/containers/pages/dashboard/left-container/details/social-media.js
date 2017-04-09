@@ -4,7 +4,7 @@ const SocialMediaDetails = props => {
   return(
       <li className="social-media">
         <h3>Social Media</h3>
-        <div>
+        <div className="details-content">
           <label htmlFor="facebook">
             <span className="hs-icon icon-facebook"></span>
             <input id="facebook" type="text" value="Placeholder"/>
@@ -25,5 +25,6 @@ const SocialMediaDetails = props => {
       </li>
   )
 };
+
 
 export default SocialMediaDetails;
