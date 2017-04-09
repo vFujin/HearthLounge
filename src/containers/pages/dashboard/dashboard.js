@@ -24,13 +24,13 @@ export class Dashboard extends Component {
   }
 
 
-  render(){
 
+  render(){
+    console.log(this.props)
     return (
         <div className="container__page container__page--twoSided dashboard">
           <div className="container__page--inner container__page--left">
-            {this.props.authed}
-            <Sidebar user={this.props.user}/>
+            <Sidebar username={this.props.username} email={this.props.email}/>
           </div>
           <div className="container__page--inner container__page--right">
             <Topbar/>

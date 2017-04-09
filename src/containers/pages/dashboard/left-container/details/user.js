@@ -8,7 +8,7 @@ const UserDetails = props => {
         <div className="details-content">
           <label htmlFor="email">
             <p>E-mail</p>
-            <input id="email" type="text" value="joe@placeholder.com"/>
+            <input id="email" type="text" value={props.email}/>
           </label>
         </div>
       </li>
