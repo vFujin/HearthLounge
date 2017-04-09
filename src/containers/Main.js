@@ -35,11 +35,6 @@ export class Main extends Component {
     })
   }
 
-  handleLogout(e){
-    e.preventDefault();
-    firebase.auth().signOut();
-  }
-
   render(){
     console.log(this.state.authed);
     const {children, location} = this.props;
