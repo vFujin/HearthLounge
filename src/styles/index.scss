@@ -1963,8 +1963,12 @@ footer{
               .hs-icon{
                 font-size:20px;
               }
+              p{
+                height:31px;
+              }
               input{
-                text-align: right;
+                text-align: center;
+                padding:5px 0;
               }
             }
           }

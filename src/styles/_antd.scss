@@ -105,6 +105,7 @@
       }
     }
     .classes-list{
+      font-weight: normal;
       justify-content: space-between;
     }
     .region-list{
@@ -123,6 +124,7 @@
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:hover:after{
   color: $pearl;
 }
+
 .ant-slider-mark-text .ant-slider-mark-text-active{
   width: 35%;
   margin-left: -17.5%;

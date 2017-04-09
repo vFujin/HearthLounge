@@ -3352,8 +3352,11 @@ footer {
         justify-content: space-between; }
         .dashboard .container__page--left .sidebar ul li .details-content label .hs-icon {
           font-size: 20px; }
+        .dashboard .container__page--left .sidebar ul li .details-content label p {
+          height: 31px; }
         .dashboard .container__page--left .sidebar ul li .details-content label input {
-          text-align: right; }
+          text-align: center;
+          padding: 5px 0; }
     .dashboard .container__page--left .sidebar ul li h3 {
       position: absolute;
       top: -11px;
@@ -3500,6 +3503,7 @@ footer {
     .ant-select-dropdown ul .ant-select-dropdown-menu-item span {
       font-size: 2vh; }
   .ant-select-dropdown ul .classes-list {
+    font-weight: normal;
     justify-content: space-between; }
   .ant-select-dropdown ul .region-list {
     justify-content: center; }
