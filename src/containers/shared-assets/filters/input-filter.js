@@ -3,8 +3,7 @@ import Select from 'antd/lib/select';
 import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
 
-const InputFilter = props => {
-  const {attribute, cards, filter, query} = props;
+const InputFilter = ({attribute, filter, multiple, query}) => {
   const Option = Select.Option;
 
   const queries = attr =>{
@@ -19,9 +18,9 @@ const InputFilter = props => {
   return (
       <div className="input-filter-wrapper">
         <h4>{filter}</h4>
-        <Select multiple={props.multiple}
-                showSearch={props.multiple === false ? true : false}
-                allowClear={props.multiple === false ? true : false}
+        <Select multiple={multiple}
+                showSearch={multiple === false ? true : false}
+                allowClear={multiple === false ? true : false}
                 style={{width: "100%"}}
                 placeholder={`${placeholder}...`}
                 onChange={(e)=>addQuery(queries(e))}
@@ -36,6 +35,7 @@ const InputFilter = props => {
 InputFilter.propTypes = {
   attribute: React.PropTypes.array,
   filter: React.PropTypes.string,
+  multiple: React.PropTypes.bool,
   query: React.PropTypes.object
 };
 
