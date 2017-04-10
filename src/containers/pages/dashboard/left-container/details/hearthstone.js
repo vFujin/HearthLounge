@@ -2,7 +2,8 @@ import React from 'react';
 import Select from 'antd/lib/select';
 import {dashboard_data} from '../../../../../data/dashboard';
 import DetailHeader from './detail-header';
-const HearthstoneDetails = () => {
+
+const HearthstoneDetails = ({handleEditClick, isEditing}) => {
   const Option = Select.Option;
   const classesPlaceholder = <span className="hs-icon icon-warlock placeholder-icon"></span>;
 
@@ -29,7 +30,7 @@ const HearthstoneDetails = () => {
 
   return(
       <li className="hearthstone">
-        <DetailHeader title="hearthstone"/>
+        <DetailHeader title="hearthstone" handleEditClick={handleEditClick} isEditing={isEditing}/>
         <div className="details-content">
           <label htmlFor="battletag">
             <span className="hs-icon icon-battlenet"></span>

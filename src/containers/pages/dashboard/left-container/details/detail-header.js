@@ -1,9 +1,17 @@
 import React from 'react';
-const DetailHeader = ({title}) =>{
+import _ from 'lodash';
+const DetailHeader = ({isEditing, handleEditClick, title}) =>{
+  let editing = !isEditing ? 'Edit' : 'Cancel editing';
+  const capitalizedTitle = _.startCase(title);
+  const snakeCasedTitle = _.snakeCase(title);
+
   return(
       <div className="details-header">
-        <h3>{title}</h3>
-        <button className="btn-pearl">Edit</button>
+        <h3>{capitalizedTitle}</h3>
+        <div>
+          <button onClick={(e)=>handleEditClick(e)} id={`editing_${snakeCasedTitle}`} className="btn-pearl">{editing}</button>
+          <button id={`save_${snakeCasedTitle}`} className={`btn-pearl ${!isEditing ? 'display-none' : ''}`}>Save</button>
+        </div>
       </div>
   )
 };

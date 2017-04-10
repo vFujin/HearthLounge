@@ -1964,14 +1964,19 @@ footer{
             h3{
               padding: 0 5px;
               background: $light-grey;
-              text-transform: capitalize;
             }
-            button{
-              background: $light-grey;
-              border-color: $dark-grey;
-              &:hover{
-                background: $dark-grey;
-                color: $pearl;
+            div {
+              display: flex;
+              button {
+                background: $light-grey;
+                border-color: $dark-grey;
+                &:hover {
+                  background: $dark-grey;
+                  color: $pearl;
+                }
+                &:last-child{
+                  margin-left: 5px;
+                }
               }
             }
           }

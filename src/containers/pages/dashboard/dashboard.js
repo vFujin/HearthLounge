@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
-import Sidebar from './left-container/sidebar';
+import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar'
 
 export class Dashboard extends Component {
@@ -22,6 +22,8 @@ export class Dashboard extends Component {
       user: nextProps.user
     })
   }
+
+
 
 
 

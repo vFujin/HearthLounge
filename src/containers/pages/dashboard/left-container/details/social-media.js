@@ -1,9 +1,9 @@
 import React from 'react';
 import DetailHeader from './detail-header';
-const SocialMediaDetails = props => {
+const SocialMediaDetails = ({handleEditClick, isEditing}) => {
   return(
       <li className="social-media">
-        <DetailHeader title="social media"/>
+        <DetailHeader title="social media" handleEditClick={handleEditClick} isEditing={isEditing}/>
         <div className="details-content">
           <label htmlFor="facebook">
             <span className="hs-icon icon-facebook"></span>
