@@ -3372,8 +3372,7 @@ footer {
         margin-top: 1vh;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding-right: 5px; }
+        align-items: center; }
         .dashboard .container__page--left .sidebar ul li .details-content label .hs-icon {
           font-size: 20px; }
         .dashboard .container__page--left .sidebar ul li .details-content label .wrapper {
@@ -3398,7 +3397,7 @@ footer {
             font-size: 12px;
             padding: 4px 4px 4px 2px;
             background: transparent;
-            border: 1px solid black;
+            border: 1px solid #474143;
             text-align: center;
             color: #E7E2DA; }
             .dashboard .container__page--left .sidebar ul li .details-content label .wrapper input[disabled] {
