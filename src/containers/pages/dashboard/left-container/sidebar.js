@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import UserDetails from './details/user';
 import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
@@ -12,7 +11,7 @@ export class Sidebar extends Component{
       editing_details: false,
       editing_hearthstone: false,
       editing_social_media: false
-    }
+    };
   }
 
   handleEditClick(e){
@@ -22,6 +21,11 @@ export class Sidebar extends Component{
     this.setState({
       [target]: isActive
     })
+  }
+
+  handleSaveClick(e){
+    let target = e.target.id;
+
   }
 
   render() {

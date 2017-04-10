@@ -10,6 +10,7 @@ export class Dashboard extends Component {
     this.state = {
       user: null
     }
+
   }
   componentWillMount(){
     if(this.props.authed === false){

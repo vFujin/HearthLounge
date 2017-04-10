@@ -1,0 +1,38 @@
+import React from 'react';
+import Select from 'antd/lib/select';
+import {dashboard_data} from '../../../../../../data/dashboard';
+
+const SelectLabel = ({id, title, placeholder}) => {
+  const Option = Select.Option;
+  const classesPlaceholder = <span className="hs-icon icon-warlock placeholder-icon"></span>;
+
+  const options = (opt) => {
+    return dashboard_data[opt].map(el => (
+        <Option className={`${opt}-list`} title={el} instancePrefix={el} optionIndex={el} option={el} value={el} key={el}>
+          <span className={`hs-icon icon-${el.toLowerCase()}`}></span>
+          <p className={opt}>{el}</p>
+        </Option>
+    ));
+  };
+
+  const select = (opt, placeholder) =>{
+    return(
+        <Select multiple={false}
+                style={{width: "50%"}}
+                placeholder={placeholder}
+                allowClear={true}
+                showSearch={true}>
+          {options(opt)}
+        </Select>
+    )
+  };
+  return(
+    <label htmlFor={id}>
+      <p>{title}:</p>
+      {select('classes', placeholder === 'classes' ? classesPlaceholder : placeholder)}
+    </label>
+  )
+};
+
+
+export default SelectLabel;
