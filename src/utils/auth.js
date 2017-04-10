@@ -14,10 +14,14 @@ export function logout(e){
       .catch(e=>console.log(e.message));
 }
 
-export function signIn(email, pass){
+export function signIn(email, pass, cb){
   return firebaseAuth().signInWithEmailAndPassword(email, pass)
       .then(()=>browserHistory.push('/dashboard'))
-      .catch(e=>console.log(e.message));
+      .catch(e=>{
+        let m = e.message;
+        console.log(m);
+        return cb(m)
+      });
 }
 
 // export function resetPassword(email) {
