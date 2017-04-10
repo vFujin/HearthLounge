@@ -2,7 +2,7 @@ import React from 'react';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 
-const IconLabel = ({id, title, placeholder}) => {
+const IconLabel = ({id, title, placeholder, disabled}) => {
   const capitalizedTitle = _.capitalize(title);
   const suffix = () => {
     switch(title){
@@ -23,7 +23,7 @@ const IconLabel = ({id, title, placeholder}) => {
         </Tooltip>
         <div className='wrapper'>
           <p>{link}</p>
-          <input id={id} placeholder={placeholder} />
+          <input disabled={!disabled} id={id} placeholder={placeholder} />
         </div>
       </label>
   )

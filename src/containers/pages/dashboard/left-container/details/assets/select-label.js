@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'antd/lib/select';
 import {dashboard_data} from '../../../../../../data/dashboard';
 
-const SelectLabel = ({id, title, placeholder}) => {
+const SelectLabel = ({id, title, placeholder, disabled}) => {
   const Option = Select.Option;
   const classesPlaceholder = <span className="hs-icon icon-warlock placeholder-icon"></span>;
 
@@ -21,7 +21,8 @@ const SelectLabel = ({id, title, placeholder}) => {
                 style={{width: "50%"}}
                 placeholder={placeholder}
                 allowClear={true}
-                showSearch={true}>
+                showSearch={true}
+                disabled={!disabled}>
           {options(opt)}
         </Select>
     )
