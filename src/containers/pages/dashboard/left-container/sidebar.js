@@ -16,10 +16,11 @@ export class Sidebar extends Component{
   }
 
   handleEditClick(e){
+    //either "Edit" or "Cancel" buttons
     let target = e.target.id;
-    console.log(target);
+    let isActive = this.state[target] === false ? true : false;
     this.setState({
-      [target]: true
+      [target]: isActive
     })
   }
 
