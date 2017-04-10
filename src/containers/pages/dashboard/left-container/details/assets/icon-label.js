@@ -1,6 +1,5 @@
 import React from 'react';
 import Tooltip from 'antd/lib/tooltip';
-import Input from 'antd/lib/input';
 import _ from 'lodash';
 
 const IconLabel = ({id, title, placeholder}) => {
@@ -22,7 +21,10 @@ const IconLabel = ({id, title, placeholder}) => {
         <Tooltip title={capitalizedTitle} placement="right">
           <span className={`hs-icon icon-${id}`}></span>
         </Tooltip>
-        <Input id={id} placeholder={placeholder} addonBefore={link}/>
+        <div className='wrapper'>
+          <p>{link}</p>
+          <input id={id} placeholder={placeholder} />
+        </div>
       </label>
   )
 };

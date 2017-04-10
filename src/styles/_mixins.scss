@@ -87,13 +87,13 @@
   }
 
   &.table-row{
+    color: $dark-grey;
     &:nth-child(odd) {
       background-color: rgba(0, 0, 0, .1);
       &:hover{
         background: $color;
       }
     }
-  color: $dark-grey;
     &:hover{
       background-color: $color;
       color: $dark-grey;

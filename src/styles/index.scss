@@ -1991,8 +1991,33 @@ footer{
               .hs-icon{
                 font-size:20px;
               }
-              p{
-                height:31px;
+              .wrapper{
+                //@include transition(all ease .4s);
+                display: flex;
+                align-items: center;
+
+                p{
+                  background: rgba(255,255,255, .2);
+                  font-size: 12px;
+                  border: 1px solid $dark-grey;
+                  padding: 4px;
+                  border-right: 0;
+                  width: 50%;
+                  text-align: right;
+                }
+                input{
+                  font-size: 12px;
+                  padding: 4px 4px 4px 2px;
+                  background: transparent;
+                  border: 1px solid black;
+                  text-align: center;
+                  color: $pearl;
+                  &[disabled]{
+                    background: blue;
+                  }
+                }
+
+
               }
             }
           }

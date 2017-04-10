@@ -258,28 +258,3 @@
     }
   }
 }
-
-/*
- *  Input
- */
-.ant-input{
-  border: none;
-  border-radius: 0;
-  height: 0%;
-  &:focus{
-    border: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-  }
-}
-.ant-input-group{
-  width: 90%;
-  margin-right: 4px;
-  .ant-input-group-addon{
-    &:first-child {
-      border-right: 0;
-      width: 50%;
-    }
-  }
-}
