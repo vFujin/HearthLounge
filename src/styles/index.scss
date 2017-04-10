@@ -1954,6 +1954,27 @@ footer{
           margin-top: 2vh;
           border: 1px solid $dark-grey;
           position: relative;
+          .details-header{
+            position: absolute;
+            top: -11px;
+            margin: 0 5px;
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 10px);
+            h3{
+              padding: 0 5px;
+              background: $light-grey;
+              text-transform: capitalize;
+            }
+            button{
+              background: $light-grey;
+              border-color: $dark-grey;
+              &:hover{
+                background: $dark-grey;
+                color: $pearl;
+              }
+            }
+          }
           .details-content{
             margin: 2vh 1vh;
             label{
@@ -1972,13 +1993,7 @@ footer{
               }
             }
           }
-          h3{
-            position: absolute;
-            top: -11px;
-            padding: 0 5px;
-            margin-left: 5px;
-            background: $light-grey;
-          }
+
           &:first-child{
             text-align: center;
             border: 0;

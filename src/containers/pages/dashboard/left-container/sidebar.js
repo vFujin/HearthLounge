@@ -7,9 +7,7 @@ import SocialMediaDetails from './details/social-media';
 const Sidebar = (props) => {
   return (
       <div className="sidebar">
-        <h3 className="sidebar__header">Profile
-          <button className="btn-pearl">Edit</button>
-        </h3>
+        <h3 className="sidebar__header">Profile</h3>
 
         <ul className="sidebar__body">
           <li className="about">

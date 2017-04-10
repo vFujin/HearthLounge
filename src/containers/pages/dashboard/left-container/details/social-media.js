@@ -1,9 +1,9 @@
 import React from 'react';
-
+import DetailHeader from './detail-header';
 const SocialMediaDetails = props => {
   return(
       <li className="social-media">
-        <h3>Social Media</h3>
+        <DetailHeader title="social media"/>
         <div className="details-content">
           <label htmlFor="facebook">
             <span className="hs-icon icon-facebook"></span>

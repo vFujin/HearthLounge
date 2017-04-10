@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'antd/lib/select';
 import {dashboard_data} from '../../../../../data/dashboard';
-
+import DetailHeader from './detail-header';
 const HearthstoneDetails = () => {
   const Option = Select.Option;
   const classesPlaceholder = <span className="hs-icon icon-warlock placeholder-icon"></span>;
@@ -29,7 +29,7 @@ const HearthstoneDetails = () => {
 
   return(
       <li className="hearthstone">
-        <h3>Hearthstone</h3>
+        <DetailHeader title="hearthstone"/>
         <div className="details-content">
           <label htmlFor="battletag">
             <span className="hs-icon icon-battlenet"></span>

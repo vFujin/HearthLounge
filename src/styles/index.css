@@ -1671,6 +1671,7 @@ a:active, a:hover, a:link, a:visited {
     -webkit-box-shadow: 0 0 5px #00a99c;
     -moz-box-shadow: 0 0 5px #00a99c;
     box-shadow: 0 0 5px #00a99c;
+    background: #474143;
     border-color: #00a99c;
     color: #00a99c; }
 
@@ -3344,6 +3345,23 @@ footer {
     margin-top: 2vh;
     border: 1px solid #474143;
     position: relative; }
+    .dashboard .container__page--left .sidebar ul li .details-header {
+      position: absolute;
+      top: -11px;
+      margin: 0 5px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 10px); }
+      .dashboard .container__page--left .sidebar ul li .details-header h3 {
+        padding: 0 5px;
+        background: #A69E9D;
+        text-transform: capitalize; }
+      .dashboard .container__page--left .sidebar ul li .details-header button {
+        background: #A69E9D;
+        border-color: #474143; }
+        .dashboard .container__page--left .sidebar ul li .details-header button:hover {
+          background: #474143;
+          color: #E7E2DA; }
     .dashboard .container__page--left .sidebar ul li .details-content {
       margin: 2vh 1vh; }
       .dashboard .container__page--left .sidebar ul li .details-content label {
@@ -3357,12 +3375,6 @@ footer {
         .dashboard .container__page--left .sidebar ul li .details-content label input {
           text-align: center;
           padding: 5px 0; }
-    .dashboard .container__page--left .sidebar ul li h3 {
-      position: absolute;
-      top: -11px;
-      padding: 0 5px;
-      margin-left: 5px;
-      background: #A69E9D; }
     .dashboard .container__page--left .sidebar ul li:first-child {
       text-align: center;
       border: 0; }

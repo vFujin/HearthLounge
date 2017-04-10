@@ -221,6 +221,7 @@
     padding: .3vh .5vh;
     &:hover{
       @include box-shadow(0, 0, 5px, $sea-color);
+      background: $dark-grey;
       border-color: $sea-color;
       color: $sea-color;
     }

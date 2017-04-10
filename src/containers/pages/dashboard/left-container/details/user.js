@@ -1,10 +1,10 @@
 import React from 'react';
-
+import DetailHeader from './detail-header';
 const UserDetails = props => {
 
   return(
       <li className="details">
-        <h3>Details</h3>
+        <DetailHeader title="details"/>
         <div className="details-content">
           <label htmlFor="email">
             <p>E-mail</p>
