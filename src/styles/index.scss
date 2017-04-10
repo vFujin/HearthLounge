@@ -1987,15 +1987,12 @@ footer{
               display: flex;
               justify-content: space-between;
               align-items: center;
+              padding-right: 5px;
               .hs-icon{
                 font-size:20px;
               }
               p{
                 height:31px;
-              }
-              input{
-                text-align: center;
-                padding:5px 0;
               }
             }
           }

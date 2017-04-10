@@ -15,7 +15,7 @@ const IconLabel = ({id, title, placeholder}) => {
     }
   };
 
-  const link = !(title === 'battle tag') ? `https://www.${title}.${suffix()}/` : false;
+  const link = !(title === 'battle tag') ? `https://${title}.${suffix()}/` : false;
 
   return(
       <label htmlFor={id}>

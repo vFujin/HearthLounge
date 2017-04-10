@@ -3371,14 +3371,12 @@ footer {
         margin-top: 1vh;
         display: flex;
         justify-content: space-between;
-        align-items: stretch; }
+        align-items: center;
+        padding-right: 5px; }
         .dashboard .container__page--left .sidebar ul li .details-content label .hs-icon {
           font-size: 20px; }
         .dashboard .container__page--left .sidebar ul li .details-content label p {
           height: 31px; }
-        .dashboard .container__page--left .sidebar ul li .details-content label input {
-          text-align: center;
-          padding: 5px 0; }
     .dashboard .container__page--left .sidebar ul li:first-child {
       text-align: center;
       border: 0; }
@@ -3564,6 +3562,9 @@ footer {
   .ant-slider .ant-slider-dot-active {
     border-color: #E7E2DA; }
 
+/*
+ *  Tooltips
+ */
 .ant-tooltip {
   margin-top: 19px; }
   .ant-tooltip .ant-tooltip-inner {
@@ -3627,5 +3628,25 @@ footer {
     .form-tooltip .ant-tooltip-content .ant-tooltip-inner ul li i {
       margin-right: 3px;
       font-style: normal; }
+
+/*
+ *  Input
+ */
+.ant-input {
+  border: none;
+  border-radius: 0;
+  height: 0%; }
+  .ant-input:focus {
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; }
+
+.ant-input-group {
+  width: 90%;
+  margin-right: 4px; }
+  .ant-input-group .ant-input-group-addon:first-child {
+    border-right: 0;
+    width: 50%; }
 
 /*# sourceMappingURL=index.css.map */
