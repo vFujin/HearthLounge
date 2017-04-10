@@ -14,7 +14,7 @@ const IconLabel = ({id, title, placeholder, disabled}) => {
     }
   };
 
-  const link = !(title === 'battle tag') ? `https://${title}.${suffix()}/` : false;
+  const link = !(title === 'battle tag') ? <p>https://{title}.{suffix()}/</p> : null;
 
   return(
       <label htmlFor={id}>
@@ -22,7 +22,7 @@ const IconLabel = ({id, title, placeholder, disabled}) => {
           <span className={`hs-icon icon-${id}`}></span>
         </Tooltip>
         <div className='wrapper'>
-          <p>{link}</p>
+          {link}
           <input disabled={!disabled} id={id} placeholder={placeholder} />
         </div>
       </label>

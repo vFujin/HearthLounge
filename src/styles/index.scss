@@ -1970,6 +1970,7 @@ footer{
               button {
                 background: $light-grey;
                 border-color: $dark-grey;
+                color: $dark-grey;
                 &:hover {
                   background: $dark-grey;
                   color: $pearl;
@@ -1981,21 +1982,20 @@ footer{
             }
           }
           .details-content{
-            margin: 2vh 1vh;
+            margin: 2vh 5px 2vh 1vh;
             label{
               margin-top: 1vh;
               display: flex;
               justify-content: space-between;
               align-items: center;
-              padding-right: 5px;
               .hs-icon{
                 font-size:20px;
               }
               .wrapper{
-                //@include transition(all ease .4s);
                 display: flex;
                 align-items: center;
-
+                justify-content:flex-end;
+                width: 85%;
                 p{
                   background: rgba(255,255,255, .2);
                   font-size: 12px;
@@ -2006,6 +2006,7 @@ footer{
                   text-align: right;
                 }
                 input{
+                  @include transition(all ease .4s);
                   font-size: 12px;
                   padding: 4px 4px 4px 2px;
                   background: transparent;
@@ -2013,11 +2014,11 @@ footer{
                   text-align: center;
                   color: $pearl;
                   &[disabled]{
-                    background: blue;
+                    background: rgba(255,255,255, .2);
+                    color: $dark-grey;
+                    cursor: not-allowed;
                   }
                 }
-
-
               }
             }
           }

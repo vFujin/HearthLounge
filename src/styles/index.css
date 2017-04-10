@@ -3359,14 +3359,15 @@ footer {
         display: flex; }
         .dashboard .container__page--left .sidebar ul li .details-header div button {
           background: #A69E9D;
-          border-color: #474143; }
+          border-color: #474143;
+          color: #474143; }
           .dashboard .container__page--left .sidebar ul li .details-header div button:hover {
             background: #474143;
             color: #E7E2DA; }
           .dashboard .container__page--left .sidebar ul li .details-header div button:last-child {
             margin-left: 5px; }
     .dashboard .container__page--left .sidebar ul li .details-content {
-      margin: 2vh 1vh; }
+      margin: 2vh 5px 2vh 1vh; }
       .dashboard .container__page--left .sidebar ul li .details-content label {
         margin-top: 1vh;
         display: flex;
@@ -3377,7 +3378,9 @@ footer {
           font-size: 20px; }
         .dashboard .container__page--left .sidebar ul li .details-content label .wrapper {
           display: flex;
-          align-items: center; }
+          align-items: center;
+          justify-content: flex-end;
+          width: 85%; }
           .dashboard .container__page--left .sidebar ul li .details-content label .wrapper p {
             background: rgba(255, 255, 255, 0.2);
             font-size: 12px;
@@ -3387,6 +3390,11 @@ footer {
             width: 50%;
             text-align: right; }
           .dashboard .container__page--left .sidebar ul li .details-content label .wrapper input {
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+            transition: all ease 0.4s;
             font-size: 12px;
             padding: 4px 4px 4px 2px;
             background: transparent;
@@ -3394,7 +3402,9 @@ footer {
             text-align: center;
             color: #E7E2DA; }
             .dashboard .container__page--left .sidebar ul li .details-content label .wrapper input[disabled] {
-              background: blue; }
+              background: rgba(255, 255, 255, 0.2);
+              color: #474143;
+              cursor: not-allowed; }
     .dashboard .container__page--left .sidebar ul li:first-child {
       text-align: center;
       border: 0; }
