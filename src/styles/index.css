@@ -3370,7 +3370,8 @@ footer {
       .dashboard .container__page--left .sidebar ul li .details-content label {
         margin-top: 1vh;
         display: flex;
-        justify-content: space-between; }
+        justify-content: space-between;
+        align-items: stretch; }
         .dashboard .container__page--left .sidebar ul li .details-content label .hs-icon {
           font-size: 20px; }
         .dashboard .container__page--left .sidebar ul li .details-content label p {
