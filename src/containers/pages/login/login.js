@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
 import {browserHistory} from 'react-router';
+import {createUser, signIn} from '../../../utils/auth'
 
 import {events} from "../../shared-assets/form-assets/form-events-data";
 export class Login extends Component {
@@ -19,29 +20,38 @@ export class Login extends Component {
 
       //Sign in
       signIn_email: "",
-      signIn_password: ""
+      signIn_password: "",
+
+      error_tooltip: null
     };
 
     events.handleSignIn = events.handleSignIn.bind(this);
     events.handleCheckboxClick = events.handleCheckboxClick.bind(this, 'tos');
-    events.handleFormSubmit = events.handleFormSubmit.bind(this);
   }
 
-  componentWillMount(){
-    console.log("foo")
-  }
   componentWillReceiveProps(nextProps){
     if(nextProps.authed){
       browserHistory.push('/dashboard')
     }
   }
-  foo (e){
+
+  handleInputChange (e){
     const target = e.target;
     const value = e.target.value;
     const id = target.id;
     return this.setState({
       [id]: value
     });
+  }
+
+  handleFormSubmit(e, email, pass, username){
+    e.preventDefault();
+    let err = "";
+    console.log("before:", err);
+    createUser(email, pass, username, (v)=>this.setState({
+      error_tooltip: v
+    }));
+
   }
 
   render() {
@@ -71,11 +81,12 @@ export class Login extends Component {
 
               signIn_email: this.state.signIn_email,
               signIn_password: this.state.signIn_password,
-              handleSignIn: events.handleSignIn,
+              error_tooltip: this.state.error_tooltip,
 
-              handleInputChange: this.foo.bind(this),
+              handleSignIn: events.handleSignIn,
+              handleInputChange: this.handleInputChange.bind(this),
               handleCheckboxClick: events.handleCheckboxClick,
-              handleFormSubmit: events.handleFormSubmit
+              handleFormSubmit: (e)=>this.handleFormSubmit(e, this.state.signUp_email, this.state.signUp_password, this.state.signUp_username)
             })}
           </div>
         </div>
