@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {TwitchClientId} from '../../../keys';
 import Sidebar from './sidebar';
 import Topbar from './topbar';
-import Loader from '../../shared-assets/loader';
+import Loader from '../../../utils/loader';
 import 'whatwg-fetch';
 
 export class Streams extends Component {

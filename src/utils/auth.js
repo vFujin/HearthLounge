@@ -1,7 +1,6 @@
 import {ref, firebaseAuth} from '../keys';
 import {browserHistory} from 'react-router';
 import _ from 'lodash';
-
 export function createUser(email, pass, username, callback){
   let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(user=>saveUser(user, username));
   promise.catch(e => callback(e.message));
@@ -47,6 +46,6 @@ export function getUserData(uid, cb) {
   return ref.once("value", (snapshot) =>cb(snapshot.child(`users/${uid}`).val()))
 }
 
-export function checkIfEmailExists(value, cb){
+export function getEmails(cb){
   return ref.once("value").then(snapshot=>cb(_.map(Object.values(snapshot.child('users').val()), 'email')));
 }

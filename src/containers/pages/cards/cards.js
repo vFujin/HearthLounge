@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
-import Loader from '../../shared-assets/loader';
+import Loader from '../../../utils/loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
 import {Data} from '../../../data/cards-data';

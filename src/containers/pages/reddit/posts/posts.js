@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import Loader from '../../../shared-assets/loader';
+import Loader from '../../../../utils/loader';
 import Icon, {supported_domains} from '../domain-icons';
 
 const RedditPosts = (props) => {

@@ -3,7 +3,7 @@ import 'whatwg-fetch';
 import FilterSidebar from './picked-class/left-container/filter-sidebar';
 import DeckSidebar from './picked-class/left-container/deck-sidebar';
 import Topbar from './picked-class/right-container/topbar';
-import Loader from '../../shared-assets/loader';
+import Loader from '../../../utils/loader';
 import 'antd/lib/tooltip/style/css';
 import {Data} from '../../../data/cards-data';
 import _ from 'lodash';

@@ -2,7 +2,7 @@ import React from 'react';
 import DetailHeader from './detail-header';
 import InputLabel from './assets/input-label';
 
-const UserDetails = ({email, handleEditClick, isEditing, handleInputChange, handleSaveClick}) => {
+const UserDetails = ({user, handleEditClick, isEditing, handleInputChange, handleSaveClick}) => {
   return(
       <li className="details">
         <DetailHeader title="details"
@@ -10,7 +10,7 @@ const UserDetails = ({email, handleEditClick, isEditing, handleInputChange, hand
                       isEditing={isEditing}
                       handleSaveClick={handleSaveClick}/>
         <div className="details-content">
-          <InputLabel id="email" title="e-mail" value={email} disabled={isEditing} handleInputChange={handleInputChange}/>
+          <InputLabel id="email" title="e-mail" value={user.email} disabled={isEditing} handleInputChange={handleInputChange}/>
         </div>
       </li>
   )

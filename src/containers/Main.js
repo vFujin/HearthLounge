@@ -10,8 +10,7 @@ export class Main extends Component {
     super(props);
     this.state = {
       authed: false,
-      user: null,
-      email: null
+      user: null
     };
 
     firebase.auth().onAuthStateChanged(user => {
@@ -20,28 +19,25 @@ export class Main extends Component {
           console.log(v);
           this.setState({
             authed: true,
-            user: v.username,
-            email: v.email
+            user: v
           });
         });
       }
       else {
         this.setState({
           authed: false,
-          user: null,
-          email: null
+          user: null
         })
       }
     })
   }
 
   render(){
-    console.log(this.state.authed);
     const {children, location} = this.props;
     return (
         <div id="container">
           <Navbar url={location.pathname} user={this.state.user} handleLogout={(e)=>logout(e)}/>
-          {React.cloneElement(children, {authed: this.state.authed, username: this.state.user, email: this.state.email})}
+          {React.cloneElement(children, {authed: this.state.authed, user: this.state.user})}
           <Footer/>
         </div>
     );
@@ -52,3 +48,4 @@ Main.propTypes = {
   children: React.PropTypes.element,
   location: React.PropTypes.object
 };
+

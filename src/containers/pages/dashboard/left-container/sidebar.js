@@ -55,7 +55,7 @@ export class Sidebar extends Component{
   }
 
   render() {
-    const {email, username} = this.props;
+    const {user} = this.props;
     return (
         <div className="sidebar">
           <h3 className="sidebar__header">Profile</h3>
@@ -63,10 +63,10 @@ export class Sidebar extends Component{
           <ul className="sidebar__body">
             <li className="about">
               <div className="avatar"><img src="http://lorempixel.com/100/100/cats/" alt="cat"/></div>
-              <div className="username">{username}</div>
+              <div className="username">{user.username}</div>
             </li>
 
-            <UserDetails email={this.state.email}
+            <UserDetails user={user}
                          isEditing={this.state.editing_details}
                          handleEditClick={(e)=>this.handleEditClick(e)}
                          handleInputChange={(e)=>this.handleInputChange(e)}

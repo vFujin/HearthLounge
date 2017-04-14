@@ -42,7 +42,7 @@ const Navbar = ({handleLogout, user}) => {
         <li className="nav__list--item login">
           <Link className="nav__list--link" to={user ? '/dashboard' : '/sign-in'}>
             <span className="hs-icon icon-login"></span>
-            <div onClick={(e) => handleLogout(e)}>{user ? user : "Login"}</div>
+            <div onClick={(e) => handleLogout(e)}>{user ? user.username : "Login"}</div>
           </Link>
         </li>
       </ul>
@@ -51,7 +51,7 @@ const Navbar = ({handleLogout, user}) => {
 };
 
 Navbar.propTypes = {
-  user: React.PropTypes.string
+  user: React.PropTypes.object
 };
 
 export default Navbar;

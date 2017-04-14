@@ -3,12 +3,12 @@ import _ from 'lodash';
 import Tooltip from 'antd/lib/tooltip';
 import FormTooltipText from './form-tooltip-text';
 
-const Input = ({id, type, placeholder, handleInputChange, value, pattern}) =>{
+const Input = ({id, type, placeholder, handleInputChange, value, pattern, error}) =>{
   const label = _.startCase(_.trimStart(id, 'signUp'));
 
   return (
       <div className="input-wrapper">
-        <Tooltip overlayClassName="form-tooltip" title={<FormTooltipText id={id} label={label}/>} placement="right" trigger="focus">
+        <Tooltip overlayClassName="form-tooltip" title={error ? error : <FormTooltipText id={id} label={label}/>} placement="right" trigger="focus">
           <label htmlFor={id}>{label}:
             <div>
               <input id={id}
@@ -16,8 +16,7 @@ const Input = ({id, type, placeholder, handleInputChange, value, pattern}) =>{
                      placeholder={placeholder}
                      onChange={(e)=>handleInputChange(e)}
                      value={value}
-                     pattern={pattern}/>
-              <p>x</p>
+                     pattern={pattern} required/>
             </div>
           </label>
         </Tooltip>
