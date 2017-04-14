@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import UserDetails from './details/user';
 import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
-import {updateEmail, updateUserHearthstoneData} from '../../../../utils/dashboard-user-settings';
+import {updateEmail, updateUserHearthstoneData, updateUserSocialMediaData} from '../../../../utils/dashboard-user-settings';
 import _ from 'lodash';
 
 export class Sidebar extends Component{
@@ -14,7 +14,7 @@ export class Sidebar extends Component{
       editing_hearthstone: false,
       editing_social_media: false,
 
-      email: props.email,
+      email: null,
       battletag: null,
       favourite_class: null,
       region: null,
@@ -35,24 +35,19 @@ export class Sidebar extends Component{
   }
 
   handleSaveClick(e){
+    /*
+     * Changes will occur after relogging
+     */
+    let uid = this.props.user.uid;
     let target = e.target.id;
     let isActive = this.state[target] === false ? true : false;
     this.setState({
       [`editing_${target}`]: isActive
     });
     switch(target){
-      case 'details': {
-        updateEmail(this.state.email);
-        this.setState({
-          email: null
-        });
-        break;
-      }
-      case 'hearthstone': {
-        console.log(this.props.user.uid);
-        updateUserHearthstoneData(this.props.user.uid, this.state.battletag, this.state.favourite_class, this.state.region);
-        break;
-      }
+      case 'details': return updateEmail(this.state.email);
+      case 'hearthstone': return updateUserHearthstoneData(uid, this.state.battletag, this.state.favourite_class, this.state.region);
+      case 'social_media': return updateUserSocialMediaData(uid, this.state.facebook, this.state.twitter, this.state.twitch, this.state.youtube);
     }
   }
 
@@ -94,7 +89,11 @@ export class Sidebar extends Component{
                                 handleInputChange={(e)=>this.handleInputChange(e)}
                                 handleSelectChange={(v, selector)=>this.handleSelectChange(v, selector)}
                                 handleSaveClick={(e)=>this.handleSaveClick(e)}/>
-            <SocialMediaDetails isEditing={this.state.editing_social_media} handleEditClick={(e)=>this.handleEditClick(e)}/>
+            <SocialMediaDetails user={user}
+                                isEditing={this.state.editing_social_media} h
+                                handleEditClick={(e)=>this.handleEditClick(e)}
+                                handleInputChange={(e)=>this.handleInputChange(e)}
+                                handleSaveClick={(e)=>this.handleSaveClick(e)}/>
           </ul>
         </div>
     );

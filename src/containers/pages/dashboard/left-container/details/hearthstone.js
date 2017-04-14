@@ -5,7 +5,6 @@ import IconLabel from './assets/icon-label';
 import SelectLabel from './assets/select-label';
 
 const HearthstoneDetails = ({user, handleEditClick, isEditing, handleSaveClick, handleInputChange, handleSelectChange}) => {
-
   const placeholder = (value, defaultValue) =>{
     return user[value] ? user[value] : defaultValue;
   };

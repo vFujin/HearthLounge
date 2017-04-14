@@ -16,7 +16,6 @@ export class Main extends Component {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         getUserData(user.uid, (v)=>{
-          console.log(v);
           this.setState({
             authed: true,
             user: v

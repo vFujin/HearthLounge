@@ -1,5 +1,4 @@
 import {ref, firebaseAuth} from '../keys';
-// import {getUserData} from './auth';
 
 export function updateEmail(email){
   let user = firebaseAuth().currentUser;
@@ -13,3 +12,13 @@ export function updateUserHearthstoneData(uid, battletag, favourite_class, regio
     region
   });
 }
+
+export function updateUserSocialMediaData(uid, facebook, twitter, twitch, youtube){
+  return ref.child(`users/${uid}`).update({
+    facebook,
+    twitter,
+    twitch,
+    youtube
+  });
+}
+

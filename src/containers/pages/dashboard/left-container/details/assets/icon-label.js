@@ -19,7 +19,7 @@ const IconLabel = ({id, title, placeholder, disabled, handleInputChange}) => {
   return(
       <label htmlFor={id}>
         <Tooltip title={capitalizedTitle} placement="right">
-          <span className={`hs-icon icon-${id}`}></span>
+          <span className={`hs-icon icon-${id === 'battletag' ? 'battlenet' : id}`}></span>
         </Tooltip>
         <div className='wrapper'>
           {link}
