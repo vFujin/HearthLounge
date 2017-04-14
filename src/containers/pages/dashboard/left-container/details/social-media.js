@@ -5,7 +5,7 @@ import IconLabel from './assets/icon-label';
 const SocialMediaDetails = ({user, handleEditClick, isEditing, handleInputChange, handleSaveClick}) => {
 
   const placeholder = (value) =>{
-    return user[value] ? user[value] : 'Hearth Lounge';
+    return user[value] ? user[value] : 'N/A';
   };
 
   return(
@@ -40,7 +40,12 @@ const SocialMediaDetails = ({user, handleEditClick, isEditing, handleInputChange
   )
 };
 
-
-
+SocialMediaDetails.reactProptypes = {
+  user: React.PropTypes.object.isRequired,
+  isEditing: React.PropTypes.bool.isRequired,
+  handleEditClick: React.PropTypes.func.isRequired,
+  handleInputChange: React.PropTypes.func.isRequired,
+  handleSaveClick: React.PropTypes.func.isRequired,
+};
 
 export default SocialMediaDetails;
