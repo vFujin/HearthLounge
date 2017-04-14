@@ -1717,6 +1717,11 @@ a:active, a:hover, a:link, a:visited {
       align-items: center;
       justify-content: space-between; }
 
+.loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 .sk-folding-cube {
   margin: 20px auto;
   width: 40px;

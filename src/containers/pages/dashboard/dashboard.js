@@ -26,13 +26,12 @@ export class Dashboard extends Component {
       )
     }
     else{
-      return <Loader/>;
+      return <div className="container__page"><Loader/></div>;
     }
   }
 
 
   render(){
-    console.log(this.props.user);
     return this.isAuthed();
   }
 }
