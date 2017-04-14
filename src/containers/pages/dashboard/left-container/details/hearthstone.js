@@ -4,7 +4,12 @@ import DetailHeader from './detail-header';
 import IconLabel from './assets/icon-label';
 import SelectLabel from './assets/select-label';
 
-const HearthstoneDetails = ({handleEditClick, isEditing, handleSaveClick, handleInputChange}) => {
+const HearthstoneDetails = ({user, handleEditClick, isEditing, handleSaveClick, handleInputChange, handleSelectChange}) => {
+
+  const placeholder = (value, defaultValue) =>{
+    return user[value] ? user[value] : defaultValue;
+  };
+
   return(
       <li className="hearthstone">
         <DetailHeader title="hearthstone"
@@ -12,9 +17,21 @@ const HearthstoneDetails = ({handleEditClick, isEditing, handleSaveClick, handle
                       isEditing={isEditing}
                       handleSaveClick={handleSaveClick}/>
         <div className="details-content">
-          <IconLabel id="battlenet" title="battle tag" placeholder="blizzard#0000" disabled={isEditing} handleInputChange={handleInputChange}/>
-          <SelectLabel id="classes" title="favourite class" placeholder="classes" disabled={isEditing}/>
-          <SelectLabel id="region" title="region" placeholder="EU > NA" disabled={isEditing}/>
+          <IconLabel id="battlenet"
+                     title="battle tag"
+                     placeholder={placeholder('battletag', 'battletag#1234')}
+                     disabled={isEditing}
+                     handleInputChange={handleInputChange}/>
+          <SelectLabel id="classes"
+                       title="favourite_class"
+                       placeholder={placeholder('favourite_class', 'classes')}
+                       disabled={isEditing}
+                       handleSelectChange={handleSelectChange}/>
+          <SelectLabel id="region"
+                       title="region"
+                       placeholder={placeholder('region', 'EU > NA')}
+                       disabled={isEditing}
+                       handleSelectChange={handleSelectChange}/>
         </div>
       </li>
   )

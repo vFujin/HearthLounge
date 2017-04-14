@@ -3,6 +3,7 @@ import UserDetails from './details/user';
 import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
 import {updateEmail, updateUserHearthstoneData} from '../../../../utils/dashboard-user-settings';
+import _ from 'lodash';
 
 export class Sidebar extends Component{
   constructor(props){
@@ -48,24 +49,25 @@ export class Sidebar extends Component{
         break;
       }
       case 'hearthstone': {
-        updateUserHearthstoneData(this.state.battletag, this.state.favourite_class, this.state.region);
-        this.setState({
-          battletag: null,
-          favourite_class: null,
-          region: null
-        });
+        console.log(this.props.user.uid);
+        updateUserHearthstoneData(this.props.user.uid, this.state.battletag, this.state.favourite_class, this.state.region);
         break;
       }
     }
   }
 
-
   handleInputChange(e){
     let target = e.target.id;
     let value = e.target.value;
-    console.log(target, value)
+    console.log(value);
     this.setState({
       [target]: value
+    })
+  }
+
+  handleSelectChange(v, selector){
+    this.setState({
+      [selector]: v
     })
   }
 
@@ -90,6 +92,7 @@ export class Sidebar extends Component{
                                 isEditing={this.state.editing_hearthstone}
                                 handleEditClick={(e)=>this.handleEditClick(e)}
                                 handleInputChange={(e)=>this.handleInputChange(e)}
+                                handleSelectChange={(v, selector)=>this.handleSelectChange(v, selector)}
                                 handleSaveClick={(e)=>this.handleSaveClick(e)}/>
             <SocialMediaDetails isEditing={this.state.editing_social_media} handleEditClick={(e)=>this.handleEditClick(e)}/>
           </ul>
