@@ -17,7 +17,7 @@ const HearthstoneDetails = ({user, handleEditClick, isEditing, handleSaveClick, 
                       isEditing={isEditing}
                       handleSaveClick={handleSaveClick}/>
         <div className="details-content">
-          <IconLabel id="battlenet"
+          <IconLabel id="battletag"
                      title="battle tag"
                      placeholder={placeholder('battletag', 'battletag#1234')}
                      disabled={isEditing}
@@ -35,6 +35,15 @@ const HearthstoneDetails = ({user, handleEditClick, isEditing, handleSaveClick, 
         </div>
       </li>
   )
+};
+
+HearthstoneDetails.propTypes = {
+  user: React.PropTypes.object.isRequired,
+  isEditing: React.PropTypes.bool.isRequired,
+  handleEditClick: React.PropTypes.func.isRequired,
+  handleSaveClick: React.PropTypes.func.isRequired,
+  handleInputChange: React.PropTypes.func.isRequired,
+  handleSelectChange: React.PropTypes.func.isRequired
 };
 
 export default HearthstoneDetails;
