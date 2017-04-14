@@ -34,20 +34,29 @@ export class Sidebar extends Component{
     });
   }
 
+  validateState(user, value){
+    return  this.state[value] !== null ? this.state[value] : user[value];
+  }
+
   handleSaveClick(e){
     /*
-     * Changes will occur after relogging
+     * Changes will occur after relogging, need to reauthenticate or some other stuff
      */
-    let uid = this.props.user.uid;
+    let user = this.props.user;
     let target = e.target.id;
     let isActive = this.state[target] === false ? true : false;
     this.setState({
       [`editing_${target}`]: isActive
     });
+
+    const validateInput = (value) => {
+      return this.state[value] !== null ? this.state[value] : user[value];
+    };
+
     switch(target){
       case 'details': return updateEmail(this.state.email);
-      case 'hearthstone': return updateUserHearthstoneData(uid, this.state.battletag, this.state.favourite_class, this.state.region);
-      case 'social_media': return updateUserSocialMediaData(uid, this.state.facebook, this.state.twitter, this.state.twitch, this.state.youtube);
+      case 'hearthstone': return updateUserHearthstoneData(user.uid, validateInput('battletag'), validateInput('favourite_class'), validateInput('region'));
+      case 'social_media': return updateUserSocialMediaData(user.uid, validateInput('facebook'), validateInput('twitter'), validateInput('twitch'), validateInput('youtube'));
     }
   }
 
