@@ -40,8 +40,22 @@ export class Sidebar extends Component{
       [`editing_${target}`]: isActive
     });
     switch(target){
-      case 'details': return updateEmail(this.state.email);
-      case 'hearthstone': return updateUserHearthstoneData(this.state.battletag, this.state.favouriteclass, this.state.region)
+      case 'details': {
+        updateEmail(this.state.email);
+        this.setState({
+          email: null
+        });
+        break;
+      }
+      case 'hearthstone': {
+        updateUserHearthstoneData(this.state.battletag, this.state.favourite_class, this.state.region);
+        this.setState({
+          battletag: null,
+          favourite_class: null,
+          region: null
+        });
+        break;
+      }
     }
   }
 
@@ -49,6 +63,7 @@ export class Sidebar extends Component{
   handleInputChange(e){
     let target = e.target.id;
     let value = e.target.value;
+    console.log(target, value)
     this.setState({
       [target]: value
     })
@@ -71,7 +86,11 @@ export class Sidebar extends Component{
                          handleEditClick={(e)=>this.handleEditClick(e)}
                          handleInputChange={(e)=>this.handleInputChange(e)}
                          handleSaveClick={(e)=>this.handleSaveClick(e)}/>
-            <HearthstoneDetails isEditing={this.state.editing_hearthstone} handleEditClick={(e)=>this.handleEditClick(e)}/>
+            <HearthstoneDetails user={user}
+                                isEditing={this.state.editing_hearthstone}
+                                handleEditClick={(e)=>this.handleEditClick(e)}
+                                handleInputChange={(e)=>this.handleInputChange(e)}
+                                handleSaveClick={(e)=>this.handleSaveClick(e)}/>
             <SocialMediaDetails isEditing={this.state.editing_social_media} handleEditClick={(e)=>this.handleEditClick(e)}/>
           </ul>
         </div>

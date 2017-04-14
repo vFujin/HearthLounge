@@ -10,7 +10,7 @@ const UserDetails = ({user, handleEditClick, isEditing, handleInputChange, handl
                       isEditing={isEditing}
                       handleSaveClick={handleSaveClick}/>
         <div className="details-content">
-          <InputLabel id="email" title="e-mail" value={user.email} disabled={isEditing} handleInputChange={handleInputChange}/>
+          <InputLabel id="email" title="e-mail" placeholder={user.email} disabled={isEditing} handleInputChange={handleInputChange}/>
         </div>
       </li>
   )

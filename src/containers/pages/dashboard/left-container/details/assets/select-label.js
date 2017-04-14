@@ -30,7 +30,7 @@ const SelectLabel = ({id, title, placeholder, disabled}) => {
   return(
     <label htmlFor={id}>
       <p>{title}:</p>
-      {select('classes', placeholder === 'classes' ? classesPlaceholder : placeholder)}
+      {select(id, placeholder === 'classes' ? classesPlaceholder : placeholder)}
     </label>
   )
 };
