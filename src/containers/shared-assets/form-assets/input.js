@@ -16,7 +16,7 @@ const Input = ({id, type, placeholder, handleInputChange, value, pattern, error}
                      placeholder={placeholder}
                      onChange={(e)=>handleInputChange(e)}
                      value={value}
-                     pattern={pattern} required/>
+                     pattern={pattern}/>
             </div>
           </label>
         </Tooltip>

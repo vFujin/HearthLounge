@@ -1,4 +1,4 @@
-import {createUser, signIn} from '../../../utils/auth'
+import {createUser, signIn} from '../../../server/auth'
 export const events = {
 
   handleCheckboxClick: function (key){

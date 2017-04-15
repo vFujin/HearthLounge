@@ -1,15 +1,24 @@
 import React from 'react';
 import {Link} from 'react-router';
 import Input from '../../shared-assets/form-assets/input';
-import {getEmails} from '../../../utils/auth';
+import {getEmails} from '../../../server/auth';
 import _ from 'lodash';
 
 const SignUp = ({ signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, error_tooltip}) => {
   const username_pattern = "[A-Za-z0-9]{3,10}";
 
-  let checkEmail = getEmails(emails=>_.includes(emails, signUp_email)).then(v=>checkEmail=v);
+  // let checkEmail = getEmails(emails=>_.includes(emails, signUp_email)).then(v=>console.log(v));
 
-  // console.log(checkEmail);
+  let hasError;
+  getEmails().then(emails => {
+    console.log(emails);
+    hasError = _.includes(emails, signUp_email)
+  });
+
+  // var foo = new Promise()
+  // foo.then().then().then().catch();
+
+  console.log("err: ", hasError);
 
   return (
       <div className="sign sign-up active">
@@ -27,7 +36,7 @@ const SignUp = ({ signUp_username, signUp_email, signUp_confirmEmail, signUp_pas
                  handleInputChange={handleInputChange}
                  value={signUp_email}
                   />
-          <Input id="signUp_confirmEmail"     type="email"    placeholder="hearth@lounge.com" handleInputChange={handleInputChange} value={signUp_confirmEmail}/>
+          <Input  id="signUp_confirmEmail"     type="email"    placeholder="hearth@lounge.com" handleInputChange={handleInputChange} value={signUp_confirmEmail}/>
           <Input id="signUp_password"         type="password" placeholder="" handleInputChange={handleInputChange} value={signUp_password}/>
           <Input id="signUp_confirmPassword"  type="password" placeholder="" handleInputChange={handleInputChange} value={signUp_confirmPassword}/>
 

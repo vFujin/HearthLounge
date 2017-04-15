@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
 import {browserHistory} from 'react-router';
-import {createUser, signIn} from '../../../utils/auth'
+import {createUser, signIn} from '../../../server/auth'
 
 import {events} from "../../shared-assets/form-assets/form-events-data";
 export class Login extends Component {

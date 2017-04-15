@@ -69,7 +69,7 @@ const MapIcons = ({deck, params, set, types}) => {
             <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
               <span className={`hs-icon icon-${obj.icon}`}></span>
             </Tooltip>)
-    : topbar_icons[set].map(obj =>
+      : topbar_icons[set].map(obj =>
         <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
           <span className={`hs-icon icon-${obj.icon}`}></span>
           {deckCardTypes(_.upperFirst(obj.title))}

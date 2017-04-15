@@ -47,5 +47,5 @@ export function getUserData(uid, cb) {
 }
 
 export function getEmails(cb){
-  return ref.once("value").then(snapshot=>cb(_.map(Object.values(snapshot.child('users').val()), 'email')));
+  return ref.once("value").then(snapshot=>_.map(Object.values(snapshot.child('users').val()), 'email'));
 }

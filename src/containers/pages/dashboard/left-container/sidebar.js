@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import UserDetails from './details/user';
 import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
-import {updateEmail, updateUserHearthstoneData, updateUserSocialMediaData} from '../../../../utils/dashboard-user-settings';
+import {updateEmail, updateUserHearthstoneData, updateUserSocialMediaData} from '../../../../server/dashboard-user-settings';
 import _ from 'lodash';
 
 export class Sidebar extends Component{

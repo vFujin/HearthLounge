@@ -24,4 +24,11 @@ const Topbar = ({deck, filtersView, params, query}) => {
   );
 };
 
+Topbar.propTypes = {
+  deck: React.PropTypes.array.isRequired,
+  filtersView: React.PropTypes.bool,
+  params: React.PropTypes.object,
+  query: React.PropTypes.object
+};
+
 export default Topbar;

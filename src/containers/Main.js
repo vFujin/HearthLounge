@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import firebase from 'firebase';
 import Navbar from './layout/navbar';
 import {Footer} from './layout/footer';
-import {getUserData, logout} from '../utils/auth';
+import {getUserData, logout} from '../server/auth';
 import 'antd/lib/tooltip/style/css';
 
 export class Main extends Component {
