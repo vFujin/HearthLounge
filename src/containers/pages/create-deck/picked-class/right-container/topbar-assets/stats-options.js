@@ -8,7 +8,7 @@ const StatsOptions = ({deck, filtersNotActive, params, handleDeckSaving}) => {
       <div className={`topbar__container ${filtersNotActive}`}>
         <MapFunctionlessIcons deck={deck} params={params} set="types" filtersActive={filtersNotActive}/>
         <div className="deck-length"><p>{deck.length} / 30</p></div>
-        <MapFunctionfulIcons deck={deck} set="options" filtersActive={filtersNotActive}/>
+        <MapFunctionfulIcons set="options" filtersActive={filtersNotActive} handleDeckSaving={handleDeckSaving}/>
       </div>
   )
 };

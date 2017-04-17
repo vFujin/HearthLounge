@@ -8,7 +8,7 @@ const Topbar = ({deck, filtersView, params, query, handleDeckSaving}) => {
   return (
       <div className="topbar">
         <Filters deck={deck} filtersNotActive={filtersNotActive} params={params} query={query} />
-        <StatsOptions deck={deck} filtersNotActive={filtersActive} params={params} />
+        <StatsOptions deck={deck} filtersNotActive={filtersActive} params={params} handleDeckSaving={handleDeckSaving}/>
       </div>
   );
 };

@@ -208,13 +208,15 @@ export class CreateDeckClassSelected extends Component {
                     query={query} params={params}
                     deck={this.state.deck}
                     handleDeckSaving={(e)=>this.handleDeckSaving(e)}/>
-            <div className="content">
-              <ul className="container__cards">
-                {this.listCards(query)}
-              </ul>
-            </div>
-            <div className={this.state.modal ? 'modal' : 'display-none'}>
-              foo
+            <div>
+              <div className="content">
+                <ul className="container__cards">
+                  {this.listCards(query)}
+                </ul>
+              </div>
+              <div className={this.state.modal ? 'modal' : 'display-none'}>
+                foo
+              </div>
             </div>
           </div>
         </div>

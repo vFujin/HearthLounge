@@ -5,6 +5,7 @@ import Tooltip from 'antd/lib/tooltip';
 
 const MapFunctionlessIcons = ({deck, params, set, filtersActive}) => {
   const countTypes = _.countBy(deck, 'type');
+  const filtersAreActive = filtersActive ? 'display-none' : '';
 
   const deckCardTypes = (type) =>{
     return countTypes[type] || 0;
@@ -20,6 +21,7 @@ const MapFunctionlessIcons = ({deck, params, set, filtersActive}) => {
       <li key={obj.icon}>
         <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
           <span className={`hs-icon icon-${obj.icon}`}></span>
+          <p className={filtersAreActive}>{deckCardTypes(_.upperFirst(obj.title))}</p>
         </Tooltip>
       </li>);
   };
@@ -27,9 +29,10 @@ const MapFunctionlessIcons = ({deck, params, set, filtersActive}) => {
 
   return(
       <ul>
-        <li className={!filtersActive}>
-          <Tooltip key={params} title={params} placement="bottom">
+        <li className={!filtersAreActive}>
+          <Tooltip key={params} title={checkSuffix(params)} placement="bottom">
             <span className={`hs-icon icon-${params}`}></span>
+
           </Tooltip>
         </li>
         {generateSet()}
