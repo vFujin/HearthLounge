@@ -9,7 +9,6 @@ export const events = {
 
   handleSignIn: function (e, email, pass) {
     e.preventDefault();
-    console.log("handle fun:", e.message)
     signIn(email, pass);
   }
 };

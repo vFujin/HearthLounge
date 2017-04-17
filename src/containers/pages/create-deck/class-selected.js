@@ -25,7 +25,9 @@ export class CreateDeckClassSelected extends Component {
       type: [],
 
       cardSet: [],
-      sliderFirstValue: []
+      sliderFirstValue: [],
+
+      modal: false,
     }
   }
 
@@ -163,6 +165,13 @@ export class CreateDeckClassSelected extends Component {
     // }
   }
 
+  handleDeckSaving(e){
+    console.log(e);
+    let modalIsActive = this.state.modal === false ? true : false;
+    this.setState({
+      modal: modalIsActive
+    })
+  }
 
   render() {
     let query = this.props.location.query;
@@ -195,11 +204,17 @@ export class CreateDeckClassSelected extends Component {
                            query={query}/>
           </div>
           <div className="container__page--inner container__page--right">
-            <Topbar filtersView={this.state.filtersView} query={query} params={params} deck={this.state.deck} />
+            <Topbar filtersView={this.state.filtersView}
+                    query={query} params={params}
+                    deck={this.state.deck}
+                    handleDeckSaving={(e)=>this.handleDeckSaving(e)}/>
             <div className="content">
               <ul className="container__cards">
                 {this.listCards(query)}
               </ul>
+            </div>
+            <div className={this.state.modal ? 'modal' : 'display-none'}>
+              foo
             </div>
           </div>
         </div>

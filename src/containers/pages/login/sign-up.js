@@ -7,19 +7,6 @@ import _ from 'lodash';
 const SignUp = ({ signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, error_tooltip}) => {
   const username_pattern = "[A-Za-z0-9]{3,10}";
 
-  // let checkEmail = getEmails(emails=>_.includes(emails, signUp_email)).then(v=>console.log(v));
-
-  let hasError;
-  getEmails().then(emails => {
-    console.log(emails);
-    hasError = _.includes(emails, signUp_email)
-  });
-
-  // var foo = new Promise()
-  // foo.then().then().then().catch();
-
-  console.log("err: ", hasError);
-
   return (
       <div className="sign sign-up active">
         <form onSubmit={handleFormSubmit}>

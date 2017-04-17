@@ -1723,7 +1723,6 @@ a:active, a:hover, a:link, a:visited {
   justify-content: center; }
 
 .sk-folding-cube {
-  margin: 20px auto;
   width: 40px;
   height: 40px;
   position: relative;
@@ -2998,6 +2997,10 @@ footer {
     .create-deck .container__page--right .topbar__deckDetails div:last-child span:hover {
       color: #E7E2DA;
       background: #474143; }
+.create-deck .container__page--right .modal {
+  width: 20%;
+  height: 100%;
+  background: blue; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }
