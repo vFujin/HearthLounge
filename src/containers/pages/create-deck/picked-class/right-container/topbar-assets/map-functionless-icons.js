@@ -17,25 +17,18 @@ const MapFunctionlessIcons = ({deck, params, set, filtersActive}) => {
 
   const generateSet = () => {
     return topbar_icons[set].map(obj =>
-      <li>
+      <li key={obj.icon}>
         <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
           <span className={`hs-icon icon-${obj.icon}`}></span>
         </Tooltip>
       </li>);
-        // : topbar_icons[set].map(obj =>
-        //
-        //     <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
-        //
-        //       <span className={`hs-icon icon-${obj.icon}`}></span>
-        //       {deckCardTypes(_.upperFirst(obj.title))}
-        //     </Tooltip>)
   };
 
 
   return(
       <ul>
-        <li className={filtersActive}>
-          <Tooltip key={params} title={checkSuffix(params)} placement="bottom">
+        <li className={!filtersActive}>
+          <Tooltip key={params} title={params} placement="bottom">
             <span className={`hs-icon icon-${params}`}></span>
           </Tooltip>
         </li>
@@ -48,7 +41,7 @@ React.propTypes = {
   deck: React.PropTypes.array,
   params: React.PropTypes.string, //choosen class
   set: React.PropTypes.string,
-  types: React.PropTypes.bool
+  filtersActive: React.PropTypes.string
 };
 
 export default MapFunctionlessIcons;

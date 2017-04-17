@@ -2960,6 +2960,9 @@ footer {
   color: #E7E2DA;
   text-align: center; }
 
+.create-deck .container__page--right .topbar__container ul {
+  display: flex;
+  align-items: center; }
 .create-deck .container__page--right .topbar__filters {
   align-items: center;
   display: flex;
