@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import {topbar_icons} from '../topbar-assets/icons';
+import {topbar_icons} from './icons';
 import Tooltip from 'antd/lib/tooltip';
 
 const MapFunctionfulIcons = ({set, filtersActive, handleDeckSaving}) => {

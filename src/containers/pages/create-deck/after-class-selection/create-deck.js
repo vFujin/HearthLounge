@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import FilterSidebar from './picked-class/left-container/filter-sidebar';
-import DeckSidebar from './picked-class/left-container/deck-sidebar';
-import Topbar from './picked-class/right-container/topbar';
-import Loader from '../../../utils/loader';
-import Cards from './picked-class/right-container/content-assets/cards';
+import FilterSidebar from './left-container/filter-sidebar';
+import DeckSidebar from './left-container/deck-sidebar';
+import Topbar from './right-container/topbar';
+import Loader from '../../../../utils/loader';
+import Cards from './right-container/content-assets/cards';
 import Modal from 'antd/lib/modal';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/modal/style/css';
-import {Data} from '../../../data/cards-data';
+import {Data} from '../../../../data/cards-data';
 
 import _ from 'lodash';
 

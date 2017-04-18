@@ -13,7 +13,10 @@ export class Main extends Component {
       user: null
     };
 
+
+
     firebase.auth().onAuthStateChanged(user => {
+      console.log(firebase.auth().currentUser.getToken(false));
       if (user) {
         console.log(user);
         getUserData(user.uid, (v)=>{
