@@ -4,8 +4,12 @@ import FilterSidebar from './picked-class/left-container/filter-sidebar';
 import DeckSidebar from './picked-class/left-container/deck-sidebar';
 import Topbar from './picked-class/right-container/topbar';
 import Loader from '../../../utils/loader';
+import Cards from './picked-class/right-container/content-assets/cards';
+import Modal from 'antd/lib/modal';
 import 'antd/lib/tooltip/style/css';
+import 'antd/lib/modal/style/css';
 import {Data} from '../../../data/cards-data';
+
 import _ from 'lodash';
 
 export class CreateDeckClassSelected extends Component {
@@ -208,16 +212,15 @@ export class CreateDeckClassSelected extends Component {
                     query={query} params={params}
                     deck={this.state.deck}
                     handleDeckSaving={(e)=>this.handleDeckSaving(e)}/>
-            <div>
-              <div className="content">
-                <ul className="container__cards">
-                  {this.listCards(query)}
-                </ul>
-              </div>
-              <div className={this.state.modal ? 'modal' : 'display-none'}>
-                foo
-              </div>
-            </div>
+            <Cards cards={this.listCards(query)} />
+            <Modal title="Title of the modal dialog"
+                   visible={this.state.modal}
+                   // onOk={this.handleOk}
+                   // confirmLoading={this.state.confirmLoading}
+                   //  onCancel=
+                >
+              <p>foo</p>
+            </Modal>
           </div>
         </div>
     );
