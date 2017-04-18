@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
-import FilterSidebar from './left-container/filter-sidebar';
-import DeckSidebar from './left-container/deck-sidebar';
-import Topbar from './right-container/topbar';
+import LeftContainer from './left-container';
+import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
-import Cards from './right-container/content-assets/cards';
+import Cards from './right-container/content-assets/cards/cards';
 import Modal from 'antd/lib/modal';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/modal/style/css';
@@ -68,8 +67,6 @@ export class CreateDeckClassSelected extends Component {
     Data.fetchData(setState);
 
   }
-
-
 
   handleClick(e, card) {
     e.preventDefault();
@@ -170,7 +167,6 @@ export class CreateDeckClassSelected extends Component {
   }
 
   handleDeckSaving(e){
-    console.log(e);
     let modalIsActive = this.state.modal === false ? true : false;
     this.setState({
       modal: modalIsActive
@@ -178,50 +174,32 @@ export class CreateDeckClassSelected extends Component {
   }
 
   render() {
-    let query = this.props.location.query;
-    let params = this.props.params.class;
-    let ifDeck = this.state.filtersView === false ? 'deck' : "filters";
-    let ifFilter = this.state.filtersView === false ? 'filters' : "deck";
+    const {location, params} = this.props;
+    let query = location.query;
     return (
         <div tabIndex="0" onKeyDown={(e)=>this.handleSidebarViewChange(e)} className="container__page container__page--twoSided create-deck">
-          <div className="container__page--inner container__page--left">
-            <h3  className="sidebar__header">
-              <span>{ifDeck}</span>
-              <button className="btn-pearl" onClick={(e)=>this.handleSidebarViewChange(e)}>Show {ifFilter}</button>
-            </h3>
-            <DeckSidebar filtersView={this.state.filtersView}
+          <LeftContainer handleSidebarViewChange={(e)=>this.handleSidebarViewChange(e)}
+                         filtersView={this.state.filtersView}
                          countCards={(e)=>this.countCards(e)}
                          deck={this.state.deck}
                          deckDetails={this.state.deckDetails}
                          handleDeckDetailClick={(e)=>this.handleDeckDetailsClick(e)}
+                         params={params}
+                         name={this.state.name}
+                         race={this.state.race}
                          mechanics={this.state.mechanics}
-                         params={params}/>
+                         type={this.state.type}
+                         faction={this.state.faction}
+                         cards={this.state.cards}
+                         cardSet={this.state.cardSet}
+                         query={query} />
 
-            <FilterSidebar filtersView={this.state.filtersView}
-                           name={this.state.name}
-                           race={this.state.race}
-                           mechanics={this.state.mechanics}
-                           type={this.state.type}
-                           faction={this.state.faction}
-                           cards={this.state.cards}
-                           cardSet={this.state.cardSet}
-                           query={query}/>
-          </div>
-          <div className="container__page--inner container__page--right">
-            <Topbar filtersView={this.state.filtersView}
-                    query={query} params={params}
-                    deck={this.state.deck}
-                    handleDeckSaving={(e)=>this.handleDeckSaving(e)}/>
-            <Cards cards={this.listCards(query)} />
-            <Modal title="Title of the modal dialog"
-                   visible={this.state.modal}
-                   // onOk={this.handleOk}
-                   // confirmLoading={this.state.confirmLoading}
-                   //  onCancel=
-                >
-              <p>foo</p>
-            </Modal>
-          </div>
+          <RightContainer filtersView={this.state.filtersView}
+                          query={query} params={params}
+                          deck={this.state.deck}
+                          handleDeckSaving={(e)=>this.handleDeckSaving(e)}
+                          cards={this.listCards(query)}
+                          visible={this.state.modal} />
         </div>
     );
   }
