@@ -1,7 +1,7 @@
 import React from 'react';
-import DeckGraph from './sidebar/deck-graph';
-import ChoosenCards from './sidebar/choosen-cards';
-import DeckDetails from './sidebar/deck-details';
+import ManaCurve from './sidebar/details/mana-curve/mana-curve';
+import ChoosenCards from './sidebar/details/choosen-cards';
+import DeckMechanics from './sidebar/details/deck-mechanics';
 
 import _ from 'lodash';
 const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDetailClick, mechanics, params}) => {
@@ -12,16 +12,11 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDeta
       <div className={`sidebar__body ${filtersView === false ? 'active' : 'display-none'}`}>
         <div className="container__mana-curve">
           <h3>Cards/Mana Cost</h3>
-          <ul className="graph">
-            {[...new Array(7)].map((bar, i)=>
-                <DeckGraph key={i} cost={i} icon={i} deck={deck} max={max} />
-            )}
-            <DeckGraph cost={7} icon="7-plus" deck={deck} max={max}/>
-          </ul>
-          <h3>Choosen Cards <button className="btn-pearl" onClick={(e)=>handleDeckDetailClick(e)}>More details</button></h3> {/* consider changing btn to icon*/}
+          <ManaCurve deck={deck} max={max}/>
 
+          <h3>Choosen Cards <button className="btn-pearl" onClick={(e)=>handleDeckDetailClick(e)}>More details</button></h3> {/* consider changing btn to icon*/}
           <ChoosenCards deck={deck} countCards={countCards} deckDetails={deckDetails}/>
-          <DeckDetails deck={deck} deckDetails={deckDetails} mechanics={mechanics}/>
+          <DeckMechanics deck={deck} deckDetails={deckDetails} mechanics={mechanics}/>
         </div>
         <div className="background">
           <span className={`hs-icon icon-${params}`}></span>

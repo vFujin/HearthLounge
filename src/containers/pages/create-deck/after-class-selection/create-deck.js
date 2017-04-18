@@ -3,10 +3,7 @@ import 'whatwg-fetch';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
-import Cards from './right-container/content-assets/cards/cards';
-import Modal from 'antd/lib/modal';
 import 'antd/lib/tooltip/style/css';
-import 'antd/lib/modal/style/css';
 import {Data} from '../../../../data/cards-data';
 
 import _ from 'lodash';

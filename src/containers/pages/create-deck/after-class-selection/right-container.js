@@ -1,7 +1,7 @@
 import React from 'react';
 import Topbar from './right-container/topbar';
 import Cards from './right-container/content-assets/cards/cards'
-import SaveDeckForm from './right-container/content-assets/deck-description/save-deck-form';
+import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 
 const RightContainer = ({deck, filtersView, handleDeckSaving, cards, params, query, visible}) =>{
   return (
@@ -10,8 +10,8 @@ const RightContainer = ({deck, filtersView, handleDeckSaving, cards, params, que
                 query={query} params={params}
                 deck={deck}
                 handleDeckSaving={handleDeckSaving}/>
-        <Cards cards={cards} />
-        <SaveDeckForm visible={visible} />
+        <Cards cards={cards} visible={visible}/>
+        <DeckOptions visible={visible} />
 
       </div>
   )

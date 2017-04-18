@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Cards = ({cards}) =>{
+const Cards = ({cards, visible}) =>{
   return(
-      <div className="content">
+      <div className={`content ${visible ? 'display-none' : ''}`}>
         <ul className="container__cards">
           {cards}
         </ul>

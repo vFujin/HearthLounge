@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-const DeckDetails = ({deck, deckDetails, mechanics}) => {
+const DeckMechanics = ({deck, deckDetails, mechanics}) => {
   let deckMechanics = [].concat.apply([], _.map(deck, (value)=>value.hasOwnProperty('mechanics') ? value.mechanics : null));
   let countMechanics = _.countBy(deckMechanics, 'name');
 
@@ -33,10 +33,10 @@ const DeckDetails = ({deck, deckDetails, mechanics}) => {
   );
 };
 
-DeckDetails.propTypes = {
+DeckMechanics.propTypes = {
   deck: React.PropTypes.array,
   deckDetails: React.PropTypes.bool,
   mechanics: React.PropTypes.array
 };
 
-export default DeckDetails;
+export default DeckMechanics;

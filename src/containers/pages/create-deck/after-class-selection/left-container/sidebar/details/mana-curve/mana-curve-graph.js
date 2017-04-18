@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-const DeckGraph = ({cost, deck, icon, max}) => {
+const ManaCurveBar = ({cost, deck, icon, max}) => {
   const costBelowSeven = (number) =>{
     return _.filter(deck, {cost: number}).length
   };
@@ -19,11 +19,11 @@ const DeckGraph = ({cost, deck, icon, max}) => {
   );
 };
 
-DeckGraph.propTypes = {
+ManaCurveBar.propTypes = {
   cost: React.PropTypes.number,
   deck: React.PropTypes.array,
   icon: React.PropTypes.any, //either string or number
   max: React.PropTypes.number
 };
 
-export default DeckGraph;
+export default ManaCurveBar;
