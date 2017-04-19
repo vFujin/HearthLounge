@@ -600,9 +600,10 @@ footer{
           .section__body {
             padding-right: 1vh;
             overflow: auto;
-            div {
+            .section__body--background {
               background: rgba(0, 0, 0, .2);
               padding: 1vh;
+              height: calc(100% - 1vh - 10px);
             }
           }
         }
