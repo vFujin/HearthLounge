@@ -4,15 +4,32 @@ import { Editor } from 'react-draft-wysiwyg';
 import { convertToRaw } from 'draft-js'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-const TextEditor = ({editorState, handleInputChange}) => {
+const TextEditor = ({editorState, handleInputChange, selector}) => {
+
+  const toolbar = {
+    options: ['inline', 'blockType', 'fontSize', 'list', 'textAlign', 'link', 'embedded', 'image', 'history'],
+    inline: {
+      options: ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript']
+    },
+    blockType: {
+      options: ['Normal', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6']
+    },
+    fontSize: {
+      options: [10, 11, 12, 14, 16, 18]
+    },
+    list: {
+      options: ['unordered', 'ordered']
+    }
+  };
+
   return (
       <div>
-        <Editor editorState={editorState} onEditorStateChange={handleInputChange}/>
-        <textarea
-            disabled
-            id="foo"
-            value={editorState && draftToHtml(convertToRaw(editorState.getCurrentContent()))}
-        />
+        <Editor editorState={editorState}
+                onEditorStateChange={handleInputChange}
+                toolbar={toolbar}/>
+        <textarea disabled
+                  id={selector}
+                  value={editorState && draftToHtml(convertToRaw(editorState.getCurrentContent()))}/>
       </div>
 
   );

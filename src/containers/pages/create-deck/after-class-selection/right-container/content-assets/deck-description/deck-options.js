@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import TextEditor from '../../../../../../shared-assets/editor/text-editor';
-
 import Input from '../../../../../../shared-assets/form-assets/input';
+
 export class DeckOptions extends Component {
   constructor(props){
     super(props);
@@ -16,8 +16,8 @@ export class DeckOptions extends Component {
   }
 
 
-  handleInputChange(editorState) {
-    let textarea = document.getElementById('foo').value;
+  handleInputChange(editorState, selector) {
+    let textarea = document.getElementById(selector).value;
     this.setState({
       editorState,
       deckDescription: textarea
@@ -27,9 +27,10 @@ export class DeckOptions extends Component {
 
   render() {
     const {deckTitle, deckType, deckArchetype, deckDescription, editorState} = this.state;
+    const editorSelector = 'deckDescription';
     return (
         <div className={!this.props.visible ? 'display-none' : 'save-deck-form'}>
-          <form>
+          <form className="save-deck">
             <Input id="deck_title"
                    type="text"
                    placeholder="SMOrc huntard"
@@ -43,7 +44,9 @@ export class DeckOptions extends Component {
             <select>
               <option>SMOrc huntard</option>
             </select>
-            <TextEditor editorState={editorState} handleInputChange={(e)=>this.handleInputChange(e)}/>
+            <TextEditor editorState={editorState}
+                        handleInputChange={(e)=>this.handleInputChange(e, editorSelector)}
+                        selector={editorSelector}/>
           </form>
         </div>
     )
