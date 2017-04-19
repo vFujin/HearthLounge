@@ -12,4 +12,9 @@ const ManaCurve = ({deck, max}) => {
   )
 };
 
+ManaCurve.propTypes = {
+  deck: React.PropTypes.array,
+  max: React.PropTypes.number
+};
+
 export default ManaCurve;

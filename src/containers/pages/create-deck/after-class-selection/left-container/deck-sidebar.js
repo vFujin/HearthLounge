@@ -2,8 +2,8 @@ import React from 'react';
 import ManaCurve from './sidebar/details/mana-curve/mana-curve';
 import ChoosenCards from './sidebar/details/choosen-cards';
 import DeckMechanics from './sidebar/details/deck-mechanics';
-
 import _ from 'lodash';
+
 const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDetailClick, mechanics, params}) => {
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
@@ -29,7 +29,8 @@ DeckSidebar.propTypes = {
   filtersView: React.PropTypes.bool,
   countCards: React.PropTypes.func,
   deck: React.PropTypes.array,
-  params: React.PropTypes.string
+  params: React.PropTypes.object
 };
 
 export default DeckSidebar;
+

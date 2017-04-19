@@ -10,8 +10,8 @@ const SidebarHeader = ({ifDeck, ifFilter, handleSidebarViewChange}) =>{
 };
 
 SidebarHeader.propTypes = {
-  ifDeck: React.PropTypes.bool.isRequired,
-  ifFilter: React.PropTypes.bool.isRequired,
+  ifDeck: React.PropTypes.string.isRequired,
+  ifFilter: React.PropTypes.string.isRequired,
   handleSidebarViewChange: React.PropTypes.func.isRequired
 };
 

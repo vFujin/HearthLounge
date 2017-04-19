@@ -9,7 +9,6 @@ import {Data} from '../../../../data/cards-data';
 import _ from 'lodash';
 
 export class CreateDeckClassSelected extends Component {
-
   constructor(props){
     super(props);
     this.state = {
@@ -86,13 +85,10 @@ export class CreateDeckClassSelected extends Component {
     }
   }
 
-  handleDeckDetailsClick(e){
+  handleDeckMechanicsClick(e){
     let isActive = this.state.deckDetails === false ? true : false;
     console.log("alt", e.ctrlKey);
-    if(e || e.altKey) {
-      this.setState({
-        deckDetails: isActive
-      })
+    if(e.keyCode = 8) {
     }
   }
 
@@ -150,7 +146,7 @@ export class CreateDeckClassSelected extends Component {
         filtersView: isActive
       });
     }
-    if(e || e.altKey) {
+    if(e.altKey) {
       let isActive = this.state.deckDetails === false ? true : false;
       this.setState({
         deckDetails: isActive
@@ -170,6 +166,7 @@ export class CreateDeckClassSelected extends Component {
     })
   }
 
+
   render() {
     const {location, params} = this.props;
     let query = location.query;
@@ -180,7 +177,7 @@ export class CreateDeckClassSelected extends Component {
                          countCards={(e)=>this.countCards(e)}
                          deck={this.state.deck}
                          deckDetails={this.state.deckDetails}
-                         handleDeckDetailClick={(e)=>this.handleDeckDetailsClick(e)}
+                         handleDeckDetailClick={(e)=>this.handleDeckMechanicsClick(e)}
                          params={params}
                          name={this.state.name}
                          race={this.state.race}
@@ -196,7 +193,7 @@ export class CreateDeckClassSelected extends Component {
                           deck={this.state.deck}
                           handleDeckSaving={(e)=>this.handleDeckSaving(e)}
                           cards={this.listCards(query)}
-                          visible={this.state.modal} />
+                          visible={this.state.modal}/>
         </div>
     );
   }
