@@ -4,7 +4,6 @@ import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
 import 'antd/lib/tooltip/style/css';
-import {Data} from '../../../../data/cards-data';
 
 import _ from 'lodash';
 
@@ -16,52 +15,13 @@ export class CreateDeckClassSelected extends Component {
       filtersView: false,
       deckDetails: false,
 
-      name: [],
-      cards: [],
-      faction: [],
-      mechanics: [],
-      race: [],
-      type: [],
 
-      cardSet: [],
+
+
       sliderFirstValue: [],
 
       modal: false,
     }
-  }
-
-  componentDidMount(){
-    const getUniqueAttributes = (data, attribute) =>{
-      let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
-
-      switch(attribute){
-        case 'name':
-        case 'faction':
-        case 'race':
-        case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
-        case 'cardSet':
-        case 'cost': return data.filter(x=>x.cost).map(x=>x.cost).filter((x, i, a)=>a.indexOf(x) === i);
-        case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
-        default: return null;
-      }
-    };
-
-    const setState = (cards) =>{
-      this.setState({
-        cards,
-        name: getUniqueAttributes(cards, 'name'),
-        mechanics: getUniqueAttributes(cards, 'mechanics'),
-        faction: getUniqueAttributes(cards, 'faction'),
-        race: getUniqueAttributes(cards, 'race'),
-        type: getUniqueAttributes(cards, 'type'),
-        cost: getUniqueAttributes(cards, 'cost'),
-        cardSet: getUniqueAttributes(cards, 'cardSet')
-
-      });
-    };
-
-    Data.fetchData(setState);
-
   }
 
   handleClick(e, card) {
@@ -92,6 +52,8 @@ export class CreateDeckClassSelected extends Component {
     }
   }
 
+
+
   countCards(card){
     return _.filter(this.state.deck, {cardId: card.cardId}).length;
   }
@@ -101,42 +63,34 @@ export class CreateDeckClassSelected extends Component {
   }
 
   listCards(query) {
-    if (this.state.cards < 1) {
+
+    console.log(this.props);
+    if (this.props.cards < 1) {
+
       return <Loader/>;
     }
-
-    return (
-        this.state.cards
-            .filter(function (card) {
-              return Object.keys(query).every(function (queryKey) {
-                if (query[queryKey].constructor === Array) {
-                  return query[queryKey].some(queryValue => {
-
-                    return card[queryKey] == queryValue
-                  });
-                }
-
-                else{
-                  return card[queryKey] == query[queryKey];
-                }
-              })
-            })
-            .map(card =>
-                <li key={card.cardId}
-                    onContextMenu={this.state.deck ? (e) => this.handleClick(e, card) : null}
-                    onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
+    else {
+      return (
+          this.props.cards.filter(card=>card.playerClass === _.upperFirst(this.props.params.class) || card.playerClass === "Neutral")
+              .map(card =>
+                  <li key={card.cardId}
+                      onContextMenu={this.state.deck ? (e) => this.handleClick(e, card) : null}
+                      onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
                     <div className={this.showCardCountTooltip(card, 'tooltip-count', 'display-none')}>
                       <span>
                         {this.countCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
                       </span>
                     </div>
-                    <img className={`${this.showCardCountTooltip(card, 'choosen', null)} ${this.state.deck.length >= 30 ? "disabled" : ''} `}
-                         src={card.img}
-                         alt={card.name}/>
-                </li>
-            )
-    )
+                    <img
+                        className={`${this.showCardCountTooltip(card, 'choosen', null)} ${this.state.deck.length >= 30 ? "disabled" : ''} `}
+                        src={card.img}
+                        alt={card.name}/>
+                  </li>
+              )
+      )
+    }
   }
+
 
 
   handleSidebarViewChange(e){
@@ -168,7 +122,8 @@ export class CreateDeckClassSelected extends Component {
 
 
   render() {
-    const {location, params} = this.props;
+
+    const {location, params, name, race, mechanics, faction, type, cards, cardSet} = this.props;
     let query = location.query;
     return (
         <div tabIndex="0" onKeyDown={(e)=>this.handleSidebarViewChange(e)} className="container__page container__page--twoSided create-deck">
@@ -179,13 +134,13 @@ export class CreateDeckClassSelected extends Component {
                          deckDetails={this.state.deckDetails}
                          handleDeckDetailClick={(e)=>this.handleDeckMechanicsClick(e)}
                          params={params}
-                         name={this.state.name}
-                         race={this.state.race}
-                         mechanics={this.state.mechanics}
-                         type={this.state.type}
-                         faction={this.state.faction}
-                         cards={this.state.cards}
-                         cardSet={this.state.cardSet}
+                         name={name}
+                         race={race}
+                         mechanics={mechanics}
+                         type={type}
+                         faction={faction}
+                         cards={cards}
+                         cardSet={cardSet}
                          query={query} />
 
           <RightContainer filtersView={this.state.filtersView}

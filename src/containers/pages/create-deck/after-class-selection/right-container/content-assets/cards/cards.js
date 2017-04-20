@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cards = ({cards, visible}) =>{
   return(
-      <div className={visible ? 'display-none' : ''}>
+      <div className={!visible ? 'display-none' : ''}>
         <ul className="container__cards">
           {cards}
         </ul>

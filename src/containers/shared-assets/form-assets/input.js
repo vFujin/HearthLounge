@@ -10,7 +10,7 @@ const Input = ({id, type, placeholder, handleInputChange, value, pattern, error}
       <div className="input-wrapper">
         <Tooltip overlayClassName="form-tooltip" title={error ? error : <FormTooltipText id={id} label={label}/>} placement="right" trigger="focus">
           <label htmlFor={id}>{label}:
-            <div>
+            <div className="input-wrapper">
               <input id={id}
                      type={type}
                      placeholder={placeholder}
@@ -23,5 +23,7 @@ const Input = ({id, type, placeholder, handleInputChange, value, pattern, error}
       </div>
   )
 };
+
+
 
 export default Input;

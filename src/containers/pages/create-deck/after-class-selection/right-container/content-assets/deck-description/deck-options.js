@@ -29,14 +29,14 @@ export class DeckOptions extends Component {
     const {deckTitle, deckType, deckArchetype, deckDescription, editorState} = this.state;
     const editorSelector = 'deckDescription';
     return (
-        <div className={!this.props.visible ? 'display-none' : 'container__details'}>
+        <div className={this.props.visible ? 'display-none' : 'container__details'}>
           <div className="container__details--section container__details--description">
             <div className="section__header">
               <div className="line"></div>
               <h1>About deck</h1>
             </div>
             <div className="section__body">
-              <form className="save-deck section__body--background">
+              <form className="inline section__body--background">
                 <Input id="deck_title"
                        type="text"
                        placeholder="SMOrc huntard"

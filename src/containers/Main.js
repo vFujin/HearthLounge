@@ -4,21 +4,26 @@ import Navbar from './layout/navbar';
 import {Footer} from './layout/footer';
 import {getUserData, logout} from '../server/auth';
 import 'antd/lib/tooltip/style/css';
+import {Data} from '../data/cards-data';
+
 
 export class Main extends Component {
   constructor(props){
     super(props);
     this.state = {
       authed: false,
-      user: null
+      user: null,
+      cards: [],
+      name: [],
+      faction: [],
+      race: [],
+      type: [],
+      cardSet: [],
+      mechanics: []
     };
 
-
-
     firebase.auth().onAuthStateChanged(user => {
-      console.log(firebase.auth().currentUser.getToken(false));
       if (user) {
-        console.log(user);
         getUserData(user.uid, (v)=>{
           this.setState({
             authed: true,
@@ -35,17 +40,64 @@ export class Main extends Component {
     })
   }
 
+
+  componentDidMount(){
+    const getUniqueAttributes = (data, attribute) =>{
+      let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
+
+      switch(attribute){
+        case 'name':
+        case 'faction':
+        case 'race':
+        case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
+        case 'cardSet':
+        case 'cost': return data.filter(x=>x.cost).map(x=>x.cost).filter((x, i, a)=>a.indexOf(x) === i);
+        case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
+        default: return null;
+      }
+    };
+
+    const setState = (cards) =>{
+      this.setState({
+        cards,
+        name: getUniqueAttributes(cards, 'name'),
+        mechanics: getUniqueAttributes(cards, 'mechanics'),
+        faction: getUniqueAttributes(cards, 'faction'),
+        race: getUniqueAttributes(cards, 'race'),
+        type: getUniqueAttributes(cards, 'type'),
+        cost: getUniqueAttributes(cards, 'cost'),
+        cardSet: getUniqueAttributes(cards, 'cardSet')
+
+      });
+    };
+
+    Data.fetchData(setState);
+
+  }
+
   render(){
     const {children, location} = this.props;
+    const {authed, user, name, cards, faction, mechanics, race, type, cardSet} = this.state;
     return (
         <div id="container">
-          <Navbar url={location.pathname} user={this.state.user} handleLogout={(e)=>logout(e)}/>
-          {React.cloneElement(children, {authed: this.state.authed, user: this.state.user})}
+          <Navbar url={location.pathname} user={user} handleLogout={(e)=>logout(e)}/>
+          {React.cloneElement(children, {
+            authed,
+            user,
+            name,
+            cards,
+            faction,
+            mechanics,
+            race,
+            type,
+            cardSet
+          })}
           <Footer/>
         </div>
     );
   }
 }
+
 
 Main.propTypes = {
   children: React.PropTypes.element,
