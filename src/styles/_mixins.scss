@@ -137,3 +137,10 @@
   &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
   &::-webkit-scrollbar-track{background-color: $light-grey; border-left: 1px solid $border_color;}
 }
+
+@mixin slim-scrollbar(){
+  &::-webkit-scrollbar{width: 8px;}
+  &::-webkit-scrollbar-thumb{background-color: rgba(255,255,255, .2); border-radius: 4px}
+  &::-webkit-scrollbar-thumb:hover{background-color: $pearl}
+  &::-webkit-scrollbar-track{background-color: transparent}
+}

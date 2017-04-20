@@ -57,7 +57,7 @@ export class Main extends Component {
       }
     };
 
-    const setState = (cards) =>{
+    const cards = (cards) =>{
       this.setState({
         cards,
         name: getUniqueAttributes(cards, 'name'),
@@ -71,13 +71,12 @@ export class Main extends Component {
       });
     };
 
-    Data.fetchData(setState);
-
+    Data.fetchData(cards);
   }
 
   render(){
-    const {children, location} = this.props;
     const {authed, user, name, cards, faction, mechanics, race, type, cardSet} = this.state;
+    const {children, location} = this.props;
     return (
         <div id="container">
           <Navbar url={location.pathname} user={user} handleLogout={(e)=>logout(e)}/>

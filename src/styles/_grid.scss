@@ -112,6 +112,15 @@
           }
         }
       }
+      form{
+        display: grid;
+        grid-template-rows: 20vh auto;
+        .editor-wrapper{
+          display: grid;
+          grid-template-rows: 25% 75%;
+          height: 100%;
+        }
+      }
     }
     .container__class-selection {
       display: grid;

@@ -37,22 +37,26 @@ export class DeckOptions extends Component {
             </div>
             <div className="section__body">
               <form className="inline section__body--background">
-                <Input id="deck_title"
-                       type="text"
-                       placeholder="SMOrc huntard"
-                       handleInputChange={()=>this.handleInputChange}
-                       value={deckTitle}/>
-                Type:
-                <select>
-                  <option>Standard</option>
-                </select>
-                Archetype:
-                <select>
-                  <option>SMOrc huntard</option>
-                </select>
-                <TextEditor editorState={editorState}
-                            handleInputChange={(e)=>this.handleInputChange(e, editorSelector)}
-                            selector={editorSelector}/>
+                <div className="section__body--upperContainer">
+                  <Input id="deck_title"
+                         type="text"
+                         placeholder="SMOrc huntard"
+                         handleInputChange={()=>this.handleInputChange}
+                         value={deckTitle}/>
+                  Type:
+                  <select>
+                    <option>Standard</option>
+                  </select>
+                  Archetype:
+                  <select>
+                    <option>SMOrc huntard</option>
+                  </select>
+                </div>
+                <div className="text-editor">
+                  <TextEditor editorState={editorState}
+                              handleInputChange={(e)=>this.handleInputChange(e, editorSelector)}
+                              selector={editorSelector}/>
+                </div>
               </form>
             </div>
           </div>

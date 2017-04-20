@@ -15,9 +15,6 @@ export class CreateDeckClassSelected extends Component {
       filtersView: false,
       deckDetails: false,
 
-
-
-
       sliderFirstValue: [],
 
       modal: false,
@@ -52,8 +49,6 @@ export class CreateDeckClassSelected extends Component {
     }
   }
 
-
-
   countCards(card){
     return _.filter(this.state.deck, {cardId: card.cardId}).length;
   }
@@ -63,30 +58,27 @@ export class CreateDeckClassSelected extends Component {
   }
 
   listCards(query) {
-
-    console.log(this.props);
     if (this.props.cards < 1) {
-
       return <Loader/>;
     }
     else {
       return (
-          this.props.cards.filter(card=>card.playerClass === _.upperFirst(this.props.params.class) || card.playerClass === "Neutral")
-              .map(card =>
-                  <li key={card.cardId}
-                      onContextMenu={this.state.deck ? (e) => this.handleClick(e, card) : null}
-                      onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
-                    <div className={this.showCardCountTooltip(card, 'tooltip-count', 'display-none')}>
-                      <span>
-                        {this.countCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
-                      </span>
-                    </div>
-                    <img
-                        className={`${this.showCardCountTooltip(card, 'choosen', null)} ${this.state.deck.length >= 30 ? "disabled" : ''} `}
-                        src={card.img}
-                        alt={card.name}/>
-                  </li>
-              )
+        this.props.cards.filter(card=>card.playerClass === _.upperFirst(this.props.params.class) || card.playerClass === "Neutral")
+            .map(card =>
+                <li key={card.cardId}
+                    onContextMenu={this.state.deck ? (e) => this.handleClick(e, card) : null}
+                    onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
+                  <div className={this.showCardCountTooltip(card, 'tooltip-count', 'display-none')}>
+                    <span>
+                      {this.countCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
+                    </span>
+                  </div>
+                  <img
+                      className={`${this.showCardCountTooltip(card, 'choosen', null)} ${this.state.deck.length >= 30 ? "disabled" : ''} `}
+                      src={card.img}
+                      alt={card.name}/>
+                </li>
+            )
       )
     }
   }
@@ -94,14 +86,15 @@ export class CreateDeckClassSelected extends Component {
 
 
   handleSidebarViewChange(e){
+    const {filtersView, deckDetails} = this.state;
     if(e.button === 0 || e.ctrlKey) {
-      let isActive = this.state.filtersView === false ? true : false;
+      let isActive = filtersView === false ? true : false;
       this.setState({
         filtersView: isActive
       });
     }
     if(e.altKey) {
-      let isActive = this.state.deckDetails === false ? true : false;
+      let isActive = deckDetails === false ? true : false;
       this.setState({
         deckDetails: isActive
       })
@@ -122,7 +115,6 @@ export class CreateDeckClassSelected extends Component {
 
 
   render() {
-
     const {location, params, name, race, mechanics, faction, type, cards, cardSet} = this.props;
     let query = location.query;
     return (
