@@ -14,6 +14,7 @@ const InputFilter = ({attribute, filter, multiple, query}) => {
       <Option instancePrefix={a} optionIndex={a} option={a} value={a} key={a}>{a}</Option>
   ));
 
+
   const placeholder = attribute.slice(0,3).map(x=>x).join(", ").toLowerCase();
   return (
       <div className="input-filter-wrapper">

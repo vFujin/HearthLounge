@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import TextEditor from '../../../../../../shared-assets/editor/text-editor';
 import Input from '../../../../../../shared-assets/form-assets/input';
-
+import FormSelect from './select';
+import 'antd/lib/select/style/css';
 export class DeckOptions extends Component {
   constructor(props){
     super(props);
@@ -43,14 +44,9 @@ export class DeckOptions extends Component {
                          placeholder="SMOrc huntard"
                          handleInputChange={()=>this.handleInputChange}
                          value={deckTitle}/>
-                  Type:
-                  <select>
-                    <option>Standard</option>
-                  </select>
-                  Archetype:
-                  <select>
-                    <option>SMOrc huntard</option>
-                  </select>
+                  <FormSelect section="mode"/>
+                  <FormSelect section="archetype" params={this.props.params.class}/>
+
                 </div>
                 <div className="text-editor">
                   <TextEditor editorState={editorState}
