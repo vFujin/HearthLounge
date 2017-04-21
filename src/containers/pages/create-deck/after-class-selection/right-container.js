@@ -12,7 +12,7 @@ const RightContainer = ({deck, filtersView, handleDeckSaving, cards, params, que
                 handleDeckSaving={handleDeckSaving}/>
         <div className="content">
           <Cards cards={cards} visible={visible}/>
-          <DeckOptions visible={visible} params={params}/>
+          <DeckOptions visible={visible} params={params} deck={deck}/>
         </div>
       </div>
   )

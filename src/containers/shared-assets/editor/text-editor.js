@@ -4,7 +4,7 @@ import { Editor } from 'react-draft-wysiwyg';
 import { convertToRaw } from 'draft-js'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-const TextEditor = ({editorState, handleInputChange, selector}) => {
+const TextEditor = ({editorState, handleInputChange, selector, handleEditorImageUpload}) => {
 
   const toolbar = {
     options: ['inline', 'blockType', 'fontSize', 'list', 'textAlign', 'link', 'embedded', 'image', 'history'],
@@ -19,6 +19,9 @@ const TextEditor = ({editorState, handleInputChange, selector}) => {
     },
     list: {
       options: ['unordered', 'ordered']
+    },
+    image: {
+      uploadCallback: handleEditorImageUpload
     }
   };
 

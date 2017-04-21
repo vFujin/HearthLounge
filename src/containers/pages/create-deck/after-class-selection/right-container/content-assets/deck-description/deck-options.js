@@ -25,9 +25,23 @@ export class DeckOptions extends Component {
     })
   }
 
+  handleSelectChange(v, selector){
+    this.setState({
+      [selector]: v
+    })
+  }
+
+  handleEditorImageUpload(file){
+    // return new Promise(
+    //     (resolve, reject)=>{
+    //       resolve({data: {link: 'none'}});
+    //     }
+    // )
+  }
+
 
   render() {
-    const {deckTitle, deckType, deckArchetype, deckDescription, editorState} = this.state;
+    const {deckTitle, deckDescription, editorState} = this.state;
     const editorSelector = 'deckDescription';
     return (
         <div className={this.props.visible ? 'display-none' : 'container__details'}>
@@ -44,13 +58,14 @@ export class DeckOptions extends Component {
                          placeholder="SMOrc huntard"
                          handleInputChange={()=>this.handleInputChange}
                          value={deckTitle}/>
-                  <FormSelect section="mode"/>
-                  <FormSelect section="archetype" params={this.props.params.class}/>
+                  <FormSelect section="mode" handleSelectChange={(v)=>this.handleSelectChange(v, 'deckType')}/>
+                  <FormSelect section="archetype" hsClass={this.props.params.class} handleSelectChange={(v)=>this.handleSelectChange(v, 'deckArchetype')}/>
 
                 </div>
                 <div className="text-editor">
                   <TextEditor editorState={editorState}
                               handleInputChange={(e)=>this.handleInputChange(e, editorSelector)}
+                              handleEditorImageUpload={(e, file)=>this.handleEditorImageUpload(e, file)}
                               selector={editorSelector}/>
                 </div>
               </form>

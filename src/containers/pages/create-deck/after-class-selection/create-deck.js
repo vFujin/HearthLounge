@@ -83,8 +83,6 @@ export class CreateDeckClassSelected extends Component {
     }
   }
 
-
-
   handleSidebarViewChange(e){
     const {filtersView, deckDetails} = this.state;
     if(e.button === 0 || e.ctrlKey) {
@@ -139,6 +137,7 @@ export class CreateDeckClassSelected extends Component {
                           query={query} params={params}
                           deck={this.state.deck}
                           handleDeckSaving={(e)=>this.handleDeckSaving(e)}
+
                           cards={this.listCards(query)}
                           visible={!this.state.modal}/>
         </div>

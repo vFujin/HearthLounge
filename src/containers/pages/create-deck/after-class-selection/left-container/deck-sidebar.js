@@ -19,7 +19,7 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDeta
           <DeckMechanics deck={deck} deckDetails={deckDetails} mechanics={mechanics}/>
         </div>
         <div className="background">
-          <span className={`hs-icon icon-${params}`}></span>
+          <span className={`hs-icon icon-${params.class}`}></span>
         </div>
       </div>
   );

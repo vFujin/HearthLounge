@@ -313,24 +313,26 @@ form {
   }
   .text-editor{
     overflow: hidden;
+    border:1px solid $light-grey;
+    padding-bottom: 3px;
     .mothership{
       height: 100%;
       overflow: hidden;
       .editor-wrapper {
         background: $dark-grey;
+        position: relative;
         .toolbar {
           background-color: transparent;
           border-radius: 0;
           border: 0;
-          position: relative;
+          position: initial;
           &:before {
             content: '';
             position: absolute;
-            bottom: -5px;
+            top: 25%;
             width: calc(100% - 20px);
             border-bottom: 1px solid $light-grey;
           }
-
           div {
             align-items: center;
             &:not(.rdw-block-wrapper):not(.rdw-fontsize-wrapper) {
@@ -339,17 +341,69 @@ form {
               }
             }
             div {
-              border: 1px solid $light-grey;
               color: $light-grey;
               border-radius: 0;
               background: transparent;
-              &.rdw-option-active, &:hover {
-                border: 1px solid $pearl;
+              &.rdw-option-active{
                 background: rgba(255, 255, 255, .2);
+              }
+              &.rdw-option-active, &:hover{
+
                 color: $pearl;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
                 box-shadow: none;
+              }
+              &[class$="wrapper"], &.rdw-dropdown-wrapper{
+                border: 1px solid $light-grey;
+                &:hover{
+                  border: 1px solid $pearl;
+                  background: rgba(255, 255, 255, .2);
+                }
+              }
+              &[class$="modal"]{
+                border:1px solid $light-grey;
+                div{
+                  &:hover{
+                    color: $light-grey;
+                  }
+                }
+                span{
+                  color: $pearl;
+                  &[class$="modal-header-label"], &[class$="highlighted"]{
+                    border:0;
+                    border-bottom: 2px solid $light-grey;
+                  }
+                  &[class$="modal-header-option"]{
+                    color: $light-grey;
+                  }
+                  &[class$="highlighted"]{
+                    border-bottom: 2px solid $pearl;
+                  }
+                }
+                &[class$="modal-upload-option"]{
+                  @include transition(all ease .4s);
+                  outline: 2px dashed $light-grey;
+                  &:hover{
+                    color: $pearl;
+                    outline-color: $pearl;
+                  }
+                }
+                input{
+                  @include transition(all ease .4s);
+                  color: $sea-color;
+                  margin-top: 5px;
+                  border-radius: 0;
+                  border: 0;
+                  border-bottom: 1px solid $light-grey;
+                  height: 25px;
+                  margin-bottom: 15px;
+                  background: transparent;
+                  padding: 0 5px;
+                  &:focus{
+                    border-color: $pearl;
+                  }
+                }
               }
               a {
                 div {
@@ -402,6 +456,90 @@ form {
                 }
               }
             }
+          }
+          div[class$="modal"], div[class$="modal-header"]{
+            &:hover{
+              background: $dark-grey;
+            }
+          }
+          div[class$="modal"] {
+            position: absolute;
+            top: 25%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background: $dark-grey;
+            box-shadow: none;
+            &:hover {
+              border-color: $light-grey;
+            }
+            div[class$="modal-header"] {
+              width: 100%;
+              border: none;
+            }
+            button {
+              @include transition(all ease .4s);
+              border: 1px solid $light-grey;
+              background: transparent;
+              color: $light-grey;
+              border-radius: 0;
+              &:hover {
+                @include box-shadow(0, 0, 5px, $sea-color);
+                background: $dark-grey;
+                border-color: $sea-color;
+                color: $sea-color;
+              }
+              &:disabled {
+                opacity: 0.4;
+                cursor: default;
+                &:hover {
+                  box-shadow: none;
+                  border-color: $light-grey;
+                  color: $light-grey;
+                }
+              }
+            }
+            span{
+              display: flex;
+              align-items: center;
+            }
+            .rdw-link-modal-target-option {
+              input[type=checkbox] {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 0;
+                font-size: 10px;
+                visibility: hidden;
+                margin-bottom: 0;
+                padding: 0;
+                margin-right: 2px;
+                &:after {
+                  content: " ";
+                  background-color: transparent;
+                  color: $light-grey;
+                  border: 1px solid $light-grey;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 10px;
+                  height: 10px;
+                  visibility: visible;
+                  margin-bottom: 5px;
+                  margin-left: 3px;
+                  padding: 3px 3px 4px 4px;
+                }
+                &:checked:after {
+                  content: '\2714';
+                  color: $pearl;
+                  border-color: $pearl;
+                }
+              }
+            }
+          }
+          div[class$="wrapper"]{
+            position: initial;
           }
         }
         .editor {
