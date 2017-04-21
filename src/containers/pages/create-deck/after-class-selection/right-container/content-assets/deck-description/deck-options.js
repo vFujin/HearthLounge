@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import TextEditor from '../../../../../../shared-assets/editor/text-editor';
-import Input from '../../../../../../shared-assets/form-assets/input';
 import FormSelect from './select';
 import 'antd/lib/select/style/css';
 export class DeckOptions extends Component {
@@ -54,11 +53,14 @@ export class DeckOptions extends Component {
               <form className="inline section__body--background">
                 <div className="section__body--upperContainer">
                   <div className="inner inner__left">
-                    <Input id="deck_title"
-                           type="text"
-                           placeholder="SMOrc huntard"
-                           handleInputChange={()=>this.handleInputChange}
-                           value={deckTitle}/>
+                    <div className="input-wrapper">
+                      <label htmlFor="deck_title">Deck title:</label>
+                      <input id="deck_title"
+                             type="text"
+                             placeholder="Deck title i.e SMOrc hunter"
+                             onChange={()=>this.handleInputChange}
+                             value={deckTitle}/>
+                    </div>
                     <FormSelect section="mode" handleSelectChange={(v)=>this.handleSelectChange(v, 'deckType')}/>
                     <FormSelect section="archetype" hsClass={this.props.params.class} handleSelectChange={(v)=>this.handleSelectChange(v, 'deckArchetype')}/>
                   </div>

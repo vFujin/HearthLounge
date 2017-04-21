@@ -8,6 +8,7 @@
   }
 }
 .ant-select {
+  color: $pearl;
   font-size:14px;
   .ant-select-selection {
     -webkit-border-radius:0;
@@ -66,7 +67,20 @@
     }
   }
 }
+.select-wrapper{
+  .ant-select{
+    .ant-select-selection{
+      border-bottom: 1px solid $light-grey;
+      .ant-select-selection__placeholder, .ant-select-search__field__placeholder{
+        color: $light-grey;
+        .ant-select-search__field__wrap{
+          color: $sea-color;
+        }
+      }
+    }
+  }
 
+}
 /*
  *  Select dropdown
  */
@@ -117,6 +131,7 @@
       background: rgba(0, 0, 0, 0.4);
       color: $pearl;
       border-bottom:1px dashed $pearl;
+      font-weight: normal;
     }
   }
 }

@@ -1519,6 +1519,27 @@ footer{
           flex-direction:column;
           justify-content: space-around;
           width: 100%;
+          label, input{
+            color: $pearl;
+            width: 50%;
+          }
+        }
+        .inner__left {
+          border: 1px solid $light-grey;
+          margin-bottom: 1vh;
+          padding: 1vh;
+          .input-wrapper {
+            display: flex;
+            align-items:center;
+            input {
+              margin-bottom: 0;
+            }
+          }
+          .select-wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
         }
         .inner__right{
           align-self: flex-start;
