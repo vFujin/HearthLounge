@@ -26,18 +26,20 @@ const TextEditor = ({editorState, handleInputChange, selector, handleEditorImage
   };
 
   return (
-      <div className="mothership">
-        <Editor editorState={editorState}
-                onEditorStateChange={handleInputChange}
-                toolbar={toolbar}
-                placeholder="Your text goes here..."
-                wrapperClassName="editor-wrapper"
-                editorClassName="editor"
-                toolbarClassName="toolbar"/>
-        <textarea disabled
-                  style={{visibility: 'hidden'}}
-                  id={selector}
-                  value={editorState && draftToHtml(convertToRaw(editorState.getCurrentContent()))}/>
+      <div className="text-editor">
+        <div className="mothership">
+          <Editor editorState={editorState}
+                  onEditorStateChange={handleInputChange}
+                  toolbar={toolbar}
+                  placeholder="Your text goes here..."
+                  wrapperClassName="editor-wrapper"
+                  editorClassName="editor"
+                  toolbarClassName="toolbar"/>
+          <textarea disabled
+                    style={{visibility: 'hidden'}}
+                    id={selector}
+                    value={editorState && draftToHtml(convertToRaw(editorState.getCurrentContent()))}/>
+        </div>
       </div>
 
   );

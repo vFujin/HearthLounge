@@ -53,21 +53,24 @@ export class DeckOptions extends Component {
             <div className="section__body">
               <form className="inline section__body--background">
                 <div className="section__body--upperContainer">
-                  <Input id="deck_title"
-                         type="text"
-                         placeholder="SMOrc huntard"
-                         handleInputChange={()=>this.handleInputChange}
-                         value={deckTitle}/>
-                  <FormSelect section="mode" handleSelectChange={(v)=>this.handleSelectChange(v, 'deckType')}/>
-                  <FormSelect section="archetype" hsClass={this.props.params.class} handleSelectChange={(v)=>this.handleSelectChange(v, 'deckArchetype')}/>
+                  <div className="inner inner__left">
+                    <Input id="deck_title"
+                           type="text"
+                           placeholder="SMOrc huntard"
+                           handleInputChange={()=>this.handleInputChange}
+                           value={deckTitle}/>
+                    <FormSelect section="mode" handleSelectChange={(v)=>this.handleSelectChange(v, 'deckType')}/>
+                    <FormSelect section="archetype" hsClass={this.props.params.class} handleSelectChange={(v)=>this.handleSelectChange(v, 'deckArchetype')}/>
+                  </div>
+                    <div className="inner inner__right">
+                      <button type="submit" className="btn-pearl">Submit</button>
+                    </div>
+                </div>
 
-                </div>
-                <div className="text-editor">
-                  <TextEditor editorState={editorState}
-                              handleInputChange={(e)=>this.handleInputChange(e, editorSelector)}
-                              handleEditorImageUpload={(e, file)=>this.handleEditorImageUpload(e, file)}
-                              selector={editorSelector}/>
-                </div>
+                <TextEditor editorState={editorState}
+                            handleInputChange={(e)=>this.handleInputChange(e, editorSelector)}
+                            handleEditorImageUpload={(e, file)=>this.handleEditorImageUpload(e, file)}
+                            selector={editorSelector}/>
               </form>
             </div>
           </div>

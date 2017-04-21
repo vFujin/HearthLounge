@@ -363,6 +363,9 @@ a:active, a:hover, a:link, a:visited {
         display: grid;
         grid-template-rows: 25% 75%;
         height: 100%; }
+      #container .container__page .content form .section__body--upperContainer {
+        display: grid;
+        grid-template-columns: 75% 25%; }
     #container .container__page .container__class-selection {
       display: grid;
       grid-template-rows: 4vh auto; }
@@ -3309,6 +3312,21 @@ footer {
     .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options span:hover {
       color: #E7E2DA;
       background: #474143; }
+.create-deck .container__page--right form .section__body--upperContainer {
+  display: flex; }
+  .create-deck .container__page--right form .section__body--upperContainer .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%; }
+  .create-deck .container__page--right form .section__body--upperContainer .inner__right {
+    align-self: flex-start;
+    display: flex;
+    width: 100%;
+    align-items: flex-end; }
+    .create-deck .container__page--right form .section__body--upperContainer .inner__right button {
+      width: 50%;
+      padding: 7px 0; }
 
 .pageContainer.forum {
   width: calc(100% - 20px); }

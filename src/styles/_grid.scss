@@ -120,6 +120,10 @@
           grid-template-rows: 25% 75%;
           height: 100%;
         }
+        .section__body--upperContainer{
+          display: grid;
+          grid-template-columns: 75% 25%;
+        }
       }
     }
     .container__class-selection {
