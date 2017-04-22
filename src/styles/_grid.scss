@@ -115,11 +115,7 @@
       form{
         display: grid;
         grid-template-rows: 20vh auto;
-        .editor-wrapper{
-          display: grid;
-          grid-template-rows: 25% 75%;
-          height: 100%;
-        }
+        grid-row-gap: 1vh;
         .section__body--upperContainer{
           display: grid;
           grid-template-columns: 60% 40%;

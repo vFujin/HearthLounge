@@ -1514,6 +1514,8 @@ footer{
     form{
       .section__body--upperContainer{
         display: flex;
+        border-bottom: 1px solid $light-grey;
+        padding-bottom: 1vh;
         .inner{
           display: flex;
           flex-direction:column;
@@ -1526,7 +1528,7 @@ footer{
         }
         .inner__left {
           border: 1px solid $light-grey;
-          margin-bottom: 1vh;
+
           padding: 1vh;
           .input-wrapper {
             display: flex;
@@ -1908,7 +1910,6 @@ footer{
       .sign {
         align-self: center;
       }
-
     }
     .breakline{
       height: 100%;

@@ -81,11 +81,7 @@ class DeckOptions extends Component {
                     </div>
                 </div>
 
-                <TextEditor editorState={this.props.deckText}
-                            handleInputChange={this.handleInputChange}
-                            // handleEditorImageUpload={(e, file)=>this.handleEditorImageUpload(e, file)}
-                            selector={editorSelector}
-                            placeholder={this.props.deckText}/>
+                <TextEditor/>
               </form>
             </div>
           </div>
