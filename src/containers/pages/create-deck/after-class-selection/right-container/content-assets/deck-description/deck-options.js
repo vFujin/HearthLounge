@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 import TextEditor from '../../../../../../shared-assets/editor/text-editor';
 import FormSelect from './select';
 import 'antd/lib/select/style/css';
-export class DeckOptions extends Component {
+import _ from 'lodash';
+import {connect} from 'react-redux';
+
+class DeckOptions extends Component {
   constructor(props){
     super(props);
 
@@ -16,13 +19,9 @@ export class DeckOptions extends Component {
   }
 
 
-  handleInputChange(editorState, selector) {
-    let textarea = document.getElementById(selector).value;
-    this.setState({
-      editorState,
-      deckDescription: textarea
-    })
-  }
+  handleInputChange = (editorState) => {
+    this.props.updateDeckText(editorState);
+  };
 
   handleSelectChange(v, selector){
     this.setState({
@@ -36,6 +35,17 @@ export class DeckOptions extends Component {
     //       resolve({data: {link: 'none'}});
     //     }
     // )
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    // return this.state.deckDescription !== nextState.deckDescription ? true : false;
+    _.map(nextState, (state, key)=>{
+      if(state !== this.state[key]){
+        console.log(`${key} != `);
+        console.log('new: ', state);
+        console.log('old: ', this.state[key])
+      }
+    }); return true;
   }
 
 
@@ -58,21 +68,24 @@ export class DeckOptions extends Component {
                       <input id="deck_title"
                              type="text"
                              placeholder="Deck title i.e SMOrc hunter"
-                             onChange={()=>this.handleInputChange}
+                             onChange={this.handleInputChange}
                              value={deckTitle}/>
                     </div>
-                    <FormSelect section="mode" handleSelectChange={(v)=>this.handleSelectChange(v, 'deckType')}/>
-                    <FormSelect section="archetype" hsClass={this.props.params.class} handleSelectChange={(v)=>this.handleSelectChange(v, 'deckArchetype')}/>
+                    <FormSelect section="mode"
+                                handleSelectChange={this.handleSelectChange}/>
+                    <FormSelect section="archetype" hsClass={this.props.params.class}
+                                handleSelectChange={this.handleSelectChange}/>
                   </div>
                     <div className="inner inner__right">
                       <button type="submit" className="btn-pearl">Submit</button>
                     </div>
                 </div>
 
-                <TextEditor editorState={editorState}
-                            handleInputChange={(e)=>this.handleInputChange(e, editorSelector)}
-                            handleEditorImageUpload={(e, file)=>this.handleEditorImageUpload(e, file)}
-                            selector={editorSelector}/>
+                <TextEditor editorState={this.props.deckText}
+                            handleInputChange={this.handleInputChange}
+                            // handleEditorImageUpload={(e, file)=>this.handleEditorImageUpload(e, file)}
+                            selector={editorSelector}
+                            placeholder={this.props.deckText}/>
               </form>
             </div>
           </div>
@@ -83,10 +96,25 @@ export class DeckOptions extends Component {
               <h1>Preview</h1>
             </div>
             <div className="section__body">
-              {deckDescription}
+              {}
             </div>
           </div>
         </div>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    deckText: state.deckOptions.deckText
+  }
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateDeckText: (deckText) => dispatch({
+      type: 'SET_DECK_TEXT',
+      deckText
+    })
+  }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(DeckOptions)

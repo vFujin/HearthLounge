@@ -1771,7 +1771,7 @@ form .text-editor {
           content: '';
           position: absolute;
           top: 25%;
-          width: calc(100% - 20px);
+          width: calc(100% - 10px);
           border-bottom: 1px solid #A69E9D; }
         form .text-editor .mothership .editor-wrapper .toolbar div {
           align-items: center; }

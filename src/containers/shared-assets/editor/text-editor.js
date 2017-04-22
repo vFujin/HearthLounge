@@ -4,7 +4,8 @@ import { Editor } from 'react-draft-wysiwyg';
 import { convertToRaw } from 'draft-js'
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-const TextEditor = ({editorState, handleInputChange, selector, handleEditorImageUpload}) => {
+const TextEditor = ({placeholder, editorState, handleInputChange, selector, handleEditorImageUpload}) => {
+
 
   const toolbar = {
     options: ['inline', 'blockType', 'fontSize', 'list', 'textAlign', 'link', 'embedded', 'image', 'history'],
@@ -38,7 +39,8 @@ const TextEditor = ({editorState, handleInputChange, selector, handleEditorImage
           <textarea disabled
                     style={{visibility: 'hidden'}}
                     id={selector}
-                    value={editorState && draftToHtml(convertToRaw(editorState.getCurrentContent()))}/>
+                    value={editorState && draftToHtml(convertToRaw(editorState.getCurrentContent()))}
+          />
         </div>
       </div>
 

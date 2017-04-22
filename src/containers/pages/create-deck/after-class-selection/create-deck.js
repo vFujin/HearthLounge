@@ -85,7 +85,7 @@ export class CreateDeckClassSelected extends Component {
 
   handleSidebarViewChange(e){
     const {filtersView, deckDetails} = this.state;
-    if(e.button === 0 || e.ctrlKey) {
+    if(e.button === 0 ) {
       let isActive = filtersView === false ? true : false;
       this.setState({
         filtersView: isActive
