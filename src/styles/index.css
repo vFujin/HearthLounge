@@ -1777,6 +1777,31 @@ form .button-wrapper {
   display: flex;
   justify-content: flex-start; }
 
+.text-editor .toolbar {
+  display: flex; }
+  .text-editor .toolbar li {
+    border: 1px solid #A69E9D;
+    margin-right: 5px; }
+    .text-editor .toolbar li:last-child {
+      margin-right: 0; }
+    .text-editor .toolbar li button {
+      background: transparent;
+      padding: 5px 7px;
+      border: none;
+      outline: none;
+      align-items: center;
+      text-align: center;
+      display: flex; }
+      .text-editor .toolbar li button span {
+        font-size: 16px; }
+.text-editor textarea {
+  width: 100%;
+  color: #E7E2DA;
+  height: 200px;
+  border: 1px solid #A69E9D;
+  background: transparent;
+  margin-top: 1vh; }
+
 .decks .submenu {
   width: 12vw; }
 

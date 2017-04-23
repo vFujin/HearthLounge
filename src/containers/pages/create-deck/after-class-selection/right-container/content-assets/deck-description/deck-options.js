@@ -19,8 +19,23 @@ class DeckOptions extends Component {
   }
 
 
-  handleInputChange = (editorState) => {
-    this.props.updateDeckText(editorState);
+  handleInputChange = (e) => {
+    this.props.updateDeckText(e.target.value);
+  };
+
+  handleBBCodeClick = (e) =>{
+    e.preventDefault();
+    let value = e.currentTarget.value;
+    let selector = this.props.deckText || '';
+
+    let cursorPosStart = document.getElementById('textarea').selectionStart;
+    let cursorPosEnd = document.getElementById('textarea').selectionEnd;
+
+    let start = selector.substr(0, cursorPosStart);
+    let selection = selector.substr(cursorPosStart, cursorPosEnd - cursorPosStart);
+    let end = selector.substr(cursorPosEnd);
+
+    this.props.updateDeckText(start + `[${value}]` + selection + `[/${value}]` + end);
   };
 
   handleSelectChange(v, selector){
@@ -29,13 +44,6 @@ class DeckOptions extends Component {
     })
   }
 
-  handleEditorImageUpload(file){
-    // return new Promise(
-    //     (resolve, reject)=>{
-    //       resolve({data: {link: 'none'}});
-    //     }
-    // )
-  }
 
   shouldComponentUpdate(nextProps, nextState){
     // return this.state.deckDescription !== nextState.deckDescription ? true : false;
@@ -50,8 +58,7 @@ class DeckOptions extends Component {
 
 
   render() {
-    const {deckTitle, deckDescription, editorState} = this.state;
-    const editorSelector = 'deckDescription';
+    const {deckTitle} = this.state;
     return (
         <div className={this.props.visible ? 'display-none' : 'container__details'}>
           <div className="container__details--section container__details--description">
@@ -81,7 +88,9 @@ class DeckOptions extends Component {
                     </div>
                 </div>
 
-                <TextEditor/>
+                <TextEditor handleInputChange={this.handleInputChange}
+                            handleBBCodeClick={this.handleBBCodeClick}
+                            value={this.props.deckText} />
               </form>
             </div>
           </div>
@@ -92,7 +101,7 @@ class DeckOptions extends Component {
               <h1>Preview</h1>
             </div>
             <div className="section__body">
-              {}
+              {this.props.deckText}
             </div>
           </div>
         </div>
@@ -108,8 +117,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateDeckText: (deckText) => dispatch({
-      type: 'SET_DECK_TEXT',
-      deckText
+      type: 'SET_DECK_TEXT', deckText
     })
   }
 };

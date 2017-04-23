@@ -246,8 +246,6 @@ form {
       display: block;
       color: $pearl;
     }
-
-
     input{
       @include transition(all ease .4s);
       margin-bottom: 2vh;
@@ -313,3 +311,37 @@ form {
   }
 }
 
+.text-editor{
+  .toolbar{
+    display: flex;
+    li{
+      border: 1px solid $light-grey;
+      margin-right: 5px;
+
+      &:last-child{
+        margin-right: 0;
+      }
+      button{
+        background: transparent;
+        padding: 5px 7px;
+        border:none;
+        outline:none;
+        align-items: center;
+        text-align: center;
+        display: flex;
+        span{
+          color: $light-grey;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  textarea{
+    width: 100%;
+    color: $pearl;
+    height: 200px;
+    border: 1px solid $light-grey;
+    background: transparent;
+    margin-top: 1vh;
+  }
+}

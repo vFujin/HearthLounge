@@ -3,14 +3,18 @@ import {toolbar} from '../../../data/editor-icons';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 
-const TextEditor = ({handleInputChange, selector}) => {
+const TextEditor = ({handleInputChange, value, handleBBCodeClick}) => {
 
   const mapToolbar = () => {
-    return toolbar.map(item => {
+    return toolbar.map(tool => {
       return (
-          <Tooltip title={_.startCase(item)} placement="bottom">
-            <span className={`hs-icon icon-${item}`}></span>
-          </Tooltip>
+          <li>
+            <Tooltip title={_.startCase(tool.name === 'hs-logo' ? tool.abbreviation : tool.name)} placement="bottom">
+              <button onClick={handleBBCodeClick} value={tool.abbreviation}>
+                <span className={`hs-icon icon-${tool.name}`}></span>
+              </button>
+            </Tooltip>
+          </li>
       )
     });
   };
@@ -20,9 +24,7 @@ const TextEditor = ({handleInputChange, selector}) => {
         <ul className="toolbar">
           {mapToolbar()}
         </ul>
-        <div className="">
-          <textarea></textarea>
-        </div>
+        <textarea id="textarea" value={value} onChange={handleInputChange}></textarea>
       </div>
 
   );
