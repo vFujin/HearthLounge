@@ -18,7 +18,7 @@ export const toolbar = [
   },
   {
     name: 'link',
-    abbreviation: 'a'
+    abbreviation: 'url'
   },
   {
     name: 'quote',

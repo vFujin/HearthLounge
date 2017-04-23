@@ -8,7 +8,7 @@ const TextEditor = ({handleInputChange, value, handleBBCodeClick}) => {
   const mapToolbar = () => {
     return toolbar.map(tool => {
       return (
-          <li>
+          <li key={tool.name}>
             <Tooltip title={_.startCase(tool.name === 'hs-logo' ? tool.abbreviation : tool.name)} placement="bottom">
               <button onClick={handleBBCodeClick} value={tool.abbreviation}>
                 <span className={`hs-icon icon-${tool.name}`}></span>
@@ -24,7 +24,7 @@ const TextEditor = ({handleInputChange, value, handleBBCodeClick}) => {
         <ul className="toolbar">
           {mapToolbar()}
         </ul>
-        <textarea id="textarea" value={value} onChange={handleInputChange}></textarea>
+        <textarea id="textarea" placeholder="Your text goes here..." value={value} onChange={handleInputChange}></textarea>
       </div>
 
   );

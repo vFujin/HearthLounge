@@ -35,7 +35,8 @@ function saveUser(user, username){
       .set({
         email: user.email,
         username: username.toLowerCase(),
-        role: 'user'
+        role: 'user',
+        uid: user.uid
       })
       .then(()=>user)
 }

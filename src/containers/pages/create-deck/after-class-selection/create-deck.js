@@ -44,9 +44,6 @@ export class CreateDeckClassSelected extends Component {
 
   handleDeckMechanicsClick(e){
     let isActive = this.state.deckDetails === false ? true : false;
-    console.log("alt", e.ctrlKey);
-    if(e.keyCode = 8) {
-    }
   }
 
   countCards(card){
@@ -85,7 +82,7 @@ export class CreateDeckClassSelected extends Component {
 
   handleSidebarViewChange(e){
     const {filtersView, deckDetails} = this.state;
-    if(e.button === 0 || e.ctrlKey) {
+    if(e.button === 0) {
       let isActive = filtersView === false ? true : false;
       this.setState({
         filtersView: isActive

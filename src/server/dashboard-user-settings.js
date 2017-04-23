@@ -6,6 +6,7 @@ export function updateEmail(email){
 }
 
 export function updateUserHearthstoneData(uid, battletag, favourite_class, region){
+  console.log(uid);
   return ref.child(`users/${uid}`).update({
     battletag,
     favourite_class,

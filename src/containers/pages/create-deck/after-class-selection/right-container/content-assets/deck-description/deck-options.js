@@ -18,7 +18,11 @@ class DeckOptions extends Component {
     }
   }
 
-
+  shouldComponentUpdate(nextProps){
+    if(nextProps !== this.props.deckText){
+      return true;
+    }
+  }
   handleInputChange = (e) => {
     this.props.updateDeckText(e.target.value);
   };
@@ -35,8 +39,52 @@ class DeckOptions extends Component {
     let selection = selector.substr(cursorPosStart, cursorPosEnd - cursorPosStart);
     let end = selector.substr(cursorPosEnd);
 
-    this.props.updateDeckText(start + `[${value}]` + selection + `[/${value}]` + end);
+    switch(value){
+      case 'url': return this.props.updateDeckText(start + `[${value}][li]` + selection + `[/li][/${value}]` + end);
+      case 'ul':
+      case 'ol':   return this.props.updateDeckText(start + `[${value}][li]` + selection + `[/li][/${value}]` + end);
+      case 'card': return this.props.updateDeckText(start + `[${value}]` + selection + end);
+      case value:  return this.props.updateDeckText(start + `[${value}]` + selection + `[/${value}]` + end);
+    }
   };
+
+  handlePreviewCompiling(text){
+    if(text !== undefined) {
+      let s = text.replace(/</g, '<')
+          .replace(/>/g, '>')
+          .replace(/\(/g, '(')
+          .replace(/\)/g, ')')
+          .replace(/;/g, ';')
+          //affix
+          .replace(/\[b]/g, '<b>')
+          .replace(/\[i]/g, '<i>')
+          .replace(/\[u]/g, '<u>')
+          .replace(/\[s]/g, '<del>')
+          .replace(/\[url]/g, '<a href="">')
+          .replace(/\[q]/g, '<q>')
+          .replace(/\[em]/g, '<iframe src="">')
+          .replace(/\[ul]/g, '<ul><li>')
+          .replace(/\[ol]/g, '<ol><li>')
+          .replace(/\[li]/g, '<li>')
+          .replace(/\[card]/g, '{card name}')
+          //suffix
+          .replace(/\[\/b]/g, '</b>')
+          .replace(/\[\/i]/g, '</i>')
+          .replace(/\[\/u]/g, '</u>')
+          .replace(/\[\/s]/g, '</del>')
+          .replace(/\[\/url]/g, '</a>')
+          .replace(/\[\/q]/g, '</q>')
+          .replace(/\[\/em]/g, '</iframe>')
+          .replace(/\[\/ul]/g, '</li></ul>')
+          .replace(/\[\/ol]/g, '</li></ol>')
+          .replace(/\[\/li]/g, '</li>');
+
+      function createMarkup(){
+        return {__html: s}
+      }
+      return <div dangerouslySetInnerHTML={createMarkup()} />
+    }
+  }
 
   handleSelectChange(v, selector){
     this.setState({
@@ -82,6 +130,14 @@ class DeckOptions extends Component {
                                 handleSelectChange={this.handleSelectChange}/>
                     <FormSelect section="archetype" hsClass={this.props.params.class}
                                 handleSelectChange={this.handleSelectChange}/>
+                    <div className="input-wrapper">
+                      <label htmlFor="mulligan">Mulligans:</label>
+                      <input id="mulligan"
+                             type="text"
+                             placeholder="Deck title i.e SMOrc hunter"
+                             onChange={this.handleInputChange}
+                             value={deckTitle}/>
+                    </div>
                   </div>
                     <div className="inner inner__right">
                       <button type="submit" className="btn-pearl">Submit</button>
@@ -101,7 +157,7 @@ class DeckOptions extends Component {
               <h1>Preview</h1>
             </div>
             <div className="section__body">
-              {this.props.deckText}
+              {this.handlePreviewCompiling(this.props.deckText)}
             </div>
           </div>
         </div>
