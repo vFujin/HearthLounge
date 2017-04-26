@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Cards = ({cards, visible}) =>{
   return(
@@ -11,7 +12,7 @@ const Cards = ({cards, visible}) =>{
 };
 
 Cards.propTypes = {
-  cards: React.PropTypes.object.isRequired
+  cards: PropTypes.array.isRequired
 };
 
 export default Cards;

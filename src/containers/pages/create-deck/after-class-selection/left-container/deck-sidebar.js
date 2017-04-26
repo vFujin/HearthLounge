@@ -14,7 +14,7 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDeta
           <h3>Cards/Mana Cost</h3>
           <ManaCurve deck={deck} max={max}/>
 
-          <h3>Choosen Cards <button className="btn-pearl" onClick={(e)=>handleDeckDetailClick(e)}>More details</button></h3> {/* consider changing btn to icon*/}
+          <h3>Chosen Cards <button className="btn-pearl" onClick={(e)=>handleDeckDetailClick(e)}>More details</button></h3> {/* consider changing btn to icon*/}
           <ChoosenCards deck={deck} countCards={countCards} deckDetails={deckDetails}/>
           <DeckMechanics deck={deck} deckDetails={deckDetails} mechanics={mechanics}/>
         </div>

@@ -1454,6 +1454,8 @@ footer{
 .create-deck {
   .container__page--right {
     .topbar__container{
+      width:100%;
+      display: flex;
       ul{
         display: flex;
         align-items:center;
@@ -1493,12 +1495,15 @@ footer{
         align-items: center;
 
         span {
-          @include transition(all ease .4s);
-          cursor: pointer;
-          font-size: 2vh;
-          padding: 1vh;
+          display: flex;
+          align-items: center;
+          .hs-icon {
+            @include transition(all ease .4s);
+            cursor: pointer;
+            font-size: 2vh;
+            padding: 1vh;
+          }
         }
-
       }
       .topbar__deckDetails--options {
         justify-content: flex-end;
@@ -1510,6 +1515,7 @@ footer{
           }
         }
       }
+
     }
     form{
       .section__body--upperContainer{

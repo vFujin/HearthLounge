@@ -3120,9 +3120,12 @@ footer {
   color: #E7E2DA;
   text-align: center; }
 
-.create-deck .container__page--right .topbar__container ul {
-  display: flex;
-  align-items: center; }
+.create-deck .container__page--right .topbar__container {
+  width: 100%;
+  display: flex; }
+  .create-deck .container__page--right .topbar__container ul {
+    display: flex;
+    align-items: center; }
 .create-deck .container__page--right .topbar__filters {
   align-items: center;
   display: flex;
@@ -3149,14 +3152,17 @@ footer {
   display: flex;
   align-items: center; }
   .create-deck .container__page--right .topbar__deckDetails ul span {
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
-    transition: all ease 0.4s;
-    cursor: pointer;
-    font-size: 2vh;
-    padding: 1vh; }
+    display: flex;
+    align-items: center; }
+    .create-deck .container__page--right .topbar__deckDetails ul span .hs-icon {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      cursor: pointer;
+      font-size: 2vh;
+      padding: 1vh; }
 .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options {
   justify-content: flex-end; }
   .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options span {

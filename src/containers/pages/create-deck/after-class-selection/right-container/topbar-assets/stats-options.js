@@ -1,16 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MapFunctionlessIcons from './map-functionless-icons';
 import MapFunctionfulIcons from './map-functionful-icons';
 
-const StatsOptions = ({deck, filtersNotActive, params, handleDeckSaving}) => {
+const StatsOptions = ({deck, activeClass, handleDeckSaving, filtersActive}) => {
 
   return (
-      <div className={`topbar__container ${filtersNotActive}`}>
-        <MapFunctionlessIcons deck={deck} params={params} set="types" filtersActive={filtersNotActive}/>
+      <div className={`topbar__container topbar__deckDetails`}>
+        <MapFunctionlessIcons deck={deck} activeClass={activeClass} filtersActive={filtersActive} set="types" />
         <div className="deck-length"><p>{deck.length} / 30</p></div>
-        <MapFunctionfulIcons set="options" filtersActive={filtersNotActive} handleDeckSaving={handleDeckSaving}/>
+        <MapFunctionfulIcons set="options" handleDeckSaving={handleDeckSaving}/>
       </div>
   )
+};
+
+StatsOptions.propTypes = {
+  deck: PropTypes.array,
+  activeClass: PropTypes.string.isRequired,
+  handleDeckSaving: PropTypes.func.isRequired
 };
 
 export default StatsOptions;

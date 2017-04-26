@@ -1,23 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StatsOptions from './topbar-assets/stats-options';
 import Filters from './topbar-assets/filters';
 
-const Topbar = ({deck, filtersView, params, query, handleDeckSaving}) => {
-  let filtersActive = !filtersView ? 'topbar__deckDetails' : 'display-none';
-  let filtersNotActive = filtersView ? 'topbar__filters' : 'display-none';
+const Topbar = ({deck, filtersView, activeClass, query, handleDeckSaving}) => {
+
+  const activeView = () =>{
+    return filtersView
+        ? <Filters deck={deck} activeClass={activeClass} query={query} filtersActive={filtersView}/>
+        : <StatsOptions deck={deck} activeClass={activeClass} handleDeckSaving={handleDeckSaving} filtersActive={filtersView}/>
+  };
+
   return (
       <div className="topbar">
-        <Filters deck={deck} filtersNotActive={filtersNotActive} params={params} query={query} />
-        <StatsOptions deck={deck} filtersNotActive={filtersActive} params={params} handleDeckSaving={handleDeckSaving}/>
+        {activeView()}
       </div>
   );
 };
 
 Topbar.propTypes = {
-  deck: React.PropTypes.array.isRequired,
-  filtersView: React.PropTypes.bool,
-  params: React.PropTypes.object,
-  query: React.PropTypes.object
+  deck: PropTypes.array.isRequired,
+  filtersView: PropTypes.bool,
+  params: PropTypes.object,
+  query: PropTypes.object
 };
 
 export default Topbar;

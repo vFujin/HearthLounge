@@ -7,6 +7,7 @@ import 'antd/lib/tooltip/style/css';
 
 import _ from 'lodash';
 
+
 export class CreateDeckClassSelected extends Component {
   constructor(props){
     super(props);
@@ -131,10 +132,10 @@ export class CreateDeckClassSelected extends Component {
                          query={query} />
 
           <RightContainer filtersView={this.state.filtersView}
-                          query={query} params={params}
+                          query={query}
+                          activeClass={params.class}
                           deck={this.state.deck}
                           handleDeckSaving={(e)=>this.handleDeckSaving(e)}
-
                           cards={this.listCards(query)}
                           visible={!this.state.modal}/>
         </div>

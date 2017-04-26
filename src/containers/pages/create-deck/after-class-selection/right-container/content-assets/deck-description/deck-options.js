@@ -18,11 +18,6 @@ class DeckOptions extends Component {
     }
   }
 
-  shouldComponentUpdate(nextProps){
-    if(nextProps !== this.props.deckText){
-      return true;
-    }
-  }
   handleInputChange = (e) => {
     this.props.updateDeckText(e.target.value);
   };
@@ -94,7 +89,6 @@ class DeckOptions extends Component {
 
 
   shouldComponentUpdate(nextProps, nextState){
-    // return this.state.deckDescription !== nextState.deckDescription ? true : false;
     _.map(nextState, (state, key)=>{
       if(state !== this.state[key]){
         console.log(`${key} != `);
@@ -128,7 +122,7 @@ class DeckOptions extends Component {
                     </div>
                     <FormSelect section="mode"
                                 handleSelectChange={this.handleSelectChange}/>
-                    <FormSelect section="archetype" hsClass={this.props.params.class}
+                    <FormSelect section="archetype" hsClass={this.props.activeClass}
                                 handleSelectChange={this.handleSelectChange}/>
                     <div className="input-wrapper">
                       <label htmlFor="mulligan">Mulligans:</label>
