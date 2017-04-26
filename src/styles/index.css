@@ -3138,14 +3138,14 @@ footer {
     font-size: 1.5vw;
     cursor: pointer;
     margin-right: 1vh; }
-.create-deck .container__page--right .topbar__deckDetails div {
+.create-deck .container__page--right .topbar__deckDetails .deck-length {
   display: flex;
   align-items: center;
   background: -moz-linear-gradient(left, rgba(208, 228, 247, 0) 0%, #a69e9d 15%, #474143 50%, #a69e9d 85%, rgba(135, 188, 234, 0) 100%);
   background: -webkit-linear-gradient(left, rgba(208, 228, 247, 0) 0%, #a69e9d 15%, #474143 50%, #a69e9d 85%, rgba(135, 188, 234, 0) 100%);
   background: linear-gradient(to right, rgba(208, 228, 247, 0) 0%, #a69e9d 15%, #474143 50%, #a69e9d 85%, rgba(135, 188, 234, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00d0e4f7', endColorstr='#0087bcea', GradientType=1); }
-  .create-deck .container__page--right .topbar__deckDetails div p {
+  .create-deck .container__page--right .topbar__deckDetails .deck-length p {
     position: relative;
     left: calc(50% - 6vh);
     font-size: 3vh;
@@ -3154,17 +3154,19 @@ footer {
 .create-deck .container__page--right .topbar__deckDetails ul {
   display: flex;
   align-items: center; }
-  .create-deck .container__page--right .topbar__deckDetails ul span {
+  .create-deck .container__page--right .topbar__deckDetails ul li span {
     display: flex;
     align-items: center; }
-    .create-deck .container__page--right .topbar__deckDetails ul span .hs-icon {
+    .create-deck .container__page--right .topbar__deckDetails ul li span.hs-icon {
+      font-size: 2vh; }
+    .create-deck .container__page--right .topbar__deckDetails ul li span span {
+      font-size: 2vh;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
       -ms-transition: all ease 0.4s;
       -o-transition: all ease 0.4s;
       transition: all ease 0.4s;
       cursor: pointer;
-      font-size: 2vh;
       padding: 1vh; }
 .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options {
   justify-content: flex-end; }

@@ -1475,7 +1475,7 @@ footer{
       }
     }
     .topbar__deckDetails {
-      div {
+      .deck-length {
         display: flex;
         align-items: center;
         background: -moz-linear-gradient(left, rgba(208, 228, 247, 0) 0%, rgba(166, 158, 157, 1) 15%, rgba(71, 65, 67, 1) 50%, rgba(166, 158, 157, 1) 85%, rgba(135, 188, 234, 0) 100%);
@@ -1493,15 +1493,19 @@ footer{
       ul {
         display: flex;
         align-items: center;
-
-        span {
-          display: flex;
-          align-items: center;
-          .hs-icon {
-            @include transition(all ease .4s);
-            cursor: pointer;
-            font-size: 2vh;
-            padding: 1vh;
+        li {
+          span {
+            display: flex;
+            align-items: center;
+            &.hs-icon {
+              font-size: 2vh;
+            }
+            span {
+              font-size: 2vh;
+              @include transition(all ease .4s);
+              cursor: pointer;
+              padding: 1vh;
+            }
           }
         }
       }

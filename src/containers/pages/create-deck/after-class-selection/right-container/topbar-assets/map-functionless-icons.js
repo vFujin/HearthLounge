@@ -20,8 +20,8 @@ const MapFunctionlessIcons = ({deck, activeClass, filtersActive, set}) => {
       return topbar_icons(activeClass)[set].map(obj =>
           <li key={obj.icon}>
             <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
-              <span className={`hs-icon icon-${obj.icon}`}></span>
-              <p className={filtersActive ? 'display-none' : ''}>{deckCardTypes(_.upperFirst(obj.title))}</p>
+                <span className={`hs-icon icon-${obj.icon}`}></span>
+                <p className={filtersActive ? 'display-none' : ''}>{deckCardTypes(_.upperFirst(obj.title))}</p>
             </Tooltip>
           </li>);
   };

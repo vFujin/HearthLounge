@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import TextEditor from '../../../../../../shared-assets/editor/text-editor';
-import FormSelect from './select';
+import InnerLeftContainer from './save-deck-assets/about-deck-inner-left-container';
+import InnerRightContainer from './save-deck-assets/about-deck-inner-right-container';
+
 import 'antd/lib/select/style/css';
 import _ from 'lodash';
 import {connect} from 'react-redux';
@@ -87,6 +89,9 @@ class DeckOptions extends Component {
     })
   }
 
+  handleSaveDeckSubmit(e){
+    e.preventDefault;
+  }
 
   shouldComponentUpdate(nextProps, nextState){
     _.map(nextState, (state, key)=>{
@@ -95,7 +100,8 @@ class DeckOptions extends Component {
         console.log('new: ', state);
         console.log('old: ', this.state[key])
       }
-    }); return true;
+    });
+    return true;
   }
 
 
@@ -111,31 +117,11 @@ class DeckOptions extends Component {
             <div className="section__body">
               <form className="inline section__body--background">
                 <div className="section__body--upperContainer">
-                  <div className="inner inner__left">
-                    <div className="input-wrapper">
-                      <label htmlFor="deck_title">Deck title:</label>
-                      <input id="deck_title"
-                             type="text"
-                             placeholder="Deck title i.e SMOrc hunter"
-                             onChange={this.handleInputChange}
-                             value={deckTitle}/>
-                    </div>
-                    <FormSelect section="mode"
-                                handleSelectChange={this.handleSelectChange}/>
-                    <FormSelect section="archetype" hsClass={this.props.activeClass}
-                                handleSelectChange={this.handleSelectChange}/>
-                    <div className="input-wrapper">
-                      <label htmlFor="mulligan">Mulligans:</label>
-                      <input id="mulligan"
-                             type="text"
-                             placeholder="Deck title i.e SMOrc hunter"
-                             onChange={this.handleInputChange}
-                             value={deckTitle}/>
-                    </div>
-                  </div>
-                    <div className="inner inner__right">
-                      <button type="submit" className="btn-pearl">Submit</button>
-                    </div>
+                  <InnerLeftContainer activeClass={this.props.activeClass}
+                                      deckTitle={deckTitle}
+                                      handleInputChange={this.handleInputChange}
+                                      handleSelectChange={this.handleSelectChange}/>
+                  <InnerRightContainer handleSaveDeckSubmit={(e)=>this.handleSaveDeckSubmit(e)}/>
                 </div>
 
                 <TextEditor handleInputChange={this.handleInputChange}
