@@ -137,7 +137,8 @@ export class CreateDeckClassSelected extends Component {
                           deck={this.state.deck}
                           handleDeckSaving={(e)=>this.handleDeckSaving(e)}
                           cards={this.listCards(query)}
-                          visible={!this.state.modal}/>
+                          visible={!this.state.modal}
+                          user={this.props.user}/>
         </div>
     );
   }

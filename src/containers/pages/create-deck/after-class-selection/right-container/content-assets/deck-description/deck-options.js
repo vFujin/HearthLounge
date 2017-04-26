@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AboutDeck from './save-deck-assets/about-deck';
 import Preview from './save-deck-assets/preview';
+import {saveDeck} from '../../../../../../../server/deck-creation';
 import 'antd/lib/select/style/css';
 import {connect} from 'react-redux';
 
@@ -34,10 +35,14 @@ class DeckOptions extends Component {
   }
 
   handleSaveDeckSubmit(e){
-    e.preventDefault;
+    e.preventDefault();
+
+    saveDeck(this.props.user.username, this.state.deckTitle, this.state.deckType, this.state.deckArchetype,
+    this.props.deck, this.props.deckText, this.props.user.uid)
   }
 
   render() {
+    const {updateDeckTitle} = this.props;
     return (
         <div className={this.props.visible ? 'display-none' : 'container__details'}>
           <AboutDeck activeClass={this.props.activeClass}
@@ -56,13 +61,17 @@ class DeckOptions extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    deckText: state.deckOptions.deckText
+    deckText: state.deckOptions.deckText,
+    deckTitle: state.deckOptions.deckTitle
   }
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     updateDeckText: (deckText) => dispatch({
       type: 'SET_DECK_TEXT', deckText
+    }),
+    updateDeckTitle: (deckTitle) => dispatch({
+      type: 'SET_DECK_TITLE', deckTitle
     })
   }
 };

@@ -12,13 +12,13 @@ const AboutDeck = ({activeClass, deckTitle, handleInputChange, handleSelectChang
           <h1>About deck</h1>
         </div>
         <div className="section__body">
-          <form className="inline section__body--background">
+          <form onSubmit={handleSaveDeckSubmit} className="inline section__body--background">
             <div className="section__body--upperContainer">
               <InnerLeftContainer activeClass={activeClass}
                                   deckTitle={deckTitle}
                                   handleInputChange={handleInputChange}
                                   handleSelectChange={handleSelectChange}/>
-              <InnerRightContainer handleSaveDeckSubmit={handleSaveDeckSubmit}/>
+              <InnerRightContainer />
             </div>
 
             <TextEditor handleInputChange={handleInputChange} value={deckText} handleTagInsertion={handleTagInsertion}/>

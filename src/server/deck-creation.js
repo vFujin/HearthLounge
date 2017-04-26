@@ -1,9 +1,7 @@
 import {ref} from '../keys';
-import _ from 'lodash';
 
 export function saveDeck(author, title, type, archetype, deck, description, uid){
-  let deckId = _.uniqueId();
-  return ref.child(`decks/${deckId}`).update({
+  let newDeck =  ref.child(`decks`).push({
     created: + new Date(),
     author,
     title,
@@ -11,11 +9,15 @@ export function saveDeck(author, title, type, archetype, deck, description, uid)
     archetype,
     upvotes: 0,
     downvotes: 0,
-    patch: '',
+    patch: 'ungoro',
     description,
-    deck,
-  })
-    .then(()=>ref.child(`users/${uid}`).update({
-      decks: _.concat(deckId)
-    }));
+    deck
+  });
+
+  let newDeckId = newDeck.key;
+
+  return newDeck.then(()=>ref.child(`users/${uid}/decks`).push({
+        deck: newDeckId
+      })
+    );
 }
