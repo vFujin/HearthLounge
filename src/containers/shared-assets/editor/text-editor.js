@@ -1,16 +1,17 @@
 import React from 'react';
 import {toolbar} from '../../../data/editor-icons';
+import {handleBBCodeClick} from './text-editor-functions';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 
-const TextEditor = ({handleInputChange, value, handleBBCodeClick}) => {
+const TextEditor = ({handleInputChange, value, handleTagInsertion}) => {
 
   const mapToolbar = () => {
     return toolbar.map(tool => {
       return (
           <li key={tool.name}>
             <Tooltip title={_.startCase(tool.name === 'hs-logo' ? tool.abbreviation : tool.name)} placement="bottom">
-              <button onClick={handleBBCodeClick} value={tool.abbreviation}>
+              <button onClick={(e)=>handleBBCodeClick(e, value, handleTagInsertion)} value={tool.abbreviation}>
                 <span className={`hs-icon icon-${tool.name}`}></span>
               </button>
             </Tooltip>
@@ -26,7 +27,6 @@ const TextEditor = ({handleInputChange, value, handleBBCodeClick}) => {
         </ul>
         <textarea id="textarea" placeholder="Your text goes here..." value={value} onChange={handleInputChange}></textarea>
       </div>
-
   );
 };
 

@@ -4,7 +4,7 @@ import TextEditor from '../../../../../../../shared-assets/editor/text-editor';
 import InnerLeftContainer from './about-deck-inner-left-container';
 import InnerRightContainer from './about-deck-inner-right-container';
 
-const AboutDeck = ({activeClass, deckTitle, handleInputChange, handleSelectChange, handleSaveDeckSubmit, handleBBCodeClick, deckText}) =>{
+const AboutDeck = ({activeClass, deckTitle, handleInputChange, handleSelectChange, handleSaveDeckSubmit, deckText, handleTagInsertion}) =>{
   return (
       <div className="container__details--section container__details--description">
         <div className="section__header">
@@ -21,9 +21,7 @@ const AboutDeck = ({activeClass, deckTitle, handleInputChange, handleSelectChang
               <InnerRightContainer handleSaveDeckSubmit={handleSaveDeckSubmit}/>
             </div>
 
-            <TextEditor handleInputChange={handleInputChange}
-                        handleBBCodeClick={handleBBCodeClick}
-                        value={deckText} />
+            <TextEditor handleInputChange={handleInputChange} value={deckText} handleTagInsertion={handleTagInsertion}/>
           </form>
         </div>
       </div>
@@ -32,12 +30,11 @@ const AboutDeck = ({activeClass, deckTitle, handleInputChange, handleSelectChang
 
 AboutDeck.propTypes = {
   activeClass: PropTypes.string.isRequired,
-  deckTitle: PropTypes.string.isRequired,
-  deckText: PropTypes.string.isRequired,
+  deckTitle: PropTypes.string,
+  deckText: PropTypes.string,
   handleInputChange: PropTypes.func.isRequired,
   handleSelectChange: PropTypes.func.isRequired,
-  handleSaveDeckSubmit: PropTypes.func.isRequired,
-  handleBBCodeClick: PropTypes.func.isRequired
+  handleSaveDeckSubmit: PropTypes.func.isRequired
 };
 
 export default AboutDeck;

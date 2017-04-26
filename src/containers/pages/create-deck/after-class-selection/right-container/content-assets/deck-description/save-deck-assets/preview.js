@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {handlePreviewCompiling} from '../../../../../../../shared-assets/editor/text-editor-functions';
 
-const Preview = ({deckText, handlePreviewCompiling}) =>{
+const Preview = ({deckText}) =>{
   return (
       <div className="container__details--section container__details--description">
         <div className="section__header">
@@ -16,8 +17,7 @@ const Preview = ({deckText, handlePreviewCompiling}) =>{
 };
 
 Preview.propTypes = {
-  deckText: PropTypes.string.isRequired,
-  handlePreviewCompiling: PropTypes.func.isRequired
+  deckText: PropTypes.string
 };
 
 export default Preview;
