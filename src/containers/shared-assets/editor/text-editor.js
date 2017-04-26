@@ -4,7 +4,7 @@ import {handleBBCodeClick} from './text-editor-functions';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 
-const TextEditor = ({handleInputChange, value, handleTagInsertion}) => {
+const TextEditor = ({handleInputChange, id, value, handleTagInsertion}) => {
 
   const mapToolbar = () => {
     return toolbar.map(tool => {
@@ -25,7 +25,7 @@ const TextEditor = ({handleInputChange, value, handleTagInsertion}) => {
         <ul className="toolbar">
           {mapToolbar()}
         </ul>
-        <textarea id="textarea" placeholder="Your text goes here..." value={value} onChange={handleInputChange}></textarea>
+        <textarea id={id} placeholder="Your text goes here..." value={value} onChange={handleInputChange}></textarea>
       </div>
   );
 };

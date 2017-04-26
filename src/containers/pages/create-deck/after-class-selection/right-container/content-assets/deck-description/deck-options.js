@@ -5,53 +5,68 @@ import {saveDeck} from '../../../../../../../server/deck-creation';
 import 'antd/lib/select/style/css';
 import {connect} from 'react-redux';
 
+// const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetype, deckText,  updateDeckProperty, visible}) => {
+//
+//   const handleInputChange = (e) => {
+//     let target = e.currentTarget.id;
+//     let value = e.target.value;
+//     updateDeckProperty({[target]: value});
+//   };
+//
+//   const handleSelectChange = (v) => {
+//
+//   };
+//
+//   const handleSaveDeckSubmit = (e) => {
+//     e.preventDefault();
+//     saveDeck(activeClass, user.username, deckTitle, deckType, deckArchetype, deck, deckText, user.uid);
+//   };
+//
+//   return (
+//       <div className={visible ? 'display-none' : 'container__details'}>
+//         <AboutDeck activeClass={activeClass}
+//                    deckTitle={deckTitle}
+//                    deckText={deckText}
+//                    handleInputChange={handleInputChange}
+//                    handleSelectChange={handleSelectChange}
+//                    handleSaveDeckSubmit={(e) => handleSaveDeckSubmit(e)}
+//                    handleTagInsertion={updateDeckProperty}/>
+//         <Preview deckText={deckText}/>
+//
+//       </div>
+//   )
+// };
+
 class DeckOptions extends Component {
-  constructor(props){
-    super(props);
 
-    this.state={
-      deckTitle: '',
-      deckType: '',
-      deckArchetype: '',
-      deckDescription: '',
-      editorState: ''
-    }
-  }
-
-  shouldComponentUpdate(nextProps) {
-    if (nextProps !== this.props.deckText) {
-      return true;
-    }
-  }
-
+  // componentWillUpdate(nextProps){
+  //   console.log(nextProps);
+  // }
   handleInputChange = (e) => {
-    this.props.updateDeckText(e.target.value);
+    let target = e.currentTarget.id;
+    let value = e.target.value;
+    this.props.updateDeckProperty({[target]: value});
   };
 
-  handleSelectChange(v, selector){
-    this.setState({
-      [selector]: v
-    })
-  }
+  handleSelectChange = (v) => {
 
-  handleSaveDeckSubmit(e){
+  };
+
+  handleSaveDeckSubmit = (e) => {
     e.preventDefault();
-
-    saveDeck(this.props.user.username, this.state.deckTitle, this.state.deckType, this.state.deckArchetype,
-    this.props.deck, this.props.deckText, this.props.user.uid)
-  }
+    // saveDeck(this.props.activeClass, this.props.user.username, deckTitle, deckType, deckArchetype, deck, deckText, user.uid);
+  };
 
   render() {
-    const {updateDeckTitle} = this.props;
     return (
         <div className={this.props.visible ? 'display-none' : 'container__details'}>
           <AboutDeck activeClass={this.props.activeClass}
-                     deckTitle={this.state.deckTitle}
+                     deckTitle={this.props.deckTitle}
                      deckText={this.props.deckText}
                      handleInputChange={this.handleInputChange}
                      handleSelectChange={this.handleSelectChange}
-                     handleSaveDeckSubmit={(e)=>this.handleSaveDeckSubmit(e)}
-                     handleTagInsertion={this.props.updateDeckText}/>
+                     handleSaveDeckSubmit={(e) => this.handleSaveDeckSubmit(e)}
+                     handleTagInsertion={this.props.updateDeckProperty}/>
           <Preview deckText={this.props.deckText}/>
 
         </div>
@@ -60,19 +75,17 @@ class DeckOptions extends Component {
 }
 
 const mapStateToProps = (state) => {
+  const {deckTitle, deckText} = state.deckOptions;
   return {
-    deckText: state.deckOptions.deckText,
-    deckTitle: state.deckOptions.deckTitle
+    deckTitle, deckText
   }
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDeckText: (deckText) => dispatch({
-      type: 'SET_DECK_TEXT', deckText
-    }),
-    updateDeckTitle: (deckTitle) => dispatch({
-      type: 'SET_DECK_TITLE', deckTitle
+    updateDeckProperty: (props) => dispatch({
+      type: 'EDIT_DECK_PROPERTY', props
     })
   }
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(DeckOptions)

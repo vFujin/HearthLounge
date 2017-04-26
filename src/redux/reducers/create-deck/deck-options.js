@@ -1,13 +1,15 @@
 export default function(state={}, action){
   switch(action.type){
-    case 'SET_DECK_TEXT': return {
-        ...state,
-        deckText: action.deckText
+    case 'EDIT_DECK_PROPERTY': return {
+      ...state,
+      ...action.props
     };
-    case 'SET_DECK_TITLE': return {
-        ...state,
-        deckTitle: action.deckTitle
-    }
+    case 'SET_DECK_TEXT': return {
+      ...state,
+      deckText: action.deckText
+    };
+
+
   }
   return state;
 }

@@ -21,7 +21,7 @@ const AboutDeck = ({activeClass, deckTitle, handleInputChange, handleSelectChang
               <InnerRightContainer />
             </div>
 
-            <TextEditor handleInputChange={handleInputChange} value={deckText} handleTagInsertion={handleTagInsertion}/>
+            <TextEditor id="deckText" handleInputChange={handleInputChange} value={deckText} handleTagInsertion={handleTagInsertion}/>
           </form>
         </div>
       </div>

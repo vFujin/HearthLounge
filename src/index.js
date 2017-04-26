@@ -5,7 +5,7 @@ import './styles/index.css';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import rootReducer from './redux/reducers/index';
-let store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+let store = createStore(rootReducer);
 
 ReactDOM.render(
     <Provider store={store}>
