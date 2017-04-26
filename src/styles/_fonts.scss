@@ -26,6 +26,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-hall-of-fame:before {
+  content: "\e93b";
+}
+.icon-copy:before {
+  content: "\e937";
+}
 .icon-download:before {
   content: "\e960";
 }
@@ -94,9 +100,6 @@
 }
 .icon-journey-to-ungoro:before {
   content: "\e938";
-}
-.icon-hall-of-fame:before {
-  content: "\e939";
 }
 .icon-minions:before {
   content: "\e91d";
@@ -261,7 +264,7 @@
   content: "\e936";
 }
 .icon-warrior:before {
-  content: "\e937";
+  content: "\e939";
 }
 .icon-wild:before {
   content: "\e93a";
