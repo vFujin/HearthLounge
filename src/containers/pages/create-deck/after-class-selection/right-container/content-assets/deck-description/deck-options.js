@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import TextEditor from '../../../../../../shared-assets/editor/text-editor';
-import InnerLeftContainer from './save-deck-assets/about-deck-inner-left-container';
-import InnerRightContainer from './save-deck-assets/about-deck-inner-right-container';
-
+import AboutDeck from './save-deck-assets/about-deck';
+import Preview from './save-deck-assets/preview';
 import 'antd/lib/select/style/css';
 import _ from 'lodash';
 import {connect} from 'react-redux';
@@ -18,6 +16,17 @@ class DeckOptions extends Component {
       deckDescription: '',
       editorState: ''
     }
+  }
+
+  shouldComponentUpdate(nextProps){
+    _.map(nextState, (state, key)=>{
+      if(state !== this.state[key]){
+        console.log(`${key} != `);
+        console.log('new: ', state);
+        console.log('old: ', this.state[key])
+      }
+    });
+    return true;
   }
 
   handleInputChange = (e) => {
@@ -93,53 +102,22 @@ class DeckOptions extends Component {
     e.preventDefault;
   }
 
-  shouldComponentUpdate(nextProps, nextState){
-    _.map(nextState, (state, key)=>{
-      if(state !== this.state[key]){
-        console.log(`${key} != `);
-        console.log('new: ', state);
-        console.log('old: ', this.state[key])
-      }
-    });
-    return true;
-  }
+
 
 
   render() {
-    const {deckTitle} = this.state;
     return (
         <div className={this.props.visible ? 'display-none' : 'container__details'}>
-          <div className="container__details--section container__details--description">
-            <div className="section__header">
-              <div className="line"></div>
-              <h1>About deck</h1>
-            </div>
-            <div className="section__body">
-              <form className="inline section__body--background">
-                <div className="section__body--upperContainer">
-                  <InnerLeftContainer activeClass={this.props.activeClass}
-                                      deckTitle={deckTitle}
-                                      handleInputChange={this.handleInputChange}
-                                      handleSelectChange={this.handleSelectChange}/>
-                  <InnerRightContainer handleSaveDeckSubmit={(e)=>this.handleSaveDeckSubmit(e)}/>
-                </div>
+          <AboutDeck activeClass={this.props.activeClass}
+                     deckTitle={this.state.deckTitle}
+                     deckText={this.props.deckText}
+                     handleInputChange={this.handleInputChange}
+                     handleSelectChange={this.handleSelectChange}
+                     handleSaveDeckSubmit={this.handleSaveDeckSubmit}
+                     handleBBCodeClick={this.handleBBCodeClick}/>
+          <Preview deckText={this.props.deckText}
+                   handlePreviewCompiling={this.handlePreviewCompiling}/>
 
-                <TextEditor handleInputChange={this.handleInputChange}
-                            handleBBCodeClick={this.handleBBCodeClick}
-                            value={this.props.deckText} />
-              </form>
-            </div>
-          </div>
-
-          <div className="container__details--section container__details--description">
-            <div className="section__header">
-              <div className="line"></div>
-              <h1>Preview</h1>
-            </div>
-            <div className="section__body">
-              {this.handlePreviewCompiling(this.props.deckText)}
-            </div>
-          </div>
         </div>
     )
   }
