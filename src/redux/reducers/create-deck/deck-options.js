@@ -4,10 +4,6 @@ export default function(state={}, action){
       ...state,
       ...action.props
     };
-    case 'SET_DECK_TEXT': return {
-      ...state,
-      deckText: action.deckText
-    };
 
 
   }

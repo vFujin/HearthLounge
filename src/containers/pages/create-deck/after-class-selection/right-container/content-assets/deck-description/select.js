@@ -13,14 +13,15 @@ const FormSelect = ({hsClass, section, handleSelectChange}) =>{
   ));
 
   return(
-      <div className="select-wrapper">
+      <div className="select-wrapper" id="foo">
         <label htmlFor="">Select {section}:</label>
         <Select showSearch
                 notFoundContent="Not Found"
                 style={{ width: '50%' }}
                 optionFilterProp="children"
                 defaultValue={section==="archetype" ? `${firstVal} ${hsClass}` : firstVal }
-                onChange={handleSelectChange}
+                onChange={(e)=>handleSelectChange(e, section)}
+
                 filterOption={(input, option) => option.props.value.toLowerCase().indexOf(input.toLowerCase()) >= 0}>
           {options}
         </Select>

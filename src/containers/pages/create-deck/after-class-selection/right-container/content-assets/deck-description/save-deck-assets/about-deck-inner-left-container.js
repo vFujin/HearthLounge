@@ -13,7 +13,7 @@ const InnerLeftContainer = ({activeClass, deckTitle, handleInputChange, handleSe
                  onChange={handleInputChange}
                  value={deckTitle}/>
         </div>
-        <FormSelect section="mode" handleSelectChange={handleSelectChange}/>
+        <FormSelect section="type" handleSelectChange={handleSelectChange}/>
         <FormSelect section="archetype" hsClass={activeClass} handleSelectChange={handleSelectChange}/>
         <div className="input-wrapper">
           <label htmlFor="mulligan">Mulligans:</label>

@@ -1,22 +1,22 @@
 import React from 'react';
-export const handleBBCodeClick = (e, textContainer, handleTagInsertion) =>{
+export const handleBBCodeClick = (e, textContainer, handleTagInsertion, id) =>{
   e.preventDefault();
   let value = e.currentTarget.value;
   let selector = textContainer || '';
 
-  let cursorPosStart = document.getElementById('textarea').selectionStart;
-  let cursorPosEnd = document.getElementById('textarea').selectionEnd;
+  let cursorPosStart = document.getElementById(id).selectionStart;
+  let cursorPosEnd = document.getElementById(id).selectionEnd;
 
   let start = selector.substr(0, cursorPosStart);
   let selection = selector.substr(cursorPosStart, cursorPosEnd - cursorPosStart);
   let end = selector.substr(cursorPosEnd);
 
   switch(value){
-    case 'url': return handleTagInsertion(start + `[${value}][li]` + selection + `[/li][/${value}]` + end);
+    case 'url': return handleTagInsertion({[id]: start + `[${value}][li]` + selection + `[/li][/${value}]` + end});
     case 'ul':
-    case 'ol':   return handleTagInsertion(start + `[${value}][li]` + selection + `[/li][/${value}]` + end);
-    case 'card': return handleTagInsertion(start + `[${value}]` + selection + end);
-    case value:  return handleTagInsertion(start + `[${value}]` + selection + `[/${value}]` + end);
+    case 'ol':   return handleTagInsertion({[id]: start + `[${value}][li]` + selection + `[/li][/${value}]` + end});
+    case 'card': return handleTagInsertion({[id]: start + `[${value}]` + selection + end});
+    case value:  return handleTagInsertion({[id]: start + `[${value}]` + selection + `[/${value}]` + end});
   }
 };
 

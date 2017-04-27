@@ -11,7 +11,7 @@ const TextEditor = ({handleInputChange, id, value, handleTagInsertion}) => {
       return (
           <li key={tool.name}>
             <Tooltip title={_.startCase(tool.name === 'hs-logo' ? tool.abbreviation : tool.name)} placement="bottom">
-              <button onClick={(e)=>handleBBCodeClick(e, value, handleTagInsertion)} value={tool.abbreviation}>
+              <button onClick={(e)=>handleBBCodeClick(e, value, handleTagInsertion, id)} value={tool.abbreviation}>
                 <span className={`hs-icon icon-${tool.name}`}></span>
               </button>
             </Tooltip>
