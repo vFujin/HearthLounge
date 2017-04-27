@@ -1,18 +1,18 @@
 import {ref} from '../keys';
 
-export function saveDeck(className, author, title, type, archetype, deck, description, uid){
+export function saveDeck(hsClass, author, title, type, archetype, deck, description, uid){
   let newDeck =  ref.child(`decks`).push({
     created: + new Date(),
     upvotes: 0,
     downvotes: 0,
     patch: 'ungoro',
-    className,
+    hsClass,
     author,
     title,
     type,
     archetype,
-    description,
-    deck
+    deck,
+    description
   });
 
   let newDeckId = newDeck.key;

@@ -4,7 +4,7 @@ import TextEditor from '../../../../../../../shared-assets/editor/text-editor';
 import InnerLeftContainer from './about-deck-inner-left-container';
 import InnerRightContainer from './about-deck-inner-right-container';
 
-const AboutDeck = ({activeClass, deckTitle, handleInputChange, handleSelectChange, handleSaveDeckSubmit, deckText, handleTagInsertion}) =>{
+const AboutDeck = ({activeClass, deckTitle, deckType, deckArchetype, handleInputChange, handleSelectChange, handleSaveDeckSubmit, deckText, handleTagInsertion}) =>{
   return (
       <div className="container__details--section container__details--description">
         <div className="section__header">
@@ -16,6 +16,8 @@ const AboutDeck = ({activeClass, deckTitle, handleInputChange, handleSelectChang
             <div className="section__body--upperContainer">
               <InnerLeftContainer activeClass={activeClass}
                                   deckTitle={deckTitle}
+                                  deckType={deckType}
+                                  deckArchetype={deckArchetype}
                                   handleInputChange={handleInputChange}
                                   handleSelectChange={handleSelectChange}/>
               <InnerRightContainer />

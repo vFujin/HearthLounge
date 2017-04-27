@@ -21,7 +21,7 @@ const InnerLeftContainer = ({activeClass, deckTitle, handleInputChange, handleSe
                  type="text"
                  placeholder="Deck title i.e SMOrc hunter"
                  onChange={handleInputChange}
-                 value={deckTitle}/>
+                 value="random mulligans"/>
         </div>
       </div>
   )
