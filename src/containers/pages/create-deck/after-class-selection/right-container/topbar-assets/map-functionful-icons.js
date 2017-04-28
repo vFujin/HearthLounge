@@ -13,6 +13,7 @@ const MapFunctionfulIcons = ({set, handleOptionsClick}) => {
           <Tooltip key={obj.title} title={obj.title} placement="bottom">
             <span className={`hs-icon icon-${obj.icon}`}></span>
           </Tooltip>
+          <div className="">foo</div>
         </li>)
   };
 

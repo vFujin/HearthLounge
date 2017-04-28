@@ -2,7 +2,8 @@ const initialState = {
   filters: false,
   editingTool: false,
   deckMechanics: false,
-  deck: []
+  deck: [],
+  summarizedDeck: []
 };
 
 export default function(state=initialState, action){
@@ -21,11 +22,8 @@ export default function(state=initialState, action){
     };
     case 'EDIT_DECK': return {
       ...state,
-      deck: action.deck
-    };
-    case 'SHOW_CARD_TOOLTIP': return {
-      ...state,
-      ...action.card
+      deck: action.deck,
+      summarizedDeck: action.summarizedDeck
     };
     default: return state;
   }

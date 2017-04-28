@@ -9,9 +9,10 @@ import _ from 'lodash';
 import domtoimage from 'dom-to-image';
 
 const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, faction, filters, location, mechanics,
-name, params, race, showDeckEditingTool, showCardTooltip, toggleDeckMechanics, toggleFilters, type, user}) => {
+name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, type, user}) => {
 
   const query = location.query;
+
 
   const countUniqueCards = (card) => {
     return _.filter(deck, {cardId: card.cardId}).length;
@@ -20,10 +21,8 @@ name, params, race, showDeckEditingTool, showCardTooltip, toggleDeckMechanics, t
   const handleCardClick = (e, card) => {
     e.preventDefault();
     let ifLegendary = card.rarity !== "Legendary" ? countUniqueCards(card) < 2 : countUniqueCards(card) < 1;
-
     if (e.button === 0 && ifLegendary && deck.length < 30) {
       editDeck(deck.concat(card));
-      showCardTooltip(card.cardId);
       // this.setState({
       //   [`${card.cardId}_tooltip`]: true
       // });
@@ -42,10 +41,24 @@ name, params, race, showDeckEditingTool, showCardTooltip, toggleDeckMechanics, t
 
 
   const showCardCountTooltip = (card, visibleClass, defaultClass) => {
-    return
+    // return
   };
 
+  const toggleCardAmountTooltip = (card) => {
+    const CardTooltip = () =>{
+      return (
+          <div className="tooltip-count">
+              <span>
+                {countUniqueCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
+              </span>
+          </div>
+      )
+    };
 
+    return (
+        deck.filter(c => c.cardId === card.cardId).length > 0 ? <CardTooltip /> : null
+    )
+  };
 
   const listCards = () => {
     if (cards < 1) {
@@ -58,11 +71,7 @@ name, params, race, showDeckEditingTool, showCardTooltip, toggleDeckMechanics, t
                   <li key={card.cardId}
                       onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
                       onClick={deck ? (e) => handleCardClick(e, card) : null}>
-                    <div className="display-none">
-                      <span>
-                        {countUniqueCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
-                      </span>
-                    </div>
+                    {toggleCardAmountTooltip(card)}
                     <img
                         className={`${showCardCountTooltip(card, 'choosen', null)} ${deck.length >= 30 ? "disabled" : ''} `}
                         src={card.img}
@@ -99,21 +108,19 @@ name, params, race, showDeckEditingTool, showCardTooltip, toggleDeckMechanics, t
     toggleDeckMechanics(true);
   };
 
-  const handleOptionsClick = (icon) => {
-    console.log(icon);
-    switch (icon) {
-      case 'link': return;
-      case 'copy': return handleImageCapture();
-      case 'download': return showDeckEditingTool(true);
-    }
+  const handleCopyDeckURLClick = () =>{
+    let json = { ...summarizedDeck},
+        stringifiedJson = JSON.stringify(json);
+
+    console.log(btoa(stringifiedJson))
   };
 
   const handleImageCapture = () =>{
-    let deckList = document.getElementById('decklist-to-canvas');
+    let deckList = document.getElementById('decklist-to-img');
     domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
         .then(dataUrl=>{
           let link = document.createElement('a');
-          link.download = 'my-image-name.jpeg';
+          link.download = 'deck.jpeg';
           link.href = dataUrl;
           link.click();
         })
@@ -122,6 +129,14 @@ name, params, race, showDeckEditingTool, showCardTooltip, toggleDeckMechanics, t
         });
   };
 
+  const handleOptionsClick = (icon) => {
+    console.log(icon);
+    switch (icon) {
+      case 'link': return handleCopyDeckURLClick();
+      case 'copy': return handleImageCapture();
+      case 'download': return showDeckEditingTool(true);
+    }
+  };
 
 
   return (
@@ -156,14 +171,14 @@ name, params, race, showDeckEditingTool, showCardTooltip, toggleDeckMechanics, t
 };
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, deck, card} = state.deckCreation;
+  const {filters, editingTool, deckMechanics, deck, summarizedDeck} = state.deckCreation;
 
   return {
     filters,
     editingTool,
     deckMechanics,
     deck,
-    card
+    summarizedDeck
   };
 };
 
@@ -179,10 +194,7 @@ const mapDispatchToProps = (dispatch) => {
       type: 'TOGGLE_DECK_MECHANICS', deckMechanics
     }),
     editDeck: (deck) => dispatch({
-      type: 'EDIT_DECK', deck
-    }),
-    showCardTooltip: (card) => dispatch({
-      type: 'SHOW_CARD_TOOLTIP', card
+      type: 'EDIT_DECK', deck, summarizedDeck: deck.map(c=>c.cardId)
     })
   }
 };
