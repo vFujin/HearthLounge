@@ -4,11 +4,11 @@ import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
 import 'antd/lib/tooltip/style/css';
-
+import {connect} from 'react-redux';
 import _ from 'lodash';
 
 
-export class CreateDeckClassSelected extends Component {
+class CreateDeckClassSelected extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ export class CreateDeckClassSelected extends Component {
     }
   }
 
-  handleClick(e, card) {
+  handleCardClick(e, card) {
     e.preventDefault();
     let uniqueCard = _.filter(this.state.deck, {cardId: card.cardId});
     let ifLegendary = card.rarity !== "Legendary" ? uniqueCard.length < 2 : uniqueCard.length < 1;
@@ -64,8 +64,8 @@ export class CreateDeckClassSelected extends Component {
         this.props.cards.filter(card=>card.playerClass === _.upperFirst(this.props.params.class) || card.playerClass === "Neutral")
             .map(card =>
                 <li key={card.cardId}
-                    onContextMenu={this.state.deck ? (e) => this.handleClick(e, card) : null}
-                    onClick={this.state.deck ? (e) => this.handleClick(e, card) : null}>
+                    onContextMenu={this.state.deck ? (e) => this.handleCardClick(e, card) : null}
+                    onClick={this.state.deck ? (e) => this.handleCardClick(e, card) : null}>
                   <div className={this.showCardCountTooltip(card, 'tooltip-count', 'display-none')}>
                     <span>
                       {this.countCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
@@ -81,20 +81,20 @@ export class CreateDeckClassSelected extends Component {
     }
   }
 
-  handleSidebarViewChange(e){
-    const {filtersView, deckDetails} = this.state;
-    if(e.button === 0) {
-      let isActive = filtersView === false ? true : false;
-      this.setState({
-        filtersView: isActive
-      });
-    }
-    if(e.altKey) {
-      let isActive = deckDetails === false ? true : false;
-      this.setState({
-        deckDetails: isActive
-      })
-    }
+  handleFiltersToogle(e){
+    this.props.toggleFilters(this.props.filters === false ? true : false)
+    // if(e.button === 0) {
+    //   let isActive = filtersView === false ? true : false;
+    //   this.setState({
+    //     filtersView: isActive
+    //   });
+    // }
+    // if(e.altKey) {
+    //   let isActive = deckDetails === false ? true : false;
+    //   this.setState({
+    //     deckDetails: isActive
+    //   })
+    // }
     // if(e.keyCode > 64 && e.keyCode <= 90){
     //   this.setState({
     //     cards: _.filter(Data, {name: e})
@@ -102,11 +102,20 @@ export class CreateDeckClassSelected extends Component {
     // }
   }
 
-  handleDeckSaving(e){
-    let modalIsActive = this.state.modal === false ? true : false;
-    this.setState({
-      modal: modalIsActive
-    })
+  handleDeckDetailsPage(){
+
+  }
+
+  handleOptionsClick(icon){
+    console.log(icon);
+      switch(icon) {
+        case 'link':
+          return;
+        case 'copy':
+          return;
+        case 'download':
+          return this.handleDeckDetailsPage;
+      }
   }
 
 
@@ -114,9 +123,9 @@ export class CreateDeckClassSelected extends Component {
     const {location, params, name, race, mechanics, faction, type, cards, cardSet} = this.props;
     let query = location.query;
     return (
-        <div tabIndex="0" onKeyDown={(e)=>this.handleSidebarViewChange(e)} className="container__page container__page--twoSided create-deck">
-          <LeftContainer handleSidebarViewChange={(e)=>this.handleSidebarViewChange(e)}
-                         filtersView={this.state.filtersView}
+        <div tabIndex="0" onKeyDown={(e)=>this.handleFiltersToogle(e)} className="container__page container__page--twoSided create-deck">
+          <LeftContainer handleSidebarViewChange={(e)=>this.handleFiltersToogle(e)}
+                         filtersView={this.props.filters}
                          countCards={(e)=>this.countCards(e)}
                          deck={this.state.deck}
                          deckDetails={this.state.deckDetails}
@@ -131,11 +140,11 @@ export class CreateDeckClassSelected extends Component {
                          cardSet={cardSet}
                          query={query} />
 
-          <RightContainer filtersView={this.state.filtersView}
+          <RightContainer filtersView={this.props.filters}
                           query={query}
                           activeClass={params.class}
                           deck={this.state.deck}
-                          handleDeckSaving={(e)=>this.handleDeckSaving(e)}
+                          handleOptionsClick={this.handleOptionsClick}
                           cards={this.listCards(query)}
                           visible={!this.state.modal}
                           user={this.props.user}/>
@@ -143,3 +152,20 @@ export class CreateDeckClassSelected extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) =>{
+  const {filters} = state.deckCreation;
+  return {
+    filters
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleFilters: (filters) => dispatch({
+      type: 'TOGGLE_FILTERS', filters
+    })
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateDeckClassSelected);

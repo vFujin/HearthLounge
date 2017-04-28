@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import AboutDeck from './save-deck-assets/about-deck';
 import Preview from './save-deck-assets/preview';
 import {saveDeck} from '../../../../../../../server/deck-creation';

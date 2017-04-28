@@ -34,7 +34,7 @@ import AdventureBoss from './pages/adventures/assets/adventure-boss';
 
 import CreateDeck from './pages/create-deck/create-deck';
 import {CreateDeckClassSelection} from './pages/create-deck/before-class-selection/class-selection';
-import {CreateDeckClassSelected} from './pages/create-deck/after-class-selection/create-deck';
+import CreateDeckClassSelected from './pages/create-deck/after-class-selection/create-deck';
 
 import {Streams} from './pages/streams/streams';
 import Iframe from './pages/streams/iframe';

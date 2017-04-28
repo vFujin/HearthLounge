@@ -4,8 +4,6 @@ export default function(state={}, action){
       ...state,
       ...action.props
     };
-
-
   }
   return state;
 }
