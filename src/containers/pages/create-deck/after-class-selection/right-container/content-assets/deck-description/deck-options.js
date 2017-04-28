@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AboutDeck from './save-deck-assets/about-deck';
 import Preview from './save-deck-assets/preview';
 import {saveDeck} from '../../../../../../../server/deck-creation';
@@ -27,7 +28,6 @@ const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetyp
     saveDeck(activeClass, user.username, deckTitle, deckType, deckArchetype, deck, deckText, user.uid);
   };
 
-
   return (
       <div className={visible ? 'display-none' : 'container__details'}>
         <AboutDeck activeClass={activeClass}
@@ -44,48 +44,6 @@ const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetyp
       </div>
   )
 };
-
-// class DeckOptions extends Component {
-//   componentWillUpdate(nextProps){
-//     console.log(nextProps)
-//   }
-//
-//   handleInputChange = (e) => {
-//     let target = e.target.id;
-//     let value = e.target.value;
-//     this.props.updateDeckProperty({[target]: value});
-//   };
-//
-//   handleSelectChange = (v, selector) => {
-//     let key= `deck${_.upperFirst(selector)}`;
-//     this.props.updateDeckProperty({[key]: v})
-//   };
-//
-//   handleSaveDeckSubmit = (e) => {
-//     e.preventDefault();
-//     saveDeck(this.props.activeClass, this.props.user.username, this.props.deckTitle, this.props.deckType, this.props.deckArchetype, this.props.deck, this.props.deckText, this.props.user.uid);
-//   };
-//
-// render() {
-//   return (
-//       <div className={this.props.visible ? 'display-none' : 'container__details'}>
-//         <AboutDeck activeClass={this.props.activeClass}
-//                    deckTitle={this.props.deckTitle}
-//                    deckType={this.props.deckType}
-//                    deckArchetype={this.props.deckArchetype}
-//                    deckText={this.props.deckText}
-//                    handleInputChange={this.handleInputChange}
-//                    handleSelectChange={this.handleSelectChange}
-//                    handleSaveDeckSubmit={(e) => this.handleSaveDeckSubmit(e)}
-//                    handleTagInsertion={this.updateDeckProperty}/>
-//         <Preview deckText={this.props.deckText}/>
-//
-//       </div>
-//   )
-// }
-// }
-
-
 
 const mapStateToProps = (state) => {
   const {deckTitle, deckType, deckArchetype, deckText} = state.deckOptions;

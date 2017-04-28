@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FormSelect from '../select';
+import FormSelect from './select';
 
 const InnerLeftContainer = ({activeClass, deckTitle, handleInputChange, handleSelectChange}) =>{
   return(

@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'antd/lib/select';
-import {icon_filters} from '../../../../../../../data/filters';
+import {icon_filters} from '../../../../../../../../data/filters';
 import _ from 'lodash';
 
 const FormSelect = ({hsClass, section, handleSelectChange}) =>{

@@ -14,7 +14,6 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
 
   const query = location.query;
 
-
   const countUniqueCards = (card) => {
     return _.filter(deck, {cardId: card.cardId}).length;
   };
@@ -24,18 +23,10 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     let ifLegendary = card.rarity !== "Legendary" ? countUniqueCards(card) < 2 : countUniqueCards(card) < 1;
     if (e.button === 0 && ifLegendary && deck.length < 30) {
       editDeck(deck.concat(card));
-      // this.setState({
-      //   [`${card.cardId}_tooltip`]: true
-      // });
     }
 
     if (e.button === 2 && countUniqueCards(card) > 0) {
       editDeck(_.filter(deck, (c) => c.cardId !== card.cardId));
-      // this.setState({
-      //
-      //   deck: this.state.deck.filter(function(c){return c.cardId !== card.cardId}),
-      //   [`${card.cardId}_tooltip`]: false
-      // });
     }
   };
 
@@ -82,20 +73,17 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     }
   };
 
-  const handleFiltersToggle = () => {
-    toggleFilters(filters === false ? true : false)
-    // if(e.button === 0) {
-    //   let isActive = filtersView === false ? true : false;
-    //   this.setState({
-    //     filtersView: isActive
-    //   });
+  const handleKeyShortcuts = (e) => {
+    let areDeckMechanicsActive = filters === false ? true : false;
+    let areFiltersActive = deckMechanics === false ? true : false;
+
+    // if(e.ctrlKey) {
+    //   toggleFilters(areFiltersActive)
     // }
-    // if(e.altKey) {
-    //   let isActive = deckDetails === false ? true : false;
-    //   this.setState({
-    //     deckDetails: isActive
-    //   })
+    // if(e.altKey){
+    //   toggleDeckMechanics(areDeckMechanicsActive)
     // }
+
     // if(e.keyCode > 64 && e.keyCode <= 90){
     //   this.setState({
     //     cards: _.filter(Data, {name: e})
@@ -130,19 +118,19 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
   };
 
   const handleOptionsClick = (icon) => {
-    console.log(icon);
+    let isEditingToolActive = editDeck === false ? true : false;
     switch (icon) {
       case 'link': return handleCopyDeckURLClick();
       case 'copy': return handleImageCapture();
-      case 'download': return showDeckEditingTool(true);
+      case 'download': return showDeckEditingTool(isEditingToolActive);
     }
   };
 
 
   return (
-      <div tabIndex="0" onKeyDown={(e) => handleFiltersToggle(e)}
+      <div tabIndex="0" onKeyDown={(e) => handleKeyShortcuts(e)}
            className="container__page container__page--twoSided create-deck">
-        <LeftContainer handleSidebarViewChange={(e) => handleFiltersToggle(e)}
+        <LeftContainer handleSidebarViewChange={(e) => handleKeyShortcuts(e)}
                        filtersView={filters}
                        countCards={(e) => countUniqueCards(e)}
                        deck={deck}
@@ -164,7 +152,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
                         deck={deck}
                         handleOptionsClick={handleOptionsClick}
                         cards={listCards(query)}
-                        visible={true}
+                        visible={editDeck}
                         user={user}/>
       </div>
   );
