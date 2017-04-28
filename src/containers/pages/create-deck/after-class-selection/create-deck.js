@@ -6,10 +6,11 @@ import Loader from '../../../../utils/loader';
 import 'antd/lib/tooltip/style/css';
 import {connect} from 'react-redux';
 import _ from 'lodash';
+import domtoimage from 'dom-to-image';
 
-const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, faction, filters, location,mechanics,
-name, params, props, race, showDeckEditingTool, toggleDeckMechanics, toggleFilters, type, user}) => {
-console.log(deck);
+const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, faction, filters, location, mechanics,
+name, params, race, showDeckEditingTool, showCardTooltip, toggleDeckMechanics, toggleFilters, type, user}) => {
+
   const query = location.query;
 
   const countUniqueCards = (card) => {
@@ -22,6 +23,7 @@ console.log(deck);
 
     if (e.button === 0 && ifLegendary && deck.length < 30) {
       editDeck(deck.concat(card));
+      showCardTooltip(card.cardId);
       // this.setState({
       //   [`${card.cardId}_tooltip`]: true
       // });
@@ -37,14 +39,10 @@ console.log(deck);
     }
   };
 
-  const handleDeckMechanicsToggle = () => {
-    // console.log(this.props.deckMechanics);
-    // let areActive = this.props.deckMechanics === false ? true : false
-    toggleDeckMechanics(true);
-  };
 
-  const showCardCountTooltip = (card, visibleClass, callback) => {
-    // return props[`${card.cardId}_tooltip`] === true ? visibleClass : callback;
+
+  const showCardCountTooltip = (card, visibleClass, defaultClass) => {
+    return
   };
 
 
@@ -60,10 +58,10 @@ console.log(deck);
                   <li key={card.cardId}
                       onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
                       onClick={deck ? (e) => handleCardClick(e, card) : null}>
-                    <div className={showCardCountTooltip(card, 'tooltip-count', 'display-none')}>
-                    <span>
-                      {countUniqueCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
-                    </span>
+                    <div className="display-none">
+                      <span>
+                        {countUniqueCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
+                      </span>
                     </div>
                     <img
                         className={`${showCardCountTooltip(card, 'choosen', null)} ${deck.length >= 30 ? "disabled" : ''} `}
@@ -95,18 +93,36 @@ console.log(deck);
     //   })
     // }
   }
+  const handleDeckMechanicsToggle = () => {
+    // console.log(this.props.deckMechanics);
+    // let areActive = this.props.deckMechanics === false ? true : false
+    toggleDeckMechanics(true);
+  };
 
   const handleOptionsClick = (icon) => {
     console.log(icon);
     switch (icon) {
-      case 'link':
-        return;
-      case 'copy':
-        return;
-      case 'download':
-        return showDeckEditingTool(true);
+      case 'link': return;
+      case 'copy': return handleImageCapture();
+      case 'download': return showDeckEditingTool(true);
     }
   };
+
+  const handleImageCapture = () =>{
+    let deckList = document.getElementById('decklist-to-canvas');
+    domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
+        .then(dataUrl=>{
+          let link = document.createElement('a');
+          link.download = 'my-image-name.jpeg';
+          link.href = dataUrl;
+          link.click();
+        })
+        .catch(error=>{
+          console.error("something went wrong", error)
+        });
+  };
+
+
 
   return (
       <div tabIndex="0" onKeyDown={(e) => handleFiltersToggle(e)}
@@ -140,13 +156,15 @@ console.log(deck);
 };
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, deck} = state.deckCreation;
+  const {filters, editingTool, deckMechanics, deck, card} = state.deckCreation;
+
   return {
     filters,
     editingTool,
     deckMechanics,
-    deck
-  }
+    deck,
+    card
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -162,6 +180,9 @@ const mapDispatchToProps = (dispatch) => {
     }),
     editDeck: (deck) => dispatch({
       type: 'EDIT_DECK', deck
+    }),
+    showCardTooltip: (card) => dispatch({
+      type: 'SHOW_CARD_TOOLTIP', card
     })
   }
 };

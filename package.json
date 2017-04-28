@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "antd": "^2.8.1",
+    "dom-to-image": "^2.5.2",
     "firebase": "^3.7.4",
     "prop-types": "^15.5.8",
+    "rasterizehtml": "^1.2.4",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-redux": "^5.0.4",

@@ -22,7 +22,11 @@ export default function(state=initialState, action){
     case 'EDIT_DECK': return {
       ...state,
       deck: action.deck
-    }
+    };
+    case 'SHOW_CARD_TOOLTIP': return {
+      ...state,
+      ...action.card
+    };
+    default: return state;
   }
-  return state;
 }

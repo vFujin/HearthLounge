@@ -10,7 +10,7 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMech
 
   return (
       <div className={`sidebar__body ${filtersView === false ? 'active' : 'display-none'}`}>
-        <div className="container__mana-curve">
+        <div className="container__mana-curve" id="decklist-to-canvas">
           <h3>Cards/Mana Cost</h3>
           <ManaCurve deck={deck} max={max}/>
 
