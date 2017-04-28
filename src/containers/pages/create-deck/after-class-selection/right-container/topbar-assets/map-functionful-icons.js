@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {topbar_icons} from './icons';
 import Tooltip from 'antd/lib/tooltip';
+import Popover from 'antd/lib/popover';
 
 const MapFunctionfulIcons = ({set, handleOptionsClick}) => {
-
-
 
   const generateSet = () => {
     return topbar_icons(null)[set].map(obj =>
         <li key={obj.icon} onClick={()=>handleOptionsClick(obj.icon)}>
-          <Tooltip key={obj.title} title={obj.title} placement="bottom">
-            <span className={`hs-icon icon-${obj.icon}`}></span>
-          </Tooltip>
-          <div className="">foo</div>
+          <Popover placement="bottomRight" title="foo" content="bar" trigger="click"  overlayClassName={obj.popover ? null : 'display-none'} arrowPointAtCenter>
+            <Tooltip key={obj.title} title={obj.title} placement="bottom">
+              <span className={`hs-icon icon-${obj.icon}`}></span>
+            </Tooltip>
+          </Popover>
         </li>)
   };
 
@@ -26,7 +26,7 @@ const MapFunctionfulIcons = ({set, handleOptionsClick}) => {
 
 React.propTypes = {
   set: PropTypes.string.isRequired,
-  handleDeckSaving: PropTypes.func.isRequired
+  handleOptionsClick: PropTypes.func.isRequired
 };
 
 export default MapFunctionfulIcons;

@@ -17,7 +17,7 @@ const StatsOptions = ({deck, activeClass, handleOptionsClick, filtersActive}) =>
 StatsOptions.propTypes = {
   deck: PropTypes.array,
   activeClass: PropTypes.string.isRequired,
-  handleDeckSaving: PropTypes.func.isRequired
+  handleOptionsClick: PropTypes.func.isRequired
 };
 
 export default StatsOptions;

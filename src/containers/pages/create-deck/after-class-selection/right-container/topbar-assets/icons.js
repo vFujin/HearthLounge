@@ -21,15 +21,18 @@ export const topbar_icons = (active_class) => {
     options: [
       {
         title: 'copy deck URL',
-        icon: 'link'
+        icon: 'link',
+        popover: true
       },
       {
         title: 'copy deck to clipboard',
-        icon: 'copy'
+        icon: 'copy',
+        popover: true
       },
       {
         title: 'save deck',
-        icon: 'download'
+        icon: 'download',
+        popover: false
       },
     ],
     types: [

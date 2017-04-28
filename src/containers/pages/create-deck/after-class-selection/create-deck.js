@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'whatwg-fetch';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
 import 'antd/lib/tooltip/style/css';
+import 'antd/lib/popover/style/css';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import domtoimage from 'dom-to-image';
@@ -38,12 +39,6 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     }
   };
 
-
-
-  const showCardCountTooltip = (card, visibleClass, defaultClass) => {
-    // return
-  };
-
   const toggleCardAmountTooltip = (card) => {
     const CardTooltip = () =>{
       return (
@@ -54,13 +49,19 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
           </div>
       )
     };
-
     return (
         deck.filter(c => c.cardId === card.cardId).length > 0 ? <CardTooltip /> : null
     )
   };
 
+
+
   const listCards = () => {
+    const toggleImg = (card) =>{
+      let amount = deck.filter(c => c.cardId === card.cardId).length;
+      if(amount > 0) return 'choosen';
+    };
+
     if (cards < 1) {
       return <Loader/>;
     }
@@ -72,8 +73,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
                       onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
                       onClick={deck ? (e) => handleCardClick(e, card) : null}>
                     {toggleCardAmountTooltip(card)}
-                    <img
-                        className={`${showCardCountTooltip(card, 'choosen', null)} ${deck.length >= 30 ? "disabled" : ''} `}
+                    <img className={`${toggleImg(card)} ${deck.length >= 30 ? "disabled" : ''} `}
                         src={card.img}
                         alt={card.name}/>
                   </li>
@@ -101,7 +101,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     //     cards: _.filter(Data, {name: e})
     //   })
     // }
-  }
+  };
   const handleDeckMechanicsToggle = () => {
     // console.log(this.props.deckMechanics);
     // let areActive = this.props.deckMechanics === false ? true : false
