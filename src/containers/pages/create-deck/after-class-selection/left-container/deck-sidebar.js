@@ -4,7 +4,7 @@ import ChoosenCards from './sidebar/details/choosen-cards';
 import DeckMechanics from './sidebar/details/deck-mechanics';
 import _ from 'lodash';
 
-const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDetailClick, mechanics, params}) => {
+const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMechanicsToggle, mechanics, params}) => {
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
 
@@ -14,7 +14,7 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckDeta
           <h3>Cards/Mana Cost</h3>
           <ManaCurve deck={deck} max={max}/>
 
-          <h3>Chosen Cards <button className="btn-pearl" onClick={(e)=>handleDeckDetailClick(e)}>More details</button></h3> {/* consider changing btn to icon*/}
+          <h3>Chosen Cards <button className="btn-pearl" onClick={handleDeckMechanicsToggle}>Deck Mechanics</button></h3> {/* consider changing btn to icon*/}
           <ChoosenCards deck={deck} countCards={countCards} deckDetails={deckDetails}/>
           <DeckMechanics deck={deck} deckDetails={deckDetails} mechanics={mechanics}/>
         </div>

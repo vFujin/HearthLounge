@@ -3,7 +3,7 @@ import SidebarHeader from './left-container/sidebar/sidebar-header';
 import DeckSidebar from './left-container/deck-sidebar';
 import FilterSidebar from './left-container/filter-sidebar';
 
-const LeftContainer = ({handleSidebarViewChange, filtersView, countCards, deck, deckDetails, handleDeckDetailsClick, params,
+const LeftContainer = ({handleSidebarViewChange, filtersView, countCards, deck, deckDetails, handleDeckMechanicsToggle, params,
                           mechanics, name, race, type, faction, cards, cardSet, query }) =>{
 
   let ifDeck = !filtersView ? 'deck' : "filters";
@@ -16,7 +16,7 @@ const LeftContainer = ({handleSidebarViewChange, filtersView, countCards, deck, 
                      countCards={countCards}
                      deck={deck}
                      deckDetails={deckDetails}
-                     handleDeckDetailClick={handleDeckDetailsClick}
+                     handleDeckMechanicsToggle={handleDeckMechanicsToggle}
                      mechanics={mechanics}
                      params={params}/>
 

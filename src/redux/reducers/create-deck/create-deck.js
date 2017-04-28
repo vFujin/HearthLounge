@@ -1,5 +1,8 @@
 const initialState = {
-  filters: false
+  filters: false,
+  editingTool: false,
+  deckMechanics: false,
+  deck: []
 };
 
 export default function(state=initialState, action){
@@ -11,6 +14,14 @@ export default function(state=initialState, action){
     case 'SHOW_DECK_EDITING_TOOL': return {
       ...state,
       editingTool: action.editingTool
+    };
+    case 'TOGGLE_DECK_MECHANICS': return {
+      ...state,
+      deckMechanics: action.deckMechanics
+    };
+    case 'EDIT_DECK': return {
+      ...state,
+      deck: action.deck
     }
   }
   return state;
