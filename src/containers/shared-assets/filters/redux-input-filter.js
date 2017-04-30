@@ -1,14 +1,9 @@
 import React from 'react';
 import Select from 'antd/lib/select';
-import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
 
-const InputFilter = ({attribute, filter, multiple, query}) => {
+const InputFilter = ({attribute, filter, multiple, handleInputChange}) => {
   const Option = Select.Option;
-
-  const queries = attr =>{
-    return Object.assign({}, query, {[filter]: attr});
-  };
 
   const options = attribute.map(a=> (
       <Option instancePrefix={a} optionIndex={a} option={a} value={a} key={a}>{a}</Option>
@@ -24,9 +19,7 @@ const InputFilter = ({attribute, filter, multiple, query}) => {
                 allowClear={multiple === false ? true : false}
                 style={{width: "100%"}}
                 placeholder={`${placeholder}...`}
-                onChange={(e)=>addQuery(queries(e))}
-                onDeselect={()=>removeQuery(filter)}
-                value={query[filter]}>
+                onChange={handleInputChange}>
           {options}
         </Select>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import {icon_filters} from '../../../data/filters';
 import Tooltip from 'antd/lib/tooltip';
@@ -63,12 +64,12 @@ const IconFilter = ({filter, header, header_label, isStandard, query, wrapper_cl
 };
 
 IconFilter.propTypes = {
-  header: React.PropTypes.bool,
-  header_label: React.PropTypes.string,
-  filter: React.PropTypes.string,
-  isStandard: React.PropTypes.bool,
-  query: React.PropTypes.object,
-  wrapper_class: React.PropTypes.string,
+  header: PropTypes.bool.isRequired,
+  header_label: PropTypes.string,
+  filter: PropTypes.string.isRequired,
+  isStandard: PropTypes.bool.isRequired,
+  query: PropTypes.object.isRequired,
+  wrapper_class: PropTypes.string.isRequired,
 };
 
 export default IconFilter;
