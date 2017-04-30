@@ -101,18 +101,28 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
         stringifiedJson = JSON.stringify(json);
   };
 
-  const handleImgSaveClick = () =>{
-    let deckList = document.getElementById('decklist-to-img');
-    domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
-        .then(dataUrl=>{
-          let link = document.createElement('a');
-          link.download = 'deck.jpeg';
-          link.href = dataUrl;
-          link.click();
-        })
-        .catch(error=>{
-          console.error("something went wrong", error)
-        });
+  const handleImgSaveClick = (e) =>{
+    let target = e.currentTarget.id;
+
+    const imgCapture = () =>{
+      let deckList = document.getElementById('decklist-to-img');
+      return domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
+          .then(dataUrl=>{
+            let link = document.createElement('a');
+            link.download = 'deck.jpeg';
+            link.href = dataUrl;
+            link.click();
+            toggleImgReadyDecklist(false);
+          })
+          .catch(error=>{
+            console.error("something went wrong", error)
+          });
+    };
+
+    switch(target){
+      case 'save-img': return imgCapture();
+      case 'cancel-img-save': return toggleImgReadyDecklist(false);
+    }
   };
 
   const handleOptionsClick = (icon) => {
@@ -156,7 +166,8 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
                         handleImgSaveClick={handleImgSaveClick}
                         cards={listCards(query)}
                         editingTool={editingTool}
-                        user={user}/>
+                        user={user}
+                        imgReadyDecklist={imgReadyDecklist}/>
       </div>
   );
 };

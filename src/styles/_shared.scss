@@ -315,17 +315,17 @@ form {
     display: flex;
     align-items: center;
     li {
+      display: flex;
+      align-items:center;
       cursor: pointer;
       span {
         display: flex;
         align-items: center;
-        font-size: 2vh;
-        padding: 5px;
-
         span {
           font-size: 2vh;
-          @include transition(all ease .4s);
           cursor: pointer;
+          padding: 5px;
+          @include transition(all ease .4s);
         }
       }
     }

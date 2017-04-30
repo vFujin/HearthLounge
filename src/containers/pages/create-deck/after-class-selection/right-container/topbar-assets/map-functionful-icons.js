@@ -7,19 +7,22 @@ import Popover from 'antd/lib/popover';
 import PopoverLink from './popover-link';
 import PopoverSaveImg from './popover-save-img';
 
-const MapFunctionfulIcons = ({set, handleOptionsClick, handleImgSaveClick}) => {
-
+const MapFunctionfulIcons = ({set, handleOptionsClick, handleImgSaveClick, imgReadyDecklist}) => {
   const popoverContent = (obj) => {
     switch (obj.icon) {
       case 'link': return <PopoverLink icon={obj.title}/>;
       case 'copy': return <PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>;
     }
   };
-
   const generateSet = () => {
     return topbar_icons(null)[set].map(obj =>
         <li key={obj.icon} onClick={()=>handleOptionsClick(obj.icon)}>
-          <Popover placement="bottomRight" title={_.startCase(obj.title)} content={popoverContent(obj)} trigger="click"  overlayClassName={obj.popover ? null : 'display-none'} arrowPointAtCenter>
+          <Popover placement="bottomRight"
+                   overlayClassName={obj.icon} title={_.startCase(obj.title)}
+                   visible={obj.icon === 'copy' ? imgReadyDecklist : false}
+                   content={popoverContent(obj)}
+                   trigger="click"
+                   arrowPointAtCenter>
             <Tooltip key={obj.title} title={obj.title} placement="bottom">
               <span className={`hs-icon icon-${obj.icon}`}></span>
             </Tooltip>

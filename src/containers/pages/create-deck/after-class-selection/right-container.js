@@ -3,7 +3,7 @@ import Topbar from './right-container/topbar';
 import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 
-const RightContainer = ({deck, filtersView, handleOptionsClick, handleImgSaveClick, cards, activeClass, query, editingTool, user}) =>{
+const RightContainer = ({deck, filtersView, handleOptionsClick, handleImgSaveClick, cards, activeClass, query, editingTool, user, imgReadyDecklist}) =>{
 
   const currentView = () => {
     return !editingTool ? <Cards cards={cards}/> : <DeckOptions activeClass={activeClass} deck={deck} user={user}/>
@@ -16,7 +16,8 @@ const RightContainer = ({deck, filtersView, handleOptionsClick, handleImgSaveCli
                 activeClass={activeClass}
                 deck={deck}
                 handleImgSaveClick={handleImgSaveClick}
-                handleOptionsClick={handleOptionsClick} />
+                handleOptionsClick={handleOptionsClick}
+                imgReadyDecklist={imgReadyDecklist}/>
         <div className="content">
           {currentView()}
         </div>
