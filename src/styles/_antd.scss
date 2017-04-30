@@ -290,6 +290,12 @@
         color: $pearl;
         border-bottom-color: $light-grey;
       }
+      .ant-popover-inner-content{
+        .popover-save-img {
+          display: flex;
+          justify-content: space-around;
+        }
+      }
     }
   }
 }

@@ -22,7 +22,7 @@ export const topbar_icons = (active_class) => {
       {
         title: 'copy deck URL',
         icon: 'link',
-        popover: true
+        popover: false
       },
       {
         title: 'copy deck to clipboard',

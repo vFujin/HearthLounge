@@ -3835,5 +3835,8 @@ footer {
   .ant-popover .ant-popover-content .ant-popover-inner .ant-popover-title {
     color: #E7E2DA;
     border-bottom-color: #A69E9D; }
+  .ant-popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .popover-save-img {
+    display: flex;
+    justify-content: space-around; }
 
 /*# sourceMappingURL=index.css.map */
