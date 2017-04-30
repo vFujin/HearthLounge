@@ -1494,11 +1494,13 @@ footer{
         display: flex;
         align-items: center;
         li {
+          cursor: pointer;
           span {
             display: flex;
             align-items: center;
             &.hs-icon {
               font-size: 2vh;
+              padding: 5px;
             }
             span {
               font-size: 2vh;

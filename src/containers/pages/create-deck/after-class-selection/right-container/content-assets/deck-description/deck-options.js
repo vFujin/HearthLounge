@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 
 
-const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetype, deckText,  updateDeckProperty, visible}) => {
+const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetype, deckText,  updateDeckProperty}) => {
 
   const handleInputChange = (e) => {
     let target = e.target.id;
@@ -29,7 +29,7 @@ const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetyp
   };
 
   return (
-      <div className={visible ? 'display-none' : 'container__details'}>
+      <div className='container__details'>
         <AboutDeck activeClass={activeClass}
                    deckTitle={deckTitle}
                    deckType={deckType}

@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import domtoimage from 'dom-to-image';
 
-const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, faction, filters, location, mechanics,
+const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, location, mechanics,
 name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, type, user}) => {
 
   const query = location.query;
@@ -118,7 +118,8 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
   };
 
   const handleOptionsClick = (icon) => {
-    let isEditingToolActive = editDeck === false ? true : false;
+    let isEditingToolActive = editingTool === false ? true : false;
+    console.log(editDeck);
     switch (icon) {
       case 'link': return handleCopyDeckURLClick();
       case 'copy': return handleImageCapture();
@@ -152,7 +153,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
                         deck={deck}
                         handleOptionsClick={handleOptionsClick}
                         cards={listCards(query)}
-                        visible={editDeck}
+                        editingTool={editingTool}
                         user={user}/>
       </div>
   );
