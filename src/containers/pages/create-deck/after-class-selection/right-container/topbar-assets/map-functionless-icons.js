@@ -27,7 +27,7 @@ const MapFunctionlessIcons = ({deck, activeClass, filtersActive, set}) => {
   };
 
   return(
-      <ul>
+      <ul className="decklist-summary-icons">
         {generateSet()}
       </ul>
   )

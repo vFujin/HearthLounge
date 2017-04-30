@@ -5,18 +5,14 @@ import {topbar_icons} from './icons';
 import Tooltip from 'antd/lib/tooltip';
 import Popover from 'antd/lib/popover';
 import PopoverLink from './popover-link';
+import PopoverSaveImg from './popover-save-img';
 
-const MapFunctionfulIcons = ({set, handleOptionsClick}) => {
+const MapFunctionfulIcons = ({set, handleOptionsClick, handleImgSaveClick}) => {
 
-  const popoverContent = (obj) =>{
-    switch(obj.icon){
+  const popoverContent = (obj) => {
+    switch (obj.icon) {
       case 'link': return <PopoverLink icon={obj.title}/>;
-      case 'copy': return (
-          <div className="popover-content-wrapper">
-            <button>Save as JPEG</button>
-            <button>Cancel</button>
-          </div>
-      )
+      case 'copy': return <PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>;
     }
   };
 

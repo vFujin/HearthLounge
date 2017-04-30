@@ -4,7 +4,7 @@ import DeckSidebar from './left-container/deck-sidebar';
 import FilterSidebar from './left-container/filter-sidebar';
 
 const LeftContainer = ({handleSidebarViewChange, filtersView, countCards, deck, deckDetails, handleDeckMechanicsToggle, params,
-                          mechanics, name, race, type, faction, cards, cardSet, query }) =>{
+                          mechanics, name, race, type, faction, cards, cardSet, query, imgReadyDecklist}) =>{
 
   let ifDeck = !filtersView ? 'deck' : "filters";
   let ifFilter = !filtersView ? 'filters' : "deck";
@@ -17,6 +17,7 @@ const LeftContainer = ({handleSidebarViewChange, filtersView, countCards, deck, 
                      deck={deck}
                      deckDetails={deckDetails}
                      handleDeckMechanicsToggle={handleDeckMechanicsToggle}
+                     imgReadyDecklist={imgReadyDecklist}
                      mechanics={mechanics}
                      params={params}/>
 

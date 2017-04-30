@@ -9,8 +9,8 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import domtoimage from 'dom-to-image';
 
-const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, location, mechanics,
-name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, type, user}) => {
+const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
+name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user}) => {
 
   const query = location.query;
 
@@ -96,7 +96,12 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     toggleDeckMechanics(true);
   };
 
-  const imageCapture = () =>{
+  const handleCopyDeckURLClick = () =>{
+    let json = { ...summarizedDeck},
+        stringifiedJson = JSON.stringify(json);
+  };
+
+  const handleImgSaveClick = () =>{
     let deckList = document.getElementById('decklist-to-img');
     domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
         .then(dataUrl=>{
@@ -110,24 +115,17 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
         });
   };
 
-  const handleCopyDeckURLClick = () =>{
-    let json = { ...summarizedDeck},
-        stringifiedJson = JSON.stringify(json);
-  };
-
-  const handleImageCapture = (e) =>{
-    //on btn save click trigger imageCapture function
-  };
-
   const handleOptionsClick = (icon) => {
     let isEditingToolActive = editingTool === false ? true : false;
-    console.log(editDeck);
+    let isDecklistReadyForCapture = imgReadyDecklist === false ? true : false;
     switch (icon) {
       case 'link': return handleCopyDeckURLClick();
-      case 'copy': return handleImageCapture();
+      case 'copy': return toggleImgReadyDecklist(isDecklistReadyForCapture);
       case 'download': return showDeckEditingTool(isEditingToolActive);
     }
   };
+
+
 
 
   return (
@@ -147,6 +145,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
                        faction={faction}
                        cards={cards}
                        cardSet={cardSet}
+                       imgReadyDecklist={imgReadyDecklist}
                        query={query}/>
 
         <RightContainer filtersView={filters}
@@ -154,6 +153,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
                         activeClass={params.class}
                         deck={deck}
                         handleOptionsClick={handleOptionsClick}
+                        handleImgSaveClick={handleImgSaveClick}
                         cards={listCards(query)}
                         editingTool={editingTool}
                         user={user}/>
@@ -162,12 +162,13 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
 };
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, deck, summarizedDeck} = state.deckCreation;
+  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, summarizedDeck} = state.deckCreation;
 
   return {
     filters,
     editingTool,
     deckMechanics,
+    imgReadyDecklist,
     deck,
     summarizedDeck
   };
@@ -183,6 +184,9 @@ const mapDispatchToProps = (dispatch) => {
     }),
     toggleDeckMechanics: (deckMechanics) => dispatch({
       type: 'TOGGLE_DECK_MECHANICS', deckMechanics
+    }),
+    toggleImgReadyDecklist: (imgReadyDecklist) => dispatch({
+      type: 'TOGGLE_IMG_READY_DECKLIST', imgReadyDecklist
     }),
     editDeck: (deck) => dispatch({
       type: 'EDIT_DECK', deck, summarizedDeck: deck.map(c=>c.cardId)

@@ -2,6 +2,7 @@ const initialState = {
   filters: false,
   editingTool: false,
   deckMechanics: false,
+  imgReadyDecklist: false,
   deck: [],
   summarizedDeck: []
 };
@@ -19,6 +20,10 @@ export default function(state=initialState, action){
     case 'TOGGLE_DECK_MECHANICS': return {
       ...state,
       deckMechanics: action.deckMechanics
+    };
+    case 'TOGGLE_IMG_READY_DECKLIST': return {
+      ...state,
+      imgReadyDecklist: action.imgReadyDecklist
     };
     case 'EDIT_DECK': return {
       ...state,

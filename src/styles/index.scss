@@ -1490,27 +1490,7 @@ footer{
           padding: 0 1vh;
         }
       }
-      ul {
-        display: flex;
-        align-items: center;
-        li {
-          cursor: pointer;
-          span {
-            display: flex;
-            align-items: center;
-            &.hs-icon {
-              font-size: 2vh;
-              padding: 5px;
-            }
-            span {
-              font-size: 2vh;
-              @include transition(all ease .4s);
-              cursor: pointer;
-              padding: 1vh;
-            }
-          }
-        }
-      }
+
       .topbar__deckDetails--options {
         justify-content: flex-end;
         span {

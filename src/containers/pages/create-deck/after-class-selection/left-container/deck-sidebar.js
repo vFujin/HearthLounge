@@ -1,12 +1,19 @@
 import React from 'react';
+import _ from 'lodash';
 import ManaCurve from './sidebar/details/mana-curve/mana-curve';
 import ChoosenCards from './sidebar/details/choosen-cards';
 import DeckMechanics from './sidebar/details/deck-mechanics';
-import _ from 'lodash';
+import MapFunctionlessIcons from '../right-container/topbar-assets/map-functionless-icons';
 
-const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMechanicsToggle, mechanics, params}) => {
+const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMechanicsToggle, mechanics, params, imgReadyDecklist}) => {
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
+
+  const  decklistHeaderView = () => {
+    return imgReadyDecklist
+        ? <MapFunctionlessIcons deck={deck} activeClass={null} filtersActive={false} set="types"/>
+        : <button className="btn-pearl" onClick={handleDeckMechanicsToggle}>Deck Mechanics</button>
+  };
 
   return (
       <div className={`sidebar__body ${filtersView === false ? 'active' : 'display-none'}`}>
@@ -14,7 +21,7 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMech
           <h3>Cards/Mana Cost</h3>
           <ManaCurve deck={deck} max={max}/>
 
-          <h3>Chosen Cards <button className="btn-pearl" onClick={handleDeckMechanicsToggle}>Deck Mechanics</button></h3> {/* consider changing btn to icon*/}
+          <h3>Chosen Cards{decklistHeaderView()}</h3>
           <ChoosenCards deck={deck} countCards={countCards} deckDetails={deckDetails}/>
           <DeckMechanics deck={deck} deckDetails={deckDetails} mechanics={mechanics}/>
         </div>
