@@ -1493,7 +1493,16 @@ footer{
 
       .topbar__deckDetails--options {
         justify-content: flex-end;
+        li{
+          &.active{
+            span{
+              background: $dark-grey;
+              color: $pearl;
+            }
+          }
+        }
         span {
+          @include transition(all ease .4s);
           margin-right: 1vw;
           font-size: 2vh;
           padding: 1vh;

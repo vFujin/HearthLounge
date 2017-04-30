@@ -113,6 +113,9 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
             link.href = dataUrl;
             link.click();
             toggleImgReadyDecklist(false);
+            !imgReadyDecklist
+                ? document.getElementById('image').className += "active"
+                : document.getElementById('image').className = "";
           })
           .catch(error=>{
             console.error("something went wrong", error)
@@ -121,17 +124,32 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
 
     switch(target){
       case 'save-img': return imgCapture();
-      case 'cancel-img-save': return toggleImgReadyDecklist(false);
+      case 'cancel-img-save':
+        !imgReadyDecklist
+            ? document.getElementById('image').className += "active"
+            : document.getElementById('image').className = "";
+        toggleImgReadyDecklist(false);
+        break;
     }
   };
 
-  const handleOptionsClick = (icon) => {
+  const handleOptionsClick = (e, icon) => {
     let isEditingToolActive = editingTool === false ? true : false;
     let isDecklistReadyForCapture = imgReadyDecklist === false ? true : false;
     switch (icon) {
       case 'link': return handleCopyDeckURLClick();
-      case 'copy': return toggleImgReadyDecklist(isDecklistReadyForCapture);
-      case 'download': return showDeckEditingTool(isEditingToolActive);
+      case 'image':
+        !imgReadyDecklist
+            ? document.getElementById(e.currentTarget.id).className += "active"
+            : document.getElementById(e.currentTarget.id).className = "";
+        toggleImgReadyDecklist(isDecklistReadyForCapture);
+        break;
+      case 'download':
+        !editingTool
+            ? document.getElementById(e.currentTarget.id).className += "active"
+            : document.getElementById(e.currentTarget.id).className = "";
+        showDeckEditingTool(isEditingToolActive);
+        break;
     }
   };
 
