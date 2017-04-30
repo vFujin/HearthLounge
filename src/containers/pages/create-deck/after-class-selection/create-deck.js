@@ -115,8 +115,8 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
         stringifiedJson = JSON.stringify(json);
   };
 
-  const handleImageCapture = () =>{
-
+  const handleImageCapture = (e) =>{
+    //on btn save click trigger imageCapture function
   };
 
   const handleOptionsClick = (icon) => {
