@@ -275,5 +275,21 @@
 }
 
 /*
- * Modal
+ * Popover
  */
+.ant-popover{
+  .ant-popover-content {
+    .ant-popover-arrow {
+      border-bottom-color: $pearl;
+    }
+    .ant-popover-inner {
+      background-color: $dark-grey;
+      border:1px solid $pearl;
+      border-radius: 0;
+      .ant-popover-title{
+        color: $pearl;
+        border-bottom-color: $light-grey;
+      }
+    }
+  }
+}

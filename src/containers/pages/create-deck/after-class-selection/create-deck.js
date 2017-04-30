@@ -96,14 +96,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     toggleDeckMechanics(true);
   };
 
-  const handleCopyDeckURLClick = () =>{
-    let json = { ...summarizedDeck},
-        stringifiedJson = JSON.stringify(json);
-
-    console.log(btoa(stringifiedJson))
-  };
-
-  const handleImageCapture = () =>{
+  const imageCapture = () =>{
     let deckList = document.getElementById('decklist-to-img');
     domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
         .then(dataUrl=>{
@@ -115,6 +108,15 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
         .catch(error=>{
           console.error("something went wrong", error)
         });
+  };
+
+  const handleCopyDeckURLClick = () =>{
+    let json = { ...summarizedDeck},
+        stringifiedJson = JSON.stringify(json);
+  };
+
+  const handleImageCapture = () =>{
+
   };
 
   const handleOptionsClick = (icon) => {
