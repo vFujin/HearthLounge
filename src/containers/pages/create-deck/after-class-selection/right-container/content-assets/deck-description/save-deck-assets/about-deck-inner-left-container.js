@@ -29,7 +29,7 @@ const InnerLeftContainer = ({activeClass, deckTitle, handleInputChange, handleSe
 
 InnerLeftContainer.propTypes = {
   activeClass: PropTypes.string.isRequired,
-  deckTitle: PropTypes.string.isRequired,
+  deckTitle: PropTypes.string,
   handleInputChange: PropTypes.func.isRequired,
   handleSelectChange: PropTypes.func.isRequired
 };

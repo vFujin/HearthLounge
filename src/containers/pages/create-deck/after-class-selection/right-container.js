@@ -3,10 +3,10 @@ import Topbar from './right-container/topbar';
 import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 
-const RightContainer = ({deck, filtersView, handleOptionsClick, handleImgSaveClick, cards, activeClass, query, editingTool, user, imgReadyDecklist}) =>{
+const RightContainer = ({deck, filtersView, handleOptionsClick, handleImgSaveClick, cards, activeClass, query, summarizedDeck, editingTool, user, imgReadyDecklist}) =>{
 
   const currentView = () => {
-    return !editingTool ? <Cards cards={cards}/> : <DeckOptions activeClass={activeClass} deck={deck} user={user}/>
+    return !editingTool ? <Cards cards={cards}/> : <DeckOptions activeClass={activeClass} summarizedDeck={summarizedDeck} user={user}/>
   };
 
   return (

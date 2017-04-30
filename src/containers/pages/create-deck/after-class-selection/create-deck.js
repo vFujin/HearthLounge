@@ -1,12 +1,12 @@
 import React from 'react';
-import 'whatwg-fetch';
+import _ from 'lodash';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/popover/style/css';
 import {connect} from 'react-redux';
-import _ from 'lodash';
+
 import domtoimage from 'dom-to-image';
 
 const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
@@ -77,9 +77,9 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     let areDeckMechanicsActive = filters === false ? true : false;
     let areFiltersActive = deckMechanics === false ? true : false;
 
-    // if(e.ctrlKey) {
-    //   toggleFilters(areFiltersActive)
-    // }
+    if(e.button === 0 || e.ctrlKey) {
+      toggleFilters(areFiltersActive)
+    }
     // if(e.altKey){
     //   toggleDeckMechanics(areDeckMechanicsActive)
     // }
@@ -180,6 +180,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
                         query={query}
                         activeClass={params.class}
                         deck={deck}
+                        summarizedDeck={summarizedDeck}
                         handleOptionsClick={handleOptionsClick}
                         handleImgSaveClick={handleImgSaveClick}
                         cards={listCards(query)}

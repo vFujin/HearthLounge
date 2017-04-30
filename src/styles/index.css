@@ -3173,9 +3173,11 @@ footer {
     padding: 0 1vh; }
 .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options {
   justify-content: flex-end; }
-  .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options li.active span {
-    background: #474143;
-    color: #E7E2DA; }
+  .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options li {
+    cursor: pointer; }
+    .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options li.active span {
+      background: #474143;
+      color: #E7E2DA; }
   .create-deck .container__page--right .topbar__deckDetails .topbar__deckDetails--options span {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;

@@ -1494,6 +1494,7 @@ footer{
       .topbar__deckDetails--options {
         justify-content: flex-end;
         li{
+          cursor: pointer;
           &.active{
             span{
               background: $dark-grey;

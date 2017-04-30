@@ -9,13 +9,15 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 
 
-const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetype, deckText,  updateDeckProperty}) => {
+const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, deckArchetype, deckText,  updateDeckProperty}) => {
 
-  const handleInputChange = (e) => {
+  const handleInputChange = _.debounce((e) => {
+
+    console.log(e);
     let target = e.target.id;
     let value = e.target.value;
     updateDeckProperty({[target]: value});
-  };
+  }, 300);
 
   const handleSelectChange = (v, selector) => {
     let key= `deck${_.upperFirst(selector)}`;
@@ -25,8 +27,12 @@ const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetyp
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
     console.log(deckType);
-    saveDeck(activeClass, user.username, deckTitle, deckType, deckArchetype, deck, deckText, user.uid);
+    saveDeck(activeClass, user.username, deckTitle, deckType, deckArchetype, summarizedDeck, deckText, user.uid);
   };
+
+
+
+
 
   return (
       <div className='container__details'>
@@ -35,12 +41,11 @@ const DeckOptions = ({activeClass, user, deck, deckType, deckTitle, deckArchetyp
                    deckType={deckType}
                    deckArchetype={deckArchetype}
                    deckText={deckText}
-                   handleInputChange={debounceEventHandler(handleInputChange, 300)}
+                   handleInputChange={handleInputChange}
                    handleSelectChange={handleSelectChange}
                    handleSaveDeckSubmit={(e)=>handleSaveDeckSubmit(e)}
                    handleTagInsertion={updateDeckProperty}/>
         <Preview deckText={deckText}/>
-
       </div>
   )
 };
@@ -51,6 +56,7 @@ const mapStateToProps = (state) => {
     deckTitle, deckType, deckArchetype, deckText
   }
 };
+
 const mapDispatchToProps = (dispatch) => {
   return {
     updateDeckProperty: (props) => (dispatch({
