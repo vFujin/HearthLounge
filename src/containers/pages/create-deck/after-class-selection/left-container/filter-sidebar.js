@@ -6,10 +6,9 @@ import {connect} from 'react-redux';
 
 const FilterSidebar = ({faction, filtersView, mechanics, name, query, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, rarity, updateFilter}) => {
 
-  const handleInputChange = (e) =>{
-    let target = e.target.id;
-    let value = e.target.value;
-    updateFilter({[target]:value});
+  const handleInputChange = (v, s) =>{
+    console.log(v, s);
+    updateFilter({[cardName]:v});
   };
 
   const page = "create-deck";

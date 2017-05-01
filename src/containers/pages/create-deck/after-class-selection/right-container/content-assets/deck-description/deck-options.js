@@ -9,15 +9,23 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 
 
-const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, deckArchetype, deckText,  updateDeckProperty}) => {
+const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, deckArchetype, deckText, deckTextControlled, updateDeckProperty}) => {
 
-  const handleInputChange = _.debounce((e) => {
+  const updateDeckText = _.debounce((value) => {
+    updateDeckProperty({deckText: value})
+  }, 300);
 
-    console.log(e);
+  const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
-    updateDeckProperty({[target]: value});
-  }, 300);
+    if(target === 'deckText') {
+      updateDeckProperty({deckTextControlled: value});
+      updateDeckText(value);
+    }
+    else {
+      updateDeckProperty({[target]: value});
+    }
+  };
 
   const handleSelectChange = (v, selector) => {
     let key= `deck${_.upperFirst(selector)}`;
@@ -32,15 +40,13 @@ const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, de
 
 
 
-
-
   return (
       <div className='container__details'>
         <AboutDeck activeClass={activeClass}
                    deckTitle={deckTitle}
                    deckType={deckType}
                    deckArchetype={deckArchetype}
-                   deckText={deckText}
+                   deckTextControlled={deckTextControlled}
                    handleInputChange={handleInputChange}
                    handleSelectChange={handleSelectChange}
                    handleSaveDeckSubmit={(e)=>handleSaveDeckSubmit(e)}
@@ -51,9 +57,9 @@ const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, de
 };
 
 const mapStateToProps = (state) => {
-  const {deckTitle, deckType, deckArchetype, deckText} = state.deckOptions;
+  const {deckTitle, deckType, deckArchetype, deckText, deckTextControlled} = state.deckOptions;
   return {
-    deckTitle, deckType, deckArchetype, deckText
+    deckTitle, deckType, deckArchetype, deckText, deckTextControlled
   }
 };
 
