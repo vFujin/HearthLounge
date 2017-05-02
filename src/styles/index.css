@@ -2146,11 +2146,6 @@ footer {
         justify-self: center;
         align-self: center; }
         .container__page .container__class-selection ul li a {
-          -webkit-transition: all 0.4s ease;
-          -moz-transition: all 0.4s ease;
-          -ms-transition: all 0.4s ease;
-          -o-transition: all 0.4s ease;
-          transition: all 0.4s ease;
           cursor: pointer;
           display: grid;
           text-align: center;

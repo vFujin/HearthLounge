@@ -202,7 +202,6 @@ footer{
         justify-self: center;
         align-self: center;
         a{
-          @include transition(all .4s ease);
           cursor: pointer;
           display: grid;
           text-align: center;

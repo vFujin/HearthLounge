@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'antd/lib/select';
 import 'antd/lib/select/style/css';
 
-const InputFilter = ({attribute, filter, multiple, handleInputChange, value}) => {
+const InputFilter = ({attribute, filter, multiple, handleSelect, value}) => {
   const Option = Select.Option;
 
   const options = attribute.map(a=> (
@@ -16,12 +16,11 @@ const InputFilter = ({attribute, filter, multiple, handleInputChange, value}) =>
         <h4>{filter}</h4>
         <Select mode={multiple ? "multiple" : null}
                 showSearch={multiple === false ? true : false}
-                allowClear={multiple === false ? true : false}
+                allowClear={multiple !== false ? true : false}
                 style={{width: "100%"}}
-                onChange={(e, v)=>handleInputChange(e,v)}
-                labelInValue
-                placeholder={`${placeholder}...`}
-                >
+                onChange={(e)=>handleSelect(e,filter)}
+
+                placeholder={`${placeholder}...`}>
           {options}
         </Select>
       </div>
