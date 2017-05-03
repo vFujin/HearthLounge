@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 import message from 'antd/lib/message';
 import domtoimage from 'dom-to-image';
 import 'antd/lib/message/style/index.css';
+import LazyLoad from 'react-lazyload';
 
 const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
 name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user, updateURL}) => {
@@ -62,14 +63,18 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
             return card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral"
           })
               .map(card =>
+                  <LazyLoad height={250} overflow throttle={200}>
                   <li key={card.cardId}
                       onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
                       onClick={deck ? (e) => handleCardClick(e, card) : null}>
                     {toggleCardAmountTooltip(card)}
+
                     <img className={`${toggleImg(card)} ${deck.length >= 30 ? "disabled" : ''} `}
                         src={card.img}
                         alt={card.name}/>
+
                   </li>
+                  </LazyLoad>
               )
       )
     }

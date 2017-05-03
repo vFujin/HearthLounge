@@ -5,6 +5,7 @@ import Loader from '../../../utils/loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
 import {Data} from '../../../data/cards-data';
+import LazyLoad from 'react-lazyload';
 
 export class Cards extends Component {
   constructor(props){
@@ -107,11 +108,15 @@ export class Cards extends Component {
           })
         })
         .map(card =>
+
           <li key={card.cardId} onClick={(e) => this.handleCardClick(e, card)}>
+            <LazyLoad height={250} overflow>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <img src={card.img} alt={card.name}/>
             </Tooltip>
+            </LazyLoad>
           </li>
+
         )
     )
   }
