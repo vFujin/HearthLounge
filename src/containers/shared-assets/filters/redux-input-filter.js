@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Select from 'antd/lib/select';
 import 'antd/lib/select/style/css';
 
@@ -28,10 +29,14 @@ const InputFilter = ({attribute, filter, multiple, handleSelect, value}) => {
 };
 
 InputFilter.propTypes = {
-  attribute: React.PropTypes.array,
-  filter: React.PropTypes.string,
-  multiple: React.PropTypes.bool,
-  query: React.PropTypes.object
+  attribute: PropTypes.array.isRequired,
+  filter: PropTypes.string.isRequired,
+  multiple: PropTypes.bool.isRequired,
+  handleSelect: PropTypes.func.isRequired,
+  value: PropTypes.oneOfType([
+      PropTypes.string, //if multiple == false
+      PropTypes.array   //if multiple == true
+  ])
 };
 
 
