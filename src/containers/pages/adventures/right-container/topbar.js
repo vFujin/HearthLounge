@@ -19,7 +19,7 @@ const Topbar = props => {
 
   return (
       <div className='topbar'>
-        <ul className="content-navigation">
+        <ul className="topbar__extension-navigation">
           {listDetails()}
         </ul>
       </div>

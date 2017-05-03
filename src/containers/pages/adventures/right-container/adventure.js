@@ -3,17 +3,18 @@ import {navItems} from '../../../../data/nav';
 import Topbar from './topbar';
 import ValidateURL from '../../../shared-assets/validateUrl';
 
-const Adventure = props => {
-  const {children, location, params} = props;
+const Adventure = ({children, location, params}) => {
   const {adventure, details, boss} = params;
 
   const content = (adventure, details, boss) =>{
     return (
-        <div className="content">
+        <div className='container__page--inner container__page--right'>
           <Topbar adventure={adventure}
                   details={details}
                   boss={boss}/>
+          <div className="content">
           {children}
+          </div>
         </div>
     )
   };
@@ -28,7 +29,6 @@ const Adventure = props => {
       default:          return null;
     }
   };
-
 
   return <ValidateURL condition={validateUrlProps('condition')}
                       content={validateUrlProps('content')}

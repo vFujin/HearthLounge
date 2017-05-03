@@ -20,9 +20,9 @@ const Sidebar = props => {
   };
 
   return (
-      <div className="sidebar">
-        <h3 className="filter-header">Adventures</h3>
-        <ul className="sidebar-icons">
+      <div className="sidebar container__extension-list">
+        <h3 className="sidebar__header">Adventures</h3>
+        <ul className="sidebar__body">
           {listAdventures()}
         </ul>
       </div>

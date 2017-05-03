@@ -14,7 +14,7 @@ const AdventureCards = props => {
   };
 
   return (
-      <ul className={`cards cards-container ${details === 'cards' && 'active'}-view`}>
+      <ul className={`cards container__cards ${details === 'cards' && 'active'}-view`}>
         {listCards()}
       </ul>
   );

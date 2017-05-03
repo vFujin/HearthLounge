@@ -31,7 +31,7 @@ export class AdventureDetails extends Component {
     switch(detailsUrl){
       case 'overview':          return <AdventureOverview         adventure={adventureUrl} details={detailsUrl}/>;
       case 'bosses':            return <AdventureBosses           adventure={adventureUrl} details={detailsUrl}/>;
-      case 'cards':             return <AdventureCards            adventure={adventureUrl} details={detailsUrl} cards={this.state.cards}/>;
+      case 'cards':             return <AdventureCards            adventure={adventureUrl} details={detailsUrl} cards={this.state.cards.slice(10, 20)}/>;
       case 'class-challanges':  return <AdventureClassChallanges  adventure={adventureUrl} details={detailsUrl} cards={this.state.cards}/>;
       case 'cost':              return <AdventureCost             adventure={adventureUrl} details={detailsUrl}/>;
       case 'structure':         return <AdventureStructure        adventure={adventureUrl} details={detailsUrl}/>;
@@ -51,7 +51,7 @@ export class AdventureDetails extends Component {
   validateUrlProps(args){
     const {adventure, details, boss} = this.props.params;
     let details_path = adventure_detail_tabs.map(x => x.url).includes(details);
-    let wing_path = adventure_details.filter(x=>x.adventure === adventure).map(x=>x.bosses.details)[0].map(x=>x.url).includes(details);
+    let wing_path = adventure_details.filter(x=>x.adventure === adventure).map(x=>x.bosses.details).map(x=>x.url).includes(details);
 
     switch(args){
       case 'condition': return (details_path || wing_path);

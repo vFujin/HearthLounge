@@ -1,20 +1,15 @@
 import React from 'react';
 import Sidebar from './left-container/sidebar';
 
-const Adventures = props => {
-  const {children, params} = props,
-        {adventure} = params;
+const Adventures = ({children, params})=> {
+  const {adventure} = params;
 
   return (
-      <div className="pageContainer adventures">
-        <div className="left-container">
+      <div className="container__page container__page--twoSided adventures">
+        <div className="container__page--inner container__page--left">
           <Sidebar adventure={adventure}/>
         </div>
-        <div className='right-container'>
-          <div className={`content`}>
-            {children}
-          </div>
-        </div>
+        {children}
       </div>
   );
 };
