@@ -7,11 +7,14 @@ import Tooltip from 'antd/lib/tooltip';
 const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, value, handleIconClick}) => {
 
   const iconUrl = (icon) =>{
+    let classic = 'classic icon-hs-logo';
+    let def = `${icon.url} icon-${icon.url}`;
+    let isClassic = icon.url === 'classic' ? classic : def;
+
     switch(filter){
-      case 'Classic': return 'hs-logo';
       case 'rarity': return `${_.toLower(icon.name)} icon-rarity `;
       case 'cost':   return `mana-${icon.url}`;
-      default: return `${icon.url} icon-${icon.url}`;
+      default: return isClassic;
     }
   };
 
@@ -35,7 +38,7 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, valu
       return (
           <div className="icon-filter-wrapper">
             <h3>
-              {`${headerLabel}s`}
+              {filter === 'cardSet' ? `${headerLabel}s` : headerLabel}
               <button className={`btn-pearl btn-padding-small`}>x</button>
             </h3>
             <ul className={`${wrapperClass} ${filter}`}>
