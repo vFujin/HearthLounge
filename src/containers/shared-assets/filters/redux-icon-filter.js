@@ -15,12 +15,13 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, valu
     }
   };
 
+
   const listIcons = () =>{
     return (
         icon_filters[filter].filter(icon => icon.isStandard === isStandard).map((icon, index) =>
             <li key={index} id={_.kebabCase(icon.name)} onClick={(e)=>handleIconClick(e, headerLabel)}>
               <Tooltip title={icon.name} placement="bottom">
-                <span className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${value !== undefined ? 'active' : ''}`}></span>
+                <span className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${value === _.kebabCase(icon.name)? 'active' : ''}`}></span>
               </Tooltip>
             </li>
         ))
@@ -31,7 +32,7 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, valu
       return (
           <div className="icon-filter-wrapper">
             <h3>
-              {headerLabel}
+              {`${headerLabel}s`}
               <button className={`btn-pearl btn-padding-small`}>x</button>
             </h3>
             <ul className={`${wrapperClass} ${filter}`}>

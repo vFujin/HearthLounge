@@ -5,7 +5,7 @@ import InputFilter from '../../../../shared-assets/filters/redux-input-filter';
 import SliderFilter from '../../../../shared-assets/filters/redux-slider-filter';
 import {connect} from 'react-redux';
 
-const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, cardRarity, updateFilter}) => {
+const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardTopbarSet, cardCost, cardRarity, updateFilter}) => {
 
   const handleSelect = (value, selector) =>{
     updateFilter({[`card${_.startCase(selector)}`]:value});
@@ -28,9 +28,9 @@ const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardN
         <SliderFilter filter="attack"     value={cardAttack}     defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}   handleSelect={handleSelect}/>
         <SliderFilter filter="durability" value={cardDurability} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}   handleSelect={handleSelect}/>
 
-        <IconFilter header={true} headerLabel="standard sets" filter="cardSet" value={setStandard} wrapperClass="sidebar-icons" isStandard={true}  handleIconClick={handleIconClick}/>
-        <IconFilter header={true} headerLabel="wild sets"     filter="cardSet" value={setWild} wrapperClass="sidebar-icons"     isStandard={false} handleIconClick={handleIconClick}/>
-        <IconFilter header={true} headerLabel="rarity"        filter="rarity"  value={cardRarity} wrapperClass="sidebar-icons"  handleIconClick={handleIconClick}/>
+        <IconFilter header={true} headerLabel="standard set" filter="cardSet" value={cardStandardSet} wrapperClass="sidebar-icons" isStandard={true}  handleIconClick={handleIconClick}/>
+        <IconFilter header={true} headerLabel="wild set"     filter="cardSet" value={cardWildSet} wrapperClass="sidebar-icons"     isStandard={false} handleIconClick={handleIconClick}/>
+        <IconFilter header={true} headerLabel="rarity"       filter="rarity"  value={cardRarity} wrapperClass="sidebar-icons"  handleIconClick={handleIconClick}/>
       </div>
   );
 };
@@ -46,7 +46,7 @@ FilterSidebar.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, cardRarity} = state.createDeckFilters;
+  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardTopbarSet, cardCost, cardRarity} = state.createDeckFilters;
   return {
     cardName,
     cardRace,
@@ -57,10 +57,10 @@ const mapStateToProps = (state) => {
     cardAttack,
     cardDurability,
     cardRarity,
-    setStandard,
-    setWild,
-    setTopbar,
-    setCost
+    cardStandardSet,
+    cardWildSet,
+    cardTopbarSet,
+    cardCost
   };
 };
 
