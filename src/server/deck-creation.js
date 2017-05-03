@@ -5,6 +5,7 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
     created: + new Date(),
     upvotes: 0,
     downvotes: 0,
+    comments: [],
     patch: 'ungoro',
     hsClass,
     author,

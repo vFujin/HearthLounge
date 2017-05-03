@@ -63,9 +63,8 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
             return card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral"
           })
               .map(card =>
-                  <LazyLoad height={250} overflow throttle={200}>
-                  <li key={card.cardId}
-                      onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
+                  <LazyLoad key={card.cardId} height={250} overflow throttle={200}>
+                  <li onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
                       onClick={deck ? (e) => handleCardClick(e, card) : null}>
                     {toggleCardAmountTooltip(card)}
 
