@@ -28,9 +28,9 @@ const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardN
         <SliderFilter filter="attack"     value={cardAttack}     defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}   handleSelect={handleSelect}/>
         <SliderFilter filter="durability" value={cardDurability} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}   handleSelect={handleSelect}/>
 
-        <IconFilter header={true} headerLabel="standard sets" filter="cardSet" value={setStandard} wrapper_class="sidebar-icons" isStandard={true}  handleIconClick={handleIconClick}/>
-        <IconFilter header={true} headerLabel="wild sets"     filter="cardSet" value={setWild} wrapper_class="sidebar-icons"     isStandard={false} handleIconClick={handleIconClick}/>
-        <IconFilter header={true} headerLabel="rarity"        filter="rarity"  value={cardRarity} wrapper_class="sidebar-icons"  handleIconClick={handleIconClick}/>
+        <IconFilter header={true} headerLabel="standard sets" filter="cardSet" value={setStandard} wrapperClass="sidebar-icons" isStandard={true}  handleIconClick={handleIconClick}/>
+        <IconFilter header={true} headerLabel="wild sets"     filter="cardSet" value={setWild} wrapperClass="sidebar-icons"     isStandard={false} handleIconClick={handleIconClick}/>
+        <IconFilter header={true} headerLabel="rarity"        filter="rarity"  value={cardRarity} wrapperClass="sidebar-icons"  handleIconClick={handleIconClick}/>
       </div>
   );
 };

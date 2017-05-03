@@ -4,7 +4,7 @@ import _ from 'lodash';
 import {icon_filters} from '../../../data/filters';
 import Tooltip from 'antd/lib/tooltip';
 
-const IconFilter = ({filter, header, headerLabel, isStandard, wrapper_class, value, handleIconClick}) => {
+const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, value, handleIconClick}) => {
 
   const iconUrl = (icon) =>{
     switch(filter){
@@ -34,7 +34,7 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapper_class, val
               {headerLabel}
               <button className={`btn-pearl btn-padding-small`}>x</button>
             </h3>
-            <ul className={`${wrapper_class} ${filter}`}>
+            <ul className={`${wrapperClass} ${filter}`}>
               {listIcons()}
             </ul>
           </div>
@@ -43,7 +43,7 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapper_class, val
 
     else{
       return (
-          <ul className={`${wrapper_class} ${filter}`}>
+          <ul className={`${wrapperClass} ${filter}`}>
             {listIcons()}
           </ul>
       )
@@ -54,11 +54,13 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapper_class, val
 };
 
 IconFilter.propTypes = {
-  header: PropTypes.bool.isRequired,
-  header_label: PropTypes.string,
   filter: PropTypes.string.isRequired,
-  isStandard: PropTypes.bool.isRequired,
-  wrapper_class: PropTypes.string.isRequired,
+  header: PropTypes.bool.isRequired,
+  headerLabel: PropTypes.string.isRequired,
+  isStandard: PropTypes.bool,
+  wrapperClass: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  handleIconClick: PropTypes.func.isRequired
 };
 
 export default IconFilter;
