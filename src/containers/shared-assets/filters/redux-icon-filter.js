@@ -9,9 +9,9 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, valu
   const iconUrl = (icon) =>{
     switch(filter){
       case 'Classic': return 'hs-logo';
-      case 'rarity': return `rarity`;
-      case 'cost':   return `mana-${icon.url} mana`;
-      default: return icon.url;
+      case 'rarity': return `${_.toLower(icon.name)} icon-rarity `;
+      case 'cost':   return `mana-${icon.url}`;
+      default: return `${icon.url} icon-${icon.url}`;
     }
   };
 
@@ -20,12 +20,11 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, valu
   };
 
   const listIcons = () =>{
-
     return (
         icon_filters[filter].filter(icon => icon.isStandard === isStandard).map((icon, index) =>
             <li key={index} id={_.kebabCase(icon.name)} className={isActive(icon)} onClick={(e)=>handleIconClick(e, headerLabel)}>
               <Tooltip title={icon.name} placement="bottom">
-                <span className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${isActive(icon)}`}></span>
+                <span className={`hs-icon ${iconUrl(icon)} ${isActive(icon)}`}></span>
               </Tooltip>
             </li>
         ))
