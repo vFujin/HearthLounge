@@ -78,6 +78,9 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
   const success = (msg) =>{
     message.success(msg);
   };
+  const loading = (msg) =>{
+    message.loading(msg);
+  };
 
   const handleKeyShortcuts = (e) => {
     let areDeckMechanicsActive = filters === false ? true : false;
@@ -106,16 +109,17 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     const count = summarizedDeck => summarizedDeck.reduce((a,b)=> Object.assign(a, {[b]: (a[b] || 0) + 1}), {});
     let urlEndObj = count(summarizedDeck);
     let urlEnd = Object.keys(urlEndObj).map(k=>`${k}:${urlEndObj[k]}`).join(',');
-    const successMsg = 'Successfully copied deck URL!';
+    const successMsg = 'Successfully copied deck URL into clipboard!';
     updateURL(urlEnd);
     success(successMsg);
   };
 
   const handleImgSaveClick = (e) =>{
     let target = e.currentTarget.id;
-
+    let a = performance.now();
     const imgCapture = () =>{
       let deckList = document.getElementById('decklist-to-img');
+
       return domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
           .then(dataUrl=>{
             let link = document.createElement('a');
@@ -126,14 +130,15 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
             !imgReadyDecklist
                 ? document.getElementById('image').className += "active"
                 : document.getElementById('image').className = "";
+            success('Image saved!')
           })
           .catch(error=>{
-            console.error("something went wrong", error)
+            error("Couldn't save image. Try again later.");
           });
     };
-
+    let b = performance.now();
     switch(target){
-      case 'save-img': return imgCapture();
+      case 'save-img': return loading('Saving image...', b-a, imgCapture());
       case 'cancel-img-save':
         !imgReadyDecklist
             ? document.getElementById('image').className += "active"
