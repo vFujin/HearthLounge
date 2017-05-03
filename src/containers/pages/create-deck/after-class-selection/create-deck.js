@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
 import domtoimage from 'dom-to-image';
 
 const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
-name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user}) => {
+name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user, updateURL}) => {
 
   const query = location.query;
 
@@ -45,20 +45,21 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     )
   };
 
-
-
   const listCards = () => {
     const toggleImg = (card) =>{
       let amount = deck.filter(c => c.cardId === card.cardId).length;
       if(amount > 0) return 'choosen';
     };
 
+
     if (cards < 1) {
       return <Loader/>;
     }
     else {
       return (
-          cards.filter(card => card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral")
+          cards.filter(card => {
+            return card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral"
+          })
               .map(card =>
                   <li key={card.cardId}
                       onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
@@ -90,15 +91,18 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     //   })
     // }
   };
+
   const handleDeckMechanicsToggle = () => {
     // console.log(this.props.deckMechanics);
-    // let areActive = this.props.deckMechanics === false ? true : false
-    toggleDeckMechanics(true);
+    let areActive = deckMechanics === false ? true : false;
+    toggleDeckMechanics(areActive);
   };
 
   const handleCopyDeckURLClick = () =>{
-    let json = { ...summarizedDeck},
-        stringifiedJson = JSON.stringify(json);
+    const count = summarizedDeck => summarizedDeck.reduce((a,b)=> Object.assign(a, {[b]: (a[b] || 0) + 1}), {});
+    let urlEndObj = count(summarizedDeck);
+    let urlEnd = Object.keys(urlEndObj).map(k=>`${k}:${urlEndObj[k]}`).join(',');
+    updateURL(urlEnd)
   };
 
   const handleImgSaveClick = (e) =>{
@@ -153,9 +157,6 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     }
   };
 
-
-
-
   return (
       <div tabIndex="0" onKeyDown={(e) => handleKeyShortcuts(e)}
            className="container__page container__page--twoSided create-deck">
@@ -191,10 +192,8 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
   );
 };
 
-
 const mapStateToProps = (state) =>{
   const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, summarizedDeck} = state.deckCreation;
-
   return {
     filters,
     editingTool,
@@ -218,6 +217,9 @@ const mapDispatchToProps = (dispatch) => {
     }),
     toggleImgReadyDecklist: (imgReadyDecklist) => dispatch({
       type: 'TOGGLE_IMG_READY_DECKLIST', imgReadyDecklist
+    }),
+    updateURL: (deckUrl) => dispatch ({
+      type: 'UPDATE_URL', deckUrl
     }),
     editDeck: (deck) => dispatch({
       type: 'EDIT_DECK', deck, summarizedDeck: deck.map(c=>c.cardId)

@@ -54,7 +54,7 @@ FilterSidebar.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardTopbarSet, cardCost, cardRarity} = state.createDeckFilters;
+  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardTopbarSet, cardCost, cardRarity} = state.deckCreationFilters;
   return {
     cardName,
     cardRace,

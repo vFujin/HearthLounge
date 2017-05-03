@@ -25,6 +25,10 @@ export default function(state=initialState, action){
       ...state,
       imgReadyDecklist: action.imgReadyDecklist
     };
+    case 'UPDATE_URL': return {
+      ...state,
+      deckUrl: action.deckUrl
+    };
     case 'EDIT_DECK': return {
       ...state,
       deck: action.deck,
