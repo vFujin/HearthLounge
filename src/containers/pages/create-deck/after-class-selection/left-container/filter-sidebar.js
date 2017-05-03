@@ -2,28 +2,27 @@ import React from 'react';
 import _ from 'lodash';
 import IconFilter from '../../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../../shared-assets/filters/redux-input-filter';
-import SliderFilter from '../../../../shared-assets/filters/slider-filter';
+import SliderFilter from '../../../../shared-assets/filters/redux-slider-filter';
 import {connect} from 'react-redux';
 
 const FilterSidebar = ({faction, filtersView, mechanics, name, query, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, rarity, updateFilter}) => {
 
   const handleSelect = (value, selector) =>{
     updateFilter({[`card${_.startCase(selector)}`]:value});
-    console.log(cardRace)
   };
 
   const page = "create-deck";
   return (
       <div className={`sidebar__body ${filtersView === true ? 'active' : 'display-none'}`}>
         <InputFilter attribute={name}      value={cardName}      filter="name"      multiple={false} handleSelect={handleSelect}/>
-        <InputFilter attribute={race}      value={cardRace}      filter="race"      multiple={true} handleSelect={handleSelect}/>
-        <InputFilter attribute={mechanics} value={cardMechanics} filter="mechanics" multiple={true} handleSelect={handleSelect}/>
-        <InputFilter attribute={faction}   value={cardFaction}   filter="faction"   multiple={true} handleSelect={handleSelect}/>
-        <InputFilter attribute={type}      value={cardType}      filter="type"      multiple={true} handleSelect={handleSelect}/>
+        <InputFilter attribute={race}      value={cardRace}      filter="race"      multiple={true}  handleSelect={handleSelect}/>
+        <InputFilter attribute={mechanics} value={cardMechanics} filter="mechanics" multiple={true}  handleSelect={handleSelect}/>
+        <InputFilter attribute={faction}   value={cardFaction}   filter="faction"   multiple={true}  handleSelect={handleSelect}/>
+        <InputFilter attribute={type}      value={cardType}      filter="type"      multiple={true}  handleSelect={handleSelect}/>
 
-        <SliderFilter filter="health"     query={query} defaultValue={[0, 30]} max={50} marks={{0:0, 30:30, 50:50}} page={page}/>
-        <SliderFilter filter="attack"     query={query} defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}} page={page}/>
-        <SliderFilter filter="durability" query={query} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}} page={page}/>
+        <SliderFilter filter="health"     value={cardHealth}     defaultValue={[0, 30]} max={50} marks={{0:0, 30:30, 50:50}} handleSelect={handleSelect}/>
+        <SliderFilter filter="attack"     value={cardAttack}     defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}   handleSelect={handleSelect}/>
+        <SliderFilter filter="durability" value={cardDurability} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}   handleSelect={handleSelect}/>
 
         <IconFilter header={true} header_label="standard sets" filter="cardSet" query={query} wrapper_class="sidebar-icons" isStandard={true} page={page}/>
         <IconFilter header={true} header_label="wild sets"     filter="cardSet" query={query} wrapper_class="sidebar-icons" isStandard={false} page={page}/>

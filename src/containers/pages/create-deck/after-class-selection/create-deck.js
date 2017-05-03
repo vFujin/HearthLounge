@@ -191,6 +191,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
   );
 };
 
+
 const mapStateToProps = (state) =>{
   const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, summarizedDeck} = state.deckCreation;
 
