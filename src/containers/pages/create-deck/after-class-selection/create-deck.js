@@ -84,7 +84,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
 
   const handleKeyShortcuts = (e) => {
     let areDeckMechanicsActive = filters === false ? true : false;
-    let areFiltersActive = deckMechanics === false ? true : false;
+    let areFiltersActive = filters === false ? true : false;
 
     if(e.button === 0 || e.ctrlKey) {
       toggleFilters(areFiltersActive)

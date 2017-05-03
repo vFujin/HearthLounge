@@ -13,7 +13,7 @@ const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, valu
 
     switch(filter){
       case 'rarity': return `${_.toLower(icon.name)} icon-rarity `;
-      case 'cost':   return `mana-${icon.url}`;
+      case 'cost':   return `mana icon-mana-${icon.url}`;
       default: return isClassic;
     }
   };

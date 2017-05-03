@@ -5,7 +5,7 @@ import InputFilter from '../../../../shared-assets/filters/redux-input-filter';
 import SliderFilter from '../../../../shared-assets/filters/redux-slider-filter';
 import {connect} from 'react-redux';
 
-const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardTopbarSet, cardCost, cardRarity, updateFilter}) => {
+const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity, updateFilter}) => {
 
   const handleSelect = (value, selector) =>{
     updateFilter({[`card${_.startCase(selector)}`]:value});
@@ -54,7 +54,7 @@ FilterSidebar.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardTopbarSet, cardCost, cardRarity} = state.deckCreationFilters;
+  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity} = state.deckCreationFilters;
   return {
     cardName,
     cardRace,
@@ -66,9 +66,7 @@ const mapStateToProps = (state) => {
     cardDurability,
     cardRarity,
     cardStandardSet,
-    cardWildSet,
-    cardTopbarSet,
-    cardCost
+    cardWildSet
   };
 };
 
