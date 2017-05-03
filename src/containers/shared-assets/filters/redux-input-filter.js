@@ -19,7 +19,7 @@ const InputFilter = ({attribute, filter, multiple, handleSelect, value}) => {
                 allowClear={multiple !== false ? true : false}
                 style={{width: "100%"}}
                 onChange={(e)=>handleSelect(e,filter)}
-
+                value={value}
                 placeholder={`${placeholder}...`}>
           {options}
         </Select>

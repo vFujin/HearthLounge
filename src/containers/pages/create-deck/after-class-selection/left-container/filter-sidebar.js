@@ -15,7 +15,6 @@ const FilterSidebar = ({faction, filtersView, mechanics, name, query, race, type
   const page = "create-deck";
   return (
       <div className={`sidebar__body ${filtersView === true ? 'active' : 'display-none'}`}>
-        {console.log(cardRace)}
         <InputFilter attribute={name}      value={cardName}      filter="name"      multiple={false} handleSelect={handleSelect}/>
         <InputFilter attribute={race}      value={cardRace}      filter="race"      multiple={true} handleSelect={handleSelect}/>
         <InputFilter attribute={mechanics} value={cardMechanics} filter="mechanics" multiple={true} handleSelect={handleSelect}/>
@@ -45,21 +44,21 @@ FilterSidebar.propTypes = {
 
 const mapStateToProps = (state) => {
   const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, rarity} = state.createDeckFilters;
-  return (
-      cardName,
-      cardRace,
-      cardMechanics,
-      cardFaction,
-      cardType,
-      cardHealth,
-      cardAttack,
-      cardDurability,
-      setStandard,
-      setWild,
-      setTopbar,
-      setCost,
-      rarity
-  );
+  return {
+    cardName,
+    cardRace,
+    cardMechanics,
+    cardFaction,
+    cardType,
+    cardHealth,
+    cardAttack,
+    cardDurability,
+    setStandard,
+    setWild,
+    setTopbar,
+    setCost,
+    rarity
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
