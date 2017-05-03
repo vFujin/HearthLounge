@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 const CreateDeck = ({children, authed, user, name, cards, faction, mechanics, race, type, cardSet}) =>{
     return React.cloneElement(children, {
       authed,
@@ -15,7 +15,7 @@ const CreateDeck = ({children, authed, user, name, cards, faction, mechanics, ra
 };
 
 CreateDeck.propTypes = {
-  children: React.PropTypes.element
+  children: PropTypes.element.isRequired
 };
 
 export default CreateDeck;
