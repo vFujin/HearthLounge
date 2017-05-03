@@ -12,8 +12,16 @@ const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardN
   };
 
   const handleIconClick = (e, selector) =>{
-    let target = e.currentTarget.id;
-    updateFilter({[`card${_.upperFirst(_.camelCase(selector))}`]:target});
+    let target = e.currentTarget;
+    let targetId = target.id;
+    let targetClassList = target.classList;
+
+    if(targetClassList.contains('active')){
+      updateFilter({[`card${_.upperFirst(_.camelCase(selector))}`]:''});
+    }
+    else{
+      updateFilter({[`card${_.upperFirst(_.camelCase(selector))}`]:targetId});
+    }
   };
 
   return (
