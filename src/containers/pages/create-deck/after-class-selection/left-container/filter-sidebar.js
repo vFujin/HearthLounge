@@ -1,17 +1,21 @@
 import React from 'react';
 import _ from 'lodash';
-import IconFilter from '../../../../shared-assets/filters/icon-filter';
+import IconFilter from '../../../../shared-assets/filters/redux-icon-filter';
 import InputFilter from '../../../../shared-assets/filters/redux-input-filter';
 import SliderFilter from '../../../../shared-assets/filters/redux-slider-filter';
 import {connect} from 'react-redux';
 
-const FilterSidebar = ({faction, filtersView, mechanics, name, query, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, rarity, updateFilter}) => {
+const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, cardRarity, updateFilter}) => {
 
   const handleSelect = (value, selector) =>{
     updateFilter({[`card${_.startCase(selector)}`]:value});
   };
 
-  const page = "create-deck";
+  const handleIconClick = (e, selector) =>{
+    let target = e.currentTarget.id;
+    updateFilter({[`card${_.upperFirst(_.camelCase(selector))}`]:target});
+  };
+
   return (
       <div className={`sidebar__body ${filtersView === true ? 'active' : 'display-none'}`}>
         <InputFilter attribute={name}      value={cardName}      filter="name"      multiple={false} handleSelect={handleSelect}/>
@@ -24,9 +28,9 @@ const FilterSidebar = ({faction, filtersView, mechanics, name, query, race, type
         <SliderFilter filter="attack"     value={cardAttack}     defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}   handleSelect={handleSelect}/>
         <SliderFilter filter="durability" value={cardDurability} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}   handleSelect={handleSelect}/>
 
-        <IconFilter header={true} header_label="standard sets" filter="cardSet" query={query} wrapper_class="sidebar-icons" isStandard={true} page={page}/>
-        <IconFilter header={true} header_label="wild sets"     filter="cardSet" query={query} wrapper_class="sidebar-icons" isStandard={false} page={page}/>
-        <IconFilter header={true} header_label="rarity"        filter="rarity"  query={query} wrapper_class="sidebar-icons" page={page}/>
+        <IconFilter header={true} headerLabel="standard sets" filter="cardSet" value={setStandard} wrapper_class="sidebar-icons" isStandard={true}  handleIconClick={handleIconClick}/>
+        <IconFilter header={true} headerLabel="wild sets"     filter="cardSet" value={setWild} wrapper_class="sidebar-icons"     isStandard={false} handleIconClick={handleIconClick}/>
+        <IconFilter header={true} headerLabel="rarity"        filter="rarity"  value={cardRarity} wrapper_class="sidebar-icons"  handleIconClick={handleIconClick}/>
       </div>
   );
 };
@@ -42,7 +46,7 @@ FilterSidebar.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, rarity} = state.createDeckFilters;
+  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, setStandard, setWild, setTopbar, setCost, cardRarity} = state.createDeckFilters;
   return {
     cardName,
     cardRace,
@@ -52,11 +56,11 @@ const mapStateToProps = (state) => {
     cardHealth,
     cardAttack,
     cardDurability,
+    cardRarity,
     setStandard,
     setWild,
     setTopbar,
-    setCost,
-    rarity
+    setCost
   };
 };
 

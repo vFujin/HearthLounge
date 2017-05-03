@@ -33,5 +33,4 @@ SliderFilter.propTypes = {
   handleSelect: PropTypes.func.isRequired
 };
 
-
 export default SliderFilter;
