@@ -3844,4 +3844,12 @@ footer {
     display: flex;
     justify-content: space-around; }
 
+/*
+ * Message
+ */
+.ant-message span .ant-message-notice .ant-message-notice-content {
+  border-radius: 0;
+  border: 1px solud;
+  background: #E7E2DA; }
+
 /*# sourceMappingURL=index.css.map */

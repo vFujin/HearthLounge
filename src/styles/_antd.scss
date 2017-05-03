@@ -299,3 +299,18 @@
     }
   }
 }
+
+/*
+ * Message
+ */
+.ant-message{
+  span{
+    .ant-message-notice{
+      .ant-message-notice-content{
+        border-radius: 0;
+        border:1px solid $dark-grey;
+        background: $pearl;
+      }
+    }
+  }
+}

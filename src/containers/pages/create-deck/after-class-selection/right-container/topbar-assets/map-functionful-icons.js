@@ -5,6 +5,8 @@ import {topbar_icons} from './icons';
 import Tooltip from 'antd/lib/tooltip';
 import Popover from 'antd/lib/popover';
 import PopoverSaveImg from './popover-save-img';
+import CopyToClipboard from 'react-copy-to-clipboard';
+import 'antd/lib/message/style/index.css';
 
 const MapFunctionfulIcons = ({set, handleOptionsClick, handleImgSaveClick, imgReadyDecklist}) => {
   const popoverVisibility = (obj) =>{
@@ -23,9 +25,11 @@ const MapFunctionfulIcons = ({set, handleOptionsClick, handleImgSaveClick, imgRe
                    content={<PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>}
                    trigger="click"
                    arrowPointAtCenter>
-            <Tooltip key={obj.title} title={_.startCase(obj.title)} placement={obj.icon === "download" ? 'bottomRight' : 'bottom'}>
-              <span className={`hs-icon icon-${obj.icon}`}></span>
-            </Tooltip>
+            <CopyToClipboard text="foox" onCopy={()=>obj.allowCopy ? "foo" : null}>
+              <Tooltip key={obj.title} title={_.startCase(obj.title)} placement={obj.icon === "download" ? 'bottomRight' : 'bottom'}>
+                <span className={`hs-icon icon-${obj.icon}`}></span>
+              </Tooltip>
+            </CopyToClipboard>
           </Popover>
         </li>)
   };

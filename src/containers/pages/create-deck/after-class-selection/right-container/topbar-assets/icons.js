@@ -22,17 +22,20 @@ export const topbar_icons = (active_class) => {
       {
         title: 'Copy deck URL to clipboard',
         icon: 'link',
-        popover: false
+        popover: false,
+        allowCopy: true
       },
       {
         title: 'save deck as image',
         icon: 'image',
-        popover: true
+        popover: true,
+        allowCopy: false
       },
       {
         title: 'save deck in hearth lounge',
         icon: 'download',
-        popover: false
+        popover: false,
+        allowCopy: false
       },
     ],
     types: [

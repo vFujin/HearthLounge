@@ -6,8 +6,9 @@ import Loader from '../../../../utils/loader';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/popover/style/css';
 import {connect} from 'react-redux';
-
+import message from 'antd/lib/message';
 import domtoimage from 'dom-to-image';
+import 'antd/lib/message/style/index.css';
 
 const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
 name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user, updateURL}) => {
@@ -74,6 +75,10 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     }
   };
 
+  const success = (msg) =>{
+    message.success(msg);
+  };
+
   const handleKeyShortcuts = (e) => {
     let areDeckMechanicsActive = filters === false ? true : false;
     let areFiltersActive = deckMechanics === false ? true : false;
@@ -93,16 +98,17 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
   };
 
   const handleDeckMechanicsToggle = () => {
-    // console.log(this.props.deckMechanics);
     let areActive = deckMechanics === false ? true : false;
     toggleDeckMechanics(areActive);
   };
 
-  const handleCopyDeckURLClick = () =>{
+  const handleCopyDeckURLClick = (e) =>{
     const count = summarizedDeck => summarizedDeck.reduce((a,b)=> Object.assign(a, {[b]: (a[b] || 0) + 1}), {});
     let urlEndObj = count(summarizedDeck);
     let urlEnd = Object.keys(urlEndObj).map(k=>`${k}:${urlEndObj[k]}`).join(',');
-    updateURL(urlEnd)
+    const successMsg = 'Successfully copied deck URL!';
+    updateURL(urlEnd);
+    success(successMsg);
   };
 
   const handleImgSaveClick = (e) =>{
