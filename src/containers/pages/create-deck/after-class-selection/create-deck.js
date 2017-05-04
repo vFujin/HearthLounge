@@ -115,13 +115,14 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     let urlEnd = Object.keys(urlEndObj).map(k=>`${k}:${urlEndObj[k]}`).join(',');
     const successMsg = 'Successfully copied deck URL into clipboard!';
     updateURL(urlEnd);
+    console.log(urlEnd);
     success(successMsg);
   };
 
   const handleImgSaveClick = (e) =>{
     let target = e.currentTarget.id;
-    let a = performance.now();
-    const imgCapture = () =>{
+    const imgCapture = (closeLoadingMessage) =>{
+      // loading('Img saving');
       let deckList = document.getElementById('decklist-to-img');
 
       return domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
@@ -134,15 +135,18 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
             !imgReadyDecklist
                 ? document.getElementById('image').className += "active"
                 : document.getElementById('image').className = "";
+            closeLoadingMessage();
             success('Image saved!')
           })
           .catch(error=>{
+            closeLoadingMessage();
             error("Couldn't save image. Try again later.");
           });
     };
-    let b = performance.now();
     switch(target){
-      case 'save-img': return loading('Saving image...', b-a, imgCapture());
+      case 'save-img':
+        let closeLoadingMessage = message.loading('Creaating img');
+        imgCapture(closeLoadingMessage);
       case 'cancel-img-save':
         !imgReadyDecklist
             ? document.getElementById('image').className += "active"

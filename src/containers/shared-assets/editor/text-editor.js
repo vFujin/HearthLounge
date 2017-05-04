@@ -19,13 +19,16 @@ const TextEditor = ({handleInputChange, id, value, handleTagInsertion}) => {
       )
     });
   };
-console.log(value);
   return (
       <div className="text-editor">
         <ul className="toolbar">
           {mapToolbar()}
         </ul>
-        <textarea id={id} placeholder="Your text goes here..." value={value} onChange={handleInputChange}></textarea>
+        <textarea id={id}
+                  placeholder="Your text goes here..."
+                  value={value}
+                  onChange={handleInputChange}>
+        </textarea>
       </div>
   );
 };

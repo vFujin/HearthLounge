@@ -7,19 +7,20 @@ import 'antd/lib/select/style/css';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 
+const updateDeckText = _.debounce((updateDeckProperty, value) => {
+  updateDeckProperty({deckText: value})
+}, 300);
+
 
 const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, deckArchetype, deckText, deckTextControlled, updateDeckProperty}) => {
 
-  const updateDeckText = _.debounce((value) => {
-    updateDeckProperty({deckText: value})
-  }, 300);
 
   const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
     if(target === 'deckText') {
       updateDeckProperty({deckTextControlled: value});
-      updateDeckText(value);
+      updateDeckText(updateDeckProperty, value);
     }
     else {
       updateDeckProperty({[target]: value});
