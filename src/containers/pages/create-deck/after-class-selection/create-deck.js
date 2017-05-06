@@ -122,7 +122,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
   const handleImgSaveClick = (e) =>{
     let target = e.currentTarget.id;
     const imgCapture = (closeLoadingMessage) =>{
-      // loading('Img saving');
+
       let deckList = document.getElementById('decklist-to-img');
 
       return domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
@@ -147,6 +147,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
       case 'save-img':
         let closeLoadingMessage = message.loading('Creaating img');
         imgCapture(closeLoadingMessage);
+        break;
       case 'cancel-img-save':
         !imgReadyDecklist
             ? document.getElementById('image').className += "active"
