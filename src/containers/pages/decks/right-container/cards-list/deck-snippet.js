@@ -1,35 +1,35 @@
 import React from 'react';
 import {Link} from 'react-router';
-export const DeckSnippet = (props) => {
+export const DeckSnippet = ({handleTableRowClick, hsClass, title, votes, deck, created, archetype, author, type}) => {
   return (
-    <tr className={`deck-snippet ${props.class} table-row`} onClick={props.handleTableRowClick}>
+    <tr className={`deck-snippet ${hsClass} table-row`} onClick={handleTableRowClick}>
 
         <td className="name">
-          <Link to={`/decks/${props.class}/123`}>
-            <span className={`hs-icon icon-${props.class}`}></span>
+          <Link to={`/decks/${hsClass}/123`}>
+            <span className={`hs-icon icon-${hsClass}`}></span>
             <div className="name-details">
-              <p className="title">Top 10 legend {props.class}</p>
-              <p className="author">created by (authorname)</p>
+              <p className="title">{title}</p>
+              <p className="author">created by {author}</p>
             </div>
           </Link>
         </td>
         <td className="class">
-          <Link to={`/decks/${props.class}/123`}>
-            {props.class}
+          <Link to={`/decks/${hsClass}/123`}>
+            {hsClass}
           </Link>
         </td>
         <td className="rating">
-          <Link to={`/decks/${props.class}/123`}>
-            42
+          <Link to={`/decks/${hsClass}/123`}>
+            {votes}
           </Link>
         </td>
         <td className="views">
-          <Link to={`/decks/${props.class}/123`}>
-            1337
+          <Link to={`/decks/${hsClass}/123`}>
+            42
           </Link>
         </td>
         <td className="mana-curve">
-          <Link to={`/decks/${props.class}/123`}>
+          <Link to={`/decks/${hsClass}/123`}>
             <ul>
               <li></li>
               <li></li>
@@ -42,13 +42,13 @@ export const DeckSnippet = (props) => {
           </Link>
         </td>
         <td className="type">
-          <Link to={`/decks/${props.class}/123`}>
-            Reno{props.class}
+          <Link to={`/decks/${hsClass}/123`}>
+            {type}
           </Link>
         </td>
         <td className="created">
-          <Link to={`/decks/${props.class}/123`}>
-          4 dni temu
+          <Link to={`/decks/${hsClass}/123`}>
+            {created}
           </Link>
         </td>
 

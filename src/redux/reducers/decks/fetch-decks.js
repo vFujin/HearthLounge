@@ -4,7 +4,7 @@ const initialState = {
 
 export default function(state=initialState, action){
   switch(action.type){
-    case 'FETCH_DECKS': return {
+    case 'UPDATE_DECK_LIST': return {
         ...state,
       decks: action.decks
     };

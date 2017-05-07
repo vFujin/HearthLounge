@@ -6,38 +6,33 @@ import 'whatwg-fetch';
 import {connect} from 'react-redux';
 
 class DeckSelection extends Component {
-
-  constructor(props){
-    super(props);
-
-    this.state = {
-      decks: []
-    }
-  }
-
   componentDidMount() {
-    fetchDecks((v)=>{
-      console.log(v);
-      return this.setState({
-        decks: v
-      })
-    })
+    fetchDecks((v)=> this.props.updateDeckList(v));
+    console.log(this.props.decks)
   }
 
   render() {
     return (
         <div  className="container__page container__page--twoSided decks">
           <LeftContainer/>
-          <RightContainer handleTableRowClick={this.props.handleTableRowClick}/>
+          <RightContainer decks={this.props.decks} handleTableRowClick={this.props.handleTableRowClick}/>
         </div>
     );
   };
 }
 
 const mapStateToProps = state =>{
-  const {filter} = state.deckListFilters;
-  return {filter};
+  const {decks} = state.deckList;
+  return {decks};
 };
 
-export default connect(mapStateToProps)(DeckSelection);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateDeckList: (decks) => dispatch({
+      type: 'UPDATE_DECK_LIST', decks
+    })
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeckSelection);
 

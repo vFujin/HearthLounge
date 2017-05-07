@@ -1,7 +1,29 @@
 import React from 'react';
+import  _ from 'lodash';
+import Loader from '../../../../../utils/loader';
 import DeckSnippet from '../../right-container/cards-list/deck-snippet';
 
-const DeckList = ({handleTableRowClick}) => {
+const DeckList = ({decks, handleTableRowClick}) => {
+
+  const mapDecks = () =>{
+
+    if(decks && decks.length<1){
+      return <tr><td><Loader/></td></tr>
+    }
+    else {
+      return _.map(decks).map(deck => {
+        return <DeckSnippet handleTableRowClick={handleTableRowClick}
+                            hsClass={deck.hsClass}
+                            title={deck.title}
+                            votes={deck.upvotes - deck.downvotes}
+                            deck={deck.deck}
+                            created={deck.created}
+                            archetype={deck.archetype}
+                            author={deck.author}
+                            type={deck.type} views={deck.views}/>
+      })
+    }
+  };
   return (
       <table className="shared-table">
         <tbody>
@@ -14,9 +36,7 @@ const DeckList = ({handleTableRowClick}) => {
           <td className="type">Type</td>
           <td className="created">Created</td>
         </tr>
-        <DeckSnippet handleTableRowClick={handleTableRowClick} class="warlock"/>
-        <DeckSnippet handleTableRowClick={handleTableRowClick} class="hunter"/>
-        <DeckSnippet handleTableRowClick={handleTableRowClick} class="mage"/>
+        {mapDecks()}
         </tbody>
       </table>
   )
