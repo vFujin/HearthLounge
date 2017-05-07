@@ -7,9 +7,7 @@ const RightContainer = ({handleTableRowClick}) => {
       <div className="container__page--inner container__page--right">
         <Topbar />
         <div className="content">
-
-            <DeckList handleTableRowClick={handleTableRowClick}/>
-
+          <DeckList handleTableRowClick={handleTableRowClick}/>
         </div>
       </div>
   )
