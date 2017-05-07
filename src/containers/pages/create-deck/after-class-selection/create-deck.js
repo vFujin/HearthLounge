@@ -10,6 +10,7 @@ import message from 'antd/lib/message';
 import domtoimage from 'dom-to-image';
 import 'antd/lib/message/style/index.css';
 import LazyLoad from 'react-lazyload';
+import {copyDeckUrlToClipboard} from '../../../../utils/copyTextToClipboard';
 
 const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
 name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user, updateURL}) => {
@@ -109,14 +110,8 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     toggleDeckMechanics(areActive);
   };
 
-  const handleCopyDeckURLClick = (e) =>{
-    const count = summarizedDeck => summarizedDeck.reduce((a,b)=> Object.assign(a, {[b]: (a[b] || 0) + 1}), {});
-    let urlEndObj = count(summarizedDeck);
-    let urlEnd = Object.keys(urlEndObj).map(k=>`${k}:${urlEndObj[k]}`).join(',');
-    const successMsg = 'Successfully copied deck URL into clipboard!';
-    updateURL(urlEnd);
-    console.log(urlEnd);
-    success(successMsg);
+  const handleCopyDeckURLClick = () =>{
+    copyDeckUrlToClipboard(summarizedDeck, updateURL);
   };
 
   const handleImgSaveClick = (e) =>{
