@@ -40,7 +40,6 @@ export class Main extends Component {
     })
   }
 
-
   componentDidMount(){
     const getUniqueAttributes = (data, attribute) =>{
       let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);

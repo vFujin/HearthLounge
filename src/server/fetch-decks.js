@@ -1,3 +1,5 @@
-/**
- * Created by TERMINATOR on 07.05.2017.
- */
+import {ref} from '../keys';
+
+export function fetchDecks(callback) {
+  return ref.once("value", (snapshot) => callback(snapshot.child(`decks`).val()))
+}
