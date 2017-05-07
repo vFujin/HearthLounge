@@ -1,19 +1,9 @@
 import React from 'react';
 import DeckSnippet from '../right-container/cards-list/deck-snippet';
-import {icon_filters} from '../../../../data/filters';
+import Topbar from './topbar';
 const DeckSelection  = (props) => {
 
-  const mapFilters = (filter) =>{
-    return (
-        icon_filters[filter].map(el=>{
-          return (
-            <li key={el.url}>
-              <span className={`hs-icon icon-${el.url}`}></span>
-            </li>
-          )
-        })
-    )
-  };
+
 
   return (
       <div className="container__page container__page--twoSided decks">
@@ -24,10 +14,7 @@ const DeckSelection  = (props) => {
           </div>
         </div>
         <div className="container__page--inner container__page--right">
-          <div className="topbar">
-            <div className="topbar-left">{mapFilters('type')}</div>
-            <div className="topbar-right">{mapFilters('playerClass')}</div>
-          </div>
+          <Topbar />
           <div className="content">
             <div className="top-decks">
               <table className="shared-table">
