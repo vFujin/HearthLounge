@@ -8,6 +8,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 
 const updateDeckText = _.debounce((updateDeckProperty, value) => {
+  console.log(value);
   updateDeckProperty({deckText: value})
 }, 300);
 
@@ -18,7 +19,8 @@ const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, de
   const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
-    if(target === 'deckText') {
+    console.log(target);
+    if(target === 'deckTextControlled') {
       updateDeckProperty({deckTextControlled: value});
       updateDeckText(updateDeckProperty, value);
     }
@@ -34,7 +36,6 @@ const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, de
 
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
-    console.log(deckType);
     saveDeck(activeClass, user.username, deckTitle, deckType, deckArchetype, summarizedDeck, deckText, user.uid);
   };
 

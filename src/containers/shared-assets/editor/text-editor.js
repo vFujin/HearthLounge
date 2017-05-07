@@ -4,14 +4,14 @@ import {handleBBCodeClick} from './text-editor-functions';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 
-const TextEditor = ({handleInputChange, id, value, handleTagInsertion}) => {
+const TextEditor = ({handleInputChange, id, previewId, value, handleTagInsertion}) => {
 
   const mapToolbar = () => {
     return toolbar.map(tool => {
       return (
           <li key={tool.name}>
             <Tooltip title={_.startCase(tool.name === 'hs-logo' ? tool.abbreviation : tool.name)} placement="bottom">
-              <button onClick={(e)=>handleBBCodeClick(e, value, handleTagInsertion, id)} value={tool.abbreviation}>
+              <button onClick={(e)=>handleBBCodeClick(e, value, handleTagInsertion, id, previewId)} value={tool.abbreviation}>
                 <span className={`hs-icon icon-${tool.name}`}></span>
               </button>
             </Tooltip>

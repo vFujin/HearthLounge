@@ -1,7 +1,7 @@
 import React from 'react';
-export const handleBBCodeClick = (e, textContainer, handleTagInsertion, id) =>{
+export const handleBBCodeClick = (e, textContainer, handleTagInsertion, id, previewId) =>{
   e.preventDefault();
-  let value = e.currentTarget.value;
+  let bbcode = e.currentTarget.value;
   let selector = textContainer || '';
 
   let cursorPosStart = document.getElementById(id).selectionStart;
@@ -11,14 +11,28 @@ export const handleBBCodeClick = (e, textContainer, handleTagInsertion, id) =>{
   let selection = selector.substr(cursorPosStart, cursorPosEnd - cursorPosStart);
   let end = selector.substr(cursorPosEnd);
 
-  switch(value){
-    case 'url': return handleTagInsertion({[id]: start + `[${value}][li]` + selection + `[/li][/${value}]` + end});
+  switch(bbcode){
+    case 'url': return handleTagInsertion({
+      [id]: start + `[${bbcode}][li]` + selection + `[/li][/${bbcode}]` + end,
+      [previewId]: start + `[${bbcode}][li]` + selection + `[/li][/${bbcode}]` + end
+    });
     case 'ul':
-    case 'ol':   return handleTagInsertion({[id]: start + `[${value}][li]` + selection + `[/li][/${value}]` + end});
-    case 'card': return handleTagInsertion({[id]: start + `[${value}]` + selection + end});
-    case value:  return handleTagInsertion({[id]: start + `[${value}]` + selection + `[/${value}]` + end});
+    case 'ol': return handleTagInsertion({
+      [id]: start + `[${bbcode}][li]` + selection + `[/li][/${bbcode}]` + end,
+      [previewId]: start + `[${bbcode}][li]` + selection + `[/li][/${bbcode}]` + end
+    });
+    case 'card': return handleTagInsertion({
+      [id]: start + `[${bbcode}]` + selection + end,
+      [previewId]: start + `[${bbcode}]` + selection + end
+    });
+    case bbcode:  return handleTagInsertion({
+      [id]: start + `[${bbcode}]` + selection + `[/${bbcode}]` + end,
+      [previewId]: start + `[${bbcode}]` + selection + `[/${bbcode}]` + end
+    });
   }
 };
+
+
 
 export const handlePreviewCompiling = (text) =>{
   if(text !== undefined) {
@@ -50,6 +64,7 @@ export const handlePreviewCompiling = (text) =>{
         .replace(/\[\/ul]/g, '</li></ul>')
         .replace(/\[\/ol]/g, '</li></ol>')
         .replace(/\[\/li]/g, '</li>');
+    console.log(s);
 
     function createMarkup(){
       return {__html: s}
