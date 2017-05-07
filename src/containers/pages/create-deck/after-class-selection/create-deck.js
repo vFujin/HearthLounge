@@ -6,9 +6,9 @@ import Loader from '../../../../utils/loader';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/popover/style/css';
 import {connect} from 'react-redux';
-import message from 'antd/lib/message';
 import 'antd/lib/message/style/index.css';
 import LazyLoad from 'react-lazyload';
+import {loading} from '../../../../utils/messages';
 import {copyDeckUrlToClipboard} from '../../../../utils/copyDeckUrlToClipboard';
 import {captureDecklist} from '../../../../utils/captureDecklist';
 
@@ -98,8 +98,8 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     // }
   };
 
-  const switchDecklistClasses = () =>{
-    toggleImgReadyDecklist(false);
+  const switchDecklistClasses = (param) =>{
+    toggleImgReadyDecklist(param);
     !imgReadyDecklist
         ? document.getElementById('image').className += "active"
         : document.getElementById('image').className = "";
@@ -118,10 +118,10 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     let target = e.currentTarget.id;
     switch(target){
       case 'save-img':
-        let closeLoadingMessage = message.loading('Creating image...');
+        let closeLoadingMessage = loading('Creating image...');
         captureDecklist('decklist-to-img', switchDecklistClasses, closeLoadingMessage);
         break;
-      case 'cancel-img-save': return switchDecklistClasses();
+      case 'cancel-img-save': return switchDecklistClasses(false);
     }
   };
 
@@ -130,12 +130,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     let isDecklistReadyForCapture = imgReadyDecklist === false ? true : false;
     switch (icon) {
       case 'link': return handleCopyDeckURLClick();
-      case 'image':
-        !imgReadyDecklist
-            ? document.getElementById(e.currentTarget.id).className += "active"
-            : document.getElementById(e.currentTarget.id).className = "";
-        toggleImgReadyDecklist(isDecklistReadyForCapture);
-        break;
+      case 'image': return switchDecklistClasses(isDecklistReadyForCapture);
       case 'download':
         !editingTool
             ? document.getElementById(e.currentTarget.id).className += "active"

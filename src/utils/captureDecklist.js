@@ -10,7 +10,7 @@ export const captureDecklist = (selector, decklistState, closeLoadingMessage) =>
         link.download = 'deck.jpeg';
         link.href = dataUrl;
         link.click();
-        decklistState();
+        decklistState(false);
         closeLoadingMessage();
         success('Image saved!')
       })
