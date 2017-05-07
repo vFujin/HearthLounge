@@ -7,10 +7,10 @@ import 'antd/lib/tooltip/style/css';
 import 'antd/lib/popover/style/css';
 import {connect} from 'react-redux';
 import message from 'antd/lib/message';
-import domtoimage from 'dom-to-image';
 import 'antd/lib/message/style/index.css';
 import LazyLoad from 'react-lazyload';
-import {copyDeckUrlToClipboard} from '../../../../utils/copyTextToClipboard';
+import {copyDeckUrlToClipboard} from '../../../../utils/copyDeckUrlToClipboard';
+import {captureDecklist} from '../../../../utils/captureDecklist';
 
 const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
 name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user, updateURL}) => {
@@ -80,13 +80,6 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     }
   };
 
-  const success = (msg) =>{
-    message.success(msg);
-  };
-  const loading = (msg) =>{
-    message.loading(msg);
-  };
-
   const handleKeyShortcuts = (e) => {
     let areDeckMechanicsActive = filters === false ? true : false;
     let areFiltersActive = filters === false ? true : false;
@@ -105,6 +98,13 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     // }
   };
 
+  const switchDecklistClasses = () =>{
+    toggleImgReadyDecklist(false);
+    !imgReadyDecklist
+        ? document.getElementById('image').className += "active"
+        : document.getElementById('image').className = "";
+  };
+
   const handleDeckMechanicsToggle = () => {
     let areActive = deckMechanics === false ? true : false;
     toggleDeckMechanics(areActive);
@@ -116,39 +116,12 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
 
   const handleImgSaveClick = (e) =>{
     let target = e.currentTarget.id;
-    const imgCapture = (closeLoadingMessage) =>{
-
-      let deckList = document.getElementById('decklist-to-img');
-
-      return domtoimage.toJpeg(deckList, {bgcolor: '#E7E2DA'})
-          .then(dataUrl=>{
-            let link = document.createElement('a');
-            link.download = 'deck.jpeg';
-            link.href = dataUrl;
-            link.click();
-            toggleImgReadyDecklist(false);
-            !imgReadyDecklist
-                ? document.getElementById('image').className += "active"
-                : document.getElementById('image').className = "";
-            closeLoadingMessage();
-            success('Image saved!')
-          })
-          .catch(error=>{
-            closeLoadingMessage();
-            error("Couldn't save image. Try again later.");
-          });
-    };
     switch(target){
       case 'save-img':
-        let closeLoadingMessage = message.loading('Creaating img');
-        imgCapture(closeLoadingMessage);
+        let closeLoadingMessage = message.loading('Creating image...');
+        captureDecklist('decklist-to-img', switchDecklistClasses, closeLoadingMessage);
         break;
-      case 'cancel-img-save':
-        !imgReadyDecklist
-            ? document.getElementById('image').className += "active"
-            : document.getElementById('image').className = "";
-        toggleImgReadyDecklist(false);
-        break;
+      case 'cancel-img-save': return switchDecklistClasses();
     }
   };
 
