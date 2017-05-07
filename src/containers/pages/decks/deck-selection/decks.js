@@ -1,25 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export class Decks extends Component {
-  render() {
-    const {sidebar, topbar, main} = this.props;
-    return (
-      <div className="container__page container__page--twoSided decks">
-        {this.props.children}
-          <div className="container__page--inner container__page--left">
-            <div className="sidebar">
-              {sidebar}
-            </div>
-          </div>
-          <div className="container__page--inner container__page--right">
-            <div className="topbar">
-              {topbar}
-            </div>
-            <div className="content">
-              {main}
-            </div>
-          </div>
-        </div>
-    );
-  }
-}
+const Decks = ({children}) => {
+  return children;
+};
+
+Decks.propTypes = {
+  children: PropTypes.element
+};
+
+export default Decks;

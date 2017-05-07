@@ -10,7 +10,7 @@ import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 
 
-import {Decks} from './pages/decks/deck-selection/decks';
+import Decks from './pages/decks/deck-selection/decks';
 import {Deck} from './pages/decks/deck/deck';
 import {DeckSidebar} from './pages/decks/deck/sidebar';
 import {DeckTopbar} from './pages/decks/deck/topbar';
@@ -70,9 +70,8 @@ export class App extends Component {
 
           <Redirect from="decks" to="decks/all"/>
           <Route path="decks"             component={Decks}>
-
-            <Route path="all"             components={{main: DeckSelection, sidebar: DeckSelectionSidebar, topbar: DeckSelectionTopbar}}/>
-            <Route path=":class/:deckId"  components={{main: Deck, sidebar: DeckSidebar, topbar: DeckTopbar}}/>
+            <Route path="all"             components={DeckSelection}/>
+            {/*<Route path=":class/:deckId"  components={{main: Deck, sidebar: DeckSidebar, topbar: DeckTopbar}}/>*/}
           </Route>
 
           {/*<Redirect from="cards" to="cards/all" />*/}

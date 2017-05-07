@@ -7,5 +7,5 @@ export const loading = (msg) =>{
   message.loading(msg);
 };
 export const error = (msg) =>{
-  message.error(msg);
+  message.error(msg, 2);
 };
