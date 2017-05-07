@@ -12,11 +12,7 @@ import {Tournaments} from './pages/tournaments/tournaments';
 
 import Decks from './pages/decks/deck-selection/decks';
 import {Deck} from './pages/decks/deck/deck';
-import {DeckSidebar} from './pages/decks/deck/sidebar';
-import {DeckTopbar} from './pages/decks/deck/topbar';
-import {DeckSelection} from "./pages/decks/deck-selection/deck-selection";
-import {DeckSelectionSidebar} from "./pages/decks/deck-selection/sidebar";
-import {DeckSelectionTopbar} from "./pages/decks/deck-selection/topbar";
+import DeckSelection from "./pages/decks/deck-selection/deck-selection";
 
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
 import {ArenaPickerClassSelection} from './pages/arena-picker/class-selection';
@@ -138,4 +134,3 @@ export class App extends Component {
     );
   }
 }
-export default App;
