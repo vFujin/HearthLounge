@@ -8,10 +8,11 @@ import {connect} from 'react-redux';
 class DeckSelection extends Component {
   componentDidMount() {
     fetchDecks((v)=> this.props.updateDeckList(v));
-    console.log(this.props.decks)
   }
 
+
   render() {
+    console.log(this.props);
     return (
         <div  className="container__page container__page--twoSided decks">
           <LeftContainer/>

@@ -7,24 +7,22 @@ import {CardDetails} from './right-container/card-details';
 import {Data} from '../../../data/cards-data';
 import LazyLoad from 'react-lazyload';
 
-export class Cards extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
 
-      sliderFirstValue: []
-    }
-  }
+export class Cards extends Component {
+
 
   handleCardClick(e, card){
     // let target = e.target;
     console.log(card);
   }
 
+  componentWillReceiveProps(nextProps){
+    console.log(nextProps);
+  }
 
   listCards(query) {
-    console.log(this.props);
-    if (this.props.cards.all.length < 1) {
+    console.log(this);
+    if (this.props.cards.all.length < 1 ) {
       return <Loader/>;
     }
 
@@ -90,13 +88,13 @@ export class Cards extends Component {
         <div className="container__page container__page--twoSided cards">
             <div className="container__page--inner  container__page--left">
               <h3 className="sidebar__header">Filters</h3>
-              <Sidebar name={this.state.name}
-                       race={this.state.race}
-                       mechanics={this.state.mechanics}
-                       type={this.state.type}
-                       faction={this.state.faction}
+              <Sidebar name={this.props.cards.name}
+                       race={this.props.cards.race}
+                       mechanics={this.props.cards.mechanics}
+                       type={this.props.cards.type}
+                       faction={this.props.cards.faction}
                        cards={this.props.cards}
-                       cardSet={this.state.cardSet}
+                       cardSet={this.props.cards.cardSet}
                        query={query}/>
             </div>
             <div className="container__page--inner container__page--right">

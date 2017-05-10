@@ -62,15 +62,10 @@ Main.propTypes = {
 };
 
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = state =>{
   const {cards} = state.cards;
-  return {
-    cards
-  };
+  return {cards};
 };
-
-
-
 
 const mapDispatchToProps = (dispatch) => {
   return {
