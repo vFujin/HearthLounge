@@ -6,7 +6,7 @@ const Decks = ({children}) => {
 };
 
 Decks.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.element.isRequired
 };
 
 export default Decks;

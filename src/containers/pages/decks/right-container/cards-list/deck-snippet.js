@@ -1,57 +1,24 @@
 import React from 'react';
-import {Link} from 'react-router';
-export const DeckSnippet = ({handleTableRowClick, hsClass, title, votes, deck, created, archetype, author, type}) => {
+import {deckSnippetCells} from '../../../../../data/decks-snippet-cells';
+import DefaultCell from './deck-snippet-cells/default-cell';
+import TitleCell from './deck-snippet-cells/title-cell';
+
+export const DeckSnippet = (props, {handleTableRowClick} ) => {
+  const {hsClass, title, votes, deck, created, archetype, author, type} = props;
+  const deckUrl = `/decks/${hsClass}/123`;
+
+  const mapCells = () =>{
+    return deckSnippetCells.map(el=>{
+      switch(el){
+        case 'title': return <TitleCell el={el} deckUrl={deckUrl} hsClass={hsClass} title={title} author={author} />;
+        case 'mana-curve': return <td>x</td>;
+        default: return <DefaultCell deckUrl={deckUrl} props={props} el={el}/>;
+      }
+    })
+  };
   return (
     <tr className={`deck-snippet ${hsClass} table-row`} onClick={handleTableRowClick}>
-
-        <td className="name">
-          <Link to={`/decks/${hsClass}/123`}>
-            <span className={`hs-icon icon-${hsClass}`}></span>
-            <div className="name-details">
-              <p className="title">{title}</p>
-              <p className="author">created by {author}</p>
-            </div>
-          </Link>
-        </td>
-        <td className="class">
-          <Link to={`/decks/${hsClass}/123`}>
-            {hsClass}
-          </Link>
-        </td>
-        <td className="rating">
-          <Link to={`/decks/${hsClass}/123`}>
-            {votes}
-          </Link>
-        </td>
-        <td className="views">
-          <Link to={`/decks/${hsClass}/123`}>
-            42
-          </Link>
-        </td>
-        <td className="mana-curve">
-          <Link to={`/decks/${hsClass}/123`}>
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </Link>
-        </td>
-        <td className="type">
-          <Link to={`/decks/${hsClass}/123`}>
-            {type}
-          </Link>
-        </td>
-        <td className="created">
-          <Link to={`/decks/${hsClass}/123`}>
-            {created}
-          </Link>
-        </td>
-
+      {mapCells()}
     </tr>
 
   );
