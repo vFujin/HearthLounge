@@ -3,7 +3,7 @@ import  _ from 'lodash';
 import Loader from '../../../../../utils/loader';
 import DeckSnippet from '../../right-container/cards-list/deck-snippet';
 
-const DeckList = ({decks, handleTableRowClick}) => {
+const DeckList = ({decks, handleTableRowClick, cards}) => {
 
   const mapDecks = () =>{
 
@@ -12,6 +12,7 @@ const DeckList = ({decks, handleTableRowClick}) => {
     }
     else {
       return _.map(decks).map(deck => {
+
         return <DeckSnippet handleTableRowClick={handleTableRowClick}
                             hsClass={deck.hsClass}
                             title={deck.title}
@@ -20,7 +21,9 @@ const DeckList = ({decks, handleTableRowClick}) => {
                             created={deck.created}
                             archetype={deck.archetype}
                             author={deck.author}
-                            type={deck.type} views={deck.views}/>
+                            type={deck.type}
+                            views={deck.views}
+                            cards={cards}/>
       })
     }
   };

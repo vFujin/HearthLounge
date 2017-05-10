@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Decks = ({children}) => {
-  return children;
+const Decks = ({children, cards}) => {
+  return React.cloneElement(children, {cards: cards.allCards});
 };
 
 Decks.propTypes = {

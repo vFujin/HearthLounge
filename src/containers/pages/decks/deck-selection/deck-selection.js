@@ -12,11 +12,10 @@ class DeckSelection extends Component {
 
 
   render() {
-    console.log(this.props);
     return (
         <div  className="container__page container__page--twoSided decks">
           <LeftContainer/>
-          <RightContainer decks={this.props.decks} handleTableRowClick={this.props.handleTableRowClick}/>
+          <RightContainer decks={this.props.decks} cards={this.props.cards} handleTableRowClick={this.props.handleTableRowClick}/>
         </div>
     );
   };
