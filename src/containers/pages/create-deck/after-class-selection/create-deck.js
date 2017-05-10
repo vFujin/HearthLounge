@@ -9,8 +9,8 @@ import {connect} from 'react-redux';
 import 'antd/lib/message/style/index.css';
 import LazyLoad from 'react-lazyload';
 import {loading} from '../../../../utils/messages';
-import {copyDeckUrlToClipboard} from '../../../../utils/copyDeckUrlToClipboard';
-import {captureDecklist} from '../../../../utils/captureDecklist';
+import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboard';
+import {captureDecklist} from '../../../../utils/capture-decklist';
 
 const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
 name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user, updateURL}) => {

@@ -17,7 +17,6 @@ const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, de
   const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
-    console.log(target);
     if(target === 'deckTextControlled') {
       updateDeckProperty({deckTextControlled: value});
       updateDeckText(updateDeckProperty, value);
