@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormSelect from './select';
 
-const InnerLeftContainer = ({activeClass, deckTitle, handleInputChange, handleSelectChange}) =>{
+const InnerLeftContainer = ({activeClass, deckTitle, deckType, deckArchetype, handleInputChange, handleSelectChange}) =>{
   return(
       <div className="inner inner__left">
         <div className="input-wrapper">
@@ -13,8 +13,8 @@ const InnerLeftContainer = ({activeClass, deckTitle, handleInputChange, handleSe
                  onChange={handleInputChange}
                  value={deckTitle}/>
         </div>
-        <FormSelect section="type" handleSelectChange={handleSelectChange}/>
-        <FormSelect section="archetype" hsClass={activeClass} handleSelectChange={handleSelectChange}/>
+        <FormSelect section="type" type={deckType} archetype={deckArchetype} handleSelectChange={handleSelectChange}/>
+        <FormSelect section="archetype" type={deckType} archetype={deckArchetype} hsClass={activeClass} handleSelectChange={handleSelectChange}/>
         <div className="input-wrapper">
           <label htmlFor="mulligan">Mulligans:</label>
           <input id="mulligan"

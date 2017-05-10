@@ -14,7 +14,6 @@ const updateDeckText = _.debounce((updateDeckProperty, value) => {
 
 const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, deckArchetype, deckText, deckTextControlled, updateDeckProperty}) => {
 
-
   const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
@@ -57,7 +56,7 @@ const DeckOptions = ({activeClass, user, summarizedDeck, deckType, deckTitle, de
 };
 
 const mapStateToProps = (state) => {
-  const {deckTitle, deckType, deckArchetype, deckText, deckTextControlled} = state.deckOptions;
+  const {deckTitle, deckType, deckArchetype, deckText, deckTextControlled} = state.deckDetails;
   return {
     deckTitle, deckType, deckArchetype, deckText, deckTextControlled
   }

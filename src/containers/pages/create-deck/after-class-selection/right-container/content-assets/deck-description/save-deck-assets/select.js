@@ -3,9 +3,8 @@ import Select from 'antd/lib/select';
 import {icon_filters} from '../../../../../../../../data/filters';
 import _ from 'lodash';
 
-const FormSelect = ({hsClass, section, handleSelectChange}) =>{
+const FormSelect = ({hsClass, type, archetype, section, handleSelectChange}) =>{
   const Option = Select.Option;
-  const firstVal = _.startCase(icon_filters[section].map(v=>v.name)[0]);
   let ifHsClass = hsClass ? hsClass : '';
 
   const options = icon_filters[section].map(el=> (
@@ -19,7 +18,7 @@ const FormSelect = ({hsClass, section, handleSelectChange}) =>{
                 notFoundContent="Not Found"
                 style={{ width: '50%' }}
                 optionFilterProp="children"
-                defaultValue={section==="archetype" ? `${firstVal} ${hsClass}` : firstVal }
+                defaultValue={section==="archetype" ? archetype : type}
                 onChange={(e)=>handleSelectChange(e, section)}
 
                 filterOption={(input, option) => option.props.value.toLowerCase().indexOf(input.toLowerCase()) >= 0}>

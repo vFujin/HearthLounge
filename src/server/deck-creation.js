@@ -9,6 +9,7 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
       downvotes: 0,
       comments: [],
       patch: 'ungoro',
+      views: 0,
       hsClass,
       author,
       title,
@@ -20,13 +21,12 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
 
 
     let newDeckId = newDeck.key;
-
-    return newDeck.then(()=>loading('Uploading deck...'))
-        .then(() => ref.child(`users/${uid}/decks`).push({
+    return newDeck.then(() => ref.child(`users/${uid}/decks`).push({
           deck: newDeckId
-        })
+        }, loading("Uploading deck..."))
         .then(() => success('Deck has been uploaded!'))
         .catch(err => error("Couldn't upload deck. " + err))
+
     );
   }
   else{
