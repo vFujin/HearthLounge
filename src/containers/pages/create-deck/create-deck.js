@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-const CreateDeck = ({children, authed, user, name, cards, faction, mechanics, race, type, cardSet}) =>{
+const CreateDeck = ({children, authed, user, cards}) =>{
     return React.cloneElement(children, {
       authed,
       user,
-      name,
       cards,
-      faction,
-      mechanics,
-      race,
-      type,
-      cardSet
     });
 };
 

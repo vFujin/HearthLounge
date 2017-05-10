@@ -12,9 +12,10 @@ import {loading} from '../../../../utils/messages';
 import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboard';
 import {captureDecklist} from '../../../../utils/capture-decklist';
 
-const CreateDeckClassSelected = ({cards, cardSet, deck, deckMechanics, editDeck, editingTool, faction, filters, imgReadyDecklist, location, mechanics,
-name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, type, user, updateURL}) => {
+const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, summarizedDeck,
+                                   toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, user, updateURL}) => {
 
+  const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
   const query = location.query;
 
   const countUniqueCards = (card) => {
@@ -60,7 +61,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
     }
     else {
       return (
-          cards.filter(card => {
+          allCards.filter(card => {
             return card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral"
           })
               .map(card =>
@@ -155,7 +156,7 @@ name, params, race, showDeckEditingTool, summarizedDeck, toggleDeckMechanics, to
                        mechanics={mechanics}
                        type={type}
                        faction={faction}
-                       cards={cards}
+                       cards={allCards}
                        cardSet={cardSet}
                        imgReadyDecklist={imgReadyDecklist}
                        query={query}/>
