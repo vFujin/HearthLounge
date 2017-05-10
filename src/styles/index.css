@@ -2345,8 +2345,6 @@ footer {
         font-weight: bold; }
       .shared-table tr .title .author {
         font-size: 10px; }
-    .shared-table tr .hsClass {
-      text-transform: capitalize; }
     .shared-table tr .mana-curve ul {
       display: flex;
       justify-content: center; }

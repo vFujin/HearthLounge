@@ -4,22 +4,15 @@ import Navbar from './layout/navbar';
 import {Footer} from './layout/footer';
 import {getUserData, logout} from '../server/auth';
 import 'antd/lib/tooltip/style/css';
-import {Data} from '../data/cards-data';
+import {fetchData} from '../data/cards-data';
+import {connect} from 'react-redux';
 
-
-export class Main extends Component {
+class Main extends Component {
   constructor(props){
     super(props);
     this.state = {
       authed: false,
       user: null,
-      cards: [],
-      name: [],
-      faction: [],
-      race: [],
-      type: [],
-      cardSet: [],
-      mechanics: []
     };
 
     firebase.auth().onAuthStateChanged(user => {
@@ -41,54 +34,20 @@ export class Main extends Component {
   }
 
   componentDidMount(){
-    const getUniqueAttributes = (data, attribute) =>{
-      let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
-
-      switch(attribute){
-        case 'name':
-        case 'faction':
-        case 'race':
-        case 'type': return initialFiltering.map(x=>x).filter((x, i, a)=>a.indexOf(x) === i);
-        case 'cardSet':
-        case 'cost': return data.filter(x=>x.cost).map(x=>x.cost).filter((x, i, a)=>a.indexOf(x) === i);
-        case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
-        default: return null;
-      }
-    };
-
-    const cards = (cards) =>{
-      this.setState({
-        cards,
-        name: getUniqueAttributes(cards, 'name'),
-        mechanics: getUniqueAttributes(cards, 'mechanics'),
-        faction: getUniqueAttributes(cards, 'faction'),
-        race: getUniqueAttributes(cards, 'race'),
-        type: getUniqueAttributes(cards, 'type'),
-        cost: getUniqueAttributes(cards, 'cost'),
-        cardSet: getUniqueAttributes(cards, 'cardSet')
-
-      });
-    };
-
-    Data.fetchData(cards);
+    fetchData(this.props.updateCards);
   }
 
+
   render(){
-    const {authed, user, name, cards, faction, mechanics, race, type, cardSet} = this.state;
-    const {children, location} = this.props;
+    const {authed, user} = this.state;
+    const {children, location, cards} = this.props;
     return (
         <div id="container">
           <Navbar url={location.pathname} user={user} handleLogout={(e)=>logout(e)}/>
           {React.cloneElement(children, {
             authed,
             user,
-            name,
-            cards,
-            faction,
-            mechanics,
-            race,
-            type,
-            cardSet
+            cards
           })}
           <Footer/>
         </div>
@@ -102,3 +61,23 @@ Main.propTypes = {
   location: React.PropTypes.object
 };
 
+
+const mapStateToProps = (state) =>{
+  const {cards} = state.cards;
+  return {
+    cards
+  };
+};
+
+
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateCards: (cards) => dispatch({
+      type: 'UPDATE_CARDS', cards
+    })
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

@@ -52,7 +52,7 @@ import NotFound from './shared-assets/not-found';
 
 import {Dashboard} from './pages/dashboard/dashboard';
 
-import {Main} from './Main';
+import Main from './Main';
 
 export class App extends Component {
 

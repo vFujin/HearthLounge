@@ -23,7 +23,7 @@ export class Expansion extends Component{
   content(details, expansion){
     return (
       <div className="content">
-        {React.cloneElement(this.props.children, {cards: this.state.cards})}
+        {React.cloneElement(this.props.children, {cards: this.props.cards})}
       </div>
     )
   }
