@@ -4,8 +4,6 @@ import { Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router
 import {Home} from './pages/home/home';
 
 import Cards from './pages/cards/cards';
-import {ServiceCards} from './pages/cards/right-container/service.cards';
-
 import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 
@@ -70,10 +68,7 @@ export class App extends Component {
             <Route path=":class/:deckId"  components={Deck}/>
           </Route>
 
-          {/*<Redirect from="cards" to="cards/all" />*/}
-          <Route path="cards"             component={Cards}>
-            <Route path=":filters"      component={ServiceCards}/>
-          </Route>
+          <Route path="cards"             component={Cards} />
 
           <Redirect from="arena-picker" to="arena-picker/class-selection" />
           <Route path="arena-picker"      component={ArenaPicker}>
