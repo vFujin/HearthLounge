@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router';
 import {Home} from './pages/home/home';
 
-import {Cards} from './pages/cards/cards';
+import Cards from './pages/cards/cards';
 import {ServiceCards} from './pages/cards/right-container/service.cards';
 
 import {Forum} from './pages/forum/forum';

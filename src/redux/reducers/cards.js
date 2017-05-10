@@ -1,6 +1,6 @@
 const initialState = {
   cards: {
-    all: [],
+    allCards: [],
     name: [],
     mechanics: [],
     faction: [],

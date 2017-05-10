@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import firebase from 'firebase';
 import Navbar from './layout/navbar';
 import {Footer} from './layout/footer';
@@ -57,8 +58,8 @@ class Main extends Component {
 
 
 Main.propTypes = {
-  children: React.PropTypes.element,
-  location: React.PropTypes.object
+  children: PropTypes.element.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 

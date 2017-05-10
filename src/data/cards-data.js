@@ -20,7 +20,7 @@ const getUniqueAttributes = (data, attribute) =>{
 
 const cards = (cards) =>{
   return {
-    all: cards,
+    allCards: cards,
     name: getUniqueAttributes(cards, 'name'),
     mechanics: getUniqueAttributes(cards, 'mechanics'),
     faction: getUniqueAttributes(cards, 'faction'),
