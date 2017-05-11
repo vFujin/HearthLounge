@@ -4,15 +4,13 @@ import Loader from '../../../../../utils/loader';
 import DeckSnippet from '../../right-container/cards-list/deck-snippet';
 
 const DeckList = ({decks, handleTableRowClick, cards}) => {
-
   const mapDecks = () =>{
 
-    if(decks && decks.length<1){
+    if(decks && decks.length < 1){
       return <tr><td><Loader/></td></tr>
     }
     else {
       return _.map(decks).map(deck => {
-
         return <DeckSnippet handleTableRowClick={handleTableRowClick}
                             hsClass={deck.hsClass}
                             title={deck.title}
