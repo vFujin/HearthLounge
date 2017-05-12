@@ -2299,8 +2299,31 @@ nav {
 footer {
   background-color: #474143; }
 
+.table-scroll {
+  overflow: auto; }
+  .table-scroll table {
+    width: 100%;
+    border-collapse: collapse; }
+    .table-scroll table thead {
+      position: absolute;
+      top: 0; }
+      .table-scroll table thead tr {
+        background: #474143;
+        color: #E7E2DA;
+        font-size: .9vw; }
+    .table-scroll table tr th {
+      font-weight: normal; }
+    .table-scroll table tr td, .table-scroll table tr th {
+      padding: .5vh;
+      text-align: center; }
+      .table-scroll table tr td span, .table-scroll table tr th span {
+        font-size: 20px; }
+      .table-scroll table tr td:first-child, .table-scroll table tr td:last-child, .table-scroll table tr th:first-child, .table-scroll table tr th:last-child {
+        width: 10%; }
+      .table-scroll table tr td:nth-child(3), .table-scroll table tr th:nth-child(3) {
+        width: 20%; }
+
 .shared-table {
-  margin-right: 20px;
   border-collapse: collapse;
   width: 100%; }
   .shared-table tr {
@@ -2309,17 +2332,13 @@ footer {
     -ms-transition: all ease 0.4s;
     -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
-    .shared-table tr:first-child td {
-      background: rgba(0, 0, 0, 0.5);
-      color: #E7E2DA;
-      padding: 20px; }
     .shared-table tr td {
       padding: 0;
       cursor: pointer;
       border: 1px solid #474143;
       border-right: 0;
       border-left: 0;
-      text-align: center; }
+      font-size: initial; }
       .shared-table tr td a {
         display: block;
         padding: 10px 0;
@@ -2534,7 +2553,6 @@ footer {
         overflow: hidden;
         margin-top: 1px; }
         .container__page .container__page--left .container__mana-curve .list .table-scroll {
-          overflow: auto;
           height: calc(100% - 30px);
           margin-top: 30px; }
           .container__page .container__page--left .container__mana-curve .list .table-scroll::-webkit-scrollbar {
@@ -2548,27 +2566,6 @@ footer {
           .container__page .container__page--left .container__mana-curve .list .table-scroll::-webkit-scrollbar-track {
             background-color: #A69E9D;
             border-left: 1px solid #A69E9D; }
-          .container__page .container__page--left .container__mana-curve .list .table-scroll table {
-            width: 100%;
-            border-collapse: collapse; }
-            .container__page .container__page--left .container__mana-curve .list .table-scroll table thead {
-              position: absolute;
-              top: 0; }
-              .container__page .container__page--left .container__mana-curve .list .table-scroll table thead tr {
-                background: #474143;
-                color: #E7E2DA;
-                font-size: .9vw; }
-            .container__page .container__page--left .container__mana-curve .list .table-scroll table tr th {
-              font-weight: normal; }
-            .container__page .container__page--left .container__mana-curve .list .table-scroll table tr td, .container__page .container__page--left .container__mana-curve .list .table-scroll table tr th {
-              padding: .5vh;
-              text-align: center; }
-              .container__page .container__page--left .container__mana-curve .list .table-scroll table tr td span, .container__page .container__page--left .container__mana-curve .list .table-scroll table tr th span {
-                font-size: 20px; }
-              .container__page .container__page--left .container__mana-curve .list .table-scroll table tr td:first-child, .container__page .container__page--left .container__mana-curve .list .table-scroll table tr td:last-child, .container__page .container__page--left .container__mana-curve .list .table-scroll table tr th:first-child, .container__page .container__page--left .container__mana-curve .list .table-scroll table tr th:last-child {
-                width: 10%; }
-              .container__page .container__page--left .container__mana-curve .list .table-scroll table tr td:nth-child(3), .container__page .container__page--left .container__mana-curve .list .table-scroll table tr th:nth-child(3) {
-                width: 20%; }
       .container__page .container__page--left .container__mana-curve .mechanics-list table tbody tr {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
@@ -3076,6 +3073,36 @@ footer {
   width: 100%; }
   .decks .container__page--left .sidebar table tr td:last-child {
     text-align: center; }
+.decks .container__page--right .content {
+  position: relative;
+  margin: 1vh 0 0 1vh; }
+  .decks .container__page--right .content .table-scroll {
+    height: calc(100% - 1vh - 61px);
+    margin-top: calc(61px + 1vh); }
+    .decks .container__page--right .content .table-scroll::-webkit-scrollbar {
+      width: 13px; }
+    .decks .container__page--right .content .table-scroll::-webkit-scrollbar-thumb {
+      background-color: #474143;
+      border-radius: 0;
+      border-left: 1px solid #E7E2DA; }
+    .decks .container__page--right .content .table-scroll::-webkit-scrollbar-thumb:hover {
+      background-color: #474143; }
+    .decks .container__page--right .content .table-scroll::-webkit-scrollbar-track {
+      background-color: #A69E9D;
+      border-left: 1px solid #E7E2DA; }
+    .decks .container__page--right .content .table-scroll table {
+      width: calc(100% - 1vh - 1px); }
+      .decks .container__page--right .content .table-scroll table thead {
+        display: table;
+        width: calc(100% - 1vh - 1px); }
+        .decks .container__page--right .content .table-scroll table thead tr td {
+          padding: 20px; }
+      .decks .container__page--right .content .table-scroll table tr td.title {
+        width: 30%; }
+      .decks .container__page--right .content .table-scroll table tr td.hsClass, .decks .container__page--right .content .table-scroll table tr td.votes, .decks .container__page--right .content .table-scroll table tr td.views, .decks .container__page--right .content .table-scroll table tr td.mana-curve {
+        width: 10%; }
+      .decks .container__page--right .content .table-scroll table tr td.type, .decks .container__page--right .content .table-scroll table tr td.created {
+        width: 15%; }
 .decks .container__page--right .topbar .choosen-deck-topbar {
   display: flex;
   align-items: center; }
@@ -3092,23 +3119,6 @@ footer {
   .decks .container__page--right .topbar .choosen-deck-topbar .rating {
     display: flex;
     align-items: center; }
-.decks .container__page--right .top-decks {
-  margin: 10px 10px 0 10px;
-  padding-right: 10px;
-  height: calc(100% - 60px);
-  width: calc(100% - 20px);
-  overflow: auto; }
-  .decks .container__page--right .top-decks::-webkit-scrollbar {
-    width: 13px; }
-  .decks .container__page--right .top-decks::-webkit-scrollbar-thumb {
-    background-color: #474143;
-    border-radius: 0;
-    border-left: 1px solid #E7E2DA; }
-  .decks .container__page--right .top-decks::-webkit-scrollbar-thumb:hover {
-    background-color: #474143; }
-  .decks .container__page--right .top-decks::-webkit-scrollbar-track {
-    background-color: #A69E9D;
-    border-left: 1px solid #E7E2DA; }
 
 .cards .left-container .sidebar .sidebar-icons {
   margin: 1em 0;

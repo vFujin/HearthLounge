@@ -25,21 +25,26 @@ const DeckList = ({decks, handleTableRowClick, cards}) => {
       })
     }
   };
+
   return (
-      <table className="shared-table">
-        <tbody>
-        <tr>
-          <td className="name">Name</td>
-          <td className="class">Class</td>
-          <td className="rating">Rating</td>
-          <td className="views">Views</td>
-          <td className="mana-curve">Mana</td>
-          <td className="type">Type</td>
-          <td className="created">Created</td>
-        </tr>
-        {mapDecks()}
-        </tbody>
-      </table>
+  <div className="table-scroll">
+    <table className="shared-table">
+      <thead>
+      <tr>
+        <td className="title"><p>Name</p></td>
+        <td className="hsClass"><p>Class</p></td>
+        <td className="votes"><p>Rating</p></td>
+        <td className="views"><p>Views</p></td>
+        <td className="mana-curve"><p>Mana</p></td>
+        <td className="type"><p>Type</p></td>
+        <td className="created"><p>Created</p></td>
+      </tr>
+      </thead>
+      <tbody>
+      {mapDecks()}
+      </tbody>
+    </table>
+  </div>
   )
 };
 
