@@ -3,13 +3,13 @@ import {icon_filters} from '../../../../../data/filters';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 
-const Topbar = () => {
+const Topbar = ({handleModeFilterClick, handleClassFilterClick}) => {
 
   const mapFilters = (filter) => {
     return (
         icon_filters[filter].map(el => {
           return (
-              <li key={el.url}>
+              <li key={el.url} id={el.url} onClick={filter==="type" ? handleModeFilterClick : handleClassFilterClick}>
                 <Tooltip placement="bottom" title={_.startCase(el.name)}>
                   <span className={`hs-icon icon-${el.url}`}></span>
                 </Tooltip>

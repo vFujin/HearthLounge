@@ -1,5 +1,5 @@
 import React from 'react';
-import InputFilter from '../../../../shared-assets/filters/input-filter';
+import InputFilter from '../../../../shared-assets/filters/redux-input-filter';
 const LeftContainer = ({query}) => {
 
   return (
