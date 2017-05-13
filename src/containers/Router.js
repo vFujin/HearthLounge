@@ -10,7 +10,7 @@ import {Tournaments} from './pages/tournaments/tournaments';
 
 
 import Decks from './pages/decks/deck-selection/decks';
-import {Deck} from './pages/decks/deck/deck';
+import {Deck} from './pages/decks/deck/deck-details';
 import DeckSelection from "./pages/decks/deck-selection/deck-selection";
 
 import {ArenaPicker} from './pages/arena-picker/arena-picker';

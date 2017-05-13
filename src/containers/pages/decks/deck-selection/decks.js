@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Function representing Decks page container, that is DeckList page and DeckDetails page
+ *
+ * @param {object} children -
+ * @param {object[]} cards - Array of all obtainable by player cards
+ * @returns {*} - Returns DeckList and DeckDetails pages
+ * @constructor
+ */
 const Decks = ({children, cards}) => {
   return React.cloneElement(children, {cards: cards.allCards});
 };
