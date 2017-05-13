@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {App} from './containers/Router';
+import App from './containers/Router';
 import './styles/index.css';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
@@ -9,7 +9,7 @@ let store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && wind
 
 ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <App store={store}/>
     </Provider>,
   document.getElementById('root')
 );

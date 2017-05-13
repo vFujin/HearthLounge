@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+import {routerReducer} from 'react-router-redux';
 
 import UsersReducer from './users';
 import Cards from './cards';
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   deckCreation: DeckCreation,
   deckCreationFilters: DeckCreationFilters,
   deckList: DeckList,
-  deckListFilters: DeckListFilters
+  deckListFilters: DeckListFilters,
+  routing: routerReducer
 });
 
 export default rootReducer;
