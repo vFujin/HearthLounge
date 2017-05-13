@@ -1,5 +1,6 @@
 const initialState = {
   decks: [],
+  users: [],
   adventuresToggled: false
 };
 
@@ -8,6 +9,10 @@ export default function(state=initialState, action){
     case 'UPDATE_DECK_LIST': return {
         ...state,
       decks: action.decks
+    };
+    case 'UPDATE_USER_LIST': return {
+        ...state,
+      users: action.users
     };
     case 'TOGGLE_ADVENTURE_FILTERS': return {
       ...state,

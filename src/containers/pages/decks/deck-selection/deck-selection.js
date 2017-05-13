@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
 import {fetchDecks} from '../../../../server/fetch-decks';
+import {fetchUsers} from '../../../../server/fetch-users';
 import 'whatwg-fetch';
 import {connect} from 'react-redux';
 
@@ -11,6 +12,7 @@ import {connect} from 'react-redux';
 class DeckSelection extends Component {
   componentDidMount() {
     fetchDecks((v) => this.props.updateDeckList(v));
+    fetchUsers((v) => this.props.updateUserList(v));
     // window.addEventListener("scroll", function () {
     //       if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
     //         lazyLoadDecks((v) => console.log(v));
@@ -37,17 +39,15 @@ class DeckSelection extends Component {
 
   handleClassFilterClick = (e) =>{
     let targetId = e.currentTarget.id;
-    // let areActive = this.props.adventureFilter === false ? true : false;
-    // this.props.toggleAdventureFilters(areActive)
     this.props.updateClassFilter(targetId);
   };
 
 
   render() {
-    const {decks, cards, adventuresToggled, handleTableRowClick, activeAdventure, activeMode, activeClass} = this.props;
+    const {decks, users, cards, adventuresToggled, handleTableRowClick, activeAdventure, activeMode, activeClass} = this.props;
     return (
         <div  className="container__page container__page--twoSided decks">
-          <LeftContainer/>
+          <LeftContainer users={users}/>
           <RightContainer decks={decks}
                           cards={cards}
                           adventuresToggled={adventuresToggled}
@@ -64,14 +64,17 @@ class DeckSelection extends Component {
 }
 
 const mapStateToProps = state =>{
-  const {decks, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
-  return {decks, adventuresToggled, activeAdventure, activeMode, activeClass};
+  const {decks, users, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
+  return {decks, users, adventuresToggled, activeAdventure, activeMode, activeClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateDeckList: (decks) => dispatch({
       type: 'UPDATE_DECK_LIST', decks
+    }),
+    updateUserList: (users) => dispatch({
+      type: 'UPDATE_USER_LIST', users
     }),
     toggleAdventureFilters: (adventuresToggled) => dispatch({
       type: 'TOGGLE_ADVENTURE_FILTERS', adventuresToggled
