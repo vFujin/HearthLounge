@@ -1059,6 +1059,11 @@ footer{
           display: flex;
           ul{
             display: flex;
+            li{
+              span{
+                padding:.5vh;
+              }
+            }
           }
         }
       }

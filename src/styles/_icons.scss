@@ -84,6 +84,16 @@
   @include icon_color($legendary);
 }
 
+//Modes
+.mammoth, .kraken{
+  @include icon_color($standard);
+}
+.wild{
+  @include icon_color($wild);
+}
+.expansions, .adventures{
+  @include icon_color($extensions);
+}
 
 //Social Media
 .facebook{

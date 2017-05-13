@@ -74,6 +74,10 @@
       color: $dark-grey;
       border-color: $color;
   }
+  &.active-without-background{
+    color: $color !important;
+    background-color: transparent;
+  }
   &.active-on-hover{
     color: $dark-grey;
     &:hover{
