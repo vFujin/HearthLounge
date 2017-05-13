@@ -17,6 +17,10 @@ export default function(state=initialState, action){
       ...state,
       activeMode: action.activeMode
     };
+    case 'UPDATE_ADVENTURE_FILTER': return {
+      ...state,
+      activeAdventure: action.activeAdventure
+    };
     case 'UPDATE_CLASS_FILTER': return {
       ...state,
       activeClass: action.activeClass

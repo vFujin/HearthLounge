@@ -21,9 +21,18 @@ class DeckSelection extends Component {
 
   handleModeFilterClick = (e) =>{
     let targetId = e.currentTarget.id;
-    // let areActive = this.props.adventureFilter === false ? true : false;
-    // this.props.toggleAdventureFilters(areActive)
     this.props.updateModeFilter(targetId);
+    if(targetId === "adventures"){
+      this.props.toggleAdventureFilters(true);
+    }
+    else {
+      this.props.toggleAdventureFilters(false);
+    }
+  };
+
+  handleAdventureFilterClick = (e) =>{
+    let targetId = e.currentTarget.id;
+    this.props.updateAdventureFilter(targetId);
   };
 
   handleClassFilterClick = (e) =>{
@@ -35,14 +44,19 @@ class DeckSelection extends Component {
 
 
   render() {
-    const {decks, cards, handleTableRowClick} = this.props;
+    const {decks, cards, adventuresToggled, handleTableRowClick, activeAdventure, activeMode, activeClass} = this.props;
     return (
         <div  className="container__page container__page--twoSided decks">
           <LeftContainer/>
           <RightContainer decks={decks}
                           cards={cards}
+                          adventuresToggled={adventuresToggled}
+                          activeMode={activeMode}
+                          activeAdventure={activeAdventure}
+                          activeClass={activeClass}
                           handleTableRowClick={handleTableRowClick}
                           handleModeFilterClick={this.handleModeFilterClick}
+                          handleAdventureFilterClick={this.handleAdventureFilterClick}
                           handleClassFilterClick={this.handleClassFilterClick}/>
         </div>
     );
@@ -50,8 +64,8 @@ class DeckSelection extends Component {
 }
 
 const mapStateToProps = state =>{
-  const {decks, adventureFilter, activeMode, activeClass} = state.deckList;
-  return {decks, adventureFilter, activeMode, activeClass};
+  const {decks, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
+  return {decks, adventuresToggled, activeAdventure, activeMode, activeClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -59,11 +73,14 @@ const mapDispatchToProps = (dispatch) => {
     updateDeckList: (decks) => dispatch({
       type: 'UPDATE_DECK_LIST', decks
     }),
-    toggleAdventureFilters: (adventures) => dispatch({
-      type: 'TOGGLE_ADVENTURE_FILTERS', adventures
+    toggleAdventureFilters: (adventuresToggled) => dispatch({
+      type: 'TOGGLE_ADVENTURE_FILTERS', adventuresToggled
     }),
     updateModeFilter: (activeMode) => dispatch({
       type: 'UPDATE_MODE_FILTER', activeMode
+    }),
+    updateAdventureFilter: (activeAdventure) => dispatch({
+      type: 'UPDATE_ADVENTURE_FILTER', activeAdventure
     }),
     updateClassFilter: (activeClass) => dispatch({
       type: 'UPDATE_CLASS_FILTER', activeClass

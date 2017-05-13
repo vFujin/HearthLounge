@@ -3103,6 +3103,10 @@ footer {
         width: 10%; }
       .decks .container__page--right .content .table-scroll table tr td.type, .decks .container__page--right .content .table-scroll table tr td.created {
         width: 15%; }
+.decks .container__page--right .topbar .topbar-left #adventures {
+  display: flex; }
+  .decks .container__page--right .topbar .topbar-left #adventures ul {
+    display: flex; }
 .decks .container__page--right .topbar .choosen-deck-topbar {
   display: flex;
   align-items: center; }

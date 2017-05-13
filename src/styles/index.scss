@@ -1054,6 +1054,14 @@ footer{
       }
     }
     .topbar {
+      .topbar-left{
+        #adventures{
+          display: flex;
+          ul{
+            display: flex;
+          }
+        }
+      }
       .choosen-deck-topbar {
         display: flex;
         align-items: center;
