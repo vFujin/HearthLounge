@@ -67,7 +67,7 @@ const App = ({store}) =>{
         <Redirect from="decks" to="decks/all"/>
         <Route path="decks"             component={Decks}>
           <Route path="all"             components={DeckSelection}/>
-          <Route path=":class/:deckId"  components={Deck}/>
+          <Route path=":class/:deckId/:deckTitle"  components={Deck}/>
         </Route>
 
         <Route path="cards"             component={Cards} />

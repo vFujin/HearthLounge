@@ -176,7 +176,7 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
   );
 };
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = (state, ownProps) =>{
   const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, summarizedDeck} = state.deckCreation;
   return {
     filters,

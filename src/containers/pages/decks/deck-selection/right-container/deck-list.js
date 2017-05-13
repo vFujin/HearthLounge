@@ -12,6 +12,7 @@ const DeckList = ({decks, handleTableRowClick, cards}) => {
     else {
       return _.map(decks).map(deck => {
         return <DeckSnippet handleTableRowClick={handleTableRowClick}
+                            deckId={deck.id}
                             hsClass={deck.hsClass}
                             title={deck.title}
                             votes={deck.upvotes - deck.downvotes}

@@ -50,6 +50,7 @@ const Navbar = ({handleLogout, user}) => {
   );
 };
 
+
 Navbar.propTypes = {
   user: React.PropTypes.object
 };
