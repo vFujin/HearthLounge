@@ -5,14 +5,14 @@ import {fetchDecks} from '../../../../server/fetch-decks';
 import {fetchUsers} from '../../../../server/fetch-users';
 import 'whatwg-fetch';
 import {connect} from 'react-redux';
-
+import _ from 'lodash';
 
 
 
 class DeckSelection extends Component {
   componentDidMount() {
     fetchDecks((v) => this.props.updateDeckList(v));
-    fetchUsers((v) => this.props.updateUserList(v));
+    fetchUsers((v) => this.props.updateUserList(_.map(v, 'username')));
     // window.addEventListener("scroll", function () {
     //       if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
     //         lazyLoadDecks((v) => console.log(v));
@@ -64,7 +64,8 @@ class DeckSelection extends Component {
 }
 
 const mapStateToProps = state =>{
-  const {decks, users, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
+  const {decks, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
+  const {users} = state.users;
   return {decks, users, adventuresToggled, activeAdventure, activeMode, activeClass};
 };
 

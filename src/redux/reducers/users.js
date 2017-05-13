@@ -1,6 +1,18 @@
-import {ref} from '../../keys';
-import _ from 'lodash';
+const initialState = {
+  activeUser: null,
+  users: []
+};
 
-export default function (){
-  return ref.once("value").then(snapshot=>_.map(Object.values(snapshot.child('users').val()), 'email'));
+export default function(state=initialState, action){
+  switch(action.type){
+    case 'UPDATE_ACTIVE_USER': return {
+      ...state,
+      activeUser: action.activeUser
+    };
+    case 'UPDATE_USER_LIST': return {
+      ...state,
+      users: action.users
+    };
+    default: return state;
+  }
 }
