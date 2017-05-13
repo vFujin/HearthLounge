@@ -16,6 +16,11 @@ import {success, loading, error} from '../utils/messages';
 export function saveDeck(hsClass, author, title, type, archetype, deck, description, uid){
   if(hsClass && author && title && type && archetype && deck && description && uid) {
     const deckId = ref.push().key;
+
+    /**
+     * Deck object
+     * @type {{created: number, edited: null, upvotes: number, downvotes: number, comments: Array, patch: string, views: number, hsClass: string, author: string, title: string, type: string, archetype: string, deck: string[], description: string, id}}
+     */
     let newDeck = {
       created: +new Date(),
       edited: null,
