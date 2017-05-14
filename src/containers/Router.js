@@ -54,7 +54,7 @@ import {Dashboard} from './pages/dashboard/dashboard';
 import Main from './Main';
 
 
-
+// getCurrentUserInfo(updateActiveUser);
 const App = ({store}) =>{
   const history = syncHistoryWithStore(browserHistory, store);
   return (

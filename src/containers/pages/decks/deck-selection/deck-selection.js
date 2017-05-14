@@ -12,7 +12,7 @@ import _ from 'lodash';
 class DeckSelection extends Component {
   componentDidMount() {
     fetchDecks((v) => this.props.updateDeckList(v));
-    fetchUsers((v) => this.props.updateUserList(_.map(v, 'username')));
+    // fetchUsers((v) => this.props.updateUserList(_.map(v, 'username')));
     // window.addEventListener("scroll", function () {
     //       if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
     //         lazyLoadDecks((v) => console.log(v));

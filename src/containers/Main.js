@@ -1,53 +1,30 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import firebase from 'firebase';
 import Navbar from './layout/navbar';
 import {Footer} from './layout/footer';
-import {getUserData, logout} from '../server/auth';
+import {getCurrentUserInfo, logout} from '../server/auth';
 import 'antd/lib/tooltip/style/css';
 import {fetchData} from '../data/cards-data';
 import {connect} from 'react-redux';
 
-class Main extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      authed: false,
-      user: null,
-    };
+class Main extends Component{
+constructor(props){
+  super(props);
+    getCurrentUserInfo(this.props.updateActiveUser);
+  };
 
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        getUserData(user.uid, (v)=>{
-          this.setState({
-            authed: true,
-            user: v
-          });
-        });
-      }
-      else {
-        this.setState({
-          authed: false,
-          user: null
-        })
-      }
-    })
-  }
-
-  componentDidMount(){
+  componentDidMount() {
     fetchData(this.props.updateCards);
   }
 
-
   render(){
-    const {authed, user} = this.state;
-    const {children, location, cards} = this.props;
+    const {authenticated, activeUser, children, location, cards} = this.props;
     return (
         <div id="container">
-          <Navbar url={location.pathname} user={user} handleLogout={(e)=>logout(e)}/>
+          <Navbar url={location.pathname} user={this.props.activeUser} handleLogout={(e)=>logout(e)}/>
           {React.cloneElement(children, {
-            authed,
-            user,
+            authed: authenticated,
+            user: activeUser,
             cards
           })}
           <Footer/>
@@ -65,13 +42,17 @@ Main.propTypes = {
 
 const mapStateToProps = state =>{
   const {cards} = state.cards;
-  return {cards};
+  const {authenticated, activeUser} = state.users;
+  return {cards, authenticated, activeUser};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateCards: (cards) => dispatch({
       type: 'UPDATE_CARDS', cards
+    }),
+    updateActiveUser: (authenticated, activeUser) => dispatch({
+      type: 'UPDATE_ACTIVE_USER', authenticated, activeUser
     })
   }
 };

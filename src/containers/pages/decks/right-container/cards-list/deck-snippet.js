@@ -7,13 +7,13 @@ import _ from 'lodash';
 
 export const DeckSnippet = (props, {handleTableRowClick} ) => {
   const {hsClass, deckId, title, author, deck, cards} = props;
+  const deckUrl = `/decks/${hsClass}/${deckId}/${_.snakeCase(title)}`;
 
-  const deckUrlPrefix = `/decks/${hsClass}/`;
   const cells = (el) =>{
     switch(el) {
-      case 'title': return <TitleCell deckUrl={`${deckUrlPrefix}/${deckId}/${title}`} hsClass={hsClass} title={title} author={author}/>;
+      case 'title': return <TitleCell deckUrl={`${deckUrl}`} hsClass={hsClass} title={title} author={author}/>;
       case 'mana-curve': return <ManaCurve deck={deck} cards={props.cards} hsClass={hsClass}/>;
-      default: return <Link to={deckUrlPrefix}>{_.startCase(props[el])}</Link>;
+      default: return <Link to={deckUrl}>{_.startCase(props[el])}</Link>;
     }
   };
 

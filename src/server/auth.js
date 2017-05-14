@@ -44,3 +44,17 @@ function saveUser(user, username){
 export function getUserData(uid, cb) {
   return ref.once("value", (snapshot) =>cb(snapshot.child(`users/${uid}`).val()))
 }
+
+export function getCurrentUserInfo(reducer){
+  firebaseAuth().onAuthStateChanged(user => {
+    console.log(user);
+    if (user) {
+      getUserData(user.uid, (v)=>{
+        reducer(true, v);
+      });
+    }
+    else {
+      reducer(false, null);
+    }
+  });
+}

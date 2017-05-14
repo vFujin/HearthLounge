@@ -7,7 +7,7 @@ import 'antd/lib/select/style/css';
 const LeftContainer = ({users}) => {
   const Option = Select.Option;
 
-  let options = users.map(a => <Option value={a} key={a}>{a}</Option>);
+  let options = users.map(a => <Option value={a} option={a} key={a}>{a}</Option>);
   return (
       <div className="container__page--inner container__page--left">
         <h3 className="sidebar__header">Filters</h3>
