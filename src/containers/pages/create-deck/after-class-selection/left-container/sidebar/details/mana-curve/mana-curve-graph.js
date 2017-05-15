@@ -7,7 +7,6 @@ const ManaCurveBar = ({cost, deck, icon, max}) => {
   };
   let costSevenOrMore = _.filter(deck, (value)=>value.cost >= 7).length;
   let s = cost < 7 ? costBelowSeven(cost) : costSevenOrMore;
-
   return (
       <li>
         <div className="count">{s}</div>

@@ -13,7 +13,7 @@ import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboa
 import {captureDecklist} from '../../../../utils/capture-decklist';
 
 const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, summarizedDeck,
-                                   toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, user, updateURL}) => {
+                                   toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, trimmedDeck, user, updateURL}) => {
 
   const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
   const query = location.query;
@@ -33,6 +33,68 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
       editDeck(_.filter(deck, (c) => c.cardId !== card.cardId));
     }
   };
+
+  const trimDeck = () =>{
+    let cards = {};
+    let types = {};
+    // deck.some(obj=>cards.size === cards.add(obj.cardId).size);
+    let foo = _.map(deck, (v)=>{
+      return {
+        cost: v.cost,
+        amount: _.countBy(this, 'name')
+      }
+    });
+    console.log("foo keys:", foo);
+    console.log(_.mapValues(_.keyBy(deck, 'name'), (v)=> console.log("v:", _.mapKeys(foo))));
+
+
+    /*
+    Expected result
+    cards = {
+        'novice engineer': {
+            cost: 2,
+            amount: 1
+         }
+        'deathwing': {
+            cost: 10,
+            amount: 1
+        }
+    }
+
+
+
+     */
+    console.log(cards);
+
+    deck.map(v=>v.type).forEach((c)=>types[c]=(types[c] || 0) +1);
+    // let name = _.map(deck, 'name');
+    let manaCurve0 = _.filter(deck, (v)=>v.cost === 0).length;
+    let manaCurve1 = _.filter(deck, (v)=>v.cost === 1).length;
+    let manaCurve2 = _.filter(deck, (v)=>v.cost === 2).length;
+    let manaCurve3 = _.filter(deck, (v)=>v.cost === 3).length;
+    let manaCurve4 = _.filter(deck, (v)=>v.cost === 4).length;
+    let manaCurve5 = _.filter(deck, (v)=>v.cost === 5).length;
+    let manaCurve6 = _.filter(deck, (v)=>v.cost === 6).length;
+    let manaCurve7plus = _.filter(deck, (v)=>v.cost >= 7).length;
+
+
+    let trimmed = {
+      cards,
+      manaCurve:{
+        0: manaCurve0,
+        1: manaCurve1,
+        2: manaCurve2,
+        3: manaCurve3,
+        4: manaCurve4,
+        5: manaCurve5,
+        6: manaCurve6,
+        7: manaCurve7plus
+      },
+      types
+    };
+
+  };
+  trimDeck();
 
   const toggleCardAmountTooltip = (card) => {
     const CardTooltip = () =>{
@@ -177,14 +239,15 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
 };
 
 const mapStateToProps = (state, ownProps) =>{
-  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, summarizedDeck} = state.deckCreation;
+  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, summarizedDeck, trimmedDeck} = state.deckCreation;
   return {
     filters,
     editingTool,
     deckMechanics,
     imgReadyDecklist,
     deck,
-    summarizedDeck
+    summarizedDeck,
+    trimmedDeck
   };
 };
 
@@ -206,7 +269,7 @@ const mapDispatchToProps = (dispatch) => {
       type: 'UPDATE_URL', deckUrl
     }),
     editDeck: (deck) => dispatch({
-      type: 'EDIT_DECK', deck, summarizedDeck: deck.map(c=>c.cardId)
+      type: 'EDIT_DECK', deck, summarizedDeck: deck.map(c=>c.cardId), trimmedDeck: ''
     })
   }
 };

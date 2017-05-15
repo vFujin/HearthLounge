@@ -10,7 +10,6 @@ const ChoosenCards = ({countCards, deck, deckDetails}) => {
   const listCards = () => {
     return _.uniqBy(_.sortBy(deck, ['cost', 'name'])).map((card, i) =>
         <tr key={i} className={`${_.toLower(card.rarity)} gradient`}>
-          {console.log(_.trim(card.cardSet, " "))}
           <td><span className={`hs-icon icon-${_.kebabCase(removeApostrophe(card.cardSet))}`}></span></td>
           <td>{card.name}</td>
           <td>{countCards(card)}</td>

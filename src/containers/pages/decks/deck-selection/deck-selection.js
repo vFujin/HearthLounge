@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
-import {fetchDecks} from '../../../../server/fetch-decks';
-import {fetchUsers} from '../../../../server/fetch-users';
+import {lazyLoadDecks} from '../../../../server/fetch-decks';
 import 'whatwg-fetch';
 import {connect} from 'react-redux';
-import _ from 'lodash';
 
 
 
 class DeckSelection extends Component {
   componentDidMount() {
-    fetchDecks((v) => this.props.updateDeckList(v));
+    lazyLoadDecks((v) => this.props.updateDeckList(v), null);
     // fetchUsers((v) => this.props.updateUserList(_.map(v, 'username')));
     // window.addEventListener("scroll", function () {
     //       if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
@@ -20,6 +18,7 @@ class DeckSelection extends Component {
     //     }
     // )
   }
+
 
   handleModeFilterClick = (e) =>{
     let targetId = e.currentTarget.id;
@@ -40,6 +39,7 @@ class DeckSelection extends Component {
   handleClassFilterClick = (e) =>{
     let targetId = e.currentTarget.id;
     this.props.updateClassFilter(targetId);
+    lazyLoadDecks((v) => this.props.updateDeckList(v), targetId);
   };
 
 

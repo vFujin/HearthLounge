@@ -4,7 +4,8 @@ const initialState = {
   deckMechanics: false,
   imgReadyDecklist: false,
   deck: [],
-  summarizedDeck: []
+  summarizedDeck: [],
+  trimmedDeck: [],
 };
 
 export default function(state=initialState, action){
@@ -32,7 +33,8 @@ export default function(state=initialState, action){
     case 'EDIT_DECK': return {
       ...state,
       deck: action.deck,
-      summarizedDeck: action.summarizedDeck
+      summarizedDeck: action.summarizedDeck,
+      trimmedDeck: action.trimmedDeck
     };
     default: return state;
   }
