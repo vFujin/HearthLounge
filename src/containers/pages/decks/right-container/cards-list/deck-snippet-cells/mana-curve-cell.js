@@ -3,15 +3,15 @@ import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-const ManaCurve = ({hsClass, deck, cards}) =>{
+const ManaCurve = ({deckUrl, deck, cards}) =>{
 
 
 
-    // console.log(cards.filter(c=>c.cardId === ));
+    // console.log(Object.keys(deck.manaCurve));
 
 
   return (
-        <Link to={`/decks/${hsClass}/123`}>
+        <Link to={deckUrl}>
           <ul>
             <li></li>
             <li></li>
@@ -23,6 +23,7 @@ const ManaCurve = ({hsClass, deck, cards}) =>{
           </ul>
         </Link>
   )
+
 };
 
 export default ManaCurve;

@@ -34,7 +34,7 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
     }
   };
 
-  const foo = () => {
+  const deckSimplification = () => {
     let cards = {};
     let types = {};
     let manaCurve = {};
@@ -162,7 +162,7 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
             ? document.getElementById(e.currentTarget.id).className += "active"
             : document.getElementById(e.currentTarget.id).className = "";
         showDeckEditingTool(isEditingToolActive);
-        foo();
+        deckSimplification();
         break;
     }
   };

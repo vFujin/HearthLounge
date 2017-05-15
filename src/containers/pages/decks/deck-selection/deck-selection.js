@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 class DeckSelection extends Component {
   componentDidMount() {
     lazyLoadDecks((v) => this.props.updateDeckList(v), null);
+
     // fetchUsers((v) => this.props.updateUserList(_.map(v, 'username')));
     // window.addEventListener("scroll", function () {
     //       if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
@@ -44,12 +45,11 @@ class DeckSelection extends Component {
 
 
   render() {
-    const {decks, users, cards, adventuresToggled, handleTableRowClick, activeAdventure, activeMode, activeClass} = this.props;
+    const {decks, users, adventuresToggled, handleTableRowClick, activeAdventure, activeMode, activeClass} = this.props;
     return (
         <div  className="container__page container__page--twoSided decks">
           <LeftContainer users={users}/>
           <RightContainer decks={decks}
-                          cards={cards}
                           adventuresToggled={adventuresToggled}
                           activeMode={activeMode}
                           activeAdventure={activeAdventure}
