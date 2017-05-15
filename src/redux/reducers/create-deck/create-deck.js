@@ -5,7 +5,11 @@ const initialState = {
   imgReadyDecklist: false,
   deck: [],
   summarizedDeck: [],
-  trimmedDeck: [],
+  simplifiedDeck: {
+    cards: {},
+    manaCurve: {},
+    types: {}
+  },
 };
 
 export default function(state=initialState, action){
@@ -34,7 +38,10 @@ export default function(state=initialState, action){
       ...state,
       deck: action.deck,
       summarizedDeck: action.summarizedDeck,
-      trimmedDeck: action.trimmedDeck
+    };
+    case 'SIMPLIFY_DECK': return {
+        ...state,
+      simplifiedDeck: action.simplifiedDeck
     };
     default: return state;
   }
