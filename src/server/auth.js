@@ -20,7 +20,6 @@ export function signIn(email, pass, cb){
       .then(()=>browserHistory.push('/dashboard'))
       .catch(e=>{
         let m = e.message;
-        console.log(m);
         return cb(m)
       });
 }
