@@ -1,6 +1,5 @@
 import {ref, firebaseAuth} from '../keys';
 import {browserHistory} from 'react-router';
-import _ from 'lodash';
 export function createUser(email, pass, username, callback){
 
   let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(user=>saveUser(user, username));
