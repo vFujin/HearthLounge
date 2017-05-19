@@ -14,10 +14,9 @@ import {captureDecklist} from '../../../../utils/capture-decklist';
 
 const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, summarizedDeck,
                                    toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
-
   const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
   const query = location.query;
-
+  let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   const countUniqueCards = (card) => {
     return _.filter(deck, {cardId: card.cardId}).length;
   };
@@ -37,7 +36,17 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
   const deckSimplification = () => {
     let cards = {};
     let types = {};
-    let manaCurve = {};
+    let manaCurve = {
+      0:0,
+      1:0,
+      2:0,
+      3:0,
+      4:0,
+      5:0,
+      6:0,
+      7:0,
+    };
+    let max = _.max(Object.values(countByCost));
 
     deck.filter((card, i, self) => {
       Object.assign(cards, {
@@ -49,14 +58,21 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
     });
     deck.map(v => v.type).forEach((c) => types[c] = (types[c] || 0) + 1);
     deck.map(v => v.cost).forEach((c) => {
-      if (c >= 7) {
-        return manaCurve[7] = (manaCurve[7] || 0) + 1
-      }
-      else {
-        return manaCurve[c] = (manaCurve[c] || 0) + 1
-      }
+     console.log(c);
+
+      switch(c){
+       case 0: return manaCurve[0] = ((manaCurve[0] || 0) +1);
+       case 1: return manaCurve[1] = ((manaCurve[1] || 0) +1);
+       case 2: return manaCurve[2] = ((manaCurve[2] || 0) +1);
+       case 3: return manaCurve[3] = ((manaCurve[3] || 0) +1);
+       case 4: return manaCurve[4] = ((manaCurve[4] || 0) +1);
+       case 5: return manaCurve[5] = ((manaCurve[5] || 0) +1);
+       case 6: return manaCurve[6] = ((manaCurve[6] || 0) +1);
+       default: manaCurve[7] = (manaCurve[7] || 0) +1;
+     }
+
     });
-    simplifyDeck({cards, manaCurve, types});
+    simplifyDeck({cards, manaCurve, types, max});
   };
 
   const toggleCardAmountTooltip = (card) => {

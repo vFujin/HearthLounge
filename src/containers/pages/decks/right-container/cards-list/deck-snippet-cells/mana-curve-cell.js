@@ -3,26 +3,21 @@ import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-const ManaCurve = ({deckUrl, deck, cards}) =>{
-
-
-
-    // console.log(Object.keys(deck.manaCurve));
-
+const ManaCurve = ({deckUrl, deck, hsClass}) =>{
 
   return (
         <Link to={deckUrl}>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            {deck.manaCurve.map(i=> {
+              return (
+                  <li>
+                    <span style={{height: `${(i/deck.max * 100 || 0)}%`}}></span>
+                  </li>
+              )})}
           </ul>
         </Link>
   )
+
 
 };
 

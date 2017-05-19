@@ -9,11 +9,10 @@ export const DeckSnippet = (props, {handleTableRowClick} ) => {
   const {hsClass, deckId, title, author, deck} = props;
   const deckUrl = `/decks/${hsClass}/${deckId}/${_.snakeCase(title)}`;
 
-  console.log(deck);
   const cells = (el) =>{
     switch(el) {
       case 'title': return <TitleCell deckUrl={`${deckUrl}`} hsClass={hsClass} title={title} author={author}/>;
-      case 'mana-curve': return <ManaCurve deck={deck} deckUrl={deckUrl}/>;
+      case 'mana-curve': return <ManaCurve deck={deck} deckUrl={deckUrl} hsClass={hsClass}/>;
       default: return <Link to={deckUrl}>{_.startCase(props[el])}</Link>;
     }
   };
