@@ -9,8 +9,8 @@ import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 
 
-import {Deck} from './pages/decks/deck/deck-details';
 import DeckSelection from "./pages/decks/deck-selection/deck-selection";
+import Deck from './pages/decks/deck/deck-details';
 
 import {ArenaPicker} from './pages/arena-picker/arena-picker';
 import {ArenaPickerClassSelection} from './pages/arena-picker/class-selection';
