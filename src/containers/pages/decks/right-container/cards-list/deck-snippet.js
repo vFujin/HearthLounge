@@ -5,10 +5,9 @@ import TitleCell from './deck-snippet-cells/title-cell';
 import ManaCurve from './deck-snippet-cells/mana-curve-cell';
 import _ from 'lodash';
 
-export const DeckSnippet = (props, {handleTableRowClick} ) => {
-  const {hsClass, deckId, title, author, deck} = props;
+export const DeckSnippet = (props) => {
+  const {hsClass, deckId, title, author, deck, handleDeckSnippetClick} = props;
   const deckUrl = `/decks/${hsClass}/${deckId}/${_.snakeCase(title)}`;
-
   const cells = (el) =>{
     switch(el) {
       case 'title': return <TitleCell deckUrl={`${deckUrl}`} hsClass={hsClass} title={title} author={author}/>;
@@ -23,7 +22,7 @@ export const DeckSnippet = (props, {handleTableRowClick} ) => {
     })
   };
   return (
-      <tr key={props.created} className={`deck-snippet ${hsClass} table-row`} onClick={handleTableRowClick}>
+      <tr id={deckId} key={props.created} className={`deck-snippet ${hsClass} table-row`} onClick={handleDeckSnippetClick}>
         {mapCells()}
       </tr>
 

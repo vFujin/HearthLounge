@@ -1,4 +1,4 @@
-import {refParent} from '../keys';
+import {ref, refParent} from '../keys';
 // let _start = 0;
 // let _end = 14;
 // let _n = 15;
@@ -31,4 +31,16 @@ export function lazyLoadDecks(callback, playerClass){
   //     });
   // _start += _n;
   // _end += _n;
+}
+
+export function incrementViewsCount(deckId){
+  return ref.child(`decks/${deckId}`).transaction(function(deck) {
+    if (deck) {
+        deck.views++;
+        if (!deck.views) {
+          deck.views = {};
+        }
+    }
+    return deck;
+  });
 }

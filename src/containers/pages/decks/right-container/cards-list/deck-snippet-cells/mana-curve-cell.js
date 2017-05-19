@@ -8,10 +8,10 @@ const ManaCurve = ({deckUrl, deck, hsClass}) =>{
   return (
         <Link to={deckUrl}>
           <ul>
-            {deck.manaCurve.map(i=> {
+            {deck.manaCurve.map((el, i)=> {
               return (
-                  <li>
-                    <span style={{height: `${(i/deck.max * 100 || 0)}%`}}></span>
+                  <li key={i}>
+                    <span style={{height: `${(el/deck.max * 100 || 0)}%`}}></span>
                   </li>
               )})}
           </ul>

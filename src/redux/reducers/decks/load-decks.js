@@ -14,6 +14,10 @@ export default function(state=initialState, action){
         ...state,
       users: action.users
     };
+    case 'UPDATE_ACTIVE_DECK': return {
+      ...state,
+      activeDeck: action.activeDeck
+    };
     case 'TOGGLE_ADVENTURE_FILTERS': return {
       ...state,
       adventuresToggled: action.adventuresToggled

@@ -9,7 +9,6 @@ import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 
 
-import Decks from './pages/decks/deck-selection/decks';
 import {Deck} from './pages/decks/deck/deck-details';
 import DeckSelection from "./pages/decks/deck-selection/deck-selection";
 
@@ -64,9 +63,7 @@ const App = ({store}) =>{
         <Redirect from="home" to="/" />
         <Route path=""                  component={Home} />
 
-        <Redirect from="decks" to="decks/all"/>
-        <Route path="decks"             component={Decks}>
-          <Route path="all"             components={DeckSelection}/>
+        <Route path="decks"             component={DeckSelection}>
           <Route path=":class/:deckId/:deckTitle"  components={Deck}/>
         </Route>
 

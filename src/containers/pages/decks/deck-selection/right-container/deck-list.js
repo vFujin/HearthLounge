@@ -3,7 +3,7 @@ import  _ from 'lodash';
 import Loader from '../../../../../utils/loader';
 import DeckSnippet from '../../right-container/cards-list/deck-snippet';
 
-const DeckList = ({decks, handleTableRowClick}) => {
+const DeckList = ({decks, handleDeckSnippetClick}) => {
   const mapDecks = () =>{
 
     if(decks && decks.length < 1){
@@ -11,7 +11,7 @@ const DeckList = ({decks, handleTableRowClick}) => {
     }
     else {
       return _.map(decks).map(deck => {
-        return <DeckSnippet handleTableRowClick={handleTableRowClick}
+        return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
                             deckId={deck.id}
                             hsClass={deck.hsClass}
                             title={deck.title}

@@ -2,8 +2,8 @@ import React from 'react';
 import Topbar from './topbar';
 import DeckList from './deck-list';
 
-const RightContainer = ({adventuresToggled, decks, handleTableRowClick, handleModeFilterClick, handleClassFilterClick,
-                          handleAdventureFilterClick, activeAdventure, activeMode, activeClass}) => {
+const RightContainer = ({adventuresToggled, decks, handleModeFilterClick, handleClassFilterClick,
+                          handleAdventureFilterClick, handleDeckSnippetClick, activeAdventure, activeMode, activeClass}) => {
   return (
       <div className="container__page--inner container__page--right">
         <Topbar adventuresToggled={adventuresToggled}
@@ -14,7 +14,7 @@ const RightContainer = ({adventuresToggled, decks, handleTableRowClick, handleMo
                 activeAdventure={activeAdventure}
                 activeClass={activeClass}/>
         <div className="content">
-          <DeckList decks={decks} handleTableRowClick={handleTableRowClick}/>
+          <DeckList decks={decks} handleDeckSnippetClick={handleDeckSnippetClick}/>
         </div>
       </div>
   )

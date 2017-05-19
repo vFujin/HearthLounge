@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
-import {lazyLoadDecks} from '../../../../server/fetch-decks';
+import {lazyLoadDecks, incrementViewsCount} from '../../../../server/decks';
 import 'whatwg-fetch';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 
 
 
@@ -43,30 +44,42 @@ class DeckSelection extends Component {
     lazyLoadDecks((v) => this.props.updateDeckList(v), targetId);
   };
 
+  handleDeckSnippetClick = (e) =>{
+    let deck = e.currentTarget.id;
+    let deckDetails = _.map(this.props.decks).filter(d=>d.id === deck ? d : null);
+    this.props.updateActiveDeck(deckDetails);
+    incrementViewsCount(deck);
+  };
 
   render() {
-    const {decks, users, adventuresToggled, handleTableRowClick, activeAdventure, activeMode, activeClass} = this.props;
-    return (
-        <div  className="container__page container__page--twoSided decks">
-          <LeftContainer users={users}/>
-          <RightContainer decks={decks}
-                          adventuresToggled={adventuresToggled}
-                          activeMode={activeMode}
-                          activeAdventure={activeAdventure}
-                          activeClass={activeClass}
-                          handleTableRowClick={handleTableRowClick}
-                          handleModeFilterClick={this.handleModeFilterClick}
-                          handleAdventureFilterClick={this.handleAdventureFilterClick}
-                          handleClassFilterClick={this.handleClassFilterClick}/>
-        </div>
-    );
+    const {children, location, decks, users, adventuresToggled, activeAdventure, activeMode, activeClass, activeDeck} = this.props;
+    if(location.pathname !== "/decks"){
+      return React.cloneElement(children, {activeDeck});
+    }
+    else {
+      return (
+          <div className="container__page container__page--twoSided decks">
+            <LeftContainer users={users}/>
+            <RightContainer decks={decks}
+                            adventuresToggled={adventuresToggled}
+                            activeMode={activeMode}
+                            activeAdventure={activeAdventure}
+                            activeClass={activeClass}
+                            handleModeFilterClick={this.handleModeFilterClick}
+                            handleAdventureFilterClick={this.handleAdventureFilterClick}
+                            handleClassFilterClick={this.handleClassFilterClick}
+                            handleDeckSnippetClick={(e) => this.handleDeckSnippetClick(e)}/>
+          </div>
+      );
+    }
   };
 }
 
+
 const mapStateToProps = state =>{
-  const {decks, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
+  const {decks, activeDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
   const {users} = state.users;
-  return {decks, users, adventuresToggled, activeAdventure, activeMode, activeClass};
+  return {decks, users, activeDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -76,6 +89,9 @@ const mapDispatchToProps = (dispatch) => {
     }),
     updateUserList: (users) => dispatch({
       type: 'UPDATE_USER_LIST', users
+    }),
+    updateActiveDeck: (activeDeck) => dispatch({
+      type: 'UPDATE_ACTIVE_DECK', activeDeck
     }),
     toggleAdventureFilters: (adventuresToggled) => dispatch({
       type: 'TOGGLE_ADVENTURE_FILTERS', adventuresToggled
@@ -89,6 +105,7 @@ const mapDispatchToProps = (dispatch) => {
     updateClassFilter: (activeClass) => dispatch({
       type: 'UPDATE_CLASS_FILTER', activeClass
     })
+
   }
 };
 
