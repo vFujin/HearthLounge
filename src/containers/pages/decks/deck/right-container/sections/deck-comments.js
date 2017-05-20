@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from '../../view/comment';
 import TextEditor from '../../../../../shared-assets/editor/text-editor';
-
-const DeckComments = () =>{
+import {convertBBCode} from '../../../../../shared-assets/editor/text-editor-functions';
+const DeckComments = ({deckComment, deckCommentControlled, handleTextareaChange, handleTagInsertion}) =>{
   return (
       <div className="container__details--section container__details--comments">
         <div className="section__header">
@@ -11,23 +11,32 @@ const DeckComments = () =>{
           <h1>104 comments</h1>
         </div>
         <div className="section__body">
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
+          <div className="comments">
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+            <Comment/>
+          </div>
+          <div className="comment-preview">
+            {convertBBCode(deckComment)}
+          </div>
         </div>
         <div className="section__footer">
-          <TextEditor/>
+
+          <TextEditor editorId="deckCommentControlled"
+                      previewID=""
+                      handleInputChange={handleTextareaChange}
+                      value={deckCommentControlled}
+                      handleTagInsertion={handleTagInsertion}/>
         </div>
       </div>
   )
@@ -35,6 +44,6 @@ const DeckComments = () =>{
 
 export default DeckComments;
 
-// DeckComments.propTypes = {
-//   currentDeck: PropTypes.object
-// };
+DeckComments.propTypes = {
+  updateComment: PropTypes.func
+};

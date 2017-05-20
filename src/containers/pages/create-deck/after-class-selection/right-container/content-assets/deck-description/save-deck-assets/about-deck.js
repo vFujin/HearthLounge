@@ -23,7 +23,7 @@ const AboutDeck = ({activeClass, deckTitle, deckType, deckArchetype, handleInput
               <InnerRightContainer />
             </div>
 
-            <TextEditor id="deckTextControlled"
+            <TextEditor editorId="deckTextControlled"
                         previewId="deckText"
                         handleInputChange={handleInputChange}
                         value={deckTextControlled}

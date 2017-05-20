@@ -8,7 +8,6 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 
 const updateDeckText = _.debounce((updateDeckProperty, value) => {
-  console.log(value);
   updateDeckProperty({deckText: value})
 }, 300);
 
@@ -35,8 +34,6 @@ const DeckOptions = ({activeClass, user, deckType, deckTitle, deckArchetype, dec
     e.preventDefault();
     saveDeck(activeClass, user.username, deckTitle, deckType, deckArchetype, simplifiedDeck, deckText, user.uid);
   };
-
-
 
   return (
       <div className='container__details'>
