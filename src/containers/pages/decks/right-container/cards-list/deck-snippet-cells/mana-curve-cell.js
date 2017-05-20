@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-const ManaCurve = ({deckUrl, deck, hsClass}) =>{
+const ManaCurve = ({deckUrl, deck}) =>{
 
   return (
         <Link to={deckUrl}>

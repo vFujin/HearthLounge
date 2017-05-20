@@ -2536,64 +2536,64 @@ footer {
 .shared-table {
   border-collapse: collapse;
   width: 100%; }
-  .shared-table tr {
+  .shared-table tbody tr {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
     -ms-transition: all ease 0.4s;
     -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
-    .shared-table tr td {
+    .shared-table tbody tr td {
       padding: 0;
       cursor: pointer;
       border: 1px solid #474143;
       border-right: 0;
       border-left: 0;
       font-size: initial; }
-      .shared-table tr td a {
+      .shared-table tbody tr td a {
         display: flex;
         align-items: center;
         padding: 10px 0;
         width: 100%;
         height: 100%;
         justify-content: center; }
-      .shared-table tr td:first-child {
+      .shared-table tbody tr td:first-child {
         border-left: 1px solid #474143; }
-        .shared-table tr td:first-child a {
+        .shared-table tbody tr td:first-child a {
           justify-content: flex-start;
           padding-left: 10px; }
-      .shared-table tr td:last-child {
+      .shared-table tbody tr td:last-child {
         border-right: 1px solid #474143; }
-    .shared-table tr .title {
+    .shared-table tbody tr .title {
       text-align: left; }
-      .shared-table tr .title span, .shared-table tr .title div {
+      .shared-table tbody tr .title span, .shared-table tbody tr .title div {
         display: inline-block; }
-      .shared-table tr .title span {
+      .shared-table tbody tr .title span {
         padding: 5px;
         font-size: 30px;
         border: 2px solid #474143;
         border-radius: 50%;
         margin-right: 5px; }
-      .shared-table tr .title .title {
+      .shared-table tbody tr .title .title {
         font-weight: bold; }
-      .shared-table tr .title .author {
+      .shared-table tbody tr .title .author {
         font-size: 10px; }
-    .shared-table tr .mana-curve {
+    .shared-table tbody tr .mana-curve {
       position: relative;
       z-index: 1;
       height: 100%; }
-      .shared-table tr .mana-curve ul {
+      .shared-table tbody tr .mana-curve ul {
         display: flex;
         justify-content: center;
         width: 100%; }
-        .shared-table tr .mana-curve ul li {
+        .shared-table tbody tr .mana-curve ul li {
           width: 4px;
           background: #474143;
           height: 20px;
           margin-right: 2px;
           position: relative; }
-          .shared-table tr .mana-curve ul li:last-child {
+          .shared-table tbody tr .mana-curve ul li:last-child {
             margin-right: 0; }
-          .shared-table tr .mana-curve ul li span {
+          .shared-table tbody tr .mana-curve ul li span {
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
             -ms-transition: all ease 0.4s;

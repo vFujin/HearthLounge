@@ -76,7 +76,7 @@ class DeckSelection extends Component {
 }
 
 
-const mapStateToProps = state =>{
+const mapStateToProps = (state, ownProps) =>{
   const {decks, activeDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
   const {users} = state.users;
   return {decks, users, activeDeck, adventuresToggled, activeAdventure, activeMode, activeClass};

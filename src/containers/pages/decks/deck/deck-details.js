@@ -12,19 +12,33 @@ const Deck = ({activeDeck}) => {
             <div className="container__mana-curve">
               <h3>Mana Curve</h3>
               <ManaCurve deck={activeDeck.deck.cards} max={activeDeck.deck.max}/>
-
               <h3>Cards</h3>
+              <div className="list cards-list">
+                <div className="table-scroll">
+                  <table>
+                    <thead>
+                    <tr>
+                      <th>Set</th>
+                      <th>Card</th>
+                      <th>Amount</th>
+                      <th>Cost</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {_.map(activeDeck.deck.cards).map((c, i)=>
+                        <tr>
+                          <td>set</td>
+                          <td>{cardNames[i]}</td>
+                          <td>{c.amount}</td>
+                          <td><span className={`hs-icon icon-mana-${c.cost}`}></span></td>
+                        </tr>
+                    )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
               <table>
-                <tbody>
-              {_.map(activeDeck.deck.cards).map((c, i)=>
-                <tr>
-                  <td>set</td>
-                  <td>{cardNames[i]}</td>
-                  <td>{c.amount}</td>
-                  <td>{c.cost}</td>
-                </tr>
-              )}
-                </tbody>
+
               </table>
             </div>
             <div className="background">

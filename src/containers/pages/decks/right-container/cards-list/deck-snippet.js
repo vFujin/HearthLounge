@@ -22,7 +22,7 @@ export const DeckSnippet = (props) => {
     })
   };
   return (
-      <tr id={deckId} key={props.created} className={`deck-snippet ${hsClass} table-row`} onClick={handleDeckSnippetClick}>
+      <tr id={deckId} key={deckId} className={`deck-snippet ${hsClass} table-row`} onClick={handleDeckSnippetClick}>
         {mapCells()}
       </tr>
 

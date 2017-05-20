@@ -10,8 +10,9 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
       return <tr><td><Loader/></td></tr>
     }
     else {
-      return _.map(decks).map(deck => {
+      return _.map(decks).map(deck  => {
         return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
+                            key={deck.id}
                             deckId={deck.id}
                             hsClass={deck.hsClass}
                             title={deck.title}
@@ -25,6 +26,8 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
       })
     }
   };
+
+
 
   return (
   <div className="table-scroll">
