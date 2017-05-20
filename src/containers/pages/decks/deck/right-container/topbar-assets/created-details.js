@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CreatedDetails = ({currentDeck}) =>{
+  const {patch, created} = currentDeck;
+
   return (
       <div className="created-details">
-        <p>{currentDeck.patch}</p>
-        <p>{currentDeck.created}</p>
+        <p>{patch}</p>
+        <p>{created}</p>
       </div>
   )
 };

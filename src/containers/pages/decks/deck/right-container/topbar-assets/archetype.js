@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Archetype = ({currentDeck}) =>{
+  const {hsClass, archetype} = currentDeck;
+
   return (
       <div className="deck-details-wrapper archetype">
-        <p className={`${currentDeck.hsClass} active`}>{`${currentDeck.archetype} ${currentDeck.hsClass}`}</p>
+        <p className={`${hsClass} active`}>
+          {`${archetype} ${hsClass}`}
+        </p>
       </div>
   )
 };

@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Votes = ({currentDeck}) =>{
-  let votes = currentDeck.upvotes - currentDeck.downvotes;
+  const {upvotes, downvotes} = currentDeck;
+  let votes = upvotes - downvotes;
   let voteResClass = votes >= 0 ? 'pos' : 'neg';
+  
   return (
       <div className="deck-details-wrapper votes">
         <span className="hs-icon monk active-without-background icon-circle-up"></span>
