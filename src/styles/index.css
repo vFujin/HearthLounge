@@ -2486,7 +2486,23 @@ nav {
     text-transform: uppercase;
     border-right: 1px solid #666; }
     nav .nav__list .nav__list--item:first-child {
-      border-left: 1px solid #666; }
+      border-left: none;
+      display: flex;
+      align-items: center;
+      padding-left: 1vh; }
+      nav .nav__list .nav__list--item:first-child:hover {
+        background-color: #474143; }
+      nav .nav__list .nav__list--item:first-child .logo-wrapper {
+        display: flex;
+        align-items: center; }
+        nav .nav__list .nav__list--item:first-child .logo-wrapper span {
+          font-size: 8vh;
+          color: #00a99c; }
+        nav .nav__list .nav__list--item:first-child .logo-wrapper .text-wrapper {
+          margin-left: 1vh; }
+          nav .nav__list .nav__list--item:first-child .logo-wrapper .text-wrapper p:first-child {
+            margin-bottom: .5vh;
+            margin-top: .1vh; }
     nav .nav__list .nav__list--item:hover {
       background-color: #00a99c; }
       nav .nav__list .nav__list--item:hover .submenu {

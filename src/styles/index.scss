@@ -57,7 +57,30 @@ nav {
       text-transform: uppercase;
       border-right: 1px solid #666;
       &:first-child {
-        border-left: 1px solid #666;
+        border-left: none;
+        display: flex;
+        align-items: center;
+        padding-left: 1vh;
+        &:hover{
+          background-color: $dark-grey;
+        }
+        .logo-wrapper{
+          display: flex;
+          align-items: center;
+          span{
+            font-size: 8vh;
+            color: $sea-color;
+          }
+          .text-wrapper{
+            margin-left: 1vh;
+            p{
+              &:first-child{
+                margin-bottom: .5vh;
+                margin-top: .1vh;
+              }
+            }
+          }
+        }
       }
       &:hover {
         background-color: $sea-color;

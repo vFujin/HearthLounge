@@ -29,7 +29,15 @@ const Navbar = ({handleLogout, user}) => {
   return (
     <nav>
       <ul className="nav__list">
-        <li className="nav__list--item logo"></li>
+        <li className="nav__list--item logo">
+          <div className="logo-wrapper">
+            <span className="hs-icon icon-hl-logo"></span>
+            <div className="text-wrapper">
+              <p>Hearth</p>
+              <p>Lounge</p>
+            </div>
+          </div>
+        </li>
         {navItems.map((element, index) =>
             <li key={index} className={`nav__list--item ${element.url}`}>
               <Link className="nav__list--link" to={'/' + element.url} activeClassName="active">
