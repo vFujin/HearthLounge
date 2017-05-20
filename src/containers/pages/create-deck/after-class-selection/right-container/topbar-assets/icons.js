@@ -21,7 +21,7 @@ export const topbar_icons = (active_class) => {
     options: [
       {
         title: 'Copy deck URL to clipboard',
-        icon: 'link',
+        icon: 'copy',
         popover: false,
         allowCopy: true
       },

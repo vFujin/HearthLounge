@@ -47,8 +47,11 @@ const Deck = ({activeDeck}) => {
 
           </div>
         </div>
+
         <div className="container__page--inner container__page--right">
-          <div className="topbar"></div>
+          <div className="topbar">
+            <div className="votes"></div>
+          </div>
           <div className="content">
             <div className="container__details">
               <div className="container__details--section container__details--description">

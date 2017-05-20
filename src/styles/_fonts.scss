@@ -25,7 +25,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-circle-down:before {
+  content: "\ea43";
+}
+.icon-hl-logo:before {
+  content: "\e93c";
+}
 .icon-hall-of-fame:before {
   content: "\e93b";
 }
@@ -97,6 +102,9 @@
 }
 .icon-embed:before {
   content: "\ea7f";
+}
+.icon-bubbles22:before {
+  content: "\e96d";
 }
 .icon-journey-to-ungoro:before {
   content: "\e938";
