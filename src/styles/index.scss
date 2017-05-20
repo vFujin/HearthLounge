@@ -1185,12 +1185,20 @@ footer{
       }
     }
     .content {
-      .container__details{
-        .container__details--description{
-          .section__body{
-            .section__body--background{
+      .container__details {
+        .container__details--description {
+          .section__body {
+            .section__body--background {
               background: $light-grey;
             }
+          }
+        }
+        .container__details--comments {
+          .section__body {
+            margin-bottom: 1vh;
+          }
+          .section__footer {
+            height: 20vh;
           }
         }
       }

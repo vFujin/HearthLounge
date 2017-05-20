@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from '../../view/comment';
+import TextEditor from '../../../../../shared-assets/editor/text-editor';
 
 const DeckComments = () =>{
   return (
@@ -14,6 +15,7 @@ const DeckComments = () =>{
           <Comment/>
           <Comment/>
           <Comment/>
+
           <Comment/>
           <Comment/>
           <Comment/>
@@ -23,6 +25,9 @@ const DeckComments = () =>{
           <Comment/>
           <Comment/>
           <Comment/>
+        </div>
+        <div className="section__footer">
+          <TextEditor/>
         </div>
       </div>
   )

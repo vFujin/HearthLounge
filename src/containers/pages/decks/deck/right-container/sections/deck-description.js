@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {convertBBCode} from '../../../../../shared-assets/editor/text-editor-functions';
 
 const DeckDescription = ({currentDeck}) =>{
   const {title, description} = currentDeck;
@@ -10,7 +11,7 @@ const DeckDescription = ({currentDeck}) =>{
           <h1>{title}</h1>
         </div>
         <div className="section__body">
-          <div className="section__body--background">{description}</div>
+          <div className="section__body--background">{convertBBCode(description)}</div>
         </div>
       </div>
   )

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Topbar from './topbar';
 import Content from './content';
 
@@ -12,3 +13,7 @@ const RightContainer = ({currentDeck}) =>{
 };
 
 export default RightContainer;
+
+RightContainer.propTypes = {
+  currentDeck: PropTypes.object
+};

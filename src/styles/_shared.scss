@@ -331,8 +331,11 @@ form {
     }
 }
 
+
 .text-editor{
   display: grid;
+  background: $dark-grey;
+  height: calc(100% - 2vh - 2px);
   grid-template-rows: 40px auto;
   border: 1px solid grey;
   padding: 1vh;

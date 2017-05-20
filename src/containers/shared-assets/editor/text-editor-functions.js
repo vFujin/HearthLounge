@@ -34,7 +34,7 @@ export const handleBBCodeClick = (e, textContainer, handleTagInsertion, id, prev
 
 
 
-export const handlePreviewCompiling = (text) =>{
+export const convertBBCode = (text) =>{
   if(text !== undefined) {
     let s = text.replace(/</g, '<')
         .replace(/>/g, '>')

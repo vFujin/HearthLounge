@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {handlePreviewCompiling} from '../../../../../../../shared-assets/editor/text-editor-functions';
+import {convertBBCode} from '../../../../../../../shared-assets/editor/text-editor-functions';
 
 const Preview = ({deckText}) =>{
   return (
@@ -10,7 +10,7 @@ const Preview = ({deckText}) =>{
           <h1>Preview</h1>
         </div>
         <div className="section__body">
-          {handlePreviewCompiling(deckText)}
+          {convertBBCode(deckText)}
         </div>
       </div>
   )

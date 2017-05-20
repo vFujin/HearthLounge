@@ -99,7 +99,7 @@
       }
       .container__details {
         display: grid;
-        grid-template-columns: repeat(2, calc(50% - .5vh));
+        grid-template-columns: repeat(2, calc(50% - 1vh));
         grid-column-gap: 1vh;
         height: 100%;
         .container__details--section {

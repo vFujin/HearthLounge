@@ -388,7 +388,7 @@ a:active, a:hover, a:link, a:visited {
       grid-column-gap: .4vh; }
     #container .container__page .content .container__details {
       display: grid;
-      grid-template-columns: repeat(2, calc(50% - .5vh));
+      grid-template-columns: repeat(2, calc(50% - 1vh));
       grid-column-gap: 1vh;
       height: 100%; }
       #container .container__page .content .container__details .container__details--section {
@@ -2024,6 +2024,8 @@ form .button-wrapper {
 
 .text-editor {
   display: grid;
+  background: #474143;
+  height: calc(100% - 2vh - 2px);
   grid-template-rows: 40px auto;
   border: 1px solid grey;
   padding: 1vh; }
@@ -3415,6 +3417,10 @@ footer {
     margin-right: 1vh; }
 .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--background {
   background: #A69E9D; }
+.deck .container__page--right .content .container__details .container__details--comments .section__body {
+  margin-bottom: 1vh; }
+.deck .container__page--right .content .container__details .container__details--comments .section__footer {
+  height: 20vh; }
 
 .cards .left-container .sidebar .sidebar-icons {
   margin: 1em 0;
