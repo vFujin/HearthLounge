@@ -5,10 +5,12 @@ import ManaCurve from '../../create-deck/after-class-selection/left-container/si
 const Deck = ({activeDeck}) => {
   console.log(activeDeck);
   let cardNames = Object.keys(activeDeck.deck.cards);
+  let votes = activeDeck.upvotes - activeDeck.downvotes;
   return (
       <div className="container__page container__page--twoSided deck">
         <div className="container__page--inner container__page--left">
-          <h3 className="sidebar__header">Deck Details</h3>
+          <h3 className="sidebar__header">Deck Details  <span className={`hs-icon icon-${activeDeck.type === "standard" ? "mammoth" : activeDeck.type}`}></span>
+          </h3>
           <div className="sidebar__body">
             <div className="container__mana-curve">
               <h3>Mana Curve</h3>
@@ -53,24 +55,26 @@ const Deck = ({activeDeck}) => {
           <div className="topbar">
             <div className="topbar__container topbar__grid topbar__grid--2-1-1">
               <div>
-                <div className="votes">
-                  <span className="hs-icon icon-circle-up"></span>
-                  <p>{activeDeck.upvotes - activeDeck.downvotes}</p>
-                  <span className="hs-icon icon-circle-down"></span>
-                </div>
-                <div className="deck-details">
-                <span className={`hs-icon icon-${activeDeck.type === "standard" ? "mammoth" : activeDeck.type}`}></span>
-                <div className="stats">
-                  <span className="hs-icon icon-minions"></span><p>{activeDeck.deck.types.Minion || 0}</p>
-                  <span className="hs-icon icon-fire"></span><p>{activeDeck.deck.types.Spell || 0}</p>
-                  <span className="hs-icon icon-warrior"></span><p>{activeDeck.deck.types.Weapon || 0}</p>
-                </div>
-                <div className="archetype">
-                  <p>{`${activeDeck.archetype} ${activeDeck.hsClass}`}</p>
-                </div>
-              </div>
-              </div>
 
+
+
+                <div className="deck-details">
+                 <div className="deck-details-wrapper votes">
+                    <span className="hs-icon monk active-without-background icon-circle-up"></span>
+                    <p className={votes >= 0 ? 'pos' : 'neg'}>{votes}</p>
+                    <span className="hs-icon death-knight active-without-background icon-circle-down"></span>
+                 </div>
+                  <div className="deck-details-wrapper stats">
+                    <span className="hs-icon icon-minions"></span><p>{activeDeck.deck.types.Minion || 0}</p>
+                    <span className="hs-icon icon-fire"></span><p>{activeDeck.deck.types.Spell || 0}</p>
+                    <span className="hs-icon icon-warrior"></span><p>{activeDeck.deck.types.Weapon || 0}</p>
+                  </div>
+                  <div className="deck-details-wrapper archetype">
+
+                    <p className={`${activeDeck.hsClass} active`}>{`${activeDeck.archetype} ${activeDeck.hsClass}`}</p>
+                  </div>
+                </div>
+              </div>
               <div>
                 deck url
               </div>
