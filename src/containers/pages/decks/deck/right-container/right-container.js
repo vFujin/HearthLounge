@@ -7,7 +7,6 @@ const RightContainer = ({currentDeck}) =>{
       <div className="container__page--inner container__page--right">
         <Topbar currentDeck={currentDeck}/>
 
-
         <div className="content">
           <div className="container__details">
             <div className="container__details--section container__details--description">

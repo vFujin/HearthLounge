@@ -1134,50 +1134,67 @@ footer{
 
   }
 }
-.deck{
-  .container__page--right{
-    .topbar{
-        .topbar__container{
-          align-content: center;
-          div {
+.deck {
+  .container__page--right {
+    .topbar {
+      .topbar__container {
+        align-content: center;
+        div {
+          display: flex;
+          .deck-details-wrapper {
+            margin-left: 2vh;
             display: flex;
-            .deck-details-wrapper{
-              margin-left: 2vh;
-              display: flex;
-              align-items: center;
-              &:first-child{
-                margin-left: 1vh;
-              }
-              span, p{
-                margin-right: .5vh;
-                &:last-child{
-                  margin-right:0;
-                }
-              }
-              span{
-                font-size: 1vw;
+            align-items: center;
+            &:first-child {
+              margin-left: 1vh;
+            }
+            span, p {
+              margin-right: .5vh;
+              &:last-child {
+                margin-right: 0;
               }
             }
-            .votes{
-              padding: 0 .5vh;
-             p{
-               &.pos{
-                 color: $monk;
-               }
-               &.neg{
-                 color: $death_knight;
-               }
-             }
+            span {
+              font-size: 1vw;
             }
-            .archetype {
-              text-transform: capitalize;
-              p{
-                padding: .5vh;
+          }
+          .votes {
+            padding: 0 .5vh;
+            p {
+              &.pos {
+                color: $monk;
               }
+              &.neg {
+                color: $death_knight;
+              }
+            }
+          }
+          .archetype {
+            text-transform: capitalize;
+            p {
+              padding: .5vh;
+            }
+          }
+
+        }
+        .created-details {
+          display: grid;
+          text-align: right;
+          margin-right: 1vh;
+        }
+      }
+    }
+    .content {
+      .container__details{
+        .container__details--description{
+          .section__body{
+            .section__body--background{
+              background: $light-grey;
             }
           }
         }
       }
+    }
   }
 }
 .cards{

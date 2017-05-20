@@ -3404,11 +3404,17 @@ footer {
       .deck .container__page--right .topbar .topbar__container div .votes p.pos {
         color: #00FF96; }
       .deck .container__page--right .topbar .topbar__container div .votes p.neg {
-        background: #C41F3B; }
+        color: #C41F3B; }
     .deck .container__page--right .topbar .topbar__container div .archetype {
       text-transform: capitalize; }
       .deck .container__page--right .topbar .topbar__container div .archetype p {
         padding: .5vh; }
+  .deck .container__page--right .topbar .topbar__container .created-details {
+    display: grid;
+    text-align: right;
+    margin-right: 1vh; }
+.deck .container__page--right .content .container__details .container__details--description .section__body .section__body--background {
+  background: #A69E9D; }
 
 .cards .left-container .sidebar .sidebar-icons {
   margin: 1em 0;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const CreatedDetails = ({currentDeck}) =>{
   return (
-      <div>
+      <div className="created-details">
         <p>{currentDeck.patch}</p>
         <p>{currentDeck.created}</p>
       </div>

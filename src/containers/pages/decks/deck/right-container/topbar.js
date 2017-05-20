@@ -19,6 +19,7 @@ const Topbar = ({currentDeck}) => {
           <DeckUrl/>
           <CreatedDetails currentDeck={currentDeck}/>
         </div>
+s
       </div>
   )
 };
