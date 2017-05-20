@@ -52,9 +52,9 @@ class DeckSelection extends Component {
   };
 
   render() {
-    const {children, location, decks, users, adventuresToggled, activeAdventure, activeMode, activeClass, activeDeck} = this.props;
+    const {children, location, decks, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck} = this.props;
     if(location.pathname !== "/decks"){
-      return React.cloneElement(children, {activeDeck});
+      return React.cloneElement(children, {currentDeck});
     }
     else {
       return (
@@ -77,9 +77,9 @@ class DeckSelection extends Component {
 
 
 const mapStateToProps = (state, ownProps) =>{
-  const {decks, activeDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
+  const {decks, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
   const {users} = state.users;
-  return {decks, users, activeDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
+  return {decks, users, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -90,8 +90,8 @@ const mapDispatchToProps = (dispatch) => {
     updateUserList: (users) => dispatch({
       type: 'UPDATE_USER_LIST', users
     }),
-    updateActiveDeck: (activeDeck) => dispatch({
-      type: 'UPDATE_ACTIVE_DECK', activeDeck
+    updateActiveDeck: (currentDeck) => dispatch({
+      type: 'UPDATE_ACTIVE_DECK', currentDeck
     }),
     toggleAdventureFilters: (adventuresToggled) => dispatch({
       type: 'TOGGLE_ADVENTURE_FILTERS', adventuresToggled

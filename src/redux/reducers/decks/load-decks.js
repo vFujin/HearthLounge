@@ -16,7 +16,7 @@ export default function(state=initialState, action){
     };
     case 'UPDATE_ACTIVE_DECK': return {
       ...state,
-      activeDeck: action.activeDeck
+      currentDeck: action.currentDeck
     };
     case 'TOGGLE_ADVENTURE_FILTERS': return {
       ...state,

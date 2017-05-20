@@ -1,11 +1,11 @@
 import React from 'react';
 import _ from 'lodash';
 import ManaCurve from '../../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
-const LeftContainer = ({activeDeck}) =>{
-  let cardNames = Object.keys(activeDeck.deck.cards);
+const LeftContainer = ({currentDeck}) =>{
+  let cardNames = Object.keys(currentDeck.deck.cards);
 
   const listCards = () =>{
-    return _.map(activeDeck.deck.cards).map((c, i)=>
+    return _.map(currentDeck.deck.cards).map((c, i)=>
         <tr>
           <td>set</td>
           <td>{cardNames[i]}</td>
@@ -17,12 +17,12 @@ const LeftContainer = ({activeDeck}) =>{
 
   return(
       <div className="container__page--inner container__page--left">
-        <h3 className="sidebar__header">Deck Details  <span className={`hs-icon icon-${activeDeck.type === "standard" ? "mammoth" : activeDeck.type}`}></span>
+        <h3 className="sidebar__header">Deck Details  <span className={`hs-icon icon-${currentDeck.type === "standard" ? "mammoth" : currentDeck.type}`}></span>
         </h3>
         <div className="sidebar__body">
           <div className="container__mana-curve">
             <h3>Mana Curve</h3>
-            <ManaCurve deck={activeDeck.deck.cards} max={activeDeck.deck.max}/>
+            <ManaCurve deck={currentDeck.deck.cards} max={currentDeck.deck.max}/>
             <h3>Cards</h3>
             <div className="list cards-list">
               <div className="table-scroll">
@@ -45,7 +45,7 @@ const LeftContainer = ({activeDeck}) =>{
             </table>
           </div>
           <div className="background">
-            <span className={`hs-icon icon-${activeDeck.hsClass}`}></span>
+            <span className={`hs-icon icon-${currentDeck.hsClass}`}></span>
           </div>
 
         </div>
