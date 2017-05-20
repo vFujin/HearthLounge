@@ -73,17 +73,21 @@
       }
     }
     .container__page--right{
-      .topbar__deckDetails{
+      .topbar__grid{
         display: grid;
-        grid-template-columns: 20vw 40vw 20vw;
         width: 100%;
         height:100%;
         div{
           height:100%;
-
           &:last-child{
             justify-content: flex-end;
           }
+        }
+        &.topbar__grid--2-1-1{
+          grid-template-columns: 40vw 20vw 20vw;
+        }
+        &.topbar__grid--1-2-1{
+          grid-template-columns: 20vw 40vw 20vw;
         }
       }
     }

@@ -3,9 +3,10 @@ import Comment from './view/comment';
 import _ from 'lodash';
 import ManaCurve from '../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
 const Deck = ({activeDeck}) => {
+  console.log(activeDeck);
   let cardNames = Object.keys(activeDeck.deck.cards);
   return (
-      <div className="container__page container__page--twoSided decks">
+      <div className="container__page container__page--twoSided deck">
         <div className="container__page--inner container__page--left">
           <h3 className="sidebar__header">Deck Details</h3>
           <div className="sidebar__body">
@@ -50,8 +51,37 @@ const Deck = ({activeDeck}) => {
 
         <div className="container__page--inner container__page--right">
           <div className="topbar">
-            <div className="votes"></div>
+            <div className="topbar__container topbar__grid topbar__grid--2-1-1">
+              <div>
+                <div className="votes">
+                  <span className="hs-icon icon-circle-up"></span>
+                  <p>{activeDeck.upvotes - activeDeck.downvotes}</p>
+                  <span className="hs-icon icon-circle-down"></span>
+                </div>
+                <div className="deck-details">
+                <span className={`hs-icon icon-${activeDeck.type === "standard" ? "mammoth" : activeDeck.type}`}></span>
+                <div className="stats">
+                  <span className="hs-icon icon-minions"></span><p>{activeDeck.deck.types.Minion || 0}</p>
+                  <span className="hs-icon icon-fire"></span><p>{activeDeck.deck.types.Spell || 0}</p>
+                  <span className="hs-icon icon-warrior"></span><p>{activeDeck.deck.types.Weapon || 0}</p>
+                </div>
+                <div className="archetype">
+                  <p>{`${activeDeck.archetype} ${activeDeck.hsClass}`}</p>
+                </div>
+              </div>
+              </div>
+
+              <div>
+                deck url
+              </div>
+              <div>
+                <p>{activeDeck.patch}</p>
+                <p>{activeDeck.created}</p>
+              </div>
+            </div>
           </div>
+
+
           <div className="content">
             <div className="container__details">
               <div className="container__details--section container__details--description">

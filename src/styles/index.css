@@ -370,15 +370,18 @@ a:active, a:hover, a:link, a:visited {
     #container .container__page .container__page--left .sidebar__body .container__mana-curve {
       display: grid;
       grid-template-rows: 3vh 18vh 3vh auto; }
-    #container .container__page .container__page--right .topbar__deckDetails {
+    #container .container__page .container__page--right .topbar__grid {
       display: grid;
-      grid-template-columns: 20vw 40vw 20vw;
       width: 100%;
       height: 100%; }
-      #container .container__page .container__page--right .topbar__deckDetails div {
+      #container .container__page .container__page--right .topbar__grid div {
         height: 100%; }
-        #container .container__page .container__page--right .topbar__deckDetails div:last-child {
+        #container .container__page .container__page--right .topbar__grid div:last-child {
           justify-content: flex-end; }
+      #container .container__page .container__page--right .topbar__grid.topbar__grid--2-1-1 {
+        grid-template-columns: 40vw 20vw 20vw; }
+      #container .container__page .container__page--right .topbar__grid.topbar__grid--1-2-1 {
+        grid-template-columns: 20vw 40vw 20vw; }
     #container .container__page .content .container__cards {
       display: grid;
       grid-template-columns: repeat(7, 11vw);
@@ -3379,6 +3382,13 @@ footer {
   .decks .container__page--right .topbar .choosen-deck-topbar .rating {
     display: flex;
     align-items: center; }
+
+.deck .container__page--right .topbar .topbar__container {
+  align-content: center; }
+  .deck .container__page--right .topbar .topbar__container div {
+    display: flex; }
+    .deck .container__page--right .topbar .topbar__container div .archetype {
+      text-transform: capitalize; }
 
 .cards .left-container .sidebar .sidebar-icons {
   margin: 1em 0;

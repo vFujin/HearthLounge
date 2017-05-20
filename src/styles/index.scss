@@ -1134,7 +1134,21 @@ footer{
 
   }
 }
-
+.deck{
+  .container__page--right{
+    .topbar{
+        .topbar__container{
+          align-content: center;
+          div {
+            display: flex;
+            .archetype {
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
+  }
+}
 .cards{
   .left-container{
     .sidebar{
