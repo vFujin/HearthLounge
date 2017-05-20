@@ -1,63 +1,19 @@
 import React from 'react';
 import Comment from './view/comment';
-import _ from 'lodash';
-import ManaCurve from '../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
+
+import LeftContainer from "./left-container/left-container";
+
 const Deck = ({activeDeck}) => {
-  console.log(activeDeck);
-  let cardNames = Object.keys(activeDeck.deck.cards);
+
   let votes = activeDeck.upvotes - activeDeck.downvotes;
   return (
       <div className="container__page container__page--twoSided deck">
-        <div className="container__page--inner container__page--left">
-          <h3 className="sidebar__header">Deck Details  <span className={`hs-icon icon-${activeDeck.type === "standard" ? "mammoth" : activeDeck.type}`}></span>
-          </h3>
-          <div className="sidebar__body">
-            <div className="container__mana-curve">
-              <h3>Mana Curve</h3>
-              <ManaCurve deck={activeDeck.deck.cards} max={activeDeck.deck.max}/>
-              <h3>Cards</h3>
-              <div className="list cards-list">
-                <div className="table-scroll">
-                  <table>
-                    <thead>
-                    <tr>
-                      <th>Set</th>
-                      <th>Card</th>
-                      <th>Amount</th>
-                      <th>Cost</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {_.map(activeDeck.deck.cards).map((c, i)=>
-                        <tr>
-                          <td>set</td>
-                          <td>{cardNames[i]}</td>
-                          <td>{c.amount}</td>
-                          <td><span className={`hs-icon icon-mana-${c.cost}`}></span></td>
-                        </tr>
-                    )}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <table>
-
-              </table>
-            </div>
-            <div className="background">
-              <span className={`hs-icon icon-${activeDeck.hsClass}`}></span>
-            </div>
-
-          </div>
-        </div>
+        <LeftContainer activeDeck={activeDeck} />
 
         <div className="container__page--inner container__page--right">
           <div className="topbar">
             <div className="topbar__container topbar__grid topbar__grid--2-1-1">
               <div>
-
-
-
                 <div className="deck-details">
                  <div className="deck-details-wrapper votes">
                     <span className="hs-icon monk active-without-background icon-circle-up"></span>
