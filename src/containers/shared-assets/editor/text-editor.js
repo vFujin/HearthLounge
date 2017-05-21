@@ -5,7 +5,7 @@ import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 
 const TextEditor = ({handleInputChange, editorId, previewId, value, handleTagInsertion}) => {
-
+  console.log(value);
   const mapToolbar = () => {
     return toolbar.map(tool => {
       return (

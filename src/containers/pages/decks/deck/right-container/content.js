@@ -3,15 +3,12 @@ import PropTypes from 'prop-types';
 import DeckDescription from './sections/deck-description';
 import DeckComments from './sections/deck-comments';
 
-const Content = ({currentDeck, deckComment, deckCommentControlled, handleTextareaChange, handleTagInsertion}) =>{
+const Content = ({currentDeck}) =>{
   return (
       <div className="content">
         <div className="container__details">
           <DeckDescription currentDeck={currentDeck}/>
-          <DeckComments handleTextareaChange={handleTextareaChange}
-                        deckCommentControlled={deckCommentControlled}
-                        handleTagInsertion={handleTagInsertion}
-                        deckComment={deckComment}/>
+          <DeckComments />
         </div>
       </div>
   )
@@ -20,6 +17,5 @@ const Content = ({currentDeck, deckComment, deckCommentControlled, handleTextare
 export default Content;
 
 Content.propTypes = {
-  currentDeck: PropTypes.object,
-  updateComment: PropTypes.func
+  currentDeck: PropTypes.object
 };

@@ -1,9 +1,24 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import Comment from '../../view/comment';
 import TextEditor from '../../../../../shared-assets/editor/text-editor';
 import {convertBBCode} from '../../../../../shared-assets/editor/text-editor-functions';
-const DeckComments = ({deckComment, deckCommentControlled, handleTextareaChange, handleTagInsertion}) =>{
+
+const updateCommentText = _.debounce((updateComment, value) => {
+  updateComment({deckComment: value})
+}, 300);
+
+const DeckComments = ({deckComment, deckCommentControlled, updateComment}) =>{
+
+  const handleTextareaChange = (e) => {
+    let value = e.target.value;
+    updateComment({deckCommentControlled: value});
+    updateCommentText(updateComment, value);
+  };
+
+
   return (
       <div className="container__details--section container__details--comments">
         <div className="section__header">
@@ -40,16 +55,34 @@ const DeckComments = ({deckComment, deckCommentControlled, handleTextareaChange,
             </div>
           </div>
           <TextEditor editorId="deckCommentControlled"
-                      previewID=""
+                      previewID="deckComment"
                       handleInputChange={handleTextareaChange}
                       value={deckCommentControlled}
-                      handleTagInsertion={handleTagInsertion}/>
+                      handleTagInsertion={updateComment}/>
         </div>
       </div>
   )
 };
 
-export default DeckComments;
+
+const mapStateToProps = (state) => {
+  const {deckComment, deckCommentControlled} = state.deckView;
+  return {deckComment, deckCommentControlled}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateComment: (props) => (dispatch({
+      type: 'UPDATE_COMMENT', props
+    })),
+    togglePreview: (previewOpen) => (dispatch({
+      type: 'TOGGLE_PREVIEW', previewOpen
+    }))
+  }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeckComments)
 
 DeckComments.propTypes = {
   updateComment: PropTypes.func

@@ -3,7 +3,7 @@ export default function(state={}, action) {
     case 'UPDATE_COMMENT':
       return {
         ...state,
-        deckComment: action.deckComment
+        ...action.props
       };
     default: return state;
   }
