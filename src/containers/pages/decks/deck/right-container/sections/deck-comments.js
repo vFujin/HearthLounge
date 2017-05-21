@@ -31,7 +31,14 @@ const DeckComments = ({deckComment, deckCommentControlled, handleTextareaChange,
           </div>
         </div>
         <div className="section__footer">
-
+          <div className="section__footer--header">
+            <h4>Comment</h4>
+            <div>
+              <button className="btn btn-pearl">Hide</button>
+              <button className="btn btn-pearl">Preview</button>
+              <button className="btn btn-pearl">Post Comment</button>
+            </div>
+          </div>
           <TextEditor editorId="deckCommentControlled"
                       previewID=""
                       handleInputChange={handleTextareaChange}

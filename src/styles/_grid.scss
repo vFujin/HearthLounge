@@ -104,9 +104,13 @@
         height: 100%;
         .container__details--section {
           display: grid;
-          grid-template-rows: 6vh auto;
+
+        }
+        .container__details--description{
+          grid-template-rows: 6vh auto 8vh;
         }
         .container__details--comments {
+          grid-template-rows: 6vh auto 20vh;
           .section__body {
             .comment {
               display: grid;
