@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-
+import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
@@ -36,12 +36,11 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, commen
 
   return (
       <div className="container__details--section container__details--comments">
-        <div className="section__header">
-          <div className="line"></div>
-          <h1>104 comments</h1>
-        </div>
+        <SectionHeader />
+
         <SectionBody deckComment={deckComment}
                      previewIsActive={previewIsActive}/>
+
         <SectionFooter commentBoxIsActive={commentBoxIsActive}
                        deckCommentControlled={deckCommentControlled}
                        updateComment={updateComment}
@@ -52,9 +51,6 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, commen
       </div>
   )
 };
-
-
-
 
 const mapStateToProps = (state) => {
   const {deckComment, deckCommentControlled, commentBoxIsActive, previewIsActive} = state.deckView;
