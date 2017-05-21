@@ -64,7 +64,6 @@ export const convertBBCode = (text) =>{
         .replace(/\[\/ul]/g, '</li></ul>')
         .replace(/\[\/ol]/g, '</li></ol>')
         .replace(/\[\/li]/g, '</li>');
-    console.log(s);
 
     function createMarkup(){
       return {__html: s}

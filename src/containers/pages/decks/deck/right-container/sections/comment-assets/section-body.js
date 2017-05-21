@@ -1,25 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from '../../../view/comment';
+import Loader from '../../../../../../../utils/loader';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
 
-const SectionBody = ({deckComment, previewIsActive}) => {
+const SectionBody = ({comments, deckComment, previewIsActive}) => {
+
+  const listComments = () =>{
+    if(comments.length < 1){
+      return <Loader/>
+    }
+    else{
+      return comments[0].map((c, i)=> <Comment key={i} c={c}/>)
+    }
+  };
+
   return (
       <div className="section__body">
         <div className={previewIsActive ? "display-none" : "comments"}>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
-          <Comment/>
+          {listComments()}
         </div>
         <div className={!previewIsActive ? "display-none" : "comment-preview"}>
           {convertBBCode(deckComment)}

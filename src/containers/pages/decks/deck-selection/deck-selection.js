@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
-import {lazyLoadDecks, incrementViewsCount} from '../../../../server/decks';
+import {lazyLoadDecks, incrementViewsCount} from '../../../../server/decks/decks';
 import 'whatwg-fetch';
 import {connect} from 'react-redux';
 import _ from 'lodash';

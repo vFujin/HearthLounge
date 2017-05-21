@@ -1,10 +1,16 @@
 const initialState = {
+  comments: [],
   commentBoxIsActive: false,
   previewIsActive: false
 };
 
 export default function(state=initialState, action) {
   switch (action.type) {
+    case 'FETCH_COMMENTS':
+      return {
+        ...state,
+        comments: action.comments
+      };
     case 'UPDATE_COMMENT':
       return {
         ...state,
@@ -20,6 +26,7 @@ export default function(state=initialState, action) {
         ...state,
         previewIsActive: action.previewIsActive
       };
-    default: return state;
+    default:
+      return state;
   }
 }

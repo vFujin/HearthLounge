@@ -1,5 +1,5 @@
-import {ref, refParent} from '../keys';
-import {success, loading, error} from '../utils/messages';
+import {ref, refParent} from '../../keys';
+import {success, loading, error} from '../../utils/messages';
 // let _start = 0;
 // let _end = 14;
 // let _n = 15;
@@ -45,37 +45,6 @@ export function incrementViewsCount(deckId){
     return deck;
   });
 }
-
-export function postComment(author, text, deckId, uid){
-  if(author && text && deckId && uid){
-
-
-    let newComment = {
-      created: +new Date(),
-      edited: null,
-      author,
-      text,
-      uid
-    };
-
-    const commentId = ref.child(`decks/${deckId}/comments`).push().key;
-
-    let updates = {};
-    updates[`/deck-comments/${deckId}/${commentId}`] = newComment;
-    updates[`/user-deck-comments/${uid}/${commentId}`] = newComment;
-
-    return ref.update(updates);
-  }
-}
-
-export function fetchComments(deckId, callback){
-  ref(`deck-comments/${deckId}`)
-      .on("value", snapshot => {
-        console.log(snapshot.val());
-        callback(snapshot.val());
-      });
-}
-
 
 
 
