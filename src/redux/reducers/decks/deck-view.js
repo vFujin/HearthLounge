@@ -1,4 +1,5 @@
 const initialState = {
+  commentBoxIsActive: false,
   previewIsActive: false
 };
 
@@ -9,8 +10,13 @@ export default function(state=initialState, action) {
         ...state,
         ...action.props
       };
+    case 'TOGGLE_COMMENT_BOX':
+      return {
+        ...state,
+        commentBoxIsActive: action.commentBoxIsActive
+      };
     case 'TOGGLE_PREVIEW':
-      return{
+      return {
         ...state,
         previewIsActive: action.previewIsActive
       };

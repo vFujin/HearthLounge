@@ -633,27 +633,29 @@ footer{
             padding: 2vh 1vh 0 1vh;
             border: 1px solid $dark-grey;
             position: relative;
-            .section__footer--header {
-              h4, div {
-                display: flex;
-                position: absolute;
-                top: -11px;
-              }
-              h4 {
-                background: $pearl;
-                padding: 0 1vh;
-                border: 1px solid $dark-grey;
-              }
-              div {
-                right: 1vh;
-                button {
-                  margin-left: .5vh;
-                  &:first-child {
-                    margin-left: 0;
+            div {
+              .section__footer--header {
+                h4, div {
+                  display: flex;
+                  position: absolute;
+                  top: -11px;
+                }
+                h4 {
+                  background: $pearl;
+                  padding: 0 1vh;
+                  border: 1px solid $dark-grey;
+                }
+                div {
+                  right: 1vh;
+                  button {
+                    margin-left: .5vh;
+                    &:first-child {
+                      margin-left: 0;
+                    }
                   }
                 }
-              }
 
+              }
             }
           }
         }

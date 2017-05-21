@@ -11,7 +11,8 @@ const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
 }, 300);
 
-const DeckComments = ({deckComment, deckCommentControlled, updateComment, previewIsActive, togglePreview}) =>{
+const DeckComments = ({deckComment, deckCommentControlled, updateComment, commentBoxIsActive, toggleCommentBox, previewIsActive, togglePreview}) =>{
+
 
   const handleInputChange = (e) => {
     let value = e.target.value;
@@ -23,6 +24,15 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, previe
   const handlePreviewClick = () =>{
     let isActive = previewIsActive === false ? true: false;
     togglePreview(isActive);
+  };
+
+  const handleAddCommentClick = () =>{
+    toggleCommentBox(true);
+  };
+
+  const handleHideCommentClick = () =>{
+    toggleCommentBox(false);
+    togglePreview(false);
   };
 
 
@@ -53,34 +63,47 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, previe
           </div>
         </div>
         <div className="section__footer">
-          <div className="section__footer--header">
-            <h4>Comment</h4>
-            <div>
-              <button className="btn btn-pearl">Hide</button>
-              <button onClick={handlePreviewClick} className="btn btn-pearl">Preview</button>
-              <button className="btn btn-pearl">Post Comment</button>
-            </div>
-          </div>
-          <TextEditor editorId="deckCommentControlled"
-                      previewId="deckComment"
-                      handleInputChange={handleInputChange}
-                      value={deckCommentControlled}
-                      handleTagInsertion={updateComment}/>
+
+          {!commentBoxIsActive ?
+              <div className="add-comment">
+                <button onClick={handleAddCommentClick} className="btn btn-pearl">Add comment</button>
+              </div>
+              : <div>
+                  <div className="section__footer--header">
+                    <h4>Comment</h4>
+                    <div>
+                      <button onClick={handleHideCommentClick} className="btn btn-pearl">Hide</button>
+                      <button onClick={handlePreviewClick} className="btn btn-pearl">Preview</button>
+                      <button className="btn btn-pearl">Post Comment</button>
+                    </div>
+                  </div>
+                  <TextEditor editorId="deckCommentControlled"
+                              previewId="deckComment"
+                              handleInputChange={handleInputChange}
+                              value={deckCommentControlled}
+                              handleTagInsertion={updateComment}/>
+              </div>
+          }
         </div>
       </div>
   )
 };
 
 
+
+
 const mapStateToProps = (state) => {
-  const {deckComment, deckCommentControlled, previewIsActive} = state.deckView;
-  return {deckComment, deckCommentControlled, previewIsActive}
+  const {deckComment, deckCommentControlled, commentBoxIsActive, previewIsActive} = state.deckView;
+  return {deckComment, deckCommentControlled, commentBoxIsActive, previewIsActive}
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateComment: (props) => (dispatch({
       type: 'UPDATE_COMMENT', props
+    })),
+    toggleCommentBox: (commentBoxIsActive) => (dispatch({
+      type: 'TOGGLE_COMMENT_BOX', commentBoxIsActive
     })),
     togglePreview: (previewIsActive) => (dispatch({
       type: 'TOGGLE_PREVIEW', previewIsActive
