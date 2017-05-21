@@ -2,9 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import Comment from '../../view/comment';
 
-import {convertBBCode} from '../../../../../shared-assets/editor/text-editor-functions';
+
+import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
 const updateCommentText = _.debounce((updateComment, value) => {
@@ -16,7 +16,6 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, commen
   const handleInputChange = (e) => {
     let value = e.target.value;
     updateComment({deckCommentControlled: value});
-    console.log(updateCommentText, updateComment, value);
     updateCommentText(updateComment, value);
   };
 
@@ -41,26 +40,8 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, commen
           <div className="line"></div>
           <h1>104 comments</h1>
         </div>
-        <div className="section__body">
-          <div className={previewIsActive ? "display-none" : "comments"}>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-            <Comment/>
-          </div>
-          <div className={!previewIsActive ? "display-none" : "comment-preview"}>
-            {convertBBCode(deckComment)}
-          </div>
-        </div>
+        <SectionBody deckComment={deckComment}
+                     previewIsActive={previewIsActive}/>
         <SectionFooter commentBoxIsActive={commentBoxIsActive}
                        deckCommentControlled={deckCommentControlled}
                        updateComment={updateComment}
