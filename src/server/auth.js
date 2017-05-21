@@ -1,5 +1,15 @@
 import {ref, firebaseAuth} from '../keys';
 import {browserHistory} from 'react-router';
+
+/**
+ * Function representing user creation with username, email and password
+ *
+ * @param {string} email - user email
+ * @param {string} pass - user password
+ * @param {string} username - unique username
+ * @param {func} callback - function to get data into reducer
+ * @returns {!firebase.Promise.<*>}
+ */
 export function createUser(email, pass, username, callback){
   let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(user=>saveUser(user, username));
   promise.catch(e => callback(e.message));
