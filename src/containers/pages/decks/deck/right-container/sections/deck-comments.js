@@ -7,15 +7,22 @@ import TextEditor from '../../../../../shared-assets/editor/text-editor';
 import {convertBBCode} from '../../../../../shared-assets/editor/text-editor-functions';
 
 const updateCommentText = _.debounce((updateComment, value) => {
+  console.log(updateComment, value)
   updateComment({deckComment: value})
 }, 300);
 
-const DeckComments = ({deckComment, deckCommentControlled, updateComment}) =>{
+const DeckComments = ({deckComment, deckCommentControlled, updateComment, previewIsActive, togglePreview}) =>{
 
-  const handleTextareaChange = (e) => {
+  const handleInputChange = (e) => {
     let value = e.target.value;
     updateComment({deckCommentControlled: value});
+    console.log(updateCommentText, updateComment, value);
     updateCommentText(updateComment, value);
+  };
+
+  const handlePreviewClick = () =>{
+    let isActive = previewIsActive === false ? true: false;
+    togglePreview(isActive);
   };
 
 
@@ -26,7 +33,7 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment}) =>{
           <h1>104 comments</h1>
         </div>
         <div className="section__body">
-          <div className="comments">
+          <div className={previewIsActive ? "display-none" : "comments"}>
             <Comment/>
             <Comment/>
             <Comment/>
@@ -41,7 +48,7 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment}) =>{
             <Comment/>
             <Comment/>
           </div>
-          <div className="comment-preview">
+          <div className={!previewIsActive ? "display-none" : "comment-preview"}>
             {convertBBCode(deckComment)}
           </div>
         </div>
@@ -50,13 +57,13 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment}) =>{
             <h4>Comment</h4>
             <div>
               <button className="btn btn-pearl">Hide</button>
-              <button className="btn btn-pearl">Preview</button>
+              <button onClick={handlePreviewClick} className="btn btn-pearl">Preview</button>
               <button className="btn btn-pearl">Post Comment</button>
             </div>
           </div>
           <TextEditor editorId="deckCommentControlled"
-                      previewID="deckComment"
-                      handleInputChange={handleTextareaChange}
+                      previewId="deckComment"
+                      handleInputChange={handleInputChange}
                       value={deckCommentControlled}
                       handleTagInsertion={updateComment}/>
         </div>
@@ -66,8 +73,8 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment}) =>{
 
 
 const mapStateToProps = (state) => {
-  const {deckComment, deckCommentControlled} = state.deckView;
-  return {deckComment, deckCommentControlled}
+  const {deckComment, deckCommentControlled, previewIsActive} = state.deckView;
+  return {deckComment, deckCommentControlled, previewIsActive}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -75,8 +82,8 @@ const mapDispatchToProps = (dispatch) => {
     updateComment: (props) => (dispatch({
       type: 'UPDATE_COMMENT', props
     })),
-    togglePreview: (previewOpen) => (dispatch({
-      type: 'TOGGLE_PREVIEW', previewOpen
+    togglePreview: (previewIsActive) => (dispatch({
+      type: 'TOGGLE_PREVIEW', previewIsActive
     }))
   }
 };
