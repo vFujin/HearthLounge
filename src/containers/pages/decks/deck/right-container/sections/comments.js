@@ -7,11 +7,14 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
+import {postComment} from '../../../../../../server/decks';
+
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
 }, 300);
 
-const DeckComments = ({deckComment, deckCommentControlled, updateComment, commentBoxIsActive, toggleCommentBox, previewIsActive, togglePreview}) =>{
+const DeckComments = ({currentDeck, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, toggleCommentBox, previewIsActive, togglePreview}) =>{
+  const {author, id} = currentDeck;
 
   const handleInputChange = (e) => {
     let value = e.target.value;
@@ -32,6 +35,10 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, commen
     toggleCommentBox(false);
     togglePreview(false);
   };
+  
+  const handlePostCommentClick = () =>{
+    postComment(author, deckComment, id, 123);
+  };
 
 
   return (
@@ -46,6 +53,7 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, commen
                        updateComment={updateComment}
                        handleInputChange={handleInputChange}
                        handleAddCommentClick={handleAddCommentClick}
+                       handlePostCommentClick={handlePostCommentClick}
                        handleHideCommentClick={handleHideCommentClick}
                        handlePreviewClick={handlePreviewClick}/>
       </div>

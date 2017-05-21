@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SectionFooterHeader = ({handleHideCommentClick, handlePreviewClick}) => {
+const SectionFooterHeader = ({handleHideCommentClick, handlePreviewClick, handlePostCommentClick}) => {
 
   return (
           <div className="section__footer--header">
@@ -9,7 +9,7 @@ const SectionFooterHeader = ({handleHideCommentClick, handlePreviewClick}) => {
             <div>
               <button onClick={handleHideCommentClick} className="btn btn-pearl">Hide</button>
               <button onClick={handlePreviewClick} className="btn btn-pearl">Preview</button>
-              <button className="btn btn-pearl">Post Comment</button>
+              <button onClick={handlePostCommentClick} className="btn btn-pearl">Post Comment</button>
             </div>
           </div>
   )

@@ -8,7 +8,7 @@ const Content = ({currentDeck}) =>{
       <div className="content">
         <div className="container__details">
           <DeckDescription currentDeck={currentDeck}/>
-          <DeckComments />
+          <DeckComments currentDeck={currentDeck}/>
         </div>
       </div>
   )

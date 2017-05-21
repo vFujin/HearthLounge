@@ -15,7 +15,8 @@ import {success, loading, error} from '../utils/messages';
  */
 export function saveDeck(hsClass, author, title, type, archetype, deck, description, uid){
   if(hsClass && author && title && type && archetype && deck && description && uid) {
-    const deckId = ref.push().key;
+
+    const deckId = ref.child(`decks`).push().key;
 
     /**
      * Deck object
@@ -26,7 +27,6 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
       edited: null,
       upvotes: 0,
       downvotes: 0,
-      comments: [],
       patch: 'ungoro',
       views: 0,
       hsClass,
@@ -39,12 +39,11 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
       id: deckId
     };
 
-    ref.child(`decks`)
-        .push(newDeck)
-        .then(() => ref.child(`users/${uid}/decks`).push(deckId, loading("Uploading deck..."))
-        .then(() => success('Deck has been uploaded!'))
-        .catch(err => error("Couldn't upload deck. " + err))
-    );
+    let pushes = {};
+    pushes[`/decks/${deckId}`] = newDeck;
+    pushes[`/user-decks/${uid}/${deckId}`] = newDeck.id;
+
+    return ref.update(pushes);
   }
   else{
     error("Couldn't upload deck.")

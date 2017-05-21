@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SectionFooterCommentBox from './section-footer-commentbox';
 
-const SectionFooter = ({commentBoxIsActive, handleInputChange, handleAddCommentClick, handleHideCommentClick, handlePreviewClick, deckCommentControlled, updateComment}) => {
+const SectionFooter = ({commentBoxIsActive, handleInputChange, handlePostCommentClick, handleAddCommentClick, handleHideCommentClick, handlePreviewClick, deckCommentControlled, updateComment}) => {
 
   return (
       <div className="section__footer">
@@ -13,6 +13,7 @@ const SectionFooter = ({commentBoxIsActive, handleInputChange, handleAddCommentC
             </div>
             : <SectionFooterCommentBox deckCommentControlled={deckCommentControlled}
                                        updateComment={updateComment}
+                                       handlePostCommentClick={handlePostCommentClick}
                                        handleInputChange={handleInputChange}
                                        handleHideCommentClick={handleHideCommentClick}
                                        handlePreviewClick={handlePreviewClick}/>
