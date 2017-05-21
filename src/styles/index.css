@@ -3015,20 +3015,22 @@ footer {
           padding: 2vh 1vh 0 1vh;
           border: 1px solid #474143;
           position: relative; }
-          .container__page .container__page--right .content .container__details .container__details--section .section__footer .section__footer--header h4, .container__page .container__page--right .content .container__details .container__details--section .section__footer .section__footer--header div {
-            display: flex;
-            position: absolute;
-            top: -11px; }
-          .container__page .container__page--right .content .container__details .container__details--section .section__footer .section__footer--header h4 {
-            background: #E7E2DA;
-            padding: 0 1vh;
-            border: 1px solid #474143; }
-          .container__page .container__page--right .content .container__details .container__details--section .section__footer .section__footer--header div {
-            right: 1vh; }
-            .container__page .container__page--right .content .container__details .container__details--section .section__footer .section__footer--header div button {
-              margin-left: .5vh; }
-              .container__page .container__page--right .content .container__details .container__details--section .section__footer .section__footer--header div button:first-child {
-                margin-left: 0; }
+          .container__page .container__page--right .content .container__details .container__details--section .section__footer .section_footer--wrapper {
+            height: 100%; }
+            .container__page .container__page--right .content .container__details .container__details--section .section__footer .section_footer--wrapper .section__footer--header h4, .container__page .container__page--right .content .container__details .container__details--section .section__footer .section_footer--wrapper .section__footer--header div {
+              display: flex;
+              position: absolute;
+              top: -11px; }
+            .container__page .container__page--right .content .container__details .container__details--section .section__footer .section_footer--wrapper .section__footer--header h4 {
+              background: #E7E2DA;
+              padding: 0 1vh;
+              border: 1px solid #474143; }
+            .container__page .container__page--right .content .container__details .container__details--section .section__footer .section_footer--wrapper .section__footer--header div {
+              right: 1vh; }
+              .container__page .container__page--right .content .container__details .container__details--section .section__footer .section_footer--wrapper .section__footer--header div button {
+                margin-left: .5vh; }
+                .container__page .container__page--right .content .container__details .container__details--section .section__footer .section_footer--wrapper .section__footer--header div button:first-child {
+                  margin-left: 0; }
       .container__page .container__page--right .content .container__details .container__details--description .section__body {
         padding-right: 1vh;
         overflow: auto; }

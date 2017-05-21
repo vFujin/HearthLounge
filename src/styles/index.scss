@@ -633,7 +633,8 @@ footer{
             padding: 2vh 1vh 0 1vh;
             border: 1px solid $dark-grey;
             position: relative;
-            div {
+            .section_footer--wrapper {
+              height:100%;
               .section__footer--header {
                 h4, div {
                   display: flex;

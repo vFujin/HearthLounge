@@ -3,16 +3,15 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import Comment from '../../view/comment';
-import TextEditor from '../../../../../shared-assets/editor/text-editor';
+
 import {convertBBCode} from '../../../../../shared-assets/editor/text-editor-functions';
+import SectionFooter from './comment-assets/section-footer';
 
 const updateCommentText = _.debounce((updateComment, value) => {
-  console.log(updateComment, value)
   updateComment({deckComment: value})
 }, 300);
 
 const DeckComments = ({deckComment, deckCommentControlled, updateComment, commentBoxIsActive, toggleCommentBox, previewIsActive, togglePreview}) =>{
-
 
   const handleInputChange = (e) => {
     let value = e.target.value;
@@ -62,29 +61,13 @@ const DeckComments = ({deckComment, deckCommentControlled, updateComment, commen
             {convertBBCode(deckComment)}
           </div>
         </div>
-        <div className="section__footer">
-
-          {!commentBoxIsActive ?
-              <div className="add-comment">
-                <button onClick={handleAddCommentClick} className="btn btn-pearl">Add comment</button>
-              </div>
-              : <div>
-                  <div className="section__footer--header">
-                    <h4>Comment</h4>
-                    <div>
-                      <button onClick={handleHideCommentClick} className="btn btn-pearl">Hide</button>
-                      <button onClick={handlePreviewClick} className="btn btn-pearl">Preview</button>
-                      <button className="btn btn-pearl">Post Comment</button>
-                    </div>
-                  </div>
-                  <TextEditor editorId="deckCommentControlled"
-                              previewId="deckComment"
-                              handleInputChange={handleInputChange}
-                              value={deckCommentControlled}
-                              handleTagInsertion={updateComment}/>
-              </div>
-          }
-        </div>
+        <SectionFooter commentBoxIsActive={commentBoxIsActive}
+                       deckCommentControlled={deckCommentControlled}
+                       updateComment={updateComment}
+                       handleInputChange={handleInputChange}
+                       handleAddCommentClick={handleAddCommentClick}
+                       handleHideCommentClick={handleHideCommentClick}
+                       handlePreviewClick={handlePreviewClick}/>
       </div>
   )
 };

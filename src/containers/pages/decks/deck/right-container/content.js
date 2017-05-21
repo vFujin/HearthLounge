@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DeckDescription from './sections/deck-description';
-import DeckComments from './sections/deck-comments';
+import DeckDescription from './sections/description';
+import DeckComments from './sections/comments';
 
 const Content = ({currentDeck}) =>{
   return (
