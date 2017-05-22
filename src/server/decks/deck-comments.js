@@ -1,4 +1,11 @@
 import {ref, refParent} from '../../keys';
+/**
+ * Function representing comment posting to the deck
+ * @param {string} author - username of the logged user
+ * @param {string} text - comment text
+ * @param {string} deckId - deck id
+ * @param {string} uid - user id
+ */
 export function postComment(author, text, deckId, uid){
   if(author && text && deckId && uid){
 
