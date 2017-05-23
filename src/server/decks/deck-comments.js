@@ -1,4 +1,14 @@
 import {ref, refParent} from '../../keys';
+import {error} from '../../utils/messages';
+
+export function fetchComments(deckId, callback){
+  refParent(`deck-comments/${deckId}`)
+      .once("value", snapshot => {
+        callback(snapshot.val());
+      });
+}
+
+
 /**
  * Function representing comment posting to the deck
  * @param {string} author - username of the logged user
@@ -8,7 +18,6 @@ import {ref, refParent} from '../../keys';
  */
 export function postComment(author, text, deckId, uid){
   if(author && text && deckId && uid){
-
     let newComment = {
       created: +new Date(),
       edited: null,
@@ -28,11 +37,23 @@ export function postComment(author, text, deckId, uid){
 
     return ref.update(updates);
   }
+  else {
+    return error("Couldn't upload comment. Try again later.")
+  }
 }
 
-export function fetchComments(deckId, callback){
-  refParent(`deck-comments/${deckId}`)
-      .once("value", snapshot => {
-        callback(snapshot.val());
-      });
+export function rateComment(deckId, commentId, uid, vote){
+  ref.child(`deck-comments/${deckId}/${commentId}`).transaction(comment=>{
+    if(comment) {
+      switch (vote) {
+        case "upvote":  return comment.upvotes++;
+        case "downvote": return comment.downvotes++;
+      }
+      if(!comment.upvotes || !comment.downvotes){
+        comment.upvotes = {};
+        comment.downvotes = {};
+      }
+    }
+    return comment;
+  })
 }

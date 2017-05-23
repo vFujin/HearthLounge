@@ -35,7 +35,7 @@ export function lazyLoadDecks(callback, playerClass){
 }
 
 export function incrementViewsCount(deckId){
-  return ref.child(`decks/${deckId}`).transaction(function(deck) {
+  ref.child(`decks/${deckId}`).transaction(function(deck) {
     if (deck) {
         deck.views++;
         if (!deck.views) {

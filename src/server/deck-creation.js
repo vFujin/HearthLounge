@@ -43,7 +43,7 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
     pushes[`/decks/${deckId}`] = newDeck;
     pushes[`/user-decks/${uid}/${deckId}`] = newDeck.id;
 
-    return ref.update(pushes);
+    return ref.update(pushes, success("Deck has been uploaded!"));
   }
   else{
     error("Couldn't upload deck.")

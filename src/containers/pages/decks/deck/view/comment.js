@@ -1,5 +1,7 @@
 import React from 'react';
+
 export const Comment = ({c}) => {
+
   let votes = c.upvotes - c.downvotes;
   return (
     <div className="comment">

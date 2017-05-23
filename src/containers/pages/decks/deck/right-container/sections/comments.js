@@ -7,7 +7,7 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
-import {postComment, fetchComments} from '../../../../../../server/decks/deck-comments';
+import {fetchComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
 
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
@@ -44,6 +44,12 @@ class DeckComments extends Component {
     const {id, author} = this.props.currentDeck;
     postComment(author, this.props.deckComment, id, 123);
     fetchComments(id, (comments)=>this.props.updateComments(id, comments))
+  };
+
+  handleUpvoteCommentClick = (e) =>{
+
+    const {deckId, author} = this.props.currentDeck;
+    rateComment(deckId, commentId, )
   };
 
   render() {
