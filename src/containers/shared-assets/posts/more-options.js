@@ -10,13 +10,13 @@ const MoreOptions = () =>{
       </Menu>
   );
   return (
-      <Tooltip title="More options" placement="bottomRight" arrowPointAtCenter>
+      <Tooltip title="More options" placement="topRight" arrowPointAtCenter>
         <div className="post-more-options">
-            <Dropdown overlay={menu} placement="bottomLeft">
+            <Dropdown overlay={menu} placement="bottomCenter" trigger={['click']}>
               <ul className="options">
-                <li></li>
-                <li></li>
-                <li></li>
+                <li className="peripheral"></li>
+                <li className="peripheral"></li>
+                <li className="peripheral"></li>
               </ul>
             </Dropdown>
         </div>

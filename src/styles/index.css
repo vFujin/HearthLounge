@@ -2095,12 +2095,28 @@ form .button-wrapper {
   padding: 0 10px;
   cursor: pointer; }
   .post-more-options .options li {
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     background: black;
     margin-bottom: 2px; }
     .post-more-options .options li:last-child {
       margin-bottom: 0; }
+
+.post .details .header, .comment .details .header {
+  font-size: 11px; }
+  .post .details .header .header-right, .comment .details .header .header-right {
+    display: flex; }
+.post .commented, .post .posted, .post .patch, .comment .commented, .comment .posted, .comment .patch {
+  opacity: .5; }
+.post .peripheral, .comment .peripheral {
+  opacity: .2;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  -ms-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s; }
+.post:hover .peripheral, .comment:hover .peripheral {
+  opacity: 1; }
 
 .decks .submenu {
   width: 12vw; }
@@ -3458,8 +3474,6 @@ footer {
     margin-right: 1vh; }
 .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--background {
   background: #A69E9D; }
-.deck .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header .header-right {
-  display: flex; }
 .deck .container__page--right .content .container__details .container__details--comments .section__footer {
   padding: 2vh 1vh 0 1vh;
   border: 1px solid #474143;

@@ -32,9 +32,9 @@ export const Comment = ({comment}) => {
           {text}
         </div>
         <div className="footer">
-          <div className="up">+</div>
-          <div className="votes">{votes}</div>
-          <div className="down">-</div>
+          <div className="up peripheral">+</div>
+          <div className="votes peripheral">{votes}</div>
+          <div className="down peripheral">-</div>
         </div>
       </div>
     </div>

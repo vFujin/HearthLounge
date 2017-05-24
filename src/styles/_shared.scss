@@ -397,13 +397,37 @@ form {
   cursor: pointer;
   .options{
     li{
-      width: 4px;
-      height: 4px;
+      width: 3px;
+      height: 3px;
       background: black;
       margin-bottom: 2px;
+
       &:last-child{
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+.post, .comment{
+  .details{
+    .header{
+      font-size:11px;
+      .header-right {
+        display: flex;
+      }
+    }
+  }
+  .commented, .posted, .patch{
+    opacity: .5;
+  }
+  .peripheral{
+    opacity: .2;
+    @include transition(all ease .5s);
+  }
+  &:hover{
+    .peripheral {
+      opacity: 1;
     }
   }
 }
