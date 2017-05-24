@@ -391,9 +391,19 @@ form {
 }
 
 .post-more-options{
+  display: flex;
+  align-items:center;
+  padding: 0 10px;
+  cursor: pointer;
   .options{
     li{
-      font-size:18px;
+      width: 4px;
+      height: 4px;
+      background: black;
+      margin-bottom: 2px;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
   }
 }

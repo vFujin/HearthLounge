@@ -10,17 +10,17 @@ const MoreOptions = () =>{
       </Menu>
   );
   return (
-      <div className="post-more-options">
-        <Tooltip title="More options" placement="bottomRight">
-          <Dropdown overlay={menu} placement="bottomLeft">
-            <ul className="options">
-              <li>•</li>
-              <li>•</li>
-              <li>•</li>
-            </ul>
-          </Dropdown>
-        </Tooltip>
-      </div>
+      <Tooltip title="More options" placement="bottomRight" arrowPointAtCenter>
+        <div className="post-more-options">
+            <Dropdown overlay={menu} placement="bottomLeft">
+              <ul className="options">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </Dropdown>
+        </div>
+      </Tooltip>
   )
 };
 
