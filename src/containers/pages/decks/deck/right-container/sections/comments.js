@@ -41,15 +41,17 @@ class DeckComments extends Component {
   };
 
   handlePostCommentClick = () => {
-    const {id, author} = this.props.currentDeck;
-    postComment(author, this.props.deckComment, id, 123);
-    fetchComments(id, (comments)=>this.props.updateComments(id, comments))
+    const {deckId, author} = this.props.currentDeck;
+    postComment(author, this.props.deckComment, deckId, this.props.activeUser.uid);
+    fetchComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
   };
 
-  handleUpvoteCommentClick = (e) =>{
-
+  handleCommentRatingClick = (e, vote) =>{
+    let commentId = e.currentTarget.id;
     const {deckId, author} = this.props.currentDeck;
-    rateComment(deckId, commentId, )
+    rateComment(deckId, commentId, this.props.user.uid, vote)
+
+
   };
 
   render() {
@@ -61,7 +63,8 @@ class DeckComments extends Component {
 
           <SectionBody comments={mappedComments}
                        deckComment={deckComment}
-                       previewIsActive={previewIsActive}/>
+                       previewIsActive={previewIsActive}
+                       handleCommentRatingClick={this.handleCommentRatingClick}/>
 
           <SectionFooter commentBoxIsActive={commentBoxIsActive}
                          deckCommentControlled={deckCommentControlled}

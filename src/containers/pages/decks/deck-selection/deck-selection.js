@@ -51,10 +51,11 @@ class DeckSelection extends Component {
     incrementViewsCount(deck);
   };
 
+
   render() {
-    const {children, location, decks, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck} = this.props;
+    const {children, location, decks, activeUser, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck} = this.props;
     if(location.pathname !== "/decks"){
-      return React.cloneElement(children, {currentDeck});
+      return React.cloneElement(children, {activeUser, currentDeck});
     }
     else {
       return (
@@ -78,8 +79,8 @@ class DeckSelection extends Component {
 
 const mapStateToProps = (state, ownProps) =>{
   const {decks, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
-  const {users} = state.users;
-  return {decks, users, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
+  const {activeUser, users} = state.users;
+  return {decks, activeUser, users, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
 };
 
 const mapDispatchToProps = (dispatch) => {

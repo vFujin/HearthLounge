@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 
-const Deck = ({user, currentDeck}) => {
+const Deck = ({activeUser, currentDeck}) => {
   return (
       <div className="container__page container__page--twoSided deck">
         <LeftContainer currentDeck={currentDeck} />
-        <RightContainer user={user} currentDeck={currentDeck} />
+        <RightContainer activeUser={activeUser} currentDeck={currentDeck} />
       </div>
   );
 };
