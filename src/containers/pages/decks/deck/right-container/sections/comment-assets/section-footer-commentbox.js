@@ -6,7 +6,7 @@ import TextEditor from '../../../../../../shared-assets/editor/text-editor';
 const SectionFooterCommentBox = ({deckCommentControlled, updateComment, handleInputChange, handleHideCommentClick, handlePreviewClick, handlePostCommentClick}) => {
 
   return (
-      <div className="section_footer--wrapper" style={{height: "20vh"}}>
+      <div className="section_footer--wrapper">
         <SectionFooterHeader handleHideCommentClick={handleHideCommentClick}
                              handlePreviewClick={handlePreviewClick}
                              handlePostCommentClick={handlePostCommentClick}/>

@@ -23,7 +23,7 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
      * @type {{created: number, edited: null, upvotes: number, downvotes: number, comments: Array, patch: string, views: number, hsClass: string, author: string, title: string, type: string, archetype: string, deck: string[], description: string, id}}
      */
     let newDeck = {
-      created: +new Date(),
+      created: + new Date(),
       edited: null,
       upvotes: 0,
       downvotes: 0,
@@ -36,12 +36,12 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
       archetype,
       deck,
       description,
-      id: deckId
+      deckId
     };
 
     let pushes = {};
     pushes[`/decks/${deckId}`] = newDeck;
-    pushes[`/user-decks/${uid}/${deckId}`] = newDeck.id;
+    pushes[`/user-decks/${uid}/${deckId}`] = newDeck.deckId;
 
     return ref.update(pushes, success("Deck has been uploaded!"));
   }

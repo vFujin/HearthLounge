@@ -38,7 +38,7 @@ export function postComment(author, text, deckId, uid){
     return ref.update(updates);
   }
   else {
-    return error("Couldn't upload comment. Try again later.")
+    return error("Something's not quite right. Try again later.")
   }
 }
 

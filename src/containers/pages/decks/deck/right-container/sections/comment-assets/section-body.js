@@ -11,7 +11,7 @@ const SectionBody = ({comments, deckComment, previewIsActive}) => {
       return <Loader/>
     }
     else{
-      return comments[0].map((c, i)=> <Comment key={i} c={c}/>)
+      return comments[0].map((comment, i)=> <Comment key={i} comment={comment}/>)
     }
   };
 

@@ -46,7 +46,7 @@ class DeckSelection extends Component {
 
   handleDeckSnippetClick = (e) =>{
     let deck = e.currentTarget.id;
-    let deckDetails = _.head(_.map(this.props.decks).filter(d=>d.id === deck ? d : null));
+    let deckDetails = _.head(_.map(this.props.decks).filter(d=>d.deckId === deck ? d : null));
     this.props.updateActiveDeck(deckDetails);
     incrementViewsCount(deck);
   };

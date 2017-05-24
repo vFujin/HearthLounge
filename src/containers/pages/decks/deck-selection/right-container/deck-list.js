@@ -12,8 +12,8 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
     else {
       return _.map(decks).map(deck  => {
         return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
-                            key={deck.id}
-                            deckId={deck.id}
+                            key={deck.deckId}
+                            deckId={deck.deckId}
                             hsClass={deck.hsClass}
                             title={deck.title}
                             votes={deck.upvotes - deck.downvotes}

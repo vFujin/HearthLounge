@@ -15,7 +15,7 @@ const updateCommentText = _.debounce((updateComment, value) => {
 
 class DeckComments extends Component {
   componentDidMount(){
-    let deckId = this.props.currentDeck.id;
+    const { deckId } = this.props.currentDeck;
     fetchComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
   }
 
@@ -42,6 +42,7 @@ class DeckComments extends Component {
 
   handlePostCommentClick = () => {
     const {deckId, author} = this.props.currentDeck;
+
     postComment(author, this.props.deckComment, deckId, this.props.activeUser.uid);
     fetchComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
   };
@@ -50,15 +51,13 @@ class DeckComments extends Component {
     let commentId = e.currentTarget.id;
     const {deckId, author} = this.props.currentDeck;
     rateComment(deckId, commentId, this.props.user.uid, vote)
-
-
   };
 
   render() {
     const {comments, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive} = this.props;
     let mappedComments = _.map(comments);
     return (
-        <div className="container__details--section container__details--comments">
+        <div className={`container__details--section container__details--comments ${commentBoxIsActive ? 'editorActive' : ''}`}>
           <SectionHeader />
 
           <SectionBody comments={mappedComments}
