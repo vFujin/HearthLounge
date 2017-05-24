@@ -2089,6 +2089,9 @@ form .button-wrapper {
     .text-editor textarea::-webkit-scrollbar-track {
       background-color: transparent; }
 
+.post-more-options .options li {
+  font-size: 18px; }
+
 .decks .submenu {
   width: 12vw; }
 
@@ -3445,6 +3448,8 @@ footer {
     margin-right: 1vh; }
 .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--background {
   background: #A69E9D; }
+.deck .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header .header-right {
+  display: flex; }
 .deck .container__page--right .content .container__details .container__details--comments .section__footer {
   padding: 2vh 1vh 0 1vh;
   border: 1px solid #474143;
