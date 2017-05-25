@@ -2106,6 +2106,10 @@ form .button-wrapper {
   font-size: 11px; }
   .post .details .header .header-right, .comment .details .header .header-right {
     display: flex; }
+.post .details .footer .up, .post .details .footer .down, .comment .details .footer .up, .comment .details .footer .down {
+  cursor: pointer; }
+  .post .details .footer .up span, .post .details .footer .down span, .comment .details .footer .up span, .comment .details .footer .down span {
+    font-size: 12px; }
 .post .commented, .post .posted, .post .patch, .comment .commented, .comment .posted, .comment .patch {
   opacity: .5; }
 .post .peripheral, .comment .peripheral {

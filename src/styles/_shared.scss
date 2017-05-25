@@ -1,4 +1,5 @@
 @import '_colors';
+@import '_mixins';
 .deck-snippet{
   position: relative;
   background-color: $pearl;
@@ -415,6 +416,14 @@ form {
       font-size:11px;
       .header-right {
         display: flex;
+      }
+    }
+    .footer{
+      .up, .down{
+        cursor: pointer;
+        span{
+          font-size: 12px;
+        }
       }
     }
   }

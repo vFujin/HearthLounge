@@ -32,9 +32,9 @@ export const Comment = ({comment}) => {
           {text}
         </div>
         <div className="footer">
-          <div className="up peripheral">+</div>
+          <div className="up peripheral"><span className="hs-icon icon-circle-up"></span></div>
           <div className="votes peripheral">{votes}</div>
-          <div className="down peripheral">-</div>
+          <div className="down peripheral"><span className="hs-icon icon-circle-down"></span></div>
         </div>
       </div>
     </div>
