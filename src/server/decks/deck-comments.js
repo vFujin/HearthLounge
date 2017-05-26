@@ -18,6 +18,9 @@ export function fetchComments(deckId, callback){
  */
 export function postComment(author, text, deckId, uid){
   if(author && text && deckId && uid){
+
+    const newCommentKey = ref.child(`decks/${deckId}/comments`).push().key;
+
     let newComment = {
       created: +new Date(),
       edited: null,
@@ -26,10 +29,11 @@ export function postComment(author, text, deckId, uid){
       downvotes: 0,
       author,
       text,
-      uid
+      uid,
+      id: newCommentKey
     };
 
-    const newCommentKey = ref.child(`decks/${deckId}/comments`).push().key;
+
 
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
@@ -43,11 +47,12 @@ export function postComment(author, text, deckId, uid){
 }
 
 export function rateComment(deckId, commentId, uid, vote){
-  ref.child(`deck-comments/${deckId}/${commentId}`).transaction(comment=>{
+  ref.child(`deck-comments/${deckId}/${commentId}`).transaction(function(comment){
     if(comment) {
+      console.log("before: ", comment);
       switch (vote) {
-        case "upvote":  return comment.upvotes++;
-        case "downvote": return comment.downvotes++;
+        case "upvote":  {comment.upvotes++; break;}
+        case "downvote": {comment.downvotes++; break;}
       }
       if(!comment.upvotes || !comment.downvotes){
         comment.upvotes = {};

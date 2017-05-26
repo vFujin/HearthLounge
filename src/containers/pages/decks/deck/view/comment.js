@@ -3,8 +3,8 @@ import {timeDifference} from '../../../../../utils/unix-to-date';
 import MoreOptions from '../../../../shared-assets/posts/more-options';
 import Tooltip from 'antd/lib/tooltip';
 
-export const Comment = ({comment}) => {
-  const {upvotes, downvotes, created, author, patch, text} = comment;
+export const Comment = ({comment, handleCommentVotingClick}) => {
+  const {upvotes, downvotes, created, author, patch, text, id} = comment;
   let votes = upvotes - downvotes;
   let commented = timeDifference(created, false);
   let detailedDate = timeDifference(created, true);
@@ -32,9 +32,9 @@ export const Comment = ({comment}) => {
           {text}
         </div>
         <div className="footer">
-          <div className="up peripheral"><span className="hs-icon icon-circle-up"></span></div>
+          <div data-id={id} onClick={handleCommentVotingClick} id="upvote" className="up peripheral"><span className="hs-icon icon-circle-up"></span></div>
           <div className="votes peripheral">{votes}</div>
-          <div className="down peripheral"><span className="hs-icon icon-circle-down"></span></div>
+          <div data-id={id} onClick={handleCommentVotingClick} id="downvote" className="down peripheral"><span className="hs-icon icon-circle-down"></span></div>
         </div>
       </div>
     </div>

@@ -26,6 +26,11 @@ export default function(state=initialState, action) {
         ...state,
         previewIsActive: action.previewIsActive
       };
+    case 'UPDATE_ACTIVE_COMMENT_ID':
+      return {
+          ...state,
+        activeComment: action.activeComment
+      };
     default:
       return state;
   }

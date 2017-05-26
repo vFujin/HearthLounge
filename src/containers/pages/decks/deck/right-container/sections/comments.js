@@ -47,10 +47,16 @@ class DeckComments extends Component {
     fetchComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
   };
 
-  handleCommentRatingClick = (e, vote) =>{
+  handleCommentClick = (e) =>{
     let commentId = e.currentTarget.id;
-    const {deckId, author} = this.props.currentDeck;
-    rateComment(deckId, commentId, this.props.user.uid, vote)
+    this.props.updateActiveCommentId(commentId);
+  };
+
+  handleCommentVotingClick = (e) =>{
+    let commentId = e.currentTarget.dataset.id;
+    let vote = e.currentTarget.id;
+    const {deckId} = this.props.currentDeck;
+    rateComment(deckId, commentId, this.props.activeUser.uid, vote)
   };
 
   render() {
@@ -61,9 +67,10 @@ class DeckComments extends Component {
           <SectionHeader />
 
           <SectionBody comments={mappedComments}
+                       handleCommentClick={this.handleCommentClick}
                        deckComment={deckComment}
                        previewIsActive={previewIsActive}
-                       handleCommentRatingClick={this.handleCommentRatingClick}/>
+                       handleCommentVotingClick={this.handleCommentVotingClick}/>
 
           <SectionFooter commentBoxIsActive={commentBoxIsActive}
                          deckCommentControlled={deckCommentControlled}
@@ -80,8 +87,8 @@ class DeckComments extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const {comments, deckComment, deckCommentControlled, commentBoxIsActive, previewIsActive} = state.deckView;
-  return {comments, deckComment, deckCommentControlled, commentBoxIsActive, previewIsActive}
+  const {comments, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive} = state.deckView;
+  return {comments, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -97,6 +104,9 @@ const mapDispatchToProps = (dispatch) => {
     })),
     updateComments: (deckId, comments) => (dispatch({
       type: 'FETCH_COMMENTS',  comments: {[deckId]: _.map(comments)}
+    })),
+    updateActiveCommentId: (activeComment) => (dispatch({
+      type: 'UPDATE_ACTIVE_COMMENT_ID', activeComment
     }))
   }
 };
