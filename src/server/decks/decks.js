@@ -39,7 +39,7 @@ export function incrementViewsCount(deckId){
     if (deck) {
         deck.views++;
         if (!deck.views) {
-          deck.views = {};
+          deck.views = 0;
         }
     }
     return deck;

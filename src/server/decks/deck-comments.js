@@ -49,15 +49,20 @@ export function postComment(author, text, deckId, uid){
 export function rateComment(deckId, commentId, uid, vote){
   ref.child(`deck-comments/${deckId}/${commentId}`).transaction(function(comment){
     if(comment) {
-      console.log("before: ", comment);
+      console.log("before: ", comment.upvotes);
       switch (vote) {
-        case "upvote":  {comment.upvotes++; break;}
+        case "upvote":  {
+
+          comment.upvotes++;
+
+          break;
+        }
         case "downvote": {comment.downvotes++; break;}
       }
-      if(!comment.upvotes || !comment.downvotes){
-        comment.upvotes = {};
-        comment.downvotes = {};
-      }
+      // if(!comment.upvotes || !comment.downvotes){
+      //   comment.upvotes = {};
+      //   comment.downvotes = {};
+      // }
     }
     return comment;
   })

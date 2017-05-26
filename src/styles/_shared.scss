@@ -434,10 +434,8 @@ form {
         display: flex;
       }
     }
+
     .footer{
-      .peripheral{
-        opacity: .2;
-      }
       .up, .down{
         cursor: pointer;
         span{
@@ -446,14 +444,12 @@ form {
       }
     }
   }
-
+  .peripheral {
+    opacity: .2;
+  }
   &:hover{
-    .details{
-      .footer{
-        .peripheral {
-          opacity: 1;
-        }
-      }
+    .peripheral {
+      opacity: 1;
     }
   }
 }

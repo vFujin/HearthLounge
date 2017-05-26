@@ -24,7 +24,7 @@ export const Comment = ({comment, handleCommentVotingClick}) => {
             <div className="commented">{commented}</div>
           </Tooltip>
           <div className="header-right">
-            <div className="patch">{patch}</div>
+            <div className="patch ">{patch}</div>
             <MoreOptions/>
           </div>
         </div>
