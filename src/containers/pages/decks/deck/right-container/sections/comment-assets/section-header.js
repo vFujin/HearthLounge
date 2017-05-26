@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
-const SectionHeader = () => {
+const SectionHeader = ({comments}) => {
+  let countComments = _.map(Object.values(comments)[0]).length;
   return (
       <div className="section__header">
         <div className="line"></div>
-        <h1>104 comments</h1>
+        <h1>{countComments} {countComments === 1 ? 'comment' : 'comments'}</h1>
       </div>
   )
 };

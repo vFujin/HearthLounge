@@ -64,7 +64,7 @@ class DeckComments extends Component {
     let mappedComments = _.map(comments);
     return (
         <div className={`container__details--section container__details--comments ${commentBoxIsActive ? 'editorActive' : ''}`}>
-          <SectionHeader />
+          <SectionHeader comments={comments}/>
 
           <SectionBody comments={mappedComments}
                        handleCommentClick={this.handleCommentClick}
