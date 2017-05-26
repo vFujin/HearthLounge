@@ -1919,25 +1919,44 @@ a:active, a:hover, a:link, a:visited {
       padding: .5vh; }
 
 .btn-pearl {
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s;
   cursor: pointer;
   background: #474143;
   border: 1px solid #E7E2DA;
   color: #E7E2DA;
   outline: 0;
   font-size: 1.2vh;
-  padding: .3vh .5vh; }
-  .btn-pearl:hover {
+  padding: .3vh .5vh;
+  position: relative;
+  -webkit-box-shadow: 0 0 5px #474143;
+  -moz-box-shadow: 0 0 5px #474143;
+  box-shadow: 0 0 5px #474143;
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .btn-pearl:after {
     -webkit-box-shadow: 0 0 5px #00a99c;
     -moz-box-shadow: 0 0 5px #00a99c;
     box-shadow: 0 0 5px #00a99c;
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+  .btn-pearl:hover {
     background: #474143;
     border-color: #00a99c;
     color: #00a99c; }
+    .btn-pearl:hover:after {
+      opacity: 1; }
 
 .btn-padding-small {
   padding: 1px 5px; }
@@ -2106,20 +2125,13 @@ form .button-wrapper {
   font-size: 11px; }
   .post .details .header .header-right, .comment .details .header .header-right {
     display: flex; }
+.post .details .footer .peripheral, .comment .details .footer .peripheral {
+  opacity: .2; }
 .post .details .footer .up, .post .details .footer .down, .comment .details .footer .up, .comment .details .footer .down {
   cursor: pointer; }
   .post .details .footer .up span, .post .details .footer .down span, .comment .details .footer .up span, .comment .details .footer .down span {
     font-size: 12px; }
-.post .commented, .post .posted, .post .patch, .comment .commented, .comment .posted, .comment .patch {
-  opacity: .5; }
-.post .peripheral, .comment .peripheral {
-  opacity: .2;
-  -webkit-transition: all ease 0.5s;
-  -moz-transition: all ease 0.5s;
-  -ms-transition: all ease 0.5s;
-  -o-transition: all ease 0.5s;
-  transition: all ease 0.5s; }
-.post:hover .peripheral, .comment:hover .peripheral {
+.post:hover .details .footer .peripheral, .comment:hover .details .footer .peripheral {
   opacity: 1; }
 
 .decks .submenu {
@@ -3480,8 +3492,7 @@ footer {
   background: #A69E9D; }
 .deck .container__page--right .content .container__details .container__details--comments .section__footer {
   padding: 2vh 1vh 0 1vh;
-  border: 1px solid #474143;
-  position: relative; }
+  border: 1px solid #474143; }
   .deck .container__page--right .content .container__details .container__details--comments .section__footer .text-editor {
     height: calc(100% - 3vh - 2px); }
 
