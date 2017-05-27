@@ -2129,6 +2129,15 @@ form .button-wrapper {
   cursor: pointer; }
   .post .details .footer .up span, .post .details .footer .down span, .comment .details .footer .up span, .comment .details .footer .down span {
     font-size: 12px; }
+  .post .details .footer .up.voted, .post .details .footer .down.voted, .comment .details .footer .up.voted, .comment .details .footer .down.voted {
+    opacity: 1; }
+    .post .details .footer .up.voted span, .post .details .footer .down.voted span, .comment .details .footer .up.voted span, .comment .details .footer .down.voted span {
+      border-radius: 50%;
+      -webkit-box-shadow: 0 0 5px #474143;
+      -moz-box-shadow: 0 0 5px #474143;
+      box-shadow: 0 0 5px #474143;
+      background: #474143;
+      color: #E7E2DA; }
 .post .peripheral, .comment .peripheral {
   opacity: .2; }
 .post:hover .peripheral, .comment:hover .peripheral {

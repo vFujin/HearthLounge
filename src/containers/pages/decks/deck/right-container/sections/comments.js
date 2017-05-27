@@ -62,13 +62,15 @@ class DeckComments extends Component {
   };
 
   render() {
-    const {comments, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive} = this.props;
+    const {activeUser, comments, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive} = this.props;
+    const { uid } = activeUser;
     let mappedComments = _.map(comments);
     return (
         <div className={`container__details--section container__details--comments ${commentBoxIsActive ? 'editorActive' : ''}`}>
           <SectionHeader comments={comments}/>
 
           <SectionBody comments={mappedComments}
+                       uid={uid}
                        handleCommentClick={this.handleCommentClick}
                        deckComment={deckComment}
                        previewIsActive={previewIsActive}

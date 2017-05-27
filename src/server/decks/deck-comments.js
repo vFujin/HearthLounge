@@ -1,5 +1,5 @@
 import {ref, refParent} from '../../keys';
-import {error} from '../../utils/messages';
+import {error, success} from '../../utils/messages';
 
 export function fetchComments(deckId, callback){
   refParent(`deck-comments/${deckId}`)
@@ -95,6 +95,14 @@ export function rateComment(deckId, commentId, uid, vote){
       }
     }
     return comment;
+  }, (err, commited, snapshot)=>{
+    if(err){
+      error("Something's not quite right! Try again later.")
+    } else if (!commited) {
+      error("You have already voted!")
+    } else {
+      success("Vote has been submitted")
+    }
   });
 
 

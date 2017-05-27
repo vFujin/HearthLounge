@@ -11,7 +11,6 @@ const Deck = ({activeUser, currentDeck}) => {
     rateDeck(deckId, activeUser.uid, vote);
   };
 
-
   return (
       <div className="container__page container__page--twoSided deck">
         <LeftContainer currentDeck={currentDeck} />

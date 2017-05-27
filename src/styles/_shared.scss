@@ -441,6 +441,15 @@ form {
         span{
           font-size: 12px;
         }
+        &.voted{
+          opacity: 1;
+          span {
+            border-radius: 50%;
+            @include box-shadow(0, 0, 5px, $dark-grey);
+            background: $dark-grey;
+            color: $pearl;
+          }
+        }
       }
     }
   }

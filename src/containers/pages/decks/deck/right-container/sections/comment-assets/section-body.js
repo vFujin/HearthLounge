@@ -4,7 +4,7 @@ import {Comment} from '../../../view/comment';
 import Loader from '../../../../../../../utils/loader';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
 
-const SectionBody = ({comments, deckComment, previewIsActive, handleCommentClick, handleCommentVotingClick}) => {
+const SectionBody = ({comments, deckComment, uid, previewIsActive, handleCommentClick, handleCommentVotingClick}) => {
 
   const listComments = () =>{
     if(comments.length < 1){
@@ -13,6 +13,7 @@ const SectionBody = ({comments, deckComment, previewIsActive, handleCommentClick
     else{
       return comments[0].map((comment, i)=> <Comment key={i}
                                                      comment={comment}
+                                                     uid={uid}
                                                      handleCommentClick={handleCommentClick}
                                                      handleCommentVotingClick={handleCommentVotingClick}/>
       )
