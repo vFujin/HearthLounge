@@ -54,48 +54,47 @@ export function postComment(author, text, deckId, uid){
 }
 
 export function rateComment(deckId, commentId, uid, vote){
-  ref.child(`deck-comments/${deckId}/${commentId}`).transaction(function(comment){
-    if(comment) {
-      if (comment.upvotes && comment[uid]) {
-        comment.upvotes--;
-        if(vote==="downvote"){
-          comment.downvotes++;
-          comment[uid] = {
-            type: "downvote"
-          }
-        } else {
-          comment[uid] = null
-        }
-      }
-      else if (comment.downvotes && comment[uid]) {
-        comment.downvotes--;
-        if(vote==="upvote"){
-          comment.upvotes++;
-          comment[uid] = {
-            type: "upvote"
-          }
-        } else {
-          comment[uid] = null
-        }
-      }
-      else {
-        if(vote==="upvote"){
-          comment.upvotes++;
-          comment[uid] = {
-            type: "upvote"
-          }
-        }
-        else{
-          comment.downvotes++;
-          comment[uid] = {
-            type: "downvote"
-          }
-        }
+  const userComment = ref.child(`user-deck-comment-ratings/${uid}/${deckId}/${commentId}`);
+  const deckComment = ref.child(`deck-comments/${deckId}/${commentId}`);
 
+  deckComment.transaction(function(comment){
+    const upvote = () =>{
+      comment.upvotes++;
+      comment[uid] = { type: "upvote" };
+      userComment.set(commentId);
+    };
+
+    const downvote = () => {
+      comment.downvotes++;
+      comment[uid] = { type: "downvote" };
+      userComment.set(commentId);
+    };
+
+    const nulify = () => {
+      comment[uid] = null;
+      userComment.remove();
+    };
+
+    if(comment) {
+      if(comment.upvotes && comment[uid]){
+        comment.upvotes--;
+        vote === "downvote" ? downvote() : nulify();
+      } else if (comment.downvotes && comment[uid]) {
+        comment.downvotes--;
+        vote === "upvote" ? upvote() : nulify();
+      } else {
+        //ternary, y u no workin :(
+        if(vote === "upvote"){
+          upvote();
+        } else {
+          downvote();
+        }
+        userComment.set(commentId);
       }
     }
+
     return comment;
-  }, (err, commited, snapshot)=>{
+  }, (err, commited)=>{
     if(err){
       error("Something's not quite right! Try again later.")
     } else if (!commited) {
