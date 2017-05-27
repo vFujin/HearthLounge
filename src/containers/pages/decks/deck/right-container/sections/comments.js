@@ -9,6 +9,7 @@ import SectionFooter from './comment-assets/section-footer';
 
 import {fetchComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
 
+
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
 }, 300);
@@ -58,6 +59,7 @@ class DeckComments extends Component {
     const {deckId} = this.props.currentDeck;
     rateComment(deckId, commentId, this.props.activeUser.uid, vote)
   };
+
 
   render() {
     const {comments, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive} = this.props;

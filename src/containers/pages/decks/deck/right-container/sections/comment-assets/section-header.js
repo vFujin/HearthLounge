@@ -7,7 +7,7 @@ const SectionHeader = ({comments}) => {
   return (
       <div className="section__header">
         <div className="line"></div>
-        <h1>{countComments} {countComments === 1 ? 'comment' : 'comments'}</h1>
+        <h1>{countComments || 0} {countComments === 1 ? 'comment' : 'comments'}</h1>
       </div>
   )
 };

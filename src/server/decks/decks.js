@@ -46,7 +46,20 @@ export function incrementViewsCount(deckId){
   });
 }
 
-
-
+export function rateDeck(deckId, uid, vote){
+  ref.child(`decks/${deckId}`).transaction(function(deck){
+    if(deck) {
+      switch (vote) {
+        case "upvote":  {deck.upvotes++;break;}
+        case "downvote": {deck.downvotes++; break;}
+      }
+      // if(!deck.upvotes || !deck.downvotes){
+      //   deck.upvotes = {};
+      //   deck.downvotes = {};
+      // }
+    }
+    return deck;
+  })
+}
 
 

@@ -37,7 +37,7 @@ export function postComment(author, text, deckId, uid){
 
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
-    updates[`/user-deck-comments/${uid}/${newCommentKey}`] = newComment;
+    updates[`/user-deck-comments/${uid}/${newCommentKey}`] = newComment.id;
 
     return ref.update(updates);
   }
@@ -65,5 +65,6 @@ export function rateComment(deckId, commentId, uid, vote){
       // }
     }
     return comment;
-  })
+  });
+  ref.child(`user-deck-comment-ratings/${uid}/${deckId}/${commentId}`).set(commentId);
 }
