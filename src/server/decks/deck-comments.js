@@ -40,8 +40,6 @@ export function postComment(author, text, deckId, uid){
       id: newCommentKey
     };
 
-
-
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
     updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
@@ -57,44 +55,21 @@ export function rateComment(deckId, commentId, uid, vote){
   const userComment = ref.child(`user-deck-comment-ratings/${uid}/${deckId}/${commentId}`);
   const deckComment = ref.child(`deck-comments/${deckId}/${commentId}`);
 
-  deckComment.transaction(function(comment){
-    const upvote = () =>{
-      comment.upvotes++;
-      comment[uid] = { type: "upvote" };
-      userComment.set(commentId);
-    };
-
-    const downvote = () => {
-      comment.downvotes++;
-      comment[uid] = { type: "downvote" };
-      userComment.set(commentId);
-    };
-
-    const nulify = () => {
-      comment[uid] = null;
-      userComment.remove();
-    };
-
-    if(comment) {
-      if(comment.upvotes && comment[uid]){
-        comment.upvotes--;
-        vote === "downvote" ? downvote() : nulify();
-      } else if (comment.downvotes && comment[uid]) {
-        comment.downvotes--;
-        vote === "upvote" ? upvote() : nulify();
-      } else {
-        //ternary, y u no workin :(
-        if(vote === "upvote"){
-          upvote();
-        } else {
-          downvote();
-        }
-        userComment.set(commentId);
-      }
-    }
-
-    return comment;
-  }, (err, commited)=>{
+  const upvote = (comment) =>{
+    comment.upvotes++;
+    comment[uid] = { type: "upvote" };
+    userComment.set(commentId);
+  };
+  const downvote = (comment) => {
+    comment.downvotes++;
+    comment[uid] = { type: "downvote" };
+    userComment.set(commentId);
+  };
+  const nulify = (comment) => {
+    comment[uid] = null;
+    userComment.remove();
+  };
+  const onCommentVote = (err, commited) =>{
     if(err){
       error("Something's not quite right! Try again later.")
     } else if (!commited) {
@@ -102,7 +77,30 @@ export function rateComment(deckId, commentId, uid, vote){
     } else {
       success("Vote has been submitted")
     }
-  });
+  };
+
+  deckComment.transaction(function(comment){
+    if(comment) {
+      if(comment.upvotes && comment[uid]){
+        comment.upvotes--;
+        vote === "downvote" ? downvote(comment) : nulify(comment);
+
+      } else if (comment.downvotes && comment[uid]) {
+        comment.downvotes--;
+        vote === "upvote" ? upvote(comment) : nulify(comment);
+
+      } else {
+        //ternary, y u no workin :(
+        if(vote === "upvote"){
+          upvote(comment);
+        } else {
+          downvote(comment);
+        }
+        userComment.set(commentId);
+      }
+    }
+    return comment;
+  }, (err, commited)=>onCommentVote(err, commited));
 
 
 }
