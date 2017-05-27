@@ -8,6 +8,13 @@ export function fetchComments(deckId, callback){
       });
 }
 
+export function fetchUserVotedDeckComments(uid, deckId, callback){
+  refParent(`user-deck-comment-ratings/${uid}/${deckId}`)
+      .once("value", snapshot => {
+        callback(snapshot.val());
+      });
+}
+
 
 /**
  * Function representing comment posting to the deck
@@ -37,7 +44,7 @@ export function postComment(author, text, deckId, uid){
 
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
-    updates[`/user-deck-comments/${uid}/${newCommentKey}`] = newComment.id;
+    updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
 
     return ref.update(updates);
   }
@@ -49,22 +56,46 @@ export function postComment(author, text, deckId, uid){
 export function rateComment(deckId, commentId, uid, vote){
   ref.child(`deck-comments/${deckId}/${commentId}`).transaction(function(comment){
     if(comment) {
-      console.log("before: ", comment.upvotes);
-      switch (vote) {
-        case "upvote":  {
-
-          comment.upvotes++;
-
-          break;
+      if (comment.upvotes && comment[uid]) {
+        comment.upvotes--;
+        if(vote==="downvote"){
+          comment.downvotes++;
+          comment[uid] = {
+            type: "downvote"
+          }
+        } else {
+          comment[uid] = null
         }
-        case "downvote": {comment.downvotes++; break;}
       }
-      // if(!comment.upvotes || !comment.downvotes){
-      //   comment.upvotes = {};
-      //   comment.downvotes = {};
-      // }
+      else if (comment.downvotes && comment[uid]) {
+        comment.downvotes--;
+        if(vote==="upvote"){
+          comment.upvotes++;
+          comment[uid] = {
+            type: "upvote"
+          }
+        } else {
+          comment[uid] = null
+        }
+      }
+      else {
+        if(vote==="upvote"){
+          comment.upvotes++;
+          comment[uid] = {
+            type: "upvote"
+          }
+        }
+        else{
+          comment.downvotes++;
+          comment[uid] = {
+            type: "downvote"
+          }
+        }
+
+      }
     }
     return comment;
   });
-  ref.child(`user-deck-comment-ratings/${uid}/${deckId}/${commentId}`).set(commentId);
+
+
 }

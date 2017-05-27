@@ -1,5 +1,6 @@
 const initialState = {
   comments: [],
+  votedComments: {},
   commentBoxIsActive: false,
   previewIsActive: false
 };
@@ -10,6 +11,11 @@ export default function(state=initialState, action) {
       return {
         ...state,
         comments: action.comments
+      };
+      case 'FETCH_USER_VOTED_COMMENTS':
+      return {
+        ...state,
+        votedComments: action.votedComments
       };
     case 'UPDATE_COMMENT':
       return {

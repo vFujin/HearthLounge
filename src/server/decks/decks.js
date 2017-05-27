@@ -59,7 +59,9 @@ export function rateDeck(deckId, uid, vote){
       // }
     }
     return deck;
-  })
+  });
+
+  ref.child(`user-deck-ratings/${uid}/${deckId}`).set(deckId);
 }
 
 

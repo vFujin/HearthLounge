@@ -7,7 +7,7 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
-import {fetchComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
+import {fetchComments, fetchUserVotedDeckComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
 
 
 const updateCommentText = _.debounce((updateComment, value) => {
@@ -17,7 +17,9 @@ const updateCommentText = _.debounce((updateComment, value) => {
 class DeckComments extends Component {
   componentDidMount(){
     const { deckId } = this.props.currentDeck;
-    fetchComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
+    const { uid } = this.props.activeUser;
+    fetchComments(deckId, comments=>this.props.updateComments(deckId, comments));
+    fetchUserVotedDeckComments(uid, deckId, userVotedComments=>this.props.updateUserVotedDeckComments(deckId, userVotedComments))
   }
 
   handleInputChange = (e) => {
@@ -35,16 +37,15 @@ class DeckComments extends Component {
     this.props.toggleCommentBox(true);
   };
 
-
   handleHideCommentClick = () => {
     this.props.toggleCommentBox(false);
     this.props.togglePreview(false);
   };
 
   handlePostCommentClick = () => {
-    const {deckId, author} = this.props.currentDeck;
-
-    postComment(author, this.props.deckComment, deckId, this.props.activeUser.uid);
+    const {deckId} = this.props.currentDeck;
+    const {username, uid} = this.props.activeUser;
+    postComment(username, this.props.deckComment, deckId, uid);
     fetchComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
   };
 
@@ -59,7 +60,6 @@ class DeckComments extends Component {
     const {deckId} = this.props.currentDeck;
     rateComment(deckId, commentId, this.props.activeUser.uid, vote)
   };
-
 
   render() {
     const {comments, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive} = this.props;
@@ -106,6 +106,9 @@ const mapDispatchToProps = (dispatch) => {
     })),
     updateComments: (deckId, comments) => (dispatch({
       type: 'FETCH_COMMENTS',  comments: {[deckId]: _.map(comments)}
+    })),
+    updateUserVotedDeckComments: (deckId, votedComments) => (dispatch({
+      type: 'FETCH_USER_VOTED_COMMENTS',  votedComments: {[deckId]: _.map(votedComments)}
     })),
     updateActiveCommentId: (activeComment) => (dispatch({
       type: 'UPDATE_ACTIVE_COMMENT_ID', activeComment
