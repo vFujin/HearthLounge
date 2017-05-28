@@ -47,16 +47,26 @@ export function incrementViewsCount(deckId){
 }
 
 export function rateDeck(deckId, uid, vote){
-  ref.child(`decks/${deckId}`).transaction(function(deck){
+  const userDeckVote = ref.child(`user-deck-ratings/${uid}/${deckId}`);
+  const deck = ref.child(`deck-comments/${deckId}`);
+
+  // const upvote = (deck) =>{
+  //   deck.upvotes++;
+  //   deck[uid] = { type: "upvote" };
+  //   userCommentVote.set({commentId, type: "upvote"});
+  // };
+  // const downvote = (comment) => {
+  //   comment.downvotes++;
+  //   comment[uid] = { type: "downvote" };
+  //   userCommentVote.set({commentId, type: "downvote"});
+  // };
+
+  deck.transaction(function(deck){
     if(deck) {
-      switch (vote) {
-        case "upvote":  {deck.upvotes++;break;}
-        case "downvote": {deck.downvotes++; break;}
+      if(deck.upvotes && deck[uid]){
+
       }
-      // if(!deck.upvotes || !deck.downvotes){
-      //   deck.upvotes = {};
-      //   deck.downvotes = {};
-      // }
+
     }
     return deck;
   });

@@ -12,7 +12,7 @@ export default function(state=initialState, action) {
         ...state,
         comments: action.comments
       };
-      case 'FETCH_USER_VOTED_COMMENTS':
+    case 'FETCH_USER_VOTED_COMMENTS':
       return {
         ...state,
         votedComments: action.votedComments
@@ -21,6 +21,14 @@ export default function(state=initialState, action) {
       return {
         ...state,
         ...action.props
+      };
+    case 'UPDATE_COMMENT_VOTES':
+      return {
+        ...state,
+        commentId: {
+            ...action.commentId
+        },
+        commentVotes: action.commentVotes
       };
     case 'TOGGLE_COMMENT_BOX':
       return {
@@ -34,7 +42,7 @@ export default function(state=initialState, action) {
       };
     case 'UPDATE_ACTIVE_COMMENT_ID':
       return {
-          ...state,
+        ...state,
         activeComment: action.activeComment
       };
     default:

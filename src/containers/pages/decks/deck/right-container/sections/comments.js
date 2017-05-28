@@ -7,7 +7,7 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
-import {fetchComments, fetchUserVotedDeckComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
+import {fetchComments, getUpdatedComment, fetchUserVotedDeckComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
 
 
 const updateCommentText = _.debounce((updateComment, value) => {
@@ -19,7 +19,7 @@ class DeckComments extends Component {
     const { deckId } = this.props.currentDeck;
     const { uid } = this.props.activeUser;
     fetchComments(deckId, comments=>this.props.updateComments(deckId, comments));
-    fetchUserVotedDeckComments(uid, deckId, userVotedComments=>this.props.updateUserVotedDeckComments(deckId, userVotedComments))
+    fetchUserVotedDeckComments(uid, deckId, userVotedComments=>this.props.updateUserVotedDeckComments(uid, deckId, userVotedComments))
   }
 
   handleInputChange = (e) => {
@@ -58,11 +58,15 @@ class DeckComments extends Component {
     let commentId = e.currentTarget.dataset.id;
     let vote = e.currentTarget.id;
     const {deckId} = this.props.currentDeck;
-    rateComment(deckId, commentId, this.props.activeUser.uid, vote)
+    rateComment(deckId, commentId, this.props.activeUser.uid, vote);
+    // getUpdatedComment(deckId, commentId, (v)=>this.props.updateCommentVotes(v.id, v.upvotes - v.downvotes))
   };
 
+
+
+
   render() {
-    const {activeUser, comments, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive} = this.props;
+    const {activeUser, comments, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive} = this.props;
     const { uid } = activeUser;
     let mappedComments = _.map(comments);
     return (
@@ -72,6 +76,9 @@ class DeckComments extends Component {
           <SectionBody comments={mappedComments}
                        uid={uid}
                        handleCommentClick={this.handleCommentClick}
+                       commentId={commentId}
+                       commentVotes={commentVotes}
+
                        deckComment={deckComment}
                        previewIsActive={previewIsActive}
                        handleCommentVotingClick={this.handleCommentVotingClick}/>
@@ -91,16 +98,26 @@ class DeckComments extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const {comments, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive} = state.deckView;
-  return {comments, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive}
+  const {comments, votes, commentId, commentVotes, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive} = state.deckView;
+  return {comments, deckComment, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive}
 };
+
+// const a = (votedComments, uid) =>{
+//   let s = _.forEach(votedComments).filter(id=>Object.keys(id).includes(uid)).map(id=>id.id);       //commentID
+//   let d = _.forEach(votedComments).filter(id=>Object.keys(id).includes(uid)).map(id=>id[uid].type) // vote type
+//   return Object.assign({s}, {d})
+// }
+
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateComment: (props) => (dispatch({
       type: 'UPDATE_COMMENT', props
     })),
-    toggleCommentBox: (commentBoxIsActive) => (dispatch({
+    updateCommentVotes: (commentId, commentVotes) => (dispatch({
+      type: 'UPDATE_COMMENT_VOTES', commentId, commentVotes
+    })),
+     toggleCommentBox: (commentBoxIsActive) => (dispatch({
       type: 'TOGGLE_COMMENT_BOX', commentBoxIsActive
     })),
     togglePreview: (previewIsActive) => (dispatch({
@@ -109,8 +126,13 @@ const mapDispatchToProps = (dispatch) => {
     updateComments: (deckId, comments) => (dispatch({
       type: 'FETCH_COMMENTS',  comments: {[deckId]: _.map(comments)}
     })),
-    updateUserVotedDeckComments: (deckId, votedComments) => (dispatch({
-      type: 'FETCH_USER_VOTED_COMMENTS',  votedComments: {[deckId]: _.map(votedComments)}
+    updateUserVotedDeckComments: (uid, deckId, votedComments) => (dispatch({
+      type: 'FETCH_USER_VOTED_COMMENTS',
+      votedComments: {
+        [deckId]: {
+
+        }
+      }
     })),
     updateActiveCommentId: (activeComment) => (dispatch({
       type: 'UPDATE_ACTIVE_COMMENT_ID', activeComment
