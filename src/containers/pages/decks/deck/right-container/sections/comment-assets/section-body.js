@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Comment} from '../../../view/comment';
+import Comment from '../../../view/comment';
 import Loader from '../../../../../../../utils/loader';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
 
-const SectionBody = ({comments, deckComment, uid, previewIsActive, commentVotes, commentId, handleCommentClick, handleCommentVotingClick}) => {
+const SectionBody = ({comments, deckComment, deckId, uid, previewIsActive, commentVotes, commentId, handleCommentClick, handleCommentVotingClick, votedComments}) => {
 
   const listComments = () =>{
     if(comments.length < 1){
@@ -14,8 +14,10 @@ const SectionBody = ({comments, deckComment, uid, previewIsActive, commentVotes,
       return comments[0].map((comment, i)=> <Comment key={i}
                                                      comment={comment}
                                                      uid={uid}
+                                                     deckId={deckId}
                                                      commentId={commentId}
                                                      commentVotes={commentVotes}
+                                                     votedComments={votedComments}
                                                      handleCommentClick={handleCommentClick}
                                                      handleCommentVotingClick={handleCommentVotingClick}/>
       )

@@ -11,19 +11,17 @@ export function fetchComments(deckId, callback){
 export function fetchUserVotedDeckComments(uid, deckId, callback){
   refParent(`deck-comment-ratings/${deckId}`)
       .once("value", snapshot => {
-        console.log(snapshot.val())
         callback(snapshot.val());
       });
 }
 
-export function getUpdatedComment(deckId, commentId, callback){
-  refParent(`deck-comments/${deckId}/${commentId}`)
-      .on("value", snapshot => {
-        console.log(snapshot.val());
-        callback(snapshot.val())
+export function getUpdatedCommentVotes(deckId, commentId, callback){
+  refParent(`deck-comment-ratings/${deckId}/${commentId}`)
+      .on("value", snapshot =>{
+        // console.log(snapshot.val());
+        callback(snapshot.val());
       })
 }
-
 
 /**
  * Function representing comment posting to the deck

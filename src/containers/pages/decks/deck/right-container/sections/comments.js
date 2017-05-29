@@ -7,7 +7,7 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
-import {fetchComments, getUpdatedComment, fetchUserVotedDeckComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
+import {fetchComments, fetchUserVotedDeckComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
 
 
 const updateCommentText = _.debounce((updateComment, value) => {
@@ -19,7 +19,12 @@ class DeckComments extends Component {
     const { deckId } = this.props.currentDeck;
     const { uid } = this.props.activeUser;
     fetchComments(deckId, comments=>this.props.updateComments(deckId, comments));
-    fetchUserVotedDeckComments(uid, deckId, userVotedComments=>this.props.updateUserVotedDeckComments(uid, deckId, userVotedComments))
+    fetchUserVotedDeckComments(uid, deckId, userVotedComments=>{
+      // Needs refactor
+      let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid].type);
+      let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
+      let toObj = _.zipObject(votedCommentId, voteType);
+      return this.props.updateUserVotedDeckComments(uid, deckId, toObj)})
   }
 
   handleInputChange = (e) => {
@@ -55,19 +60,21 @@ class DeckComments extends Component {
   };
 
   handleCommentVotingClick = (e) =>{
-    let commentId = e.currentTarget.dataset.id;
+    let commentId = e.currentTarget.dataset.commentid;
     let vote = e.currentTarget.id;
     const {deckId} = this.props.currentDeck;
+    const {uid} = this.props.activeUser;
     rateComment(deckId, commentId, this.props.activeUser.uid, vote);
-    // getUpdatedComment(deckId, commentId, (v)=>this.props.updateCommentVotes(v.id, v.upvotes - v.downvotes))
+
   };
 
 
 
 
   render() {
-    const {activeUser, comments, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive} = this.props;
+    const {activeUser, comments, currentDeck, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments} = this.props;
     const { uid } = activeUser;
+    const { deckId } = currentDeck;
     let mappedComments = _.map(comments);
     return (
         <div className={`container__details--section container__details--comments ${commentBoxIsActive ? 'editorActive' : ''}`}>
@@ -77,8 +84,9 @@ class DeckComments extends Component {
                        uid={uid}
                        handleCommentClick={this.handleCommentClick}
                        commentId={commentId}
+                       deckId={deckId}
                        commentVotes={commentVotes}
-
+                       votedComments={votedComments}
                        deckComment={deckComment}
                        previewIsActive={previewIsActive}
                        handleCommentVotingClick={this.handleCommentVotingClick}/>
@@ -98,8 +106,8 @@ class DeckComments extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const {comments, votes, commentId, commentVotes, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive} = state.deckView;
-  return {comments, deckComment, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive}
+  const {comments, votes, commentId, commentVotes, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments} = state.deckView;
+  return {comments, deckComment, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments}
 };
 
 // const a = (votedComments, uid) =>{
@@ -107,6 +115,7 @@ const mapStateToProps = (state) => {
 //   let d = _.forEach(votedComments).filter(id=>Object.keys(id).includes(uid)).map(id=>id[uid].type) // vote type
 //   return Object.assign({s}, {d})
 // }
+// console.log(_.map(this.props.votedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id))
 
 
 const mapDispatchToProps = (dispatch) => {
@@ -129,9 +138,7 @@ const mapDispatchToProps = (dispatch) => {
     updateUserVotedDeckComments: (uid, deckId, votedComments) => (dispatch({
       type: 'FETCH_USER_VOTED_COMMENTS',
       votedComments: {
-        [deckId]: {
-
-        }
+        [deckId]: votedComments
       }
     })),
     updateActiveCommentId: (activeComment) => (dispatch({
@@ -139,6 +146,10 @@ const mapDispatchToProps = (dispatch) => {
     }))
   }
 };
+
+
+
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckComments)

@@ -3,12 +3,11 @@ import {timeDifference} from '../../../../../utils/unix-to-date';
 import MoreOptions from '../../../../shared-assets/posts/more-options';
 import Tooltip from 'antd/lib/tooltip';
 
-export const Comment = ({comment, uid, commentVotes, commentId, handleCommentVotingClick}) => {
+const Comment = ({comment, uid, deckId, commentVotes, commentId, votedComments, handleCommentVotingClick}) => {
   const {upvotes, downvotes, created, author, patch, text, id} = comment;
   let votes = upvotes - downvotes;
   let commented = timeDifference(created, false);
   let detailedDate = timeDifference(created, true);
-
   return (
     <div className="comment">
       <div className="author">
@@ -32,13 +31,15 @@ export const Comment = ({comment, uid, commentVotes, commentId, handleCommentVot
           {text}
         </div>
         <div className="footer">
-          <div data-id={id} onClick={handleCommentVotingClick} id="upvote" className={`up peripheral ${(comment[uid] && comment[uid].type === "upvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-up"></span></div>
-          <div className="votes peripheral">{id === commentId ? commentVotes : votes || votes}</div>
-          <div data-id={id} onClick={handleCommentVotingClick} id="downvote" className={`down peripheral ${(comment[uid] && comment[uid].type === "downvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-down"></span></div>
+          <div data-commentid={id} onClick={handleCommentVotingClick} id="upvote" className={`up peripheral ${(votedComments[deckId] && votedComments[deckId][id] === "upvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-up"></span></div>
+          <div className="votes peripheral">{votes}</div>
+          <div data-commentid={id} onClick={handleCommentVotingClick} id="downvote" className={`down peripheral ${(votedComments[deckId] && votedComments[deckId][id] === "downvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-down"></span></div>
         </div>
       </div>
     </div>
   );
 };
+
+
 
 export default Comment;

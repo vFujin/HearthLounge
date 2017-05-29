@@ -25,9 +25,7 @@ export default function(state=initialState, action) {
     case 'UPDATE_COMMENT_VOTES':
       return {
         ...state,
-        commentId: {
-            ...action.commentId
-        },
+        commentId: action.commentId,
         commentVotes: action.commentVotes
       };
     case 'TOGGLE_COMMENT_BOX':
