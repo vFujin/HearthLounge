@@ -55,7 +55,7 @@ export function postComment(author, text, deckId, uid){
 
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
-    updates[`/deck-comment-ratings/${deckId}/${newCommentKey}`] = simplifiedNewComment;
+    // updates[`/deck-comment-ratings/${deckId}/${newCommentKey}`] = simplifiedNewComment;
     updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
 
     return ref.update(updates);
@@ -67,27 +67,28 @@ export function postComment(author, text, deckId, uid){
 
 
 
-export function rateComment(deckId, commentId, uid, vote){
+export function rateComment(deckId, commentId, uid, vote) {
   const userCommentVote = ref.child(`user-deck-comment-ratings/${uid}/${deckId}/${commentId}`);
   const deckComment = ref.child(`deck-comments/${deckId}/${commentId}`);
-  const deckCommentRating = ref.child(`deck-comment-ratings/${deckId}/${commentId}`);
+  const deckCommentRatings = ref.child(`deck-comment-ratings/${deckId}/${commentId}`);
 
-  const upvote = (comment, hasUid) =>{
+
+  const upvote = (comment, hasUid) => {
     comment.upvotes++;
-    hasUid ? comment[uid] = { type: "upvote" } : null;
+    hasUid ? comment[uid] = {type: "upvote"} : null;
     hasUid ? userCommentVote.set({commentId, type: "upvote"}) : null;
   };
   const downvote = (comment, hasUid) => {
     comment.downvotes++;
-    hasUid ? comment[uid] = { type: "downvote" } : null;
+    hasUid ? comment[uid] = {type: "downvote"} : null;
     hasUid ? userCommentVote.set({commentId, type: "downvote"}) : null;
   };
   const nulify = (comment, hasUid) => {
     hasUid ? comment[uid] = null : null;
     hasUid ? userCommentVote.remove() : null;
   };
-  const onCommentVote = (err, commited) =>{
-    if(err){
+  const onCommentVote = (err, commited) => {
+    if (err) {
       error("You can't vote for your own comments.")
     } else if (!commited) {
       error("You have already voted!")
@@ -96,7 +97,7 @@ export function rateComment(deckId, commentId, uid, vote){
     }
   };
 
-  deckCommentRating.transaction(function(comment){
+  deckCommentRatings.transaction(function (comment) {
     if (comment) {
       if (comment.upvotes && comment[uid]) {
         comment.upvotes--;
@@ -112,13 +113,15 @@ export function rateComment(deckId, commentId, uid, vote){
         } else {
           downvote(comment, true);
         }
+        // deckCommentRatings.set({commentId, type: vote});
         userCommentVote.set({commentId, type: vote});
       }
     }
+
     return comment;
   });
 
-  deckComment.transaction(function(comment) {
+  deckComment.transaction(function (comment) {
     if (comment) {
       if (comment.upvotes) {
         comment.upvotes--;
@@ -135,8 +138,30 @@ export function rateComment(deckId, commentId, uid, vote){
         } else {
           downvote(comment, false);
         }
+
+
+        ref.child(`deck-comment-ratings/${deckId}`).once("value", snapshot => {
+          if (!snapshot.hasChild(commentId)) {
+            let simplifiedNewComment = {
+              [uid]: {type: vote},
+              upvotes: vote === "upvote" ? 1 : 0,
+              downvotes: vote === "downvote" ? 1 : 0,
+              id: commentId,
+            };
+            let updates = {};
+            updates[`deck-comment-ratings/${deckId}/${commentId}`] = simplifiedNewComment;
+            console.log(updates, uid);
+            ref.update(updates);
+          }
+
+          if(snapshot.hasChild(commentId) && snapshot.child(commentId).hasChildren() <= 3){
+            console.log("this");
+            deckCommentRatings.remove();
+          }
+
+        });
       }
     }
-      return comment;
-  }, (err, commited)=>onCommentVote(err, commited));
+    return comment;
+  }, (err, commited) => onCommentVote(err, commited));
 }

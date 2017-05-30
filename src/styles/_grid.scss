@@ -110,9 +110,9 @@
           grid-template-rows: 6vh 1fr 8vh;
         }
         .container__details--comments {
-          grid-template-rows: 6vh 1fr 8vh;
+          grid-template-rows: 6vh 62.5vh 8vh;
           &.editorActive{
-            grid-template-rows: 6vh 1fr 20vh;
+            grid-template-rows: 6vh 50.5vh 20vh;
           }
           .section__body {
             .comment {

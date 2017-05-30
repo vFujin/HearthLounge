@@ -48,30 +48,76 @@ export function incrementViewsCount(deckId){
 
 export function rateDeck(deckId, uid, vote){
   const userDeckVote = ref.child(`user-deck-ratings/${uid}/${deckId}`);
-  const deck = ref.child(`deck-comments/${deckId}`);
+  const deck = ref.child(`decks/${deckId}`);
+  const deckRating = ref.child(`deck-ratings/${deckId}`);
 
-  // const upvote = (deck) =>{
-  //   deck.upvotes++;
-  //   deck[uid] = { type: "upvote" };
-  //   userCommentVote.set({commentId, type: "upvote"});
-  // };
-  // const downvote = (comment) => {
-  //   comment.downvotes++;
-  //   comment[uid] = { type: "downvote" };
-  //   userCommentVote.set({commentId, type: "downvote"});
-  // };
+  const upvote = (deck, hasUid) =>{
+    deck.upvotes++;
+    hasUid ? deck[uid] = { type: "upvote" } : null;
+    hasUid ? userDeckVote.set({deckId, type: "upvote"}) : null;
+  };
+  const downvote = (deck, hasUid) => {
+    deck.downvotes++;
+    hasUid ? deck[uid] = { type: "downvote" } : null;
+    hasUid ? userDeckVote.set({deckId, type: "downvote"}) : null;
+  };
+  const nulify = (deck, hasUid) => {
+    hasUid ? deck[uid] = null : null;
+    hasUid ? userDeckVote.remove() : null;
+  };
+  const onDeckVote = (err, commited) =>{
+    if(err){
+      error("You can't vote for your own deck.")
+    } else if (!commited) {
+      error("You have already voted!")
+    } else {
+      success("Vote has been submitted")
+    }
+  };
 
-  deck.transaction(function(deck){
-    if(deck) {
-      if(deck.upvotes && deck[uid]){
+  deckRating.transaction(function(deck){
+    if (deck) {
+      if (deck.upvotes && deck[uid]) {
+        deck.upvotes--;
+        vote === "downvote" ? downvote(deck, true) : nulify(deck, true);
 
+      } else if (deck.downvotes && deck[uid]) {
+        deck.downvotes--;
+        vote === "upvote" ? upvote(deck, true) : nulify(deck, true);
+
+      } else {
+        if (vote === "upvote") {
+          upvote(deck, true);
+        } else {
+          downvote(deck, true);
+        }
+        userDeckVote.set({deckId, type: vote});
       }
-
     }
     return deck;
   });
 
-  ref.child(`user-deck-ratings/${uid}/${deckId}`).set(deckId);
+  deck.transaction(function(deck) {
+    if (deck) {
+      if (deck.upvotes) {
+        deck.upvotes--;
+        vote === "downvote" ? downvote(deck, false) : nulify(deck, false);
+
+      } else if (deck.downvotes) {
+        deck.downvotes--;
+        vote === "upvote" ? upvote(deck, false) : nulify(deck, false);
+
+      } else {
+        //ternary, y u no workin :(
+        if (vote === "upvote") {
+          upvote(deck, false);
+        } else {
+          downvote(deck, false);
+        }
+      }
+    }
+    return deck;
+  }, (err, commited)=>onDeckVote(err, commited));
 }
 
 

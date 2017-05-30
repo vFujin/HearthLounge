@@ -110,14 +110,6 @@ const mapStateToProps = (state) => {
   return {comments, deckComment, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments}
 };
 
-// const a = (votedComments, uid) =>{
-//   let s = _.forEach(votedComments).filter(id=>Object.keys(id).includes(uid)).map(id=>id.id);       //commentID
-//   let d = _.forEach(votedComments).filter(id=>Object.keys(id).includes(uid)).map(id=>id[uid].type) // vote type
-//   return Object.assign({s}, {d})
-// }
-// console.log(_.map(this.props.votedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id))
-
-
 const mapDispatchToProps = (dispatch) => {
   return {
     updateComment: (props) => (dispatch({

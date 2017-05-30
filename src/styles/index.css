@@ -396,9 +396,9 @@ a:active, a:hover, a:link, a:visited {
       #container .container__page .content .container__details .container__details--description {
         grid-template-rows: 6vh 1fr 8vh; }
       #container .container__page .content .container__details .container__details--comments {
-        grid-template-rows: 6vh 1fr 8vh; }
+        grid-template-rows: 6vh 62.5vh 8vh; }
         #container .container__page .content .container__details .container__details--comments.editorActive {
-          grid-template-rows: 6vh 1fr 20vh; }
+          grid-template-rows: 6vh 50.5vh 20vh; }
         #container .container__page .content .container__details .container__details--comments .section__body .comment {
           display: grid;
           grid-template-columns: 20% auto;
