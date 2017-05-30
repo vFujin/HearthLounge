@@ -131,6 +131,7 @@ export function rateComment(deckId, commentId, uid, vote) {
         comment.downvotes--;
         vote === "upvote" ? upvote(comment, false) : nulify(comment, false);
 
+
       } else {
         //ternary, y u no workin :(
         if (vote === "upvote") {
