@@ -73,19 +73,43 @@ export function rateComment(deckId, commentId, uid, vote) {
   const deckCommentRatings = ref.child(`deck-comment-ratings/${deckId}/${commentId}`);
 
 
-  const upvote = (comment, hasUid) => {
+  const upvoteUID = (comment) => {
     comment.upvotes++;
-    hasUid ? comment[uid] = {type: "upvote"} : null;
-    hasUid ? userCommentVote.set({commentId, type: "upvote"}) : null;
+    comment[uid] = {type: "upvote"}
+    userCommentVote.set({commentId, type: "upvote"});
   };
-  const downvote = (comment, hasUid) => {
+
+  const upvote = (comment) => {
+    comment.upvotes++;
+    deckCommentRatings.set({
+      [uid]: {type: vote},
+      upvotes: 1,
+      downvotes: 0,
+      id: commentId})
+  };
+
+  const downvoteUID = (comment) => {
     comment.downvotes++;
-    hasUid ? comment[uid] = {type: "downvote"} : null;
-    hasUid ? userCommentVote.set({commentId, type: "downvote"}) : null;
+    comment[uid] = {type: "downvote"}
+    userCommentVote.set({commentId, type: "downvote"});
   };
-  const nulify = (comment, hasUid) => {
-    hasUid ? comment[uid] = null : null;
-    hasUid ? userCommentVote.remove() : null;
+
+  const downvote = (comment) => {
+    comment.downvotes;
+    deckCommentRatings.set({
+      [uid]: {type: vote},
+      upvotes: 0,
+      downvotes: 1,
+      id: commentId})
+  };
+
+  const nulifyUID = (comment) => {
+    comment[uid] = null;
+    userCommentVote.remove();
+  };
+
+  const nulify = () => {
+    deckCommentRatings.remove()
   };
   const onCommentVote = (err, commited) => {
     if (err) {
@@ -101,17 +125,17 @@ export function rateComment(deckId, commentId, uid, vote) {
     if (comment) {
       if (comment.upvotes && comment[uid]) {
         comment.upvotes--;
-        vote === "downvote" ? downvote(comment, true) : nulify(comment, true);
+        vote === "downvote" ? downvoteUID(comment) : nulifyUID(comment);
 
       } else if (comment.downvotes && comment[uid]) {
         comment.downvotes--;
-        vote === "upvote" ? upvote(comment, true) : nulify(comment, true);
+        vote === "upvote" ? upvoteUID(comment) : nulifyUID(comment);
 
       } else {
         if (vote === "upvote") {
-          upvote(comment, true);
+          upvoteUID(comment);
         } else {
-          downvote(comment, true);
+          downvoteUID(comment);
         }
         // deckCommentRatings.set({commentId, type: vote});
         userCommentVote.set({commentId, type: vote});
@@ -125,44 +149,29 @@ export function rateComment(deckId, commentId, uid, vote) {
     if (comment) {
       if (comment.upvotes) {
         comment.upvotes--;
-        vote === "downvote" ? downvote(comment, false) : nulify(comment, false);
+        vote === "downvote" ? downvote(comment) : nulify();
 
       } else if (comment.downvotes) {
         comment.downvotes--;
-        vote === "upvote" ? upvote(comment, false) : nulify(comment, false);
+        vote === "upvote" ? upvote(comment) : nulify();
 
 
       } else {
         //ternary, y u no workin :(
         if (vote === "upvote") {
-          upvote(comment, false);
+          upvote(comment);
         } else {
-          downvote(comment, false);
+          downvote(comment);
         }
-
-
-        ref.child(`deck-comment-ratings/${deckId}`).once("value", snapshot => {
-          if (!snapshot.hasChild(commentId)) {
-            let simplifiedNewComment = {
-              [uid]: {type: vote},
-              upvotes: vote === "upvote" ? 1 : 0,
-              downvotes: vote === "downvote" ? 1 : 0,
-              id: commentId,
-            };
-            let updates = {};
-            updates[`deck-comment-ratings/${deckId}/${commentId}`] = simplifiedNewComment;
-            console.log(updates, uid);
-            ref.update(updates);
-          }
-
-          if(snapshot.hasChild(commentId) && snapshot.child(commentId).hasChildren() <= 3){
-            console.log("this");
-            deckCommentRatings.remove();
-          }
-
-        });
+        // deckCommentRatings.update({
+        //   [uid]: {type: vote},
+        //   upvotes: vote === "upvote" ? 1 : 0,
+        //   downvotes: vote === "downvote" ? 1 : 0,
+        //   id: commentId,
+        // })
       }
     }
     return comment;
   }, (err, commited) => onCommentVote(err, commited));
+
 }
