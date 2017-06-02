@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
 import {createUser, signIn} from '../../../server/auth'
+import PropTypes from 'prop-types';
 
 const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, error_tooltip, updateFormProperty}) =>{
 
@@ -72,7 +73,6 @@ const mapStateToProps = (state) =>{
 };
 
 
-
 const mapDispatchToProps = (dispatch) => {
   return {
     updateFormProperty: (props) => (dispatch({
@@ -83,3 +83,18 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Entry);
+
+Entry.propTypes = {
+  signIn_email: PropTypes.string,
+  signIn_password: PropTypes.string,
+  signUp_username: PropTypes.string,
+  signUp_email: PropTypes.string,
+  signUp_confirmEmail: PropTypes.string,
+  signUp_password: PropTypes.string,
+  signUp_confirmPassword: PropTypes.string,
+  handleInputChange: PropTypes.func,
+  handleFormSubmit: PropTypes.func,
+  handleSignIn: PropTypes.func,
+  handleCheckboxClick: PropTypes.func,
+  error_tooltip: PropTypes.string
+};
