@@ -16,15 +16,19 @@ const updateCommentText = _.debounce((updateComment, value) => {
 
 class DeckComments extends Component {
   componentDidMount(){
-    const { deckId } = this.props.currentDeck;
-    const { uid } = this.props.activeUser;
+    const {deckId} = this.props.params;
     fetchComments(deckId, comments=>this.props.updateComments(deckId, comments));
-    fetchUserVotedDeckComments(uid, deckId, userVotedComments=>{
-      // Needs refactor
-      let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid].type);
-      let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
-      let toObj = _.zipObject(votedCommentId, voteType);
-      return this.props.updateUserVotedDeckComments(uid, deckId, toObj)})
+
+    if(this.props.activeUser) {
+      fetchUserVotedDeckComments(this.props.params.deckId, userVotedComments => {
+        // Needs refactor
+        const {uid} = this.props.activeUser;
+        let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
+        let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
+        let toObj = _.zipObject(votedCommentId, voteType);
+        this.props.updateUserVotedDeckComments(uid, deckId, toObj)
+      })
+    }
   }
 
   handleInputChange = (e) => {
@@ -48,7 +52,7 @@ class DeckComments extends Component {
   };
 
   handlePostCommentClick = () => {
-    const {deckId} = this.props.currentDeck;
+    const {deckId} = this.props.params;
     const {username, uid} = this.props.activeUser;
     postComment(username, this.props.deckComment, deckId, uid);
     fetchComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
@@ -62,26 +66,24 @@ class DeckComments extends Component {
   handleCommentVotingClick = (e) =>{
     let commentId = e.currentTarget.dataset.commentid;
     let vote = e.currentTarget.id;
-    const {deckId} = this.props.currentDeck;
+    const {deckId} = this.props.params.deckId;
     const {uid} = this.props.activeUser;
-    rateComment(deckId, commentId, this.props.activeUser.uid, vote);
-
+    console.log(this.props);
+    rateComment(deckId, commentId, uid, vote);
   };
 
 
 
 
   render() {
-    const {activeUser, comments, currentDeck, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments} = this.props;
-    const { uid } = activeUser;
-    const { deckId } = currentDeck;
+    const {comments, params, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments} = this.props;
+    const { deckId } = params.deckId;
     let mappedComments = _.map(comments);
     return (
         <div className={`container__details--section container__details--comments ${commentBoxIsActive ? 'editorActive' : ''}`}>
           <SectionHeader comments={comments}/>
 
           <SectionBody comments={mappedComments}
-                       uid={uid}
                        handleCommentClick={this.handleCommentClick}
                        commentId={commentId}
                        deckId={deckId}

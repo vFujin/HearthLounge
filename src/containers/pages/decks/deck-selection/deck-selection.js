@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
 import {lazyLoadDecks, incrementViewsCount} from '../../../../server/decks/decks';
+import {getDeckDetails} from '../../../../server/decks/deck';
+import Loader from '../../../../utils/loader';
 import 'whatwg-fetch';
 import {connect} from 'react-redux';
 import _ from 'lodash';
@@ -53,9 +55,18 @@ class DeckSelection extends Component {
 
 
   render() {
-    const {children, location, decks, activeUser, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck} = this.props;
+    const {children, location, decks, activeUser, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
+
     if(location.pathname !== "/decks"){
-      return React.cloneElement(children, {activeUser, currentDeck});
+      if(!currentDeck){
+        getDeckDetails(params.deckId, v=>{
+          this.props.updateActiveDeck(v);
+        });
+        return <Loader/>
+      } else {
+        console.log(currentDeck)
+        return React.cloneElement(children, {activeUser, currentDeck});
+      }
     }
     else {
       return (
@@ -77,7 +88,7 @@ class DeckSelection extends Component {
 }
 
 
-const mapStateToProps = (state, ownProps) =>{
+const mapStateToProps = (state) =>{
   const {decks, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
   const {activeUser, users} = state.users;
   return {decks, activeUser, users, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass};

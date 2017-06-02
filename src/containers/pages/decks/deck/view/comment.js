@@ -3,7 +3,7 @@ import {timeDifference} from '../../../../../utils/unix-to-date';
 import MoreOptions from '../../../../shared-assets/posts/more-options';
 import Tooltip from 'antd/lib/tooltip';
 
-const Comment = ({comment, uid, deckId, commentVotes, commentId, votedComments, handleCommentVotingClick}) => {
+const Comment = ({comment, deckId, commentVotes, commentId, votedComments, handleCommentVotingClick}) => {
   const {upvotes, downvotes, created, author, patch, text, id} = comment;
   let votes = upvotes - downvotes;
   let commented = timeDifference(created, false);

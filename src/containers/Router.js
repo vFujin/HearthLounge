@@ -64,7 +64,8 @@ const App = ({store}) =>{
         <Route path=""                  component={Home} />
 
         <Route path="decks"             component={DeckSelection}>
-          <Route path=":class/:deckId/:deckTitle"  components={Deck}/>
+          {/*<Route path=":class/:deckId"  component={Deck}/>*/}
+          <Route path=":class/:deckId/:deckTitle"  component={Deck}/>
         </Route>
 
         <Route path="cards"             component={Cards} />
