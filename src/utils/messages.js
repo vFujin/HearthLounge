@@ -10,6 +10,6 @@ export const success = (msg) =>{
 export const loading = (msg) =>{
   message.loading(msg);
 };
-export const error = (msg) =>{
-  message.error(msg, 2);
+export const error = (msg, duration) =>{
+  message.error(msg, duration || 2);
 };

@@ -8,9 +8,9 @@ const SignIn = ({handleInputChange, handleSignIn, signIn_email, signIn_password}
           <div className="input-wrapper">
             <label htmlFor="username-email">E-mail:</label>
             <input id="signIn_email"
+                   type="text"
                    onChange={handleInputChange}
-                   value={signIn_email}
-                   type="text"/>
+                   value={signIn_email}/>
           </div>
 
           <div className="input-wrapper">
@@ -21,7 +21,7 @@ const SignIn = ({handleInputChange, handleSignIn, signIn_email, signIn_password}
           </div>
 
           <div className="button-wrapper">
-            <button onClick={(e) => handleSignIn(e, signIn_email, signIn_password, ()=>e.message)} className="btn-pearl">
+            <button onClick={(e) => handleSignIn(e, signIn_email, signIn_password)} className="btn-pearl">
               Submit
             </button>
           </div>

@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import Input from '../../shared-assets/form-assets/input';
 import PropTypes from 'prop-types';
 
-const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, error_tooltip}) => {
+const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos, error_tooltip}) => {
   const username_pattern = "[A-Za-z0-9]{3,10}";
 
   return (
@@ -27,7 +27,7 @@ const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_pass
 
           <div className="input-wrapper">
             <div className="tos">
-              <input onClick={handleCheckboxClick} id="tos" type="checkbox"/>
+              <input onChange={handleCheckboxClick} id="tos" checked={tos} type="checkbox"/>
               <label htmlFor="tos">I agree to the <Link to="terms-of-service">terms of service</Link></label>
             </div>
           </div>
