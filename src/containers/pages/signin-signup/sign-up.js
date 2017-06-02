@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import Input from '../../shared-assets/form-assets/input';
 import PropTypes from 'prop-types';
 
-const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos, error_tooltip}) => {
+const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos}) => {
   const username_pattern = "[A-Za-z0-9]{3,10}";
 
   return (
@@ -36,7 +36,6 @@ const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_pass
           <div className="button-wrapper">
             <button className="btn-pearl">Submit</button>
           </div>
-          {error_tooltip}
         </form>
       </div>
   );
@@ -52,6 +51,5 @@ SignUp.propTypes = {
   signUp_confirmPassword: PropTypes.string,
   handleInputChange: PropTypes.func,
   handleFormSubmit: PropTypes.func,
-  handleCheckboxClick: PropTypes.func,
-  error_tooltip: PropTypes.string
+  handleCheckboxClick: PropTypes.func
 };

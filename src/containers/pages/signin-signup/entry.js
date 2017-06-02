@@ -5,7 +5,7 @@ import {LeftContainer} from './left-container';
 import {createUser, signIn} from '../../../server/auth'
 import PropTypes from 'prop-types';
 
-const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, error_tooltip, updateFormProperty}) =>{
+const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, updateFormProperty}) =>{
 
   const handleInputChange = (e) =>{
     let target = e.target;
@@ -51,7 +51,6 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
               signUp_password,
               signUp_confirmPassword,
               tos,
-              error_tooltip,
 
               signIn_email,
               signIn_password,
@@ -68,10 +67,9 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
 };
 
 const mapStateToProps = (state) =>{
-  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, error_tooltip} = state.entry;
-  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, error_tooltip};
+  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password} = state.entry;
+  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password};
 };
-
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -96,5 +94,5 @@ Entry.propTypes = {
   handleFormSubmit: PropTypes.func,
   handleSignIn: PropTypes.func,
   handleCheckboxClick: PropTypes.func,
-  error_tooltip: PropTypes.string
+  updateFormProperty: PropTypes.func
 };

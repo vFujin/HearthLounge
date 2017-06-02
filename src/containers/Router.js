@@ -2,7 +2,7 @@ import React from 'react';
 import {syncHistoryWithStore} from 'react-router-redux';
 import { Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router';
 
-import {Home} from './pages/home/home';
+import Home from './pages/home/home';
 
 import Cards from './pages/cards/cards';
 import {Forum} from './pages/forum/forum';
@@ -49,6 +49,7 @@ import SignIn from './pages/signin-signup/sign-in';
 import NotFound from './shared-assets/not-found';
 
 import {Dashboard} from './pages/dashboard/dashboard';
+import Prestige from './pages/prestige/prestige';
 
 import Main from './Main';
 
@@ -123,6 +124,8 @@ const App = ({store}) =>{
         </Route>
 
         <Route path="dashboard" component={Dashboard} />
+        <Route path="prestige" component={Prestige} />
+
         <Route path="*" component={NotFound} />
       </Route>
     </Router>

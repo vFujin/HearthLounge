@@ -24,8 +24,8 @@ constructor(props){
         <div id="container">
           <Navbar url={location.pathname} user={this.props.activeUser} handleLogout={(e)=>logout(e)}/>
           {React.cloneElement(children, {
-            authed: authenticated,
-            user: activeUser,
+            authenticated,
+            activeUser,
             cards
           })}
           <Footer/>
