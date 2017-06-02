@@ -42,9 +42,9 @@ import RedditPosts from './pages/reddit/posts/posts';
 import {RedditPostsSidebar} from './pages/reddit/posts/sidebar';
 import RedditPostsTopbar from './pages/reddit/posts/topbar';
 
-import {Login} from './pages/login/login';
-import SignUp from './pages/login/sign-up';
-import SignIn from './pages/login/sign-in';
+import Entry from './pages/signin-signup/login';
+import SignUp from './pages/signin-signup/sign-up';
+import SignIn from './pages/signin-signup/sign-in';
 
 import NotFound from './shared-assets/not-found';
 
@@ -117,7 +117,7 @@ const App = ({store}) =>{
           <Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
         </Route>
 
-        <Route path="login"      component={Login}>
+        <Route path="login"      component={Entry}>
           <Route path="/sign-in" component={SignIn} />
           <Route path="/sign-up" component={SignUp} />
         </Route>
