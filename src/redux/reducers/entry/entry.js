@@ -1,4 +1,11 @@
 const initialState = {
+  signIn_email: "",
+  signIn_password: "",
+  signUp_username: "",
+  signUp_email: "",
+  signUp_confirmEmail: "",
+  signUp_password: "",
+  signUp_confirmPassword: "",
   tos: false
 };
 
