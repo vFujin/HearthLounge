@@ -3,8 +3,10 @@ import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
 import {browserHistory} from 'react-router';
 import {createUser, signIn} from '../../../server/auth'
-
 import {events} from "../../shared-assets/form-assets/form-events-data";
+import {connect} from 'react-redux';
+
+
 export class Login extends Component {
   constructor(props){
     super(props);
@@ -46,8 +48,6 @@ export class Login extends Component {
 
   handleFormSubmit(e, email, pass, username){
     e.preventDefault();
-    let err = "";
-    console.log("before:", err);
     createUser(email, pass, username, (v)=>this.setState({
       error_tooltip: v
     }));
@@ -77,8 +77,6 @@ export class Login extends Component {
               signUp_confirmPassword: this.state.signUp_confirmPassword,
               tos: this.state.tos,
 
-              // sessionStorage, localStorage JSON.stringify
-
               signIn_email: this.state.signIn_email,
               signIn_password: this.state.signIn_password,
               error_tooltip: this.state.error_tooltip,
@@ -95,6 +93,17 @@ export class Login extends Component {
   }
 }
 
-Login.propTypes = {
-
+const mapStateToProps = (state) =>{
+  const {} = state.deckList;
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateFormProperty: (props) => (dispatch({
+      type: 'EDIT_FORM_PROPERTY', props
+    }))
+
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

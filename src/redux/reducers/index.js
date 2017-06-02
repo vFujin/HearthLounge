@@ -9,6 +9,7 @@ import DeckCreationFilters from './filters';
 import DeckList from './decks/decks';
 import DeckListFilters from './filters';
 import DeckView from './decks/deck-view'
+import SignForm from './signin-signup/signin-signup'
 
 const rootReducer = combineReducers({
   users: Users,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   deckList: DeckList,
   deckListFilters: DeckListFilters,
   deckView: DeckView,
+  signForm: SignForm,
   routing: routerReducer
 });
 
