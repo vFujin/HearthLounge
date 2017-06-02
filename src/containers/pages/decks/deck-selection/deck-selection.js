@@ -4,6 +4,7 @@ import RightContainer from './right-container/right-container';
 import {lazyLoadDecks, incrementViewsCount} from '../../../../server/decks/decks';
 import {getDeckDetails} from '../../../../server/decks/deck';
 import Loader from '../../../../utils/loader';
+import NotFound from '../../../shared-assets/not-found';
 import 'whatwg-fetch';
 import {connect} from 'react-redux';
 import _ from 'lodash';
@@ -47,10 +48,10 @@ class DeckSelection extends Component {
   };
 
   handleDeckSnippetClick = (e) =>{
-    let deck = e.currentTarget.id;
-    let deckDetails = _.head(_.map(this.props.decks).filter(d=>d.deckId === deck ? d : null));
-    this.props.updateActiveDeck(deckDetails);
-    incrementViewsCount(deck);
+    let deckId = e.currentTarget.id;
+    let deckObject = _.head(_.map(this.props.decks).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
+    this.props.updateActiveDeck(deckObject);
+    incrementViewsCount(deckId);
   };
 
 
@@ -62,11 +63,12 @@ class DeckSelection extends Component {
         getDeckDetails(params.deckId, v=>{
           this.props.updateActiveDeck(v);
         });
+        if(currentDeck === null){
+          return <NotFound/>
+        }
         return <Loader/>
-      } else {
-        console.log(currentDeck)
-        return React.cloneElement(children, {activeUser, currentDeck});
       }
+      return React.cloneElement(children, {activeUser, currentDeck});
     }
     else {
       return (

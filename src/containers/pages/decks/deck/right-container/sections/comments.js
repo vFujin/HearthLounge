@@ -20,7 +20,7 @@ class DeckComments extends Component {
     fetchComments(deckId, comments=>this.props.updateComments(deckId, comments));
 
     if(this.props.activeUser) {
-      fetchUserVotedDeckComments(this.props.params.deckId, userVotedComments => {
+      fetchUserVotedDeckComments(deckId, userVotedComments => {
         // Needs refactor
         const {uid} = this.props.activeUser;
         let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
@@ -64,11 +64,11 @@ class DeckComments extends Component {
   };
 
   handleCommentVotingClick = (e) =>{
+    console.log(this.props)
     let commentId = e.currentTarget.dataset.commentid;
     let vote = e.currentTarget.id;
     const {deckId} = this.props.params.deckId;
     const {uid} = this.props.activeUser;
-    console.log(this.props);
     rateComment(deckId, commentId, uid, vote);
   };
 

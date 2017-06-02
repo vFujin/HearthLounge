@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {rateDeck} from '../../../../server/decks/decks';
-import Loader from '../../../../utils/loader';
+
 const Deck = ({activeUser, currentDeck, params}) => {
   const handleDeckVotingClick = (e) =>{
     let vote = e.currentTarget.id;
@@ -16,6 +16,7 @@ const Deck = ({activeUser, currentDeck, params}) => {
         <LeftContainer currentDeck={currentDeck}/>
         <RightContainer currentDeck={currentDeck}
                         params={params}
+                        activeUser={activeUser}
                         handleDeckVotingClick={handleDeckVotingClick}/>
       </div>
   );
