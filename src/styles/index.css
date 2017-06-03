@@ -4207,12 +4207,14 @@ footer {
         margin: 0; }
       .dashboard .container__page--left .sidebar ul li:first-child label input {
         text-align: center; }
-.dashboard .container__page--right .topbar li {
-  margin-right: 10px; }
-  .dashboard .container__page--right .topbar li:first-child {
-    margin-left: 10px; }
-  .dashboard .container__page--right .topbar li:last-child {
-    margin-right: 0; }
+.dashboard .container__page--right .topbar {
+  justify-content: flex-start; }
+  .dashboard .container__page--right .topbar li {
+    margin-right: 10px; }
+    .dashboard .container__page--right .topbar li:first-child {
+      margin-left: 10px; }
+    .dashboard .container__page--right .topbar li:last-child {
+      margin-right: 0; }
 
 .not-found {
   display: flex;

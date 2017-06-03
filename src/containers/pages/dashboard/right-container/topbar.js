@@ -12,13 +12,11 @@ export class Topbar extends Component {
                 {/*<p>Homepage block scheme</p>*/}
               {/*</div>*/}
             {/*</li>*/}
+          <Tooltip title="decks" placement="bottom">
             <li className="deck">
               <span className="hs-icon icon-deck"></span>
-              <div className="tooltip">
-                <div className="caret-up"></div>
-                <p>Decks</p>
-              </div>
             </li>
+          </Tooltip>
             {/*<li className="forum">*/}
               {/*<span className="hs-icon icon-bubbles2"></span>*/}
               {/*<div className="tooltip">*/}
