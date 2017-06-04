@@ -42,9 +42,9 @@ import RedditPosts from './pages/reddit/posts/posts';
 import {RedditPostsSidebar} from './pages/reddit/posts/sidebar';
 import RedditPostsTopbar from './pages/reddit/posts/topbar';
 
-import Entry from './pages/signin-signup/entry';
-import SignUp from './pages/signin-signup/sign-up';
-import SignIn from './pages/signin-signup/sign-in';
+import Entry from './pages/entry/entry';
+import SignUp from './pages/entry/sign-up';
+import SignIn from './pages/entry/sign-in';
 
 import NotFound from './shared-assets/not-found';
 

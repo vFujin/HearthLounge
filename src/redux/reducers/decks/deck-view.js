@@ -22,11 +22,10 @@ export default function(state=initialState, action) {
         ...state,
         ...action.props
       };
-    case 'UPDATE_COMMENT_VOTES':
+    case 'UPDATE_COMMENT_VOTE':
       return {
         ...state,
-        commentId: action.commentId,
-        commentVotes: action.commentVotes
+        vote: action.vote
       };
     case 'TOGGLE_COMMENT_BOX':
       return {

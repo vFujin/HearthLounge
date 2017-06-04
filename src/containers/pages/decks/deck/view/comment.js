@@ -8,6 +8,13 @@ const Comment = ({comment, deckId, commentVotes, commentId, votedComments, handl
   let votes = upvotes - downvotes;
   let commented = timeDifference(created, false);
   let detailedDate = timeDifference(created, true);
+  // console.log(Object.values(votedComments)[0][id])
+
+  console.log();
+  const showActiveClass = (vote) => {
+    return Object.keys(votedComments).length > 0 ? ((Object.values(votedComments)[0][id] !== undefined) && Object.values(votedComments)[0][id] === vote) ? 'voted' : '' : '';
+  };
+
   return (
     <div className="comment">
       <div className="author">
@@ -31,9 +38,9 @@ const Comment = ({comment, deckId, commentVotes, commentId, votedComments, handl
           {text}
         </div>
         <div className="footer">
-          <div data-commentid={id} onClick={handleCommentVotingClick} id="upvote" className={`up peripheral ${(votedComments[deckId] && votedComments[deckId][id] === "upvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-up"></span></div>
+          <div data-commentid={id} onClick={handleCommentVotingClick} id="upvote" className={`up peripheral ${showActiveClass('upvote')}`}><span className="hs-icon icon-circle-up"></span></div>
           <div className="votes peripheral">{votes}</div>
-          <div data-commentid={id} onClick={handleCommentVotingClick} id="downvote" className={`down peripheral ${(votedComments[deckId] && votedComments[deckId][id] === "downvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-down"></span></div>
+          <div data-commentid={id} onClick={handleCommentVotingClick} id="downvote" className={`down peripheral ${showActiveClass('downvote')}`}><span className="hs-icon icon-circle-down"></span></div>
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@ export const fetchData = (reducer) => {
   })
     .then(r=>r.json())
     .then(data => {
-      let fetchedCards = Object.values(data).reduce((a, b) => a.concat(b)).slice(0, 200); //all cards returned at once
+      let fetchedCards = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
       // let d = data["Naxxramas"];
 
       reducer(cards(fetchedCards));
