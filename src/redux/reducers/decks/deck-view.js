@@ -2,7 +2,13 @@ const initialState = {
   comments: [],
   votedComments: {},
   commentBoxIsActive: false,
-  previewIsActive: false
+  previewIsActive: false,
+  commentVotes: {
+    upvotes: 0,
+    downvoted: 0,
+    votes: 0,
+    id: ""
+  }
 };
 
 export default function(state=initialState, action) {
@@ -26,6 +32,11 @@ export default function(state=initialState, action) {
       return {
         ...state,
         vote: action.vote
+      };
+    case 'UPDATE_COMMENT_VOTES':
+      return {
+        ...state,
+        commentVotes: action.commentVotes
       };
     case 'TOGGLE_COMMENT_BOX':
       return {

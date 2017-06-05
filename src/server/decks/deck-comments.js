@@ -1,126 +1,104 @@
 import {ref, refParent} from '../../keys';
 import {error, success} from '../../utils/messages';
 
-export function fetchComments(deckId, callback){
-  console.log(deckId);
-  refParent(`deck-comments/${deckId}`)
-      .once("value", snapshot => {
-        callback(snapshot.val());
+export function fetchComments(deckId, uid, callback){
+  ref.child(`deck-comments/${deckId}`)
+     .once("value")
+     .then(snapshot => {
+        let arr = [];
+        snapshot.forEach(childSnapshot => {
+          let comment = childSnapshot.val();
+          if(uid) {
+            arr.push({
+              upvotes: comment.upvotes,
+              downvotes: comment.downvotes,
+              votes: comment.votes,
+              id: comment.id,
+              author: comment.author,
+              created: comment.created,
+              patch: comment.patch,
+              text: comment.text,
+              voteType: comment[uid]
+            });
+          } else {
+            arr.push({
+              upvotes: comment.upvotes,
+              downvotes: comment.downvotes,
+              votes: comment.votes,
+              id: comment.id,
+              author: comment.author,
+              created: comment.created,
+              patch: comment.patch,
+              text: comment.text,
+            })
+          }
+        });
+        callback(arr)
       });
 }
 
-export function fetchUserVotedDeckComments(deckId, callback){
-  refParent(`deck-comment-ratings/${deckId}`)
+export function fetchComment(deckId, commentId, callback){
+  ref.child(`deck-comment/${deckId}/${commentId}`)
       .on("value", snapshot => {
-        callback(snapshot.val());
-      });
-}
-
-export function getUpdatedCommentVotes(deckId, commentId, callback){
-  refParent(`deck-comment-ratings/${deckId}/${commentId}`)
-      .on("value", snapshot =>{
-        // console.log(snapshot.val());
-        callback(snapshot.val());
+        callback({
+          upvotes: snapshot.val().upvotes,
+          downvotes: snapshot.val().downvotes,
+          votes: snapshot.val().votes,
+          id: snapshot.val().id
+        })
       })
-}
-
-/**
- * Posts deck comment.
- *
- * @param {string} author - username of the logged user
- * @param {string} text - comment text
- * @param {string} deckId - deck id
- * @param {string} uid - user id
- */
-export function postComment(author, text, deckId, uid){
-  if(author && text && deckId && uid){
-
-    const newCommentKey = ref.child(`decks/${deckId}/comments`).push().key;
-
-    let newComment = {
-      created: +new Date(),
-      edited: null,
-      patch: 'ungoro',
-      upvotes: 0,
-      downvotes: 0,
-      author,
-      text,
-      uid,
-      id: newCommentKey
-    };
-
-    let updates = {};
-    updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
-    updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
-
-    return ref.update(updates);
-  }
-  else {
-    return error("Something's not quite right. Try again later.")
-  }
 }
 
 export function getElementSnapshotOnce(selector, callback){
   return selector.once("value", snapshot=>callback(snapshot));
 }
+
 export function subscribeToElementSnapshot(selector, callback){
   return selector.on("value", snapshot=>callback(snapshot));
 }
 
-export function rateComment(deckId, commentId, uid, voteType, userVote, callback) {
-  const deckComment = ref.child(`deck-comments/${deckId}/${commentId}`);
-  const deckCommentRatings = ref.child(`deck-comment-ratings/${deckId}/${commentId}`);
+export function rateComment(deckId, commentId, uid, voteType, callback) {
+  const deckComments = ref.child(`deck-comments/${deckId}/${commentId}`);
   const userDeckCommentRatings = ref.child(`user-deck-comment-ratings/${uid}/${deckId}`);
 
-  getElementSnapshotOnce(deckCommentRatings, (snapshot)=> {
+  deckComments.transaction(function(comment){
+    const upvote = "upvote";
+    const downvote = "downvote";
 
-    if (snapshot.val() === null) {
+    if(comment){
+      if(comment[uid]){
 
-      deckCommentRatings.set({
-        [uid]: voteType,
-        id: commentId
-      });
-      callback(voteType);
-    }
+        if(comment[uid] === upvote && voteType === upvote){
+          comment.votes--;
+          comment.upvotes--;
+          comment[uid] = null
+        }
 
-    else if (snapshot.val()[uid] === voteType) {
-      if(snapshot.numChildren() < 3){
-        deckCommentRatings.remove();
+        else if (comment[uid] === downvote && voteType === downvote) {
+          comment.votes++;
+          comment.downvotes--;
+          comment[uid] = null
+        }
+
+        else if (comment[uid] === upvote && voteType === downvote){
+          comment.votes -= 2;
+          comment.upvotes--;
+          comment.downvotes++;
+          comment[uid] = downvote;
+        }
+
+        else {
+          comment.votes += 2;
+          comment.upvotes++;
+          comment.downvotes--;
+          comment[uid] = upvote;
+        }
       }
+
       else {
-        deckCommentRatings.update({
-          [uid]: null
-        });
-      }
-      callback("null");
-    }
-
-    else {
-      deckCommentRatings.update({
-        [uid]: voteType
-      });
-      callback(voteType);
-        // deckComment.update({})
-
-    }
-  });
-
-  deckComment.transaction(function(comment){
-    if(comment) {
-      console.log(voteType, userVote);
-      if(voteType === userVote){
-        comment[`${voteType}s`]--
-      }
-      else if(voteType === "upvote" && userVote === "downvote"){
-        comment.upvotes++;
-        comment.downvotes--;
-      }
-      else if(voteType === "downvote" && userVote === "upvote"){
-        comment.downvotes++;
-        comment.upvotes--;
-      }
-      else{
-        comment[`${voteType}s`]++
+        comment[uid] = voteType;
+        comment[uid] === upvote ? comment.votes++ : comment.votes--;
+        comment[uid] === upvote ? comment.upvotes++ : comment.downvotes++;
       }
     }
     return comment;
@@ -131,6 +109,7 @@ export function rateComment(deckId, commentId, uid, voteType, userVote, callback
       userDeckCommentRatings.set({
         [commentId]: voteType
       });
+      callback(voteType);
     }
 
     else if (snapshot.val()[commentId] === voteType) {
@@ -142,36 +121,13 @@ export function rateComment(deckId, commentId, uid, voteType, userVote, callback
           [commentId]: null
         });
       }
-
+      callback("null");
     }
     else {
       userDeckCommentRatings.update({
         [commentId]: voteType
       });
+      callback(voteType);
     }
   });
-
-  // deckComment.transaction(function(comment){
-  //   if(comment) {
-  //
-  //
-  //       if(voteType === "downvote"){
-  //         comment.upvotes--;
-  //         comment.downvotes++;
-  //       }
-  //     // else if (comment.downvotes)  {
-  //     //   if(voteType === "upvote"){
-  //     //     comment.upvotes++;
-  //     //     comment.downvotes--;
-  //     //   }
-  //     //   else {
-  //     //     comment.upvotes--;
-  //     //     comment.downvotes--;
-  //     //   }
-  //     // }
-  //     // else voteType === "upvote" ? comment.upvotes++ : comment.downvotes++;
-  //   }
-  //   return comment;
-  // })
-
 }

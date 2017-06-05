@@ -7,45 +7,77 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
-import {fetchComments, fetchUserVotedDeckComments, postComment, rateComment} from '../../../../../../server/decks/deck-comments';
-
+import {fetchComments, fetchComment, rateComment} from '../../../../../../server/decks/deck-comments';
+import {postComment} from '../../../../../../server/save-to-firebase/deck-comment';
 
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
 }, 300);
 
 class DeckComments extends Component {
-  componentDidMount(){
+  /**
+   * Using componentDidMount just to fetch user voted comments that is logged in,
+   * though componentDidMount works only when user is redirected from other webapp page,
+   * since usually Firebase async call that checks the authentication will end after mounted component
+   *
+   * Any user page refreshing / typing URL by hand will fail to fetch; see shouldComponentUpdate below
+   */
+  componentDidMount() {
     const {deckId} = this.props.params;
-    fetchComments(deckId, comments=>this.props.updateComments(deckId, comments));
 
+
+    // fetchUserVotedDeckComments(deckId, (comment)=>this.props.updateUserVotedDeckComments(comment))
     if(this.props.activeUser){
-      fetchUserVotedDeckComments(deckId, userVotedComments => {
-        // Needs refactor
-        const {uid} = this.props.activeUser;
-        let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
-        let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
-
-        let toObj = _.zipObject(votedCommentId, voteType);
-        this.props.updateUserVotedDeckComments(uid, deckId, toObj)
-      })
+      const {uid} = this.props.activeUser;
+      fetchComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
+      // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
+      //   // Needs refactor
+      //
+      //   let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
+      //   let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
+      //
+      //   let toObj = _.zipObject(votedCommentId, voteType);
+      //   this.props.updateUserVotedDeckComments(uid, deckId, toObj)
+      // })
     }
   }
-  shouldComponentUpdate(nextProps){
-    const {deckId} = this.props.params;
-    if(nextProps.activeUser !== this.props.activeUser){
-      fetchUserVotedDeckComments(deckId, userVotedComments => {
-        // Needs refactor
-        const {uid} = this.props.activeUser;
-        let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
-        let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
 
-        let toObj = _.zipObject(votedCommentId, voteType);
-        this.props.updateUserVotedDeckComments(uid, deckId, toObj)
-      });
-    }
-   return true;
-  }
+  /**
+   * If user refreshes / goes to the deck by URL there has to be validation if he is logged in,
+   * and since Firebase does only async calls we can't depend only on componentDidMount
+   * (since component can be mounted already, but async call didn't finish yet)
+   *
+   * @param {object} nextProps - Next properties that will trigger the render
+   *                             (in this case when Firebase finishes the authentication)
+   * @returns {boolean} - If true, comments component rerenders
+   */
+  // componentWillReceiveProps(nextProps){
+  //   const {deckId} = this.props.params;
+  //
+  //   if(nextProps.activeUser){
+  //     const {uid} = this.props.activeUser;
+  //     console.log("uid:", uid)
+  //     fetchComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
+  //     // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
+  //     //   // Needs refactor
+  //     //   const {uid} = this.props.activeUser;
+  //     //   let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
+  //     //   let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
+  //     //
+  //     //   let toObj = _.zipObject(votedCommentId, voteType);
+  //     //   this.props.updateUserVotedDeckComments(uid, deckId, toObj)
+  //     // });
+  //   }
+  //  return true;
+  // }
+
+
+  /**
+   * Once we leave deck component/page we have to reset user voted comments in redux,
+   * so they won't "blink" while disappearing due to saved state.
+   *
+   * Function purely for better user experience.
+   */
   componentWillUnmount(){
     this.props.updateUserVotedDeckComments("", "", "")
   }
@@ -86,15 +118,18 @@ class DeckComments extends Component {
     let commentId = e.currentTarget.dataset.commentid;
     let vote = e.currentTarget.id;
     const {deckId} = this.props.params;
-// console.log(this.props.vote)
     const {uid} = this.props.activeUser;
-    rateComment(deckId, commentId, uid, vote, this.props.vote, (voteType)=>this.props.updateCommentVote(voteType));
+    rateComment(deckId, commentId, uid, vote, (voteType)=>this.props.updateCommentVote(voteType));
+    fetchComment(deckId, commentId, (comment)=>this.props.updateCommentVotes(comment))
   };
+
 
   render() {
     const {comments, params, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments} = this.props;
     const { deckId } = params.deckId;
-    let mappedComments = _.map(comments);
+
+    let mappedComments = Object.values(comments);
+    console.log(mappedComments)
     return (
         <div className={`container__details--section container__details--comments ${commentBoxIsActive ? 'editorActive' : ''}`}>
           <SectionHeader comments={comments}/>
@@ -150,6 +185,9 @@ const mapDispatchToProps = (dispatch) => {
       votedComments: {
         [deckId]: votedComments
       }
+    })),
+    updateCommentVotes: (commentVotes) => (dispatch({
+      type: 'UPDATE_COMMENT_VOTES', commentVotes
     })),
     updateActiveCommentId: (activeComment) => (dispatch({
       type: 'UPDATE_ACTIVE_COMMENT_ID', activeComment
