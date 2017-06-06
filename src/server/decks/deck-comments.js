@@ -3,12 +3,12 @@ import {error, success} from '../../utils/messages';
 
 export function fetchComments(deckId, uid, callback){
   ref.child(`deck-comments/${deckId}`)
-     .once("value")
-     .then(snapshot => {
+     .once("value",snapshot => {
         let arr = [];
         snapshot.forEach(childSnapshot => {
           let comment = childSnapshot.val();
-          if(uid) {
+          console.log(uid)
+
             arr.push({
               upvotes: comment.upvotes,
               downvotes: comment.downvotes,
@@ -20,33 +20,26 @@ export function fetchComments(deckId, uid, callback){
               text: comment.text,
               voteType: comment[uid]
             });
-          } else {
-            arr.push({
-              upvotes: comment.upvotes,
-              downvotes: comment.downvotes,
-              votes: comment.votes,
-              id: comment.id,
-              author: comment.author,
-              created: comment.created,
-              patch: comment.patch,
-              text: comment.text,
-            })
-          }
+
         });
         callback(arr)
       });
 }
 
-export function fetchComment(deckId, commentId, callback){
-  ref.child(`deck-comment/${deckId}/${commentId}`)
+export function fetchComment(deckId, commentId, callback, uid){
+  ref.child(`deck-comments/${deckId}/${commentId}`)
       .on("value", snapshot => {
-        callback({
-          upvotes: snapshot.val().upvotes,
-          downvotes: snapshot.val().downvotes,
-          votes: snapshot.val().votes,
-          id: snapshot.val().id
-        })
+        if(snapshot.val() !== null && uid) {
+          callback({
+            upvotes: snapshot.val().upvotes,
+            downvotes: snapshot.val().downvotes,
+            votes: snapshot.val().votes,
+            id: snapshot.val().id,
+            voteType: snapshot.val()[uid]
+          });
+        }
       })
+
 }
 
 export function getElementSnapshotOnce(selector, callback){

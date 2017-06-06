@@ -24,22 +24,11 @@ class DeckComments extends Component {
    */
   componentDidMount() {
     const {deckId} = this.props.params;
-
-
-    // fetchUserVotedDeckComments(deckId, (comment)=>this.props.updateUserVotedDeckComments(comment))
     if(this.props.activeUser){
       const {uid} = this.props.activeUser;
       fetchComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
-      // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
-      //   // Needs refactor
-      //
-      //   let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
-      //   let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
-      //
-      //   let toObj = _.zipObject(votedCommentId, voteType);
-      //   this.props.updateUserVotedDeckComments(uid, deckId, toObj)
-      // })
     }
+    fetchComments(deckId, false, comments => this.props.updateComments(deckId, comments));
   }
 
   /**
@@ -51,25 +40,26 @@ class DeckComments extends Component {
    *                             (in this case when Firebase finishes the authentication)
    * @returns {boolean} - If true, comments component rerenders
    */
-  // componentWillReceiveProps(nextProps){
-  //   const {deckId} = this.props.params;
-  //
-  //   if(nextProps.activeUser){
-  //     const {uid} = this.props.activeUser;
-  //     console.log("uid:", uid)
-  //     fetchComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
-  //     // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
-  //     //   // Needs refactor
-  //     //   const {uid} = this.props.activeUser;
-  //     //   let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
-  //     //   let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
-  //     //
-  //     //   let toObj = _.zipObject(votedCommentId, voteType);
-  //     //   this.props.updateUserVotedDeckComments(uid, deckId, toObj)
-  //     // });
-  //   }
-  //  return true;
-  // }
+  shouldComponentUpdate(nextProps){
+    const {deckId} = this.props.params;
+
+    if(nextProps.activeUser !== this.props.activeUser){
+      if(this.props.activeUser) {
+        const {uid} = this.props.activeUser;
+        fetchComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
+        // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
+        //   // Needs refactor
+        //   const {uid} = this.props.activeUser;
+        //   let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
+        //   let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
+        //
+        //   let toObj = _.zipObject(votedCommentId, voteType);
+        //   this.props.updateUserVotedDeckComments(uid, deckId, toObj)
+        // });
+      }
+    }
+    return true;
+  }
 
 
   /**
@@ -79,7 +69,8 @@ class DeckComments extends Component {
    * Function purely for better user experience.
    */
   componentWillUnmount(){
-    this.props.updateUserVotedDeckComments("", "", "")
+    // const {deckId} = this.props.params;
+    // this.props.updateComments(null)
   }
 
   handleInputChange = (e) => {
@@ -120,16 +111,17 @@ class DeckComments extends Component {
     const {deckId} = this.props.params;
     const {uid} = this.props.activeUser;
     rateComment(deckId, commentId, uid, vote, (voteType)=>this.props.updateCommentVote(voteType));
-    fetchComment(deckId, commentId, (comment)=>this.props.updateCommentVotes(comment))
-  };
+    fetchComment(deckId, commentId, comment=>this.props.updateCommentVotes(comment), uid);
+    // this.props.updateCommentVotes({upvotes: 0, downvotes: 0, votes: 0, id: ""})
 
+  };
 
   render() {
     const {comments, params, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments} = this.props;
     const { deckId } = params.deckId;
 
-    let mappedComments = Object.values(comments);
-    console.log(mappedComments)
+    let mappedComments = Object.values(comments)[0];
+
     return (
         <div className={`container__details--section container__details--comments ${commentBoxIsActive ? 'editorActive' : ''}`}>
           <SectionHeader comments={comments}/>

@@ -7,18 +7,18 @@ import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-
 const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, handleCommentClick, handleCommentVotingClick, votedComments}) => {
 
   const listComments = () =>{
-    if(comments.length < 1){
+    if(comments === undefined){
       return <Loader/>
     }
     else{
-      return comments[0].map((comment, i)=> <Comment key={i}
-                                                     comment={comment}
-                                                     deckId={deckId}
-                                                     commentId={commentId}
-                                                     commentVotes={commentVotes}
-                                                     votedComments={votedComments}
-                                                     handleCommentClick={handleCommentClick}
-                                                     handleCommentVotingClick={handleCommentVotingClick}/>
+      return comments.map((comment, i)=> <Comment key={i}
+                                                   comment={comment}
+                                                   deckId={deckId}
+                                                   commentId={commentId}
+                                                   commentVotes={commentVotes}
+                                                   votedComments={votedComments}
+                                                   handleCommentClick={handleCommentClick}
+                                                   handleCommentVotingClick={handleCommentVotingClick}/>
       )
     }
   };

@@ -4,23 +4,12 @@ import MoreOptions from '../../../../shared-assets/posts/more-options';
 import Tooltip from 'antd/lib/tooltip';
 
 const Comment = ({comment, deckId, commentVotes, commentId, votedComments, handleCommentVotingClick}) => {
-  const {created, author, patch, text, id} = comment;
+  const {created, author, patch, text, id, votes, voteType} = comment;
   // let votes = ;
   let commented = timeDifference(created, false);
   let detailedDate = timeDifference(created, true);
   // console.log(Object.values(votedComments)[0][id])
-
-  // console.log(commentVotes[id]);
-
-  const showActiveClass = (vote) => {
-    return Object.keys(votedComments).length > 0 ? ((Object.values(votedComments)[0][id] !== undefined) && Object.values(votedComments)[0][id] === vote) ? 'voted' : '' : '';
-  };
-
-
-
-
-
-
+console.log(commentVotes.id)
   return (
     <div className="comment">
       <div className="author">
@@ -44,9 +33,9 @@ const Comment = ({comment, deckId, commentVotes, commentId, votedComments, handl
           {text}
         </div>
         <div className="footer">
-          <div data-commentid={id} onClick={handleCommentVotingClick} id="upvote" className={`up peripheral ${showActiveClass('upvote')}`}><span className="hs-icon icon-circle-up"></span></div>
-          <div className="votes peripheral">{(commentVotes && commentVotes.id === id)? commentVotes.votes : 0}</div>
-          <div data-commentid={id} onClick={handleCommentVotingClick} id="downvote" className={`down peripheral ${showActiveClass('downvote')}`}><span className="hs-icon icon-circle-down"></span></div>
+          <div data-commentid={id} onClick={handleCommentVotingClick} id="upvote" className={`up peripheral ${(voteType && voteType ==="upvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-up"></span></div>
+          <div className="votes peripheral">{(commentVotes && commentVotes.id === id) ? commentVotes.votes : votes}</div>
+          <div data-commentid={id} onClick={handleCommentVotingClick} id="downvote" className={`down peripheral ${(voteType && voteType ==="downvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-down"></span></div>
         </div>
       </div>
     </div>
