@@ -13,6 +13,11 @@ const initialState = {
 
 export default function(state=initialState, action) {
   switch (action.type) {
+    case 'UPDATE_DECK_RATING':
+      return {
+        ...state,
+        deckVote: action.deckVote
+      };
     case 'FETCH_COMMENTS':
       return {
         ...state,

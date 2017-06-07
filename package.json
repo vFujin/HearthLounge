@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "antd": "^2.8.1",
-    "d3": "^4.9.1",
     "dom-to-image": "^2.5.2",
     "firebase": "^3.7.4",
     "lodash": "^4.17.4",
@@ -32,5 +31,5 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://xnehel.github.io/HearthLounge"
+  "homepage": "http://vfujin.github.io/HearthLounge"
 }

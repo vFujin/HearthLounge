@@ -1,5 +1,5 @@
-import {ref} from '../keys';
-import {success, loading, error} from '../utils/messages';
+import {ref} from '../../keys';
+import {success, loading, error} from '../../utils/messages';
 
 /**
  * Function representing deck saving to Firebase /decks and /users/:id/decks endpoint
@@ -29,6 +29,7 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
       downvotes: 0,
       patch: 'ungoro',
       views: 0,
+      votes: 0,
       hsClass,
       author,
       title,

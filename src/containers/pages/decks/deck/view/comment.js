@@ -9,7 +9,7 @@ const Comment = ({comment, deckId, commentVotes, commentId, votedComments, handl
   let commented = timeDifference(created, false);
   let detailedDate = timeDifference(created, true);
   // console.log(Object.values(votedComments)[0][id])
-console.log(commentVotes.id)
+
   return (
     <div className="comment">
       <div className="author">

@@ -1,4 +1,4 @@
-import {ref, refParent} from '../../keys';
+import {ref} from '../../keys';
 import {voteTransaction} from '../utils/vote-transaction';
 import {updateUserVotes} from '../utils/update-user-votes';
 
@@ -39,13 +39,12 @@ export function fetchComment(deckId, commentId, callback, uid){
           });
         }
       })
-
 }
 
 export function rateComment(deckId, commentId, uid, vote, callback) {
-  const deckComments = ref.child(`deck-comments/${deckId}/${commentId}`);
-  const userDeckCommentRatings = ref.child(`user-deck-comment-ratings/${uid}/${deckId}`);
+  const deckComment = ref.child(`deck-comments/${deckId}/${commentId}`);
+  const userDeckCommentRating = ref.child(`user-deck-comment-ratings/${uid}/${deckId}`);
 
-  voteTransaction(deckComments, uid, vote);
-  updateUserVotes(userDeckCommentRatings, commentId, vote, callback);
+  voteTransaction(deckComment, uid, vote);
+  updateUserVotes(userDeckCommentRating, commentId, vote, callback);
 }

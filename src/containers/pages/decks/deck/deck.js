@@ -1,14 +1,16 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {rateDeck} from '../../../../server/decks/decks';
 
-const Deck = ({activeUser, currentDeck, params}) => {
+const Deck = ({activeUser, currentDeck, params, updateDeckRating}) => {
   const handleDeckVotingClick = (e) =>{
     let vote = e.currentTarget.id;
     const {deckId} = currentDeck;
-    rateDeck(deckId, activeUser.uid, vote);
+    const {uid} = activeUser;
+    rateDeck(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
   };
 
   return (
@@ -22,4 +24,17 @@ const Deck = ({activeUser, currentDeck, params}) => {
   );
 };
 
-export default Deck;
+const mapStateToProps = (state) => {
+  const {deckVote} = state.deckView;
+  return {deckVote}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateDeckRating: (deckVote) => (dispatch({
+      type: 'UPDATE_DECK_RATING', deckVote
+    })),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Deck);

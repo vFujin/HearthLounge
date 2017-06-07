@@ -1,45 +1,48 @@
 export function voteTransaction(selector, uid, vote){
-  return selector.transaction(function(comment){
+  return selector.transaction(function(element){
     const upvote = "upvote";
     const downvote = "downvote";
 
-    if(comment){
-      if(comment[uid]){
+    if(element){
+      if(element[uid]){
 
-        if(comment[uid] === upvote && vote === upvote){
-          comment.votes--;
-          comment.upvotes--;
-          comment[uid] = null
+        if(element[uid] === upvote && vote === upvote){
+          element.votes--;
+          element.upvotes--;
+          element[uid] = null
         }
 
-        else if (comment[uid] === downvote && vote === downvote) {
-          comment.votes++;
-          comment.downvotes--;
-          comment[uid] = null
+        else if (element[uid] === downvote && vote === downvote) {
+          element.votes++;
+          element.downvotes--;
+          element[uid] = null
         }
 
-        else if (comment[uid] === upvote && vote === downvote){
-          comment.votes -= 2;
-          comment.upvotes--;
-          comment.downvotes++;
-          comment[uid] = downvote;
+        else if (element[uid] === upvote && vote === downvote){
+          element.votes -= 2;
+          element.upvotes--;
+          element.downvotes++;
+          element[uid] = downvote;
         }
 
         else {
-          comment.votes += 2;
-          comment.upvotes++;
-          comment.downvotes--;
-          comment[uid] = upvote;
+          element.votes += 2;
+          element.upvotes++;
+          element.downvotes--;
+          element[uid] = upvote;
         }
       }
 
       else {
-        comment[uid] = vote;
-        comment[uid] === upvote ? comment.votes++ : comment.votes--;
-        comment[uid] === upvote ? comment.upvotes++ : comment.downvotes++;
+        element[uid] = vote;
+        element[uid] === upvote ? element.votes++ : element.votes--;
+        element[uid] === upvote ? element.upvotes++ : element.downvotes++;
+        if(!element.votes){
+          element.votes = element.upvotes - element.downvotes;
+        }
       }
     }
-    return comment;
+    return element;
   });
 
 }
