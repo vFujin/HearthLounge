@@ -8,13 +8,17 @@ const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_pass
 
   return (
       <div className="sign sign-up active">
+        <div className="progress-steps">
+          <div className="circle">1</div>
+          <div className="circle">2</div>
+        </div>
         <form onSubmit={handleFormSubmit}>
-          <Input id="signUp_username"
-                 type="text"
-                 placeholder="Joe"
-                 handleInputChange={handleInputChange}
-                 value={signUp_username}
-                 pattern={username_pattern}/>
+          {/*<Input id="signUp_username"*/}
+                 {/*type="text"*/}
+                 {/*placeholder="Joe"*/}
+                 {/*handleInputChange={handleInputChange}*/}
+                 {/*value={signUp_username}*/}
+                 {/*pattern={username_pattern}/>*/}
 
           <Input id="signUp_email"
                  type="email"
@@ -44,7 +48,7 @@ const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_pass
 export default SignUp;
 
 SignUp.propTypes = {
-  signUp_username: PropTypes.string,
+  // signUp_username: PropTypes.string,
   signUp_email: PropTypes.string,
   signUp_confirmEmail: PropTypes.string,
   signUp_password: PropTypes.string,

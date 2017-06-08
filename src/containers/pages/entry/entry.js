@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
-import {createUser, signIn} from '../../../server/auth'
+import {createUser, saveUser, signIn} from '../../../server/auth'
 import PropTypes from 'prop-types';
 
 const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, updateFormProperty}) =>{
@@ -17,6 +17,11 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
   const handleFormSubmit = (e) =>{
     e.preventDefault();
     createUser(signUp_email, signUp_password, signUp_username);
+  };
+
+  const handleUpdateProfileFormSubmit = (e, activeUser) => {
+    e.preventDefault();
+    saveUser(activeUser, signUp_username)
   };
 
   const handleSignIn = (e) => {
@@ -58,7 +63,8 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
               handleInputChange,
               handleCheckboxClick,
               handleSignIn,
-              handleFormSubmit
+              handleFormSubmit,
+              handleUpdateProfileFormSubmit
             })}
           </div>
         </div>

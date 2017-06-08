@@ -44,6 +44,7 @@ import RedditPostsTopbar from './pages/reddit/posts/topbar';
 
 import Entry from './pages/entry/entry';
 import SignUp from './pages/entry/sign-up';
+import SignUpUpdateProfile from './pages/entry/sign-up-update-profile';
 import SignIn from './pages/entry/sign-in';
 
 import NotFound from './shared-assets/not-found';
@@ -121,6 +122,7 @@ const App = ({store}) =>{
         <Route path="login"      component={Entry}>
           <Route path="/sign-in" component={SignIn} />
           <Route path="/sign-up" component={SignUp} />
+          <Route path="/sign-up/update-profile" component={SignUpUpdateProfile} />
         </Route>
 
         <Route path="dashboard" component={Dashboard} />

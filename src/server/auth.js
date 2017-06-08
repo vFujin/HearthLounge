@@ -6,16 +6,22 @@ import {loading, success, error} from '../utils/messages';
  * Creates new user.
  *
  * @param {string} email - The user's email address.
- * @param {string} pass - The user's chosen password.
+ * @param {string} password - The user's chosen password.
  * @param {string} username - The user's unique username.
  * @param {func} callback - Callback function to pass data into reducer.
  * @returns {!firebase.Promise.<*>}
  */
-export function createUser(email, pass, username){
+export function createUser(email, password, username){
   // Need to figure out how to throw exception when username is taken, since if email is not, user will be created anyway in "main" db
-  let promise = firebaseAuth().createUserWithEmailAndPassword(email, pass).then(user=>saveUser(user, username));
-  promise.catch(e => error("Couldn't save user. " + e.message));
-  return promise;
+  return firebaseAuth().createUserWithEmailAndPassword(email, password)
+      .then(user=>{
+        saveUser(user, username)
+        browserHistory.push('/sign-up/update-profile')
+      })
+      .catch(e => {
+        error("Couldn't save user. " + e.message)
+      });
+  // return promise;
 }
 
 /**
@@ -34,7 +40,7 @@ export function logout(e){
 }
 
 /**
- * Signs in user.
+ * Signs in user and redirects to user dashboard on success.
  *
  * @param {string} email - The user's e-mail address.
  * @param {string} pass - The user's password.
@@ -59,12 +65,12 @@ export function signIn(email, pass){
  * @param {object} user - The user's details.
  * @param {string} username - The user's unique username.
  */
-function saveUser(user, username){
+export function saveUser(user, username){
   if(user && username){
     const {email, uid} = user;
 
     let newUser = {
-      created: +new Date(),
+      updatedProfile: false,
       prestige: 1,
       role: 'user',
       email,
