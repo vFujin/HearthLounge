@@ -14,12 +14,12 @@ class SignUpUpdateProfile extends Component {
   }
 
   mapPlayerClasses(){
-    return icon_filters.playerClass.map(playerClass => <li><span className={`hs-icon icon-${playerClass.url}`}></span></li>)
+    return icon_filters.playerClass.map(playerClass => <li key={playerClass.url}><span className={`hs-icon icon-${playerClass.url}`}></span></li>)
   };
 
   render() {
     return (
-      <form onSubmit={(e)=>this.props.handleUpdateProfileFormSubmit(e, this.props.activeUser)}>
+      <form onSubmit={(e)=>this.props.handleUpdateProfileFormSubmit(e)}>
 
         <div className="divider"><span>Required</span></div>
 
@@ -27,8 +27,7 @@ class SignUpUpdateProfile extends Component {
                type="text"
                placeholder="Joe"
                handleInputChange={this.props.handleInputChange}
-               value={this.props.signUp_username}
-               pattern=""/>
+               value={this.props.signUp_username}/>
 
         <div className="divider"><span>Optional</span></div>
         <div className="avatar-wrapper">

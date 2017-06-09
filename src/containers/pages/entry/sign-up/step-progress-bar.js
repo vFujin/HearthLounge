@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const StepProgressBar = ({signUp_firstStep, signUp_secondStep}) =>{
-  console.log(signUp_firstStep, signUp_secondStep)
+const StepProgressBar = ({location, signUp_firstStep, signUp_secondStep}) =>{
+  console.log(location)
   const signUpFirstStepStatus = () =>{
     switch(signUp_firstStep){
       case 'success': return <span>✓</span>;
@@ -10,11 +10,16 @@ const StepProgressBar = ({signUp_firstStep, signUp_secondStep}) =>{
       default: return "1";
     }
   };
+  const signUpSecondStepStatus = () =>{
+    switch(signUp_secondStep){
+      case 'success': return <span>✓</span>;
+      case 'failure': return <span>x</span>;
+      default: return "2";
+    }
+  };
 
   const signUpFirstStepStatusClass = () => {
-    // debugger;
     switch(signUp_firstStep){
-
       case 'success': return "step-1-success";
       case 'failure': return "step-1-failure";
       default: return "step";
@@ -40,7 +45,7 @@ const StepProgressBar = ({signUp_firstStep, signUp_secondStep}) =>{
   return (
       <ul className={`step-progress-bar ${signUpStatus()}`}>
         <li>{signUpFirstStepStatus()}</li>
-        <li>2</li>
+        <li>{signUpSecondStepStatus()}</li>
       </ul>
   )
 };

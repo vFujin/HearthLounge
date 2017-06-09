@@ -2,10 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
-import {createUser, saveUser, signIn} from '../../../server/auth'
+import {createUser, updateUser, signIn} from '../../../server/auth'
 import PropTypes from 'prop-types';
 
-const Entry = ({authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
+const Entry = ({activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
 
   const handleInputChange = (e) =>{
     let target = e.target;
@@ -19,9 +19,9 @@ const Entry = ({authenticated, children, signUp_username, signUp_email, signUp_c
     createUser(signUp_email, signUp_password, updateSignUpStatus);
   };
 
-  const handleUpdateProfileFormSubmit = (e, activeUser) => {
+  const handleUpdateProfileFormSubmit = (e) => {
     e.preventDefault();
-    saveUser(activeUser, signUp_username)
+    updateUser(activeUser, signUp_username)
   };
 
   const handleSignIn = (e) => {

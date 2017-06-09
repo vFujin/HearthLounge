@@ -13,9 +13,10 @@ import {loading, success, error} from '../utils/messages';
 export function createUser(email, password, updateSignUpStatus){
   // Need to figure out how to throw exception when username is taken, since if email is not, user will be created anyway in "main" db
   firebaseAuth().createUserWithEmailAndPassword(email, password)
-      .then(()=>{
+      .then((user)=>{
         updateSignUpStatus("success", null);
-        browserHistory.push('/sign-up/update-profile')
+        browserHistory.push('/sign-up/update-profile');
+        saveUser(user);
       })
       .catch(e => {
         updateSignUpStatus("failure", null);
@@ -63,40 +64,50 @@ export function signIn(email, pass){
  * Saves user to Firebase.
  *
  * @param {object} user - The user's details.
- * @param {string} username - The user's unique username.
  */
-export function saveUser(user, username){
-  if(user && username){
+export function saveUser(user){
+  if(user){
     const {email, uid} = user;
 
     let newUser = {
       updatedProfile: false,
       prestige: 1,
       role: 'user',
+      username: email,
       email,
-      username,
       uid
     };
 
     let updates = {};
     updates[`users/${uid}`] = newUser;
-    updates[`usernames/${username}`] = uid;
+    // updates[`usernames/${username}`] = uid;
 
     return ref.update(updates);
   }
 }
 
-export function getUserData(uid, cb) {
-  return ref.once("value", (snapshot) =>cb(snapshot.child(`users/${uid}`).val()))
+export function updateUser(user, username){
+    let updatedUsername = {
+      ...user,
+      updatedProfile: true,
+      username
+    };
+
+    let updates = {};
+    updates[`users/${user.uid}`] = updatedUsername;
+    updates[`usernames/${username}`] = user.uid;
+    return ref.update(updates);
+}
+
+export function getUserData(uid, callback) {
+  return ref.once("value", (snapshot) =>callback(snapshot.child(`users/${uid}`).val()))
 }
 
 export function getCurrentUserInfo(reducer){
   firebaseAuth().onAuthStateChanged(user => {
     console.log(user);
     if (user) {
-      getUserData(user.uid, (v)=>{
-        reducer(true, v);
-      });
+      getUserData(user.uid, (v)=> reducer(true, v));
     }
     else {
       reducer(false, null);
