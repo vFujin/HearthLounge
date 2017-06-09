@@ -1,6 +1,8 @@
 const initialState = {
   signIn_email: "",
   signIn_password: "",
+  signUp_firstStep: "",
+  signUp_secondStep: "",
   signUp_username: "",
   signUp_email: "",
   signUp_confirmEmail: "",
@@ -15,6 +17,11 @@ export default function(state=initialState, action){
       ...state,
       ...action.props
     };
+    case 'UPDATE_SIGN_UP_STATUS': return {
+        ...state,
+      signUp_firstStep: action.signUp_firstStep,
+      signUp_secondStep: action.signUp_secondStep
+    }
   }
   return state;
 }

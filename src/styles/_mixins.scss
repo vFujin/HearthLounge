@@ -51,13 +51,13 @@
   }
 }
 
-@mixin sign_up_first_step_progress_bar($color, $distance){
+@mixin sign_up_first_step_progress_bar($color){
   li:first-child{
     border-color: $color;
     color: $color;
   }
   &:before{
-    background: linear-gradient(90deg, $color $distance, $light-grey $distance);
+    background: linear-gradient(90deg, $color 50%, $light-grey 50%);
   }
 }
 

@@ -7,18 +7,18 @@ import {loading, success, error} from '../utils/messages';
  *
  * @param {string} email - The user's email address.
  * @param {string} password - The user's chosen password.
- * @param {string} username - The user's unique username.
  * @param {func} callback - Callback function to pass data into reducer.
  * @returns {!firebase.Promise.<*>}
  */
-export function createUser(email, password, username){
+export function createUser(email, password, updateSignUpStatus){
   // Need to figure out how to throw exception when username is taken, since if email is not, user will be created anyway in "main" db
-  return firebaseAuth().createUserWithEmailAndPassword(email, password)
-      .then(user=>{
-        saveUser(user, username)
+  firebaseAuth().createUserWithEmailAndPassword(email, password)
+      .then(()=>{
+        updateSignUpStatus("success", null);
         browserHistory.push('/sign-up/update-profile')
       })
       .catch(e => {
+        updateSignUpStatus("failure", null);
         error("Couldn't save user. " + e.message)
       });
   // return promise;

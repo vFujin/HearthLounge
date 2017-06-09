@@ -4142,6 +4142,8 @@ footer {
         background: #474143;
         z-index: 1;
         color: #A69E9D; }
+        .container__page.entry .wrapper .container__page--right .step-progress-bar li span {
+          padding-bottom: 1px; }
       .container__page.entry .wrapper .container__page--right .step-progress-bar:before {
         content: "";
         position: absolute;

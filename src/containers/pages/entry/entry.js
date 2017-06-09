@@ -5,7 +5,7 @@ import {LeftContainer} from './left-container';
 import {createUser, saveUser, signIn} from '../../../server/auth'
 import PropTypes from 'prop-types';
 
-const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, updateFormProperty}) =>{
+const Entry = ({authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
 
   const handleInputChange = (e) =>{
     let target = e.target;
@@ -16,7 +16,7 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
 
   const handleFormSubmit = (e) =>{
     e.preventDefault();
-    createUser(signUp_email, signUp_password, signUp_username);
+    createUser(signUp_email, signUp_password, updateSignUpStatus);
   };
 
   const handleUpdateProfileFormSubmit = (e, activeUser) => {
@@ -45,7 +45,7 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
               <Link to="/sign-in" activeClassName="active">
                 <p>Sign In</p>
               </Link>
-              <Link to="/sign-up" activeClassName="active">
+              <Link to={authenticated ? '/dashboard' : '/sign-up'} activeClassName="active">
                 <p>Sign Up</p>
               </Link>
             </div>
@@ -55,6 +55,8 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
               signUp_confirmEmail,
               signUp_password,
               signUp_confirmPassword,
+              signUp_firstStep,
+              signUp_secondStep,
               tos,
 
               signIn_email,
@@ -73,16 +75,18 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
 };
 
 const mapStateToProps = (state) =>{
-  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password} = state.entry;
-  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password};
+  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep} = state.entry;
+  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateFormProperty: (props) => (dispatch({
       type: 'EDIT_FORM_PROPERTY', props
+    })),
+    updateSignUpStatus: (signUp_firstStep, signUp_secondStep) => (dispatch({
+      type: 'UPDATE_SIGN_UP_STATUS', signUp_firstStep, signUp_secondStep
     }))
-
   }
 };
 

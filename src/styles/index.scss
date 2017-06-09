@@ -2117,8 +2117,12 @@ footer{
           background: $dark-grey;
           z-index: 1;
           color: $light-grey;
+          span{
+            padding-bottom:1px;
+          }
         }
         &:before{
+
           content: "";
           position: absolute;
           height: 1px;
@@ -2128,13 +2132,13 @@ footer{
         }
         &.step {
           &-1-success {
-            @include sign_up_first_step_progress_bar($monk, 50%);
+            @include sign_up_first_step_progress_bar($monk);
           }
           &-1-failure {
-            @include sign_up_first_step_progress_bar($death_knight, 50%);
+            @include sign_up_first_step_progress_bar($death_knight);
           }
           &-2{
-            @include sign_up_first_step_progress_bar($monk, 50%)
+            @include sign_up_first_step_progress_bar($monk)
           }
           &-2-success{
             @include sign_up_second_step_progress_bar($monk, $monk, 100%);
