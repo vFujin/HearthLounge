@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const StepProgressBar = ({location, signUp_firstStep, signUp_secondStep}) =>{
-  console.log(location)
+const StepProgressBar = ({signUp_firstStep, signUp_secondStep}) =>{
   const signUpFirstStepStatus = () =>{
     switch(signUp_firstStep){
       case 'success': return <span>✓</span>;

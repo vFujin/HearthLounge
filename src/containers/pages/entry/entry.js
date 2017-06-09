@@ -5,7 +5,11 @@ import {LeftContainer} from './left-container';
 import {createUser, updateUser, signIn} from '../../../server/auth'
 import PropTypes from 'prop-types';
 
-const Entry = ({activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
+const Entry = ({location, activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
+
+  if(location.pathname === '/sign-up/update-profile'){
+    updateSignUpStatus("success", "");
+  }
 
   const handleInputChange = (e) =>{
     let target = e.target;
@@ -21,7 +25,7 @@ const Entry = ({activeUser, authenticated, children, signUp_username, signUp_ema
 
   const handleUpdateProfileFormSubmit = (e) => {
     e.preventDefault();
-    updateUser(activeUser, signUp_username)
+    updateUser(activeUser, signUp_username, updateSignUpStatus)
   };
 
   const handleSignIn = (e) => {

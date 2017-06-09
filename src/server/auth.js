@@ -80,27 +80,34 @@ export function saveUser(user){
 
     let updates = {};
     updates[`users/${uid}`] = newUser;
-    // updates[`usernames/${username}`] = uid;
 
     return ref.update(updates);
   }
 }
 
-export function updateUser(user, username){
-    let updatedUsername = {
-      ...user,
-      updatedProfile: true,
-      username
-    };
+export function updateUser(user, username, updateSignUpStatus){
+  let updatedUsername = {
+    ...user,
+    updatedProfile: true,
+    username
+  };
 
-    let updates = {};
-    updates[`users/${user.uid}`] = updatedUsername;
-    updates[`usernames/${username}`] = user.uid;
-    return ref.update(updates);
+  let updates = {};
+  updates[`users/${user.uid}`] = updatedUsername;
+  updates[`usernames/${username}`] = user.uid;
+  return ref.update(updates, function(err){
+    if(err){
+      updateSignUpStatus("success", "failure");
+      error("Something's not quite right. Try again later.", 4);
+    } else {
+      updateSignUpStatus("success", "success");
+      success("Profile has been updated!");
+    }
+  });
 }
 
 export function getUserData(uid, callback) {
-  return ref.once("value", (snapshot) =>callback(snapshot.child(`users/${uid}`).val()))
+  return ref.on("value", (snapshot) =>callback(snapshot.child(`users/${uid}`).val()))
 }
 
 export function getCurrentUserInfo(reducer){
