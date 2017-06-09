@@ -42,10 +42,10 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
           <div className="breakline v-breakline"></div>
           <div className="container__page--inner container__page--right">
             <div className="topbar">
-              <Link to="sign-in" activeClassName="active">
+              <Link to="/sign-in" activeClassName="active">
                 <p>Sign In</p>
               </Link>
-              <Link to="sign-up" activeClassName="active">
+              <Link to="/sign-up" activeClassName="active">
                 <p>Sign Up</p>
               </Link>
             </div>

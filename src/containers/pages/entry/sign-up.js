@@ -1,10 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router';
-import Input from '../../shared-assets/form-assets/input';
 import PropTypes from 'prop-types';
+import SignUpForm from './sign-up/sign-up-form';
 
-const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos}) => {
-  const username_pattern = "[A-Za-z0-9]{3,10}";
+const SignUp = ({children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos, location}) => {
+
+  const signUp = () =>{
+    return location.pathname === "/sign-up"
+        ? <SignUpForm signUp_email={signUp_email}
+                      signUp_confirmEmail={signUp_confirmEmail}
+                      signUp_password={signUp_password}
+                      signUp_confirmPassword={signUp_confirmPassword}
+                      handleInputChange={handleInputChange}
+                      handleFormSubmit={handleFormSubmit}
+                      handleCheckboxClick={handleCheckboxClick}
+                      tos={tos}/>
+        : children;
+  };
 
   return (
       <div className="sign sign-up active">
@@ -12,35 +23,7 @@ const SignUp = ({signUp_username, signUp_email, signUp_confirmEmail, signUp_pass
           <div className="circle">1</div>
           <div className="circle">2</div>
         </div>
-        <form onSubmit={handleFormSubmit}>
-          {/*<Input id="signUp_username"*/}
-                 {/*type="text"*/}
-                 {/*placeholder="Joe"*/}
-                 {/*handleInputChange={handleInputChange}*/}
-                 {/*value={signUp_username}*/}
-                 {/*pattern={username_pattern}/>*/}
-
-          <Input id="signUp_email"
-                 type="email"
-                 placeholder="hearth@lounge.com"
-                 handleInputChange={handleInputChange}
-                 value={signUp_email}/>
-          <Input id="signUp_confirmEmail"     type="email"    placeholder="hearth@lounge.com" handleInputChange={handleInputChange} value={signUp_confirmEmail}/>
-          <Input id="signUp_password"         type="password" placeholder="" handleInputChange={handleInputChange} value={signUp_password}/>
-          <Input id="signUp_confirmPassword"  type="password" placeholder="" handleInputChange={handleInputChange} value={signUp_confirmPassword}/>
-
-          <div className="input-wrapper">
-            <div className="tos">
-              <input onChange={handleCheckboxClick} id="tos" checked={tos} type="checkbox"/>
-              <label htmlFor="tos">I agree to the <Link to="terms-of-service">terms of service</Link></label>
-            </div>
-          </div>
-          {/*place for captcha*/}
-
-          <div className="button-wrapper">
-            <button className="btn-pearl">Submit</button>
-          </div>
-        </form>
+        {signUp()}
       </div>
   );
 };

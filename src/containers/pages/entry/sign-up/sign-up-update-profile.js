@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link, browserHistory} from 'react-router';
-import Input from '../../shared-assets/form-assets/input';
-import {firebaseStorage} from '../../../keys.js';
+import Input from '../../../shared-assets/form-assets/input';
+import {firebaseStorage} from '../../../../keys.js';
 import PropTypes from 'prop-types';
 
 class SignUpUpdateProfile extends Component {
