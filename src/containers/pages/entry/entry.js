@@ -36,7 +36,7 @@ const Entry = ({children, signUp_username, signUp_email, signUp_confirmEmail, si
   };
 
     return (
-      <div className={`container__page container__page--oneSided login`}>
+      <div className={`container__page container__page--oneSided entry`}>
         <div className="wrapper">
           <LeftContainer/>
           <div className="breakline v-breakline"></div>

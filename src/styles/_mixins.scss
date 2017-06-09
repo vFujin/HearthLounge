@@ -51,11 +51,30 @@
   }
 }
 
-
-@mixin height-lineheight($height){
-  line-height: $height;
-  height: $height;
+@mixin sign_up_first_step_progress_bar($color, $distance){
+  li:first-child{
+    border-color: $color;
+    color: $color;
+  }
+  &:before{
+    background: linear-gradient(90deg, $color $distance, $light-grey $distance);
+  }
 }
+
+@mixin sign_up_second_step_progress_bar($color, $second-color, $distance){
+  li:first-child{
+    border-color: $color;
+    color: $color;
+  }
+  li:last-child{
+    border-color: $second-color;
+    color: $second-color;
+  }
+  &:before{
+    background: linear-gradient(90deg, $monk $distance, $second-color $distance);
+  }
+}
+
 
 @mixin icon_color($color) {
   color: $color;

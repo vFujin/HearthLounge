@@ -119,7 +119,7 @@ const App = ({store}) =>{
           <Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />
         </Route>
 
-        <Route path="login"      component={Entry}>
+        <Route path="entry"      component={Entry}>
           <Redirect from="/sign-up/" to="/sign-up"/>
 
           <Route path="/sign-in" component={SignIn} />

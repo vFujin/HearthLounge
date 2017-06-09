@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SignUpForm from './sign-up/sign-up-form';
+import StepProgressBar from './sign-up/step-progress-bar';
 
 const SignUp = ({children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos, location}) => {
 
@@ -19,10 +20,7 @@ const SignUp = ({children, signUp_username, signUp_email, signUp_confirmEmail, s
 
   return (
       <div className="sign sign-up active">
-        <div className="progress-steps">
-          <div className="circle">1</div>
-          <div className="circle">2</div>
-        </div>
+        <StepProgressBar />
         {signUp()}
       </div>
   );
