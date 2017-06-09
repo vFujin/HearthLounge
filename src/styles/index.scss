@@ -2148,6 +2148,43 @@ footer{
           }
         }
       }
+      form{
+        .avatar-wrapper{
+          margin-bottom:1vh;
+          input::-webkit-file-upload-button{
+            background: transparent;
+            outline: none;
+            color: $light-grey;
+            border: 1px solid $light-grey;
+          }
+        }
+        .favourite-class{
+          display: flex;
+          margin-bottom: 1vh;
+          li{
+            cursor: pointer;
+            margin-top: 5px;
+            margin-right: 10px;
+            &:last-child{
+              margin-right:0;
+            }
+            span{
+              @include transition(all ease .4s);
+              font-size: 1vw;
+              padding: 3px;
+              color: $light-grey;
+              border: 1px solid $light-grey
+            }
+            &:hover{
+              span{
+                border-color: $pearl;
+                background-color: $white-020;
+                color: $pearl;
+              }
+            }
+          }
+        }
+      }
     }
     .breakline{
       height: 100%;

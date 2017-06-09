@@ -323,6 +323,28 @@ form {
     display: flex;
     justify-content: flex-start;
   }
+  .divider{
+    width: inherit;
+    text-align: center;
+    color: $light-grey;
+    position: relative;
+    font-size: 12px;
+    margin: 20px 0;
+    span{
+      position: relative;
+      padding: 0 10px;
+      background: $dark-grey;
+    }
+    &:before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      top: 50%;
+      left: 0;
+      background-color: $light-grey;
+    }
+  }
 }
 
 .decklist-summary-icons{

@@ -31,6 +31,7 @@ const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_
   )
 };
 
+
 export default SignUpForm;
 
 SignUpForm.propTypes = {

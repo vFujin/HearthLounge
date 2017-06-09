@@ -2025,6 +2025,25 @@ form .input-wrapper {
 form .button-wrapper {
   display: flex;
   justify-content: flex-start; }
+form .divider {
+  width: inherit;
+  text-align: center;
+  color: #A69E9D;
+  position: relative;
+  font-size: 12px;
+  margin: 20px 0; }
+  form .divider span {
+    position: relative;
+    padding: 0 10px;
+    background: #474143; }
+  form .divider:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background-color: #A69E9D; }
 
 .decklist-summary-icons {
   display: flex;
@@ -4182,6 +4201,36 @@ footer {
         color: #C41F3B; }
       .container__page.entry .wrapper .container__page--right .step-progress-bar.step-2-failure:before {
         background: linear-gradient(90deg, #00FF96 50%, #C41F3B 50%); }
+    .container__page.entry .wrapper .container__page--right form .avatar-wrapper {
+      margin-bottom: 1vh; }
+      .container__page.entry .wrapper .container__page--right form .avatar-wrapper input::-webkit-file-upload-button {
+        background: transparent;
+        outline: none;
+        color: #A69E9D;
+        border: 1px solid #A69E9D; }
+    .container__page.entry .wrapper .container__page--right form .favourite-class {
+      display: flex;
+      margin-bottom: 1vh; }
+      .container__page.entry .wrapper .container__page--right form .favourite-class li {
+        cursor: pointer;
+        margin-top: 5px;
+        margin-right: 10px; }
+        .container__page.entry .wrapper .container__page--right form .favourite-class li:last-child {
+          margin-right: 0; }
+        .container__page.entry .wrapper .container__page--right form .favourite-class li span {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          -ms-transition: all ease 0.4s;
+          -o-transition: all ease 0.4s;
+          transition: all ease 0.4s;
+          font-size: 1vw;
+          padding: 3px;
+          color: #A69E9D;
+          border: 1px solid #A69E9D; }
+        .container__page.entry .wrapper .container__page--right form .favourite-class li:hover span {
+          border-color: #E7E2DA;
+          background-color: rgba(225, 255, 255, 0.2);
+          color: #E7E2DA; }
   .container__page.entry .wrapper .breakline {
     height: 100%;
     width: 1px;
