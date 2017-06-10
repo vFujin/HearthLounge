@@ -9,21 +9,19 @@ import 'whatwg-fetch';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 
-
-
 class DeckSelection extends Component {
   componentDidMount() {
-    lazyLoadDecks((v) => this.props.updateDeckList(v), null);
-
+    lazyLoadDecks((v) => this.props.updateDeckList(v));
+    const el = document.querySelector('.table-scroll');
     // fetchUsers((v) => this.props.updateUserList(_.map(v, 'username')));
-    // window.addEventListener("scroll", function () {
-    //       if (window.scrollY === document.body.scrollHeight - window.innerHeight) {
-    //         lazyLoadDecks((v) => console.log(v));
-    //       }
-    //     }
-    // )
-  }
 
+        el.addEventListener("scroll", function () {
+          if (el.clientHeight === el.scrollHeight - el.scrollTop) {
+            // lazyLoadDecks((v) => this.props.updateDeckList(v));
+          }
+        }
+    )
+  }
 
   handleModeFilterClick = (e) =>{
     let targetId = e.currentTarget.id;

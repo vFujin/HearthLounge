@@ -34,12 +34,10 @@ constructor(props){
   }
 }
 
-
 Main.propTypes = {
   children: PropTypes.element.isRequired,
   location: PropTypes.object.isRequired
 };
-
 
 const mapStateToProps = state =>{
   const {cards} = state.cards;

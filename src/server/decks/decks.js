@@ -2,39 +2,46 @@ import {ref, refParent} from '../../keys';
 import {voteTransaction} from '../utils/vote-transaction';
 import {updateUserVotes} from '../utils/update-user-votes';
 import {success, loading, error} from '../../utils/messages';
-// let _start = 0;
-// let _end = 14;
-// let _n = 15;
+
+let data = [];
+let _start = Date.now() - 86400*3000; //3 days
+let _end = Date.now() - 604800*3000;
+let _n = 604800*1000;
 
 export function lazyLoadDecks(callback, playerClass){
-  if(playerClass !== null) {
-
+  // if(playerClass !== null) {
+  //
+  //   refParent('decks')
+  //       .orderByChild('hsClass')
+  //       .equalTo(playerClass)
+  //       .once("value", snapshot => {
+  //         console.log(snapshot.val());
+  //         callback(snapshot.val());
+  //       });
+  // }
+  // else {
     refParent('decks')
         .orderByChild('hsClass')
-        .equalTo(playerClass)
         .once("value", snapshot => {
-          console.log(snapshot.val());
+          console.log(snapshot.val())
           callback(snapshot.val());
         });
-  }
-  else{
-    refParent('decks')
-        .orderByChild('hsClass')
-        .once("value", snapshot=> {
-          callback(snapshot.val());
-        });
-  }
-  // refChild('decks').orderByChild('title')
-  //     .startAt(_start)
-  //     .endAt(_end)
-  //     .limitToLast(_n)
-  //     .on("child_added", (snapshot)=>  {
-  //       console.log(snapshot);
-  //       return callback(snapshot.val());
-  //     });
-  // _start += _n;
-  // _end += _n;
+  //
+  //   let now = Date.now();
+  //   refParent('decks').orderByChild('created')
+  //       .startAt(_start)
+  //       .limitToFirst(_n)
+  //       .on("child_added", (snapshot) => {
+  //         console.log(snapshot.val());
+  //         data.push(snapshot.val());
+  //         callback(data);
+  //       });
+  //   console.log(data)
+  //   _start += _n;
+  //   _end += _n;
 }
+
+
 
 export function incrementViewsCount(deckId){
   ref.child(`decks/${deckId}`).transaction(function(deck) {

@@ -10,7 +10,7 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
       return <tr><td><Loader/></td></tr>
     }
     else {
-      return _.map(decks).map(deck  => {
+      return _.map(decks).reverse().map(deck  => {
         return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
                             key={deck.deckId}
                             deckId={deck.deckId}
