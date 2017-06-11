@@ -13,7 +13,6 @@ class DeckSelection extends Component {
   componentDidMount() {
     lazyLoadDecks((v) => this.props.updateDeckList(v));
     const el = document.querySelector('.table-scroll');
-    // fetchUsers((v) => this.props.updateUserList(_.map(v, 'username')));
 
         el.addEventListener("scroll", function () {
           if (el.clientHeight === el.scrollHeight - el.scrollTop) {
