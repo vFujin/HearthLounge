@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
 import 'whatwg-fetch';
 export class Reddit extends Component{
   constructor(props){
@@ -88,10 +90,10 @@ export class Reddit extends Component{
 }
 
 Reddit.propTypes = {
-  posts: React.PropTypes.array,
-  post_permalink: React.PropTypes.string,
-  active_post: React.PropTypes.string,
-  handleReditPostClick: React.PropTypes.func,
-  active_tabmenu: React.PropTypes.string,
-  handleTabmenuClick: React.PropTypes.func
+  posts: PropTypes.array,
+  post_permalink: PropTypes.string,
+  active_post: PropTypes.string,
+  handleReditPostClick: PropTypes.func,
+  active_tabmenu: PropTypes.string,
+  handleTabmenuClick: PropTypes.func
 };
