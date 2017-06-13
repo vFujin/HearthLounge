@@ -1,22 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import Tooltip from 'antd/lib/tooltip';
 import 'antd/lib/tooltip/style/css';
 import _ from 'lodash';
-import {supported_domain_icons} from '../domain-icons';
+import {supported_domain_icons} from '../../domain-icons';
 
-const RedditPostsTopbar = props => {
-console.log(props);
+const Topbar = (props) => {
   let query = props.location.query.domain;
 
-  function checkIcon(domain){
+  checkIcon = (domain) =>{
     if(domain === "bubbles2"){
       return "hearthstone"
     }
     else return domain;
-  }
+  };
+
   return (
-      <div className="subreddit-posts-topbar">
+      <div className="topbar">
         <ul>
         {supported_domain_icons.map((domain, index)=>
           <li key={domain}>
@@ -32,4 +33,4 @@ console.log(props);
   )
 };
 
-export default RedditPostsTopbar;
+export default Topbar;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
 import 'whatwg-fetch';
+import RedditPosts from './posts/posts';
 export class Reddit extends Component{
   constructor(props){
     super(props);
@@ -30,7 +30,6 @@ export class Reddit extends Component{
             posts: posts
           })
         });
-
   }
 
   handleRedditPostClick(active_post) {
@@ -62,30 +61,9 @@ export class Reddit extends Component{
   };
 
 
-
   render(){
-    const {main, sidebar, topbar} = this.props;
-    return (
-      <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
-          <div className="container__page--inner container__page--left">
-            <h3 className="sidebar__header">Filters</h3>
-              {React.cloneElement(sidebar, {handleTabmenuClick: this.handleFilterClick.bind(this),
-                                            active_tabmenu: this.state.active_tabmenu,
-                                            active_domain_filter: this.state.active_domain_filter})}
-          </div>
-          <div className="container__page--inner container__page--right">
-            <div className="topbar">
-              {React.cloneElement(topbar, {active_tabmenu: this.state.active_tabmenu,
-                                           active_domain_filter: this.state.active_domain_filter})}
-            </div>
-            <div className="content">
-            {React.cloneElement(main, {posts: this.state.posts,
-                                       post_permalink: this.state.post_permalink,
-                                       handleRedditPostClick: this.handleRedditPostClick.bind(this)})}
-            </div>
-          </div>
-      </div>
-    )
+    return this.props.children
+
   }
 }
 
