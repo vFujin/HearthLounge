@@ -4,12 +4,12 @@ import {Link} from 'react-router';
 import Tooltip from 'antd/lib/tooltip';
 import 'antd/lib/tooltip/style/css';
 import _ from 'lodash';
-import {supported_domain_icons} from '../../domain-icons';
+import {supported_domain_icons} from '../../../../../utils/reddit-util-functions';
 
 const Topbar = (props) => {
   let query = props.location.query.domain;
 
-  checkIcon = (domain) =>{
+  const checkIcon = (domain) =>{
     if(domain === "bubbles2"){
       return "hearthstone"
     }
@@ -17,8 +17,7 @@ const Topbar = (props) => {
   };
 
   return (
-      <div className="topbar">
-        <ul>
+        <ul className="topbar">
         {supported_domain_icons.map((domain, index)=>
           <li key={domain}>
             <Link to={{pathname: 'reddit', query: {category: props.active_tabmenu, domain: checkIcon(domain)}}}>
@@ -29,7 +28,6 @@ const Topbar = (props) => {
           </li>
         )}
         </ul>
-      </div>
   )
 };
 

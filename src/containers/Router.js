@@ -34,7 +34,7 @@ import {Streams} from './pages/streams/streams';
 import Iframe from './pages/streams/iframe';
 
 
-import {Reddit} from './pages/reddit/reddit';
+import Reddit from './pages/reddit/reddit';
 import RedditPost from './pages/reddit/post/post';
 import {RedditPostSidebar} from './pages/reddit/post/sidebar';
 import {RedditPostTopbar} from './pages/reddit/post/topbar';

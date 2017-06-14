@@ -1,15 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {supported_domains} from '../../../utils/reddit-util-functions';
 
-export const supported_domains = ["battle.net", "youtu.be", "self.hearthstone", "twitter.com","youtube.com", "clips.twitch.tv", "reddit.com"];
-export const supported_domain_icons = ["battlenet", "youtube", "bubbles2", "twitter", "twitch", "reddit"];
-
-const Icon = (post) => {
-  if(post.link_flair_text !== null) {
-    let domain = post.domain;
-    let flair_text = post.link_flair_text.toLowerCase();
-    let self = domain.includes(supported_domains[2]);
-
+const Icon = ({link_flair_text, domain }) => {
+  if(link_flair_text !== null) {
     const iconTemplate = (icon) => <span className={`hs hs-icon icon-${icon}`}></span>;
+
+    let flair_text = link_flair_text.toLowerCase();
+    let self = domain.includes(supported_domains[2]);
 
     if (domain.includes(supported_domains[0]))
       return iconTemplate("battlenet");

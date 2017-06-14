@@ -9,7 +9,8 @@ import DeckCreation from './create-deck/create-deck';
 import DeckCreationFilters from './filters';
 import DeckList from './decks/decks';
 import DeckListFilters from './filters';
-import DeckView from './decks/deck-view'
+import DeckView from './decks/deck-view';
+import RedditPosts from './reddit/posts'
 
 const rootReducer = combineReducers({
   entry: Entry,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   deckList: DeckList,
   deckListFilters: DeckListFilters,
   deckView: DeckView,
+  redditPosts: RedditPosts,
   routing: routerReducer
 });
 
