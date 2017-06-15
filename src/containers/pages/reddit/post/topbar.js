@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-export class RedditPostTopbar extends Component {
+export class Topbar extends Component {
   render() {
     return (
-        <div>post topbar</div>
+        <div className="topbar">post topbar</div>
     )
   }
 }

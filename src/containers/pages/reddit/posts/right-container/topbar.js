@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 import Tooltip from 'antd/lib/tooltip';
 import 'antd/lib/tooltip/style/css';
 import _ from 'lodash';
-import {supported_domain_icons} from '../../../../../utils/reddit-util-functions';
+import {supported_domain_icons} from '../../../../../utils/reddit/posts';
 
 const Topbar = (props) => {
   let query = props.location.query.domain;

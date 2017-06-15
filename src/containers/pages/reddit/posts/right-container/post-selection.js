@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import Loader from '../../../../../utils/loader';
-import {checkIfStickied, checkIfBlizzardPost, stripDomains, checkTopbarIconFilters, checkDomain} from '../../../../../utils/reddit-util-functions';
+import {checkIfStickied, checkIfBlizzardPost, stripDomains, checkTopbarIconFilters, checkDomain} from '../../../../../utils/reddit/posts';
 import Icon from '../../domain-icons';
 
 const PostSelection = ({location, posts, handlePostClick}) => {
+
   const mapPosts = () =>{
     return (
         <div className="content">
@@ -18,9 +19,9 @@ const PostSelection = ({location, posts, handlePostClick}) => {
               <th>Created</th>
             </tr>
             {posts.map(post => (
-                <tr className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} ${checkTopbarIconFilters(location, post)}`}
+                <tr id={post.id} className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} ${checkTopbarIconFilters(location, post)}`}
                     key={post.id}
-                    onClick={handlePostClick}>
+                    onClick={(e)=>handlePostClick(e, post)}>
                   {/*{convertUnixTimestamp(post.created)}*/}
                   <td className="upvotes"><Link to={checkDomain(post)}><span>{post.ups}</span></Link></td>
                   <td className="domain"><Link to={checkDomain(post)}>{Icon(post)}</Link></td>

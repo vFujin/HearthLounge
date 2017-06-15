@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {supported_domains} from '../../../utils/reddit-util-functions';
+import {supported_domains} from '../../../utils/reddit/posts';
 
 const Icon = ({link_flair_text, domain }) => {
   if(link_flair_text !== null) {

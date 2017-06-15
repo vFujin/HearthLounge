@@ -6,46 +6,33 @@ import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar';
 import PostSelection from './right-container/post-selection';
 
-class RedditPosts extends Component{
-  componentDidMount() {
-    let query = this.props.location.query.category || "hot";
-    fetch(`https://www.reddit.com/r/hearthstone/${query}.json`)
-        .then(res => res.json())
-        .then(res=>{
-          const posts = res.data.children.map(obj => obj.data);
-          console.log(posts);
-          this.props.updatePosts(posts);
-        });
-  }
+const RedditPosts = ({posts, location, activePost, updatePosts, updateActivePost, activeCategoryFilter, toggleCategoryFilter}) => {
 
-  handlePostClick = (activePost) =>{
-    this.props.updateActivePost(activePost);
+
+  const handlePostClick = (activePost) =>{
+    updateActivePost(activePost);
   };
 
-  handleCategoryClick = (e) => {
+  const handleCategoryClick = (e) => {
     e.preventDefault();
     let filter = e.currentTarget.id;
-    if(filter !== this.state.active_tabmenu){
+    if(filter !== activeCategoryFilter){
       fetch(`https://www.reddit.com/r/hearthstone/${filter}.json`)
         .then(res => res.json())
         .then(res=>{
             const posts = res.data.children.map(obj => obj.data);
             console.log(posts);
-            this.setState({
-              posts: posts
-            })
+            updatePosts(posts);
           });
-      this.props.toggleDomainFilter(filter)
+      toggleCategoryFilter(filter)
     }
   };
 
-  render() {
-    const {posts, location, activePost} = this.props;
     return (
         <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
           <div className="container__page--inner container__page--left">
             <h3 className="sidebar__header">Filters</h3>
-            {/*<Sidebar/>*/}
+            <Sidebar handleCategoryClick={handleCategoryClick}/>
             {/*{React.cloneElement(sidebar, {*/}
             {/*handleTabmenuClick: this.handleFilterClick.bind(this),*/}
             {/*active_tabmenu: this.state.active_tabmenu,*/}
@@ -61,17 +48,16 @@ class RedditPosts extends Component{
 
             <PostSelection posts={posts}
                            activePostPermalink={activePost}
-                           handlePostClick={this.handlePostClick()}/>
+                           handlePostClick={handlePostClick()}/>
 
           </div>
         </div>
     )
-  }
 };
 
 const mapStateToProps = (state) =>{
-  const {posts, activePost} = state.redditPosts;
-  return {posts, activePost};
+  const {posts, activePost, activeCategoryFilter} = state.redditPosts;
+  return {posts, activePost, activeCategoryFilter};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -84,6 +70,9 @@ const mapDispatchToProps = (dispatch) => {
     }),
     toggleDomainFilter: (activeDomainFilter) => dispatch({
       type: 'TOGGLE_DOMAIN_FILTER', activeDomainFilter
+    }),
+    toggleCategoryFilter: (activeCategoryFilter) => dispatch({
+      type: 'TOGGLE_DOMAIN_FILTER', activeCategoryFilter
     })
   }
 };

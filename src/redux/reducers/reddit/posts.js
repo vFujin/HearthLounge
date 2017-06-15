@@ -12,6 +12,10 @@ export default function(state=initialState, action){
       ...state,
       activePost: action.activePost
     };
+    case 'UPDATE_POST_COMMENTS': return {
+        ...state,
+      postComments: action.postComments
+    };
     case 'TOGGLE_DOMAIN_FILTER': return {
       ...state,
       activeDomainFilter: action.activeDomainFilter

@@ -1,8 +1,24 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import 'whatwg-fetch';
 import RedditPosts from './posts/posts';
-const Reddit = ({children}) => {
+class Reddit extends Component{
+
+  componentDidMount() {
+    let query = this.props.location.query.category || "hot";
+    fetch(`https://www.reddit.com/r/hearthstone/${query}.json`)
+        .then(res => res.json())
+        .then(res=>{
+          const posts = res.data.children.map(obj => obj.data);
+          this.props.updatePosts(posts);
+          console.log(posts)
+        });
+  }
+
+  render(){
+    return React.cloneElement(this.props.children, {posts: this.props.posts});
+  }
   // constructor(props){
   //   super(props);
   //
@@ -40,16 +56,23 @@ const Reddit = ({children}) => {
   //     });
   //   }
   // };
-  return children;
+}
+
+const mapStateToProps = (state) =>{
+  const {posts} = state.redditPosts;
+  return {posts};
 };
 
-export default Reddit;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updatePosts: (posts) => dispatch({
+      type: 'UPDATE_POSTS', posts
+    })
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Reddit);
 
 Reddit.propTypes = {
-  posts: PropTypes.array,
-  post_permalink: PropTypes.string,
-  active_post: PropTypes.string,
-  handleReditPostClick: PropTypes.func,
-  active_tabmenu: PropTypes.string,
-  handleTabmenuClick: PropTypes.func
+  posts: PropTypes.array
 };

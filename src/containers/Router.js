@@ -36,11 +36,7 @@ import Iframe from './pages/streams/iframe';
 
 import Reddit from './pages/reddit/reddit';
 import RedditPost from './pages/reddit/post/post';
-import {RedditPostSidebar} from './pages/reddit/post/sidebar';
-import {RedditPostTopbar} from './pages/reddit/post/topbar';
 import RedditPosts from './pages/reddit/posts/posts';
-// import {RedditPostsSidebar} from './pages/reddit/posts/left-container/sidebar';
-// import RedditPostsTopbar from './pages/reddit/posts/right-container/topbar';
 
 import Entry from './pages/entry/entry';
 import SignUp from './pages/entry/sign-up';
@@ -115,7 +111,7 @@ const App = ({store}) =>{
         <Redirect from="reddit" to="reddit/posts" />
         <Route path="reddit"              component={Reddit}>
           <Route path="posts"             component={RedditPosts} />
-          {/*<Route path="post/:id/:post"    components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />*/}
+          <Route path="post/:id/:post"    component={RedditPost} />
           {/*<Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />*/}
         </Route>
 
