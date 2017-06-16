@@ -21,7 +21,7 @@ const PostSelection = ({location, posts, handlePostClick}) => {
             {posts.map(post => (
                 <tr id={post.id} className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} ${checkTopbarIconFilters(location, post)}`}
                     key={post.id}
-                    onClick={(e)=>handlePostClick(e, post)}>
+                    onClick={handlePostClick}>
                   {/*{convertUnixTimestamp(post.created)}*/}
                   <td className="upvotes"><Link to={checkDomain(post)}><span>{post.ups}</span></Link></td>
                   <td className="domain"><Link to={checkDomain(post)}>{Icon(post)}</Link></td>

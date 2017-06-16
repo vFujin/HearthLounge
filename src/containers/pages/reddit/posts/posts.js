@@ -11,6 +11,7 @@ const RedditPosts = ({posts, location, activePost, updatePosts, updateActivePost
 
   const handlePostClick = (activePost) =>{
     updateActivePost(activePost);
+    
   };
 
   const handleCategoryClick = (e) => {
