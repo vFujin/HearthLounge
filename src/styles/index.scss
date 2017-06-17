@@ -55,6 +55,7 @@ nav {
     height:100%;
     .nav__list--item {
       width: 10%;
+      position: relative;
       @include transition(all ease .4s);
       color: $primary-font-color;
       text-transform: uppercase;
@@ -99,18 +100,21 @@ nav {
         height: 100%;
         align-items: center;
         justify-content: center;
-         .nav__list--link{
-          > div{
-            margin-top: 1vh;
-            font-size: 0.6vw;
-          }
-        }
-        span {
-          font-size: 2.1vw;
-        }
-        .submenu__icon{
-          font-size: 1.5vw;
-        }
+         .nav__list--link {
+           > div {
+             margin-top: 1vh;
+             font-size: 0.6vw;
+           }
+           span {
+             font-size: 2.1vw;
+           }
+           .submenu {
+             left: 0;
+             .submenu__icon {
+               font-size: 1.5vw;
+             }
+           }
+         }
       }
       .active {
         @include transition(all ease .4s);
@@ -134,8 +138,6 @@ nav {
 footer{
   background-color: $dark-grey;
 }
-
-
 
 .table-scroll {
   overflow: auto;
@@ -796,7 +798,6 @@ footer{
   justify-content:center;
   align-content: center;
 }
-
 
 /*
   Pages

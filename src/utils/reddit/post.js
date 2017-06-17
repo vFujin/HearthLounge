@@ -28,11 +28,11 @@ export const filterPosts = (props) => {
       case 'self.hearthstone':
         return <div key={index} className="section-body" dangerouslySetInnerHTML={createMarkup(obj)}/>;
       case 'youtube.com':
-        return this.iframe(replacedYTUrl, index);
+        return iframe(replacedYTUrl, index);
       case 'youtu.be':
-        return this.iframe(replacedYTShortenerUrl, index);
+        return iframe(replacedYTShortenerUrl, index);
       case 'clips.twitch.tv':
-        return this.iframe(`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`, index);
+        return iframe(`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`, index);
       default:
         window.open(url);
         break;

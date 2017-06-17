@@ -2547,6 +2547,7 @@ nav {
     height: 100%; }
     nav .nav__list .nav__list--item {
       width: 10%;
+      position: relative;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
       -ms-transition: all ease 0.4s;
@@ -2588,10 +2589,12 @@ nav {
         nav .nav__list .nav__list--item .nav__list--linkContainer .nav__list--link > div {
           margin-top: 1vh;
           font-size: 0.6vw; }
-        nav .nav__list .nav__list--item .nav__list--linkContainer span {
+        nav .nav__list .nav__list--item .nav__list--linkContainer .nav__list--link span {
           font-size: 2.1vw; }
-        nav .nav__list .nav__list--item .nav__list--linkContainer .submenu__icon {
-          font-size: 1.5vw; }
+        nav .nav__list .nav__list--item .nav__list--linkContainer .nav__list--link .submenu {
+          left: 0; }
+          nav .nav__list .nav__list--item .nav__list--linkContainer .nav__list--link .submenu .submenu__icon {
+            font-size: 1.5vw; }
       nav .nav__list .nav__list--item .active {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;

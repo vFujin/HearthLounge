@@ -56,12 +56,12 @@ export const navItems = [
     icon: "icon-card",
     homepage_block_width: 1
   },
-  {
-    name: "Arena Picker",
-    url: "arena-picker",
-    icon: "icon-arena-picker",
-    homepage_block_width: 1
-  },
+  // {
+  //   name: "Arena Picker",
+  //   url: "arena-picker",
+  //   icon: "icon-arena-picker",
+  //   homepage_block_width: 1
+  // },
   {
     name: "expansions",
     url: 'expansions',
@@ -120,24 +120,24 @@ export const navItems = [
     icon: "icon-create-deck",
     homepage_block_width: 1
   },
-  {
-    name: "forum",
-    url: 'forum',
-    icon: "icon-bubbles2",
-    homepage_block_width: 1
-  },
+  // {
+  //   name: "forum",
+  //   url: 'forum',
+  //   icon: "icon-bubbles2",
+  //   homepage_block_width: 1
+  // },
   {
     name: "Tournaments",
     url: 'tournaments',
     icon: "icon-trophy",
     homepage_block_width: 1
   },
-  {
-    name: "Streamers",
-    url: 'twitch',
-    icon: "icon-twitch",
-    homepage_block_width: 2
-  },
+  // {
+  //   name: "Streamers",
+  //   url: 'twitch',
+  //   icon: "icon-twitch",
+  //   homepage_block_width: 2
+  // },
   {
     name: "Reddit",
     url: 'reddit',

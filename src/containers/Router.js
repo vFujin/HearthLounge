@@ -5,16 +5,16 @@ import { Router, Route, browserHistory, IndexRoute, Redirect} from 'react-router
 import Home from './pages/home/home';
 
 import Cards from './pages/cards/cards';
-import {Forum} from './pages/forum/forum';
+// import {Forum} from './pages/forum/forum';
 import {Tournaments} from './pages/tournaments/tournaments';
 
 
 import DeckSelection from "./pages/decks/deck-selection/deck-selection";
 import Deck from './pages/decks/deck/deck';
 
-import {ArenaPicker} from './pages/arena-picker/arena-picker';
-import {ArenaPickerClassSelection} from './pages/arena-picker/class-selection';
-import {ArenaPickerClassSelected} from './pages/arena-picker/class-selected';
+// import {ArenaPicker} from './pages/arena-picker/arena-picker';
+// import {ArenaPickerClassSelection} from './pages/arena-picker/class-selection';
+// import {ArenaPickerClassSelected} from './pages/arena-picker/class-selected';
 
 import Expansions from './pages/expansions/expansions';
 import {Expansion} from './pages/expansions/right-container/expansion';
@@ -30,8 +30,8 @@ import CreateDeck from './pages/create-deck/create-deck';
 import CreateDeckClassSelection from './pages/create-deck/before-class-selection/class-selection';
 import CreateDeckClassSelected from './pages/create-deck/after-class-selection/create-deck';
 
-import {Streams} from './pages/streams/streams';
-import Iframe from './pages/streams/iframe';
+// import {Streams} from './pages/streams/streams';
+// import Iframe from './pages/streams/iframe';
 
 
 import Reddit from './pages/reddit/reddit';
@@ -68,11 +68,11 @@ const App = ({store}) =>{
 
         <Route path="cards"             component={Cards} />
 
-        <Redirect from="arena-picker" to="arena-picker/class-selection" />
-        <Route path="arena-picker"      component={ArenaPicker}>
-          <Route path="class-selection" component={ArenaPickerClassSelection} />
-          <Route path=":class"          component={ArenaPickerClassSelected} />
-        </Route>
+        {/*<Redirect from="arena-picker" to="arena-picker/class-selection" />*/}
+        {/*<Route path="arena-picker"      component={ArenaPicker}>*/}
+          {/*<Route path="class-selection" component={ArenaPickerClassSelection} />*/}
+          {/*<Route path=":class"          component={ArenaPickerClassSelected} />*/}
+        {/*</Route>*/}
 
         <Redirect from="expansion" to="expansions"/>
         <Route path="expansions"        component={Expansions}>
@@ -100,19 +100,19 @@ const App = ({store}) =>{
 
         </Route>
 
-        <Route path="forum"             component={Forum} />
+        {/*<Route path="forum"             component={Forum} />*/}
         <Route path="tournaments"       component={Tournaments} />
 
-        <Redirect from="twitch" to="twitch/all" />
-        <Route path="twitch"         component={Streams}>
-          <Route path=":channel"     component={Iframe}/>
-        </Route>
+        {/*<Redirect from="twitch" to="twitch/all" />*/}
+        {/*<Route path="twitch"         component={Streams}>*/}
+          {/*<Route path=":channel"     component={Iframe}/>*/}
+        {/*</Route>*/}
 
         <Redirect from="reddit" to="reddit/posts" />
         <Route path="reddit"              component={Reddit}>
           <Route path="posts"             component={RedditPosts} />
           <Route path="post/:id/:post"    component={RedditPost} />
-          {/*<Route path="post/:id"          components={{main: RedditPost,  sidebar: RedditPostSidebar,  topbar: RedditPostTopbar}} />*/}
+          <Route path="post/:id"          components={RedditPost} />
         </Route>
 
         <Route path="entry"      component={Entry}>
