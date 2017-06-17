@@ -26,7 +26,7 @@ export const filterPosts = (props) => {
 
     switch (obj.domain) {
       case 'self.hearthstone':
-        return <div key={index} className="section-body" dangerouslySetInnerHTML={this.createMarkup(obj)}/>;
+        return <div key={index} className="section-body" dangerouslySetInnerHTML={createMarkup(obj)}/>;
       case 'youtube.com':
         return this.iframe(replacedYTUrl, index);
       case 'youtu.be':

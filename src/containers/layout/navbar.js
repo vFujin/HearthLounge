@@ -40,17 +40,21 @@ const Navbar = ({handleLogout, user}) => {
         </li>
         {navItems.map((element, index) =>
             <li key={index} className={`nav__list--item ${element.url}`}>
-              <Link className="nav__list--link" to={'/' + element.url} activeClassName="active">
-                <span className={`hs-icon ${element.icon}`}></span>
-                <div>{element.name}</div>
-                {dropdown(element, index)}
+              <Link className="nav__list--linkContainer" to={'/' + element.url} activeClassName="active">
+                <div className="nav__list--link">
+                  <span className={`hs-icon ${element.icon}`}></span>
+                  <div>{element.name}</div>
+                  {dropdown(element, index)}
+                </div>
               </Link>
             </li>
         )}
         <li className="nav__list--item login">
-          <Link className="nav__list--link" to={user ? '/dashboard' : '/sign-in'}>
-            <span className="hs-icon icon-login"></span>
-            <div onClick={(e) => handleLogout(e)}>{user ? user.username : "Sign In"}</div>
+          <Link className="nav__list--linkContainer" to={user ? '/dashboard' : '/sign-in'}>
+            <div className="nav__list--link">
+              <span className="hs-icon icon-login"></span>
+              <div onClick={(e) => handleLogout(e)}>{user ? user.username : "Sign In"}</div>
+            </div>
           </Link>
         </li>
       </ul>

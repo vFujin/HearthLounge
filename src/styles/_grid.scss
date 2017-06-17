@@ -4,29 +4,6 @@
   display: grid;
   grid-template-rows: 10vh 83vh 5vh;
   grid-row-gap: 1vh;
-  nav {
-    .nav__list {
-      display: grid;
-      grid-template-columns: auto repeat(14, 6vw);
-      height: 100%;
-      align-items: center;
-      .nav__list--item {
-        height: 100%;
-        &:first-child {
-          grid-column-start: 1;
-          grid-column-end: 4;
-        }
-        .nav__list--link {
-          display: grid;
-          width: 100%;
-          height: 100%;
-          text-align: center;
-          align-items: center;
-          align-content: center;
-        }
-      }
-    }
-  }
 
   .container__index {
     .home__list {
