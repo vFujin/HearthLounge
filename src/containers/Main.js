@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Navbar from './layout/navbar';
-import {Footer} from './layout/footer';
+import Footer from './layout/footer';
 import {getCurrentUserInfo, logout} from '../server/auth';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';

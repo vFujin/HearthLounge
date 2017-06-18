@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-export class Footer extends Component {
-  render() {
+import React from 'react';
+const Footer = () =>{
+
     return (
-        <footer><p style={{'font-size': '8px', color: 'white'}}>pre-alpha 0.1.0</p>copyright yada yada</footer>
+        <footer><p style={{'fontSize': '8px', color: 'white'}}>pre-alpha 0.1.0</p>copyright yada yada</footer>
     );
-  }
-}
+};
+
+export default Footer;

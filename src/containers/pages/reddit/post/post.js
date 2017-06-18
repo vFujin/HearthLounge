@@ -16,6 +16,14 @@ class RedditPost extends Component{
         });
   }
 
+  mapComments = () => {
+    if (this.props.postComments) {
+      return this.props.postComments.map(comment =>
+          <div key={comment.id}>{comment.body}</div>
+      )
+    }
+  };
+
 
   render() {
     return (
@@ -26,18 +34,35 @@ class RedditPost extends Component{
           </div>
           <div className="container__page--inner container__page--right">
             <Topbar />
-            <div className="choosen-deck-view">
-              <div className="choosen-deck-details">
-                <div className="section description">
-                  <div className="section-header"><h1>
-                    <span>{this.props.posts.filter(x => x.id === this.props.params.id).map(x => x.title)[0]}</span></h1></div>
+            <div className="content">
+              <div className="container__details">
+                <div className="container__details--section container__details--description">
+                  <div className="section__header">
+                    <div className="line"></div>
+                    <h1>{this.props.posts.filter(x => x.id === this.props.params.id).map(x => x.title)[0]}</h1>
+                  </div>
+                  <div className="section__body">
+                    <div className="section__body--background">
                   {filterPosts(this.props)}
+                    </div>
+                  </div>
+                </div>
+                <div className="container__details--section container__details--comments">
+                  <div className="section__header">
+                    <div className="line"></div>
+                    <h1>{this.props.posts.filter(x=>x.id === this.props.params.id).map(x=>x.num_comments)[0]} comments</h1>
+                  </div>
+                  <div className="section__body">
+                    <div className="comments">
+                      {/*{this.props.postComments}*/}
+                      {this.mapComments()}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
     )
   }
 };
