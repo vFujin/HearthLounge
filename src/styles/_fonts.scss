@@ -25,6 +25,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.icon-paypal:before {
+  content: "\ead8";
+}
+.icon-discord:before {
+  content: "\e93d";
+}
 .icon-circle-down:before {
   content: "\ea43";
 }
