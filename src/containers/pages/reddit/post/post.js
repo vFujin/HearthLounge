@@ -5,6 +5,7 @@ import 'whatwg-fetch';
 import {Sidebar} from './sidebar';
 import {Topbar} from './topbar';
 import {filterPosts} from '../../../../utils/reddit/post'
+import _ from 'lodash';
 class RedditPost extends Component{
 
   componentDidMount(){
@@ -16,14 +17,38 @@ class RedditPost extends Component{
         });
   }
 
-  mapComments = () => {
-    if (this.props.postComments) {
-      return this.props.postComments.map(comment =>
-          <div key={comment.id}>{comment.body}</div>
-      )
+  hasReplies = (comment) =>{
+    if(comment && comment.hasOwnProperty('replies') && comment.replies !== ""){
+      <div className="comment">
+        <div className="author"></div>
+        <div className="details">
+          <div className="header"></div>
+          {console.log(comment.replies.data.children.map((o, i)=>o)[0].data.body)}
+          {/*<div className="body">{comment.replies.data.children[1].map(c=>c.body)}</div>*/}
+          <div className="footer"></div>
+        </div>
+      </div>
+      // console.log(comment.replies.data.children.map(c=>c))
     }
   };
 
+  mapComments = () => {
+    if (this.props.postComments) {
+      return this.props.postComments.map(comment =>
+          <div className="comment" key={comment.id}>
+            <div className="author"></div>
+            <div className="details">
+              <div className="header"></div>
+              <div className="body"> {comment.body}
+                {/*{console.log(comment)}*/}
+                {this.hasReplies(comment)}
+              </div>
+              <div className="footer"></div>
+            </div>
+           </div>
+      )
+    }
+  };
 
   render() {
     return (
