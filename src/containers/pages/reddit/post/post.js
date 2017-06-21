@@ -17,18 +17,24 @@ class RedditPost extends Component{
         });
   }
 
+  getReplies = (comment, repliesLength) => {
+    for(let i = 0; i < repliesLength; i++){
+      <div className="body">{comment.replies.data.children.map(c=>c)[i].data.body}</div>
+    }
+  };
+
   hasReplies = (comment) =>{
     if(comment && comment.hasOwnProperty('replies') && comment.replies !== ""){
-      <div className="comment">
+      let repliesLength = comment.replies.data.children.map(o=>o).length;
+
+      return (<div className="comment">
         <div className="author"></div>
         <div className="details">
           <div className="header"></div>
-          {console.log(comment.replies.data.children.map((o, i)=>o)[0].data.body)}
-          {/*<div className="body">{comment.replies.data.children[1].map(c=>c.body)}</div>*/}
+          {this.getReplies(comment, repliesLength)}
           <div className="footer"></div>
         </div>
-      </div>
-      // console.log(comment.replies.data.children.map(c=>c))
+      </div>)
     }
   };
 
