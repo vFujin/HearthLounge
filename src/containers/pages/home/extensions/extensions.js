@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 const ExtensionsBlock = () => {
   return (
-      <li className={'home__block expansions block-width-2'}>
+      <div >
         <Link to={'/expansions'}>
           <div className="header">Extensions</div>
         </Link>
@@ -15,7 +15,7 @@ const ExtensionsBlock = () => {
             </li>
           </ul>
         </div>
-      </li>
+      </div>
   );
 };
 

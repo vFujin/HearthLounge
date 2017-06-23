@@ -808,20 +808,25 @@ footer{
       color: black;
       height: 100%;
       background-color: $light-grey;
-      a{
-        .header{
+        .home__block--header{
           background-color: $dark-grey;
           color: $pearl;
           font-size: 16px;
-          padding: 15.5px 10px ;
+          padding: 15.5px 10px;
           text-transform: uppercase;
-        }
-      }
-      .image-container{
-        img{
-          max-width:100%;
-          max-height:100%;
-          display:block;
+          a {
+            display: flex;
+            align-items:center;
+            p{
+              margin-left: 10px;
+            }
+          }
+        .image-container {
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+          }
         }
       }
     }

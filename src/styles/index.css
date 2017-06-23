@@ -343,7 +343,7 @@ a:active, a:hover, a:link, a:visited {
       grid-column-end: 4; }
     #container .container__index .home__list .home__block.arena-picker {
       grid-column-start: 4; }
-    #container .container__index .home__list .home__block.expansions, #container .container__index .home__list .home__block.streams {
+    #container .container__index .home__list .home__block.expansions, #container .container__index .home__list .home__block.twitch {
       grid-column-start: 2;
       grid-column-end: 4; }
   #container .container__page {
@@ -3217,16 +3217,21 @@ footer {
   color: black;
   height: 100%;
   background-color: #A69E9D; }
-  .home ul.home__list li.home__block a .header {
+  .home ul.home__list li.home__block .home__block--header {
     background-color: #474143;
     color: #E7E2DA;
     font-size: 16px;
     padding: 15.5px 10px;
     text-transform: uppercase; }
-  .home ul.home__list li.home__block .image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block; }
+    .home ul.home__list li.home__block .home__block--header a {
+      display: flex;
+      align-items: center; }
+      .home ul.home__list li.home__block .home__block--header a p {
+        margin-left: 10px; }
+    .home ul.home__list li.home__block .home__block--header .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block; }
 .home ul.home__list .decks {
   display: flex; }
   .home ul.home__list .decks .left-container {

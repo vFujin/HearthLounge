@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import PostSnippet from './post-snippet/post'
 const ForumBlock = () => {
   return (
-      <li className={'home__block forum block-width-1'}>
+      <div>
         <Link to={'/forum'}>
           <div className="header">Recent Discussion</div>
         </Link>
@@ -12,7 +12,7 @@ const ForumBlock = () => {
         <PostSnippet/>
         <PostSnippet/>
         <PostSnippet/>
-      </li>
+      </div>
   );
 };
 

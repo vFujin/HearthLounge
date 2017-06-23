@@ -5,8 +5,7 @@ import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
 import SearchDecks from './filters/search-decks';
 const DecksBlock = () => {
   return (
-      <li className={'home__block decks block-width-3'}>
-
+      <div>
         <div className="left-container">
           <div className="sidebar">
             <SearchDecks/>
@@ -31,7 +30,7 @@ const DecksBlock = () => {
             </div>
           </div>
         </div>
-      </li>
+      </div>
   );
 };
 

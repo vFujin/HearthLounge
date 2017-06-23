@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const TournamentsBlock = () => {
   let calendar = "https://www.google.com/calendar/embed?src=kvaverirkumds90dnen1jlmmq0dcvgom%40import.calendar.google.com&ctz=America/New_York";
   return (
-      <li className={'home__block tournaments block-width-1'}>
+      <div>
         <Link to={'/tournaments'}>
           <div className="header">Tournaments</div>
         </Link>
@@ -15,7 +15,7 @@ const TournamentsBlock = () => {
             height="82%"
             frameBorder="0"
             scrolling="no"></iframe>
-      </li>
+      </div>
   );
 };
 
