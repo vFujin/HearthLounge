@@ -3,7 +3,9 @@ import { Link } from 'react-router'
 const CreateDeckBlock = () => {
   return (
       <Link to={'/create-deck'}>
-        <span className="hs-icon icon-create-deck"></span>
+        <div className="icon-wrapper">
+          <span className="hs-icon icon-create-deck"></span>
+        </div>
       </Link>
   );
 };

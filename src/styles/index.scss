@@ -803,17 +803,18 @@ footer{
   Pages
  */
 .home{
-  ul.home__list {
-    li.home__block {
+  .home__list {
+    .home__block {
       color: black;
       height: 100%;
       background-color: $light-grey;
         .home__block--header{
+          display: flex;
+          height: 5.5vh;
           background-color: $dark-grey;
           color: $pearl;
           font-size: 16px;
-          padding: 15.5px 10px;
-          text-transform: uppercase;
+          padding: 0 10px;
           a {
             display: flex;
             align-items:center;
@@ -821,69 +822,18 @@ footer{
               margin-left: 10px;
             }
           }
-        .image-container {
-          img {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-          }
+      }
+      .home__block--body{
+        height: calc(100% - 7.5vh);
+        > div {
+          height: 100%;
         }
       }
     }
 
     .decks{
-      display: flex;
-      .left-container{
-        padding-left: 10px;
-        background-color: $dark-grey;
-        width: 15%;
-        height: 100%;
-        .sidebar {
-          .search-decks{
-            padding-top:10px;
-            width: calc(100% - 10px);
-            h3{
-              padding: 5.5px;
-              text-transform: uppercase;
-              font-size: 16px;
-              font-weight: normal;
-              margin: 0 0 10px 0;
-            }
-            input{
-              @include transition(all ease .4s);
-              outline:0;
-              font-size: 15px;
-              background-color: rgba(231, 226, 218, .1);
-              padding: 5px;
-              height: 29px;
-              border-bottom: 1px solid $light-grey;
-              color: $pearl;
-
-              &:focus{
-                border-bottom:1px solid $pearl;
-              }
-            }
-          }
-          .mode-selection {
-            margin-top:10px ;
-            li {
-              color: $light-grey;
-              display: flex;
-              span {
-                font-size: 34px;
-              }
-              p {
-                text-transform: uppercase;
-                height: 40px;
-                line-height: 40px;
-                margin: 0 0 0 10px;
-              }
-            }
-          }
-        }
-      }
-      .right-container{
-        width: 85%;
+      > div {
+        display: flex;
         .class-filter {
           padding: 4px 0;
           background-color: $dark-grey;
@@ -893,7 +843,7 @@ footer{
               @include transition(all ease .4s);
               margin-right: 25px;
               display: inline-block;
-              padding:3px;
+              padding: 3px;
               cursor: pointer;
               span {
                 font-size: 34px;
@@ -904,17 +854,70 @@ footer{
             }
           }
         }
-        .hot-decks{
-          width: calc(100% - 20px);
-          padding: 10px;
-          .upper-row, .bottom-row{
-            width: 100%;
-            display: flex;
-          }
-          .bottom-row{
-            margin-top:10px;
-          }
 
+        .left-container {
+          padding-left: 10px;
+          background-color: $dark-grey;
+          width: 15%;
+          height: 100%;
+          .sidebar {
+            .search-decks {
+              padding-top: 10px;
+              width: calc(100% - 10px);
+              h3 {
+                padding: 5.5px;
+                text-transform: uppercase;
+                font-size: 16px;
+                font-weight: normal;
+                margin: 0 0 10px 0;
+              }
+              input {
+                @include transition(all ease .4s);
+                outline: 0;
+                font-size: 15px;
+                background-color: rgba(231, 226, 218, .1);
+                padding: 5px;
+                height: 29px;
+                border-bottom: 1px solid $light-grey;
+                color: $pearl;
+
+                &:focus {
+                  border-bottom: 1px solid $pearl;
+                }
+              }
+            }
+            .mode-selection {
+              margin-top: 10px;
+              li {
+                color: $light-grey;
+                display: flex;
+                span {
+                  font-size: 34px;
+                }
+                p {
+                  text-transform: uppercase;
+                  height: 40px;
+                  line-height: 40px;
+                  margin: 0 0 0 10px;
+                }
+              }
+            }
+          }
+        }
+        .right-container {
+          width: 85%;
+          .hot-decks {
+            width: calc(100% - 20px);
+            padding: 10px;
+            .upper-row, .bottom-row {
+              width: 100%;
+              display: flex;
+            }
+            .bottom-row {
+              margin-top: 10px;
+            }
+
+          }
         }
       }
     }
@@ -926,71 +929,76 @@ footer{
     .tournaments{}
 
     .expansions{
-      .slider{
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        padding: 10px;
-        height:100%;
-        ul{
-          height:100%;
-          li{
-            height:100%;
-            img{
-              width:100%;
-              height: calc(100% - 70px);
-            }
-          }
-        }
-        .slider-nav{
-          position: absolute;
-          top: calc(50% - 25px);
+      > div {
+        .slider {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          height: calc(100% - 20px);
+          padding: 10px;
           width: calc(100% - 20px);
-          display: flex;
-          font-size: 50px;
-          border: 0;
-          outline:none;
-          .prev, .next{
-            @include transition(all ease .4s);
-            position: absolute;
-            padding: 0 15px;
-            background-color: rgba(255,255,255,.4);
-            cursor: pointer;
-            &:hover{
-              background-color: $sea-color;
-              color: $pearl;
+          ul {
+            height: 100%;
+            li {
+              height:100%;
+              img {
+                height: 100%;
+                width: 100%;
+              }
             }
           }
-          .prev{
-            left: 0;
-          }
-          .next{
-            right: 0
-          }
-          .bullets{
+          .slider-nav {
             position: absolute;
-            background-color: rgba(255,255,255,.4);
-            left: calc(50% - 20px);
-            top: 140px;
+            top: calc(50% - 25px);
+            width: calc(100% - 20px);
+            display: flex;
+            font-size: 50px;
+            border: 0;
+            outline: none;
+            .prev, .next {
+              @include transition(all ease .4s);
+              position: absolute;
+              padding: 0 15px;
+              background-color: rgba(255, 255, 255, .4);
+              cursor: pointer;
+              &:hover {
+                background-color: $sea-color;
+                color: $pearl;
+              }
+            }
+            .prev {
+              left: 0;
+            }
+            .next {
+              right: 0
+            }
+            .bullets {
+              position: absolute;
+              background-color: rgba(255, 255, 255, .4);
+              left: calc(50% - 20px);
+              top: 140px;
+            }
           }
         }
       }
     }
 
-    .cards, .create-deck{
-      .icon{
-        @include transition(all ease .4s);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: calc(100% - 50px);
-        span{
-          font-size: 15vw ;
+    .card, .create-deck{
+      > div {
+        .icon-wrapper{
+          @include transition(all ease .4s);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          .hs-icon{
+            font-size: 12vw ;
+          }
         }
       }
       &:hover{
-        .icon{
+        .icon-wrapper{
           color: $pearl;
         }
       }
@@ -998,97 +1006,105 @@ footer{
 
     .create-deck{}
 
-    .streams {
-      .streams-body {
-        display: flex;
-        height: calc(100% - 50px);
-        .live-broadcasters {
-          width: 20% ;
-          background-color: $dark-grey;
-          li{
-            margin: 11px;
-            cursor: pointer;
-            &:first-child{
-              margin-top:0;
+    .twitch {
+      .home__block--body{
+        height: calc(100% - 5.5vh);
+        > div {
+          .streams-body {
+            display: flex;
+            height: 100%;
+            .live-broadcasters {
+              width: 20%;
+              background-color: $dark-grey;
+              li {
+                margin: 11px;
+                cursor: pointer;
+                &:first-child {
+                  margin-top: 0;
+                }
+                a {
+                  @include transition(all ease .4s);
+                  display: flex;
+                  font-size: .8vw;
+                  width: calc(100% - 20px);
+                  height: 100%;
+                  padding: 10px;
+                  justify-content: space-between;
+                  background: transparent;
+                  border: 1px solid $light-grey;
+                  color: $light-grey;
+                  &.active {
+                    border: 1px solid $pearl;
+                    color: $pearl;
+                    background-color: rgba(255, 255, 255, .2);
+                  }
+                  &:hover {
+                    border: 1px solid $pearl;
+                    color: $pearl;
+                  }
+                  .name {
+                    flex-grow: 8;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    margin-right: 10px;
+                  }
+                  .viewers {
+                    flex-grow: 2;
+                    text-align: center;
+                  }
+                }
+              }
             }
-            a{
-              @include transition(all ease .4s);
-              display: flex;
-              font-size: .8vw;
-              width: calc(100% - 20px);
-              height: 100%;
+            .iframe-container {
+              width: calc(80% - 20px);
               padding: 10px;
-              justify-content: space-between;
-              background: transparent;
-              border:1px solid $light-grey;
-              color: $light-grey;
-              &.active{
-                border: 1px solid $pearl;
-                color: $pearl;
-                background-color: rgba(255,255,255,.2);
-              }
-              &:hover{
-                border: 1px solid $pearl;
-                color: $pearl;
-              }
-              .name{
-                flex-grow: 8;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                margin-right: 10px;
-              }
-              .viewers{
-                flex-grow: 2;
-                text-align: center;
+              iframe {
+                border: none;
               }
             }
-          }
-        }
-        .iframe-container {
-          width: calc(80% - 20px);
-          padding: 10px;
-          iframe{
-            border:none;
           }
         }
       }
+
     }
 
-    .forum{
-      .post{
-        background-color: $pearl;
-        margin: 12.45px 10px;
-        padding: 11px 10px;
-        color: $dark-grey;
-        display: flex;
-        cursor: pointer;
-        .about {
-          width: 80%;
-          .topic {
-            font-weight: bold;
-            font-size: 16px;
+    .reddit{
+      > div {
+        .post {
+          background-color: $pearl;
+          margin: 12.45px 10px;
+          padding: 11px 10px;
+          color: $dark-grey;
+          display: flex;
+          cursor: pointer;
+          .about {
+            width: 80%;
+            .topic {
+              font-weight: bold;
+              font-size: 16px;
+            }
+            .details {
+              display: flex;
+              .author, .created {
+                font-size: 12px;
+              }
+            }
           }
-          .details {
-            display: flex;
-            .author, .created {
+          .answers {
+            width: 20%;
+            .answer-count {
+              text-align: center;
+              font-weight: bold;
+              span {
+                padding: 0 5px;
+                background-color: $dark-grey;
+                color: $pearl;
+              }
+            }
+            .answer-label {
               font-size: 12px;
+              text-align: center;
             }
-          }
-        }
-        .answers{
-          width: 20%;
-          .answer-count{
-            text-align: center;
-            font-weight: bold;
-            span{
-              padding: 0 5px;
-              background-color: $dark-grey;
-              color: $pearl;
-            }
-          }
-          .answer-label{
-            font-size: 12px;
-            text-align: center;
           }
         }
       }

@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router'
 const CardsBlock = () => {
   return (
-        <Link to={'/cards'} >
-          <div className="header">Cards</div>
-          <div className="icon">
+      <div>
+        <Link to={'/cards'}>
+          <div className="icon-wrapper">
             <span className="hs-icon icon-card"></span>
           </div>
         </Link>
+      </div>
   );
 };
 

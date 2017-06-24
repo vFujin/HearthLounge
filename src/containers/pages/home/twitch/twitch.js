@@ -49,10 +49,7 @@ export class TwitchBlock extends Component {
 
   render() {
     return (
-        <li className={'home__block streams block-width-2'}>
-          <Link to={'/twitch'}>
-            <div className="header">Current Top HS Broadcasters</div>
-          </Link>
+        <div>
           <div className="streams-body">
             <div className="live-broadcasters">
               <TopLiveStreamersList streams={this.state.streams}
@@ -63,7 +60,7 @@ export class TwitchBlock extends Component {
               <TwitchIframe streams={this.state.streams} streamer={this.state.streamer}/>
             </div>
           </div>
-        </li>
+        </div>
     );
   }
 }

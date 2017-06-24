@@ -12,9 +12,7 @@ const Home = () => {
   return (
       <div className="container__index home">
         <ul className="home__list">
-          {/*<HomeBlock blockTitle="decks" blockWidth={3}>*/}
-            {/*<DecksBlock />*/}
-          {/*</HomeBlock>*/}
+            <DecksBlock />
           <HomeBlock icon="arena-picker">
             <ArenaPickerBlock/>
           </HomeBlock>
@@ -24,7 +22,8 @@ const Home = () => {
           <HomeBlock icon="expansions" blockWidth={2}>
             <ExtensionsBlock />
           </HomeBlock>
-          <HomeBlock icon="cards">
+
+          <HomeBlock icon="card" title="cards">
            <CardsBlock />
           </HomeBlock>
           <HomeBlock icon="create-deck">
@@ -33,9 +32,9 @@ const Home = () => {
           <HomeBlock icon="twitch" blockWidth={2} title="top HS broadcasters" >
             <TwitchBlock />
           </HomeBlock>
-          <HomeBlock icon="bubbles2" title="forum" >
-            <ForumBlock />
-          </HomeBlock>
+          {/*<HomeBlock icon="bubbles2" title="forum" >*/}
+            {/*<ForumBlock />*/}
+          {/*</HomeBlock>*/}
           <HomeBlock icon="reddit">
             <ForumBlock />
           </HomeBlock>
