@@ -6,6 +6,9 @@ import {Sidebar} from './sidebar';
 import {Topbar} from './topbar';
 import {filterPosts} from '../../../../utils/reddit/post'
 import _ from 'lodash';
+import TreeView from 'react-treeview';
+import 'react-treeview/react-treeview.css';
+
 class RedditPost extends Component{
 
   componentDidMount(){
@@ -17,43 +20,31 @@ class RedditPost extends Component{
         });
   }
 
-  getReplies = (comment, repliesLength) => {
-    for(let i = 0; i < repliesLength; i++){
-      <div className="body">{comment.replies.data.children.map(c=>c)[i].data.body}</div>
-    }
-  };
-
-  hasReplies = (comment) =>{
-    if(comment && comment.hasOwnProperty('replies') && comment.replies !== ""){
-      let repliesLength = comment.replies.data.children.map(o=>o).length;
-
-      return (<div className="comment">
-        <div className="author"></div>
-        <div className="details">
-          <div className="header"></div>
-          {this.getReplies(comment, repliesLength)}
-          <div className="footer"></div>
-        </div>
-      </div>)
-    }
-  };
-
-  mapComments = () => {
-    if (this.props.postComments) {
-      return this.props.postComments.map(comment =>
-          <div className="comment" key={comment.id}>
+  renderComment = (comment) => {
+    return (
+        <TreeView
+            key={comment.id}
+            nodeLabel={comment.id}
+            collapsed={false}>
+          <div className="comment">
             <div className="author"></div>
             <div className="details">
               <div className="header"></div>
               <div className="body"> {comment.body}
-                {/*{console.log(comment)}*/}
-                {this.hasReplies(comment)}
+                {this.renderReplies(comment)}
               </div>
               <div className="footer"></div>
             </div>
-           </div>
-      )
-    }
+          </div>
+        </TreeView>
+    )
+  };
+
+
+  renderReplies = (c) =>{
+    return c.replies
+      ? c.replies.data.children.map(c => this.renderComment(c.data))
+      : [];
   };
 
   render() {
@@ -85,8 +76,8 @@ class RedditPost extends Component{
                   </div>
                   <div className="section__body">
                     <div className="comments">
-                      {/*{this.props.postComments}*/}
-                      {this.mapComments()}
+                      {this.props.postComments ? this.props.postComments.map(c => this.renderComment(c)) : null}
+                      {/*{this.mapComments()}*/}
                     </div>
                   </div>
                 </div>

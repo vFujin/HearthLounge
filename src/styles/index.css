@@ -334,7 +334,7 @@ a:active, a:hover, a:link, a:visited {
   #container .container__index .home__list {
     display: grid;
     grid-template-columns: repeat(4, 24.2vw);
-    grid-template-rows: 42.5vh 39.5vh 42.5vh;
+    grid-template-rows: 42.5vh 29.5vh;
     grid-column-gap: 1vh;
     grid-row-gap: 1vh;
     margin: 0 1vh; }
@@ -3230,7 +3230,7 @@ footer {
       .home .home__list .home__block .home__block--header a p {
         margin-left: 10px; }
   .home .home__list .home__block .home__block--body {
-    height: calc(100% - 7.5vh); }
+    height: calc(100% - 7vh); }
     .home .home__list .home__block .home__block--body > div {
       height: 100%; }
 .home .home__list .decks > div {
