@@ -8,7 +8,7 @@ import {filterPosts} from '../../../../utils/reddit/post'
 import _ from 'lodash';
 import TreeView from 'react-treeview';
 import 'react-treeview/react-treeview.css';
-
+import CommentHeader from './comment/header';
 class RedditPost extends Component{
 
   componentDidMount(){
@@ -20,20 +20,22 @@ class RedditPost extends Component{
         });
   }
 
+  isOfficialDev = (comment) =>{
+    return comment.author_flair_css_class === "blizzard" ? "blizzard" : null
+  };
+
   renderComment = (comment) => {
     return (
         <TreeView
             key={comment.id}
-            nodeLabel={comment.id}
+            nodeLabel={<CommentHeader comment={comment} isOfficialDev={this.isOfficialDev(comment)}/>}
+            itemClassName={this.isOfficialDev(comment)}
             collapsed={false}>
           <div className="comment">
-            <div className="author"></div>
             <div className="details">
-              <div className="header"></div>
-              <div className="body"> {comment.body}
+              <div className="body"> <p>{comment.body}</p>
                 {this.renderReplies(comment)}
               </div>
-              <div className="footer"></div>
             </div>
           </div>
         </TreeView>
@@ -42,6 +44,7 @@ class RedditPost extends Component{
 
 
   renderReplies = (c) =>{
+    console.log(c);
     return c.replies
       ? c.replies.data.children.map(c => this.renderComment(c.data))
       : [];
