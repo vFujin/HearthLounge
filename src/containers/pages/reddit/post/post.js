@@ -4,11 +4,12 @@ import {connect} from 'react-redux';
 import 'whatwg-fetch';
 import {Sidebar} from './sidebar';
 import {Topbar} from './topbar';
-import {filterPosts} from '../../../../utils/reddit/post'
+import {createMarkup, filterPosts} from '../../../../utils/reddit/post'
 import _ from 'lodash';
 import TreeView from 'react-treeview';
 import 'react-treeview/react-treeview.css';
 import CommentHeader from './comment/header';
+
 class RedditPost extends Component{
 
   componentDidMount(){
@@ -33,12 +34,11 @@ class RedditPost extends Component{
         <TreeView
             key={comment.id}
             nodeLabel={<CommentHeader comment={comment} isOfficialDev={this.isOfficialDev(comment)}/>}
-            itemClassName={this.isOfficialDev(comment)}
-            className={this.isOfficialDev(comment)}
+            treeViewClassName={this.isOfficialDev(comment)}
             collapsed={false}>
           <div className="comment">
             <div className="details">
-              <div className="body"> <p>{comment.body_html}</p>
+              <div className="body"> <p className={this.isOfficialDev(comment) === "blizzard" ? "blizzard_post" : ''} dangerouslySetInnerHTML={createMarkup(comment.body_html)}/>
                 {this.renderReplies(comment)}
               </div>
             </div>

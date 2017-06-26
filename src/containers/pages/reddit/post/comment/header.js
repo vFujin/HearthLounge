@@ -13,7 +13,7 @@ const CommentHeader = ({comment, isOfficialDev}) =>{
                 ? <span className="hs-icon icon-blizzardapp"></span>
                 : <span className="hs-icon icon-reddit"></span>
             }
-            <p>{author}</p>
+            <p className={isOfficialDev === "blizzard" ? "blizzard_post" : ''}>{author}</p>
             </Link>
         </div>
         <div className="votes">

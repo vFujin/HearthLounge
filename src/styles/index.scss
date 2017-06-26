@@ -2029,49 +2029,49 @@ footer{
       .container__details{
         .container__details--comments{
           grid-template-rows: 6vh auto !important;
-          .section__body{
-            margin-bottom:0;
-            .comments{
-              .tree-view{
+          .section__body {
+            margin-bottom: 0;
+            .comments {
+              .tree-view {
                 margin-top: 10px;
-                &:first-child{
+                &:first-child {
                   margin-top: 0;
                 }
-                .tree-view_item{
+                .tree-view_item {
                   display: flex;
                   position: relative;
-                  &:after{
+                  &:after {
                     width: calc(100% - 50px);
                     height: 1px;
-                    background: rgba(0,0,0,.2);
+                    background: rgba(0, 0, 0, .2);
                     content: '';
                     position: absolute;
                     margin-left: 50px;
 
                     top: calc(50% - 1px);
                   }
-                  .comment__header{
+                  .comment__header {
                     display: flex;
                     background: $pearl;
                     position: relative;
                     z-index: 1;
-                    div{
+                    div {
                       display: flex;
-                      align-items:center;
+                      align-items: center;
                       opacity: .7;
                       font-size: 12px;
-                      a{
+                      a {
                         display: flex;
                       }
-                      span{
-                          font-size: 12px;
-                          margin-right: 5px;
+                      span {
+                        font-size: 12px;
+                        margin-right: 5px;
                       }
-                      &:after{
+                      &:after {
                         margin: 0 10px;
                         content: "\00b7";
                       }
-                      &:last-child{
+                      &:last-child {
                         margin: 0;
                         &:after {
                           margin: 0 5px;
@@ -2080,42 +2080,44 @@ footer{
                       }
                     }
                   }
-                  &.blizzard {
-                    .comment__header {
-                      .author {
-                        opacity: 1;
-                        p {
-                          color: #00c0f6;
-                          background-color: #1e293f;
-
-                        }
-                      }
-                    }
-                  }
                 }
-                .tree-view_children{
-                  border: 1px solid rgba(0,0,0,.2);
+                .tree-view_children {
+                  border: 1px solid rgba(0, 0, 0, .2);
                   border-top: 0;
                   border-right: 0;
                   margin-left: 6.5px;
                   position: relative;
-                  &:after{
+                  &:after {
                     content: '';
                     position: absolute;
                     right: 0;
                     height: calc(100% + 10px);
                     width: 1px;
                     top: -10px;
-                    background-color: rgba(0,0,0,.2);
+                    background-color: rgba(0, 0, 0, .2);
                   }
-                  .comment{
+                  .comment {
                     grid-template-columns: none !important;
                     margin-left: 10px;
-                    .details{
-                      .body{
+                    .details {
+                      .body {
                         word-break: break-word;
                         padding: 0;
                       }
+                    }
+                  }
+                }
+                &.blizzard {
+                  .blizzard_post {
+                    color: #00c0f6;
+                    background-color: #1e293f;
+                    div{
+                      padding: 10px;
+                    }
+                  }
+                  .comment__header {
+                    .author {
+                      opacity: 1;
                     }
                   }
                 }

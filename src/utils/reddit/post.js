@@ -1,15 +1,17 @@
 import React from 'react';
 export const createMarkup = (obj) =>{
-  let html = obj.selftext_html;
-  html = html.replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&amp;#39;/g, "'")
-      .replace(/&amp;/g, "&")
-      .replace('<!-- SC_OFF -->', '')
-      .replace('<!-- SC_ON -->', '')
-      .replace('class', 'className');
-  return {__html: html};
+  if(obj) {
+    let html = obj;
+    html = html.replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&amp;#39;/g, "'")
+        .replace(/&amp;/g, "&")
+        .replace('<!-- SC_OFF -->', '')
+        .replace('<!-- SC_ON -->', '')
+        .replace('class="md"', '');
+    return {__html: html};
+  }
 };
 
 export const iframe = (src, index)=>{
@@ -26,7 +28,7 @@ export const filterPosts = (props) => {
 
     switch (obj.domain) {
       case 'self.hearthstone':
-        return <div key={index} className="section-body" dangerouslySetInnerHTML={createMarkup(obj)}/>;
+        return <div key={index} className="section-body" dangerouslySetInnerHTML={createMarkup(obj.selftext_html)}/>;
       case 'youtube.com':
         return iframe(replacedYTUrl, index);
       case 'youtu.be':

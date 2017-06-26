@@ -4104,11 +4104,6 @@ footer {
               .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:last-child:after {
                 margin: 0 5px;
                 content: ""; }
-        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item.blizzard .comment__header .author {
-          opacity: 1; }
-          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item.blizzard .comment__header .author p {
-            color: #00c0f6;
-            background-color: #1e293f; }
       .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children {
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-top: 0;
@@ -4129,6 +4124,13 @@ footer {
           .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children .comment .details .body {
             word-break: break-word;
             padding: 0; }
+      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post {
+        color: #00c0f6;
+        background-color: #1e293f; }
+        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post div {
+          padding: 10px; }
+      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .comment__header .author {
+        opacity: 1; }
 
 .container__page.entry .wrapper {
   display: flex;
