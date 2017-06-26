@@ -20,8 +20,12 @@ class RedditPost extends Component{
         });
   }
 
+  componentWillUnmount(){
+    this.props.updatePostComments([]);
+  }
+
   isOfficialDev = (comment) =>{
-    return comment.author_flair_css_class === "blizzard" ? "blizzard" : null
+    return comment.author_flair_css_class === "blizzard" ? "blizzard" : ''
   };
 
   renderComment = (comment) => {
@@ -30,10 +34,11 @@ class RedditPost extends Component{
             key={comment.id}
             nodeLabel={<CommentHeader comment={comment} isOfficialDev={this.isOfficialDev(comment)}/>}
             itemClassName={this.isOfficialDev(comment)}
+            className={this.isOfficialDev(comment)}
             collapsed={false}>
           <div className="comment">
             <div className="details">
-              <div className="body"> <p>{comment.body}</p>
+              <div className="body"> <p>{comment.body_html}</p>
                 {this.renderReplies(comment)}
               </div>
             </div>
@@ -80,7 +85,6 @@ class RedditPost extends Component{
                   <div className="section__body">
                     <div className="comments">
                       {this.props.postComments ? this.props.postComments.map(c => this.renderComment(c)) : null}
-                      {/*{this.mapComments()}*/}
                     </div>
                   </div>
                 </div>
