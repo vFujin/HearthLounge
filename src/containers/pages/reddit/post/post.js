@@ -9,6 +9,7 @@ import _ from 'lodash';
 import TreeView from 'react-treeview';
 import 'react-treeview/react-treeview.css';
 import CommentHeader from './comment/header';
+import CommentBody from './comment/body';
 
 class RedditPost extends Component{
 
@@ -38,21 +39,13 @@ class RedditPost extends Component{
             collapsed={false}>
           <div className="comment">
             <div className="details">
-              <div className="body"> <p className={this.isOfficialDev(comment) === "blizzard" ? "blizzard_post" : ''} dangerouslySetInnerHTML={createMarkup(comment.body_html)}/>
-                {this.renderReplies(comment)}
-              </div>
+              <CommentBody comment={comment}
+                           isOfficialDev={this.isOfficialDev(comment)}
+                           renderComment={this.renderComment}/>
             </div>
           </div>
         </TreeView>
     )
-  };
-
-
-  renderReplies = (c) =>{
-    console.log(c);
-    return c.replies
-      ? c.replies.data.children.map(c => this.renderComment(c.data))
-      : [];
   };
 
   render() {

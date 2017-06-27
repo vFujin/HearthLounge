@@ -32,5 +32,8 @@ CommentHeader.propTypes = {
     created_utc: PropTypes.number,
     score: PropTypes.number
   }),
-  isOfficialDev: PropTypes.string
+  isOfficialDev: PropTypes.oneOfType([
+      PropTypes.string,
+      null
+  ])
 };
