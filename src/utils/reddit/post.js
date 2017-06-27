@@ -9,6 +9,8 @@ export const createMarkup = (obj) =>{
         .replace(/&amp;/g, "&")
         .replace('<!-- SC_OFF -->', '')
         .replace('<!-- SC_ON -->', '')
+        .replace('[[', '<span class="card" style="font-weight: bold;">')
+        .replace(']]', '</span>')
         .replace('class="md"', '');
     return {__html: html};
   }

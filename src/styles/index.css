@@ -3117,29 +3117,31 @@ footer {
           height: calc(100% - 1vh - 10px); }
       .container__page .container__page--right .content .container__details .container__details--description .section__footer .details {
         display: flex; }
-      .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment {
-        border-bottom: 1px solid black;
-        margin: 1vh 1vh 0 0;
-        padding-bottom: 1vh; }
-        .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment:first-child {
-          margin: 0 1vh 0 0; }
-        .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment:last-child {
-          border: 0; }
-        .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .author {
-          display: flex; }
-          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .author .name {
-            margin-left: 1vh; }
-        .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header, .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer {
-          display: flex;
-          align-items: center; }
-        .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header {
-          justify-content: space-between; }
-        .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .body {
-          padding: 1vh 0; }
-        .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer {
-          align-items: center; }
-          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .votes {
-            padding: 0 1vh; }
+      .container__page .container__page--right .content .container__details .container__details--comments .section__body {
+        font-family: 'Arial', sans-serif; }
+        .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment {
+          border-bottom: 1px solid black;
+          margin: 1vh 1vh 0 0;
+          padding-bottom: 1vh; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment:first-child {
+            margin: 0 1vh 0 0; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment:last-child {
+            border: 0; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .author {
+            display: flex; }
+            .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .author .name {
+              margin-left: 1vh; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header, .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer {
+            display: flex;
+            align-items: center; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header {
+            justify-content: space-between; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .body {
+            padding: 1vh 0; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer {
+            align-items: center; }
+            .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .votes {
+              padding: 0 1vh; }
     .container__page .container__page--right .content .container__extension .before-extension-pick {
       width: calc(100% - 10px);
       height: 100%;

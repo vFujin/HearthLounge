@@ -40,6 +40,8 @@ class RedditPost extends Component{
           <div className="comment">
             <div className="details">
               <CommentBody comment={comment}
+                           cards={this.props.cards.allCards}
+                           comments={this.props.postComments}
                            isOfficialDev={this.isOfficialDev(comment)}
                            renderComment={this.renderComment}/>
             </div>

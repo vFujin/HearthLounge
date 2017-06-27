@@ -17,7 +17,7 @@ class Reddit extends Component{
   }
 
   render(){
-    return React.cloneElement(this.props.children, {posts: this.props.posts});
+    return React.cloneElement(this.props.children, {posts: this.props.posts, cards: this.props.cards});
   }
   // constructor(props){
   //   super(props);
