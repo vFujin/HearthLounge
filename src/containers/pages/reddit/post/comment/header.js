@@ -3,10 +3,10 @@ import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 import {timeDifference} from '../../../../../utils/unix-to-date';
 
-const CommentHeader = ({comment, isOfficialDev}) =>{
+const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
   const {author, created_utc, score} = comment;
   return (
-      <div className="comment__header">
+      <div className="comment__header" onClick={handleCollapseClick}>
         <div className="author">
           <Link to={`https://www.reddit.com/user/${author}`}>
             {isOfficialDev === "blizzard"

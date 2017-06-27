@@ -31,14 +31,20 @@ class RedditPost extends Component{
     return comment.author_flair_css_class === "blizzard" ? "blizzard" : ''
   };
 
-  renderComment = (comment) => {
+  handleCollapseClick = (i) => {
+    let [...collapsedComments] = this.props.collapsedComments;
+    collapsedComments[i] = !collapsedComments[i];
+    this.props.toggleCollapse(collapsedComments)
+  };
 
+  renderComment = (comment, i) => {
     return (
         <TreeView
             key={comment.id}
-            nodeLabel={<CommentHeader comment={comment} isOfficialDev={this.isOfficialDev(comment)}/>}
+
+            nodeLabel={<CommentHeader comment={comment} onClick={()=>this.handleCollapseClick(i)} isOfficialDev={this.isOfficialDev(comment)}/>}
             treeViewClassName={this.isOfficialDev(comment)}
-            collapsed={false}>
+            collapsed={this.props.postComments ? this.props.collapsedComments[i] : false}>
           <div className="comment">
             <div className="details">
               <CommentBody comment={comment}
@@ -81,7 +87,7 @@ class RedditPost extends Component{
                   </div>
                   <div className="section__body">
                     <div className="comments">
-                      {this.props.postComments ? this.props.postComments.map(c => this.renderComment(c)) : <Loader />}
+                      {this.props.postComments ? this.props.postComments.map((c, i) => this.renderComment(c, i)) : <Loader />}
                     </div>
                   </div>
                 </div>
@@ -94,14 +100,17 @@ class RedditPost extends Component{
 };
 
 const mapStateToProps = (state) =>{
-  const {postComments} = state.redditPosts;
-  return {postComments};
+  const {postComments, collapsedComments} = state.redditPosts;
+  return {postComments, collapsedComments};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updatePostComments: (postComments) => dispatch({
       type: 'UPDATE_POST_COMMENTS', postComments
+    }),
+    toggleCollapse: (collapsedComments) => dispatch({
+      type:  'TOGGLE_POST_COMMENT', collapsedComments
     })
   }
 };

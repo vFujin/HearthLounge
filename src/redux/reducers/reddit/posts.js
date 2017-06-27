@@ -1,5 +1,6 @@
 const initialState = {
-  posts: []
+  posts: [],
+  collapsedComments: []
 };
 
 export default function(state=initialState, action){
@@ -15,6 +16,10 @@ export default function(state=initialState, action){
     case 'UPDATE_POST_COMMENTS': return {
         ...state,
       postComments: action.postComments
+    };
+    case 'TOGGLE_COLLAPSE': return {
+        ...state,
+        collapsedComments: action.collapsedComments
     };
     case 'TOGGLE_DOMAIN_FILTER': return {
       ...state,

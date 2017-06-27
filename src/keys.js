@@ -1,8 +1,13 @@
 import firebase from 'firebase';
-export const TwitchClientId = "<Your Twitch Client id>"; //https://dev.twitch.tv/docs#getting-started
-export const MashapeKey = '<Your Mashape key>'; //https://market.mashape.com/omgvamp/hearthstone
-export const FirebaseConfig = { //Your Firebase Config
-  
+export const TwitchClientId = "jupouny3vvr7kl38jlsj7ssnyww80z";
+export const MashapeKey = 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q';
+export const FirebaseConfig = {
+  apiKey: "AIzaSyC0llLdIXWVVcVkMc3r1sF_OpwrxctXe58",
+  authDomain: "hearthlounge-32197.firebaseapp.com",
+  databaseURL: "https://hearthlounge-32197.firebaseio.com",
+  projectId: "hearthlounge-32197",
+  storageBucket: "hearthlounge-32197.appspot.com",
+  messagingSenderId: "313812762792"
 };
 firebase.initializeApp(FirebaseConfig);
 export const refParent = (parent) => {
