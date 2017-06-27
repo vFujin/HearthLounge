@@ -2193,7 +2193,8 @@ form .divider {
 .loading-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  height: 100%; }
 
 .sk-folding-cube {
   width: 40px;
@@ -3120,6 +3121,7 @@ footer {
       .container__page .container__page--right .content .container__details .container__details--comments .section__body {
         font-family: 'Arial', sans-serif; }
         .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment {
+          height: 100%;
           border-bottom: 1px solid black;
           margin: 1vh 1vh 0 0;
           padding-bottom: 1vh; }
@@ -4068,71 +4070,73 @@ footer {
   grid-template-rows: 6vh auto !important; }
   .subreddit .container__page--right .content .container__details .container__details--comments .section__body {
     margin-bottom: 0; }
-    .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view {
-      margin-top: 10px; }
-      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view:first-child {
-        margin-top: 0; }
-      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item {
-        display: flex;
-        position: relative; }
-        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item:after {
-          width: calc(100% - 50px);
-          height: 1px;
-          background: rgba(0, 0, 0, 0.2);
-          content: '';
-          position: absolute;
-          margin-left: 50px;
-          top: calc(50% - 1px); }
-        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header {
+    .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments {
+      height: 100%; }
+      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view {
+        margin-top: 10px; }
+        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view:first-child {
+          margin-top: 0; }
+        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item {
           display: flex;
-          background: #E7E2DA;
-          position: relative;
-          z-index: 1; }
-          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div {
+          position: relative; }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item:after {
+            width: calc(100% - 50px);
+            height: 1px;
+            background: rgba(0, 0, 0, 0.2);
+            content: '';
+            position: absolute;
+            margin-left: 50px;
+            top: calc(50% - 1px); }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header {
             display: flex;
-            align-items: center;
-            opacity: .7;
-            font-size: 12px; }
-            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div a {
-              display: flex; }
-            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div span {
-              font-size: 12px;
-              margin-right: 5px; }
-            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:after {
-              margin: 0 10px;
-              content: "\00b7"; }
-            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:last-child {
-              margin: 0; }
-              .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:last-child:after {
-                margin: 0 5px;
-                content: ""; }
-      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children {
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-top: 0;
-        border-right: 0;
-        margin-left: 6.5px;
-        position: relative; }
-        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children:after {
-          content: '';
-          position: absolute;
-          right: 0;
-          height: calc(100% + 10px);
-          width: 1px;
-          top: -10px;
-          background-color: rgba(0, 0, 0, 0.2); }
-        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children .comment {
-          grid-template-columns: none !important;
-          margin-left: 10px; }
-          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children .comment .details .body {
-            word-break: break-word;
-            padding: 0; }
-      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post {
-        color: #00c0f6;
-        background-color: #1e293f; }
-        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post div {
-          padding: 10px; }
-      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .comment__header .author {
-        opacity: 1; }
+            background: #E7E2DA;
+            position: relative;
+            z-index: 1; }
+            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div {
+              display: flex;
+              align-items: center;
+              opacity: .7;
+              font-size: 12px; }
+              .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div a {
+                display: flex; }
+              .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div span {
+                font-size: 12px;
+                margin-right: 5px; }
+              .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:after {
+                margin: 0 10px;
+                content: "\00b7"; }
+              .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:last-child {
+                margin: 0; }
+                .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:last-child:after {
+                  margin: 0 5px;
+                  content: ""; }
+        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children {
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          border-top: 0;
+          border-right: 0;
+          margin-left: 6.5px;
+          position: relative; }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            height: calc(100% + 10px);
+            width: 1px;
+            top: -11px;
+            background-color: rgba(0, 0, 0, 0.2); }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children .comment {
+            grid-template-columns: none !important;
+            margin-left: 10px; }
+            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children .comment .details .body {
+              word-break: break-word;
+              padding: 0; }
+        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post {
+          color: #00c0f6;
+          background-color: #1e293f; }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post div {
+            padding: 10px; }
+        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .comment__header .author {
+          opacity: 1; }
 
 .container__page.entry .wrapper {
   display: flex;

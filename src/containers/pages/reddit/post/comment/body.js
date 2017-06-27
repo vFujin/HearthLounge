@@ -4,10 +4,10 @@ import {createMarkup} from '../../../../../utils/reddit/post';
 import {findSubstring} from '../../../../../utils/find-substring';
 import _ from 'lodash';
 import Tooltip from 'antd/lib/tooltip';
-import {Loader} from '../../../../../utils/loader';
 
 const CommentBody = ({cards, comment, comments, isOfficialDev, renderComment}) =>{
   const {body_html} = comment;
+
 
   // const foo = () =>{
   //   if(body_html && comments.length > 0 && (body_html.includes('[[') && body_html.includes(']]'))){

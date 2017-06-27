@@ -693,6 +693,7 @@ footer{
           .section__body{
             font-family: 'Arial', sans-serif;
             .comment {
+              height:100%;
               border-bottom: 1px solid black;
               margin: 1vh 1vh 0 0;
               padding-bottom: 1vh;
@@ -2033,6 +2034,7 @@ footer{
           .section__body {
             margin-bottom: 0;
             .comments {
+              height:100%;
               .tree-view {
                 margin-top: 10px;
                 &:first-child {
@@ -2094,7 +2096,7 @@ footer{
                     right: 0;
                     height: calc(100% + 10px);
                     width: 1px;
-                    top: -10px;
+                    top: -11px;
                     background-color: rgba(0, 0, 0, .2);
                   }
                   .comment {

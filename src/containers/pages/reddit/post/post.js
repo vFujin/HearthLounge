@@ -5,6 +5,7 @@ import 'whatwg-fetch';
 import {Sidebar} from './sidebar';
 import {Topbar} from './topbar';
 import {createMarkup, filterPosts} from '../../../../utils/reddit/post'
+import Loader from '../../../../utils/loader';
 import _ from 'lodash';
 import TreeView from 'react-treeview';
 import 'react-treeview/react-treeview.css';
@@ -23,7 +24,7 @@ class RedditPost extends Component{
   }
 
   componentWillUnmount(){
-    this.props.updatePostComments([]);
+    this.props.updatePostComments(null);
   }
 
   isOfficialDev = (comment) =>{
@@ -31,6 +32,7 @@ class RedditPost extends Component{
   };
 
   renderComment = (comment) => {
+
     return (
         <TreeView
             key={comment.id}
@@ -40,10 +42,10 @@ class RedditPost extends Component{
           <div className="comment">
             <div className="details">
               <CommentBody comment={comment}
-                           cards={this.props.cards.allCards}
-                           comments={this.props.postComments}
-                           isOfficialDev={this.isOfficialDev(comment)}
-                           renderComment={this.renderComment}/>
+                            cards={this.props.cards.allCards}
+                            comments={this.props.postComments}
+                            isOfficialDev={this.isOfficialDev(comment)}
+                            renderComment={this.renderComment}/>
             </div>
           </div>
         </TreeView>
@@ -79,7 +81,7 @@ class RedditPost extends Component{
                   </div>
                   <div className="section__body">
                     <div className="comments">
-                      {this.props.postComments ? this.props.postComments.map(c => this.renderComment(c)) : null}
+                      {this.props.postComments ? this.props.postComments.map(c => this.renderComment(c)) : <Loader />}
                     </div>
                   </div>
                 </div>
