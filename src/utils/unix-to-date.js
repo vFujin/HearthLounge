@@ -39,9 +39,9 @@ export const unixToDate = (time, detailed) =>{
 };
 
 export const timeDifference = (timeWhenCreated, showDetailedDate) =>{
+
   let timeNow = +new Date();
   let difference = timeNow - timeWhenCreated;
-
   if(showDetailedDate) return unixToDate(timeWhenCreated, showDetailedDate);
-  return unixToDate(difference, showDetailedDate);
+  else return unixToDate(difference, showDetailedDate);
 };

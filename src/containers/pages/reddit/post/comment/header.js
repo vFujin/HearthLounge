@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import {timeDifference} from '../../../../../utils/unix-to-date';
 
 const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
-  const {author, created_utc, score} = comment;
+  console.log(comment)
+  const {author, created, created_utc, score} = comment;
+  console.log(+new Date - created)
   return (
       <div className="comment__header" onClick={handleCollapseClick}>
         <div className="author">
@@ -19,7 +21,7 @@ const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
         <div className="votes">
           {score}
           </div>
-        <div className="created">{timeDifference(created_utc, false)}</div>
+        <div className="created">{timeDifference(created)}</div>
       </div>
   )
 };
@@ -35,5 +37,6 @@ CommentHeader.propTypes = {
   isOfficialDev: PropTypes.oneOfType([
       PropTypes.string,
       null
-  ])
+  ]),
+  handleCollapseClick: PropTypes.func
 };
