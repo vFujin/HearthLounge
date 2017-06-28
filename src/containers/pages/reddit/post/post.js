@@ -23,6 +23,7 @@ class RedditPost extends Component{
         });
   }
 
+
   componentWillUnmount(){
     this.props.updatePostComments(null);
   }
