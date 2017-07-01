@@ -1,12 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
 import PropTypes from 'prop-types';
-import {timeDifference} from '../../../../../utils/unix-to-date';
+import {wrapDate} from '../../../../../utils/wrap-date';
 
 const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
-  console.log(comment)
-  const {author, created, created_utc, score} = comment;
-  console.log(+new Date - created)
+  const {author, edited, created_utc, score} = comment;
+
   return (
       <div className="comment__header" onClick={handleCollapseClick}>
         <div className="author">
@@ -21,7 +20,7 @@ const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
         <div className="votes">
           {score}
           </div>
-        <div className="created">{timeDifference(created)}</div>
+          <div className="created">{wrapDate(created_utc, edited)}</div>
       </div>
   )
 };
