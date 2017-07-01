@@ -2109,6 +2109,12 @@ footer{
                       }
                     }
                   }
+                  &-collapsed{
+                    border: none;
+                    &:after{
+                      height:0;
+                    }
+                  }
                 }
                 &.blizzard {
                   .blizzard_post {

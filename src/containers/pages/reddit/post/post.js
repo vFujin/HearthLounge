@@ -19,6 +19,7 @@ class RedditPost extends Component{
         .then(res => res.json())
         .then(res=>{
           const comments = res[1].data.children.map(obj => obj.data);
+          console.log(comments)
           this.props.updatePostComments(comments);
         });
   }
@@ -39,24 +40,27 @@ class RedditPost extends Component{
   };
 
   renderComment = (comment, i) => {
-    return (
-        <TreeView
-            key={comment.id}
+    if(comment.body) {
+      return (
+          <TreeView
+              key={comment.id}
 
-            nodeLabel={<CommentHeader comment={comment} onClick={()=>this.handleCollapseClick(i)} isOfficialDev={this.isOfficialDev(comment)}/>}
-            treeViewClassName={this.isOfficialDev(comment)}
-            collapsed={this.props.postComments ? this.props.collapsedComments[i] : false}>
-          <div className="comment">
-            <div className="details">
-              <CommentBody comment={comment}
-                            cards={this.props.cards.allCards}
-                            comments={this.props.postComments}
-                            isOfficialDev={this.isOfficialDev(comment)}
-                            renderComment={this.renderComment}/>
+              nodeLabel={<CommentHeader comment={comment} onClick={() => this.handleCollapseClick(i)}
+                                        isOfficialDev={this.isOfficialDev(comment)}/>}
+              treeViewClassName={this.isOfficialDev(comment)}
+              collapsed={this.props.postComments ? this.props.collapsedComments[i] : false}>
+            <div className="comment">
+              <div className="details">
+                <CommentBody comment={comment}
+                             cards={this.props.cards.allCards}
+                             comments={this.props.postComments}
+                             isOfficialDev={this.isOfficialDev(comment)}
+                             renderComment={this.renderComment}/>
+              </div>
             </div>
-          </div>
-        </TreeView>
-    )
+          </TreeView>
+      )
+    }
   };
 
   render() {

@@ -10,7 +10,7 @@ const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
   return (
       <div className="comment__header" onClick={handleCollapseClick}>
         <div className="author">
-          <Link to={`https://www.reddit.com/user/${author}`}>
+          <Link target="_blank" rel="noreferrer noopener" to={`https://www.reddit.com/user/${author}`}>
             {isOfficialDev === "blizzard"
                 ? <span className="hs-icon icon-blizzardapp"></span>
                 : <span className="hs-icon icon-reddit"></span>

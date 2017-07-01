@@ -4130,6 +4130,10 @@ footer {
             .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children .comment .details .body {
               word-break: break-word;
               padding: 0; }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children-collapsed {
+            border: none; }
+            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children-collapsed:after {
+              height: 0; }
         .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post {
           color: #00c0f6;
           background-color: #1e293f; }
