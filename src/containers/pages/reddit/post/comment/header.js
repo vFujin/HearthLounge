@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 import {wrapDate} from '../../../../../utils/wrap-date';
+import {wrapScore} from '../../../../../utils/wrap-score';
 
 const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
   const {author, edited, created_utc, score} = comment;
@@ -17,10 +18,8 @@ const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
             <p className={isOfficialDev === "blizzard" ? "blizzard_post" : ''}>{author}</p>
             </Link>
         </div>
-        <div className="votes">
-          {score}
-          </div>
-          <div className="created">{wrapDate(created_utc, edited)}</div>
+        <div className="votes">{wrapScore(score)}</div>
+        <div className="created">{wrapDate(created_utc, edited)}</div>
       </div>
   )
 };
