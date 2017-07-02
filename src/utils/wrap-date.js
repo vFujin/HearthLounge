@@ -12,7 +12,7 @@ import format from 'date-fns/format';
  */
 export const notEdited = (created, createdFormatted, placement) =>{
   return (
-      <Tooltip title={createdFormatted} placement={placement || "bottom"}>
+      <Tooltip title={`created ${createdFormatted}`} placement={placement || "bottom"}>
         {created}
       </Tooltip>
   )
@@ -31,8 +31,8 @@ export const notEdited = (created, createdFormatted, placement) =>{
 export const editedWrapper = (created, createdFormatted, edited, editedFormatted, placement) =>{
   return (
       <p>
-        <Tooltip title={createdFormatted} placement={placement || "bottom"}>{created}</Tooltip>
-        <Tooltip title={editedFormatted} placement={placement || "bottom"}>{' *'}</Tooltip>
+        <Tooltip title={`created ${createdFormatted}`} placement={placement || "bottom"}>{created}</Tooltip>
+        <Tooltip title={`last edited ${editedFormatted}`} placement={placement || "bottom"}>{' *'}</Tooltip>
       </p>
   )
 };

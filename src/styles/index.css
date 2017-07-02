@@ -4131,6 +4131,8 @@ footer {
       .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item {
         display: flex;
         position: relative; }
+        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .tree-view_arrow {
+          margin-right: 3px; }
         .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item:after {
           width: calc(100% - 50px);
           height: 1px;
@@ -4138,7 +4140,7 @@ footer {
           content: '';
           position: absolute;
           margin-left: 50px;
-          top: calc(50% - 1px); }
+          top: calc(50% + 1px); }
         .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header {
           display: flex;
           background: #E7E2DA;
@@ -4150,18 +4152,32 @@ footer {
             opacity: .7;
             font-size: 12px; }
             .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div a {
-              display: flex; }
+              display: flex;
+              align-items: center; }
             .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div span {
-              font-size: 12px;
-              margin-right: 5px; }
+              font-size: 12px; }
             .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:after {
-              margin: 0 10px;
+              margin: 2px 10px 0 10px;
               content: "\00b7"; }
-            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:last-child {
-              margin: 0; }
-              .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header div:last-child:after {
-                margin: 0 5px;
-                content: ""; }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author {
+            color: orangered; }
+            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author span {
+              font-size: 16px;
+              margin-right: 5px; }
+            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author a p {
+              margin-top: 2px; }
+            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author a:hover p {
+              text-decoration: underline; }
+            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author:after {
+              margin-top: 4px;
+              color: #474143; }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .votes {
+            margin-top: 2px; }
+          .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .created {
+            margin: 2px 5px 0 0; }
+            .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .created:after {
+              margin: 2px 0 0 0;
+              content: ""; }
       .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children {
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-top: 0;
@@ -4174,13 +4190,13 @@ footer {
           right: 0;
           height: calc(100% + 11px);
           width: 1px;
-          top: -10px;
+          top: -8px;
           background-color: rgba(0, 0, 0, 0.2); }
         .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children .comment {
           grid-template-columns: none !important;
           margin-left: 10px; }
           .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children .comment .details .body {
-            word-break: break-word;
+            word-wrap: break-word;
             padding: 0; }
         .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children-collapsed {
           border: none; }

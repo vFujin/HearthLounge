@@ -104,7 +104,7 @@ class RedditPost extends Component{
         </div>
     )
   }
-};
+}
 
 const mapStateToProps = (state) =>{
   const {postComments, collapsedComments} = state.redditPosts;
