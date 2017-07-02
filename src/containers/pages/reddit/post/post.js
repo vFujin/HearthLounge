@@ -39,6 +39,10 @@ class RedditPost extends Component{
     this.props.toggleCollapse(collapsedComments)
   };
 
+  collapsed = i =>{
+    return this.props.postComments ? this.props.collapsedComments[i] : false;
+  };
+
   renderComment = (comment, i) => {
     if(comment.body) {
       return (
@@ -48,7 +52,7 @@ class RedditPost extends Component{
               nodeLabel={<CommentHeader comment={comment} onClick={() => this.handleCollapseClick(i)}
                                         isOfficialDev={this.isOfficialDev(comment)}/>}
               treeViewClassName={this.isOfficialDev(comment)}
-              collapsed={this.props.postComments ? this.props.collapsedComments[i] : false}>
+              collapsed={this.collapsed(i)}>
             <div className="comment">
               <div className="details">
                 <CommentBody comment={comment}
@@ -73,16 +77,14 @@ class RedditPost extends Component{
           <div className="container__page--inner container__page--right">
             <Topbar />
             <div className="content">
-              <div className="container__details">
+              <div className="container__details post">
                 <div className="container__details--section container__details--description">
                   <div className="section__header">
                     <div className="line"></div>
                     <h1>{this.props.posts.filter(x => x.id === this.props.params.id).map(x => x.title)[0]}</h1>
                   </div>
                   <div className="section__body">
-                    <div className="section__body--background">
-                  {filterPosts(this.props)}
-                    </div>
+                      {filterPosts(this.props)}
                   </div>
                 </div>
                 <div className="container__details--section container__details--comments">

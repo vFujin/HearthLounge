@@ -675,12 +675,18 @@ footer{
         }
         .container__details--description {
           .section__body {
-            padding-right: 1vh;
             overflow: auto;
-            .section__body--background {
-              background: #474143;
-              padding: 1vh;
-              height: calc(100% - 1vh - 10px);
+            background: $light-grey;
+            height: calc(100% - 2.5vh);
+            padding: 1vh;
+            .section__body--content{
+              div {
+                ul, li, ol {
+                  list-style: disc;
+                }
+                p {
+                }
+              }
             }
           }
           .section__footer{
@@ -730,7 +736,11 @@ footer{
             }
           }
         }
-
+        &.post{
+          .section__body{
+            margin-bottom: 0;
+          }
+        }
       }
       .container__extension{
         .before-extension-pick{
@@ -2030,7 +2040,6 @@ footer{
     .content{
       .container__details{
         .container__details--comments{
-          grid-template-rows: 6vh auto !important;
           .section__body {
             margin-bottom: 0;
             .comments {
