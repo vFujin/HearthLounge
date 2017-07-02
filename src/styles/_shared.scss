@@ -3,6 +3,7 @@
 
 .default-style{
   font-family: 'Arial', sans-serif;
+
   h1{
     margin: 0.67em 0;
   }
@@ -30,6 +31,7 @@
     padding: 0 0 0 40px;
     li{
       display: list-item;
+      list-style-type: disc;
       margin: 3px 0;
       &:first-child{
         margin-top: 0;
@@ -39,8 +41,47 @@
       }
     }
   }
+  a{
+    &:link {
+      color: #0000EE;
+    }
+    &:hover {
+      text-decoration: underline
+    }
+    &:visited {
+      color: #551A8B;
+    }
+  }
+  &.blizzard_post {
+    ol, li {
+      list-style-type: square;
+      li{
+        list-style-type: square;
+      }
+    }
+    a {
+      color: #f8b700;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+      &:visited {
+        color: #f8b700;
+      }
+    }
+  }
 }
 
+.blizzard_post {
+  color: #00c0f6;
+  background-color: #1e293f;
+  div{
+    padding: 10px;
+  }
+  strong{
+    color: white;
+  }
+}
 .deck-snippet{
   position: relative;
   background-color: $pearl;

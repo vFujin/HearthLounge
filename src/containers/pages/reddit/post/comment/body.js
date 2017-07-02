@@ -26,8 +26,6 @@ const CommentBody = ({cards, comment, comments, isOfficialDev, renderComment}) =
     else return [];
   };
 
-
-
   return (
       <div className="comment__body">
           <p className={isOfficialDev === "blizzard" ? "blizzard_post" : ''}

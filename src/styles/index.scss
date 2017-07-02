@@ -677,16 +677,9 @@ footer{
           .section__body {
             overflow: auto;
             background: $light-grey;
-            height: calc(100% - 2.5vh);
-            padding: 1vh;
+            height: calc(100% - .5vh);
             .section__body--content{
-              div {
-                ul, li, ol {
-                  list-style: disc;
-                }
-                p {
-                }
-              }
+              padding: 10px;
             }
           }
           .section__footer{
@@ -2126,13 +2119,6 @@ footer{
                   }
                 }
                 &.blizzard {
-                  .blizzard_post {
-                    color: #00c0f6;
-                    background-color: #1e293f;
-                    div{
-                      padding: 10px;
-                    }
-                  }
                   .comment__header {
                     .author {
                       opacity: 1;

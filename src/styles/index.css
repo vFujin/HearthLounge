@@ -1775,11 +1775,37 @@ a:active, a:hover, a:link, a:visited {
     padding: 0 0 0 40px; }
     .default-style ol li, .default-style ul li {
       display: list-item;
+      list-style-type: disc;
       margin: 3px 0; }
       .default-style ol li:first-child, .default-style ul li:first-child {
         margin-top: 0; }
       .default-style ol li:last-child, .default-style ul li:last-child {
         margin-bottom: 0; }
+  .default-style a:link {
+    color: #0000EE; }
+  .default-style a:hover {
+    text-decoration: underline; }
+  .default-style a:visited {
+    color: #551A8B; }
+  .default-style.blizzard_post ol, .default-style.blizzard_post li {
+    list-style-type: square; }
+    .default-style.blizzard_post ol li, .default-style.blizzard_post li li {
+      list-style-type: square; }
+  .default-style.blizzard_post a {
+    color: #f8b700; }
+    .default-style.blizzard_post a:hover {
+      color: white;
+      text-decoration: none; }
+    .default-style.blizzard_post a:visited {
+      color: #f8b700; }
+
+.blizzard_post {
+  color: #00c0f6;
+  background-color: #1e293f; }
+  .blizzard_post div {
+    padding: 10px; }
+  .blizzard_post strong {
+    color: white; }
 
 .deck-snippet {
   position: relative;
@@ -3139,10 +3165,9 @@ footer {
       .container__page .container__page--right .content .container__details .container__details--description .section__body {
         overflow: auto;
         background: #A69E9D;
-        height: calc(100% - 2.5vh);
-        padding: 1vh; }
-        .container__page .container__page--right .content .container__details .container__details--description .section__body .section__body--content div ul, .container__page .container__page--right .content .container__details .container__details--description .section__body .section__body--content div li, .container__page .container__page--right .content .container__details .container__details--description .section__body .section__body--content div ol {
-          list-style: disc; }
+        height: calc(100% - .5vh); }
+        .container__page .container__page--right .content .container__details .container__details--description .section__body .section__body--content {
+          padding: 10px; }
       .container__page .container__page--right .content .container__details .container__details--description .section__footer .details {
         display: flex; }
       .container__page .container__page--right .content .container__details .container__details--comments .section__body {
@@ -4161,11 +4186,6 @@ footer {
           border: none; }
           .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_children-collapsed:after {
             height: 0; }
-      .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post {
-        color: #00c0f6;
-        background-color: #1e293f; }
-        .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .blizzard_post div {
-          padding: 10px; }
       .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view.blizzard .comment__header .author {
         opacity: 1; }
 
