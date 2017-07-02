@@ -21,16 +21,19 @@ export const iframe = (src, index)=>{
   return <iframe key={index} height={height} width={width} src={src}></iframe>
 };
 
-export const filterPosts = (props) => {
-  return props.posts.filter(p => p.id === props.params.id).map((obj, index) => {
-    let url = obj.url;
+export const filterPosts = (posts, params) => {
+  return posts.filter(post => post.id === params.id).map((post, index) => {
+    const {author_flair_css_class, domain, selftext_html, url} = post;
+
     let replacedYTUrl = url.replace("watch?v=", "embed/");
     let replacedYTShortenerUrl = url.replace("youtu.be/", "youtube.com/embed/");
     let replacedTwitchUrl = url.replace("https://clips.twitch.tv/", "");
 
-    switch (obj.domain) {
+    switch (domain) {
       case 'self.hearthstone':
-        return <div key={index} className={`section__body--content default-style ${obj.author_flair_css_class === "blizzard" ? "blizzard_post" : ""}`} dangerouslySetInnerHTML={createMarkup(obj.selftext_html)}/>;
+        return <div key={index}
+                    className={`section__body--content default-style ${author_flair_css_class === "blizzard" ? "blizzard_post" : ""}`}
+                    dangerouslySetInnerHTML={createMarkup(selftext_html)}/>;
       case 'youtube.com':
         return iframe(replacedYTUrl, index);
       case 'youtu.be':

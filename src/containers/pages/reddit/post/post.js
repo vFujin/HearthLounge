@@ -4,13 +4,12 @@ import {connect} from 'react-redux';
 import 'whatwg-fetch';
 import {Sidebar} from './sidebar';
 import {Topbar} from './topbar';
-import {createMarkup, filterPosts} from '../../../../utils/reddit/post'
-import Loader from '../../../../utils/loader';
-import _ from 'lodash';
-import TreeView from 'react-treeview';
+import {filterPosts} from '../../../../utils/reddit/post'
+
+
 import 'react-treeview/react-treeview.css';
-import CommentHeader from './comment/header';
-import CommentBody from './comment/body';
+
+import Content from './content';
 
 class RedditPost extends Component{
 
@@ -19,53 +18,13 @@ class RedditPost extends Component{
         .then(res => res.json())
         .then(res=>{
           const comments = res[1].data.children.map(obj => obj.data);
-          console.log(comments)
           this.props.updatePostComments(comments);
         });
   }
 
-
   componentWillUnmount(){
     this.props.updatePostComments(null);
   }
-
-  isOfficialDev = (comment) =>{
-    return comment.author_flair_css_class === "blizzard" ? "blizzard" : ''
-  };
-
-  handleCollapseClick = (i) => {
-    let [...collapsedComments] = this.props.collapsedComments;
-    collapsedComments[i] = !collapsedComments[i];
-    this.props.toggleCollapse(collapsedComments)
-  };
-
-  collapsed = i =>{
-    return this.props.postComments ? this.props.collapsedComments[i] : false;
-  };
-
-  renderComment = (comment, i) => {
-    if(comment.body) {
-      return (
-          <TreeView
-              key={comment.id}
-
-              nodeLabel={<CommentHeader comment={comment} onClick={() => this.handleCollapseClick(i)}
-                                        isOfficialDev={this.isOfficialDev(comment)}/>}
-              treeViewClassName={this.isOfficialDev(comment)}
-              collapsed={this.collapsed(i)}>
-            <div className="comment">
-              <div className="details">
-                <CommentBody comment={comment}
-                             cards={this.props.cards.allCards}
-                             comments={this.props.postComments}
-                             isOfficialDev={this.isOfficialDev(comment)}
-                             renderComment={this.renderComment}/>
-              </div>
-            </div>
-          </TreeView>
-      )
-    }
-  };
 
   render() {
     return (
@@ -76,30 +35,12 @@ class RedditPost extends Component{
           </div>
           <div className="container__page--inner container__page--right">
             <Topbar />
-            <div className="content">
-              <div className="container__details post">
-                <div className="container__details--section container__details--description">
-                  <div className="section__header">
-                    <div className="line"></div>
-                    <h1>{this.props.posts.filter(x => x.id === this.props.params.id).map(x => x.title)[0]}</h1>
-                  </div>
-                  <div className="section__body">
-                      {filterPosts(this.props)}
-                  </div>
-                </div>
-                <div className="container__details--section container__details--comments">
-                  <div className="section__header">
-                    <div className="line"></div>
-                    <h1>{this.props.posts.filter(x=>x.id === this.props.params.id).map(x=>x.num_comments)[0]} comments</h1>
-                  </div>
-                  <div className="section__body">
-                    <div className="comments">
-                      {this.props.postComments ? this.props.postComments.map((c, i) => this.renderComment(c, i)) : <Loader />}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Content cards={this.props.cards}
+                     collapsedComments={this.props.collapsedComments}
+                     posts={this.props.posts}
+                     postComments={this.props.postComments}
+                     params={this.props.params}
+                     toggleCollapse={this.props.toggleCollapse()}/>
           </div>
         </div>
     )
