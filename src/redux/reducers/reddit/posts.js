@@ -1,6 +1,7 @@
 const initialState = {
   posts: [],
-  collapsedComments: []
+  collapsedComments: [],
+  activeCategoryFilter: 'hot'
 };
 
 export default function(state=initialState, action){
@@ -8,6 +9,10 @@ export default function(state=initialState, action){
     case 'UPDATE_POSTS': return {
       ...state,
       posts: action.posts
+    };
+    case 'UPDATE_FILTERED_POSTS': return {
+      ...state,
+      filteredPosts: action.filteredPosts
     };
     case 'UPDATE_ACTIVE_POST': return {
       ...state,

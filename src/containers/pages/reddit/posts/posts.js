@@ -1,31 +1,47 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 import 'whatwg-fetch';
 import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar';
 import PostSelection from './right-container/post-selection';
+import {stripDomains} from '../../../../utils/reddit/posts';
 
-const RedditPosts = ({posts, location, activePost, updatePosts, updateActivePost, activeCategoryFilter, toggleCategoryFilter}) => {
+const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, updateActivePost, updateFilteredPosts, activeCategoryFilter, activeDomainFilter, toggleDomainFilter, toggleCategoryFilter}) => {
 
 
   const handlePostClick = (activePost) =>{
     updateActivePost(activePost);
-    
   };
 
   const handleCategoryClick = (e) => {
     e.preventDefault();
     let filter = e.currentTarget.id;
-    if(filter !== activeCategoryFilter){
+    if(filter !== activeCategoryFilter) {
       fetch(`https://www.reddit.com/r/hearthstone/${filter}.json`)
-        .then(res => res.json())
-        .then(res=>{
+          .then(res => res.json())
+          .then(res => {
             const posts = res.data.children.map(obj => obj.data);
-            console.log(posts);
+            toggleCategoryFilter(filter);
             updatePosts(posts);
           });
-      toggleCategoryFilter(filter)
+    }
+  };
+
+  const handleDomainClick = (e) =>{
+    let targetId = e.currentTarget.id;
+    let queryDomain = location.query.domain;
+    let domain = targetId !== 'bubbles2' ? targetId : 'hearthstone';
+    let filteredPosts = posts.filter(post=>stripDomains(post) === domain);
+
+    if(domain === queryDomain){
+      browserHistory.push('/reddit/posts');
+      toggleDomainFilter(null);
+      updateFilteredPosts(null);
+    } else {
+      toggleDomainFilter(domain);
+      updateFilteredPosts(filteredPosts)
     }
   };
 
@@ -34,22 +50,14 @@ const RedditPosts = ({posts, location, activePost, updatePosts, updateActivePost
           <div className="container__page--inner container__page--left">
             <h3 className="sidebar__header">Filters</h3>
             <Sidebar handleCategoryClick={handleCategoryClick}/>
-            {/*{React.cloneElement(sidebar, {*/}
-            {/*handleTabmenuClick: this.handleFilterClick.bind(this),*/}
-            {/*active_tabmenu: this.state.active_tabmenu,*/}
-            {/*active_domain_filter: this.state.active_domain_filter*/}
-            {/*})}*/}
           </div>
           <div className="container__page--inner container__page--right">
-            <Topbar location={location}/>
-            {/*{React.cloneElement(topbar, {*/}
-            {/*active_tabmenu: this.state.active_tabmenu,*/}
-            {/*active_domain_filter: this.state.active_domain_filter*/}
-            {/*})}*/}
-
+            <Topbar location={location}
+                    handleDomainClick={(e)=>handleDomainClick(e)}/>
             <PostSelection posts={posts}
+                           filteredPosts={filteredPosts}
                            activePostPermalink={activePost}
-                           handlePostClick={handlePostClick()}/>
+                           handlePostClick={()=>handlePostClick()}/>
 
           </div>
         </div>
@@ -57,14 +65,17 @@ const RedditPosts = ({posts, location, activePost, updatePosts, updateActivePost
 };
 
 const mapStateToProps = (state) =>{
-  const {posts, activePost, activeCategoryFilter} = state.redditPosts;
-  return {posts, activePost, activeCategoryFilter};
+  const {posts, activePost, filteredPosts, activeCategoryFilter, activeDomainFilter} = state.redditPosts;
+  return {posts, activePost, filteredPosts, activeCategoryFilter, activeDomainFilter};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updatePosts: (posts) => dispatch({
       type: 'UPDATE_POSTS', posts
+    }),
+    updateFilteredPosts: (filteredPosts) => dispatch({
+      type: 'UPDATE_FILTERED_POSTS', filteredPosts
     }),
     updateActivePost: (activePost) => dispatch({
       type: 'UPDATE_ACTIVE_POST', activePost
@@ -73,7 +84,7 @@ const mapDispatchToProps = (dispatch) => {
       type: 'TOGGLE_DOMAIN_FILTER', activeDomainFilter
     }),
     toggleCategoryFilter: (activeCategoryFilter) => dispatch({
-      type: 'TOGGLE_DOMAIN_FILTER', activeCategoryFilter
+      type: 'TOGGLE_CATEGORY_FILTER', activeCategoryFilter
     })
   }
 };

@@ -5,7 +5,7 @@ import {wrapDate} from '../../../../../utils/wrap-date';
 import {wrapScore} from '../../../../../utils/wrap-score';
 
 const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
-  const {author, edited, created_utc, score} = comment;
+  const {author, created_utc, edited, score} = comment;
 
   return (
       <div className="comment__header" onClick={handleCollapseClick}>
@@ -30,6 +30,10 @@ CommentHeader.propTypes = {
   comment: PropTypes.shape({
     author: PropTypes.string,
     created_utc: PropTypes.number,
+    edited: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.bool
+    ]),
     score: PropTypes.number
   }),
   isOfficialDev: PropTypes.oneOfType([

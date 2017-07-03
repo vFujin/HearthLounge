@@ -6,8 +6,8 @@ import 'antd/lib/tooltip/style/css';
 import _ from 'lodash';
 import {supported_domain_icons} from '../../../../../utils/reddit/posts';
 
-const Topbar = (props) => {
-  let query = props.location.query.domain;
+const Topbar = ({location, handleDomainClick}) => {
+  let query = location.query.domain;
 
   const checkIcon = (domain) =>{
     if(domain === "bubbles2"){
@@ -19,8 +19,8 @@ const Topbar = (props) => {
   return (
         <ul className="topbar">
         {supported_domain_icons.map((domain, index)=>
-          <li key={domain}>
-            <Link to={{pathname: 'reddit', query: {category: props.active_tabmenu, domain: checkIcon(domain)}}}>
+          <li key={domain} onClick={handleDomainClick} id={domain}>
+            <Link to={{pathname: 'reddit', query: {domain: checkIcon(domain)}}}>
               <Tooltip title={_.upperFirst(checkIcon(domain))} placement="bottom">
                 <span className={`hs-icon icon-${domain} ${domain} ${domain === query ? "active" : ""}`}></span>
               </Tooltip>

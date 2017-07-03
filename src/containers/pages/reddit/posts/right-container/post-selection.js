@@ -5,9 +5,9 @@ import Loader from '../../../../../utils/loader';
 import {checkIfStickied, checkIfBlizzardPost, stripDomains, checkTopbarIconFilters, checkDomain} from '../../../../../utils/reddit/posts';
 import Icon from '../../domain-icons';
 
-const PostSelection = ({location, posts, handlePostClick}) => {
+const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
 
-  const mapPosts = () =>{
+  const mapPosts = (posts) =>{
     return (
         <div className="content">
           <table>
@@ -38,8 +38,10 @@ const PostSelection = ({location, posts, handlePostClick}) => {
   const ifPostsLoaded = () =>{
     if(posts.length < 1){
       return <Loader/>
+    } else if (filteredPosts && filteredPosts.length < 1){
+      return <p>Couldn't find any posts</p>
     }
-    else return mapPosts();
+    else return mapPosts(filteredPosts || posts);
   };
 
   return (

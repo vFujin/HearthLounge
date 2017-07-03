@@ -676,8 +676,8 @@ footer{
         .container__details--description {
           .section__body {
             overflow: auto;
-            background: $light-grey;
-            height: calc(100% - .5vh);
+            border: 1px solid rgba(0,0,0,0.2);
+            height: calc(100% - .5vh - 2px);
             .section__body--content{
               padding: 10px;
             }

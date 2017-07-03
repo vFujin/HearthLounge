@@ -23,20 +23,23 @@ export const stripRedditURL = url => {
 export const stripDomains = post => {
   const {domain} = post;
 
-  //Battle.net
-  if(domain.includes(supported_domains[0]))
-    return domain.split('.')[1]+"net";
+  if(post && domain) {
+    //Battle.net
+    if (domain.includes(supported_domains[0])) {
+      return domain.split('.')[1] + "net";
+    }
 
-  //Youtu.be
-  else if(domain ===  supported_domains[1]){
-    return domain.replace(supported_domains[1], "youtube");
+    //Youtu.be
+    else if (domain === supported_domains[1]) {
+      return domain.replace(supported_domains[1], "youtube");
+    }
+
+    else if (supported_domains.slice(2, 7).includes(domain)) {
+      return domain.replace(/self\.|\.com|clips\.|\.tv/g, "");
+    }
+
+    else return "default";
   }
-
-  else if(supported_domains.slice(2, 7).includes(domain)){
-    return domain.replace(/self\.|\.com|clips\.|\.tv/g, "");
-  }
-
-  else return "default";
 };
 
 export const checkDomain = post =>{
