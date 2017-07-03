@@ -4,8 +4,6 @@ import {connect} from 'react-redux';
 import 'whatwg-fetch';
 import {Sidebar} from './sidebar';
 import {Topbar} from './topbar';
-import {filterPosts} from '../../../../utils/reddit/post'
-
 
 import 'react-treeview/react-treeview.css';
 
@@ -26,6 +24,11 @@ class RedditPost extends Component{
     this.props.updatePostComments(null);
   }
 
+  handleCollapseClick = (i) => {
+    let [...collapsedComments] = this.props.collapsedComments;
+    collapsedComments[i] = !collapsedComments[i];
+  };
+
   render() {
     return (
         <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
@@ -37,10 +40,10 @@ class RedditPost extends Component{
             <Topbar />
             <Content cards={this.props.cards}
                      collapsedComments={this.props.collapsedComments}
+                     handleCollapseClick={this.handleCollapseClick}
                      posts={this.props.posts}
                      postComments={this.props.postComments}
-                     params={this.props.params}
-                     toggleCollapse={this.props.toggleCollapse()}/>
+                     params={this.props.params}/>
           </div>
         </div>
     )

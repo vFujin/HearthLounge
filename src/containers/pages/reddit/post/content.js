@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import PostDescription from './content/post-description';
 import PostComments from './content/post-comments';
 
-const Content = ({cards, collapsedComments, params, posts, postComments, toggleCollapse}) =>{
+const Content = ({cards, collapsedComments, handleCollapseClick, params, posts, postComments, renderComment}) =>{
 
   return (
       <div className="content">
@@ -13,10 +13,11 @@ const Content = ({cards, collapsedComments, params, posts, postComments, toggleC
                            params={params}/>
           <PostComments cards={cards}
                         collapsedComments={collapsedComments}
+                        handleCollapseClick={handleCollapseClick}
                         posts={posts}
                         params={params}
                         postComments={postComments}
-                        toggleCollapse={toggleCollapse}/>
+                        renderComment={renderComment}/>
         </div>
       </div>
   )
