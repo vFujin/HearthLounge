@@ -4055,19 +4055,27 @@ footer {
       .subreddit .container__page--left button a:hover {
         background-color: #474143;
         color: #E7E2DA; }
-.subreddit .container__page--right .topbar .subreddit-posts-topbar {
-  display: flex;
-  align-items: center; }
-  .subreddit .container__page--right .topbar .subreddit-posts-topbar ul {
+.subreddit .container__page--right .topbar {
+  justify-content: inherit; }
+  .subreddit .container__page--right .topbar li {
+    margin: 0 10px; }
+    .subreddit .container__page--right .topbar li a span {
+      cursor: pointer;
+      font-size: 1vw;
+      padding: 5px; }
+  .subreddit .container__page--right .topbar .subreddit-posts-topbar {
     display: flex;
-    margin-top: 2px; }
-    .subreddit .container__page--right .topbar .subreddit-posts-topbar ul li {
-      margin-left: 15px;
-      color: #474143; }
-      .subreddit .container__page--right .topbar .subreddit-posts-topbar ul li a span {
-        font-size: 25px;
-        padding: 5px;
-        text-transform: capitalize; }
+    align-items: center; }
+    .subreddit .container__page--right .topbar .subreddit-posts-topbar ul {
+      display: flex;
+      margin-top: 2px; }
+      .subreddit .container__page--right .topbar .subreddit-posts-topbar ul li {
+        margin-left: 15px;
+        color: #474143; }
+        .subreddit .container__page--right .topbar .subreddit-posts-topbar ul li a span {
+          font-size: 25px;
+          padding: 5px;
+          text-transform: capitalize; }
 .subreddit .container__page--right .posts {
   overflow: auto;
   margin: 10px 0 0 10px;

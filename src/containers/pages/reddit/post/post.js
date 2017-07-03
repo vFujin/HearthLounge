@@ -11,10 +11,14 @@ import Content from './content';
 
 class RedditPost extends Component{
 
+  //TODO: need to add edge case when post doesnt exist, simple task, though no time for today
   componentDidMount(){
     fetch(`https://www.reddit.com/r/hearthstone/comments/${this.props.params.id}.json`)
         .then(res => res.json())
         .then(res=>{
+          if(res.error && res.error === 404){
+            this.props.updatePostComments(null);
+          }
           const comments = res[1].data.children.map(obj => obj.data);
           this.props.updatePostComments(comments);
         });

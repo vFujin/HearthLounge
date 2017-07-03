@@ -20,14 +20,13 @@ const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, u
     e.preventDefault();
 
     let filter = e.currentTarget.id;
-    if(filter !== category) {
+    if(filter !== category || filter !== activeCategoryFilter) {
       updatePosts([]);
       fetch(`https://www.reddit.com/r/hearthstone/${filter}.json`)
           .then(res => res.json())
           .then(res => {
             const posts = res.data.children.map(obj => obj.data);
-            addQuery({category: [filter]});
-            toggleCategoryFilter(filter);
+
             updatePosts(posts);
             if(domain){
               let filteredPosts = posts.filter(post=> stripDomains(post) === domain);
@@ -35,6 +34,8 @@ const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, u
             }
 
           });
+      addQuery({category: [filter]});
+      toggleCategoryFilter(filter);
     }
   };
 
@@ -45,7 +46,7 @@ const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, u
     let filteredPosts = posts.filter(post=> stripDomains(post) === targetDomain);
 
     if(targetDomain === domain){
-      browserHistory.push(`/reddit/posts?category=${activeCategoryFilter}`)
+      browserHistory.push(`/reddit/posts?category=${activeCategoryFilter}`);
       toggleDomainFilter(null);
       updateFilteredPosts(null);
     } else {
@@ -59,7 +60,7 @@ const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, u
       <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
         <div className="container__page--inner container__page--left">
           <h3 className="sidebar__header">Filters</h3>
-          <Sidebar handleCategoryClick={handleCategoryClick}/>
+          <Sidebar category={category} handleCategoryClick={handleCategoryClick}/>
         </div>
         <div className="container__page--inner container__page--right">
           <Topbar location={location}
@@ -67,7 +68,7 @@ const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, u
           <PostSelection posts={posts}
                          filteredPosts={filteredPosts}
                          activePostPermalink={activePost}
-                         handlePostClick={()=>handlePostClick()}/>
+                         handlePostClick={handlePostClick()}/>
 
         </div>
       </div>
