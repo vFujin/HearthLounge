@@ -9,7 +9,7 @@ const Sidebar = ({handleCategoryClick}) => {
         {tabmenu.map(el => {
           return (
               <button key={el} id={el} onClick={handleCategoryClick}>
-                <Link activeClassName="active" to={{pathname: 'reddit', query: {category: el}}}>{el}</Link>
+                <Link activeClassName="active">{el}</Link>
               </button>
           )
         })}

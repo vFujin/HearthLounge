@@ -2,71 +2,46 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import 'whatwg-fetch';
+import {stripDomains} from '../../../utils/reddit/posts';
 import RedditPosts from './posts/posts';
-class Reddit extends Component{
+class Reddit extends Component {
 
   componentDidMount() {
     let query = this.props.location.query.category || "hot";
+    let domain = this.props.location.query.domain || false;
     fetch(`https://www.reddit.com/r/hearthstone/${query}.json`)
         .then(res => res.json())
-        .then(res=>{
+        .then(res => {
           const posts = res.data.children.map(obj => obj.data);
           this.props.updatePosts(posts);
-          console.log(posts)
+          if (domain) {
+            let filteredPosts = posts.filter(post => stripDomains(post) === domain);
+            this.props.updateFilteredPosts(filteredPosts);
+          }
         });
   }
 
-  render(){
-    return React.cloneElement(this.props.children, {posts: this.props.posts, cards: this.props.cards});
+  render() {
+    return React.cloneElement(this.props.children, {
+      posts: this.props.posts,
+      filteredPosts: this.props.location.query.domain ? this.props.filteredPosts : null,
+      cards: this.props.cards
+    });
   }
-  // constructor(props){
-  //   super(props);
-  //
-  //   this.state = {
-  //     posts: [],
-  //     post: '',
-  //     active_post: '',
-  //     post_permalink: '',
-  //     active_tabmenu: 'hot',
-  //     active_domain_filter: ''
-  //   };
-  //
-  //   this.handleFilterClick = this.handleFilterClick.bind(this);
-  // }
-  //
-  //
-
-  //
-  //
-  // handleFilterClick = (e) => {
-  //   e.preventDefault();
-  //   let filter = e.currentTarget.id;
-  //   if(filter !== this.state.active_tabmenu){
-  //     fetch(`https://www.reddit.com/r/hearthstone/${filter}.json`)
-  //       .then(res => res.json())
-  //       .then(res=>{
-  //           const posts = res.data.children.map(obj => obj.data);
-  //           console.log(posts);
-  //           this.setState({
-  //             posts: posts
-  //           })
-  //         });
-  //     this.setState({
-  //       active_tabmenu: filter,
-  //     });
-  //   }
-  // };
 }
 
 const mapStateToProps = (state) =>{
-  const {posts} = state.redditPosts;
-  return {posts};
+  const {posts, filteredPosts} = state.redditPosts;
+  return {posts, filteredPosts};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updatePosts: (posts) => dispatch({
       type: 'UPDATE_POSTS', posts
+    }),
+    updateFilteredPosts: (filteredPosts) => dispatch({
+      type: 'UPDATE_FILTERED_POSTS', filteredPosts
     })
   }
 };

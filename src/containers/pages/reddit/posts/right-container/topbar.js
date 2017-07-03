@@ -20,7 +20,7 @@ const Topbar = ({location, handleDomainClick}) => {
         <ul className="topbar">
         {supported_domain_icons.map((domain, index)=>
           <li key={domain} onClick={handleDomainClick} id={domain}>
-            <Link to={{pathname: 'reddit', query: {domain: checkIcon(domain)}}}>
+            <Link>
               <Tooltip title={_.upperFirst(checkIcon(domain))} placement="bottom">
                 <span className={`hs-icon icon-${domain} ${domain} ${domain === query ? "active" : ""}`}></span>
               </Tooltip>
