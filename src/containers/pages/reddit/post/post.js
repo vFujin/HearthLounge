@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import 'whatwg-fetch';
 import {Sidebar} from './sidebar';
 import {Topbar} from './topbar';
+import NotFound from '../../../shared-assets/not-found';
 
 import 'react-treeview/react-treeview.css';
 
@@ -11,17 +12,18 @@ import Content from './content';
 
 class RedditPost extends Component{
 
-  //TODO: need to add edge case when post doesnt exist, simple task, though no time for today
   componentDidMount(){
     fetch(`https://www.reddit.com/r/hearthstone/comments/${this.props.params.id}.json`)
         .then(res => res.json())
         .then(res=>{
           if(res.error && res.error === 404){
-            this.props.updatePostComments(null);
+            this.props.updatePostComments({error: res.error});
+          } else {
+            const comments = res[1].data.children.map(obj => obj.data);
+            this.props.updatePostComments(comments);
           }
-          const comments = res[1].data.children.map(obj => obj.data);
-          this.props.updatePostComments(comments);
         });
+
   }
 
   componentWillUnmount(){
@@ -34,6 +36,9 @@ class RedditPost extends Component{
   };
 
   render() {
+    if(this.props.postComments && this.props.postComments.error){
+      return <NotFound page={`reddit/post/${this.props.params.id}`} redirect="reddit/posts"/>
+    }
     return (
         <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
           <div className="container__page--inner container__page--left">

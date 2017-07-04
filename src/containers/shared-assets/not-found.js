@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 
-const NotFound = props => {
-  const{page, redirect} = props;
+const NotFound = ({page, redirect, below_topbar}) => {
 
   const pluralize = () =>{
     if(page) {
@@ -15,7 +15,7 @@ const NotFound = props => {
   };
 
   return (
-      <div className={`not-found ${props.below_topbar === true ? "below-topbar" : ""}`}>
+      <div className={`not-found ${below_topbar === true ? "below-topbar" : ""}`}>
         <div className="wrapper">
           <div className="lost">
             <span className="hs-icon icon-mana-4"></span>
@@ -35,3 +35,9 @@ const NotFound = props => {
 };
 
 export default NotFound;
+
+NotFound.propTypes = {
+  page: PropTypes.string.isRequired,
+  redirect: PropTypes.string.isRequired,
+  below_topbar: PropTypes.bool
+};

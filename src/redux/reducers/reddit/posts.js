@@ -4,6 +4,7 @@ const initialState = {
   activeCategoryFilter: 'hot'
 };
 
+
 export default function(state=initialState, action){
   switch(action.type){
     case 'UPDATE_POSTS': return {

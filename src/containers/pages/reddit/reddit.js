@@ -9,9 +9,19 @@ class Reddit extends Component {
   componentDidMount() {
     let query = this.props.location.query.category || "hot";
     let domain = this.props.location.query.domain || false;
+    if(this.props.params.id && this.props.posts.length < 1) {
+      fetch(`https://www.reddit.com/r/hearthstone/${this.props.params.id}.json`)
+          .then(res => res.json())
+          .then(res => {
+            console.log(res);
+            const posts = res[0].data.children.map(obj => obj.data);
+
+          });
+    }
     fetch(`https://www.reddit.com/r/hearthstone/${query}.json`)
         .then(res => res.json())
         .then(res => {
+          console.log(res);
           const posts = res.data.children.map(obj => obj.data);
           this.props.updatePosts(posts);
           if (domain) {
