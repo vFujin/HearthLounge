@@ -13,7 +13,6 @@ class Reddit extends Component {
     let domainQuery = domain || false;
     let preload = id && posts.length < 1;
 
-
     fetch(`https://www.reddit.com/r/hearthstone/${preload ? params.id : categoryQuery}.json`)
         .then(res => res.json())
         .then(res => {
@@ -30,6 +29,7 @@ class Reddit extends Component {
   render() {
     const {cards, children, posts, location, filteredPosts } = this.props;
     const {domain} = location.query;
+
     return React.cloneElement(children, {
       filteredPosts: domain ? filteredPosts : null,
       cards,

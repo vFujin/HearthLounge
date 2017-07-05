@@ -20,6 +20,6 @@ const Sidebar = ({category, handleCategoryClick}) => {
 export default Sidebar;
 
 Sidebar.propTypes = {
-  category: PropTypes.string.isRequired,
-  handleTabmenuClick: PropTypes.func.isRequired
+  category: PropTypes.string,
+  handleTabmenuClick: PropTypes.func
 };

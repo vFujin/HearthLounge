@@ -66,6 +66,7 @@ const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, u
           <Topbar location={location}
                   handleDomainClick={(e)=>handleDomainClick(e)}/>
           <PostSelection posts={posts}
+                         location={location}
                          filteredPosts={filteredPosts}
                          activePostPermalink={activePost}
                          handlePostClick={handlePostClick()}/>
