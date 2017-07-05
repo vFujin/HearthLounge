@@ -5,7 +5,7 @@ import Loader from '../../../../../../../utils/loader';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
 
 const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, handleCommentClick, handleCommentVotingClick, votedComments}) => {
-
+  console.log(votedComments)
   const listComments = () =>{
     if(comments === undefined){
       return <Loader/>
@@ -36,3 +36,20 @@ const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVot
 };
 
 export default SectionBody;
+
+SectionBody.propTypes = {
+  comments: PropTypes.array,
+  deckComment: PropTypes.string,
+  deckId: PropTypes.string,
+  previewIsActive: PropTypes.bool,
+  commentVotes: PropTypes.shape({
+    downvotes: PropTypes.number,
+    upvotes: PropTypes.number,
+    votes: PropTypes.number,
+    id: PropTypes.string
+  }),
+  commentId: PropTypes.string,
+  handleCommentClick: PropTypes.func,
+  handleCommentVotingClick: PropTypes.func,
+  votedComments: PropTypes.object // key - {string} :deckId, value - {string} voteType
+};

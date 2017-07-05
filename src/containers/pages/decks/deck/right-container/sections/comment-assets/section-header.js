@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 const SectionHeader = ({comments}) => {
@@ -13,3 +12,5 @@ const SectionHeader = ({comments}) => {
 };
 
 export default SectionHeader;
+
+//No proptypes, comments is an object with dynamic {string} `deckId` keys and array of comments object values

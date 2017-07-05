@@ -23,3 +23,14 @@ const SectionFooter = ({commentBoxIsActive, handleInputChange, handlePostComment
 };
 
 export default SectionFooter;
+
+SectionFooterCommentBox.propTypes = {
+  commentBoxIsActive: PropTypes.bool,
+  handleInputChange: PropTypes.func,
+  handlePostCommentClick: PropTypes.func,
+  handleAddCommentClick: PropTypes.func,
+  handleHideCommentClick: PropTypes.func,
+  handlePreviewClick: PropTypes.func,
+  deckCommentControlled: PropTypes.string,
+  updateComment: PropTypes.func,
+};

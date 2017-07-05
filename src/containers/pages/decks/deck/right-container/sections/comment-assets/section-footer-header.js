@@ -16,3 +16,9 @@ const SectionFooterHeader = ({handleHideCommentClick, handlePreviewClick, handle
 };
 
 export default SectionFooterHeader;
+
+SectionFooterHeader.propTypes = {
+  handleHideCommentClick: PropTypes.func,
+  handlePreviewClick: PropTypes.func,
+  handlePostCommentClick: PropTypes.func,
+};
