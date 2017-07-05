@@ -47,7 +47,6 @@ export const toSeconds = (time) =>{
   return time * 1000;
 };
 
-
 /**
  * Wraps element into ant-design Tooltip to give more detailed date on hover.
  * @example Without any action: 42 minutes ago

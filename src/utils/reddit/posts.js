@@ -42,8 +42,7 @@ export const stripDomains = post => {
   }
 };
 
-export const checkDomain = post =>{
-  const {id, permalink, domain, url} = post;
+export const checkDomain = ({id, permalink, domain, url}) =>{
   let selfURL = `/reddit/post/${id}/${stripRedditURL(permalink)}`;
 
   switch (domain) {
