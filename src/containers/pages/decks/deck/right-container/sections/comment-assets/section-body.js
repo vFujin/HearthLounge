@@ -5,7 +5,6 @@ import Loader from '../../../../../../../utils/loader';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
 
 const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, handleCommentClick, handleCommentVotingClick, votedComments}) => {
-  console.log(votedComments)
   const listComments = () =>{
     if(comments === undefined){
       return <Loader/>

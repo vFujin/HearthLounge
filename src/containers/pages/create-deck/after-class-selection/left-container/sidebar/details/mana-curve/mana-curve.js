@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ManaCurveBar from './mana-curve-graph';
 
 const ManaCurve = ({deck, max}) => {
@@ -13,8 +14,8 @@ const ManaCurve = ({deck, max}) => {
 };
 
 ManaCurve.propTypes = {
-  deck: React.PropTypes.array,
-  max: React.PropTypes.number
+  deck: PropTypes.object,
+  max: PropTypes.number
 };
 
 export default ManaCurve;

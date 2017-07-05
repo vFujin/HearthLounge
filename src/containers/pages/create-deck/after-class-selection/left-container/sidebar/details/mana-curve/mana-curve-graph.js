@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 const ManaCurveBar = ({cost, deck, icon, max}) => {
@@ -19,10 +20,13 @@ const ManaCurveBar = ({cost, deck, icon, max}) => {
 };
 
 ManaCurveBar.propTypes = {
-  cost: React.PropTypes.number,
-  deck: React.PropTypes.array,
-  icon: React.PropTypes.any, //either string or number
-  max: React.PropTypes.number
+  cost: PropTypes.number,
+  deck: PropTypes.object,
+  icon: PropTypes.oneOfType(
+      PropTypes.string,
+      PropTypes.number
+  ),
+  max: PropTypes.number
 };
 
 export default ManaCurveBar;

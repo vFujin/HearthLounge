@@ -6,7 +6,7 @@ const LeftContainer = ({currentDeck}) =>{
 
   const listCards = () =>{
     return _.map(currentDeck.deck.cards).map((c, i)=>
-        <tr>
+        <tr key={i}>
           <td>set</td>
           <td>{cardNames[i]}</td>
           <td>{c.amount}</td>
