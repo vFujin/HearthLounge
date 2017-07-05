@@ -32,3 +32,7 @@ const SectionFooter = ({author}) => {
 };
 
 export default SectionFooter;
+
+SectionFooter.propTypes = {
+  author: PropTypes.string.isRequired
+};

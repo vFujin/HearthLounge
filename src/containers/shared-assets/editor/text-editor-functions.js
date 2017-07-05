@@ -1,4 +1,5 @@
 import React from 'react';
+
 export const handleBBCodeClick = (e, textContainer, handleTagInsertion, id, previewId) =>{
   e.preventDefault();
   let bbcode = e.currentTarget.value;
@@ -22,17 +23,15 @@ export const handleBBCodeClick = (e, textContainer, handleTagInsertion, id, prev
       [previewId]: start + `[${bbcode}][li]` + selection + `[/li][/${bbcode}]` + end
     });
     case 'card': return handleTagInsertion({
-      [id]: start + `[${bbcode}]` + selection + end,
-      [previewId]: start + `[${bbcode}]` + selection + end
+      [id]: start + `[[${bbcode}]]` + selection + end,
+      [previewId]: start + `[[${bbcode}]]` + selection + end
     });
-    case bbcode:  return handleTagInsertion({
+    default: return handleTagInsertion({
       [id]: start + `[${bbcode}]` + selection + `[/${bbcode}]` + end,
       [previewId]: start + `[${bbcode}]` + selection + `[/${bbcode}]` + end
     });
   }
 };
-
-
 
 export const convertBBCode = (text) =>{
   if(text !== undefined) {

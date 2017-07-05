@@ -13,3 +13,7 @@ const SectionBody = ({description}) => {
 };
 
 export default SectionBody;
+
+SectionBody.propTypes = {
+  description: PropTypes.string.isRequired
+};

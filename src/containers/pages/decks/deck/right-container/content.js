@@ -17,5 +17,7 @@ const Content = ({activeUser, currentDeck, params}) =>{
 export default Content;
 
 Content.propTypes = {
-  currentDeck: PropTypes.object
+  activeUser: PropTypes.object,
+  currentDeck: PropTypes.object,
+  params: PropTypes.object
 };

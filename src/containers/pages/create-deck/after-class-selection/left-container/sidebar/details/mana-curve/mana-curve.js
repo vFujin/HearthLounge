@@ -14,7 +14,10 @@ const ManaCurve = ({deck, max}) => {
 };
 
 ManaCurve.propTypes = {
-  deck: PropTypes.object,
+  deck: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ]),
   max: PropTypes.number
 };
 

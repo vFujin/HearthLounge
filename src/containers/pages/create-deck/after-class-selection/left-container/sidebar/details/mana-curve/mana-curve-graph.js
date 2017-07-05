@@ -21,11 +21,14 @@ const ManaCurveBar = ({cost, deck, icon, max}) => {
 
 ManaCurveBar.propTypes = {
   cost: PropTypes.number,
-  deck: PropTypes.object,
-  icon: PropTypes.oneOfType(
+  deck: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ]),
+  icon: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
-  ),
+  ]),
   max: PropTypes.number
 };
 

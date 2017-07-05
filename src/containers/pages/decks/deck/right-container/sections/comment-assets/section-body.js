@@ -50,5 +50,8 @@ SectionBody.propTypes = {
   commentId: PropTypes.string,
   handleCommentClick: PropTypes.func,
   handleCommentVotingClick: PropTypes.func,
-  votedComments: PropTypes.object // key - {string} :deckId, value - {string} voteType
+  votedComments: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array
+      ])
 };

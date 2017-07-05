@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
 const ManaCurve = ({deckUrl, deck}) =>{
 
@@ -17,8 +16,14 @@ const ManaCurve = ({deckUrl, deck}) =>{
           </ul>
         </Link>
   )
-
-
 };
 
 export default ManaCurve;
+
+ManaCurve.propTypes = {
+  deck: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ]).isRequired,
+  deckUrl: PropTypes.string.isRequired
+};

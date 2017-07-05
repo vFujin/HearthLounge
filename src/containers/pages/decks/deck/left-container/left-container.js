@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import ManaCurve from '../../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
 const LeftContainer = ({currentDeck}) =>{
+  console.log(currentDeck)
   let cardNames = Object.keys(currentDeck.deck.cards);
 
   const listCards = () =>{
@@ -54,3 +56,25 @@ const LeftContainer = ({currentDeck}) =>{
 };
 
 export default LeftContainer;
+
+LeftContainer.propTypes = {
+  currentDeck: PropTypes.shape({
+    archetype: PropTypes.string,
+    author: PropTypes.string,
+    created: PropTypes.number,
+    deck: PropTypes.shape({
+      cards: PropTypes.object,
+      manaCurve: PropTypes.array,
+      types: PropTypes.object,
+    }),
+    deckId: PropTypes.string,
+    description: PropTypes.string,
+    hsClass: PropTypes.string,
+    patch: PropTypes.string,
+    title: PropTypes.string,
+    type: PropTypes.string,
+    views: PropTypes.number,
+    upvotes: PropTypes.number,
+    downvotes: PropTypes.number,
+  })
+};
