@@ -26,8 +26,12 @@ const Content = ({cards, collapsedComments, handleCollapseClick, params, posts, 
 export default Content;
 
 Content.propTypes = {
-  posts: PropTypes.array,
+  cards: PropTypes.array,
+  collapsedComments: PropTypes.array,
+  handleCollapseClick: PropTypes.func,
   params: PropTypes.shape({
     id: PropTypes.string
-  })
+  }),
+  posts: PropTypes.array,
+  renderComment: PropTypes.func
 };

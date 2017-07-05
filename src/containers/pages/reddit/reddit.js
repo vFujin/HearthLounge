@@ -6,38 +6,34 @@ import {stripDomains} from '../../../utils/reddit/posts';
 class Reddit extends Component {
 
   componentDidMount() {
-    let query = this.props.location.query.category || "hot";
-    let domain = this.props.location.query.domain || false;
-    // if(this.props.params.id && this.props.posts.length < 1) {
-    //   fetch(`https://www.reddit.com/r/hearthstone/${this.props.params.id}.json`)
-    //       .then(res => res.json())
-    //       .then(res => {
-    //         console.log(res);
-    //         const posts = res[0].data.children.map(obj => obj.data);
-    //         if (domain) {
-    //           let filteredPosts = posts.filter(post => stripDomains(post) === domain);
-    //           this.props.updateFilteredPosts(filteredPosts);
-    //         }
-    //       });
-    // }
-    fetch(`https://www.reddit.com/r/hearthstone/${query}.json`)
+    const {location, params, posts, updatePosts, updateFilteredPosts} = this.props;
+    const {category, domain} = location.query;
+    const {id} = params;
+    let categoryQuery = category || "hot";
+    let domainQuery = domain || false;
+    let preload = id && posts.length < 1;
+
+
+    fetch(`https://www.reddit.com/r/hearthstone/${preload ? params.id : categoryQuery}.json`)
         .then(res => res.json())
         .then(res => {
           console.log(res);
-          const posts = res.data.children.map(obj => obj.data);
-          this.props.updatePosts(posts);
-          if (domain) {
-            let filteredPosts = posts.filter(post => stripDomains(post) === domain);
-            this.props.updateFilteredPosts(filteredPosts);
+          const posts = preload ? res[0].data.children.map(obj => obj.data) : res.data.children.map(obj => obj.data);
+          updatePosts(posts);
+          if (domainQuery) {
+            let filteredPosts = posts.filter(post => stripDomains(post) === domainQuery);
+            updateFilteredPosts(filteredPosts);
           }
         });
   }
 
   render() {
-    return React.cloneElement(this.props.children, {
-      posts: this.props.posts,
-      filteredPosts: this.props.location.query.domain ? this.props.filteredPosts : null,
-      cards: this.props.cards
+    const {cards, children, posts, location, filteredPosts } = this.props;
+    const {domain} = location.query;
+    return React.cloneElement(children, {
+      filteredPosts: domain ? filteredPosts : null,
+      cards,
+      posts
     });
   }
 }

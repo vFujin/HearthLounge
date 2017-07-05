@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Tooltip from 'antd/lib/tooltip';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import format from 'date-fns/format';
@@ -70,4 +71,10 @@ export const wrapDate = (created, edited, placement) => {
           ? notEdited(timeDifference, createdFormatted, placement)
           : editedWrapper(timeDifference, createdFormatted, toSeconds(edited), editedTimeFormatted, placement)
   )
+};
+
+wrapDate.propTypes = {
+  created: PropTypes.number.isRequired,
+  edited: PropTypes.number.isRequired,
+  placement: PropTypes.string
 };
