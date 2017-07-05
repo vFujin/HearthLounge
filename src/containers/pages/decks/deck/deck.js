@@ -38,3 +38,10 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Deck);
+
+Deck.propTypes = {
+  activeUser: PropTypes.object,
+  currentDeck: PropTypes.object,
+  params: PropTypes.object,
+  updateDeckRating: PropTypes.func,
+};

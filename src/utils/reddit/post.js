@@ -40,9 +40,7 @@ export const filterPosts = (posts, params) => {
         return iframe(replacedYTShortenerUrl, index);
       case 'clips.twitch.tv':
         return iframe(`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`, index);
-      default:
-        window.open(url);
-        break;
+      default: return window.open(url);
     }
   })
 };

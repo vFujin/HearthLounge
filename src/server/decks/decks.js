@@ -1,12 +1,12 @@
 import {ref, refParent} from '../../keys';
 import {voteTransaction} from '../utils/vote-transaction';
 import {updateUserVotes} from '../utils/update-user-votes';
-import {success, loading, error} from '../../utils/messages';
+// import {success, loading, error} from '../../utils/messages';
 
-let data = [];
-let _start = Date.now() - 86400*3000; //3 days
-let _end = Date.now() - 604800*3000;
-let _n = 604800*1000;
+// let data = [];
+// let _start = Date.now() - 86400*3000; //3 days
+// let _end = Date.now() - 604800*3000;
+// let _n = 604800*1000;
 
 export function lazyLoadDecks(callback, playerClass){
   // if(playerClass !== null) {

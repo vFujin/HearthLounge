@@ -8,6 +8,6 @@ export default function(state=initialState, action){
       ...state,
       ...action.props
     };
+    default: return state;
   }
-  return state;
 }

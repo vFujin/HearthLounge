@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {createMarkup} from '../../../../../utils/reddit/post';
-import {findSubstring} from '../../../../../utils/find-substring';
-import _ from 'lodash';
-import Tooltip from 'antd/lib/tooltip';
+// import {findSubstring} from '../../../../../utils/find-substring';
+// import _ from 'lodash';
+// import Tooltip from 'antd/lib/tooltip';
 
 const CommentBody = ({cards, comment, comments, isOfficialDev, renderComment}) =>{
   const {body_html} = comment;

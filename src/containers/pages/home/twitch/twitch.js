@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import {TwitchClientId} from "../../../../keys";
 import TopLiveStreamersList from './twitch-snippet/top-livestreamers-list';
 import TwitchIframe from './twitch-snippet/twtch-iframe';

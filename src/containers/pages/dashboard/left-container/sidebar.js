@@ -57,6 +57,7 @@ export class Sidebar extends Component{
       case 'details': return updateEmail(this.state.email);
       case 'hearthstone': return updateUserHearthstoneData(user.uid, validateInput('battletag'), validateInput('favourite_class'), validateInput('region'));
       case 'social_media': return updateUserSocialMediaData(user.uid, validateInput('facebook'), validateInput('twitter'), validateInput('twitch'), validateInput('youtube'));
+      default: return target;
     }
   }
 

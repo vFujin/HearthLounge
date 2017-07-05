@@ -49,7 +49,7 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
     let max = _.max(Object.values(countByCost));
 
     deck.filter((card, i, self) => {
-      Object.assign(cards, {
+      return Object.assign(cards, {
         [card.name]: {
           cost: card.cost,
           amount: (self.indexOf(card) !== i) ? 2 : 1
@@ -123,7 +123,7 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
   };
 
   const handleKeyShortcuts = (e) => {
-    let areDeckMechanicsActive = filters === false ? true : false;
+    // let areDeckMechanicsActive = filters === false ? true : false;
     let areFiltersActive = filters === false ? true : false;
 
     if(e.button === 0 || e.ctrlKey) {
@@ -164,6 +164,7 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
         captureDecklist('decklist-to-img', switchDecklistClasses, closeLoadingMessage);
         break;
       case 'cancel-img-save': return switchDecklistClasses(false);
+      default: return target;
     }
   };
 
@@ -180,7 +181,9 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
         showDeckEditingTool(isEditingToolActive);
         deckSimplification();
         break;
+      default: return icon;
     }
+
   };
 
   return (
@@ -218,7 +221,7 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
   );
 };
 
-const mapStateToProps = (state, ownProps) =>{
+const mapStateToProps = (state) =>{
   const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, summarizedDeck, simplifiedDeck} = state.deckCreation;
   return {
     filters,

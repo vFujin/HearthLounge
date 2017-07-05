@@ -67,3 +67,15 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckOptions)
+
+DeckOptions.propTypes = {
+  activeClass: PropTypes.string,
+  user: PropTypes.object,
+  deckType: PropTypes.string,
+  deckTitle: PropTypes.string,
+  deckArchetype: PropTypes.string,
+  deckText: PropTypes.string,
+  deckTextControlled: PropTypes.string,
+  simplifiedDeck: PropTypes.object,
+  updateDeckProperty: PropTypes.func
+};

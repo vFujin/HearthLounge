@@ -21,7 +21,7 @@ export default function(state=initialState, action){
         ...state,
       signUp_firstStep: action.signUp_firstStep,
       signUp_secondStep: action.signUp_secondStep
-    }
+    };
+    default: return state;
   }
-  return state;
 }

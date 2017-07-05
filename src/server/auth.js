@@ -1,6 +1,6 @@
 import {ref, firebaseAuth} from '../keys';
 import {browserHistory} from 'react-router';
-import {loading, success, error} from '../utils/messages';
+import {success, error} from '../utils/messages';
 
 /**
  * Creates new user.

@@ -35,6 +35,6 @@ export default function(state=initialState, action){
       ...state,
       activeCategoryFilter: action.activeCategoryFilter
     };
+    default: return state;
   }
-  return state;
 }

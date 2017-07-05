@@ -10,7 +10,7 @@ const IconLabel = ({id, title, placeholder, disabled, handleInputChange}) => {
       case 'twitter':
       case 'youtube': return 'com';
       case 'twitch': return 'tv';
-
+      default: return title;
     }
   };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'antd/lib/slider';
 import Tooltip from 'antd/lib/tooltip';
 import {Link} from 'react-router';
-import {addQuery, removeQuery} from '../../../utils/utils-router';
+import {addQuery} from '../../../utils/utils-router';
 import 'antd/lib/slider/style/css';
 
 const SliderFilter = props => {

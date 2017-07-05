@@ -1,5 +1,5 @@
 import {ref} from '../../keys';
-import {success, loading, error} from '../../utils/messages';
+import {success, error} from '../../utils/messages';
 
 /**
  * Function representing deck saving to Firebase /decks and /users/:id/decks endpoint
