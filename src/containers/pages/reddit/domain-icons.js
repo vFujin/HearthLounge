@@ -21,7 +21,13 @@ const Icon = ({link_flair_text, domain }) => {
       let icon = domain.replace(/\.com|clips\.|\.tv/g, "").toLowerCase();
       return iconTemplate(icon);
     }
+    //TODO: need to add default icon for domains that are not supported
   }
 };
 
 export default Icon;
+
+Icon.propTypes = {
+  link_flair_text: PropTypes.string,
+  domain: PropTypes.string
+};

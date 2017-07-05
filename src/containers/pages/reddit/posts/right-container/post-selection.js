@@ -22,8 +22,7 @@ const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
             <td className="upvotes"><Link to={checkDomain(post)}><span>{post.ups}</span></Link></td>
             <td className="domain"><Link to={checkDomain(post)}>{Icon(post)}</Link></td>
             <td className="comments"><Link to={checkDomain(post)}><span>{post.num_comments}</span></Link></td>
-            <td className="title"><Link
-                to={checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
+            <td className="title"><Link to={checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
             <td className="created"><Link to={checkDomain(post)}>{wrapDate(post.created, post.edited)}</Link></td>
           </tr>
       ))

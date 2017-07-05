@@ -20,7 +20,7 @@ export const stripRedditURL = url => {
   return split[split.length - 2];
 };
 
-export const stripDomains = post => {
+export const stripDomains = (post) => {
   const {domain} = post;
 
   if(post && domain) {
@@ -42,10 +42,10 @@ export const stripDomains = post => {
   }
 };
 
-export const checkDomain = ({id, permalink, domain, url}) =>{
+export const checkDomain = post =>{
+  const {id, permalink, url} = post;
   let selfURL = `/reddit/post/${id}/${stripRedditURL(permalink)}`;
-
-  switch (domain) {
+  switch (stripDomains(post)) {
     case supported_domains[1]:
     case supported_domains[2]:
     case supported_domains[4]:
