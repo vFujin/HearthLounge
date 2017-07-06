@@ -43,9 +43,9 @@ export const stripDomains = (post) => {
 };
 
 export const checkDomain = post =>{
-  const {id, permalink, url} = post;
+  const {id, permalink, domain, url} = post;
   let selfURL = `/reddit/post/${id}/${stripRedditURL(permalink)}`;
-  switch (stripDomains(post)) {
+  switch (domain) {
     case supported_domains[1]:
     case supported_domains[2]:
     case supported_domains[4]:
