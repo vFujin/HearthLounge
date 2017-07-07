@@ -152,6 +152,10 @@ export const icon_filters = {
     {
       name: "Journey to Un'Goro",
       url: 'journey-to-ungoro'
+    },
+    {
+      name: "Knights of the Frozen Throne",
+      url: 'knights-of-the-frozen-throne'
     }
   ],
   cost: [

@@ -1354,6 +1354,51 @@ a:active, a:hover, a:link, a:visited {
     background-attachment: fixed;
     border-left: 10px solid #3d9e2c; }
 
+.knights-of-the-frozen-throne {
+  color: #a5f2f3; }
+  .knights-of-the-frozen-throne span {
+    border-color: #a5f2f3; }
+  .knights-of-the-frozen-throne:hover {
+    background-color: #a5f2f3;
+    color: #474143; }
+    .knights-of-the-frozen-throne:hover span {
+      border-color: #474143; }
+  .knights-of-the-frozen-throne.active {
+    background-color: #a5f2f3;
+    color: #474143;
+    border-color: #a5f2f3; }
+  .knights-of-the-frozen-throne.active-without-background {
+    color: #a5f2f3 !important;
+    background-color: transparent; }
+  .knights-of-the-frozen-throne.active-on-hover {
+    color: #474143; }
+    .knights-of-the-frozen-throne.active-on-hover:hover {
+      background-color: #a5f2f3;
+      color: #474143;
+      border: #474143; }
+  .knights-of-the-frozen-throne.icon-font-active {
+    color: #474143; }
+  .knights-of-the-frozen-throne.table-row {
+    color: #474143; }
+    .knights-of-the-frozen-throne.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .knights-of-the-frozen-throne.table-row:nth-child(odd):hover {
+        background: #a5f2f3; }
+    .knights-of-the-frozen-throne.table-row:hover {
+      background-color: #a5f2f3;
+      color: #474143;
+      border: #474143; }
+  .knights-of-the-frozen-throne.blizzard-official {
+    background-color: #a5f2f3;
+    color: #000; }
+  .knights-of-the-frozen-throne.gradient {
+    background: -moz-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 10%);
+    background: -webkit-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 10%);
+    background: linear-gradient(to right, rgba(165, 242, 243, 0.4) 0%, transparent 10%);
+    color: #474143;
+    background-attachment: fixed;
+    border-left: 10px solid #a5f2f3; }
+
 .common {
   color: #fff; }
   .common span {

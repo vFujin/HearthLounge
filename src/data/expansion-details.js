@@ -139,5 +139,30 @@ export const topbar_tabs = [
         url: 'standard-mode'
       }
     ]
+  },
+  {
+    expansion: 'Knights of the Frozen Throne',
+    expansion_topbar_tabs: [
+      {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
+        name: 'Cards',
+        url: 'cards'
+      },
+      {
+        name: 'Pre-order',
+        url: 'pre-order'
+      },
+      {
+        name: 'Arena',
+        url: 'arena'
+      },
+      {
+        name: 'Standard Mode',
+        url: 'standard-mode'
+      }
+    ]
   }
 ];

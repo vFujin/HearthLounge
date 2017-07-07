@@ -1,3 +1,6 @@
+@import 'mixins';
+@import 'colors';
+
 //Classes
 .druid{
   @include icon_color($druid);
@@ -68,6 +71,9 @@
 }
 .journey-to-ungoro{
   @include icon_color($ungoro);
+}
+.knights-of-the-frozen-throne{
+  @include icon_color($kotft);
 }
 
 //Rarity

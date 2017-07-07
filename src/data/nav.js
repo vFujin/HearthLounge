@@ -87,6 +87,10 @@ export const navItems = [
       {
         name: "Journey to Un'Goro",
         url: "journey-to-ungoro"
+      },
+      {
+        name: "Knights of the Frozen Throne",
+        url: "knights-of-the-frozen-throne"
       }
     ]
   },
