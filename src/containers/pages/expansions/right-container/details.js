@@ -19,8 +19,8 @@ const components = {
   MulticlassCards
 };
 
-const ExpansionDetails = ({cards, details, expansion}) => {
 
+const ExpansionDetails = ({cards, details, expansion}) => {
   const currentView = () =>{
     return topbar_tabs.filter(tab => tab.expansion === expansion)[0].expansion_topbar_tabs.filter(tab => tab.url === details).map(page=> {
       let componentName = _.upperFirst(_.camelCase(page.name));

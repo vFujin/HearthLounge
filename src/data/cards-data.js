@@ -4,6 +4,7 @@ import {MashapeKey} from '../keys';
 
 const getUniqueAttributes = (data, attribute) =>{
   let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
+  let setFiltering = data.filter(c=>c.cardSet === attribute);
 
   switch(attribute){
     case 'name':
@@ -14,6 +15,20 @@ const getUniqueAttributes = (data, attribute) =>{
 
     case 'cost': return data.filter(x=>x.cost).map(x=>x.cost).filter((x, i, a)=>a.indexOf(x) === i);
     case 'mechanics': return initialFiltering.reduce((a,b)=>a.concat(b)).map(x=>x.name).filter((x, i, a)=>a.indexOf(x) === i);
+
+    case 'Basic':
+    case 'Classic':
+    case 'Naxxramas':
+    case 'Goblins vs Gnomes':
+    case 'Blackrock Mountain':
+    case 'The Grand Tournament':
+    case 'The League of Explorers':
+    case 'Whispers of the Old Gods':
+    case 'One Night in Karazhan':
+    case 'Mean Streets of Gadgetzan':
+    case "Journey to Un'Goro":
+    case "Knights of the Frozen Throne": return setFiltering;
+
     default: return null;
   }
 };
@@ -27,7 +42,22 @@ const cards = (cards) =>{
     race: getUniqueAttributes(cards, 'race'),
     type: getUniqueAttributes(cards, 'type'),
     cost: getUniqueAttributes(cards, 'cost'),
-    cardSet: getUniqueAttributes(cards, 'cardSet')
+    cardSet: getUniqueAttributes(cards, 'cardSet'),
+    sets: {
+      basic: getUniqueAttributes(cards, 'Basic'),
+      classic: getUniqueAttributes(cards, 'Classic'),
+      "curse-of-naxxramas": getUniqueAttributes(cards, 'Naxxramas'),
+      "goblins-vs-gnomes": getUniqueAttributes(cards, 'Goblins vs Gnomes'),
+      "blackrock-mountain": getUniqueAttributes(cards, 'Blackrock Mountain'),
+      "the-grand-tournament": getUniqueAttributes(cards, 'The Grand Tournament'),
+      "the-league-of-explorers": getUniqueAttributes(cards, 'The League of Explorers'),
+      "whispers-of-the-old-gods": getUniqueAttributes(cards, 'Whispers of the Old Gods'),
+      "one-night-in-karazhan": getUniqueAttributes(cards, 'One Night in Karazhan'),
+      "mean-streets-of-gadgetzan": getUniqueAttributes(cards, 'Mean Streets of Gadgetzan'),
+      "journey-to-ungoro": getUniqueAttributes(cards, "Journey to Un'Goro"),
+      "knights-of-the-frozen-throne": getUniqueAttributes(cards, "Knights of the Frozen Throne")
+    }
+
 
   };
 };

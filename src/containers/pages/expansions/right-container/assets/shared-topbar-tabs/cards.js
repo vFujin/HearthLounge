@@ -1,22 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import Loader from '../../../../../../utils/loader';
 
-const Cards = props => {
-  const {topbarActiveTabUrl} = props;
-
+const Cards = ({cards, expansion}) => {
   const listCards = () =>{
-    return;
+    return cards.sets[expansion].length < 1
+        ? <Loader/>
+        : cards.sets[expansion].map(c=>
+          <li key={c.cardId}>
+            <img src={c.img} alt="foo"/>
+          </li>
+        )
   };
 
   return (
-      <ul className={`cards cards-container ${topbarActiveTabUrl === 'cards' && 'active'}-view`}>
+      <ul className="container__cards">
         {listCards()}
       </ul>
   );
 };
 
 Cards.propTypes = {
-  // cards: React.PropTypes.array,
-  topbarActiveTabUrl: React.PropTypes.string.isRequired
+  cards: PropTypes.array.isRequired,
+  expansion: PropTypes.string.isRequired
 };
 
 export default Cards;
