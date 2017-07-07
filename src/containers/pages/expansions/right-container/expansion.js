@@ -1,6 +1,5 @@
 import React from 'react';
-// import ValidateURL from '../../../shared-assets/validateUrl';
-
+import PropTypes from 'prop-types';
 import Topbar from './topbar';
 import Content from './content';
 
@@ -14,3 +13,9 @@ const Expansion = ({cards, details, expansion}) => {
 };
 
 export default Expansion;
+
+Expansion.propTypes = {
+  cards: PropTypes.array.isRequired,
+  details: PropTypes.string,
+  expansion: PropTypes.string
+};

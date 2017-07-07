@@ -97,9 +97,9 @@
 .wild{
   @include icon_color($wild);
 }
-.expansions, .adventures{
-  @include icon_color($extensions);
-}
+//.expansions, .adventures{
+//  @include icon_color($extensions);
+//}
 
 //Social Media
 .facebook{

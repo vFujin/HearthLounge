@@ -4,18 +4,22 @@ import _ from 'lodash';
 import Sidebar from './left-container/sidebar';
 import NotFound from '../../shared-assets/not-found';
 import Expansion from './right-container/expansion';
+import SelectExtension from '../../shared-assets/extensions/select-extension';
 import {topbar_tabs} from '../../../data/expansion-details'
 
 const Expansions = ({cards, params}) => {
   const {details, expansion} = params;
 
-  const expansionExist = () => {
+  const rightContainer = () => {
     let path   = location.pathname.split("/")[2],
         exists = topbar_tabs.map(tab => tab.expansion).includes(path);
-    console.log(expansion)
-    return exists
-        ? <Expansion cards={cards} details={details} expansion={expansion} />
-        : <NotFound page={_.startCase(expansion)} redirect="expansions"/>
+
+    if(expansion !== undefined) {
+      return exists
+          ? <Expansion cards={cards} details={details} expansion={expansion}/>
+          : <NotFound page={_.startCase(expansion)} redirect="expansions"/>
+    }
+    return <SelectExtension group="expansion"/>
   };
 
   return (
@@ -23,7 +27,7 @@ const Expansions = ({cards, params}) => {
         <div className="container__page--inner container__page--left">
           <Sidebar expansion={expansion}/>
         </div>
-        {expansionExist()}
+        {rightContainer()}
       </div>
   );
 };

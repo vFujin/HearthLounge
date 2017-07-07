@@ -1,41 +1,43 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {topbar_tabs} from '../../../../data/expansion-details'
-import SharedTopbarTabs from './assets/shared-topbar-tabs'
-import ValidateURL from '../../../shared-assets/validateUrl';
+// import ValidateURL from '../../../shared-assets/validateUrl';
+import _ from 'lodash';
 
-const ExpansionDetails = ({params}) => {
-  const {cards, details, expansion} = params;
+import {Overview, Arena, Cards, PreOrder, StandardMode} from './assets/shared-expansion-tabs';
+import {HearthstoneOnAndroid, SpectatorMode} from './assets/gvg';
+import {JadeGolemMechanic, MulticlassCards} from './assets/msog';
 
-  const content = (cards, details, expansion) =>{
-    return (
-        <div className="container__extension">
-          <SharedTopbarTabs expansion={expansion}
-                            details={details}
-                            cards={cards}/>
-        </div>
-    )
-  };
-
-  const validateUrlProps = args => {
-    let detailsPath = topbar_tabs.filter(tab => tab.expansion === expansion)[0].expansion_topbar_tabs.map(expansion => expansion.url).includes(details);
-
-    switch (args) {
-      case 'condition': return detailsPath;
-      case 'content':   return content(cards, details, expansion);
-      default:          return null;
-    }
-  };
-
-  return <ValidateURL condition={validateUrlProps('condition')}
-                      content={validateUrlProps('content')}
-                      page="expansion detail"
-                      redirect={`expansions/${expansion}`}/>
+const components = {
+  Overview,
+  Arena,
+  Cards,
+  PreOrder,
+  StandardMode,
+  HearthstoneOnAndroid,
+  SpectatorMode,
+  JadeGolemMechanic,
+  MulticlassCards
 };
 
-ExpansionDetails.propTypes = {
-  cards:     React.PropTypes.array,
-  details:   React.PropTypes.string,
-  expansion: React.PropTypes.string
+const ExpansionDetails = ({cards, details, expansion}) => {
+
+  const currentView = () =>{
+    return topbar_tabs.filter(tab => tab.expansion === expansion)[0].expansion_topbar_tabs.filter(tab => tab.url === details).map(page=> {
+      let componentName = _.upperFirst(_.camelCase(page.name));
+      let Page = components[componentName];
+
+      return <Page key={page.url} expansion={expansion} topbarActiveTabUrl={details} cards={cards}/>
+    })
+  };
+
+  return <div>{currentView()}</div>;
 };
 
 export default ExpansionDetails;
+
+ExpansionDetails.propTypes = {
+  cards:     PropTypes.array.isRequired,
+  details:   PropTypes.string,
+  expansion: PropTypes.string
+};

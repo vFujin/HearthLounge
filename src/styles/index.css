@@ -1669,51 +1669,6 @@ a:active, a:hover, a:link, a:visited {
     background-attachment: fixed;
     border-left: 10px solid #695840; }
 
-.expansions, .adventures {
-  color: #fff; }
-  .expansions span, .adventures span {
-    border-color: #fff; }
-  .expansions:hover, .adventures:hover {
-    background-color: #fff;
-    color: #474143; }
-    .expansions:hover span, .adventures:hover span {
-      border-color: #474143; }
-  .expansions.active, .adventures.active {
-    background-color: #fff;
-    color: #474143;
-    border-color: #fff; }
-  .expansions.active-without-background, .adventures.active-without-background {
-    color: #fff !important;
-    background-color: transparent; }
-  .expansions.active-on-hover, .adventures.active-on-hover {
-    color: #474143; }
-    .expansions.active-on-hover:hover, .adventures.active-on-hover:hover {
-      background-color: #fff;
-      color: #474143;
-      border: #474143; }
-  .expansions.icon-font-active, .adventures.icon-font-active {
-    color: #474143; }
-  .expansions.table-row, .adventures.table-row {
-    color: #474143; }
-    .expansions.table-row:nth-child(odd), .adventures.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .expansions.table-row:nth-child(odd):hover, .adventures.table-row:nth-child(odd):hover {
-        background: #fff; }
-    .expansions.table-row:hover, .adventures.table-row:hover {
-      background-color: #fff;
-      color: #474143;
-      border: #474143; }
-  .expansions.blizzard-official, .adventures.blizzard-official {
-    background-color: #fff;
-    color: #000; }
-  .expansions.gradient, .adventures.gradient {
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    color: #474143;
-    background-attachment: fixed;
-    border-left: 10px solid #fff; }
-
 .facebook {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
@@ -4570,5 +4525,13 @@ footer {
         color: #00a99c; }
     .not-found .wrapper button {
       margin-top: 5vh; }
+
+.select-extension {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  margin: auto;
+  height: 100%; }
 
 /*# sourceMappingURL=index.css.map */
