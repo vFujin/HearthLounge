@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-export class HearthstoneOnAndroid extends Component {
-  render() {
+import React from 'react';
+const HearthstoneOnAndroid = (props) =>{
     return (
-        <div className={`hs-android ${(this.props.topbarActiveTabUrl === 'hs-android' && this.props.selectedExpansionClass === 'goblins-vs-gnomes') && 'active'}-view`}>
+        <div className={`hs-android ${(props.topbarActiveTabUrl === 'hs-android' && props.selectedExpansionClass === 'goblins-vs-gnomes') && 'active'}-view`}>
           hs android
         </div>
     );
-  }
-}
+};
+
+export default HearthstoneOnAndroid;

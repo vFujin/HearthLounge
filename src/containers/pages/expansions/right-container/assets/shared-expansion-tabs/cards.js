@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExpansionCards = props => {
+const Cards = props => {
   const {topbarActiveTabUrl} = props;
 
   const listCards = () =>{
@@ -14,9 +14,9 @@ const ExpansionCards = props => {
   );
 };
 
-ExpansionCards.propTypes = {
+Cards.propTypes = {
   // cards: React.PropTypes.array,
   topbarActiveTabUrl: React.PropTypes.string.isRequired
 };
 
-export default ExpansionCards;
+export default Cards;

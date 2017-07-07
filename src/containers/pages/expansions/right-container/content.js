@@ -3,17 +3,10 @@ import PropTypes from 'prop-types';
 import NotFound from '../../../shared-assets/not-found';
 import _ from 'lodash';
 import { topbar_tabs } from '../../../../data/expansion-details';
-import Overview from './assets/shared-expansion-tabs/overview';
-import Arena from './assets/shared-expansion-tabs/arena';
-import Cards from './assets/shared-expansion-tabs/cards';
-import PreOrder from './assets/shared-expansion-tabs/preorder';
-import StandardMode from './assets/shared-expansion-tabs/standard-mode';
 
-import {HearthstoneOnAndroid} from './assets/gvg/hs-on-android';
-import {SpectatorMode} from './assets/gvg/spectator-mode';
-
-import {JadeGolemMechanic} from './assets/msog/jade-golem-mechanic';
-import {MulticlassCards} from './assets/msog/multiclass-cards';
+import {Overview, Arena, Cards, PreOrder, StandardMode} from './assets/shared-expansion-tabs';
+import {HearthstoneOnAndroid, SpectatorMode} from './assets/gvg';
+import {JadeGolemMechanic, MulticlassCards} from './assets/msog';
 
 const components = {
   Overview,
