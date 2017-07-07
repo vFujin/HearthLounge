@@ -21,11 +21,13 @@ const components = {
 };
 
 const Content = ({cards, details, expansion}) => {
+  let detailsPath = topbar_tabs.filter(tab => tab.expansion === expansion)[0].expansion_topbar_tabs.map(expansion => expansion.url).includes(details);
 
   const currentView = () =>{
     return topbar_tabs.filter(tab => tab.expansion === expansion)[0].expansion_topbar_tabs.filter(tab => tab.url === details).map(page=> {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
+
 
       return <Page key={page.url} expansion={expansion} topbarActiveTabUrl={details} cards={cards}/>
     })
@@ -33,7 +35,7 @@ const Content = ({cards, details, expansion}) => {
 
   return (
       <div className="content">
-        {currentView()}
+        {detailsPath ? currentView() : <NotFound page={_.startCase(details)} redirect="expansions"/>}
       </div>
   )
 };

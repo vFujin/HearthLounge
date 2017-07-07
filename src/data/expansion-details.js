@@ -141,7 +141,7 @@ export const topbar_tabs = [
     ]
   },
   {
-    expansion: 'Knights of the Frozen Throne',
+    expansion: 'knights-of-the-frozen-throne',
     expansion_topbar_tabs: [
       {
         name: 'Overview',
