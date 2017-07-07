@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-const JadeGolemMechanic = (props) =>{
+import React from 'react';
 
-    return (
-        <div className={`jade-golem-mechanic ${(props.topbarActiveTabUrl === 'jade-golem-mechanic' && props.selectedExpansionClass === 'mean-streets-of-gadgetzan') && 'active'}-view`}>
-          jade golem
-        </div>
-    );
+const JadeGolemMechanic = () => {
+  return (
+      <div className="jade-golem-mechanic">
+        jade golem
+      </div>
+  );
 };
 
 export default JadeGolemMechanic;

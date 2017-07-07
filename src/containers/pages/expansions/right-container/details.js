@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {topbar_tabs} from '../../../../data/expansion-details'
-// import ValidateURL from '../../../shared-assets/validateUrl';
 import _ from 'lodash';
+import {topbar_tabs} from '../../../../data/expansion-details'
 
-import {Overview, Arena, Cards, PreOrder, StandardMode} from './assets/shared-expansion-tabs';
+import {Overview, Arena, Cards, PreOrder, StandardMode} from './assets/shared-topbar-tabs';
 import {HearthstoneOnAndroid, SpectatorMode} from './assets/gvg';
 import {JadeGolemMechanic, MulticlassCards} from './assets/msog';
 
@@ -27,7 +26,7 @@ const ExpansionDetails = ({cards, details, expansion}) => {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
 
-      return <Page key={page.url} expansion={expansion} topbarActiveTabUrl={details} cards={cards}/>
+      return <Page key={page.url} expansion={expansion} cards={cards}/>
     })
   };
 

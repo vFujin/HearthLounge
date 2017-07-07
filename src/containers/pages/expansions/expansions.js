@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Sidebar from './left-container/sidebar';
-import NotFound from '../../shared-assets/not-found';
 import Expansion from './right-container/expansion';
+import NotFound from '../../shared-assets/not-found';
 import SelectExtension from '../../shared-assets/extensions/select-extension';
 import {topbar_tabs} from '../../../data/expansion-details'
 
@@ -21,6 +21,7 @@ const Expansions = ({cards, params}) => {
     }
     return <SelectExtension group="expansion"/>
   };
+
 
   return (
       <div className="container__page container__page--twoSided expansions">

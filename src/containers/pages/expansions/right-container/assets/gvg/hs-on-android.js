@@ -1,7 +1,8 @@
 import React from 'react';
-const HearthstoneOnAndroid = (props) =>{
+
+const HearthstoneOnAndroid = () =>{
     return (
-        <div className={`hs-android ${(props.topbarActiveTabUrl === 'hs-android' && props.selectedExpansionClass === 'goblins-vs-gnomes') && 'active'}-view`}>
+        <div className="hs-android">
           hs android
         </div>
     );
