@@ -1,7 +1,7 @@
 import React from 'react';
 import { adventure_details } from '../../../../data/adventure-details';
 
-const AdventureCost = props => {
+const Cost = props => {
   const {adventure, details} = props;
 
   const cost_description = (adventure) => {
@@ -53,9 +53,9 @@ const AdventureCost = props => {
   );
 };
 
-AdventureCost.propTypes = {
+Cost.propTypes = {
   adventure: React.PropTypes.string.isRequired,
   details: React.PropTypes.string.isRequired
 };
 
-export default AdventureCost;
+export default Cost;

@@ -1,14 +1,17 @@
 import React from 'react';
+import Loader from '../../../../utils/loader';
 
-const AdventureCards = props => {
-  const {cards, details} = props;
+const Cards = ({adventure, cards, details}) => {
 
+  console.log(adventure, cards.sets)
   const listCards = () =>{
     return (
-        cards.map((card, i) =>
-            <li key={i}>
-              <img src={`http://media.services.zam.com/v1/media/byName/hs/cards/enus/${card.id}.png`} alt={`${card.name}`}/>
-            </li>
+        cards.sets[adventure].length < 1 ?
+            <Loader/>
+            : cards.sets[adventure].map((card, i) =>
+                <li key={i}>
+                  <img src={card.img} alt={`${card.name}`}/>
+                </li>
         )
     )
   };
@@ -20,9 +23,9 @@ const AdventureCards = props => {
   );
 };
 
-AdventureCards.propTypes = {
+Cards.propTypes = {
   cards: React.PropTypes.array,
   details: React.PropTypes.string.isRequired
 };
 
-export default AdventureCards;
+export default Cards;

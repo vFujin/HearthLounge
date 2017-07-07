@@ -50,7 +50,7 @@ export const boss_details = [
 
 export const adventure_details = [
   {
-    adventure: "curse-of-naxxramas",
+    adventure: "naxxramas",
     singular_adventure_name: "Klątwa Naxxramas",
     plural_aventure_name: "Klątwy Naxxramas",
     description: 'Klątwa Naxxramas jest pięcio skrzydłową przygodą, gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Naxxramas w World of Warcraft. Gracz pokonując skrzydła może dostać 30 nowych kart dodanych w tej przygodzie.',
@@ -659,7 +659,7 @@ export const adventure_details = [
     }
   },
   {
-    adventure: "one-night-at-karazhan",
+    adventure: "karazhan",
     singular_adventure_name: "Pewnej Nocy w Karazhanie",
     plural_aventure_name: "Pewnej Nocy w Karazhanie",
     description: '',

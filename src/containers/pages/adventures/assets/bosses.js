@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import {adventure_details} from '../../../../data/adventure-details';
 
-const AdventureBosses = props => {
+const Bosses = props => {
   const {adventure} = props;
 
   const tableData = (wing, adventure) => {
@@ -49,8 +49,8 @@ const AdventureBosses = props => {
   );
 };
 
-AdventureBosses.propTypes = {
+Bosses.propTypes = {
   adventure: React.PropTypes.string.isRequired
 };
 
-export default AdventureBosses;
+export default Bosses;

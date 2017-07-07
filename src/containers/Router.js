@@ -24,7 +24,7 @@ import Adventures from './pages/adventures/adventures';
 import Adventure from './pages/adventures/right-container/adventure';
 import {AdventureDetails} from './pages/adventures/right-container/details';
 import AdventureBosses from './pages/adventures/assets/bosses';
-import AdventureBoss from './pages/adventures/assets/adventure-boss';
+import AdventureBoss from './pages/adventures/assets/boss';
 
 import CreateDeck from './pages/create-deck/create-deck';
 import CreateDeckClassSelection from './pages/create-deck/before-class-selection/class-selection';

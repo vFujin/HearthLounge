@@ -1,69 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
+import _ from 'lodash';
 import {adventure_detail_tabs, adventure_details} from '../../../../data/adventure-details';
-import 'whatwg-fetch';
-import AdventureOverview from '../assets/overview';
-import AdventureBosses from '../assets/bosses';
-import AdventureCards from '../assets/cards';
-import AdventureClassChallanges from '../assets/class-challanges';
-import AdventureCost from '../assets/cost';
-import AdventureStructure from '../assets/structure';
-import AdventureBoss from '../assets/adventure-boss';
-import ValidateURL from '../../../shared-assets/validateUrl';
+import {
+  Overview,
+  Bosses,
+  Cards,
+  ClassChallenges,
+  Cost,
+  Structure,
+  Boss
+} from '../assets';
 
-export class AdventureDetails extends Component {
-  constructor(props){
-    super(props);
+const components = {
+  Overview,
+  Bosses,
+  Cards,
+  ClassChallenges,
+  Cost,
+  Structure,
+  // Boss,
+};
 
-    this.state = {
-      cards: []
-    }
-  }
+const AdventureDetails = ({cards, adventure, details}) =>{
+  const currentView = () =>{
+    return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page=> {
+      let componentName = _.upperFirst(_.camelCase(page.name));
+      let Page = components[componentName];
 
-  componentDidMount() {
-    fetch('https://api.hearthstonejson.com/v1/17994/enUS/cards.collectible.json')
-        .then(r=>r.json())
-        .then(cards=>{
-          this.setState({cards})
-        })
-  }
+      return <Page key={page.url} adventure={adventure} cards={cards}/>
+    })
+  };
 
-  activeDetailsContent(adventureUrl, detailsUrl, bossUrl){
-    switch(detailsUrl){
-      case 'overview':          return <AdventureOverview         adventure={adventureUrl} details={detailsUrl}/>;
-      case 'bosses':            return <AdventureBosses           adventure={adventureUrl} details={detailsUrl}/>;
-      case 'cards':             return <AdventureCards            adventure={adventureUrl} details={detailsUrl} cards={this.state.cards.slice(10, 20)}/>;
-      case 'class-challanges':  return <AdventureClassChallanges  adventure={adventureUrl} details={detailsUrl} cards={this.state.cards}/>;
-      case 'cost':              return <AdventureCost             adventure={adventureUrl} details={detailsUrl}/>;
-      case 'structure':         return <AdventureStructure        adventure={adventureUrl} details={detailsUrl}/>;
-      case detailsUrl:          return <AdventureBoss             adventure={adventureUrl} details={detailsUrl} boss={bossUrl}/>;
-      default:                  return <AdventureOverview         adventure={adventureUrl} details={detailsUrl}/>;
-    }
-  }
+  return <div>{currentView()}</div>;
+};
 
-  content(adventure, details, boss){
-    return (
-      <div className={`extension-content`}>
-        {this.activeDetailsContent(adventure, details, boss)}
-      </div>
-    )
-  }
+export default AdventureDetails;
 
-  validateUrlProps(args){
-    const {adventure, details, boss} = this.props.params;
-    let details_path = adventure_detail_tabs.map(x => x.url).includes(details);
-    let wing_path = adventure_details.filter(x=>x.adventure === adventure).map(x=>x.bosses.details).map(x=>x.url).includes(details);
+AdventureDetails.propTypes = {
 
-    switch(args){
-      case 'condition': return (details_path || wing_path);
-      case 'content': return this.content(adventure, details, boss);
-      default: return null;
-    }
-  }
-
-  render(){
-    return <ValidateURL condition={this.validateUrlProps('condition')}
-                        content={this.validateUrlProps('content')}
-                        page="adventure detail"
-                        redirect={`adventures/${this.props.params.adventure}`}/>
-  }
-}
+};

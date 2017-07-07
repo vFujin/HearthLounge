@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdventureOverview = props => {
+const Overview = props => {
   const {adventure, details} = props;
   return (
       <div className={`overview ${details === 'overview' && 'active'}-view`}>
@@ -10,9 +10,9 @@ const AdventureOverview = props => {
   );
 };
 
-AdventureOverview.propTypes = {
+Overview.propTypes = {
   adventure: React.PropTypes.string.isRequired,
   details: React.PropTypes.string.isRequired,
 };
 
-export default AdventureOverview;
+export default Overview;

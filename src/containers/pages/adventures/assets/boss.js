@@ -3,7 +3,7 @@ import {adventure_details, boss_details} from '../../../../data/adventure-detail
 import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
 import ValidateURL from '../../../shared-assets/validateUrl';
 
-const AdventureBoss = props => {
+const Boss = props => {
   const {adventure, details, boss} = props;
 
   const blocks = (index, adventure, wing, wingUrl, bossName, bossUrl, bossReward) => {
@@ -129,10 +129,10 @@ const AdventureBoss = props => {
                       redirect={`adventures/${adventure}/bosses`}/>
 };
 
-AdventureBoss.propTypes = {
+Boss.propTypes = {
   adventure: React.PropTypes.string.isRequired,
   details: React.PropTypes.string.isRequired,
   boss: React.PropTypes.string.isRequired
 };
 
-export default AdventureBoss;
+export default Boss;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { adventure_details } from '../../../../data/adventure-details';
 
-const AdventureStructure = props => {
+const Structure = props => {
   const {adventure, details} = props;
 
   return (
@@ -28,9 +28,9 @@ const AdventureStructure = props => {
   );
 };
 
-AdventureStructure.propTypes = {
+Structure.propTypes = {
   adventure: React.PropTypes.string.isRequired,
   details: React.PropTypes.string.isRequired
 };
 
-export default AdventureStructure;
+export default Structure;
