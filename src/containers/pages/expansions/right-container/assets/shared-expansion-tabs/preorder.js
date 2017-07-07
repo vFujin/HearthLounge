@@ -1,5 +1,5 @@
 import React from 'react';
-const Preorder = props => {
+const PreOrder = props => {
   const {topbarActiveTabUrl} = props;
 
   return (
@@ -9,8 +9,8 @@ const Preorder = props => {
   );
 };
 
-Preorder.propTypes = {
+PreOrder .propTypes = {
   topbarActiveTabUrl: React.PropTypes.string.isRequired
 };
 
-export default Preorder;
+export default PreOrder ;

@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar';
+import Content from './right-container/content'
 
-const Expansions = props => {
-  const {children, params} = props;
+const Expansions = ({cards, params}) => {
   const {details, expansion} = params;
 
   return (
@@ -13,15 +14,18 @@ const Expansions = props => {
         </div>
         <div className="container__page--inner container__page--right">
           <Topbar expansion={expansion} details={details}/>
-          {children}
+          <Content cards={cards} details={details} expansion={expansion}/>
         </div>
       </div>
   );
 };
 
-Expansions.propTypes = {
-  children: React.PropTypes.element,
-  params: React.PropTypes.object
-};
-
 export default Expansions;
+
+Expansions.propTypes = {
+  children: PropTypes.element.isRequired,
+  params: PropTypes.shape({
+    details: PropTypes.string,
+    expansion: PropTypes.string
+  })
+};

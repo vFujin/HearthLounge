@@ -1,12 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Overview  from './shared-expansion-tabs/overview';
 import ExpansionCards  from './shared-expansion-tabs/cards';
 import Arena  from './shared-expansion-tabs/arena';
 import Preorder  from './shared-expansion-tabs/preorder';
 import StandardMode  from './shared-expansion-tabs/standard-mode';
 
-const SharedTopbarTabs = props => {
-  const {cards, details, expansion} = props;
+const SharedTopbarTabs = ({cards, details, expansion}) => {
 
   return (
       <div className={`${expansion} ${details}`}>
@@ -20,9 +20,9 @@ const SharedTopbarTabs = props => {
 };
 
 SharedTopbarTabs.propTypes = {
-  cards:     React.PropTypes.array,
-  details:   React.PropTypes.string,
-  expansion: React.PropTypes.string
+  cards:     PropTypes.array,
+  details:   PropTypes.string.isRequired,
+  expansion: PropTypes.string.isRequired
 };
 
 export default SharedTopbarTabs;
