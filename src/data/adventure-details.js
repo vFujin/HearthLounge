@@ -20,8 +20,8 @@ export const adventure_detail_tabs = [
     url: 'bosses'
   },
   {
-    name: 'Class Challanges',
-    url: 'class-challanges'
+    name: 'Class Challenges',
+    url: 'class-challenges'
   }
 ];
 

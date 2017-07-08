@@ -46,13 +46,13 @@ const cards = (cards) =>{
     sets: {
       basic: getUniqueAttributes(cards, 'Basic'),
       classic: getUniqueAttributes(cards, 'Classic'),
-      "curse-of-naxxramas": getUniqueAttributes(cards, 'Naxxramas'),
+      "naxxramas": getUniqueAttributes(cards, 'Naxxramas'),
       "goblins-vs-gnomes": getUniqueAttributes(cards, 'Goblins vs Gnomes'),
       "blackrock-mountain": getUniqueAttributes(cards, 'Blackrock Mountain'),
       "the-grand-tournament": getUniqueAttributes(cards, 'The Grand Tournament'),
       "the-league-of-explorers": getUniqueAttributes(cards, 'The League of Explorers'),
       "whispers-of-the-old-gods": getUniqueAttributes(cards, 'Whispers of the Old Gods'),
-      "one-night-in-karazhan": getUniqueAttributes(cards, 'One Night in Karazhan'),
+      "karazhan": getUniqueAttributes(cards, 'One Night in Karazhan'),
       "mean-streets-of-gadgetzan": getUniqueAttributes(cards, 'Mean Streets of Gadgetzan'),
       "journey-to-ungoro": getUniqueAttributes(cards, "Journey to Un'Goro"),
       "knights-of-the-frozen-throne": getUniqueAttributes(cards, "Knights of the Frozen Throne")

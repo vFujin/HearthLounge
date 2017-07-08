@@ -31,7 +31,7 @@ const AdventureDetails = ({cards, adventure, details}) =>{
     })
   };
 
-  return <div>{currentView()}</div>;
+  return <div className="content">{currentView()}</div>;
 };
 
 export default AdventureDetails;
