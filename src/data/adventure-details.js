@@ -88,7 +88,7 @@ export const adventure_details = [
         }
       ],
     },
-    bosses: {
+    wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
@@ -295,7 +295,7 @@ export const adventure_details = [
         }
       ],
     },
-    bosses: {
+    wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
@@ -475,7 +475,8 @@ export const adventure_details = [
     adventure: "the-league-of-explorers",
     singular_adventure_name: "Liga Eksplorerów",
     plural_aventure_name: "Ligi Eksplorerów",
-    description: '',img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/liga_odkrywcow.jpg',
+    description: '',
+    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/liga_odkrywcow.jpg',
     cost: {
       wings: [
         {
@@ -510,7 +511,7 @@ export const adventure_details = [
         }
       ],
     },
-    bosses: {
+    wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {
@@ -697,7 +698,7 @@ export const adventure_details = [
         }
       ],
     },
-    bosses: {
+    wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
         {

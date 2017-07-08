@@ -9,7 +9,7 @@ import {adventure_details} from '../../../data/adventure-details';
 
 const Adventures = ({cards, params})=> {
   const {adventure, boss, details} = params;
-
+  console.log(boss);
   const rightContainer = () => {
     let path   = location.pathname.split("/")[2],
         exists = adventure_details.map(a => a.adventure).includes(path);

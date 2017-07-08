@@ -3,8 +3,8 @@ import {adventure_details, boss_details} from '../../../../data/adventure-detail
 import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
 import ValidateURL from '../../../shared-assets/validateUrl';
 
-const Boss = props => {
-  const {adventure, details, boss} = props;
+const Boss = ({adventure, details, boss}) => {
+
 
   const blocks = (index, adventure, wing, wingUrl, bossName, bossUrl, bossReward) => {
     switch (index) {
@@ -95,7 +95,7 @@ const Boss = props => {
           wing      = getBossDetailsFromUrl('wing', details, boss),
           reward    = getBossDetailsFromUrl('reward', details, boss);
       return (
-          <div className={`boss inner-container ${details && 'active'}-view`}>
+          <div className="boss inner-container">
             {adventure_details.slice(0, 1).map((adventure, i) =>
                 <div key={i} className="boss-guide-header">
                   <p className="boss-details-nav-el">{boss_name}</p>

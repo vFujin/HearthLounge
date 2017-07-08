@@ -6,7 +6,8 @@ import {adventure_details} from '../../../../data/adventure-details';
 const Bosses = ({adventure}) => {
 
   const tableData = (wing, adventure) => {
-    let adventureDetailsFromUrl = adventure_details.filter(x => x.adventure === adventure).map(x => x.bosses.details.map(x => x.url).some(x => x === wing.url))[0];
+    let adventureDetailsFromUrl = adventure_details.filter(a => a.adventure === adventure)
+        .map(a => a.wings.details.map(w => w.url).some(w => w === wing.url))[0];
 
     const checkAdventure = (adventure, boss) => {
       let src = `https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/${adventure}/${wing.url}/${boss.url}.jpg`;
@@ -26,27 +27,22 @@ const Bosses = ({adventure}) => {
     )
   };
 
-  return (
-      <div className="bosses">
-        {adventure_details.filter(a => a.adventure === adventure).map((a, index) =>
-            <div className={`${adventure === a.adventure && 'active'}-view`} key={index}>
-              <div>
-                <p>{a.bosses.description}</p>
-                <table>
-                  <tbody>
-                  {a.bosses.details.map((wing, i) =>
-                      <tr key={i}>
-                        <th className={`${adventure} active`}>{wing.wing_title}</th>
-                        {tableData(wing, adventure)}
-                      </tr>
-                  )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-        )}
-      </div>
-  );
+  const bosses = () =>{
+    return adventure_details.filter(a => a.adventure === adventure).map((a, index) =>
+          <table key={index}>
+            <tbody>
+            {a.wings.details.map((wing, i) =>
+                <tr key={i}>
+                  <th className={`${adventure} active`}>{wing.wing_title}</th>
+                  {tableData(wing, adventure)}
+                </tr>
+            )}
+            </tbody>
+          </table>
+    );
+  };
+
+  return <div className="bosses">{bosses()}</div>;
 };
 
 export default Bosses;

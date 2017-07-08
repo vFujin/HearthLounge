@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import {adventure_detail_tabs, adventure_details} from '../../../../data/adventure-details';
+import {adventure_detail_tabs} from '../../../../data/adventure-details';
 import {
   Overview,
   Bosses,
@@ -18,7 +18,7 @@ const components = {
   ClassChallenges,
   Cost,
   Structure,
-  // Boss,
+  Boss,
 };
 
 const AdventureDetails = ({cards, adventure, details}) =>{

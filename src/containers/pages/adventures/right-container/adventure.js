@@ -9,7 +9,7 @@ const Adventure = ({adventure, boss, cards, details}) => {
         <Topbar adventure={adventure}
                 details={details}
                 boss={boss}/>
-        <Content cards={cards} details={details} adventure={adventure}/>
+        <Content adventure={adventure} boss={boss} cards={cards} details={details} />
       </div>
   )
 };
