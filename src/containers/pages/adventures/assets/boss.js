@@ -1,7 +1,6 @@
 import React from 'react';
 import {adventure_details, boss_details} from '../../../../data/adventure-details';
 import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
-import ValidateURL from '../../../shared-assets/validateUrl';
 
 const Boss = ({adventure, details, boss}) => {
 
@@ -78,7 +77,7 @@ const Boss = ({adventure, details, boss}) => {
   };
 
   const getBossDetailsFromUrl = (detail, wing, boss) => {
-    let detailsArr = adventure_details.map(x => x.bosses.details.filter(x => x.url === wing)[0]).filter(x => x)[0],
+    let detailsArr = adventure_details.map(x => x.wings.details.filter(x => x.url === wing)[0]).filter(x => x)[0],
         bossArr    = detailsArr.bosses.filter(x => x.url === boss)[0];
 
     switch (detail) {
@@ -90,7 +89,6 @@ const Boss = ({adventure, details, boss}) => {
   };
 
   const content = (details, boss, condition) => {
-    if (condition === true) {
       let boss_name = getBossDetailsFromUrl('boss', details, boss),
           wing      = getBossDetailsFromUrl('wing', details, boss),
           reward    = getBossDetailsFromUrl('reward', details, boss);
@@ -107,7 +105,6 @@ const Boss = ({adventure, details, boss}) => {
             )}
           </div>
       )
-    }
   };
 
   const validateUrlProps = args => {
@@ -123,10 +120,7 @@ const Boss = ({adventure, details, boss}) => {
     }
   };
 
-  return <ValidateURL condition={validateUrlProps('condition')}
-                      content={validateUrlProps('content')}
-                      page="boss"
-                      redirect={`adventures/${adventure}/bosses`}/>
+  return <div>{content(details, boss)}</div>
 };
 
 Boss.propTypes = {

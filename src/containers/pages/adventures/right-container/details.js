@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import {adventure_detail_tabs} from '../../../../data/adventure-details';
+import {wingExists, bossExists} from '../../../../utils/adventures/paths';
 import {
   Overview,
   Bosses,
@@ -21,7 +22,7 @@ const components = {
   Boss,
 };
 
-const AdventureDetails = ({cards, adventure, details}) =>{
+const AdventureDetails = ({cards, adventure, details, boss}) =>{
   const currentView = () =>{
     return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page=> {
       let componentName = _.upperFirst(_.camelCase(page.name));
@@ -31,7 +32,11 @@ const AdventureDetails = ({cards, adventure, details}) =>{
     })
   };
 
-  return <div className="content">{currentView()}</div>;
+  return <div className="content">
+    {(wingExists(adventure, details) && bossExists(adventure, details, boss))
+        ? <Boss adventure={adventure} boss={boss} details={details}/>
+        : currentView()}
+    </div>;
 };
 
 export default AdventureDetails;
