@@ -1,18 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Overview = props => {
-  const {adventure, details} = props;
+const Overview = ({adventure}) => {
+
   return (
-      <div className={`overview ${details === 'overview' && 'active'}-view`}>
-        <img src={`https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}.jpg`}
+      <div className="overview">
+        <img src={`https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/${adventure}.jpg`}
              alt={adventure}/>
       </div>
   );
 };
 
-Overview.propTypes = {
-  adventure: React.PropTypes.string.isRequired,
-  details: React.PropTypes.string.isRequired,
-};
-
 export default Overview;
+
+Overview.propTypes = {
+  adventure: PropTypes.string.isRequired,
+};

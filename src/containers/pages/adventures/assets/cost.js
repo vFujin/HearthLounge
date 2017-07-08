@@ -1,8 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { adventure_details } from '../../../../data/adventure-details';
 
-const Cost = props => {
-  const {adventure, details} = props;
+const Cost = ({adventure}) => {
 
   const cost_description = (adventure) => {
     let countWings = adventure_details[0].cost.wings.length;
@@ -41,21 +41,19 @@ const Cost = props => {
   };
 
   return (
-      <div className={`cost inner-container ${details === 'cost' && 'active'}-view `}>
-        {adventure_details.map((a, index) =>
-            <div className={`${adventure === a.adventure && 'active'}-view`} key={index}>
+      <div className="cost inner-container">
+        {adventure_details.filter(a => a.adventure === adventure).map((a, index) =>
+            <div key={index}>
               {cost_description(a)}
               {cost_table(a, index)}
             </div>
         )}
-
       </div>
   );
 };
 
-Cost.propTypes = {
-  adventure: React.PropTypes.string.isRequired,
-  details: React.PropTypes.string.isRequired
-};
-
 export default Cost;
+
+Cost.propTypes = {
+  adventure: PropTypes.string.isRequired
+};

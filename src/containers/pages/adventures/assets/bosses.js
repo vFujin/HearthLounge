@@ -1,15 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import {adventure_details} from '../../../../data/adventure-details';
 
-const Bosses = props => {
-  const {adventure} = props;
+const Bosses = ({adventure}) => {
 
   const tableData = (wing, adventure) => {
     let adventureDetailsFromUrl = adventure_details.filter(x => x.adventure === adventure).map(x => x.bosses.details.map(x => x.url).some(x => x === wing.url))[0];
 
     const checkAdventure = (adventure, boss) => {
-      let src = `https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/adventures/${adventure}/${wing.url}/${boss.url}.jpg`;
+      let src = `https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/${adventure}/${wing.url}/${boss.url}.jpg`;
 
       if (adventureDetailsFromUrl === true) {
         return <img src={src} alt={boss.boss}/>
@@ -27,8 +27,8 @@ const Bosses = props => {
   };
 
   return (
-      <div className={`bosses inner-container ${adventure && 'active'}-view`}>
-        {adventure_details.map((a, index) =>
+      <div className="bosses">
+        {adventure_details.filter(a => a.adventure === adventure).map((a, index) =>
             <div className={`${adventure === a.adventure && 'active'}-view`} key={index}>
               <div>
                 <p>{a.bosses.description}</p>
@@ -49,8 +49,8 @@ const Bosses = props => {
   );
 };
 
-Bosses.propTypes = {
-  adventure: React.PropTypes.string.isRequired
-};
-
 export default Bosses;
+
+Bosses.propTypes = {
+  adventure: PropTypes.string.isRequired
+};

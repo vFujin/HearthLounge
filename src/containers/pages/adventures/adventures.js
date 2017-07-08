@@ -35,7 +35,9 @@ const Adventures = ({cards, params})=> {
 export default Adventures;
 
 Adventures.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.shape({
+    sets: PropTypes.objectOf(PropTypes.array)
+  }),
   params: PropTypes.shape({
     details: PropTypes.string,
     adventure: PropTypes.string

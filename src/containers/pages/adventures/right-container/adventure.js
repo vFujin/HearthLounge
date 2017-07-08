@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Topbar from './topbar';
 import Content from './content'
 
@@ -14,12 +15,12 @@ const Adventure = ({adventure, boss, cards, details}) => {
 };
 
 Adventure.propTypes = {
-  children:   React.PropTypes.element.isRequired,
-  location:   React.PropTypes.object.isRequired,
-  params:     React.PropTypes.object.isRequired,
-  adventure:  React.PropTypes.string,
-  details:    React.PropTypes.string,
-  boss:       React.PropTypes.string
+  adventure: PropTypes.string,
+  boss: PropTypes.string,
+  cards: PropTypes.shape({
+    sets: PropTypes.objectOf(PropTypes.array)
+  }),
+  details: PropTypes.string
 };
 
 export default Adventure;

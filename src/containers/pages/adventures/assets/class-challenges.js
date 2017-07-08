@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { adventure_details } from '../../../../data/adventure-details';
 
-const ClassChallenges = props => {
-  const {adventure} = props;
+const ClassChallenges = ({adventure}) => {
 
-  const listClassChallengeCards = (adventure_details_element) =>{
+  const listClassChallengeCards = (adventure) =>{
     return (
-        adventure_details_element.class_challenges.map((element, index) =>
+        adventure.class_challenges.map((element, index) =>
             <li key={index}>
               <p>{element.class}</p>
               {/*special place for cards </3 */}
@@ -17,21 +18,18 @@ const ClassChallenges = props => {
 
   return (
       <div className="class-challenges inner-container">
-        {adventure_details.map((element, index) =>
-            <div className={`${adventure === element.adventure && 'active'}-view `} key={index}>
-              <ul key={index}>
-                {listClassChallengeCards(element)}
-              </ul>
-            </div>
+        {adventure_details.filter(a => a.adventure === adventure).map((adventure, index) =>
+          <ul key={index}>
+            {listClassChallengeCards(adventure)}
+          </ul>
         )}
       </div>
   );
 };
 
-ClassChallenges.propTypes = {
-  adventure: React.PropTypes.string.isRequired,
-  // cards: React.PropTypes.array,
-  details: React.PropTypes.string.isRequired
-};
-
 export default ClassChallenges;
+
+ClassChallenges.propTypes = {
+  adventure: PropTypes.string.isRequired,
+  // cards: React.PropTypes.array,
+};
