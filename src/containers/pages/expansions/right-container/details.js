@@ -21,8 +21,11 @@ const components = {
 
 
 const ExpansionDetails = ({cards, details, expansion}) => {
+  let activeExpansion =  topbar_tabs.filter(tab => tab.expansion === expansion)[0];
+  let activeExpansionTab = activeExpansion.expansion_topbar_tabs.filter(tab => tab.url === details);
+
   const currentView = () =>{
-    return topbar_tabs.filter(tab => tab.expansion === expansion)[0].expansion_topbar_tabs.filter(tab => tab.url === details).map(page=> {
+    return activeExpansionTab.map(page=> {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
 
@@ -36,7 +39,9 @@ const ExpansionDetails = ({cards, details, expansion}) => {
 export default ExpansionDetails;
 
 ExpansionDetails.propTypes = {
-  cards:     PropTypes.array.isRequired,
+  cards: PropTypes.shape({
+    sets: PropTypes.objectOf(PropTypes.array)
+  }),
   details:   PropTypes.string,
   expansion: PropTypes.string
 };

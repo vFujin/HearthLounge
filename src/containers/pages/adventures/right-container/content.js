@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {adventure_detail_tabs} from '../../../../data/adventure-details';
-import {wingExists, bossExists} from '../../../../utils/adventures/paths';
+import {adventureWingExists, adventureBossExists} from '../../../../utils/checkIfPathExist';
 import AdventureDetails from './details';
 import NotFound from '../../../shared-assets/not-found';
 
 const Content = ({adventure, boss, cards, details, }) => {
   let detailsPath = adventure_detail_tabs.map(tab => tab.url).includes(details);
   let wingDetailsPath = boss
-      ? wingExists(adventure, details)
+      ? adventureWingExists(adventure, details)
       : null;
   let bossDetailsPath = (boss && wingDetailsPath)
-      ? bossExists(adventure, details, boss)
+      ? adventureBossExists(adventure, details, boss)
       : null;
 
   let notFoundPage = (boss && wingDetailsPath) ? _.startCase(boss) : _.startCase(details);

@@ -5,17 +5,16 @@ import Sidebar from './left-container/sidebar';
 import Adventure from './right-container/adventure';
 import NotFound from '../../shared-assets/not-found';
 import SelectExtension from '../../shared-assets/extensions/select-extension';
-import {adventure_details} from '../../../data/adventure-details';
+import {adventureExists} from '../../../utils/checkIfPathExist';
 
 const Adventures = ({cards, params})=> {
   const {adventure, boss, details} = params;
-  console.log(boss);
+
   const rightContainer = () => {
-    let path   = location.pathname.split("/")[2],
-        exists = adventure_details.map(a => a.adventure).includes(path);
+    let path = location.pathname.split("/")[2];
 
     if(adventure !== undefined) {
-      return exists
+      return adventureExists(path)
           ? <Adventure cards={cards} details={details} boss={boss} adventure={adventure}/>
           : <NotFound page={_.startCase(adventure)} redirect="expansions"/>
     }

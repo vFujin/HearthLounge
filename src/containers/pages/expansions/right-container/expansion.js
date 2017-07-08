@@ -15,7 +15,9 @@ const Expansion = ({cards, details, expansion}) => {
 export default Expansion;
 
 Expansion.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.shape({
+    sets: PropTypes.objectOf(PropTypes.array)
+  }),
   details: PropTypes.string,
   expansion: PropTypes.string
 };

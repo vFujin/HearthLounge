@@ -21,7 +21,9 @@ const Cards = ({cards, expansion}) => {
 };
 
 Cards.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.shape({
+    sets: PropTypes.objectOf(PropTypes.array)
+  }).isRequired,
   expansion: PropTypes.string.isRequired
 };
 

@@ -5,23 +5,21 @@ import Sidebar from './left-container/sidebar';
 import Expansion from './right-container/expansion';
 import NotFound from '../../shared-assets/not-found';
 import SelectExtension from '../../shared-assets/extensions/select-extension';
-import {topbar_tabs} from '../../../data/expansion-details'
+import {expansionExists} from '../../../utils/checkIfPathExist'
 
 const Expansions = ({cards, params}) => {
   const {details, expansion} = params;
 
   const rightContainer = () => {
-    let path   = location.pathname.split("/")[2],
-        exists = topbar_tabs.map(tab => tab.expansion).includes(path);
+    let path = location.pathname.split("/")[2];
 
     if(expansion !== undefined) {
-      return exists
+      return expansionExists(path)
           ? <Expansion cards={cards} details={details} expansion={expansion}/>
           : <NotFound page={_.startCase(expansion)} redirect="expansions"/>
     }
     return <SelectExtension group="expansion"/>
   };
-
 
   return (
       <div className="container__page container__page--twoSided expansions">
@@ -36,7 +34,9 @@ const Expansions = ({cards, params}) => {
 export default Expansions;
 
 Expansions.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cards: PropTypes.shape({
+    sets: PropTypes.objectOf(PropTypes.array)
+  }),
   params: PropTypes.shape({
     details: PropTypes.string,
     expansion: PropTypes.string

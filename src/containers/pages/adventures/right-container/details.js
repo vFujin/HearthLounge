@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import {adventure_detail_tabs} from '../../../../data/adventure-details';
-import {wingExists, bossExists} from '../../../../utils/adventures/paths';
+import {adventureWingExists, adventureBossExists} from '../../../../utils/checkIfPathExist';
 import {
   Overview,
   Bosses,
@@ -33,7 +33,7 @@ const AdventureDetails = ({cards, adventure, details, boss}) =>{
   };
 
   return <div className="content">
-    {(wingExists(adventure, details) && bossExists(adventure, details, boss))
+    {(adventureWingExists(adventure, details) && adventureBossExists(adventure, details, boss))
         ? <Boss adventure={adventure} boss={boss} details={details}/>
         : currentView()}
     </div>;
