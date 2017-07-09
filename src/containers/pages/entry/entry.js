@@ -5,11 +5,11 @@ import {LeftContainer} from './left-container';
 import {createUser, updateUser, signIn} from '../../../server/auth'
 import PropTypes from 'prop-types';
 
-const Entry = ({location, activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
+const Entry = ({updateActiveUser, location, activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
 
-  if(location.pathname === '/sign-up/update-profile'){
-    updateSignUpStatus("success", "");
-  }
+  // if(location.pathname === '/sign-up/update-profile'){
+  //   updateSignUpStatus("success", "");
+  // }
 
   const handleInputChange = (e) =>{
     let target = e.target;
@@ -20,7 +20,7 @@ const Entry = ({location, activeUser, authenticated, children, signUp_username, 
 
   const handleFormSubmit = (e) =>{
     e.preventDefault();
-    createUser(signUp_email, signUp_password, updateSignUpStatus);
+    createUser(signUp_email, signUp_password, updateSignUpStatus, updateActiveUser);
   };
 
   const handleUpdateProfileFormSubmit = (e) => {
@@ -90,7 +90,10 @@ const mapDispatchToProps = (dispatch) => {
     })),
     updateSignUpStatus: (signUp_firstStep, signUp_secondStep) => (dispatch({
       type: 'UPDATE_SIGN_UP_STATUS', signUp_firstStep, signUp_secondStep
-    }))
+    })),
+    updateActiveUser: (authenticated, activeUser) => dispatch({
+      type: 'UPDATE_ACTIVE_USER', authenticated, activeUser
+    })
   }
 };
 

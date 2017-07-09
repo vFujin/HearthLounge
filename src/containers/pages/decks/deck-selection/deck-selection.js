@@ -11,12 +11,15 @@ import _ from 'lodash';
 
 class DeckSelection extends Component {
   componentDidMount() {
-    lazyLoadDecks((v) => this.props.updateDeckList(v));
+    lazyLoadDecks(v=>this.props.updateDeckList(v))
     const el = document.querySelector('.table-scroll');
 
         el.addEventListener("scroll", function () {
           if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-            // lazyLoadDecks((v) => this.props.updateDeckList(v));
+            lazyLoadDecks((v) => {
+              console.log(v)
+              return this.props.updateDeckList(v)
+            })
           }
         }
     )

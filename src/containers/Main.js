@@ -9,9 +9,9 @@ import {fetchData} from '../data/cards-data';
 import {connect} from 'react-redux';
 
 class Main extends Component{
-constructor(props){
-  super(props);
-    getCurrentUserInfo(this.props.updateActiveUser);
+  constructor(props) {
+    super(props);
+    getCurrentUserInfo(props.updateActiveUser);
   };
 
   componentDidMount() {

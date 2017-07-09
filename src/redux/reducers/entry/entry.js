@@ -22,6 +22,11 @@ export default function(state=initialState, action){
       signUp_firstStep: action.signUp_firstStep,
       signUp_secondStep: action.signUp_secondStep
     };
+    case 'UPDATE_ACTIVE_USER': return {
+      ...state,
+      authenticated: action.authenticated,
+      activeUser: action.activeUser
+    };
     default: return state;
   }
 }

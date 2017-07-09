@@ -10,19 +10,20 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
       return <tr><td><Loader/></td></tr>
     }
     else {
-      return _.map(decks).reverse().map(deck  => {
+      return _.map(decks).reverse().map(d  => {
+        const {deckId, hsClass, title, upvotes, downvotes, deck, created, archetype, author, type, views} = d;
         return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
-                            key={deck.deckId}
-                            deckId={deck.deckId}
-                            hsClass={deck.hsClass}
-                            title={deck.title}
-                            votes={deck.upvotes - deck.downvotes}
-                            deck={deck.deck}
-                            created={deck.created}
-                            archetype={deck.archetype}
-                            author={deck.author}
-                            type={deck.type}
-                            views={deck.views}/>
+                            key={deckId}
+                            deckId={deckId}
+                            hsClass={hsClass}
+                            title={title}
+                            votes={upvotes - downvotes}
+                            deck={deck}
+                            created={created}
+                            archetype={archetype}
+                            author={author}
+                            type={type}
+                            views={views}/>
       })
     }
   };

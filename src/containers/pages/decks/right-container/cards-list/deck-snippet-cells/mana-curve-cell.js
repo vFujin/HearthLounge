@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 
 const ManaCurve = ({deckUrl, deck}) =>{
 
-  return (
-        <Link to={deckUrl}>
+  return <Link to={deckUrl}>
           <ul>
             {deck.manaCurve.map((el, i)=> {
               return (
@@ -15,7 +14,7 @@ const ManaCurve = ({deckUrl, deck}) =>{
               )})}
           </ul>
         </Link>
-  )
+      ;
 };
 
 export default ManaCurve;

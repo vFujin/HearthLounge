@@ -10,19 +10,25 @@ import {success, error} from '../utils/messages';
  * @param {func} callback - Callback function to pass data into reducer.
  * @returns {!firebase.Promise.<*>}
  */
-export function createUser(email, password, updateSignUpStatus){
-  // Need to figure out how to throw exception when username is taken, since if email is not, user will be created anyway in "main" db
+export function createUser(email, password, updateSignUpStatus, reducer){
   firebaseAuth().createUserWithEmailAndPassword(email, password)
       .then((user)=>{
         updateSignUpStatus("success", null);
         browserHistory.push('/sign-up/update-profile');
+        reducer(true, {
+          username: user.email,
+          email: user.email,
+          uid: user.uid,
+          updatedProfile: false,
+          prestige: 1,
+          role: 'user'
+        });
         saveUser(user);
       })
       .catch(e => {
         updateSignUpStatus("failure", null);
         error("Couldn't save user. " + e.message)
       });
-  // return promise;
 }
 
 /**
@@ -85,25 +91,28 @@ export function saveUser(user){
   }
 }
 
-export function updateUser(user, username, updateSignUpStatus){
-  let updatedUsername = {
-    ...user,
-    updatedProfile: true,
-    username
-  };
 
-  let updates = {};
-  updates[`users/${user.uid}`] = updatedUsername;
-  updates[`usernames/${username}`] = user.uid;
-  return ref.update(updates, function(err){
-    if(err){
-      updateSignUpStatus("success", "failure");
-      error("Something's not quite right. Try again later.", 4);
-    } else {
-      updateSignUpStatus("success", "success");
-      success("Profile has been updated!");
-    }
-  });
+export function updateUser(user, username, updateSignUpStatus){
+  if(!user.updatedProfile) {
+    let updatedUsername = {
+      ...user,
+      updatedProfile: true,
+      username
+    };
+
+    let updates = {};
+    updates[`users/${user.uid}`] = updatedUsername;
+    updates[`usernames/${username}`] = user.uid;
+    return ref.update(updates, function (err) {
+      if (err) {
+        updateSignUpStatus("success", "failure");
+        error("Something's not quite right. Try again later.", 4);
+      } else {
+        updateSignUpStatus("success", "success");
+        success("Profile has been updated!");
+      }
+    });
+  } else error("Your profile has been already updated. You can update your profile in your dashboard", 10)
 }
 
 export function getUserData(uid, callback) {
@@ -112,9 +121,10 @@ export function getUserData(uid, callback) {
 
 export function getCurrentUserInfo(reducer){
   firebaseAuth().onAuthStateChanged(user => {
-    console.log(user);
     if (user) {
-      getUserData(user.uid, (v)=> reducer(true, v));
+      getUserData(user.uid, (v)=> {
+        reducer(true, v)
+      });
     }
     else {
       reducer(false, null);

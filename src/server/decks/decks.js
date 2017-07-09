@@ -3,42 +3,29 @@ import {voteTransaction} from '../utils/vote-transaction';
 import {updateUserVotes} from '../utils/update-user-votes';
 // import {success, loading, error} from '../../utils/messages';
 
-// let data = [];
-// let _start = Date.now() - 86400*3000; //3 days
-// let _end = Date.now() - 604800*3000;
-// let _n = 604800*1000;
+let data = [];
+let now = new Date();
+let week = now.setDate(now.getDate() - 7);
+let _start = now.setDate(now.getDate() - 1);
+let _end = +new Date();
+let _n = 15;
+export function lazyLoadDecks(callback, playerClass) {
+  let decksRef = ref.child('decks');
+  console.log("before", data)
+  decksRef.orderByChild('created')
+      .startAt(_start)
+      .endAt(_end)
+      .limitToLast(_n)
+      .once("value", snapshot=> {
+        // console.log(_start, _end)
+        data.push(snapshot.val());
 
-export function lazyLoadDecks(callback, playerClass){
-  // if(playerClass !== null) {
-  //
-  //   refParent('decks')
-  //       .orderByChild('hsClass')
-  //       .equalTo(playerClass)
-  //       .once("value", snapshot => {
-  //         console.log(snapshot.val());
-  //         callback(snapshot.val());
-  //       });
-  // }
-  // else {
-    refParent('decks')
-        .orderByChild('hsClass')
-        .once("value", snapshot => {
-          console.log(snapshot.val())
-          callback(snapshot.val());
-        });
-  //
-  //   let now = Date.now();
-  //   refParent('decks').orderByChild('created')
-  //       .startAt(_start)
-  //       .limitToFirst(_n)
-  //       .on("child_added", (snapshot) => {
-  //         console.log(snapshot.val());
-  //         data.push(snapshot.val());
-  //         callback(data);
-  //       });
-  //   console.log(data)
-  //   _start += _n;
-  //   _end += _n;
+        callback(snapshot.val());
+        console.log("after", data)
+      });
+  _start = _start - 2629743*3;
+  _end = now.setDate(now.getDate() - 30);
+
 }
 
 
