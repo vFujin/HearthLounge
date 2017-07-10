@@ -1,4 +1,4 @@
-import {ref, firebaseAuth} from '../keys';
+import {ref, firebaseAuth, firebaseStorage} from '../keys';
 import {browserHistory} from 'react-router';
 import {success, error} from '../utils/messages';
 
@@ -14,7 +14,7 @@ export function createUser(email, password, updateSignUpStatus, reducer){
   firebaseAuth().createUserWithEmailAndPassword(email, password)
       .then((user)=>{
         updateSignUpStatus("success", null);
-        browserHistory.push('/sign-up/update-profile');
+        console.log(reducer, user)
         reducer(true, {
           username: user.email,
           email: user.email,
@@ -23,6 +23,7 @@ export function createUser(email, password, updateSignUpStatus, reducer){
           prestige: 1,
           role: 'user'
         });
+        browserHistory.push('/sign-up/update-profile');
         saveUser(user);
       })
       .catch(e => {
@@ -115,6 +116,51 @@ export function updateUser(user, username, updateSignUpStatus){
   } else error("Your profile has been already updated. You can update your profile in your dashboard", 10)
 }
 
+export function updateUserProfilePic(e, user){
+  const uploader = document.getElementById("uploader");
+  const fileButton = document.getElementById("fileButton");
+
+  if(fileButton) {
+      let file = e.target.files[0];
+      const fileType = /^(image\/(jpe?g|png))$/.test(file.type);
+      const fileSize = file.size;
+      const fileNameLength = file.name.length;
+
+
+      if(!fileType){
+        error("Image must be a .jpg, .jpeg or .png", 6)
+      } else if(fileSize >= 2 * 1024 * 1024){
+        error("Image size must be less than 2mb", 6)
+      } else if(fileNameLength > 10){
+        error("Image name must be less or equal than 10 characters", 10)
+      } else {
+        let storageRef = firebaseStorage().ref(`${user.uid}/profilePicture/${file.name}`);
+        let task = storageRef.put(file);
+
+        task.on('state_changed',
+            function progress(snapshot) {
+              uploader.value = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            },
+            function error() {
+              if (!fileType) {
+                error("Image must be a .jpg, .jpeg or .png", 6)
+              } else if(!fileSize){
+                error("Image must be less than 2mb", 6)
+              } else if(fileNameLength > 10){
+                error("Image name must be less or equal than 10 characters", 10)
+              } else {
+                error("Couldn't upload image. Try again later", 6)
+              }
+            },
+            function complete() {
+              success("Image has been uploaded!")
+              //show some another component
+            }
+        )
+      }
+  }
+}
+
 export function getUserData(uid, callback) {
   return ref.on("value", (snapshot) =>callback(snapshot.child(`users/${uid}`).val()))
 }
@@ -123,7 +169,7 @@ export function getCurrentUserInfo(reducer){
   firebaseAuth().onAuthStateChanged(user => {
     if (user) {
       getUserData(user.uid, (v)=> {
-        reducer(true, v)
+        reducer(true, v, user.photoURL)
       });
     }
     else {

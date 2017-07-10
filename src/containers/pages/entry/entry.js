@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
-import {createUser, updateUser, signIn} from '../../../server/auth'
+import {createUser, updateUser, signIn} from '../../../server/user'
 import PropTypes from 'prop-types';
 
 const Entry = ({updateActiveUser, location, activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
@@ -54,6 +54,7 @@ const Entry = ({updateActiveUser, location, activeUser, authenticated, children,
               </Link>
             </div>
             {React.cloneElement(children, {
+              activeUser,
               signUp_username,
               signUp_email,
               signUp_confirmEmail,

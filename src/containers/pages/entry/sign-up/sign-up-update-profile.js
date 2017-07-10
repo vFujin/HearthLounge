@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {browserHistory} from 'react-router';
 import Input from '../../../shared-assets/form-assets/input';
 import {icon_filters} from '../../../../data/filters';
-// import {firebaseStorage} from '../../../../keys.js';
+import {updateUserProfilePic} from '../../../../server/user';
 // import PropTypes from 'prop-types';
 
-class SignUpUpdateProfile extends Component {
+class SignUpUpdateProfile extends PureComponent {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.authenticated === false) {
-      browserHistory.push('/sign-in');
+      browserHistory.push('/sign-up');
     }
   }
 
@@ -32,7 +32,8 @@ class SignUpUpdateProfile extends Component {
         <div className="divider"><span>Optional</span></div>
         <div className="avatar-wrapper">
           <p>Upload your avatar</p>
-          <input type="file"/>
+          <progress value="0" max="100" id="uploader">0%</progress>
+          <input onChange={(e)=>updateUserProfilePic(e, this.props.activeUser)} type="file"  id="fileButton"/>
         </div>
         <div className="social-media"></div>
         <div className="favourite-class-wrapper">

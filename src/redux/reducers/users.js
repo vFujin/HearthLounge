@@ -8,7 +8,10 @@ export default function(state=initialState, action){
     case 'UPDATE_ACTIVE_USER': return {
       ...state,
       authenticated: action.authenticated,
-      activeUser: action.activeUser
+      activeUser: {
+          ...action.activeUser,
+        photoURL: action.photoURL
+      }
     };
     case 'UPDATE_USER_LIST': return {
       ...state,

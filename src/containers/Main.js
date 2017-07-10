@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
-import {getCurrentUserInfo, logout} from '../server/auth';
+import {getCurrentUserInfo, logout} from '../server/user';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';
 import {fetchData} from '../data/cards-data';
@@ -50,8 +50,8 @@ const mapDispatchToProps = (dispatch) => {
     updateCards: (cards) => dispatch({
       type: 'UPDATE_CARDS', cards
     }),
-    updateActiveUser: (authenticated, activeUser) => dispatch({
-      type: 'UPDATE_ACTIVE_USER', authenticated, activeUser
+    updateActiveUser: (authenticated, activeUser, photoURL) => dispatch({
+      type: 'UPDATE_ACTIVE_USER', authenticated, activeUser, photoURL
     })
   }
 };

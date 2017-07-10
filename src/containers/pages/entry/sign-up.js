@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import SignUpForm from './sign-up/sign-up-form';
 import StepProgressBar from './sign-up/step-progress-bar';
 
-const SignUp = ({children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, signUp_firstStep, signUp_secondStep, handleInputChange, handleFormSubmit, handleUpdateProfileFormSubmit, handleCheckboxClick, tos, location}) => {
+const SignUp = ({children, activeUser, signUp_username, signUp_email, signUp_confirmEmail, signUp_password,
+                  signUp_confirmPassword, signUp_firstStep, signUp_secondStep, handleInputChange, handleFormSubmit,
+                  handleUpdateProfileFormSubmit, handleCheckboxClick, tos, location}) => {
 
   const signUp = () =>{
     return location.pathname === "/sign-up"
@@ -15,8 +17,9 @@ const SignUp = ({children, signUp_username, signUp_email, signUp_confirmEmail, s
                       handleFormSubmit={handleFormSubmit}
                       handleCheckboxClick={handleCheckboxClick}
                       tos={tos}/>
-        : React.cloneElement(children, {handleInputChange, signUp_username, handleUpdateProfileFormSubmit});
+        : React.cloneElement(children, {handleInputChange, activeUser, signUp_username, handleUpdateProfileFormSubmit});
   };
+
 
   return (
       <div className="sign sign-up active">
