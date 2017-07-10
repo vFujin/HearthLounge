@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
-import Input from '../../../shared-assets/form-assets/input';
+import Input from '../../../../shared-assets/form-assets/input';
 
 const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos}) =>{
   return (

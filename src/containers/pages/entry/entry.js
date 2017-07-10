@@ -5,7 +5,7 @@ import {LeftContainer} from './left-container';
 import {createUser, updateUser, signIn} from '../../../server/user'
 import PropTypes from 'prop-types';
 
-const Entry = ({updateActiveUser, location, activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
+const Entry = ({updateActiveUser, location, activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, signUp_profilePic, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
 
   // if(location.pathname === '/sign-up/update-profile'){
   //   updateSignUpStatus("success", "");
@@ -39,49 +39,52 @@ const Entry = ({updateActiveUser, location, activeUser, authenticated, children,
     updateFormProperty({tos: checked})
   };
 
-    return (
-      <div className={`container__page container__page--oneSided entry`}>
-        <div className="wrapper">
-          <LeftContainer/>
-          <div className="breakline v-breakline"></div>
-          <div className="container__page--inner container__page--right">
-            <div className="topbar">
-              <Link to="/sign-in" activeClassName="active">
-                <p>Sign In</p>
-              </Link>
-              <Link to={authenticated ? '/dashboard' : '/sign-up'} activeClassName="active">
-                <p>Sign Up</p>
-              </Link>
-            </div>
-            {React.cloneElement(children, {
-              activeUser,
-              signUp_username,
-              signUp_email,
-              signUp_confirmEmail,
-              signUp_password,
-              signUp_confirmPassword,
-              signUp_firstStep,
-              signUp_secondStep,
-              tos,
-
-              signIn_email,
-              signIn_password,
-
-              handleInputChange,
-              handleCheckboxClick,
-              handleSignIn,
-              handleFormSubmit,
-              handleUpdateProfileFormSubmit
-            })}
+  return (
+    <div className={`container__page container__page--oneSided entry`}>
+      <div className="wrapper">
+        <LeftContainer/>
+        <div className="breakline v-breakline"></div>
+        <div className="container__page--inner container__page--right">
+          <div className="topbar">
+            <Link to="/sign-in" activeClassName="active">
+              <p>Sign In</p>
+            </Link>
+            <Link to={authenticated ? '/dashboard' : '/sign-up'} activeClassName="active">
+              <p>Sign Up</p>
+            </Link>
           </div>
+          {React.cloneElement(children, {
+            activeUser,
+            signUp_username,
+            signUp_email,
+            signUp_confirmEmail,
+            signUp_password,
+            signUp_confirmPassword,
+            signUp_profilePic,
+            signUp_firstStep,
+            signUp_secondStep,
+            tos,
+
+            signIn_email,
+            signIn_password,
+
+            updateFormProperty,
+
+            handleInputChange,
+            handleCheckboxClick,
+            handleSignIn,
+            handleFormSubmit,
+            handleUpdateProfileFormSubmit
+          })}
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 const mapStateToProps = (state) =>{
-  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep} = state.entry;
-  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep};
+  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_profilePic, signUp_firstStep, signUp_secondStep} = state.entry;
+  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_profilePic, signUp_firstStep, signUp_secondStep};
 };
 
 const mapDispatchToProps = (dispatch) => {

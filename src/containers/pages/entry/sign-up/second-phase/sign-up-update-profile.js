@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react';
 import {browserHistory} from 'react-router';
-import Input from '../../../shared-assets/form-assets/input';
-import {icon_filters} from '../../../../data/filters';
-import {updateUserProfilePic} from '../../../../server/user';
+import Input from '../../../../shared-assets/form-assets/input';
+import {icon_filters} from '../../../../../data/filters';
+
+import ImageUpload from './image-upload';
 // import PropTypes from 'prop-types';
 
 class SignUpUpdateProfile extends PureComponent {
@@ -13,9 +14,17 @@ class SignUpUpdateProfile extends PureComponent {
     }
   }
 
-  mapPlayerClasses(){
+  mapPlayerClasses = () =>{
     return icon_filters.playerClass.map(playerClass => <li key={playerClass.url}><span className={`hs-icon icon-${playerClass.url}`}></span></li>)
   };
+
+  uploadedImage = () => {
+    return this.props.signUp_profilePic
+        ? "✓ Image successfully uploaded."
+        : <ImageUpload activeUser={this.props.activeUser}
+                       updateFormProperty={this.props.updateFormProperty}/>
+  };
+
 
   render() {
     return (
@@ -30,11 +39,7 @@ class SignUpUpdateProfile extends PureComponent {
                value={this.props.signUp_username}/>
 
         <div className="divider"><span>Optional</span></div>
-        <div className="avatar-wrapper">
-          <p>Upload your avatar</p>
-          <progress value="0" max="100" id="uploader">0%</progress>
-          <input onChange={(e)=>updateUserProfilePic(e, this.props.activeUser)} type="file"  id="fileButton"/>
-        </div>
+        {this.uploadedImage()}
         <div className="social-media"></div>
         <div className="favourite-class-wrapper">
           <p>Choose favourite class:</p>

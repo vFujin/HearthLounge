@@ -4484,6 +4484,9 @@ footer {
         margin: 0; }
       .dashboard .container__page--left .sidebar ul li:first-child label input {
         text-align: center; }
+  .dashboard .container__page--left .sidebar ul .about img {
+    width: 150px;
+    height: 150px; }
 .dashboard .container__page--right .topbar {
   justify-content: flex-start; }
   .dashboard .container__page--right .topbar li {

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
+import EntryNode from './entry-node';
 
 const Navbar = ({handleLogout, user}) => {
+
 
   const listSubmenu = (index, el, sub) =>{
     return (
@@ -16,6 +18,7 @@ const Navbar = ({handleLogout, user}) => {
       )
     )
   };
+
 
   const dropdown = (el, index) => {
     if (!el.hasOwnProperty('submenu')) return;
@@ -49,14 +52,7 @@ const Navbar = ({handleLogout, user}) => {
               </Link>
             </li>
         )}
-        <li className="nav__list--item login">
-          <Link className="nav__list--linkContainer" to={user ? '/dashboard' : '/sign-in'}>
-            <div className="nav__list--link">
-              <span className="hs-icon icon-login"></span>
-              <div onClick={(e) => handleLogout(e)}>{user ? user.username : "Sign In"}</div>
-            </div>
-          </Link>
-        </li>
+        <EntryNode handleLogout={handleLogout} user={user}/>
       </ul>
     </nav>
   );

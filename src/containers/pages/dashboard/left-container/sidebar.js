@@ -3,7 +3,6 @@ import UserDetails from './details/user';
 import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
 import {updateEmail, updateUserHearthstoneData, updateUserSocialMediaData} from '../../../../server/dashboard';
-import _ from 'lodash';
 
 export class Sidebar extends Component{
   constructor(props){
@@ -84,7 +83,7 @@ export class Sidebar extends Component{
 
           <ul className="sidebar__body">
             <li className="about">
-              <div className="avatar"><img src="http://lorempixel.com/100/100/cats/" alt="cat"/></div>
+              <div className="avatar">{user.photoURL ? <img src={user.photoURL} alt={`${user.username}'s profile`}/> : <span className="hs-icon icon-login"></span>}</div>
               <div className="username">{user.username}</div>
             </li>
 

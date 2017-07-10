@@ -7,14 +7,14 @@ import {success, error} from '../utils/messages';
  *
  * @param {string} email - The user's email address.
  * @param {string} password - The user's chosen password.
- * @param {func} callback - Callback function to pass data into reducer.
+ * @param {func} updateSignUpStatus - Callback function to pass data into signUpStatus reducer.
+ * @param {func} reducer - Callback function to pass data into activeUser reducer.
  * @returns {!firebase.Promise.<*>}
  */
 export function createUser(email, password, updateSignUpStatus, reducer){
   firebaseAuth().createUserWithEmailAndPassword(email, password)
       .then((user)=>{
         updateSignUpStatus("success", null);
-        console.log(reducer, user)
         reducer(true, {
           username: user.email,
           email: user.email,
@@ -116,7 +116,7 @@ export function updateUser(user, username, updateSignUpStatus){
   } else error("Your profile has been already updated. You can update your profile in your dashboard", 10)
 }
 
-export function updateUserProfilePic(e, user){
+export function updateUserProfilePic(e, user, updateFormProperty){
   const uploader = document.getElementById("uploader");
   const fileButton = document.getElementById("fileButton");
 
@@ -125,14 +125,17 @@ export function updateUserProfilePic(e, user){
       const fileType = /^(image\/(jpe?g|png))$/.test(file.type);
       const fileSize = file.size;
       const fileNameLength = file.name.length;
-
+      // const fileValues = [fileType, fileSize, fileNameLength];
 
       if(!fileType){
-        error("Image must be a .jpg, .jpeg or .png", 6)
+        error("Image must be a .jpg, .jpeg or .png", 6);
+        updateFormProperty({signUp_profilePic: false});
       } else if(fileSize >= 2 * 1024 * 1024){
-        error("Image size must be less than 2mb", 6)
+        error("Image size must be less than 2mb", 6);
+        updateFormProperty({signUp_profilePic: false})
       } else if(fileNameLength > 10){
-        error("Image name must be less or equal than 10 characters", 10)
+        error("Image name must be less or equal than 10 characters", 10);
+        updateFormProperty({signUp_profilePic: false})
       } else {
         let storageRef = firebaseStorage().ref(`${user.uid}/profilePicture/${file.name}`);
         let task = storageRef.put(file);
@@ -143,23 +146,33 @@ export function updateUserProfilePic(e, user){
             },
             function error() {
               if (!fileType) {
-                error("Image must be a .jpg, .jpeg or .png", 6)
+                error("Image must be a .jpg, .jpeg or .png", 6);
               } else if(!fileSize){
-                error("Image must be less than 2mb", 6)
+                error("Image must be less than 2mb", 6);
               } else if(fileNameLength > 10){
-                error("Image name must be less or equal than 10 characters", 10)
+                error("Image name must be less or equal than 10 characters", 10);
               } else {
-                error("Couldn't upload image. Try again later", 6)
+                error("Couldn't upload image. Try again later", 6);
               }
+              updateFormProperty({signUp_profilePic: false})
             },
             function complete() {
-              success("Image has been uploaded!")
-              //show some another component
+              let photoURL = task.snapshot.downloadURL;
+              success("Image has been uploaded!");
+
+              firebaseAuth().currentUser.updateProfile({photoURL})
+                  .then(()=> success("Profile has been updated!"),
+                      (err)=> error("Something's not quite right. Try again later.", 4)
+                  );
+
+              updateFormProperty({signUp_profilePic: true})
             }
         )
       }
   }
 }
+
+
 
 export function getUserData(uid, callback) {
   return ref.on("value", (snapshot) =>callback(snapshot.child(`users/${uid}`).val()))
@@ -171,9 +184,11 @@ export function getCurrentUserInfo(reducer){
       getUserData(user.uid, (v)=> {
         reducer(true, v, user.photoURL)
       });
-    }
-    else {
-      reducer(false, null);
+    } else {
+
+
+
+      reducer(false, null, undefined);
     }
   });
 }
