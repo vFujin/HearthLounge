@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SectionFooter = ({author}) => {
+const SectionFooter = ({author, authorPic}) => {
   return (
       <div className="section__footer">
         <div className="section_footer--wrapper">
@@ -9,7 +9,7 @@ const SectionFooter = ({author}) => {
             <h4>About author</h4>
           </div>
           <div className="details">
-            <img src="http://lorempixel.com/45/45/cats/" alt="profile pic" />
+            {authorPic ? <img src={authorPic} alt="profile pic" /> : <span className="hs-icon icon-login"></span>}
             <div className="general-info-wrapper">
               <p>{author}</p>
               <p>reputation</p>

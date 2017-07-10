@@ -6,6 +6,7 @@ import {success, error} from '../../utils/messages';
  *
  * @param {string} hsClass - Choosen Hearthstone player class after class selection
  * @param {string} author - User username
+ * @param {string || null} authorPic - User profile picture, null if user has no profile picture
  * @param {string} title - Deck title
  * @param {string} type - Deck type; i.e Standard, Wild, Brawl, Adventures
  * @param {string} archetype - Deck archetype + player class; i.e N'zoth Priest, Jade Shaman, Quest Rogue
@@ -13,11 +14,11 @@ import {success, error} from '../../utils/messages';
  * @param {string} description - Deck description
  * @param {string} uid - User ID
  */
-export function saveDeck(hsClass, author, title, type, archetype, deck, description, uid){
+export function saveDeck(hsClass, author, authorPic, title, type, archetype, deck, description, uid){
   if(hsClass && author && title && type && archetype && deck && description && uid) {
 
     const deckId = ref.child(`decks`).push().key;
-
+    let authorProfilePic = !authorPic ? null : authorPic;
     /**
      * Deck object
      * @type {{created: number, edited: null, upvotes: number, downvotes: number, comments: Array, patch: string, views: number, hsClass: string, author: string, title: string, type: string, archetype: string, deck: string[], description: string, id}}
@@ -32,6 +33,7 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
       votes: 0,
       hsClass,
       author,
+      authorPic: authorProfilePic,
       title,
       type,
       archetype,

@@ -87,6 +87,9 @@ nav {
           }
         }
       }
+      &:last-child{
+        border-right: 0;
+      }
       &:hover {
         background-color: $sea-color;
         .submenu{
@@ -107,6 +110,9 @@ nav {
            }
            span {
              font-size: 2.1vw;
+             &.icon-logout{
+               font-size: .6vw
+             }
            }
            .submenu {
              left: 0;
@@ -127,10 +133,15 @@ nav {
       }
     }
 
-    .login{
+    .nav__list--item.login{
       a {
         background-color: $sea-color;
         color: $pearl;
+        div{
+          img{
+            width: 2.1vw;
+          }
+        }
       }
     }
   }
@@ -1203,8 +1214,6 @@ footer{
         }
       }
     }
-
-
   }
 }
 .deck {
@@ -1263,6 +1272,14 @@ footer{
           .section__body {
             .section__body--background {
               background: $light-grey;
+            }
+          }
+          .section__footer{
+            .details{
+              img{
+                width: 45px;
+                height: 45px;
+              }
             }
           }
         }

@@ -11,7 +11,7 @@ const DeckDescription = ({currentDeck}) =>{
       <div className="container__details--section container__details--description">
         <SectionHeader title={title} />
         <SectionBody description={description} />
-        <SectionFooter author={author} />
+        <SectionFooter author={author} authorPic={currentDeck.authorPic}/>
       </div>
   )
 };

@@ -32,7 +32,7 @@ const DeckOptions = ({activeClass, user, deckType, deckTitle, deckArchetype, dec
 
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
-    saveDeck(activeClass, user.username, deckTitle, deckType, deckArchetype, simplifiedDeck, deckText, user.uid);
+    saveDeck(activeClass, user.username, user.photoURL, deckTitle, deckType, deckArchetype, simplifiedDeck, deckText, user.uid);
   };
 
   return (

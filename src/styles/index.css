@@ -156,6 +156,18 @@ a:active, a:hover, a:link, a:visited {
 .icon-bubbles22:before {
   content: "\e96d"; }
 
+.icon-cross:before {
+  content: "\ea0f"; }
+
+.icon-logout:before {
+  content: "\ea14"; }
+
+.icon-share:before {
+  content: "\ea7d"; }
+
+.icon-redirect:before {
+  content: "\ea7e"; }
+
 .icon-journey-to-ungoro:before {
   content: "\e938"; }
 
@@ -2635,6 +2647,8 @@ nav {
             nav .nav__list .nav__list--item:first-child .logo-wrapper .text-wrapper p:first-child {
               margin-bottom: .5vh;
               margin-top: .1vh; }
+      nav .nav__list .nav__list--item:last-child {
+        border-right: 0; }
       nav .nav__list .nav__list--item:hover {
         background-color: #00a99c; }
         nav .nav__list .nav__list--item:hover .submenu {
@@ -2651,6 +2665,8 @@ nav {
           font-size: 0.6vw; }
         nav .nav__list .nav__list--item .nav__list--linkContainer .nav__list--link span {
           font-size: 2.1vw; }
+          nav .nav__list .nav__list--item .nav__list--linkContainer .nav__list--link span.icon-logout {
+            font-size: 0.6vw; }
         nav .nav__list .nav__list--item .nav__list--linkContainer .nav__list--link .submenu {
           left: 0; }
           nav .nav__list .nav__list--item .nav__list--linkContainer .nav__list--link .submenu .submenu__icon {
@@ -2666,9 +2682,11 @@ nav {
         nav .nav__list .nav__list--item .active:hover {
           color: #E7E2DA;
           background-color: #00a99c; }
-    nav .nav__list .login a {
+    nav .nav__list .nav__list--item.login a {
       background-color: #00a99c;
       color: #E7E2DA; }
+      nav .nav__list .nav__list--item.login a div img {
+        width: 2.1vw; }
 
 footer {
   background-color: #474143; }
@@ -3587,6 +3605,9 @@ footer {
     margin-right: 1vh; }
 .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--background {
   background: #A69E9D; }
+.deck .container__page--right .content .container__details .container__details--description .section__footer .details img {
+  width: 45px;
+  height: 45px; }
 .deck .container__page--right .content .container__details .container__details--comments .section__footer {
   padding: 2vh 1vh 0 1vh;
   border: 1px solid #474143; }

@@ -160,10 +160,20 @@ export function updateUserProfilePic(e, user, updateFormProperty){
               let photoURL = task.snapshot.downloadURL;
               success("Image has been uploaded!");
 
-              firebaseAuth().currentUser.updateProfile({photoURL})
-                  .then(()=> success("Profile has been updated!"),
-                      (err)=> error("Something's not quite right. Try again later.", 4)
-                  );
+              let updatedProfilePic = {
+                ...user,
+                photoURL
+              };
+
+              let updates = {};
+              updates[`users/${user.uid}`] = updatedProfilePic;
+              ref.update(updates, function (err) {
+                if (err) {
+                  error("Something's not quite right. Try again later.", 4);
+                } else {
+                  success("Profile has been updated!");
+                }
+              });
 
               updateFormProperty({signUp_profilePic: true})
             }
@@ -182,13 +192,13 @@ export function getCurrentUserInfo(reducer){
   firebaseAuth().onAuthStateChanged(user => {
     if (user) {
       getUserData(user.uid, (v)=> {
-        reducer(true, v, user.photoURL)
+        reducer(true, v)
       });
     } else {
 
 
 
-      reducer(false, null, undefined);
+      reducer(false, null);
     }
   });
 }

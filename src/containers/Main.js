@@ -18,6 +18,7 @@ class Main extends Component{
     fetchData(this.props.updateCards);
   }
 
+
   render(){
     const {authenticated, activeUser, children, location, cards} = this.props;
     return (
