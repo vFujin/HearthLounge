@@ -18,7 +18,7 @@ const EntryNode = ({user, handleLogout}) =>{
         <Link className="nav__list--linkContainer" to={user ? '/dashboard' : '/sign-in'}>
           <div className="nav__list--link">
             {(user && user.photoURL)
-                ? <img src={user.photoURL} alt={`${user.username}'s profile`}/>
+                ? <div className="nav__list--imageWrapper"><img src={user.photoURL} alt={`${user.username}'s profile`}/></div>
                 : <span className="hs-icon icon-login"></span>}
             {entryLabel()}
           </div>
