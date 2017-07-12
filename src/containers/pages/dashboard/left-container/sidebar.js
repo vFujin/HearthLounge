@@ -4,7 +4,7 @@ import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
 import DangerZone from './details/danger-zone';
 
-import {updateEmail, updateUserHearthstoneData, updateUserSocialMediaData} from '../../../../server/dashboard';
+import {updateEmail, updateUserHearthstoneData, updateUserSocialMediaData, deleteUser, deleteAvatar, reauthenticate} from '../../../../server/dashboard';
 
 export class Sidebar extends Component{
   constructor(props){
@@ -23,7 +23,10 @@ export class Sidebar extends Component{
       facebook: null,
       twitter: null,
       twitch: null,
-      youtube: null
+      youtube: null,
+
+      isReauthenticated: false,
+      reauthPassword: ''
     };
   }
 
@@ -78,6 +81,18 @@ export class Sidebar extends Component{
     })
   }
 
+  handleDeleteAccountClick = () =>{
+    deleteUser(this.props.user);
+  };
+
+  handleAvatarDeletion = () =>{
+    deleteAvatar(this.props.user)
+  };
+
+  handleReauthenticationClick = () =>{
+    reauthenticate(this.state.reauthPassword)
+  };
+
   render() {
     const {user} = this.props;
     return (
@@ -95,6 +110,7 @@ export class Sidebar extends Component{
                          isEditing={this.state.editing_details}
                          handleEditClick={(e)=>this.handleEditClick(e)}
                          handleInputChange={(e)=>this.handleInputChange(e)}
+                         handleAvatarDeletion={this.handleAvatarDeletion}
                          handleSaveClick={(e)=>this.handleSaveClick(e)}/>
             <HearthstoneDetails user={user}
                                 isEditing={this.state.editing_hearthstone}
@@ -108,7 +124,11 @@ export class Sidebar extends Component{
                                 handleInputChange={(e)=>this.handleInputChange(e)}
                                 handleSaveClick={(e)=>this.handleSaveClick(e)}/>
             <DangerZone isEditing={this.state.editing_danger_zone}
+                        reauthPassword={this.state.reauthPassword}
+                        handleDeleteAccountClick={this.handleDeleteAccountClick}
+                        handleReauthenticationClick={this.handleReauthenticationClick}
                         handleEditClick={(e)=>this.handleEditClick(e)}
+                        handleInputChange={(e)=>this.handleInputChange(e)}
                         handleSaveClick={(e)=>this.handleSaveClick(e)}/>
           </ul>
         </div>

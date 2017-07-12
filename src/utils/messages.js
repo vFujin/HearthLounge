@@ -11,5 +11,5 @@ export const loading = (msg) =>{
   message.loading(msg);
 };
 export const error = (msg, duration) =>{
-  message.error(msg, duration || 2);
+  message.error(msg, duration || 4);
 };

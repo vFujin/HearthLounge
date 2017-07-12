@@ -2,7 +2,16 @@ import React from 'react';
 import DetailHeader from './detail-header';
 import InputLabel from './assets/input-label';
 
-const UserDetails = ({user, handleEditClick, isEditing, handleInputChange, handleSaveClick}) => {
+const UserDetails = ({user, handleEditClick, isEditing, handleAvatarDeletion, handleInputChange, handleSaveClick}) => {
+
+  const hasAvatar = () =>{
+    if(!user.photoURL){
+      return <div>Upload avatar: <input type="file" name="avatar" id="avatar" disabled={!isEditing}/></div>
+    }
+    return <div><button onClick={handleAvatarDeletion} >Delete avatar</button> || <input type="file" name="avatar" id="avatar" disabled={!isEditing}/></div>
+
+  };
+
   return(
       <li className="details">
         <DetailHeader title="details"
@@ -13,7 +22,8 @@ const UserDetails = ({user, handleEditClick, isEditing, handleInputChange, handl
           <InputLabel id="email" title="e-mail" placeholder={user.email} disabled={isEditing} handleInputChange={handleInputChange}/>
           <label htmlFor="avatar" className="avatar">
             <p>Avatar</p>
-            <input type="file" name="avatar" id="avatar" disabled={!isEditing}/>
+            {hasAvatar()}
+
           </label>
           {user.updatedProfile
               ? null
@@ -23,6 +33,5 @@ const UserDetails = ({user, handleEditClick, isEditing, handleInputChange, handl
       </li>
   )
 };
-
 
 export default UserDetails;

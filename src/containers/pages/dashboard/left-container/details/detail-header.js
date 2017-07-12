@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-const DetailHeader = ({isEditing, handleEditClick, handleSaveClick, title}) =>{
+const DetailHeader = ({isEditing, handleEditClick, handleSaveClick, title, hasSaveBtn}) =>{
   let editing = !isEditing ? 'Edit' : 'Cancel';
   let toggleSave = !isEditing ? 'display-none' : '';
+
   const capitalizedTitle = _.startCase(title);
   const snakeCasedTitle = _.snakeCase(title);
 
@@ -13,7 +14,9 @@ const DetailHeader = ({isEditing, handleEditClick, handleSaveClick, title}) =>{
         <h3>{capitalizedTitle}</h3>
         <div>
           <button onClick={(e)=>handleEditClick(e)} id={`editing_${snakeCasedTitle}`} className="btn-pearl">{editing}</button>
-          <button onClick={(e)=>handleSaveClick(e)} id={snakeCasedTitle}    className={`btn-pearl ${toggleSave}`}>Save</button>
+          {hasSaveBtn === false
+              ?  null
+              : <button onClick={(e)=>handleSaveClick(e)} id={snakeCasedTitle} className={`btn-pearl ${toggleSave}`}>Save</button>}
         </div>
       </div>
   )
