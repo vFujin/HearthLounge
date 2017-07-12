@@ -1,7 +1,6 @@
 import 'whatwg-fetch';
 import {MashapeKey} from '../keys';
 
-
 const getUniqueAttributes = (data, attribute) =>{
   let initialFiltering = data.filter(x=>x[attribute]).map(x=>x[attribute]);
   let setFiltering = data.filter(c=>c.cardSet === attribute);
@@ -57,9 +56,7 @@ const cards = (cards) =>{
       "journey-to-ungoro": getUniqueAttributes(cards, "Journey to Un'Goro"),
       "knights-of-the-frozen-throne": getUniqueAttributes(cards, "Knights of the Frozen Throne")
     }
-
-
-  };
+  }
 };
 
 export const fetchData = (reducer) => {
@@ -71,8 +68,16 @@ export const fetchData = (reducer) => {
     .then(r=>r.json())
     .then(data => {
       let fetchedCards = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
-      // let d = data["Naxxramas"];
-
       reducer(cards(fetchedCards));
     })
+};
+
+export const fetchPatchData = reducer => {
+  fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/info`, {
+    headers: {
+      'X-Mashape-Key': MashapeKey
+    }
+  })
+      .then(r => r.json())
+      .then(data => reducer(data.patch))
 };

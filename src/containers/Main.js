@@ -5,7 +5,7 @@ import Footer from './layout/footer';
 import {getCurrentUserInfo, logout} from '../server/user';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';
-import {fetchData} from '../data/cards-data';
+import {fetchData, fetchPatchData} from '../data/cards-data';
 import {connect} from 'react-redux';
 
 class Main extends Component{
@@ -15,19 +15,21 @@ class Main extends Component{
   };
 
   componentDidMount() {
+    fetchPatchData(this.props.updateCurrentPatch);
     fetchData(this.props.updateCards);
   }
 
 
   render(){
-    const {authenticated, activeUser, children, location, cards} = this.props;
+    const {authenticated, activeUser, children, location, cards, patch} = this.props;
     return (
         <div id="container">
           <Navbar url={location.pathname} user={this.props.activeUser} handleLogout={(e)=>logout(e)}/>
           {React.cloneElement(children, {
             authenticated,
             activeUser,
-            cards
+            cards,
+            patch
           })}
           <Footer/>
         </div>
@@ -41,13 +43,16 @@ Main.propTypes = {
 };
 
 const mapStateToProps = state =>{
-  const {cards} = state.cards;
+  const {cards, patch} = state.cards;
   const {authenticated, activeUser} = state.users;
-  return {cards, authenticated, activeUser};
+  return {cards, patch, authenticated, activeUser};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    updateCurrentPatch: patch => dispatch({
+      type: 'UPDATE_CURRENT_PATCH', patch
+    }),
     updateCards: (cards) => dispatch({
       type: 'UPDATE_CARDS', cards
     }),

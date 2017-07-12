@@ -12,7 +12,7 @@ import {loading} from '../../../../utils/messages';
 import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboard';
 import {captureDecklist} from '../../../../utils/capture-decklist';
 
-const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, summarizedDeck,
+const CreateDeckClassSelected = ({cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, summarizedDeck,
                                    toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
   const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
   const query = location.query;
@@ -214,6 +214,7 @@ const CreateDeckClassSelected = ({cards, deck, deckMechanics, editDeck, editingT
                         handleOptionsClick={handleOptionsClick}
                         handleImgSaveClick={handleImgSaveClick}
                         cards={listCards(query)}
+                        patch={patch}
                         editingTool={editingTool}
                         user={user}
                         imgReadyDecklist={imgReadyDecklist}/>

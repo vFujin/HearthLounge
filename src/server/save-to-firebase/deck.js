@@ -13,8 +13,8 @@ import {success, error} from '../../utils/messages';
  * @param {string} description - Deck description
  * @param {string} uid - User ID
  */
-export function saveDeck(hsClass, author, title, type, archetype, deck, description, uid){
-  if(hsClass && author && title && type && archetype && deck && description && uid) {
+export function saveDeck(patch, hsClass, author, title, type, archetype, deck, description, uid){
+  if(patch && hsClass && author && title && type && archetype && deck && description && uid) {
 
     const deckId = ref.child(`decks`).push().key;
     /**
@@ -27,9 +27,9 @@ export function saveDeck(hsClass, author, title, type, archetype, deck, descript
       edited: null,
       upvotes: 0,
       downvotes: 0,
-      patch: 'ungoro',
       views: 0,
       votes: 0,
+      patch,
       hsClass,
       author,
       title,

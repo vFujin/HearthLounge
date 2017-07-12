@@ -11,7 +11,7 @@ const updateDeckText = _.debounce((updateDeckProperty, value) => {
   updateDeckProperty({deckText: value})
 }, 300);
 
-const DeckOptions = ({activeClass, user, deckType, deckTitle, deckArchetype, deckText, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
+const DeckOptions = ({activeClass, patch, user, deckType, deckTitle, deckArchetype, deckText, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
 
   const handleInputChange = (e) => {
     let target = e.target.id;
@@ -29,11 +29,12 @@ const DeckOptions = ({activeClass, user, deckType, deckTitle, deckArchetype, dec
     let key= `deck${_.upperFirst(selector)}`;
     updateDeckProperty({[key]: v})
   };
-
+console.log(patch)
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
-    saveDeck(activeClass, user.username, user.photoURL, deckTitle, deckType, deckArchetype, simplifiedDeck, deckText, user.uid);
+    saveDeck(patch, activeClass, user.username, deckTitle, deckType, deckArchetype, simplifiedDeck, deckText, user.uid);
   };
+
 
   return (
       <div className='container__details'>
