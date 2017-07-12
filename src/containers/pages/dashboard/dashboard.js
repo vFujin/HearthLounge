@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {browserHistory} from 'react-router';
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar'
 import Content from './right-container/content';
 import Loader from '../../../utils/loader';
 
-export class Dashboard extends Component{
+export class Dashboard extends PureComponent{
 
   componentWillReceiveProps(nextProps){
     if(nextProps.authenticated === false){

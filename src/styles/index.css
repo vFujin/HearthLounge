@@ -2694,11 +2694,15 @@ nav {
         nav .nav__list .nav__list--item .active:hover {
           color: #E7E2DA;
           background-color: #00a99c; }
-    nav .nav__list .nav__list--item.login a {
-      background-color: #00a99c;
-      color: #E7E2DA; }
-      nav .nav__list .nav__list--item.login a div img {
-        width: 2.1vw; }
+      nav .nav__list .nav__list--item.login a {
+        background-color: #00a99c;
+        color: #E7E2DA; }
+        nav .nav__list .nav__list--item.login a div .submenu {
+          width: 100%;
+          background: transparent;
+          margin-left: 0; }
+          nav .nav__list .nav__list--item.login a div .submenu li {
+            width: 100%; }
 
 footer {
   background-color: #474143; }
@@ -4519,7 +4523,10 @@ footer {
         text-align: center; }
   .dashboard .container__page--left .sidebar ul .about img {
     width: 150px;
-    height: 150px; }
+    height: 150px;
+    -webkit-box-shadow: 0 0 10px black;
+    -moz-box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px black; }
 .dashboard .container__page--right .topbar {
   justify-content: flex-start; }
   .dashboard .container__page--right .topbar li {

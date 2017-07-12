@@ -144,15 +144,19 @@ nav {
           background-color: $sea-color;
         }
       }
-    }
-
-    .nav__list--item.login{
-      a {
-        background-color: $sea-color;
-        color: $pearl;
-        div{
-          img{
-            width: 2.1vw;
+      &.login{
+        a {
+          background-color: $sea-color;
+          color: $pearl;
+          div{
+            .submenu{
+              width: 100%;
+              background: transparent;
+              margin-left:0;
+              li{
+                width: 100%;
+              }
+            }
           }
         }
       }
@@ -2507,6 +2511,7 @@ footer{
           img{
             width: 150px;
             height: 150px;
+            @include box-shadow(0, 0, 10px, black);
           }
         }
       }

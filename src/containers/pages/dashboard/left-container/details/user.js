@@ -11,6 +11,14 @@ const UserDetails = ({user, handleEditClick, isEditing, handleInputChange, handl
                       handleSaveClick={handleSaveClick}/>
         <div className="details-content">
           <InputLabel id="email" title="e-mail" placeholder={user.email} disabled={isEditing} handleInputChange={handleInputChange}/>
+          <label htmlFor="avatar" className="avatar">
+            <p>Avatar</p>
+            <input type="file" name="avatar" id="avatar" disabled={!isEditing}/>
+          </label>
+          {user.updatedProfile
+              ? null
+              : <InputLabel id="username" title="username" placeholder={user.username} disabled={isEditing} handleInputChange={handleInputChange} />
+          }
         </div>
       </li>
   )

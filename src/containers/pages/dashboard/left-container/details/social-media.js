@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import DetailHeader from './detail-header';
 import IconLabel from './assets/icon-label';
 
@@ -40,12 +41,12 @@ const SocialMediaDetails = ({user, handleEditClick, isEditing, handleInputChange
   )
 };
 
-SocialMediaDetails.reactProptypes = {
-  user: React.PropTypes.object.isRequired,
-  isEditing: React.PropTypes.bool.isRequired,
-  handleEditClick: React.PropTypes.func.isRequired,
-  handleInputChange: React.PropTypes.func.isRequired,
-  handleSaveClick: React.PropTypes.func.isRequired,
-};
-
 export default SocialMediaDetails;
+
+SocialMediaDetails.propTypes = {
+  user: PropTypes.object.isRequired,
+  isEditing: PropTypes.bool.isRequired,
+  handleEditClick: PropTypes.func.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  handleSaveClick: PropTypes.func.isRequired,
+};

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import UserDetails from './details/user';
 import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
+import DangerZone from './details/danger-zone';
+
 import {updateEmail, updateUserHearthstoneData, updateUserSocialMediaData} from '../../../../server/dashboard';
 
 export class Sidebar extends Component{
@@ -12,6 +14,7 @@ export class Sidebar extends Component{
       editing_details: false,
       editing_hearthstone: false,
       editing_social_media: false,
+      editing_danger_zone: false,
 
       email: null,
       battletag: null,
@@ -85,6 +88,7 @@ export class Sidebar extends Component{
             <li className="about">
               <div className="avatar">{user.photoURL ? <img src={user.photoURL} alt={`${user.username}'s profile`}/> : <span className="hs-icon icon-login"></span>}</div>
               <div className="username">{user.username}</div>
+              <div className="prestige">{user.prestige}</div>
             </li>
 
             <UserDetails user={user}
@@ -99,10 +103,13 @@ export class Sidebar extends Component{
                                 handleSelectChange={(v, selector)=>this.handleSelectChange(v, selector)}
                                 handleSaveClick={(e)=>this.handleSaveClick(e)}/>
             <SocialMediaDetails user={user}
-                                isEditing={this.state.editing_social_media} h
+                                isEditing={this.state.editing_social_media}
                                 handleEditClick={(e)=>this.handleEditClick(e)}
                                 handleInputChange={(e)=>this.handleInputChange(e)}
                                 handleSaveClick={(e)=>this.handleSaveClick(e)}/>
+            <DangerZone isEditing={this.state.editing_danger_zone}
+                        handleEditClick={(e)=>this.handleEditClick(e)}
+                        handleSaveClick={(e)=>this.handleSaveClick(e)}/>
           </ul>
         </div>
     );

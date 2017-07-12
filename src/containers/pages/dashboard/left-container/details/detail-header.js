@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
+
 const DetailHeader = ({isEditing, handleEditClick, handleSaveClick, title}) =>{
   let editing = !isEditing ? 'Edit' : 'Cancel';
   let toggleSave = !isEditing ? 'display-none' : '';
@@ -17,8 +19,11 @@ const DetailHeader = ({isEditing, handleEditClick, handleSaveClick, title}) =>{
   )
 };
 
-DetailHeader.propTypes = {
-  title: React.PropTypes.string
-};
-
 export default DetailHeader;
+
+DetailHeader.propTypes = {
+  isEditing: PropTypes.bool.isRequired,
+  handleEditClick: PropTypes.func.isRequired,
+  handleSaveClick: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired
+};
