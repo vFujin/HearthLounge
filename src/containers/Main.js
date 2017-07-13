@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
-import {getActiveUser} from '../firebase/user/user-data';
+import {getActiveUser} from '../firebase/user/read';
 import {signOut} from '../firebase/user/utils';
 import {fetchData, fetchPatchData} from '../data/cards-data';
 import 'antd/lib/tooltip/style/css';

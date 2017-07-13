@@ -1,6 +1,6 @@
-import {ref} from '../../keys';
+import {ref} from '../../../../keys';
 
-export function getDeckDetails(deckId, callback){
+export default function (deckId, callback){
   ref.child(`decks/${deckId}`).once("value", snapshot => {
     callback(snapshot.val());
   });

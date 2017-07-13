@@ -1,5 +1,5 @@
-import {ref} from '../../keys';
-import {error} from '../../utils/messages';
+import {ref} from '../../../../keys';
+import {success, error} from '../../../../utils/messages';
 
 /**
  * Creates deck comment.
@@ -9,34 +9,33 @@ import {error} from '../../utils/messages';
  * @param {string} deckId - deck id
  * @param {string} uid - user id
  */
-export function postComment(author, text, deckId, uid){
-  if(author && text && deckId && uid){
+export function postComment(patch, author, text, deckId, uid){
+  if(patch && author && text && deckId && uid){
 
     const newCommentKey = ref.child(`decks/${deckId}/comments`).push().key;
 
     let newComment = {
       created: +new Date(),
-      edited: null,
-      patch: 'ungoro',
-      author,
-      text,
-      uid,
       id: newCommentKey,
       votes: 0,
       upvotes: 0,
-      downvotes: 0
+      downvotes: 0,
+      authorId: uid,
+      patch,
+      author,
+      text
     };
-
-
 
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
     // updates[`/deck-comment-ratings/${deckId}/${newCommentKey}`] = newCommentRatings;
     updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
 
-    return ref.update(updates);
-  }
-  else {
+    return ref.update(updates)
+        .then(()=>success('Successfully added comment!'),
+              err=>error("Couldn't add comment. Try again later.")
+        );
+  } else {
     return error("Something's not quite right. Try again later.")
   }
 }

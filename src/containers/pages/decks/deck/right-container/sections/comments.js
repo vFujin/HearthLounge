@@ -7,8 +7,9 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
-import {fetchComments, fetchComment, rateComment} from '../../../../../../server/decks/deck-comments';
-import {postComment} from '../../../../../../server/save-to-firebase/deck-comment';
+import {getComment, getComments} from '../../../../../../firebase/decks/comments/read';
+import {updateCommentRating} from '../../../../../../firebase/decks/comments/update';
+import {postComment} from '../../../../../../firebase/decks/comments/create/comment';
 
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
@@ -26,9 +27,9 @@ class DeckComments extends Component {
     const {deckId} = this.props.params;
     if(this.props.activeUser){
       const {uid} = this.props.activeUser;
-      fetchComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
+      getComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
     }
-    fetchComments(deckId, false, comments => this.props.updateComments(deckId, comments));
+    getComments(deckId, false, comments => this.props.updateComments(deckId, comments));
   }
 
   /**
@@ -46,7 +47,7 @@ class DeckComments extends Component {
     if(nextProps.activeUser !== this.props.activeUser){
       if(this.props.activeUser) {
         const {uid} = this.props.activeUser;
-        fetchComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
+        getComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
         // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
         //   // Needs refactor
         //   const {uid} = this.props.activeUser;
@@ -97,7 +98,7 @@ class DeckComments extends Component {
     const {deckId} = this.props.params;
     const {username, uid} = this.props.activeUser;
     postComment(username, this.props.deckComment, deckId, uid);
-    fetchComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
+    getComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
   };
 
   handleCommentClick = (e) =>{
@@ -110,8 +111,8 @@ class DeckComments extends Component {
     let vote = e.currentTarget.id;
     const {deckId} = this.props.params;
     const {uid} = this.props.activeUser;
-    rateComment(deckId, commentId, uid, vote, (voteType)=>this.props.updateCommentVote(voteType));
-    fetchComment(deckId, commentId, comment=>this.props.updateCommentVotes(comment), uid);
+    updateCommentRating(deckId, commentId, uid, vote, (voteType)=>this.props.updateCommentVote(voteType));
+    getComment(deckId, commentId, comment=>this.props.updateCommentVotes(comment), uid);
     // this.props.updateCommentVotes({upvotes: 0, downvotes: 0, votes: 0, id: ""})
 
   };

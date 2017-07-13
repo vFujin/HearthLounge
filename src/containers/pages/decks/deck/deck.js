@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
-import {rateDeck} from '../../../../server/decks/decks';
+import {rateDeck} from '../../../../firebase/decks/deck/read/decks';
 
 const Deck = ({activeUser, currentDeck, params, updateDeckRating}) => {
   const handleDeckVotingClick = (e) =>{

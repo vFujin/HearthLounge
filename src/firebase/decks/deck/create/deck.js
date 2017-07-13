@@ -1,5 +1,5 @@
-import {ref} from '../../keys';
-import {success, error} from '../../utils/messages';
+import {ref} from '../../../../keys';
+import {success, error} from '../../../../utils/messages';
 
 /**
  * Function representing deck saving to Firebase /decks and /users/:id/decks endpoint
@@ -13,15 +13,11 @@ import {success, error} from '../../utils/messages';
  * @param {string} description - Deck description
  * @param {string} uid - User ID
  */
-export function saveDeck(patch, hsClass, author, title, type, archetype, deck, description, uid){
+export default function (patch, hsClass, author, title, type, archetype, deck, description, uid){
   if(patch && hsClass && author && title && type && archetype && deck && description && uid) {
 
     const deckId = ref.child(`decks`).push().key;
-    /**
-     * Deck Object
-     *
-     * @type {{created: number, upvotes: number, downvotes: number, views: number, votes: number, authorId: string, patch: *, hsClass: string, author: string, title: string, type: string, archetype: string, deck: string[], description: string, deckId}}
-     */
+
     let newDeck = {
       created: + new Date(),
       upvotes: 0,

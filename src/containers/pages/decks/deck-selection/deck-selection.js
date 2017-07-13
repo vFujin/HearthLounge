@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
-import {lazyLoadDecks, incrementViewsCount} from '../../../../server/decks/decks';
-import {getDeckDetails} from '../../../../server/decks/deck';
+import {getDeckDetails, getDecks} from '../../../../firebase/decks/deck/read';
+import {updateViews} from '../../../../firebase/decks/deck/update';
 import Loader from '../../../../utils/loader';
 import NotFound from '../../../shared-assets/not-found';
 import 'whatwg-fetch';
@@ -11,13 +11,13 @@ import _ from 'lodash';
 
 class DeckSelection extends Component {
   componentDidMount() {
-    lazyLoadDecks(v=>this.props.updateDeckList(v))
+    getDecks(v=>this.props.updateDeckList(v));
     const el = document.querySelector('.table-scroll');
 
         el.addEventListener("scroll", function () {
           if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-            lazyLoadDecks((v) => {
-              console.log(v)
+            getDecks((v) => {
+              console.log(v);
               return this.props.updateDeckList(v)
             })
           }
@@ -44,14 +44,14 @@ class DeckSelection extends Component {
   handleClassFilterClick = (e) =>{
     let targetId = e.currentTarget.id;
     this.props.updateClassFilter(targetId);
-    lazyLoadDecks((v) => this.props.updateDeckList(v), targetId);
+    getDecks((v) => this.props.updateDeckList(v), targetId);
   };
 
   handleDeckSnippetClick = (e) =>{
     let deckId = e.currentTarget.id;
     let deckObject = _.head(_.map(this.props.decks).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
     this.props.updateActiveDeck(deckObject);
-    incrementViewsCount(deckId);
+    updateViews(deckId);
   };
 
 
