@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
-import {getCurrentUserInfo} from '../server/user';
+import {getActiveUser} from '../firebase/user/user-data';
 import {signOut} from '../firebase/user/utils';
 import {fetchData, fetchPatchData} from '../data/cards-data';
 import 'antd/lib/tooltip/style/css';
@@ -12,7 +12,7 @@ import 'antd/lib/dropdown/style/css';
 class Main extends Component{
   constructor(props) {
     super(props);
-    getCurrentUserInfo(props.updateActiveUser);
+    getActiveUser(props.updateActiveUser);
   };
 
 

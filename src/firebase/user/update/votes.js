@@ -1,7 +1,7 @@
 /**
  * Updates user's vote
  *
- * @param {string} selector - Firebase database reference (i.e `ref.child(${user-decks}`)
+ * @param {function} selector - Firebase database reference (i.e `ref.child(${user-decks}`)
  * @param {string} elementId - Voting element ID
  * @param {string} vote - Vote type (upvote / downvote)
  * @param {function} callback - Callbacks `vote`
