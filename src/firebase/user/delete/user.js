@@ -2,6 +2,11 @@ import {ref, firebaseAuth} from '../../../keys';
 import {success, error} from '../../../utils/messages';
 import {browserHistory} from 'react-router';
 
+/**
+ * Deletes user from main db(only if user is currently logged in and after successful reauthentication)
+ *
+ * @param {object} activeUser - Currently logged user
+ */
 export default function (activeUser){
   let user = firebaseAuth().currentUser;
   let uid = user.uid;
@@ -26,6 +31,12 @@ export default function (activeUser){
       });
 }
 
+/**
+ * Deletes User's data from secondary db (realtime database)
+ *
+ * @param {string} entity - Db entity (i.e `users`)
+ * @param {string} uid - User ID
+ */
 export function getUserData(entity, uid){
   ref.child(`${entity}/${uid}`).remove()
       .then(()=>console.log(`User ${uid} entity ${entity} has been deleted`),
