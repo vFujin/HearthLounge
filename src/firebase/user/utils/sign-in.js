@@ -3,7 +3,7 @@ import {success, error} from '../../../utils/messages';
 import {browserHistory} from 'react-router';
 
 /**
- * Signs in user and redirects to user dashboard on success.
+ * Signs in user and redirects to user's dashboard on success.
  *
  * @param {string} email - The user's e-mail address.
  * @param {string} pass - The user's password.
