@@ -1,13 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
+import TextEditor from '../../../../../../shared-assets/editor/text-editor';
 
-const SectionBody = ({description}) => {
+const SectionBody = ({description, deckEditing, editingDeckDescription, handleInputChange}) => {
+
   return (
       <div className="section__body">
-        <div className="section__body--background">
-          {convertBBCode(description)}
-        </div>
+
+        {deckEditing
+            ? <TextEditor handleInputChange={handleInputChange}
+                          editorId="deck-description"
+                          value={editingDeckDescription || description}
+                          handleTagInsertion={null} />
+            : <div className="section__body--background">
+               {convertBBCode(description)}
+              </div>
+        }
       </div>
   )
 };

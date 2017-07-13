@@ -5,7 +5,8 @@ import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {rateDeck} from '../../../../firebase/decks/deck/read/decks';
 
-const Deck = ({activeUser, currentDeck, params, updateDeckRating}) => {
+const Deck = ({activeUser, currentDeck, params, deckEditing, updateDeckRating, toggleDeckEditing}) => {
+
   const handleDeckVotingClick = (e) =>{
     let vote = e.currentTarget.id;
     const {deckId} = currentDeck;
@@ -13,20 +14,26 @@ const Deck = ({activeUser, currentDeck, params, updateDeckRating}) => {
     rateDeck(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
   };
 
+  const handleDeckEditingClick = () =>{
+    toggleDeckEditing(!deckEditing ? true : false)
+  };
+
   return (
       <div className="container__page container__page--twoSided deck">
-        <LeftContainer currentDeck={currentDeck}/>
+        <LeftContainer currentDeck={currentDeck} />
         <RightContainer currentDeck={currentDeck}
                         params={params}
                         activeUser={activeUser}
+                        deckEditing={deckEditing}
+                        handleDeckEditingClick={handleDeckEditingClick}
                         handleDeckVotingClick={handleDeckVotingClick}/>
       </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  const {deckVote} = state.deckView;
-  return {deckVote}
+  const {deckVote, deckEditing} = state.deckView;
+  return {deckVote, deckEditing}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -34,6 +41,9 @@ const mapDispatchToProps = (dispatch) => {
     updateDeckRating: (deckVote) => (dispatch({
       type: 'UPDATE_DECK_RATING', deckVote
     })),
+    toggleDeckEditing: (deckEditing) => (dispatch({
+      type: 'TOGGLE_DECK_EDITING', deckEditing
+    }))
   };
 };
 

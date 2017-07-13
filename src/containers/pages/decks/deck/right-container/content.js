@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import DeckDescription from './sections/description';
 import DeckComments from './sections/comments';
 
-const Content = ({activeUser, currentDeck, params}) =>{
+const Content = ({activeUser, currentDeck, handleDeckEditingClick, deckEditing, params}) =>{
   return (
       <div className="content">
         <div className="container__details">
-          <DeckDescription currentDeck={currentDeck}/>
+          <DeckDescription currentDeck={currentDeck} activeUser={activeUser} deckEditing={deckEditing} handleDeckEditingClick={handleDeckEditingClick}/>
           <DeckComments currentDeck={currentDeck} activeUser={activeUser} params={params}/>
         </div>
       </div>

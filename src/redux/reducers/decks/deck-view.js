@@ -1,4 +1,5 @@
 const initialState = {
+  deckEditing: false,
   comments: [],
   votedComments: {},
   commentBoxIsActive: false,
@@ -17,6 +18,16 @@ export default function(state=initialState, action) {
       return {
         ...state,
         deckVote: action.deckVote
+      };
+    case 'TOGGLE_DECK_EDITING':
+      return {
+          ...state,
+        deckEditing: action.deckEditing
+      };
+    case 'UPDATE_DECK_DESCRIPTION':
+      return {
+        ...state,
+        editingDeckDescription: action.editingDeckDescription
       };
     case 'FETCH_COMMENTS':
       return {

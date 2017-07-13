@@ -11,18 +11,19 @@ import _ from 'lodash';
 
 class DeckSelection extends Component {
   componentDidMount() {
-    getDecks(v=>this.props.updateDeckList(v));
+    getDecks(v => this.props.updateDeckList(v));
     const el = document.querySelector('.table-scroll');
-
-        el.addEventListener("scroll", function () {
-          if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-            getDecks((v) => {
-              console.log(v);
-              return this.props.updateDeckList(v)
-            })
+    if (el) {
+      el.addEventListener("scroll", function () {
+            if (el.clientHeight === el.scrollHeight - el.scrollTop) {
+              getDecks((v) => {
+                console.log(v);
+                return this.props.updateDeckList(v)
+              })
+            }
           }
-        }
-    )
+      )
+    }
   }
 
   handleModeFilterClick = (e) =>{

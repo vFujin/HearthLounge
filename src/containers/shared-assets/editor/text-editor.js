@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {toolbar} from '../../../data/editor-icons';
 import {handleBBCodeClick} from './text-editor-functions';
 import Tooltip from 'antd/lib/tooltip';
@@ -33,3 +34,11 @@ const TextEditor = ({handleInputChange, editorId, previewId, value, handleTagIns
 };
 
 export default TextEditor;
+
+TextEditor.propTypes = {
+  editorId: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  handleTagInsertion: PropTypes.func.isRequired,
+  previewId: PropTypes.string,
+  value: PropTypes.string
+};

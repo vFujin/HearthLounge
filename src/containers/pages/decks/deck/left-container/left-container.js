@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import ManaCurve from '../../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
 const LeftContainer = ({currentDeck}) =>{
-  console.log(currentDeck)
   let cardNames = Object.keys(currentDeck.deck.cards);
 
   const listCards = () =>{

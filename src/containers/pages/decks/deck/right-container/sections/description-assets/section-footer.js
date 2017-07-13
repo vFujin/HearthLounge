@@ -1,17 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SectionFooter = ({author, authorPic}) => {
+const SectionFooter = ({authorId, activeUser, handleDeckEditingClick}) => {
   return (
       <div className="section__footer">
         <div className="section_footer--wrapper">
           <div className="section__footer--header">
             <h4>About author</h4>
+
+            {(activeUser && (authorId === activeUser.uid))
+                ? <div>
+                    <button className="btn btn-pearl" onClick={handleDeckEditingClick}>Edit deck</button>
+                    <button className="btn btn-pearl">Delete deck</button>
+                  </div>
+                : null}
           </div>
           <div className="details">
-            {authorPic ? <img src={authorPic} alt="profile pic" /> : <span className="hs-icon icon-login"></span>}
+            <span className="hs-icon icon-login"></span>
             <div className="general-info-wrapper">
-              <p>{author}</p>
+              <p>author</p>
               <p>reputation</p>
             </div>
             <div className="game-details-wrapper">
