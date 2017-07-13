@@ -1,17 +1,24 @@
 import {ref} from '../../../keys';
 import {success, error} from '../../../utils/messages';
 
-export default function (user, username, updateSignUpStatus){
-  if(!user.updatedProfile) {
+/**
+ * Updates User's username (if it wasn't set yet)
+ *
+ * @param {object} activeUser - Currently logged user
+ * @param {string} username - User's username
+ * @param {function} updateSignUpStatus - updates sign up phase 2 progress bar state
+ */
+export default function (activeUser, username, updateSignUpStatus){
+  if(!activeUser.updatedProfile) {
     let updatedUsername = {
-      ...user,
+      ...activeUser,
       updatedProfile: true,
       username
     };
 
     let updates = {};
-    updates[`users/${user.uid}`] = updatedUsername;
-    updates[`usernames/${username}`] = user.uid;
+    updates[`users/${activeUser.uid}`] = updatedUsername;
+    updates[`usernames/${username}`] = activeUser.uid;
     return ref.update(updates, function (err) {
       if (err) {
         updateSignUpStatus("success", "failure");

@@ -1,7 +1,14 @@
 import {ref, firebaseStorage} from '../../../keys';
 import {success, error} from '../../../utils/messages';
 
-export default function (e, user, updateFormProperty){
+/**
+ * Updates user's avatar
+ *
+ * @param {event} e
+ * @param {object} activeUser - Currently logged user
+ * @param {function} updateFormProperty - Updates redux's signUp_avatar state, returns `true` if meets all requirements
+ */
+export default function (e, activeUser, updateFormProperty){
   const uploader = document.getElementById("uploader");
   const fileButton = document.getElementById("fileButton");
 
@@ -22,7 +29,7 @@ export default function (e, user, updateFormProperty){
       error("Image name must be less or equal than 10 characters", 10);
       updateFormProperty({signUp_profilePic: false})
     } else {
-      let storageRef = firebaseStorage().ref(`${user.uid}/profilePicture/${file.name}`);
+      let storageRef = firebaseStorage().ref(`${activeUser.uid}/profilePicture/${file.name}`);
       let task = storageRef.put(file);
 
       task.on('state_changed',
@@ -46,12 +53,12 @@ export default function (e, user, updateFormProperty){
             success("Image has been uploaded!");
 
             let updatedProfilePic = {
-              ...user,
+              ...activeUser,
               photoURL
             };
 
             let updates = {};
-            updates[`users/${user.uid}`] = updatedProfilePic;
+            updates[`users/${activeUser.uid}`] = updatedProfilePic;
             ref.update(updates, function (err) {
               if (err) {
                 error("Something's not quite right. Try again later.", 4);

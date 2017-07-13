@@ -1,3 +1,12 @@
+/**
+ * Updates user's vote
+ *
+ * @param {string} selector - Firebase database reference (i.e `ref.child(${user-decks}`)
+ * @param {string} elementId - Voting element ID
+ * @param {string} vote - Vote type (upvote / downvote)
+ * @param {function} callback - Callbacks `vote`
+ * @returns {*}
+ */
 export default function (selector, elementId, vote, callback) {
   return getElementSnapshotOnce(selector, snapshot => {
     if (snapshot.val() === null) {
