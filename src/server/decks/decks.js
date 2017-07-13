@@ -1,6 +1,6 @@
 import {ref, refParent} from '../../keys';
-import {voteTransaction} from '../utils/vote-transaction';
-import {updateUserVotes} from '../utils/update-user-votes';
+import {default as voteTransaction} from '../../firebase/utils/vote';
+import {updateVotes} from '../../firebase/user/update';
 // import {success, loading, error} from '../../utils/messages';
 
 let data = [];
@@ -47,7 +47,7 @@ export function rateDeck(deckId, uid, vote, callback){
   const userDeckRating = ref.child(`user-deck-ratings/${uid}/${deckId}`);
 
   voteTransaction(deckRating, uid, vote);
-  updateUserVotes(userDeckRating, deckId, vote, callback);
+  updateVotes(userDeckRating, deckId, vote, callback);
 }
 
 

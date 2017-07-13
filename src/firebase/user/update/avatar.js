@@ -1,0 +1,68 @@
+import {ref, firebaseStorage} from '../../../keys';
+import {success, error} from '../../../utils/messages';
+
+export default function (e, user, updateFormProperty){
+  const uploader = document.getElementById("uploader");
+  const fileButton = document.getElementById("fileButton");
+
+  if(fileButton) {
+    let file = e.target.files[0];
+    const fileType = /^(image\/(jpe?g|png))$/.test(file.type);
+    const fileSize = file.size;
+    const fileNameLength = file.name.length;
+    // const fileValues = [fileType, fileSize, fileNameLength];
+
+    if(!fileType){
+      error("Image must be a .jpg, .jpeg or .png", 6);
+      updateFormProperty({signUp_profilePic: false});
+    } else if(fileSize >= 2 * 1024 * 1024){
+      error("Image size must be less than 2mb", 6);
+      updateFormProperty({signUp_profilePic: false})
+    } else if(fileNameLength > 10){
+      error("Image name must be less or equal than 10 characters", 10);
+      updateFormProperty({signUp_profilePic: false})
+    } else {
+      let storageRef = firebaseStorage().ref(`${user.uid}/profilePicture/${file.name}`);
+      let task = storageRef.put(file);
+
+      task.on('state_changed',
+          function progress(snapshot) {
+            uploader.value = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          },
+          function error() {
+            if (!fileType) {
+              error("Image must be a .jpg, .jpeg or .png", 6);
+            } else if(!fileSize){
+              error("Image must be less than 2mb", 6);
+            } else if(fileNameLength > 10){
+              error("Image name must be less or equal than 10 characters", 10);
+            } else {
+              error("Couldn't upload image. Try again later", 6);
+            }
+            updateFormProperty({signUp_profilePic: false})
+          },
+          function complete() {
+            let photoURL = task.snapshot.downloadURL;
+            success("Image has been uploaded!");
+
+            let updatedProfilePic = {
+              ...user,
+              photoURL
+            };
+
+            let updates = {};
+            updates[`users/${user.uid}`] = updatedProfilePic;
+            ref.update(updates, function (err) {
+              if (err) {
+                error("Something's not quite right. Try again later.", 4);
+              } else {
+                success("Profile has been updated!");
+              }
+            });
+
+            updateFormProperty({signUp_profilePic: true})
+          }
+      )
+    }
+  }
+}

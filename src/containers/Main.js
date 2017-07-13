@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
-import {getCurrentUserInfo, logout} from '../server/user';
+import {getCurrentUserInfo} from '../server/user';
+import {signOut} from '../firebase/user/utils';
+import {fetchData, fetchPatchData} from '../data/cards-data';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';
-import {fetchData, fetchPatchData} from '../data/cards-data';
-import {connect} from 'react-redux';
 
 class Main extends Component{
   constructor(props) {
@@ -14,17 +15,17 @@ class Main extends Component{
     getCurrentUserInfo(props.updateActiveUser);
   };
 
+
   componentDidMount() {
     fetchPatchData(this.props.updateCurrentPatch);
     fetchData(this.props.updateCards);
   }
 
-
   render(){
     const {authenticated, activeUser, children, location, cards, patch} = this.props;
     return (
         <div id="container">
-          <Navbar url={location.pathname} user={this.props.activeUser} handleLogout={(e)=>logout(e)}/>
+          <Navbar url={location.pathname} user={this.props.activeUser} handleLogout={(e)=>signOut(e)}/>
           {React.cloneElement(children, {
             authenticated,
             activeUser,

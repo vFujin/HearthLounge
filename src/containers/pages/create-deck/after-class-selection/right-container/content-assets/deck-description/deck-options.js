@@ -29,7 +29,7 @@ const DeckOptions = ({activeClass, patch, user, deckType, deckTitle, deckArchety
     let key= `deck${_.upperFirst(selector)}`;
     updateDeckProperty({[key]: v})
   };
-console.log(patch)
+
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
     saveDeck(patch, activeClass, user.username, deckTitle, deckType, deckArchetype, simplifiedDeck, deckText, user.uid);

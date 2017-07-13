@@ -19,5 +19,9 @@ const DeckDescription = ({currentDeck}) =>{
 export default DeckDescription;
 
 DeckDescription.propTypes = {
-  currentDeck: PropTypes.object
+  currentDeck: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    uid: PropTypes.string
+  })
 };

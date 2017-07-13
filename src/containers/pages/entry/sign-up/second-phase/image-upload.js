@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {updateUserProfilePic} from '../../../../../server/user';
+import {updateAvatar} from '../../../../../firebase/user/update';
 
 const ImageUpload = ({activeUser, updateFormProperty}) => {
   return(
       <div className="avatar-wrapper">
         <p>Upload your avatar</p>
         <progress value="0" max="100" id="uploader">0%</progress>
-        <input onChange={(e)=>updateUserProfilePic(e, activeUser, updateFormProperty)} type="file"  id="fileButton"/>
+        <input onChange={(e)=>updateAvatar(e, activeUser, updateFormProperty)} type="file"  id="fileButton"/>
       </div>
   )
 };

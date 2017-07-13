@@ -1,4 +1,4 @@
-export function voteTransaction(selector, uid, vote){
+export default function (selector, uid, vote){
   return selector.transaction(function(element){
     const upvote = "upvote";
     const downvote = "downvote";
@@ -44,7 +44,4 @@ export function voteTransaction(selector, uid, vote){
     }
     return element;
   });
-
 }
-
-

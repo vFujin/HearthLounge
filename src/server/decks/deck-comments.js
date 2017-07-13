@@ -1,6 +1,6 @@
 import {ref} from '../../keys';
-import {voteTransaction} from '../utils/vote-transaction';
-import {updateUserVotes} from '../utils/update-user-votes';
+import {default as voteTransaction} from '../../firebase/utils/vote';
+import {updateVotes} from '../../firebase/user/update';
 
 
 export function fetchComments(deckId, uid, callback){
@@ -46,5 +46,5 @@ export function rateComment(deckId, commentId, uid, vote, callback) {
   const userDeckCommentRating = ref.child(`user-deck-comment-ratings/${uid}/${deckId}`);
 
   voteTransaction(deckComment, uid, vote);
-  updateUserVotes(userDeckCommentRating, commentId, vote, callback);
+  updateVotes(userDeckCommentRating, commentId, vote, callback);
 }

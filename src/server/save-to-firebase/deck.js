@@ -20,15 +20,15 @@ export function saveDeck(patch, hsClass, author, title, type, archetype, deck, d
     /**
      * Deck Object
      *
-     * @type {{created: number, edited: null, upvotes: number, downvotes: number, patch: string, views: number, votes: number, hsClass: string, author: string, title: string, type: string, archetype: string, deck: string[], description: string, uid: string, deckId}}
+     * @type {{created: number, upvotes: number, downvotes: number, views: number, votes: number, authorId: string, patch: *, hsClass: string, author: string, title: string, type: string, archetype: string, deck: string[], description: string, deckId}}
      */
     let newDeck = {
       created: + new Date(),
-      edited: null,
       upvotes: 0,
       downvotes: 0,
       views: 0,
       votes: 0,
+      authorId: uid,
       patch,
       hsClass,
       author,
@@ -37,7 +37,6 @@ export function saveDeck(patch, hsClass, author, title, type, archetype, deck, d
       archetype,
       deck,
       description,
-      uid,
       deckId
     };
 

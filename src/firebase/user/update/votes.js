@@ -1,6 +1,4 @@
-import {getElementSnapshotOnce} from './read-data';
-
-export function updateUserVotes(selector, elementId, vote, callback) {
+export default function (selector, elementId, vote, callback) {
   return getElementSnapshotOnce(selector, snapshot => {
     if (snapshot.val() === null) {
       selector.set({
@@ -27,4 +25,12 @@ export function updateUserVotes(selector, elementId, vote, callback) {
       callback(vote);
     }
   });
+}
+
+export function getElementSnapshotOnce(selector, callback){
+  return selector.once("value", snapshot=>callback(snapshot));
+}
+
+export function subscribeToElementSnapshot(selector, callback){
+  return selector.on("value", snapshot=>callback(snapshot));
 }

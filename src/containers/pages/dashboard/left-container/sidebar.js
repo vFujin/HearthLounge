@@ -4,7 +4,9 @@ import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
 import DangerZone from './details/danger-zone';
 
-import {updateEmail, updateUserHearthstoneData, updateUserSocialMediaData, deleteUser, deleteAvatar, reauthenticate} from '../../../../server/dashboard';
+import {updateEmail, updateHearthstoneData, updateSocialMediaData} from '../../../../firebase/user/update';
+import {deleteUser, deleteAvatar} from '../../../../firebase/user/delete';
+import {reauthenticate} from '../../../../firebase/user/utils';
 
 export class Sidebar extends Component{
   constructor(props){
@@ -60,8 +62,8 @@ export class Sidebar extends Component{
 
     switch(target){
       case 'details': return updateEmail(this.state.email);
-      case 'hearthstone': return updateUserHearthstoneData(user.uid, validateInput('battletag'), validateInput('favourite_class'), validateInput('region'));
-      case 'social_media': return updateUserSocialMediaData(user.uid, validateInput('facebook'), validateInput('twitter'), validateInput('twitch'), validateInput('youtube'));
+      case 'hearthstone': return updateHearthstoneData(user.uid, validateInput('battletag'), validateInput('favourite_class'), validateInput('region'));
+      case 'social_media': return updateSocialMediaData(user.uid, validateInput('facebook'), validateInput('twitter'), validateInput('twitch'), validateInput('youtube'));
       default: return target;
     }
   }

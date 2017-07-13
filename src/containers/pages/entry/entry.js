@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
-import {createUser, updateUser, signIn} from '../../../server/user'
-import PropTypes from 'prop-types';
+import {createUser} from '../../../firebase/user/create';
+import {updateUsername} from '../../../firebase/user/update';
+import {signIn} from '../../../firebase/user/utils';
 
 const Entry = ({updateActiveUser, location, activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, signUp_profilePic, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
 
@@ -25,7 +27,7 @@ const Entry = ({updateActiveUser, location, activeUser, authenticated, children,
 
   const handleUpdateProfileFormSubmit = (e) => {
     e.preventDefault();
-    updateUser(activeUser, signUp_username, updateSignUpStatus)
+    updateUsername(activeUser, signUp_username, updateSignUpStatus)
   };
 
   const handleSignIn = (e) => {
