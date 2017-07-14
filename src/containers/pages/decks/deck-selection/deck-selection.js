@@ -57,7 +57,7 @@ class DeckSelection extends Component {
 
 
   render() {
-    const {children, location, decks, activeUser, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
+    const {cards, children, location, decks, activeUser, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
 
     if(location.pathname !== "/decks"){
       if(!currentDeck){
@@ -69,7 +69,7 @@ class DeckSelection extends Component {
         }
         return <Loader/>
       }
-      return React.cloneElement(children, {activeUser, currentDeck});
+      return React.cloneElement(children, {activeUser, currentDeck, cards});
     }
     else {
       return (

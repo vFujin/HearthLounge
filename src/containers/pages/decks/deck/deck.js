@@ -1,39 +1,87 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {rateDeck} from '../../../../firebase/decks/deck/read/decks';
 
-const Deck = ({activeUser, currentDeck, params, deckEditing, updateDeckRating, toggleDeckEditing}) => {
+class Deck  extends PureComponent{
 
-  const handleDeckVotingClick = (e) =>{
+  componentDidMount(){
+    const {currentDeck, updateDecklist} = this.props;
+    if(currentDeck){
+      updateDecklist(currentDeck.deck)
+    }
+  }
+
+  handleDeckVotingClick = (e) =>{
+    const {activeUser, currentDeck, updateDeckRating} = this.props;
     let vote = e.currentTarget.id;
     const {deckId} = currentDeck;
     const {uid} = activeUser;
     rateDeck(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
   };
 
-  const handleDeckEditingClick = () =>{
+  handleDeckEditingClick = () =>{
+    const {toggleDeckEditing, deckEditing} = this.props;
     toggleDeckEditing(!deckEditing ? true : false)
   };
 
-  return (
-      <div className="container__page container__page--twoSided deck">
-        <LeftContainer currentDeck={currentDeck} />
-        <RightContainer currentDeck={currentDeck}
-                        params={params}
-                        activeUser={activeUser}
-                        deckEditing={deckEditing}
-                        handleDeckEditingClick={handleDeckEditingClick}
-                        handleDeckVotingClick={handleDeckVotingClick}/>
-      </div>
-  );
-};
+  handleCardRemovalClick = (e) =>{
+    const {editingDecklist} = this.props;
+    let cards = editingDecklist.cards;
+    let manaCurve = editingDecklist.manaCurve;
+
+    let target = e.target;
+    let targetDataset = target.dataset;
+
+    let cardName = target.id;
+    let cardCost = targetDataset.cost;
+
+    let decklistAfterCardRemoval = Object.keys(cards).reduce((acc, card) => {
+      const currCard = cards[card];
+      if(card !== cardName) {
+        acc[card] = currCard
+      }
+      return acc;
+    }, {});
+
+    let manacurveAfterCostRemoval = manaCurve.map((c, i) => i == cardCost ? c-1 : c);
+    let max = _.max(manacurveAfterCostRemoval);
+
+    this.props.updateDecklist({
+        cards: decklistAfterCardRemoval,
+        manaCurve: manacurveAfterCostRemoval,
+        max
+      //add type
+    });
+  };
+
+  render() {
+    const {activeUser, currentDeck, params, editingDecklist, deckEditing, updateDecklist} = this.props;
+    return (
+        <div className="container__page container__page--twoSided deck">
+          <LeftContainer currentDeck={currentDeck}
+                         cards={this.props.cards}
+                         editingDecklist={editingDecklist}
+                         deckEditing={deckEditing}
+                         updateDecklist={updateDecklist}
+                         handleCardRemovalClick={this.handleCardRemovalClick}/>
+          <RightContainer currentDeck={currentDeck}
+                          params={params}
+                          activeUser={activeUser}
+                          deckEditing={deckEditing}
+                          handleDeckEditingClick={this.handleDeckEditingClick}
+                          handleDeckVotingClick={this.handleDeckVotingClick}/>
+        </div>
+    )
+  }
+}
 
 const mapStateToProps = (state) => {
-  const {deckVote, deckEditing} = state.deckView;
-  return {deckVote, deckEditing}
+  const {deckVote, deckEditing, editingDecklist} = state.deckView;
+  return {deckVote, deckEditing, editingDecklist}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -43,6 +91,9 @@ const mapDispatchToProps = (dispatch) => {
     })),
     toggleDeckEditing: (deckEditing) => (dispatch({
       type: 'TOGGLE_DECK_EDITING', deckEditing
+    })),
+    updateDecklist: (editingDecklist) => (dispatch({
+      type: 'UPDATE_DECKLIST', editingDecklist
     }))
   };
 };

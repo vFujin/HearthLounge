@@ -1,5 +1,5 @@
 const initialState = {
-  deckEditing: false,
+  deckEditing: true,
   comments: [],
   votedComments: {},
   commentBoxIsActive: false,
@@ -11,6 +11,8 @@ const initialState = {
     id: ""
   }
 };
+
+
 
 export default function(state=initialState, action) {
   switch (action.type) {
@@ -28,6 +30,11 @@ export default function(state=initialState, action) {
       return {
         ...state,
         editingDeckDescription: action.editingDeckDescription
+      };
+    case 'UPDATE_DECKLIST':
+      return {
+          ...state,
+        editingDecklist: action.editingDecklist
       };
     case 'FETCH_COMMENTS':
       return {

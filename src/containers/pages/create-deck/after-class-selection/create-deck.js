@@ -51,28 +51,27 @@ const CreateDeckClassSelected = ({cards, deck, patch, deckMechanics, editDeck, e
     deck.filter((card, i, self) => {
       return Object.assign(cards, {
         [card.name]: {
+          amount: (self.indexOf(card) !== i) ? 2 : 1,
           cost: card.cost,
-          amount: (self.indexOf(card) !== i) ? 2 : 1
+          type: card.type
         }
       })
     });
     deck.map(v => v.type).forEach((c) => types[c] = (types[c] || 0) + 1);
     deck.map(v => v.cost).forEach((c) => {
-     console.log(c);
-
       switch(c){
-       case 0: return manaCurve[0] = ((manaCurve[0] || 0) +1);
-       case 1: return manaCurve[1] = ((manaCurve[1] || 0) +1);
-       case 2: return manaCurve[2] = ((manaCurve[2] || 0) +1);
-       case 3: return manaCurve[3] = ((manaCurve[3] || 0) +1);
-       case 4: return manaCurve[4] = ((manaCurve[4] || 0) +1);
-       case 5: return manaCurve[5] = ((manaCurve[5] || 0) +1);
-       case 6: return manaCurve[6] = ((manaCurve[6] || 0) +1);
-       default: manaCurve[7] = (manaCurve[7] || 0) +1;
-     }
-
+         case 0: return manaCurve[0] = ((manaCurve[0] || 0) +1);
+         case 1: return manaCurve[1] = ((manaCurve[1] || 0) +1);
+         case 2: return manaCurve[2] = ((manaCurve[2] || 0) +1);
+         case 3: return manaCurve[3] = ((manaCurve[3] || 0) +1);
+         case 4: return manaCurve[4] = ((manaCurve[4] || 0) +1);
+         case 5: return manaCurve[5] = ((manaCurve[5] || 0) +1);
+         case 6: return manaCurve[6] = ((manaCurve[6] || 0) +1);
+         default: manaCurve[7] = (manaCurve[7] || 0) +1;
+       }
     });
-    simplifyDeck({cards, manaCurve, types, max});
+    let deckLength = deck.length;
+    simplifyDeck({cards, manaCurve, types, max, length: deckLength});
   };
 
   const toggleCardAmountTooltip = (card) => {

@@ -1,29 +1,100 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import Loader from '../../../../../utils/loader';
 import ManaCurve from '../../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
-const LeftContainer = ({currentDeck}) =>{
-  let cardNames = Object.keys(currentDeck.deck.cards);
+import Select from 'antd/lib/select';
+import 'antd/lib/select/style/index.css';
+
+
+const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
 
   const listCards = () =>{
-    return _.map(currentDeck.deck.cards).map((c, i)=>
+    if(editingDecklist){
+      let cardNames = Object.keys(editingDecklist.cards);
+      return _.map(editingDecklist.cards).map((c, i)=>
         <tr key={i}>
           <td>set</td>
           <td>{cardNames[i]}</td>
           <td>{c.amount}</td>
           <td><span className={`hs-icon icon-mana-${c.cost}`}></span></td>
+          {deckEditing ? <td id={cardNames[i]}
+                             data-cost={c.cost}
+                             data-amount={c.amount}
+                             onClick={handleCardRemovalClick}>x</td> : null}
         </tr>
-    )
+    )}
+    return <Loader/>
   };
+
+  const handleCardAddition = (value) => {
+    let filteredCard = cards.allCards.find(card => card.name === value);
+
+    let editingDecklistCards = editingDecklist.cards;
+    let manaCurve = editingDecklist.manaCurve;
+
+    let decklistAfterCardAddition = Object.keys(editingDecklistCards).reduce((result, card) => {
+      if(card !== filteredCard.name){
+        result = Object.assign(editingDecklistCards, {
+          [filteredCard.name]: {
+            amount: 1,
+            cost: filteredCard.cost,
+            type: filteredCard.type
+          }
+        });
+      }
+      if(card === filteredCard.name ) {
+        debugger;
+        result[card].amount = 2;
+      }
+
+      return result;
+    }, editingDecklistCards);
+    // console.log("decklistAfterAddition", decklistAfterCardAddition)
+
+    let manacurveAfterCostAddition = manaCurve.map((card, i) => i == filteredCard.cost ? card+1 : card);
+    let max = _.max(manacurveAfterCostAddition);
+
+    updateDecklist({
+      cards: decklistAfterCardAddition,
+      manaCurve: manacurveAfterCostAddition,
+      max
+      //add type
+    });
+  };
+
+  const search = () => {
+    if(cards.allCards.length > 0) {
+      const Option = Select.Option;
+      const options = cards.allCards
+          .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(currentDeck.hsClass) || card.playerClass === 'Neutral')))
+          .map(card => <Option value={card.name} key={card.name}>{card.name}</Option>);
+      return (
+          <Select mode="combobox"
+                  placeholder="Card name..."
+                  style={{width: '80%'}}
+                  allowClear={true}
+                  disabled={_.map(editingDecklist.card).length >= 30 ? true : false}
+                  showSearch={true}
+                  onSelect={(v)=>handleCardAddition(v)}>
+            {options}
+          </Select>
+      )
+    }
+    return "foo"
+  };
+
 
   return(
       <div className="container__page--inner container__page--left">
-        <h3 className="sidebar__header">Deck Details  <span className={`hs-icon icon-${currentDeck.type === "standard" ? "mammoth" : currentDeck.type}`}></span>
+        <h3 className="sidebar__header">
+          Deck Details
+          <span className={`hs-icon icon-${currentDeck.type === "standard" ? "mammoth" : currentDeck.type}`}></span>
         </h3>
         <div className="sidebar__body">
           <div className="container__mana-curve">
             <h3>Mana Curve</h3>
-            <ManaCurve deck={currentDeck.deck.cards} max={currentDeck.deck.max}/>
+            {editingDecklist ? <ManaCurve deck={editingDecklist.cards} max={editingDecklist.max}/> : <Loader/>}
             <h3>Cards</h3>
             <div className="list cards-list">
               <div className="table-scroll">
@@ -44,6 +115,10 @@ const LeftContainer = ({currentDeck}) =>{
             </div>
             <table>
             </table>
+          </div>
+          <div className="addCard-wrapper">
+            {search()}
+            <span>+</span>
           </div>
           <div className="background">
             <span className={`hs-icon icon-${currentDeck.hsClass}`}></span>

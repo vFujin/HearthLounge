@@ -3589,6 +3589,16 @@ footer {
     display: flex;
     align-items: center; }
 
+.deck .container__page--left .sidebar__body .addCard-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+  z-index: 10;
+  display: flex; }
+  .deck .container__page--left .sidebar__body .addCard-wrapper input {
+    width: 80%;
+    height: 100%; }
 .deck .container__page--right .topbar .topbar__container {
   align-content: center; }
   .deck .container__page--right .topbar .topbar__container div {

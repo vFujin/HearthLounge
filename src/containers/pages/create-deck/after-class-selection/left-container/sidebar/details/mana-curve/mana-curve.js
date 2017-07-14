@@ -13,6 +13,8 @@ const ManaCurve = ({deck, max}) => {
   )
 };
 
+export default ManaCurve;
+
 ManaCurve.propTypes = {
   deck: PropTypes.oneOfType([
     PropTypes.object,
@@ -20,5 +22,3 @@ ManaCurve.propTypes = {
   ]),
   max: PropTypes.number
 };
-
-export default ManaCurve;
