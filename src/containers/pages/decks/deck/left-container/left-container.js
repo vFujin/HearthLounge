@@ -7,7 +7,9 @@ import Select from 'antd/lib/select';
 import 'antd/lib/select/style/index.css';
 
 
+
 const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
+
 
   const listCards = () =>{
     if(editingDecklist){
@@ -18,10 +20,16 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
           <td>{cardNames[i]}</td>
           <td>{c.amount}</td>
           <td><span className={`hs-icon icon-mana-${c.cost}`}></span></td>
-          {deckEditing ? <td id={cardNames[i]}
-                             data-cost={c.cost}
-                             data-amount={c.amount}
-                             onClick={handleCardRemovalClick}>x</td> : null}
+
+          {deckEditing
+              ? <td>
+                <div id={cardNames[i]}
+                     data-cost={c.cost}
+                     data-amount={c.amount} onClick={(e)=>handleCardRemovalClick(e)}>
+                  <span   className="hs-icon icon-cross"></span>
+                </div>
+              </td>
+            : null}
         </tr>
     )}
     return <Loader/>
@@ -44,15 +52,25 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
         });
       }
       if(card === filteredCard.name ) {
-        debugger;
         result[card].amount = 2;
       }
 
       return result;
     }, editingDecklistCards);
-    // console.log("decklistAfterAddition", decklistAfterCardAddition)
 
-    let manacurveAfterCostAddition = manaCurve.map((card, i) => i == filteredCard.cost ? card+1 : card);
+
+    let manacurveAfterCostAddition =  manaCurve.map((c, i) => {
+      //edge case for 7+ cost cards
+      return Object.entries(editingDecklistCards).filter(k => k[0] === filteredCard.name).map(card => {
+        if ((i == filteredCard.cost) && !(card[1].amount >= 2)) {
+          return Number(c) + 1;
+        }
+        return c;
+      })[0];
+    });
+    console.log(manacurveAfterCostAddition)
+
+
     let max = _.max(manacurveAfterCostAddition);
 
     updateDecklist({
@@ -61,6 +79,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
       max
       //add type
     });
+
   };
 
   const search = () => {
@@ -86,7 +105,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
 
 
   return(
-      <div className="container__page--inner container__page--left">
+      <div className={`container__page--inner container__page--left ${deckEditing ? 'edit-mode' : ''}`}>
         <h3 className="sidebar__header">
           Deck Details
           <span className={`hs-icon icon-${currentDeck.type === "standard" ? "mammoth" : currentDeck.type}`}></span>
@@ -116,10 +135,13 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
             <table>
             </table>
           </div>
-          <div className="addCard-wrapper">
-            {search()}
-            <span>+</span>
-          </div>
+          {deckEditing
+              ? <div className="addCard-wrapper">
+                  {search()}
+                  <span>+</span>
+                </div>
+              : null
+          }
           <div className="background">
             <span className={`hs-icon icon-${currentDeck.hsClass}`}></span>
           </div>

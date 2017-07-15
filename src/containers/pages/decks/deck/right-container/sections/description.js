@@ -23,6 +23,7 @@ const DeckDescription = ({activeUser, currentDeck, deckEditing, handleDeckEditin
                      deckEditing={deckEditing}/>
         <SectionFooter author={author}
                        authorId={authorId}
+                       deckEditing={deckEditing}
                        activeUser={activeUser}
                        handleDeckEditingClick={handleDeckEditingClick}/>
       </div>

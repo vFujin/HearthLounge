@@ -826,6 +826,63 @@ footer{
       }
     }
   }
+  .edit-mode{
+    .sidebar__body{
+      .container__mana-curve{
+        .graph{
+          @include box-shadow(0, 0, 20px, $dark-grey, true);
+          @include striped-background($white-010, $white-020)
+        }
+        .cards-list{
+          .table-scroll{
+            height: calc(100% - 30px - 5vh);
+            @include box-shadow(-5px, 0, 20px, $dark-grey, true);
+            @include striped-background($white-010, $white-020);
+            table{
+              tbody{
+                tr{
+                  @include transition(all ease .4s);
+                  td{
+                    div {
+                      display: flex;
+                      margin-top: -2.5px;
+                      cursor: pointer;
+                      @include transition(all ease .4s);
+                      .icon-cross {
+                        background: $dark-grey;
+                        padding: 5px;
+                        color: $pearl;
+                        border-radius: 50%;
+                        font-size: 7px;
+                        @include transition(all ease .4s);
+                      }
+                      &:hover{
+                        .icon-cross{
+                          background: $pearl;
+                          color: $dark-grey;
+                          @include box-shadow(0, 0, 10px, $dark-grey);
+                        }
+                      }
+                    }
+                  }
+                  &:hover {
+                    background: $black-010
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .addCard-wrapper{
+        display: flex;
+      }
+    }
+    &.stats{
+      @include box-shadow(0, 0, 20px, $dark-grey, true);
+      @include striped-background($white-010, $white-020)
+    }
+  }
 }
 .container__page--oneSided{
   justify-content:center;
@@ -1243,6 +1300,7 @@ footer{
         height: 5vh;
         z-index: 10;
         display: flex;
+        background: $light-grey;
         input{
           width: 80%;
           height:100%;
@@ -1270,6 +1328,9 @@ footer{
             align-items: center;
             &:first-child {
               margin-left: 1vh;
+            }
+            &.stats{
+              padding: 0 10px;
             }
             span, p {
               margin-right: .5vh;

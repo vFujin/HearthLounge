@@ -28,16 +28,18 @@ class Deck  extends PureComponent{
     toggleDeckEditing(!deckEditing ? true : false)
   };
 
+
   handleCardRemovalClick = (e) =>{
     const {editingDecklist} = this.props;
     let cards = editingDecklist.cards;
     let manaCurve = editingDecklist.manaCurve;
+    let target = e.currentTarget;
 
-    let target = e.target;
     let targetDataset = target.dataset;
-
     let cardName = target.id;
+
     let cardCost = targetDataset.cost;
+    console.log(target, cardCost, cardName)
 
     let decklistAfterCardRemoval = Object.keys(cards).reduce((acc, card) => {
       const currCard = cards[card];

@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SectionFooter = ({authorId, activeUser, handleDeckEditingClick}) => {
+const SectionFooter = ({authorId, activeUser, deckEditing, handleDeckEditingClick}) => {
   return (
       <div className="section__footer">
         <div className="section_footer--wrapper">
           <div className="section__footer--header">
             <h4>About author</h4>
-
             {(activeUser && (authorId === activeUser.uid))
                 ? <div>
-                    <button className="btn btn-pearl" onClick={handleDeckEditingClick}>Edit deck</button>
+                    <button className="btn btn-pearl" onClick={handleDeckEditingClick}>{deckEditing ? 'Cancel editing' : 'Edit deck'}</button>
                     <button className="btn btn-pearl">Delete deck</button>
                   </div>
                 : null}

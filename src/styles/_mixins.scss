@@ -167,3 +167,24 @@
   &::-webkit-scrollbar-thumb:hover{background-color: $pearl}
   &::-webkit-scrollbar-track{background-color: transparent}
 }
+
+@mixin striped-background($primary_color, $secondary_color, $angle: false){
+  @if $angle {
+    background: repeating-linear-gradient(
+                    $angle,
+                    $primary_color,
+                    $primary_color 10px,
+                    $secondary_color 10px,
+                    $secondary_color 20px
+    );
+  }
+  @else {
+    background: repeating-linear-gradient(
+                    -45deg,
+                    $primary_color,
+                    $primary_color 10px,
+                    $secondary_color 10px,
+                    $secondary_color 20px
+    );
+  }
+}
