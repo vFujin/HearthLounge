@@ -1,5 +1,5 @@
 const initialState = {
-  deckEditing: true,
+  deckEditing: false,
   comments: [],
   votedComments: {},
   commentBoxIsActive: false,

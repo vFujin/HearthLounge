@@ -6,10 +6,7 @@ import ManaCurve from '../../../create-deck/after-class-selection/left-container
 import Select from 'antd/lib/select';
 import 'antd/lib/select/style/index.css';
 
-
-
 const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
-
 
   const listCards = () =>{
     if(editingDecklist){

@@ -6,14 +6,49 @@ import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {rateDeck} from '../../../../firebase/decks/deck/read/decks';
 
-class Deck  extends PureComponent{
+class Deck extends PureComponent{
 
   componentDidMount(){
-    const {currentDeck, updateDecklist} = this.props;
+    const {currentDeck, updateDecklist, editingDecklist} = this.props;
+    const {deck} = currentDeck;
     if(currentDeck){
-      updateDecklist(currentDeck.deck)
+      updateDecklist(deck)
+    }
+
+    if(this.props.deckEditing && (JSON.stringify(editingDecklist) !==  JSON.stringify(deck))){
+      window.addEventListener("beforeunload", this.onUnload)
     }
   }
+
+  componentWillUpdate(nextProps){
+    //need proper testing
+    let decksEqual = JSON.stringify(this.props.editingDecklist) ===  JSON.stringify(this.props.currentDeck.deck);
+    let decksNotEqual = JSON.stringify(this.props.editingDecklist) !==  JSON.stringify(this.props.currentDeck.deck);
+    let descriptionsEqual = this.props.editingDeckDescription === this.props.currentDeck.description;
+    let descriptionsNotEqual = this.props.editingDeckDescription !== this.props.currentDeck.description;
+    console.log(descriptionsEqual, descriptionsNotEqual)
+    if(nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
+      window.addEventListener("beforeunload", this.onUnload)
+    }
+    if(nextProps.deckEditing && (decksEqual && descriptionsEqual)){
+      window.removeEventListener("beforeunload", this.onUnload)
+    }
+    if(!nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
+      window.removeEventListener("beforeunload", this.onUnload)
+    }
+    if(!nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
+      window.removeEventListener("beforeunload", this.onUnload)
+    }
+  }
+
+  componentWillUnmount(){
+    this.props.toggleDeckEditing(false);
+  }
+
+  onUnload = (e) =>{
+    e.returnValue = "foo";
+  };
+
 
   handleDeckVotingClick = (e) =>{
     const {activeUser, currentDeck, updateDeckRating} = this.props;
@@ -28,18 +63,14 @@ class Deck  extends PureComponent{
     toggleDeckEditing(!deckEditing ? true : false)
   };
 
-
   handleCardRemovalClick = (e) =>{
     const {editingDecklist} = this.props;
     let cards = editingDecklist.cards;
     let manaCurve = editingDecklist.manaCurve;
     let target = e.currentTarget;
-
     let targetDataset = target.dataset;
     let cardName = target.id;
-
     let cardCost = targetDataset.cost;
-    console.log(target, cardCost, cardName)
 
     let decklistAfterCardRemoval = Object.keys(cards).reduce((acc, card) => {
       const currCard = cards[card];
