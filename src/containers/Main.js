@@ -21,6 +21,17 @@ class Main extends Component{
     fetchData(this.props.updateCards);
   }
 
+  // shouldComponentUpdate(nextProps){
+  //   const {cards, patch} = this.props;
+  //   if(cards !== nextProps.cards || patch !== nextProps.patch){
+  //     return false
+  //   } else {
+  //     return true
+  //   }
+  // }
+
+
+
   render(){
     const {authenticated, activeUser, children, location, cards, patch} = this.props;
     return (

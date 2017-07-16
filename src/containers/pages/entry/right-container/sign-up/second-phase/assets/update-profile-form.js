@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Input from '../../../../shared-assets/form-assets/input';
+import Input from '../../../../../../shared-assets/form-assets/input';
 
 const UpdateProfileForm = ({signUp_username, usernameStatus, uploadedImage, handleInputChange, handleUpdateProfileFormSubmit}) =>{
   return (
@@ -26,15 +26,13 @@ const UpdateProfileForm = ({signUp_username, usernameStatus, uploadedImage, hand
   )
 };
 
+
 export default UpdateProfileForm;
 
 UpdateProfileForm.propTypes = {
   signUp_username: PropTypes.string.isRequired,
-  usernameStatus: PropTypes.bool,
-  uploadedImage: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]),
+  usernameStatus: PropTypes.func,
+  uploadedImage: PropTypes.func,
   handleInputChange: PropTypes.func,
   handleUpdateProfileFormSubmit: PropTypes.func
 };

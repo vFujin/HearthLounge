@@ -1,17 +1,18 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import AboutDeck from './save-deck-assets/about-deck';
 import Preview from './save-deck-assets/preview';
 import {default as saveDeck} from '../../../../../../../firebase/decks/deck/create/deck';
+import {error} from '../../../../../../../utils/messages';
 import 'antd/lib/select/style/css';
-import {connect} from 'react-redux';
-import _ from 'lodash';
 
 const updateDeckText = _.debounce((updateDeckProperty, value) => {
   updateDeckProperty({deckText: value})
 }, 300);
 
-const DeckOptions = ({activeClass, patch, user, deckType, deckTitle, deckArchetype, deckText, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
+const DeckOptions = ({authenticated, activeClass, patch, user, deckType, deckTitle, deckArchetype, deckText, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
 
   const handleInputChange = (e) => {
     let target = e.target.id;
@@ -25,6 +26,7 @@ const DeckOptions = ({activeClass, patch, user, deckType, deckTitle, deckArchety
     }
   };
 
+
   const handleSelectChange = (v, selector) => {
     let key= `deck${_.upperFirst(selector)}`;
     updateDeckProperty({[key]: v})
@@ -32,7 +34,11 @@ const DeckOptions = ({activeClass, patch, user, deckType, deckTitle, deckArchety
 
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
-    saveDeck(patch, activeClass, user.username, deckTitle, deckType, deckArchetype, simplifiedDeck, deckText, user.uid);
+    if(authenticated && user){
+      saveDeck(patch, activeClass, user.username, deckTitle, deckType, deckArchetype, simplifiedDeck, deckText, user.uid);
+    } else {
+      error("You have to be logged in in order to save your deck.", 6)
+    }
   };
 
 

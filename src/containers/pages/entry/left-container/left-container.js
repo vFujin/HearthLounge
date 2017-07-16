@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Carousel} from './carousel';
-import {carousel} from './data';
+import {Carousel} from './assets/carousel';
+import {carousel} from './assets/data';
 export class LeftContainer extends Component {
   constructor(props) {
     super(props);

@@ -1,11 +1,9 @@
 import React, {PureComponent} from 'react';
 import {browserHistory} from 'react-router';
-import Input from '../../../../shared-assets/form-assets/input';
-import ImageUpload from './image-upload';
-// import Loader from '../../../../../utils/loader';
-// import PropTypes from 'prop-types';
-import UpdateProfileForm from './update-profile-form';
-import Summary from './summary';
+import PropTypes from 'prop-types';
+import ImageUpload from './assets/image-upload';
+import Summary from './assets/summary';
+import UpdateProfileForm from './assets/update-profile-form';
 
 class SignUpUpdateProfile extends PureComponent {
 
@@ -48,3 +46,18 @@ class SignUpUpdateProfile extends PureComponent {
 }
 
 export default SignUpUpdateProfile;
+
+SignUpUpdateProfile.propTypes = {
+  activeUser: PropTypes.object,
+  signUp_firstStep: PropTypes.string,
+  signUp_secondStep: PropTypes.string,
+  signUp_username: PropTypes.string,
+  usernameFree: PropTypes.bool,
+  uploadedImage: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
+  handleInputChange: PropTypes.func,
+  handleUpdateProfileFormSubmit: PropTypes.func,
+  updateFormProperty: PropTypes.func
+};

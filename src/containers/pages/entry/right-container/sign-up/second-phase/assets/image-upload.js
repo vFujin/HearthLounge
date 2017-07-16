@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {updateAvatar} from '../../../../../firebase/user/update';
+import {updateAvatar} from '../../../../../../../firebase/user/update/index';
 
 const ImageUpload = ({activeUser, updateFormProperty}) => {
   return(

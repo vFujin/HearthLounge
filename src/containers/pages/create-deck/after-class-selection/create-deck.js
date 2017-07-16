@@ -12,7 +12,7 @@ import {loading} from '../../../../utils/messages';
 import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboard';
 import {captureDecklist} from '../../../../utils/capture-decklist';
 
-const CreateDeckClassSelected = ({cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, summarizedDeck,
+const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, summarizedDeck,
                                    toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
   const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
   const query = location.query;
@@ -32,6 +32,10 @@ const CreateDeckClassSelected = ({cards, deck, patch, deckMechanics, editDeck, e
     if (e.button === 2 && countUniqueCards(card) > 0) {
       editDeck(_.filter(deck, (c) => c.cardId !== card.cardId));
     }
+  };
+
+  const removeApostrophe = (string) =>{
+    return _.replace(string.toLowerCase(), "'", "");
   };
 
   const deckSimplification = () => {
@@ -54,7 +58,7 @@ const CreateDeckClassSelected = ({cards, deck, patch, deckMechanics, editDeck, e
       return Object.assign(cards, {
         [name]: {
           amount: (self.indexOf(card) !== i) ? 2 : 1,
-          set: cardSet,
+          set: _.kebabCase(removeApostrophe(cardSet)),
           cost,
           type
         }
@@ -209,6 +213,7 @@ const CreateDeckClassSelected = ({cards, deck, patch, deckMechanics, editDeck, e
                        query={query}/>
 
         <RightContainer filtersView={filters}
+                        authenticated={authenticated}
                         query={query}
                         activeClass={params.class}
                         deck={deck}

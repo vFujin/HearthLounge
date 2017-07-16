@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SignUpForm from './sign-up/first-phase/sign-up-form';
-import StepProgressBar from './sign-up/step-progress-bar';
+import SignUpForm from './first-phase/sign-up-form';
+import StepProgressBar from './step-progress-bar';
 
 const SignUp = ({children, activeUser, usernameFree, signUp_username, signUp_email, signUp_confirmEmail, signUp_password,
                   signUp_confirmPassword, signUp_profilePic, signUp_firstStep, signUp_secondStep, handleInputChange, handleFormSubmit,
@@ -43,7 +43,7 @@ const SignUp = ({children, activeUser, usernameFree, signUp_username, signUp_ema
 export default SignUp;
 
 SignUp.propTypes = {
-  // signUp_username: PropTypes.string,
+  signUp_username: PropTypes.string,
   signUp_email: PropTypes.string,
   signUp_confirmEmail: PropTypes.string,
   signUp_password: PropTypes.string,

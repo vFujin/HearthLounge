@@ -1,27 +1,29 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import 'whatwg-fetch';
+import _ from 'lodash';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
 import {getDeckDetails, getDecks} from '../../../../firebase/decks/deck/read';
 import {updateViews} from '../../../../firebase/decks/deck/update';
 import Loader from '../../../../utils/loader';
 import NotFound from '../../../shared-assets/not-found';
-import 'whatwg-fetch';
-import {connect} from 'react-redux';
-import _ from 'lodash';
+
 
 class DeckSelection extends Component {
   componentDidMount() {
     getDecks(v => this.props.updateDeckList(v));
   }
 
-  shouldComponentUpdate(nextProps){
-    return !(
-        this.props.activeUser !== nextProps.activeUser ||
-        this.props.cards !== nextProps.cards ||
-        this.props.cards.patch !== nextProps.cards.patch
-    );
 
-  }
+  // shouldComponentUpdate(nextProps){
+  //   return !(
+  //       this.props.activeUser !== nextProps.activeUser ||
+  //       this.props.cards !== nextProps.cards ||
+  //       this.props.cards.patch !== nextProps.cards.patch
+  //   );
+  //
+  // }
 
 
 

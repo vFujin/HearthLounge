@@ -1,104 +1,110 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 import {Link} from 'react-router';
-import {LeftContainer} from './left-container';
+import {LeftContainer} from './left-container/left-container';
 import {createUser} from '../../../firebase/user/create';
 import {updateUsername} from '../../../firebase/user/update';
 import {getUsername} from '../../../firebase/user/read';
 import {signIn} from '../../../firebase/user/utils';
-import _ from 'lodash';
 
 const findUsername = _.debounce((input, updateUsernameExistStatus) => {
   getUsername(input, (value) => updateUsernameExistStatus(value))
 }, 500);
 
-const Entry = ({usernameFree, updateUsernameExistStatus, updateActiveUser, location, activeUser, authenticated, children, signUp_username,
-                 signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, signUp_profilePic, tos, signIn_email, signIn_password,
-                 signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
+class Entry extends PureComponent {
+  constructor(props){
+    super(props)
 
-  // if(location.pathname === '/sign-up/update-profile'){
-  //   updateSignUpStatus("success", "");
-  // }
+    //debounce here
+  }
 
-  const handleInputChange = (e) =>{
+  componentDidMount() {
+    const {location, signUp_firstStep, updateSignUpStatus} = this.props;
+    if (location.pathname === '/sign-up/update-profile' && signUp_firstStep !== "succes") {
+      updateSignUpStatus("success", "")
+    }
+  }
+
+  componentWillUnmount(){
+    const {updateFormProperty} = this.props;
+    updateFormProperty({
+      signIn_password: "",
+      signUp_firstStep: "",
+      signUp_secondStep: "",
+      signUp_confirmEmail: "",
+      signUp_password: "",
+      signUp_confirmPassword: ""
+    })
+  }
+
+   handleInputChange = (e) => {
+    const {updateFormProperty, updateUsernameExistStatus} = this.props;
     let target = e.target;
     let id = target.id;
     let value = target.value;
     updateFormProperty({[id]: value});
-    if(id === "signUp_username"){
+    if (id === "signUp_username") {
       findUsername(value, updateUsernameExistStatus);
     }
   };
 
-  const handleFormSubmit = (e) =>{
+  handleFormSubmit = (e) => {
     e.preventDefault();
+    const {signUp_email, signUp_password, updateSignUpStatus, updateActiveUser} = this.props;
     createUser(signUp_email, signUp_password, updateSignUpStatus, updateActiveUser);
   };
 
-  const handleUpdateProfileFormSubmit = (e) => {
+  handleUpdateProfileFormSubmit = (e) => {
     e.preventDefault();
+    const {activeUser, signUp_username, updateSignUpStatus} = this.props;
     updateUsername(activeUser, signUp_username, updateSignUpStatus)
   };
 
-  const handleSignIn = (e) => {
+  handleSignIn = (e) => {
     e.preventDefault();
+    const {signIn_email, signIn_password} = this.props;
     signIn(signIn_email, signIn_password);
   };
 
-  const handleCheckboxClick = (e) => {
+  handleCheckboxClick = (e) => {
+    const {updateFormProperty} = this.props;
     let target = e.target;
     let checked = target.checked;
     updateFormProperty({tos: checked})
   };
 
-  return (
-    <div className={`container__page container__page--oneSided entry`}>
-      <div className="wrapper">
-        <LeftContainer/>
-        <div className="breakline v-breakline"></div>
-        <div className="container__page--inner container__page--right">
-          <div className="topbar">
-            <Link to="/sign-in" activeClassName="active">
-              <p>Sign In</p>
-            </Link>
-            <Link to="/sign-up" activeClassName="active">
-              <p>Sign Up</p>
-            </Link>
+  render() {
+    const {children} = this.props;
+
+    return (
+        <div className={`container__page container__page--oneSided entry`}>
+          <div className="wrapper">
+            <LeftContainer/>
+            <div className="breakline v-breakline"></div>
+            <div className="container__page--inner container__page--right">
+              <div className="topbar">
+                <Link to="/sign-in" activeClassName="active">
+                  <p>Sign In</p>
+                </Link>
+                <Link to="/sign-up" activeClassName="active">
+                  <p>Sign Up</p>
+                </Link>
+              </div>
+              {React.cloneElement(children, {
+                ...this.props,
+                handleInputChange: this.handleInputChange,
+                handleFormSubmit: this.handleFormSubmit,
+                handleUpdateProfileFormSubmit: this.handleUpdateProfileFormSubmit,
+                handleSignIn: this.handleSignIn,
+                handleCheckboxClick: this.handleCheckboxClick
+              })}
+            </div>
           </div>
-          {React.cloneElement(children, {
-            //sign up phase 1
-            signUp_email,
-            signUp_confirmEmail,
-            signUp_password,
-            signUp_confirmPassword,
-            signUp_firstStep,
-            signUp_secondStep,
-            tos,
-
-            //sign up phase 2
-            activeUser,
-            signUp_username,
-            usernameFree,
-            signUp_profilePic,
-
-            //sign in
-            signIn_email,
-            signIn_password,
-
-            //sign in / sign up
-            updateFormProperty,
-            handleInputChange,
-            handleCheckboxClick,
-            handleSignIn,
-            handleFormSubmit,
-            handleUpdateProfileFormSubmit
-          })}
         </div>
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 const mapStateToProps = (state) =>{
   const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_profilePic, signUp_firstStep, signUp_secondStep, usernameFree} = state.entry;
@@ -123,18 +129,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Entry);
-
-Entry.propTypes = {
-  signIn_email: PropTypes.string,
-  signIn_password: PropTypes.string,
-  signUp_username: PropTypes.string,
-  signUp_email: PropTypes.string,
-  signUp_confirmEmail: PropTypes.string,
-  signUp_password: PropTypes.string,
-  signUp_confirmPassword: PropTypes.string,
-  handleInputChange: PropTypes.func,
-  handleFormSubmit: PropTypes.func,
-  handleSignIn: PropTypes.func,
-  handleCheckboxClick: PropTypes.func,
-  updateFormProperty: PropTypes.func
-};

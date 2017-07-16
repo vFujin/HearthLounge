@@ -14,6 +14,7 @@ import {success, error} from '../../../../utils/messages';
  * @param {string} uid - User ID
  */
 export default function (patch, hsClass, author, title, type, archetype, deck, description, uid){
+  console.log(patch, hsClass, author, title, type, archetype, deck, description, uid)
   if(patch && hsClass && author && title && type && archetype && deck && description && uid) {
 
     const deckId = ref.child(`decks`).push().key;

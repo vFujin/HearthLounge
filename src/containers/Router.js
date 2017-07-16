@@ -39,9 +39,9 @@ import RedditPost from './pages/reddit/post/post';
 import RedditPosts from './pages/reddit/posts/posts';
 
 import Entry from './pages/entry/entry';
-import SignUp from './pages/entry/sign-up';
-import SignUpUpdateProfile from './pages/entry/sign-up/second-phase/sign-up-update-profile';
-import SignIn from './pages/entry/sign-in';
+import SignUp from './pages/entry/right-container/sign-up/sign-up';
+import SignUpUpdateProfile from './pages/entry/right-container/sign-up/second-phase/sign-up-update-profile';
+import SignIn from './pages/entry/right-container/sign-in/sign-in';
 
 import NotFound from './shared-assets/not-found';
 
