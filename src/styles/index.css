@@ -3309,6 +3309,14 @@ footer {
     -moz-box-shadow: inset -5px 0 20px #474143;
     box-shadow: inset -5px 0 20px #474143;
     background: repeating-linear-gradient(-45deg, rgba(225, 255, 255, 0.1), rgba(225, 255, 255, 0.1) 10px, rgba(225, 255, 255, 0.2) 10px, rgba(225, 255, 255, 0.2) 20px); }
+    .container__page .edit-mode .sidebar__body .container__mana-curve .cards-list .table-scroll table thead th:first-child {
+      width: 5%; }
+    .container__page .edit-mode .sidebar__body .container__mana-curve .cards-list .table-scroll table thead th:nth-child(3) {
+      width: 25%;
+      text-align: left; }
+    .container__page .edit-mode .sidebar__body .container__mana-curve .cards-list .table-scroll table thead th:last-child {
+      width: 35%;
+      text-align: left; }
     .container__page .edit-mode .sidebar__body .container__mana-curve .cards-list .table-scroll table tbody tr {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
@@ -3648,7 +3656,7 @@ footer {
   height: 5vh;
   z-index: 10;
   display: flex;
-  background: #A69E9D; }
+  background: #474143; }
   .deck .container__page--left .sidebar__body .addCard-wrapper input {
     width: 80%;
     height: 100%; }
@@ -3684,8 +3692,11 @@ footer {
     display: grid;
     text-align: right;
     margin-right: 1vh; }
-.deck .container__page--right .content .container__details .container__details--description .section__body .section__body--background {
-  background: #A69E9D; }
+.deck .container__page--right .content .container__details .container__details--description .section__body {
+  background: #A69E9D;
+  border: 0; }
+  .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--background {
+    background: #A69E9D; }
 .deck .container__page--right .content .container__details .container__details--description .section__footer .details img {
   width: 45px;
   height: 45px; }
@@ -4512,6 +4523,9 @@ footer {
       content: "";
       background: #A69E9D;
       width: 1px; }
+
+.entry .wrapper .container__page--right .sign-up form .username-wrapper {
+  display: flex; }
 
 .dashboard .container__page--left .sidebar ul {
   margin: 0 auto;

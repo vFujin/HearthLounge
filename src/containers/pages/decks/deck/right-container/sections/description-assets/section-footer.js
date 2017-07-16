@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SectionFooter = ({authorId, activeUser, deckEditing, handleDeckEditingClick}) => {
+const SectionFooter = ({authorId, activeUser, deckEditing, handleDeckEditingClick, descriptionsNotEqual, decksNotEqual}) => {
+
   return (
       <div className="section__footer">
         <div className="section_footer--wrapper">
@@ -11,6 +12,7 @@ const SectionFooter = ({authorId, activeUser, deckEditing, handleDeckEditingClic
                 ? <div>
                     <button className="btn btn-pearl" onClick={handleDeckEditingClick}>{deckEditing ? 'Cancel editing' : 'Edit deck'}</button>
                     <button className="btn btn-pearl">Delete deck</button>
+                  {(deckEditing && (descriptionsNotEqual || decksNotEqual)) ? <button className="btn btn-pearl">Update deck</button> : null }
                   </div>
                 : null}
           </div>

@@ -24,9 +24,9 @@ class Deck extends PureComponent{
     //need proper testing
     let decksEqual = JSON.stringify(this.props.editingDecklist) ===  JSON.stringify(this.props.currentDeck.deck);
     let decksNotEqual = JSON.stringify(this.props.editingDecklist) !==  JSON.stringify(this.props.currentDeck.deck);
-    let descriptionsEqual = this.props.editingDeckDescription === this.props.currentDeck.description;
-    let descriptionsNotEqual = this.props.editingDeckDescription !== this.props.currentDeck.description;
-    console.log(descriptionsEqual, descriptionsNotEqual)
+    let descriptionsEqual = this.props.editingDeckDescription && (this.props.editingDeckDescription === this.props.currentDeck.description);
+    let descriptionsNotEqual = this.props.editingDeckDescription && (this.props.editingDeckDescription !== this.props.currentDeck.description);
+
     if(nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
       window.addEventListener("beforeunload", this.onUnload)
     }
@@ -34,10 +34,14 @@ class Deck extends PureComponent{
       window.removeEventListener("beforeunload", this.onUnload)
     }
     if(!nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
-      window.removeEventListener("beforeunload", this.onUnload)
+      window.removeEventListener("beforeunload", this.onUnload);
+      this.props.updateDecklist(this.props.currentDeck.deck)
+      //add description reducer
     }
     if(!nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
-      window.removeEventListener("beforeunload", this.onUnload)
+      window.removeEventListener("beforeunload", this.onUnload);
+      this.props.updateDecklist(this.props.currentDeck.deck)
+      //add description reducer
     }
   }
 
@@ -48,7 +52,6 @@ class Deck extends PureComponent{
   onUnload = (e) =>{
     e.returnValue = "foo";
   };
-
 
   handleDeckVotingClick = (e) =>{
     const {activeUser, currentDeck, updateDeckRating} = this.props;
@@ -61,6 +64,7 @@ class Deck extends PureComponent{
   handleDeckEditingClick = () =>{
     const {toggleDeckEditing, deckEditing} = this.props;
     toggleDeckEditing(!deckEditing ? true : false)
+
   };
 
   handleCardRemovalClick = (e) =>{
@@ -80,6 +84,7 @@ class Deck extends PureComponent{
       return acc;
     }, {});
 
+    //need amount of card here
     let manacurveAfterCostRemoval = manaCurve.map((c, i) => i == cardCost ? c-1 : c);
     let max = _.max(manacurveAfterCostRemoval);
 
@@ -92,7 +97,10 @@ class Deck extends PureComponent{
   };
 
   render() {
-    const {activeUser, currentDeck, params, editingDecklist, deckEditing, updateDecklist} = this.props;
+    const {activeUser, currentDeck, params, editingDecklist, deckEditing, updateDecklist, editingDeckDescription} = this.props;
+    let decksNotEqual = JSON.stringify(editingDecklist) !==  JSON.stringify(currentDeck.deck);
+    let descriptionsNotEqual = editingDeckDescription && (editingDeckDescription !== currentDeck.description);
+
     return (
         <div className="container__page container__page--twoSided deck">
           <LeftContainer currentDeck={currentDeck}
@@ -103,6 +111,8 @@ class Deck extends PureComponent{
                          handleCardRemovalClick={this.handleCardRemovalClick}/>
           <RightContainer currentDeck={currentDeck}
                           params={params}
+                          decksNotEqual={decksNotEqual}
+                          descriptionsNotEqual={descriptionsNotEqual}
                           activeUser={activeUser}
                           deckEditing={deckEditing}
                           handleDeckEditingClick={this.handleDeckEditingClick}
@@ -113,8 +123,8 @@ class Deck extends PureComponent{
 }
 
 const mapStateToProps = (state) => {
-  const {deckVote, deckEditing, editingDecklist} = state.deckView;
-  return {deckVote, deckEditing, editingDecklist}
+  const {deckVote, deckEditing, editingDecklist, editingDeckDescription} = state.deckView;
+  return {deckVote, deckEditing, editingDecklist, editingDeckDescription}
 };
 
 const mapDispatchToProps = (dispatch) => {

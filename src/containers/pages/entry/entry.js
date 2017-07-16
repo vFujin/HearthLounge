@@ -5,9 +5,17 @@ import {Link} from 'react-router';
 import {LeftContainer} from './left-container';
 import {createUser} from '../../../firebase/user/create';
 import {updateUsername} from '../../../firebase/user/update';
+import {getUsername} from '../../../firebase/user/read';
 import {signIn} from '../../../firebase/user/utils';
+import _ from 'lodash';
 
-const Entry = ({updateActiveUser, location, activeUser, authenticated, children, signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, signUp_profilePic, tos, signIn_email, signIn_password, signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
+const findUsername = _.debounce((input, updateUsernameExistStatus) => {
+  getUsername(input, (value) => updateUsernameExistStatus(value))
+}, 500);
+
+const Entry = ({usernameFree, updateUsernameExistStatus, updateActiveUser, location, activeUser, authenticated, children, signUp_username,
+                 signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, signUp_profilePic, tos, signIn_email, signIn_password,
+                 signUp_firstStep, signUp_secondStep, updateFormProperty, updateSignUpStatus}) =>{
 
   // if(location.pathname === '/sign-up/update-profile'){
   //   updateSignUpStatus("success", "");
@@ -18,6 +26,9 @@ const Entry = ({updateActiveUser, location, activeUser, authenticated, children,
     let id = target.id;
     let value = target.value;
     updateFormProperty({[id]: value});
+    if(id === "signUp_username"){
+      findUsername(value, updateUsernameExistStatus);
+    }
   };
 
   const handleFormSubmit = (e) =>{
@@ -56,17 +67,22 @@ const Entry = ({updateActiveUser, location, activeUser, authenticated, children,
             </Link>
           </div>
           {React.cloneElement(children, {
-            activeUser,
-            signUp_username,
+            //sign up phase 1
             signUp_email,
             signUp_confirmEmail,
             signUp_password,
             signUp_confirmPassword,
-            signUp_profilePic,
             signUp_firstStep,
             signUp_secondStep,
             tos,
 
+            //sign up phase 2
+            activeUser,
+            signUp_username,
+            usernameFree,
+            signUp_profilePic,
+
+            //sign in
             signIn_email,
             signIn_password,
 
@@ -85,8 +101,8 @@ const Entry = ({updateActiveUser, location, activeUser, authenticated, children,
 };
 
 const mapStateToProps = (state) =>{
-  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_profilePic, signUp_firstStep, signUp_secondStep} = state.entry;
-  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_profilePic, signUp_firstStep, signUp_secondStep};
+  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_profilePic, signUp_firstStep, signUp_secondStep, usernameFree} = state.entry;
+  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_profilePic, signUp_firstStep, signUp_secondStep, usernameFree};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -96,6 +112,9 @@ const mapDispatchToProps = (dispatch) => {
     })),
     updateSignUpStatus: (signUp_firstStep, signUp_secondStep) => (dispatch({
       type: 'UPDATE_SIGN_UP_STATUS', signUp_firstStep, signUp_secondStep
+    })),
+    updateUsernameExistStatus: (usernameFree) => (dispatch({
+      type: 'UPDATE_USERNAME_EXIST_STATUS', usernameFree
     })),
     updateActiveUser: (authenticated, activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', authenticated, activeUser

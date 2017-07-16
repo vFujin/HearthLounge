@@ -12,19 +12,18 @@ import _ from 'lodash';
 class DeckSelection extends Component {
   componentDidMount() {
     getDecks(v => this.props.updateDeckList(v));
-    const el = document.querySelector('.table-scroll');
-    if (el) {
-      el.addEventListener("scroll", function () {
-            if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-              getDecks((v) => {
-                console.log(v);
-                return this.props.updateDeckList(v)
-              })
-            }
-          }
-      )
-    }
   }
+
+  shouldComponentUpdate(nextProps){
+    return !(
+        this.props.activeUser !== nextProps.activeUser ||
+        this.props.cards !== nextProps.cards ||
+        this.props.cards.patch !== nextProps.cards.patch
+    );
+
+  }
+
+
 
   handleModeFilterClick = (e) =>{
     let targetId = e.currentTarget.id;
@@ -38,8 +37,9 @@ class DeckSelection extends Component {
   };
 
   handleAdventureFilterClick = (e) =>{
-    let targetId = e.currentTarget.id;
-    this.props.updateAdventureFilter(targetId);
+    // let targetId = e.currentTarget.id;
+    // this.props.updateAdventureFilter(targetId);
+
   };
 
   handleClassFilterClick = (e) =>{
@@ -55,9 +55,25 @@ class DeckSelection extends Component {
     updateViews(deckId);
   };
 
+  infiniteScroll = (updateDeckList) => {
+    console.log("foo");
+    const el = document.querySelector('.table-scroll');
+    if (el) {
+      el.addEventListener("scroll", function () {
+            if (el.clientHeight === el.scrollHeight - el.scrollTop) {
+              getDecks((v) => {
+                return updateDeckList(v)
+              })
+            }
+          }
+      )
+    }
+  };
 
   render() {
     const {cards, children, location, decks, activeUser, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
+    this.infiniteScroll(this.props.updateDeckList);
+
 
     if(location.pathname !== "/decks"){
       if(!currentDeck){

@@ -10,6 +10,9 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
 
   const listCards = () =>{
     if(editingDecklist){
+      // let countByCost = _.countBy(editingDecklist.cards, (card)=>card.cost < 7 ? card.cost : 7);
+      // console.log(countByCost)
+
       let cardNames = Object.keys(editingDecklist.cards);
       return _.map(editingDecklist.cards).map((c, i)=>
         <tr key={i}>
@@ -65,8 +68,6 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
         return c;
       })[0];
     });
-    console.log(manacurveAfterCostAddition)
-
 
     let max = _.max(manacurveAfterCostAddition);
 
@@ -120,7 +121,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
                     <th>Set</th>
                     <th>Card</th>
                     <th>Amount</th>
-                    <th>Cost</th>
+                    <th colSpan={deckEditing ? 2 : null}>Cost</th>
                   </tr>
                   </thead>
                   <tbody>

@@ -16,10 +16,11 @@ const CreateDeckClassSelected = ({cards, deck, patch, deckMechanics, editDeck, e
                                    toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
   const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
   const query = location.query;
-  let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
+  let countByCost = _.countBy(deck, (card)=>card.cost < 7 ? card.cost : 7);
   const countUniqueCards = (card) => {
     return _.filter(deck, {cardId: card.cardId}).length;
   };
+
 
   const handleCardClick = (e, card) => {
     e.preventDefault();
@@ -49,11 +50,13 @@ const CreateDeckClassSelected = ({cards, deck, patch, deckMechanics, editDeck, e
     let max = _.max(Object.values(countByCost));
 
     deck.filter((card, i, self) => {
+      const {cardSet, cost, name, type} = card;
       return Object.assign(cards, {
-        [card.name]: {
+        [name]: {
           amount: (self.indexOf(card) !== i) ? 2 : 1,
-          cost: card.cost,
-          type: card.type
+          set: cardSet,
+          cost,
+          type
         }
       })
     });
