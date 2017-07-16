@@ -4,15 +4,33 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
+import {getUser} from '../../../../firebase/user/read';
 import {rateDeck} from '../../../../firebase/decks/deck/read/decks';
 
 class Deck extends PureComponent{
 
   componentDidMount(){
-    const {currentDeck, updateDecklist, editingDecklist} = this.props;
+    const {currentDeck, updateDecklist, updateDeckAuthorDetails, editingDecklist} = this.props;
     const {deck} = currentDeck;
+
     if(currentDeck){
-      updateDecklist(deck)
+      updateDecklist(deck);
+      getUser(currentDeck.authorId, deckAuthor=>{
+        const { photoURL, username, prestige, region, battletag, facebook, twitter, twitch, youtube, favouriteClass} = deckAuthor;
+
+        updateDeckAuthorDetails({
+          photoURL,
+          username,
+          prestige,
+          region,
+          battletag,
+          facebook,
+          twitter,
+          twitch,
+          youtube,
+          favouriteClass
+        })
+      });
     }
 
     if(this.props.deckEditing && (JSON.stringify(editingDecklist) !==  JSON.stringify(deck))){
@@ -97,7 +115,7 @@ class Deck extends PureComponent{
   };
 
   render() {
-    const {activeUser, currentDeck, params, editingDecklist, deckEditing, updateDecklist, editingDeckDescription} = this.props;
+    const {activeUser, currentDeck, params, editingDecklist, deckEditing, updateDecklist, editingDeckDescription, deckAuthor} = this.props;
     let decksNotEqual = JSON.stringify(editingDecklist) !==  JSON.stringify(currentDeck.deck);
     let descriptionsNotEqual = editingDeckDescription && (editingDeckDescription !== currentDeck.description);
 
@@ -111,6 +129,7 @@ class Deck extends PureComponent{
                          handleCardRemovalClick={this.handleCardRemovalClick}/>
           <RightContainer currentDeck={currentDeck}
                           params={params}
+                          deckAuthor={deckAuthor}
                           decksNotEqual={decksNotEqual}
                           descriptionsNotEqual={descriptionsNotEqual}
                           activeUser={activeUser}
@@ -123,8 +142,8 @@ class Deck extends PureComponent{
 }
 
 const mapStateToProps = (state) => {
-  const {deckVote, deckEditing, editingDecklist, editingDeckDescription} = state.deckView;
-  return {deckVote, deckEditing, editingDecklist, editingDeckDescription}
+  const {deckVote, deckEditing, editingDecklist, editingDeckDescription, deckAuthor} = state.deckView;
+  return {deckVote, deckEditing, editingDecklist, editingDeckDescription, deckAuthor}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -137,7 +156,10 @@ const mapDispatchToProps = (dispatch) => {
     })),
     updateDecklist: (editingDecklist) => (dispatch({
       type: 'UPDATE_DECKLIST', editingDecklist
-    }))
+    })),
+    updateDeckAuthorDetails: deckAuthor => dispatch({
+      type: 'UPDATE_DECK_AUTHOR_DETAILS', deckAuthor
+    })
   };
 };
 

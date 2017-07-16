@@ -5,7 +5,6 @@ import DeckOptions from './right-container/content-assets/deck-description/deck-
 
 const RightContainer = ({authenticated, deck, patch, filtersView, handleOptionsClick, handleImgSaveClick, cards, activeClass, query, simplifiedDeck, editingTool, user, imgReadyDecklist}) =>{
 
-
   const currentView = () => {
     return !editingTool
         ? <Cards cards={cards}/>

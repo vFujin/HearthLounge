@@ -31,6 +31,11 @@ export default function(state=initialState, action) {
         ...state,
         editingDeckDescription: action.editingDeckDescription
       };
+    case 'UPDATE_DECK_AUTHOR_DETAILS':
+      return {
+          ...state,
+        deckAuthor: action.deckAuthor
+      };
     case 'UPDATE_DECKLIST':
       return {
           ...state,

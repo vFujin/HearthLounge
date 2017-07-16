@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-const SectionFooter = ({authorId, activeUser, deckEditing, handleDeckEditingClick, descriptionsNotEqual, decksNotEqual}) => {
+import AuthorDetails from './section-footer-deck-author-details';
+import Loader from '../../../../../../../utils/loader';
+const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditing, handleDeckEditingClick, descriptionsNotEqual, decksNotEqual}) => {
 
   return (
       <div className="section__footer">
@@ -16,24 +17,10 @@ const SectionFooter = ({authorId, activeUser, deckEditing, handleDeckEditingClic
                   </div>
                 : null}
           </div>
-          <div className="details">
-            <span className="hs-icon icon-login"></span>
-            <div className="general-info-wrapper">
-              <p>author</p>
-              <p>reputation</p>
-            </div>
-            <div className="game-details-wrapper">
-              <span className="hs-icon icon-battletag"></span>
-              <p>region</p>
-              <p>favourite class</p>
-            </div>
-            <div className="social-media-wrapper">
-              <span className="hs-icon icon-facebook"></span>
-              <span className="hs-icon icon-twitter"></span>
-              <span className="hs-icon icon-twitch"></span>
-              <span className="hs-icon icon-youtube"></span>
-            </div>
-          </div>
+          {deckAuthor
+              ? <AuthorDetails deckAuthor={deckAuthor}/>
+              : <Loader/>
+          }
         </div>
       </div>
   )

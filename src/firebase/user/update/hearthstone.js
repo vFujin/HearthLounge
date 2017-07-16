@@ -8,10 +8,10 @@ import {ref} from '../../../keys';
  * @param {string} favourite_class - User's favourite class
  * @param {string} region - User's abbreviated region
  */
-export default function (uid, battletag, favourite_class, region){
+export default function (uid, battletag, favouriteClass, region){
   return ref.child(`users/${uid}`).update({
     battletag,
-    favourite_class,
+    favouriteClass,
     region
   });
 }

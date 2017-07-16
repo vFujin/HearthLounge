@@ -5,7 +5,7 @@ import SectionHeader from './description-assets/section-header';
 import SectionBody from './description-assets/section-body';
 import SectionFooter from './description-assets/section-footer';
 
-const DeckDescription = ({activeUser, currentDeck, deckEditing, handleDeckEditingClick, editingDeckDescription, decksNotEqual, descriptionsNotEqual, updateDeckDescription}) =>{
+const DeckDescription = ({activeUser, deckAuthor, currentDeck, deckEditing, handleDeckEditingClick, editingDeckDescription, decksNotEqual, descriptionsNotEqual, updateDeckDescription}) =>{
   const {title, description, author, authorId} = currentDeck;
 
   const handleInputChange = (e) => {
@@ -23,6 +23,7 @@ const DeckDescription = ({activeUser, currentDeck, deckEditing, handleDeckEditin
                      deckEditing={deckEditing}/>
         <SectionFooter author={author}
                        authorId={authorId}
+                       deckAuthor={deckAuthor}
                        deckEditing={deckEditing}
                        activeUser={activeUser}
                        descriptionsNotEqual={descriptionsNotEqual}
@@ -41,7 +42,7 @@ const mapDispatchToProps = dispatch => {
   return {
     updateDeckDescription: editingDeckDescription => dispatch({
       type: 'UPDATE_DECK_DESCRIPTION', editingDeckDescription
-    })
+    }),
   }
 };
 
