@@ -62,7 +62,7 @@ const Entry = ({usernameFree, updateUsernameExistStatus, updateActiveUser, locat
             <Link to="/sign-in" activeClassName="active">
               <p>Sign In</p>
             </Link>
-            <Link to={authenticated ? '/dashboard' : '/sign-up'} activeClassName="active">
+            <Link to="/sign-up" activeClassName="active">
               <p>Sign Up</p>
             </Link>
           </div>
@@ -86,8 +86,8 @@ const Entry = ({usernameFree, updateUsernameExistStatus, updateActiveUser, locat
             signIn_email,
             signIn_password,
 
+            //sign in / sign up
             updateFormProperty,
-
             handleInputChange,
             handleCheckboxClick,
             handleSignIn,

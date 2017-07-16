@@ -4526,6 +4526,11 @@ footer {
 
 .entry .wrapper .container__page--right .sign-up form .username-wrapper {
   display: flex; }
+.entry .wrapper .container__page--right .sign-up .summary {
+  text-align: center; }
+  .entry .wrapper .container__page--right .sign-up .summary p a {
+    text-decoration: underline;
+    color: #00a99c; }
 
 .dashboard .container__page--left .sidebar ul {
   margin: 0 auto;

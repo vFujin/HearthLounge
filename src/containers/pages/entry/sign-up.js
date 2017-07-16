@@ -24,6 +24,8 @@ const SignUp = ({children, activeUser, usernameFree, signUp_username, signUp_ema
             usernameFree,
             signUp_profilePic,
             updateFormProperty,
+            signUp_firstStep,
+            signUp_secondStep,
             handleUpdateProfileFormSubmit
           });
   };

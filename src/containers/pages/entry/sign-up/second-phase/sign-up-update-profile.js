@@ -4,6 +4,8 @@ import Input from '../../../../shared-assets/form-assets/input';
 import ImageUpload from './image-upload';
 // import Loader from '../../../../../utils/loader';
 // import PropTypes from 'prop-types';
+import UpdateProfileForm from './update-profile-form';
+import Summary from './summary';
 
 class SignUpUpdateProfile extends PureComponent {
 
@@ -14,15 +16,17 @@ class SignUpUpdateProfile extends PureComponent {
   }
 
   uploadedImage = () => {
-    return this.props.signUp_profilePic
+    const {activeUser, signUp_profilePic, updateFormProperty} = this.props;
+
+    return signUp_profilePic
         ? "✓ Image successfully uploaded."
-        : <ImageUpload activeUser={this.props.activeUser}
-                       updateFormProperty={this.props.updateFormProperty}/>
+        : <ImageUpload activeUser={activeUser}
+                       updateFormProperty={updateFormProperty}/>
   };
 
   usernameStatus = () =>{
     const {signUp_username, usernameFree} = this.props;
-    if(!usernameFree && signUp_username.length < 3 || usernameFree && signUp_username.length < 3){
+    if((!usernameFree && signUp_username.length < 3) || (usernameFree && signUp_username.length < 3)){
       return null;
     }
     if(usernameFree && signUp_username.length >= 3){
@@ -34,27 +38,12 @@ class SignUpUpdateProfile extends PureComponent {
   };
 
   render() {
-    return (
-      <form onSubmit={this.props.handleUpdateProfileFormSubmit}>
-
-        <div className="divider"><span>Required</span></div>
-
-        <div className="username-wrapper">
-        <Input id="signUp_username"
-               type="text"
-               placeholder="Joe"
-               handleInputChange={this.props.handleInputChange}
-               value={this.props.signUp_username}/>
-        {this.usernameStatus()}
-        </div>
-        <div className="divider"><span>Optional</span></div>
-        {this.uploadedImage()}
-
-        <div className="button-wrapper">
-          <button className="btn-pearl">Submit</button>
-        </div>
-      </form>
-    );
+    const {signUp_firstStep, signUp_secondStep} = this.props;
+    return (signUp_firstStep === "success" && signUp_secondStep === "success")
+            ? <Summary/>
+            : <UpdateProfileForm {...this.props}
+                                 usernameStatus={this.usernameStatus}
+                                 uploadedImage={this.uploadedImage}/>
   }
 }
 

@@ -2525,6 +2525,15 @@ footer{
             display: flex;
           }
         }
+        .summary{
+          text-align: center;
+          p{
+            a{
+              text-decoration: underline;
+              color: $sea-color;
+            }
+          }
+        }
       }
     }
   }
