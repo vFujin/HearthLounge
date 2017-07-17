@@ -69,6 +69,33 @@ a:active, a:hover, a:link, a:visited {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-knights-of-the-frozen-throne:before {
+  content: "\e93e"; }
+
+.icon-prestige-2:before {
+  content: "\e93f"; }
+
+.icon-prestige-3:before {
+  content: "\e940"; }
+
+.icon-prestige-4:before {
+  content: "\e941"; }
+
+.icon-prestige-5:before {
+  content: "\e942"; }
+
+.icon-prestige-6:before {
+  content: "\e943"; }
+
+.icon-prestige-7:before {
+  content: "\e944"; }
+
+.icon-prestige-8:before {
+  content: "\e945"; }
+
+.icon-prestige-1:before {
+  content: "\e946"; }
+
 .icon-paypal:before {
   content: "\ead8"; }
 

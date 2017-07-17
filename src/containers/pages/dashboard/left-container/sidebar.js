@@ -20,7 +20,7 @@ export class Sidebar extends Component{
 
       email: null,
       battletag: null,
-      favourite_class: null,
+      favouriteClass: null,
       region: null,
       facebook: null,
       twitter: null,
@@ -49,7 +49,8 @@ export class Sidebar extends Component{
     /*
      * Changes will occur after relogging, need to reauthenticate or some other stuff
      */
-    let user = this.props.user;
+    const {user} = this.props;
+    const {uid} = user;
     let target = e.target.id;
     let isActive = this.state[target] === false ? true : false;
     this.setState({
@@ -62,8 +63,8 @@ export class Sidebar extends Component{
 
     switch(target){
       case 'details': return updateEmail(this.state.email);
-      case 'hearthstone': return updateHearthstoneData(user.uid, validateInput('battletag'), validateInput('favourite_class'), validateInput('region'));
-      case 'social_media': return updateSocialMediaData(user.uid, validateInput('facebook'), validateInput('twitter'), validateInput('twitch'), validateInput('youtube'));
+      case 'hearthstone': return updateHearthstoneData(uid, validateInput('battletag'), validateInput('favouriteClass'), validateInput('region'));
+      case 'social_media': return updateSocialMediaData(uid, validateInput('facebook'), validateInput('twitter'), validateInput('twitch'), validateInput('youtube'));
       default: return target;
     }
   }
@@ -88,11 +89,11 @@ export class Sidebar extends Component{
   };
 
   handleAvatarDeletion = () =>{
-    deleteAvatar(this.props.user)
+    deleteAvatar(this.props.user);
   };
 
   handleReauthenticationClick = () =>{
-    reauthenticate(this.state.reauthPassword)
+    reauthenticate(this.state.reauthPassword);
   };
 
   render() {
