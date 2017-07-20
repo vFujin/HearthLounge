@@ -115,10 +115,9 @@ class Deck extends PureComponent{
   };
 
   render() {
-    const {activeUser, currentDeck, params, editingDecklist, deckEditing, updateDecklist, editingDeckDescription, deckAuthor} = this.props;
+    const {activeUser, patch, currentDeck, params, editingDecklist, deckEditing, updateDecklist, editingDeckDescription, deckAuthor} = this.props;
     let decksNotEqual = JSON.stringify(editingDecklist) !==  JSON.stringify(currentDeck.deck);
     let descriptionsNotEqual = editingDeckDescription && (editingDeckDescription !== currentDeck.description);
-
     return (
         <div className="container__page container__page--twoSided deck">
           <LeftContainer currentDeck={currentDeck}
@@ -129,6 +128,7 @@ class Deck extends PureComponent{
                          handleCardRemovalClick={this.handleCardRemovalClick}/>
           <RightContainer currentDeck={currentDeck}
                           params={params}
+                          patch={patch}
                           deckAuthor={deckAuthor}
                           decksNotEqual={decksNotEqual}
                           descriptionsNotEqual={descriptionsNotEqual}

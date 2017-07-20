@@ -1,9 +1,10 @@
-import {ref} from '../../../../keys';
+import {ref, refParent} from '../../../../keys';
 import {success, error} from '../../../../utils/messages';
 
 /**
  * Creates deck comment.
  *
+ * @param {string} patch - current patch version in Hearthstone
  * @param {string} author - username of the logged user
  * @param {string} text - comment text
  * @param {string} deckId - deck id
@@ -12,7 +13,8 @@ import {success, error} from '../../../../utils/messages';
 export function postComment(patch, author, text, deckId, uid){
   if(patch && author && text && deckId && uid){
 
-    const newCommentKey = ref.child(`decks/${deckId}/comments`).push().key;
+    const newCommentKey = refParent(`decks/${deckId}/comments}`).push().key;
+    console.log(newCommentKey)
 
     let newComment = {
       created: +new Date(),
@@ -26,13 +28,13 @@ export function postComment(patch, author, text, deckId, uid){
       text
     };
 
+
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
     // updates[`/deck-comment-ratings/${deckId}/${newCommentKey}`] = newCommentRatings;
     updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
 
-    return ref.update(updates)
-        .then(()=>success('Successfully added comment!'),
+    return ref.update(updates).then(()=>success('Successfully added comment!'),
               err=>error("Couldn't add comment. Try again later.")
         );
   } else {

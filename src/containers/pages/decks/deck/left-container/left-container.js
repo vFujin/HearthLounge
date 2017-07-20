@@ -8,6 +8,7 @@ import 'antd/lib/select/style/index.css';
 
 const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
 
+
   const listCards = () =>{
     if(editingDecklist){
       // let countByCost = _.countBy(editingDecklist.cards, (card)=>card.cost < 7 ? card.cost : 7);
@@ -50,14 +51,15 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
             type: filteredCard.type
           }
         });
-      } else {
+      }
+
+      if (card === filteredCard.name) {
         console.log("before, ",card, result[card].amount)
         result[card].amount = 2;
         console.log("after, ",card, result[card].amount)
       }
 
     }, editingDecklistCards);
-
 
     let manacurveAfterCostAddition =  manaCurve.map((c, i) => {
       //edge case for 7+ cost cards

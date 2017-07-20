@@ -71,7 +71,7 @@ class DeckComments extends Component {
    */
   componentWillUnmount(){
     // const {deckId} = this.props.params;
-    // this.props.updateComments(null)
+    this.props.updateComments([])
   }
 
   handleInputChange = (e) => {
@@ -95,9 +95,10 @@ class DeckComments extends Component {
   };
 
   handlePostCommentClick = () => {
+    const {patch} = this.props;
     const {deckId} = this.props.params;
     const {username, uid} = this.props.activeUser;
-    postComment(username, this.props.deckComment, deckId, uid);
+    postComment(patch, username, this.props.deckComment, deckId, uid);
     getComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
   };
 

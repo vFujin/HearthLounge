@@ -1,4 +1,4 @@
-import {ref} from '../../../keys';
+import {refParent} from '../../../keys';
 
 /**
  * Reads user details
@@ -7,5 +7,5 @@ import {ref} from '../../../keys';
  * @param {function} callback - returns user details
  */
 export default function (uid, callback) {
-  return ref.once("value", (snapshot) =>callback(snapshot.child(`users/${uid}`).val()))
+  return refParent('users').once("value", (snapshot)=>callback(snapshot.child(uid).val()))
 }

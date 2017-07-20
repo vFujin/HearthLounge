@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import DeckDescription from './sections/description';
 import DeckComments from './sections/comments';
 
-const Content = ({activeUser, deckAuthor, currentDeck, handleDeckEditingClick, deckEditing, decksNotEqual, descriptionsNotEqual, params}) =>{
+const Content = ({activeUser, patch, deckAuthor, currentDeck, handleDeckEditingClick, deckEditing, decksNotEqual, descriptionsNotEqual, params}) =>{
   return (
       <div className="content">
         <div className="container__details">
@@ -14,7 +14,7 @@ const Content = ({activeUser, deckAuthor, currentDeck, handleDeckEditingClick, d
                            decksNotEqual={decksNotEqual}
                            descriptionsNotEqual={descriptionsNotEqual}
                            handleDeckEditingClick={handleDeckEditingClick}/>
-          <DeckComments currentDeck={currentDeck} activeUser={activeUser} params={params}/>
+          <DeckComments currentDeck={currentDeck} patch={patch} activeUser={activeUser} params={params}/>
         </div>
       </div>
   )

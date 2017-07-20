@@ -8,6 +8,8 @@ import {signOut} from '../firebase/user/utils';
 import {fetchData, fetchPatchData} from '../data/cards-data';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';
+import 'antd/lib/popover/style/css';
+import 'antd/lib/message/style/index.css';
 
 class Main extends Component{
   constructor(props) {
@@ -29,7 +31,6 @@ class Main extends Component{
   //     return true
   //   }
   // }
-
 
 
   render(){

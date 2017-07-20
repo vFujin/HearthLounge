@@ -20,7 +20,6 @@ export default function (callback) {
     });
   });
 
-
   let nextQuery = decksRef.orderByChild('created').startAt(lastKnownDeck).limitToFirst(15);
 
   nextQuery.once('value', snapshot => {

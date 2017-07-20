@@ -1,13 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import _ from 'lodash';
+import LazyLoad from 'react-lazyload';
+import {encode} from 'deckstrings';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
-import 'antd/lib/tooltip/style/css';
-import 'antd/lib/popover/style/css';
-import {connect} from 'react-redux';
-import 'antd/lib/message/style/index.css';
-import LazyLoad from 'react-lazyload';
 import {loading} from '../../../../utils/messages';
 import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboard';
 import {captureDecklist} from '../../../../utils/capture-decklist';
@@ -39,7 +37,13 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
   };
 
   const deckSimplification = () => {
+
     let cards = {};
+    let deckStringObj = {
+      cards: [],
+      heroes: [813],
+      format: 2
+    };
     let types = {};
     let manaCurve = {
       0:0,
@@ -54,15 +58,27 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
     let max = _.max(Object.values(countByCost));
 
     deck.filter((card, i, self) => {
-      const {cardSet, cost, name, type} = card;
-      return Object.assign(cards, {
+      const {cardSet, cost, name, type, dbfId} = card;
+      Object.assign(cards, {
         [name]: {
           amount: (self.indexOf(card) !== i) ? 2 : 1,
           set: _.kebabCase(removeApostrophe(cardSet)),
           cost,
           type
         }
-      })
+      });
+
+
+      if(deckStringObj.cards.length < 1) {
+        deckStringObj.cards.push([
+          Number(dbfId),
+          1
+        ])
+
+      } else {
+      }
+
+
     });
     deck.map(v => v.type).forEach((c) => types[c] = (types[c] || 0) + 1);
     deck.map(v => v.cost).forEach((c) => {
@@ -79,6 +95,9 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
     });
     let deckLength = deck.length;
     simplifyDeck({cards, manaCurve, types, max, length: deckLength});
+
+
+    console.log(deckStringObj);
   };
 
   const toggleCardAmountTooltip = (card) => {
