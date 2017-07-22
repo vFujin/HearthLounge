@@ -4,7 +4,7 @@ const initialState = {
   deckMechanics: false,
   imgReadyDecklist: false,
   deck: [],
-  summarizedDeck: [],
+  deckstring: '',
   simplifiedDeck: {
     cards: {},
     manaCurve: {},
@@ -37,7 +37,7 @@ export default function(state=initialState, action){
     case 'EDIT_DECK': return {
       ...state,
       deck: action.deck,
-      summarizedDeck: action.summarizedDeck,
+      deckstring: action.deckstring,
     };
     case 'SIMPLIFY_DECK': return {
         ...state,

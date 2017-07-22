@@ -2,102 +2,31 @@ import React from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import LazyLoad from 'react-lazyload';
-import {encode} from 'deckstrings';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
 import {loading} from '../../../../utils/messages';
 import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboard';
 import {captureDecklist} from '../../../../utils/capture-decklist';
+import {uniqueCards} from '../../../../utils/deck/calculate'
+import {deckSimplification} from '../../../../utils/deck';
+import {setDeckstringObj} from '../../../../utils/deck/deckstring';
 
-const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, summarizedDeck,
+const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, deckstring,
                                    toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
   const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
-  const query = location.query;
-  let countByCost = _.countBy(deck, (card)=>card.cost < 7 ? card.cost : 7);
-  const countUniqueCards = (card) => {
-    return _.filter(deck, {cardId: card.cardId}).length;
-  };
-
+  const {query} = location;
 
   const handleCardClick = (e, card) => {
     e.preventDefault();
-    let ifLegendary = card.rarity !== "Legendary" ? countUniqueCards(card) < 2 : countUniqueCards(card) < 1;
+    let ifLegendary = card.rarity !== "Legendary" ? uniqueCards(deck, card) < 2 : uniqueCards(deck, card) < 1;
     if (e.button === 0 && ifLegendary && deck.length < 30) {
       editDeck(deck.concat(card));
     }
 
-    if (e.button === 2 && countUniqueCards(card) > 0) {
+    if (e.button === 2 && uniqueCards(deck, card) > 0) {
       editDeck(_.filter(deck, (c) => c.cardId !== card.cardId));
     }
-  };
-
-  const removeApostrophe = (string) =>{
-    return _.replace(string.toLowerCase(), "'", "");
-  };
-
-  const deckSimplification = () => {
-
-    let cards = {};
-    let deckStringObj = {
-      cards: [],
-      heroes: [813],
-      format: 2
-    };
-    let types = {};
-    let manaCurve = {
-      0:0,
-      1:0,
-      2:0,
-      3:0,
-      4:0,
-      5:0,
-      6:0,
-      7:0,
-    };
-    let max = _.max(Object.values(countByCost));
-
-    deck.filter((card, i, self) => {
-      const {cardSet, cost, name, type, dbfId} = card;
-      Object.assign(cards, {
-        [name]: {
-          amount: (self.indexOf(card) !== i) ? 2 : 1,
-          set: _.kebabCase(removeApostrophe(cardSet)),
-          cost,
-          type
-        }
-      });
-
-
-      if(deckStringObj.cards.length < 1) {
-        deckStringObj.cards.push([
-          Number(dbfId),
-          1
-        ])
-
-      } else {
-      }
-
-
-    });
-    deck.map(v => v.type).forEach((c) => types[c] = (types[c] || 0) + 1);
-    deck.map(v => v.cost).forEach((c) => {
-      switch(c){
-         case 0: return manaCurve[0] = ((manaCurve[0] || 0) +1);
-         case 1: return manaCurve[1] = ((manaCurve[1] || 0) +1);
-         case 2: return manaCurve[2] = ((manaCurve[2] || 0) +1);
-         case 3: return manaCurve[3] = ((manaCurve[3] || 0) +1);
-         case 4: return manaCurve[4] = ((manaCurve[4] || 0) +1);
-         case 5: return manaCurve[5] = ((manaCurve[5] || 0) +1);
-         case 6: return manaCurve[6] = ((manaCurve[6] || 0) +1);
-         default: manaCurve[7] = (manaCurve[7] || 0) +1;
-       }
-    });
-    let deckLength = deck.length;
-    simplifyDeck({cards, manaCurve, types, max, length: deckLength});
-
-
-    console.log(deckStringObj);
   };
 
   const toggleCardAmountTooltip = (card) => {
@@ -105,7 +34,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
       return (
           <div className="tooltip-count">
               <span>
-                {countUniqueCards(card)}/{card.rarity !== "Legendary" ? 2 : 1}
+                {uniqueCards(deck, card)}/{card.rarity !== "Legendary" ? 2 : 1}
               </span>
           </div>
       )
@@ -120,7 +49,6 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
       let amount = deck.filter(c => c.cardId === card.cardId).length;
       if(amount > 0) return 'choosen';
     };
-
 
     if (cards < 1) {
       return <Loader/>;
@@ -177,8 +105,8 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
     toggleDeckMechanics(areActive);
   };
 
-  const handleCopyDeckURLClick = () =>{
-    copyDeckUrlToClipboard(summarizedDeck, updateURL);
+  const handleCopyDeckStringClick = () =>{
+    copyDeckUrlToClipboard(deckstring, updateURL);
   };
 
   const handleImgSaveClick = (e) =>{
@@ -194,17 +122,19 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
   };
 
   const handleOptionsClick = (e, icon) => {
+    let simplifiedDeck = deckSimplification(deck);
     let isEditingToolActive = editingTool === false ? true : false;
     let isDecklistReadyForCapture = imgReadyDecklist === false ? true : false;
     switch (icon) {
-      case 'link': return handleCopyDeckURLClick();
+      case 'link': return handleCopyDeckStringClick();
       case 'image': return switchDecklistClasses(isDecklistReadyForCapture);
       case 'download':
         !editingTool
             ? document.getElementById(e.currentTarget.id).className += "active"
             : document.getElementById(e.currentTarget.id).className = "";
         showDeckEditingTool(isEditingToolActive);
-        deckSimplification();
+        simplifyDeck(simplifiedDeck);
+
         break;
       default: return icon;
     }
@@ -216,7 +146,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
            className="container__page container__page--twoSided create-deck">
         <LeftContainer handleSidebarViewChange={(e) => handleKeyShortcuts(e)}
                        filtersView={filters}
-                       countCards={(e) => countUniqueCards(e)}
+                       countCards={(e) => uniqueCards(deck, e)}
                        deck={deck}
                        deckDetails={deckMechanics}
                        handleDeckMechanicsToggle={handleDeckMechanicsToggle}
@@ -249,14 +179,14 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
 };
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, summarizedDeck, simplifiedDeck} = state.deckCreation;
+  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, deckstring, simplifiedDeck} = state.deckCreation;
   return {
     filters,
     editingTool,
     deckMechanics,
     imgReadyDecklist,
     deck,
-    summarizedDeck,
+    deckstring,
     simplifiedDeck
   };
 };
@@ -279,7 +209,7 @@ const mapDispatchToProps = (dispatch) => {
       type: 'UPDATE_URL', deckUrl
     }),
     editDeck: (deck) => dispatch({
-      type: 'EDIT_DECK', deck, summarizedDeck: deck.map(c=>c.cardId)
+      type: 'EDIT_DECK', deck, deckstring: deck.map(c=>c.cardId)
     }),
     simplifyDeck: (simplifiedDeck) => dispatch({
       type: 'SIMPLIFY_DECK', simplifiedDeck

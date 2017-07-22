@@ -34,6 +34,10 @@ export default function(state=initialState, action){
       ...state,
       cards: action.cards
     };
+    case 'CURRENT_CARDS_LOADED': return {
+        ...state,
+      currentCardsLoaded: action.currentCardsLoaded
+    };
 
     default: return state;
   }

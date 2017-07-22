@@ -6,7 +6,6 @@ import AboutDeck from './save-deck-assets/about-deck';
 import Preview from './save-deck-assets/preview';
 import {default as saveDeck} from '../../../../../../../firebase/decks/deck/create/deck';
 import {error} from '../../../../../../../utils/messages';
-import 'antd/lib/select/style/css';
 
 const updateDeckText = _.debounce((updateDeckProperty, value) => {
   updateDeckProperty({deckText: value})

@@ -9,14 +9,15 @@ import {fetchData, fetchPatchData} from '../data/cards-data';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';
 import 'antd/lib/popover/style/css';
-import 'antd/lib/message/style/index.css';
+import 'antd/lib/message/style/css';
+import 'antd/lib/select/style/css';
+
 
 class Main extends Component{
   constructor(props) {
     super(props);
     getActiveUser(props.updateActiveUser);
   };
-
 
   componentDidMount() {
     fetchPatchData(this.props.updateCurrentPatch);

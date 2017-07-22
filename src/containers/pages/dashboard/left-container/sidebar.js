@@ -18,6 +18,7 @@ export class Sidebar extends Component{
       editing_social_media: false,
       editing_danger_zone: false,
 
+
       email: null,
       battletag: null,
       favouriteClass: null,
@@ -57,6 +58,7 @@ export class Sidebar extends Component{
       [`editing_${target}`]: isActive
     });
 
+
     const validateInput = (value) => {
       return this.state[value] !== null ? this.state[value] : user[value];
     };
@@ -77,6 +79,7 @@ export class Sidebar extends Component{
       [target]: value
     })
   }
+
 
   handleSelectChange(v, selector){
     this.setState({

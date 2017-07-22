@@ -39,7 +39,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
   const handleCardAddition = (value) => {
     let filteredCard = cards.allCards.find(card => card.name === value);
     let editingDecklistCards = editingDecklist.cards;
-    console.log(Object.entries(editingDecklistCards).filter(k => k[0] === filteredCard.name));
+    // console.log(Object.entries(editingDecklistCards).filter(k => k[0] === filteredCard.name));
     let manaCurve = editingDecklist.manaCurve;
 
     let decklistAfterCardAddition = Object.keys(editingDecklistCards).reduce((result, card) => {
