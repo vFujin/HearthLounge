@@ -8,12 +8,6 @@ export default function (deck){
   let types = cardTypes(deck);
   let manaCurve = calcManaCurve(deck);
 
-  let deckStringObj = {
-    cards: [],
-    heroes: [813],
-    format: 2
-  };
-
   return {
     cards,
     manaCurve,

@@ -3,7 +3,7 @@ import Topbar from './right-container/topbar';
 import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 
-const RightContainer = ({authenticated, deck, patch, filtersView, handleOptionsClick, handleImgSaveClick, cards, activeClass, query, simplifiedDeck, editingTool, user, imgReadyDecklist}) =>{
+const RightContainer = ({authenticated, deck, deckstring, patch, filtersView, handleOptionsClick, handleImgSaveClick, cards, activeClass, query, simplifiedDeck, editingTool, user, imgReadyDecklist}) =>{
 
   const currentView = () => {
     return !editingTool
@@ -21,6 +21,7 @@ const RightContainer = ({authenticated, deck, patch, filtersView, handleOptionsC
                 query={query}
                 activeClass={activeClass}
                 deck={deck}
+                deckstring={deckstring}
                 handleImgSaveClick={handleImgSaveClick}
                 handleOptionsClick={handleOptionsClick}
                 imgReadyDecklist={imgReadyDecklist}/>

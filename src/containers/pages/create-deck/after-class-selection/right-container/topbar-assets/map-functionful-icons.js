@@ -6,16 +6,15 @@ import Tooltip from 'antd/lib/tooltip';
 import Popover from 'antd/lib/popover';
 import PopoverSaveImg from './popover-save-img';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import 'antd/lib/message/style/index.css';
 
-const MapFunctionfulIcons = ({set, handleOptionsClick, handleImgSaveClick, imgReadyDecklist}) => {
+const MapFunctionfulIcons = ({set, deckstring, handleOptionsClick, handleImgSaveClick, imgReadyDecklist}) => {
   const popoverVisibility = (obj) =>{
     switch(obj.icon){
       case 'image': return imgReadyDecklist;
       default: return obj.popover;
     }
   };
-
+  console.log(deckstring)
   const generateSet = () => {
     return topbar_icons(null)[set].map(obj =>
         <li key={obj.icon} id={obj.icon} onClick={(e)=>handleOptionsClick(e, obj.icon)}>
@@ -25,7 +24,7 @@ const MapFunctionfulIcons = ({set, handleOptionsClick, handleImgSaveClick, imgRe
                    content={<PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>}
                    trigger="click"
                    arrowPointAtCenter>
-            <CopyToClipboard text="foox" onCopy={()=>obj.allowCopy ? "foo" : null}>
+            <CopyToClipboard text={deckstring} onCopy={()=>obj.allowCopy ? "foo" : null}>
               <Tooltip key={obj.title} title={_.startCase(obj.title)} placement={obj.icon === "download" ? 'bottomRight' : 'bottom'}>
                 <span className={`hs-icon icon-${obj.icon}`}></span>
               </Tooltip>

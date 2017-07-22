@@ -37,6 +37,9 @@ export default function(state=initialState, action){
     case 'EDIT_DECK': return {
       ...state,
       deck: action.deck,
+    };
+    case 'UPDATE_DECKSTRING': return {
+      ...state,
       deckstring: action.deckstring,
     };
     case 'SIMPLIFY_DECK': return {

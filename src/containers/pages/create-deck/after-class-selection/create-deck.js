@@ -10,9 +10,9 @@ import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboa
 import {captureDecklist} from '../../../../utils/capture-decklist';
 import {uniqueCards} from '../../../../utils/deck/calculate'
 import {deckSimplification} from '../../../../utils/deck';
-import {setDeckstringObj} from '../../../../utils/deck/deckstring';
+import {setDeckstringObj, encodeDeckstring} from '../../../../utils/deck/deckstring';
 
-const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, deckstring,
+const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, deckstring,
                                    toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
   const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
   const {query} = location;
@@ -27,6 +27,9 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
     if (e.button === 2 && uniqueCards(deck, card) > 0) {
       editDeck(_.filter(deck, (c) => c.cardId !== card.cardId));
     }
+    // let ds = ;
+    console.log(deckstring)
+
   };
 
   const toggleCardAmountTooltip = (card) => {
@@ -101,12 +104,15 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
   };
 
   const handleDeckMechanicsToggle = () => {
+    console.log(simplifiedDeck)
     let areActive = deckMechanics === false ? true : false;
     toggleDeckMechanics(areActive);
   };
 
+
   const handleCopyDeckStringClick = () =>{
-    copyDeckUrlToClipboard(deckstring, updateURL);
+    let deckstring = encodeDeckstring(setDeckstringObj(deck, params.class));
+    updateDeckstring(deckstring);
   };
 
   const handleImgSaveClick = (e) =>{
@@ -126,7 +132,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
     let isEditingToolActive = editingTool === false ? true : false;
     let isDecklistReadyForCapture = imgReadyDecklist === false ? true : false;
     switch (icon) {
-      case 'link': return handleCopyDeckStringClick();
+      case 'copy': return handleCopyDeckStringClick();
       case 'image': return switchDecklistClasses(isDecklistReadyForCapture);
       case 'download':
         !editingTool
@@ -138,7 +144,6 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
         break;
       default: return icon;
     }
-
   };
 
   return (
@@ -165,6 +170,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, cards, deck, patch,
                         authenticated={authenticated}
                         query={query}
                         activeClass={params.class}
+                        deckstring={encodeDeckstring(setDeckstringObj(deck, params.class))}
                         deck={deck}
                         simplifiedDeck={simplifiedDeck}
                         handleOptionsClick={handleOptionsClick}
@@ -209,7 +215,10 @@ const mapDispatchToProps = (dispatch) => {
       type: 'UPDATE_URL', deckUrl
     }),
     editDeck: (deck) => dispatch({
-      type: 'EDIT_DECK', deck, deckstring: deck.map(c=>c.cardId)
+      type: 'EDIT_DECK', deck
+    }),
+    updateDeckstring: (deckstring) => dispatch({
+      type: 'UPDATE_DECKSTRING', deckstring
     }),
     simplifyDeck: (simplifiedDeck) => dispatch({
       type: 'SIMPLIFY_DECK', simplifiedDeck

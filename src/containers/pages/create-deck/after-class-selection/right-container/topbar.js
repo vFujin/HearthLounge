@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import StatsOptions from './topbar-assets/stats-options';
 import Filters from './topbar-assets/filters';
 
-const Topbar = ({deck, filtersView, activeClass, query, handleImgSaveClick, handleOptionsClick, imgReadyDecklist}) => {
+const Topbar = ({deck, deckstring, filtersView, activeClass, query, handleImgSaveClick, handleOptionsClick, imgReadyDecklist}) => {
 
   const activeView = () =>{
     return filtersView
         ? <Filters deck={deck} activeClass={activeClass} query={query} filtersActive={filtersView}/>
         : <StatsOptions deck={deck}
+                        deckstring={deckstring}
                         activeClass={activeClass}
                         handleImgSaveClick={handleImgSaveClick}
                         handleOptionsClick={handleOptionsClick}

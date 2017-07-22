@@ -1,4 +1,4 @@
-export default function (dbfId, playerClass, mode) {
+export default function (deck, playerClass, mode) {
 
   const playerClassId = () =>{
     switch(playerClass){
@@ -24,20 +24,22 @@ export default function (dbfId, playerClass, mode) {
     }
   };
 
+
   let deckstringObj ={
     cards: [],
     heroes: [playerClassId()],
-    format: [modeId()]
+    format: modeId()
   };
 
-  let cardArr = deckstringObj.cards.find(c => c[0] === dbfId);
+  deck.filter(card=> {
+    const {dbfId} = card;
+    let cardArr = deckstringObj.cards.find(c => Number(c[0]) === Number(dbfId));
 
-  if (!cardArr) {
-    cardArr = [dbfId, 0];
-    deckstringObj.cards.push(cardArr);
-  }
-
-  cardArr[1]++;
-
+    if (!cardArr) {
+      cardArr = [Number(dbfId), 0];
+      deckstringObj.cards.push(cardArr);
+    }
+    cardArr[1]++;
+  });
   return deckstringObj;
 }
