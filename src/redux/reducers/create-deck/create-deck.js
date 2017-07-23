@@ -46,6 +46,10 @@ export default function(state=initialState, action){
         ...state,
       simplifiedDeck: action.simplifiedDeck
     };
+    case 'UPDATE_PLAYERCLASS': return {
+        ...state,
+      playerClass: action.playerClass
+    };
     default: return state;
   }
 }

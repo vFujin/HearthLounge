@@ -25,9 +25,6 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
     if (e.button === 2 && uniqueCards(deck, card) > 0) {
       editDeck(_.filter(deck, (c) => c.cardId !== card.cardId));
     }
-    // let ds = ;
-    console.log(deckstring)
-
   };
 
   const toggleCardAmountTooltip = (card) => {
@@ -53,19 +50,19 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
 
     if (cards < 1) {
       return <Loader/>;
-    }
-    else {
+    } else {
       return (
           allCards.filter(card => {
             return card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral"
-          }).map(card =>
-                <li onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
+          }).slice(0, 10).map(card =>
+                <li className={toggleImg(card)} onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
                     onClick={deck ? (e) => handleCardClick(e, card) : null}>
                   {toggleCardAmountTooltip(card)}
-
+                  <div className="img-wrapper">
                   <img className={`${toggleImg(card)} ${deck.length >= 30 ? "disabled" : ''} `}
                       src={card.img}
                       alt={card.name}/>
+                  </div>
 
                 </li>
             )

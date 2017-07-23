@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-export class Card extends Component {
+import React from 'react';
 
-  render() {
+const Card = ({cards}) =>{
     return (
         <ul className="cards-container">
-          {this.props.cards.map((card, i)=>
+          {cards.map((card, i)=>
               <li key={i}>
-                <img src={card.img} alt={`${card.name}`}/>
+                <div className="img-wrapper">
+                  <img src={card.img} alt={`${card.name}`}/>
+                </div>
               </li>
           )}
         </ul>
     );
-  }
-}
+};
+
+export default Card;

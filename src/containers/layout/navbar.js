@@ -3,8 +3,7 @@ import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
 import EntryNode from './entry-node';
 
-const Navbar = ({handleLogout, user}) => {
-
+const Navbar = ({handleLogout, user, playerClass}) => {
 
   const listSubmenu = (index, el, sub) =>{
     return (
@@ -43,7 +42,12 @@ const Navbar = ({handleLogout, user}) => {
         </li>
         {navItems.map((element, index) =>
             <li key={index} className={`nav__list--item ${element.url}`}>
-              <Link className="nav__list--linkContainer" to={'/' + element.url} activeClassName="active">
+              <Link className="nav__list--linkContainer"
+                    to={element.url === 'create-deck'
+                        ? playerClass
+                            ? `/${element.url}/${playerClass}`
+                            : `/${element.url}`
+                        : `/${element.url}`} activeClassName="active">
                 <div className="nav__list--link">
                   <span className={`hs-icon ${element.icon}`}></span>
                   <div>{element.name}</div>

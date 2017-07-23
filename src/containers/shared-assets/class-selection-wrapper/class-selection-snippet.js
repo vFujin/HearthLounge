@@ -1,13 +1,23 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router';
 import {icon_filters} from '../../../data/filters';
-import { Link } from 'react-router'
-const ClassSelectionSnippet = (props) =>{
+
+const ClassSelectionSnippet = ({page, updatePlayerClass}) =>{
+
+  const handleClassSelection = (e) =>{
+    let playerClass = e.currentTarget.id;
+    updatePlayerClass(playerClass)
+  };
 
   const listClasses = () =>{
     return (
         icon_filters.playerClass.map(hs_class =>
-            <li key={hs_class.url} className={hs_class.url}>
-              <Link to={`/${props.page}/${hs_class.url}`}>
+            <li key={hs_class.url}
+                className={hs_class.url}
+                id={hs_class.url}
+                onClick={handleClassSelection}>
+              <Link to={`/${page}/${hs_class.url}`}>
                 <span className={`hs-icon icon-${hs_class.url}`}></span>
                 <p>{hs_class.name}</p>
               </Link>
@@ -28,5 +38,12 @@ const ClassSelectionSnippet = (props) =>{
   );
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updatePlayerClass: (playerClass) => (dispatch({
+      type: 'UPDATE_PLAYERCLASS', playerClass
+    }))
+  }
+};
 
-export default ClassSelectionSnippet;
+export default connect(null, mapDispatchToProps)(ClassSelectionSnippet)

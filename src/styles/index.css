@@ -3153,15 +3153,21 @@ footer {
             color: #E7E2DA;
             padding: .5vh 1vh; }
         .container__page .container__page--right .content .container__cards li .img-wrapper:before {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          -ms-transition: all ease 0.4s;
+          -o-transition: all ease 0.4s;
+          transition: all ease 0.4s;
           background: url(http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png) center center no-repeat;
           background-size: contain;
           content: '';
           position: absolute;
           height: 75%;
-          top: 16%;
+          top: 15%;
           width: 81%;
           left: 1vw;
-          z-index: 1; }
+          z-index: 1;
+          opacity: 1; }
         .container__page .container__page--right .content .container__cards li .img-wrapper img {
           position: relative;
           z-index: 2;
@@ -3179,6 +3185,8 @@ footer {
           .container__page .container__page--right .content .container__cards li .img-wrapper img.choosen.disabled {
             background: transparent;
             cursor: pointer; }
+        .container__page .container__page--right .content .container__cards li.choosen .img-wrapper:before {
+          opacity: 0; }
     .container__page .container__page--right .content .container__details {
       width: calc(100% + 1vh); }
       .container__page .container__page--right .content .container__details .container__details--section {

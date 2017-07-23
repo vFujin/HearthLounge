@@ -35,10 +35,13 @@ class Main extends Component{
 
 
   render(){
-    const {authenticated, activeUser, children, location, cards, patch} = this.props;
+    const {authenticated, activeUser, children, location, playerClass, cards, patch} = this.props;
     return (
         <div id="container">
-          <Navbar url={location.pathname} user={this.props.activeUser} handleLogout={(e)=>signOut(e)}/>
+          <Navbar url={location.pathname}
+                  user={activeUser}
+                  playerClass={playerClass}
+                  handleLogout={(e)=>signOut(e)}/>
           {React.cloneElement(children, {
             authenticated,
             activeUser,
@@ -59,7 +62,8 @@ Main.propTypes = {
 const mapStateToProps = state =>{
   const {cards, patch} = state.cards;
   const {authenticated, activeUser} = state.users;
-  return {cards, patch, authenticated, activeUser};
+  const {playerClass} = state.deckCreation;
+  return {cards, patch, authenticated, activeUser, playerClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
