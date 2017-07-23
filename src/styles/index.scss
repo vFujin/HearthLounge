@@ -604,6 +604,7 @@ footer{
       overflow: auto;
       .container__cards{
         justify-content: center;
+        height:100%;
         li{
           cursor: pointer;
           position: relative;

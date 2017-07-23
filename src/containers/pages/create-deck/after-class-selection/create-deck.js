@@ -103,7 +103,6 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
     toggleDeckMechanics(areActive);
   };
 
-
   const handleCopyDeckStringClick = () =>{
     let deckstring = encodeDeckstring(setDeckstringObj(deck, params.class));
     updateDeckstring(deckstring);

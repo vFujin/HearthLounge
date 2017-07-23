@@ -73,6 +73,9 @@
         display: grid;
         grid-template-columns: repeat(7, 11vw);
         grid-column-gap: .4vh;
+         .loading-wrapper{
+          grid-column-start: 4;
+        }
       }
       .container__details {
         display: grid;

@@ -13,7 +13,6 @@ export const addQuery = (query) => {
  * @param {...String} queryNames
  */
 export const removeQuery = (...queryNames) => {
-  console.log(queryNames);
   const location = Object.assign({}, browserHistory.getCurrentLocation());
   queryNames.forEach(q => location.query[q] === false);
   browserHistory.push(location);

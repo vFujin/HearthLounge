@@ -34,10 +34,7 @@ class Cards extends PureComponent {
   listCards = () => {
     if (this.props.cards.allCards.length < 1) {
       return <Loader/>;
-    }
-
-
-    else {
+    } else {
       this.infiniteScroll(this.props.updateCurrentCardsLoaded);
       return this.props.cards.allCards.slice(9, this.props.currentCardsLoaded || 37).map(card =>
           <li key={card.cardId}>

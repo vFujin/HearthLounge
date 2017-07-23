@@ -414,6 +414,8 @@ a:active, a:hover, a:link, a:visited {
       display: grid;
       grid-template-columns: repeat(7, 11vw);
       grid-column-gap: .4vh; }
+      #container .container__page .content .container__cards .loading-wrapper {
+        grid-column-start: 4; }
     #container .container__page .content .container__details {
       display: grid;
       grid-template-columns: repeat(2, calc(50% - 1vh));
@@ -3136,7 +3138,8 @@ footer {
       background-color: #A69E9D;
       border-left: 1px solid #E7E2DA; }
     .container__page .container__page--right .content .container__cards {
-      justify-content: center; }
+      justify-content: center;
+      height: 100%; }
       .container__page .container__page--right .content .container__cards li {
         cursor: pointer;
         position: relative; }
