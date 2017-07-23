@@ -619,19 +619,35 @@ footer{
               padding: .5vh 1vh;
             }
           }
-          img{
-            @include transition(all ease .4s);
-            width:100%;
-            &.choosen{
-              opacity: .3;
+          .img-wrapper {
+            &:before {
+              background: url(http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png) center center no-repeat;
+              background-size: contain;
+              content: '';
+              position: absolute;
+              height: 75%;
+              top: 16%;
+              width: 81%;
+              left: 1vw;
+              z-index: 1;
             }
-            &.disabled{
-              background: rgba(255, 0, 0, .3);
-              cursor: not-allowed;
-            }
-            &.choosen.disabled{
-              background: transparent;
-              cursor: pointer;
+            img {
+              position: relative;
+              z-index: 2;
+              @include transition(all ease .4s);
+              width: 100%;
+              &.choosen {
+                opacity: .3;
+              }
+              &.disabled {
+                background: rgba(255, 0, 0, .3);
+                cursor: not-allowed;
+              }
+              &.choosen.disabled {
+                background: transparent;
+                cursor: pointer;
+              }
+
             }
           }
         }

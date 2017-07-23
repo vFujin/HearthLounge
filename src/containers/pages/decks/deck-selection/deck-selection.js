@@ -58,14 +58,11 @@ class DeckSelection extends Component {
   };
 
   infiniteScroll = (updateDeckList) => {
-    console.log("foo");
     const el = document.querySelector('.table-scroll');
     if (el) {
       el.addEventListener("scroll", function () {
             if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-              getDecks((v) => {
-                return updateDeckList(v)
-              })
+              getDecks((v) => updateDeckList(v))
             }
           }
       )
@@ -106,7 +103,6 @@ class DeckSelection extends Component {
     }
   };
 }
-
 
 const mapStateToProps = (state) =>{
   const {decks, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;

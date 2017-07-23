@@ -34,7 +34,7 @@ const getUniqueAttributes = (data, attribute) =>{
 
 const cards = (cards) =>{
   return {
-    allCards: cards,
+    allCards: cards.filter(card=>card.type !== "Hero"),
     name: getUniqueAttributes(cards, 'name'),
     mechanics: getUniqueAttributes(cards, 'mechanics'),
     faction: getUniqueAttributes(cards, 'faction'),

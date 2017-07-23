@@ -3152,19 +3152,31 @@ footer {
             background-color: #474143;
             color: #E7E2DA;
             padding: .5vh 1vh; }
-        .container__page .container__page--right .content .container__cards li img {
+        .container__page .container__page--right .content .container__cards li .img-wrapper:before {
+          background: url(http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png) center center no-repeat;
+          background-size: contain;
+          content: '';
+          position: absolute;
+          height: 75%;
+          top: 16%;
+          width: 81%;
+          left: 1vw;
+          z-index: 1; }
+        .container__page .container__page--right .content .container__cards li .img-wrapper img {
+          position: relative;
+          z-index: 2;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
           -ms-transition: all ease 0.4s;
           -o-transition: all ease 0.4s;
           transition: all ease 0.4s;
           width: 100%; }
-          .container__page .container__page--right .content .container__cards li img.choosen {
+          .container__page .container__page--right .content .container__cards li .img-wrapper img.choosen {
             opacity: .3; }
-          .container__page .container__page--right .content .container__cards li img.disabled {
+          .container__page .container__page--right .content .container__cards li .img-wrapper img.disabled {
             background: rgba(255, 0, 0, 0.3);
             cursor: not-allowed; }
-          .container__page .container__page--right .content .container__cards li img.choosen.disabled {
+          .container__page .container__page--right .content .container__cards li .img-wrapper img.choosen.disabled {
             background: transparent;
             cursor: pointer; }
     .container__page .container__page--right .content .container__details {

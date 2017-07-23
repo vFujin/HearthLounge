@@ -15,51 +15,75 @@ class Cards extends PureComponent {
   }
 
   infiniteScroll = (updateCurrentCardsLoaded) => {
-    const el = document.querySelector('.infinite');
+    const el = document.querySelector('.content');
 
-    let end = 37;
+    let end = 35;
     console.log(el);
     if (el) {
-
       el.addEventListener("scroll", _.throttle(function () {
         if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-          end += 37;
+          end += 35;
           updateCurrentCardsLoaded(end);
         }
       }, 1000));
     }
   };
 
-
   listCards = () => {
-    if (this.props.cards.allCards.length < 1) {
+    const {cards, currentCardsLoaded, updateCurrentCardsLoaded, location} = this.props;
+    const {allCards} = cards;
+    const {query} = location;
+
+    if (allCards.length < 1) {
       return <Loader/>;
     } else {
-      this.infiniteScroll(this.props.updateCurrentCardsLoaded);
-      return this.props.cards.allCards.slice(9, this.props.currentCardsLoaded || 37).map(card =>
+      this.infiniteScroll(updateCurrentCardsLoaded);
+      return allCards.filter(function (card) {
+        return Object.keys(query).every(function (queryKey) {
+          // if (queryKey === 'mechanics') {
+          //   console.log(queryKey);
+          //   return query[queryKey].some(queryValue => {
+          //     console.log(queryValue, card[queryKey].indexOf(queryValue) > -1);
+          //     return card[queryKey].indexOf(queryValue) > -1;
+          //   });
+          // }
+          if (query[queryKey].constructor === Array) {
+            return query[queryKey].some(queryValue => {
+
+              return card[queryKey] == queryValue
+            });
+          }
+          else {
+            return card[queryKey] == query[queryKey];
+          }
+        })
+      }).slice(0, currentCardsLoaded || 35).map(card =>
           <li key={card.cardId}>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
+              <div className="img-wrapper">
               <img src={card.img} alt={card.name}/>
+              </div>
             </Tooltip>
           </li>
       )
     }
   };
 
-
   render() {
+    const {cards, location} = this.props;
+    const {query} = location;
     return (
         <div className="container__page container__page--twoSided cards">
           <div className="container__page--inner  container__page--left">
             <h3 className="sidebar__header">Filters</h3>
-            <Sidebar cards={this.props.cards}
-                     query={this.props.location.query}/>
+            <Sidebar cards={cards}
+                     query={query}/>
           </div>
           <div className="container__page--inner container__page--right">
-            <CardsTopbarFilters query={this.props.location.query}/>
-            <div className="content infinite">
+            <CardsTopbarFilters query={query}/>
+            <div className="content">
               <ul className="container__cards">
-                {this.listCards(this.props.location.query)}
+                {this.listCards(query)}
               </ul>
             </div>
 
