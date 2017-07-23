@@ -48,13 +48,13 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
       if(amount > 0) return 'choosen';
     };
 
-    if (cards < 1) {
+    if (allCards.length < 1) {
       return <Loader/>;
     } else {
       return (
           allCards.filter(card => {
             return card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral"
-          }).slice(0, 10).map(card =>
+          }).slice(0, 60).map(card =>
                 <li className={toggleImg(card)} onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
                     onClick={deck ? (e) => handleCardClick(e, card) : null}>
                   {toggleCardAmountTooltip(card)}

@@ -9,7 +9,7 @@ const Preview = ({deckText}) =>{
           <div className="line"></div>
           <h1>Preview</h1>
         </div>
-        <div className="section__body">
+        <div className="section__body default-style">
           {convertBBCode(deckText)}
         </div>
       </div>

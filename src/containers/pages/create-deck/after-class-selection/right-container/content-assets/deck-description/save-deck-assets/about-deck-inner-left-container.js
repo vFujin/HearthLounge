@@ -9,20 +9,12 @@ const InnerLeftContainer = ({activeClass, deckTitle, deckType, deckArchetype, ha
           <label htmlFor="deck_title">Deck title:</label>
           <input id="deckTitle"
                  type="text"
-                 placeholder="Deck title i.e SMOrc hunter"
+                 placeholder="SMOrc hunter"
                  onChange={handleInputChange}
                  value={deckTitle}/>
         </div>
         <FormSelect section="type" type={deckType} archetype={deckArchetype} handleSelectChange={handleSelectChange}/>
         <FormSelect section="archetype" type={deckType} archetype={deckArchetype} hsClass={activeClass} handleSelectChange={handleSelectChange}/>
-        <div className="input-wrapper">
-          <label htmlFor="mulligan">Mulligans:</label>
-          <input id="mulligan"
-                 type="text"
-                 placeholder="Deck title i.e SMOrc hunter"
-                 onChange={handleInputChange}
-                 value="random mulligans"/>
-        </div>
       </div>
   )
 };
