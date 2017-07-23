@@ -3139,8 +3139,7 @@ footer {
       justify-content: center; }
       .container__page .container__page--right .content .container__cards li {
         cursor: pointer;
-        position: relative;
-        width: 110px; }
+        position: relative; }
         .container__page .container__page--right .content .container__cards li .tooltip-count {
           position: absolute;
           padding: .5vh;

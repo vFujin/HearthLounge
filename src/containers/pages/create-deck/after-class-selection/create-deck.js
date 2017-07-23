@@ -1,12 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import LazyLoad from 'react-lazyload';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import Loader from '../../../../utils/loader';
-import {loading} from '../../../../utils/messages';
-import {copyDeckUrlToClipboard} from '../../../../utils/copy-deck-url-to-clipboard';
+import {loading, success} from '../../../../utils/messages';
 import {captureDecklist} from '../../../../utils/capture-decklist';
 import {uniqueCards} from '../../../../utils/deck/calculate'
 import {deckSimplification} from '../../../../utils/deck';
@@ -14,7 +12,7 @@ import {setDeckstringObj, encodeDeckstring} from '../../../../utils/deck/deckstr
 
 const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, deckstring,
                                    toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
-  const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
+  const {allCards, cardSet} = cards;
   const {query} = location;
 
   const handleCardClick = (e, card) => {
@@ -60,20 +58,17 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
       return (
           allCards.filter(card => {
             return card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral"
-          })
-              .map(card =>
-                  <LazyLoad key={card.cardId} height={250} overflow throttle={200}>
-                  <li onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
-                      onClick={deck ? (e) => handleCardClick(e, card) : null}>
-                    {toggleCardAmountTooltip(card)}
+          }).map(card =>
+                <li onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
+                    onClick={deck ? (e) => handleCardClick(e, card) : null}>
+                  {toggleCardAmountTooltip(card)}
 
-                    <img className={`${toggleImg(card)} ${deck.length >= 30 ? "disabled" : ''} `}
-                        src={card.img}
-                        alt={card.name}/>
+                  <img className={`${toggleImg(card)} ${deck.length >= 30 ? "disabled" : ''} `}
+                      src={card.img}
+                      alt={card.name}/>
 
-                  </li>
-                  </LazyLoad>
-              )
+                </li>
+            )
       )
     }
   };
@@ -104,7 +99,6 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
   };
 
   const handleDeckMechanicsToggle = () => {
-    console.log(simplifiedDeck)
     let areActive = deckMechanics === false ? true : false;
     toggleDeckMechanics(areActive);
   };
@@ -113,6 +107,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
   const handleCopyDeckStringClick = () =>{
     let deckstring = encodeDeckstring(setDeckstringObj(deck, params.class));
     updateDeckstring(deckstring);
+    success('Successfully copied deckstring to clipboard!');
   };
 
   const handleImgSaveClick = (e) =>{
@@ -156,12 +151,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
                        deckDetails={deckMechanics}
                        handleDeckMechanicsToggle={handleDeckMechanicsToggle}
                        params={params}
-                       name={name}
-                       race={race}
-                       mechanics={mechanics}
-                       type={type}
-                       faction={faction}
-                       cards={allCards}
+                       cards={cards}
                        cardSet={cardSet}
                        imgReadyDecklist={imgReadyDecklist}
                        query={query}/>

@@ -14,7 +14,6 @@ const MapFunctionfulIcons = ({set, deckstring, handleOptionsClick, handleImgSave
       default: return obj.popover;
     }
   };
-  console.log(deckstring)
   const generateSet = () => {
     return topbar_icons(null)[set].map(obj =>
         <li key={obj.icon} id={obj.icon} onClick={(e)=>handleOptionsClick(e, obj.icon)}>
@@ -24,7 +23,7 @@ const MapFunctionfulIcons = ({set, deckstring, handleOptionsClick, handleImgSave
                    content={<PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>}
                    trigger="click"
                    arrowPointAtCenter>
-            <CopyToClipboard text={deckstring} onCopy={()=>obj.allowCopy ? "foo" : null}>
+            <CopyToClipboard text={deckstring} onCopy={()=>obj.allowCopy}>
               <Tooltip key={obj.title} title={_.startCase(obj.title)} placement={obj.icon === "download" ? 'bottomRight' : 'bottom'}>
                 <span className={`hs-icon icon-${obj.icon}`}></span>
               </Tooltip>

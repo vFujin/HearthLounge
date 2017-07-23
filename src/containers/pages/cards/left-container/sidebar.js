@@ -4,7 +4,9 @@ import IconFilter from '../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../shared-assets/filters/input-filter';
 import SliderFilter from '../../../shared-assets/filters/slider-filter';
 
-const Sidebar = ({faction, mechanics, name, query, race, type}) => {
+const Sidebar = ({cards, query}) => {
+  const {name, race, mechanics, type, faction} = cards;
+
   return (
     <div className="sidebar__body">
       <InputFilter attribute={name}      filter="name"      query={query} multiple={false}/>

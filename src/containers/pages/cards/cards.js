@@ -1,148 +1,76 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../../utils/loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
-import LazyLoad from 'react-lazyload';
 
-function cardsService() {
-  // pageSize;
-  // items;
-  //
-  // constructor(items, pageSize = 25){}
-  //
-  // setPageSize(){}
-  // getPage(pageNumber: number) {}
-  // getNextPage() {}
-  //
-  // getPrevPage() {}
-}
+class Cards extends PureComponent {
 
+  componentWillUnmount(){
+    this.props.updateCurrentCardsLoaded(37);
+  }
 
+  infiniteScroll = (updateCurrentCardsLoaded) => {
+    const el = document.querySelector('.infinite');
 
-const Cards = ({cards, location, updateCurrentCardsLoaded, currentCardsLoaded}) => {
-  const {allCards, name, race, mechanics, type, faction, cardSet} = cards;
-  const {query} = location;
-
-
-  const handleCardClick = (e, card) => {
-    // let target = e.target;
-    console.log(card);
-  };
-
-  const infiniteScroll = () => {
-    const el = document.querySelector('.content');
+    let end = 37;
+    console.log(el);
     if (el) {
 
-      el.addEventListener("scroll", function () {
-        // console.log(el.clientHeight, el.scrollHeight, el.scrollTop, el.scrollHeight - el.scrollTop)
+      el.addEventListener("scroll", _.throttle(function () {
         if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-          // updateCurrentCardsLoaded(allCards.slice(0, 100));
-          updateCurrentCardsLoaded(allCards.slice(10, 100))
-          console.log(currentCardsLoaded)
-         currentCardsLoaded.filter(function (card) {
-            return Object.keys(query).every(function (queryKey) {
-              // if (queryKey === 'mechanics') {
-              //   console.log(queryKey);
-              //   return query[queryKey].some(queryValue => {
-              //     console.log(queryValue, card[queryKey].indexOf(queryValue) > -1);
-              //     return card[queryKey].indexOf(queryValue) > -1;
-              //   });
-              // }
-              if (queryKey === 'health') {
-
-              } else if (query[queryKey].constructor === Array) {
-                return query[queryKey].some(queryValue => {
-
-                  return card[queryKey] == queryValue
-                });
-              }
-              else {
-                return card[queryKey] == query[queryKey];
-              }
-            })
-          }).map(card =>
-              <li key={card.cardId} onClick={(e) => handleCardClick(e, card)}>
-
-                <Tooltip placement="left" title={<CardDetails card={card}/>}>
-                  <img src={card.img} alt={card.name}/>
-                </Tooltip>
-              </li>
-          )
+          end += 37;
+          updateCurrentCardsLoaded(end);
         }
-      });
+      }, 1000));
+    }
+  };
 
-      return allCards.filter(function (card) {
-        return Object.keys(query).every(function (queryKey) {
-          // if (queryKey === 'mechanics') {
-          //   console.log(queryKey);
-          //   return query[queryKey].some(queryValue => {
-          //     console.log(queryValue, card[queryKey].indexOf(queryValue) > -1);
-          //     return card[queryKey].indexOf(queryValue) > -1;
-          //   });
-          // }
-          if (queryKey === 'health') {
 
-          } else if (query[queryKey].constructor === Array) {
-            return query[queryKey].some(queryValue => {
+  listCards = () => {
+    if (this.props.cards.allCards.length < 1) {
+      return <Loader/>;
+    }
 
-              return card[queryKey] == queryValue
-            });
-          }
-          else {
-            return card[queryKey] == query[queryKey];
-          }
-        })
-      }).slice(0, 58).map(card =>
-          <li key={card.cardId} onClick={(e) => handleCardClick(e, card)}>
 
+    else {
+      this.infiniteScroll(this.props.updateCurrentCardsLoaded);
+      return this.props.cards.allCards.slice(9, this.props.currentCardsLoaded || 37).map(card =>
+          <li key={card.cardId}>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <img src={card.img} alt={card.name}/>
             </Tooltip>
           </li>
       )
     }
-
-
   };
 
 
-  const listCards = (query) => {
-    if (allCards.length < 1) {
-      return <Loader/>;
-    }
-
-    else return infiniteScroll();
-  };
-
-  return (
-      <div className="container__page container__page--twoSided cards">
-        <div className="container__page--inner  container__page--left">
-          <h3 className="sidebar__header">Filters</h3>
-          <Sidebar name={name}
-                   race={race}
-                   mechanics={mechanics}
-                   type={type}
-                   faction={faction}
-                   cards={allCards}
-                   cardSet={cardSet}
-                   query={query}/>
-        </div>
-        <div className="container__page--inner container__page--right">
-          <CardsTopbarFilters query={query}/>
-          <div className="content">
-            <ul className="container__cards">
-              {listCards(query)}
-            </ul>
+  render() {
+    return (
+        <div className="container__page container__page--twoSided cards">
+          <div className="container__page--inner  container__page--left">
+            <h3 className="sidebar__header">Filters</h3>
+            <Sidebar cards={this.props.cards}
+                     query={this.props.location.query}/>
           </div>
+          <div className="container__page--inner container__page--right">
+            <CardsTopbarFilters query={this.props.location.query}/>
+            <div className="content infinite">
+              <ul className="container__cards">
+                {this.listCards(this.props.location.query)}
+              </ul>
+            </div>
 
+          </div>
         </div>
-      </div>
-  );
-};
+    );
+  }
+}
 
 Cards.propTypes = {
   cards: PropTypes.object,
