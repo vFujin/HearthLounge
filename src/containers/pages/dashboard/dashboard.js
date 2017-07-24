@@ -3,7 +3,7 @@ import {browserHistory} from 'react-router';
 import {Sidebar} from './left-container/sidebar';
 import {Topbar} from './right-container/topbar'
 import Content from './right-container/content';
-import Loader from '../../../utils/loader';
+import Loader from '../../../components/loader';
 
 export class Dashboard extends PureComponent{
 

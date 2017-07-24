@@ -19,6 +19,13 @@
   }
 }
 
+@mixin truncate($container-width){
+  width: $container-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @mixin screen($size) {
   $desktop: "(min-width: 1600px)";
   $laptop: "(min-width: 1366px) and (max-width: 1600px)";

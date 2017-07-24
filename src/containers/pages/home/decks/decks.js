@@ -28,16 +28,16 @@ const DecksBlock = () => {
           <div className="right-container">
 
             <div className="hot-decks">
-              <div className="upper-row">
                 <DeckSnippet/>
                 <DeckSnippet/>
                 <DeckSnippet/>
-              </div>
-              <div className="bottom-row">
                 <DeckSnippet/>
                 <DeckSnippet/>
                 <DeckSnippet/>
-              </div>
+                <DeckSnippet/>
+                <DeckSnippet/>
+                <DeckSnippet/>
+                <DeckSnippet/>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Loader from '../../../../../utils/loader';
+import Loader from '../../../../../components/loader';
 import ManaCurve from '../../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
 import Select from 'antd/lib/select';
 import 'antd/lib/select/style/index.css';

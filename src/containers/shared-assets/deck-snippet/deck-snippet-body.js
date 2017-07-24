@@ -5,25 +5,21 @@ export const DeckSnippetBody = (props) => {
   return (
       <div className={`${prefix}-body`}>
         <div className={`${prefix}-body-header`}>
-          <div className={`${prefix}-mode`}><span className="hs-icon icon-kraken"></span></div>
-          <ManaCurve prefix={prefix}/>
           <div className={`${prefix}-type`}>Renohunter</div>
-          <div className={`${prefix}-dust-needed`}>
-            <span className="hs-icon icon-dust"></span>
-            <p>8910</p>
-          </div>
+          <ManaCurve prefix={prefix}/>
+
         </div>
         <div className={`${prefix}-body-body`}>
-          <div className={`${prefix}-minions`}>10 minions</div>
-          <div className={`${prefix}-spells`}>14 spells</div>
-          <div className={`${prefix}-weapons`}>6 weapons</div>
+          <div className={`${prefix}-minions`}><span className="hs-icon icon-minions"></span> 10</div>
+          <div className={`${prefix}-spells`}><span className="hs-icon icon-fire"></span> 14</div>
+          <div className={`${prefix}-weapons`}><span className="hs-icon icon-warrior"></span> 6</div>
         </div>
         <div className={`${prefix}-body-footer`}>
           <div className={`${prefix}-views`}>
             <span className="hs-icon icon-eye"></span>
-            <p>10k.</p>
+            <p>10k</p>
           </div>
-          <div className={`${prefix}-comments`}>14 comments</div>
+          <div className={`${prefix}-comments`}><span className="hs-icon icon-bubbles2"></span> 42</div>
           <div className={`${prefix}-votes`}><span className="hs-icon icon-circle-up"></span> 14</div>
         </div>
       </div>

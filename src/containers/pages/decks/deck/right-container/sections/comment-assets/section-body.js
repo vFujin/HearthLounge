@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from '../../../view/comment';
-import Loader from '../../../../../../../utils/loader';
+import Loader from '../../../../../../../components/loader';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
 
 const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, handleCommentClick, handleCommentVotingClick, votedComments}) => {

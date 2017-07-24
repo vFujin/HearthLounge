@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
-import Loader from '../../../utils/loader';
+import Loader from '../../../components/loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
 

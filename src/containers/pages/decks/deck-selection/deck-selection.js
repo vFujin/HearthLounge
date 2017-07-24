@@ -6,7 +6,7 @@ import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
 import {getDeckDetails, getDecks} from '../../../../firebase/decks/deck/read';
 import {updateViews} from '../../../../firebase/decks/deck/update';
-import Loader from '../../../../utils/loader';
+import Loader from '../../../../components/loader';
 import NotFound from '../../../shared-assets/not-found';
 
 

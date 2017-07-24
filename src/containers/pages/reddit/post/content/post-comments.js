@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TreeView from 'react-treeview';
-import Loader from '../../../../../utils/loader';
+import Loader from '../../../../../components/loader';
 import CommentHeader from '../comment/header';
 import CommentBody from '../comment/body';
 

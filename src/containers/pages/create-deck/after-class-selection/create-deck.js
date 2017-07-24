@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
-import Loader from '../../../../utils/loader';
+import Loader from '../../../../components/loader';
 import {loading, success} from '../../../../utils/messages';
 import {captureDecklist} from '../../../../utils/capture-decklist';
 import {uniqueCards} from '../../../../utils/deck/calculate'

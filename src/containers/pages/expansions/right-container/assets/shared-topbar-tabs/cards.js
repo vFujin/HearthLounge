@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loader from '../../../../../../utils/loader';
+import Loader from '../../../../../../components/loader';
 
 const Cards = ({cards, expansion}) => {
   const listCards = () =>{

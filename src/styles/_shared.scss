@@ -82,24 +82,25 @@
     color: white;
   }
 }
-.deck-snippet{
+.deck-snippet {
+  @include box-shadow(0, 0, 10px, rgba(black, .3));
+  @include transition(all ease .4s);
   position: relative;
   background-color: $pearl;
-  width: 37.4vh;
   padding: 1vh;
-  margin-right: 1vh;
-  &:last-child{
-    margin-right:0;
+  &:hover{
+    @include box-shadow(0, 0, 10px, $dark-grey);
+    cursor: pointer;
   }
-  .background-icon{
+  .background-icon {
     position: absolute;
-    font-size: 130px;
-    opacity: 0.05;
-    padding-left: 57%;
-    padding-top: 8px;
+    font-size: 8.125em;
+    opacity: 0.15;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
   }
   .deck-snippet-header{
-    display: flex;
     padding-bottom: 4.5px;
     border-bottom: 1px solid $dark-grey;
     .deck-snippet-hs-class {
@@ -115,10 +116,10 @@
       }
     }
     .deck-snippet-about{
-      margin-left: 10px;
       .deck-snippet-title{
         font-weight: bold;
         font-size: 16px;
+        @include truncate(100%);
       }
       .deck-snippet-author, .deck-snippet-created{
         font-size:12px;
@@ -130,6 +131,8 @@
     height: calc(9.5vh - 10px);
     .deck-snippet-body-header{
       display: flex;
+      width: 100%;
+      justify-content: space-between;
       .deck-snippet-mode {
         width: 10%;
         text-align: center;
@@ -141,33 +144,24 @@
           margin-left: 5px ;
         }
       }
-      .deck-snippet-dust-needed{
-        display: flex;
-        span{
-          font-size:25px;
-        }
-      }
       .deck-snippet-mana-curve{
-        width:14%;
         display: flex;
         li{
-          width: 5px;
+          width: 4px;
           background-color: $dark-grey;
           height: 100%;
           margin-right: 2px;
+          &:last-child{
+            margin-right:0;
+          }
         }
       }
-      .deck-snippet-type, .deck-snippet-dust-needed{
+      .deck-snippet-type{
         height:27px;
         line-height: 27px;
       }
       .deck-snippet-type{
         width: 55%;
-      }
-      .deck-snippet-dust-needed{
-        width: 21%;
-        display: flex;
-        justify-content: flex-end;
       }
     }
     .deck-snippet-body-body{
@@ -175,14 +169,26 @@
       display: flex;
       div{
         text-align: left;
-        border-right: 1px solid $light-grey;
         padding: 0 5px;
+        &:after{
+          position: absolute;
+          content: "\00b7";
+          margin-left: 2.5px;
+          color: $dark-grey;
+        }
         &:first-child{
           padding-left:0;
         }
         &:last-child{
           padding-right:0;
           border-right:0;
+          &:after{
+            position: absolute;
+            content: "";
+          }
+        }
+        span{
+          font-size: 16px;
         }
       }
     }
@@ -193,6 +199,8 @@
         width: 33.33%;
         align-items: center;
         display: flex;
+        opacity: .6;
+
         span{
           font-size: 16px;
           margin-right: 5px;
@@ -200,7 +208,6 @@
       }
       .deck-snippet-views{
         display: flex;
-        opacity: .6;
         p{
           padding:0;
           margin: 0;

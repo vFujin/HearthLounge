@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AuthorDetails from './section-footer-deck-author-details';
-import Loader from '../../../../../../../utils/loader';
+import Loader from '../../../../../../../components/loader';
 const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditing, handleDeckEditingClick, descriptionsNotEqual, decksNotEqual}) => {
 
   return (
