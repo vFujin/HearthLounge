@@ -1,6 +1,5 @@
 import React from 'react';
-export const DeckSnippetHeader = (props) => {
-  let prefix = props.prefix;
+export const DeckSnippetHeader = ({prefix}) => {
   return (
       <div className={`${prefix}-header`}>
         <div className={`${prefix}-hs-class`}><span className="hs-icon icon-warlock"></span></div>

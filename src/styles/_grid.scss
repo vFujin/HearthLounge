@@ -1,5 +1,13 @@
 @import 'mixins';
-
+.block-width-1{
+  width: calc(25% - 10px);
+}
+.block-width-2{
+  width: 50%
+}
+.block-width-3{
+  width: 75%
+}
 #container {
   display: grid;
   grid-template-rows: 10vh 83vh 5vh;
@@ -7,22 +15,18 @@
 
   .container__index {
     .home__list {
-      display: grid;
-      grid-template-columns: repeat(4, 24.2vw);
-      grid-template-rows: 42.5vh 39.5vh;
-      grid-column-gap: 1vh;
-      grid-row-gap: 1vh;
-      margin: 0 1vh;
       .home__block.decks {
-        grid-column-start: 1;
-        grid-column-end: 4;
+        .home__block--header{
+          display: grid;
+          grid-template-columns: calc(15% - 10px) auto;
+          align-items: center;
+        }
         .home__block--body{
           .right-container{
             .hot-decks{
               display: grid;
-              height: calc(100% - 10px);
+              height: calc(100% - 2vh);
               grid-row-gap: 1vh;
-              padding: 10px 10px 0 10px;
               grid-template-rows: repeat(2, calc(50% - 5px));
               grid-template-columns: repeat(5, calc(20% - .8vh));
               grid-column-gap: 1vh;
@@ -36,13 +40,6 @@
             }
           }
         }
-      }
-      .home__block.arena-picker {
-        grid-column-start: 4;
-      }
-      .home__block.expansions, .home__block.twitch {
-        grid-column-start: 2;
-        grid-column-end: 4;
       }
     }
   }

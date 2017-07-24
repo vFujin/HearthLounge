@@ -7,15 +7,13 @@ import {Link} from 'react-router';
 import _ from 'lodash';
 const DecksBlock = () => {
   return (
-      <li className={`home__block decks block-width-1`}>
+      <li className={`home__block decks block-width-3`}>
         <div className="home__block--header">
           <Link to="/decks">
             <span className={`hs-icon icon-decks`}></span>
             <p>{_.upperCase("decks")}</p>
-            <div className="class-filter">
-              <ClassSelection/>
-            </div>
           </Link>
+          <ClassSelection/>
         </div>
         <div className="home__block--body">
           <div className="left-container">
@@ -24,9 +22,7 @@ const DecksBlock = () => {
               <ModeSelection />
             </div>
           </div>
-
           <div className="right-container">
-
             <div className="hot-decks">
                 <DeckSnippet/>
                 <DeckSnippet/>
