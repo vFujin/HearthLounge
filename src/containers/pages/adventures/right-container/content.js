@@ -6,7 +6,7 @@ import {adventureWingExists, adventureBossExists} from '../../../../utils/checkI
 import AdventureDetails from './details';
 import NotFound from '../../../shared-assets/not-found';
 
-const Content = ({adventure, boss, cards, details, }) => {
+const Content = ({adventure, boss, cards, details}) => {
   let detailsPath = adventure_detail_tabs.map(tab => tab.url).includes(details);
   let wingDetailsPath = boss
       ? adventureWingExists(adventure, details)

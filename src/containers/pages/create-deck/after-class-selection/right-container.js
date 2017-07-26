@@ -11,6 +11,7 @@ const RightContainer = ({authenticated, deck, deckstring, patch, filtersView, ha
         : <DeckOptions activeClass={activeClass}
                        simplifiedDeck={simplifiedDeck}
                        patch={patch}
+                       deckstring={deckstring}
                        authenticated={authenticated}
                        user={user}/>
   };

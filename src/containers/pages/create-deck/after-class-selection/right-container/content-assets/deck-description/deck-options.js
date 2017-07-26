@@ -11,7 +11,7 @@ const updateDeckText = _.debounce((updateDeckProperty, value) => {
   updateDeckProperty({deckText: value})
 }, 300);
 
-const DeckOptions = ({authenticated, activeClass, patch, user, deckType, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
+const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckType, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
 
   const handleInputChange = (e) => {
     let target = e.target.id;
@@ -33,7 +33,7 @@ const DeckOptions = ({authenticated, activeClass, patch, user, deckType, deckTit
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
     if(authenticated && user){
-      saveDeck(patch, activeClass, user.username, deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, simplifiedDeck, deckText, user.uid);
+      saveDeck(patch, activeClass, user.username, deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, simplifiedDeck, deckText, deckstring, user.uid);
     } else {
       error("You have to be logged in in order to save your deck.", 6)
     }

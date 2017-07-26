@@ -23,7 +23,7 @@ const MapFunctionfulIcons = ({set, deckstring, handleOptionsClick, handleImgSave
                    content={<PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>}
                    trigger="click"
                    arrowPointAtCenter>
-            <CopyToClipboard text={deckstring} onCopy={()=>obj.allowCopy}>
+            <CopyToClipboard text={obj.allowCopy ? deckstring : null}>
               <Tooltip key={obj.title} title={_.startCase(obj.title)} placement={obj.icon === "download" ? 'bottomRight' : 'bottom'}>
                 <span className={`hs-icon icon-${obj.icon}`}></span>
               </Tooltip>

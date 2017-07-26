@@ -4,7 +4,7 @@ import {topbar_tabs} from '../data/expansion-details';
 /**
  * Checks if adventure exists
  *
- * @example hearthlounge.firebaseapp.io/naxxramas
+ * @example hearthlounge.firebaseapp.io/adventures/naxxramas
  * adventurePath -> naxxramas
  *
  * @param {string} adventurePath - adventure path taken from url
@@ -12,14 +12,14 @@ import {topbar_tabs} from '../data/expansion-details';
  */
 export const adventureExists = (adventurePath) =>{
   return adventure_details
-         .map(a => a.adventure)
+         .map(adventure => adventure.url)
          .includes(adventurePath);
 };
 
 /**
  * Checks if adventure wing exists
  *
- * @example hearthlounge.firebaseapp.io/naxxramas/the-arachnid-quarter
+ * @example hearthlounge.firebaseapp.io/adventures/naxxramas/the-arachnid-quarter
  * adventurePath -> naxxramas
  * detailsPath   -> the-arachnid-quarter
  *
@@ -29,7 +29,7 @@ export const adventureExists = (adventurePath) =>{
  */
 export const adventureWingExists = (adventurePath, detailsPath) => {
   return adventure_details
-         .filter(a => a.adventure === adventurePath)[0].wings.details
+         .filter(adventure => adventure.url === adventurePath)[0].wings.details
          .map(wing => wing.url)
          .includes(detailsPath)
 };
@@ -37,7 +37,7 @@ export const adventureWingExists = (adventurePath, detailsPath) => {
 /**
  * Checks if adventure wing exists AND if boss exists in particular wing
  *
- * @example hearthlounge.firebaseapp.io/naxxramas/the-arachnid-quarter/maexxna
+ * @example hearthlounge.firebaseapp.io/adventures/naxxramas/the-arachnid-quarter/maexxna
  * adventurePath -> naxxramas
  * detailsPath   -> the-arachnid-quarter
  * bossPath      -> maexxna
@@ -49,7 +49,7 @@ export const adventureWingExists = (adventurePath, detailsPath) => {
  */
 export const adventureBossExists = (adventurePath, detailsPath, bossPath) => {
   return adventure_details
-         .filter(a => a.adventure === adventurePath)[0].wings.details
+         .filter(adventure => adventure.url=== adventurePath)[0].wings.details
          .filter(wing => wing.url === detailsPath)
          .map(wing=>wing.bosses)[0]
          .map(boss => boss.url)
@@ -59,7 +59,7 @@ export const adventureBossExists = (adventurePath, detailsPath, bossPath) => {
 /**
  * Checks if expansion exists
  *
- * @example hearthlounge.firebaseapp.io/goblins-vs-gnomes
+ * @example hearthlounge.firebaseapp.io/expansions/goblins-vs-gnomes
  * expansionPath -> goblins-vs-gnomes
  *
  * @param {string} expansionPath - expansion path taken from url
@@ -74,7 +74,7 @@ export const expansionExists = (expansionPath) => {
 /**
  * Checks if expansion detail exists
  *
- * @example hearthlounge.firebaseapp.io/goblins-vs-gnomes/overview
+ * @example hearthlounge.firebaseapp.io/expansions/goblins-vs-gnomes/overview
  * expansionPath -> goblins-vs-gnomes
  * detailsPath   -> overview
  *

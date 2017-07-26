@@ -70,6 +70,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
     }
   };
 
+
   const handleKeyShortcuts = (e) => {
     // let areDeckMechanicsActive = filters === false ? true : false;
     let areFiltersActive = filters === false ? true : false;

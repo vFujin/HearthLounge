@@ -6,7 +6,7 @@ import {adventure_details} from '../../../../data/adventure-details';
 const Bosses = ({adventure}) => {
 
   const tableData = (wing, adventure) => {
-    let adventureDetailsFromUrl = adventure_details.filter(a => a.adventure === adventure)
+    let adventureDetailsFromUrl = adventure_details.filter(a => a.url === adventure)
         .map(a => a.wings.details.map(w => w.url).some(w => w === wing.url))[0];
 
     const checkAdventure = (adventure, boss) => {
@@ -28,7 +28,7 @@ const Bosses = ({adventure}) => {
   };
 
   const bosses = () =>{
-    return adventure_details.filter(a => a.adventure === adventure).map((a, index) =>
+    return adventure_details.filter(a => a.url === adventure).map((a, index) =>
           <table key={index}>
             <tbody>
             {a.wings.details.map((wing, i) =>

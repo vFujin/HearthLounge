@@ -18,7 +18,7 @@ const ClassChallenges = ({adventure}) => {
 
   return (
       <div className="class-challenges inner-container">
-        {adventure_details.filter(a => a.adventure === adventure).map((adventure, index) =>
+        {adventure_details.filter(a => a.url === adventure).map((adventure, index) =>
           <ul key={index}>
             {listClassChallengeCards(adventure)}
           </ul>

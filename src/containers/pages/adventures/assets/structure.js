@@ -5,7 +5,7 @@ import { adventure_details } from '../../../../data/adventure-details';
 const Structure = ({adventure}) => {
 
   const structure = () =>{
-    return adventure_details.filter(a=> a.adventure === adventure).map((a, index) =>
+    return adventure_details.filter(a=> a.url === adventure).map((a, index) =>
         <ul key={index}>
           <li>{a.structure.wing_amount} wings</li>
           <li>
