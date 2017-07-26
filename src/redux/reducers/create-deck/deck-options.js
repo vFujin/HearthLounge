@@ -1,6 +1,8 @@
 const initialState = {
   deckType: "standard",
-  deckArchetype: "quest"
+  deckArchetype: "quest",
+  deckAdventure: '',
+  deckBoss: ''
 };
 export default function(state=initialState, action){
   switch(action.type){

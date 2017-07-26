@@ -265,25 +265,3 @@ export const icon_filters = {
     }
   ]
 };
-
-// function (card) {
-//   return Object.keys(query).every(function (queryKey) {
-//     if (queryKey === 'mechanics') {
-//       let arr = [];
-//       return query[queryKey].some(queryValue => {
-//         return card[queryKey].indexOf(queryValue) > -1;
-//       });
-//     }
-//     if (queryKey === 'health') {
-//
-//     } else if (query[queryKey].constructor === Array) {
-//       return query[queryKey].some(queryValue => {
-//
-//         return card[queryKey] == queryValue
-//       });
-//     }
-//     else {
-//       return card[queryKey] == query[queryKey];
-//     }
-//   })
-// }

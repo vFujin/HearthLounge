@@ -20,10 +20,6 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    &:hover, &:focus{
-      border-color: $pearl;
-      outline:none;
-    }
     .ant-select-selection--single{
       height:31px;
     }
@@ -99,23 +95,14 @@
       color: $light-grey;
       border-bottom:1px dashed $light-grey;
       &:hover{
-        background-color: $dark-grey;
+        background-color: rgba(black, .5);
         color: $pearl;
-        border-bottom: 1px dashed$pearl;
       }
       &:last-child{
         border-bottom: 0;
         &:hover{
           border-bottom: 0;
         }
-      }
-    }
-    .ant-select-dropdown-menu-item{
-      display: flex;
-      align-items: center;
-
-      span{
-        font-size: 2vh;
       }
     }
     .classes-list{
@@ -125,16 +112,41 @@
     .region-list{
       justify-content: center;
     }
+    .ant-select-dropdown-menu-item{
+      display: flex;
+      align-items: center;
+
+      span{
+        font-size: 2vh;
+      }
+    }
+
     .ant-select-dropdown-menu-item-selected,
     .ant-select-dropdown-menu-item-active,
     .ant-select-dropdown-menu-item-selected:hover{
-      background: rgba(0, 0, 0, 0.4);
+      background-color: rgba($dark-grey, .4);
       color: $pearl;
-      border-bottom:1px dashed $pearl;
       font-weight: normal;
+    }
+    .ant-select-dropdown-menu-item-group{
+      border-bottom: 0;
+      &:hover{
+        border-bottom: 0;
+      }
+      .ant-select-dropdown-menu-item-group-title{
+        background: $sea-color;
+        color: $pearl;
+      }
+      .ant-select-dropdown-menu-item-group-list{
+        .ant-select-dropdown-menu-item-selected,
+        .ant-select-dropdown-menu-item:hover{
+          background: rgba($light-grey, .2);
+        }
+      }
     }
   }
 }
+
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:after,
 .ant-select-dropdown.ant-select-dropdown--multiple .ant-select-dropdown-menu-item-selected:hover:after{
   color: $pearl;

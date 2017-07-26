@@ -50,9 +50,8 @@ export const boss_details = [
 
 export const adventure_details = [
   {
-    adventure: "naxxramas",
-    singular_adventure_name: "Klątwa Naxxramas",
-    plural_aventure_name: "Klątwy Naxxramas",
+    adventure: "Curse of Naxxramas",
+    url: 'naxxramas',
     description: 'Klątwa Naxxramas jest pięcio skrzydłową przygodą, gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Naxxramas w World of Warcraft. Gracz pokonując skrzydła może dostać 30 nowych kart dodanych w tej przygodzie.',
     cost: {
       wings: [
@@ -257,9 +256,8 @@ export const adventure_details = [
     }
   },
   {
-    adventure: "blackrock-mountain",
-    singular_adventure_name: "Czarna Góra",
-    plural_aventure_name: "Czarnej Góry",
+    adventure: "Blackrock Mountain",
+    url: "blackrock-mountain",
     description: 'gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Blackrock w World of Warcraft',
     cost: {
       wings: [
@@ -472,11 +470,10 @@ export const adventure_details = [
     }
   },
   {
-    adventure: "the-league-of-explorers",
-    singular_adventure_name: "Liga Eksplorerów",
-    plural_aventure_name: "Ligi Eksplorerów",
+    adventure: "The League of Explorers",
+    url: "the-league-of-explorers",
     description: '',
-    img: 'https://raw.githubusercontent.com/xNehel/clownfiesta-collector-react/master/src/images/home.expansion-slider/liga_odkrywcow.jpg',
+    img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/home.expansion-slider/liga_odkrywcow.jpg',
     cost: {
       wings: [
         {
@@ -660,9 +657,8 @@ export const adventure_details = [
     }
   },
   {
-    adventure: "karazhan",
-    singular_adventure_name: "Pewnej Nocy w Karazhanie",
-    plural_aventure_name: "Pewnej Nocy w Karazhanie",
+    adventure: "One Night in Karazhan",
+    url: "karazhan",
     description: '',
     cost: {
       wings: [

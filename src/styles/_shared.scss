@@ -157,8 +157,8 @@
         }
       }
       .deck-snippet-type{
-        height:27px;
-        line-height: 27px;
+        height: 20px;
+        line-height: 20px;
       }
       .deck-snippet-type{
         width: 55%;
@@ -193,14 +193,13 @@
       }
     }
     .deck-snippet-body-footer{
-      margin-top:7px;
+      margin-top: 10px;
       display: flex;
+      justify-content: space-between;
       div{
-        width: 33.33%;
         align-items: center;
         display: flex;
         opacity: .6;
-
         span{
           font-size: 16px;
           margin-right: 5px;
