@@ -28,9 +28,9 @@ const EntryNode = ({user, handleLogout}) =>{
       <li className="nav__list--item login">
         <Link className="nav__list--linkContainer" to={user ? '/dashboard' : '/sign-in'}>
           <div className="nav__list--link">
-            {(user && user.photoURL)
+            {(user && user.avatar)
                 ? <div className="nav__list--imageWrapper">
-                    <img src={user.photoURL} alt={`${user.username}'s profile`}/>
+                    <img src={user.avatar} alt={`${user.username}'s profile`}/>
                   </div>
                 : <span className="hs-icon icon-login"></span>}
             {entryLabel()}
@@ -45,7 +45,7 @@ export default EntryNode;
 EntryNode.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string,
-    photoURL: PropTypes.string
+    avatar: PropTypes.string
   }),
   handleLogout: PropTypes.func.isRequired
 };

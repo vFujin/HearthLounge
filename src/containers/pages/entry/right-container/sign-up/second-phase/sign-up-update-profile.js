@@ -14,9 +14,9 @@ class SignUpUpdateProfile extends PureComponent {
   }
 
   uploadedImage = () => {
-    const {activeUser, signUp_profilePic, updateFormProperty} = this.props;
+    const {activeUser, signUp_avatar, updateFormProperty} = this.props;
 
-    return signUp_profilePic
+    return signUp_avatar
         ? "✓ Image successfully uploaded."
         : <ImageUpload activeUser={activeUser}
                        updateFormProperty={updateFormProperty}/>

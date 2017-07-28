@@ -7,6 +7,7 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
+import {getSimplifiedUser} from "../../../../../../firebase/user/read/index";
 import {getComment, getComments} from '../../../../../../firebase/decks/comments/read';
 import {updateCommentRating} from '../../../../../../firebase/decks/comments/update';
 import {postComment} from '../../../../../../firebase/decks/comments/create/comment';
@@ -14,6 +15,7 @@ import {postComment} from '../../../../../../firebase/decks/comments/create/comm
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
 }, 300);
+
 
 class DeckComments extends Component {
   /**
@@ -29,7 +31,12 @@ class DeckComments extends Component {
       const {uid} = this.props.activeUser;
       getComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
     }
-    getComments(deckId, false, comments => this.props.updateComments(deckId, comments));
+    getComments(deckId, false, comments => {
+      this.props.updateComments(deckId, comments);
+      let users = {};
+      comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>Object.assign(users, {[c.authorId]: userDetails})));
+      this.props.updateUsersDetails(users)
+    });
   }
 
   /**
@@ -62,13 +69,6 @@ class DeckComments extends Component {
     return true;
   }
 
-
-  /**
-   * Once we leave deck component/page we have to reset user voted comments in redux,
-   * so they won't "blink" while disappearing due to saved state.
-   *
-   * Function purely for better user experience.
-   */
   componentWillUnmount(){
     // const {deckId} = this.props.params;
     this.props.updateComments([])
@@ -115,11 +115,10 @@ class DeckComments extends Component {
     updateCommentRating(deckId, commentId, uid, vote, (voteType)=>this.props.updateCommentVote(voteType));
     getComment(deckId, commentId, comment=>this.props.updateCommentVotes(comment), uid);
     // this.props.updateCommentVotes({upvotes: 0, downvotes: 0, votes: 0, id: ""})
-
   };
 
   render() {
-    const {comments, params, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments} = this.props;
+    const {comments, params, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
     const { deckId } = params.deckId;
     let mappedComments = Object.values(comments)[0];
 
@@ -135,6 +134,7 @@ class DeckComments extends Component {
                        votedComments={votedComments}
                        deckComment={deckComment}
                        previewIsActive={previewIsActive}
+                       usersDetails={usersDetails}
                        handleCommentVotingClick={this.handleCommentVotingClick}/>
 
           <SectionFooter commentBoxIsActive={commentBoxIsActive}
@@ -152,8 +152,8 @@ class DeckComments extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const {comments, vote, commentId, commentVotes, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments} = state.deckView;
-  return {comments, vote, deckComment, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments}
+  const {comments, vote, commentId, commentVotes, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = state.deckView;
+  return {comments, vote, deckComment, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments, usersDetails}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -172,6 +172,9 @@ const mapDispatchToProps = (dispatch) => {
     })),
     updateComments: (deckId, comments) => (dispatch({
       type: 'FETCH_COMMENTS',  comments: {[deckId]: _.map(comments)}
+    })),
+    updateUsersDetails: (usersDetails) => (dispatch({
+      type: 'FETCH_USERS_DETAILS', usersDetails
     })),
     updateUserVotedDeckComments: (uid, deckId, votedComments) => (dispatch({
       type: 'FETCH_USER_VOTED_COMMENTS',

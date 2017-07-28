@@ -4,20 +4,20 @@ import Comment from '../../../view/comment';
 import Loader from '../../../../../../../components/loader';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
 
-const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, handleCommentClick, handleCommentVotingClick, votedComments}) => {
+const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments}) => {
   const listComments = () =>{
-    if(comments === undefined){
+    if(comments === undefined || Object.keys(usersDetails).length === 0){
       return <Loader/>
-    }
-    else{
+    } else {
       return comments.map((comment, i)=> <Comment key={i}
-                                                   comment={comment}
-                                                   deckId={deckId}
-                                                   commentId={commentId}
-                                                   commentVotes={commentVotes}
-                                                   votedComments={votedComments}
-                                                   handleCommentClick={handleCommentClick}
-                                                   handleCommentVotingClick={handleCommentVotingClick}/>
+                                                  comment={comment}
+                                                  deckId={deckId}
+                                                  usersDetails={usersDetails}
+                                                  commentId={commentId}
+                                                  commentVotes={commentVotes}
+                                                  votedComments={votedComments}
+                                                  handleCommentClick={handleCommentClick}
+                                                  handleCommentVotingClick={handleCommentVotingClick}/>
       )
     }
   };

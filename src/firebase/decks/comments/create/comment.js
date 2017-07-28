@@ -27,7 +27,6 @@ export function postComment(patch, text, deckId, uid){
       downvotes: 0
     };
 
-
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
     // updates[`/deck-comment-ratings/${deckId}/${newCommentKey}`] = newCommentRatings;

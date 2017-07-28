@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const AuthorDetails = (props) =>{
   console.log(props)
-  const {username, prestige, photoURL} = props.deckAuthor;
+  const {username, prestige, avatar} = props.deckAuthor;
   const hasAvatar = () =>{
-    return photoURL
-        ? <img src={photoURL} alt={`${username}s avatar`}/>
+    return avatar
+        ? <img src={avatar} alt={`${username}s avatar`}/>
         : <span className="hs-icon icon-login"></span>;
   };
 

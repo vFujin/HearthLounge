@@ -4,6 +4,7 @@ const initialState = {
   votedComments: {},
   commentBoxIsActive: false,
   previewIsActive: false,
+  usersDetails: {},
   commentVotes: {
     upvotes: 0,
     downvoted: 0,
@@ -45,6 +46,13 @@ export default function(state=initialState, action) {
       return {
         ...state,
         comments: action.comments
+      };
+    case 'FETCH_USERS_DETAILS':
+      return{
+          ...state,
+          usersDetails: {
+            ...action.usersDetails
+          }
       };
     case 'FETCH_USER_VOTED_COMMENTS':
       return {

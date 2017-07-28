@@ -74,8 +74,8 @@ const mapDispatchToProps = (dispatch) => {
     updateCards: (cards) => dispatch({
       type: 'UPDATE_CARDS', cards
     }),
-    updateActiveUser: (authenticated, activeUser, photoURL) => dispatch({
-      type: 'UPDATE_ACTIVE_USER', authenticated, activeUser, photoURL
+    updateActiveUser: (authenticated, activeUser, avatar) => dispatch({
+      type: 'UPDATE_ACTIVE_USER', authenticated, activeUser, avatar
     })
   }
 };

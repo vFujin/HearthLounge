@@ -53,5 +53,5 @@ export default StepProgressBar;
 
 StepProgressBar.propTypes = {
   signUp_firstStep: PropTypes.string.isRequired,
-  signUp_secondStep: PropTypes.string.isRequired
+  signUp_secondStep: PropTypes.string
 };

@@ -1,7 +1,7 @@
 import {refParent} from '../../../keys';
 
 /**
- * Reads simplified user details, that is username, profile picture and prestige
+ * Reads simplified user details; that is username, profile picture, prestige and role
  *
  * @param {string} uid - User ID
  * @param {function} callback - returns user simplified details
@@ -11,8 +11,9 @@ export default function (uid, callback) {
     const user = snapshot.child(uid).val();
     let simplifiedUser = {
       username: user.username,
-      profilePic: user.profilePic,
-      prestige: user.prestige
+      avatar: user.avatar ? user.avatar : false,
+      prestige: user.prestige,
+      role: user.role
     };
 
     callback(simplifiedUser);

@@ -4,7 +4,7 @@ import SignUpForm from './first-phase/sign-up-form';
 import StepProgressBar from './step-progress-bar';
 
 const SignUp = ({children, activeUser, usernameFree, signUp_username, signUp_email, signUp_confirmEmail, signUp_password,
-                  signUp_confirmPassword, signUp_profilePic, signUp_firstStep, signUp_secondStep, handleInputChange, handleFormSubmit,
+                  signUp_confirmPassword, signUp_avatar, signUp_firstStep, signUp_secondStep, handleInputChange, handleFormSubmit,
                   handleCheckboxClick, tos, location, updateFormProperty, handleUpdateProfileFormSubmit}) => {
 
   const signUp = () =>{
@@ -22,7 +22,7 @@ const SignUp = ({children, activeUser, usernameFree, signUp_username, signUp_ema
             activeUser,
             signUp_username,
             usernameFree,
-            signUp_profilePic,
+            signUp_avatar,
             updateFormProperty,
             signUp_firstStep,
             signUp_secondStep,

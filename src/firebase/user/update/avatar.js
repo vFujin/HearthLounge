@@ -21,15 +21,15 @@ export default function (e, activeUser, updateFormProperty){
 
     if(!fileType){
       error("Image must be a .jpg, .jpeg or .png", 6);
-      updateFormProperty({signUp_profilePic: false});
+      updateFormProperty({signUp_avatar: false});
     } else if(fileSize >= 2 * 1024 * 1024){
       error("Image size must be less than 2mb", 6);
-      updateFormProperty({signUp_profilePic: false})
+      updateFormProperty({signUp_avatar: false})
     } else if(fileNameLength > 10){
       error("Image name must be less or equal than 10 characters", 10);
-      updateFormProperty({signUp_profilePic: false})
+      updateFormProperty({signUp_avatar: false})
     } else {
-      let storageRef = firebaseStorage().ref(`${activeUser.uid}/profilePicture/${file.name}`);
+      let storageRef = firebaseStorage().ref(`${activeUser.uid}/avatar/${file.name}`);
       let task = storageRef.put(file);
 
       task.on('state_changed',
@@ -46,19 +46,19 @@ export default function (e, activeUser, updateFormProperty){
             } else {
               error("Couldn't upload image. Try again later", 6);
             }
-            updateFormProperty({signUp_profilePic: false})
+            updateFormProperty({signUp_avatar: false})
           },
           function complete() {
-            let photoURL = task.snapshot.downloadURL;
+            let avatar = task.snapshot.downloadURL;
             success("Image has been uploaded!");
 
-            let updatedProfilePic = {
+            let updatedAvatar = {
               ...activeUser,
-              photoURL
+              avatar
             };
 
             let updates = {};
-            updates[`users/${activeUser.uid}`] = updatedProfilePic;
+            updates[`users/${activeUser.uid}`] = updatedAvatar;
             ref.update(updates, function (err) {
               if (err) {
                 error("Something's not quite right. Try again later.", 4);
@@ -67,7 +67,7 @@ export default function (e, activeUser, updateFormProperty){
               }
             });
 
-            updateFormProperty({signUp_profilePic: true})
+            updateFormProperty({signUp_avatar: true})
           }
       )
     }

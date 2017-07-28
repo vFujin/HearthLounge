@@ -5,7 +5,7 @@ import InputLabel from './assets/input-label';
 const UserDetails = ({user, handleEditClick, isEditing, handleAvatarDeletion, handleInputChange, handleSaveClick}) => {
 
   const hasAvatar = () =>{
-    if(!user.photoURL){
+    if(!user.avatar){
       return <div>Upload avatar: <input type="file" name="avatar" id="avatar" disabled={!isEditing}/></div>
     }
     return <div><button onClick={handleAvatarDeletion} >Delete avatar</button> || <input type="file" name="avatar" id="avatar" disabled={!isEditing}/></div>

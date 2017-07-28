@@ -19,6 +19,7 @@ export default function (activeUser, username, updateSignUpStatus){
     let updates = {};
     updates[`users/${activeUser.uid}`] = updatedUsername;
     updates[`usernames/${username}`] = activeUser.uid;
+
     return ref.update(updates, function (err) {
       if (err) {
         updateSignUpStatus("success", "failure");

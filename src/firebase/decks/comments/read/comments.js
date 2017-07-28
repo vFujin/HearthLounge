@@ -12,7 +12,7 @@ export default function (deckId, uid, callback) {
           downvotes: comment.downvotes,
           votes: comment.votes,
           id: comment.id,
-          author: comment.author,
+          authorId: comment.authorId,
           created: comment.created,
           patch: comment.patch,
           text: comment.text,
