@@ -52,7 +52,7 @@ a:active, a:hover, a:link, a:visited {
   display: inline-flex; }
 
 @font-face {
-  font-family: 'Hearthstone';
+  font-family: 'hearthstone';
   src: url("../icons/hearthstone.ttf") format("truetype"), url("../icons/hearthstone.woff") format("woff"), url("../icons/hearthstone.svg#Hearthstone") format("svg");
   font-weight: normal;
   font-style: normal; }
@@ -72,28 +72,28 @@ a:active, a:hover, a:link, a:visited {
 .icon-knights-of-the-frozen-throne:before {
   content: "\e93e"; }
 
-.icon-prestige-2:before {
+.icon-rank-2:before {
   content: "\e93f"; }
 
-.icon-prestige-3:before {
+.icon-rank-3:before {
   content: "\e940"; }
 
-.icon-prestige-4:before {
+.icon-rank-4:before {
   content: "\e941"; }
 
-.icon-prestige-5:before {
+.icon-rank-5:before {
   content: "\e942"; }
 
-.icon-prestige-6:before {
+.icon-rank-6:before {
   content: "\e943"; }
 
-.icon-prestige-7:before {
+.icon-rank-7:before {
   content: "\e944"; }
 
-.icon-prestige-8:before {
+.icon-rank-8:before {
   content: "\e945"; }
 
-.icon-prestige-1:before {
+.icon-rank-1:before {
   content: "\e946"; }
 
 .icon-paypal:before {
@@ -1857,122 +1857,6 @@ a:active, a:hover, a:link, a:visited {
   .blizzard_post strong {
     color: white; }
 
-.deck-snippet {
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s;
-  position: relative;
-  background-color: #E7E2DA;
-  padding: 1vh; }
-  .deck-snippet:hover {
-    -webkit-box-shadow: 0 0 10px #474143;
-    -moz-box-shadow: 0 0 10px #474143;
-    box-shadow: 0 0 10px #474143;
-    cursor: pointer; }
-  .deck-snippet .background-icon {
-    position: absolute;
-    font-size: 8.125em;
-    opacity: 0.15;
-    top: 50%;
-    right: 10px;
-    transform: translate(0, -50%); }
-  .deck-snippet .deck-snippet-header {
-    padding-bottom: 4.5px;
-    border-bottom: 1px solid #474143; }
-    .deck-snippet .deck-snippet-header .deck-snippet-hs-class span {
-      font-size: 35px;
-      position: relative;
-      top: 5px;
-      padding: 5px;
-      border: 2px solid black;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%; }
-    .deck-snippet .deck-snippet-header .deck-snippet-about .deck-snippet-title {
-      font-weight: bold;
-      font-size: 16px;
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis; }
-    .deck-snippet .deck-snippet-header .deck-snippet-about .deck-snippet-author, .deck-snippet .deck-snippet-header .deck-snippet-about .deck-snippet-created {
-      font-size: 12px; }
-  .deck-snippet .deck-snippet-body {
-    margin-top: 4.5px;
-    height: calc(9.5vh - 10px); }
-    .deck-snippet .deck-snippet-body .deck-snippet-body-header {
-      display: flex;
-      width: 100%;
-      justify-content: space-between; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mode {
-        width: 10%;
-        text-align: center; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mode span {
-          color: darkgreen;
-          font-size: 25px; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mode p {
-          margin-left: 5px; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mana-curve {
-        display: flex; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mana-curve li {
-          width: 4px;
-          background-color: #474143;
-          height: 100%;
-          margin-right: 2px; }
-          .deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mana-curve li:last-child {
-            margin-right: 0; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-type {
-        height: 20px;
-        line-height: 20px; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-type {
-        width: 55%; }
-    .deck-snippet .deck-snippet-body .deck-snippet-body-body {
-      margin-top: 10px;
-      display: flex; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-body div {
-        text-align: left;
-        padding: 0 5px; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-body div:after {
-          position: absolute;
-          content: "\00b7";
-          margin-left: 2.5px;
-          color: #474143; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-body div:first-child {
-          padding-left: 0; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-body div:last-child {
-          padding-right: 0;
-          border-right: 0; }
-          .deck-snippet .deck-snippet-body .deck-snippet-body-body div:last-child:after {
-            position: absolute;
-            content: ""; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-body div span {
-          font-size: 16px; }
-    .deck-snippet .deck-snippet-body .deck-snippet-body-footer {
-      margin-top: 10px;
-      display: flex;
-      justify-content: space-between; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-footer div {
-        align-items: center;
-        display: flex;
-        opacity: .6; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-footer div span {
-          font-size: 16px;
-          margin-right: 5px; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-views {
-        display: flex; }
-        .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-views p {
-          padding: 0;
-          margin: 0; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-comments {
-        justify-content: center; }
-      .deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-votes {
-        justify-content: flex-end; }
-
 .list-with-filters-layout .left-container ul li {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
@@ -2394,6 +2278,141 @@ form .divider {
     -webkit-transform: perspective(140px) rotateY(180deg);
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
+.component.simplifiedUser {
+  display: flex; }
+  .component.simplifiedUser .simplifiedUser__avatar {
+    height: 50px;
+    width: 50px; }
+    .component.simplifiedUser .simplifiedUser__avatar span {
+      height: 100%;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      font-size: 39px; }
+    .component.simplifiedUser .simplifiedUser__avatar img {
+      width: 100%;
+      height: 100%; }
+  .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div {
+    display: flex; }
+    .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div span {
+      font-size: 12px; }
+.component.deck-snippet {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  position: relative;
+  background-color: #E7E2DA;
+  padding: 1vh; }
+  .component.deck-snippet:hover {
+    -webkit-box-shadow: 0 0 10px #474143;
+    -moz-box-shadow: 0 0 10px #474143;
+    box-shadow: 0 0 10px #474143;
+    cursor: pointer; }
+  .component.deck-snippet .background-icon {
+    position: absolute;
+    font-size: 8.125em;
+    opacity: 0.15;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%); }
+  .component.deck-snippet .deck-snippet-header {
+    padding-bottom: 4.5px;
+    border-bottom: 1px solid #474143; }
+    .component.deck-snippet .deck-snippet-header .deck-snippet-hs-class span {
+      font-size: 35px;
+      position: relative;
+      top: 5px;
+      padding: 5px;
+      border: 2px solid black;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%; }
+    .component.deck-snippet .deck-snippet-header .deck-snippet-about .deck-snippet-title {
+      font-weight: bold;
+      font-size: 16px;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    .component.deck-snippet .deck-snippet-header .deck-snippet-about .deck-snippet-author, .component.deck-snippet .deck-snippet-header .deck-snippet-about .deck-snippet-created {
+      font-size: 12px; }
+  .component.deck-snippet .deck-snippet-body {
+    margin-top: 4.5px;
+    height: calc(9.5vh - 10px); }
+    .component.deck-snippet .deck-snippet-body .deck-snippet-body-header {
+      display: flex;
+      width: 100%;
+      justify-content: space-between; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mode {
+        width: 10%;
+        text-align: center; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mode span {
+          color: darkgreen;
+          font-size: 25px; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mode p {
+          margin-left: 5px; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mana-curve {
+        display: flex; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mana-curve li {
+          width: 4px;
+          background-color: #474143;
+          height: 100%;
+          margin-right: 2px; }
+          .component.deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-mana-curve li:last-child {
+            margin-right: 0; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-type {
+        height: 20px;
+        line-height: 20px; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-header .deck-snippet-type {
+        width: 55%; }
+    .component.deck-snippet .deck-snippet-body .deck-snippet-body-body {
+      margin-top: 10px;
+      display: flex; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-body div {
+        text-align: left;
+        padding: 0 5px; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-body div:after {
+          position: absolute;
+          content: "\00b7";
+          margin-left: 2.5px;
+          color: #474143; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-body div:first-child {
+          padding-left: 0; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-body div:last-child {
+          padding-right: 0;
+          border-right: 0; }
+          .component.deck-snippet .deck-snippet-body .deck-snippet-body-body div:last-child:after {
+            position: absolute;
+            content: ""; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-body div span {
+          font-size: 16px; }
+    .component.deck-snippet .deck-snippet-body .deck-snippet-body-footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-footer div {
+        align-items: center;
+        display: flex;
+        opacity: .6; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-footer div span {
+          font-size: 16px;
+          margin-right: 5px; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-views {
+        display: flex; }
+        .component.deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-views p {
+          padding: 0;
+          margin: 0; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-comments {
+        justify-content: center; }
+      .component.deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-votes {
+        justify-content: flex-end; }
+
 /*
  *  Select
  */

@@ -20,7 +20,7 @@ export default function (email, password, updateSignUpStatus, reducer){
           email: user.email,
           uid: user.uid,
           updatedProfile: false,
-          prestige: 1,
+          rank: 1,
           role: 'user'
         });
         browserHistory.push('/sign-up/update-profile');
@@ -47,7 +47,7 @@ export function saveUser(user){
 
     let newUser = {
       updatedProfile: false,
-      prestige: 1,
+      rank: 1,
       role: 'user',
       username: email,
       email,

@@ -16,12 +16,12 @@ class Deck extends PureComponent{
     if(currentDeck){
       updateDecklist(deck);
       getUser(currentDeck.authorId, deckAuthor=>{
-        const { avatar, username, prestige, region, battletag, facebook, twitter, twitch, youtube, favouriteClass} = deckAuthor;
+        const { avatar, username, rank, region, battletag, facebook, twitter, twitch, youtube, favouriteClass} = deckAuthor;
 
         updateDeckAuthorDetails({
           avatar,
           username,
-          prestige,
+          rank,
           region,
           battletag,
           facebook,

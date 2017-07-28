@@ -48,26 +48,31 @@ class DeckComments extends Component {
    *                             (in this case when Firebase finishes the authentication)
    * @returns {boolean} - If true, comments component rerenders
    */
-  shouldComponentUpdate(nextProps){
-    const {deckId} = this.props.params;
-
-    if(nextProps.activeUser !== this.props.activeUser){
-      if(this.props.activeUser) {
-        const {uid} = this.props.activeUser;
-        getComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
-        // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
-        //   // Needs refactor
-        //   const {uid} = this.props.activeUser;
-        //   let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
-        //   let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
-        //
-        //   let toObj = _.zipObject(votedCommentId, voteType);
-        //   this.props.updateUserVotedDeckComments(uid, deckId, toObj)
-        // });
-      }
-    }
-    return true;
-  }
+  // shouldComponentUpdate(nextProps){
+  //   const {deckId} = this.props.params;
+  //
+  //   if(nextProps.activeUser !== this.props.activeUser){
+  //     if(this.props.activeUser) {
+  //       const {uid} = this.props.activeUser;
+  //       getComments(deckId, uid, comments => {
+  //         this.props.updateComments(deckId, comments)
+  //         let users = {};
+  //         comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>Object.assign(users, {[c.authorId]: userDetails})));
+  //         this.props.updateUsersDetails(users)
+  //       });
+  //       // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
+  //       //   // Needs refactor
+  //       //   const {uid} = this.props.activeUser;
+  //       //   let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
+  //       //   let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
+  //       //
+  //       //   let toObj = _.zipObject(votedCommentId, voteType);
+  //       //   this.props.updateUserVotedDeckComments(uid, deckId, toObj)
+  //       // });
+  //     }
+  //   }
+  //   return true;
+  // }
 
   componentWillUnmount(){
     // const {deckId} = this.props.params;
@@ -88,6 +93,7 @@ class DeckComments extends Component {
   handleAddCommentClick = () => {
     this.props.toggleCommentBox(true);
   };
+  
 
   handleHideCommentClick = () => {
     this.props.toggleCommentBox(false);
@@ -99,7 +105,12 @@ class DeckComments extends Component {
     const {deckId} = params;
     const {uid} = activeUser;
     postComment(patch, deckComment, deckId, uid);
-    getComments(deckId, uid, (comments)=>updateComments(deckId, comments))
+    getComments(deckId, uid, (comments)=>{
+      updateComments(deckId, comments);
+      let users = {};
+      comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>Object.assign(users, {[c.authorId]: userDetails})));
+      this.props.updateUsersDetails(users)
+    })
   };
 
   handleCommentClick = (e) =>{

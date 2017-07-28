@@ -1,21 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import UserAvatar from '../../../../../../../components/user/user-avatar'
 const AuthorDetails = (props) =>{
-  console.log(props)
-  const {username, prestige, avatar} = props.deckAuthor;
-  const hasAvatar = () =>{
-    return avatar
-        ? <img src={avatar} alt={`${username}s avatar`}/>
-        : <span className="hs-icon icon-login"></span>;
-  };
+  const {username, rank, avatar} = props.deckAuthor;
 
   return (
       <div className="details">
-        {hasAvatar()}
+        <UserAvatar avatar={avatar} username={username} />
         <div className="general-info-wrapper">
           <p>{username}</p>
-          <p>{prestige}</p>
+          <p>{rank}</p>
         </div>
         <div className="game-details-wrapper">
           <span className="hs-icon icon-battletag"></span>

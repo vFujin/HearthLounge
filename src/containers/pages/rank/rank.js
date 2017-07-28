@@ -1,17 +1,17 @@
 import React from 'react';
 
-const Prestige = () =>{
+const Rank = () =>{
   return (
     <p>
-      What is Prestige? How do I earn (and lose) it?
-      {/*The primary way to gain prestige is by posting good comments*/}
-      You gain prestige when:
+      What is Ranking syst w/e? How do I earn (and lose) it?
+      {/*The primary way to gain rank is by posting good comments*/}
+      You gain rank when:
       deck is voted up: +2
       deck comment is voted up: +2
       post is voted up: +5
       post comment is voted up: +5
 
-      You lose prestige when:
+      You lose rank when:
       your deck comment is downvoted: -2
       your post comment is downvoted: -2
       you vote down a deck comment: -1
@@ -24,4 +24,4 @@ const Prestige = () =>{
   )
 };
 
-export default Prestige;
+export default Rank;

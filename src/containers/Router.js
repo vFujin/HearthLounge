@@ -46,7 +46,7 @@ import SignIn from './pages/entry/right-container/sign-in/sign-in';
 import NotFound from './shared-assets/not-found';
 
 import {Dashboard} from './pages/dashboard/dashboard';
-import Prestige from './pages/prestige/prestige';
+import Rank from './pages/rank/rank';
 
 import Main from './Main';
 
@@ -125,7 +125,7 @@ const App = ({store}) =>{
         </Route>
 
         <Route path="dashboard" component={Dashboard} />
-        <Route path="prestige" component={Prestige} />
+        <Route path="rank" component={Rank} />
 
         <Route path="*" component={NotFound} />
       </Route>

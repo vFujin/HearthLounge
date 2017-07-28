@@ -109,7 +109,7 @@ export class Sidebar extends Component{
             <li className="about">
               <div className="avatar">{user.avatar ? <img src={user.avatar} alt={`${user.username}'s profile`}/> : <span className="hs-icon icon-login"></span>}</div>
               <div className="username">{user.username}</div>
-              <div className="prestige">{user.prestige}</div>
+              <div className="rank">{user.rank}</div>
             </li>
 
             <UserDetails user={user}

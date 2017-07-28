@@ -8,14 +8,14 @@ const Comment = ({comment, deckId, commentVotes, votedComments, usersDetails, ha
   const {authorId, created, patch, text, commentId, votes, voteType} = comment;
   let user = {};
   Object.entries(usersDetails).filter(o => o[0] === authorId).map(o =>user = o[1]);
-  const {prestige, avatar, role, username} = user;
+  const {rank, avatar, role, username} = user;
 
   let commented = timeDifference(created, false);
   let detailedDate = timeDifference(created, true);
   // console.log(Object.values(votedComments)[0][id])
   return (
     <div className="comment">
-      <SimplifiedUserSnippet prestige={prestige} role={role} avatar={avatar} username={username} />
+      <SimplifiedUserSnippet rank={rank} role={role} avatar={avatar} username={username} />
       <div className="details">
         <div className="header">
           <Tooltip title={detailedDate} placement="right">

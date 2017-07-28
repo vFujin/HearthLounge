@@ -1,7 +1,7 @@
 import {refParent} from '../../../keys';
 
 /**
- * Reads simplified user details; that is username, profile picture, prestige and role
+ * Reads simplified user details; that is username, profile picture, rank and role
  *
  * @param {string} uid - User ID
  * @param {function} callback - returns user simplified details
@@ -12,7 +12,7 @@ export default function (uid, callback) {
     let simplifiedUser = {
       username: user.username,
       avatar: user.avatar ? user.avatar : false,
-      prestige: user.prestige,
+      rank: user.rank,
       role: user.role
     };
 
