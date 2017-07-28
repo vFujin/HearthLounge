@@ -10,29 +10,28 @@ import {success, error} from '../../../../utils/messages';
  * @param {string} deckId - deck id
  * @param {string} uid - user id
  */
-export function postComment(patch, author, text, deckId, uid){
-  if(patch && author && text && deckId && uid){
+export function postComment(patch, text, deckId, uid){
+  if(patch && text && deckId && uid){
 
-    const newCommentKey = refParent(`decks/${deckId}/comments}`).push().key;
+    const newCommentKey = ref.child(`decks/${deckId}/comments}`).push().key;
     console.log(newCommentKey)
 
     let newComment = {
+      patch,
+      text,
+      authorId: uid,
       created: +new Date(),
-      id: newCommentKey,
+      commentId: newCommentKey,
       votes: 0,
       upvotes: 0,
-      downvotes: 0,
-      authorId: uid,
-      patch,
-      author,
-      text
+      downvotes: 0
     };
 
 
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
     // updates[`/deck-comment-ratings/${deckId}/${newCommentKey}`] = newCommentRatings;
-    updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
+    // updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
 
     return ref.update(updates).then(()=>success('Successfully added comment!'),
               err=>error("Couldn't add comment. Try again later.")

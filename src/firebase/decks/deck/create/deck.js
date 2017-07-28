@@ -14,34 +14,34 @@ import {success, error} from '../../../../utils/messages';
  * @param {string || null} boss - If deck mode is selected as 'Adventure' and 'Boss' has been choosen, returns string, else null
  * @param {string[]} deck - Array of cards
  * @param {string} description - Deck description
+ * @param {string} deckstring - Deck string
  * @param {string} uid - User ID
  */
-export default function (patch, hsClass, author, title, type, archetype, adventure, boss, deck, description, uid){
-  if(patch && hsClass && author && title && type && archetype && deck && description && uid) {
-
+export default function (patch, hsClass, title, type, archetype, adventure, boss, deck, description, deckstring, uid){
+  if(patch && hsClass && title && type && archetype && deck && description && deckstring && uid) {
     const validateAdventureType = (type === 'adventures' && adventure && boss) ? type : 'wild';
     const validateAdventure = (adventure && boss) ? adventure : null;
     const validateBoss = (adventure && boss) ? boss : null;
     const deckId = ref.child(`decks`).push().key;
 
     let newDeck = {
-      patch,
-      hsClass,
-      author,
-      title,
       archetype,
       deck,
+      deckstring,
       description,
+      hsClass,
+      patch,
+      title,
       deckId,
-      created: + new Date(),
-      upvotes: 0,
-      downvotes: 0,
-      views: 0,
-      votes: 0,
-      authorId: uid,
-      type: validateAdventureType,
       adventure: validateAdventure,
-      boss: validateBoss
+      authorId: uid,
+      boss: validateBoss,
+      created: + new Date(),
+      downvotes: 0,
+      type: validateAdventureType,
+      upvotes: 0,
+      views: 0,
+      votes: 0
     };
 
     let updates = {};

@@ -3,8 +3,8 @@ import {timeDifference} from '../../../../../utils/unix-to-date';
 import MoreOptions from '../../../../shared-assets/posts/more-options';
 import Tooltip from 'antd/lib/tooltip';
 
-const Comment = ({comment, deckId, commentVotes, commentId, votedComments, handleCommentVotingClick}) => {
-  const {created, author, patch, text, id, votes, voteType} = comment;
+const Comment = ({comment, deckId, commentVotes, votedComments, handleCommentVotingClick}) => {
+  const {created, author, authorId, patch, text, commentId, votes, voteType} = comment;
   // let votes = ;
   let commented = timeDifference(created, false);
   let detailedDate = timeDifference(created, true);
@@ -33,9 +33,9 @@ const Comment = ({comment, deckId, commentVotes, commentId, votedComments, handl
           {text}
         </div>
         <div className="footer">
-          <div data-commentid={id} onClick={handleCommentVotingClick} id="upvote" className={`up peripheral ${(voteType && voteType ==="upvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-up"></span></div>
-          <div className="votes peripheral">{(commentVotes && commentVotes.id === id) ? commentVotes.votes : votes}</div>
-          <div data-commentid={id} onClick={handleCommentVotingClick} id="downvote" className={`down peripheral ${(voteType && voteType ==="downvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-down"></span></div>
+          <div data-commentid={commentId} onClick={handleCommentVotingClick} id="upvote" className={`up peripheral ${(voteType && voteType ==="upvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-up"></span></div>
+          <div className="votes peripheral">{(commentVotes && commentVotes.id === commentId) ? commentVotes.votes : votes}</div>
+          <div data-commentid={commentId} onClick={handleCommentVotingClick} id="downvote" className={`down peripheral ${(voteType && voteType ==="downvote") ? 'voted' : ''}`}><span className="hs-icon icon-circle-down"></span></div>
         </div>
       </div>
     </div>

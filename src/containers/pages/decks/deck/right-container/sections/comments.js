@@ -95,11 +95,11 @@ class DeckComments extends Component {
   };
 
   handlePostCommentClick = () => {
-    const {patch} = this.props;
-    const {deckId} = this.props.params;
-    const {username, uid} = this.props.activeUser;
-    postComment(patch, username, this.props.deckComment, deckId, uid);
-    getComments(deckId, (comments)=>this.props.updateComments(deckId, comments))
+    const {patch, params, activeUser, deckComment, updateComments} = this.props;
+    const {deckId} = params;
+    const {uid} = activeUser;
+    postComment(patch, deckComment, deckId, uid);
+    getComments(deckId, uid, (comments)=>updateComments(deckId, comments))
   };
 
   handleCommentClick = (e) =>{
@@ -121,7 +121,6 @@ class DeckComments extends Component {
   render() {
     const {comments, params, commentVotes, commentId, deckComment, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments} = this.props;
     const { deckId } = params.deckId;
-
     let mappedComments = Object.values(comments)[0];
 
     return (
