@@ -176,15 +176,16 @@
     font-size: 12px;
     cursor: pointer;
     outline: 0;
+    @include transition(all ease .2s);
     @include box-shadow(0, 0, 5px, $dark-grey);
+    &__default{
+      @include button($pearl, $dark-grey, $sea-color);
+    }
     &__delete{
-      background: $death_knight;
-      color: $pearl;
-      border: 1px solid $pearl;
-      @include transition(all ease .2s);
-      &:hover{
-        background: darken($death_knight, 10%);
-      }
+      @include button($pearl, $death_knight);
+    }
+    &__update{
+      @include button($pearl, $dark-green);
     }
   }
 }

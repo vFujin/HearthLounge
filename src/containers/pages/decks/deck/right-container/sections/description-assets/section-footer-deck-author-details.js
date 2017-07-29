@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UserAvatar from '../../../../../../../components/user/user-avatar'
+import Icon from "../../../../../../../components/icons/icon";
+
 const AuthorDetails = (props) =>{
   const {username, rank, avatar} = props.deckAuthor;
 
@@ -12,18 +14,26 @@ const AuthorDetails = (props) =>{
           <p>{rank}</p>
         </div>
         <div className="game-details-wrapper">
-          <span className="hs-icon icon-battletag"></span>
+          <Icon name="battletag"/>
           <p>region</p>
           <p>favourite class</p>
         </div>
         <div className="social-media-wrapper">
-          <span className="hs-icon icon-facebook"></span>
-          <span className="hs-icon icon-twitter"></span>
-          <span className="hs-icon icon-twitch"></span>
-          <span className="hs-icon icon-youtube"></span>
+          <Icon name="facebook"/>
+          <Icon name="twitter"/>
+          <Icon name="twitch"/>
+          <Icon name="youtube"/>
         </div>
       </div>
   )
 };
 
 export default AuthorDetails;
+
+AuthorDetails.propTypes = {
+  props: PropTypes.shape({
+    username: PropTypes.string,
+    rank: PropTypes.number,
+    avatar: PropTypes.string,
+  })
+};

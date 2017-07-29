@@ -13,7 +13,6 @@ const DeckDescription = ({activeUser, deckAuthor, currentDeck, deckEditing, hand
     updateDeckDescription(value);
   };
 
-
   return (
       <div className="container__details--section container__details--description">
         <SectionHeader title={title} />
