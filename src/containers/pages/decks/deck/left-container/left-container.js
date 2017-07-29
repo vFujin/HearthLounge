@@ -4,8 +4,7 @@ import _ from 'lodash';
 import Loader from '../../../../../components/loader';
 import ManaCurve from '../../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
 import Select from 'antd/lib/select';
-import 'antd/lib/select/style/index.css';
-
+import Icon from '../../../../../components/icons/icon';
 const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
 
 
@@ -17,17 +16,21 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
       let cardNames = Object.keys(editingDecklist.cards);
       return _.map(editingDecklist.cards).map((c, i)=>
         <tr key={i}>
-          <td>set</td>
+          <td>
+            <Icon name={c.set} type="set"/>
+          </td>
           <td>{cardNames[i]}</td>
           <td>{c.amount}</td>
-          <td><span className={`hs-icon icon-mana-${c.cost}`}></span></td>
+          <td>
+            <Icon name={c.cost} type="mana"/>
+          </td>
 
           {deckEditing
               ? <td>
                 <div id={cardNames[i]}
                      data-cost={c.cost}
                      data-amount={c.amount} onClick={(e)=>handleCardRemovalClick(e)}>
-                  <span   className="hs-icon icon-cross"></span>
+                  <Icon name="cross"/>
                 </div>
               </td>
             : null}
@@ -108,7 +111,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
       <div className={`container__page--inner container__page--left ${deckEditing ? 'edit-mode' : ''}`}>
         <h3 className="sidebar__header">
           Deck Details
-          <span className={`hs-icon icon-${currentDeck.type === "standard" ? "mammoth" : currentDeck.type}`}></span>
+          <Icon name={currentDeck.type} type="mode"/>
         </h3>
         <div className="sidebar__body">
           <div className="container__mana-curve">
@@ -143,7 +146,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
               : null
           }
           <div className="background">
-            <span className={`hs-icon icon-${currentDeck.hsClass}`}></span>
+            <Icon name={currentDeck.hsClass}/>
           </div>
 
         </div>

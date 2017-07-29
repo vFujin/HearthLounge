@@ -13,6 +13,6 @@ UserAvatar.propTypes = {
   avatar: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.bool
-  ]).isRequired,
-  username: PropTypes.string.isRequired
+  ]),
+  username: PropTypes.string
 };

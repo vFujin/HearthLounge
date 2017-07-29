@@ -1,7 +1,7 @@
 import React from 'react';
 import {timeDifference} from '../../../../../utils/unix-to-date';
 import MoreOptions from '../../../../shared-assets/posts/more-options';
-import SimplifiedUserSnippet from '../../../../../components/simplified-user-snippet';
+import SimplifiedUserSnippet from '../../../../../components/user/simplified-user-snippet';
 import Tooltip from 'antd/lib/tooltip';
 
 const Comment = ({comment, deckId, commentVotes, votedComments, usersDetails, handleCommentVotingClick}) => {

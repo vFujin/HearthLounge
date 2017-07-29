@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import UserAvatar from './user/user-avatar';
-import UserRank from './user/user-rank';
+import UserAvatar from './user-avatar';
+import UserRank from './user-rank';
 
 const SimplifiedUserSnippet = ({rank, avatar, role, username}) =>{
   return (
@@ -22,11 +22,11 @@ const SimplifiedUserSnippet = ({rank, avatar, role, username}) =>{
 export default SimplifiedUserSnippet;
 
 SimplifiedUserSnippet.propTypes = {
-  rank: PropTypes.number.isRequired,
-  role: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
+  rank: PropTypes.number,
+  role: PropTypes.string,
+  username: PropTypes.string,
   avatar: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.bool
-  ]).isRequired
+  ])
 };

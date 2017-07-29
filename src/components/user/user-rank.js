@@ -13,5 +13,5 @@ const UserRank = ({rank}) => {
 export default UserRank;
 
 UserRank.propTypes = {
-  rank: PropTypes.number.isRequired
+  rank: PropTypes.number
 };
