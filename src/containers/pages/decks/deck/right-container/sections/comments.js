@@ -26,53 +26,22 @@ class DeckComments extends Component {
    * Any user page refreshing / typing URL by hand will fail to fetch; see shouldComponentUpdate below
    */
   componentDidMount() {
-    const {deckId} = this.props.params;
-    if(this.props.activeUser){
-      const {uid} = this.props.activeUser;
-      getComments(deckId, uid, comments => this.props.updateComments(deckId, comments));
+    const {activeUser, params, updateComments, updateUsersDetails} = this.props;
+    const {deckId} = params;
+    if(activeUser){
+      const {uid} = activeUser;
+      getComments(deckId, uid, comments => updateComments(deckId, comments));
     }
     getComments(deckId, false, comments => {
-      this.props.updateComments(deckId, comments);
       let users = {};
-      comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>Object.assign(users, {[c.authorId]: userDetails})));
-      this.props.updateUsersDetails(users)
+      updateComments(deckId, comments);
+      comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>{
+        let updateUsers = Object.assign(users, {[c.authorId]: userDetails});
+        updateUsersDetails(users);
+        return updateUsers;
+      }));
     });
   }
-
-  /**
-   * If user refreshes / goes to the deck by URL there has to be validation if he is logged in,
-   * and since Firebase does only async calls we can't depend only on componentDidMount
-   * (since component can be mounted already, but async call didn't finish yet)
-   *
-   * @param {object} nextProps - Next properties that will trigger the render
-   *                             (in this case when Firebase finishes the authentication)
-   * @returns {boolean} - If true, comments component rerenders
-   */
-  // shouldComponentUpdate(nextProps){
-  //   const {deckId} = this.props.params;
-  //
-  //   if(nextProps.activeUser !== this.props.activeUser){
-  //     if(this.props.activeUser) {
-  //       const {uid} = this.props.activeUser;
-  //       getComments(deckId, uid, comments => {
-  //         this.props.updateComments(deckId, comments)
-  //         let users = {};
-  //         comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>Object.assign(users, {[c.authorId]: userDetails})));
-  //         this.props.updateUsersDetails(users)
-  //       });
-  //       // fetchUserVotedDeckComments(deckId, uid, userVotedComments => {
-  //       //   // Needs refactor
-  //       //   const {uid} = this.props.activeUser;
-  //       //   let voteType = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id[uid]);
-  //       //   let votedCommentId = _.map(userVotedComments).filter(id => Object.keys(id).includes(uid)).map(id => id.id);
-  //       //
-  //       //   let toObj = _.zipObject(votedCommentId, voteType);
-  //       //   this.props.updateUserVotedDeckComments(uid, deckId, toObj)
-  //       // });
-  //     }
-  //   }
-  //   return true;
-  // }
 
   componentWillUnmount(){
     // const {deckId} = this.props.params;
@@ -93,7 +62,7 @@ class DeckComments extends Component {
   handleAddCommentClick = () => {
     this.props.toggleCommentBox(true);
   };
-  
+
 
   handleHideCommentClick = () => {
     this.props.toggleCommentBox(false);

@@ -11,12 +11,12 @@ export default function (deckId, uid, callback) {
           upvotes: comment.upvotes,
           downvotes: comment.downvotes,
           votes: comment.votes,
-          id: comment.id,
+          commentId: comment.commentId,
           authorId: comment.authorId,
           created: comment.created,
           patch: comment.patch,
           text: comment.text,
-          voteType: comment[uid]
+          voteType: uid ? comment[uid] : null
         });
       });
       callback(arr)

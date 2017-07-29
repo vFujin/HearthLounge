@@ -6,7 +6,7 @@ import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-
 
 const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments}) => {
   const listComments = () =>{
-    if(comments === undefined || Object.keys(usersDetails).length === 0){
+    if(comments === undefined){
       return <Loader/>
     } else {
       return comments.map((comment, i)=> <Comment key={i}
