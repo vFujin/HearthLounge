@@ -16,7 +16,6 @@ const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
 }, 300);
 
-
 class DeckComments extends Component {
   /**
    * Using componentDidMount just to fetch user voted comments that is logged in,

@@ -5,6 +5,7 @@ import Loader from '../../../../../components/loader';
 import ManaCurve from '../../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
 import Select from 'antd/lib/select';
 import Icon from '../../../../../components/icons/icon';
+import {cardRarityBackground} from "../../../../../utils/deck/card-rarity-background";
 const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
 
 
@@ -15,7 +16,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
 
       let cardNames = Object.keys(editingDecklist.cards);
       return _.map(editingDecklist.cards).map((c, i)=>
-        <tr key={i}>
+        <tr key={i} className={cardRarityBackground(c.rarity)}>
           <td>
             <Icon name={c.set} type="set"/>
           </td>

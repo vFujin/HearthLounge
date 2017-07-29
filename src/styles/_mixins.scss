@@ -137,14 +137,13 @@
   }
 
   &.gradient{
-    background: -moz-linear-gradient(left,  rgba($color,.4) 0%, rgba(0,0,0,0) 10%);
-    background: -webkit-linear-gradient(left,  rgba($color,.4) 0%,rgba(0,0,0,0) 10%);
-    background: linear-gradient(to right,  rgba($color,.4) 0%,rgba(0,0,0,0) 10%);
-    color: $dark-grey;
+    background: -moz-linear-gradient(left,  rgba($color,.4) 0%, rgba(0,0,0,0) 15%);
+    background: -webkit-linear-gradient(left,  rgba($color,.4) 0%,rgba(0,0,0,0) 15%);
+    background: linear-gradient(to right,  rgba($color,.4) 0%,rgba(0,0,0,0) 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid $color;
   }
-
 }
 
 @mixin social_media_icon_color($color, $background_color){

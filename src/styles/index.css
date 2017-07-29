@@ -497,10 +497,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #FF7D0A;
     color: #000; }
   .druid.gradient {
-    background: -moz-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(255, 125, 10, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 125, 10, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #FF7D0A; }
 
@@ -542,10 +542,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #ABD473;
     color: #000; }
   .hunter.gradient {
-    background: -moz-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(171, 212, 115, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(171, 212, 115, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #ABD473; }
 
@@ -587,10 +587,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #69CCF0;
     color: #000; }
   .mage.gradient {
-    background: -moz-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(105, 204, 240, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(105, 204, 240, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #69CCF0; }
 
@@ -632,10 +632,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #F58CBA;
     color: #000; }
   .paladin.gradient {
-    background: -moz-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(245, 140, 186, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(245, 140, 186, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #F58CBA; }
 
@@ -677,10 +677,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #FFFFFF;
     color: #000; }
   .priest.gradient {
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #FFFFFF; }
 
@@ -722,10 +722,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #FFF569;
     color: #000; }
   .rogue.gradient {
-    background: -moz-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(255, 245, 105, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 245, 105, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #FFF569; }
 
@@ -767,10 +767,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #0070DE;
     color: #000; }
   .shaman.gradient {
-    background: -moz-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(0, 112, 222, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(0, 112, 222, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #0070DE; }
 
@@ -812,10 +812,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #9482C9;
     color: #000; }
   .warlock.gradient {
-    background: -moz-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #9482C9; }
 
@@ -857,10 +857,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #C79C6E;
     color: #000; }
   .warrior.gradient {
-    background: -moz-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(199, 156, 110, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(199, 156, 110, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #C79C6E; }
 
@@ -902,10 +902,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #C41F3B;
     color: #000; }
   .death-knight.gradient {
-    background: -moz-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #C41F3B; }
 
@@ -947,10 +947,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #00FF96;
     color: #000; }
   .monk.gradient {
-    background: -moz-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(0, 255, 150, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(0, 255, 150, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #00FF96; }
 
@@ -992,10 +992,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #A330C9;
     color: #000; }
   .demon-hunter.gradient {
-    background: -moz-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(163, 48, 201, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(163, 48, 201, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #A330C9; }
 
@@ -1037,10 +1037,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #b5de3f;
     color: #000; }
   .naxxramas.gradient {
-    background: -moz-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(181, 222, 63, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(181, 222, 63, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #b5de3f; }
 
@@ -1082,10 +1082,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #fa5210;
     color: #000; }
   .blackrock-mountain.gradient {
-    background: -moz-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(250, 82, 16, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(250, 82, 16, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #fa5210; }
 
@@ -1127,10 +1127,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #14a9a1;
     color: #000; }
   .the-league-of-explorers.gradient {
-    background: -moz-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(20, 169, 161, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(20, 169, 161, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #14a9a1; }
 
@@ -1172,10 +1172,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #e2b4df;
     color: #000; }
   .karazhan.gradient {
-    background: -moz-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(226, 180, 223, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(226, 180, 223, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #e2b4df; }
 
@@ -1217,10 +1217,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #fae43f;
     color: #000; }
   .goblins-vs-gnomes.gradient {
-    background: -moz-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(250, 228, 63, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(250, 228, 63, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #fae43f; }
 
@@ -1262,10 +1262,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #f00;
     color: #000; }
   .the-grand-tournament.gradient {
-    background: -moz-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(255, 0, 0, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #f00; }
 
@@ -1307,10 +1307,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #cc00ff;
     color: #000; }
   .whispers-of-the-old-gods.gradient {
-    background: -moz-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(204, 0, 255, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(204, 0, 255, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #cc00ff; }
 
@@ -1352,10 +1352,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #d2cac5;
     color: #000; }
   .mean-streets-of-gadgetzan.gradient {
-    background: -moz-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(210, 202, 197, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(210, 202, 197, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #d2cac5; }
 
@@ -1397,10 +1397,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #3d9e2c;
     color: #000; }
   .journey-to-ungoro.gradient {
-    background: -moz-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(61, 158, 44, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(61, 158, 44, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #3d9e2c; }
 
@@ -1442,10 +1442,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #a5f2f3;
     color: #000; }
   .knights-of-the-frozen-throne.gradient {
-    background: -moz-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(165, 242, 243, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(165, 242, 243, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #a5f2f3; }
 
@@ -1487,10 +1487,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #fff;
     color: #000; }
   .common.gradient {
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #fff; }
 
@@ -1532,10 +1532,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: blue;
     color: #000; }
   .rare.gradient {
-    background: -moz-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid blue; }
 
@@ -1577,10 +1577,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: purple;
     color: #000; }
   .epic.gradient {
-    background: -moz-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(128, 0, 128, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(128, 0, 128, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid purple; }
 
@@ -1622,10 +1622,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: orange;
     color: #000; }
   .legendary.gradient {
-    background: -moz-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(255, 165, 0, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 165, 0, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid orange; }
 
@@ -1667,10 +1667,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #318e2f;
     color: #000; }
   .mammoth.gradient, .kraken.gradient {
-    background: -moz-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(49, 142, 47, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(49, 142, 47, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #318e2f; }
 
@@ -1712,10 +1712,10 @@ a:active, a:hover, a:link, a:visited {
     background-color: #695840;
     color: #000; }
   .wild.gradient {
-    background: -moz-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 10%);
-    background: -webkit-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 10%);
-    background: linear-gradient(to right, rgba(105, 88, 64, 0.4) 0%, transparent 10%);
-    color: #474143;
+    background: -moz-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(105, 88, 64, 0.4) 0%, transparent 15%);
+    color: black;
     background-attachment: fixed;
     border-left: 10px solid #695840; }
 

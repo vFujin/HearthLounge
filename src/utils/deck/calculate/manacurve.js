@@ -10,7 +10,7 @@ export default function (deck){
     7:0,
   };
 
-  deck.map(card => card.cost).forEach((cardCost) => {
+  deck.map(card => card.cost).forEach(cardCost => {
     switch(cardCost){
       case 0: return manaCurve[0] = ((manaCurve[0] || 0) +1);
       case 1: return manaCurve[1] = ((manaCurve[1] || 0) +1);

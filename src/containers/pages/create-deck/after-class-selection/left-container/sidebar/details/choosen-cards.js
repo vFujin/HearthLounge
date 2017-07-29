@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background"
 
 const ChoosenCards = ({countCards, deck, deckDetails}) => {
 
@@ -9,7 +10,7 @@ const ChoosenCards = ({countCards, deck, deckDetails}) => {
 
   const listCards = () => {
     return _.uniqBy(_.sortBy(deck, ['cost', 'name'])).map((card, i) =>
-        <tr key={i} className={`${_.toLower(card.rarity)} gradient`}>
+        <tr key={i} className={cardRarityBackground(card.rarity)}>
           <td><span className={`hs-icon icon-${_.kebabCase(removeApostrophe(card.cardSet))}`}></span></td>
           <td>{card.name}</td>
           <td>{countCards(card)}</td>
