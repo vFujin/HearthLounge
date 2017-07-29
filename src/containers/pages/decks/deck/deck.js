@@ -110,7 +110,7 @@ class Deck extends PureComponent{
         cards: decklistAfterCardRemoval,
         manaCurve: manacurveAfterCostRemoval,
         max
-      //add type
+      //add type and rarity
     });
   };
 

@@ -7,9 +7,10 @@
  * @param {function} callback - Callbacks `vote`
  * @returns {*}
  */
-export default function (selector, elementId, vote, callback) {
+export default function (selector, uid, elementId, vote, callback) {
   return getElementSnapshotOnce(selector, snapshot => {
     if (snapshot.val() === null) {
+
       selector.set({
         [elementId]: vote
       });

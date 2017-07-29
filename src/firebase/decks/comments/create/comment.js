@@ -14,7 +14,6 @@ export function postComment(patch, text, deckId, uid){
   if(patch && text && deckId && uid){
 
     const newCommentKey = ref.child(`decks/${deckId}/comments}`).push().key;
-    console.log(newCommentKey)
 
     let newComment = {
       patch,
@@ -29,8 +28,7 @@ export function postComment(patch, text, deckId, uid){
 
     let updates = {};
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
-    // updates[`/deck-comment-ratings/${deckId}/${newCommentKey}`] = newCommentRatings;
-    // updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newComment.id;
+    updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newCommentKey;
 
     return ref.update(updates).then(()=>success('Successfully added comment!'),
               err=>error("Couldn't add comment. Try again later.")
