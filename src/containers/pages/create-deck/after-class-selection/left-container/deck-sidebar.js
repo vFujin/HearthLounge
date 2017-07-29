@@ -9,7 +9,7 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMech
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
 
-  const  decklistHeaderView = () => {
+  const decklistHeaderView = () => {
     return imgReadyDecklist
         ? <MapFunctionlessIcons deck={deck} activeClass="decklist-summary" filtersActive={false} set="types"/>
         : <button className="btn-pearl" onClick={handleDeckMechanicsToggle}>Deck Mechanics</button>

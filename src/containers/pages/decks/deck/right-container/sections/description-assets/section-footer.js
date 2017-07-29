@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AuthorDetails from './section-footer-deck-author-details';
 import Loader from '../../../../../../../components/loader';
+import DeleteButton from "../../../../../../../components/buttons/delete";
 const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditing, handleDeckEditingClick, descriptionsNotEqual, decksNotEqual}) => {
 
   return (
@@ -12,7 +13,7 @@ const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditing, handleDec
             {(activeUser && (authorId === activeUser.uid))
                 ? <div>
                     <button className="btn btn-pearl" onClick={handleDeckEditingClick}>{deckEditing ? 'Cancel editing' : 'Edit deck'}</button>
-                    <button className="btn btn-pearl">Delete deck</button>
+                    <DeleteButton element="deck"/>
                   {(deckEditing && (descriptionsNotEqual || decksNotEqual)) ? <button className="btn btn-pearl">Update deck</button> : null }
                   </div>
                 : null}

@@ -2412,6 +2412,24 @@ form .divider {
         justify-content: center; }
       .component.deck-snippet .deck-snippet-body .deck-snippet-body-footer .deck-snippet-votes {
         justify-content: flex-end; }
+.component.btn {
+  font-size: 12px;
+  cursor: pointer;
+  outline: 0;
+  -webkit-box-shadow: 0 0 5px #474143;
+  -moz-box-shadow: 0 0 5px #474143;
+  box-shadow: 0 0 5px #474143; }
+  .component.btn__delete {
+    background: #C41F3B;
+    color: #E7E2DA;
+    border: 1px solid #E7E2DA;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease 0.2s;
+    -ms-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+    transition: all ease 0.2s; }
+    .component.btn__delete:hover {
+      background: #98182e; }
 
 /*
  *  Select
@@ -2649,6 +2667,32 @@ form .divider {
   .ant-popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .popover-save-img {
     display: flex;
     justify-content: space-around; }
+
+.popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .ant-popover-message i {
+  color: #FF7D0A; }
+.popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .ant-popover-message div {
+  color: #E7E2DA; }
+.popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .ant-popover-buttons {
+  display: flex; }
+  .popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .ant-popover-buttons button {
+    border-radius: 0;
+    outline: 0;
+    border: 1px solid #E7E2DA;
+    color: #E7E2DA;
+    background: transparent; }
+    .popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .ant-popover-buttons button:hover {
+      border-color: #00a99c;
+      color: #00a99c;
+      -webkit-box-shadow: 0 0 2px #00a99c;
+      -moz-box-shadow: 0 0 2px #00a99c;
+      box-shadow: 0 0 2px #00a99c; }
+    .popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .ant-popover-buttons button.ant-btn-primary {
+      background: #C41F3B;
+      color: #E7E2DA; }
+      .popover .ant-popover-content .ant-popover-inner .ant-popover-inner-content .ant-popover-buttons button.ant-btn-primary:hover {
+        background: #6c1120;
+        box-shadow: none;
+        border-color: #E7E2DA; }
 
 /*
  * Message
@@ -4109,8 +4153,7 @@ footer {
   align-items: center;
   background: -moz-linear-gradient(left, rgba(208, 228, 247, 0) 0%, #a69e9d 15%, #474143 50%, #a69e9d 85%, rgba(135, 188, 234, 0) 100%);
   background: -webkit-linear-gradient(left, rgba(208, 228, 247, 0) 0%, #a69e9d 15%, #474143 50%, #a69e9d 85%, rgba(135, 188, 234, 0) 100%);
-  background: linear-gradient(to right, rgba(208, 228, 247, 0) 0%, #a69e9d 15%, #474143 50%, #a69e9d 85%, rgba(135, 188, 234, 0) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00d0e4f7', endColorstr='#0087bcea', GradientType=1); }
+  background: linear-gradient(to right, rgba(208, 228, 247, 0) 0%, #a69e9d 15%, #474143 50%, #a69e9d 85%, rgba(135, 188, 234, 0) 100%); }
   .create-deck .container__page--right .topbar__deckDetails .deck-length p {
     position: relative;
     left: calc(50% - 6vh);

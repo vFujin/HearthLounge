@@ -1,4 +1,6 @@
 @import 'colors';
+@import 'mixins';
+
 /*
  *  Select
  */
@@ -306,6 +308,48 @@
         .popover-save-img {
           display: flex;
           justify-content: space-around;
+        }
+      }
+    }
+  }
+}
+.popover{
+  .ant-popover-content {
+    .ant-popover-inner {
+      //@include striped-background(rgba($death_knight, .5), rgba(white, .4), false)
+      .ant-popover-inner-content{
+        .ant-popover-message{
+          i{
+            color: $druid;
+          }
+          div{
+            color: $pearl;
+          }
+        }
+        .ant-popover-buttons{
+          display: flex;
+          button{
+            border-radius: 0;
+            outline:0;
+            border:1px solid $pearl;
+            color: $pearl;
+            background: transparent;
+            &:hover{
+              border-color: $sea-color;
+              color: $sea-color;
+              @include box-shadow(0, 0, 2px, $sea-color);
+            }
+            &.ant-btn-primary{
+              background: $death_knight;
+              color: $pearl;
+              &:hover{
+                background: darken($death_knight, 20%);
+                box-shadow: none;
+                border-color: $pearl;
+
+              }
+            }
+          }
         }
       }
     }
