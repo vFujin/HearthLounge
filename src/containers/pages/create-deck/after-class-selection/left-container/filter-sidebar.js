@@ -4,24 +4,16 @@ import IconFilter from '../../../../shared-assets/filters/redux-icon-filter';
 import InputFilter from '../../../../shared-assets/filters/redux-input-filter';
 import SliderFilter from '../../../../shared-assets/filters/redux-slider-filter';
 import {connect} from 'react-redux';
+import {toggleSelectedIcon} from "../../../../../utils/filter/toggle-selected-icon";
 
-const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity, updateFilter}) => {
+const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity, updateDeckCreationFilter}) => {
 
   const handleSelect = (value, selector) =>{
-    updateFilter({[`card${_.startCase(selector)}`]:value});
+    updateDeckCreationFilter({[`card${_.startCase(selector)}`]:value});
   };
 
   const handleIconClick = (e, selector) =>{
-    let target = e.currentTarget;
-    let targetId = target.id;
-    let targetClassList = target.classList;
-
-    if(targetClassList.contains('active')){
-      updateFilter({[`card${_.upperFirst(_.camelCase(selector))}`]:''});
-    }
-    else{
-      updateFilter({[`card${_.upperFirst(_.camelCase(selector))}`]:targetId});
-    }
+    toggleSelectedIcon(e, selector, updateDeckCreationFilter, true);
   };
 
   return (
@@ -56,24 +48,26 @@ FilterSidebar.propTypes = {
 const mapStateToProps = (state) => {
   const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity} = state.deckCreationFilters;
   return {
-    cardName,
-    cardRace,
-    cardMechanics,
-    cardFaction,
-    cardType,
-    cardHealth,
-    cardAttack,
-    cardDurability,
-    cardRarity,
-    cardStandardSet,
-    cardWildSet
+    filtersQuery: {
+      cardName,
+      cardRace,
+      cardMechanics,
+      cardFaction,
+      cardType,
+      cardHealth,
+      cardAttack,
+      cardDurability,
+      cardRarity,
+      cardStandardSet,
+      cardWildSet
+    }
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateFilter: (filters) => dispatch({
-      type: 'UPDATE_FILTER', filters
+    updateDeckCreationFilter: (filters) => dispatch({
+      type: 'UPDATE_DECK_CREATION_FILTER', filters
     }),
   }
 };

@@ -1,6 +1,6 @@
 export default function(e, toggleDeckMechanics, deckMechanics){
-  e.preventDefault();
-  if(e.altKey && (e.keyCode === 77)){
+  if(e.button === 0 ||e.altKey && (e.keyCode === 77)){
+    e.preventDefault();
     toggleDeckMechanics(!deckMechanics)
   }
 }

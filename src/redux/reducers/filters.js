@@ -1,8 +1,11 @@
-export default function(state={}, action){
+const initialState = {
+  filtersQuery: {}
+};
+export default function(state=initialState, action){
   switch(action.type){
-    case 'UPDATE_FILTER': return {
+    case 'UPDATE_DECK_CREATION_FILTER': return {
         ...state,
-        ...action.filters
+        filtersQuery: {...action.filters}
     };
     default: return state;
   }

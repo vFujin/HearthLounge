@@ -7,6 +7,7 @@ import SliderFilter from '../../../shared-assets/filters/slider-filter';
 const Sidebar = ({cards, query}) => {
   const {name, race, mechanics, type, faction} = cards;
 
+  
   return (
     <div className="sidebar__body">
       <InputFilter attribute={name}      filter="name"      query={query} multiple={false}/>

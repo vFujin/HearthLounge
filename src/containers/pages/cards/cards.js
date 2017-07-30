@@ -8,6 +8,7 @@ import Loader from '../../../components/loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
 import {infiniteScroll} from "../../../utils/infinite-scroll"
+import {filterByUrl} from "../../../utils/filter/cards/by-url";
 class Cards extends PureComponent {
 
   componentWillUnmount(){
@@ -23,26 +24,7 @@ class Cards extends PureComponent {
       return <Loader/>;
     } else {
       infiniteScroll('.content', updateCurrentCardsLoaded);
-      return allCards.filter(function (card) {
-        return Object.keys(query).every(function (queryKey) {
-          // if (queryKey === 'mechanics') {
-          //   console.log(queryKey);
-          //   return query[queryKey].some(queryValue => {
-          //     console.log(queryValue, card[queryKey].indexOf(queryValue) > -1);
-          //     return card[queryKey].indexOf(queryValue) > -1;
-          //   });
-          // }
-          if (query[queryKey].constructor === Array) {
-            return query[queryKey].some(queryValue => {
-
-              return card[queryKey] == queryValue
-            });
-          }
-          else {
-            return card[queryKey] == query[queryKey];
-          }
-        })
-      }).slice(0, currentCardsLoaded || 35).map(card =>
+      return filterByUrl(allCards, query, currentCardsLoaded).map(card =>
           <li key={card.cardId}>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <div className="img-wrapper">

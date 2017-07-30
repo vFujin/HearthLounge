@@ -1,7 +1,7 @@
 import upperFirst from 'lodash/upperFirst';
 import {filterCards} from "../cards";
 
-const findPlayerClass = (card, playerClass) =>{
+export const findPlayerClass = (card, playerClass) =>{
   return card.playerClass === upperFirst(playerClass) || card.playerClass === "Neutral";
 };
 

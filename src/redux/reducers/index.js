@@ -8,7 +8,6 @@ import DeckDetails from './create-deck/deck-options';
 import DeckCreation from './create-deck/create-deck';
 import DeckCreationFilters from './filters';
 import DeckList from './decks/decks';
-import DeckListFilters from './filters';
 import DeckView from './decks/deck-view';
 import RedditPosts from './reddit/posts'
 
@@ -20,7 +19,6 @@ const rootReducer = combineReducers({
   deckCreation: DeckCreation,
   deckCreationFilters: DeckCreationFilters,
   deckList: DeckList,
-  deckListFilters: DeckListFilters,
   deckView: DeckView,
   redditPosts: RedditPosts,
   routing: routerReducer

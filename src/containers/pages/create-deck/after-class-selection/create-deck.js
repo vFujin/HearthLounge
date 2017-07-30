@@ -67,7 +67,7 @@ class CreateDeckClassSelected extends PureComponent {
   };
 
   render() {
-    const {authenticated, cards, deck, patch, deckMechanics, editingTool, filters, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
+    const {authenticated, cards, deck, patch, deckMechanics, editingTool, filters, filtersQuery, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
     const {allCards, cardSet} = cards;
     const {query} = location;
     const playerClass = params.class;
@@ -76,7 +76,7 @@ class CreateDeckClassSelected extends PureComponent {
     return (
         <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
              className="container__page container__page--twoSided create-deck">
-          <LeftContainer handleSidebarViewChange={(e) => this.handleKeyShortcuts(e)}
+          <LeftContainer handleSidebarViewChange={this.handleKeyShortcuts}
                          filtersView={filters}
                          countCards={(e) => uniqueCards(deck, e)}
                          deck={deck}
@@ -103,6 +103,7 @@ class CreateDeckClassSelected extends PureComponent {
                           editingTool={editingTool}
                           user={user}
                           imgReadyDecklist={imgReadyDecklist}
+                          filtersQuery={filtersQuery}
                           updateCurrentCardsLoaded={updateCurrentCardsLoaded}
                           currentCardsLoaded={currentCardsLoaded}/>
         </div>
@@ -112,6 +113,7 @@ class CreateDeckClassSelected extends PureComponent {
 
 const mapStateToProps = (state) =>{
   const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, simplifiedDeck, currentCardsLoaded} = state.deckCreation;
+  const {filtersQuery} = state.deckCreationFilters;
   return {
     filters,
     editingTool,
@@ -119,7 +121,8 @@ const mapStateToProps = (state) =>{
     imgReadyDecklist,
     deck,
     simplifiedDeck,
-    currentCardsLoaded
+    currentCardsLoaded,
+    filtersQuery
   };
 };
 

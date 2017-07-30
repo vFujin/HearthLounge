@@ -3,20 +3,12 @@ import _ from 'lodash';
 import MapFunctionlessIcons from './map-functionless-icons';
 import IconFilter from '../../../../../shared-assets/filters/redux-icon-filter';
 import {connect} from 'react-redux';
+import {toggleSelectedIcon} from "../../../../../../utils/filter/toggle-selected-icon";
 
-const Filters = ({deck, activeClass, filtersActive, updateFilter, cardTopbarSet, cardCost}) => {
+const Filters = ({deck, activeClass, filtersActive, updateDeckCreationFilter, cardTopbarSet, cardCost}) => {
 
   const handleIconClick = (e, selector) =>{
-    let target = e.currentTarget;
-    let targetId = target.id;
-    let targetClassList = target.classList;
-
-    if(targetClassList.contains('active')){
-      updateFilter({[`card${_.upperFirst(_.camelCase(selector))}`]:''});
-    }
-    else{
-      updateFilter({[`card${_.upperFirst(_.camelCase(selector))}`]:targetId});
-    }
+    toggleSelectedIcon(e, selector, updateDeckCreationFilter, true);
   };
 
   return (
@@ -39,8 +31,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateFilter: (filters) => dispatch({
-      type: 'UPDATE_FILTER', filters
+    updateDeckCreationFilter: (filters) => dispatch({
+      type: 'UPDATE_DECK_CREATION_FILTER', filters
     }),
   }
 };

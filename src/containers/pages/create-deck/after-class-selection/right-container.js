@@ -4,7 +4,7 @@ import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 
 const RightContainer = ({authenticated, deck, deckstring, patch, filtersView, handleCardClick, handleOptionsClick, handleImgSaveClick, allCards, activeClass,
-                          query, simplifiedDeck, editingTool, user, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
+                          query, simplifiedDeck, filtersQuery, editingTool, user, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
 
   const currentView = () => {
     return !editingTool
@@ -13,6 +13,7 @@ const RightContainer = ({authenticated, deck, deckstring, patch, filtersView, ha
                  playerClass={activeClass}
                  handleCardClick={handleCardClick}
                  updateCurrentCardsLoaded={updateCurrentCardsLoaded}
+                 filtersQuery={filtersQuery}
                  currentCardsLoaded={currentCardsLoaded}/>
         : <DeckOptions activeClass={activeClass}
                        simplifiedDeck={simplifiedDeck}

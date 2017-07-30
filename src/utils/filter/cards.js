@@ -2,7 +2,7 @@
  * Filters cards
  *
  * @param {Object[]} cards
- * @param {func} filter
+ * @param {function} filter - see `./cards` dir
  * @param {string} query
  * @param {number} currentItemsLoaded
  */

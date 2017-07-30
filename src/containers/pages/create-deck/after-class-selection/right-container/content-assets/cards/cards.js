@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import Loader from "../../../../../../../components/loader";
-import {filterByPlayerClass} from "../../../../../../../utils/filter/cards/by-player-class";
 import Card from "./card";
 import {infiniteScroll} from "../../../../../../../utils/infinite-scroll";
+import {filterByUrl} from "../../../../../../../utils/filter/cards/by-url";
 
-const Cards = ({allCards, deck, playerClass, handleCardClick, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
+const Cards = ({allCards, deck, playerClass, filtersQuery, handleCardClick, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
   const cardsLength = allCards.length;
 
   const cards = () =>{
     infiniteScroll('.content', updateCurrentCardsLoaded);
-    return filterByPlayerClass(allCards, playerClass, currentCardsLoaded)
-        .map(card => <Card card={card}
-                           deck={deck}
-                           key={card.cardId}
-                           handleCardClick={handleCardClick}/>
-        )
+    let initialFilteringCards = allCards.filter(card=> card.playerClass === _.upperFirst(playerClass) || card.playerClass === "Neutral");
+    return filterByUrl(initialFilteringCards, filtersQuery, currentCardsLoaded).map(card=> <Card card={card}
+                                                                              deck={deck}
+                                                                              key={card.cardId}
+                                                                              handleCardClick={handleCardClick}/>)
   };
 
   return (
