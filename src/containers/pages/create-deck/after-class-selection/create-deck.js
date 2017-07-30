@@ -1,53 +1,30 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import _ from 'lodash';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
-import {loading, success} from '../../../../utils/messages';
-import {captureDecklist} from '../../../../utils/capture-decklist';
 import {uniqueCards} from '../../../../utils/deck/calculate'
-import {deckSimplification} from '../../../../utils/deck';
 import {setDeckstringObj, encodeDeckstring} from '../../../../utils/deck/deckstring';
+import {topbarOptions, imgCaptureBox, updateDeck} from "./right-container/content-assets/utils";
 
-const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, cards, deck, patch, deckMechanics, editDeck, editingTool, filters, imgReadyDecklist, location, params, showDeckEditingTool, deckstring,
-                                   toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
-  const {allCards, cardSet} = cards;
-  const {query} = location;
-  const playerClass = params.class;
+class CreateDeckClassSelected extends PureComponent {
 
-  const handleCardClick = (e, card) => {
+  componentWillUnmount() {
+    const {updateCurrentCardsLoaded} = this.props;
+    updateCurrentCardsLoaded(35);
+  }
+
+  handleCardClick = (e, card) => {
+    const {deck, editDeck} = this.props;
+
     e.preventDefault();
-    let ifLegendary = card.rarity !== "Legendary" ? uniqueCards(deck, card) < 2 : uniqueCards(deck, card) < 1;
-    if (e.button === 0 && ifLegendary && deck.length < 30) {
-      editDeck(deck.concat(card));
-    }
-
-    if (e.button === 2 && uniqueCards(deck, card) > 0) {
-      editDeck(_.filter(deck, (c) => c.cardId !== card.cardId));
-    }
+    updateDeck(e, card, deck, editDeck);
   };
 
-  const toggleCardAmountTooltip = (card) => {
-    const CardTooltip = () =>{
-      return (
-          <div className="tooltip-count">
-              <span>
-                {uniqueCards(deck, card)}/{card.rarity !== "Legendary" ? 2 : 1}
-              </span>
-          </div>
-      )
-    };
-    return (
-        deck.filter(c => c.cardId === card.cardId).length > 0 ? <CardTooltip /> : null
-    )
-  };
-
-
-  const handleKeyShortcuts = (e) => {
+  handleKeyShortcuts = (e) => {
     // let areDeckMechanicsActive = filters === false ? true : false;
-    if(e.button === 0 || e.ctrlKey) {
-      toggleFilters(!filters)
-    }
+    // if(e.button === 0 || e.ctrlKey) {
+    //   toggleFilters(!filters)
+    // }
     // if(e.altKey){
     //   toggleDeckMechanics(filters)
     // }
@@ -59,100 +36,91 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
     // }
   };
 
-  const switchDecklistClasses = (param) =>{
+  switchDecklistClasses = (param) => {
+    const {toggleImgReadyDecklist, imgReadyDecklist} = this.props;
+
     toggleImgReadyDecklist(param);
     !imgReadyDecklist
         ? document.getElementById('image').className += "active"
         : document.getElementById('image').className = "";
   };
 
-  const handleDeckMechanicsToggle = () => {
-    let areActive = deckMechanics === false ? true : false;
-    toggleDeckMechanics(areActive);
+  handleDeckMechanicsToggle = () => {
+    const {toggleDeckMechanics, deckMechanics} = this.props;
+    toggleDeckMechanics(!deckMechanics);
   };
 
-  const handleCopyDeckStringClick = () =>{
+  handleCopyDeckStringClick = () => {
+    const {updateDeckstring, deck, params} = this.props;
+    const playerClass = params.class;
     let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
+
     updateDeckstring(deckstring);
-    success('Successfully copied deckstring to clipboard!');
   };
 
-  const handleImgSaveClick = (e) =>{
-    let target = e.currentTarget.id;
-    switch(target){
-      case 'save-img':
-        let closeLoadingMessage = loading('Creating image...');
-        captureDecklist('decklist-to-img', switchDecklistClasses, closeLoadingMessage);
-        break;
-      case 'cancel-img-save': return switchDecklistClasses(false);
-      default: return target;
-    }
+  handleImgSaveClick = (event) => {
+    imgCaptureBox(event, this.switchDecklistClasses);
   };
 
-  const handleOptionsClick = (e, icon) => {
-    let simplifiedDeck = deckSimplification(deck);
-    let isEditingToolActive = editingTool === false ? true : false;
-    let isDecklistReadyForCapture = imgReadyDecklist === false ? true : false;
-    switch (icon) {
-      case 'copy': return handleCopyDeckStringClick();
-      case 'image': return switchDecklistClasses(isDecklistReadyForCapture);
-      case 'download':
-        !editingTool
-            ? document.getElementById(e.currentTarget.id).className += "active"
-            : document.getElementById(e.currentTarget.id).className = "";
-        showDeckEditingTool(isEditingToolActive);
-        simplifyDeck(simplifiedDeck);
-
-        break;
-      default: return icon;
-    }
+  handleOptionsClick = (event, icon) => {
+    const {editingTool, deck, imgReadyDecklist, showDeckEditingTool, simplifyDeck} = this.props;
+    topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck);
   };
 
-  return (
-      <div tabIndex="0" onKeyDown={(e) => handleKeyShortcuts(e)}
-           className="container__page container__page--twoSided create-deck">
-        <LeftContainer handleSidebarViewChange={(e) => handleKeyShortcuts(e)}
-                       filtersView={filters}
-                       countCards={(e) => uniqueCards(deck, e)}
-                       deck={deck}
-                       deckDetails={deckMechanics}
-                       handleDeckMechanicsToggle={handleDeckMechanicsToggle}
-                       params={params}
-                       cards={cards}
-                       cardSet={cardSet}
-                       imgReadyDecklist={imgReadyDecklist}
-                       query={query}/>
+  render() {
+    const {authenticated, cards, deck, patch, deckMechanics, editingTool, filters, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
+    const {allCards, cardSet} = cards;
+    const {query} = location;
+    const playerClass = params.class;
+    let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
 
-        <RightContainer filtersView={filters}
-                        authenticated={authenticated}
-                        query={query}
-                        activeClass={params.class}
-                        deckstring={encodeDeckstring(setDeckstringObj(deck, params.class))}
-                        deck={deck}
-                        simplifiedDeck={simplifiedDeck}
-                        handleCardClick={handleCardClick}
-                        handleOptionsClick={handleOptionsClick}
-                        handleImgSaveClick={handleImgSaveClick}
-                        toggleCardAmountTooltip={toggleCardAmountTooltip}
-                        allCards={allCards}
-                        patch={patch}
-                        editingTool={editingTool}
-                        user={user}
-                        imgReadyDecklist={imgReadyDecklist}/>
-      </div>
-  );
-};
+    return (
+        <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
+             className="container__page container__page--twoSided create-deck">
+          <LeftContainer handleSidebarViewChange={(e) => this.handleKeyShortcuts(e)}
+                         filtersView={filters}
+                         countCards={(e) => uniqueCards(deck, e)}
+                         deck={deck}
+                         deckDetails={deckMechanics}
+                         handleDeckMechanicsToggle={this.handleDeckMechanicsToggle}
+                         params={params}
+                         cards={cards}
+                         cardSet={cardSet}
+                         imgReadyDecklist={imgReadyDecklist}
+                         query={query}/>
+
+          <RightContainer filtersView={filters}
+                          authenticated={authenticated}
+                          query={query}
+                          activeClass={params.class}
+                          deckstring={deckstring}
+                          deck={deck}
+                          simplifiedDeck={simplifiedDeck}
+                          handleCardClick={this.handleCardClick}
+                          handleOptionsClick={this.handleOptionsClick}
+                          handleImgSaveClick={this.handleImgSaveClick}
+                          allCards={allCards}
+                          patch={patch}
+                          editingTool={editingTool}
+                          user={user}
+                          imgReadyDecklist={imgReadyDecklist}
+                          updateCurrentCardsLoaded={updateCurrentCardsLoaded}
+                          currentCardsLoaded={currentCardsLoaded}/>
+        </div>
+    );
+  }
+}
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, deckstring, simplifiedDeck} = state.deckCreation;
+  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, simplifiedDeck, currentCardsLoaded} = state.deckCreation;
   return {
     filters,
     editingTool,
     deckMechanics,
     imgReadyDecklist,
     deck,
-    deckstring,
-    simplifiedDeck
+    simplifiedDeck,
+    currentCardsLoaded
   };
 };
 
@@ -181,6 +149,9 @@ const mapDispatchToProps = (dispatch) => {
     }),
     simplifyDeck: (simplifiedDeck) => dispatch({
       type: 'SIMPLIFY_DECK', simplifiedDeck
+    }),
+    updateCurrentCardsLoaded: (currentCardsLoaded) => dispatch({
+      type: 'UPDATE_CURRENT_CARDS_LOADED', currentCardsLoaded
     })
   }
 };

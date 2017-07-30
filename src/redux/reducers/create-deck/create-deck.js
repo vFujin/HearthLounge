@@ -10,6 +10,7 @@ const initialState = {
     manaCurve: {},
     types: {}
   },
+  currentCardsLoaded: 35
 };
 
 export default function(state=initialState, action){
@@ -49,6 +50,10 @@ export default function(state=initialState, action){
     case 'UPDATE_PLAYERCLASS': return {
         ...state,
       playerClass: action.playerClass
+    };
+    case 'UPDATE_CURRENT_CARDS_LOADED': return {
+        ...state,
+      currentCardsLoaded: action.currentCardsLoaded
     };
     default: return state;
   }

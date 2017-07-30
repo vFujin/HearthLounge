@@ -1,22 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CardTooltip from "./card-tooltip";
 
-const Card = ({card, deck, handleCardClick, toggleCardAmountTooltip}) => {
-  const toggleImg = (card) =>{
-    let amount = deck.filter(c => c.cardId === card.cardId).length;
-    if(amount > 0) return 'choosen';
+const Card = ({card, deck, handleCardClick}) =>{
+  const deckLength = deck.length;
+  let cardAmount = deck.filter(c => c.cardId === card.cardId).length;
+  let isDisabled = deckLength >= 30 ? "disabled" : '';
+
+  const toggleImg = () =>{
+    if(cardAmount > 0) return 'choosen';
+  };
+
+  const toggleCardAmountTooltip = () => {
+    if(cardAmount > 0) return <CardTooltip card={card} deck={deck} />;
   };
 
   return (
-      <li className={toggleImg(card)} onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
+      <li className={toggleImg()} onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
           onClick={deck ? (e) => handleCardClick(e, card) : null}>
-        {toggleCardAmountTooltip(card)}
+        {toggleCardAmountTooltip()}
         <div className="img-wrapper">
-          <img className={`${toggleImg(card)} ${deck.length >= 30 ? "disabled" : ''} `}
+          <img className={`${toggleImg()} ${isDisabled}`}
                src={card.img}
                alt={card.name}/>
         </div>
-
       </li>
   );
 };
@@ -26,6 +33,5 @@ export default Card;
 Card.propTypes = {
   card: PropTypes.object.isRequired,
   deck: PropTypes.array.isRequired,
-  handleCardClick: PropTypes.func.isRequired,
-  toggleCardAmountTooltip: PropTypes.func.isRequired,
+  handleCardClick: PropTypes.func.isRequired
 };
