@@ -5,6 +5,7 @@ import RightContainer from './right-container';
 import {uniqueCards} from '../../../../utils/deck/calculate'
 import {setDeckstringObj, encodeDeckstring} from '../../../../utils/deck/deckstring';
 import {topbarOptions, imgCaptureBox, updateDeck} from "./right-container/content-assets/utils";
+import {scToggleDeckFilters, scToggleDeckMechanics} from "./right-container/content-assets/utils/shortcuts";
 
 class CreateDeckClassSelected extends PureComponent {
 
@@ -21,14 +22,12 @@ class CreateDeckClassSelected extends PureComponent {
   };
 
   handleKeyShortcuts = (e) => {
-    // let areDeckMechanicsActive = filters === false ? true : false;
-    // if(e.button === 0 || e.ctrlKey) {
-    //   toggleFilters(!filters)
-    // }
-    // if(e.altKey){
-    //   toggleDeckMechanics(filters)
-    // }
+    const {toggleFilters, toggleDeckMechanics, filters, deckMechanics} = this.props;
+    scToggleDeckFilters(e, toggleFilters, filters);
+    scToggleDeckMechanics(e, toggleDeckMechanics, deckMechanics);
 
+
+    // for input
     // if(e.keyCode > 64 && e.keyCode <= 90){
     //   this.setState({
     //     cards: _.filter(Data, {name: e})
