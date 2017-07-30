@@ -7,27 +7,12 @@ import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../../components/loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
-
+import {infiniteScroll} from "../../../utils/infinite-scroll"
 class Cards extends PureComponent {
 
   componentWillUnmount(){
     this.props.updateCurrentCardsLoaded(37);
   }
-
-  infiniteScroll = (updateCurrentCardsLoaded) => {
-    const el = document.querySelector('.content');
-
-    let end = 35;
-    console.log(el);
-    if (el) {
-      el.addEventListener("scroll", _.throttle(function () {
-        if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-          end += 35;
-          updateCurrentCardsLoaded(end);
-        }
-      }, 1000));
-    }
-  };
 
   listCards = () => {
     const {cards, currentCardsLoaded, updateCurrentCardsLoaded, location} = this.props;
@@ -37,7 +22,7 @@ class Cards extends PureComponent {
     if (allCards.length < 1) {
       return <Loader/>;
     } else {
-      this.infiniteScroll(updateCurrentCardsLoaded);
+      infiniteScroll('.content', updateCurrentCardsLoaded);
       return allCards.filter(function (card) {
         return Object.keys(query).every(function (queryKey) {
           // if (queryKey === 'mechanics') {

@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
-import Loader from '../../../../components/loader';
 import {loading, success} from '../../../../utils/messages';
 import {captureDecklist} from '../../../../utils/capture-decklist';
 import {uniqueCards} from '../../../../utils/deck/calculate'
@@ -14,6 +13,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
                                    toggleDeckMechanics, toggleFilters, toggleImgReadyDecklist, simplifiedDeck, simplifyDeck, user, updateURL}) => {
   const {allCards, cardSet} = cards;
   const {query} = location;
+  const playerClass = params.class;
 
   const handleCardClick = (e, card) => {
     e.preventDefault();
@@ -42,44 +42,14 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
     )
   };
 
-  const listCards = () => {
-    const toggleImg = (card) =>{
-      let amount = deck.filter(c => c.cardId === card.cardId).length;
-      if(amount > 0) return 'choosen';
-    };
-
-    if (allCards.length < 1) {
-      return <Loader/>;
-    } else {
-      return (
-          allCards.filter(card => {
-            return card.playerClass === _.upperFirst(params.class) || card.playerClass === "Neutral"
-          }).slice(0, 60).map(card =>
-                <li className={toggleImg(card)} onContextMenu={deck ? (e) => handleCardClick(e, card) : null}
-                    onClick={deck ? (e) => handleCardClick(e, card) : null}>
-                  {toggleCardAmountTooltip(card)}
-                  <div className="img-wrapper">
-                  <img className={`${toggleImg(card)} ${deck.length >= 30 ? "disabled" : ''} `}
-                      src={card.img}
-                      alt={card.name}/>
-                  </div>
-
-                </li>
-            )
-      )
-    }
-  };
-
 
   const handleKeyShortcuts = (e) => {
     // let areDeckMechanicsActive = filters === false ? true : false;
-    let areFiltersActive = filters === false ? true : false;
-
     if(e.button === 0 || e.ctrlKey) {
-      toggleFilters(areFiltersActive)
+      toggleFilters(!filters)
     }
     // if(e.altKey){
-    //   toggleDeckMechanics(areDeckMechanicsActive)
+    //   toggleDeckMechanics(filters)
     // }
 
     // if(e.keyCode > 64 && e.keyCode <= 90){
@@ -102,7 +72,7 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
   };
 
   const handleCopyDeckStringClick = () =>{
-    let deckstring = encodeDeckstring(setDeckstringObj(deck, params.class));
+    let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
     updateDeckstring(deckstring);
     success('Successfully copied deckstring to clipboard!');
   };
@@ -160,9 +130,11 @@ const CreateDeckClassSelected = ({authenticated, activeUser, updateDeckstring, c
                         deckstring={encodeDeckstring(setDeckstringObj(deck, params.class))}
                         deck={deck}
                         simplifiedDeck={simplifiedDeck}
+                        handleCardClick={handleCardClick}
                         handleOptionsClick={handleOptionsClick}
                         handleImgSaveClick={handleImgSaveClick}
-                        cards={listCards(query)}
+                        toggleCardAmountTooltip={toggleCardAmountTooltip}
+                        allCards={allCards}
                         patch={patch}
                         editingTool={editingTool}
                         user={user}

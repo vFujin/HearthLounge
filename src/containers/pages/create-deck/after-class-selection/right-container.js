@@ -3,11 +3,15 @@ import Topbar from './right-container/topbar';
 import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 
-const RightContainer = ({authenticated, deck, deckstring, patch, filtersView, handleOptionsClick, handleImgSaveClick, cards, activeClass, query, simplifiedDeck, editingTool, user, imgReadyDecklist}) =>{
+const RightContainer = ({authenticated, deck, deckstring, patch, filtersView, handleCardClick, handleOptionsClick, handleImgSaveClick, toggleCardAmountTooltip, allCards, activeClass, query, simplifiedDeck, editingTool, user, imgReadyDecklist}) =>{
 
   const currentView = () => {
     return !editingTool
-        ? <Cards cards={cards}/>
+        ? <Cards allCards={allCards}
+                 deck={deck}
+                 playerClass={activeClass}
+                 handleCardClick={handleCardClick}
+                 toggleCardAmountTooltip={toggleCardAmountTooltip}/>
         : <DeckOptions activeClass={activeClass}
                        simplifiedDeck={simplifiedDeck}
                        patch={patch}
@@ -15,6 +19,7 @@ const RightContainer = ({authenticated, deck, deckstring, patch, filtersView, ha
                        authenticated={authenticated}
                        user={user}/>
   };
+
 
   return (
       <div className="container__page--inner container__page--right">
