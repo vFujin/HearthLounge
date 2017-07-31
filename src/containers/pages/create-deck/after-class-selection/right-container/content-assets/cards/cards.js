@@ -12,10 +12,11 @@ const Cards = ({allCards, deck, playerClass, filtersQuery, handleCardClick, upda
   const cards = () =>{
     infiniteScroll('.content', updateCurrentCardsLoaded);
     let initialFilteringCards = allCards.filter(card=> card.playerClass === _.upperFirst(playerClass) || card.playerClass === "Neutral");
-    return filterByUrl(initialFilteringCards, filtersQuery, currentCardsLoaded).map(card=> <Card card={card}
-                                                                              deck={deck}
-                                                                              key={card.cardId}
-                                                                              handleCardClick={handleCardClick}/>)
+    return filterByUrl(initialFilteringCards, filtersQuery, currentCardsLoaded)
+          .map(card=> <Card card={card}
+                            deck={deck}
+                            key={card.cardId}
+                            handleCardClick={handleCardClick}/>)
   };
 
   return (

@@ -1,9 +1,9 @@
 import React from 'react';
 import _ from 'lodash';
-import ManaCurve from './sidebar/details/mana-curve/mana-curve';
 import ChoosenCards from './sidebar/details/choosen-cards';
 import DeckMechanics from './sidebar/details/deck-mechanics';
 import MapFunctionlessIcons from '../right-container/topbar-assets/map-functionless-icons';
+import ManaCurve from "../../../../../components/mana-curve/mana-curve";
 
 const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMechanicsToggle, mechanics, params, imgReadyDecklist}) => {
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);

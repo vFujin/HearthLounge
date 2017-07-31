@@ -417,6 +417,8 @@ a:active, a:hover, a:link, a:visited {
           justify-content: flex-end; }
       #container .container__page .container__page--right .topbar__grid.topbar__grid--2-1-1 {
         grid-template-columns: 40vw 20vw 20vw; }
+      #container .container__page .container__page--right .topbar__grid.topbar__grid--1-1 {
+        grid-template-columns: repeat(2, 50%); }
       #container .container__page .container__page--right .topbar__grid.topbar__grid--1-2-1 {
         grid-template-columns: 20vw 40vw 20vw; }
     #container .container__page .content .container__cards {

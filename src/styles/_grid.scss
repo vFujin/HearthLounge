@@ -80,6 +80,9 @@
         &.topbar__grid--2-1-1{
           grid-template-columns: 40vw 20vw 20vw;
         }
+        &.topbar__grid--1-1{
+          grid-template-columns: repeat(2, 50%);
+        }
         &.topbar__grid--1-2-1{
           grid-template-columns: 20vw 40vw 20vw;
         }

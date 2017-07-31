@@ -26,8 +26,8 @@ ManaCurveBar.propTypes = {
     PropTypes.array
   ]),
   icon: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number
+    PropTypes.string,
+    PropTypes.number
   ]),
   max: PropTypes.number
 };

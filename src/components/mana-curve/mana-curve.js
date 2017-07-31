@@ -19,6 +19,6 @@ ManaCurve.propTypes = {
   deck: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array
-  ]),
+  ]).isRequired,
   max: PropTypes.number
 };

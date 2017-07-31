@@ -1,12 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import startCase from 'lodash/startCase';
+import Tooltip from 'antd/lib/tooltip';
 
-const selectType = (iconName, type) =>{
+const selectType = (iconName, type = null, tooltip = true, tooltipPlacement = "bottom") =>{
   const validateSet = iconName === "classic" ? "hs-logo" : iconName;
   const validateMode = iconName === "standard" ? "mammoth" : iconName;
 
-  let icon = (name) => <span className={`hs-icon icon-${name}`}></span>;
-  let manaIcon = (name) => <span className={`hs-icon icon-mana-${name}`}></span>;
+  const iconWrapper = (icon) => {
+    return (
+        <Tooltip title={startCase(iconName)}
+                 placement={tooltipPlacement}
+                 arrowPointAtCenter={true}>
+          {icon}
+        </Tooltip>
+    )
+  };
+
+  let icon = (name) => {
+    let icon = <span className={`hs-icon icon-${name}`}></span>;
+    return tooltip ? iconWrapper(icon) : icon;
+  };
+
+  let manaIcon = (name) => {
+    let icon = <span className={`hs-icon icon-mana-${name}`}></span>;
+    return tooltip ? iconWrapper(icon) : icon;
+  };
 
   switch(type){
     case 'set': return icon(validateSet);
@@ -16,7 +35,7 @@ const selectType = (iconName, type) =>{
   }
 };
 
-const Icon = ({name, type}) => selectType(name, type || null);
+const Icon = ({name, type, tooltip, tooltipPlacement}) => selectType(name, type, tooltip, tooltipPlacement);
 
 export default Icon;
 
@@ -25,5 +44,6 @@ Icon.propTypes = {
       PropTypes.string,
       PropTypes.number
   ]).isRequired,
-  type: PropTypes.string
+  type: PropTypes.string,
+  tooltipPlacement: PropTypes.string
 };

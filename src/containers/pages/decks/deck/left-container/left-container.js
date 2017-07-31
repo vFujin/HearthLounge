@@ -1,44 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Loader from '../../../../../components/loader';
-import ManaCurve from '../../../create-deck/after-class-selection/left-container/sidebar/details/mana-curve/mana-curve'
 import Select from 'antd/lib/select';
-import Icon from '../../../../../components/icons/icon';
-import {cardRarityBackground} from "../../../../../utils/deck/card-rarity-background";
+import SidebarHeader from "./sidebar-header/sidebar-header";
+import SidebarBody from "./sidebar-body/sidebar-body";
+
 const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
-
-
-  const listCards = () =>{
-    if(editingDecklist){
-      // let countByCost = _.countBy(editingDecklist.cards, (card)=>card.cost < 7 ? card.cost : 7);
-      // console.log(countByCost)
-
-      let cardNames = Object.keys(editingDecklist.cards);
-      return _.map(editingDecklist.cards).map((c, i)=>
-        <tr key={i} className={cardRarityBackground(c.rarity)}>
-          <td>
-            <Icon name={c.set} type="set"/>
-          </td>
-          <td>{cardNames[i]}</td>
-          <td>{c.amount}</td>
-          <td>
-            <Icon name={c.cost} type="mana"/>
-          </td>
-
-          {deckEditing
-              ? <td>
-                <div id={cardNames[i]}
-                     data-cost={c.cost}
-                     data-amount={c.amount} onClick={(e)=>handleCardRemovalClick(e)}>
-                  <Icon name="cross"/>
-                </div>
-              </td>
-            : null}
-        </tr>
-    )}
-    return <Loader/>
-  };
 
   const handleCardAddition = (value) => {
     let filteredCard = cards.allCards.find(card => card.name === value);
@@ -97,7 +64,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
                   placeholder="Card name..."
                   style={{width: '80%'}}
                   allowClear={true}
-                  disabled={_.map(editingDecklist.card).length >= 30 ? true : false}
+                  disabled={_.map(editingDecklist.card).length >= 30}
                   showSearch={true}
                   onSelect={(v)=>handleCardAddition(v)}>
             {options}
@@ -110,47 +77,12 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
 
   return(
       <div className={`container__page--inner container__page--left ${deckEditing ? 'edit-mode' : ''}`}>
-        <h3 className="sidebar__header">
-          Deck Details
-          <Icon name={currentDeck.type} type="mode"/>
-        </h3>
-        <div className="sidebar__body">
-          <div className="container__mana-curve">
-            <h3>Mana Curve</h3>
-            {editingDecklist ? <ManaCurve deck={editingDecklist.cards} max={editingDecklist.max}/> : <Loader/>}
-            <h3>Cards</h3>
-            <div className="list cards-list">
-              <div className="table-scroll">
-                <table>
-                  <thead>
-                  <tr>
-                    <th>Set</th>
-                    <th>Card</th>
-                    <th>Amount</th>
-                    <th colSpan={deckEditing ? 2 : null}>Cost</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  {listCards()}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <table>
-            </table>
-          </div>
-          {deckEditing
-              ? <div className="addCard-wrapper">
-                  {search()}
-                  <span>+</span>
-                </div>
-              : null
-          }
-          <div className="background">
-            <Icon name={currentDeck.hsClass}/>
-          </div>
-
-        </div>
+        <SidebarHeader currentDeck={currentDeck}/>
+        <SidebarBody currentDeck={currentDeck}
+                     deckEditing={deckEditing}
+                     handleCardRemovalClick={handleCardRemovalClick}
+                     search={search}
+                     editingDecklist={editingDecklist}/>
       </div>
   )
 };
