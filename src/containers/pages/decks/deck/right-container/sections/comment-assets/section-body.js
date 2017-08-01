@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Comment from '../../../view/comment';
+import Comment from '../comment';
 import Loader from '../../../../../../../components/loader';
 import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
 

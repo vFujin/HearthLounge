@@ -6,6 +6,7 @@ import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {getUser} from '../../../../firebase/user/read';
 import {rateDeck} from '../../../../firebase/decks/deck/read/decks';
+import {alertUnload} from "./utils/alert-unload";
 
 class Deck extends PureComponent{
 
@@ -40,27 +41,8 @@ class Deck extends PureComponent{
 
   componentWillUpdate(nextProps){
     //need proper testing
-    let decksEqual = JSON.stringify(this.props.editingDecklist) ===  JSON.stringify(this.props.currentDeck.deck);
-    let decksNotEqual = JSON.stringify(this.props.editingDecklist) !==  JSON.stringify(this.props.currentDeck.deck);
-    let descriptionsEqual = this.props.editingDeckDescription && (this.props.editingDeckDescription === this.props.currentDeck.description);
-    let descriptionsNotEqual = this.props.editingDeckDescription && (this.props.editingDeckDescription !== this.props.currentDeck.description);
-
-    if(nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
-      window.addEventListener("beforeunload", this.onUnload)
-    }
-    if(nextProps.deckEditing && (decksEqual && descriptionsEqual)){
-      window.removeEventListener("beforeunload", this.onUnload)
-    }
-    if(!nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
-      window.removeEventListener("beforeunload", this.onUnload);
-      this.props.updateDecklist(this.props.currentDeck.deck)
-      //add description reducer
-    }
-    if(!nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
-      window.removeEventListener("beforeunload", this.onUnload);
-      this.props.updateDecklist(this.props.currentDeck.deck)
-      //add description reducer
-    }
+    const {editingDecklist, editingDeckDescription, currentDeck, updateDecklist} = this.props;
+    alertUnload(nextProps, editingDecklist, editingDeckDescription, currentDeck, updateDecklist, this.onUnload);
   }
 
   componentWillUnmount(){
@@ -81,8 +63,7 @@ class Deck extends PureComponent{
 
   handleDeckEditingClick = () =>{
     const {toggleDeckEditing, deckEditing} = this.props;
-    toggleDeckEditing(!deckEditing ? true : false)
-
+    toggleDeckEditing(!deckEditing)
   };
 
   handleCardRemovalClick = (e) =>{
