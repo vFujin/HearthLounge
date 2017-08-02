@@ -19,6 +19,8 @@ html, body{
 body{
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
+  font-size: inherit;
+  line-height: inherit;
   .hs-icon{
     font-family: 'Hearthstone';
     font-size: 2vw;
@@ -38,6 +40,9 @@ body{
         }
       }
     }
+  }
+  a{
+    color: white;
   }
 }
 
