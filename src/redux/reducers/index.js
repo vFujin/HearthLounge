@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
+import Home from './home';
 import Entry from './entry/entry'
 import Users from './users';
 import Cards from './cards';
@@ -12,6 +13,7 @@ import DeckView from './decks/deck-view';
 import RedditPosts from './reddit/posts'
 
 const rootReducer = combineReducers({
+  home: Home,
   entry: Entry,
   users: Users,
   cards: Cards,

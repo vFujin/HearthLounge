@@ -5,7 +5,16 @@ import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
 import SearchDecks from './filters/search-decks';
 import {Link} from 'react-router';
 import _ from 'lodash';
-const DecksBlock = () => {
+import Loader from "../../../../components/loader";
+const DecksBlock = ({decks, handleDeckClick}) => {
+
+  const listDecks = () =>{
+    return decks.map(deck => <DeckSnippet key={deck.deckId}
+                                          d={deck}
+                                          handleDeckClick={handleDeckClick}/>)
+  };
+
+
   return (
       <li className={`home__block decks block-width-3`}>
         <div className="home__block--header">
@@ -24,16 +33,7 @@ const DecksBlock = () => {
           </div>
           <div className="right-container">
             <div className="hot-decks">
-                <DeckSnippet/>
-                <DeckSnippet/>
-                <DeckSnippet/>
-                <DeckSnippet/>
-                <DeckSnippet/>
-                <DeckSnippet/>
-                <DeckSnippet/>
-                <DeckSnippet/>
-                <DeckSnippet/>
-                <DeckSnippet/>
+              {decks ? listDecks() : <Loader />}
             </div>
           </div>
         </div>
@@ -42,3 +42,4 @@ const DecksBlock = () => {
 };
 
 export default DecksBlock;
+

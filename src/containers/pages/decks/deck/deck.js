@@ -5,7 +5,7 @@ import _ from 'lodash';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {getUser} from '../../../../firebase/user/read';
-import {rateDeck} from '../../../../firebase/decks/deck/read/decks';
+import {rateDeck} from '../../../../firebase/decks/deck/read/lazyload-decks';
 import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
 import {alertUnload} from "./utils/alert-unload";
 

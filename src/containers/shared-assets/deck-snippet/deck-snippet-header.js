@@ -1,12 +1,12 @@
 import React from 'react';
-export const DeckSnippetHeader = ({prefix}) => {
+export const DeckSnippetHeader = ({prefix, hsClass, username, title, created}) => {
   return (
       <div className={`${prefix}-header`}>
-        <div className={`${prefix}-hs-class`}><span className="hs-icon icon-warlock"></span></div>
+        <div className={`${prefix}-hs-class`}><span className={`hs-icon icon-${hsClass}`}></span></div>
         <div className={`${prefix}-about`}>
-          <div className={`${prefix}-title`}>Yada yada 123 123 123231123 123 legend 1</div>
-          <div className={`${prefix}-author`}>Joe</div>
-          <div className={`${prefix}-created`}>1 day ago</div>
+          <div className={`${prefix}-title`}>{title}</div>
+          <div className={`${prefix}-author`}>{username}</div>
+          <div className={`${prefix}-created`}>{created}</div>
         </div>
       </div>
   );

@@ -1,57 +1,13 @@
-import {ref} from '../../../../keys';
-// import {success, loading, error} from '../../utils/messages';
-
-let now = new Date();
-let week = now.setDate(now.getDate() - 7);
-
+import {refParent} from '../../../../keys';
+import {getSimplifiedUser} from "../../../user/read/index";
 export default function (callback) {
-  let decksRef = ref.child('decks');
-  let lastKnownDeck = null;
-  let pageQuery = decksRef.orderByChild('created').limitToFirst(15);
+  let decksRef = refParent('decks');
+  let pageQuery = decksRef.orderByChild('votes').limitToLast(10);
+  let decks = {};
 
-  pageQuery.once('value', snapshot=>{
-    snapshot.forEach(childSnapshot=>{
-      // if(childSnapshot.child('created').val() < week){
-      //   return null;
-      // }
-      lastKnownDeck = childSnapshot.child('created').val();
-    });
-  });
+  pageQuery.on('child_added', snapshot => {
+    getSimplifiedUser(snapshot.val().authorId, username =>  Object.assign(decks, {[snapshot.val().deckId]: Object.assign(snapshot.val(), username)}));
 
-  let nextQuery = decksRef.orderByChild('created').startAt(lastKnownDeck).limitToFirst(15);
-
-  nextQuery.once('value', snapshot => {
-    let snapshotWithoutVotes = {};
-    snapshot.forEach(childSnapshot =>{
-      const {archetype, authorId, created, deck, deckId, deckstring, description, downvotes, hsClass, patch, title, type, upvotes, views, votes} = childSnapshot.val();
-      Object.assign(snapshotWithoutVotes, {
-        [deckId]: {
-          archetype,
-          authorId,
-          created,
-          deck,
-          deckId,
-          deckstring,
-          description,
-          downvotes,
-          hsClass,
-          patch,
-          title,
-          type,
-          upvotes,
-          views,
-          votes
-        }
-      });
-    });
-    callback(snapshotWithoutVotes);
+    callback(decks);
   })
 }
-
-
-
-
-
-
-
-

@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import _ from 'lodash';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
-import {getDeckDetails, getDecks} from '../../../../firebase/decks/deck/read';
+import {getDeckDetails, getLazyloadDecks} from '../../../../firebase/decks/deck/read';
 import {updateViews} from '../../../../firebase/decks/deck/update';
 import Loader from '../../../../components/loader';
 import NotFound from '../../../shared-assets/not-found';
@@ -12,7 +12,7 @@ import NotFound from '../../../shared-assets/not-found';
 
 class DeckSelection extends Component {
   componentDidMount() {
-    getDecks(v => this.props.updateDeckList(v));
+    getLazyloadDecks(v => this.props.updateDeckList(v));
   }
 
 
@@ -48,7 +48,7 @@ class DeckSelection extends Component {
   handleClassFilterClick = (e) =>{
     let targetId = e.currentTarget.id;
     this.props.updateClassFilter(targetId);
-    getDecks((v) => this.props.updateDeckList(v), targetId);
+    getLazyloadDecks((v) => this.props.updateDeckList(v), targetId);
   };
 
   handleDeckSnippetClick = (e) =>{
@@ -63,7 +63,7 @@ class DeckSelection extends Component {
     if (el) {
       el.addEventListener("scroll", function () {
             if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-              getDecks((v) => updateDeckList(v))
+              getLazyloadDecks((v) => updateDeckList(v))
             }
           }
       )

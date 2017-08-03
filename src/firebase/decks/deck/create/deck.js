@@ -6,7 +6,6 @@ import {success, error} from '../../../../utils/messages';
  *
  * @param {string} patch - Current patch
  * @param {string} hsClass - Choosen Hearthstone player class after class selection
- * @param {string} author - User username
  * @param {string} title - Deck title
  * @param {string} type - Deck type; i.e Standard, Wild, Brawl, Adventures
  * @param {string} archetype - Deck archetype + player class; i.e N'zoth Priest, Jade Shaman, Quest Rogue
@@ -36,6 +35,7 @@ export default function (patch, hsClass, title, type, archetype, adventure, boss
       adventure: validateAdventure,
       authorId: uid,
       boss: validateBoss,
+      comments: 0,
       created: + new Date(),
       downvotes: 0,
       type: validateAdventureType,
