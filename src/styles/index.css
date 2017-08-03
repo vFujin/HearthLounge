@@ -2740,7 +2740,9 @@ html, body {
 
 body {
   font-family: 'Roboto', sans-serif;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: inherit;
+  line-height: inherit; }
   body .hs-icon {
     font-family: 'Hearthstone';
     font-size: 2vw; }
@@ -2748,6 +2750,8 @@ body {
     color: navy; }
   body .mana-crystal:hover a span {
     color: #0070DE; }
+  body a {
+    color: white; }
 
 .container__index {
   overflow-y: auto; }

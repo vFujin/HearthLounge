@@ -6,6 +6,7 @@ import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {getUser} from '../../../../firebase/user/read';
 import {rateDeck} from '../../../../firebase/decks/deck/read/decks';
+import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
 import {alertUnload} from "./utils/alert-unload";
 
 class Deck extends PureComponent{
@@ -58,7 +59,7 @@ class Deck extends PureComponent{
     let vote = e.currentTarget.id;
     const {deckId} = currentDeck;
     const {uid} = activeUser;
-    rateDeck(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
+    udpateDeckRating(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
   };
 
   handleDeckEditingClick = () =>{

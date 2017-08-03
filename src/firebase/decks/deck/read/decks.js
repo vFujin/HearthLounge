@@ -4,8 +4,6 @@ import {ref} from '../../../../keys';
 let now = new Date();
 let week = now.setDate(now.getDate() - 7);
 
-
-
 export default function (callback) {
   let decksRef = ref.child('decks');
   let lastKnownDeck = null;
@@ -23,7 +21,30 @@ export default function (callback) {
   let nextQuery = decksRef.orderByChild('created').startAt(lastKnownDeck).limitToFirst(15);
 
   nextQuery.once('value', snapshot => {
-    callback(snapshot.val())
+    let snapshotWithoutVotes = {};
+    snapshot.forEach(childSnapshot =>{
+      const {archetype, authorId, created, deck, deckId, deckstring, description, downvotes, hsClass, patch, title, type, upvotes, views, votes} = childSnapshot.val();
+      Object.assign(snapshotWithoutVotes, {
+        [deckId]: {
+          archetype,
+          authorId,
+          created,
+          deck,
+          deckId,
+          deckstring,
+          description,
+          downvotes,
+          hsClass,
+          patch,
+          title,
+          type,
+          upvotes,
+          views,
+          votes
+        }
+      });
+    });
+    callback(snapshotWithoutVotes);
   })
 }
 

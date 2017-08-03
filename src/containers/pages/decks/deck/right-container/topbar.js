@@ -19,4 +19,5 @@ const Topbar = ({currentDeck, deckEditing, handleDeckVotingClick}) => {
   )
 };
 
+
 export default Topbar;

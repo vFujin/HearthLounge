@@ -4,8 +4,8 @@ import {updateVotes} from '../../../user/update';
 
 export default function(deckId, uid, vote, callback){
   const deckRating = ref.child(`decks/${deckId}`);
-  const userDeckRating = ref.child(`user-deck-ratings/${uid}/${deckId}`);
+  const userDeckRating = `user-deck-ratings/${uid}`;
 
   voteTransaction(deckRating, uid, vote);
-  updateVotes(userDeckRating, deckId, vote, callback);
+  updateVotes(userDeckRating, uid, deckId, vote, callback);
 }
