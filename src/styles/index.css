@@ -309,7 +309,7 @@ a:active, a:hover, a:link, a:visited {
 .icon-kabal:before {
   content: "\e925"; }
 
-.icon-karazhan:before {
+.icon-karazhan:before, icon-one-i {
   content: "\e926"; }
 
 .icon-kraken:before {

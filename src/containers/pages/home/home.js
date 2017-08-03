@@ -44,9 +44,9 @@ class Home extends PureComponent{
               <CardsBlock/>
             </HomeBlock>
 
-            <HomeBlock icon="twitch" width={2} title="top HS broadcasters">
-              <TwitchBlock/>
-            </HomeBlock>
+            {/*<HomeBlock icon="twitch" width={2} title="top HS broadcasters">*/}
+              {/*<TwitchBlock/>*/}
+            {/*</HomeBlock>*/}
             {/*<HomeBlock icon="bubbles2" title="forum" >*/}
             {/*<ForumBlock />*/}
             {/*</HomeBlock>*/}

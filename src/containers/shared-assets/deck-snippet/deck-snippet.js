@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import DeckSnippetHeader from './deck-snippet-header';
 import DeckSnippetBody from './deck-snippet-body';
 import _ from "lodash";
+import Icon from "../../../components/icons/icon";
 
 const DeckSnippet = ({d, handleDeckClick}) => {
   const {adventure, archetype, comments, created, deck, deckId, hsClass, title, type, username, views, votes} = d;
@@ -12,7 +13,7 @@ const DeckSnippet = ({d, handleDeckClick}) => {
             onClick={handleDeckClick}
             id={deckId}
             className={`${prefix} component ${hsClass} active-on-hover`}>
-        <span className={`background-icon hs-icon icon-${type === 'adventures' ? _.kebabCase(adventure) : type}`}></span>
+        <Icon name={type === 'adventures' ? _.kebabCase(adventure) : type} className="background-icon" type="set"/>
         <DeckSnippetHeader prefix={prefix}
                            title={title}
                            username={username}

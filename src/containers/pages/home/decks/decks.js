@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router';
+import _ from 'lodash';
 import ClassSelection from './filters/class-selection';
 import ModeSelection from './filters/mode-selection';
 import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
 import SearchDecks from './filters/search-decks';
-import {Link} from 'react-router';
-import _ from 'lodash';
 import Loader from "../../../../components/loader";
+import Icon from "../../../../components/icons/icon";
 const DecksBlock = ({decks, handleDeckClick}) => {
 
   const listDecks = () =>{
@@ -19,7 +20,7 @@ const DecksBlock = ({decks, handleDeckClick}) => {
       <li className={`home__block decks block-width-3`}>
         <div className="home__block--header">
           <Link to="/decks">
-            <span className={`hs-icon icon-decks`}></span>
+            <Icon name="decks" />
             <p>{_.upperCase("decks")}</p>
           </Link>
           <ClassSelection/>
