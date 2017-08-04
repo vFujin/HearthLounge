@@ -1,4 +1,4 @@
-import {amountByCost} from '../../deck/calculate';
+import {amountByCost} from '../index';
 
 describe('#countsAmountByCost', () =>{
   const early_game_deck = [
