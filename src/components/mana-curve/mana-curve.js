@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ManaCurveBar from './mana-curve-graph';
 
-const ManaCurve = ({deck, max, barHeight, barWidth, barSpacing, showCount = true, showIcons = true}) => {
+const ManaCurve = ({deck, max, barHeight, barWidth, barSpacing, showCount, showIcons}) => {
   return (
       <ul className="graph">
         {[...new Array(7)].map((bar, i)=>

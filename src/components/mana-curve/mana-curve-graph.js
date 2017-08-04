@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Icon from "../icons/icon";
 
-const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount, showIcons}) => {
+const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true}) => {
 
   const costBelowSeven = (number) =>{
     return _.filter(deck, {cost: number}).length
@@ -22,7 +22,6 @@ const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.
       return  <Icon name={icon} type="mana" />;
     }
   };
-
 
   return (
       <li style={{height: barHeight, marginRight: barSpacing}}>

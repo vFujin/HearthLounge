@@ -58,6 +58,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
       const Option = Select.Option;
       const options = cards.allCards
           .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(currentDeck.hsClass) || card.playerClass === 'Neutral')))
+          .slice(0, 30)
           .map(card => <Option value={card.name} key={card.name}>{card.name}</Option>);
       return (
           <Select mode="combobox"

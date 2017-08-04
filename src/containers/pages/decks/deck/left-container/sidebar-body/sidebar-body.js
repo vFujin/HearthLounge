@@ -7,6 +7,7 @@ import Loader from "../../../../../../components/loader";
 const SidebarBody = ({currentDeck, editingDecklist, deckEditing, search, handleCardRemovalClick}) =>{
   const {hsClass} = currentDeck;
   if(editingDecklist) {
+
     return (
         <div className="sidebar__body">
           <DeckDetails editingDecklist={editingDecklist}

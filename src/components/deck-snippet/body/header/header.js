@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import ManaCurve from "../../mana-curve";
 import DSType from "./type";
 import ManaCurve from "../../../mana-curve/mana-curve";
 

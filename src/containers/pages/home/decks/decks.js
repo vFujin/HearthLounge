@@ -7,14 +7,13 @@ import DeckSnippet from '../../../../components/deck-snippet/deck-snippet';
 import SearchDecks from './filters/search-decks';
 import Loader from "../../../../components/loader";
 import Icon from "../../../../components/icons/icon";
-const DecksBlock = ({decks, handleDeckClick}) => {
+const DecksBlock = ({decks, handleDeckClick, handlePlayerClassFilterClick}) => {
 
   const listDecks = () =>{
     return decks.map(deck => <DeckSnippet key={deck.deckId}
                                           d={deck}
                                           handleDeckClick={handleDeckClick}/>)
   };
-
 
   return (
       <li className={`home__block decks block-width-3`}>
@@ -23,7 +22,7 @@ const DecksBlock = ({decks, handleDeckClick}) => {
             <Icon name="decks" />
             <p>{_.upperCase("decks")}</p>
           </Link>
-          <ClassSelection/>
+          <ClassSelection handlePlayerClassFilterClick={handlePlayerClassFilterClick}/>
         </div>
         <div className="home__block--body">
           <div className="left-container">

@@ -9,14 +9,20 @@ import TournamentsBlock from './tournament/tournaments';
 import CreateDeckBlock from './create-deck/create-deck';
 import HomeBlock from './block';
 import { TwitchBlock } from './twitch/twitch';
-import {getDecks} from "../../../firebase/decks/deck/read/index";
-import {updateViews} from "../../../firebase/decks/deck/update/index";
+import {getDecks} from "../../../firebase/decks/deck/read";
+import {updateViews} from "../../../firebase/decks/deck/update";
 // import ForumBlock from './forum/forum';
 class Home extends PureComponent{
 
   componentDidMount() {
-    getDecks(decks=>this.props.updateDecks(decks));
+    getDecks(false, decks=>this.props.updateDecks(decks));
   }
+
+
+
+
+
+
 
   handleDeckClick = (e) =>{
     let deckId = e.currentTarget.id;
@@ -24,12 +30,19 @@ class Home extends PureComponent{
     updateViews(deckId);
   };
 
+  handlePlayerClassFilterClick = (e) =>{
+    let playerClass = e.currentTarget.id;
+    getDecks(playerClass, decks => this.props.updateDecks(decks))
+  };
+
   render() {
     const {decks} = this.props;
     return (
         <div className="container__index home">
           <ul className="home__list">
-            <DecksBlock decks={_.map(decks)} handleDeckClick={this.handleDeckClick}/>
+            <DecksBlock decks={_.map(decks)}
+                        handleDeckClick={this.handleDeckClick}
+                        handlePlayerClassFilterClick={this.handlePlayerClassFilterClick}/>
             <HomeBlock icon="create-deck">
               <CreateDeckBlock/>
             </HomeBlock>
