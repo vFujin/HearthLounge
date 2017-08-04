@@ -30,24 +30,16 @@ describe('#countsCardTypes', ()=>{
     return JSON.stringify(value);
   };
 
-  test('counts card types in test deck 1', ()=>{
-    const eStringifiedValue = stringifyObject(cardTypes(test_deck_1));
-    const rStringifiedValue = stringifyObject({"Minion": 3, "Spell": 2, "Weapon": 1});
+  const testCountedCardTypes = (deckType, expectedDeck, expectedValue) => {
+    test(`counts amount of card types in test deck ${deckType}`, ()=>{
+      const eStringifiedValue = stringifyObject(cardTypes(expectedDeck));
+      const rStringifiedValue = stringifyObject(expectedValue);
 
-    expect(eStringifiedValue).toBe(rStringifiedValue)
-  });
+      expect(cardTypes(eStringifiedValue)).toBe(rStringifiedValue)
+    });
+  };
 
-  test('counts card types in test deck 2', ()=>{
-    const eStringifiedValue = stringifyObject(cardTypes(test_deck_2));
-    const rStringifiedValue = stringifyObject({"Minion": 4, "Spell": 2});
-
-    expect(eStringifiedValue).toBe(rStringifiedValue)
-  });
-
-  test('counts card types in test deck 3', ()=>{
-    const eStringifiedValue = stringifyObject(cardTypes(test_deck_3));
-    const rStringifiedValue = stringifyObject({"Minion": 4});
-
-    expect(eStringifiedValue).toBe(rStringifiedValue)
-  });
+  testCountedCardTypes('1', test_deck_1, {"Minion": 3, "Spell": 2, "Weapon": 1});
+  testCountedCardTypes('2', test_deck_2, {"Minion": 4, "Spell": 2});
+  testCountedCardTypes('3', test_deck_3, {"Minion": 4});
 });

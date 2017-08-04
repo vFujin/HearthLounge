@@ -1,6 +1,6 @@
-import {amountByCost} from '../index';
+import {maxCardsCostAmount} from '../index';
 
-describe('#countsAmountByCost', () =>{
+describe('#countsHighestAmountOfCardsCost', () =>{
   const early_game_deck = [
     {cardId: 'id1', cost: 1},
     {cardId: 'id2', cost: 1},
@@ -31,20 +31,14 @@ describe('#countsAmountByCost', () =>{
     {cardId: 'id7', cost: 9},
   ];
 
-  const stringifyObject = (value) =>{
-    return JSON.stringify(value);
-  };
+  const testMaxCardCostAmount = (deckType, expectedDeck, expectedValue) => {
+    test(`counts highest amount of cards cost in ${deckType} game deck`, ()=>{
 
-  const testCountedAmountByCost = (deckType, expectedDeck, expectedValue) =>{
-    test(`counts maximum amount of each card cost in ${deckType} game deck`, ()=>{
-      const eStringifiedValue = stringifyObject(amountByCost(expectedDeck));
-      const rStringifiedValue = stringifyObject(expectedValue);
-
-      expect(eStringifiedValue).toBe(rStringifiedValue)
+      expect(maxCardsCostAmount(expectedDeck)).toBe(expectedValue)
     });
   };
 
-  testCountedAmountByCost('early', early_game_deck, {"1": 2, "2": 4, "3": 1});
-  testCountedAmountByCost('mid', mid_game_deck, {"1": 1, "3": 1, "4": 1, "7": 4});
-  testCountedAmountByCost('late', late_game_deck, {"3": 1, "7": 6});
+  testMaxCardCostAmount('early', early_game_deck, 4);
+  testMaxCardCostAmount('mid', mid_game_deck, 4);
+  testMaxCardCostAmount('late', late_game_deck, 6);
 });
