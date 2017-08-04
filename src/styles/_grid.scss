@@ -30,13 +30,6 @@
               grid-template-rows: repeat(2, calc(50% - 5px));
               grid-template-columns: repeat(5, calc(20% - .8vh));
               grid-column-gap: 1vh;
-              .deck-snippet{
-                .deck-snippet-header{
-                  display: grid;
-                  grid-template-columns: 25% calc(75% - 1vh);
-                  grid-column-gap: 1vh;
-                }
-              }
             }
           }
         }

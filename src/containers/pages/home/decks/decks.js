@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import _ from 'lodash';
 import ClassSelection from './filters/class-selection';
 import ModeSelection from './filters/mode-selection';
-import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
+import DeckSnippet from '../../../../components/deck-snippet/deck-snippet';
 import SearchDecks from './filters/search-decks';
 import Loader from "../../../../components/loader";
 import Icon from "../../../../components/icons/icon";

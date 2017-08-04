@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import startCase from 'lodash/startCase';
 import Tooltip from 'antd/lib/tooltip';
 
-const selectType = (iconName, className = '', type = null, tooltip = true, tooltipPlacement = "bottom") =>{
+const selectType = (iconName, className = '', type = null, tooltip = false, tooltipPlacement = "bottom") =>{
 
   const validateSet = () =>{
     switch(iconName){

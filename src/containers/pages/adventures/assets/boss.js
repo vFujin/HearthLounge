@@ -1,6 +1,6 @@
 import React from 'react';
 import {adventure_details, boss_details} from '../../../../data/adventure-details';
-import DeckSnippet from '../../../shared-assets/deck-snippet/deck-snippet';
+import DeckSnippet from '../../../../components/deck-snippet/deck-snippet';
 
 const Boss = ({adventure, details, boss}) => {
 
