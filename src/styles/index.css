@@ -2405,14 +2405,14 @@ form .divider {
           font-size: 25px; }
         .deckSnippet__body--header-mode p {
           margin-left: 5px; }
-      .deckSnippet__body--header-manaCurve {
+      .deckSnippet__body--headergraph {
         display: flex; }
-        .deckSnippet__body--header-manaCurve li {
+        .deckSnippet__body--headergraph li {
           width: 4px;
           background-color: #474143;
           height: 100%;
           margin-right: 2px; }
-          .deckSnippet__body--header-manaCurve li:last-child {
+          .deckSnippet__body--headergraph li:last-child {
             margin-right: 0; }
       .deckSnippet__body--header-type {
         height: 20px;
@@ -2461,7 +2461,43 @@ form .divider {
       .deckSnippet__body--footer-comments {
         justify-content: center; }
       .deckSnippet__body--footer-votes {
-        justify-content: flex-end; }
+        justify-content: flex-end;
+        color: #2e7d32; }
+
+.graph {
+  text-align: center;
+  display: inline-flex;
+  align-self: center;
+  height: calc(100% - 2vh); }
+  .graph li {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .graph li:last-child {
+      margin-right: 0; }
+    .graph li div {
+      margin-bottom: 5px; }
+    .graph li .bar {
+      height: 100%;
+      background-color: #474143;
+      position: relative; }
+      .graph li .bar span {
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        -ms-transition: all ease 0.4s;
+        -o-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #3b679e;
+        background: -moz-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
+        background: -webkit-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
+        background: linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); }
+    .graph li .hs-icon {
+      font-size: 1.2vw; }
 
 /*
  *  Select
@@ -3116,36 +3152,6 @@ footer {
       position: relative;
       z-index: 1;
       height: 100%; }
-      .container__page .container__page--left .container__mana-curve .graph {
-        padding: 1vh;
-        width: calc(100% - 2vh);
-        text-align: center;
-        display: inline-flex;
-        align-self: center; }
-        .container__page .container__page--left .container__mana-curve .graph li {
-          width: 100%; }
-          .container__page .container__page--left .container__mana-curve .graph li .bar {
-            height: 10vh;
-            margin: .2vh auto;
-            width: 1.5vh;
-            background-color: #474143;
-            position: relative; }
-            .container__page .container__page--left .container__mana-curve .graph li .bar span {
-              -webkit-transition: all ease 0.4s;
-              -moz-transition: all ease 0.4s;
-              -ms-transition: all ease 0.4s;
-              -o-transition: all ease 0.4s;
-              transition: all ease 0.4s;
-              width: 100%;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              background: #3b679e;
-              background: -moz-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
-              background: -webkit-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
-              background: linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); }
-          .container__page .container__page--left .container__mana-curve .graph li .hs-icon {
-            font-size: 1.2vw; }
       .container__page .container__page--left .container__mana-curve .list {
         position: relative;
         overflow: hidden;

@@ -9,7 +9,7 @@ const DeckDetails = ({editingDecklist, deckEditing, handleCardRemovalClick}) => 
   return (
       <div className="container__mana-curve">
         <h3>Mana Curve</h3>
-        <ManaCurve deck={cards} max={max}/>
+        <ManaCurve deck={cards} max={max} />
 
         <h3>Cards</h3>
         <Decklist cards={cards}
@@ -18,6 +18,7 @@ const DeckDetails = ({editingDecklist, deckEditing, handleCardRemovalClick}) => 
       </div>
   )
 };
+
 
 export default DeckDetails;
 
