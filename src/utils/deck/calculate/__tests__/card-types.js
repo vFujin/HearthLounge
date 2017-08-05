@@ -35,7 +35,7 @@ describe('#countsCardTypes', ()=>{
       const eStringifiedValue = stringifyObject(cardTypes(expectedDeck));
       const rStringifiedValue = stringifyObject(expectedValue);
 
-      expect(cardTypes(eStringifiedValue)).toBe(rStringifiedValue)
+      expect(eStringifiedValue).toBe(rStringifiedValue)
     });
   };
 

@@ -18,12 +18,6 @@ class Home extends PureComponent{
     getDecks(false, decks=>this.props.updateDecks(decks));
   }
 
-
-
-
-
-
-
   handleDeckClick = (e) =>{
     let deckId = e.currentTarget.id;
 
