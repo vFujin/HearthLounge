@@ -1,32 +1,7 @@
 import {deckLength} from "../index";
-
+import {createTestDeck, rng} from "../../../test-helpers"
 describe('#countsDeckLength', ()=>{
-  const test_deck_1 = [
-    {cardId: 'id1', type: "Minion"},
-    {cardId: 'id2', type: "Minion"},
-    {cardId: 'id1', type: "Minion"},
-    {cardId: 'id3', type: "Spell"},
-    {cardId: 'id4', type: "Weapon"},
-    {cardId: 'id5', type: "Spell"},
-  ];
-
-  const test_deck_2 = [
-    {cardId: 'id1', type: "Minion"},
-    {cardId: 'id2', type: "Minion"},
-    {cardId: 'id1', type: "Minion"},
-    {cardId: 'id3', type: "Spell"},
-    {cardId: 'id4', type: "Minion"},
-    {cardId: 'id5', type: "Spell"},
-    {cardId: 'id5', type: "Spell"},
-    {cardId: 'id5', type: "Spell"},
-    {cardId: 'id5', type: "Spell"},
-    {cardId: 'id5', type: "Spell"}
-  ];
-
-  const test_deck_3 = [
-    {cardId: 'id1', type: "Minion"},
-    {cardId: 'id2', type: "Minion"}
-  ];
+  const cardObj = {cardId: rng(), cost: rng()};
 
   const testDeckLength = (testingDeckName, deck, expectedValue) =>{
     test(`counts test deck ${testingDeckName} length`, ()=>{
@@ -34,7 +9,8 @@ describe('#countsDeckLength', ()=>{
     });
   };
 
-  testDeckLength(1, test_deck_1, 6);
-  testDeckLength(1, test_deck_2, 10);
-  testDeckLength(3, test_deck_3, 2);
+  testDeckLength(1, createTestDeck(cardObj, 6), 6);
+  testDeckLength(2, createTestDeck(cardObj, 10), 10);
+  testDeckLength(3, createTestDeck(cardObj, 2), 2);
+  testDeckLength(4, createTestDeck(cardObj, 29), 29);
 });
