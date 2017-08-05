@@ -24,7 +24,7 @@ export default function (deck, playerClass, mode) {
     }
   };
 
-  let deckstringObj ={
+  let deckstringObj = {
     cards: [],
     heroes: [playerClassId()],
     format: modeId()

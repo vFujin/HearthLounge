@@ -1,14 +1,14 @@
 import {setDeckstringObj} from "../index";
 import {rng} from "../../../test-helpers";
 
-describe('prepares deck object to be ready for deckstring conversion', ()=>{
-  let test_playerClass_1 = 'priest';
-  let test_playerClass_2 = 'warrior';
+describe('prepares deck to be ready for deckstring conversion', ()=>{
+  const test_playerClass_1 = 'priest',
+        test_playerClass_2 = 'warrior';
 
-  let test_mode_1 = 'adventure';
-  let test_mode_2 = 'tavern-brawl';
-  let test_mode_3 = 'does-exist-but-is-not-listed-aka-standard';
-  let test_mode_4 = 'wild';
+  const test_mode_1 = 'adventure',
+        test_mode_2 = 'tavern-brawl',
+        test_mode_3 = 'does-exist-but-is-not-listed-aka-standard',
+        test_mode_4 = 'wild';
 
   let test_deck_1 = [
     {cardId: rng(), dbfId: 216},
@@ -29,7 +29,7 @@ describe('prepares deck object to be ready for deckstring conversion', ()=>{
   ];
 
   const testDeckToDeckstringObj = (deck, testingPlayerClass, testingMode, expectedValue) =>{
-    test(`converts ${testingPlayerClass} deck, ${testingPlayerClass} playerClass and ${testingMode} mode objects to deckstring object`, ()=>{
+    test(`converts ${testingPlayerClass} deck, ${testingPlayerClass} playerClass and ${testingMode} mode to deckstring object`, ()=>{
       let eStringifiedValue = JSON.stringify(setDeckstringObj(deck, testingPlayerClass, testingMode));
       let rStringifiedValue = JSON.stringify(expectedValue);
 
