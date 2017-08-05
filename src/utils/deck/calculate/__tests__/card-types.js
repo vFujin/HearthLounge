@@ -1,4 +1,4 @@
-import {cardTypes} from "../index"
+import {cardTypes} from "../index";
 
 describe('#countsCardTypes', ()=>{
   const test_deck_1 = [
