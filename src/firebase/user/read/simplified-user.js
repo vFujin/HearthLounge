@@ -10,10 +10,10 @@ export default function (uid, callback) {
   return refParent('users').once("value", (snapshot)=>{
     const user = snapshot.child(uid).val();
     let simplifiedUser = {
-      username: user.username,
       avatar: user.avatar ? user.avatar : false,
       rank: user.rank,
-      role: user.role
+      role: user.role,
+      username: user.username
     };
 
     callback(simplifiedUser);
