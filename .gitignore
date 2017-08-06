@@ -16,3 +16,4 @@ npm-debug.log
 .idea/
 npm
 /src/keys.js
+/src/firebase/init/index.js

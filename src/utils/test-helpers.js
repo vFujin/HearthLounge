@@ -10,3 +10,11 @@ export const createTestDeck = (cardObj, amountOfCards) =>{
   }
   return deck;
 };
+
+export const callbackHelper = (data, expectedData, done) =>{
+    let eStringifiedData = JSON.stringify(data);
+    let rStringifiedData = JSON.stringify(expectedData);
+
+    expect(eStringifiedData).toBe(rStringifiedData);
+    done();
+};
