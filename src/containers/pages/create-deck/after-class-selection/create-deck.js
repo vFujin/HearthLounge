@@ -6,6 +6,7 @@ import {uniqueCards} from '../../../../utils/deck/calculate'
 import {setDeckstringObj, encodeDeckstring} from '../../../../utils/deck/deckstring';
 import {topbarOptions, imgCaptureBox, updateDeck} from "./right-container/content-assets/utils";
 import {scToggleDeckFilters, scToggleDeckMechanics} from "./right-container/content-assets/utils/shortcuts";
+import * as deckCreationActions from "../../../../redux/actions/create-deck/create-deck";
 
 class CreateDeckClassSelected extends PureComponent {
 
@@ -73,6 +74,8 @@ class CreateDeckClassSelected extends PureComponent {
     const playerClass = params.class;
     let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
 
+
+
     return (
         <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
              className="container__page container__page--twoSided create-deck">
@@ -127,34 +130,21 @@ const mapStateToProps = (state) =>{
 };
 
 const mapDispatchToProps = (dispatch) => {
+  const {
+    toggleFilters, showDeckEditingTool, toggleDeckMechanics,
+    toggleImgReadyDecklist, updateURL, editDeck, updateDeckstring, simplifyDeck, updateCurrentCardsLoaded
+  } = deckCreationActions;
+
   return {
-    toggleFilters: (filters) => dispatch({
-      type: 'TOGGLE_FILTERS', filters
-    }),
-    showDeckEditingTool: (editingTool) => dispatch({
-      type: 'SHOW_DECK_EDITING_TOOL', editingTool
-    }),
-    toggleDeckMechanics: (deckMechanics) => dispatch({
-      type: 'TOGGLE_DECK_MECHANICS', deckMechanics
-    }),
-    toggleImgReadyDecklist: (imgReadyDecklist) => dispatch({
-      type: 'TOGGLE_IMG_READY_DECKLIST', imgReadyDecklist
-    }),
-    updateURL: (deckUrl) => dispatch ({
-      type: 'UPDATE_URL', deckUrl
-    }),
-    editDeck: (deck) => dispatch({
-      type: 'EDIT_DECK', deck
-    }),
-    updateDeckstring: (deckstring) => dispatch({
-      type: 'UPDATE_DECKSTRING', deckstring
-    }),
-    simplifyDeck: (simplifiedDeck) => dispatch({
-      type: 'SIMPLIFY_DECK', simplifiedDeck
-    }),
-    updateCurrentCardsLoaded: (currentCardsLoaded) => dispatch({
-      type: 'UPDATE_CURRENT_CARDS_LOADED', currentCardsLoaded
-    })
+    toggleFilters: filters => dispatch(toggleFilters(filters)),
+    showDeckEditingTool: editingTool => dispatch(showDeckEditingTool(editingTool)),
+    toggleDeckMechanics: deckMechanics => dispatch(toggleDeckMechanics(deckMechanics)),
+    toggleImgReadyDecklist: imgReadyDecklist => dispatch(toggleImgReadyDecklist(imgReadyDecklist)),
+    updateURL: deckUrl => dispatch(updateURL),
+    editDeck: deck => dispatch(editDeck(deck)),
+    updateDeckstring: deckstring => dispatch(updateDeckstring(deckstring)),
+    simplifyDeck: simplifiedDeck => dispatch(simplifyDeck),
+    updateCurrentCardsLoaded: currentCardsLoaded => dispatch(updateCurrentCardsLoaded(currentCardsLoaded))
   }
 };
 
