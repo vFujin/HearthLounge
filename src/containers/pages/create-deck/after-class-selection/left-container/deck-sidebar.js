@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import ChoosenCards from './sidebar/details/choosen-cards';
 import DeckMechanics from './sidebar/details/deck-mechanics';
@@ -33,10 +34,10 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMech
 };
 
 DeckSidebar.propTypes = {
-  filtersView: React.PropTypes.bool,
-  countCards: React.PropTypes.func,
-  deck: React.PropTypes.array,
-  params: React.PropTypes.object
+  filtersView: PropTypes.bool,
+  countCards: PropTypes.func,
+  deck: PropTypes.array,
+  params: PropTypes.object
 };
 
 export default DeckSidebar;

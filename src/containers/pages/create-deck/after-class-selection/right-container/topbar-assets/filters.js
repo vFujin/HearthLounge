@@ -1,9 +1,9 @@
 import React from 'react';
-import _ from 'lodash';
 import MapFunctionlessIcons from './map-functionless-icons';
 import IconFilter from '../../../../../shared-assets/filters/redux-icon-filter';
 import {connect} from 'react-redux';
 import {toggleSelectedIcon} from "../../../../../../utils/filter/toggle-selected-icon";
+import {updateDeckCreationFilters} from "../../../../../../redux/actions/create-deck/create-deck";
 
 const Filters = ({deck, activeClass, filtersActive, updateDeckCreationFilter, cardTopbarSet, cardCost}) => {
 
@@ -22,7 +22,7 @@ const Filters = ({deck, activeClass, filtersActive, updateDeckCreationFilter, ca
 };
 
 const mapStateToProps = (state) => {
-  const {cardTopbarSet, cardCost} = state.deckCreationFilters;
+  const {cardTopbarSet, cardCost} = state.deckCreation;
   return {
     cardTopbarSet,
     cardCost
@@ -31,9 +31,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDeckCreationFilter: (filters) => dispatch({
-      type: 'UPDATE_DECK_CREATION_FILTER', filters
-    }),
+    updateDeckCreationFilter: (deckCreationFilters) => dispatch(updateDeckCreationFilters(deckCreationFilters)),
   }
 };
 

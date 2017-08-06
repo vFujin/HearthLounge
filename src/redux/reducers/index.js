@@ -7,7 +7,6 @@ import Users from './users';
 import Cards from './cards';
 import DeckDetails from './create-deck/deck-options';
 import DeckCreation from './create-deck/create-deck';
-import DeckCreationFilters from './filters';
 import DeckList from './decks/decks';
 import DeckView from './decks/deck-view';
 import RedditPosts from './reddit/posts'
@@ -19,7 +18,6 @@ const rootReducer = combineReducers({
   cards: Cards,
   deckDetails: DeckDetails,
   deckCreation: DeckCreation,
-  deckCreationFilters: DeckCreationFilters,
   deckList: DeckList,
   deckView: DeckView,
   redditPosts: RedditPosts,

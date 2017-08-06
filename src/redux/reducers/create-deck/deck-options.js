@@ -1,3 +1,5 @@
+import {UPDATE_DECK_PROPERTY} from "../../types/create-deck/deck-options";
+
 const initialState = {
   deckType: "standard",
   deckArchetype: "quest",
@@ -6,7 +8,7 @@ const initialState = {
 };
 export default function(state=initialState, action){
   switch(action.type){
-    case 'EDIT_DECK_PROPERTY': return {
+    case UPDATE_DECK_PROPERTY: return {
       ...state,
       ...action.props
     };

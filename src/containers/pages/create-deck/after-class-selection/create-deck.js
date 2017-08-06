@@ -115,8 +115,7 @@ class CreateDeckClassSelected extends PureComponent {
 }
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, simplifiedDeck, currentCardsLoaded} = state.deckCreation;
-  const {filtersQuery} = state.deckCreationFilters;
+  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, simplifiedDeck, currentCardsLoaded, filtersQuery} = state.deckCreation;
   return {
     filters,
     editingTool,
@@ -140,10 +139,10 @@ const mapDispatchToProps = (dispatch) => {
     showDeckEditingTool: editingTool => dispatch(showDeckEditingTool(editingTool)),
     toggleDeckMechanics: deckMechanics => dispatch(toggleDeckMechanics(deckMechanics)),
     toggleImgReadyDecklist: imgReadyDecklist => dispatch(toggleImgReadyDecklist(imgReadyDecklist)),
-    updateURL: deckUrl => dispatch(updateURL),
+    updateURL: deckUrl => dispatch(updateURL(deckUrl)),
     editDeck: deck => dispatch(editDeck(deck)),
     updateDeckstring: deckstring => dispatch(updateDeckstring(deckstring)),
-    simplifyDeck: simplifiedDeck => dispatch(simplifyDeck),
+    simplifyDeck: simplifiedDeck => dispatch(simplifyDeck(simplifiedDeck)),
     updateCurrentCardsLoaded: currentCardsLoaded => dispatch(updateCurrentCardsLoaded(currentCardsLoaded))
   }
 };

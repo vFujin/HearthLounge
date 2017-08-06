@@ -1,19 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import IconFilter from '../../../../shared-assets/filters/redux-icon-filter';
 import InputFilter from '../../../../shared-assets/filters/redux-input-filter';
 import SliderFilter from '../../../../shared-assets/filters/redux-slider-filter';
 import {connect} from 'react-redux';
 import {toggleSelectedIcon} from "../../../../../utils/filter/toggle-selected-icon";
+import {updateDeckCreationFilters} from "../../../../../redux/actions/create-deck/create-deck";
 
-const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity, updateDeckCreationFilter}) => {
+const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity, updateDeckCreationFilters}) => {
 
   const handleSelect = (value, selector) =>{
-    updateDeckCreationFilter({[`card${_.startCase(selector)}`]:value});
+    updateDeckCreationFilters({[`card${_.startCase(selector)}`]:value});
   };
 
   const handleIconClick = (e, selector) =>{
-    toggleSelectedIcon(e, selector, updateDeckCreationFilter, true);
+    toggleSelectedIcon(e, selector, updateDeckCreationFilters, true);
   };
 
   return (
@@ -35,18 +37,17 @@ const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardN
   );
 };
 
-
 FilterSidebar.propTypes = {
-  faction: React.PropTypes.array,
-  mechanics: React.PropTypes.array,
-  name: React.PropTypes.array,
-  query: React.PropTypes.object,
-  race: React.PropTypes.array,
-  type: React.PropTypes.array,
+  faction: PropTypes.array,
+  mechanics: PropTypes.array,
+  name: PropTypes.array,
+  query: PropTypes.object,
+  race: PropTypes.array,
+  type: PropTypes.array,
 };
 
 const mapStateToProps = (state) => {
-  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity} = state.deckCreationFilters;
+  const {cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity} = state.deckCreation;
   return {
     filtersQuery: {
       cardName,
@@ -66,9 +67,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDeckCreationFilter: (filters) => dispatch({
-      type: 'UPDATE_DECK_CREATION_FILTER', filters
-    }),
+    updateDeckCreationFilters: deckCreationFilters => dispatch(updateDeckCreationFilters(deckCreationFilters)),
   }
 };
 

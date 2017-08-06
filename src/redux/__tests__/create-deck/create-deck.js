@@ -1,5 +1,5 @@
-import * as actions from '../actions/create-deck/create-deck';
-import * as types from '../types/create-deck';
+import * as actions from '../../actions/create-deck/create-deck';
+import * as types from '../../types/create-deck/create-deck';
 import lowerCase from 'lodash/lowerCase';
 
 describe('#createDeckActions', () =>{
@@ -25,4 +25,5 @@ describe('#createDeckActions', () =>{
   testActions(actions.simplifyDeck, types.SIMPLIFY_DECK, 'simplifiedDeck', 'foo');
   testActions(actions.updatePlayerClass, types.UPDATE_PLAYERCLASS, 'playerClass', 'priest');
   testActions(actions.updateCurrentCardsLoaded, types.UPDATE_CURRENT_CARDS_LOADED, 'currentCardsLoaded', 70);
+  testActions(actions.updateDeckCreationFilters, types.UPDATE_DECK_CREATION_FILTERS, 'deckCreationFilters', 'foo');
 });

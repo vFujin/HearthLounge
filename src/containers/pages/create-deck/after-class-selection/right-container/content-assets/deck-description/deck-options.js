@@ -6,28 +6,28 @@ import AboutDeck from './save-deck-assets/about-deck';
 import Preview from './save-deck-assets/preview';
 import {default as saveDeck} from '../../../../../../../firebase/decks/deck/create/deck';
 import {error} from '../../../../../../../utils/messages';
+import {updateDeckProperty} from "../../../../../../../redux/actions/create-deck/deck-options";
 
 const updateDeckText = _.debounce((updateDeckProperty, value) => {
   updateDeckProperty({deckText: value})
-}, 300);
+}, 2000);
 
 const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckType, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
-
   const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
     if(target === 'deckTextControlled') {
       updateDeckProperty({deckTextControlled: value});
       updateDeckText(updateDeckProperty, value);
-    }
-    else {
+    } else {
       updateDeckProperty({[target]: value});
     }
   };
 
+
   const handleSelectChange = (v, selector) => {
     let key= `deck${_.upperFirst(selector)}`;
-    updateDeckProperty({[key]: v})
+    updateDeckProperty({[key]: v});
   };
 
   const handleSaveDeckSubmit = (e) => {
@@ -38,7 +38,6 @@ const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckT
       error("You have to be logged in in order to save your deck.", 6)
     }
   };
-
 
   return (
       <div className='container__details'>
@@ -58,8 +57,10 @@ const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckT
   )
 };
 
+
 const mapStateToProps = (state) => {
   const {deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, deckText, deckTextControlled} = state.deckDetails;
+  console.log(deckTitle)
   return {
     deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, deckText, deckTextControlled
   }
@@ -67,9 +68,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDeckProperty: (props) => (dispatch({
-      type: 'EDIT_DECK_PROPERTY', props
-    }))
+    updateDeckProperty: props => dispatch(updateDeckProperty(props))
   }
 };
 
