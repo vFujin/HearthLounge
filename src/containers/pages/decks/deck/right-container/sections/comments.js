@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
@@ -11,12 +11,13 @@ import {getSimplifiedUser} from "../../../../../../firebase/user/read/index";
 import {getComment, getComments} from '../../../../../../firebase/decks/comments/read';
 import {updateCommentRating} from '../../../../../../firebase/decks/comments/update';
 import {postComment} from '../../../../../../firebase/decks/comments/create/comment';
+import * as deckCommentActions from "../../../../../../redux/actions/decks/deck-view";
 
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
 }, 300);
 
-class DeckComments extends Component {
+class DeckComments extends PureComponent {
   /**
    * Using componentDidMount just to fetch user voted comments that is logged in,
    * though componentDidMount works only when user is redirected from other webapp page,
@@ -54,8 +55,7 @@ class DeckComments extends Component {
   };
 
   handlePreviewClick = () => {
-    let isActive = this.props.previewIsActive === false ? true : false;
-    this.props.togglePreview(isActive);
+    this.props.togglePreview(!this.props.previewIsActive);
   };
 
   handleAddCommentClick = () => {
@@ -136,37 +136,20 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+
+  const {toggleCommentBox, togglePreview, updateComment, updateComments,
+    updateCommentVote, updateUsersDetails, updateUserVotedDeckComments, updateCommentVotes, updateActiveCommentId} = deckCommentActions;
+
   return {
-    updateComment: (props) => (dispatch({
-      type: 'UPDATE_COMMENT', props
-    })),
-    updateCommentVote: (vote) => (dispatch({
-      type: 'UPDATE_COMMENT_VOTE', vote
-    })),
-     toggleCommentBox: (commentBoxIsActive) => (dispatch({
-      type: 'TOGGLE_COMMENT_BOX', commentBoxIsActive
-    })),
-    togglePreview: (previewIsActive) => (dispatch({
-      type: 'TOGGLE_PREVIEW', previewIsActive
-    })),
-    updateComments: (deckId, comments) => (dispatch({
-      type: 'FETCH_COMMENTS',  comments: {[deckId]: _.map(comments)}
-    })),
-    updateUsersDetails: (usersDetails) => (dispatch({
-      type: 'FETCH_USERS_DETAILS', usersDetails
-    })),
-    updateUserVotedDeckComments: (uid, deckId, votedComments) => (dispatch({
-      type: 'FETCH_USER_VOTED_COMMENTS',
-      votedComments: {
-        [deckId]: votedComments
-      }
-    })),
-    updateCommentVotes: (commentVotes) => (dispatch({
-      type: 'UPDATE_COMMENT_VOTES', commentVotes
-    })),
-    updateActiveCommentId: (activeComment) => (dispatch({
-      type: 'UPDATE_ACTIVE_COMMENT_ID', activeComment
-    }))
+    updateComment: props => dispatch(updateComment(props)),
+    updateCommentVote: vote => dispatch(updateCommentVote(vote)),
+    toggleCommentBox: commentBoxIsActive => dispatch(toggleCommentBox(commentBoxIsActive)),
+    togglePreview: previewIsActive => dispatch(togglePreview(previewIsActive)),
+    updateComments: (deckId, comments) => dispatch(updateComments(deckId, comments)),
+    updateUsersDetails: usersDetails => dispatch(updateUsersDetails(usersDetails)),
+    updateUserVotedDeckComments: (uid, deckId, votedComments) => dispatch(updateUserVotedDeckComments(uid, deckId, votedComments)),
+    updateCommentVotes: commentVotes => dispatch(updateCommentVotes(commentVotes)),
+    updateActiveCommentId: activeComment => dispatch(updateActiveCommentId(activeComment))
   }
 };
 
