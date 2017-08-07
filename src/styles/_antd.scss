@@ -256,7 +256,19 @@
   }
 
 }
-
+.decklist-card-img{
+  width: 200px;
+  img{
+    width: 100%;
+    height:100%;
+  }
+  .ant-tooltip-arrow{
+    border-right-color: $pearl;
+  }
+  .ant-tooltip-inner{
+    border:1px solid $pearl;
+  }
+}
 .form-tooltip{
   .ant-tooltip-content{
 

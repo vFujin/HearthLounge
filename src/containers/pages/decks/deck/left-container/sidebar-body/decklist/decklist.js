@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import TableBody from "./table-body";
 import TableHead from "./table-head";
 
-const Decklist = ({cards, deckEditing, handleCardRemovalClick}) => {
+const Decklist = ({allCards, cards, deckEditing, handleCardRemovalClick}) => {
   return (
       <div className="list cards-list">
         <div className="table-scroll">
           <table>
             <TableHead deckEditing={deckEditing}/>
             <TableBody cards={cards}
+                       allCards={allCards}
                        deckEditing={deckEditing}
                        handleCardRemovalClick={handleCardRemovalClick}/>
           </table>

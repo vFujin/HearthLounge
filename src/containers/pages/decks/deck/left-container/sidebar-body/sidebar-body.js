@@ -4,7 +4,7 @@ import DeckDetails from "./deck-details";
 import Background from "./background";
 import Loader from "../../../../../../components/loader";
 
-const SidebarBody = ({currentDeck, editingDecklist, deckEditing, search, handleCardRemovalClick}) =>{
+const SidebarBody = ({allCards, currentDeck, editingDecklist, deckEditing, search, handleCardRemovalClick}) =>{
   const {hsClass, deckstring} = currentDeck;
   if(editingDecklist) {
 
@@ -14,6 +14,7 @@ const SidebarBody = ({currentDeck, editingDecklist, deckEditing, search, handleC
                        deckEditing={deckEditing}
                        deckstring={deckstring}
                        hsClass={hsClass}
+                       allCards={allCards}
                        handleCardRemovalClick={handleCardRemovalClick}/>
           {deckEditing
               ? <div className="addCard-wrapper">

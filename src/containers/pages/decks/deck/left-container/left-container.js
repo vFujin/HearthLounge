@@ -80,6 +80,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
       <div className={`container__page--inner container__page--left ${deckEditing ? 'edit-mode' : ''}`}>
         <SidebarHeader currentDeck={currentDeck}/>
         <SidebarBody currentDeck={currentDeck}
+                     allCards={cards.allCards}
                      deckEditing={deckEditing}
                      handleCardRemovalClick={handleCardRemovalClick}
                      search={search}

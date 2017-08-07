@@ -2,9 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '../../../../../../../components/icons/icon';
 import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background";
+import Tooltip from 'antd/lib/tooltip';
+import CardImg from "./card-img";
+const Card = ({allCards, index, card, cardNames, deckEditing, handleCardRemovalClick}) => {
 
-const Card = ({index, card, cardNames, deckEditing, handleCardRemovalClick}) => {
   return(
+      <Tooltip title={<CardImg allCards={allCards} hoveredCardName={cardNames[index]}/>}
+               overlayClassName="decklist-card-img"
+               arrowPointAtCenter={true}
+               placement="right">
         <tr key={index} className={cardRarityBackground(card.rarity)}>
           <td>
             <Icon name={card.set} type="set" tooltip={true} tooltipPlacement="right"/>
@@ -25,6 +31,7 @@ const Card = ({index, card, cardNames, deckEditing, handleCardRemovalClick}) => 
               </td>
               : null}
         </tr>
+      </Tooltip>
     )
 };
 

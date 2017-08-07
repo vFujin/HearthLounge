@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Card from './table-row-card';
 
-const TableBody = ({cards, deckEditing, handleCardRemovalClick}) => {
+const TableBody = ({allCards, cards, deckEditing, handleCardRemovalClick}) => {
   const listCards = () =>{
     let cardNames = Object.keys(cards);
     return _.map(cards).map((card, i) =>
         <Card key={i}
               index={i}
               card={card}
+              allCards={allCards}
               cardNames={cardNames}
               deckEditing={deckEditing}
               handleCardRemovalClick={handleCardRemovalClick}/>

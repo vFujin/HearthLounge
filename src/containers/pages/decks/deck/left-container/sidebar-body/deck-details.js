@@ -4,7 +4,7 @@ import Decklist from "./decklist/decklist";
 import ManaCurve from "../../../../../../components/mana-curve/mana-curve";
 import CopyDeck from "./copy-deck";
 
-const DeckDetails = ({editingDecklist, deckEditing, deckstring, hsClass, handleCardRemovalClick}) => {
+const DeckDetails = ({allCards, editingDecklist, deckEditing, deckstring, hsClass, handleCardRemovalClick}) => {
   const {cards, max} = editingDecklist;
 
 
@@ -15,6 +15,7 @@ const DeckDetails = ({editingDecklist, deckEditing, deckstring, hsClass, handleC
 
         <h3>Cards <CopyDeck deckstring={deckstring} hsClass={hsClass}/></h3>
         <Decklist cards={cards}
+                  allCards={allCards}
                   deckEditing={deckEditing}
                   handleCardRemovalClick={handleCardRemovalClick}/>
       </div>
