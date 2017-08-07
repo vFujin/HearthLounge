@@ -103,7 +103,12 @@
         }
         .container__details--section {
           display: grid;
-          grid-template-rows: 6vh 62.5vh 8vh;
+          &.v-rows-3{
+            grid-template-rows: 6vh 62.5vh 8vh;
+          }
+          &.v-rows-2{
+            grid-template-rows: 6vh auto;
+          }
         }
         .container__details--comments {
           &.editorActive{

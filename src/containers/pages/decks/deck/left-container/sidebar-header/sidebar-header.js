@@ -7,10 +7,7 @@ const SidebarHeader = ({currentDeck}) =>{
   return (
       <h3 className="sidebar__header">
         Deck Details
-        <div>
-          <Icon name="copy"/>
-          <Icon name={type} type="mode"/>
-        </div>
+        <Icon name={type} type="mode"/>
       </h3>
   )
 };

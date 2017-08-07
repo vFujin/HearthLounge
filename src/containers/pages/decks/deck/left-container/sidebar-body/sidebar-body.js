@@ -5,13 +5,15 @@ import Background from "./background";
 import Loader from "../../../../../../components/loader";
 
 const SidebarBody = ({currentDeck, editingDecklist, deckEditing, search, handleCardRemovalClick}) =>{
-  const {hsClass} = currentDeck;
+  const {hsClass, deckstring} = currentDeck;
   if(editingDecklist) {
 
     return (
         <div className="sidebar__body">
           <DeckDetails editingDecklist={editingDecklist}
                        deckEditing={deckEditing}
+                       deckstring={deckstring}
+                       hsClass={hsClass}
                        handleCardRemovalClick={handleCardRemovalClick}/>
           {deckEditing
               ? <div className="addCard-wrapper">

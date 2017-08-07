@@ -18,13 +18,6 @@ const updateCommentText = _.debounce((updateComment, value) => {
 }, 300);
 
 class DeckComments extends PureComponent {
-  /**
-   * Using componentDidMount just to fetch user voted comments that is logged in,
-   * though componentDidMount works only when user is redirected from other webapp page,
-   * since usually Firebase async call that checks the authentication will end after mounted component
-   *
-   * Any user page refreshing / typing URL by hand will fail to fetch; see shouldComponentUpdate below
-   */
   componentDidMount() {
     const {activeUser, params, updateComments, updateUsersDetails} = this.props;
     const {deckId} = params;
@@ -102,7 +95,7 @@ class DeckComments extends PureComponent {
     let mappedComments = Object.values(comments)[0];
 
     return (
-        <div className={`container__details--section container__details--comments ${commentBoxIsActive ? 'editorActive' : ''}`}>
+        <div className={`container__details--section container__details--comments v-rows-3 ${commentBoxIsActive ? 'editorActive' : ''}`}>
           <SectionHeader comments={comments}/>
 
           <SectionBody comments={mappedComments}

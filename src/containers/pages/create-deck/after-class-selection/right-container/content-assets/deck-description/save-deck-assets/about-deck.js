@@ -6,7 +6,7 @@ import InnerRightContainer from './about-deck-inner-right-container';
 
 const AboutDeck = ({activeClass, deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, handleInputChange, handleSelectChange, handleSaveDeckSubmit, deckTextControlled, handleTagInsertion}) =>{
   return (
-      <div className="container__details--section container__details--description">
+      <div className="container__details--section container__details--description v-rows-2">
         <div className="section__header">
           <div className="line"></div>
           <h1>About deck</h1>

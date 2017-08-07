@@ -4,7 +4,7 @@ import {convertBBCode} from '../../../../../../../shared-assets/editor/text-edit
 
 const Preview = ({deckText}) =>{
   return (
-      <div className="container__details--section container__details--preview">
+      <div className="container__details--section container__details--preview v-rows-2">
         <div className="section__header">
           <div className="line"></div>
           <h1>Preview</h1>

@@ -352,6 +352,17 @@ footer{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        div{
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          cursor: pointer;
+
+          span{
+            margin-left: 10px;
+            font-size: inherit;
+          }
+        }
       }
       .input-filter-wrapper, .slider-filter-wrapper{
         text-transform: capitalize;
@@ -674,7 +685,6 @@ footer{
             }
           }
           .section__body {
-            margin-bottom: 2vh;
             @include scrollbar($pearl);
             overflow: auto;
           }
@@ -708,12 +718,16 @@ footer{
               }
             }
           }
+          &.v-rows-3{
+            .section__body{
+              height: calc(100% - .5vh);
+              margin-bottom: 2vh;
+            }
+          }
         }
         .container__details--description {
           .section__body {
-            overflow: auto;
             border: 1px solid rgba(0,0,0,0.2);
-            height: calc(100% - .5vh - 2px);
             .section__body--content{
               padding: 10px;
             }
@@ -754,6 +768,7 @@ footer{
                 }
                 .body{
                   padding: 1vh 0;
+                  word-break: break-word;
                 }
                 .footer{
                   align-items: center;
@@ -1879,6 +1894,7 @@ footer{
     .container__details--description {
       .section__body {
         background: $dark-grey;
+        padding: 1vh;
         form {
           height:100%;
           .section__body--upperContainer {

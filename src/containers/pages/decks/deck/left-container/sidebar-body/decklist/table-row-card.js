@@ -7,12 +7,12 @@ const Card = ({index, card, cardNames, deckEditing, handleCardRemovalClick}) => 
   return(
         <tr key={index} className={cardRarityBackground(card.rarity)}>
           <td>
-            <Icon name={card.set} type="set" tooltipPlacement="right"/>
+            <Icon name={card.set} type="set" tooltip={true} tooltipPlacement="right"/>
           </td>
           <td>{cardNames[index]}</td>
           <td>{card.amount}</td>
           <td>
-            <Icon name={card.cost} type="mana" tooltip={false}/>
+            <Icon name={card.cost} type="mana"/>
           </td>
 
           {deckEditing

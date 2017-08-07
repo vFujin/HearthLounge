@@ -104,6 +104,16 @@
     color: $color !important;
     background-color: transparent;
   }
+  &.active-shadow{
+    color: $dark-grey;
+    background: $color;
+    @include transition(all ease .4s);
+    &:hover{
+      color: black;
+      background: darken($color, 5%);
+      @include box-shadow(0,0,10px, $color);
+    }
+  }
   &.active-on-hover{
     color: $dark-grey;
     &:hover{

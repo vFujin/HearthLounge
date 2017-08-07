@@ -431,8 +431,11 @@ a:active, a:hover, a:link, a:visited {
       #container .container__page .content .container__details.post .container__details--section {
         grid-template-rows: 6vh 71vh; }
       #container .container__page .content .container__details .container__details--section {
-        display: grid;
-        grid-template-rows: 6vh 62.5vh 8vh; }
+        display: grid; }
+        #container .container__page .content .container__details .container__details--section.v-rows-3 {
+          grid-template-rows: 6vh 62.5vh 8vh; }
+        #container .container__page .content .container__details .container__details--section.v-rows-2 {
+          grid-template-rows: 6vh auto; }
       #container .container__page .content .container__details .container__details--comments.editorActive {
         grid-template-rows: 6vh 50.5vh 20vh; }
       #container .container__page .content .container__details .container__details--comments .section__body .comment {
@@ -473,6 +476,20 @@ a:active, a:hover, a:link, a:visited {
   .druid.active-without-background {
     color: #FF7D0A !important;
     background-color: transparent; }
+  .druid.active-shadow {
+    color: #474143;
+    background: #FF7D0A;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .druid.active-shadow:hover {
+      color: black;
+      background: #f07000;
+      -webkit-box-shadow: 0 0 10px #FF7D0A;
+      -moz-box-shadow: 0 0 10px #FF7D0A;
+      box-shadow: 0 0 10px #FF7D0A; }
   .druid.active-on-hover {
     color: #474143; }
     .druid.active-on-hover:hover {
@@ -518,6 +535,20 @@ a:active, a:hover, a:link, a:visited {
   .hunter.active-without-background {
     color: #ABD473 !important;
     background-color: transparent; }
+  .hunter.active-shadow {
+    color: #474143;
+    background: #ABD473;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .hunter.active-shadow:hover {
+      color: black;
+      background: #9fce5f;
+      -webkit-box-shadow: 0 0 10px #ABD473;
+      -moz-box-shadow: 0 0 10px #ABD473;
+      box-shadow: 0 0 10px #ABD473; }
   .hunter.active-on-hover {
     color: #474143; }
     .hunter.active-on-hover:hover {
@@ -563,6 +594,20 @@ a:active, a:hover, a:link, a:visited {
   .mage.active-without-background {
     color: #69CCF0 !important;
     background-color: transparent; }
+  .mage.active-shadow {
+    color: #474143;
+    background: #69CCF0;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .mage.active-shadow:hover {
+      color: black;
+      background: #52c4ee;
+      -webkit-box-shadow: 0 0 10px #69CCF0;
+      -moz-box-shadow: 0 0 10px #69CCF0;
+      box-shadow: 0 0 10px #69CCF0; }
   .mage.active-on-hover {
     color: #474143; }
     .mage.active-on-hover:hover {
@@ -608,6 +653,20 @@ a:active, a:hover, a:link, a:visited {
   .paladin.active-without-background {
     color: #F58CBA !important;
     background-color: transparent; }
+  .paladin.active-shadow {
+    color: #474143;
+    background: #F58CBA;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .paladin.active-shadow:hover {
+      color: black;
+      background: #f375ac;
+      -webkit-box-shadow: 0 0 10px #F58CBA;
+      -moz-box-shadow: 0 0 10px #F58CBA;
+      box-shadow: 0 0 10px #F58CBA; }
   .paladin.active-on-hover {
     color: #474143; }
     .paladin.active-on-hover:hover {
@@ -653,6 +712,20 @@ a:active, a:hover, a:link, a:visited {
   .priest.active-without-background {
     color: #FFFFFF !important;
     background-color: transparent; }
+  .priest.active-shadow {
+    color: #474143;
+    background: #FFFFFF;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .priest.active-shadow:hover {
+      color: black;
+      background: #f2f2f2;
+      -webkit-box-shadow: 0 0 10px #FFFFFF;
+      -moz-box-shadow: 0 0 10px #FFFFFF;
+      box-shadow: 0 0 10px #FFFFFF; }
   .priest.active-on-hover {
     color: #474143; }
     .priest.active-on-hover:hover {
@@ -698,6 +771,20 @@ a:active, a:hover, a:link, a:visited {
   .rogue.active-without-background {
     color: #FFF569 !important;
     background-color: transparent; }
+  .rogue.active-shadow {
+    color: #474143;
+    background: #FFF569;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .rogue.active-shadow:hover {
+      color: black;
+      background: #fff350;
+      -webkit-box-shadow: 0 0 10px #FFF569;
+      -moz-box-shadow: 0 0 10px #FFF569;
+      box-shadow: 0 0 10px #FFF569; }
   .rogue.active-on-hover {
     color: #474143; }
     .rogue.active-on-hover:hover {
@@ -743,6 +830,20 @@ a:active, a:hover, a:link, a:visited {
   .shaman.active-without-background {
     color: #0070DE !important;
     background-color: transparent; }
+  .shaman.active-shadow {
+    color: #474143;
+    background: #0070DE;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .shaman.active-shadow:hover {
+      color: black;
+      background: #0063c5;
+      -webkit-box-shadow: 0 0 10px #0070DE;
+      -moz-box-shadow: 0 0 10px #0070DE;
+      box-shadow: 0 0 10px #0070DE; }
   .shaman.active-on-hover {
     color: #474143; }
     .shaman.active-on-hover:hover {
@@ -788,6 +889,20 @@ a:active, a:hover, a:link, a:visited {
   .warlock.active-without-background {
     color: #9482C9 !important;
     background-color: transparent; }
+  .warlock.active-shadow {
+    color: #474143;
+    background: #9482C9;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .warlock.active-shadow:hover {
+      color: black;
+      background: #8570c1;
+      -webkit-box-shadow: 0 0 10px #9482C9;
+      -moz-box-shadow: 0 0 10px #9482C9;
+      box-shadow: 0 0 10px #9482C9; }
   .warlock.active-on-hover {
     color: #474143; }
     .warlock.active-on-hover:hover {
@@ -833,6 +948,20 @@ a:active, a:hover, a:link, a:visited {
   .warrior.active-without-background {
     color: #C79C6E !important;
     background-color: transparent; }
+  .warrior.active-shadow {
+    color: #474143;
+    background: #C79C6E;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .warrior.active-shadow:hover {
+      color: black;
+      background: #c08f5c;
+      -webkit-box-shadow: 0 0 10px #C79C6E;
+      -moz-box-shadow: 0 0 10px #C79C6E;
+      box-shadow: 0 0 10px #C79C6E; }
   .warrior.active-on-hover {
     color: #474143; }
     .warrior.active-on-hover:hover {
@@ -878,6 +1007,20 @@ a:active, a:hover, a:link, a:visited {
   .death-knight.active-without-background {
     color: #C41F3B !important;
     background-color: transparent; }
+  .death-knight.active-shadow {
+    color: #474143;
+    background: #C41F3B;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .death-knight.active-shadow:hover {
+      color: black;
+      background: #ae1c34;
+      -webkit-box-shadow: 0 0 10px #C41F3B;
+      -moz-box-shadow: 0 0 10px #C41F3B;
+      box-shadow: 0 0 10px #C41F3B; }
   .death-knight.active-on-hover {
     color: #474143; }
     .death-knight.active-on-hover:hover {
@@ -923,6 +1066,20 @@ a:active, a:hover, a:link, a:visited {
   .monk.active-without-background {
     color: #00FF96 !important;
     background-color: transparent; }
+  .monk.active-shadow {
+    color: #474143;
+    background: #00FF96;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .monk.active-shadow:hover {
+      color: black;
+      background: #00e687;
+      -webkit-box-shadow: 0 0 10px #00FF96;
+      -moz-box-shadow: 0 0 10px #00FF96;
+      box-shadow: 0 0 10px #00FF96; }
   .monk.active-on-hover {
     color: #474143; }
     .monk.active-on-hover:hover {
@@ -968,6 +1125,20 @@ a:active, a:hover, a:link, a:visited {
   .demon-hunter.active-without-background {
     color: #A330C9 !important;
     background-color: transparent; }
+  .demon-hunter.active-shadow {
+    color: #474143;
+    background: #A330C9;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .demon-hunter.active-shadow:hover {
+      color: black;
+      background: #922bb4;
+      -webkit-box-shadow: 0 0 10px #A330C9;
+      -moz-box-shadow: 0 0 10px #A330C9;
+      box-shadow: 0 0 10px #A330C9; }
   .demon-hunter.active-on-hover {
     color: #474143; }
     .demon-hunter.active-on-hover:hover {
@@ -1013,6 +1184,20 @@ a:active, a:hover, a:link, a:visited {
   .naxxramas.active-without-background {
     color: #b5de3f !important;
     background-color: transparent; }
+  .naxxramas.active-shadow {
+    color: #474143;
+    background: #b5de3f;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .naxxramas.active-shadow:hover {
+      color: black;
+      background: #adda29;
+      -webkit-box-shadow: 0 0 10px #b5de3f;
+      -moz-box-shadow: 0 0 10px #b5de3f;
+      box-shadow: 0 0 10px #b5de3f; }
   .naxxramas.active-on-hover {
     color: #474143; }
     .naxxramas.active-on-hover:hover {
@@ -1058,6 +1243,20 @@ a:active, a:hover, a:link, a:visited {
   .blackrock-mountain.active-without-background {
     color: #fa5210 !important;
     background-color: transparent; }
+  .blackrock-mountain.active-shadow {
+    color: #474143;
+    background: #fa5210;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .blackrock-mountain.active-shadow:hover {
+      color: black;
+      background: #ec4605;
+      -webkit-box-shadow: 0 0 10px #fa5210;
+      -moz-box-shadow: 0 0 10px #fa5210;
+      box-shadow: 0 0 10px #fa5210; }
   .blackrock-mountain.active-on-hover {
     color: #474143; }
     .blackrock-mountain.active-on-hover:hover {
@@ -1103,6 +1302,20 @@ a:active, a:hover, a:link, a:visited {
   .the-league-of-explorers.active-without-background {
     color: #14a9a1 !important;
     background-color: transparent; }
+  .the-league-of-explorers.active-shadow {
+    color: #474143;
+    background: #14a9a1;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .the-league-of-explorers.active-shadow:hover {
+      color: black;
+      background: #11928b;
+      -webkit-box-shadow: 0 0 10px #14a9a1;
+      -moz-box-shadow: 0 0 10px #14a9a1;
+      box-shadow: 0 0 10px #14a9a1; }
   .the-league-of-explorers.active-on-hover {
     color: #474143; }
     .the-league-of-explorers.active-on-hover:hover {
@@ -1148,6 +1361,20 @@ a:active, a:hover, a:link, a:visited {
   .karazhan.active-without-background {
     color: #e2b4df !important;
     background-color: transparent; }
+  .karazhan.active-shadow {
+    color: #474143;
+    background: #e2b4df;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .karazhan.active-shadow:hover {
+      color: black;
+      background: #dba2d7;
+      -webkit-box-shadow: 0 0 10px #e2b4df;
+      -moz-box-shadow: 0 0 10px #e2b4df;
+      box-shadow: 0 0 10px #e2b4df; }
   .karazhan.active-on-hover {
     color: #474143; }
     .karazhan.active-on-hover:hover {
@@ -1193,6 +1420,20 @@ a:active, a:hover, a:link, a:visited {
   .goblins-vs-gnomes.active-without-background {
     color: #fae43f !important;
     background-color: transparent; }
+  .goblins-vs-gnomes.active-shadow {
+    color: #474143;
+    background: #fae43f;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .goblins-vs-gnomes.active-shadow:hover {
+      color: black;
+      background: #f9e126;
+      -webkit-box-shadow: 0 0 10px #fae43f;
+      -moz-box-shadow: 0 0 10px #fae43f;
+      box-shadow: 0 0 10px #fae43f; }
   .goblins-vs-gnomes.active-on-hover {
     color: #474143; }
     .goblins-vs-gnomes.active-on-hover:hover {
@@ -1238,6 +1479,20 @@ a:active, a:hover, a:link, a:visited {
   .the-grand-tournament.active-without-background {
     color: #f00 !important;
     background-color: transparent; }
+  .the-grand-tournament.active-shadow {
+    color: #474143;
+    background: #f00;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .the-grand-tournament.active-shadow:hover {
+      color: black;
+      background: #e60000;
+      -webkit-box-shadow: 0 0 10px #f00;
+      -moz-box-shadow: 0 0 10px #f00;
+      box-shadow: 0 0 10px #f00; }
   .the-grand-tournament.active-on-hover {
     color: #474143; }
     .the-grand-tournament.active-on-hover:hover {
@@ -1283,6 +1538,20 @@ a:active, a:hover, a:link, a:visited {
   .whispers-of-the-old-gods.active-without-background {
     color: #cc00ff !important;
     background-color: transparent; }
+  .whispers-of-the-old-gods.active-shadow {
+    color: #474143;
+    background: #cc00ff;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .whispers-of-the-old-gods.active-shadow:hover {
+      color: black;
+      background: #b800e6;
+      -webkit-box-shadow: 0 0 10px #cc00ff;
+      -moz-box-shadow: 0 0 10px #cc00ff;
+      box-shadow: 0 0 10px #cc00ff; }
   .whispers-of-the-old-gods.active-on-hover {
     color: #474143; }
     .whispers-of-the-old-gods.active-on-hover:hover {
@@ -1328,6 +1597,20 @@ a:active, a:hover, a:link, a:visited {
   .mean-streets-of-gadgetzan.active-without-background {
     color: #d2cac5 !important;
     background-color: transparent; }
+  .mean-streets-of-gadgetzan.active-shadow {
+    color: #474143;
+    background: #d2cac5;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .mean-streets-of-gadgetzan.active-shadow:hover {
+      color: black;
+      background: #c7bdb7;
+      -webkit-box-shadow: 0 0 10px #d2cac5;
+      -moz-box-shadow: 0 0 10px #d2cac5;
+      box-shadow: 0 0 10px #d2cac5; }
   .mean-streets-of-gadgetzan.active-on-hover {
     color: #474143; }
     .mean-streets-of-gadgetzan.active-on-hover:hover {
@@ -1373,6 +1656,20 @@ a:active, a:hover, a:link, a:visited {
   .journey-to-ungoro.active-without-background {
     color: #3d9e2c !important;
     background-color: transparent; }
+  .journey-to-ungoro.active-shadow {
+    color: #474143;
+    background: #3d9e2c;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .journey-to-ungoro.active-shadow:hover {
+      color: black;
+      background: #358a26;
+      -webkit-box-shadow: 0 0 10px #3d9e2c;
+      -moz-box-shadow: 0 0 10px #3d9e2c;
+      box-shadow: 0 0 10px #3d9e2c; }
   .journey-to-ungoro.active-on-hover {
     color: #474143; }
     .journey-to-ungoro.active-on-hover:hover {
@@ -1418,6 +1715,20 @@ a:active, a:hover, a:link, a:visited {
   .knights-of-the-frozen-throne.active-without-background {
     color: #a5f2f3 !important;
     background-color: transparent; }
+  .knights-of-the-frozen-throne.active-shadow {
+    color: #474143;
+    background: #a5f2f3;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .knights-of-the-frozen-throne.active-shadow:hover {
+      color: black;
+      background: #8feff0;
+      -webkit-box-shadow: 0 0 10px #a5f2f3;
+      -moz-box-shadow: 0 0 10px #a5f2f3;
+      box-shadow: 0 0 10px #a5f2f3; }
   .knights-of-the-frozen-throne.active-on-hover {
     color: #474143; }
     .knights-of-the-frozen-throne.active-on-hover:hover {
@@ -1463,6 +1774,20 @@ a:active, a:hover, a:link, a:visited {
   .common.active-without-background {
     color: #fff !important;
     background-color: transparent; }
+  .common.active-shadow {
+    color: #474143;
+    background: #fff;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .common.active-shadow:hover {
+      color: black;
+      background: #f2f2f2;
+      -webkit-box-shadow: 0 0 10px #fff;
+      -moz-box-shadow: 0 0 10px #fff;
+      box-shadow: 0 0 10px #fff; }
   .common.active-on-hover {
     color: #474143; }
     .common.active-on-hover:hover {
@@ -1508,6 +1833,20 @@ a:active, a:hover, a:link, a:visited {
   .rare.active-without-background {
     color: blue !important;
     background-color: transparent; }
+  .rare.active-shadow {
+    color: #474143;
+    background: blue;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .rare.active-shadow:hover {
+      color: black;
+      background: #0000e6;
+      -webkit-box-shadow: 0 0 10px blue;
+      -moz-box-shadow: 0 0 10px blue;
+      box-shadow: 0 0 10px blue; }
   .rare.active-on-hover {
     color: #474143; }
     .rare.active-on-hover:hover {
@@ -1553,6 +1892,20 @@ a:active, a:hover, a:link, a:visited {
   .epic.active-without-background {
     color: purple !important;
     background-color: transparent; }
+  .epic.active-shadow {
+    color: #474143;
+    background: purple;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .epic.active-shadow:hover {
+      color: black;
+      background: #670067;
+      -webkit-box-shadow: 0 0 10px purple;
+      -moz-box-shadow: 0 0 10px purple;
+      box-shadow: 0 0 10px purple; }
   .epic.active-on-hover {
     color: #474143; }
     .epic.active-on-hover:hover {
@@ -1598,6 +1951,20 @@ a:active, a:hover, a:link, a:visited {
   .legendary.active-without-background {
     color: orange !important;
     background-color: transparent; }
+  .legendary.active-shadow {
+    color: #474143;
+    background: orange;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .legendary.active-shadow:hover {
+      color: black;
+      background: #e69500;
+      -webkit-box-shadow: 0 0 10px orange;
+      -moz-box-shadow: 0 0 10px orange;
+      box-shadow: 0 0 10px orange; }
   .legendary.active-on-hover {
     color: #474143; }
     .legendary.active-on-hover:hover {
@@ -1643,6 +2010,20 @@ a:active, a:hover, a:link, a:visited {
   .mammoth.active-without-background, .kraken.active-without-background {
     color: #318e2f !important;
     background-color: transparent; }
+  .mammoth.active-shadow, .kraken.active-shadow {
+    color: #474143;
+    background: #318e2f;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .mammoth.active-shadow:hover, .kraken.active-shadow:hover {
+      color: black;
+      background: #2a7b29;
+      -webkit-box-shadow: 0 0 10px #318e2f;
+      -moz-box-shadow: 0 0 10px #318e2f;
+      box-shadow: 0 0 10px #318e2f; }
   .mammoth.active-on-hover, .kraken.active-on-hover {
     color: #474143; }
     .mammoth.active-on-hover:hover, .kraken.active-on-hover:hover {
@@ -1688,6 +2069,20 @@ a:active, a:hover, a:link, a:visited {
   .wild.active-without-background {
     color: #695840 !important;
     background-color: transparent; }
+  .wild.active-shadow {
+    color: #474143;
+    background: #695840;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .wild.active-shadow:hover {
+      color: black;
+      background: #594b36;
+      -webkit-box-shadow: 0 0 10px #695840;
+      -moz-box-shadow: 0 0 10px #695840;
+      box-shadow: 0 0 10px #695840; }
   .wild.active-on-hover {
     color: #474143; }
     .wild.active-on-hover:hover {
@@ -3066,6 +3461,14 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between; }
+        .container__page .container__page--left .sidebar__body h3 div, .container__page .container__page--left .sidebar__body h4 div {
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          cursor: pointer; }
+          .container__page .container__page--left .sidebar__body h3 div span, .container__page .container__page--left .sidebar__body h4 div span {
+            margin-left: 10px;
+            font-size: inherit; }
       .container__page .container__page--left .sidebar__body .input-filter-wrapper, .container__page .container__page--left .sidebar__body .slider-filter-wrapper {
         text-transform: capitalize;
         font-weight: normal;
@@ -3362,7 +3765,6 @@ footer {
               overflow: visible;
               max-width: 100%; }
         .container__page .container__page--right .content .container__details .container__details--section .section__body {
-          margin-bottom: 2vh;
           overflow: auto; }
           .container__page .container__page--right .content .container__details .container__details--section .section__body::-webkit-scrollbar {
             width: 13px; }
@@ -3395,10 +3797,11 @@ footer {
                 margin-left: .5vh; }
                 .container__page .container__page--right .content .container__details .container__details--section .section__footer .section_footer--wrapper .section__footer--header div button:first-child {
                   margin-left: 0; }
+        .container__page .container__page--right .content .container__details .container__details--section.v-rows-3 .section__body {
+          height: calc(100% - .5vh);
+          margin-bottom: 2vh; }
       .container__page .container__page--right .content .container__details .container__details--description .section__body {
-        overflow: auto;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        height: calc(100% - .5vh - 2px); }
+        border: 1px solid rgba(0, 0, 0, 0.2); }
         .container__page .container__page--right .content .container__details .container__details--description .section__body .section__body--content {
           padding: 10px; }
       .container__page .container__page--right .content .container__details .container__details--description .section__footer .details {
@@ -3424,7 +3827,8 @@ footer {
           .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header {
             justify-content: space-between; }
           .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .body {
-            padding: 1vh 0; }
+            padding: 1vh 0;
+            word-break: break-word; }
           .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer {
             align-items: center; }
             .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .votes {
@@ -4222,7 +4626,8 @@ footer {
       color: #E7E2DA;
       background: #474143; }
 .create-deck .container__page--right .container__details--description .section__body {
-  background: #474143; }
+  background: #474143;
+  padding: 1vh; }
   .create-deck .container__page--right .container__details--description .section__body form {
     height: 100%; }
     .create-deck .container__page--right .container__details--description .section__body form .section__body--upperContainer {

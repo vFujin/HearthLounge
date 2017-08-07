@@ -14,7 +14,7 @@ const DeckDescription = ({activeUser, deckAuthor, currentDeck, deckEditing, hand
   };
 
   return (
-      <div className="container__details--section container__details--description">
+      <div className="container__details--section container__details--description v-rows-3">
         <SectionHeader title={title} />
         <SectionBody description={description}
                      handleInputChange={handleInputChange}
