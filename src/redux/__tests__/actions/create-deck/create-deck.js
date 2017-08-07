@@ -1,5 +1,5 @@
-import * as actions from '../../actions/create-deck/create-deck';
-import * as types from '../../types/create-deck/create-deck';
+import * as actions from '../../../actions/create-deck/create-deck';
+import * as types from '../../../types/create-deck/create-deck';
 import lowerCase from 'lodash/lowerCase';
 
 describe('#createDeckActions', () =>{

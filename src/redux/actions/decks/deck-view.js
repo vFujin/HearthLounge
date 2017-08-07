@@ -53,7 +53,7 @@ export function updateUsersDetails(usersDetails){
   }
 }
 
-export function updateUserVotedDeckComments(uid, deckId, votedComments){
+export function updateUserVotedDeckComments(deckId, votedComments){
   return {
     type: FETCH_USER_VOTED_COMMENTS,
     votedComments: {
