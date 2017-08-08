@@ -13,7 +13,7 @@ const RightContainer = ({adventuresToggled, decks, handleModeFilterClick, handle
                 activeMode={activeMode}
                 activeAdventure={activeAdventure}
                 activeClass={activeClass}/>
-        <div className="content">
+        <div className="content scrollable">
           <DeckList decks={decks} handleDeckSnippetClick={handleDeckSnippetClick}/>
         </div>
       </div>

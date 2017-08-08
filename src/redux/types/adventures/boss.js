@@ -1,0 +1,1 @@
+export const FETCH_BOSS_DECKS = 'FETCH_BOSS_DECKS';

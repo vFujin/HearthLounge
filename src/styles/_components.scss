@@ -51,6 +51,13 @@
   }
 }
 
+.deckSnippet-wrapper{
+  display: grid;
+  grid-row-gap: 1vh;
+  grid-template-rows: repeat(2, calc(50% - 5px));
+  grid-template-columns: repeat(5, calc(20% - .8vh));
+  grid-column-gap: 1vh;
+}
 .deckSnippet {
   @include box-shadow(0, 0, 10px, rgba(black, .3));
   @include transition(all ease .4s);

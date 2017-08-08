@@ -6,7 +6,7 @@ import Rewards from "../../assets/boss-details/rewards";
 import Decklist from "../../assets/boss-details/decklist";
 import WingBosses from "../../assets/boss-details/wing-bosses";
 
-const BossBlock = ({blockName, adventure, wing, boss}) =>{
+const BossBlock = ({blockName, adventure, wing, boss, decks}) =>{
 
   const blockElement = (blockName) =>{
     switch(blockName){
@@ -18,7 +18,7 @@ const BossBlock = ({blockName, adventure, wing, boss}) =>{
       case 'strategy': return <Strategy />;
       case 'rewards': return <Rewards bossRewards={boss.reward}/>;
       case 'wing bosses': return <WingBosses/>;
-      case 'decks': return <Decklist/>;
+      case 'decks': return <Decklist adventure={adventure.adventure} decks={decks}/>;
 
       default: return null;
     }
@@ -36,7 +36,8 @@ BossBlock.propTypes = {
   blockName: PropTypes.string.isRequired,
   adventure: PropTypes.object.isRequired,
   wing: PropTypes.object.isRequired,
-  boss: PropTypes.object.isRequired
+  boss: PropTypes.object.isRequired,
+  decks: PropTypes.array
 };
 
 export default BossBlock;

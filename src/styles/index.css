@@ -2747,6 +2747,13 @@ form .divider {
     .component.btn__update:hover {
       background: #205823; }
 
+.deckSnippet-wrapper {
+  display: grid;
+  grid-row-gap: 1vh;
+  grid-template-rows: repeat(2, calc(50% - 5px));
+  grid-template-columns: repeat(5, calc(20% - .8vh));
+  grid-column-gap: 1vh; }
+
 .deckSnippet {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -3203,8 +3210,6 @@ body {
     color: navy; }
   body .mana-crystal:hover a span {
     color: #0070DE; }
-  body a {
-    color: white; }
 
 .container__index {
   overflow-y: auto; }
@@ -3937,7 +3942,8 @@ footer {
         font-weight: normal;
         text-transform: capitalize; }
       .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content {
-        padding: 1vh; }
+        padding: 1vh;
+        height: calc(100% - 40px - 2vh); }
   .container__page .edit-mode .sidebar__body .container__mana-curve .graph {
     -webkit-box-shadow: inset 0 0 20px #474143;
     -moz-box-shadow: inset 0 0 20px #474143;

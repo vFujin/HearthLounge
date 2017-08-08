@@ -1,10 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {foo} from "../../../../../firebase/decks/read/adventure";
+import Loader from "../../../../../components/loader";
+import DeckSnippet from "../../../../../components/deck-snippet/deck-snippet";
 
-const Decklist = () => {
+const Decklist = ({adventure, decks}) => {
+ const a = () => console.log('foo')
+
+  const mapDecks = () =>{
+    if(!decks){
+
+      return <Loader />
+    } else {
+      return decks.map(deck => <DeckSnippet d={deck} handleDeckClick={a}/>)
+    }
+  };
+
   return (
-      <ul className="container__boss--block-content">
-        decks
+      <ul className="container__boss--block-content deckSnippet-wrapper">
+        {mapDecks()}
       </ul>
   )
 };

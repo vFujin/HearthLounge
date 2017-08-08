@@ -5,7 +5,7 @@ import DeckComments from './sections/comments';
 
 const Content = ({activeUser, patch, deckAuthor, currentDeck, handleDeckEditingClick, deckEditing, decksNotEqual, descriptionsNotEqual, params}) =>{
   return (
-      <div className="content">
+      <div className="content scrollable">
         <div className="container__details">
           <DeckDescription currentDeck={currentDeck}
                            deckAuthor={deckAuthor}

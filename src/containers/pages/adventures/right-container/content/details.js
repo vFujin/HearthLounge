@@ -41,6 +41,7 @@ const AdventureDetails = ({cards, adventure, details, boss}) =>{
         <Boss key={adventure.url} adventure={adventure} wing={wing} boss={activeBoss} />
     )
   };
+
   return <div className="content">
     {(adventureWingExists(adventure, details) && adventureBossExists(adventure, details, boss))
         ? bossDetails()

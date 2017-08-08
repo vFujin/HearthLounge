@@ -41,9 +41,6 @@ body{
       }
     }
   }
-  a{
-    color: white;
-  }
 }
 
 .container__index{
@@ -866,6 +863,7 @@ footer{
           }
           .container__boss--block-content{
             padding:1vh;
+            height: calc(100% - 40px - 2vh);
           }
         }
       }

@@ -5,6 +5,7 @@ import Home from './home';
 import Entry from './entry/entry'
 import Users from './users';
 import Cards from './cards';
+import AdventureBoss from './adventures/boss'
 import DeckDetails from './create-deck/deck-options';
 import DeckCreation from './create-deck/create-deck';
 import DeckList from './decks/decks';
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   entry: Entry,
   users: Users,
   cards: Cards,
+  adventures: AdventureBoss,
   deckDetails: DeckDetails,
   deckCreation: DeckCreation,
   deckList: DeckList,
