@@ -3944,6 +3944,15 @@ footer {
       .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content {
         padding: 1vh;
         height: calc(100% - 40px - 2vh); }
+        .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content.rewards .img-wrapper {
+          margin-top: -1vh;
+          display: grid;
+          height: 100%;
+          grid-template-columns: repeat(2, 50%);
+          justify-items: center;
+          align-content: center; }
+          .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content.rewards .img-wrapper img {
+            transform: scale(0.5); }
   .container__page .edit-mode .sidebar__body .container__mana-curve .graph {
     -webkit-box-shadow: inset 0 0 20px #474143;
     -moz-box-shadow: inset 0 0 20px #474143;

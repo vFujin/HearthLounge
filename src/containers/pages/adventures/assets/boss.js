@@ -15,12 +15,12 @@ class Boss extends PureComponent{
 
 
   render() {
-    const {adventure, wing, boss, decks} = this.props;
+    const {allCards, adventure, wing, boss, decks} = this.props;
     return (
         <ul className="container__boss">
           <BossBlock blockName="overview" adventure={adventure} wing={wing} boss={boss}/>
           <BossBlock blockName="strategy" adventure={adventure} wing={wing} boss={boss}/>
-          <BossBlock blockName="rewards" adventure={adventure} wing={wing} boss={boss}/>
+          <BossBlock blockName="rewards" adventure={adventure} wing={wing} boss={boss} allCards={allCards}/>
           <BossBlock blockName="wing bosses" adventure={adventure} wing={wing} boss={boss}/>
           <BossBlock blockName="decks" adventure={adventure} wing={wing} boss={boss} decks={_.map(decks)}/>
         </ul>

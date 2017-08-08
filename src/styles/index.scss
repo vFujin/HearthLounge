@@ -864,6 +864,19 @@ footer{
           .container__boss--block-content{
             padding:1vh;
             height: calc(100% - 40px - 2vh);
+            &.rewards{
+              .img-wrapper{
+                margin-top: -1vh;
+                display: grid;
+                height: 100%;
+                grid-template-columns: repeat(2, 50%);
+                justify-items: center;
+                align-content: center;
+                img{
+                  transform: scale(.5);
+                }
+              }
+            }
           }
         }
       }

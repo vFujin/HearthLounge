@@ -23,10 +23,13 @@ const components = {
 };
 
 const AdventureDetails = ({cards, adventure, details, boss}) =>{
+
   const currentView = () =>{
     return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page=> {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
+
+
 
       return <Page key={page.url} adventure={adventure} cards={cards}/>
     })
@@ -37,8 +40,20 @@ const AdventureDetails = ({cards, adventure, details, boss}) =>{
     let wing = activeAdventure[0].wings.details.find(wing => wing.url === details);
     let activeBoss = wing.bosses.find(b => b.url === boss);
 
+
+
+
+
+
+
+
+
+
+
+
+
     return activeAdventure.map(adventure=>
-        <Boss key={adventure.url} adventure={adventure} wing={wing} boss={activeBoss} />
+        <Boss allCards={cards.allCards} key={adventure.url} adventure={adventure} wing={wing} boss={activeBoss} />
     )
   };
 
