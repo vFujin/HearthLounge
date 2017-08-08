@@ -60,7 +60,6 @@ const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckT
 
 const mapStateToProps = (state) => {
   const {deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, deckText, deckTextControlled} = state.deckDetails;
-  console.log(deckTitle)
   return {
     deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, deckText, deckTextControlled
   }

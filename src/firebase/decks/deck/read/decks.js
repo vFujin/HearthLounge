@@ -11,10 +11,11 @@ export default function (playerClass, callback) {
     let pageQuery = decksRef.orderByChild('votes').limitToLast(10);
     // console.log(pageQuery)
 
+
     pageQuery.once('value', snapshot => {
-      console.log(_.map(snapshot.val()).filter(deck => deck.hsClass === playerClass));
-      getSimplifiedUser(snapshot.val().authorId, username =>  Object.assign(decks, {[snapshot.val().deckId]: Object.assign(snapshot.val(), username)}));
       callback(null);
+      // console.log(_.map(snapshot.val()).filter(deck => deck.hsClass === playerClass));
+      getSimplifiedUser(snapshot.val().authorId, username =>  Object.assign(decks, {[snapshot.val().deckId]: Object.assign(snapshot.val(), username)}));
       callback(decks);
     })
   } else {

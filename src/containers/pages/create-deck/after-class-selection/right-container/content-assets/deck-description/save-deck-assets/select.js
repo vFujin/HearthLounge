@@ -25,7 +25,7 @@ const FormSelect = ({hsClass, value, deckAdventure, section, handleSelectChange}
 
   const mapBosses = () =>{
     const wing = adventure_details.filter(adventure => adventure.adventure === deckAdventure)[0].wings.details;
-    const bosses = wing => wing.bosses.map(boss => <Option value={boss.boss} key={boss.boss}>{boss.boss}</Option>);
+    const bosses = wing => wing.bosses.map(boss => <Option value={boss.name} key={boss.name}>{boss.name}</Option>);
 
     return _.map(wing, wing =>
         <OptGroup key={wing.url} label={wing.wing_title}>

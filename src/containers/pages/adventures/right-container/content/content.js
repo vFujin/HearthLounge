@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {adventure_detail_tabs} from '../../../../data/adventure-details';
-import {adventureWingExists, adventureBossExists} from '../../../../utils/checkIfPathExist';
+import {adventure_detail_tabs} from '../../../../../data/adventure-details';
+import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
 import AdventureDetails from './details';
-import NotFound from '../../../shared-assets/not-found';
+import NotFound from '../../../../shared-assets/not-found';
 
 const Content = ({adventure, boss, cards, details}) => {
   let detailsPath = adventure_detail_tabs.map(tab => tab.url).includes(details);

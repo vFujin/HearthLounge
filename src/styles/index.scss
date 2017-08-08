@@ -356,7 +356,7 @@ footer{
         div{
           display: flex;
           align-items: center;
-          padding: 0 10px;
+          padding: 2px 10px;
           cursor: pointer;
           span{
             margin-left: 10px;
@@ -595,7 +595,9 @@ footer{
       @include scrollbar($pearl);
       position: relative;
       margin: 1vh 1vh 0 1vh;
-      padding-right: 1vh;
+      &.scrollable{
+        padding-right: 1vh;
+      }
       overflow: auto;
       .container__cards{
         justify-content: center;
@@ -844,6 +846,26 @@ footer{
                 height: 100%;
               }
             }
+          }
+        }
+      }
+      .container__boss {
+        li.container__boss--block {
+          height: 100%;
+          background: $light-grey;
+          .container__boss--block-header {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            height: 40px;
+            background: $dark-grey;
+            color: $pearl;
+            font-weight:normal;
+            text-transform: capitalize;
+          }
+          .container__boss--block-content{
+            padding:1vh;
           }
         }
       }
@@ -1606,7 +1628,7 @@ footer{
         }
         table {
           margin-top: 10px;
-          width: 100%;
+          width: calc(100% - 1px);
           text-align: center;
           border-collapse: collapse;
           tbody {
@@ -1654,169 +1676,6 @@ footer{
                   }
                 }
               }
-            }
-          }
-        }
-        .boss-guide-header {
-          p {
-            background: transparent;
-            text-align: center;
-          }
-          ul {
-            .block {
-              width: 24%;
-              margin: 7px;
-              height: 335px;
-              background-color: rgba(255, 255, 255, .4);
-              display: inline-flex;
-              .block-content {
-                width: 100%;
-              }
-              &:last-child {
-                width: calc(100% - 20px);
-                display: flex;
-                .block-content {
-                  .top-boss-decks {
-                    display: inline-flex;
-                    width: 100%;
-                    .deck {
-                      background-color: $pearl;
-                      width: 25%;
-                      padding: 10px;
-                      margin-right: 10px;
-                      &:last-child {
-                        margin-right: 0;
-                      }
-                      .background-icon {
-                        position: absolute;
-                        font-size: 130px;
-                        opacity: 0.05;
-                        padding-left: 235px;
-                        padding-top: 8px;
-                      }
-                      .header {
-                        display: flex;
-                        padding-bottom: 4.5px;
-                        border-bottom: 1px solid $dark-grey;
-                        .hs-class {
-                          span {
-                            font-size: 35px;
-                            position: relative;
-                            top: 5px;
-                            padding: 5px;
-                            border: 2px solid black;
-                            -webkit-border-radius: 50%;
-                            -moz-border-radius: 50%;
-                            border-radius: 50%;
-                          }
-                        }
-                        .about {
-                          margin-left: 10px;
-                          .title {
-                            font-weight: bold;
-                            font-size: 16px;
-                          }
-                          .author, .created {
-                            font-size: 12px;
-                          }
-                        }
-                      }
-                      .body {
-                        margin-top: 4.5px;
-                        .body-header {
-                          display: flex;
-                          .mode {
-                            width: 10%;
-                            text-align: center;
-                            span {
-                              color: darkgreen;
-                              font-size: 25px;
-                            }
-                            p {
-                              margin-left: 5px;
-                            }
-                          }
-                          .dust-needed {
-                            display: flex;
-                            span {
-                              font-size: 25px;
-                            }
-                          }
-                          .mana-curve {
-                            width: 14%;
-                            display: flex;
-                            li {
-                              width: 5px;
-                              background-color: $dark-grey;
-                              height: 100%;
-                              margin-right: 2px;
-                            }
-                          }
-                          .deck-type, .dust-needed {
-                            height: 27px;
-                            line-height: 27px;
-                          }
-                          .deck-type {
-                            width: 55%;
-                          }
-                          .dust-needed {
-                            width: 21%;
-                            text-align: right;
-                          }
-                        }
-                        .body-body {
-                          margin-top: 10px;
-                          display: flex;
-                          div {
-                            text-align: left;
-                            border-right: 1px solid $light-grey;
-                            padding: 0 5px;
-                            &:first-child {
-                              padding-left: 0;
-                            }
-                            &:last-child {
-                              padding-right: 0;
-                              border-right: 0;
-                            }
-                          }
-                        }
-                        .body-footer {
-                          margin-top: 7px;
-                          display: flex;
-                          div {
-                            width: 33.33%;
-                          }
-                          .views {
-                            display: flex;
-                            opacity: .6;
-                            span {
-                              font-size: 10px;
-                            }
-                            p {
-                              padding: 0;
-                              margin: 0;
-                            }
-                          }
-                          .comments {
-                            text-align: center;
-                          }
-                          .votes {
-                            text-align: right;
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            .boss-details-nav-el {
-              padding: 0;
-              line-height: 40px;
-              height: 40px;
-              background: $dark-grey;
-              color: $pearl;
-              text-align: center;
             }
           }
         }

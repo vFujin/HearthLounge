@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
-import {adventure_detail_tabs} from '../../../../data/adventure-details';
-import {adventureWingExists, adventureBossExists} from '../../../../utils/checkIfPathExist';
+import {adventure_details, adventure_detail_tabs} from '../../../../../data/adventure-details';
+import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
 import {
   Overview,
   Bosses,
@@ -10,7 +10,7 @@ import {
   Cost,
   Structure,
   Boss
-} from '../assets';
+} from '../../assets';
 
 const components = {
   Overview,
@@ -32,10 +32,20 @@ const AdventureDetails = ({cards, adventure, details, boss}) =>{
     })
   };
 
+  const bossDetails = () => {
+    let activeAdventure = adventure_details.filter(a=> a.url === adventure);
+    let wing = activeAdventure[0].wings.details.find(wing => wing.url === details);
+    let activeBoss = wing.bosses.find(b => b.url === boss);
+
+    return activeAdventure.map(adventure=>
+        <Boss key={adventure.url} adventure={adventure} wing={wing} boss={activeBoss} />
+    )
+  };
   return <div className="content">
     {(adventureWingExists(adventure, details) && adventureBossExists(adventure, details, boss))
-        ? <Boss adventure={adventure} boss={boss} details={details}/>
-        : currentView()}
+        ? bossDetails()
+        : currentView()
+    }
     </div>;
 };
 

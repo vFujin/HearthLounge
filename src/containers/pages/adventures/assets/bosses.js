@@ -13,7 +13,7 @@ const Bosses = ({adventure}) => {
       let src = `https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/${adventure}/${wing.url}/${boss.url}.jpg`;
 
       if (adventureDetailsFromUrl === true) {
-        return <img src={src} alt={boss.boss}/>
+        return <img src={src} alt={boss.name}/>
       }
     };
 
@@ -21,7 +21,7 @@ const Bosses = ({adventure}) => {
         <td key={index} className={`${adventure} active-on-hover`}>
           <Link to={`/adventures/${adventure}/${wing.url}/${boss.url}`}>
             {checkAdventure(adventure, boss)}
-            <p>{boss.boss}</p>
+            <p>{boss.name}</p>
           </Link>
         </td>
     )

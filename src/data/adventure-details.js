@@ -95,17 +95,17 @@ export const adventure_details = [
           url: 'the-arachnid-quarter',
           bosses: [
             {
-              boss: "Anub'Rekhan",
+              name: "Anub'Rekhan",
               url: 'anub-rekhan',
               reward: 'Haunted Creeper'
             },
             {
-              boss: "Grand Widow Faerlina",
+              name: "Grand Widow Faerlina",
               url: "grand-widow-faerlina",
               reward: "Nerub'ar Weblord"
             },
             {
-              boss:"Maexxna",
+              name:"Maexxna",
               url: 'maexxna',
               reward: "Nerubian Egg"
             }
@@ -116,17 +116,17 @@ export const adventure_details = [
           url: "the-plague-quarter",
           bosses: [
             {
-              boss: "Noth the Plaguebringer",
+              name: "Noth the Plaguebringer",
               url: 'noth-the-plaguebringer',
               reward: "Stoneskin Gargoyle"
             },
             {
-              boss: "Heigan the Unclean",
+              name: "Heigan the Unclean",
               url: 'heigan-the-unclean',
               reward: "Unstable Ghoul"
             },
             {
-              boss: "Loatheb",
+              name: "Loatheb",
               url: 'loatheb',
               reward: "Sludge Belcher"
             }
@@ -137,17 +137,17 @@ export const adventure_details = [
           url: 'the-military-quarter',
           bosses: [
             {
-              boss: "Instructor Razuvious",
+              name: "Instructor Razuvious",
               url: 'instructor-razuvious',
               reward: "Dancing Swords"
             },
             {
-              boss: "Gothik the Harvester",
+              name: "Gothik the Harvester",
               url: 'gothik-the-harvester',
               reward: "Spectral Knight"
             },
             {
-              boss: "The Four Horsemen",
+              name: "The Four Horsemen",
               url: 'the-four-horsemen',
               reward: "Deathlord"
 
@@ -159,22 +159,22 @@ export const adventure_details = [
           url: 'the-construct-quarter',
           bosses: [
             {
-              boss: "Patchwerk",
+              name: "Patchwerk",
               url: 'patchwerk',
               reward: "Undertaker"
             },
             {
-              boss: "Grobbulus",
+              name: "Grobbulus",
               url: 'grobbulus',
               reward: "Mad Scientist"
             },
             {
-              boss: "Gluth",
+              name: "Gluth",
               url: 'gluth',
               reward: "Zombie Chow"
             },
             {
-              boss: "Thaddius",
+              name: "Thaddius",
               url: 'thaddius',
               reward: "Wailing Soul"
             }
@@ -185,12 +185,12 @@ export const adventure_details = [
           url: 'frostwyrm-lair',
           bosses: [
             {
-              boss: "Sapphiron",
+              name: "Sapphiron",
               url: 'sapphiron',
               reward: "Echoing Ooze"
             },
             {
-              boss: "Kel'Thuzad",
+              name: "Kel'Thuzad",
               url: 'kel-thuzad',
               reward: "Shade of Naxxramas"
             }
@@ -301,17 +301,17 @@ export const adventure_details = [
           url: 'blackrock-depths',
           bosses: [
             {
-              boss: "Grim Guzzler",
+              name: "Grim Guzzler",
               url: 'grim-guzzler',
               reward: "Grim Patron"
             },
             {
-              boss: "Dark Iron Arena",
+              name: "Dark Iron Arena",
               url: 'dark-iron-arena',
               reward: "Gang Up"
             },
             {
-              boss:"Emperor Thaurissan",
+              name:"Emperor Thaurissan",
               url: 'emperor-thaurissan',
               reward: "Resurrect"
             }
@@ -322,17 +322,17 @@ export const adventure_details = [
           url: "molten-core",
           bosses: [
             {
-              boss: "Garr",
+              name: "Garr",
               url: 'garr',
               reward: "Druid of the Flame"
             },
             {
-              boss: "Baron Geddon",
+              name: "Baron Geddon",
               url: 'baron-geddon',
               reward: "Blackwing Technican"
             },
             {
-              boss: "Ragnaros the Firelord",
+              name: "Ragnaros the Firelord",
               url: 'ragnaros-the-firelord',
               reward: "Imp Gang Boss"
             }
@@ -343,17 +343,17 @@ export const adventure_details = [
           url: "blackrock-spire",
           bosses: [
             {
-              boss: "Highlord Omokk",
+              name: "Highlord Omokk",
               url: 'highlord-omokk',
               reward: "Core Rager"
             },
             {
-              boss: "General Drakkisath",
+              name: "General Drakkisath",
               url: 'general-drakkisath',
               reward: "Dragon Consort"
             },
             {
-              boss: "Rend Blackhand",
+              name: "Rend Blackhand",
               url: "rend-blackhand",
               reward: "Dragon Egg"
             }
@@ -364,22 +364,22 @@ export const adventure_details = [
           url: "blackwing-lair",
           bosses: [
             {
-              boss: "Razorgore the Untamed",
+              name: "Razorgore the Untamed",
               url: 'razorgore-the-untamed',
               reward: "Revenge"
             },
             {
-              boss: "Vaelastrasz the Corrupt",
+              name: "Vaelastrasz the Corrupt",
               url: 'vaelastrasz-the-corrupt',
               reward: "Flamewaker"
             },
             {
-              boss: "Chromaggus",
+              name: "Chromaggus",
               url: 'chromaggus',
               reward: "Hungry Dragon"
             },
             {
-              boss: "Lord Victor Nefarius",
+              name: "Lord Victor Nefarius",
               url: 'lord-victor-nefarius',
               reward: "Fireguard Destroyer"
             }
@@ -390,22 +390,22 @@ export const adventure_details = [
           url: "hidden-laboratory",
           bosses: [
             {
-              boss: "Omnotron Defense System",
+              name: "Omnotron Defense System",
               url: 'omnotron-defense-system',
               reward: "Volcanic Drake"
             },
             {
-              boss: "Maloriak",
+              name: "Maloriak",
               url: 'maloriak',
               reward: "Blackwing Corruptor"
             },
             {
-              boss: "Atramedes",
+              name: "Atramedes",
               url: 'atramedes',
               reward: "Drakonid Crusher"
             },
             {
-              boss: "Nefarian",
+              name: "Nefarian",
               url: 'nefarian',
               reward: "Dragonkin Sorcerer"
             }
@@ -516,17 +516,17 @@ export const adventure_details = [
           url: "temple-of-orsis",
           bosses: [
             {
-              boss: "Zinaar",
+              name: "Zinaar",
               url: 'zinaar',
               reward: ["Djinni of Zephyrs", "Jeweled Scarab"]
             },
             {
-              boss: "Sun Raider Phaerix",
+              name: "Sun Raider Phaerix",
               url: 'sun-raider-phaerix',
               reward: ["Anubisath Sentinel", "Summoning Stone"]
             },
             {
-              boss:"Temple Escape",
+              name:"Temple Escape",
               url: 'temple-escape',
               reward: ["Rumbling Elemental", "Sacred Trial"]
             }
@@ -537,17 +537,17 @@ export const adventure_details = [
           url: "uldaman",
           bosses: [
             {
-              boss: "Chieftain Scarvash",
+              name: "Chieftain Scarvash",
               url: 'chieftain-scarvash',
               reward: ["Tunnel Trogg", "Ethereal Conjurer"]
             },
             {
-              boss: "Mine Cart Rush",
+              name: "Mine Cart Rush",
               url: 'mine-cart-rush',
               reward: ["Tomb Spider", "Unearthed Raptor"]
             },
             {
-              boss: "Archaedas",
+              name: "Archaedas",
               url: 'archaedas',
               reward: ["Fierce Monkey", "Reliquary Seeker"]
             }
@@ -558,17 +558,17 @@ export const adventure_details = [
           url: "the-ruined-city",
           bosses: [
             {
-              boss: "Lord Slitherspear",
+              name: "Lord Slitherspear",
               url: 'lord-slitherspear',
               reward: ["Huge Toad", "Gorillabot A-3"]
             },
             {
-              boss: "Giantfin",
+              name: "Giantfin",
               url: 'giantfin',
               reward: ["Anyfin Can Happen", "Murloc Tinyfin"]
             },
             {
-              boss: "Lady Naz'Jar",
+              name: "Lady Naz'Jar",
               url: 'lady-nazjar',
               reward: ["Pit Snake", "Naga Sea Witch"]
             }
@@ -579,22 +579,22 @@ export const adventure_details = [
           url: "hall-of-explorers",
           bosses: [
             {
-              boss: "Skelesaurus Hex",
+              name: "Skelesaurus Hex",
               url: 'skelesaurus-hex',
               reward: ["Fossilized Devilsaur", "Raven Idol"]
             },
             {
-              boss: "The Steel Sentinel",
+              name: "The Steel Sentinel",
               url: 'the-steel-sentinel',
               reward: ["Cursed Blade", "Museum Curator"]
             },
             {
-              boss: "Arch-Thief Rafaam",
+              name: "Arch-Thief Rafaam",
               url: 'arch-thief-rafaam',
               reward: ["Curse of Rafaam", "Wobbling Runts"]
             },
             {
-              boss: "Rafaam Unleashed",
+              name: "Rafaam Unleashed",
               url: 'rafaam-unleashed',
               reward: ["Desert Camel", "Eerie Statue"]
             }
@@ -702,17 +702,17 @@ export const adventure_details = [
           url: "the-spire",
           bosses: [
             {
-              boss: "Shade of Aran",
+              name: "Shade of Aran",
               url: "shade-of-aran",
               reward: ["Medivh's Valet", "Spirit Claws"]
             },
             {
-              boss: "Netherspite",
+              name: "Netherspite",
               url: 'netherspite',
               reward: ["Netherspite Historian", "Book Wyrm"]
             },
             {
-              boss: "Free Medivh!",
+              name: "Free Medivh!",
               url: 'free-medivh',
               reward: ["Malchezaar's Imp", "Ironforge Portal"]
             }
@@ -723,17 +723,17 @@ export const adventure_details = [
           url: "the-menagerie",
           bosses: [
             {
-              boss: "Curator",
+              name: "Curator",
               url: "curator",
               reward: ["Zoobot", "Menagerie Warden"]
             },
             {
-              boss: "Nightbane",
+              name: "Nightbane",
               url: 'nightbane',
               reward: ["Nightbane Templar", "Runic Egg"]
             },
             {
-              boss: "Teresian Illhoof",
+              name: "Teresian Illhoof",
               url: 'terestian-illhoof',
               reward: ["Purify", "Avian Watcher"]
             }
@@ -744,17 +744,17 @@ export const adventure_details = [
           url: "the-opera",
           bosses: [
             {
-              boss: "Julianne",
+              name: "Julianne",
               url: 'julianne',
               reward: ["Pompous Thespian", "Onyx Bishop"]
             },
             {
-              boss: "Big Bad Wolf",
+              name: "Big Bad Wolf",
               url: 'big-bad-wolf',
               reward: ["Kindly Grandmother", "Arcane Giant"]
             },
             {
-              boss: "The Crone",
+              name: "The Crone",
               url: 'the-crone',
               reward: ["Wicked Witchdoctor", "Moat Lurker"]
             }
@@ -765,17 +765,17 @@ export const adventure_details = [
           url: "the-parlor",
           bosses: [
             {
-              boss: "Silverware Golem",
+              name: "Silverware Golem",
               url: 'silverware-golem',
               reward: ["Deadly Fork", "Silverware Golem"]
             },
             {
-              boss: "Magic Mirror",
+              name: "Magic Mirror",
               url: 'magic-mirror',
               reward: ["Arcane Anomaly", "Pantry Spider"]
             },
             {
-              boss: "Chess",
+              name: "Chess",
               url: 'chess',
               reward: ["Ivory Knight", "Protect the King!"]
             }
@@ -786,7 +786,7 @@ export const adventure_details = [
           url: "the-prologue",
           bosses: [
             {
-              boss: "An Uninvited Guest",
+              name: "An Uninvited Guest",
               url: "an-uninvited-guest",
               reward: ["Enchanted Raven", "Firelands Portal"]
             }
