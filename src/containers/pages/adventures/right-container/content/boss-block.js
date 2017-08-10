@@ -16,7 +16,10 @@ const BossBlock = ({allCards, blockName, adventure, wing, boss, decks}) =>{
                                         wingName={wing.wing_title}/>;
       case 'strategy': return <Strategy />;
       case 'rewards': return <Rewards allCards={allCards} bossReward={boss.reward}/>;
-      case 'wing bosses': return <WingBosses/>;
+      case 'wing bosses': return <WingBosses adventure={adventure.url}
+                                             wing={wing.url}
+                                             activeBoss={boss.url}
+                                             wingBosses={wing.bosses}/>;
       case 'decks': return <Decklist adventure={adventure.adventure} decks={decks}/>;
 
       default: return null;
@@ -25,7 +28,7 @@ const BossBlock = ({allCards, blockName, adventure, wing, boss, decks}) =>{
 
   return (
       <li className="container__boss--block">
-        <h4 className="container__boss--block-header">{blockName}</h4>
+        <h4 className="container__boss--block-header">{blockName === "wing bosses" ? `${wing.wing_title}` : blockName}</h4>
         {blockElement(blockName)}
       </li>
   )

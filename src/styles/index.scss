@@ -865,16 +865,47 @@ footer{
             padding:1vh;
             height: calc(100% - 40px - 2vh);
             &.rewards{
+              display: flex;
+              justify-content: center;
+              align-items: center;
               .img-wrapper{
+                display: flex;
                 margin-top: -1vh;
-                display: grid;
-                height: 100%;
-                grid-template-columns: repeat(2, 50%);
-                justify-items: center;
-                align-content: center;
-                img{
-                  transform: scale(.5);
+                transform: scale(.5);
+              }
+            }
+            &.wing-bosses{
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-around;
+              align-items: center;
+              align-content: space-evenly;
+              @include transition(all ease .4s);
+              li{
+                width: 100px;
+                display: flex;
+                align-items: center;
+                @include transition(all ease .4s);
+                a{
+                  cursor: pointer;
+                  img{
+                    width: 100%;
+                    @include transition(all ease .2s);
+                    @include box-shadow(0, 0, 10px, $dark-grey);
+                  }
+                  &:not(.active-boss):hover{
+                    img{
+                      @include box-shadow(0, 0, 15px, $pearl);
+                    }
+                  }
                 }
+                &.active-boss{
+                  opacity: .3;
+                  a{
+                    cursor: not-allowed;
+                  }
+                }
+
               }
             }
           }
