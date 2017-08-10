@@ -33,7 +33,7 @@ const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckT
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
     if(authenticated && user){
-      saveDeck(patch, activeClass, deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, simplifiedDeck, deckText, deckstring, user.uid);
+      saveDeck(patch, activeClass, deckTitle, deckType, deckArchetype, _.kebabCase(deckAdventure), _.kebabCase(deckBoss), simplifiedDeck, deckText, deckstring, user.uid);
     } else {
       error("You have to be logged in in order to save your deck.", 6)
     }

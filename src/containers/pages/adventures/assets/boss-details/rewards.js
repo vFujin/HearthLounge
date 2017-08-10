@@ -6,11 +6,11 @@ const Rewards = ({allCards, bossReward}) => {
   const rewardType = () =>{
     if(typeof bossReward === 'object'){
       return bossReward.map(reward => allCards.filter(card => reward === card.name).map(card=>{
-        return <img src={card.img} alt={card.name}/>
+        return <img key={card.cardId} src={card.img} alt={card.name}/>
       }))
     } else {
       return allCards.filter(card => card.name === bossReward).map(card=>
-        <img src={card.img} alt={card.name}/>
+        <img key={card.cardId} src={card.img} alt={card.name}/>
       )
     }
   };

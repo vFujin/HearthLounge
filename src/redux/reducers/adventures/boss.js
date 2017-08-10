@@ -1,9 +1,9 @@
-import {FETCH_BOSS_DECKS} from "../../types/adventures/boss";
+import {FETCH_ADVENTURE_DECKS} from "../../types/adventures/boss";
 
 
 export default function(state={}, action){
   switch(action.type){
-    case FETCH_BOSS_DECKS: return {
+    case FETCH_ADVENTURE_DECKS: return {
         ...state,
       decks: action.decks
     };

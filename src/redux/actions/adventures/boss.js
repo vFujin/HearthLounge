@@ -1,8 +1,8 @@
-import {FETCH_BOSS_DECKS} from "../../types/adventures/boss";
+import {FETCH_ADVENTURE_DECKS} from "../../types/adventures/boss";
 
-export function fetchBossDecks(decks){
+export function fetchAdventureDecks(decks){
   return {
-    type: FETCH_BOSS_DECKS,
+    type: FETCH_ADVENTURE_DECKS,
     decks
   }
 }

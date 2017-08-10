@@ -6,7 +6,7 @@ import {adventureWingExists, adventureBossExists} from '../../../../../utils/che
 import AdventureDetails from './details';
 import NotFound from '../../../../shared-assets/not-found';
 
-const Content = ({adventure, boss, cards, details}) => {
+const Content = ({adventure, boss, cards, details, decks}) => {
   let detailsPath = adventure_detail_tabs.map(tab => tab.url).includes(details);
   let wingDetailsPath = boss
       ? adventureWingExists(adventure, details)
@@ -18,7 +18,11 @@ const Content = ({adventure, boss, cards, details}) => {
   let notFoundPage = (boss && wingDetailsPath) ? _.startCase(boss) : _.startCase(details);
 
   return (detailsPath || (wingDetailsPath && bossDetailsPath))
-      ? <AdventureDetails adventure={adventure} boss={boss} cards={cards} details={details}/>
+      ? <AdventureDetails adventure={adventure}
+                          boss={boss}
+                          cards={cards}
+                          details={details}
+                          decks={decks}/>
       : <NotFound page={notFoundPage} redirect="expansions"/>
 
 };
@@ -31,5 +35,6 @@ Content.propTypes = {
     sets: PropTypes.objectOf(PropTypes.array)
   }).isRequired,
   boss: PropTypes.string,
-  details: PropTypes.string
+  details: PropTypes.string,
+  decks: PropTypes.array
 };

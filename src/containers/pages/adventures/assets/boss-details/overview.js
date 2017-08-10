@@ -12,3 +12,15 @@ const Overview = ({adventure, wing, boss}) => {
 };
 
 export default Overview;
+
+Overview.propTypes = {
+  adventure: PropTypes.string.isRequired,
+  wing: PropTypes.shape({
+    wing_title: PropTypes.string,
+    url: PropTypes.string
+  }).isRequired,
+  boss: PropTypes.shape({
+    url: PropTypes.string,
+    name: PropTypes.string
+  }).isRequired,
+};

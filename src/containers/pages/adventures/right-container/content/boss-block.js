@@ -12,6 +12,7 @@ const BossBlock = ({allCards, blockName, adventure, wing, boss, decks}) =>{
       case 'overview': return <Overview adventure={adventure.url}
                                         wing={wing}
                                         boss={boss}/>;
+
       case 'strategy': return <Strategy />;
       case 'rewards': return <Rewards allCards={allCards} bossReward={boss.reward}/>;
       case 'wing bosses': return <WingBosses adventure={adventure.url}
@@ -35,8 +36,14 @@ const BossBlock = ({allCards, blockName, adventure, wing, boss, decks}) =>{
 BossBlock.propTypes = {
   blockName: PropTypes.string.isRequired,
   adventure: PropTypes.object.isRequired,
-  wing: PropTypes.object.isRequired,
-  boss: PropTypes.object.isRequired,
+  wing: PropTypes.shape({
+    wing_title: PropTypes.string,
+    url: PropTypes.string
+  }).isRequired,
+  boss: PropTypes.shape({
+    url: PropTypes.string,
+    name: PropTypes.string
+  }).isRequired,
   allCards: PropTypes.array,
   decks: PropTypes.array
 };

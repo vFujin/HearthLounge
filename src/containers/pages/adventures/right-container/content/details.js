@@ -12,6 +12,7 @@ import {
   Boss
 } from '../../assets';
 
+
 const components = {
   Overview,
   Bosses,
@@ -22,51 +23,42 @@ const components = {
   Boss,
 };
 
-const AdventureDetails = ({cards, adventure, details, boss}) =>{
+const AdventureDetails = ({cards, adventure, details, boss, decks}) => {
 
-  const currentView = () =>{
-    return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page=> {
+  const activeView = () => {
+    return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page => {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
 
-
-
-      return <Page key={page.url} adventure={adventure} cards={cards}/>
+      return <Page key={page.url}
+                   adventure={adventure}
+                   cards={cards}/>
     })
   };
 
   const bossDetails = () => {
-    let activeAdventure = adventure_details.filter(a=> a.url === adventure);
+    let activeAdventure = adventure_details.filter(a => a.url === adventure);
     let wing = activeAdventure[0].wings.details.find(wing => wing.url === details);
     let activeBoss = wing.bosses.find(b => b.url === boss);
 
-
-
-
-
-
-
-
-
-
-
-
-
-    return activeAdventure.map(adventure=>
-        <Boss allCards={cards.allCards} key={adventure.url} adventure={adventure} wing={wing} boss={activeBoss} />
+    return activeAdventure.map(adventure =>
+        <Boss allCards={cards.allCards}
+              key={adventure.url}
+              adventure={adventure}
+              wing={wing}
+              boss={activeBoss}
+              decks={decks}/>
     )
   };
 
   return <div className="content">
     {(adventureWingExists(adventure, details) && adventureBossExists(adventure, details, boss))
-        ? bossDetails()
-        : currentView()
+        ? bossDetails(cards, adventure, details, boss, decks)
+        : activeView(cards, adventure, details, boss)
     }
-    </div>;
+  </div>
 };
 
 export default AdventureDetails;
 
-AdventureDetails.propTypes = {
 
-};
