@@ -9,12 +9,9 @@ const Rewards = ({allCards, bossReward}) => {
         return <img src={card.img} alt={card.name}/>
       }))
     } else {
-      return allCards.filter(card => card.name === bossReward).map(card=>{
-        console.log(card)
-
-
-        return <img src={card.img} alt={card.name}/>
-      })
+      return allCards.filter(card => card.name === bossReward).map(card=>
+        <img src={card.img} alt={card.name}/>
+      )
     }
   };
 
@@ -36,3 +33,11 @@ const Rewards = ({allCards, bossReward}) => {
 };
 
 export default Rewards;
+
+Rewards.propTypes = {
+  allCards: PropTypes.array.isRequired,
+  bossReward: PropTypes.oneOfType([
+      PropTypes.array,
+      PropTypes.string
+  ]).isRequired
+};

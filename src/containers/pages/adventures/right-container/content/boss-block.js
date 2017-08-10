@@ -10,10 +10,8 @@ const BossBlock = ({allCards, blockName, adventure, wing, boss, decks}) =>{
   const blockElement = (blockName) =>{
     switch(blockName){
       case 'overview': return <Overview adventure={adventure.url}
-                                        wingUrl={wing.url}
-                                        bossUrl={boss.url}
-                                        bossName={boss.name}
-                                        wingName={wing.wing_title}/>;
+                                        wing={wing}
+                                        boss={boss}/>;
       case 'strategy': return <Strategy />;
       case 'rewards': return <Rewards allCards={allCards} bossReward={boss.reward}/>;
       case 'wing bosses': return <WingBosses adventure={adventure.url}

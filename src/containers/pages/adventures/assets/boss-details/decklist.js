@@ -11,7 +11,7 @@ const Decklist = ({adventure, decks}) => {
 
       return <Loader />
     } else {
-      return decks.map(deck => <DeckSnippet d={deck} handleDeckClick={a}/>)
+      return decks.map(deck => <DeckSnippet key={deck.deckId} d={deck} handleDeckClick={a}/>)
     }
   };
 

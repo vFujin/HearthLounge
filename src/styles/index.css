@@ -3944,6 +3944,19 @@ footer {
       .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content {
         padding: 1vh;
         height: calc(100% - 40px - 2vh); }
+        .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content.overview {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-evenly; }
+          .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content.overview img {
+            -webkit-box-shadow: 0 0 10px #474143;
+            -moz-box-shadow: 0 0 10px #474143;
+            box-shadow: 0 0 10px #474143; }
+          .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content.overview p {
+            text-align: center; }
+            .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content.overview p span {
+              color: #E7E2DA; }
         .container__page .container__page--right .content .container__boss li.container__boss--block .container__boss--block-content.rewards {
           display: flex;
           justify-content: center;

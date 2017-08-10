@@ -8,8 +8,8 @@ const WingBosses = ({adventure, wing, activeBoss, wingBosses}) => {
 
   const mapBosses = () =>{
     return wingBosses.map(boss =>
-        <Tooltip title={boss.name} placement="bottom">
-          <li key={boss.url} className={boss.url === activeBoss ? 'active-boss' : ''}>
+        <Tooltip key={boss.url} title={boss.name} placement="bottom">
+          <li className={boss.url === activeBoss ? 'active-boss' : ''}>
             <Link to={`/adventures/${adventure}/${wing}/${boss.url}`}>
               <AdventureBossImg adventure={adventure} wing={wing} boss={boss.url}/>
             </Link>

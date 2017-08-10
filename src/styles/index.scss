@@ -864,6 +864,21 @@ footer{
           .container__boss--block-content{
             padding:1vh;
             height: calc(100% - 40px - 2vh);
+            &.overview{
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: space-evenly;
+              img{
+                @include box-shadow(0, 0, 10px, $dark-grey);
+              }
+              p{
+                text-align: center;
+                span{
+                  color: $pearl;
+                }
+              }
+            }
             &.rewards{
               display: flex;
               justify-content: center;
