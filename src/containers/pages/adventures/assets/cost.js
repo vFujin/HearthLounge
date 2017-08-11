@@ -24,7 +24,9 @@ const Cost = ({adventure}) => {
           <tr>
             <th>Wing</th>
             <th>Gold</th>
+            <th>USD</th>
             <th>EUR</th>
+            <th>GBP</th>
           </tr>
           </thead>
           <tbody>
@@ -32,7 +34,9 @@ const Cost = ({adventure}) => {
               <tr key={i}>
                 <th>{element.desc}</th>
                 <td>{element.gold}</td>
+                <td>{element.usd}</td>
                 <td>{element.eur}</td>
+                <td>{element.gbp}</td>
               </tr>
           )}
           </tbody>
