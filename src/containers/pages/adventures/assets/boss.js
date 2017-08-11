@@ -1,18 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash'
-import BossBlock from "../right-container/content/boss-block";
+import Block from "./block";
+import Overview from "./boss-blocks/overview";
+import Strategy from "./boss-blocks/strategy";
+import Rewards from "./boss-blocks/rewards";
+import WingBosses from "./boss-blocks/wing-bosses";
+import Decklist from "./boss-blocks/decklist";
 
 const Boss = ({allCards, adventure, wing, boss, decks}) => {
-
   let filteredDecks = _.filter(decks, deck => deck.boss === boss.url);
+
+  const bossOverview = <Overview adventure={adventure.url}
+                                 wing={wing}
+                                 boss={boss}/>;
+  const bossStrategy = <Strategy />;
+  const bossRewards = <Rewards allCards={allCards} bossReward={boss.reward}/>;
+  const wingBosses = <WingBosses adventure={adventure.url}
+                                 wing={wing.url}
+                                 activeBoss={boss.url}
+                                 wingBosses={wing.bosses}/>;
+  const bossDecklist = <Decklist adventure={adventure.adventure} decks={filteredDecks}/>;
+
   return (
       <ul className="container__blocks">
-        <BossBlock blockName="overview" adventure={adventure} wing={wing} boss={boss}/>
-        <BossBlock blockName="strategy" adventure={adventure} wing={wing} boss={boss}/>
-        <BossBlock blockName="rewards" adventure={adventure} wing={wing} boss={boss} allCards={allCards}/>
-        <BossBlock blockName="wing bosses" adventure={adventure} wing={wing} boss={boss}/>
-        <BossBlock blockName="decks" adventure={adventure} wing={wing} boss={boss} decks={filteredDecks}/>
+        <Block page="boss" title="overview" element={bossOverview}/>
+        <Block page="boss" title="strategy" element={bossStrategy}/>
+        <Block page="boss" title="rewards" element={bossRewards}/>
+        <Block page="boss" title="wing bosses" element={wingBosses}/>
+        <Block page="boss" title="decks" element={bossDecklist}/>
       </ul>
   )
 };
