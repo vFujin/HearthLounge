@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Loader from '../../../../components/loader';
+import Tooltip from 'antd/lib/tooltip';
+import {CardDetails} from "../../cards/right-container/card-details";
 
 const Cards = ({adventure, cards}) => {
 
   const set = () =>{
-      return cards.sets[adventure.url].map((card, i) =>
-          <li key={i}>
-            <img src={card.img} alt={`${card.name}`}/>
+      return cards.sets[adventure.url].map(card =>
+          <li key={card.cardId}>
+            <Tooltip placement="left" title={<CardDetails card={card}/>}>
+              <div className="img-wrapper">
+                <img src={card.img} alt={card.name}/>
+              </div>
+            </Tooltip>
           </li>
       )
   };

@@ -28,7 +28,7 @@ class Cards extends PureComponent {
           <li key={card.cardId}>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <div className="img-wrapper">
-              <img src={card.img} alt={card.name}/>
+                <img src={card.img} alt={card.name}/>
               </div>
             </Tooltip>
           </li>
