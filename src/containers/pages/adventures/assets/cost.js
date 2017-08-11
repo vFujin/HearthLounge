@@ -42,7 +42,7 @@ const Cost = ({adventure}) => {
 
   return (
       <div className="cost inner-container">
-        {adventure_details.filter(a => a.url === adventure).map((a, index) =>
+        {adventure_details.filter(a => a.url === adventure.url).map((a, index) =>
             <div key={index}>
               {cost_description(a)}
               {cost_table(a, index)}

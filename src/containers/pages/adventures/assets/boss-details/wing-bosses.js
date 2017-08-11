@@ -19,7 +19,7 @@ const WingBosses = ({adventure, wing, activeBoss, wingBosses}) => {
   };
   
   return (
-    <ul className="container__boss--block-content wing-bosses">
+    <ul className="container__blocks--block-content wing-bosses">
       {mapBosses()}
     </ul>
   )

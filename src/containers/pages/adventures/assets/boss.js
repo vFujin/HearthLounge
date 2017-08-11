@@ -7,7 +7,7 @@ const Boss = ({allCards, adventure, wing, boss, decks}) => {
 
   let filteredDecks = _.filter(decks, deck => deck.boss === boss.url);
   return (
-      <ul className="container__boss">
+      <ul className="container__blocks">
         <BossBlock blockName="overview" adventure={adventure} wing={wing} boss={boss}/>
         <BossBlock blockName="strategy" adventure={adventure} wing={wing} boss={boss}/>
         <BossBlock blockName="rewards" adventure={adventure} wing={wing} boss={boss} allCards={allCards}/>

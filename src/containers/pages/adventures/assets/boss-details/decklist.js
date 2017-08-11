@@ -3,8 +3,8 @@ import {foo} from "../../../../../firebase/decks/read/adventure";
 import Loader from "../../../../../components/loader";
 import DeckSnippet from "../../../../../components/deck-snippet/deck-snippet";
 
-const Decklist = ({adventure, decks}) => {
- const a = () => console.log('foo')
+const Decklist = ({decks}) => {
+ const a = () => console.log('foo');
 
   const mapDecks = () =>{
     if(!decks){
@@ -16,7 +16,7 @@ const Decklist = ({adventure, decks}) => {
   };
 
   return (
-      <ul className="container__boss--block-content deckSnippet-wrapper">
+      <ul className="container__blocks--block-content deckSnippet-wrapper">
         {mapDecks()}
       </ul>
   )

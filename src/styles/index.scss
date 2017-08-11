@@ -846,77 +846,94 @@ footer{
           }
         }
       }
-      .container__boss {
-        li.container__boss--block {
+      .container__blocks {
+        li.container__blocks--block {
           height: 100%;
           background: $light-grey;
-          .container__boss--block-header {
+          .container__blocks--block-header {
             padding: 0;
             display: flex;
             align-items: center;
-            justify-content:center;
+            justify-content: center;
             height: 40px;
             background: $dark-grey;
             color: $pearl;
-            font-weight:normal;
+            font-weight: normal;
             text-transform: capitalize;
           }
-          .container__boss--block-content{
-            padding:1vh;
+          .container__blocks--block-content {
+            padding: 1vh;
             height: calc(100% - 40px - 2vh);
-            &.overview{
-              display: flex;
-              align-items: center;
-              flex-direction: column;
-              justify-content: space-evenly;
-              img{
-                @include box-shadow(0, 0, 10px, $dark-grey);
-              }
-              p{
-                text-align: center;
-                span{
-                  color: $pearl;
-                }
-              }
-            }
-            &.rewards{
+            &.rewards {
               display: flex;
               justify-content: center;
               align-items: center;
-              .img-wrapper{
+              .card-img-wrapper {
                 display: flex;
                 margin-top: -1vh;
                 transform: scale(.5);
               }
             }
-            &.wing-bosses{
+          }
+          &.overview{
+            .image{
+              img {
+                width: 100%;
+                height: 100%;
+              }
+            }
+            .cinematic{
+              iframe{
+                border: none;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+          &.boss {
+            .overview {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              justify-content: space-evenly;
+              img {
+                @include box-shadow(0, 0, 10px, $dark-grey);
+              }
+              p {
+                text-align: center;
+                span {
+                  color: $pearl;
+                }
+              }
+            }
+            .wing-bosses {
               display: flex;
               flex-wrap: wrap;
               justify-content: space-around;
               align-items: center;
               align-content: space-evenly;
               @include transition(all ease .4s);
-              li{
+              li {
                 width: 100px;
                 display: flex;
                 align-items: center;
                 @include transition(all ease .4s);
-                a{
+                a {
                   cursor: pointer;
-                  img{
+                  img {
                     width: 100%;
                     @include transition(all ease .2s);
                     @include box-shadow(0, 0, 10px, $dark-grey);
                   }
-                  &:not(.active-boss):hover{
-                    img{
+                  &:not(.active-boss):hover {
+                    img {
                       @include box-shadow(0, 0, 15px, $pearl);
                     }
                   }
                 }
-                &.active-boss{
+                &.active-boss {
                   opacity: .3;
-                  a{
+                  a {
                     cursor: not-allowed;
                   }
                 }
@@ -1678,7 +1695,7 @@ footer{
       .structure {
 
       }
-      .bosses, .boss {
+      .bosses {
         p {
           padding: 5px;
           background-color: $odd-row;

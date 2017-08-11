@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Strategy = () => {
   return (
-        <div className="container__boss--block-content">
+        <div className="container__blocks--block-content strategy">
           <p>Strategy list</p>
         </div>
   )

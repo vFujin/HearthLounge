@@ -25,70 +25,58 @@ export const adventure_detail_tabs = [
   }
 ];
 
-export const boss_details = [
-  {
-    name: 'Overview',
-    url: 'overview'
-  },
-  {
-    name: 'Strategy',
-    en: 'strategy'
-  },
-  {
-    name: 'Rewards',
-    url: 'rewards',
-  },
-  {
-    name: 'Rest wing bosses',
-    url: 'rest-wing-bosses'
-  },
-  {
-    title: 'Winning decks',
-    url: 'winning-decks',
-  }
-];
-
 export const adventure_details = [
   {
     adventure: "Curse of Naxxramas",
     url: 'naxxramas',
-    description: 'Klątwa Naxxramas jest pięcio skrzydłową przygodą, gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Naxxramas w World of Warcraft. Gracz pokonując skrzydła może dostać 30 nowych kart dodanych w tej przygodzie.',
+    overview: {
+      cardback_heroic: '7',
+      cinematic: 'https://www.youtube.com/embed/5SDJgW3A_sw',
+      description: '',
+      img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/curse-of-naxxramas.jpg',
+      gameboard: ''
+    },
     cost: {
       wings: [
         {
-          desc: 'Pierwsze',
+          desc: 'First',
           gold: 700,
+          usd: 6.99,
           eur: 5.99,
-          pln: 25.19
+          gbp: 4.99,
         },
         {
-          desc: 'Drugie',
+          desc: 'Second',
           gold: 1400,
+          usd: 9.99,
           eur: 8.99,
-          pln: 37.75
+          gbp: 6.99
         },
         {
-          desc: 'Trzecie',
+          desc: 'Third',
           gold: 2100,
+          usd: 14.99,
           eur: 13.99,
-          pln: 58.75
+          gbp: 11.49
         },
         {
-          desc: 'Czwarte',
+          desc: 'Fourth',
           gold: 2800,
+          usd: 19.99,
           eur: 17.99,
-          pln: 75.55
+          gbp: 13.99
         },
         {
-          desc: 'Piąte',
+          desc: 'Fifth',
           gold: 3500,
+          usd: 24.99,
           eur: 21.99,
-          pln: 92.35
+          gbp: 17.49
         }
-      ],
+      ]
     },
     wings: {
-      description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
+      description: "",
       details: [
         {
           wing_title: "The Arachnid Quarter",
@@ -258,40 +246,52 @@ export const adventure_details = [
   {
     adventure: "Blackrock Mountain",
     url: "blackrock-mountain",
-    description: 'gdzie każde skrzydło reprezentuje osobne skrzydło z instancji Blackrock w World of Warcraft',
+    overview: {
+      cardback_event: '18',
+      cardback_heroic: '21',
+      cinematic: 'https://www.youtube.com/embed/jsH9w5HW-9w',
+      description:'',
+      img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/blackrock-mountain.jpg',
+      gameboard: ''
+    },
     cost: {
       wings: [
         {
-          desc: 'Pierwsze',
+          desc: 'First',
           gold: 700,
+          usd: 6.99,
           eur: 5.99,
-          pln: 25.19
+          gbp: 4.99,
         },
         {
-          desc: 'Drugie',
+          desc: 'Second',
           gold: 1400,
+          usd: 9.99,
           eur: 8.99,
-          pln: 37.75
+          gbp: 6.99
         },
         {
-          desc: 'Trzecie',
+          desc: 'Third',
           gold: 2100,
+          usd: 14.99,
           eur: 13.99,
-          pln: 58.75
+          gbp: 11.49
         },
         {
-          desc: 'Czwarte',
+          desc: 'Fourth',
           gold: 2800,
+          usd: 19.99,
           eur: 17.99,
-          pln: 75.55
+          gbp: 13.99
         },
         {
-          desc: 'Piąte',
+          desc: 'Fifth',
           gold: 3500,
+          usd: 24.99,
           eur: 21.99,
-          pln: 92.35
+          gbp: 17.49
         }
-      ],
+      ]
     },
     wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
@@ -472,41 +472,44 @@ export const adventure_details = [
   {
     adventure: "The League of Explorers",
     url: "the-league-of-explorers",
-    description: '',
-    img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/home.expansion-slider/liga_odkrywcow.jpg',
+    overview: {
+      cardback_heroic: '37',
+      cinematic: 'https://www.youtube.com/embed/wmu0XXpUYog',
+      description: '',
+      img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/the-league-of-explorers.jpg',
+      gameboard: ''
+    },
     cost: {
       wings: [
         {
-          desc: 'Pierwsze',
+          desc: 'First',
           gold: 700,
+          usd: 6.99,
           eur: 5.99,
-          pln: 25.19
+          gbp: 4.99,
         },
         {
-          desc: 'Drugie',
+          desc: 'Second',
           gold: 1400,
+          usd: 9.99,
           eur: 8.99,
-          pln: 37.75
+          gbp: 6.99
         },
         {
-          desc: 'Trzecie',
+          desc: 'Third',
           gold: 2100,
+          usd: 14.99,
           eur: 13.99,
-          pln: 58.75
+          gbp: 11.49
         },
         {
-          desc: 'Czwarte',
+          desc: 'Fourth',
           gold: 2800,
+          usd: 19.99,
           eur: 17.99,
-          pln: 75.55
-        },
-        {
-          desc: 'Piąte',
-          gold: 3500,
-          eur: 21.99,
-          pln: 92.35
+          gbp: 13.99
         }
-      ],
+      ]
     },
     wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
@@ -659,40 +662,55 @@ export const adventure_details = [
   {
     adventure: "One Night in Karazhan",
     url: "karazhan",
-    description: '',
+    overview: {
+      cardback_event: '56',
+      cardback_heroic: '53',
+      cinematic: 'https://www.youtube.com/embed/wmu0XXpUYog',
+      description: '',
+      img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/one-night-in-karazhan.jpg',
+      gameboard: ''
+    },
     cost: {
       wings: [
         {
-          desc: 'Pierwsze',
+          desc: 'Prologue'
+        },
+        {
+          desc: 'First',
           gold: 700,
+          usd: 6.99,
           eur: 5.99,
-          pln: 25.19
+          gbp: 4.99,
         },
         {
-          desc: 'Drugie',
+          desc: 'Second',
           gold: 1400,
+          usd: 9.99,
           eur: 8.99,
-          pln: 37.75
+          gbp: 6.99
         },
         {
-          desc: 'Trzecie',
+          desc: 'Third',
           gold: 2100,
+          usd: 14.99,
           eur: 13.99,
-          pln: 58.75
+          gbp: 11.49
         },
         {
-          desc: 'Czwarte',
+          desc: 'Fourth',
           gold: 2800,
+          usd: 19.99,
           eur: 17.99,
-          pln: 75.55
+          gbp: 13.99
         },
         {
-          desc: 'Piąte',
+          desc: 'Fifth',
           gold: 3500,
+          usd: 24.99,
           eur: 21.99,
-          pln: 92.35
+          gbp: 17.49
         }
-      ],
+      ]
     },
     wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",

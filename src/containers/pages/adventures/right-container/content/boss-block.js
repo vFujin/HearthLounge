@@ -26,8 +26,8 @@ const BossBlock = ({allCards, blockName, adventure, wing, boss, decks}) =>{
   };
 
   return (
-      <li className="container__boss--block">
-        <h4 className="container__boss--block-header">{blockName === "wing bosses" ? `${wing.wing_title}` : blockName}</h4>
+      <li className="container__blocks--block boss">
+        <h4 className="container__blocks--block-header">{blockName === "wing bosses" ? `${wing.wing_title}` : blockName}</h4>
         {blockElement(blockName)}
       </li>
   )

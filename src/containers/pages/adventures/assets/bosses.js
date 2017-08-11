@@ -4,9 +4,8 @@ import {Link} from 'react-router';
 import {adventure_details} from '../../../../data/adventure-details';
 
 const Bosses = ({adventure}) => {
-
-  const tableData = (wing, adventure) => {
-    let adventureDetailsFromUrl = adventure_details.filter(a => a.url === adventure)
+  const tableData = (wing, adventureUrl) => {
+    let adventureDetailsFromUrl = adventure_details.filter(a => a.url === adventureUrl)
         .map(a => a.wings.details.map(w => w.url).some(w => w === wing.url))[0];
 
     const checkAdventure = (adventure, boss) => {
@@ -18,9 +17,9 @@ const Bosses = ({adventure}) => {
     };
 
     return wing.bosses.map((boss, index) =>
-        <td key={index} className={`${adventure} active-on-hover`}>
-          <Link to={`/adventures/${adventure}/${wing.url}/${boss.url}`}>
-            {checkAdventure(adventure, boss)}
+        <td key={index} className={`${adventureUrl} active-on-hover`}>
+          <Link to={`/adventures/${adventureUrl}/${wing.url}/${boss.url}`}>
+            {checkAdventure(adventureUrl, boss)}
             <p>{boss.name}</p>
           </Link>
         </td>
@@ -28,13 +27,13 @@ const Bosses = ({adventure}) => {
   };
 
   const bosses = () =>{
-    return adventure_details.filter(a => a.url === adventure).map((a, index) =>
+    return adventure_details.filter(a => a.url === adventure.url).map((a, index) =>
           <table key={index}>
             <tbody>
             {a.wings.details.map((wing, i) =>
                 <tr key={i}>
-                  <th className={`${adventure} active`}>{wing.wing_title}</th>
-                  {tableData(wing, adventure)}
+                  <th className={`${adventure.url} active`}>{wing.wing_title}</th>
+                  {tableData(wing, adventure.url)}
                 </tr>
             )}
             </tbody>

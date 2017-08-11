@@ -4,7 +4,7 @@ import AdventureBossImg from "../../../../../components/images/adventure-boss";
 
 const Overview = ({adventure, wing, boss}) => {
   return (
-    <div className="container__boss--block-content overview">
+    <div className="container__blocks--block-content overview">
       <AdventureBossImg adventure={adventure} wing={wing.url} boss={boss.url}/>
       <p><span>{boss.name}</span> is a part of <span>{wing.wing_title}</span> wing</p>
     </div>

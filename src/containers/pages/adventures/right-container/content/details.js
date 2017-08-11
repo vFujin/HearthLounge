@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import {adventure_details, adventure_detail_tabs} from '../../../../../data/adventure-details';
+import {adventure_detail_tabs} from '../../../../../data/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
 import {
   Overview,
@@ -12,7 +12,6 @@ import {
   Boss
 } from '../../assets';
 
-
 const components = {
   Overview,
   Bosses,
@@ -23,7 +22,7 @@ const components = {
   Boss,
 };
 
-const AdventureDetails = ({cards, adventure, details, boss, decks}) => {
+const AdventureDetails = ({cards, adventureCardbacks, adventure, details, boss, decks}) => {
 
   const activeView = () => {
     return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page => {
@@ -32,29 +31,26 @@ const AdventureDetails = ({cards, adventure, details, boss, decks}) => {
 
       return <Page key={page.url}
                    adventure={adventure}
-                   cards={cards}/>
+                   cards={cards}
+                   adventureCardbacks={adventureCardbacks}/>
     })
   };
 
   const bossDetails = () => {
-    let activeAdventure = adventure_details.filter(a => a.url === adventure);
-    let wing = activeAdventure[0].wings.details.find(wing => wing.url === details);
+    let wing = adventure.wings.details.find(wing => wing.url === details);
     let activeBoss = wing.bosses.find(b => b.url === boss);
-
-    return activeAdventure.map(adventure =>
-        <Boss allCards={cards.allCards}
+    return <Boss allCards={cards.allCards}
               key={adventure.url}
               adventure={adventure}
               wing={wing}
               boss={activeBoss}
               decks={decks}/>
-    )
   };
 
   return <div className="content">
-    {(adventureWingExists(adventure, details) && adventureBossExists(adventure, details, boss))
-        ? bossDetails(cards, adventure, details, boss, decks)
-        : activeView(cards, adventure, details, boss)
+    {(adventureWingExists(adventure.url, details) && adventureBossExists(adventure.url, details, boss))
+        ? bossDetails()
+        : activeView()
     }
   </div>
 };

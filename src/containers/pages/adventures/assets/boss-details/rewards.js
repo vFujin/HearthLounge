@@ -24,8 +24,8 @@ const Rewards = ({allCards, bossReward}) => {
   };
 
   return (
-      <div className="container__boss--block-content rewards">
-        <div className="img-wrapper">
+      <div className="container__blocks--block-content rewards">
+        <div className="card-img-wrapper">
           {mapReward()}
         </div>
       </div>

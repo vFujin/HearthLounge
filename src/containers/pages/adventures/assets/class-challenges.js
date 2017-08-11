@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { adventure_details } from '../../../../data/adventure-details';
 
 const ClassChallenges = ({adventure}) => {
-
   const listClassChallengeCards = (adventure) =>{
     return (
         adventure.class_challenges.map((element, index) =>
@@ -18,7 +17,7 @@ const ClassChallenges = ({adventure}) => {
 
   return (
       <div className="class-challenges inner-container">
-        {adventure_details.filter(a => a.url === adventure).map((adventure, index) =>
+        {adventure_details.filter(a => a.url === adventure.url).map((adventure, index) =>
           <ul key={index}>
             {listClassChallengeCards(adventure)}
           </ul>

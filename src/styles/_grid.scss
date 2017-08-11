@@ -123,17 +123,25 @@
           }
         }
       }
-      .container__boss {
+      .container__blocks {
         display: grid;
         height: 100%;
         grid-template-rows: repeat(2, calc(50% - .5vh));
         grid-row-gap: 1vh;
         grid-template-columns: repeat(4, calc(25% - .75vh));
         grid-column-gap: 1vh;
-        .container__boss--block {
-          &:last-child {
-            grid-column-start: 1;
-            grid-column-end: 5;
+        .container__blocks--block {
+          &.overview {
+            &:first-child {
+              grid-column-start: 1;
+              grid-column-end: 3;
+            }
+          }
+          &.boss {
+            &:last-child {
+              grid-column-start: 1;
+              grid-column-end: 5;
+            }
           }
         }
       }

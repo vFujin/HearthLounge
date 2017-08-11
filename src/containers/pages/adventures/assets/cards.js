@@ -5,7 +5,7 @@ import Loader from '../../../../components/loader';
 const Cards = ({adventure, cards}) => {
 
   const set = () =>{
-      return cards.sets[adventure].map((card, i) =>
+      return cards.sets[adventure.url].map((card, i) =>
           <li key={i}>
             <img src={card.img} alt={`${card.name}`}/>
           </li>
@@ -13,9 +13,9 @@ const Cards = ({adventure, cards}) => {
   };
 
   const listCards = () =>{
-    if(cards.sets[adventure] && cards.sets[adventure].length > 0){
+    if(cards.sets[adventure.url] && cards.sets[adventure.url].length > 0){
       return (
-          <ul className="cards container__cards">
+          <ul className="container__cards">
             {set()}
           </ul>
       )

@@ -17,7 +17,7 @@ const Topbar = ({adventure, details, boss}) => {
   const listDetails = () =>{
     return (
       adventure_detail_tabs.map((detail, index) =>
-          <li key={index} className={adventure}>
+          <li key={index} className={`${adventure} ${detail.url === details && 'active'}`}>
             <Link to={`/adventures/${adventure}/${detail.url}`}>
               {detail.url === 'bosses' ? bossesTab(detail) : detail.name}
             </Link>
