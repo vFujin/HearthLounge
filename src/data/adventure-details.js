@@ -201,40 +201,40 @@ export const adventure_details = [
     },
     class_challenges: [
       {
-        class: 'druid',
-        card_reward: "Mounted Raptor"
+        playerClass: 'druid',
+        reward: "Mounted Raptor"
       },
       {
-        class: 'hunter',
-        card_reward: "Dart Trap"
+        playerClass: 'hunter',
+        reward: "Dart Trap"
       },
       {
-        class: 'mage',
-        card_reward: "Animated Armor"
+        playerClass: 'mage',
+        reward: "Animated Armor"
       },
       {
-        class: 'paladin',
-        card_reward: "Keeper of Uldaman"
+        playerClass: 'paladin',
+        reward: "Keeper of Uldaman"
       },
       {
-        class: 'priest',
-        card_reward: "Entomb"
+        playerClass: 'priest',
+        reward: "Entomb"
       },
       {
-        class: 'rogue',
-        card_reward: "Tomb Pillager"
+        playerClass: 'rogue',
+        reward: "Tomb Pillager"
       },
       {
-        class: 'shaman',
-        card_reward: "Everyfin is Awesome"
+        playerClass: 'shaman',
+        reward: "Everyfin is Awesome"
       },
       {
-        class: 'warlock',
-        card_reward: "Dark Peddler"
+        playerClass: 'warlock',
+        reward: "Dark Peddler"
       },
       {
-        class: 'warrior',
-        card_reward: "Obsidian Destroyer"
+        playerClass: 'warrior',
+        reward: "Obsidian Destroyer"
       }
     ],
     cards: {
@@ -427,40 +427,40 @@ export const adventure_details = [
     },
     class_challenges: [
       {
-        class: 'druid',
-        card_reward: "Volcanic Lumberer"
+        playerClass: 'druid',
+        reward: "Volcanic Lumberer"
       },
       {
-        class: 'hunter',
-        card_reward: "Quick Shot"
+        playerClass: 'hunter',
+        reward: "Quick Shot"
       },
       {
-        class: 'mage',
-        card_reward: "Dragon's Breath"
+        playerClass: 'mage',
+        reward: "Dragon's Breath"
       },
       {
-        class: 'paladin',
-        card_reward: "Solemn Vigil"
+        playerClass: 'paladin',
+        reward: "Solemn Vigil"
       },
       {
-        class: 'priest',
-        card_reward: "Twilight Whelp"
+        playerClass: 'priest',
+        reward: "Twilight Whelp"
       },
       {
-        class: 'rogue',
-        card_reward: "Dark Iron Skulker"
+        playerClass: 'rogue',
+        reward: "Dark Iron Skulker"
       },
       {
-        class: 'shaman',
-        card_reward: "Lava Shock"
+        playerClass: 'shaman',
+        reward: "Lava Shock"
       },
       {
-        class: 'warlock',
-        card_reward: "Demonwrath"
+        playerClass: 'warlock',
+        reward: "Demonwrath"
       },
       {
-        class: 'warrior',
-        card_reward: "Axe Flinger"
+        playerClass: 'warrior',
+        reward: "Axe Flinger"
       }
     ],
     cards: {
@@ -619,40 +619,40 @@ export const adventure_details = [
     },
     class_challenges: [
       {
-        class: 'druid',
-        card_reward: "Volcanic Lumberer"
+        playerClass: 'druid',
+        reward: "Volcanic Lumberer"
       },
       {
-        class: 'hunter',
-        card_reward: "Quick Shot"
+        playerClass: 'hunter',
+        reward: "Quick Shot"
       },
       {
-        class: 'mage',
-        card_reward: "Dragon's Breath"
+        playerClass: 'mage',
+        reward: "Dragon's Breath"
       },
       {
-        class: 'paladin',
-        card_reward: "Solemn Vigil"
+        playerClass: 'paladin',
+        reward: "Solemn Vigil"
       },
       {
-        class: 'priest',
-        card_reward: "Twilight Whelp"
+        playerClass: 'priest',
+        reward: "Twilight Whelp"
       },
       {
-        class: 'rogue',
-        card_reward: "Dark Iron Skulker"
+        playerClass: 'rogue',
+        reward: "Dark Iron Skulker"
       },
       {
-        class: 'shaman',
-        card_reward: "Lava Shock"
+        playerClass: 'shaman',
+        reward: "Lava Shock"
       },
       {
-        class: 'warlock',
-        card_reward: "Demonwrath"
+        playerClass: 'warlock',
+        reward: "Demonwrath"
       },
       {
-        class: 'warrior',
-        card_reward: "Axe Flinger"
+        playerClass: 'warrior',
+        reward: "Axe Flinger"
       }
     ],
     cards: {
@@ -826,40 +826,40 @@ export const adventure_details = [
     },
     class_challenges: [
       {
-        class: 'druid',
-        card_reward: "Volcanic Lumberer"
+        playerClass: 'druid',
+        reward: "Volcanic Lumberer"
       },
       {
-        class: 'hunter',
-        card_reward: "Quick Shot"
+        playerClass: 'hunter',
+        reward: "Quick Shot"
       },
       {
-        class: 'mage',
-        card_reward: "Dragon's Breath"
+        playerClass: 'mage',
+        reward: "Dragon's Breath"
       },
       {
-        class: 'paladin',
-        card_reward: "Solemn Vigil"
+        playerClass: 'paladin',
+        reward: "Solemn Vigil"
       },
       {
-        class: 'priest',
-        card_reward: "Twilight Whelp"
+        playerClass: 'priest',
+        reward: "Twilight Whelp"
       },
       {
-        class: 'rogue',
-        card_reward: "Dark Iron Skulker"
+        playerClass: 'rogue',
+        reward: "Dark Iron Skulker"
       },
       {
-        class: 'shaman',
-        card_reward: "Lava Shock"
+        playerClass: 'shaman',
+        reward: "Lava Shock"
       },
       {
-        class: 'warlock',
-        card_reward: "Demonwrath"
+        playerClass: 'warlock',
+        reward: "Demonwrath"
       },
       {
-        class: 'warrior',
-        card_reward: "Axe Flinger"
+        playerClass: 'warrior',
+        reward: "Axe Flinger"
       }
     ],
     cards: {

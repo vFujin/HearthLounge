@@ -13,7 +13,7 @@ const Block = ({page, title, element}) =>{
 export default Block;
 
 Block.propTypes = {
-  page: PropTypes.func.isRequired,
+  page: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   element: PropTypes.element.isRequired
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
-import {adventure_details} from '../../../../data/adventure-details';
+import {adventure_details} from '../../../../../data/adventure-details';
 
 const Bosses = ({adventure}) => {
   const tableData = (wing, adventureUrl) => {

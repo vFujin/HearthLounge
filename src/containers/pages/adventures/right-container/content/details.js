@@ -22,7 +22,7 @@ const components = {
   Boss,
 };
 
-const AdventureDetails = ({cards, adventureCardbacks, adventure, details, boss, decks}) => {
+const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detailsChild, decks}) => {
 
   const activeView = () => {
     return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page => {
@@ -32,13 +32,14 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, boss, 
       return <Page key={page.url}
                    adventure={adventure}
                    cards={cards}
+                   detailsChild={detailsChild}
                    adventureCardbacks={adventureCardbacks}/>
     })
   };
 
   const bossDetails = () => {
     let wing = adventure.wings.details.find(wing => wing.url === details);
-    let activeBoss = wing.bosses.find(b => b.url === boss);
+    let activeBoss = wing.bosses.find(b => b.url === detailsChild);
     return <Boss allCards={cards.allCards}
               key={adventure.url}
               adventure={adventure}
@@ -48,7 +49,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, boss, 
   };
 
   return <div className="content">
-    {(adventureWingExists(adventure.url, details) && adventureBossExists(adventure.url, details, boss))
+    {(adventureWingExists(adventure.url, details) && adventureBossExists(adventure.url, details, detailsChild))
         ? bossDetails()
         : activeView()
     }

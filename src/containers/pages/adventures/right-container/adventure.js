@@ -36,17 +36,17 @@ class Adventure extends PureComponent{
   }
 
   render(){
-    const {adventure, adventureCardbacks, boss, cards, details, decks} = this.props;
+    const {adventure, adventureCardbacks, detailsChild, cards, details, decks} = this.props;
     let activeAdventure = adventure_details.filter(a => a.url === adventure)[0];
     return (
         <div className='container__page--inner container__page--right'>
           <Topbar adventure={adventure}
                   details={details}
-                  boss={boss}/>
+                  boss={detailsChild}/>
 
           <Content adventure={activeAdventure}
                    adventureCardbacks={adventureCardbacks}
-                   boss={boss}
+                   detailsChild={detailsChild}
                    cards={cards}
                    decks={decks}
                    details={details}/>
@@ -73,7 +73,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Adventure);
 
 Adventure.propTypes = {
   adventure: PropTypes.object,
-  boss: PropTypes.string,
+  detailsChild: PropTypes.string,
   cards: PropTypes.shape({
     sets: PropTypes.objectOf(PropTypes.array)
   }),

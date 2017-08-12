@@ -137,7 +137,7 @@
               grid-column-end: 3;
             }
           }
-          &.boss {
+          &.boss, &.class-challenge {
             &:last-child {
               grid-column-start: 1;
               grid-column-end: 5;

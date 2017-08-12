@@ -452,7 +452,7 @@ a:active, a:hover, a:link, a:visited {
       #container .container__page .content .container__blocks .container__blocks--block.overview:first-child {
         grid-column-start: 1;
         grid-column-end: 3; }
-      #container .container__page .content .container__blocks .container__blocks--block.boss:last-child {
+      #container .container__page .content .container__blocks .container__blocks--block.boss:last-child, #container .container__page .content .container__blocks .container__blocks--block.class-challenge:last-child {
         grid-column-start: 1;
         grid-column-end: 5; }
     #container .container__page .content form {
@@ -509,6 +509,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #FF7D0A;
       color: #474143;
       border: #474143; }
+  .druid.active-border {
+    border: 1px solid #FF7D0A;
+    color: #474143;
+    background: transparent; }
   .druid.icon-font-active {
     color: #474143; }
   .druid.table-row {
@@ -568,6 +572,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #ABD473;
       color: #474143;
       border: #474143; }
+  .hunter.active-border {
+    border: 1px solid #ABD473;
+    color: #474143;
+    background: transparent; }
   .hunter.icon-font-active {
     color: #474143; }
   .hunter.table-row {
@@ -627,6 +635,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #69CCF0;
       color: #474143;
       border: #474143; }
+  .mage.active-border {
+    border: 1px solid #69CCF0;
+    color: #474143;
+    background: transparent; }
   .mage.icon-font-active {
     color: #474143; }
   .mage.table-row {
@@ -686,6 +698,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #F58CBA;
       color: #474143;
       border: #474143; }
+  .paladin.active-border {
+    border: 1px solid #F58CBA;
+    color: #474143;
+    background: transparent; }
   .paladin.icon-font-active {
     color: #474143; }
   .paladin.table-row {
@@ -745,6 +761,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #FFFFFF;
       color: #474143;
       border: #474143; }
+  .priest.active-border {
+    border: 1px solid #FFFFFF;
+    color: #474143;
+    background: transparent; }
   .priest.icon-font-active {
     color: #474143; }
   .priest.table-row {
@@ -804,6 +824,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #FFF569;
       color: #474143;
       border: #474143; }
+  .rogue.active-border {
+    border: 1px solid #FFF569;
+    color: #474143;
+    background: transparent; }
   .rogue.icon-font-active {
     color: #474143; }
   .rogue.table-row {
@@ -863,6 +887,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #0070DE;
       color: #474143;
       border: #474143; }
+  .shaman.active-border {
+    border: 1px solid #0070DE;
+    color: #474143;
+    background: transparent; }
   .shaman.icon-font-active {
     color: #474143; }
   .shaman.table-row {
@@ -922,6 +950,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #9482C9;
       color: #474143;
       border: #474143; }
+  .warlock.active-border {
+    border: 1px solid #9482C9;
+    color: #474143;
+    background: transparent; }
   .warlock.icon-font-active {
     color: #474143; }
   .warlock.table-row {
@@ -981,6 +1013,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #C79C6E;
       color: #474143;
       border: #474143; }
+  .warrior.active-border {
+    border: 1px solid #C79C6E;
+    color: #474143;
+    background: transparent; }
   .warrior.icon-font-active {
     color: #474143; }
   .warrior.table-row {
@@ -1040,6 +1076,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #C41F3B;
       color: #474143;
       border: #474143; }
+  .death-knight.active-border {
+    border: 1px solid #C41F3B;
+    color: #474143;
+    background: transparent; }
   .death-knight.icon-font-active {
     color: #474143; }
   .death-knight.table-row {
@@ -1099,6 +1139,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #00FF96;
       color: #474143;
       border: #474143; }
+  .monk.active-border {
+    border: 1px solid #00FF96;
+    color: #474143;
+    background: transparent; }
   .monk.icon-font-active {
     color: #474143; }
   .monk.table-row {
@@ -1158,6 +1202,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #A330C9;
       color: #474143;
       border: #474143; }
+  .demon-hunter.active-border {
+    border: 1px solid #A330C9;
+    color: #474143;
+    background: transparent; }
   .demon-hunter.icon-font-active {
     color: #474143; }
   .demon-hunter.table-row {
@@ -1217,6 +1265,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #b5de3f;
       color: #474143;
       border: #474143; }
+  .naxxramas.active-border {
+    border: 1px solid #b5de3f;
+    color: #474143;
+    background: transparent; }
   .naxxramas.icon-font-active {
     color: #474143; }
   .naxxramas.table-row {
@@ -1276,6 +1328,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #fa5210;
       color: #474143;
       border: #474143; }
+  .blackrock-mountain.active-border {
+    border: 1px solid #fa5210;
+    color: #474143;
+    background: transparent; }
   .blackrock-mountain.icon-font-active {
     color: #474143; }
   .blackrock-mountain.table-row {
@@ -1335,6 +1391,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #14a9a1;
       color: #474143;
       border: #474143; }
+  .the-league-of-explorers.active-border {
+    border: 1px solid #14a9a1;
+    color: #474143;
+    background: transparent; }
   .the-league-of-explorers.icon-font-active {
     color: #474143; }
   .the-league-of-explorers.table-row {
@@ -1394,6 +1454,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #e2b4df;
       color: #474143;
       border: #474143; }
+  .karazhan.active-border {
+    border: 1px solid #e2b4df;
+    color: #474143;
+    background: transparent; }
   .karazhan.icon-font-active {
     color: #474143; }
   .karazhan.table-row {
@@ -1453,6 +1517,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #fae43f;
       color: #474143;
       border: #474143; }
+  .goblins-vs-gnomes.active-border {
+    border: 1px solid #fae43f;
+    color: #474143;
+    background: transparent; }
   .goblins-vs-gnomes.icon-font-active {
     color: #474143; }
   .goblins-vs-gnomes.table-row {
@@ -1512,6 +1580,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #f00;
       color: #474143;
       border: #474143; }
+  .the-grand-tournament.active-border {
+    border: 1px solid #f00;
+    color: #474143;
+    background: transparent; }
   .the-grand-tournament.icon-font-active {
     color: #474143; }
   .the-grand-tournament.table-row {
@@ -1571,6 +1643,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #cc00ff;
       color: #474143;
       border: #474143; }
+  .whispers-of-the-old-gods.active-border {
+    border: 1px solid #cc00ff;
+    color: #474143;
+    background: transparent; }
   .whispers-of-the-old-gods.icon-font-active {
     color: #474143; }
   .whispers-of-the-old-gods.table-row {
@@ -1630,6 +1706,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #d2cac5;
       color: #474143;
       border: #474143; }
+  .mean-streets-of-gadgetzan.active-border {
+    border: 1px solid #d2cac5;
+    color: #474143;
+    background: transparent; }
   .mean-streets-of-gadgetzan.icon-font-active {
     color: #474143; }
   .mean-streets-of-gadgetzan.table-row {
@@ -1689,6 +1769,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #3d9e2c;
       color: #474143;
       border: #474143; }
+  .journey-to-ungoro.active-border {
+    border: 1px solid #3d9e2c;
+    color: #474143;
+    background: transparent; }
   .journey-to-ungoro.icon-font-active {
     color: #474143; }
   .journey-to-ungoro.table-row {
@@ -1748,6 +1832,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #a5f2f3;
       color: #474143;
       border: #474143; }
+  .knights-of-the-frozen-throne.active-border {
+    border: 1px solid #a5f2f3;
+    color: #474143;
+    background: transparent; }
   .knights-of-the-frozen-throne.icon-font-active {
     color: #474143; }
   .knights-of-the-frozen-throne.table-row {
@@ -1807,6 +1895,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #fff;
       color: #474143;
       border: #474143; }
+  .common.active-border {
+    border: 1px solid #fff;
+    color: #474143;
+    background: transparent; }
   .common.icon-font-active {
     color: #474143; }
   .common.table-row {
@@ -1866,6 +1958,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: blue;
       color: #474143;
       border: #474143; }
+  .rare.active-border {
+    border: 1px solid blue;
+    color: #474143;
+    background: transparent; }
   .rare.icon-font-active {
     color: #474143; }
   .rare.table-row {
@@ -1925,6 +2021,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: purple;
       color: #474143;
       border: #474143; }
+  .epic.active-border {
+    border: 1px solid purple;
+    color: #474143;
+    background: transparent; }
   .epic.icon-font-active {
     color: #474143; }
   .epic.table-row {
@@ -1984,6 +2084,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: orange;
       color: #474143;
       border: #474143; }
+  .legendary.active-border {
+    border: 1px solid orange;
+    color: #474143;
+    background: transparent; }
   .legendary.icon-font-active {
     color: #474143; }
   .legendary.table-row {
@@ -2043,6 +2147,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #318e2f;
       color: #474143;
       border: #474143; }
+  .mammoth.active-border, .kraken.active-border {
+    border: 1px solid #318e2f;
+    color: #474143;
+    background: transparent; }
   .mammoth.icon-font-active, .kraken.icon-font-active {
     color: #474143; }
   .mammoth.table-row, .kraken.table-row {
@@ -2102,6 +2210,10 @@ a:active, a:hover, a:link, a:visited {
       background-color: #695840;
       color: #474143;
       border: #474143; }
+  .wild.active-border {
+    border: 1px solid #695840;
+    color: #474143;
+    background: transparent; }
   .wild.icon-font-active {
     color: #474143; }
   .wild.table-row {
@@ -4575,6 +4687,42 @@ footer {
   .adventures .container__page--right .content .bosses table tbody tr:hover td:first-child {
     background-color: #00a99c;
     color: #E7E2DA; }
+.adventures .container__page--right .content .classChallenges {
+  display: flex;
+  height: 100%; }
+  .adventures .container__page--right .content .classChallenges .classChallenges__sidebar {
+    border-right: 1px solid #A69E9D;
+    padding-right: 1vh; }
+    .adventures .container__page--right .content .classChallenges .classChallenges__sidebar li {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+      .adventures .container__page--right .content .classChallenges .classChallenges__sidebar li a {
+        display: block;
+        padding: 10px; }
+        .adventures .container__page--right .content .classChallenges .classChallenges__sidebar li a span {
+          font-size: 40px; }
+  .adventures .container__page--right .content .classChallenges .classChallenges__selections {
+    display: flex; }
+  .adventures .container__page--right .content .classChallenges .classChallenges__content {
+    padding-left: 1vh;
+    height: 100%;
+    width: 100%; }
+    .adventures .container__page--right .content .classChallenges .classChallenges__content .classChallenges__selection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; }
+    .adventures .container__page--right .content .classChallenges .classChallenges__content .container__blocks--block:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent; }
+      .adventures .container__page--right .content .classChallenges .classChallenges__content .container__blocks--block:last-child span {
+        opacity: .1;
+        font-size: 300px; }
 
 .create-deck .container__page--right .topbar__container {
   width: 100%;

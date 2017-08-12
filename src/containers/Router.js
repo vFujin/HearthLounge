@@ -23,9 +23,7 @@ import ExpansionDetails from './pages/expansions/right-container/details';
 
 import Adventures from './pages/adventures/adventures';
 import Adventure from './pages/adventures/right-container/adventure';
-import {AdventureDetails} from './pages/adventures/right-container/content/details';
-import AdventureBosses from './pages/adventures/assets/bosses';
-import AdventureBoss from './pages/adventures/assets/boss';
+import AdventureDetails from './pages/adventures/right-container/content/details';
 
 import CreateDeck from './pages/create-deck/create-deck';
 import CreateDeckClassSelection from './pages/create-deck/before-class-selection/class-selection';
@@ -50,7 +48,6 @@ import {Dashboard} from './pages/dashboard/dashboard';
 import Rank from './pages/rank/rank';
 
 import Main from './Main';
-
 
 // getCurrentUserInfo(updateActiveUser);
 const App = ({store}) =>{
@@ -88,10 +85,10 @@ const App = ({store}) =>{
           <Redirect from=":adventure" to=":adventure/overview"/>
           <Route path=":adventure"  component={Adventure}>
             <Route path=":details"  component={AdventureDetails}>
-              <Route path="bosses"  component={AdventureBosses}/>
-              <Route path=":boss"   component={AdventureBoss}/>
+              <Route path=":detailsChild" />
             </Route>
           </Route>
+
         </Route>
 
         <Redirect from="create-deck" to="create-deck/class-selection" />

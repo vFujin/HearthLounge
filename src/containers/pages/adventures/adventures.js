@@ -8,14 +8,13 @@ import SelectExtension from '../../shared-assets/extensions/select-extension';
 import {adventureExists} from '../../../utils/checkIfPathExist';
 
 const Adventures = ({cards, params})=> {
-  const {adventure, boss, details} = params;
-
+  const {adventure, details, detailsChild} = params;
   const rightContainer = () => {
     let path = location.pathname.split("/")[2];
 
     if(adventure !== undefined) {
       return adventureExists(path)
-          ? <Adventure cards={cards} details={details} boss={boss} adventure={adventure}/>
+          ? <Adventure cards={cards} details={details} detailsChild={detailsChild} adventure={adventure}/>
           : <NotFound page={_.startCase(adventure)} redirect="expansions"/>
     }
     return <SelectExtension group="adventure"/>

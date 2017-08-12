@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash'
-import Block from "./block";
+import Block from "../block";
 import Overview from "./boss-blocks/overview";
-import Strategy from "./boss-blocks/strategy";
-import Rewards from "./boss-blocks/rewards";
+import Strategy from "../shared-blocks/strategy";
+import Rewards from "../shared-blocks/rewards";
 import WingBosses from "./boss-blocks/wing-bosses";
 import Decklist from "./boss-blocks/decklist";
 
