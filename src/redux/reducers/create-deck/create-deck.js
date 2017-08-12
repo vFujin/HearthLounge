@@ -6,7 +6,7 @@ import {
   TOGGLE_FILTERS,
   TOGGLE_IMG_READY_DECKLIST,
   UPDATE_CURRENT_CARDS_LOADED, UPDATE_DECK_CREATION_FILTERS,
-  UPDATE_DECKSTRING,
+  UPDATE_DECKSTRING, UPDATE_IMPORTED_DECKSTRING,
   UPDATE_PLAYERCLASS,
   UPDATE_URL
 } from "../../types/create-deck/create-deck";
@@ -25,7 +25,8 @@ const initialState = {
     types: {}
   },
   filtersQuery: {},
-  currentCardsLoaded: 35
+  currentCardsLoaded: 35,
+  importedDeckstring: ''
 };
 
 export default function(state=initialState, action){
@@ -84,6 +85,12 @@ export default function(state=initialState, action){
       ...state,
       filtersQuery: {...action.deckCreationFilters}
     };
+
+    case UPDATE_IMPORTED_DECKSTRING: return {
+        ...state,
+      importedDeckstring: action.importedDeckstring
+    };
+
     default: return state;
   }
 }

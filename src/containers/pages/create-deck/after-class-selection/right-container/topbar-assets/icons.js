@@ -20,7 +20,7 @@ export const topbar_icons = (active_class) => {
     ],
     options: [
       {
-        title: 'Copy deckstring to clipboard',
+        title: 'copy deckstring to clipboard',
         icon: 'copy',
         popover: false,
         allowCopy: true
@@ -32,9 +32,15 @@ export const topbar_icons = (active_class) => {
         allowCopy: false
       },
       {
-        title: 'save deck in hearth lounge',
+        title: 'import deck to hearth lounge',
         icon: 'download',
         popover: false,
+        allowCopy: false
+      },
+      {
+        title: 'save deck in hearth lounge',
+        icon: 'fire',
+        popover: true,
         allowCopy: false
       },
     ],

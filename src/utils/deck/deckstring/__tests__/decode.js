@@ -29,10 +29,7 @@ describe('encodes deck to deckstring', ()=>{
 
   const testDecoding = (testingDeckName, format, deckstring, expectedValue) =>{
     test(`encodes ${format} test deck ${testingDeckName} to deckstring`, ()=>{
-      let eStringifiedValue = JSON.stringify(decodeDeckstring(deckstring));
-      let rStringifiedValue = JSON.stringify(expectedValue);
-
-      expect(eStringifiedValue).toBe(rStringifiedValue);
+      expect(deckstring).toEqual(expectedValue);
     })
   };
 

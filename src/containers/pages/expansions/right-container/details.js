@@ -21,7 +21,7 @@ const components = {
 
 
 const ExpansionDetails = ({cards, details, expansion}) => {
-  let activeExpansion =  topbar_tabs.filter(tab => tab.expansion === expansion)[0];
+  let activeExpansion =  topbar_tabs.find(tab => tab.expansion === expansion);
   let activeExpansionTab = activeExpansion.expansion_topbar_tabs.filter(tab => tab.url === details);
 
   const currentView = () =>{

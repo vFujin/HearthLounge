@@ -7,7 +7,8 @@ import {
   TOGGLE_IMG_READY_DECKLIST,
   UPDATE_CURRENT_CARDS_LOADED, UPDATE_DECK_CREATION_FILTERS,
   UPDATE_DECKSTRING, UPDATE_PLAYERCLASS,
-  UPDATE_URL
+  UPDATE_URL,
+  UPDATE_IMPORTED_DECKSTRING
 } from "../../types/create-deck/create-deck";
 
 export function toggleFilters(filters){
@@ -84,5 +85,12 @@ export function updateDeckCreationFilters(deckCreationFilters){
   return {
     type: UPDATE_DECK_CREATION_FILTERS,
     deckCreationFilters
+  }
+}
+
+export function updateImportedDeckstring(importedDeckstring){
+  return {
+    type: UPDATE_IMPORTED_DECKSTRING,
+    importedDeckstring
   }
 }

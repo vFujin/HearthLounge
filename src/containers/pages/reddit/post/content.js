@@ -7,7 +7,7 @@ import PostComments from './content/post-comments';
 const Content = ({cards, collapsedComments, handleCollapseClick, params, posts, postComments, renderComment}) =>{
 
   return (
-      <div className="content">
+      <div className="content scrollable">
         <div className="container__details post">
           <PostDescription posts={posts}
                            params={params}/>

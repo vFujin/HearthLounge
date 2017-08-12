@@ -27,6 +27,7 @@ export default function(event, editingTool, deck, icon, imgReadyDecklist, handle
       showDeckEditingTool(!editingTool);
       simplifyDeck(simplifiedDeck);
       break;
+    case 'fire':
     default: return icon;
   }
 };

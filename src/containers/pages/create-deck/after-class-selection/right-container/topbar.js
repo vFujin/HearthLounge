@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import StatsOptions from './topbar-assets/stats-options';
 import Filters from './topbar-assets/filters';
 
-const Topbar = ({deck, deckstring, filtersView, activeClass, query, handleImgSaveClick, handleOptionsClick, imgReadyDecklist}) => {
+const Topbar = ({deck, deckstring, importedDeckstring, filtersView, activeClass, query, handleImgSaveClick, handleOptionsClick, handleInputChange, handleDeckImport, imgReadyDecklist}) => {
 
   const activeView = () =>{
     return filtersView
@@ -11,8 +11,11 @@ const Topbar = ({deck, deckstring, filtersView, activeClass, query, handleImgSav
         : <StatsOptions deck={deck}
                         deckstring={deckstring}
                         activeClass={activeClass}
+                        importedDeckstring={importedDeckstring}
                         handleImgSaveClick={handleImgSaveClick}
                         handleOptionsClick={handleOptionsClick}
+                        handleInputChange={handleInputChange}
+                        handleDeckImport={handleDeckImport}
                         filtersActive={filtersView}
                         imgReadyDecklist={imgReadyDecklist}/>
   };

@@ -7,6 +7,8 @@ import {setDeckstringObj, encodeDeckstring} from '../../../../utils/deck/deckstr
 import {topbarOptions, imgCaptureBox, updateDeck} from "./right-container/content-assets/utils";
 import {scToggleDeckFilters, scToggleDeckMechanics} from "./right-container/content-assets/utils/shortcuts";
 import * as deckCreationActions from "../../../../redux/actions/create-deck/create-deck";
+import {createDeckFromDeckstringObj} from "../../../../utils/deck/deckstring/index";
+import {updateImportedDeckstring} from "../../../../redux/actions/create-deck/create-deck";
 
 class CreateDeckClassSelected extends PureComponent {
 
@@ -17,8 +19,8 @@ class CreateDeckClassSelected extends PureComponent {
 
   handleCardClick = (e, card) => {
     const {deck, editDeck} = this.props;
-
     e.preventDefault();
+
     updateDeck(e, card, deck, editDeck);
   };
 
@@ -62,19 +64,27 @@ class CreateDeckClassSelected extends PureComponent {
     imgCaptureBox(event, this.switchDecklistClasses);
   };
 
+  handleInputChange = e =>{
+    let deckstring = e.target.value;
+    this.props.updateImportedDeckstring(deckstring);
+  };
+
+  handleDeckImport = () => {
+    createDeckFromDeckstringObj(this.props.cards.allCards, this.props.importedDeckstring, (deck) => this.props.editDeck(deck));
+
+  };
+
   handleOptionsClick = (event, icon) => {
     const {editingTool, deck, imgReadyDecklist, showDeckEditingTool, simplifyDeck} = this.props;
     topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck);
   };
 
   render() {
-    const {authenticated, cards, deck, patch, deckMechanics, editingTool, filters, filtersQuery, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
+    const {authenticated, cards, deck, patch, deckMechanics, editingTool, filters, filtersQuery, importedDeckstring, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
     const {allCards, cardSet} = cards;
     const {query} = location;
     const playerClass = params.class;
     let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
-
-
 
     return (
         <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
@@ -97,10 +107,13 @@ class CreateDeckClassSelected extends PureComponent {
                           activeClass={params.class}
                           deckstring={deckstring}
                           deck={deck}
+                          importedDeckstring={importedDeckstring}
                           simplifiedDeck={simplifiedDeck}
                           handleCardClick={this.handleCardClick}
                           handleOptionsClick={this.handleOptionsClick}
                           handleImgSaveClick={this.handleImgSaveClick}
+                          handleInputChange={this.handleInputChange}
+                          handleDeckImport={this.handleDeckImport}
                           allCards={allCards}
                           patch={patch}
                           editingTool={editingTool}
@@ -115,7 +128,7 @@ class CreateDeckClassSelected extends PureComponent {
 }
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, imgReadyDecklist, deck, simplifiedDeck, currentCardsLoaded, filtersQuery} = state.deckCreation;
+  const {filters, editingTool, deckMechanics, imgReadyDecklist, importedDeckstring, deck, simplifiedDeck, currentCardsLoaded, filtersQuery} = state.deckCreation;
   return {
     filters,
     editingTool,
@@ -124,14 +137,15 @@ const mapStateToProps = (state) =>{
     deck,
     simplifiedDeck,
     currentCardsLoaded,
-    filtersQuery
+    filtersQuery,
+    importedDeckstring
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   const {
     toggleFilters, showDeckEditingTool, toggleDeckMechanics,
-    toggleImgReadyDecklist, updateURL, editDeck, updateDeckstring, simplifyDeck, updateCurrentCardsLoaded
+    toggleImgReadyDecklist, updateURL, editDeck, updateDeckstring, simplifyDeck, updateCurrentCardsLoaded, updateImportedDeckstring
   } = deckCreationActions;
 
   return {
@@ -143,7 +157,8 @@ const mapDispatchToProps = (dispatch) => {
     editDeck: deck => dispatch(editDeck(deck)),
     updateDeckstring: deckstring => dispatch(updateDeckstring(deckstring)),
     simplifyDeck: simplifiedDeck => dispatch(simplifyDeck(simplifiedDeck)),
-    updateCurrentCardsLoaded: currentCardsLoaded => dispatch(updateCurrentCardsLoaded(currentCardsLoaded))
+    updateCurrentCardsLoaded: currentCardsLoaded => dispatch(updateCurrentCardsLoaded(currentCardsLoaded)),
+    updateImportedDeckstring: importedDeckstring => dispatch(updateImportedDeckstring(importedDeckstring))
   }
 };
 

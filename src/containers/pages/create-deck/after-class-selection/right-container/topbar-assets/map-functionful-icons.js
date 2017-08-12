@@ -7,8 +7,9 @@ import Popover from 'antd/lib/popover';
 import {topbar_icons} from './icons';
 import PopoverSaveImg from './popover-save-img';
 import {success} from "../../../../../../utils/messages";
+import DeckstringInput from "./import-deck";
 
-const MapFunctionfulIcons = ({set, deckstring, handleOptionsClick, handleImgSaveClick, imgReadyDecklist}) => {
+const MapFunctionfulIcons = ({set, deckstring,importedDeckstring, handleOptionsClick, handleImgSaveClick, handleInputChange, handleDeckImport, imgReadyDecklist}) => {
   const popoverVisibility = (obj) =>{
     switch(obj.icon){
       case 'image': return imgReadyDecklist;
@@ -28,11 +29,11 @@ const MapFunctionfulIcons = ({set, deckstring, handleOptionsClick, handleImgSave
           <Popover placement="bottomRight"
                    overlayClassName={obj.icon} title={_.startCase(obj.title)}
                    visible={popoverVisibility(obj)}
-                   content={<PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>}
+                   content={obj.icon === "fire" ? <DeckstringInput importedDeckstring={importedDeckstring} handleInputChange={handleInputChange} handleDeckImport={handleDeckImport} /> : <PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>}
                    trigger="click"
                    arrowPointAtCenter>
             <CopyToClipboard text={allowCopy(obj, deckstring)} onCopy={allowCopy(obj, ()=>success('Successfully copied deckstring to clipboard!'))}>
-              <Tooltip key={obj.title} title={_.startCase(obj.title)} placement={obj.icon === "download" ? 'bottomRight' : 'bottom'}>
+              <Tooltip key={obj.title} title={_.startCase(obj.title)} placement={obj.icon === "fire" ? 'bottomRight' : 'bottom'}>
                 <span className={`hs-icon icon-${obj.icon}`}></span>
               </Tooltip>
             </CopyToClipboard>

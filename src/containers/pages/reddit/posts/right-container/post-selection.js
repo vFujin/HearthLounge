@@ -30,7 +30,7 @@ const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
   };
 
   return (
-      <div className="content" style={(posts.length < 1 || (filteredPosts && filteredPosts.length < 1)) ? {overflow: "hidden"} : {overflow: "inherit"}}>
+      <div className="content scrollable" style={(posts.length < 1 || (filteredPosts && filteredPosts.length < 1)) ? {overflow: "hidden"} : {overflow: "inherit"}}>
         <div className="table-scroll">
           <table>
             <thead>
