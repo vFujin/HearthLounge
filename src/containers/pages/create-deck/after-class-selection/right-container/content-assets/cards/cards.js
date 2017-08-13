@@ -33,7 +33,7 @@ const Cards = ({allCards, deck, playerClass, filtersQuery, handleCardClick, upda
 
 
 Cards.propTypes = {
-  cards: PropTypes.array.isRequired
+  cards: PropTypes.object.isRequired
 };
 
 export default Cards;

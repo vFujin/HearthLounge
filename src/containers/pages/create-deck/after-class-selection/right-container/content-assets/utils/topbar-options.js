@@ -12,14 +12,20 @@ import {deckSimplification} from "../../../../../../../utils/deck/index";
  * @param {function} switchDecklistClasses
  * @param {function} showDeckEditingTool
  * @param {function} simplifyDeck
+ * @param {bool} importedDeckstringPopover
+ * @param {function} toggleImportedDeckstringPopover
  * @return {*}
  */
-export default function(event, editingTool, deck, icon, imgReadyDecklist, handleCopyDeckStringClick, switchDecklistClasses, showDeckEditingTool, simplifyDeck){
+export default function(event, editingTool, deck, icon, imgReadyDecklist, handleCopyDeckStringClick, switchDecklistClasses, showDeckEditingTool, simplifyDeck, importedDeckstringPopover, toggleImportedDeckstringPopover){
   const simplifiedDeck = deckSimplification(deck);
 
   switch (icon) {
     case 'copy': return handleCopyDeckStringClick();
-    case 'image': return switchDecklistClasses(!imgReadyDecklist);
+    case 'image': {
+      switchDecklistClasses(!imgReadyDecklist);
+      toggleImportedDeckstringPopover(false);
+      break;
+    }
     case 'download':
       !editingTool
           ? document.getElementById(event.currentTarget.id).className += "active"
@@ -27,7 +33,11 @@ export default function(event, editingTool, deck, icon, imgReadyDecklist, handle
       showDeckEditingTool(!editingTool);
       simplifyDeck(simplifiedDeck);
       break;
-    case 'fire':
+    case 'fire': {
+      toggleImportedDeckstringPopover(!importedDeckstringPopover);
+      switchDecklistClasses(false);
+      break;
+    }
     default: return icon;
   }
 };

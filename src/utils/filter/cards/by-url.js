@@ -25,7 +25,6 @@ export const byUrl = (card, query) => {
       });
     }
     else {
-      console.log(query[queryKey])
       return card[_.toLower(_.trim(queryKey, 'card'))] == query[queryKey];
     }
   })

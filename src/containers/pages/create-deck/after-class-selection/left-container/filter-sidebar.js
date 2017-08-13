@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 import {toggleSelectedIcon} from "../../../../../utils/filter/toggle-selected-icon";
 import {updateDeckCreationFilters} from "../../../../../redux/actions/create-deck/create-deck";
 
-const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity, updateDeckCreationFilters}) => {
+const FilterSidebar = ({faction, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity, updateDeckCreationFilters}) => {
 
   const handleSelect = (value, selector) =>{
     updateDeckCreationFilters({[`card${_.startCase(selector)}`]:value});
@@ -19,7 +19,7 @@ const FilterSidebar = ({faction, filtersView, mechanics, name, race, type, cardN
   };
 
   return (
-      <div className={`sidebar__body ${filtersView === true ? 'active' : 'display-none'}`}>
+      <div className="sidebar__body">
         <InputFilter attribute={name}      value={cardName}      filter="name"      multiple={false} handleSelect={handleSelect}/>
         <InputFilter attribute={race}      value={cardRace}      filter="race"      multiple={true}  handleSelect={handleSelect}/>
         <InputFilter attribute={mechanics} value={cardMechanics} filter="mechanics" multiple={true}  handleSelect={handleSelect}/>

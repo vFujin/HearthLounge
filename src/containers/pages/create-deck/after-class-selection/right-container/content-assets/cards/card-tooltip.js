@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {uniqueCards} from "../../../../../../../utils/deck/calculate";
+import {uniqueCards} from "../../../../../../../utils/deck/calculate/index";
 
 const CardTooltip = ({card, deck}) => {
   const cardRarity = card.rarity;

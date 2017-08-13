@@ -1,19 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const SidebarHeader = ({ifDeck, ifFilter, handleSidebarViewChange}) =>{
+const SidebarHeader = ({filtersView, handleSidebarViewChange}) =>{
+  let activeViewHeader = filtersView ? 'filters' : 'deck';
+  let invertedActiveViewHeader = !filtersView ? 'filters' : 'deck';
+
   return (
       <h3 className="sidebar__header">
-        <span>{ifDeck}</span>
-        <button className="btn-pearl" onClick={handleSidebarViewChange}>Show {ifFilter}</button>
+        <span>{activeViewHeader}</span>
+        <button className="btn-pearl" onClick={handleSidebarViewChange}>Show {invertedActiveViewHeader}</button>
       </h3>
   )
 };
 
 SidebarHeader.propTypes = {
-  ifDeck: React.PropTypes.string.isRequired,
-  ifFilter: React.PropTypes.string.isRequired,
-  handleSidebarViewChange: React.PropTypes.func.isRequired
+  filtersView: PropTypes.bool.isRequired,
+  handleSidebarViewChange: PropTypes.func.isRequired
 };
-
 
 export default SidebarHeader;

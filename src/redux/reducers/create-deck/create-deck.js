@@ -4,7 +4,7 @@ import {
   SIMPLIFY_DECK,
   TOGGLE_DECK_MECHANICS,
   TOGGLE_FILTERS,
-  TOGGLE_IMG_READY_DECKLIST,
+  TOGGLE_IMG_READY_DECKLIST, TOGGLE_IMPORTED_DECKSTRING_POPOVER,
   UPDATE_CURRENT_CARDS_LOADED, UPDATE_DECK_CREATION_FILTERS,
   UPDATE_DECKSTRING, UPDATE_IMPORTED_DECKSTRING,
   UPDATE_PLAYERCLASS,
@@ -26,7 +26,8 @@ const initialState = {
   },
   filtersQuery: {},
   currentCardsLoaded: 35,
-  importedDeckstring: ''
+  importedDeckstring: '',
+  importedDeckstringPopover: false
 };
 
 export default function(state=initialState, action){
@@ -89,6 +90,11 @@ export default function(state=initialState, action){
     case UPDATE_IMPORTED_DECKSTRING: return {
         ...state,
       importedDeckstring: action.importedDeckstring
+    };
+
+    case TOGGLE_IMPORTED_DECKSTRING_POPOVER: return {
+        ...state,
+      importedDeckstringPopover: action.importedDeckstringPopover
     };
 
     default: return state;

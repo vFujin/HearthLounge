@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {toggleSelectedIcon} from "../../../../../../utils/filter/toggle-selected-icon";
 import {updateDeckCreationFilters} from "../../../../../../redux/actions/create-deck/create-deck";
 
-const Filters = ({deck, activeClass, filtersActive, updateDeckCreationFilter, cardTopbarSet, cardCost}) => {
+const Filters = ({deck, playerClass, filtersActive, updateDeckCreationFilter, cardCost}) => {
 
   const handleIconClick = (e, selector) =>{
     toggleSelectedIcon(e, selector, updateDeckCreationFilter, true);
@@ -15,7 +15,7 @@ const Filters = ({deck, activeClass, filtersActive, updateDeckCreationFilter, ca
       <div className={`topbar__container`}>
         <IconFilter header={false} headerLabel="cost" filter="cost"  value={cardCost} wrapperClass="topbar-left"  handleIconClick={handleIconClick}/>
         <div className="topbar-right">
-          <MapFunctionlessIcons deck={deck} activeClass={activeClass} filtersActive={filtersActive} set="cards" />
+          <MapFunctionlessIcons deck={deck} playerClass={playerClass} filtersActive={filtersActive} set="cards" />
         </div>
       </div>
   )

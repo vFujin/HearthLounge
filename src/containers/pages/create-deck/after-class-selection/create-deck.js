@@ -13,8 +13,12 @@ import {updateImportedDeckstring} from "../../../../redux/actions/create-deck/cr
 class CreateDeckClassSelected extends PureComponent {
 
   componentWillUnmount() {
-    const {updateCurrentCardsLoaded} = this.props;
+    const {updateCurrentCardsLoaded, toggleFilters, toggleDeckMechanics, toggleImgReadyDecklist, toggleImportedDeckstringPopover} = this.props;
     updateCurrentCardsLoaded(35);
+    toggleFilters(false);
+    toggleDeckMechanics(false);
+    toggleImgReadyDecklist(false);
+    toggleImportedDeckstringPopover(false);
   }
 
   handleCardClick = (e, card) => {
@@ -60,27 +64,31 @@ class CreateDeckClassSelected extends PureComponent {
     updateDeckstring(deckstring);
   };
 
-  handleImgSaveClick = (event) => {
-    imgCaptureBox(event, this.switchDecklistClasses);
+  handleImgSaveClick = e => {
+    imgCaptureBox(e, this.switchDecklistClasses);
   };
 
   handleInputChange = e =>{
+    const {updateImportedDeckstring} = this.props;
     let deckstring = e.target.value;
-    this.props.updateImportedDeckstring(deckstring);
+
+    updateImportedDeckstring(deckstring);
   };
 
   handleDeckImport = () => {
-    createDeckFromDeckstringObj(this.props.cards.allCards, this.props.importedDeckstring, (deck) => this.props.editDeck(deck));
+    const {cards, importedDeckstring, editDeck} = this.props;
+    const {allCards} = cards;
 
+    createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck));
   };
 
   handleOptionsClick = (event, icon) => {
-    const {editingTool, deck, imgReadyDecklist, showDeckEditingTool, simplifyDeck} = this.props;
-    topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck);
+    const {editingTool, deck, imgReadyDecklist, importedDeckstringPopover, showDeckEditingTool, simplifyDeck, toggleImportedDeckstringPopover} = this.props;
+    topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck, importedDeckstringPopover, toggleImportedDeckstringPopover);
   };
 
   render() {
-    const {authenticated, cards, deck, patch, deckMechanics, editingTool, filters, filtersQuery, importedDeckstring, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
+    const {authenticated, cards, deck, patch, deckMechanics, editingTool, filters, filtersQuery, importedDeckstring, importedDeckstringPopover, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
     const {allCards, cardSet} = cards;
     const {query} = location;
     const playerClass = params.class;
@@ -89,13 +97,15 @@ class CreateDeckClassSelected extends PureComponent {
     return (
         <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
              className="container__page container__page--twoSided create-deck">
+
+
           <LeftContainer handleSidebarViewChange={this.handleKeyShortcuts}
                          filtersView={filters}
                          countCards={(e) => uniqueCards(deck, e)}
                          deck={deck}
                          deckDetails={deckMechanics}
                          handleDeckMechanicsToggle={this.handleDeckMechanicsToggle}
-                         params={params}
+                         playerClass={playerClass}
                          cards={cards}
                          cardSet={cardSet}
                          imgReadyDecklist={imgReadyDecklist}
@@ -104,10 +114,11 @@ class CreateDeckClassSelected extends PureComponent {
           <RightContainer filtersView={filters}
                           authenticated={authenticated}
                           query={query}
-                          activeClass={params.class}
+                          playerClass={playerClass}
                           deckstring={deckstring}
                           deck={deck}
                           importedDeckstring={importedDeckstring}
+                          importedDeckstringPopover={importedDeckstringPopover}
                           simplifiedDeck={simplifiedDeck}
                           handleCardClick={this.handleCardClick}
                           handleOptionsClick={this.handleOptionsClick}
@@ -128,7 +139,7 @@ class CreateDeckClassSelected extends PureComponent {
 }
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, imgReadyDecklist, importedDeckstring, deck, simplifiedDeck, currentCardsLoaded, filtersQuery} = state.deckCreation;
+  const {filters, editingTool, deckMechanics, imgReadyDecklist, importedDeckstring, deck, simplifiedDeck, currentCardsLoaded, filtersQuery, importedDeckstringPopover} = state.deckCreation;
   return {
     filters,
     editingTool,
@@ -138,14 +149,15 @@ const mapStateToProps = (state) =>{
     simplifiedDeck,
     currentCardsLoaded,
     filtersQuery,
-    importedDeckstring
+    importedDeckstring,
+    importedDeckstringPopover
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   const {
     toggleFilters, showDeckEditingTool, toggleDeckMechanics,
-    toggleImgReadyDecklist, updateURL, editDeck, updateDeckstring, simplifyDeck, updateCurrentCardsLoaded, updateImportedDeckstring
+    toggleImgReadyDecklist, updateURL, editDeck, updateDeckstring, simplifyDeck, updateCurrentCardsLoaded, updateImportedDeckstring, toggleImportedDeckstringPopover
   } = deckCreationActions;
 
   return {
@@ -158,7 +170,8 @@ const mapDispatchToProps = (dispatch) => {
     updateDeckstring: deckstring => dispatch(updateDeckstring(deckstring)),
     simplifyDeck: simplifiedDeck => dispatch(simplifyDeck(simplifiedDeck)),
     updateCurrentCardsLoaded: currentCardsLoaded => dispatch(updateCurrentCardsLoaded(currentCardsLoaded)),
-    updateImportedDeckstring: importedDeckstring => dispatch(updateImportedDeckstring(importedDeckstring))
+    updateImportedDeckstring: importedDeckstring => dispatch(updateImportedDeckstring(importedDeckstring)),
+    toggleImportedDeckstringPopover: importedDeckstringPopover => dispatch(toggleImportedDeckstringPopover(importedDeckstringPopover))
   }
 };
 

@@ -4,7 +4,7 @@ import _ from 'lodash';
 import {topbar_icons} from './icons';
 import Tooltip from 'antd/lib/tooltip';
 
-const MapFunctionlessIcons = ({deck, activeClass, filtersActive, set}) => {
+const MapFunctionlessIcons = ({deck, playerClass, filtersActive, set}) => {
   const countTypes = _.countBy(deck, 'type');
 
   const deckCardTypes = (type) =>{
@@ -17,7 +17,7 @@ const MapFunctionlessIcons = ({deck, activeClass, filtersActive, set}) => {
   };
 
   const generateSet = () => {
-      return topbar_icons(activeClass)[set].map(obj =>
+      return topbar_icons(playerClass)[set].map(obj =>
           <li key={obj.icon}>
             <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
                 <span className={`hs-icon icon-${obj.icon}`}></span>
@@ -35,7 +35,7 @@ const MapFunctionlessIcons = ({deck, activeClass, filtersActive, set}) => {
 
 MapFunctionlessIcons.propTypes = {
   deck: PropTypes.array,
-  activeClass: PropTypes.string.isRequired,
+  playerClass: PropTypes.string.isRequired,
   set: PropTypes.string.isRequired
 };
 

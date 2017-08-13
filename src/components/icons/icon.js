@@ -1,23 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
+
 import startCase from 'lodash/startCase';
 import Tooltip from 'antd/lib/tooltip';
 
-const selectType = (iconName, className = '', type = null, tooltip = false, tooltipPlacement = "bottom") =>{
+const selectType = (iconName, title = null, className = '', type = null, tooltip = false, tooltipPlacement = "bottom") =>{
 
   const validateSet = () =>{
     switch(iconName){
       case "classic": return "hs-logo";
       case "curse-of-naxxramas": return "naxxramas";
       case "one-night-in-karazhan": return "karazhan";
-      default: return iconName;
+      default: return _.toLower(iconName);
     }
   };
   const validateMode = iconName === "standard" ? "mammoth" : iconName;
 
   const iconWrapper = (icon) => {
+    let iconTitle = title ? title : iconName;
     return (
-        <Tooltip title={startCase(iconName)}
+        <Tooltip title={startCase(iconTitle)}
                  placement={tooltipPlacement}
                  arrowPointAtCenter={true}>
           {icon}
@@ -43,7 +46,7 @@ const selectType = (iconName, className = '', type = null, tooltip = false, tool
   }
 };
 
-const Icon = ({name, className, type, tooltip, tooltipPlacement}) => selectType(name, className, type, tooltip, tooltipPlacement);
+const Icon = ({name, title, className, type, tooltip, tooltipPlacement}) => selectType(name, title, className, type, tooltip, tooltipPlacement);
 
 export default Icon;
 
@@ -52,6 +55,7 @@ Icon.propTypes = {
       PropTypes.string,
       PropTypes.number
   ]).isRequired,
+  title: PropTypes.string,
   className: PropTypes.string,
   type: PropTypes.string,
   tooltipPlacement: PropTypes.string

@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import StatsOptions from './topbar-assets/stats-options';
 import Filters from './topbar-assets/filters';
 
-const Topbar = ({deck, deckstring, importedDeckstring, filtersView, activeClass, query, handleImgSaveClick, handleOptionsClick, handleInputChange, handleDeckImport, imgReadyDecklist}) => {
+const Topbar = ({deck, deckstring, importedDeckstring, importedDeckstringPopover, filtersView, playerClass, query, handleImgSaveClick, handleOptionsClick, handleInputChange, handleDeckImport, imgReadyDecklist}) => {
 
   const activeView = () =>{
     return filtersView
-        ? <Filters deck={deck} activeClass={activeClass} query={query} filtersActive={filtersView}/>
+        ? <Filters deck={deck} playerClass={playerClass} query={query} filtersActive={filtersView}/>
         : <StatsOptions deck={deck}
                         deckstring={deckstring}
-                        activeClass={activeClass}
+                        playerClass={playerClass}
                         importedDeckstring={importedDeckstring}
+                        importedDeckstringPopover={importedDeckstringPopover}
                         handleImgSaveClick={handleImgSaveClick}
                         handleOptionsClick={handleOptionsClick}
                         handleInputChange={handleInputChange}
@@ -30,7 +31,7 @@ const Topbar = ({deck, deckstring, importedDeckstring, filtersView, activeClass,
 Topbar.propTypes = {
   deck: PropTypes.array.isRequired,
   filtersView: PropTypes.bool,
-  params: PropTypes.object,
+  playerClass: PropTypes.string,
   query: PropTypes.object
 };
 

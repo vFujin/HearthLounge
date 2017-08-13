@@ -2,17 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import Tooltip from 'antd/lib/tooltip';
 import Popover from 'antd/lib/popover';
 import {topbar_icons} from './icons';
 import PopoverSaveImg from './popover-save-img';
 import {success} from "../../../../../../utils/messages";
 import DeckstringInput from "./import-deck";
+import Icon from "../../../../../../components/icons/icon";
 
-const MapFunctionfulIcons = ({set, deckstring,importedDeckstring, handleOptionsClick, handleImgSaveClick, handleInputChange, handleDeckImport, imgReadyDecklist}) => {
+const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptionsClick, handleImgSaveClick, handleInputChange, handleDeckImport, imgReadyDecklist, importedDeckstringPopover}) => {
   const popoverVisibility = (obj) =>{
     switch(obj.icon){
       case 'image': return imgReadyDecklist;
+      case 'fire': return importedDeckstringPopover;
       default: return obj.popover;
     }
   };
@@ -23,19 +24,25 @@ const MapFunctionfulIcons = ({set, deckstring,importedDeckstring, handleOptionsC
     }
   };
 
+  const deckstringInputPopover = <DeckstringInput importedDeckstring={importedDeckstring}
+                                           handleInputChange={handleInputChange}
+                                           handleDeckImport={handleDeckImport} />;
+  const saveImgPopover = <PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>;
+
   const generateSet = () => {
-    return topbar_icons(null)[set].map(obj =>
+    return topbar_icons(null)[set].map(obj=>
         <li key={obj.icon} id={obj.icon} onClick={(e)=>handleOptionsClick(e, obj.icon)}>
           <Popover placement="bottomRight"
                    overlayClassName={obj.icon} title={_.startCase(obj.title)}
                    visible={popoverVisibility(obj)}
-                   content={obj.icon === "fire" ? <DeckstringInput importedDeckstring={importedDeckstring} handleInputChange={handleInputChange} handleDeckImport={handleDeckImport} /> : <PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>}
+                   content={obj.icon === "fire" ? deckstringInputPopover : saveImgPopover}
                    trigger="click"
-                   arrowPointAtCenter>
+                   arrowPointAtCenter={true}>
             <CopyToClipboard text={allowCopy(obj, deckstring)} onCopy={allowCopy(obj, ()=>success('Successfully copied deckstring to clipboard!'))}>
-              <Tooltip key={obj.title} title={_.startCase(obj.title)} placement={obj.icon === "fire" ? 'bottomRight' : 'bottom'}>
-                <span className={`hs-icon icon-${obj.icon}`}></span>
-              </Tooltip>
+                <Icon name={obj.icon}
+                      title={obj.title}
+                      tooltip={true}
+                      tooltipPlacement={obj.icon === 'fire' ? 'bottomRight' : 'bottom'}/>
             </CopyToClipboard>
           </Popover>
         </li>)
@@ -48,7 +55,7 @@ const MapFunctionfulIcons = ({set, deckstring,importedDeckstring, handleOptionsC
   )
 };
 
-React.propTypes = {
+MapFunctionfulIcons.propTypes = {
   set: PropTypes.string.isRequired,
   handleOptionsClick: PropTypes.func.isRequired
 };

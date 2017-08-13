@@ -3,19 +3,19 @@ import Topbar from './right-container/topbar';
 import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 
-const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, patch, filtersView, handleCardClick, handleOptionsClick, handleInputChange, handleImgSaveClick, handleDeckImport, allCards, activeClass,
+const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, importedDeckstringPopover, patch, filtersView, handleCardClick, handleOptionsClick, handleInputChange, handleImgSaveClick, handleDeckImport, allCards, playerClass,
                           query, simplifiedDeck, filtersQuery, editingTool, user, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
 
-  const currentView = () => {
+  const activeView = () => {
     return !editingTool
         ? <Cards allCards={allCards}
                  deck={deck}
-                 playerClass={activeClass}
+                 playerClass={playerClass}
                  handleCardClick={handleCardClick}
                  updateCurrentCardsLoaded={updateCurrentCardsLoaded}
                  filtersQuery={filtersQuery}
                  currentCardsLoaded={currentCardsLoaded}/>
-        : <DeckOptions activeClass={activeClass}
+        : <DeckOptions playerClass={playerClass}
                        simplifiedDeck={simplifiedDeck}
                        patch={patch}
                        deckstring={deckstring}
@@ -23,22 +23,25 @@ const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, pa
                        user={user}/>
   };
 
-
   return (
       <div className="container__page--inner container__page--right">
         <Topbar filtersView={filtersView}
                 query={query}
-                activeClass={activeClass}
+                playerClass={playerClass}
                 deck={deck}
                 importedDeckstring={importedDeckstring}
+                importedDeckstringPopover={importedDeckstringPopover}
                 deckstring={deckstring}
                 handleInputChange={handleInputChange}
                 handleImgSaveClick={handleImgSaveClick}
                 handleOptionsClick={handleOptionsClick}
                 handleDeckImport={handleDeckImport}
                 imgReadyDecklist={imgReadyDecklist}/>
-        <div className="content">
-          {currentView()}
+        <div className="content scrollable">
+          {activeView()}
+        </div>
+        <div className="filter-card-by-name">
+          <input type="text"/>
         </div>
       </div>
   )

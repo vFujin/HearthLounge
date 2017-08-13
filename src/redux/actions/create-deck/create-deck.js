@@ -8,7 +8,8 @@ import {
   UPDATE_CURRENT_CARDS_LOADED, UPDATE_DECK_CREATION_FILTERS,
   UPDATE_DECKSTRING, UPDATE_PLAYERCLASS,
   UPDATE_URL,
-  UPDATE_IMPORTED_DECKSTRING
+  UPDATE_IMPORTED_DECKSTRING,
+  TOGGLE_IMPORTED_DECKSTRING_POPOVER
 } from "../../types/create-deck/create-deck";
 
 export function toggleFilters(filters){
@@ -92,5 +93,12 @@ export function updateImportedDeckstring(importedDeckstring){
   return {
     type: UPDATE_IMPORTED_DECKSTRING,
     importedDeckstring
+  }
+}
+
+export function toggleImportedDeckstringPopover(importedDeckstringPopover){
+  return {
+    type: TOGGLE_IMPORTED_DECKSTRING_POPOVER,
+    importedDeckstringPopover
   }
 }

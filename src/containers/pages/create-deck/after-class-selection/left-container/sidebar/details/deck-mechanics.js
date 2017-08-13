@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-const DeckMechanics = ({deck, deckDetails, mechanics}) => {
+const DeckMechanics = ({deck, mechanics}) => {
   let deckMechanics = [].concat.apply([], _.map(deck, (value)=>value.hasOwnProperty('mechanics') ? value.mechanics : null));
   let countMechanics = _.countBy(deckMechanics, 'name');
 
@@ -15,7 +16,7 @@ const DeckMechanics = ({deck, deckDetails, mechanics}) => {
   };
 
   return (
-      <div className={`list mechanics-list ${deckDetails === false ? 'display-none' : null}`}>
+      <div className="list mechanics-list">
         <div className="table-scroll">
         <table>
           <thead>
@@ -34,9 +35,9 @@ const DeckMechanics = ({deck, deckDetails, mechanics}) => {
 };
 
 DeckMechanics.propTypes = {
-  deck: React.PropTypes.array,
-  deckDetails: React.PropTypes.bool,
-  mechanics: React.PropTypes.array
+  deck: PropTypes.array,
+  deckDetails: PropTypes.bool,
+  mechanics: PropTypes.array
 };
 
 export default DeckMechanics;

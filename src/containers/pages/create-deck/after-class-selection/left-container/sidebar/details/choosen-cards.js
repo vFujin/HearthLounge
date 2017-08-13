@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background"
+import Icon from "../../../../../../../components/icons/icon";
 
-const ChoosenCards = ({countCards, deck, deckDetails}) => {
+const ChoosenCards = ({countCards, deck}) => {
 
   const removeApostrophe = (string) =>{
     return _.replace(string.toLowerCase(), "'", "");
@@ -11,16 +13,16 @@ const ChoosenCards = ({countCards, deck, deckDetails}) => {
   const listCards = () => {
     return _.uniqBy(_.sortBy(deck, ['cost', 'name'])).map((card, i) =>
         <tr key={i} className={cardRarityBackground(card.rarity)}>
-          <td><span className={`hs-icon icon-${_.kebabCase(removeApostrophe(card.cardSet))}`}></span></td>
+          <td><Icon name={removeApostrophe(_.kebabCase(card.cardSet))} type="set"/></td>
           <td>{card.name}</td>
           <td>{countCards(card)}</td>
-          <td><span className={`hs-icon icon-mana-${card.cost}`}></span></td>
+          <td><Icon name={card.cost} type="mana"/></td>
         </tr>
     );
   };
 
   return (
-      <div className={`list cards-list ${deckDetails === true ? 'display-none' : ''} `}>
+      <div className="list cards-list">
         <div className="table-scroll">
         <table>
           <thead>
@@ -41,9 +43,9 @@ const ChoosenCards = ({countCards, deck, deckDetails}) => {
 };
 
 ChoosenCards.propTypes = {
-  countCards: React.PropTypes.func,
-  deck: React.PropTypes.array,
-  deckDetails: React.PropTypes.bool
+  countCards: PropTypes.func,
+  deck: PropTypes.array,
+  deckDetails: PropTypes.bool
 };
 
 export default ChoosenCards;

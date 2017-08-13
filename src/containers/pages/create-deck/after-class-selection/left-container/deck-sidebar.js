@@ -5,8 +5,9 @@ import ChoosenCards from './sidebar/details/choosen-cards';
 import DeckMechanics from './sidebar/details/deck-mechanics';
 import MapFunctionlessIcons from '../right-container/topbar-assets/map-functionless-icons';
 import ManaCurve from "../../../../../components/mana-curve/mana-curve";
+import Icon from "../../../../../components/icons/icon";
 
-const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMechanicsToggle, mechanics, params, imgReadyDecklist}) => {
+const DeckSidebar = ({countCards, deck, deckDetails, handleDeckMechanicsToggle, mechanics, playerClass, imgReadyDecklist}) => {
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
 
@@ -17,17 +18,19 @@ const DeckSidebar = ({filtersView, countCards, deck, deckDetails, handleDeckMech
   };
 
   return (
-      <div className={`sidebar__body ${filtersView === false ? 'active' : 'display-none'}`}>
+      <div className="sidebar__body">
         <div className="container__mana-curve" id="decklist-to-img">
           <h3>Cards/Mana Cost</h3>
           <ManaCurve deck={deck} max={max}/>
 
           <h3>Chosen Cards{decklistHeaderView()}</h3>
-          <ChoosenCards deck={deck} countCards={countCards} deckDetails={deckDetails}/>
-          <DeckMechanics deck={deck} deckDetails={deckDetails} mechanics={mechanics}/>
+          {!deckDetails
+              ? <ChoosenCards deck={deck} countCards={countCards}/>
+              : <DeckMechanics deck={deck} mechanics={mechanics}/>
+          }
         </div>
         <div className="background">
-          <span className={`hs-icon icon-${params.class}`}></span>
+          <Icon name={playerClass}/>
         </div>
       </div>
   );
