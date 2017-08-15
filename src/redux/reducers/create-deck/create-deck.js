@@ -8,8 +8,7 @@ import {
   TOGGLE_IMG_READY_DECKLIST, TOGGLE_IMPORTED_DECKSTRING_POPOVER, TOGGLE_SEARCH_BOX,
   UPDATE_CURRENT_CARDS_LOADED, UPDATE_DECK_CREATION_FILTERS,
   UPDATE_DECKSTRING, UPDATE_IMPORTED_DECKSTRING,
-  UPDATE_PLAYERCLASS,
-  UPDATE_URL
+  UPDATE_PLAYERCLASS
 } from "../../types/create-deck/create-deck";
 
 
@@ -38,27 +37,22 @@ export default function(state=initialState, action){
   switch(action.type){
     case TOGGLE_FILTERS: return {
       ...state,
-      filters: action.filters
+      filters: !state.filters
     };
 
     case SHOW_DECK_EDITING_TOOL: return {
       ...state,
-      editingTool: action.editingTool
+      editingTool: !state.editingTool
     };
 
     case TOGGLE_DECK_MECHANICS: return {
       ...state,
-      deckMechanics: action.deckMechanics
+      deckMechanics: !state.deckMechanics
     };
 
     case TOGGLE_IMG_READY_DECKLIST: return {
       ...state,
-      imgReadyDecklist: action.imgReadyDecklist
-    };
-
-    case UPDATE_URL: return {
-      ...state,
-      deckUrl: action.deckUrl
+      imgReadyDecklist: !state.imgReadyDecklist
     };
 
     case EDIT_DECK: return {
@@ -98,12 +92,12 @@ export default function(state=initialState, action){
 
     case TOGGLE_IMPORTED_DECKSTRING_POPOVER: return {
         ...state,
-      importedDeckstringPopover: action.importedDeckstringPopover
+      importedDeckstringPopover: !state.importedDeckstringPopover
     };
 
     case TOGGLE_SEARCH_BOX: return {
         ...state,
-      searchBox: action.searchBox
+      searchBox: !state.searchBox
     };
 
     case CARD_SEARCH_VALUE: return {

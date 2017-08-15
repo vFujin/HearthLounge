@@ -1,4 +1,4 @@
-import * as actions from '../../../actions/decks/deck-view';
+import * as actions from '../deck-view';
 import * as types from '../../../types/decks/deck-view';
 import lowerCase from 'lodash/lowerCase';
 

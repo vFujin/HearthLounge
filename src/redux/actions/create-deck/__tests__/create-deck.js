@@ -1,4 +1,4 @@
-import * as actions from '../../../actions/create-deck/create-deck';
+import * as actions from '../create-deck';
 import * as types from '../../../types/create-deck/create-deck';
 import lowerCase from 'lodash/lowerCase';
 
@@ -26,4 +26,8 @@ describe('#createDeckActions', () =>{
   testActions(actions.updatePlayerClass, types.UPDATE_PLAYERCLASS, 'playerClass', 'priest');
   testActions(actions.updateCurrentCardsLoaded, types.UPDATE_CURRENT_CARDS_LOADED, 'currentCardsLoaded', 70);
   testActions(actions.updateDeckCreationFilters, types.UPDATE_DECK_CREATION_FILTERS, 'deckCreationFilters', 'foo');
+  testActions(actions.updateImportedDeckstring, types.UPDATE_IMPORTED_DECKSTRING, 'importedDeckstring', 'AAB');
+  testActions(actions.toggleImportedDeckstringPopover, types.TOGGLE_IMPORTED_DECKSTRING_POPOVER, 'importedDeckstringPopover', true);
+  testActions(actions.toggleSearchBox, types.TOGGLE_SEARCH_BOX, 'searchBox', true);
+  testActions(actions.filterCards, types.FILTER_CARDS, 'filteredCards', []);
 });
