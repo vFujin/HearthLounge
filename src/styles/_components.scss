@@ -238,3 +238,21 @@
     }
   }
 }
+
+input {
+  &::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    transform: rotate(45deg);
+    cursor: pointer;
+    background: linear-gradient(to bottom, transparent 45%, $sea-color 45%, $sea-color 55%,  transparent 55%),
+    linear-gradient(to right, transparent 45%, $sea-color 45%, $sea-color 55%, transparent 55%);
+    @include transition(all ease .4s);
+    &:hover{
+      background: linear-gradient(to bottom, transparent 45%, $pearl 45%, $pearl 55%,  transparent 55%),
+      linear-gradient(to right, transparent 45%, $pearl 45%, $pearl 55%, transparent 55%);
+    }
+  }
+}

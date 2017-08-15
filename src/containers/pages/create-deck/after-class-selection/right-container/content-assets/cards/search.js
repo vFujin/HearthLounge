@@ -22,6 +22,7 @@ const Search = ({cards, cardSearchValue, handleInputChange}) => {
       <div className="search">
         <div className="search__wrapper">
           <Input id="search__wrapper-input"
+                 type="search"
                  className="search__wrapper-input"
                  placeholder="The Lich King"
                  value={cardSearchValue}

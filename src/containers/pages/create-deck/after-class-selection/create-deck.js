@@ -11,7 +11,7 @@ import * as deckCreationActions from "../../../../redux/actions/create-deck/crea
 import {createDeckFromDeckstringObj} from "../../../../utils/deck/deckstring/index";
 import {updateImportedDeckstring} from "../../../../redux/actions/create-deck/create-deck";
 import {
-  scClearFilters, scSubmitFilteredCard,
+  scClearFilters, scSaveDeck, scSubmitFilteredCard,
   scToggleSearchBox
 } from "./right-container/content-assets/utils/shortcuts/index";
 import {resetFocus} from "./right-container/content-assets/utils/reset-focus";
@@ -42,13 +42,14 @@ class CreateDeckClassSelected extends PureComponent {
   };
 
   handleKeyShortcuts = (e) => {
-    const {toggleFilters, toggleDeckMechanics, toggleSearchBox, updateCardSearchValue, filterCards, filters, deckMechanics, searchBox, cardSearchValue, filteredCards} = this.props;
+    const {toggleFilters, toggleDeckMechanics, toggleSearchBox, updateCardSearchValue, filterCards, filters, deckMechanics, searchBox, cardSearchValue, filteredCards, showDeckEditingTool, editingTool} = this.props;
 
     scToggleDeckFilters(e, toggleFilters, filters);
     scToggleDeckMechanics(e, toggleDeckMechanics, deckMechanics);
     scToggleSearchBox(e, toggleSearchBox, searchBox);
     scClearFilters(e, toggleFilters, toggleDeckMechanics, toggleSearchBox, filterCards, updateCardSearchValue);
-    scSubmitFilteredCard(e, searchBox, cardSearchValue, filteredCards, toggleSearchBox, updateCardSearchValue)
+    scSubmitFilteredCard(e, searchBox, cardSearchValue, filteredCards, toggleSearchBox, updateCardSearchValue);
+    scSaveDeck(e, showDeckEditingTool, editingTool);
   };
 
   switchDecklistClasses = (param) => {
@@ -63,6 +64,11 @@ class CreateDeckClassSelected extends PureComponent {
   handleDeckMechanicsToggle = () => {
     const {toggleDeckMechanics, deckMechanics} = this.props;
     toggleDeckMechanics(!deckMechanics);
+  };
+
+  handleDeckFiltersToggle = () =>{
+    const {toggleFilters, filters} = this.props;
+    toggleFilters(!filters);
   };
 
   handleCopyDeckStringClick = () => {
@@ -127,7 +133,7 @@ class CreateDeckClassSelected extends PureComponent {
         <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
              className="container__page container__page--twoSided create-deck">
 
-          <LeftContainer handleSidebarViewChange={this.handleKeyShortcuts}
+          <LeftContainer handleSidebarViewChange={this.handleDeckFiltersToggle}
                          filtersView={filters}
                          countCards={(e) => uniqueCards(deck, e)}
                          deck={deck}

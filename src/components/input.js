@@ -7,6 +7,7 @@ const Input = ({autoFocus, className, id, placeholder, onChange, type, value}) =
                 placeholder={placeholder || null}
                 className={className || null}
                 value={value}
+                results={30}
                 onChange={onChange || null}
                 autoFocus={autoFocus || false}/>
 };
