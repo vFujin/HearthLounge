@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {topbar_tabs} from '../../../../data/expansion-details'
-
-import {Overview, Arena, Cards, PreOrder, StandardMode} from './assets/shared-topbar-tabs';
+import {Overview, Arena, PreOrder, StandardMode} from './assets/shared-topbar-tabs';
+import Cards from "../../../../components/extension-blocks/cards"
 import {HearthstoneOnAndroid, SpectatorMode} from './assets/gvg';
 import {JadeGolemMechanic, MulticlassCards} from './assets/msog';
 
@@ -20,16 +19,16 @@ const components = {
 };
 
 
-const ExpansionDetails = ({cards, details, expansion}) => {
-  let activeExpansion =  topbar_tabs.find(tab => tab.expansion === expansion);
+const ExpansionDetails = ({cards, details, activeExpansion}) => {
   let activeExpansionTab = activeExpansion.expansion_topbar_tabs.filter(tab => tab.url === details);
 
   const currentView = () =>{
+
     return activeExpansionTab.map(page=> {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
 
-      return <Page key={page.url} expansion={expansion} cards={cards}/>
+      return <Page key={page.url} expansion={activeExpansion} extensionUrl={activeExpansion.url} cards={cards}/>
     })
   };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Block = ({page, title, element}) =>{
+const ExtensionBlock = ({page, title, element}) =>{
   return (
       <li className={`container__blocks--block ${page}`}>
         <h4 className="container__blocks--block-header">{title}</h4>
@@ -10,9 +10,9 @@ const Block = ({page, title, element}) =>{
   )
 };
 
-export default Block;
+export default ExtensionBlock;
 
-Block.propTypes = {
+ExtensionBlock.propTypes = {
   page: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   element: PropTypes.element.isRequired

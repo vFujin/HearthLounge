@@ -12,7 +12,6 @@ const Expansions = ({cards, params}) => {
 
   const rightContainer = () => {
     let path = location.pathname.split("/")[2];
-
     if(expansion !== undefined) {
       return expansionExists(path)
           ? <Expansion cards={cards} details={details} expansion={expansion}/>

@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loader from "../../../../../components/loader";
+import Loader from "../../loader";
 
-const Rewards = ({adventureCardbacks}) => {
+const Rewards = ({extensionCardbacks}) => {
 
   const mapCardbacks = () =>{
-    if(!adventureCardbacks){
+    if(!extensionCardbacks){
       return <Loader />
     } else {
-      return adventureCardbacks.map(cardback => {
+      return extensionCardbacks.map(cardback => {
         const {cardBackId, imgAnimated, name} = cardback;
         return <img key={cardBackId} src={imgAnimated} alt={name} />
       })
@@ -27,5 +27,5 @@ const Rewards = ({adventureCardbacks}) => {
 export default Rewards;
 
 Rewards.propTypes = {
-  adventureCardbacks: PropTypes.array.isRequired
+  extensionCardbacks: PropTypes.array.isRequired
 };

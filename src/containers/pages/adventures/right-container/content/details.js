@@ -5,12 +5,12 @@ import {adventureWingExists, adventureBossExists} from '../../../../../utils/che
 import {
   Overview,
   Bosses,
-  Cards,
   ClassChallenges,
   Cost,
   Structure,
   Boss
 } from '../../assets';
+import Cards from '../../../../../components/extension-blocks/cards';
 
 const components = {
   Overview,
@@ -32,6 +32,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
       return <Page key={page.url}
                    adventure={adventure}
                    cards={cards}
+                   extensionUrl={adventure.url}
                    detailsChild={detailsChild}
                    adventureCardbacks={adventureCardbacks}/>
     })

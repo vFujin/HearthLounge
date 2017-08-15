@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loader from '../../../../components/loader';
+import Loader from '../loader';
 import Tooltip from 'antd/lib/tooltip';
-import {CardDetails} from "../../cards/right-container/card-details";
+import {CardDetails} from "../../containers/pages/cards/right-container/card-details";
 
-const Cards = ({adventure, cards}) => {
-
+const Cards = ({extensionUrl, cards}) => {
   const set = () =>{
-      return cards.sets[adventure.url].map(card =>
+      return cards.sets[extensionUrl].map(card =>
           <li key={card.cardId}>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <div className="img-wrapper">
@@ -19,7 +18,7 @@ const Cards = ({adventure, cards}) => {
   };
 
   const listCards = () =>{
-    if(cards.sets[adventure.url] && cards.sets[adventure.url].length > 0){
+    if(cards.sets[extensionUrl] && cards.sets[extensionUrl].length > 0){
       return (
           <ul className="container__cards">
             {set()}
@@ -35,7 +34,7 @@ const Cards = ({adventure, cards}) => {
 export default Cards;
 
 Cards.propTypes = {
-  adventure: PropTypes.string.isRequired,
+  extensionUrl: PropTypes.string.isRequired,
   cards: PropTypes.shape({
     sets: PropTypes.objectOf(PropTypes.array)
   }).isRequired

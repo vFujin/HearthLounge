@@ -1,5 +1,5 @@
 import {adventure_details} from '../data/adventure-details';
-import {topbar_tabs} from '../data/expansion-details';
+import {expansion_details} from '../data/expansion-details';
 
 /**
  * Checks if adventure exists
@@ -66,8 +66,8 @@ export const adventureBossExists = (adventurePath, detailsPath, bossPath) => {
  * @returns {boolean}
  */
 export const expansionExists = (expansionPath) => {
-  return topbar_tabs
-         .map(tab => tab.expansion)
+  return expansion_details
+         .map(expansion => expansion.url)
          .includes(expansionPath)
 };
 
@@ -84,8 +84,8 @@ export const expansionExists = (expansionPath) => {
  * @returns {boolean}
  */
 export const expansionDetailExists = (expansionPath, detailsPath) => {
-  return topbar_tabs
-         .filter(tab => tab.expansion === expansionPath)[0].expansion_topbar_tabs
+  return expansion_details
+         .find(expansion => expansion.url === expansionPath).expansion_topbar_tabs
          .map(expansion => expansion.url)
          .includes(detailsPath);
 };

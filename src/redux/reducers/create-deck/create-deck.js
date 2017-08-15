@@ -37,22 +37,22 @@ export default function(state=initialState, action){
   switch(action.type){
     case TOGGLE_FILTERS: return {
       ...state,
-      filters: !state.filters
+      filters: action.filters
     };
 
     case SHOW_DECK_EDITING_TOOL: return {
       ...state,
-      editingTool: !state.editingTool
+      editingTool: action.editingTool
     };
 
     case TOGGLE_DECK_MECHANICS: return {
       ...state,
-      deckMechanics: !state.deckMechanics
+      deckMechanics: action.deckMechanics
     };
 
     case TOGGLE_IMG_READY_DECKLIST: return {
       ...state,
-      imgReadyDecklist: !state.imgReadyDecklist
+      imgReadyDecklist: action.imgReadyDecklist
     };
 
     case EDIT_DECK: return {
@@ -92,12 +92,12 @@ export default function(state=initialState, action){
 
     case TOGGLE_IMPORTED_DECKSTRING_POPOVER: return {
         ...state,
-      importedDeckstringPopover: !state.importedDeckstringPopover
+      importedDeckstringPopover: action.importedDeckstringPopover
     };
 
     case TOGGLE_SEARCH_BOX: return {
         ...state,
-      searchBox: !state.searchBox
+      searchBox: action.searchBox
     };
 
     case CARD_SEARCH_VALUE: return {
