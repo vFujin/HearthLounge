@@ -2,10 +2,10 @@ import React from 'react';
 import Topbar from './right-container/topbar';
 import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
+import Search from "./right-container/content-assets/cards/search";
 
-const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, importedDeckstringPopover, patch, filtersView, handleCardClick, handleOptionsClick, handleInputChange, handleImgSaveClick, handleDeckImport, allCards, playerClass,
-                          query, simplifiedDeck, filtersQuery, editingTool, user, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
-
+const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, udpateCardSearchValue, importedDeckstringPopover, patch, filteredCards, cardSearchValue, filtersView, handleCardClick, handleCardSearch, handleOptionsClick, handleInputChange, handleImgSaveClick, handleDeckImport, allCards, playerClass,
+                          query, simplifiedDeck, filtersQuery, editingTool, user, searchBox, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
   const activeView = () => {
     return !editingTool
         ? <Cards allCards={allCards}
@@ -21,6 +21,14 @@ const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, im
                        deckstring={deckstring}
                        authenticated={authenticated}
                        user={user}/>
+  };
+
+  const searchBoxView = () =>{
+    if(searchBox){
+      return <Search cards={allCards}
+                     cardSearchValue={cardSearchValue}
+                     handleInputChange={handleInputChange}/>
+    }
   };
 
   return (
@@ -40,9 +48,7 @@ const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, im
         <div className="content scrollable">
           {activeView()}
         </div>
-        <div className="filter-card-by-name">
-          <input type="text"/>
-        </div>
+        {searchBoxView()}
       </div>
   )
 };

@@ -2,7 +2,7 @@ import React  from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import _ from "lodash";
-import Icon from "../icons/icon";
+import Icon from "../icon";
 import DeckSnippetHeader from "./header/deck-snippet-header";
 import DeckSnippetBody from "./body/deck-snippet-body";
 

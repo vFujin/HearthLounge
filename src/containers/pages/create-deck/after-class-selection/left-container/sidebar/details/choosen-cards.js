@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background"
-import Icon from "../../../../../../../components/icons/icon";
+import Icon from "../../../../../../../components/icon";
 
 const ChoosenCards = ({countCards, deck}) => {
 

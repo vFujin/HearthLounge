@@ -7,7 +7,7 @@ import {topbar_icons} from './icons';
 import PopoverSaveImg from './popover-save-img';
 import {success} from "../../../../../../utils/messages";
 import DeckstringInput from "./import-deck";
-import Icon from "../../../../../../components/icons/icon";
+import Icon from "../../../../../../components/icon";
 
 const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptionsClick, handleImgSaveClick, handleInputChange, handleDeckImport, imgReadyDecklist, importedDeckstringPopover}) => {
   const popoverVisibility = (obj) =>{

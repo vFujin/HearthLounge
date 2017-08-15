@@ -6,7 +6,7 @@ import ModeSelection from './filters/mode-selection';
 import DeckSnippet from '../../../../components/deck-snippet/deck-snippet';
 import SearchDecks from './filters/search-decks';
 import Loader from "../../../../components/loader";
-import Icon from "../../../../components/icons/icon";
+import Icon from "../../../../components/icon";
 const DecksBlock = ({decks, handleDeckClick, handlePlayerClassFilterClick}) => {
 
   const listDecks = () =>{

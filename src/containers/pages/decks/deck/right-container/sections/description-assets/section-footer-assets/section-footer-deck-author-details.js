@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UserAvatar from '../../../../../../../../components/user/user-avatar'
-import Icon from "../../../../../../../../components/icons/icon";
+import Icon from "../../../../../../../../components/icon";
 
 const AuthorDetails = (props) =>{
   const {username, rank, avatar} = props.deckAuthor;

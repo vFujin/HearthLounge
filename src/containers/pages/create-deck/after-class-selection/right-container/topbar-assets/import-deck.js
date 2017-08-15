@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const DeckstringInput = ({importedDeckstring, handleInputChange, handleDeckImport}) =>{
   return (
       <div className="deck-import">
-        <input type="text" value={importedDeckstring} onChange={handleInputChange}/>
+        <input id="deckstring-popover" type="text" value={importedDeckstring} onChange={handleInputChange}/>
         <button onClick={handleDeckImport} id="deck-import" className="btn-pearl">Import</button>
       </div>
   )

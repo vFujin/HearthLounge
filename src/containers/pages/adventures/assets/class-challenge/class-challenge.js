@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from "../../../../../components/icons/icon";
+import Icon from "../../../../../components/icon";
 import Block from "../block";
 import Overview from "./class-challenge-blocks/overview";
 import Rewards from "../shared-blocks/rewards";

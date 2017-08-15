@@ -1,10 +1,11 @@
 import {
-  EDIT_DECK,
+  CARD_SEARCH_VALUE,
+  EDIT_DECK, FILTER_CARDS,
   SHOW_DECK_EDITING_TOOL,
   SIMPLIFY_DECK,
   TOGGLE_DECK_MECHANICS,
   TOGGLE_FILTERS,
-  TOGGLE_IMG_READY_DECKLIST, TOGGLE_IMPORTED_DECKSTRING_POPOVER,
+  TOGGLE_IMG_READY_DECKLIST, TOGGLE_IMPORTED_DECKSTRING_POPOVER, TOGGLE_SEARCH_BOX,
   UPDATE_CURRENT_CARDS_LOADED, UPDATE_DECK_CREATION_FILTERS,
   UPDATE_DECKSTRING, UPDATE_IMPORTED_DECKSTRING,
   UPDATE_PLAYERCLASS,
@@ -27,7 +28,10 @@ const initialState = {
   filtersQuery: {},
   currentCardsLoaded: 35,
   importedDeckstring: '',
-  importedDeckstringPopover: false
+  importedDeckstringPopover: false,
+  searchBox: false,
+  cardSearchValue: '',
+  filteredCards: null
 };
 
 export default function(state=initialState, action){
@@ -95,6 +99,21 @@ export default function(state=initialState, action){
     case TOGGLE_IMPORTED_DECKSTRING_POPOVER: return {
         ...state,
       importedDeckstringPopover: action.importedDeckstringPopover
+    };
+
+    case TOGGLE_SEARCH_BOX: return {
+        ...state,
+      searchBox: action.searchBox
+    };
+
+    case CARD_SEARCH_VALUE: return {
+        ...state,
+      cardSearchValue: action.cardSearchValue
+    };
+
+    case FILTER_CARDS: return {
+      ...state,
+      filteredCards: action.filteredCards
     };
 
     default: return state;

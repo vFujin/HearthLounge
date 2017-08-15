@@ -9,7 +9,10 @@ import {
   UPDATE_DECKSTRING, UPDATE_PLAYERCLASS,
   UPDATE_URL,
   UPDATE_IMPORTED_DECKSTRING,
-  TOGGLE_IMPORTED_DECKSTRING_POPOVER
+  TOGGLE_IMPORTED_DECKSTRING_POPOVER,
+  TOGGLE_SEARCH_BOX,
+  CARD_SEARCH_VALUE,
+  FILTER_CARDS
 } from "../../types/create-deck/create-deck";
 
 export function toggleFilters(filters){
@@ -100,5 +103,26 @@ export function toggleImportedDeckstringPopover(importedDeckstringPopover){
   return {
     type: TOGGLE_IMPORTED_DECKSTRING_POPOVER,
     importedDeckstringPopover
+  }
+}
+
+export function toggleSearchBox(searchBox){
+  return {
+    type: TOGGLE_SEARCH_BOX,
+    searchBox
+  }
+}
+
+export function updateCardSearchValue(cardSearchValue){
+  return {
+    type: CARD_SEARCH_VALUE,
+    cardSearchValue
+  }
+}
+
+export function filterCards(filteredCards){
+  return {
+    type: FILTER_CARDS,
+    filteredCards
   }
 }

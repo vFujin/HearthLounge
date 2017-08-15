@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../../../../../../../components/icons/icon';
+import Icon from '../../../../../../../components/icon';
 import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background";
 import Tooltip from 'antd/lib/tooltip';
 import CardImg from "./card-img";

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Icon from "../icons/icon";
+import Icon from "../icon";
 
 const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true}) => {
 

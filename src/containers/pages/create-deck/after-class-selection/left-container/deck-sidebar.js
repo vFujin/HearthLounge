@@ -5,7 +5,7 @@ import ChoosenCards from './sidebar/details/choosen-cards';
 import DeckMechanics from './sidebar/details/deck-mechanics';
 import MapFunctionlessIcons from '../right-container/topbar-assets/map-functionless-icons';
 import ManaCurve from "../../../../../components/mana-curve/mana-curve";
-import Icon from "../../../../../components/icons/icon";
+import Icon from "../../../../../components/icon";
 
 const DeckSidebar = ({countCards, deck, deckDetails, handleDeckMechanicsToggle, mechanics, playerClass, imgReadyDecklist}) => {
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
