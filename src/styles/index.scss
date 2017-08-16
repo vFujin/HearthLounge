@@ -1158,7 +1158,7 @@ footer{
     .tournaments{}
 
     .expansions{
-      > div {
+       div {
         .slider {
           -webkit-user-select: none;
           -moz-user-select: none;
@@ -1167,48 +1167,26 @@ footer{
           height: calc(100% - 20px);
           padding: 10px;
           width: calc(100% - 20px);
-          ul {
+          .ant-carousel{
             height: 100%;
-            li {
-              height:100%;
-              img {
+            .slick-slider{
+              height: 100%;
+              .slick-list{
                 height: 100%;
-                width: 100%;
+                .slick-track{
+                  height: 100%;
+                  a{
+                    height:100%;
+                    img{
+                      height:100%;
+                      width: 100%;
+                    }
+                  }
+                }
               }
             }
           }
-          .slider-nav {
-            position: absolute;
-            top: calc(50% - 25px);
-            width: calc(100% - 20px);
-            display: flex;
-            font-size: 50px;
-            border: 0;
-            outline: none;
-            .prev, .next {
-              @include transition(all ease .4s);
-              position: absolute;
-              padding: 0 15px;
-              background-color: rgba(255, 255, 255, .4);
-              cursor: pointer;
-              &:hover {
-                background-color: $sea-color;
-                color: $pearl;
-              }
-            }
-            .prev {
-              left: 0;
-            }
-            .next {
-              right: 0
-            }
-            .bullets {
-              position: absolute;
-              background-color: rgba(255, 255, 255, .4);
-              left: calc(50% - 20px);
-              top: 140px;
-            }
-          }
+
         }
       }
     }

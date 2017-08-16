@@ -1,6 +1,6 @@
 export const expansion_details = [
   {
-    name: 'Goblins vs Gnomes',
+    expansion: 'Goblins vs Gnomes',
     url: 'goblins-vs-gnomes',
     overview: {
       cardback_heroic: '15',
@@ -42,7 +42,7 @@ export const expansion_details = [
     ]
   },
   {
-    name: 'The Grand Tournament',
+    expansion: 'The Grand Tournament',
     url: 'the-grand-tournament',
     overview: {
       cardback_heroic: '31',
@@ -76,7 +76,7 @@ export const expansion_details = [
     ]
   },
   {
-    name: 'Whispers of the Old Gods',
+    expansion: 'Whispers of the Old Gods',
     url: 'whispers-of-the-old-gods',
     overview: {
       cardback_event: '45',
@@ -109,7 +109,7 @@ export const expansion_details = [
     ]
   },
   {
-    name: 'Mean Streets of Gadgetzan',
+    expansion: 'Mean Streets of Gadgetzan',
     url: 'mean-streets-of-gadgetzan',
     overview: {
       cardback_event: '66',
@@ -150,7 +150,7 @@ export const expansion_details = [
     ]
   },
   {
-    name: "Journey to Un'Goro",
+    expansion: "Journey to Un'Goro",
     url: 'journey-to-ungoro',
     overview: {
       cardback_event: '70',
@@ -183,7 +183,7 @@ export const expansion_details = [
     ]
   },
   {
-    name: 'Knights of the Frozen Throne',
+    expansion: 'Knights of the Frozen Throne',
     url: 'knights-of-the-frozen-throne',
     overview: {
       cardback_heroic: '103',
