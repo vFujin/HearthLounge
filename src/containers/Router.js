@@ -46,7 +46,7 @@ import NotFound from './shared-assets/not-found';
 
 import {Dashboard} from './pages/dashboard/dashboard';
 import Rank from './pages/rank/rank';
-
+import Issues from './pages/issues/issues';
 import Main from './Main';
 
 // getCurrentUserInfo(updateActiveUser);
@@ -124,7 +124,7 @@ const App = ({store}) =>{
 
         <Route path="dashboard" component={Dashboard} />
         <Route path="rank" component={Rank} />
-
+        <Route path="issues" component={Issues}/>
         <Route path="*" component={NotFound} />
       </Route>
     </Router>

@@ -5,6 +5,7 @@ import Home from './home';
 import Entry from './entry/entry'
 import Users from './users';
 import Cards from './cards';
+import Issues from './issues';
 import AdventureBoss from './adventures/adventure'
 import DeckDetails from './create-deck/deck-options';
 import DeckCreation from './create-deck/create-deck';
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   deckList: DeckList,
   deckView: DeckView,
   redditPosts: RedditPosts,
+  issues: Issues,
   routing: routerReducer
 });
 

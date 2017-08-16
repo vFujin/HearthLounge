@@ -7,7 +7,6 @@ import {
   TOGGLE_IMG_READY_DECKLIST,
   UPDATE_CURRENT_CARDS_LOADED, UPDATE_DECK_CREATION_FILTERS,
   UPDATE_DECKSTRING, UPDATE_PLAYERCLASS,
-  UPDATE_URL,
   UPDATE_IMPORTED_DECKSTRING,
   TOGGLE_IMPORTED_DECKSTRING_POPOVER,
   TOGGLE_SEARCH_BOX,
@@ -40,13 +39,6 @@ export function toggleImgReadyDecklist(imgReadyDecklist){
   return {
     type: TOGGLE_IMG_READY_DECKLIST,
     imgReadyDecklist
-  }
-}
-
-export function updateURL(deckUrl){
-  return {
-    type: UPDATE_URL,
-    deckUrl
   }
 }
 
