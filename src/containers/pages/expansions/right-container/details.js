@@ -32,7 +32,8 @@ const ExpansionDetails = ({cards, details, activeExpansion}) => {
     })
   };
 
-  return <div>{currentView()}</div>;
+
+  return <div className="content">{currentView()}</div>;
 };
 
 export default ExpansionDetails;

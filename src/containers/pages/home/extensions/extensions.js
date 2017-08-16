@@ -18,7 +18,7 @@ const ExtensionsBlock = () => {
           let extensionType = _.keys(extension)[0];
 
           return (
-              <Link to={`/${extensionType}s/${url}/overview`}>
+              <Link key={url} to={`/${extensionType}s/${url}/overview`}>
                 <img src={img} alt={`${url}'s art`}/>
               </Link>
           )

@@ -3324,6 +3324,23 @@ input::-webkit-search-cancel-button {
   background: #E7E2DA; }
 
 /*
+ * Carousel
+ */
+.ant-carousel {
+  height: 100%; }
+  .ant-carousel .slick-slider {
+    height: 100%; }
+    .ant-carousel .slick-slider .slick-list {
+      height: 100%; }
+      .ant-carousel .slick-slider .slick-list .slick-track {
+        height: 100%; }
+        .ant-carousel .slick-slider .slick-list .slick-track a {
+          height: 100%; }
+          .ant-carousel .slick-slider .slick-list .slick-track a img {
+            height: 100%;
+            width: 100%; }
+
+/*
   Layout
  */
 html, body {
@@ -4090,6 +4107,9 @@ footer {
         border: none;
         width: 100%;
         height: 100%; }
+      .container__page .container__page--right .content .container__blocks li.container__blocks--block.overview .gameboard img {
+        width: 100%;
+        height: 100%; }
       .container__page .container__page--right .content .container__blocks li.container__blocks--block.boss .overview {
         display: flex;
         align-items: center;
@@ -4317,19 +4337,6 @@ footer {
     height: calc(100% - 20px);
     padding: 10px;
     width: calc(100% - 20px); }
-    .home .home__list .expansions div .slider .ant-carousel {
-      height: 100%; }
-      .home .home__list .expansions div .slider .ant-carousel .slick-slider {
-        height: 100%; }
-        .home .home__list .expansions div .slider .ant-carousel .slick-slider .slick-list {
-          height: 100%; }
-          .home .home__list .expansions div .slider .ant-carousel .slick-slider .slick-list .slick-track {
-            height: 100%; }
-            .home .home__list .expansions div .slider .ant-carousel .slick-slider .slick-list .slick-track a {
-              height: 100%; }
-              .home .home__list .expansions div .slider .ant-carousel .slick-slider .slick-list .slick-track a img {
-                height: 100%;
-                width: 100%; }
   .home .home__list .card > div .icon-wrapper, .home .home__list .create-deck > div .icon-wrapper {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
@@ -4392,32 +4399,40 @@ footer {
         padding: 10px; }
         .home .home__list .twitch .home__block--body > div .streams-body .iframe-container iframe {
           border: none; }
-  .home .home__list .reddit > div .post {
-    background-color: #E7E2DA;
-    margin: 12.45px 10px;
-    padding: 11px 10px;
-    color: #474143;
+  .home .home__list .reddit > div ul {
+    height: calc(100% - 2vh);
     display: flex;
-    cursor: pointer; }
-    .home .home__list .reddit > div .post .about {
+    flex-direction: column;
+    margin: 1vh; }
+    .home .home__list .reddit > div ul .post {
+      background-color: #E7E2DA;
+      color: #474143;
+      display: flex;
+      cursor: pointer;
+      padding: 1vh;
+      margin-bottom: 1vh;
+      height: 100%; }
+      .home .home__list .reddit > div ul .post:last-child {
+        margin-bottom: 0; }
+    .home .home__list .reddit > div ul .about {
       width: 80%; }
-      .home .home__list .reddit > div .post .about .topic {
+      .home .home__list .reddit > div ul .about .topic {
         font-weight: bold;
         font-size: 16px; }
-      .home .home__list .reddit > div .post .about .details {
+      .home .home__list .reddit > div ul .about .details {
         display: flex; }
-        .home .home__list .reddit > div .post .about .details .author, .home .home__list .reddit > div .post .about .details .created {
+        .home .home__list .reddit > div ul .about .details .author, .home .home__list .reddit > div ul .about .details .created {
           font-size: 12px; }
-    .home .home__list .reddit > div .post .answers {
+    .home .home__list .reddit > div ul .answers {
       width: 20%; }
-      .home .home__list .reddit > div .post .answers .answer-count {
+      .home .home__list .reddit > div ul .answers .answer-count {
         text-align: center;
         font-weight: bold; }
-        .home .home__list .reddit > div .post .answers .answer-count span {
+        .home .home__list .reddit > div ul .answers .answer-count span {
           padding: 0 5px;
           background-color: #474143;
           color: #E7E2DA; }
-      .home .home__list .reddit > div .post .answers .answer-label {
+      .home .home__list .reddit > div ul .answers .answer-label {
         font-size: 12px;
         text-align: center; }
 

@@ -2,13 +2,13 @@ import React from 'react';
 import PostSnippet from './post-snippet/post'
 const ForumBlock = () => {
   return (
-      <div>
+      <ul>
         <PostSnippet/>
         <PostSnippet/>
         <PostSnippet/>
         <PostSnippet/>
         <PostSnippet/>
-      </div>
+      </ul>
   );
 };
 

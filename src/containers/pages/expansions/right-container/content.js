@@ -6,13 +6,9 @@ import { expansionDetailExists } from '../../../../utils/checkIfPathExist';
 import ExpansionDetails from './details';
 
 const Content = ({cards, details, activeExpansion, expansion}) => {
-  return (
-      <div className="content">
-        {expansionDetailExists(expansion, details)
-            ? <ExpansionDetails cards={cards} details={details} activeExpansion={activeExpansion}/>
-            : <NotFound page={_.startCase(details)} redirect="expansions"/>}
-      </div>
-  )
+  return expansionDetailExists(expansion, details)
+      ? <ExpansionDetails cards={cards} details={details} activeExpansion={activeExpansion}/>
+      : <NotFound page={_.startCase(details)} redirect="expansions"/>
 };
 
 export default Content;

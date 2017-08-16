@@ -382,3 +382,26 @@
     }
   }
 }
+
+/*
+ * Carousel
+ */
+.ant-carousel{
+  height: 100%;
+  .slick-slider{
+    height: 100%;
+    .slick-list{
+      height: 100%;
+      .slick-track{
+        height: 100%;
+        a{
+          height:100%;
+          img{
+            height:100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

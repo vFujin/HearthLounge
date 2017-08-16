@@ -11,7 +11,7 @@ import HomeBlock from './block';
 import { TwitchBlock } from './twitch/twitch';
 import {getDecks} from "../../../firebase/decks/deck/read";
 import {updateViews} from "../../../firebase/decks/deck/update";
-// import ForumBlock from './forum/forum';
+import ForumBlock from './forum/forum';
 class Home extends PureComponent{
 
   componentDidMount() {
@@ -40,13 +40,15 @@ class Home extends PureComponent{
             <HomeBlock icon="create-deck">
               <CreateDeckBlock/>
             </HomeBlock>
-            <HomeBlock icon="tournament" blockTitle="tournaments">
+            <HomeBlock icon="trophy" blockTitle="tournaments">
               <TournamentsBlock/>
             </HomeBlock>
-            <HomeBlock icon="expansions" width={2}>
+            <HomeBlock icon="expansions" blockTitle="extensions" width={2}>
               <ExtensionsBlock/>
             </HomeBlock>
-
+            <HomeBlock icon="reddit">
+              <ForumBlock />
+            </HomeBlock>
             <HomeBlock icon="card" title="cards">
               <CardsBlock/>
             </HomeBlock>
@@ -57,9 +59,7 @@ class Home extends PureComponent{
             {/*<HomeBlock icon="bubbles2" title="forum" >*/}
             {/*<ForumBlock />*/}
             {/*</HomeBlock>*/}
-            {/*<HomeBlock icon="reddit" width={2}>*/}
-            {/*<ForumBlock />*/}
-            {/*</HomeBlock>*/}
+
           </ul>
         </div>
     );
