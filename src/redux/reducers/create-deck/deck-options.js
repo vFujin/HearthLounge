@@ -1,7 +1,7 @@
 import {UPDATE_DECK_PROPERTY} from "../../types/create-deck/deck-options";
 
 const initialState = {
-  deckType: "standard",
+  deckMode: "standard",
   deckArchetype: "quest",
   deckAdventure: '',
   deckBoss: ''

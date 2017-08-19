@@ -8,6 +8,7 @@ import {getDeckDetails, getLazyloadDecks} from '../../../../firebase/decks/deck/
 import {updateViews} from '../../../../firebase/decks/deck/update';
 import Loader from '../../../../components/loader';
 import NotFound from '../../../shared-assets/not-found';
+import {getFilteredDecks} from "../../../../firebase/decks/deck/read/index";
 
 
 class DeckSelection extends Component {
@@ -41,7 +42,35 @@ class DeckSelection extends Component {
   handleAdventureFilterClick = (e) =>{
     // let targetId = e.currentTarget.id;
     // this.props.updateAdventureFilter(targetId);
+  };
 
+
+  handleFiltersClick = e =>{
+    const {activeMode, activeClass, updateModeFilter, updateClassFilter, updateDeckList} = this.props;
+    let targetId = e.currentTarget.id;
+    let targetFilter = e.currentTarget.dataset.filter;
+
+    switch(targetFilter){
+      case 'playerClass': {
+        updateClassFilter(targetId);
+        if(activeMode && activeClass){
+          getFilteredDecks(decks => updateDeckList(decks), 'mode_class', `${activeMode}_${targetId}`);
+        } else {
+          getFilteredDecks(decks => updateDeckList(decks), 'playerClass', targetId);
+        }
+        break;
+      }
+      case 'mode': {
+        updateModeFilter(targetId);
+        if(activeMode && activeClass){
+          getFilteredDecks(decks => updateDeckList(decks), 'mode_class', `${targetId}_${activeClass}`);
+        } else {
+          getFilteredDecks(decks => updateDeckList(decks), 'mode', targetId);
+        }
+        break;
+      }
+      default: return null;
+    }
   };
 
 
@@ -95,9 +124,7 @@ class DeckSelection extends Component {
                             activeMode={activeMode}
                             activeAdventure={activeAdventure}
                             activeClass={activeClass}
-                            handleModeFilterClick={this.handleModeFilterClick}
-                            handleAdventureFilterClick={this.handleAdventureFilterClick}
-                            handleClassFilterClick={this.handleClassFilterClick}
+                            handleFiltersClick={this.handleFiltersClick}
                             handleDeckSnippetClick={(e) => this.handleDeckSnippetClick(e)}/>
           </div>
       );

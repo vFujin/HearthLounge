@@ -9,7 +9,7 @@ export default function(state=initialState, action){
   switch(action.type){
     case 'UPDATE_DECK_LIST': return {
         ...state,
-        decks: Object.assign({...state.decks}, action.decks)
+        decks: action.decks
     };
     case 'UPDATE_USER_LIST': return {
         ...state,

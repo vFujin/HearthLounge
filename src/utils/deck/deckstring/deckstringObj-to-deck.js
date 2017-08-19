@@ -5,8 +5,9 @@
 // };
 
 import decode from "./decode";
+import {deckSimplification} from "../index";
 
-export default function (allCards, deckstring, callback) {
+export default function (allCards, deckstring, callback, callbackSimplifiedDeck) {
 
     let deck = [];
 
@@ -20,5 +21,6 @@ export default function (allCards, deckstring, callback) {
       }
     });
 
-    callback(deck);
+  callback(deck);
+  callbackSimplifiedDeck(deckSimplification(deck));
 }

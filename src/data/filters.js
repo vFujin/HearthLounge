@@ -200,7 +200,7 @@ export const icon_filters = {
       url: 10
     }
   ],
-  type: [
+  mode: [
     {
       name: "standard",
       url: "mammoth"

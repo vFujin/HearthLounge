@@ -11,11 +11,11 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
     }
     else {
       return _.map(decks).map(d  => {
-        const {deckId, hsClass, title, votes, deck, created, archetype, author, type, views} = d;
+        const {deckId, playerClass, title, votes, deck, created, archetype, author, type, views} = d;
         return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
                             key={deckId}
                             deckId={deckId}
-                            hsClass={hsClass}
+                            playerClass={playerClass}
                             title={title}
                             votes={votes}
                             deck={deck}
@@ -36,7 +36,7 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
       <thead>
       <tr>
         <td className="title"><p>Name</p></td>
-        <td className="hsClass"><p>Class</p></td>
+        <td className="playerClass"><p>Class</p></td>
         <td className="votes"><p>Rating</p></td>
         <td className="views"><p>Views</p></td>
         <td className="mana-curve"><p>Mana</p></td>

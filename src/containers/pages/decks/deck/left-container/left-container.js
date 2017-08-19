@@ -57,7 +57,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
     if(cards.allCards.length > 0) {
       const Option = Select.Option;
       const options = cards.allCards
-          .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(currentDeck.hsClass) || card.playerClass === 'Neutral')))
+          .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(currentDeck.playerClass) || card.playerClass === 'Neutral')))
           .slice(0, 30)
           .map(card => <Option value={card.name} key={card.name}>{card.name}</Option>);
       return (
@@ -103,7 +103,7 @@ LeftContainer.propTypes = {
     }),
     deckId: PropTypes.string,
     description: PropTypes.string,
-    hsClass: PropTypes.string,
+    playerClass: PropTypes.string,
     patch: PropTypes.string,
     title: PropTypes.string,
     type: PropTypes.string,

@@ -5,15 +5,14 @@ import Background from "./background";
 import Loader from "../../../../../../components/loader";
 
 const SidebarBody = ({allCards, currentDeck, editingDecklist, deckEditing, search, handleCardRemovalClick}) =>{
-  const {hsClass, deckstring} = currentDeck;
+  const {playerClass, deckstring} = currentDeck;
   if(editingDecklist) {
-
     return (
         <div className="sidebar__body">
           <DeckDetails editingDecklist={editingDecklist}
                        deckEditing={deckEditing}
                        deckstring={deckstring}
-                       hsClass={hsClass}
+                       playerClass={playerClass}
                        allCards={allCards}
                        handleCardRemovalClick={handleCardRemovalClick}/>
           {deckEditing
@@ -23,7 +22,7 @@ const SidebarBody = ({allCards, currentDeck, editingDecklist, deckEditing, searc
               </div>
               : null
           }
-          <Background hsClass={hsClass}/>
+          <Background playerClass={playerClass}/>
         </div>
     )
   } else {
@@ -35,7 +34,7 @@ export default SidebarBody;
 
 SidebarBody.propTypes = {
   currentDeck: PropTypes.shape({
-    hsClass: PropTypes.string
+    playerClass: PropTypes.string
   }).isRequired,
   deckEditing: PropTypes.bool.isRequired,
   handleCardRemovalClick: PropTypes.func.isRequired,

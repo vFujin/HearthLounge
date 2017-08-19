@@ -4,11 +4,11 @@ import {icon_filters} from '../../../../../../../../data/filters';
 import {adventure_details} from '../../../../../../../../data/adventure-details';
 import _ from 'lodash';
 
-const FormSelect = ({hsClass, value, deckAdventure, section, handleSelectChange}) =>{
+const FormSelect = ({playerClass, value, deckAdventure, section, handleSelectChange}) =>{
   const {Option, OptGroup} = Select;
   const isArchetype = (el) => {
-    if(hsClass){
-      return `${el.name} ${hsClass}`
+    if(playerClass){
+      return `${el.name} ${playerClass}`
     }
     return el.name
   };
@@ -38,7 +38,7 @@ const FormSelect = ({hsClass, value, deckAdventure, section, handleSelectChange}
     return icon_filters[section].map(el =>
         <Option value={isArchetype(el)}
                 key={el.name}>
-          {_.startCase(el.name)} {_.upperFirst(hsClass)}
+          {_.startCase(el.name)} {_.upperFirst(playerClass)}
         </Option>
     );
   };

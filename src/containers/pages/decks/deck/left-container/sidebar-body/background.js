@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from "../../../../../../components/icon";
 
-const Background = ({hsClass}) =>{
+const Background = ({playerClass}) =>{
   return (
       <div className="background">
-        <Icon name={hsClass} tooltip={false}/>
+        <Icon name={playerClass} tooltip={false}/>
       </div>
   )
 };
@@ -13,5 +13,5 @@ const Background = ({hsClass}) =>{
 export default Background;
 
 Background.propTypes = {
-  hsClass: PropTypes.string.isRequired
+  playerClass: PropTypes.string.isRequired
 };

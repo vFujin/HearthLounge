@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import DSType from "./type";
 import ManaCurve from "../../../mana-curve/mana-curve";
 
-export const DSHeader = ({archetype, hsClass, deck}) => {
+export const DSHeader = ({archetype, playerClass, deck}) => {
 
   return (
       <div className="deckSnippet__body--header">
-        <DSType archetype={archetype} hsClass={hsClass} />
+        <DSType archetype={archetype} playerClass={playerClass} />
         <ManaCurve deck={deck.cards}
                    max={deck.max}
                    barHeight="20px"
@@ -24,5 +24,5 @@ export default DSHeader;
 DSHeader.propTypes = {
   archetype: PropTypes.string.isRequired,
   deck: PropTypes.object.isRequired,
-  hsClass: PropTypes.string.isRequired
+  playerClass: PropTypes.string.isRequired
 };

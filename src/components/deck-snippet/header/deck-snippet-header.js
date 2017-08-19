@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import DSAbout from "./about";
 import DSPlayerClass from "./player-class";
 
-const DeckSnippetHeader = ({hsClass, username, title, created}) => {
+const DeckSnippetHeader = ({playerClass, username, title, created}) => {
 
     return (
       <div className="deckSnippet__header">
-        <DSPlayerClass hsClass={hsClass}/>
+        <DSPlayerClass playerClass={playerClass}/>
         <DSAbout username={username}
                  title={title}
                  created={created} />
@@ -18,7 +18,7 @@ const DeckSnippetHeader = ({hsClass, username, title, created}) => {
 export default DeckSnippetHeader;
 
 DeckSnippetHeader.propTypes = {
-  hsClass: PropTypes.string.isRequired,
+  playerClass: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   created: PropTypes.number.isRequired

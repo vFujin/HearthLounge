@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormSelect from './select';
 
-const InnerLeftContainer = ({activeClass, deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, handleInputChange, handleSelectChange}) =>{
+const InnerLeftContainer = ({playerClass, deckTitle, deckMode, deckArchetype, deckAdventure, deckBoss, handleInputChange, handleSelectChange}) =>{
   const typeIsAdventure = () =>{
-    if(deckType === 'adventures'){
+    if(deckMode === 'adventures'){
       return <FormSelect section="adventure" value={deckAdventure} handleSelectChange={handleSelectChange}/>
     }
   };
 
   const adventureSelected = () =>{
-    if(deckAdventure !== "" && deckType === 'adventures'){
+    if(deckAdventure !== "" && deckMode === 'adventures'){
       return <FormSelect section="boss" value={deckBoss} deckAdventure={deckAdventure} handleSelectChange={handleSelectChange}/>
     }
   };
@@ -25,16 +25,16 @@ const InnerLeftContainer = ({activeClass, deckTitle, deckType, deckArchetype, de
                  onChange={handleInputChange}
                  value={deckTitle}/>
         </div>
-        <FormSelect section="type" value={deckType} handleSelectChange={handleSelectChange}/>
+        <FormSelect section="mode" value={deckMode} handleSelectChange={handleSelectChange}/>
         {typeIsAdventure()}
         {adventureSelected()}
-        <FormSelect section="archetype" value={deckArchetype} hsClass={activeClass} handleSelectChange={handleSelectChange}/>
+        <FormSelect section="archetype" value={deckArchetype} playerClass={playerClass} handleSelectChange={handleSelectChange}/>
       </div>
   )
 };
 
 InnerLeftContainer.propTypes = {
-  activeClass: PropTypes.string.isRequired,
+  playerClass: PropTypes.string.isRequired,
   deckTitle: PropTypes.string,
   handleInputChange: PropTypes.func.isRequired,
   handleSelectChange: PropTypes.func.isRequired

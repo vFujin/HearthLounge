@@ -7,12 +7,12 @@ import {timeDifference} from '../../../../../utils/unix-to-date';
 import _ from 'lodash';
 
 export const DeckSnippet = (props) => {
-  const {hsClass, deckId, title, author, deck, created, handleDeckSnippetClick} = props;
-  const deckUrl = `/decks/${hsClass}/${deckId}/${_.snakeCase(title)}`;
+  const {playerClass, deckId, title, author, deck, created, handleDeckSnippetClick} = props;
+  const deckUrl = `/decks/${playerClass}/${deckId}/${_.snakeCase(title)}`;
   const cells = (el) =>{
     switch(el) {
-      case 'title': return <TitleCell deckUrl={`${deckUrl}`} hsClass={hsClass} title={title} author={author}/>;
-      case 'mana-curve': return <ManaCurve deck={deck} deckUrl={deckUrl} hsClass={hsClass}/>;
+      case 'title': return <TitleCell deckUrl={`${deckUrl}`} playerClass={playerClass} title={title} author={author}/>;
+      case 'mana-curve': return <ManaCurve deck={deck} deckUrl={deckUrl} playerClass={playerClass}/>;
       case 'created': return <Link to={deckUrl}>{timeDifference(created)}</Link>;
       default: return <Link to={deckUrl}>{_.startCase(props[el])}</Link>;
     }
@@ -24,7 +24,7 @@ export const DeckSnippet = (props) => {
     })
   };
   return (
-      <tr id={deckId} key={deckId} className={`deck-snippet ${hsClass} table-row`} onClick={handleDeckSnippetClick}>
+      <tr id={deckId} key={deckId} className={`deck-snippet ${playerClass} table-row`} onClick={handleDeckSnippetClick}>
         {mapCells()}
       </tr>
 

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from "../../icon";
 
-export const DSPlayerClass = ({hsClass}) => {
+export const DSPlayerClass = ({playerClass}) => {
   return (
-    <div className="deckSnippet__header--hsClass">
-      <Icon name={hsClass}/>
+    <div className="deckSnippet__header--playerClass">
+      <Icon name={playerClass}/>
     </div>
   );
 };
@@ -13,5 +13,5 @@ export const DSPlayerClass = ({hsClass}) => {
 export default DSPlayerClass;
 
 DSPlayerClass.propTypes = {
-  hsClass: PropTypes.string.isRequired
+  playerClass: PropTypes.string.isRequired
 };

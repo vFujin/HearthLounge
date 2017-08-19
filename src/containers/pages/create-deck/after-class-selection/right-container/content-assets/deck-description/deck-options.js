@@ -12,7 +12,7 @@ const updateDeckText = _.debounce((updateDeckProperty, value) => {
   updateDeckProperty({deckText: value})
 }, 2000);
 
-const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckType, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
+const DeckOptions = ({authenticated, playerClass, deckstring, patch, user, deckMode, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
   const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
@@ -33,7 +33,7 @@ const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckT
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
     if(authenticated && user){
-      saveDeck(patch, activeClass, deckTitle, deckType, deckArchetype, _.kebabCase(deckAdventure), _.kebabCase(deckBoss), simplifiedDeck, deckText, deckstring, user.uid);
+      saveDeck(patch, playerClass, deckTitle, deckMode, deckArchetype, _.kebabCase(deckAdventure), _.kebabCase(deckBoss), simplifiedDeck, deckText, deckstring, user.uid);
     } else {
       error("You have to be logged in in order to save your deck.", 6)
     }
@@ -41,9 +41,9 @@ const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckT
 
   return (
       <div className='container__details'>
-        <AboutDeck activeClass={activeClass}
+        <AboutDeck playerClass={playerClass}
                    deckTitle={deckTitle}
-                   deckType={deckType}
+                   deckMode={deckMode}
                    deckArchetype={deckArchetype}
                    deckAdventure={deckAdventure}
                    deckBoss={deckBoss}
@@ -59,9 +59,9 @@ const DeckOptions = ({authenticated, activeClass, deckstring, patch, user, deckT
 
 
 const mapStateToProps = (state) => {
-  const {deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, deckText, deckTextControlled} = state.deckDetails;
+  const {deckTitle, deckMode, deckArchetype, deckAdventure, deckBoss, deckText, deckTextControlled} = state.deckDetails;
   return {
-    deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, deckText, deckTextControlled
+    deckTitle, deckMode, deckArchetype, deckAdventure, deckBoss, deckText, deckTextControlled
   }
 };
 
@@ -74,9 +74,9 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(DeckOptions)
 
 DeckOptions.propTypes = {
-  activeClass: PropTypes.string,
+  playerClass: PropTypes.string,
   user: PropTypes.object,
-  deckType: PropTypes.string,
+  deckMode: PropTypes.string,
   deckTitle: PropTypes.string,
   deckArchetype: PropTypes.string,
   deckText: PropTypes.string,

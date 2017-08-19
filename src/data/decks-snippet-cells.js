@@ -1,6 +1,6 @@
 export const deckSnippetCells = [
     'title',
-    'hsClass',
+    'playerClass',
     'votes',
     'views',
     'mana-curve',

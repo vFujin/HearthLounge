@@ -3,15 +3,14 @@ import {icon_filters} from '../../../../../data/filters';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 
-const Topbar = ({adventuresToggled, handleModeFilterClick, handleAdventureFilterClick, handleClassFilterClick,
-                  activeAdventure, activeMode, activeClass}) => {
+const Topbar = ({adventuresToggled, handleFiltersClick, activeAdventure, activeMode, activeClass}) => {
 
   const adventures = () =>{
     return (
         <ul>
           {icon_filters.adventures.map(adventure =>{
             return (
-                <li id={adventure.url} onClick={handleAdventureFilterClick}>
+                <li id={adventure.url}>
                   <Tooltip placement="bottom" title={_.startCase(adventure.name)}>
                     <span className={`hs-icon icon-${adventure.url} ${adventure.url} ${(adventure.url === activeAdventure) ? 'active' : ''}`}></span>
                   </Tooltip>
@@ -25,7 +24,7 @@ const Topbar = ({adventuresToggled, handleModeFilterClick, handleAdventureFilter
     return (
         icon_filters[filter].map(el => {
           return (
-              <li key={el.url} id={el.url} onClick={filter==="type" ? handleModeFilterClick : handleClassFilterClick}>
+              <li key={el.url} id={el.url} data-filter={filter} onClick={handleFiltersClick}>
                 <Tooltip placement="bottom" title={_.startCase(el.name)}>
                   <span className={`hs-icon ${el.url} icon-${el.url} ${el.url === activeMode ? "active-without-background" : el.url === activeClass ? "active" : "" }`}></span>
                 </Tooltip>
@@ -38,7 +37,7 @@ const Topbar = ({adventuresToggled, handleModeFilterClick, handleAdventureFilter
 
   return (
       <div className="topbar">
-        <ul className="topbar-left">{mapFilters('type')}</ul>
+        <ul className="topbar-left">{mapFilters('mode')}</ul>
         <ul className="topbar-right">{mapFilters('playerClass')}</ul>
       </div>
   );

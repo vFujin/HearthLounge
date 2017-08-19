@@ -4,7 +4,7 @@ import TextEditor from '../../../../../../../shared-assets/editor/text-editor';
 import InnerLeftContainer from './about-deck-inner-left-container';
 import InnerRightContainer from './about-deck-inner-right-container';
 
-const AboutDeck = ({activeClass, deckTitle, deckType, deckArchetype, deckAdventure, deckBoss, handleInputChange, handleSelectChange, handleSaveDeckSubmit, deckTextControlled, handleTagInsertion}) =>{
+const AboutDeck = ({playerClass, deckTitle, deckMode, deckArchetype, deckAdventure, deckBoss, handleInputChange, handleSelectChange, handleSaveDeckSubmit, deckTextControlled, handleTagInsertion}) =>{
   return (
       <div className="container__details--section container__details--description v-rows-2">
         <div className="section__header">
@@ -14,9 +14,9 @@ const AboutDeck = ({activeClass, deckTitle, deckType, deckArchetype, deckAdventu
         <div className="section__body">
           <form onSubmit={handleSaveDeckSubmit} className="inline section__body--background">
             <div className="section__body--upperContainer">
-              <InnerLeftContainer activeClass={activeClass}
+              <InnerLeftContainer playerClass={playerClass}
                                   deckTitle={deckTitle}
-                                  deckType={deckType}
+                                  deckMode={deckMode}
                                   deckArchetype={deckArchetype}
                                   deckAdventure={deckAdventure}
                                   deckBoss={deckBoss}
@@ -37,7 +37,7 @@ const AboutDeck = ({activeClass, deckTitle, deckType, deckArchetype, deckAdventu
 };
 
 AboutDeck.propTypes = {
-  activeClass: PropTypes.string.isRequired,
+  playerClass: PropTypes.string.isRequired,
   deckTitle: PropTypes.string,
   deckText: PropTypes.string,
   handleInputChange: PropTypes.func.isRequired,

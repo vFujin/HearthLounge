@@ -2899,7 +2899,7 @@ form .divider {
     grid-column-gap: 1vh;
     padding-bottom: 4.5px;
     border-bottom: 1px solid #474143; }
-    .deckSnippet__header--hsClass span {
+    .deckSnippet__header--playerClass span {
       font-size: 35px;
       position: relative;
       top: 5px;
@@ -4465,7 +4465,7 @@ footer {
           padding: 20px; }
       .decks .container__page--right .content .table-scroll table tr td.title {
         width: 30%; }
-      .decks .container__page--right .content .table-scroll table tr td.hsClass, .decks .container__page--right .content .table-scroll table tr td.votes, .decks .container__page--right .content .table-scroll table tr td.views, .decks .container__page--right .content .table-scroll table tr td.mana-curve {
+      .decks .container__page--right .content .table-scroll table tr td.playerClass, .decks .container__page--right .content .table-scroll table tr td.votes, .decks .container__page--right .content .table-scroll table tr td.views, .decks .container__page--right .content .table-scroll table tr td.mana-curve {
         width: 10%; }
       .decks .container__page--right .content .table-scroll table tr td.type, .decks .container__page--right .content .table-scroll table tr td.created {
         width: 15%; }

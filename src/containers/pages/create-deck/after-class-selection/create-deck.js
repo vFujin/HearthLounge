@@ -110,10 +110,10 @@ class CreateDeckClassSelected extends PureComponent {
   }, 300);
 
   handleDeckImport = () => {
-    const {cards, importedDeckstring, editDeck} = this.props;
+    const {cards, importedDeckstring, editDeck, simplifyDeck} = this.props;
     const {allCards} = cards;
 
-    createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck));
+    createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck));
   };
 
   handleOptionsClick = (event, icon) => {
