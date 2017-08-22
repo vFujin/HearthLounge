@@ -13,8 +13,8 @@ const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_
                onChange={handleInputChange}
                value={signUp_email}/>
         <Input id="signUp_confirmEmail"     type="email"    placeholder="hearth@lounge.com" handleInputChange={handleInputChange} value={signUp_confirmEmail}/>
-        <Input id="signUp_password"         type="password" placeholder="" handleInputChange={handleInputChange} value={signUp_password}/>
-        <Input id="signUp_confirmPassword"  type="password" placeholder="" handleInputChange={handleInputChange} value={signUp_confirmPassword}/>
+        <Input id="signUp_password"         type="password" handleInputChange={handleInputChange} value={signUp_password}/>
+        <Input id="signUp_confirmPassword"  type="password" handleInputChange={handleInputChange} value={signUp_confirmPassword}/>
 
         <div className="input-wrapper">
           <div className="tos">

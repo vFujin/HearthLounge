@@ -13,7 +13,7 @@ const Input = ({id, type, placeholder, handleInputChange, value, pattern, error}
             <div className="input-wrapper">
               <input id={id}
                      type={type}
-                     placeholder={placeholder}
+                     placeholder={placeholder || null}
                      onChange={(e)=>handleInputChange(e)}
                      value={value}
                      pattern={pattern}/>

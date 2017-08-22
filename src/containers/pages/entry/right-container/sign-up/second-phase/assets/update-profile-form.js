@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from '../../../../../../../components/inputs/input';
+import {imageStatus, usernameStatus} from "../utils";
+import Button from "../../../../../../../components/buttons/button";
 
-const UpdateProfileForm = ({signUp_username, usernameStatus, uploadedImage, handleInputChange, handleUpdateProfileFormSubmit}) =>{
+const UpdateProfileForm = ({activeUser, signUp_username, signUp_avatar, handleInputChange, handleUpdateProfileFormSubmit, updateFormProperty, usernameFree}) =>{
   return (
       <form onSubmit={handleUpdateProfileFormSubmit}>
 
@@ -14,13 +16,14 @@ const UpdateProfileForm = ({signUp_username, usernameStatus, uploadedImage, hand
                  placeholder="Joe"
                  handleInputChange={handleInputChange}
                  value={signUp_username}/>
-          {usernameStatus()}
+          {usernameStatus(signUp_username, usernameFree)}
         </div>
+
         <div className="divider"><span>Optional</span></div>
-        {uploadedImage()}
+        {imageStatus(activeUser, signUp_avatar, updateFormProperty)}
 
         <div className="button-wrapper">
-          <button className="btn-pearl" type="submit">Complete registration</button>
+          <Button text="Complete registration" type="submit" />
         </div>
       </form>
   )
@@ -30,9 +33,15 @@ const UpdateProfileForm = ({signUp_username, usernameStatus, uploadedImage, hand
 export default UpdateProfileForm;
 
 UpdateProfileForm.propTypes = {
+  activeUser: PropTypes.object,
   signUp_username: PropTypes.string.isRequired,
-  usernameStatus: PropTypes.func,
-  uploadedImage: PropTypes.func,
   handleInputChange: PropTypes.func,
-  handleUpdateProfileFormSubmit: PropTypes.func
+  handleUpdateProfileFormSubmit: PropTypes.func,
+  signUp_avatar: PropTypes.bool,
+  usernameFree: PropTypes.bool,
+  uploadedImage: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
+  updateFormProperty: PropTypes.func
 };
