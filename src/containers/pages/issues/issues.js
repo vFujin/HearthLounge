@@ -1,14 +1,15 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {fetchGithubIssues} from "../../../utils/fetch/github-issues";
-import {updateGithubIssues} from "../../../redux/actions/githuIssues";
+import {getGithubIssues} from "../../../api/github-issues";
+import {updateGithubIssues} from "../../../redux/actions/githubIssues";
 
 class Issues extends PureComponent {
 
   componentDidMount(){
     const {updateGithubIssues} = this.props;
-    fetchGithubIssues(data => updateGithubIssues(data))
+    getGithubIssues(data => updateGithubIssues(data))
   }
+
 
   mapGithubIssues = (githubIssues) =>{
     return githubIssues.map(issue =>

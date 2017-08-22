@@ -1,10 +1,9 @@
-import 'whatwg-fetch';
+import 'isomorphic-fetch';
 
-export function fetchGithubIssues(callback){
+export function getGithubIssues(callback){
   fetch(`https://api.github.com/repos/vFujin/HearthLounge/issues`)
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         callback(res);
-      });
+      })
 }
