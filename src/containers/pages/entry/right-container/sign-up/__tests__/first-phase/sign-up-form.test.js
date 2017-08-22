@@ -36,19 +36,6 @@ describe('SignUpForm', () =>{
     )
   });
 
-  const testButton = () => {
-    describe(`#handleFormSubmit`, () =>{
-      beforeEach(()=>{
-        const button = wrapper.find('button').first();
-        button.simulate('click');
-      });
-
-      test('should call handleFormSubmit once', () => {
-        expect(handleFormSubmit.mock.calls.length).toEqual(1);
-      });
-    });
-  };
-
   const testCheckbox = () => {
     beforeEach(() => {
       wrapper.setProps({
@@ -62,7 +49,6 @@ describe('SignUpForm', () =>{
     })
   };
 
-  testButton();
   testCheckbox();
 
   afterEach(()=>{

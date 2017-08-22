@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import Input from '../../../../../../components/inputs/input';
+import Button from "../../../../../../components/buttons/button";
 
 const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos}) =>{
   return (
@@ -24,7 +25,7 @@ const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_
         {/*place for captcha*/}
 
         <div className="button-wrapper">
-          <button className="btn-pearl">Submit</button>
+          <Button text="Submit"/>
           <Link to="/sign-up/update-profile">redirect</Link>
         </div>
       </form>
