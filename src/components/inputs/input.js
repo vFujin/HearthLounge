@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import Tooltip from 'antd/lib/tooltip';
-import FormTooltipText from './form-tooltip-text';
+import FormTooltipText from '../../containers/shared-assets/form-assets/form-tooltip-text';
 
 const Input = ({id, type, placeholder, handleInputChange, value, pattern, error}) =>{
   const label = _.startCase(_.trimStart(id, 'signUp'));

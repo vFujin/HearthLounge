@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Input from '../../../../../../shared-assets/form-assets/input';
+import Input from '../../../../../../../components/inputs/input';
 
 const UpdateProfileForm = ({signUp_username, usernameStatus, uploadedImage, handleInputChange, handleUpdateProfileFormSubmit}) =>{
   return (

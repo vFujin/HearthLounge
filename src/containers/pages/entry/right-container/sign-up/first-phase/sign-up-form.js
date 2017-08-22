@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
-import Input from '../../../../../shared-assets/form-assets/input';
+import Input from '../../../../../../components/inputs/input';
 
 const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos}) =>{
   return (
@@ -9,7 +9,7 @@ const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_
         <Input id="signUp_email"
                type="email"
                placeholder="hearth@lounge.com"
-               handleInputChange={handleInputChange}
+               onChange={handleInputChange}
                value={signUp_email}/>
         <Input id="signUp_confirmEmail"     type="email"    placeholder="hearth@lounge.com" handleInputChange={handleInputChange} value={signUp_confirmEmail}/>
         <Input id="signUp_password"         type="password" placeholder="" handleInputChange={handleInputChange} value={signUp_password}/>
