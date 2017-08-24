@@ -10,6 +10,10 @@ export default function(state=initialState, action){
       ...state,
       decks: action.decks
     };
+    case 'UPDATE_REDDIT_POSTS': return {
+      ...state,
+      redditPosts: action.redditPosts
+    };
     default: return state;
   }
 }

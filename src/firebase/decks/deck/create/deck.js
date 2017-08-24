@@ -16,14 +16,16 @@ import {success, error} from '../../../../utils/messages';
  * @param {string} deckstring - Deck string
  * @param {string} uid - User ID
  */
-export default function (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid){
-  if(patch && playerClass && title && mode && archetype && deck && description && deckstring && uid) {
+export default function (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid) {
+  if (patch && playerClass && title && mode && archetype && deck && description && deckstring && uid) {
 
-    const validateAdventureType = (mode === 'adventures' && adventure && boss) ? mode : 'wild';
-    const validateAdventure = (adventure && boss) ? adventure : null;
-    const validateBoss = (adventure && boss) ? boss : null;
-    const validateBossClassFilter = (adventure && boss) ? `${boss}_${playerClass}` : null;
-    const deckId = ref.child(`decks`).push().key;
+
+    const validateAdventureType = (mode === 'adventures' && adventure && boss) ? mode : 'wild',
+        validateAdventure = (adventure && boss) ? adventure : null,
+        validateBoss = (adventure && boss) ? boss : null,
+        validateBossClassFilter = (adventure && boss) ? `${boss}_${playerClass}` : null,
+        deckId = ref.child(`decks`).push().key,
+        timestamp = +new Date();
 
     let newDeck = {
       archetype,
@@ -38,12 +40,13 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       authorId: uid,
       boss: validateBoss,
       comments: 0,
-      created: + new Date(),
+      created: timestamp,
       downvotes: 0,
       mode: validateAdventureType,
       upvotes: 0,
       views: 0,
       votes: 0,
+      timestamp_class: `${timestamp}_${playerClass}`,
       mode_class: `${mode}_${playerClass}`,
       boss_class: validateBossClassFilter
     };
@@ -54,7 +57,7 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
 
     return ref.update(updates, success("Deck has been uploaded!"));
   }
-  else{
+  else {
     console.log(patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid);
     error("Couldn't upload deck.")
   }

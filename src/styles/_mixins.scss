@@ -163,7 +163,7 @@
 
 @mixin social_media_icon_color($color, $background_color){
   @include transition(all ease .4s);
-  &.active, &:hover{
+  &.active:not(.hearthstone), &:hover{
     color: $color;
     background-color: $background_color;
     .domain{

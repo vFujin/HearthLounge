@@ -2243,10 +2243,10 @@ a:active, a:hover, a:link, a:visited {
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .facebook.active, .facebook:hover {
+  .facebook.active:not(.hearthstone), .facebook:hover {
     color: #fff;
     background-color: #3b5998; }
-    .facebook.active .domain a, .facebook:hover .domain a {
+    .facebook.active:not(.hearthstone) .domain a, .facebook:hover .domain a {
       color: #fff; }
 
 .twitter {
@@ -2255,10 +2255,10 @@ a:active, a:hover, a:link, a:visited {
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .twitter.active, .twitter:hover {
+  .twitter.active:not(.hearthstone), .twitter:hover {
     color: #55acee;
     background-color: #fff; }
-    .twitter.active .domain a, .twitter:hover .domain a {
+    .twitter.active:not(.hearthstone) .domain a, .twitter:hover .domain a {
       color: #55acee; }
 
 .youtube {
@@ -2267,10 +2267,10 @@ a:active, a:hover, a:link, a:visited {
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .youtube.active, .youtube:hover {
+  .youtube.active:not(.hearthstone), .youtube:hover {
     color: #fff;
     background-color: #bb0000; }
-    .youtube.active .domain a, .youtube:hover .domain a {
+    .youtube.active:not(.hearthstone) .domain a, .youtube:hover .domain a {
       color: #fff; }
 
 .reddit {
@@ -2279,10 +2279,10 @@ a:active, a:hover, a:link, a:visited {
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .reddit.active, .reddit:hover {
+  .reddit.active:not(.hearthstone), .reddit:hover {
     color: #fff;
     background-color: #ff4006; }
-    .reddit.active .domain a, .reddit:hover .domain a {
+    .reddit.active:not(.hearthstone) .domain a, .reddit:hover .domain a {
       color: #fff; }
 
 .battlenet {
@@ -2291,10 +2291,10 @@ a:active, a:hover, a:link, a:visited {
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .battlenet.active, .battlenet:hover {
+  .battlenet.active:not(.hearthstone), .battlenet:hover {
     color: #00c0f6;
     background-color: #1e293f; }
-    .battlenet.active .domain a, .battlenet:hover .domain a {
+    .battlenet.active:not(.hearthstone) .domain a, .battlenet:hover .domain a {
       color: #00c0f6; }
 
 .twitch {
@@ -2303,11 +2303,23 @@ a:active, a:hover, a:link, a:visited {
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .twitch.active, .twitch:hover {
+  .twitch.active:not(.hearthstone), .twitch:hover {
     color: #fff;
     background-color: #6441a4; }
-    .twitch.active .domain a, .twitch:hover .domain a {
+    .twitch.active:not(.hearthstone) .domain a, .twitch:hover .domain a {
       color: #fff; }
+
+.hearthstone {
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  .hearthstone.active:not(.hearthstone), .hearthstone:hover {
+    color: inherit;
+    background-color: rgba(0, 0, 0, 0.2); }
+    .hearthstone.active:not(.hearthstone) .domain a, .hearthstone:hover .domain a {
+      color: inherit; }
 
 .false.hearthstone, .false.default {
   -webkit-transition: all ease 0.4s;
@@ -2315,10 +2327,10 @@ a:active, a:hover, a:link, a:visited {
   -ms-transition: all ease 0.4s;
   -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
-  .false.hearthstone.active, .false.hearthstone:hover, .false.default.active, .false.default:hover {
+  .false.hearthstone.active:not(.hearthstone), .false.hearthstone:hover, .false.default.active:not(.hearthstone), .false.default:hover {
     color: #474143;
     background-color: rgba(0, 0, 0, 0.2); }
-    .false.hearthstone.active .domain a, .false.hearthstone:hover .domain a, .false.default.active .domain a, .false.default:hover .domain a {
+    .false.hearthstone.active:not(.hearthstone) .domain a, .false.hearthstone:hover .domain a, .false.default.active:not(.hearthstone) .domain a, .false.default:hover .domain a {
       color: #474143; }
 
 .default-style {
@@ -4404,37 +4416,52 @@ footer {
     display: flex;
     flex-direction: column;
     margin: 1vh; }
-    .home .home__list .reddit > div ul .post {
+    .home .home__list .reddit > div ul li {
+      display: flex;
+      position: relative;
       background-color: #E7E2DA;
       color: #474143;
-      display: flex;
       cursor: pointer;
-      padding: 1vh;
       margin-bottom: 1vh;
-      height: 100%; }
-      .home .home__list .reddit > div ul .post:last-child {
+      height: 100%;
+      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+      .home .home__list .reddit > div ul li:last-child {
         margin-bottom: 0; }
-    .home .home__list .reddit > div ul .about {
-      width: 80%; }
-      .home .home__list .reddit > div ul .about .topic {
-        font-weight: bold;
-        font-size: 16px; }
-      .home .home__list .reddit > div ul .about .details {
-        display: flex; }
-        .home .home__list .reddit > div ul .about .details .author, .home .home__list .reddit > div ul .about .details .created {
-          font-size: 12px; }
-    .home .home__list .reddit > div ul .answers {
-      width: 20%; }
-      .home .home__list .reddit > div ul .answers .answer-count {
-        text-align: center;
-        font-weight: bold; }
-        .home .home__list .reddit > div ul .answers .answer-count span {
-          padding: 0 5px;
-          background-color: #474143;
-          color: #E7E2DA; }
-      .home .home__list .reddit > div ul .answers .answer-label {
-        font-size: 12px;
-        text-align: center; }
+      .home .home__list .reddit > div ul li a {
+        align-content: center;
+        display: grid;
+        grid-template-columns: 10% 10% calc(80% - 10px);
+        grid-column-gap: 5px;
+        width: calc(100% - 2vh);
+        padding: 0 1vh; }
+        .home .home__list .reddit > div ul li a .upvotes, .home .home__list .reddit > div ul li a .comments {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end; }
+          .home .home__list .reddit > div ul li a .upvotes span, .home .home__list .reddit > div ul li a .comments span {
+            font-size: 14px;
+            margin-bottom: 2px; }
+          .home .home__list .reddit > div ul li a .upvotes p, .home .home__list .reddit > div ul li a .comments p {
+            font-size: 12px; }
+        .home .home__list .reddit > div ul li a .domain {
+          position: absolute;
+          opacity: .2;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%); }
+        .home .home__list .reddit > div ul li a .title {
+          font-weight: bold; }
+          .home .home__list .reddit > div ul li a .title p {
+            width: unset;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+          .home .home__list .reddit > div ul li a .title .created {
+            font-weight: normal;
+            font-size: 12px; }
 
 .decks .container__page--left .sidebar table {
   width: 100%; }

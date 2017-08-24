@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Tooltip from 'antd/lib/tooltip';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import format from 'date-fns/format';
@@ -9,14 +8,16 @@ import format from 'date-fns/format';
  * @param created
  * @param createdFormatted
  * @param placement
+ * @param {bool} tooltip - show or hide tooltip
  * @returns {XML}
  */
-export const notEdited = (created, createdFormatted, placement) =>{
-  return (
-      <Tooltip title={`created ${createdFormatted}`} placement={placement || "bottom"}>
-        {created}
-      </Tooltip>
-  )
+export const notEdited = (created, createdFormatted, placement, tooltip) =>{
+  return tooltip
+      ? <Tooltip title={`created ${createdFormatted}`} placement={placement || "bottom"}>
+          {created}
+        </Tooltip>
+      : created;
+
 };
 
 /**
@@ -27,21 +28,22 @@ export const notEdited = (created, createdFormatted, placement) =>{
  * @param {special} edited - False if not edited, edit date in UTC epoch-seconds otherwise
  * @param {number} editedFormatted - Formatted date into `DD-MM-YYYY HH:mm`
  * @param {string} placement - Position of the tooltip (https://ant.design/components/tooltip/#Common-API)
+ * @param {bool} tooltip - show or hide tooltip
  * @returns {XML}
  */
-export const editedWrapper = (created, createdFormatted, edited, editedFormatted, placement) =>{
-  return (
-      <p>
-        <Tooltip title={`created ${createdFormatted}`} placement={placement || "bottom"}>{created}</Tooltip>
-        <Tooltip title={`last edited ${editedFormatted}`} placement={placement || "bottom"}>{' *'}</Tooltip>
-      </p>
-  )
+export const editedWrapper = (created, createdFormatted, edited, editedFormatted, placement, tooltip) =>{
+  return tooltip
+      ? <p>
+          <Tooltip title={`created ${createdFormatted}`} placement={placement || "bottom"}>{created}</Tooltip>
+          <Tooltip title={`last edited ${editedFormatted}`} placement={placement || "bottom"}>{' *'}</Tooltip>
+        </p>
+      : created;
 };
 
 /**
  * Converts time from miliseconds to seconds
  *
- * @param {number} time
+ * @param {number} time - date in unix format
  * @returns {number}
  */
 export const toSeconds = (time) =>{
@@ -56,9 +58,10 @@ export const toSeconds = (time) =>{
  * @param {number} created - The time of creation in UTC epoch-second format. (passing created_utc if it's from reddit json)
  * @param {special} edited - False if not edited, edit date in UTC epoch-seconds otherwise
  * @param {string} placement - Position of the tooltip (https://ant.design/components/tooltip/#Common-API)
+ * @param {bool} tooltip - show or hide tooltip
  * @returns {String}
  */
-export const wrapDate = (created, edited, placement) => {
+export const wrapDate = (created, edited = false, placement, tooltip = true) => {
   const options = {includeSeconds: true, addSuffix: true};
   const dateFormat = 'DD-MM-YYYY HH:mm';
 
@@ -68,13 +71,7 @@ export const wrapDate = (created, edited, placement) => {
 
   return (
       edited === false
-          ? notEdited(timeDifference, createdFormatted, placement)
-          : editedWrapper(timeDifference, createdFormatted, toSeconds(edited), editedTimeFormatted, placement)
+          ? notEdited(timeDifference, createdFormatted, placement, tooltip)
+          : editedWrapper(timeDifference, createdFormatted, toSeconds(edited), editedTimeFormatted, placement, tooltip)
   )
-};
-
-wrapDate.propTypes = {
-  created: PropTypes.number.isRequired,
-  edited: PropTypes.number.isRequired,
-  placement: PropTypes.string
 };

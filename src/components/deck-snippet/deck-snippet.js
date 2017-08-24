@@ -7,7 +7,7 @@ import DeckSnippetHeader from "./header/deck-snippet-header";
 import DeckSnippetBody from "./body/deck-snippet-body";
 
 const DeckSnippet = ({d, handleDeckClick}) => {
-  const {adventure, archetype, comments, created, deck, deckId, playerClass, title, type, username, views, votes} = d;
+  const {adventure, archetype, comments, created, deck, deckstring, deckId, playerClass, title, mode, username, views, votes} = d;
 
 
   return (
@@ -15,7 +15,7 @@ const DeckSnippet = ({d, handleDeckClick}) => {
             onClick={handleDeckClick}
             id={deckId}
             className={`deckSnippet ${playerClass} active-on-hover`}>
-        <Icon name={type === 'adventures' ? _.kebabCase(adventure) : type}
+        <Icon name={mode === 'adventures' ? _.kebabCase(adventure) : mode}
               className="background-icon"
               type="set" />
         <DeckSnippetHeader title={title}
@@ -37,18 +37,19 @@ export default DeckSnippet;
 DeckSnippet.propTypes = {
   handleDeckClick: PropTypes.func.isRequired,
   d: PropTypes.shape({
-  adventure: PropTypes.string,
-  archetype: PropTypes.string,
-  comments: PropTypes.number,
-  created: PropTypes.number,
-  deck: PropTypes.object,
-  deckId: PropTypes.string,
-  playerClass: PropTypes.string,
-  title: PropTypes.string,
-  type: PropTypes.string,
-  username: PropTypes.string,
-  views: PropTypes.number,
-  votes: PropTypes.number
+    adventure: PropTypes.string,
+    archetype: PropTypes.string,
+    comments: PropTypes.number,
+    created: PropTypes.number,
+    deck: PropTypes.object,
+    deckstring: PropTypes.string,
+    deckId: PropTypes.string,
+    playerClass: PropTypes.string,
+    title: PropTypes.string,
+    mode: PropTypes.string,
+    username: PropTypes.string,
+    views: PropTypes.number,
+    votes: PropTypes.number
   })
 };
 

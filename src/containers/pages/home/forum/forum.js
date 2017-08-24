@@ -1,13 +1,16 @@
 import React from 'react';
 import PostSnippet from './post-snippet/post'
-const ForumBlock = () => {
+const ForumBlock = ({posts}) => {
+
+  const mapPosts = () => {
+    return posts.map(post =>
+      <PostSnippet key={post.id} post={post}/>
+    )
+  };
+
   return (
       <ul>
-        <PostSnippet/>
-        <PostSnippet/>
-        <PostSnippet/>
-        <PostSnippet/>
-        <PostSnippet/>
+        {mapPosts()}
       </ul>
   );
 };

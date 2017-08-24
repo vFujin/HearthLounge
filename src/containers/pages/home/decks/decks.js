@@ -9,6 +9,7 @@ import Loader from "../../../../components/loader";
 import Icon from "../../../../components/icon";
 const DecksBlock = ({decks, handleDeckClick, handlePlayerClassFilterClick}) => {
 
+
   const listDecks = () =>{
     return decks.map(deck => <DeckSnippet key={deck.deckId}
                                           d={deck}

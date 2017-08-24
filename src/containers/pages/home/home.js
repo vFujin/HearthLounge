@@ -12,10 +12,12 @@ import { TwitchBlock } from './twitch/twitch';
 import {getDecks} from "../../../firebase/decks/deck/read";
 import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
+import {fetchRedditPosts} from "../../../api/reddit";
 class Home extends PureComponent{
 
   componentDidMount() {
     getDecks(false, decks=>this.props.updateDecks(decks));
+    fetchRedditPosts(data => this.props.updateRedditPosts(data))
   }
 
   handleDeckClick = (e) =>{
@@ -30,7 +32,7 @@ class Home extends PureComponent{
   };
 
   render() {
-    const {decks} = this.props;
+    const {decks, redditPosts} = this.props;
     return (
         <div className="container__index home">
           <ul className="home__list">
@@ -47,7 +49,7 @@ class Home extends PureComponent{
               <ExtensionsBlock/>
             </HomeBlock>
             <HomeBlock icon="reddit">
-              <ForumBlock />
+              <ForumBlock posts={redditPosts}/>
             </HomeBlock>
             <HomeBlock icon="card" title="cards">
               <CardsBlock/>
@@ -67,15 +69,18 @@ class Home extends PureComponent{
 }
 
 const mapStateToProps = (state) => {
-  const {decks} = state.home;
-  return {decks}
+  const {decks, redditPosts} = state.home;
+  return {decks, redditPosts};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateDecks: (decks) => (dispatch({
       type: 'UPDATE_DECKS', decks
-    }))
+    })),
+    updateRedditPosts: (redditPosts) => dispatch({
+      type: 'UPDATE_REDDIT_POSTS', redditPosts
+    })
   };
 };
 
