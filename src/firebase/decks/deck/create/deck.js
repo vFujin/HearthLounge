@@ -55,6 +55,7 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
     return ref.update(updates, success("Deck has been uploaded!"));
   }
   else{
+    console.log(patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid);
     error("Couldn't upload deck.")
   }
 }
