@@ -14,7 +14,7 @@ describe('Input', () =>{
 
   test('renders correctly', () =>{
     const tree = renderer.create(
-        <div>Foo</div>
+        <Input/>
     ).toJSON();
     expect(tree).toMatchSnapshot()
   });

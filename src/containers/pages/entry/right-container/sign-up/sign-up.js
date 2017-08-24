@@ -30,7 +30,6 @@ const SignUp = ({children, activeUser, usernameFree, signUp_username, signUp_ema
           });
   };
 
-
   return (
       <div className="sign sign-up active">
         <StepProgressBar signUp_firstStep={signUp_firstStep}

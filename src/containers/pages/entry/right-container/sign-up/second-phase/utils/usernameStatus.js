@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * Indicates if username is already taken in database
+ * Returns username status
  *
  * @param {string} signUp_username
  * @param {bool} usernameFree

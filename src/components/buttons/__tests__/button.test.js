@@ -11,7 +11,7 @@ describe('Button', () =>{
 
   test('renders correctly', () =>{
     const tree = renderer.create(
-        <div>Foo</div>
+        <Button text={buttonText}/>
     ).toJSON();
     expect(tree).toMatchSnapshot()
   });

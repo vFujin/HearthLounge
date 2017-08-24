@@ -2,7 +2,7 @@ import React from 'react';
 import faker from 'faker';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import SignUpForm from '../../first-phase/sign-up-form';
+import SignUpForm from '../sign-up-form';
 
 describe('SignUpForm', () =>{
   let wrapper;
