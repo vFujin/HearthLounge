@@ -19,7 +19,6 @@ import {success, error} from '../../../../utils/messages';
 export default function (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid) {
   if (patch && playerClass && title && mode && archetype && deck && description && deckstring && uid) {
 
-
     const validateAdventureType = (mode === 'adventures' && adventure && boss) ? mode : 'wild',
         validateAdventure = (adventure && boss) ? adventure : null,
         validateBoss = (adventure && boss) ? boss : null,
@@ -46,7 +45,7 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       upvotes: 0,
       views: 0,
       votes: 0,
-      timestamp_class: `${timestamp}_${playerClass}`,
+      class_timestamp_votes: `${playerClass}_${timestamp}_${Math.floor(Math.random() * 1000)}`,
       mode_class: `${mode}_${playerClass}`,
       boss_class: validateBossClassFilter
     };

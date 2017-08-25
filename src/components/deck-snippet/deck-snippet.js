@@ -7,7 +7,7 @@ import DeckSnippetHeader from "./header/deck-snippet-header";
 import DeckSnippetBody from "./body/deck-snippet-body";
 
 const DeckSnippet = ({d, handleDeckClick}) => {
-  const {adventure, archetype, comments, created, deck, deckstring, deckId, playerClass, title, mode, username, views, votes} = d;
+  const {adventure, archetype, comments, created, deck, deckstring, class_timestamp_votes, deckId, playerClass, title, mode, username, views, votes} = d;
 
 
   return (
@@ -27,7 +27,7 @@ const DeckSnippet = ({d, handleDeckClick}) => {
                          archetype={archetype}
                          deck={deck}
                          views={views}
-                         votes={votes}/>
+                         votes={class_timestamp_votes.split("_").splice(-1)[0]}/>
       </Link>
   );
 };

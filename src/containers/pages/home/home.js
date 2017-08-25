@@ -26,9 +26,10 @@ class Home extends PureComponent{
     updateViews(deckId);
   };
 
+
   handlePlayerClassFilterClick = (e) =>{
     let playerClass = e.currentTarget.id;
-    getDecks(playerClass, decks => this.props.updateDecks(decks))
+    getDecks(playerClass, data => this.props.updateDecks(data))
   };
 
   render() {
