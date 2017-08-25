@@ -1,5 +1,5 @@
-@import '../../colors';
-@import '../loader';
+@import '../colors';
+@import '../mixins/loader';
 
 .loading-wrapper{
   display: flex;

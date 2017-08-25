@@ -61,8 +61,8 @@ const selectType = (
       if (self && flair_text === "tournament")
         return icon("trophy");
       if (domain !== supported_domains[2]) {
-        let icon = domain.replace(/\.com|clips\.|\.tv/g, "").toLowerCase();
-        return icon(icon);
+        let strippedDomain = domain.replace(/\.com|clips\.|\.tv/g, "").toLowerCase();
+        return icon(strippedDomain);
       }
     }
   };

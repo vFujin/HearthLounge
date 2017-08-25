@@ -2734,86 +2734,6 @@ form .divider {
       align-items: center;
       justify-content: space-between; }
 
-.loading-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%; }
-  .loading-wrapper.dark .sk-folding-cube .sk-cube:before {
-    background-color: #00a99c; }
-  .loading-wrapper.light .sk-folding-cube .sk-cube:before {
-    background-color: #E7E2DA; }
-  .loading-wrapper .sk-folding-cube {
-    width: 40px;
-    height: 40px;
-    position: relative;
-    -webkit-transform: rotateZ(45deg);
-    transform: rotateZ(45deg); }
-    .loading-wrapper .sk-folding-cube .sk-cube {
-      float: left;
-      width: 50%;
-      height: 50%;
-      position: relative;
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1); }
-      .loading-wrapper .sk-folding-cube .sk-cube:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
-        animation: sk-foldCubeAngle 2.4s infinite linear both;
-        -webkit-transform-origin: 100% 100%;
-        -ms-transform-origin: 100% 100%;
-        transform-origin: 100% 100%; }
-    .loading-wrapper .sk-folding-cube .sk-cube2 {
-      -webkit-transform: scale(1.1) rotateZ(90deg);
-      transform: scale(1.1) rotateZ(90deg); }
-      .loading-wrapper .sk-folding-cube .sk-cube2:before {
-        -webkit-animation-delay: 0.3s;
-        animation-delay: 0.3s; }
-    .loading-wrapper .sk-folding-cube .sk-cube3 {
-      -webkit-transform: scale(1.1) rotateZ(180deg);
-      transform: scale(1.1) rotateZ(180deg); }
-      .loading-wrapper .sk-folding-cube .sk-cube3:before {
-        -webkit-animation-delay: 0.6s;
-        animation-delay: 0.6s; }
-    .loading-wrapper .sk-folding-cube .sk-cube4 {
-      -webkit-transform: scale(1.1) rotateZ(270deg);
-      transform: scale(1.1) rotateZ(270deg); }
-      .loading-wrapper .sk-folding-cube .sk-cube4:before {
-        -webkit-animation-delay: 0.9s;
-        animation-delay: 0.9s; }
-
-@-webkit-keyframes sk-foldCubeAngle {
-  0%, 10% {
-    -webkit-transform: perspective(140px) rotateX(-180deg);
-    transform: perspective(140px) rotateX(-180deg);
-    opacity: 0; }
-  25%, 75% {
-    -webkit-transform: perspective(140px) rotateX(0deg);
-    transform: perspective(140px) rotateX(0deg);
-    opacity: 1; }
-  90%, 100% {
-    -webkit-transform: perspective(140px) rotateY(180deg);
-    transform: perspective(140px) rotateY(180deg);
-    opacity: 0; } }
-@keyframes sk-foldCubeAngle {
-  0%, 10% {
-    -webkit-transform: perspective(140px) rotateX(-180deg);
-    transform: perspective(140px) rotateX(-180deg);
-    opacity: 0; }
-  25%, 75% {
-    -webkit-transform: perspective(140px) rotateX(0deg);
-    transform: perspective(140px) rotateX(0deg);
-    opacity: 1; }
-  90%, 100% {
-    -webkit-transform: perspective(140px) rotateY(180deg);
-    transform: perspective(140px) rotateY(180deg);
-    opacity: 0; } }
 .component.simplifiedUser {
   display: flex; }
   .component.simplifiedUser .simplifiedUser__avatar {
@@ -2879,6 +2799,22 @@ form .divider {
     transition: all ease 0.2; }
     .component.btn__update:hover {
       background: #205823; }
+
+input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  transform: rotate(45deg);
+  cursor: pointer;
+  background: linear-gradient(to bottom, transparent 45%, #00a99c 45%, #00a99c 55%, transparent 55%), linear-gradient(to right, transparent 45%, #00a99c 45%, #00a99c 55%, transparent 55%);
+  -webkit-transition: all ease 0.4s;
+  -moz-transition: all ease 0.4s;
+  -ms-transition: all ease 0.4s;
+  -o-transition: all ease 0.4s;
+  transition: all ease 0.4s; }
+  input::-webkit-search-cancel-button:hover {
+    background: linear-gradient(to bottom, transparent 45%, #E7E2DA 45%, #E7E2DA 55%, transparent 55%), linear-gradient(to right, transparent 45%, #E7E2DA 45%, #E7E2DA 55%, transparent 55%); }
 
 .deckSnippet-wrapper {
   display: grid;
@@ -3044,22 +2980,86 @@ form .divider {
     .graph li .hs-icon {
       font-size: 1.2vw; }
 
-input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  height: 20px;
-  width: 20px;
-  position: relative;
-  transform: rotate(45deg);
-  cursor: pointer;
-  background: linear-gradient(to bottom, transparent 45%, #00a99c 45%, #00a99c 55%, transparent 55%), linear-gradient(to right, transparent 45%, #00a99c 45%, #00a99c 55%, transparent 55%);
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s; }
-  input::-webkit-search-cancel-button:hover {
-    background: linear-gradient(to bottom, transparent 45%, #E7E2DA 45%, #E7E2DA 55%, transparent 55%), linear-gradient(to right, transparent 45%, #E7E2DA 45%, #E7E2DA 55%, transparent 55%); }
+.loading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; }
+  .loading-wrapper.dark .sk-folding-cube .sk-cube:before {
+    background-color: #00a99c; }
+  .loading-wrapper.light .sk-folding-cube .sk-cube:before {
+    background-color: #E7E2DA; }
+  .loading-wrapper .sk-folding-cube {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg); }
+    .loading-wrapper .sk-folding-cube .sk-cube {
+      float: left;
+      width: 50%;
+      height: 50%;
+      position: relative;
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1); }
+      .loading-wrapper .sk-folding-cube .sk-cube:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+        animation: sk-foldCubeAngle 2.4s infinite linear both;
+        -webkit-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        transform-origin: 100% 100%; }
+    .loading-wrapper .sk-folding-cube .sk-cube2 {
+      -webkit-transform: scale(1.1) rotateZ(90deg);
+      transform: scale(1.1) rotateZ(90deg); }
+      .loading-wrapper .sk-folding-cube .sk-cube2:before {
+        -webkit-animation-delay: 0.3s;
+        animation-delay: 0.3s; }
+    .loading-wrapper .sk-folding-cube .sk-cube3 {
+      -webkit-transform: scale(1.1) rotateZ(180deg);
+      transform: scale(1.1) rotateZ(180deg); }
+      .loading-wrapper .sk-folding-cube .sk-cube3:before {
+        -webkit-animation-delay: 0.6s;
+        animation-delay: 0.6s; }
+    .loading-wrapper .sk-folding-cube .sk-cube4 {
+      -webkit-transform: scale(1.1) rotateZ(270deg);
+      transform: scale(1.1) rotateZ(270deg); }
+      .loading-wrapper .sk-folding-cube .sk-cube4:before {
+        -webkit-animation-delay: 0.9s;
+        animation-delay: 0.9s; }
 
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; }
+  25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1; }
+  90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0; } }
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    -webkit-transform: perspective(140px) rotateX(-180deg);
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0; }
+  25%, 75% {
+    -webkit-transform: perspective(140px) rotateX(0deg);
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1; }
+  90%, 100% {
+    -webkit-transform: perspective(140px) rotateY(180deg);
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0; } }
 /*
  *  Select
  */

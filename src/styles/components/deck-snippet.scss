@@ -1,0 +1,153 @@
+@import '../mixins';
+@import '../colors';
+
+.deckSnippet-wrapper{
+  display: grid;
+  grid-row-gap: 1vh;
+  grid-template-rows: repeat(2, calc(50% - 5px));
+  grid-template-columns: repeat(5, calc(20% - .8vh));
+  grid-column-gap: 1vh;
+}
+
+.deckSnippet {
+  @include box-shadow(0, 0, 10px, rgba(black, .3));
+  @include transition(all ease .4s);
+  position: relative;
+  background-color: $pearl;
+  padding: 1vh;
+  &:hover{
+    @include box-shadow(0, 0, 10px, $dark-grey);
+    cursor: pointer;
+  }
+  .background-icon {
+    position: absolute;
+    font-size: 8.125em;
+    opacity: 0.15;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+  }
+  &__header{
+    display: grid;
+    grid-template-columns: 25% calc(75% - 1vh);
+    grid-column-gap: 1vh;
+    padding-bottom: 4.5px;
+    border-bottom: 1px solid $dark-grey;
+    &--playerClass {
+      span {
+        font-size: 35px;
+        position: relative;
+        top: 5px;
+        padding: 5px;
+        border: 2px solid black;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+    }
+    &--about{
+      &-title{
+        font-weight: bold;
+        font-size: 16px;
+        @include truncate(100%);
+      }
+      &-author,
+      &-created{
+        font-size:12px;
+      }
+    }
+  }
+  &__body{
+    margin-top: 4.5px;
+    height: calc(9.5vh - 10px);
+    &--header{
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      &-mode {
+        width: 10%;
+        text-align: center;
+        span {
+          color: darkgreen;
+          font-size: 25px;
+        }
+        p{
+          margin-left: 5px ;
+        }
+      }
+      &graph{
+        display: flex;
+        li{
+          width: 4px;
+          background-color: $dark-grey;
+          height: 100%;
+          margin-right: 2px;
+          &:last-child{
+            margin-right:0;
+          }
+        }
+      }
+      &-type{
+        height: 20px;
+        line-height: 20px;
+        @include truncate(100%);
+      }
+    }
+    &--body{
+      margin-top: 10px;
+      display: flex;
+      div{
+        text-align: left;
+        padding: 0 5px;
+        &:after{
+          position: absolute;
+          content: "\00b7";
+          margin-left: 2.5px;
+          color: $dark-grey;
+        }
+        &:first-child{
+          padding-left:0;
+        }
+        &:last-child{
+          padding-right:0;
+          border-right:0;
+          &:after{
+            position: absolute;
+            content: "";
+          }
+        }
+        span{
+          font-size: 16px;
+        }
+      }
+    }
+    &--footer{
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      div{
+        align-items: center;
+        display: flex;
+        opacity: .6;
+        span{
+          font-size: 16px;
+          margin-right: 5px;
+        }
+      }
+      &-views{
+        display: flex;
+        p{
+          padding:0;
+          margin: 0;
+        }
+      }
+      &-comments{
+        justify-content:center;
+      }
+      &-votes{
+        justify-content: flex-end;
+        color: $dark-green;
+      }
+    }
+  }
+}
