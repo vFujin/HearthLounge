@@ -1,5 +1,6 @@
 import React from 'react';
 import PostSnippet from './post-snippet/post'
+import Loader from "../../../../components/loader";
 const ForumBlock = ({posts}) => {
 
   const mapPosts = () => {
@@ -10,7 +11,7 @@ const ForumBlock = ({posts}) => {
 
   return (
       <ul>
-        {mapPosts()}
+        {posts.length < 1 ? <Loader theme="light"/> : mapPosts()}
       </ul>
   );
 };

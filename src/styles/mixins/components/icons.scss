@@ -1,0 +1,93 @@
+@import '../../colors';
+@import '../utils';
+
+@mixin icon_color($color) {
+  color: $color;
+  span {
+    border-color: $color;
+  }
+  &:hover {
+    background-color: $color;
+    color: $dark-grey;
+    span {
+      border-color: $dark-grey;
+    }
+  }
+  &.active {
+    background-color: $color;
+    color: $dark-grey;
+    border-color: $color;
+  }
+  &.active-without-background{
+    color: $color !important;
+    background-color: transparent;
+  }
+  &.active-shadow{
+    color: $dark-grey;
+    background: $color;
+    @include transition(all ease .4s);
+    &:hover{
+      color: black;
+      background: darken($color, 5%);
+      @include box-shadow(0,0,10px, $color);
+    }
+  }
+  &.active-on-hover{
+    color: $dark-grey;
+    &:hover{
+      background-color: $color;
+      color: $dark-grey;
+      border: $dark-grey;
+    }
+  }
+  &.active-border{
+    border: 1px solid $color;
+    color: $dark-grey;
+    background: transparent;
+  }
+  &.icon-font-active {
+    color: $dark-grey;
+  }
+
+  &.table-row{
+    color: $dark-grey;
+    &:nth-child(odd) {
+      background-color: rgba(0, 0, 0, .1);
+      &:hover{
+        background: $color;
+      }
+    }
+    &:hover{
+      background-color: $color;
+      color: $dark-grey;
+      border: $dark-grey;
+    }
+  }
+
+  &.blizzard-official{
+    background-color: $color;
+    color: #000;
+  }
+
+  &.gradient{
+    background: -moz-linear-gradient(left,  rgba($color,.4) 0%, rgba(0,0,0,0) 15%);
+    background: -webkit-linear-gradient(left,  rgba($color,.4) 0%,rgba(0,0,0,0) 15%);
+    background: linear-gradient(to right,  rgba($color,.4) 0%,rgba(0,0,0,0) 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid $color;
+  }
+}
+
+@mixin social_media_icon_color($color, $background_color){
+  @include transition(all ease .4s);
+  &.active:not(.hearthstone), &:hover{
+    color: $color;
+    background-color: $background_color;
+    .domain{
+      a {
+        color: $color;
+      }
+    }
+  }
+}

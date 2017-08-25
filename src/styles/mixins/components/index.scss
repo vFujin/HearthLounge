@@ -1,0 +1,32 @@
+@import '../../colors';
+@import 'icons';
+
+@mixin button($color, $background_color, $hover_color: false){
+  background: $background_color;
+  color: $color;
+  border: 1px solid $color;
+  @include transition(all ease .2);
+  &:hover{
+    @if $hover_color {
+      color: $hover_color;
+      border-color: $hover_color;
+    }
+    @else {
+      background: darken($background_color, 10%);
+    }
+  }
+}
+
+@mixin scrollbar($border_color){
+  &::-webkit-scrollbar{width: 13px;}
+  &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0; border-left: 1px solid $border_color;}
+  &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
+  &::-webkit-scrollbar-track{background-color: $light-grey; border-left: 1px solid $border_color;}
+}
+
+@mixin slim-scrollbar(){
+  &::-webkit-scrollbar{width: 8px;}
+  &::-webkit-scrollbar-thumb{background-color: rgba(255,255,255, .2); border-radius: 4px}
+  &::-webkit-scrollbar-thumb:hover{background-color: $pearl}
+  &::-webkit-scrollbar-track{background-color: transparent}
+}

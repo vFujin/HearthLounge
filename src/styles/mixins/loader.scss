@@ -1,0 +1,32 @@
+@mixin transformScale($rotateZ, $animation_delay){
+  -webkit-transform: scale(1.1) rotateZ(#{$rotateZ}deg);
+  transform: scale(1.1) rotateZ(#{$rotateZ}deg);
+  &:before{
+    -webkit-animation-delay: #{$animation_delay}s;
+    animation-delay: #{$animation_delay}s;
+  }
+}
+
+@mixin transformPerspective($rotateDirection, $perspective, $rotate, $opacity){
+  @if $rotateDirection == 'X' {
+    -webkit-transform: perspective(#{$perspective}px) rotateX(#{$rotate}deg);
+    transform: perspective(#{$perspective}px) rotateX(#{$rotate}deg);
+  }
+  @else {
+    -webkit-transform: perspective(#{$perspective}px) rotateY(#{$rotate}deg);
+    transform: perspective(#{$perspective}px) rotateY(#{$rotate}deg);
+  }
+  opacity: $opacity;
+}
+
+@mixin keyframes(){
+  0%, 10% {
+    @include transformPerspective('X', 140, -180, 0);
+  }
+  25%, 75% {
+    @include transformPerspective('X', 140, 0, 1);
+  }
+  90%, 100% {
+    @include transformPerspective('Y', 140, 180, 0);
+  }
+}

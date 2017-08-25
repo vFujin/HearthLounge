@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router';
 import _ from 'lodash';
-import Icon from "../../../reddit/domain-icons";
+// import Icon from "../../../reddit/domain-icons";
 import {wrapDate} from "../../../../../utils/wrap-date";
 import {stripDomains} from "../../../../../utils/reddit/posts";
+import Icon from "../../../../../components/icon";
 
 const PostSnippet = ({post}) => {
   const {title, author, created} = post;
@@ -16,7 +17,11 @@ const PostSnippet = ({post}) => {
             <p>{post.ups}</p>
           </div>
           <div className="domain">
-            <Icon link_flair_text={post.link_flair_text} domain={post.domain}/>
+            {/*<Icon link_flair_text={post.link_flair_text} domain={post.domain}/>*/}
+            <Icon name={stripDomains(post.domain)}
+                  type="reddit"
+                  domain={stripDomains(post.domain)}
+                  link_flair_text={post.link_flair_text}/>
           </div>
           <div className="comments">
             <span className="hs-icon icon-bubbles2"></span>

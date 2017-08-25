@@ -1,0 +1,33 @@
+@import '../mixins';
+@import '../colors';
+
+/*
+ * Rarity
+ */
+.common{
+  @include icon_color($common);
+}
+.rare{
+  @include icon_color($rare);
+}
+.epic{
+  @include icon_color($epic);
+}
+.legendary{
+  @include icon_color($legendary);
+}
+
+/*
+ * Modes
+ */
+
+//A.K.A standard
+.mammoth, .kraken{
+  @include icon_color($standard);
+}
+.wild{
+  @include icon_color($wild);
+}
+//.expansions, .adventures{
+//  @include icon_color($extensions);
+//}

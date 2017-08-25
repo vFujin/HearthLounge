@@ -1,0 +1,79 @@
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin truncate($container-width){
+  width: $container-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin screen($size) {
+  $desktop: "(min-width: 1600px)";
+  $laptop: "(min-width: 1366px) and (max-width: 1600px)";
+  $tablet: "(min-width: 768px) and (max-width: 1365px)";
+  $mobile: "(max-width: 767px)";
+  @if $size == desktop {
+    @media only screen and #{$desktop} {
+      @content;
+    }
+  }
+  @else if $size == laptop {
+    @media only screen and #{$laptop} {
+      @content;
+    }
+  }
+  @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  }
+  @else if $size == mobile {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  }
+  @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}
+
+@mixin striped-background($primary_color, $secondary_color, $angle: false){
+  @if $angle {
+    background: repeating-linear-gradient(
+                    $angle,
+                    $primary_color,
+                    $primary_color 10px,
+                    $secondary_color 10px,
+                    $secondary_color 20px
+    );
+  }
+  @else {
+    background: repeating-linear-gradient(
+                    -45deg,
+                    $primary_color,
+                    $primary_color 10px,
+                    $secondary_color 10px,
+                    $secondary_color 20px
+    );
+  }
+}

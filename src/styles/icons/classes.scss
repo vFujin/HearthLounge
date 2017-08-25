@@ -1,0 +1,43 @@
+@import '../mixins';
+@import '../colors';
+
+//Classes
+.druid{
+  @include icon_color($druid);
+}
+.hunter{
+  @include icon_color($hunter);
+}
+.mage{
+  @include icon_color($mage);
+}
+.paladin{
+  @include icon_color($paladin);
+}
+.priest{
+  @include icon_color($priest);
+}
+.rogue{
+  @include icon_color($rogue);
+}
+.shaman{
+  @include icon_color($shaman);
+}
+.warlock{
+  @include icon_color($warlock);
+}
+.warrior{
+  @include icon_color($warrior);
+}
+
+.death-knight{
+  @include icon_color($death_knight);
+}
+
+.monk{
+  @include icon_color($monk);
+}
+
+.demon-hunter{
+  @include icon_color($demon_hunter);
+}

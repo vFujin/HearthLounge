@@ -1,0 +1,40 @@
+@import '../mixins';
+@import '../colors';
+
+/*
+ * Adventures
+ */
+.naxxramas{
+  @include icon_color($naxx);
+}
+.blackrock-mountain{
+  @include icon_color($bm);
+}
+.the-league-of-explorers{
+  @include icon_color($loe);
+}
+.karazhan{
+  @include icon_color($karazhan);
+}
+
+/*
+ * Expansions
+ */
+.goblins-vs-gnomes{
+  @include icon_color($gvg);
+}
+.the-grand-tournament{
+  @include icon_color($tgt);
+}
+.whispers-of-the-old-gods{
+  @include icon_color($wotog);
+}
+.mean-streets-of-gadgetzan{
+  @include icon_color($msog);
+}
+.journey-to-ungoro{
+  @include icon_color($ungoro);
+}
+.knights-of-the-frozen-throne{
+  @include icon_color($kotft);
+}

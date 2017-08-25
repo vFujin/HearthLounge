@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Loader = () =>{
+const Loader = ({theme}) =>{
   return (
-      <div className="loading-wrapper">
+      <div className={`loading-wrapper ${theme || 'dark'}`}>
         <div className="sk-folding-cube">
           <div className="sk-cube1 sk-cube"></div>
           <div className="sk-cube2 sk-cube"></div>
@@ -14,3 +15,7 @@ const Loader = () =>{
 };
 
 export default Loader;
+
+Loader.propTypes = {
+  theme: PropTypes.string
+};
