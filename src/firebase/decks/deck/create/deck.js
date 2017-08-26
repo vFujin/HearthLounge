@@ -1,6 +1,7 @@
 import {ref} from '../../../../keys';
 import {success, error} from '../../../../utils/messages';
-
+import startOfWeek from 'date-fns/start_of_week';
+import _ from 'lodash';
 /**
  * Function representing deck saving to Firebase /decks and /users/:id/decks endpoint
  *
@@ -24,7 +25,8 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
         validateBoss = (adventure && boss) ? boss : null,
         validateBossClassFilter = (adventure && boss) ? `${boss}_${playerClass}` : null,
         deckId = ref.child(`decks`).push().key,
-        timestamp = +new Date();
+        timestamp = +new Date(),
+        start = +startOfWeek(timestamp);
 
     let newDeck = {
       archetype,
@@ -45,7 +47,8 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       upvotes: 0,
       views: 0,
       votes: 0,
-      class_timestamp_votes: `${playerClass}_${timestamp}_${Math.floor(Math.random() * 1000)}`,
+      // timestamp_votes: `${start}_${Math.floor(Math.random() * 1000)}`,
+      class_timestamp_votes: `${playerClass}_${start}_${_.padStart(Math.floor(Math.random() * 1000), 4, '0')}`,
       mode_class: `${mode}_${playerClass}`,
       boss_class: validateBossClassFilter
     };

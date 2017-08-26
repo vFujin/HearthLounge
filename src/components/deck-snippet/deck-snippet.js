@@ -27,7 +27,7 @@ const DeckSnippet = ({d, handleDeckClick}) => {
                          archetype={archetype}
                          deck={deck}
                          views={views}
-                         votes={class_timestamp_votes.split("_").splice(-1)[0]}/>
+                         votes={+class_timestamp_votes.split("_").splice(-1)[0]}/>
       </Link>
   );
 };
