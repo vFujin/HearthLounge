@@ -29,7 +29,6 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
           timestamp = +new Date(),
           start = +startOfWeek(timestamp);
 
-
     let newDeck = {
       archetype,
       deck,
