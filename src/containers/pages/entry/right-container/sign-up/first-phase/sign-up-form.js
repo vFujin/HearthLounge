@@ -10,7 +10,7 @@ const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_
         <Input id="signUp_email"
                type="email"
                placeholder="hearth@lounge.com"
-               onChange={handleInputChange}
+               handleInputChange={handleInputChange}
                value={signUp_email}/>
         <Input id="signUp_confirmEmail"     type="email"    placeholder="hearth@lounge.com" handleInputChange={handleInputChange} value={signUp_confirmEmail}/>
         <Input id="signUp_password"         type="password" handleInputChange={handleInputChange} value={signUp_password}/>

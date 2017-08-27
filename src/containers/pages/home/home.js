@@ -13,6 +13,7 @@ import {getDecks} from "../../../firebase/decks/deck/read";
 import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
 import {fetchRedditPosts} from "../../../api/reddit";
+import {fetchFilteredDecks, isFilterActive} from "./utils/deck-filters";
 class Home extends PureComponent{
 
   componentDidMount() {
@@ -20,31 +21,19 @@ class Home extends PureComponent{
     fetchRedditPosts(data => this.props.updateRedditPosts(data))
   }
 
-
   handleDeckClick = (e) =>{
     let deckId = e.currentTarget.id;
-
     updateViews(deckId);
   };
 
   handleFilterClick = (e) =>{
     const {updateDeckFilters, updateDecks, deckFilters} = this.props;
-    const {playerClass, mode} = deckFilters;
-    let target = e.currentTarget.id;
+    let targetId = e.currentTarget.id;
     let filter = e.currentTarget.dataset.filter;
     let isActive = e.currentTarget.classList.contains('active');
-    console.log(isActive)
-    if(isActive){
-      updateDeckFilters({[filter]: null});
-    }
-    updateDeckFilters({[filter]: target});
-    if(playerClass && mode){
-      const mainFilter = () => (playerClass && filter ==="mode") ? target : mode;
-      const secondaryFilter = () => (mode && filter ==="playerClass") ? target : playerClass;
-      getDecks(mainFilter(), null, secondaryFilter(), decks => updateDecks(decks));
-    } else {
-      getDecks(target, filter, false, decks => updateDecks(decks));
-    }
+
+    isFilterActive(filter, targetId, isActive, updateDeckFilters);
+    fetchFilteredDecks(deckFilters, filter, targetId, updateDecks);
   };
 
   render() {

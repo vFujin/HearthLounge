@@ -33,16 +33,12 @@
     grid-column-gap: 1vh;
     padding-bottom: 4.5px;
     border-bottom: 1px solid $dark-grey;
+    align-items: center;
     &--playerClass {
       span {
         font-size: 35px;
-        position: relative;
-        top: 5px;
         padding: 5px;
-        border: 2px solid black;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
+        border: 1px solid black;
       }
     }
     &--about{

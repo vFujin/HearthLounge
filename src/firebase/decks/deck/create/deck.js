@@ -20,14 +20,15 @@ import _ from 'lodash';
 export default function (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid) {
   if (patch && playerClass && title && mode && archetype && deck && description && deckstring && uid) {
 
-    const validateAdventureType = (mode === 'adventures' && adventure && boss) ? mode : 'wild',
-        validateAdventure = (adventure && boss) ? adventure : null,
-        validateBoss = (adventure && boss) ? boss : null,
-        validateBossClassFilter = (adventure && boss) ? `${boss}_${playerClass}` : null,
-        deckId = ref.child(`decks`).push().key,
-        timestamp = +new Date(),
-        start = +startOfWeek(timestamp),
-        initVotes = _.padStart(Math.floor(Math.random() * 1000), 4, '0');
+    const validateAdventureType = (mode === 'adventures' && adventure && boss) ? 'wild' : mode,
+          validateAdventure = (adventure && boss) ? adventure : null,
+          validateBoss = (adventure && boss) ? boss : null,
+          initVotes = _.padStart(Math.floor(Math.random() * (1000 - 500 + 1 ) - 500), 4, '0'),
+          validateBossClassFilter = (adventure && boss) ? `${boss}_${playerClass}_${initVotes}` : null,
+          deckId = ref.child(`decks`).push().key,
+          timestamp = +new Date(),
+          start = +startOfWeek(timestamp);
+
 
     let newDeck = {
       archetype,
@@ -48,8 +49,7 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       upvotes: 0,
       views: 0,
       votes: 0,
-      mode_class: `${mode}_${playerClass}`,
-      boss_class: validateBossClassFilter,
+      boss_class_votes: validateBossClassFilter,
       timestamp_votes: `${start}_${initVotes}`,
       mode_timestamp_votes: `${mode}_${start}_${initVotes}`,
       class_timestamp_votes: `${playerClass}_${start}_${initVotes}`,

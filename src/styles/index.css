@@ -2852,16 +2852,12 @@ input::-webkit-search-cancel-button {
     grid-template-columns: 25% calc(75% - 1vh);
     grid-column-gap: 1vh;
     padding-bottom: 4.5px;
-    border-bottom: 1px solid #474143; }
+    border-bottom: 1px solid #474143;
+    align-items: center; }
     .deckSnippet__header--playerClass span {
       font-size: 35px;
-      position: relative;
-      top: 5px;
       padding: 5px;
-      border: 2px solid black;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%; }
+      border: 1px solid black; }
     .deckSnippet__header--about-title {
       font-weight: bold;
       font-size: 16px;
