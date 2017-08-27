@@ -16,9 +16,10 @@ import {fetchRedditPosts} from "../../../api/reddit";
 class Home extends PureComponent{
 
   componentDidMount() {
-    getDecks(false, decks=>this.props.updateDecks(decks));
+    getDecks(false, null, false, decks=>this.props.updateDecks(decks));
     fetchRedditPosts(data => this.props.updateRedditPosts(data))
   }
+
 
   handleDeckClick = (e) =>{
     let deckId = e.currentTarget.id;
@@ -26,20 +27,35 @@ class Home extends PureComponent{
     updateViews(deckId);
   };
 
-
-  handlePlayerClassFilterClick = (e) =>{
-    let playerClass = e.currentTarget.id;
-    getDecks(playerClass, data => this.props.updateDecks(data))
+  handleFilterClick = (e) =>{
+    const {updateDeckFilters, updateDecks, deckFilters} = this.props;
+    const {playerClass, mode} = deckFilters;
+    let target = e.currentTarget.id;
+    let filter = e.currentTarget.dataset.filter;
+    let isActive = e.currentTarget.classList.contains('active');
+    console.log(isActive)
+    if(isActive){
+      updateDeckFilters({[filter]: null});
+    }
+    updateDeckFilters({[filter]: target});
+    if(playerClass && mode){
+      const mainFilter = () => (playerClass && filter ==="mode") ? target : mode;
+      const secondaryFilter = () => (mode && filter ==="playerClass") ? target : playerClass;
+      getDecks(mainFilter(), null, secondaryFilter(), decks => updateDecks(decks));
+    } else {
+      getDecks(target, filter, false, decks => updateDecks(decks));
+    }
   };
 
   render() {
-    const {decks, redditPosts} = this.props;
+    const {decks, redditPosts, deckFilters} = this.props;
     return (
         <div className="container__index home">
           <ul className="home__list">
             <DecksBlock decks={_.map(decks)}
+                        deckFilters={deckFilters}
                         handleDeckClick={this.handleDeckClick}
-                        handlePlayerClassFilterClick={this.handlePlayerClassFilterClick}/>
+                        handleFilterClick={this.handleFilterClick}/>
             <HomeBlock icon="create-deck">
               <CreateDeckBlock/>
             </HomeBlock>
@@ -70,8 +86,8 @@ class Home extends PureComponent{
 }
 
 const mapStateToProps = (state) => {
-  const {decks, redditPosts} = state.home;
-  return {decks, redditPosts};
+  const {decks, redditPosts, deckFilters} = state.home;
+  return {decks, redditPosts, deckFilters};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -79,6 +95,9 @@ const mapDispatchToProps = (dispatch) => {
     updateDecks: (decks) => (dispatch({
       type: 'UPDATE_DECKS', decks
     })),
+    updateDeckFilters: (deckFilters) => dispatch({
+      type: 'UPDATE_DECK_FILTERS', deckFilters
+    }),
     updateRedditPosts: (redditPosts) => dispatch({
       type: 'UPDATE_REDDIT_POSTS', redditPosts
     })

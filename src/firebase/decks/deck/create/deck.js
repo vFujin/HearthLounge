@@ -26,7 +26,8 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
         validateBossClassFilter = (adventure && boss) ? `${boss}_${playerClass}` : null,
         deckId = ref.child(`decks`).push().key,
         timestamp = +new Date(),
-        start = +startOfWeek(timestamp);
+        start = +startOfWeek(timestamp),
+        initVotes = _.padStart(Math.floor(Math.random() * 1000), 4, '0');
 
     let newDeck = {
       archetype,
@@ -47,10 +48,12 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       upvotes: 0,
       views: 0,
       votes: 0,
-      // timestamp_votes: `${start}_${Math.floor(Math.random() * 1000)}`,
-      class_timestamp_votes: `${playerClass}_${start}_${_.padStart(Math.floor(Math.random() * 1000), 4, '0')}`,
       mode_class: `${mode}_${playerClass}`,
-      boss_class: validateBossClassFilter
+      boss_class: validateBossClassFilter,
+      timestamp_votes: `${start}_${initVotes}`,
+      mode_timestamp_votes: `${mode}_${start}_${initVotes}`,
+      class_timestamp_votes: `${playerClass}_${start}_${initVotes}`,
+      mode_class_timestamp_votes: `${mode}_${playerClass}_${start}_${initVotes}`
     };
 
     let updates = {};

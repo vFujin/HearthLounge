@@ -1,12 +1,16 @@
 import React from 'react';
 import { icon_filters } from '../../../../../data/filters';
 
-const ClassSelection = ({handlePlayerClassFilterClick}) => {
+const ClassSelection = ({handleFilterClick, activePlayerClassFilter}) => {
   return (
       <ul className="class-selection">
         {icon_filters.playerClass.map((playerClass, index) =>
-            <li key={index} id={playerClass.url} onClick={handlePlayerClassFilterClick} className={playerClass.url}>
-              <span className={`hs-icon icon-${playerClass.url}`}></span>
+            <li key={index}
+                data-filter="playerClass"
+                id={playerClass.url}
+                onClick={handleFilterClick}
+                className={`${playerClass.url} ${activePlayerClassFilter === playerClass.url && "active"}`}>
+                <span className={`hs-icon icon-${playerClass.url}`}></span>
             </li>
         )}
       </ul>
