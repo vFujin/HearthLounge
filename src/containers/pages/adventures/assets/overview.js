@@ -17,7 +17,7 @@ const Overview = ({extension, adventureCardbacks}) => {
 
   return (
       <ul className="container__blocks">
-        <ExtensionBlock page="overview" title="art" element={adventureArt}/>
+        <ExtensionBlock page="overview" blockWidth={2} title="art" element={adventureArt}/>
         <ExtensionBlock page="overview" title="cardbacks" element={adventureRewards} />
         <ExtensionBlock page="overview" title="cinematic" element={adventureCinematic}/>
         <ExtensionBlock page="overview" title="gameboard" element={adventureGameboard}/>

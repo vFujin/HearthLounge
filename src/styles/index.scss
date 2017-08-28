@@ -847,9 +847,16 @@ footer{
         }
       }
       .container__blocks {
+        display: flex;
+        height: 100%;
+        flex-wrap: wrap;
         li.container__blocks--block {
-          height: 100%;
+          height: calc(50% - .5vh);
           background: $light-grey;
+          margin-bottom: 1vh;
+          &:nth-last-child(-n+3){
+            margin-bottom:0;
+          }
           .container__blocks--block-header {
             padding: 0;
             display: flex;
@@ -1091,9 +1098,9 @@ footer{
 /*
   Pages
  */
-.home{
+.container__index.home{
+  margin: 0 1vh;
   .home__list {
-    margin: 0 1vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

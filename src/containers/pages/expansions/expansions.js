@@ -10,6 +10,7 @@ import {expansionExists} from '../../../utils/checkIfPathExist'
 const Expansions = ({cards, params}) => {
   const {details, expansion, detailsChild} = params;
 
+
   const rightContainer = () => {
     let path = location.pathname.split("/")[2];
     if(expansion !== undefined) {

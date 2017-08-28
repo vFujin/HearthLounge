@@ -1,23 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {Overview, Arena, PreOrder, StandardMode} from './assets/shared-topbar-tabs';
+import {Overview, PreOrder} from './overview-assets/index';
 import Cards from "../../../../components/extension-blocks/cards"
-import {HearthstoneOnAndroid, SpectatorMode} from './assets/gvg';
-import {JadeGolemMechanic, MulticlassCards} from './assets/msog';
 import {Boss, Bosses} from "../../../../components/extensions/bosses/index";
 import {adventureBossExists, adventureWingExists} from "../../../../utils/checkIfPathExist";
 
 const components = {
   Overview,
-  Arena,
   Cards,
   PreOrder,
-  StandardMode,
-  HearthstoneOnAndroid,
-  SpectatorMode,
-  JadeGolemMechanic,
-  MulticlassCards,
   Bosses
 };
 

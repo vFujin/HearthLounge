@@ -13,7 +13,7 @@ const selectType = (
     type = null,
     tooltip = false,
     tooltipPlacement = "bottom",
-    domain = null,
+    domain,
     linkFlairText = null) => {
 
   const validateSet = () =>{
@@ -37,17 +37,7 @@ const selectType = (
     )
   };
 
-  let icon = (name) => {
-    let icon = <span className={`hs-icon icon-${name} ${className}`}></span>;
-    return tooltip ? iconWrapper(icon) : icon;
-  };
-
-  let manaIcon = (name) => {
-    let icon = <span className={`hs-icon icon-mana-${name} ${className}`}></span>;
-    return tooltip ? iconWrapper(icon) : icon;
-  };
-
-  let redditDomainIcons = (domain) => {
+  const redditDomainIcons = (domain) => {
     if(linkFlairText !== null){
       let flair_text = linkFlairText.toLowerCase();
       let self = domain.includes(supported_domains[2]);
@@ -65,6 +55,19 @@ const selectType = (
         return icon(strippedDomain);
       }
     }
+  };
+
+  console.log(domain)
+
+
+  let icon = (name) => {
+    let icon = <span className={`hs-icon icon-${name} ${className}`}></span>;
+    return tooltip ? iconWrapper(icon) : icon;
+  };
+
+  let manaIcon = (name) => {
+    let icon = <span className={`hs-icon icon-mana-${name} ${className}`}></span>;
+    return tooltip ? iconWrapper(icon) : icon;
   };
 
   switch(type){

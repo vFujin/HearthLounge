@@ -1,29 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ExtensionBlock from "../../../../../../components/extension-blocks/extension-block";
-import Art from "../../../../../../components/extension-blocks/overview-blocks/art";
-import Rewards from "../../../../../../components/extension-blocks/overview-blocks/rewards";
-import Cinematic from "../../../../../../components/extension-blocks/overview-blocks/cinematic";
-import Gameboard from "../../../../../../components/extension-blocks/overview-blocks/gameboard";
+import ExtensionBlock from "../../../../../components/extension-blocks/extension-block";
+import {Art, About, Rewards, Cinematic, Gameboard} from "../../../../../components/extension-blocks/overview-blocks";
+import {NewMechanicsKeywords} from "./index";
 
 const Overview = ({extension, expansionCardbacks}) => {
   const {overview, name} = extension;
-  const {cinematic, gameboard, img} = overview;
+  const {cinematic, gameboard, img, about, new_mechanics_keywords} = overview;
+
 
   const expansionArt = <Art src={img} name={name} />;
+  const expansionAbout= <About about={about} />;
   const expansionRewards = <Rewards extensionCardbacks={expansionCardbacks} />;
   const expansionCinematic = <Cinematic src={cinematic} />;
   const expansionGameboard = <Gameboard src={gameboard} adventureName={name} />;
+  const expansionNewMechanicsKeywords = <NewMechanicsKeywords newMechanicsKeywords={new_mechanics_keywords}/>;
+
 
   return (
       <ul className="container__blocks">
-        <ExtensionBlock page="overview" title="art" element={expansionArt}/>
+        <ExtensionBlock page="overview" title="about" element={expansionAbout}/>
+        <ExtensionBlock page="overview" blockWidth={2} title="art" element={expansionArt}/>
         <ExtensionBlock page="overview" title="cardbacks" element={expansionRewards} />
         <ExtensionBlock page="overview" title="cinematic" element={expansionCinematic}/>
         <ExtensionBlock page="overview" title="gameboard" element={expansionGameboard}/>
+        <ExtensionBlock page="overview" title="new mechanics & keywords" element={expansionNewMechanicsKeywords}/>
       </ul>
   );
 };
+
 
 export default Overview;
 
