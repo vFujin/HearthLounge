@@ -4,9 +4,11 @@ import Loader from '../loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from "../../containers/pages/cards/right-container/card-details";
 
-const Cards = ({extensionUrl, cards}) => {
-  const set = () =>{
-      return cards.sets[extensionUrl].map(card =>
+const Cards = ({extensionUrl, cards}) => ({
+  (cards.sets[extensionUrl] && cards.sets[extensionUrl].length) && (
+    <ul className="container__cards">
+      {
+        cards.sets[extensionUrl].map(card =>
           <li key={card.cardId}>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <div className="img-wrapper">
@@ -14,22 +16,13 @@ const Cards = ({extensionUrl, cards}) => {
               </div>
             </Tooltip>
           </li>
-      )
-  };
+        )
+      }
+    </ul>
+  )
 
-  const listCards = () =>{
-    if(cards.sets[extensionUrl] && cards.sets[extensionUrl].length > 0){
-      return (
-          <ul className="container__cards">
-            {set()}
-          </ul>
-      )
-    }
-    return <Loader/>
-  };
-
-  return listCards();
-};
+  !(cards.sets[extensionUrl] && cards.sets[extensionUrl].length) && <Loader />
+})
 
 export default Cards;
 
