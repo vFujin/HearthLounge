@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash'
-import Block from "../../../../../components/extension-blocks/extension-block";
+import Block from "../../extension-blocks/extension-block";
 import Overview from "./boss-blocks/overview";
-import Strategy from "../shared-blocks/strategy";
-import Rewards from "../shared-blocks/rewards";
+import Strategy from "../../../containers/pages/adventures/assets/shared-blocks/strategy";
+import Rewards from "../../../containers/pages/adventures/assets/shared-blocks/rewards";
 import WingBosses from "./boss-blocks/wing-bosses";
 import Decklist from "./boss-blocks/decklist";
 
 const Boss = ({allCards, adventure, wing, boss, decks}) => {
   let filteredDecks = _.filter(decks, deck => deck.boss === boss.url);
+
 
   const bossOverview = <Overview adventure={adventure.url}
                                  wing={wing}

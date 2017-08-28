@@ -4177,6 +4177,54 @@ footer {
             opacity: .3; }
             .container__page .container__page--right .content .container__blocks li.container__blocks--block.boss .wing-bosses li.active-boss a {
               cursor: not-allowed; }
+    .container__page .container__page--right .content .container__bosses p {
+      padding: 5px;
+      background-color: rgba(255, 255, 255, 0.6); }
+    .container__page .container__page--right .content .container__bosses table {
+      margin-top: 10px;
+      width: calc(100% - 1px);
+      text-align: center;
+      border-collapse: collapse; }
+      .container__page .container__page--right .content .container__bosses table tbody tr th {
+        width: 15%;
+        border: 1px solid #474143; }
+      .container__page .container__page--right .content .container__bosses table tbody tr td {
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        -ms-transition: all ease 0.4s;
+        -o-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+        padding: 10px;
+        cursor: pointer;
+        border: 1px solid #474143; }
+        .container__page .container__page--right .content .container__bosses table tbody tr td a {
+          display: flex;
+          align-items: center; }
+          .container__page .container__page--right .content .container__bosses table tbody tr td a img {
+            -webkit-box-shadow: 0 0 10px black;
+            -moz-box-shadow: 0 0 10px black;
+            box-shadow: 0 0 10px black;
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+            transition: all ease 0.4s;
+            width: 70px;
+            height: 70px; }
+          .container__page .container__page--right .content .container__bosses table tbody tr td a p {
+            margin-left: 10px;
+            background: transparent; }
+        .container__page .container__page--right .content .container__bosses table tbody tr td:hover img {
+          -webkit-box-shadow: 0 0 10px #474143;
+          -moz-box-shadow: 0 0 10px #474143;
+          box-shadow: 0 0 10px #474143; }
+      .container__page .container__page--right .content .container__bosses table tbody tr:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 0.6); }
+      .container__page .container__page--right .content .container__bosses table tbody tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.5); }
+      .container__page .container__page--right .content .container__bosses table tbody tr:hover td:first-child {
+        background-color: #00a99c;
+        color: #E7E2DA; }
   .container__page .edit-mode .sidebar__body .container__mana-curve .graph {
     -webkit-box-shadow: inset 0 0 20px #474143;
     -moz-box-shadow: inset 0 0 20px #474143;
@@ -4675,54 +4723,6 @@ footer {
       background-color: rgba(255, 255, 255, 0.6); }
     .adventures .container__page--right .content .cost table tr:nth-child(even) {
       background-color: rgba(255, 255, 255, 0.5); }
-.adventures .container__page--right .content .bosses p {
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.6); }
-.adventures .container__page--right .content .bosses table {
-  margin-top: 10px;
-  width: calc(100% - 1px);
-  text-align: center;
-  border-collapse: collapse; }
-  .adventures .container__page--right .content .bosses table tbody tr th {
-    width: 15%;
-    border: 1px solid #474143; }
-  .adventures .container__page--right .content .bosses table tbody tr td {
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
-    transition: all ease 0.4s;
-    padding: 10px;
-    cursor: pointer;
-    border: 1px solid #474143; }
-    .adventures .container__page--right .content .bosses table tbody tr td a {
-      display: flex;
-      align-items: center; }
-      .adventures .container__page--right .content .bosses table tbody tr td a img {
-        -webkit-box-shadow: 0 0 10px black;
-        -moz-box-shadow: 0 0 10px black;
-        box-shadow: 0 0 10px black;
-        -webkit-transition: all ease 0.4s;
-        -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
-        transition: all ease 0.4s;
-        width: 70px;
-        height: 70px; }
-      .adventures .container__page--right .content .bosses table tbody tr td a p {
-        margin-left: 10px;
-        background: transparent; }
-    .adventures .container__page--right .content .bosses table tbody tr td:hover img {
-      -webkit-box-shadow: 0 0 10px #474143;
-      -moz-box-shadow: 0 0 10px #474143;
-      box-shadow: 0 0 10px #474143; }
-  .adventures .container__page--right .content .bosses table tbody tr:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.6); }
-  .adventures .container__page--right .content .bosses table tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.5); }
-  .adventures .container__page--right .content .bosses table tbody tr:hover td:first-child {
-    background-color: #00a99c;
-    color: #E7E2DA; }
 .adventures .container__page--right .content .classChallenges {
   display: flex;
   height: 100%; }

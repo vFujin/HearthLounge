@@ -6,8 +6,8 @@ import Rewards from "../../../../components/extension-blocks/overview-blocks/rew
 import Cinematic from "../../../../components/extension-blocks/overview-blocks/cinematic";
 import Gameboard from "../../../../components/extension-blocks/overview-blocks/gameboard";
 
-const Overview = ({adventure, adventureCardbacks}) => {
-  const {overview, name} = adventure;
+const Overview = ({extension, adventureCardbacks}) => {
+  const {overview, name} = extension;
   const {cinematic, gameboard, img} = overview;
 
   const adventureArt = <Art src={img} name={name} />;
@@ -28,6 +28,6 @@ const Overview = ({adventure, adventureCardbacks}) => {
 export default Overview;
 
 Overview.propTypes = {
-  adventure: PropTypes.string.isRequired,
+  extension: PropTypes.object.isRequired,
   adventureCardbacks: PropTypes.array.isRequired,
 };

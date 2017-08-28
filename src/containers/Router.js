@@ -76,7 +76,9 @@ const App = ({store}) =>{
         <Route path="expansions"        component={Expansions}>
           <Redirect from=":expansion" to=":expansion/overview"/>
           <Route path=":expansion"      component={Expansion}>
-            <Route path=":details"      component={ExpansionDetails} />
+            <Route path=":details"      component={ExpansionDetails}>
+              <Route path=":detailsChild" />
+            </Route>
           </Route>
         </Route>
 

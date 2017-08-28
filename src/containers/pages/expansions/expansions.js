@@ -8,13 +8,13 @@ import SelectExtension from '../../shared-assets/extensions/select-extension';
 import {expansionExists} from '../../../utils/checkIfPathExist'
 
 const Expansions = ({cards, params}) => {
-  const {details, expansion} = params;
+  const {details, expansion, detailsChild} = params;
 
   const rightContainer = () => {
     let path = location.pathname.split("/")[2];
     if(expansion !== undefined) {
       return expansionExists(path)
-          ? <Expansion cards={cards} details={details} expansion={expansion}/>
+          ? <Expansion cards={cards} details={details} expansion={expansion} detailsChild={detailsChild}/>
           : <NotFound page={_.startCase(expansion)} redirect="expansions"/>
     }
     return <SelectExtension group="expansion"/>
@@ -38,6 +38,7 @@ Expansions.propTypes = {
   }),
   params: PropTypes.shape({
     details: PropTypes.string,
-    expansion: PropTypes.string
+    expansion: PropTypes.string,
+    detailsChild: PropTypes.string
   })
 };

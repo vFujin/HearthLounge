@@ -949,6 +949,65 @@ footer{
           }
         }
       }
+      .container__bosses {
+        p {
+          padding: 5px;
+          background-color: $odd-row;
+        }
+        table {
+          margin-top: 10px;
+          width: calc(100% - 1px);
+          text-align: center;
+          border-collapse: collapse;
+          tbody {
+            tr {
+              th {
+                width: 15%;
+                border: 1px solid $dark-grey;
+              }
+              td {
+                @include transition(all ease .4s);
+                padding: 10px;
+                cursor: pointer;
+                border: 1px solid $dark-grey;
+                a {
+                  display: flex;
+                  align-items: center;
+                  img {
+                    @include box-shadow(0, 0, 10px, black);
+                    @include transition(all ease .4s);
+                    width: 70px;
+                    height: 70px;
+                  }
+                  p {
+                    margin-left: 10px;
+                    background: transparent;
+                  }
+                }
+                &:hover {
+                  img {
+                    @include box-shadow(0, 0, 10px, $dark-grey);
+                  }
+                }
+              }
+              &:nth-child(odd) {
+                background-color: $odd-row;
+              }
+              &:nth-child(even) {
+                background-color: $even-row;
+              }
+              &:hover {
+                td {
+                  &:first-child {
+                    background-color: $sea-color;
+                    color: $pearl;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
   .edit-mode{
@@ -1680,65 +1739,6 @@ footer{
       }
       .structure {
 
-      }
-      .bosses {
-        p {
-          padding: 5px;
-          background-color: $odd-row;
-        }
-        table {
-          margin-top: 10px;
-          width: calc(100% - 1px);
-          text-align: center;
-          border-collapse: collapse;
-          tbody {
-            tr {
-              th {
-                width: 15%;
-                border: 1px solid $dark-grey;
-              }
-              td {
-                @include transition(all ease .4s);
-                padding: 10px;
-                cursor: pointer;
-                border: 1px solid $dark-grey;
-                a {
-                  display: flex;
-                  align-items: center;
-                  img {
-                    @include box-shadow(0, 0, 10px, black);
-                    @include transition(all ease .4s);
-                    width: 70px;
-                    height: 70px;
-                  }
-                  p {
-                    margin-left: 10px;
-                    background: transparent;
-                  }
-                }
-                &:hover {
-                  img {
-                    @include box-shadow(0, 0, 10px, $dark-grey);
-                  }
-                }
-              }
-              &:nth-child(odd) {
-                background-color: $odd-row;
-              }
-              &:nth-child(even) {
-                background-color: $even-row;
-              }
-              &:hover {
-                td {
-                  &:first-child {
-                    background-color: $sea-color;
-                    color: $pearl;
-                  }
-                }
-              }
-            }
-          }
-        }
       }
       .classChallenges {
         display: flex;

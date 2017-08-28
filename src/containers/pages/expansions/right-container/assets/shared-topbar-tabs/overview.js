@@ -6,8 +6,8 @@ import Rewards from "../../../../../../components/extension-blocks/overview-bloc
 import Cinematic from "../../../../../../components/extension-blocks/overview-blocks/cinematic";
 import Gameboard from "../../../../../../components/extension-blocks/overview-blocks/gameboard";
 
-const Overview = ({expansion, expansionCardbacks}) => {
-  const {overview, name} = expansion;
+const Overview = ({extension, expansionCardbacks}) => {
+  const {overview, name} = extension;
   const {cinematic, gameboard, img} = overview;
 
   const expansionArt = <Art src={img} name={name} />;
@@ -28,6 +28,6 @@ const Overview = ({expansion, expansionCardbacks}) => {
 export default Overview;
 
 Overview.propTypes = {
-  expansion: PropTypes.string.isRequired,
-  expansionCardbacks: PropTypes.array.isRequired,
+  extension: PropTypes.object.isRequired,
+  expansionCardbacks: PropTypes.array,
 };

@@ -8,7 +8,7 @@ import {adventureWingExists, adventureBossExists} from '../../../../utils/checkI
 const Topbar = ({adventure, details, boss}) => {
 
   const bossesTab = (detail) => {
-    if (adventureWingExists(adventure, details) && adventureBossExists(adventure, details, boss)) {
+    if (adventureWingExists("adventures", adventure, details) && adventureBossExists("adventures", adventure, details, boss)) {
       return `${detail.name} > ${_.startCase(details)} > ${_.startCase(boss)}`;
     }
     else return detail.name

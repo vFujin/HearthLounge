@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { adventure_details } from '../../../../data/adventure-details';
 
-const Cost = ({adventure}) => {
+const Cost = ({extension}) => {
 
   const cost_description = (adventure) => {
     let countWings = adventure_details[0].cost.wings.length;
@@ -46,7 +46,7 @@ const Cost = ({adventure}) => {
 
   return (
       <div className="cost inner-container">
-        {adventure_details.filter(a => a.url === adventure.url).map((a, index) =>
+        {adventure_details.filter(a => a.url === extension.url).map((a, index) =>
             <div key={index}>
               {cost_description(a)}
               {cost_table(a, index)}
@@ -59,5 +59,5 @@ const Cost = ({adventure}) => {
 export default Cost;
 
 Cost.propTypes = {
-  adventure: PropTypes.string.isRequired
+  extension: PropTypes.string.isRequired
 };

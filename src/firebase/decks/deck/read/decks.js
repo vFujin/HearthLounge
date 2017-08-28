@@ -2,9 +2,17 @@ import {refParent} from '../../../../keys';
 import {getSimplifiedUser} from "../../../user/read/index";
 import {endOfWeek, subDays, startOfWeek} from 'date-fns';
 
+/**
+ * Filters decks
+ *
+ * @param {bool | string} mainFilter
+ * @param {null | string} filterName
+ * @param {bool | string} secondaryFilter
+ * @param {object} callback
+ */
 export default function (mainFilter, filterName , secondaryFilter, callback) {
   filterName = filterName === "playerClass" ? "class" : filterName;
-  console.log(mainFilter, secondaryFilter);
+
   let now = +new Date(),
       start = +startOfWeek(subDays(now, 7)),
       end = +endOfWeek(now),
@@ -28,6 +36,12 @@ export default function (mainFilter, filterName , secondaryFilter, callback) {
   }
 }
 
+/**
+ * Assigns username to each deck
+ *
+ * @param {array} decks
+ * @param {object} snapshot - single deck object
+ */
 const assignUsername = (decks, snapshot) =>{
   return snapshot.forEach(childSnapshot => {
     getSimplifiedUser(childSnapshot.child("authorId").val(), username => {
@@ -38,6 +52,14 @@ const assignUsername = (decks, snapshot) =>{
   });
 };
 
+/**
+ * Utility function for decks query
+ *
+ * @param {string} orderBy
+ * @param {string | number} startAt
+ * @param {string | number} endAt
+ * @param {object} callback
+ */
 const decksQuery = (orderBy, startAt, endAt, callback) =>{
   let decksRef = refParent('decks');
   let decks = {};

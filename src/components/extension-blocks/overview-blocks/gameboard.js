@@ -12,6 +12,6 @@ const Gameboard = ({src, adventureName}) => {
 export default Gameboard;
 
 Gameboard.propTypes = {
-  src: PropTypes.string.isRequired,
-  adventureName: PropTypes.string.isRequired
+  src: PropTypes.string,
+  adventureName: PropTypes.string
 };

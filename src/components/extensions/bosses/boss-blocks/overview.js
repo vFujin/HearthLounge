@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AdventureBossImg from "../../../../../../components/images/adventure-boss";
+import AdventureBossImg from "../../../images/adventure-boss";
 
 const Overview = ({adventure, wing, boss}) => {
   return (

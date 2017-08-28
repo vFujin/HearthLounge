@@ -1,6 +1,8 @@
 import {adventure_details} from '../data/adventure-details';
 import {expansion_details} from '../data/expansion-details';
 
+const data = (type) => type === "adventures" ? adventure_details : expansion_details;
+
 /**
  * Checks if adventure exists
  *
@@ -23,15 +25,18 @@ export const adventureExists = (adventurePath) =>{
  * adventurePath -> naxxramas
  * detailsPath   -> the-arachnid-quarter
  *
+ * @param {string} type
  * @param {string} adventurePath - adventure path taken from url
  * @param {string} detailsPath - adventure details path taken from url
  * @returns {boolean}
  */
-export const adventureWingExists = (adventurePath, detailsPath) => {
-  return adventure_details
-         .filter(adventure => adventure.url === adventurePath)[0].wings.details
-         .map(wing => wing.url)
-         .includes(detailsPath)
+export const adventureWingExists = (type, adventurePath, detailsPath) => {
+  const adventureExists = data(type).find(adventure => adventure.url === adventurePath);
+  if (adventureExists.hasOwnProperty('wings')) {
+    return adventureExists.wings.details
+        .map(wing => wing.url)
+        .includes(detailsPath);
+  }
 };
 
 /**
@@ -42,18 +47,21 @@ export const adventureWingExists = (adventurePath, detailsPath) => {
  * detailsPath   -> the-arachnid-quarter
  * bossPath      -> maexxna
  *
+ * @param {string} type
  * @param {string} adventurePath - adventure path taken from url
  * @param {string} detailsPath - adventure details path taken from url
  * @param {string} bossPath - adventure details boss path taken from url
  * @returns {boolean}
  */
-export const adventureBossExists = (adventurePath, detailsPath, bossPath) => {
-  return adventure_details
-         .filter(adventure => adventure.url=== adventurePath)[0].wings.details
-         .filter(wing => wing.url === detailsPath)
-         .map(wing=>wing.bosses)[0]
-         .map(boss => boss.url)
-         .includes(bossPath)
+export const adventureBossExists = (type, adventurePath, detailsPath, bossPath) => {
+  const adventureExists = data(type).find(adventure => adventure.url === adventurePath);
+  if(adventureExists.hasOwnProperty('wings')) {
+    return adventureExists.wings.details
+          .filter(wing => wing.url === detailsPath)
+          .map(wing => wing.bosses)[0]
+          .map(boss => boss.url)
+          .includes(bossPath)
+  }
 };
 
 /**
@@ -65,11 +73,10 @@ export const adventureBossExists = (adventurePath, detailsPath, bossPath) => {
  * @param {string} expansionPath - expansion path taken from url
  * @returns {boolean}
  */
-export const expansionExists = (expansionPath) => {
-  return expansion_details
-         .map(expansion => expansion.url)
-         .includes(expansionPath)
-};
+export const expansionExists = (expansionPath) =>
+    expansion_details
+        .map(expansion => expansion.url)
+        .includes(expansionPath);
 
 /**
  * Checks if expansion detail exists
@@ -83,9 +90,8 @@ export const expansionExists = (expansionPath) => {
  * @param {string} detailsPath - expansion details path taken from url
  * @returns {boolean}
  */
-export const expansionDetailExists = (expansionPath, detailsPath) => {
-  return expansion_details
-         .find(expansion => expansion.url === expansionPath).expansion_topbar_tabs
-         .map(expansion => expansion.url)
-         .includes(detailsPath);
-};
+
+export const expansionDetailExists = (expansionPath, detailsPath) =>
+    expansion_details
+        .find(expansion => expansion.url === expansionPath).expansion_topbar_tabs
+        .map(expansion => expansion.url).includes(detailsPath);

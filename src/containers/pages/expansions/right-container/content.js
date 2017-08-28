@@ -2,13 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NotFound from '../../../shared-assets/not-found';
 import _ from 'lodash';
-import { expansionDetailExists } from '../../../../utils/checkIfPathExist';
+import {adventureBossExists, adventureWingExists, expansionDetailExists} from '../../../../utils/checkIfPathExist';
 import ExpansionDetails from './details';
 
-const Content = ({cards, details, activeExpansion, expansion}) => {
-  return expansionDetailExists(expansion, details)
-      ? <ExpansionDetails cards={cards} details={details} activeExpansion={activeExpansion}/>
-      : <NotFound page={_.startCase(details)} redirect="expansions"/>
+const Content = ({cards, decks, details, detailsChild, activeExpansion, expansion}) => {
+  let wingDetailsPath = detailsChild
+      ? adventureWingExists("expansions", activeExpansion.url, details)
+      : null;
+  let bossDetailsPath = (detailsChild && wingDetailsPath)
+      ? adventureBossExists("expansions", activeExpansion.url, details, detailsChild)
+      : null;
+
+  let notFoundPage = (detailsChild && wingDetailsPath) ? _.startCase(detailsChild) : _.startCase(details);
+
+  return (expansionDetailExists(expansion, details) || (wingDetailsPath && bossDetailsPath))
+      ? <ExpansionDetails cards={cards} decks={decks} details={details} detailsChild={detailsChild} activeExpansion={activeExpansion}/>
+      : <NotFound page={notFoundPage} redirect="expansions"/>
 };
 
 export default Content;
@@ -18,5 +27,7 @@ Content.propTypes = {
   cards: PropTypes.shape({
     sets: PropTypes.objectOf(PropTypes.array)
   }).isRequired,
-  details: PropTypes.string.isRequired
+  details: PropTypes.string.isRequired,
+  detailsChild: PropTypes.string,
+  decks: PropTypes.array
 };

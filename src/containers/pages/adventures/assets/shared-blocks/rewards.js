@@ -39,5 +39,5 @@ Rewards.propTypes = {
   bossReward: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.string
-  ]).isRequired
+  ])
 };

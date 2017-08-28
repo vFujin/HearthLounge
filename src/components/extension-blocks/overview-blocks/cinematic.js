@@ -12,5 +12,5 @@ const Cinematic = ({src}) => {
 export default Cinematic;
 
 Cinematic.propTypes = {
-  src: PropTypes.string.isRequired
+  src: PropTypes.string
 };

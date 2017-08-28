@@ -12,7 +12,6 @@ import {updateCommentsCount} from "../../deck/update/index";
  */
 export function postComment(patch, text, deckId, uid){
   if(patch && text && deckId && uid){
-
     const newCommentKey = ref.child(`decks/${deckId}/comments}`).push().key;
 
     let newComment = {

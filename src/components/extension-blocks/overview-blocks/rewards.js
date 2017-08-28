@@ -27,5 +27,5 @@ const Rewards = ({extensionCardbacks}) => {
 export default Rewards;
 
 Rewards.propTypes = {
-  extensionCardbacks: PropTypes.array.isRequired
+  extensionCardbacks: PropTypes.array
 };

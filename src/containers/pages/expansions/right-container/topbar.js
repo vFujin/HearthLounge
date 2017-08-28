@@ -28,5 +28,5 @@ export default Topbar;
 
 Topbar.propTypes = {
   details: PropTypes.string.isRequired,
-  expansion: PropTypes.string.isRequired
+  expansion: PropTypes.object.isRequired
 };

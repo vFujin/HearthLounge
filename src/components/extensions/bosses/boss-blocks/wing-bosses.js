@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import Tooltip from 'antd/lib/tooltip';
-import AdventureBossImg from "../../../../../../components/images/adventure-boss";
+import AdventureBossImg from "../../../images/adventure-boss";
 
 const WingBosses = ({adventure, wing, activeBoss, wingBosses}) => {
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import {foo} from "../../../../../../firebase/decks/read/adventure";
-import Loader from "../../../../../../components/loader";
-import DeckSnippet from "../../../../../../components/deck-snippet/deck-snippet";
+import Loader from "../../../loader";
+import DeckSnippet from "../../../deck-snippet/deck-snippet";
 
 const Decklist = ({decks}) => {
  const a = () => console.log('foo');

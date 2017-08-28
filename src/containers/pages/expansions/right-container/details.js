@@ -5,6 +5,8 @@ import {Overview, Arena, PreOrder, StandardMode} from './assets/shared-topbar-ta
 import Cards from "../../../../components/extension-blocks/cards"
 import {HearthstoneOnAndroid, SpectatorMode} from './assets/gvg';
 import {JadeGolemMechanic, MulticlassCards} from './assets/msog';
+import {Boss, Bosses} from "../../../../components/extensions/bosses/index";
+import {adventureBossExists, adventureWingExists} from "../../../../utils/checkIfPathExist";
 
 const components = {
   Overview,
@@ -15,25 +17,43 @@ const components = {
   HearthstoneOnAndroid,
   SpectatorMode,
   JadeGolemMechanic,
-  MulticlassCards
+  MulticlassCards,
+  Bosses
 };
 
-
-const ExpansionDetails = ({cards, details, activeExpansion}) => {
+const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}) => {
   let activeExpansionTab = activeExpansion.expansion_topbar_tabs.filter(tab => tab.url === details);
-
-  const currentView = () =>{
+  const activeView = () =>{
 
     return activeExpansionTab.map(page=> {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
 
-      return <Page key={page.url} expansion={activeExpansion} extensionUrl={activeExpansion.url} cards={cards}/>
+      return <Page key={page.url}
+                   type="expansions"
+                   extension={activeExpansion}
+                   extensionUrl={activeExpansion.url}
+                   cards={cards}/>
     })
   };
 
+  const bossDetails = () => {
+    let wing = activeExpansion.wings.details.find(wing => wing.url === details);
+    let activeBoss = wing.bosses.find(b => b.url === detailsChild);
+    return <Boss allCards={cards.allCards}
+                 key={activeExpansion.url}
+                 adventure={activeExpansion}
+                 wing={wing}
+                 boss={activeBoss}
+                 decks={decks}/>
+  };
 
-  return <div className="content">{currentView()}</div>;
+  return <div className="content">
+    {(adventureWingExists("expansions", activeExpansion.url, details) && adventureBossExists("expansions", activeExpansion.url, details, detailsChild))
+        ? bossDetails()
+        : activeView()
+    }
+  </div>
 };
 
 export default ExpansionDetails;

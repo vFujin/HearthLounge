@@ -5,18 +5,18 @@ import Icon from "../../../../../components/icon";
 import ClassChallenge from "./class-challenge";
 import ClassChallengeSelection from "./class-challenge-selection";
 
-const ClassChallenges = ({adventure, cards, detailsChild}) => {
+const ClassChallenges = ({extension, cards, detailsChild}) => {
 
   const classChallenge = () =>{
-    return adventure.class_challenges.find(challenge => challenge.playerClass === detailsChild);
+    return extension.class_challenges.find(challenge => challenge.playerClass === detailsChild);
   };
 
   const listClassChallengeCards = () =>{
     return (
-        adventure.class_challenges.map(challenge =>
+        extension.class_challenges.map(challenge =>
 
             <li key={challenge.playerClass} className={`${challenge.playerClass} active-on-hover ${challenge.playerClass === detailsChild && 'active'}`}>
-              <Link to={`/adventures/${adventure.url}/class-challenges/${challenge.playerClass}`}>
+              <Link to={`/adventures/${extension.url}/class-challenges/${challenge.playerClass}`}>
                 <Icon name={challenge.playerClass} />
                 {/*special place for cards </3 */}
               </Link>
@@ -43,6 +43,6 @@ const ClassChallenges = ({adventure, cards, detailsChild}) => {
 export default ClassChallenges;
 
 ClassChallenges.propTypes = {
-  adventure: PropTypes.object.isRequired,
+  extension: PropTypes.object.isRequired,
   // cards: React.PropTypes.array,
 };

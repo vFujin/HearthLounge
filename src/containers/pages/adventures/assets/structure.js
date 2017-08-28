@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { adventure_details } from '../../../../data/adventure-details';
 
-const Structure = ({adventure}) => {
+const Structure = ({extension}) => {
   const structure = () =>{
-    return adventure_details.filter(a=> a.url === adventure.url).map((a, index) =>
+    return adventure_details.filter(a=> a.url === extension.url).map((a, index) =>
         <ul key={index}>
           <li>{a.structure.wing_amount} wings</li>
           <li>
@@ -32,5 +32,5 @@ const Structure = ({adventure}) => {
 export default Structure;
 
 Structure.propTypes = {
-  adventure: PropTypes.string.isRequired
+  extension: PropTypes.string.isRequired
 };

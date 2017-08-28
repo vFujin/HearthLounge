@@ -12,6 +12,6 @@ const Art = ({src, name}) => {
 export default Art;
 
 Art.propTypes = {
-  src: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired
+  src: PropTypes.string,
+  name: PropTypes.string
 };
