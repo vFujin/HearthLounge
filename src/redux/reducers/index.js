@@ -1,3 +1,13 @@
+// just an idea to automate stuff with your reducers
+// you can use glob
+// https://www.npmjs.com/package/glob
+
+// const reducers = glob.sync('./**/*.js).map((e) => e.split('/').splice(-1))
+// export default combineReducers(...reducers)
+
+// map to return the file name and use it as the property for your root reducers
+
+
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
