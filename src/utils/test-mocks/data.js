@@ -1,6 +1,6 @@
 import faker from 'faker';
 
-export const deckCardMock = () =>({
+export const cardMock = () =>({
   [faker.random.word()]: {
     amount: faker.random.number({'min': 1, 'max': 2}),
         cost: faker.random.number({'min': 0, 'max': 25}),
@@ -10,10 +10,10 @@ export const deckCardMock = () =>({
   }
 });
 
-export const deckCardsMock = (count = 30) =>{
+export const cardsMock = (count = 30) =>{
   let cards = {};
   for(let i = 0; i<count; i++){
-    Object.assign(cards, deckCardMock());
+    Object.assign(cards, cardMock());
   }
   return cards;
 };
@@ -28,7 +28,7 @@ export const deckMock = () => ({
   created: faker.random.number(),
   deckId: faker.random.number(),
   deck: {
-    cards: deckCardsMock()
+    cards: cardsMock()
   },
   comments: faker.random.number(),
 });
@@ -39,4 +39,17 @@ export const decksMock = (count = 10) =>{
    decks.push(deckMock());
   }
   return decks;
+};
+
+export const cardbackMock = () => ({
+  cardbackId: faker.random.number(),
+  name: faker.random.word()
+});
+
+export const cardbacksMock = (count = 30) => {
+  let cardbacks = [];
+  for (let i = 0; i < count; i++){
+    cardbacks.push(cardbackMock());
+  }
+  return cardbacks;
 };

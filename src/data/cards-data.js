@@ -71,13 +71,16 @@ export const fetchData = (reducer) => {
       reducer(cards(fetchedCards));
     })
 };
-
-export const fetchPatchData = reducer => {
-  fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/info`, {
-    headers: {
-      'X-Mashape-Key': MashapeKey
-    }
-  })
-      .then(r => r.json())
-      .then(data => reducer(data.patch))
-};
+//
+// export const fetchPatchData = () => {
+//   return dispatch => {
+//     dispatch(fetchPatchRequest())
+//     fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/info`, {
+//       headers: {
+//         'X-Mashape-Key': MashapeKey
+//       }
+//     })
+//         .then(r => r.json())
+//         .then(data => (data.patch))
+//   }
+// };

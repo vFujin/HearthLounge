@@ -19,7 +19,6 @@ describe('#createDeckActions', () =>{
   testActions(actions.showDeckEditingTool, types.SHOW_DECK_EDITING_TOOL, 'editingTool', true);
   testActions(actions.toggleDeckMechanics, types.TOGGLE_DECK_MECHANICS, 'deckMechanics', true);
   testActions(actions.toggleImgReadyDecklist, types.TOGGLE_IMG_READY_DECKLIST, 'imgReadyDecklist', true);
-  testActions(actions.updateURL, types.UPDATE_URL, 'deckUrl', 'foo');
   testActions(actions.editDeck, types.EDIT_DECK, 'deck', 'foo');
   testActions(actions.updateDeckstring, types.UPDATE_DECKSTRING, 'deckstring', 'foo');
   testActions(actions.simplifyDeck, types.SIMPLIFY_DECK, 'simplifiedDeck', 'foo');

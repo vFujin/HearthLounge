@@ -7,7 +7,7 @@ import NotFound from '../../shared-assets/not-found';
 import SelectExtension from '../../shared-assets/extensions/select-extension';
 import {expansionExists} from '../../../utils/checkIfPathExist'
 
-const Expansions = ({cards, params}) => {
+const Expansions = ({cards, params, location}) => {
   const {details, expansion, detailsChild} = params;
 
 

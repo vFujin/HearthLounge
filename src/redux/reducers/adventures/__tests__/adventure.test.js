@@ -1,8 +1,8 @@
 import createAdventureReducer from '../adventure';
 import * as types from "../../../types/adventures/adventures";
-import {fakedCardbacksArr} from "../__mockData__/cardbacks";
-import {fakedDecksArr} from "../__mockData__/decks";
-
+import {cardbacksMock, decksMock} from "../../../../utils/test-mocks/data";
+// import _ from 'lodash';
+// import {updateAdventureCardbacks} from "../../../actions/adventures/adventures";
 describe('#createDeckReducers', () => {
 
   test('should return initial state', () => {
@@ -26,6 +26,6 @@ describe('#createDeckReducers', () => {
     });
   };
 
-  testFetching('decks', types.FETCH_ADVENTURE_DECKS, fakedDecksArr());
-  testFetching('cardbacks', types.FETCH_CARDBACKS, fakedCardbacksArr());
+  testFetching('decks', types.FETCH_ADVENTURE_DECKS, decksMock());
+  testFetching('cardbacks', types.FETCH_CARDBACKS, cardbacksMock());
 });

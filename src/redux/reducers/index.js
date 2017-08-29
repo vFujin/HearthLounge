@@ -2,6 +2,7 @@ import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
 import Home from './home';
+import CurrentHsPatch from './current-hs-patch';
 import Entry from './entry/entry'
 import Users from './users';
 import Cards from './cards';
@@ -16,6 +17,7 @@ import RedditPosts from './reddit/posts'
 
 const rootReducer = combineReducers({
   home: Home,
+  patch: CurrentHsPatch,
   entry: Entry,
   users: Users,
   cards: Cards,

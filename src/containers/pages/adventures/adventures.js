@@ -7,7 +7,7 @@ import NotFound from '../../shared-assets/not-found';
 import SelectExtension from '../../shared-assets/extensions/select-extension';
 import {adventureExists} from '../../../utils/checkIfPathExist';
 
-const Adventures = ({cards, params})=> {
+const Adventures = ({cards, params, location})=> {
   const {adventure, details, detailsChild} = params;
   const rightContainer = () => {
     let path = location.pathname.split("/")[2];

@@ -26,10 +26,6 @@ const initialState = {
 
 export default function(state=initialState, action){
   switch(action.type){
-    case 'UPDATE_CURRENT_PATCH': return {
-        ...state,
-        patch: action.patch
-    };
     case 'UPDATE_CARDS': return {
       ...state,
       cards: action.cards

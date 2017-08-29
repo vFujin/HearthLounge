@@ -11,6 +11,7 @@ import 'antd/lib/dropdown/style/css';
 import 'antd/lib/popover/style/css';
 import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
+import {fetchPatch} from "../redux/actions/current-hs-patch";
 
 
 class Main extends Component{
@@ -20,7 +21,9 @@ class Main extends Component{
   };
 
   componentDidMount() {
-    fetchPatchData(this.props.updateCurrentPatch);
+    this.props.updateCurrentPatch();
+
+    // fetchPatchData(this.props.updateCurrentPatch);
     fetchData(this.props.updateCards);
   }
 
@@ -46,7 +49,8 @@ class Main extends Component{
             authenticated,
             activeUser,
             cards,
-            patch
+            patch,
+            location
           })}
           <Footer/>
         </div>
@@ -68,9 +72,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateCurrentPatch: patch => dispatch({
-      type: 'UPDATE_CURRENT_PATCH', patch
-    }),
+    updateCurrentPatch: () => fetchPatch(dispatch),
     updateCards: (cards) => dispatch({
       type: 'UPDATE_CARDS', cards
     }),

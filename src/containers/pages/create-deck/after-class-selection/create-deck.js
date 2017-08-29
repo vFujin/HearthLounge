@@ -198,7 +198,7 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) => {
   const {
     toggleFilters, showDeckEditingTool, toggleDeckMechanics,
-    toggleImgReadyDecklist, updateURL, editDeck, updateDeckstring, simplifyDeck, updateCurrentCardsLoaded, updateImportedDeckstring, filterCards,
+    toggleImgReadyDecklist, editDeck, updateDeckstring, simplifyDeck, updateCurrentCardsLoaded, updateImportedDeckstring, filterCards,
     toggleSearchBox, updateCardSearchValue, toggleImportedDeckstringPopover
   } = deckCreationActions;
 
@@ -207,7 +207,6 @@ const mapDispatchToProps = (dispatch) => {
     showDeckEditingTool: editingTool => dispatch(showDeckEditingTool(editingTool)),
     toggleDeckMechanics: deckMechanics => dispatch(toggleDeckMechanics(deckMechanics)),
     toggleImgReadyDecklist: imgReadyDecklist => dispatch(toggleImgReadyDecklist(imgReadyDecklist)),
-    updateURL: deckUrl => dispatch(updateURL(deckUrl)),
     editDeck: deck => dispatch(editDeck(deck)),
     updateDeckstring: deckstring => dispatch(updateDeckstring(deckstring)),
     simplifyDeck: simplifiedDeck => dispatch(simplifyDeck(simplifiedDeck)),

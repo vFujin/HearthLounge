@@ -1,7 +1,7 @@
 import * as actions from '../adventures';
 import * as types from '../../../types/adventures/adventures';
 import lowerCase from 'lodash/lowerCase';
-import {decksMock} from "../../../../utils/test-mocks/decks";
+import {decksMock} from "../../../../utils/test-mocks/data";
 
 describe('#createAdventureActions', () => {
   const testActions = (action, type, key, state) => {
