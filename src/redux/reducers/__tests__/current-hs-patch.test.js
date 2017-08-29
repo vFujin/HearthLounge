@@ -9,9 +9,6 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('async patch actions', ()=>{
-  afterEach(() =>{
-    nock.cleanAll();
-  });
 
   test('creates FETCH_PATCH_SUCCESS when fetching patch has been done', () =>{
     nock('https://omgvamp-hearthstone-v1.p.mashape.com', {
@@ -19,12 +16,12 @@ describe('async patch actions', ()=>{
         'X-Mashape-Key': MashapeKey
       }
     })
-      .get('/info')
+        .get('/info')
       .reply(200, {body: {patch: '9.0'}});
 
     const expectedActions = [
       {type: types.FETCH_PATCH_REQUEST},
-      {type: types.FETCH_PATCH_SUCCESS, body: {patch: '9.0'}}
+      {type: types.FETCH_PATCH_SUCCESS, current: '9.0.0.20457'}
     ];
 
     const store = mockStore({patch: null});
@@ -32,5 +29,9 @@ describe('async patch actions', ()=>{
     return store.dispatch(actions.fetchPatch()).then(()=>{
       expect(store.getActions()).toEqual(expectedActions);
     })
-  })
+  });
+
+  afterEach(() =>{
+    nock.cleanAll();
+  });
 });

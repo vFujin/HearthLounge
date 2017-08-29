@@ -22,15 +22,20 @@ export function fetchPatchFailure(err){
   }
 }
 
-export function fetchPatch(dispatch) {
-  dispatch(fetchPatchRequest());
+export function fetchPatch() {
+  return (dispatch) => {
+    dispatch(fetchPatchRequest());
 
-  return fetch('https://omgvamp-hearthstone-v1.p.mashape.com/info', {
-    headers: {
-      'X-Mashape-Key': MashapeKey
-    }
-  })
-      .then(res => res.json())
-      .then(data => dispatch(fetchPatchSuccess(data.patch)))
-      .catch(err => dispatch(fetchPatchFailure(err)))
+    return fetch('https://omgvamp-hearthstone-v1.p.mashape.com/info', {
+      headers: {
+        'X-Mashape-Key': MashapeKey
+      }
+    })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          dispatch(fetchPatchSuccess(data.patch))
+        })
+        .catch(err => dispatch(fetchPatchFailure(err)))
+  }
 }

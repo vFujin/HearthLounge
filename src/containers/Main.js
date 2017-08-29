@@ -5,7 +5,7 @@ import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
 import {signOut} from '../firebase/user/utils';
-import {fetchData, fetchPatchData} from '../data/cards-data';
+import {fetchData} from '../data/cards-data';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';
 import 'antd/lib/popover/style/css';
@@ -21,7 +21,7 @@ class Main extends Component{
   };
 
   componentDidMount() {
-    this.props.updateCurrentPatch();
+    fetchPatch()
 
     // fetchPatchData(this.props.updateCurrentPatch);
     fetchData(this.props.updateCards);
@@ -64,13 +64,15 @@ Main.propTypes = {
 };
 
 const mapStateToProps = state =>{
-  const {cards, patch} = state.cards;
+  const {cards} = state.cards;
+  const {patch} = state.patch;
   const {authenticated, activeUser} = state.users;
   const {playerClass} = state.deckCreation;
   return {cards, patch, authenticated, activeUser, playerClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
     updateCurrentPatch: () => fetchPatch(dispatch),
     updateCards: (cards) => dispatch({

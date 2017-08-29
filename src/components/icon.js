@@ -57,9 +57,6 @@ const selectType = (
     }
   };
 
-  console.log(domain)
-
-
   let icon = (name) => {
     let icon = <span className={`hs-icon icon-${name} ${className}`}></span>;
     return tooltip ? iconWrapper(icon) : icon;
