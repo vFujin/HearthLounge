@@ -1,5 +1,5 @@
 import createAdventureReducer from '../adventure';
-import * as types from "../../../types/adventures/boss";
+import * as types from "../../../types/adventures/adventures";
 import {fakedCardbacksArr} from "../__mockData__/cardbacks";
 import {fakedDecksArr} from "../__mockData__/decks";
 

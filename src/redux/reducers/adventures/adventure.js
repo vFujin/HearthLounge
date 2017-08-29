@@ -1,4 +1,4 @@
-import {FETCH_CARDBACKS, FETCH_ADVENTURE_DECKS, UPDATE_ADVENTURE_CARDBACKS} from "../../types/adventures/boss";
+import {FETCH_CARDBACKS, FETCH_ADVENTURE_DECKS, UPDATE_ADVENTURE_CARDBACKS} from "../../types/adventures/adventures";
 
 const initialState = {
   cardbacks: [],

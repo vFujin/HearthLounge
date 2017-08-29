@@ -1,4 +1,4 @@
-import {FETCH_ADVENTURE_DECKS, FETCH_CARDBACKS, UPDATE_ADVENTURE_CARDBACKS} from "../../types/adventures/boss";
+import {FETCH_ADVENTURE_DECKS, FETCH_CARDBACKS, UPDATE_ADVENTURE_CARDBACKS} from "../../types/adventures/adventures";
 
 export function fetchAdventureDecks(decks){
   return {
