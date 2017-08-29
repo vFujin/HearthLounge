@@ -1,3 +1,11 @@
+// you might want to rewrite components like this
+
+// export default () => (
+//  <div>
+//    ...
+//  </div>
+// )
+
 import React from 'react';
 import { Link } from 'react-router'
 const CardsBlock = () => {
