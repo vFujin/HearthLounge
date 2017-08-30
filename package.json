@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "antd": "^2.8.1",
+    "axios": "^0.16.2",
     "date-fns": "^1.28.5",
     "deckstrings": "^1.1.0",
     "dom-to-image": "^2.5.2",
@@ -31,6 +32,7 @@
     "react-router-redux": "latest",
     "react-treeview": "^0.4.7",
     "redux": "^3.6.0",
+    "redux-saga": "^0.15.6",
     "redux-thunk": "^2.2.0",
     "whatwg-fetch": "^2.0.2"
   },

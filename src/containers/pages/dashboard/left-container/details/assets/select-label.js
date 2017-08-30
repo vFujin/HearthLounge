@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'antd/lib/select';
-import {dashboard_data} from '../../../../../../data/dashboard';
+import {default as dashboard_data} from '../../../../../../data/dashboard';
 
 const SelectLabel = ({id, title, placeholder, disabled, handleSelectChange}) => {
   const Option = Select.Option;
