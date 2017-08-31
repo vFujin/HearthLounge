@@ -1,30 +1,35 @@
 import * as types from '../../types/reddit';
 
 const initialState = {
-  posts: [],
+  posts: {},
   collapsedComments: [],
   activeCategoryFilter: 'hot'
 };
 
 export default function(state=initialState, {type, payload}){
-  console.log("foo", type);
   switch(type){
     case types.FETCH_REDDIT_POSTS_REQUEST:
-      return{
-      ...state,
-      loading: true
-    };
+      return {
+        ...state,
+        posts: {
+          loading: true
+        }
+      };
     case types.FETCH_REDDIT_POSTS_SUCCESS:
       return {
         ...state,
-        loading: false,
-        posts: payload
+        posts: {
+          loading: false,
+          all: payload
+        }
       };
     case types.FETCH_REDDIT_POSTS_FAILURE:
       return {
         ...state,
-        loading: false,
-        error: payload
+        posts: {
+          loading: false,
+          error: payload
+        }
       };
 
     case types.UPDATE_FILTERED_POSTS: return {

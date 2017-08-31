@@ -9,13 +9,13 @@ export function fetchPatchRequest(){
 export function fetchPatchSuccess(current){
   return {
     type: types.FETCH_PATCH_SUCCESS,
-    current
+    payload: current
   }
 }
 
 export function fetchPatchFailure(error){
   return {
     type: types.FETCH_PATCH_FAILURE,
-    error
+    payload: error
   }
 }

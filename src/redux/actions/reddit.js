@@ -9,13 +9,13 @@ export function fetchRedditPostsRequest(){
 export function fetchRedditPostsSuccess(posts){
   return {
     type: types.FETCH_REDDIT_POSTS_SUCCESS,
-    posts
+    payload: posts
   }
 }
 
 export function fetchRedditPostsFailure(error){
   return {
     type: types.FETCH_REDDIT_POSTS_FAILURE,
-    error
+    payload: error
   }
 }

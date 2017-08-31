@@ -1,17 +1,23 @@
 import React from 'react';
 import PostSnippet from './post-snippet/post'
 import Loader from "../../../../components/loader";
+import FetchError from "../../../../components/fetch-error";
 const ForumBlock = ({posts}) => {
-
+  const {loading, all} = posts;
   const mapPosts = () => {
-    return posts.map(post =>
-      <PostSnippet key={post.id} post={post}/>
-    )
+    try{
+      return all.slice(0, 6).map(post =>
+          <PostSnippet key={post.id} post={post}/>
+      )
+    }
+    catch (error){
+      return <FetchError />
+    }
   };
 
   return (
       <ul>
-        {posts && posts.length < 1 ? <Loader theme="light"/> : mapPosts()}
+        {loading ? <Loader theme="light"/> : mapPosts()}
       </ul>
   );
 };

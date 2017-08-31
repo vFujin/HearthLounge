@@ -3053,6 +3053,13 @@ input::-webkit-search-cancel-button {
     -webkit-transform: perspective(140px) rotateY(180deg);
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
+.fetch-error {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 /*
  *  Select
  */
@@ -3365,7 +3372,7 @@ body {
   overflow: hidden;
   font-size: inherit;
   line-height: inherit;
-  color: #000; }
+  color: black; }
   body .hs-icon {
     font-family: 'Hearthstone';
     font-size: 2vw; }
