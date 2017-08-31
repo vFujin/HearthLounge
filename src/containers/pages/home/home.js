@@ -12,13 +12,14 @@ import { TwitchBlock } from './twitch/twitch';
 import {getDecks} from "../../../firebase/decks/deck/read";
 import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
-import {fetchRedditPosts} from "../../../api/reddit";
 import {fetchFilteredDecks, isFilterActive} from "./utils/deck-filters";
+import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/types/reddit";
 class Home extends PureComponent{
 
   componentDidMount() {
     getDecks(false, null, false, decks=>this.props.updateDecks(decks));
-    fetchRedditPosts(data => this.props.updateRedditPosts(data))
+    console.log(this.props.updateRedditPosts());
+
   }
 
   handleDeckClick = (e) =>{
@@ -37,7 +38,7 @@ class Home extends PureComponent{
   };
 
   render() {
-    const {decks, redditPosts, deckFilters} = this.props;
+    const {decks, posts, deckFilters} = this.props;
     return (
         <div className="container__index home">
           <ul className="home__list">
@@ -55,7 +56,7 @@ class Home extends PureComponent{
               <ExtensionsBlock/>
             </HomeBlock>
             <HomeBlock icon="reddit">
-              <ForumBlock posts={redditPosts}/>
+              <ForumBlock posts={posts}/>
             </HomeBlock>
             <HomeBlock icon="card" title="cards">
               <CardsBlock/>
@@ -75,8 +76,9 @@ class Home extends PureComponent{
 }
 
 const mapStateToProps = (state) => {
-  const {decks, redditPosts, deckFilters} = state.home;
-  return {decks, redditPosts, deckFilters};
+  const {decks, deckFilters} = state.home;
+  const {posts} = state.redditPosts;
+  return {decks, posts, deckFilters};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -87,9 +89,7 @@ const mapDispatchToProps = (dispatch) => {
     updateDeckFilters: (deckFilters) => dispatch({
       type: 'UPDATE_DECK_FILTERS', deckFilters
     }),
-    updateRedditPosts: (redditPosts) => dispatch({
-      type: 'UPDATE_REDDIT_POSTS', redditPosts
-    })
+    updateRedditPosts: () => dispatch({type: FETCH_REDDIT_POSTS_REQUEST})
   };
 };
 

@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 import _ from 'lodash';
 import {Link} from 'react-router';
 import {LeftContainer} from './left-container/left-container';
@@ -7,6 +8,7 @@ import {createUser} from '../../../firebase/user/create';
 import {updateUsername} from '../../../firebase/user/update';
 import {getUsername} from '../../../firebase/user/read';
 import {signIn} from '../../../firebase/user/utils';
+import inputVal from "./right-container/utils/input-val";
 
 const findUsername = _.debounce((input, updateUsernameExistStatus) => {
   getUsername(input, (value) => updateUsernameExistStatus(value))
@@ -19,9 +21,16 @@ class Entry extends PureComponent {
     //debounce here
   }
 
+  componentWillMount(){
+    const {location, activeUser} = this.props;
+    if(location.pathname === '/sign-up/update-profile' && !activeUser){
+      browserHistory.push('/sign-up');
+    }
+  }
+
   componentDidMount() {
-    const {location, signUp_firstStep, updateSignUpStatus} = this.props;
-    if (location.pathname === '/sign-up/update-profile' && signUp_firstStep !== "succes") {
+    const {location, signUp_firstStep, updateSignUpStatus, activeUser} = this.props;
+    if (location.pathname === '/sign-up/update-profile' && signUp_firstStep !== "succes" && activeUser) {
       updateSignUpStatus("success", "")
     }
   }
@@ -63,8 +72,8 @@ class Entry extends PureComponent {
 
   handleSignIn = (e) => {
     e.preventDefault();
-    const {signIn_email, signIn_password} = this.props;
-    signIn(signIn_email, signIn_password);
+    const {signIn_email} = this.props;
+    signIn(signIn_email, inputVal('signIn_password'));
   };
 
   handleCheckboxClick = (e) => {
@@ -107,8 +116,8 @@ class Entry extends PureComponent {
 }
 
 const mapStateToProps = (state) =>{
-  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_avatar, signUp_firstStep, signUp_secondStep, usernameFree} = state.entry;
-  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signIn_password, signUp_avatar, signUp_firstStep, signUp_secondStep, usernameFree};
+  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signUp_avatar, signUp_firstStep, signUp_secondStep, usernameFree} = state.entry;
+  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signUp_avatar, signUp_firstStep, signUp_secondStep, usernameFree};
 };
 
 const mapDispatchToProps = (dispatch) => {

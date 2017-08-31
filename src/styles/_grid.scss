@@ -28,7 +28,6 @@
           .right-container{
             .hot-decks{
               display: grid;
-              height: calc(100% - 2vh);
               grid-row-gap: 1vh;
               grid-template-rows: repeat(2, calc(50% - 5px));
               grid-template-columns: repeat(5, calc(20% - .8vh));

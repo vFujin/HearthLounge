@@ -28,7 +28,7 @@ const DecksBlock = ({decks, deckFilters, handleDeckClick, handleFilterClick}) =>
         <div className="home__block--body">
           <div className="left-container">
             <div className="sidebar">
-              <SearchDecks/>
+              {/*<SearchDecks/>*/}
               <ModeSelection activeModeFilter={mode || ''} handleFilterClick={handleFilterClick}/>
             </div>
           </div>

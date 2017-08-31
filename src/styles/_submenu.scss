@@ -1,3 +1,5 @@
+@import 'colors';
+@import 'mixins';
 .decks{
   .submenu{
     width: 12vw;
@@ -20,13 +22,11 @@
   li{
     @include transition(all .4s ease);
     background-color: $dark-grey;
-    padding: 0 .5vw 0 0;
     height: 5.5vh;
     display: grid;
     .submenu__icon {
       @include transition(border .4s ease);
-      border-width: 2px;
-      border-style: solid;
+      border:2px solid;
       padding: 5px;
     }
     a{

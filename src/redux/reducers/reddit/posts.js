@@ -1,39 +1,55 @@
+import * as types from '../../types/reddit';
+
 const initialState = {
   posts: [],
   collapsedComments: [],
   activeCategoryFilter: 'hot'
 };
 
+export default function(state=initialState, {type, payload}){
+  console.log("foo", type);
+  switch(type){
+    case types.FETCH_REDDIT_POSTS_REQUEST:
+      return{
+      ...state,
+      loading: true
+    };
+    case types.FETCH_REDDIT_POSTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        posts: payload
+      };
+    case types.FETCH_REDDIT_POSTS_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: payload
+      };
 
-export default function(state=initialState, action){
-  switch(action.type){
-    case 'UPDATE_POSTS': return {
+    case types.UPDATE_FILTERED_POSTS: return {
       ...state,
-      posts: action.posts
+      filteredPosts: payload
     };
-    case 'UPDATE_FILTERED_POSTS': return {
+    case types.UPDATE_ACTIVE_POST: return {
       ...state,
-      filteredPosts: action.filteredPosts
+      activePost: payload
     };
-    case 'UPDATE_ACTIVE_POST': return {
-      ...state,
-      activePost: action.activePost
-    };
-    case 'UPDATE_POST_COMMENTS': return {
+    case types.UPDATE_POST_COMMENTS: return {
         ...state,
-      postComments: action.postComments
+      postComments: payload
     };
-    case 'TOGGLE_COLLAPSE': return {
+    case types.TOGGLE_COLLAPSE: return {
         ...state,
-        collapsedComments: action.collapsedComments
+        collapsedComments: payload
     };
-    case 'TOGGLE_DOMAIN_FILTER': return {
+    case types.TOGGLE_DOMAIN_FILTER: return {
       ...state,
-      activeDomainFilter: action.activeDomainFilter
+      activeDomainFilter: payload
     };
-    case 'TOGGLE_CATEGORY_FILTER': return {
+    case types.TOGGLE_CATEGORY_FILTER: return {
       ...state,
-      activeCategoryFilter: action.activeCategoryFilter
+      activeCategoryFilter: payload
     };
     default: return state;
   }

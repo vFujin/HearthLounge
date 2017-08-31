@@ -1,20 +1,27 @@
-import {FETCH_PATCH_SUCCESS, FETCH_PATCH_FAILURE} from "../types/current-hs-patch";
+import * as types from "../types/current-hs-patch";
 
 const initialState = {
   current: null
 };
 
-export default function(state=initialState, action) {
-  switch (action.type) {
-    case FETCH_PATCH_SUCCESS:
+export default function(state=initialState, {type, payload}) {
+  switch (type) {
+    case types.FETCH_PATCH_REQUEST:
       return {
         ...state,
-        current: action.current
+        loading: true
       };
-    case FETCH_PATCH_FAILURE:
+    case types.FETCH_PATCH_SUCCESS:
       return {
         ...state,
-        current: action.err
+        loading: false,
+        current: payload
+      };
+    case types.FETCH_PATCH_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: payload
       };
     default:
       return state;

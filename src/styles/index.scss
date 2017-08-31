@@ -13,6 +13,9 @@
 /*
   Layout
  */
+html{
+  line-height: normal;
+}
 html, body{
   height: 100%;
 }
@@ -21,6 +24,7 @@ body{
   overflow: hidden;
   font-size: inherit;
   line-height: inherit;
+  color: black;
   .hs-icon{
     font-family: 'Hearthstone';
     font-size: 2vw;
@@ -337,9 +341,9 @@ footer{
       font-weight: normal;
       background-color: $dark-grey;
       padding: .5vh;
+      height: 100%;
       color: $pearl;
       text-transform: capitalize;
-      height: calc(100% - 1vh);
     }
     .sidebar__body {
       @include scrollbar($light-grey);
@@ -1208,7 +1212,8 @@ footer{
         .right-container {
           width: 85%;
           .hot-decks {
-            width: calc(100% - 20px);
+            height: 100%;
+            width: 100%;
             padding: 10px;
             .upper-row, .bottom-row {
               width: 100%;
@@ -1237,9 +1242,9 @@ footer{
           -moz-user-select: none;
           -ms-user-select: none;
           user-select: none;
-          height: calc(100% - 20px);
+          height: 100%;
           padding: 10px;
-          width: calc(100% - 20px);
+          width: 100%;
         }
       }
     }
@@ -1354,7 +1359,7 @@ footer{
               display: grid;
               grid-template-columns: 10% 10% calc(80% - 10px);
               grid-column-gap: 5px;
-              width: calc(100% - 2vh);
+              width: 100%;
               padding: 0 1vh;
               .upvotes, .comments {
                 display: flex;

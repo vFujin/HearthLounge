@@ -24,9 +24,9 @@ const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.
   };
 
   return (
-      <li style={{height: barHeight, marginRight: barSpacing}}>
+      <li style={{marginRight: barSpacing}}>
         {count()}
-        <div className="bar" style={{"width": barWidth}}>
+        <div className="bar" style={{"width": barWidth, height: barHeight}}>
           <span style={{height: `${(s/max)*100 || 0}%`}}></span>
         </div>
         {showIcon()}

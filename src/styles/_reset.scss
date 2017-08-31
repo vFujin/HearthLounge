@@ -1,4 +1,6 @@
 @import "colors";
+@import "mixins";
+
 body{
   background: $pearl;
 }
@@ -34,6 +36,12 @@ input{
 }
 
 a{
+  color: inherit;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  @include transition(none);
   &:active, &:hover, &:link, &:visited{
     color: inherit;
     text-decoration: none;

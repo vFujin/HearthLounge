@@ -11,7 +11,7 @@ const DeckDetails = ({allCards, editingDecklist, deckEditing, deckstring, player
   return (
       <div className="container__mana-curve">
         <h3>Mana Curve</h3>
-        <ManaCurve deck={cards} max={max} />
+        <ManaCurve deck={cards} max={max} barHeight="70%" padding="1vh 0"/>
 
         <h3>Cards <CopyDeck deckstring={deckstring} playerClass={playerClass}/></h3>
         <Decklist cards={cards}

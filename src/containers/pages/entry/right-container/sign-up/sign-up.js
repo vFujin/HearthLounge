@@ -8,7 +8,7 @@ const SignUp = ({children, activeUser, usernameFree, signUp_username, signUp_ema
                   handleCheckboxClick, tos, location, updateFormProperty, handleUpdateProfileFormSubmit}) => {
 
   const signUp = () =>{
-    return location.pathname === "/sign-up"
+    return (location.pathname === "/sign-up" || !activeUser)
         ? <SignUpForm signUp_email={signUp_email}
                       signUp_confirmEmail={signUp_confirmEmail}
                       signUp_password={signUp_password}

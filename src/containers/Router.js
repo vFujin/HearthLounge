@@ -40,6 +40,7 @@ import RedditPosts from './pages/reddit/posts/posts';
 import Entry from './pages/entry/entry';
 import SignUp from './pages/entry/right-container/sign-up/sign-up';
 import SignUpUpdateProfile from './pages/entry/right-container/sign-up/second-phase/sign-up-update-profile';
+import SignInResetPassword from './pages/entry/right-container/sign-in/reset-password';
 import SignIn from './pages/entry/right-container/sign-in/sign-in';
 
 import NotFound from './shared-assets/not-found';
@@ -118,7 +119,9 @@ const App = ({store}) =>{
         <Route path="entry"      component={Entry}>
           <Redirect from="/sign-up/" to="/sign-up"/>
 
-          <Route path="/sign-in" component={SignIn} />
+          <Route path="/sign-in" component={SignIn}>
+            <Route path="reset-password" component={SignInResetPassword} />
+          </Route>
           <Route path="/sign-up" component={SignUp}>
             <Route path="update-profile" component={SignUpUpdateProfile} />
           </Route>

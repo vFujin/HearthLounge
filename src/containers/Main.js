@@ -11,7 +11,8 @@ import 'antd/lib/dropdown/style/css';
 import 'antd/lib/popover/style/css';
 import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
-import {fetchPatch} from "../redux/actions/current-hs-patch";
+import {fetchPatch} from "../redux/sagas/current-hs-patch.saga";
+import {FETCH_PATCH_REQUEST} from "../redux/types/current-hs-patch";
 
 
 class Main extends Component{
@@ -21,10 +22,10 @@ class Main extends Component{
   };
 
   componentDidMount() {
-    fetchPatch()
-
+    const {updateCurrentPatch, updateCards} = this.props;
+    updateCurrentPatch();
     // fetchPatchData(this.props.updateCurrentPatch);
-    fetchData(this.props.updateCards);
+    fetchData(updateCards);
   }
 
   // shouldComponentUpdate(nextProps){
@@ -74,7 +75,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    updateCurrentPatch: () => fetchPatch(dispatch),
+    updateCurrentPatch: () => dispatch({type: FETCH_PATCH_REQUEST}),
     updateCards: (cards) => dispatch({
       type: 'UPDATE_CARDS', cards
     }),

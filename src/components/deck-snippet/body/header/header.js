@@ -10,7 +10,7 @@ export const DSHeader = ({archetype, playerClass, deck}) => {
         <DSType archetype={archetype} playerClass={playerClass} />
         <ManaCurve deck={deck.cards}
                    max={deck.max}
-                   barHeight="20px"
+                   barHeight="15px"
                    barWidth="4px"
                    barSpacing="2px"
                    showCount={false}

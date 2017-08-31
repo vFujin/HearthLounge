@@ -11,7 +11,7 @@ const ForumBlock = ({posts}) => {
 
   return (
       <ul>
-        {posts.length < 1 ? <Loader theme="light"/> : mapPosts()}
+        {posts && posts.length < 1 ? <Loader theme="light"/> : mapPosts()}
       </ul>
   );
 };

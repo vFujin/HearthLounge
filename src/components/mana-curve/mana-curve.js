@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ManaCurveBar from './mana-curve-graph';
 
-const ManaCurve = ({deck, max, barHeight, barWidth, barSpacing, showCount, showIcons}) => {
+const ManaCurve = ({deck, max, barHeight, barWidth, barSpacing, showCount, showIcons, padding}) => {
   return (
-      <ul className="graph">
+      <ul className="graph" style={{padding: padding || 0}}>
         {[...new Array(7)].map((bar, i)=>
             <ManaCurveBar key={i}
                           cost={i}
@@ -42,5 +42,6 @@ ManaCurve.propTypes = {
   barSpacing: PropTypes.string,
   max: PropTypes.number,
   showCount: PropTypes.bool,
-  showIcons: PropTypes.bool
+  showIcons: PropTypes.bool,
+  padding: PropTypes.string,
 };
