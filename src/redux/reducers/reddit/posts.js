@@ -1,7 +1,9 @@
 import * as types from '../../types/reddit';
 
 const initialState = {
-  posts: {},
+  posts: {
+    loading: true
+  },
   collapsedComments: [],
   activeCategoryFilter: 'hot'
 };
@@ -31,11 +33,6 @@ export default function(state=initialState, {type, payload}){
           error: payload
         }
       };
-
-    case types.UPDATE_FILTERED_POSTS: return {
-      ...state,
-      filteredPosts: payload
-    };
     case types.UPDATE_ACTIVE_POST: return {
       ...state,
       activePost: payload

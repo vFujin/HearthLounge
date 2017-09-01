@@ -8,7 +8,8 @@ const initialState = {
   signUp_confirmEmail: "",
   signUp_password: "",
   signUp_confirmPassword: "",
-  tos: false
+  tos: false,
+  resetPasswordView: false
 };
 
 export default function(state=initialState, action){
@@ -31,6 +32,10 @@ export default function(state=initialState, action){
       authenticated: action.authenticated,
       activeUser: action.activeUser
     };
+    case 'TOGGLE_RESET_PASSWORD_VIEW': return {
+      ...state,
+      resetPasswordView: action.resetPasswordView
+      };
     default: return state;
   }
 }

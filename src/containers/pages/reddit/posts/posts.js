@@ -7,10 +7,12 @@ import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar';
 import PostSelection from './right-container/post-selection';
 import {stripDomains} from '../../../../utils/reddit/posts';
-import {addQuery} from '../../../../utils/utils-router';
+import {addQuery, removeQuery} from '../../../../utils/utils-router';
+import {FETCH_REDDIT_POSTS_REQUEST} from "../../../../redux/types/reddit";
 
 const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, updateActivePost, updateFilteredPosts, activeCategoryFilter, activeDomainFilter, toggleDomainFilter, toggleCategoryFilter}) => {
   const {category, domain} = location.query;
+  const {all} = posts;
 
   const handlePostClick = (activePost) =>{
     updateActivePost(activePost);
@@ -20,33 +22,24 @@ const RedditPosts = ({posts, location, activePost, updatePosts, filteredPosts, u
     e.preventDefault();
 
     let filter = e.currentTarget.id;
-    if(filter !== category || filter !== activeCategoryFilter) {
-      updatePosts([]);
-      fetch(`https://www.reddit.com/r/hearthstone/${filter}.json`)
-          .then(res => res.json())
-          .then(res => {
-            const posts = res.data.children.map(obj => obj.data);
-
-            updatePosts(posts);
-            if(domain){
-              let filteredPosts = posts.filter(post=> stripDomains(post) === domain);
-              updateFilteredPosts(filteredPosts)
-            }
-
-          });
+    if(filter !== category) {
+      updatePosts(filter);
       addQuery({category: [filter]});
       toggleCategoryFilter(filter);
     }
   };
 
-
   const handleDomainClick = (e) =>{
     let targetId = e.currentTarget.id;
     let targetDomain = targetId !== 'bubbles2' ? targetId : 'hearthstone';
-    let filteredPosts = posts.filter(post=> stripDomains(post) === targetDomain);
-
+    let filteredPosts = all.filter(post=> stripDomains(post) === targetDomain);
     if(targetDomain === domain){
-      browserHistory.push(`/reddit/posts?category=${activeCategoryFilter}`);
+      // removeQuery("domain");
+      if(category){
+        browserHistory.push(`/reddit/posts?category=${category}`);
+      } else {
+        browserHistory.push(`/reddit/posts`);
+      }
       toggleDomainFilter(null);
       updateFilteredPosts(null);
     } else {
@@ -83,8 +76,8 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updatePosts: (posts) => dispatch({
-      type: 'UPDATE_POSTS', posts
+    updatePosts: (payload) => dispatch({
+      type: FETCH_REDDIT_POSTS_REQUEST, payload
     }),
     updateFilteredPosts: (filteredPosts) => dispatch({
       type: 'UPDATE_FILTERED_POSTS', filteredPosts

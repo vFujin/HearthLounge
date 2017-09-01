@@ -9,6 +9,7 @@ import {updateUsername} from '../../../firebase/user/update';
 import {getUsername} from '../../../firebase/user/read';
 import {signIn} from '../../../firebase/user/utils';
 import inputVal from "./right-container/utils/input-val";
+import {resetPassword} from "../../../firebase/user/utils/reset-password";
 
 const findUsername = _.debounce((input, updateUsernameExistStatus) => {
   getUsername(input, (value) => updateUsernameExistStatus(value))
@@ -29,22 +30,26 @@ class Entry extends PureComponent {
   }
 
   componentDidMount() {
-    const {location, signUp_firstStep, updateSignUpStatus, activeUser} = this.props;
+    const {location, signUp_firstStep, updateSignUpStatus, activeUser, toggleResetPasswordView, resetPasswordView} = this.props;
     if (location.pathname === '/sign-up/update-profile' && signUp_firstStep !== "succes" && activeUser) {
       updateSignUpStatus("success", "")
+    }
+    if(location.pathname === '/sign-in/reset-password' && !resetPasswordView){
+      toggleResetPasswordView(!resetPasswordView);
     }
   }
 
   componentWillUnmount(){
-    const {updateFormProperty} = this.props;
+    const {updateFormProperty, toggleResetPasswordView} = this.props;
     updateFormProperty({
       signIn_password: "",
       signUp_firstStep: "",
       signUp_secondStep: "",
       signUp_confirmEmail: "",
       signUp_password: "",
-      signUp_confirmPassword: ""
-    })
+      signUp_confirmPassword: "",
+    });
+    toggleResetPasswordView(false)
   }
 
    handleInputChange = (e) => {
@@ -76,6 +81,17 @@ class Entry extends PureComponent {
     signIn(signIn_email, inputVal('signIn_password'));
   };
 
+  handleResetPassword = (e) =>{
+    e.preventDefault();
+    const {resetPass_email} = this.props;
+    resetPassword(resetPass_email);
+  };
+
+  toggleResetPasswordViewClick = () =>{
+    const {toggleResetPasswordView, resetPasswordView} = this.props;
+    toggleResetPasswordView(!resetPasswordView)
+  };
+
   handleCheckboxClick = (e) => {
     const {updateFormProperty} = this.props;
     let target = e.target;
@@ -86,10 +102,12 @@ class Entry extends PureComponent {
   render() {
     const {children} = this.props;
 
+
     return (
         <div className={`container__page container__page--oneSided entry`}>
           <div className="wrapper">
             <LeftContainer/>
+
             <div className="breakline v-breakline"></div>
             <div className="container__page--inner container__page--right">
               <div className="topbar">
@@ -102,8 +120,10 @@ class Entry extends PureComponent {
               </div>
               {React.cloneElement(children, {
                 ...this.props,
+                toggleResetPasswordViewClick: this.toggleResetPasswordViewClick,
                 handleInputChange: this.handleInputChange,
                 handleFormSubmit: this.handleFormSubmit,
+                handleResetPassword: this.handleResetPassword,
                 handleUpdateProfileFormSubmit: this.handleUpdateProfileFormSubmit,
                 handleSignIn: this.handleSignIn,
                 handleCheckboxClick: this.handleCheckboxClick
@@ -116,8 +136,8 @@ class Entry extends PureComponent {
 }
 
 const mapStateToProps = (state) =>{
-  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signUp_avatar, signUp_firstStep, signUp_secondStep, usernameFree} = state.entry;
-  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signUp_avatar, signUp_firstStep, signUp_secondStep, usernameFree};
+  const {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signUp_avatar, signUp_firstStep, signUp_secondStep, usernameFree, resetPass_email, resetPasswordView} = state.entry;
+  return {signUp_username, signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos, signIn_email, signUp_avatar, signUp_firstStep, signUp_secondStep, usernameFree, resetPass_email, resetPasswordView};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -125,6 +145,9 @@ const mapDispatchToProps = (dispatch) => {
     updateFormProperty: (props) => (dispatch({
       type: 'EDIT_FORM_PROPERTY', props
     })),
+    toggleResetPasswordView: (resetPasswordView) => dispatch({
+      type: 'TOGGLE_RESET_PASSWORD_VIEW', resetPasswordView
+    }),
     updateSignUpStatus: (signUp_firstStep, signUp_secondStep) => (dispatch({
       type: 'UPDATE_SIGN_UP_STATUS', signUp_firstStep, signUp_secondStep
     })),

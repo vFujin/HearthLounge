@@ -7,14 +7,13 @@ import {checkIfStickied, checkIfBlizzardPost, stripDomains, checkTopbarIconFilte
 import Icon from '../../domain-icons';
 
 const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
+  const {all, loading} = posts;
 
   const mapPosts = (posts) =>{
-    if(!filteredPosts && posts.length < 1){
+    if(loading){
       return <Loader/>
-    } else if (filteredPosts && filteredPosts.length < 1){
-      return <p>Couldn't find any posts</p>
     } else {
-      return posts.map(post => (
+      return all.map(post => (
           <tr id={post.id}
               className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} ${checkTopbarIconFilters(location, post)}`}
               key={post.id}
@@ -30,7 +29,7 @@ const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
   };
 
   return (
-      <div className="content scrollable" style={(posts.length < 1 || (filteredPosts && filteredPosts.length < 1)) ? {overflow: "hidden"} : {overflow: "inherit"}}>
+      <div className="content scrollable" style={(loading || (filteredPosts && filteredPosts.length < 1)) ? {overflow: "hidden"} : {overflow: "inherit"}}>
         <div className="table-scroll">
           <table>
             <thead>
@@ -43,7 +42,7 @@ const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
             </tr>
             </thead>
             <tbody>
-              {mapPosts(filteredPosts || posts)}
+              {mapPosts()}
             </tbody>
           </table>
         </div>
