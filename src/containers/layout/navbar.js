@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
 import EntryNode from './entry-node';
 
-const Navbar = ({handleLogout, activeUser, playerClass}) => {
+const Navbar = ({handleSignOut, activeUser, playerClass}) => {
 
   const listSubmenu = (index, el, sub) =>{
     return (
@@ -57,7 +57,7 @@ const Navbar = ({handleLogout, activeUser, playerClass}) => {
               </Link>
             </li>
         )}
-        <EntryNode handleLogout={handleLogout} activeUser={activeUser}/>
+        <EntryNode handleSignOut={handleSignOut} activeUser={activeUser}/>
       </ul>
     </nav>
   );

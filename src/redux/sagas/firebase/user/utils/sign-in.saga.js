@@ -3,7 +3,7 @@ import {firebaseAuth, refParent} from "../../../../../keys";
 import {error, success} from "../../../../../utils/messages";
 import {browserHistory} from "react-router";
 import * as types from "../../../../types/firebase";
-import * as actions from '../../.././../actions/firebase/user';
+import * as actions from '../../../../actions/firebase/user/utils/sign-in';
 
 export const firebaseSignIn = (payload) => {
   const {email, pass} = payload;

@@ -2,7 +2,8 @@ import * as types from "../types/firebase";
 
 const initialState = {
   activeUser: {
-    loading: true
+    loading: true,
+    authenticated: false
   },
   users: []
 };
@@ -31,6 +32,31 @@ export default function(state=initialState, {type, payload}) {
         activeUser: {
           loading: false,
           authenticated: false,
+          error: payload
+        }
+      };
+
+    case types.FIREBASE_SIGN_OUT_REQUEST:
+      return {
+        ...state,
+        activeUser: {
+          loading: true,
+        }
+      };
+    case types.FIREBASE_SIGN_OUT_SUCCESS:
+      return {
+        ...state,
+        activeUser: {
+          loading: false,
+          authenticated: false
+        }
+      };
+    case types.FIREBASE_SIGN_OUT_ERROR:
+      return {
+        ...state,
+        activeUser: {
+          loading: false,
+          authenticated: true,
           error: payload
         }
       };

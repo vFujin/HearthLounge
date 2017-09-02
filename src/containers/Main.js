@@ -4,15 +4,14 @@ import {connect} from 'react-redux';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
-import {signOut} from '../firebase/user/utils';
 import {fetchData} from '../data/cards-data';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';
 import 'antd/lib/popover/style/css';
 import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
-import {fetchPatch} from "../redux/sagas/current-hs-patch.saga";
 import {FETCH_PATCH_REQUEST} from "../redux/types/current-hs-patch";
+import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/types/firebase";
 
 
 class Main extends Component{
@@ -20,14 +19,18 @@ class Main extends Component{
     super(props);
 
   };
+  handleSignOut = () =>{
+    const {signOut} = this.props;
+    signOut();
+  };
 
 
   componentDidMount() {
-    const {updateCurrentPatch, updateCards} = this.props;
+    const {updateCurrentPatch, updateCards, updateActiveUser} = this.props;
     updateCurrentPatch();
     // fetchPatchData(this.props.updateCurrentPatch);
     fetchData(updateCards);
-    getActiveUser((authenticated, data) => console.log(this.props.updateActiveUser({authenticated, ...data})));
+    getActiveUser((authenticated, data) => updateActiveUser({authenticated, ...data}));
   }
 
   // shouldComponentUpdate(nextProps){
@@ -42,12 +45,13 @@ class Main extends Component{
 
   render(){
     const {authenticated, activeUser, children, location, playerClass, cards, patch} = this.props;
+    const {pathname} = location;
     return (
         <div id="container">
-          <Navbar url={location.pathname}
+          <Navbar url={pathname}
                   activeUser={activeUser}
                   playerClass={playerClass}
-                  handleLogout={(e)=>signOut(e)}/>
+                  handleSignOut={this.handleSignOut}/>
           {React.cloneElement(children, {
             authenticated,
             activeUser,
@@ -85,7 +89,8 @@ const mapDispatchToProps = (dispatch) => {
     }),
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser
-    })
+    }),
+    signOut: () => dispatch({type: FIREBASE_SIGN_OUT_REQUEST})
   }
 };
 

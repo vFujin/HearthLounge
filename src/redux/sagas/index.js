@@ -2,6 +2,7 @@ import {all} from 'redux-saga/effects';
 import {watchPatch} from "./current-hs-patch.saga";
 import {watchRedditPosts} from "./reddit-posts.saga";
 import {watchFirebaseSignIn} from "./firebase/user/utils/sign-in.saga";
+import {watchFirebaseSignOut} from "./firebase/user/utils/sign-out.saga";
 
 export default function* rootSaga(){
   yield all([
@@ -9,6 +10,7 @@ export default function* rootSaga(){
       watchRedditPosts(),
 
       //Firebase
-      watchFirebaseSignIn()
+      watchFirebaseSignIn(),
+      watchFirebaseSignOut()
   ]);
 }

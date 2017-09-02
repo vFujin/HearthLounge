@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import Icon from "../../components/icon";
 
-const EntryNode = ({activeUser, handleLogout}) =>{
+const EntryNode = ({activeUser, handleSignOut}) =>{
   const {username, avatar, authenticated} = activeUser;
   const isAuthenticated = (activeUser && authenticated);
 
@@ -13,7 +13,7 @@ const EntryNode = ({activeUser, handleLogout}) =>{
           <div className="nav__list--labelWrapper">
             {username}
             <ul className="submenu">
-              <li onClick={(e) => handleLogout(e)}>
+              <li onClick={handleSignOut}>
                 <Link to="/">
                   <Icon name="logout"/>
                   Logout
@@ -49,5 +49,5 @@ EntryNode.propTypes = {
     username: PropTypes.string,
     avatar: PropTypes.string
   }),
-  handleLogout: PropTypes.func.isRequired
+  handleSignOut: PropTypes.func.isRequired
 };

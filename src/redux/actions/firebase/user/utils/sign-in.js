@@ -1,4 +1,4 @@
-import * as types from "../../types/firebase";
+import * as types from "../../../../types/firebase";
 
 export function firebaseSignInRequest(){
   return {
