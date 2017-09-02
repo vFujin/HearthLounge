@@ -8,8 +8,7 @@ import {createUser} from '../../../firebase/user/create';
 import {updateUsername} from '../../../firebase/user/update';
 import {getUsername} from '../../../firebase/user/read';
 import inputVal from "./right-container/utils/input-val";
-import {resetPassword} from "../../../firebase/user/utils/reset-password";
-import {FIREBASE_SIGN_IN_REQUEST} from "../../../redux/types/firebase";
+import {FIREBASE_RESET_PASSWORD_REQUEST, FIREBASE_SIGN_IN_REQUEST} from "../../../redux/types/firebase";
 
 const findUsername = _.debounce((input, updateUsernameExistStatus) => {
   getUsername(input, (value) => updateUsernameExistStatus(value))
@@ -90,7 +89,7 @@ class Entry extends PureComponent {
 
   handleResetPassword = (e) =>{
     e.preventDefault();
-    const {resetPass_email} = this.props;
+    const {resetPass_email, resetPassword} = this.props;
     resetPassword(resetPass_email);
   };
 
@@ -108,8 +107,6 @@ class Entry extends PureComponent {
 
   render() {
     const {children} = this.props;
-
-
     return (
         <div className={`container__page container__page--oneSided entry`}>
           <div className="wrapper">
@@ -166,7 +163,8 @@ const mapDispatchToProps = (dispatch) => {
     }),
     updateActiveUser: (authenticated, activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', authenticated, activeUser
-    })
+    }),
+    resetPassword: payload => dispatch({type: FIREBASE_RESET_PASSWORD_REQUEST, payload})
   }
 };
 

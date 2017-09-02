@@ -14,7 +14,7 @@ export const SignInResetPassword = ({handleInputChange, handleResetPassword, res
         </div>
 
         <div className="button-wrapper">
-          <button onClick={(e) => handleResetPassword(e, resetPass_email)} className="btn-pearl">
+          <button onClick={e => handleResetPassword(e, resetPass_email)} className="btn-pearl">
             Submit
           </button>
           <Link to="/sign-in/reset-password">

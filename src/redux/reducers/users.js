@@ -99,6 +99,36 @@ export default function(state=initialState, {type, payload}) {
           error: payload
         }
       };
+
+      /**
+       * RESET PASSWORD
+       */
+    case types.FIREBASE_RESET_PASSWORD_REQUEST:
+      return {
+        ...state,
+        activeUser: {
+          ...state.activeUser,
+          loading: true,
+        }
+      };
+    case types.FIREBASE_RESET_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        activeUser: {
+          ...state.activeUser,
+          loading: false,
+          resetPassword: true
+        }
+      };
+    case types.FIREBASE_RESET_PASSWORD_ERROR:
+      return {
+        ...state,
+        activeUser: {
+          ...state.activeUser,
+          loading: false,
+          error: payload
+        }
+      };
     case 'UPDATE_ACTIVE_USER':
       return {
         ...state,

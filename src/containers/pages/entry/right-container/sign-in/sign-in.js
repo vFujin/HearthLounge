@@ -24,6 +24,7 @@ const SignIn = ({handleInputChange, toggleResetPasswordViewClick, resetPasswordV
               </div>
           }
 
+
           {resetPasswordView
               ? null
               : <div className="input-wrapper">
@@ -35,7 +36,7 @@ const SignIn = ({handleInputChange, toggleResetPasswordViewClick, resetPasswordV
           {
             resetPasswordView
               ? <div className="button-wrapper">
-                <button onClick={(e) => handleResetPassword(e, signIn_email)} className="btn-pearl">
+                <button onClick={(e) => handleResetPassword(e, resetPass_email)} className="btn-pearl">
                   Reset password
                 </button>
                   <Link onClick={toggleResetPasswordViewClick} to="/sign-in">
