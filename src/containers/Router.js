@@ -120,7 +120,7 @@ const App = ({store}) =>{
           <Redirect from="/sign-up/" to="/sign-up"/>
 
           <Route path="/sign-in" component={SignIn}>
-            <Route path="reset-password" component={SignInResetPassword} />
+            <Route path="reset-password" />
           </Route>
           <Route path="/sign-up" component={SignUp}>
             <Route path="update-profile" component={SignUpUpdateProfile} />

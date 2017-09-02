@@ -7,9 +7,9 @@ import {LeftContainer} from './left-container/left-container';
 import {createUser} from '../../../firebase/user/create';
 import {updateUsername} from '../../../firebase/user/update';
 import {getUsername} from '../../../firebase/user/read';
-import {signIn} from '../../../firebase/user/utils';
 import inputVal from "./right-container/utils/input-val";
 import {resetPassword} from "../../../firebase/user/utils/reset-password";
+import {FIREBASE_SIGN_IN_REQUEST} from "../../../redux/types/firebase";
 
 const findUsername = _.debounce((input, updateUsernameExistStatus) => {
   getUsername(input, (value) => updateUsernameExistStatus(value))
@@ -18,7 +18,6 @@ const findUsername = _.debounce((input, updateUsernameExistStatus) => {
 class Entry extends PureComponent {
   constructor(props){
     super(props)
-
     //debounce here
   }
 
@@ -37,6 +36,13 @@ class Entry extends PureComponent {
     if(location.pathname === '/sign-in/reset-password' && !resetPasswordView){
       toggleResetPasswordView(!resetPasswordView);
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps.activeUser);
+    // if(nextProps.activeUser){
+    //     browserHistory.push('/dashboard')
+    // }
   }
 
   componentWillUnmount(){
@@ -77,8 +83,8 @@ class Entry extends PureComponent {
 
   handleSignIn = (e) => {
     e.preventDefault();
-    const {signIn_email} = this.props;
-    signIn(signIn_email, inputVal('signIn_password'));
+    const {signIn_email, updateSignInStatus} = this.props;
+    updateSignInStatus({email: signIn_email, pass: inputVal('signIn_password')});
   };
 
   handleResetPassword = (e) =>{
@@ -154,6 +160,9 @@ const mapDispatchToProps = (dispatch) => {
     updateUsernameExistStatus: (usernameFree) => (dispatch({
       type: 'UPDATE_USERNAME_EXIST_STATUS', usernameFree
     })),
+    updateSignInStatus: (payload) => dispatch({
+      type: FIREBASE_SIGN_IN_REQUEST, payload
+    }),
     updateActiveUser: (authenticated, activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', authenticated, activeUser
     })
