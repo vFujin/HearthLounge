@@ -1,6 +1,6 @@
 import {call, put} from 'redux-saga/effects';
 import {firebaseSignIn, firebaseSignInSaga} from "../sign-in.saga";
-import * as actions from "../../../../../actions/firebase/user/utils/sign-in";
+import * as actions from "../../../../../actions/firebase/user/utils/sign-in.action";
 
 describe('firebase sign in saga', () =>{
   describe('#firebaseSignIn', () =>{

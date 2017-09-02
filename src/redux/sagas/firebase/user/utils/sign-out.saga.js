@@ -3,7 +3,7 @@ import {push} from 'react-router-redux';
 import {firebaseAuth} from "../../../../../keys";
 import {error, success} from "../../../../../utils/messages";
 import * as types from "../../../../types/firebase";
-import * as actions from '../../../../actions/firebase/user/utils/sign-out';
+import * as actions from '../../../../actions/firebase/user/utils/sign-out.action';
 
 export const firebaseSignOut = () => {
   return firebaseAuth()

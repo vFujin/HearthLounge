@@ -6,7 +6,7 @@ import AboutDeck from './save-deck-assets/about-deck';
 import Preview from './save-deck-assets/preview';
 import {default as saveDeck} from '../../../../../../../firebase/decks/deck/create/deck';
 import {error} from '../../../../../../../utils/messages';
-import {updateDeckProperty} from "../../../../../../../redux/actions/create-deck/deck-options";
+import {updateDeckProperty} from "../../../../../../../redux/actions/create-deck/deck-options.action";
 
 const updateDeckText = _.debounce((updateDeckProperty, value) => {
   updateDeckProperty({deckText: value})

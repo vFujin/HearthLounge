@@ -9,7 +9,7 @@ import {getAdventureDecks} from "../../../../firebase/decks/read/adventure";
 import {
   fetchCardbacks, fetchAdventureDecks,
   updateAdventureCardbacks
-} from "../../../../redux/actions/adventures/adventures";
+} from "../../../../redux/actions/adventures/adventures.action";
 import {fetchCardback} from "../../../../utils/fetch";
 import {filterCardbacks} from "../../../../utils/filter/cardbacks";
 

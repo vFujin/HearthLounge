@@ -3,7 +3,7 @@ import MapFunctionlessIcons from './map-functionless-icons';
 import IconFilter from '../../../../../shared-assets/filters/redux-icon-filter';
 import {connect} from 'react-redux';
 import {toggleSelectedIcon} from "../../../../../../utils/filter/toggle-selected-icon";
-import {updateDeckCreationFilters} from "../../../../../../redux/actions/create-deck/create-deck";
+import {updateDeckCreationFilters} from "../../../../../../redux/actions/create-deck/create-deck.action";
 
 const Filters = ({deck, playerClass, filtersActive, updateDeckCreationFilter, cardCost}) => {
 

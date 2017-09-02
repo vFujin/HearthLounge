@@ -10,6 +10,9 @@ const initialState = {
 
 export default function(state=initialState, {type, payload}) {
   switch (type) {
+      /**
+       * SIGN IN
+       */
     case types.FIREBASE_SIGN_IN_REQUEST:
       return {
         ...state,
@@ -36,6 +39,9 @@ export default function(state=initialState, {type, payload}) {
         }
       };
 
+      /**
+       * SIGN OUT
+       */
     case types.FIREBASE_SIGN_OUT_REQUEST:
       return {
         ...state,
@@ -55,8 +61,41 @@ export default function(state=initialState, {type, payload}) {
       return {
         ...state,
         activeUser: {
+          ...state.activeUser,
           loading: false,
           authenticated: true,
+          error: payload,
+
+        }
+      };
+
+      /**
+       * RE-AUTHENTICATE
+       */
+    case types.FIREBASE_REAUTHENTICATE_REQUEST:
+      return {
+        ...state,
+        activeUser: {
+          ...state.activeUser,
+          loading: true,
+
+        }
+      };
+    case types.FIREBASE_REAUTHENTICATE_SUCCESS:
+      return {
+        ...state,
+        activeUser: {
+          ...state.activeUser,
+          loading: false,
+          reauthenticated: true
+        }
+      };
+    case types.FIREBASE_REAUTHENTICATE_ERROR:
+      return {
+        ...state,
+        activeUser: {
+          ...state.activeUser,
+          loading: false,
           error: payload
         }
       };

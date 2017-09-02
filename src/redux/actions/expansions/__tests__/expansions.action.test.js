@@ -1,4 +1,4 @@
-import * as actions from '../expansions';
+import * as actions from '../expansions.action';
 import * as types from '../../../types/expansions';
 import lowerCase from 'lodash/lowerCase';
 import {decksMock} from "../../../../utils/test-mocks/data";

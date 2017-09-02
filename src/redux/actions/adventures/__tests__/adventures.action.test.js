@@ -1,4 +1,4 @@
-import * as actions from '../adventures';
+import * as actions from '../adventures.action';
 import * as types from '../../../types/adventures/adventures';
 import lowerCase from 'lodash/lowerCase';
 import {decksMock} from "../../../../utils/test-mocks/data";

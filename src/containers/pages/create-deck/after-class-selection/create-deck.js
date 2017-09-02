@@ -7,9 +7,9 @@ import {uniqueCards} from '../../../../utils/deck/calculate'
 import {setDeckstringObj, encodeDeckstring} from '../../../../utils/deck/deckstring';
 import {topbarOptions, imgCaptureBox, updateDeck} from "./right-container/content-assets/utils";
 import {scToggleDeckFilters, scToggleDeckMechanics} from "./right-container/content-assets/utils/shortcuts";
-import * as deckCreationActions from "../../../../redux/actions/create-deck/create-deck";
+import * as deckCreationActions from "../../../../redux/actions/create-deck/create-deck.action";
 import {createDeckFromDeckstringObj} from "../../../../utils/deck/deckstring/index";
-import {updateImportedDeckstring} from "../../../../redux/actions/create-deck/create-deck";
+import {updateImportedDeckstring} from "../../../../redux/actions/create-deck/create-deck.action";
 import {
   scClearFilters, scSaveDeck, scSubmitFilteredCard,
   scToggleSearchBox

@@ -6,7 +6,7 @@ import Topbar from './topbar';
 import Content from './content';
 import {expansion_details} from "../../../../data/expansion-details";
 import {getAdventureDecks} from "../../../../firebase/decks/read/adventure";
-import {fetchAdventureDecks} from "../../../../redux/actions/expansions/expansions";
+import {fetchAdventureDecks} from "../../../../redux/actions/expansions/expansions.action";
 
 class Expansion extends PureComponent{
 

@@ -2,7 +2,7 @@ import {call, put} from 'redux-saga/effects';
 import {push} from 'react-router-redux';
 import {firebaseSignOut, firebaseSignOutSaga} from "../sign-out.saga";
 import {error, success} from "../../../../../../utils/messages";
-import * as actions from "../../../../../actions/firebase/user/utils/sign-out";
+import * as actions from "../../../../../actions/firebase/user/utils/sign-out.action";
 
 describe('firebase sign out saga', () =>{
   describe('#firebaseSignOut', () =>{

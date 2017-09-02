@@ -3,6 +3,7 @@ import {watchPatch} from "./current-hs-patch.saga";
 import {watchRedditPosts} from "./reddit-posts.saga";
 import {watchFirebaseSignIn} from "./firebase/user/utils/sign-in.saga";
 import {watchFirebaseSignOut} from "./firebase/user/utils/sign-out.saga";
+import {watchFirebaseReauthenticate} from "./firebase/user/utils/reauthenticate.saga";
 
 export default function* rootSaga(){
   yield all([
@@ -11,6 +12,7 @@ export default function* rootSaga(){
 
       //Firebase
       watchFirebaseSignIn(),
-      watchFirebaseSignOut()
+      watchFirebaseSignOut(),
+      watchFirebaseReauthenticate()
   ]);
 }

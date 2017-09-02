@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 import UserDetails from './details/user';
 import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
 import DangerZone from './details/danger-zone';
-
 import {updateEmail, updateHearthstoneData, updateSocialMediaData} from '../../../../firebase/user/update';
 import {deleteUser, deleteAvatar} from '../../../../firebase/user/delete';
-import {reauthenticate} from '../../../../firebase/user/utils';
+import {FIREBASE_REAUTHENTICATE_REQUEST} from "../../../../redux/types/firebase";
 
-export class Sidebar extends Component{
+class Sidebar extends PureComponent {
   constructor(props){
     super(props);
 
@@ -96,35 +96,36 @@ export class Sidebar extends Component{
   };
 
   handleReauthenticationClick = () =>{
+    const {reauthenticate} = this.props;
     reauthenticate(this.state.reauthPassword);
   };
 
   render() {
-    const {user} = this.props;
+    const {activeUser} = this.props;
     return (
         <div className="sidebar">
           <h3 className="sidebar__header">Profile</h3>
 
           <ul className="sidebar__body">
             <li className="about">
-              <div className="avatar">{user.avatar ? <img src={user.avatar} alt={`${user.username}'s profile`}/> : <span className="hs-icon icon-login"></span>}</div>
-              <div className="username">{user.username}</div>
-              <div className="rank">{user.rank}</div>
+              <div className="avatar">{activeUser.avatar ? <img src={activeUser.avatar} alt={`${activeUser.username}'s profile`}/> : <span className="hs-icon icon-login"></span>}</div>
+              <div className="username">{activeUser.username}</div>
+              <div className="rank">{activeUser.rank}</div>
             </li>
 
-            <UserDetails user={user}
+            <UserDetails user={activeUser}
                          isEditing={this.state.editing_details}
                          handleEditClick={(e)=>this.handleEditClick(e)}
                          handleInputChange={(e)=>this.handleInputChange(e)}
                          handleAvatarDeletion={this.handleAvatarDeletion}
                          handleSaveClick={(e)=>this.handleSaveClick(e)}/>
-            <HearthstoneDetails user={user}
+            <HearthstoneDetails user={activeUser}
                                 isEditing={this.state.editing_hearthstone}
                                 handleEditClick={(e)=>this.handleEditClick(e)}
                                 handleInputChange={(e)=>this.handleInputChange(e)}
                                 handleSelectChange={(v, selector)=>this.handleSelectChange(v, selector)}
                                 handleSaveClick={(e)=>this.handleSaveClick(e)}/>
-            <SocialMediaDetails user={user}
+            <SocialMediaDetails user={activeUser}
                                 isEditing={this.state.editing_social_media}
                                 handleEditClick={(e)=>this.handleEditClick(e)}
                                 handleInputChange={(e)=>this.handleInputChange(e)}
@@ -141,3 +142,19 @@ export class Sidebar extends Component{
     );
   }
 }
+
+
+const mapStateToProps = (state) =>{
+  const {activeUser} = state.users;
+  return {activeUser};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    reauthenticate: (payload) => dispatch({
+      type: FIREBASE_REAUTHENTICATE_REQUEST, payload
+    }),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
