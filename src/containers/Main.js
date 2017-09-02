@@ -18,14 +18,16 @@ import {FETCH_PATCH_REQUEST} from "../redux/types/current-hs-patch";
 class Main extends Component{
   constructor(props) {
     super(props);
-    getActiveUser(props.updateActiveUser);
+
   };
+
 
   componentDidMount() {
     const {updateCurrentPatch, updateCards} = this.props;
     updateCurrentPatch();
     // fetchPatchData(this.props.updateCurrentPatch);
     fetchData(updateCards);
+    getActiveUser((authenticated, data) => console.log(this.props.updateActiveUser({authenticated, ...data})));
   }
 
   // shouldComponentUpdate(nextProps){
@@ -43,7 +45,7 @@ class Main extends Component{
     return (
         <div id="container">
           <Navbar url={location.pathname}
-                  user={activeUser}
+                  activeUser={activeUser}
                   playerClass={playerClass}
                   handleLogout={(e)=>signOut(e)}/>
           {React.cloneElement(children, {
@@ -53,6 +55,7 @@ class Main extends Component{
             patch,
             location
           })}
+
           <Footer/>
         </div>
     );
@@ -67,8 +70,9 @@ Main.propTypes = {
 const mapStateToProps = state =>{
   const {cards} = state.cards;
   const {patch} = state.patch;
-  const {authenticated, activeUser} = state.users;
+  const {activeUser} = state.users;
   const {playerClass} = state.deckCreation;
+  const {authenticated} = activeUser;
   return {cards, patch, authenticated, activeUser, playerClass};
 };
 
@@ -79,8 +83,8 @@ const mapDispatchToProps = (dispatch) => {
     updateCards: (cards) => dispatch({
       type: 'UPDATE_CARDS', cards
     }),
-    updateActiveUser: (authenticated, activeUser, avatar) => dispatch({
-      type: 'UPDATE_ACTIVE_USER', authenticated, activeUser, avatar
+    updateActiveUser: (activeUser) => dispatch({
+      type: 'UPDATE_ACTIVE_USER', payload: activeUser
     })
   }
 };

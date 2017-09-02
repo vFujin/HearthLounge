@@ -7,10 +7,8 @@ import {refParent, firebaseAuth} from '../../../keys';
  */
 export default function (callback){
   firebaseAuth().onAuthStateChanged(user => {
-
-    console.log(user)
     if (user) {
-      getUserData(user.uid, (v)=> callback(true, v));
+      return getUserData(user.uid, (v)=> callback(true, v));
     } else {
       callback(false, null);
     }

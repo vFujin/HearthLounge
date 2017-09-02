@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
 import EntryNode from './entry-node';
 
-const Navbar = ({handleLogout, user, playerClass}) => {
+const Navbar = ({handleLogout, activeUser, playerClass}) => {
 
   const listSubmenu = (index, el, sub) =>{
     return (
@@ -56,7 +57,7 @@ const Navbar = ({handleLogout, user, playerClass}) => {
               </Link>
             </li>
         )}
-        <EntryNode handleLogout={handleLogout} user={user}/>
+        <EntryNode handleLogout={handleLogout} activeUser={activeUser}/>
       </ul>
     </nav>
   );
@@ -64,7 +65,7 @@ const Navbar = ({handleLogout, user, playerClass}) => {
 
 
 Navbar.propTypes = {
-  user: React.PropTypes.object
+  activeUser: PropTypes.object
 };
 
 export default Navbar;

@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
+import Icon from "../../components/icon";
 
-const EntryNode = ({user, handleLogout}) =>{
-  const userObjExist = (user && !(Object.keys(user).length === 1 && user.constructor === Object));
+const EntryNode = ({activeUser, handleLogout}) =>{
+  const {username, avatar, authenticated} = activeUser;
+  const isAuthenticated = (activeUser && authenticated);
 
   const entryLabel = () =>{
-    if(userObjExist) {
+    if(isAuthenticated) {
       return (
           <div className="nav__list--labelWrapper">
-            {user.username}
+            {username}
             <ul className="submenu">
               <li onClick={(e) => handleLogout(e)}>
                 <Link to="/">
-                  <span className="hs-icon icon-logout"></span>
+                  <Icon name="logout"/>
                   Logout
                 </Link>
               </li>
@@ -26,13 +28,13 @@ const EntryNode = ({user, handleLogout}) =>{
 
   return (
       <li className="nav__list--item login">
-        <Link className="nav__list--linkContainer" to={user ? '/dashboard' : '/sign-in'}>
+        <Link className="nav__list--linkContainer" to={(activeUser && authenticated) ? '/dashboard' : '/sign-in'}>
           <div className="nav__list--link">
-            {(user && user.avatar)
+            {(activeUser && avatar && authenticated)
                 ? <div className="nav__list--imageWrapper">
-                    <img src={user.avatar} alt={`${user.username}'s profile`}/>
+                    <img src={avatar} alt={`${username}'s profile`}/>
                   </div>
-                : <span className="hs-icon icon-login"></span>}
+                : <Icon name="login"/>}
             {entryLabel()}
           </div>
         </Link>
@@ -43,7 +45,7 @@ const EntryNode = ({user, handleLogout}) =>{
 export default EntryNode;
 
 EntryNode.propTypes = {
-  user: PropTypes.shape({
+  activeUser: PropTypes.shape({
     username: PropTypes.string,
     avatar: PropTypes.string
   }),

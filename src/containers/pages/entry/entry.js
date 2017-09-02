@@ -69,6 +69,7 @@ class Entry extends PureComponent {
     }
   };
 
+
   handleFormSubmit = (e) => {
     e.preventDefault();
     const {signUp_email, signUp_password, updateSignUpStatus, updateActiveUser} = this.props;
