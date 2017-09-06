@@ -1,3 +1,4 @@
+import React from 'react';
 import message from 'antd/lib/message';
 /**
  * Functions representing success - loading - error notifications respectively

@@ -23,20 +23,21 @@ export const firebaseLoadUserData = (uid) =>{
       }
     });
   });
-  return userPromise.then((activeUser) => ({activeUser})).catch(userError => ({userError}));
+  return userPromise.then((activeUser) => ({activeUser})).catch(err => ({err}));
 };
 
 export function* firebaseSignInSaga({payload}) {
   const {activeUserId, err} = yield call(firebaseSignIn, payload);
   if (activeUserId) {
-    const {activeUser, userError} = yield call(firebaseLoadUserData, activeUserId);
+    const {activeUser, err} = yield call(firebaseLoadUserData, activeUserId);
 
     if(activeUser) {
       yield put(actions.firebaseSignInSuccess(activeUser));
       yield success('Signed in Successfully!');
       yield browserHistory.push('/dashboard');
     } else {
-      yield error(userError)
+      yield put(actions.firebaseSignInError(err));
+      yield error(err)
     }
   } else {
     yield put(actions.firebaseSignInError(err));

@@ -1,51 +1,99 @@
 import {call, put} from 'redux-saga/effects';
-import {firebaseSignIn, firebaseSignInSaga} from "../sign-in.saga";
+import {firebaseLoadUserData, firebaseSignIn, firebaseSignInSaga} from "../sign-in.saga";
+import {success, error} from '../../../../../../utils/messages';
 import * as actions from "../../../../../actions/firebase/user/utils/sign-in.action";
+import jsdom from 'jsdom';
+const {JSDOM} = jsdom;
+const {document} = (new JSDOM(`<!DOCTYPE html><html><body><div></div></body></html>`));
+global.document = document;
 
 describe('firebase sign in saga', () =>{
   describe('#firebaseSignIn', () =>{
+    const payload = {email: '123', pass: '123'};
 
     describe('when success', () =>{
+      test('should call firebaseSignIn', () =>{
+        const saga = firebaseSignInSaga({payload});
 
-
-
-      test('should fetch user uid', () =>{
-        let payload = {email: 'e@e.com', pass: '12345678'};
-        const saga = firebaseSignInSaga(payload),
-            response = {activeUserId: '123'};
-
-        expect(saga.next().value).toBe(call(firebaseSignIn, payload));
-        // expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
-        // expect(saga.next(response).value).toEqual(put(actions.firebaseSignInSuccess(response.activeUserId)))
+        expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
       });
 
+      describe('when user exists', () =>{
+        // probably could add user actions
+        describe('when success', () =>{
 
+          test('should fetch user id', ()=> {
+            const saga = firebaseSignInSaga({payload}),
+                resultSignIn = {activeUserId: 'uid123'};
+            expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
+            expect(saga.next(resultSignIn).value).toBe(resultSignIn.activeUserId);
+          });
 
+          test('should dispatch success action', () => {
+            const saga = firebaseSignInSaga({payload}),
+                resultSignIn = {activeUserId: 'uid123'},
+                resultUser = {activeUser: 'foo'};
+            expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
+            expect(saga.next(resultSignIn).value).toEqual(call(firebaseSignIn, resultSignIn.activeUserId));
+            expect(saga.next(resultUser).value).toEqual(put(actions.firebaseSignInSuccess(resultUser.activeUser)));
+          });
 
-      test('should dispatch success action', () =>{
-        const saga = firebaseSignInSaga({email: 'e@e.com', pass: '12345678'}),
-            response = {activeUserId: '123'};
+          test('should call success toast message', () => {
+            const saga = firebaseSignInSaga({payload}),
+                resultSignIn = {activeUserId: 'uid123'},
+                resultUser = {activeUser: 'foo'};
+            expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
+            expect(saga.next(resultSignIn).value).toEqual(call(firebaseSignIn, resultSignIn.activeUserId));
+            expect(saga.next(resultUser).value).toEqual(put(actions.firebaseSignInSuccess(resultUser.activeUser)));
+            expect(saga.next().value).toEqual(success('success msg'));
+          });
 
-        expect(saga.next().value).toEqual(call(firebaseSignIn));
-        expect(saga.next(response).value).toEqual(put(actions.firebaseSignInSuccess(response.activeUserId)))
+          test('should redirect to dashboard', () => {
+            const saga = firebaseSignInSaga({payload}),
+                resultSignIn = {activeUserId: 'uid123'},
+                resultUser = {activeUser: 'foo'};
+            expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
+            expect(saga.next(resultSignIn).value).toEqual(call(firebaseSignIn, resultSignIn.activeUserId));
+            expect(saga.next(resultUser).value).toEqual(put(actions.firebaseSignInSuccess(resultUser.activeUser)));
+            expect(saga.next().value).toEqual(success('success msg'));
+            expect(saga.next().value).toEqual(push('/dashboard'));
+          });
+        });
+        describe('when error', () =>{
+          test('should dispatch error action', ()=> {
+            const saga = firebaseSignInSaga({payload}),
+                resultSignIn = {err: {message: 'fake user err'}};
+            expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
+            expect(saga.next(resultSignIn).value).toEqual(put(actions.firebaseSignInError(resultSignIn.err)));
+          });
+
+          test('should show error toast message', ()=> {
+            const saga = firebaseSignInSaga({payload}),
+                resultSignIn = {err: {message: 'fake user err'}};
+            expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
+            expect(saga.next(resultSignIn).value).toEqual(put(actions.firebaseSignInError(resultSignIn.err)));
+            expect(saga.next().value).toEqual(error(resultSignIn.err.message));
+          });
+        })
       });
-
-      test('should call success message', () =>{
-        const saga = firebaseSignInSaga(),
-            response = {authenticated: true},
-            successMsg = jest.fn();
-        expect(saga.next().value).toEqual(call(firebaseSignIn));
-        expect(saga.next().value).toBe(successMsg())
-      })
     });
 
     describe('when error', () =>{
-      test('should dispatch success action', () =>{
-        const saga = firebaseSignInSaga(),
-            response = {error: 'fake err'};
+      test('should dispatch error action', () =>{
+        const saga = firebaseSignInSaga({payload}),
+            response = {err: {message: 'fake err'}};
 
-        expect(saga.next().value).toEqual(call(firebaseSignIn));
-        expect(saga.next(response).value).toEqual(put(actions.firebaseSignInError(response.authenticated)))
+        expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
+        expect(saga.next(response).value).toEqual(put(actions.firebaseSignInError(response.err)))
+      });
+
+      test('should call error toast message', () =>{
+        const saga = firebaseSignInSaga({payload}),
+            response = {err: {message: 'fake err'}},
+            msg = error('error');
+        expect(saga.next().value).toEqual(call(firebaseSignIn, payload));
+        expect(saga.next(response).value).toEqual(put(actions.firebaseSignInError(response.err)));
+        expect(saga.next().value).toEqual(error(response.err.message));
       });
     });
 

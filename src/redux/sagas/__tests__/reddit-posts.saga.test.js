@@ -7,7 +7,7 @@ describe('reddit posts saga', () =>{
 
     describe('when success', () =>{
       test('should dispatch success action', () =>{
-        const saga = fetchRedditPostsSaga(),
+        const saga = fetchRedditPostsSaga({payload: {posts: []}}),
             response = {posts: []};
 
         expect(saga.next().value).toEqual(call(fetchRedditPosts));
@@ -17,7 +17,7 @@ describe('reddit posts saga', () =>{
 
     describe('when error', () =>{
       test('should dispatch an error action', () =>{
-        const saga = fetchRedditPostsSaga(),
+        const saga = fetchRedditPostsSaga({payload: {error: ""}}),
             response = { error: 'fake err'};
 
         expect(saga.next().value).toEqual(call(fetchRedditPosts));
