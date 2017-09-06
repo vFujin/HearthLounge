@@ -4,23 +4,23 @@ import * as actions from "../../actions/reddit";
 
 describe('reddit posts saga', () =>{
   describe('#fetchRedditPostsSaga', () =>{
-
+    const payload = {payload: {posts: []}};
     describe('when success', () =>{
       test('should dispatch success action', () =>{
-        const saga = fetchRedditPostsSaga({payload: {posts: []}}),
+        const saga = fetchRedditPostsSaga({payload}),
             response = {posts: []};
 
-        expect(saga.next().value).toEqual(call(fetchRedditPosts));
+        expect(saga.next().value).toEqual(call(fetchRedditPosts, payload));
         expect(saga.next(response).value).toEqual(put(actions.fetchRedditPostsSuccess(response.posts)))
       })
     });
 
     describe('when error', () =>{
       test('should dispatch an error action', () =>{
-        const saga = fetchRedditPostsSaga({payload: {error: ""}}),
+        const saga = fetchRedditPostsSaga({payload}),
             response = { error: 'fake err'};
 
-        expect(saga.next().value).toEqual(call(fetchRedditPosts));
+        expect(saga.next().value).toEqual(call(fetchRedditPosts, payload));
         expect(saga.next(response).value).toEqual(put(actions.fetchRedditPostsFailure(response.error)))
       })
     });

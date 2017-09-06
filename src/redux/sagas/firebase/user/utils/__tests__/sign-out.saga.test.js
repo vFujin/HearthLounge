@@ -24,7 +24,7 @@ describe('firebase sign out saga', () =>{
 
         expect(saga.next().value).toEqual(call(firebaseSignOut));
         expect(saga.next(response).value).toEqual(put(actions.firebaseSignOutSuccess(response.signedOut)));
-        expect(saga.next(response).value).toEqual(successToast);
+        expect(saga.next().value).toEqual(successToast);
       });
 
       test('should change location to home (index)', () =>{
