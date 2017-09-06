@@ -4,7 +4,6 @@ import * as actions from "../../actions/decks/decks";
 
 describe('fetch decks saga', () =>{
   describe('#fetchDecks', () =>{
-
     describe('when success', () =>{
 
       test('should dispatch success action', () =>{

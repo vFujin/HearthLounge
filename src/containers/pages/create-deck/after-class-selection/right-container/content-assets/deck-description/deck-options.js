@@ -10,7 +10,7 @@ import {updateDeckProperty} from "../../../../../../../redux/actions/create-deck
 
 const updateDeckText = _.debounce((updateDeckProperty, value) => {
   updateDeckProperty({deckText: value})
-}, 2000);
+}, 300);
 
 const DeckOptions = ({authenticated, playerClass, deckstring, patch, user, deckMode, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
   const handleInputChange = (e) => {
