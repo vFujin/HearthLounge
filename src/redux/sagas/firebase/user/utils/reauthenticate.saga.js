@@ -3,13 +3,12 @@ import {firebaseAuth} from "../../../../../keys";
 import {error, success} from "../../../../../utils/messages";
 import * as types from "../../../../types/firebase";
 import * as actions from '../../../../actions/firebase/user/utils/reauthenticate.action';
+import {activeUser} from "../../../../../utils/active-user";
 
-export const firebaseReauthenticate = (password) => {
-  const user = firebaseAuth().currentUser;
-  const {email} = user;
+export const firebaseReauthenticate = (payload) => {
+  const {email, password} = payload;
   const credential = firebaseAuth.EmailAuthProvider.credential(email, password);
-
-  return user
+  return activeUser()
       .reauthenticateWithCredential(credential)
       .then(() => ({reauthenticated: true}))
       .catch(err => ({err: err.message}))

@@ -44,7 +44,7 @@ class Main extends Component{
 
 
   render(){
-    const {authenticated, activeUser, children, location, playerClass, cards, patch} = this.props;
+    const {authenticated, activeUser, children, location, playerClass, cards, current} = this.props;
     const {pathname} = location;
     return (
         <div id="container">
@@ -56,7 +56,7 @@ class Main extends Component{
             authenticated,
             activeUser,
             cards,
-            patch,
+            patch: current,
             location
           })}
 
@@ -73,11 +73,11 @@ Main.propTypes = {
 
 const mapStateToProps = state =>{
   const {cards} = state.cards;
-  const {patch} = state.patch;
+  const {current} = state.patch;
   const {activeUser} = state.users;
   const {playerClass} = state.deckCreation;
   const {authenticated} = activeUser;
-  return {cards, patch, authenticated, activeUser, playerClass};
+  return {cards, current, authenticated, activeUser, playerClass};
 };
 
 const mapDispatchToProps = (dispatch) => {

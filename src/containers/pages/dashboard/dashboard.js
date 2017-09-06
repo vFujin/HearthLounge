@@ -18,7 +18,7 @@ export class Dashboard extends PureComponent{
       return (
           <div className="container__page container__page--twoSided dashboard">
             <div className="container__page--inner container__page--left">
-              <Sidebar />
+              <Sidebar activeUser={this.props.activeUser}/>
             </div>
             <div className="container__page--inner container__page--right">
               <Topbar/>

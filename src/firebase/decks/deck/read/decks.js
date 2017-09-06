@@ -8,13 +8,14 @@ import {endOfWeek, subDays, startOfWeek} from 'date-fns';
  * @param {bool | string} mainFilter
  * @param {null | string} filterName
  * @param {bool | string} secondaryFilter
- * @param {object} callback
+ * @param resolve
+ * @param reject
  */
-export default function (mainFilter, filterName , secondaryFilter, callback) {
+export default (mainFilter, filterName, secondaryFilter, resolve, reject) => {
   filterName = filterName === "playerClass" ? "class" : filterName;
 
   let now = +new Date(),
-      start = +startOfWeek(subDays(now, 7)),
+      start = +startOfWeek(subDays(now, 14)),
       end = +endOfWeek(now),
       orderBy, startAt, endAt;
 
@@ -22,17 +23,17 @@ export default function (mainFilter, filterName , secondaryFilter, callback) {
     orderBy = `${filterName}_timestamp_votes`;
     startAt = `${mainFilter}_${start}`;
     endAt   = `${mainFilter}_${end}`;
-    decksQuery(orderBy, startAt, endAt, callback);
+    return decksQuery(orderBy, startAt, endAt, resolve, reject);
 
   } else if (mainFilter && secondaryFilter) {
     orderBy = 'mode_class_timestamp_votes';
     startAt = `${mainFilter}_${secondaryFilter}_${start}`;
     endAt   = `${mainFilter}_${secondaryFilter}_${end}`;
-    decksQuery(orderBy, startAt, endAt, callback);
+    return decksQuery(orderBy, startAt, endAt, resolve, reject);
 
   } else {
     orderBy = 'timestamp_votes';
-    decksQuery(orderBy, start, end, callback)
+    return decksQuery(orderBy, start, end, resolve, reject)
   }
 }
 
@@ -42,12 +43,10 @@ export default function (mainFilter, filterName , secondaryFilter, callback) {
  * @param {array} decks
  * @param {object} snapshot - single deck object
  */
-const assignUsername = (decks, snapshot) =>{
-  return snapshot.forEach(childSnapshot => {
+const assignUsername = (decks, snapshot) => {
+  snapshot.forEach(childSnapshot => {
     getSimplifiedUser(childSnapshot.child("authorId").val(), username => {
-      Object.assign(decks, {
-        [childSnapshot.child("deckId").val()]: Object.assign(childSnapshot.val(), username)
-      });
+      return decks.push(Object.assign(childSnapshot.val(), username));
     });
   });
 };
@@ -58,18 +57,21 @@ const assignUsername = (decks, snapshot) =>{
  * @param {string} orderBy
  * @param {string | number} startAt
  * @param {string | number} endAt
- * @param {object} callback
+ * @param resolve
+ * @param reject
  */
-const decksQuery = (orderBy, startAt, endAt, callback) =>{
+const decksQuery = (orderBy, startAt, endAt, resolve, reject) => {
   let decksRef = refParent('decks');
-  let decks = {};
+
   let query = decksRef.orderByChild(orderBy)
       .startAt(`${startAt}_0000`)
       .endAt(`${endAt}_9999`)
       .limitToLast(10);
 
-  query.once('value', snapshot => {
+
+  return query.once('value', snapshot => {
+    let decks = [];
     assignUsername(decks, snapshot);
-    callback(decks);
-  });
+    resolve(decks);
+  }, err => reject(err));
 };

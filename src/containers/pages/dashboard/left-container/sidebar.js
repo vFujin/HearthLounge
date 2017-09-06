@@ -97,7 +97,7 @@ class Sidebar extends PureComponent {
 
   handleReauthenticationClick = () =>{
     const {reauthenticate} = this.props;
-    reauthenticate(this.state.reauthPassword);
+    reauthenticate(this.props.activeUser.email, this.state.reauthPassword);
   };
 
   render() {
@@ -151,8 +151,8 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    reauthenticate: (payload) => dispatch({
-      type: FIREBASE_REAUTHENTICATE_REQUEST, payload
+    reauthenticate: (email, password) => dispatch({
+      type: FIREBASE_REAUTHENTICATE_REQUEST, payload: {email, password}
     }),
   }
 };

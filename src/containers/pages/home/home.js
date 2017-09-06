@@ -14,12 +14,12 @@ import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
 import {fetchFilteredDecks, isFilterActive} from "./utils/deck-filters";
 import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/types/reddit";
+import {FETCH_DECKS_REQUEST} from "../../../redux/types/decks";
 class Home extends PureComponent{
 
   componentDidMount() {
-    getDecks(false, null, false, decks=>this.props.updateDecks(decks));
-    console.log(this.props.updateRedditPosts());
-
+    this.props.updateDecks();
+    this.props.updateRedditPosts();
   }
 
   handleDeckClick = (e) =>{
@@ -42,7 +42,7 @@ class Home extends PureComponent{
     return (
         <div className="container__index home">
           <ul className="home__list">
-            <DecksBlock decks={_.map(decks)}
+            <DecksBlock decks={decks}
                         deckFilters={deckFilters}
                         handleDeckClick={this.handleDeckClick}
                         handleFilterClick={this.handleFilterClick}/>
@@ -83,9 +83,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDecks: (decks) => (dispatch({
-      type: 'UPDATE_DECKS', decks
-    })),
+    updateDecks: () => dispatch({type: FETCH_DECKS_REQUEST}),
     updateDeckFilters: (deckFilters) => dispatch({
       type: 'UPDATE_DECK_FILTERS', deckFilters
     }),

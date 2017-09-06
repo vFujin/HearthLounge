@@ -2977,7 +2977,8 @@ input::-webkit-search-cancel-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; }
+  height: 100%;
+  width: 100%; }
   .loading-wrapper.dark .sk-folding-cube .sk-cube:before {
     background-color: #00a99c; }
   .loading-wrapper.light .sk-folding-cube .sk-cube:before {
@@ -4402,12 +4403,10 @@ footer {
         .container__index.home .home__list .decks > div .right-container .hot-decks {
           height: 100%;
           width: 100%;
-          padding: 10px; }
-          .container__index.home .home__list .decks > div .right-container .hot-decks .upper-row, .container__index.home .home__list .decks > div .right-container .hot-decks .bottom-row {
-            width: 100%;
-            display: flex; }
-          .container__index.home .home__list .decks > div .right-container .hot-decks .bottom-row {
-            margin-top: 10px; }
+          padding: 10px;
+          position: relative; }
+          .container__index.home .home__list .decks > div .right-container .hot-decks .loading-wrapper {
+            position: absolute; }
     .container__index.home .home__list .expansions div .slider {
       -webkit-user-select: none;
       -moz-user-select: none;

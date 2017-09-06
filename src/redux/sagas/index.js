@@ -5,16 +5,18 @@ import {watchFirebaseSignIn} from "./firebase/user/utils/sign-in.saga";
 import {watchFirebaseSignOut} from "./firebase/user/utils/sign-out.saga";
 import {watchFirebaseReauthenticate} from "./firebase/user/utils/reauthenticate.saga";
 import {watchFirebaseResetPassword} from "./firebase/user/utils/reset-password.saga";
+import {watchDecks} from "./decks.saga";
 
-export default function* rootSaga(){
+export default function* rootSaga() {
   yield all([
-      watchPatch(),
-      watchRedditPosts(),
+    watchDecks(),
+    watchPatch(),
+    watchRedditPosts(),
 
-      //Firebase
-      watchFirebaseSignIn(),
-      watchFirebaseSignOut(),
-      watchFirebaseReauthenticate(),
-      watchFirebaseResetPassword()
+    //Firebase
+    watchFirebaseSignIn(),
+    watchFirebaseSignOut(),
+    watchFirebaseReauthenticate(),
+    watchFirebaseResetPassword()
   ]);
 }

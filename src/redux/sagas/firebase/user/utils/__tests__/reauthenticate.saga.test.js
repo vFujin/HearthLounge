@@ -3,14 +3,19 @@ import { } from "../reauthenticate.saga";
 import {error, success} from "../../../../../../utils/messages";
 import * as actions from "../../../../../actions/firebase/user/utils/reauthenticate.action";
 import {firebaseReauthenticateSaga, firebaseReauthenticate} from "../reauthenticate.saga";
+import jsdom from 'jsdom';
+const {JSDOM} = jsdom;
+const {document} = (new JSDOM('<!DOCTYPE html>'));
+global.document = document;
 
 describe('firebase reauthenticate saga', () =>{
   describe('#firebaseReauthenticate', () =>{
-
+    const user = {payload: {email: 'e@e.com', password: '12345678'}};
+    const {payload} = user;
     describe('when success', () =>{
 
       test('should dispatch success action', () =>{
-        const saga = firebaseReauthenticateSaga(),
+        const saga = firebaseReauthenticateSaga(payload),
             response = {reauthenticated: true};
 
         expect(saga.next().value).toEqual(call(firebaseReauthenticate));
@@ -18,7 +23,7 @@ describe('firebase reauthenticate saga', () =>{
       });
 
       test('should show success toast notification', () =>{
-        const saga = firebaseReauthenticateSaga(),
+        const saga = firebaseReauthenticateSaga(payload),
             response = {signedOut: true},
             successToast = success("success");
 
@@ -30,7 +35,7 @@ describe('firebase reauthenticate saga', () =>{
 
     describe('when error', () =>{
       test('should dispatch error action', () =>{
-        const saga = firebaseReauthenticateSaga(),
+        const saga = firebaseReauthenticateSaga(payload),
             response = {err: {message: 'fake err'}};
 
         expect(saga.next().value).toEqual(call(firebaseReauthenticate));
@@ -38,7 +43,7 @@ describe('firebase reauthenticate saga', () =>{
       });
 
       test('should show error toast notification', () =>{
-        const saga = firebaseSignOutSaga(),
+        const saga = firebaseSignOutSaga(payload),
             response = {err: {message: 'fake err'}},
             errorToast = error("fake err");
 

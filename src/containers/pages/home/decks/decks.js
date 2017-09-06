@@ -9,11 +9,16 @@ import Loader from "../../../../components/loader";
 import Icon from "../../../../components/icon";
 const DecksBlock = ({decks, deckFilters, handleDeckClick, handleFilterClick}) => {
   const {playerClass, mode} = deckFilters;
-
+  console.log(decks.all);
   const listDecks = () =>{
-    return decks.map(deck => <DeckSnippet key={deck.deckId}
-                                          d={deck}
-                                          handleDeckClick={handleDeckClick}/>)
+    if(decks.all){
+      return decks.all.map((deck, i) => <DeckSnippet key={i}
+                                                     d={deck}
+                                                     handleDeckClick={handleDeckClick}/>)
+    } else {
+      return <p>{decks.error}</p>
+    }
+
   };
 
   return (
@@ -34,7 +39,7 @@ const DecksBlock = ({decks, deckFilters, handleDeckClick, handleFilterClick}) =>
           </div>
           <div className="right-container">
             <div className="hot-decks">
-              {decks ? listDecks() : <Loader />}
+              {decks.loading ? <Loader theme="light"/> : listDecks()}
             </div>
           </div>
         </div>

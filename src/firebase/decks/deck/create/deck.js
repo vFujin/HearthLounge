@@ -19,7 +19,6 @@ import _ from 'lodash';
  */
 export default function (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid) {
   if (patch && playerClass && title && mode && archetype && deck && description && deckstring && uid) {
-
     const validateAdventureType = (mode === 'adventures' && adventure && boss) ? 'wild' : mode,
           validateAdventure = (adventure && boss) ? adventure : null,
           validateBoss = (adventure && boss) ? boss : null,
