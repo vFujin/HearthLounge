@@ -100,7 +100,7 @@ class DeckSelection extends Component {
   };
 
   render() {
-    const {cards, patch, children, location, decks, activeUser, users, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
+    const {children, location, decks, activeUser, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
     this.infiniteScroll(this.props.updateDeckList);
 
     if(location.pathname !== "/decks"){
@@ -113,12 +113,12 @@ class DeckSelection extends Component {
         }
         return <Loader/>
       }
-      return React.cloneElement(children, {activeUser, currentDeck, cards, patch});
+      return React.cloneElement(children, {activeUser, currentDeck});
     }
     else {
       return (
           <div className="container__page container__page--twoSided decks">
-            <LeftContainer users={users}/>
+            <LeftContainer/>
             <RightContainer decks={decks}
                             adventuresToggled={adventuresToggled}
                             activeMode={activeMode}
@@ -134,8 +134,8 @@ class DeckSelection extends Component {
 
 const mapStateToProps = (state) =>{
   const {decks, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
-  const {activeUser, users} = state.users;
-  return {decks, activeUser, users, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
+  const {activeUser} = state.users;
+  return {decks, activeUser, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
 };
 
 const mapDispatchToProps = (dispatch) => {

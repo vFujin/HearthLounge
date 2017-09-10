@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -9,7 +9,7 @@ import {rateDeck} from '../../../../firebase/decks/deck/read/lazyload-decks';
 import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
 import {alertUnload} from "./utils/alert-unload";
 
-class Deck extends PureComponent{
+class Deck extends Component{
 
   componentDidMount(){
     const {currentDeck, updateDecklist, updateDeckAuthorDetails, editingDecklist} = this.props;
@@ -125,7 +125,8 @@ class Deck extends PureComponent{
 
 const mapStateToProps = (state) => {
   const {deckVote, deckEditing, editingDecklist, editingDeckDescription, deckAuthor} = state.deckView;
-  return {deckVote, deckEditing, editingDecklist, editingDeckDescription, deckAuthor}
+  const {cards} = state.cards;
+  return {deckVote, cards, deckEditing, editingDecklist, editingDeckDescription, deckAuthor}
 };
 
 const mapDispatchToProps = (dispatch) => {
