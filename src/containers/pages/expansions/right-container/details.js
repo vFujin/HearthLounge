@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import _ from 'lodash';
 import {Overview, PreOrder} from './overview-assets/index';
 import Cards from "../../../../components/extension-blocks/cards"
@@ -14,6 +15,9 @@ const components = {
 };
 
 const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}) => {
+  const extensionCards = cards[activeExpansion.expansion];
+
+
   let activeExpansionTab = activeExpansion.expansion_topbar_tabs.filter(tab => tab.url === details);
   const activeView = () =>{
 
@@ -25,14 +29,16 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
                    type="expansions"
                    extension={activeExpansion}
                    extensionUrl={activeExpansion.url}
-                   cards={cards}/>
+                   cardsLoading={cards.loading}
+                   cards={extensionCards}/>
     })
   };
 
   const bossDetails = () => {
     let wing = activeExpansion.wings.details.find(wing => wing.url === details);
     let activeBoss = wing.bosses.find(b => b.url === detailsChild);
-    return <Boss allCards={cards.allCards}
+    return <Boss extensionCards={extensionCards}
+                 cardsLoading={cards.loading}
                  key={activeExpansion.url}
                  adventure={activeExpansion}
                  wing={wing}
@@ -48,7 +54,12 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
   </div>
 };
 
-export default ExpansionDetails;
+const mapStateToProps = state =>{
+  const {cards} = state.cards;
+  return {cards};
+};
+
+export default connect(mapStateToProps, null)(ExpansionDetails);
 
 ExpansionDetails.propTypes = {
   cards: PropTypes.shape({

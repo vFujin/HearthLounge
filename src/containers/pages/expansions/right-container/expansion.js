@@ -16,13 +16,12 @@ class Expansion extends PureComponent{
   }
 
   render() {
-    const {cards, decks, details, detailsChild, expansion} = this.props;
+    const {decks, details, detailsChild, expansion} = this.props;
     let activeExpansion = expansion_details.filter(e => e.url === expansion)[0];
     return (
         <div className="container__page--inner container__page--right">
           <Topbar expansion={activeExpansion} details={details}/>
-          <Content cards={cards}
-                   decks={decks}
+          <Content decks={decks}
                    details={details}
                    detailsChild={detailsChild}
                    activeExpansion={activeExpansion}
@@ -46,9 +45,6 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Expansion);
 
 Expansion.propTypes = {
-  cards: PropTypes.shape({
-    sets: PropTypes.objectOf(PropTypes.array)
-  }),
   decks: PropTypes.array,
   details: PropTypes.string,
   detailsChild: PropTypes.string,

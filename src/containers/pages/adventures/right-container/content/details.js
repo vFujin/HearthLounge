@@ -23,7 +23,7 @@ const components = {
 };
 
 const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detailsChild, decks}) => {
-  const adventureCards = cards[adventure.url === 'naxxramas' ? 'Naxxramas' : adventure.adventure];
+  const extensionCards = cards[adventure.url === 'naxxramas' ? 'Naxxramas' : adventure.adventure];
 
   const activeView = () => {
     return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page => {
@@ -32,7 +32,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
       return <Page key={page.url}
                    type="adventures"
                    extension={adventure}
-                   cards={adventureCards}
+                   cards={extensionCards}
                    cardsLoading={cards.loading}
                    extensionUrl={adventure.url}
                    detailsChild={detailsChild}
@@ -44,7 +44,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
     let wing = adventure.wings.details.find(wing => wing.url === details);
     let activeBoss = wing.bosses.find(b => b.url === detailsChild);
 
-    return <Boss extensionCards={adventureCards}
+    return <Boss extensionCards={extensionCards}
                  cardsLoading={cards.loading}
                  key={adventure.url}
                  adventure={adventure}

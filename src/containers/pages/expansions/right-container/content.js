@@ -5,7 +5,7 @@ import _ from 'lodash';
 import {adventureBossExists, adventureWingExists, expansionDetailExists} from '../../../../utils/checkIfPathExist';
 import ExpansionDetails from './details';
 
-const Content = ({cards, decks, details, detailsChild, activeExpansion, expansion}) => {
+const Content = ({decks, details, detailsChild, activeExpansion, expansion}) => {
   let wingDetailsPath = detailsChild
       ? adventureWingExists("expansions", activeExpansion.url, details)
       : null;
@@ -16,7 +16,10 @@ const Content = ({cards, decks, details, detailsChild, activeExpansion, expansio
   let notFoundPage = (detailsChild && wingDetailsPath) ? _.startCase(detailsChild) : _.startCase(details);
 
   return (expansionDetailExists(expansion, details) || (wingDetailsPath && bossDetailsPath))
-      ? <ExpansionDetails cards={cards} decks={decks} details={details} detailsChild={detailsChild} activeExpansion={activeExpansion}/>
+      ? <ExpansionDetails decks={decks}
+                          details={details}
+                          detailsChild={detailsChild}
+                          activeExpansion={activeExpansion}/>
       : <NotFound page={notFoundPage} redirect="expansions"/>
 };
 
@@ -24,9 +27,6 @@ export default Content;
 
 Content.propTypes = {
   expansion: PropTypes.string.isRequired,
-  cards: PropTypes.shape({
-    sets: PropTypes.objectOf(PropTypes.array)
-  }).isRequired,
   details: PropTypes.string.isRequired,
   detailsChild: PropTypes.string,
   decks: PropTypes.array
