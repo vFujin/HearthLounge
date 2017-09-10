@@ -32,5 +32,5 @@ const Structure = ({extension}) => {
 export default Structure;
 
 Structure.propTypes = {
-  extension: PropTypes.string.isRequired
+  extension: PropTypes.object.isRequired
 };

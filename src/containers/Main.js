@@ -12,6 +12,7 @@ import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
 import {FETCH_PATCH_REQUEST} from "../redux/types/current-hs-patch";
 import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/types/firebase";
+import * as types from "../redux/types/cards";
 
 
 class Main extends Component{
@@ -27,10 +28,9 @@ class Main extends Component{
 
   componentDidMount() {
     const {updateCurrentPatch, updateCards, updateActiveUser} = this.props;
-    updateCurrentPatch();
-    // fetchPatchData(this.props.updateCurrentPatch);
-    fetchData(updateCards);
     getActiveUser((authenticated, data) => updateActiveUser({authenticated, ...data}));
+    updateCurrentPatch();
+    updateCards();
   }
 
   // shouldComponentUpdate(nextProps){
@@ -44,7 +44,7 @@ class Main extends Component{
 
 
   render(){
-    const {authenticated, activeUser, children, location, playerClass, cards, current} = this.props;
+    const {authenticated, activeUser, children, location, playerClass, current} = this.props;
     const {pathname} = location;
     return (
         <div id="container">
@@ -55,7 +55,6 @@ class Main extends Component{
           {React.cloneElement(children, {
             authenticated,
             activeUser,
-            cards,
             patch: current,
             location
           })}
@@ -72,21 +71,18 @@ Main.propTypes = {
 };
 
 const mapStateToProps = state =>{
-  const {cards} = state.cards;
   const {current} = state.patch;
   const {activeUser} = state.users;
   const {playerClass} = state.deckCreation;
   const {authenticated} = activeUser;
-  return {cards, current, authenticated, activeUser, playerClass};
+  return {current, authenticated, activeUser, playerClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
 
   return {
     updateCurrentPatch: () => dispatch({type: FETCH_PATCH_REQUEST}),
-    updateCards: (cards) => dispatch({
-      type: 'UPDATE_CARDS', cards
-    }),
+    updateCards: () => dispatch({type: types.FETCH_CARDS_REQUEST}),
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser
     }),

@@ -5,7 +5,7 @@ import Icon from "../../../../../components/icon";
 import ClassChallenge from "./class-challenge";
 import ClassChallengeSelection from "./class-challenge-selection";
 
-const ClassChallenges = ({extension, cards, detailsChild}) => {
+const ClassChallenges = ({extension, cards, cardsLoading, detailsChild}) => {
 
   const classChallenge = () =>{
     return extension.class_challenges.find(challenge => challenge.playerClass === detailsChild);
@@ -33,6 +33,7 @@ const ClassChallenges = ({extension, cards, detailsChild}) => {
             {detailsChild
                 ? <ClassChallenge challenge={classChallenge()}
                                   cards={cards}
+                                  cardsLoading={cardsLoading}
                                   playerClass={detailsChild}/>
                 : <ClassChallengeSelection />
             }
@@ -44,5 +45,7 @@ export default ClassChallenges;
 
 ClassChallenges.propTypes = {
   extension: PropTypes.object.isRequired,
+  cardsLoading: PropTypes.bool,
+
   // cards: React.PropTypes.array,
 };

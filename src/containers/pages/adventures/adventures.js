@@ -7,14 +7,14 @@ import NotFound from '../../shared-assets/not-found';
 import SelectExtension from '../../shared-assets/extensions/select-extension';
 import {adventureExists} from '../../../utils/checkIfPathExist';
 
-const Adventures = ({cards, params, location})=> {
+const Adventures = ({params, location})=> {
   const {adventure, details, detailsChild} = params;
   const rightContainer = () => {
     let path = location.pathname.split("/")[2];
 
     if(adventure !== undefined) {
       return adventureExists(path)
-          ? <Adventure cards={cards} details={details} detailsChild={detailsChild} adventure={adventure}/>
+          ? <Adventure details={details} detailsChild={detailsChild} adventure={adventure}/>
           : <NotFound page={_.startCase(adventure)} redirect="expansions"/>
     }
     return <SelectExtension group="adventure"/>
@@ -33,9 +33,6 @@ const Adventures = ({cards, params, location})=> {
 export default Adventures;
 
 Adventures.propTypes = {
-  cards: PropTypes.shape({
-    sets: PropTypes.objectOf(PropTypes.array)
-  }),
   params: PropTypes.shape({
     details: PropTypes.string,
     adventure: PropTypes.string

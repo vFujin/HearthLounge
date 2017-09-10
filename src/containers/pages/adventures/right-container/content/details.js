@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import _ from 'lodash';
 import {adventure_detail_tabs} from '../../../../../data/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
@@ -22,17 +23,17 @@ const components = {
 };
 
 const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detailsChild, decks}) => {
-
+  const adventureCards = cards[adventure.url === 'naxxramas' ? 'Naxxramas' : adventure.adventure];
 
   const activeView = () => {
     return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page => {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
-
       return <Page key={page.url}
                    type="adventures"
                    extension={adventure}
-                   cards={cards}
+                   cards={adventureCards}
+                   cardsLoading={cards.loading}
                    extensionUrl={adventure.url}
                    detailsChild={detailsChild}
                    adventureCardbacks={adventureCardbacks} />
@@ -43,7 +44,8 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
     let wing = adventure.wings.details.find(wing => wing.url === details);
     let activeBoss = wing.bosses.find(b => b.url === detailsChild);
 
-    return <Boss allCards={cards.allCards}
+    return <Boss extensionCards={adventureCards}
+                 cardsLoading={cards.loading}
                  key={adventure.url}
                  adventure={adventure}
                  wing={wing}
@@ -59,6 +61,11 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
   </div>
 };
 
-export default AdventureDetails;
+const mapStateToProps = state => {
+  const {cards} = state.cards;
+  return {cards};
+};
+
+export default connect(mapStateToProps, null)(AdventureDetails);
 
 

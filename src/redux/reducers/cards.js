@@ -1,40 +1,43 @@
+import * as types from "../types/cards";
+
 const initialState = {
   cards: {
-    allCards: [],
-    name: [],
-    mechanics: [],
-    faction: [],
-    race: [],
-    type: [],
-    cost: [],
-    cardSet: [],
-    sets: {
-      basic: [],
-      classic: [],
-      "curse-of-naxxramas": [],
-      "goblins-vs-gnomes": [],
-      "blackrock-mountain": [],
-      "the-grand-tournament": [],
-      "the-league-of-explorers": [],
-      "whispers-of-the-old-gods": [],
-      "one-night-in-karazhan": [],
-      "mean-streets-of-gadgetzan": [],
-      "journey-to-ungoro": []
-    }
+    loading: true
   }
 };
 
-export default function(state=initialState, action){
-  switch(action.type){
-    case 'UPDATE_CARDS': return {
-      ...state,
-      cards: action.cards
-    };
-    case 'CURRENT_CARDS_LOADED': return {
+export default function(state=initialState, {type, payload}) {
+  switch (type) {
+    case types.FETCH_CARDS_REQUEST:
+      return {
         ...state,
-      currentCardsLoaded: action.currentCardsLoaded
-    };
+        cards: {
+          loading: true
+        }
+      };
+    case types.FETCH_CARDS_SUCCESS:
+      return {
+        ...state,
+        cards: {
+          loading: false,
+          allCards: Object.values(payload).reduce((a, b) => a.concat(b)),
+          ...payload
+        }
+      };
+    case types.FETCH_CARDS_FAILURE:
+      return {
+        ...state,
+        cards: {
+          loading: false,
+          error: payload
+        }
+      };
+      // case 'CURRENT_CARDS_LOADED': return {
+      //     ...state,
+      //   currentCardsLoaded: action.currentCardsLoaded
+      // };
 
-    default: return state;
+    default:
+      return state;
   }
 }

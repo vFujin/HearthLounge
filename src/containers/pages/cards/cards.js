@@ -17,14 +17,14 @@ class Cards extends PureComponent {
 
   listCards = () => {
     const {cards, currentCardsLoaded, updateCurrentCardsLoaded, location} = this.props;
-    const {allCards} = cards;
+    const {all, loading} = cards;
     const {query} = location;
 
-    if (allCards.length < 1) {
+    if (loading) {
       return <Loader/>;
     } else {
       infiniteScroll('.content', updateCurrentCardsLoaded);
-      return filterByUrl(allCards, query, currentCardsLoaded).map(card =>
+      return filterByUrl(all, query, currentCardsLoaded).map(card =>
           <li key={card.cardId}>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <div className="img-wrapper">

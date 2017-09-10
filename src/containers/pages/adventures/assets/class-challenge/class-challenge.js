@@ -6,10 +6,10 @@ import Overview from "./class-challenge-blocks/overview";
 import Rewards from "../shared-blocks/rewards";
 import Strategy from "../shared-blocks/strategy";
 
-const ClassChallenge = ({cards, challenge, playerClass}) => {
+const ClassChallenge = ({cards, cardsLoading, challenge, playerClass}) => {
   const {reward} = challenge;
   const overview = <Overview />;
-  const rewards = <Rewards allCards={cards.allCards} bossReward={reward}/>;
+  const rewards = <Rewards extensionCards={cards} cardsLoading={cardsLoading} bossReward={reward}/>;
   const strategy = <Strategy />;
   return (
       <ul className="classChallenges__content container__blocks">
@@ -27,7 +27,8 @@ const ClassChallenge = ({cards, challenge, playerClass}) => {
 export default ClassChallenge;
 
 ClassChallenge.propTypes = {
-  cards: PropTypes.array.isRequired,
+  cardsLoading: PropTypes.bool.isRequired,
   challenge: PropTypes.object.isRequired,
-  playerClass: PropTypes.string.isRequired
+  playerClass: PropTypes.string.isRequired,
+  cards: PropTypes.array
 };

@@ -2,22 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Loader from "../../../../../components/loader";
 
-const Rewards = ({allCards, bossReward}) => {
+const Rewards = ({extensionCards, cardsLoading, bossReward}) => {
   const rewardType = () =>{
     if(typeof bossReward === 'object'){
-      return bossReward.map(reward => allCards.filter(card => reward === card.name).map(card=>{
+      return bossReward.map(reward => extensionCards.filter(card => reward === card.name).map(card=>{
         return <img key={card.cardId} src={card.img} alt={card.name}/>
       }))
     } else {
-      return allCards.filter(card => card.name === bossReward).map(card=>
+      return extensionCards.filter(card => card.name === bossReward).map(card=>
         <img key={card.cardId} src={card.img} alt={card.name}/>
       )
     }
   };
 
   const mapReward = () =>{
-    if(allCards.length < 1){
-      return <Loader />
+    if(cardsLoading){
+      return <Loader theme="light"/>
     } else {
       return rewardType();
     }
@@ -35,7 +35,8 @@ const Rewards = ({allCards, bossReward}) => {
 export default Rewards;
 
 Rewards.propTypes = {
-  allCards: PropTypes.array.isRequired,
+  extensionCards: PropTypes.array,
+  cardsLoading: PropTypes.bool,
   bossReward: PropTypes.oneOfType([
       PropTypes.array,
       PropTypes.string

@@ -36,7 +36,7 @@ class Adventure extends PureComponent{
   }
 
   render(){
-    const {adventure, adventureCardbacks, detailsChild, cards, details, decks} = this.props;
+    const {adventure, adventureCardbacks, detailsChild, details, decks} = this.props;
     let activeAdventure = adventure_details.filter(a => a.url === adventure)[0];
     return (
         <div className='container__page--inner container__page--right'>
@@ -47,7 +47,6 @@ class Adventure extends PureComponent{
           <Content adventure={activeAdventure}
                    adventureCardbacks={adventureCardbacks}
                    detailsChild={detailsChild}
-                   cards={cards}
                    decks={decks}
                    details={details}/>
         </div>
@@ -72,7 +71,7 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(Adventure);
 
 Adventure.propTypes = {
-  adventure: PropTypes.object,
+  adventure: PropTypes.string,
   detailsChild: PropTypes.string,
   cards: PropTypes.shape({
     sets: PropTypes.objectOf(PropTypes.array)

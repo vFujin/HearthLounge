@@ -8,7 +8,7 @@ import Rewards from "../../../containers/pages/adventures/assets/shared-blocks/r
 import WingBosses from "./boss-blocks/wing-bosses";
 import Decklist from "./boss-blocks/decklist";
 
-const Boss = ({allCards, adventure, wing, boss, decks}) => {
+const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading}) => {
   let filteredDecks = _.filter(decks, deck => deck.boss === boss.url);
 
 
@@ -16,12 +16,15 @@ const Boss = ({allCards, adventure, wing, boss, decks}) => {
                                  wing={wing}
                                  boss={boss}/>;
   const bossStrategy = <Strategy />;
-  const bossRewards = <Rewards allCards={allCards} bossReward={boss.reward}/>;
+  const bossRewards = <Rewards extensionCards={extensionCards}
+                               cardsLoading={cardsLoading}
+                               bossReward={boss.reward}/>;
   const wingBosses = <WingBosses adventure={adventure.url}
                                  wing={wing.url}
                                  activeBoss={boss.url}
                                  wingBosses={wing.bosses}/>;
-  const bossDecklist = <Decklist adventure={adventure.adventure} decks={filteredDecks}/>;
+  const bossDecklist = <Decklist adventure={adventure.adventure}
+                                 decks={filteredDecks}/>;
 
   return (
       <ul className="container__blocks">
@@ -38,8 +41,9 @@ Boss.propTypes = {
   adventure: PropTypes.object,
   wing: PropTypes.object,
   boss: PropTypes.object,
-  allCards: PropTypes.array,
-  decks: PropTypes.array
+  extensionCards: PropTypes.array,
+  decks: PropTypes.array,
+  cardsLoading: PropTypes.bool
 };
 
 export default Boss;

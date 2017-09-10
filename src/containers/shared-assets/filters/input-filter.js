@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Select from 'antd/lib/select';
 import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
@@ -10,7 +11,7 @@ const InputFilter = ({attribute, filter, multiple, query}) => {
     return Object.assign({}, query, {[filter]: attr});
   };
 
-  const options = attribute.map(a=> (
+  const options = attribute && attribute.map(a=> (
       <Option instancePrefix={a} optionIndex={a} option={a} value={a} key={a}>{a}</Option>
   ));
 
@@ -34,10 +35,10 @@ const InputFilter = ({attribute, filter, multiple, query}) => {
 };
 
 InputFilter.propTypes = {
-  attribute: React.PropTypes.array,
-  filter: React.PropTypes.string,
-  multiple: React.PropTypes.bool,
-  query: React.PropTypes.object
+  attribute: PropTypes.array,
+  filter: PropTypes.string,
+  multiple: PropTypes.bool,
+  query: PropTypes.object
 };
 
 

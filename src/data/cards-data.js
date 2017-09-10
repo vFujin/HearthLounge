@@ -68,19 +68,6 @@ export const fetchData = (reducer) => {
     .then(r=>r.json())
     .then(data => {
       let fetchedCards = Object.values(data).reduce((a, b) => a.concat(b)); //all cards returned at once
-      reducer(cards(fetchedCards));
+      console.log(fetchedCards);
     })
 };
-//
-// export const fetchPatchData = () => {
-//   return dispatch => {
-//     dispatch(fetchPatchRequest())
-//     fetch(`https://omgvamp-hearthstone-v1.p.mashape.com/info`, {
-//       headers: {
-//         'X-Mashape-Key': MashapeKey
-//       }
-//     })
-//         .then(r => r.json())
-//         .then(data => (data.patch))
-//   }
-// };

@@ -59,5 +59,5 @@ const Cost = ({extension}) => {
 export default Cost;
 
 Cost.propTypes = {
-  extension: PropTypes.string.isRequired
+  extension: PropTypes.object.isRequired
 };
