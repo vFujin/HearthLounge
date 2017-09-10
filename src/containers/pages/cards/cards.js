@@ -9,22 +9,24 @@ import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
 import {infiniteScroll} from "../../../utils/infinite-scroll"
 import {filterByUrl} from "../../../utils/filter/cards/by-url";
+import {CARDS_LOADED} from "../../../redux/types/cards";
 class Cards extends PureComponent {
 
   componentWillUnmount(){
-    this.props.updateCurrentCardsLoaded(37);
+    this.props.updateCardsLoaded(37);
   }
 
   listCards = () => {
-    const {cards, currentCardsLoaded, updateCurrentCardsLoaded, location} = this.props;
-    const {all, loading} = cards;
+    const {cards, cardsLoaded, updateCardsLoaded, location} = this.props;
+    const {loading} = cards;
     const {query} = location;
 
     if (loading) {
       return <Loader/>;
     } else {
-      infiniteScroll('.content', updateCurrentCardsLoaded);
-      return filterByUrl(all, query, currentCardsLoaded).map(card =>
+      const {allCards} = cards;
+      infiniteScroll('.content', updateCardsLoaded);
+      return filterByUrl(allCards, query, cardsLoaded).map(card =>
           <li key={card.cardId}>
             <Tooltip placement="left" title={<CardDetails card={card}/>}>
               <div className="img-wrapper">
@@ -66,14 +68,14 @@ Cards.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const {currentCardsLoaded} = state.cards;
-  return {currentCardsLoaded};
+  const {cards, cardsLoaded} = state.cards;
+  return {cards, cardsLoaded};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateCurrentCardsLoaded: (currentCardsLoaded) => (dispatch({
-      type: 'CURRENT_CARDS_LOADED', currentCardsLoaded
+    updateCardsLoaded: payload => (dispatch({
+      type: CARDS_LOADED, payload
     }))
   }
 };

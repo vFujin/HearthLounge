@@ -67,9 +67,9 @@ IconFilter.propTypes = {
   header: PropTypes.bool.isRequired,
   header_label: PropTypes.string,
   filter: PropTypes.string.isRequired,
-  isStandard: PropTypes.bool.isRequired,
   query: PropTypes.object.isRequired,
   wrapper_class: PropTypes.string.isRequired,
+  isStandard: PropTypes.bool,
 };
 
 export default IconFilter;

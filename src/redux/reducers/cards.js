@@ -2,7 +2,8 @@ import * as types from "../types/cards";
 
 const initialState = {
   cards: {
-    loading: true
+    loading: true,
+    allCards: []
   }
 };
 
@@ -32,10 +33,10 @@ export default function(state=initialState, {type, payload}) {
           error: payload
         }
       };
-      // case 'CURRENT_CARDS_LOADED': return {
-      //     ...state,
-      //   currentCardsLoaded: action.currentCardsLoaded
-      // };
+      case types.CARDS_LOADED: return {
+          ...state,
+        cardsLoaded: payload
+      };
 
     default:
       return state;

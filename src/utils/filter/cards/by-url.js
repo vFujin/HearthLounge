@@ -9,7 +9,6 @@ import _ from 'lodash';
 import {filterCards} from "../cards";
 
 export const byUrl = (card, query) => {
-
   return Object.keys(query).every(function (queryKey) {
     // if (queryKey === 'mechanics') {
     //   console.log(queryKey);
@@ -25,11 +24,11 @@ export const byUrl = (card, query) => {
       });
     }
     else {
-      return card[_.toLower(_.trim(queryKey, 'card'))] == query[queryKey];
+      return card[_.toLower(queryKey)] == query[queryKey];
     }
   })
 };
 
-export const filterByUrl = (cards, query, currentCardsLoaded) =>{
-  return filterCards(cards, byUrl, query, currentCardsLoaded)
+export const filterByUrl = (cards, query, cardsLoaded) =>{
+  return filterCards(cards, byUrl, query, cardsLoaded)
 };
