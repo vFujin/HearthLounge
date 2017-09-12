@@ -8,7 +8,7 @@ const SidebarHeader = ({filtersView, handleSidebarViewChange}) =>{
   return (
       <h3 className="sidebar__header">
         <span>{activeViewHeader}</span>
-        <button className="btn-pearl" onClick={handleSidebarViewChange}>Show {invertedActiveViewHeader}</button>
+        {/*<button className="btn-pearl" onClick={handleSidebarViewChange}>Show {invertedActiveViewHeader}</button>*/}
       </h3>
   )
 };

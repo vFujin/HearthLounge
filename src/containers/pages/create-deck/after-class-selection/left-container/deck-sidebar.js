@@ -11,6 +11,7 @@ const DeckSidebar = ({countCards, deck, deckDetails, handleDeckMechanicsToggle, 
   let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
   let max = _.max(Object.values(countByCost));
 
+  console.log(imgReadyDecklist);
   const decklistHeaderView = () => {
     return imgReadyDecklist
         ? <MapFunctionlessIcons deck={deck} activeClass="decklist-summary" filtersActive={false} set="types"/>

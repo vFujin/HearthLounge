@@ -6,25 +6,24 @@ import Card from "./card";
 import {infiniteScroll} from "../../../../../../../utils/infinite-scroll";
 import {filterByUrl} from "../../../../../../../utils/filter/cards/by-url";
 
-const Cards = ({allCards, deck, playerClass, filtersQuery, handleCardClick, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
-  const cardsLength = allCards.length;
+const Cards = ({cards, deck, playerClass, filtersQuery, handleCardClick, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
+  const {allCards, loading} = cards;
+  const mapCards = () =>{
+      infiniteScroll('.content', updateCurrentCardsLoaded);
+      let initialFilteringCards = allCards.filter(card => card.playerClass === _.upperFirst(playerClass) || card.playerClass === "Neutral");
 
-  const cards = () =>{
-    infiniteScroll('.content', updateCurrentCardsLoaded);
-    let initialFilteringCards = allCards.filter(card=> card.playerClass === _.upperFirst(playerClass) || card.playerClass === "Neutral");
-    return filterByUrl(initialFilteringCards, filtersQuery, currentCardsLoaded)
-          .map(card=> <Card card={card}
-                            deck={deck}
-                            key={card.cardId}
-                            handleCardClick={handleCardClick}/>)
+      return filterByUrl(initialFilteringCards, filtersQuery, currentCardsLoaded).map(card => <Card card={card}
+                                                                                                    deck={deck}
+                                                                                                    key={card.cardId}
+                                                                                                    handleCardClick={handleCardClick}/>)
   };
 
   return (
         <ul className="container__cards">
           {
-            cardsLength < 1
+            loading
               ? <Loader />
-              : cards()
+              : mapCards()
           }
         </ul>
   )

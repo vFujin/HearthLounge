@@ -4,11 +4,12 @@ import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 import Search from "./right-container/content-assets/cards/search";
 
-const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, udpateCardSearchValue, importedDeckstringPopover, patch, filteredCards, cardSearchValue, filtersView, handleCardClick, handleCardSearch, handleOptionsClick, handleInputChange, handleImgSaveClick, handleDeckImport, allCards, playerClass,
+const RightContainer = ({cards, authenticated, deck, deckstring, udpateCardSearchValue, patch, filteredCards, cardSearchValue, handleCardClick, handleCardSearch, handleInputChange, playerClass,
                           query, simplifiedDeck, filtersQuery, editingTool, user, searchBox, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
+
   const activeView = () => {
     return !editingTool
-        ? <Cards allCards={allCards}
+        ? <Cards cards={cards}
                  deck={deck}
                  playerClass={playerClass}
                  handleCardClick={handleCardClick}
@@ -25,7 +26,7 @@ const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, ud
 
   const searchBoxView = () =>{
     if(searchBox){
-      return <Search cards={allCards}
+      return <Search cards={cards.allCards}
                      cardSearchValue={cardSearchValue}
                      handleInputChange={handleInputChange}/>
     }
@@ -33,18 +34,10 @@ const RightContainer = ({authenticated, deck, deckstring, importedDeckstring, ud
 
   return (
       <div className="container__page--inner container__page--right">
-        <Topbar filtersView={filtersView}
-                query={query}
+        <Topbar query={query}
                 playerClass={playerClass}
                 deck={deck}
-                importedDeckstring={importedDeckstring}
-                importedDeckstringPopover={importedDeckstringPopover}
-                deckstring={deckstring}
-                handleInputChange={handleInputChange}
-                handleImgSaveClick={handleImgSaveClick}
-                handleOptionsClick={handleOptionsClick}
-                handleDeckImport={handleDeckImport}
-                imgReadyDecklist={imgReadyDecklist}/>
+                handleInputChange={handleInputChange}/>
         <div className="content scrollable">
           {activeView()}
         </div>

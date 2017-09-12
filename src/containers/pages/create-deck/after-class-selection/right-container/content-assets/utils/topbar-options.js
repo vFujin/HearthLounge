@@ -22,20 +22,20 @@ export default function(event, editingTool, deck, icon, imgReadyDecklist, handle
   switch (icon) {
     case 'copy': return handleCopyDeckStringClick();
     case 'image': {
-      switchDecklistClasses(!imgReadyDecklist);
-      toggleImportedDeckstringPopover(false);
+      switchDecklistClasses();
+      importedDeckstringPopover && toggleImportedDeckstringPopover();
       break;
     }
     case 'download':
       !editingTool
           ? document.getElementById(event.currentTarget.id).className += "active"
           : document.getElementById(event.currentTarget.id).className = "";
-      showDeckEditingTool(!editingTool);
+      showDeckEditingTool();
       simplifyDeck(simplifiedDeck);
       break;
     case 'fire': {
-      toggleImportedDeckstringPopover(!importedDeckstringPopover);
-      switchDecklistClasses(false);
+      toggleImportedDeckstringPopover();
+      imgReadyDecklist && switchDecklistClasses();
       break;
     }
     default: return icon;

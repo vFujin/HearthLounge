@@ -17,7 +17,6 @@ const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptions
       default: return obj.popover;
     }
   };
-
   const allowCopy = (obj, copyItem) =>{
     if(obj.allowCopy){
       return copyItem

@@ -24,7 +24,6 @@ const DeckOptions = ({authenticated, playerClass, deckstring, patch, user, deckM
     }
   };
 
-
   const handleSelectChange = (v, selector) => {
     let key= `deck${_.upperFirst(selector)}`;
     updateDeckProperty({[key]: v});

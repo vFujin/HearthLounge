@@ -15,6 +15,9 @@ import {
   scToggleSearchBox
 } from "./right-container/content-assets/utils/shortcuts/index";
 import {resetFocus} from "./right-container/content-assets/utils/reset-focus";
+import Loader from "../../../../components/loader";
+import {updateCardSearchValue} from "../../../../redux/actions/create-deck/create-deck.action";
+import {toggleImgReadyDecklist} from "../../../../redux/actions/create-deck/create-deck.action";
 
 class CreateDeckClassSelected extends PureComponent {
 
@@ -52,15 +55,6 @@ class CreateDeckClassSelected extends PureComponent {
     scSaveDeck(e, showDeckEditingTool, editingTool);
   };
 
-  switchDecklistClasses = (param) => {
-    const {toggleImgReadyDecklist, imgReadyDecklist} = this.props;
-
-    toggleImgReadyDecklist(param);
-    !imgReadyDecklist
-        ? document.getElementById('image').className += "active"
-        : document.getElementById('image').className = "";
-  };
-
   handleDeckMechanicsToggle = () => {
     const {toggleDeckMechanics, deckMechanics} = this.props;
     toggleDeckMechanics(!deckMechanics);
@@ -69,18 +63,6 @@ class CreateDeckClassSelected extends PureComponent {
   handleDeckFiltersToggle = () =>{
     const {toggleFilters, filters} = this.props;
     toggleFilters(!filters);
-  };
-
-  handleCopyDeckStringClick = () => {
-    const {updateDeckstring, deck, params} = this.props;
-    const playerClass = params.class;
-    let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
-
-    updateDeckstring(deckstring);
-  };
-
-  handleImgSaveClick = e => {
-    imgCaptureBox(e, this.switchDecklistClasses);
   };
 
   handleInputChange = e =>{
@@ -98,7 +80,7 @@ class CreateDeckClassSelected extends PureComponent {
 
   handleCardSearch = _.debounce(() => {
       const {filterCards, cards, params, cardSearchValue} = this.props;
-      const {allCards} = cards;
+      const {allCards, loading} = cards;
 
       if(cardSearchValue !== '') {
         return filterCards(allCards.filter(card => (card.playerClass === 'Neutral') || card.playerClass === _.startCase(params.class) ).filter(card => {
@@ -109,25 +91,10 @@ class CreateDeckClassSelected extends PureComponent {
       }
   }, 300);
 
-  handleDeckImport = () => {
-    const {cards, importedDeckstring, editDeck, simplifyDeck} = this.props;
-    const {allCards} = cards;
-
-    createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck));
-  };
-
-  handleOptionsClick = (event, icon) => {
-    const {editingTool, deck, imgReadyDecklist, importedDeckstringPopover, showDeckEditingTool, simplifyDeck, toggleImportedDeckstringPopover} = this.props;
-    topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck, importedDeckstringPopover, toggleImportedDeckstringPopover);
-  };
-
   render() {
-    const {authenticated, cards, deck, patch, deckMechanics, editingTool, filters, udpateCardSearchValue, cardSearchValue, searchBox, filteredCards, filtersQuery, importedDeckstring, importedDeckstringPopover, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
-    const {allCards, cardSet} = cards;
+    const {authenticated, cards, deck, patch, deckstring, deckMechanics, editingTool, filters, udpateCardSearchValue, cardSearchValue, searchBox, filtersQuery, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
     const {query} = location;
     const playerClass = params.class;
-    const filteredByClass = allCards.filter(card => card.playerClass === _.startCase(playerClass) || card.playerClass === 'Neutral');
-    let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
 
     return (
         <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
@@ -141,32 +108,24 @@ class CreateDeckClassSelected extends PureComponent {
                          handleDeckMechanicsToggle={this.handleDeckMechanicsToggle}
                          playerClass={playerClass}
                          cards={cards}
-                         cardSet={cardSet}
                          imgReadyDecklist={imgReadyDecklist}
                          query={query}/>
 
-          <RightContainer filtersView={filters}
-                          authenticated={authenticated}
+          <RightContainer authenticated={authenticated}
                           query={query}
                           playerClass={playerClass}
-                          deckstring={deckstring}
                           deck={deck}
-                          importedDeckstring={importedDeckstring}
-                          importedDeckstringPopover={importedDeckstringPopover}
                           simplifiedDeck={simplifiedDeck}
                           handleCardClick={this.handleCardClick}
-                          handleOptionsClick={this.handleOptionsClick}
-                          handleImgSaveClick={this.handleImgSaveClick}
                           handleInputChange={this.handleInputChange}
-                          handleDeckImport={this.handleDeckImport}
                           handleCardSearch={this.handleCardSearch}
-                          allCards={filteredCards || filteredByClass}
+                          cards={cards}
                           cardSearchValue={cardSearchValue}
                           udpateCardSearchValue={udpateCardSearchValue}
                           patch={patch}
+                          deckstring={deckstring}
                           editingTool={editingTool}
                           user={user}
-                          imgReadyDecklist={imgReadyDecklist}
                           filtersQuery={filtersQuery}
                           searchBox={searchBox}
                           updateCurrentCardsLoaded={updateCurrentCardsLoaded}
@@ -177,44 +136,44 @@ class CreateDeckClassSelected extends PureComponent {
 }
 
 const mapStateToProps = (state) =>{
-  const {filters, editingTool, deckMechanics, imgReadyDecklist, importedDeckstring, filteredCards, searchBox, cardSearchValue, deck, simplifiedDeck, currentCardsLoaded, filtersQuery, importedDeckstringPopover} = state.deckCreation;
+  const {
+    filters, deckMechanics, filteredCards, searchBox, deckstring, editingTool, cardSearchValue, deck, simplifiedDeck,
+    currentCardsLoaded, filtersQuery, imgReadyDecklist
+  } = state.deckCreation;
+  const {cards} = state.cards;
   return {
+    cards,
     filters,
-    editingTool,
     deckMechanics,
-    imgReadyDecklist,
     deck,
     simplifiedDeck,
     currentCardsLoaded,
     filtersQuery,
-    importedDeckstring,
-    importedDeckstringPopover,
     searchBox,
     cardSearchValue,
-    filteredCards
+    filteredCards,
+    editingTool,
+    imgReadyDecklist,
+    deckstring
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   const {
-    toggleFilters, showDeckEditingTool, toggleDeckMechanics,
-    toggleImgReadyDecklist, editDeck, updateDeckstring, simplifyDeck, updateCurrentCardsLoaded, updateImportedDeckstring, filterCards,
-    toggleSearchBox, updateCardSearchValue, toggleImportedDeckstringPopover
+    toggleFilters, toggleDeckMechanics,
+    editDeck, updateCurrentCardsLoaded, updateImportedDeckstring, filterCards,
+    toggleSearchBox
   } = deckCreationActions;
 
   return {
     toggleFilters: filters => dispatch(toggleFilters(filters)),
-    showDeckEditingTool: editingTool => dispatch(showDeckEditingTool(editingTool)),
     toggleDeckMechanics: deckMechanics => dispatch(toggleDeckMechanics(deckMechanics)),
-    toggleImgReadyDecklist: imgReadyDecklist => dispatch(toggleImgReadyDecklist(imgReadyDecklist)),
     editDeck: deck => dispatch(editDeck(deck)),
-    updateDeckstring: deckstring => dispatch(updateDeckstring(deckstring)),
-    simplifyDeck: simplifiedDeck => dispatch(simplifyDeck(simplifiedDeck)),
+    toggleImgReadyDecklist: decklist => dispatch(toggleImgReadyDecklist(decklist)),
+    updateCardSearchValue: card => dispatch(updateCardSearchValue(card)),
     updateCurrentCardsLoaded: currentCardsLoaded => dispatch(updateCurrentCardsLoaded(currentCardsLoaded)),
     updateImportedDeckstring: importedDeckstring => dispatch(updateImportedDeckstring(importedDeckstring)),
-    toggleImportedDeckstringPopover: importedDeckstringPopover => dispatch(toggleImportedDeckstringPopover(importedDeckstringPopover)),
     toggleSearchBox: searchBox => dispatch(toggleSearchBox(searchBox)),
-    updateCardSearchValue: cardSearchValue => dispatch(updateCardSearchValue(cardSearchValue)),
     filterCards: filteredCards => dispatch(filterCards(filteredCards))
   }
 };

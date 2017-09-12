@@ -5,10 +5,10 @@ import FilterSidebar from './left-container/filter-sidebar';
 
 const LeftContainer = ({handleSidebarViewChange, filtersView, countCards, deck, deckDetails, handleDeckMechanicsToggle, playerClass,
                           cards, query, imgReadyDecklist}) =>{
-  const {allCards, name, faction, race, mechanics, type, cardSet} = cards;
+  const {allCards, name, faction, race, mechanics, type} = cards;
 
   const activeView = () => {
-    if(!filtersView){
+    // if(!filtersView){
       return <DeckSidebar countCards={countCards}
                           deck={deck}
                           deckDetails={deckDetails}
@@ -16,16 +16,15 @@ const LeftContainer = ({handleSidebarViewChange, filtersView, countCards, deck, 
                           imgReadyDecklist={imgReadyDecklist}
                           mechanics={mechanics}
                           playerClass={playerClass}/>
-    } else {
-      return <FilterSidebar name={name}
-                            race={race}
-                            mechanics={mechanics}
-                            type={type}
-                            faction={faction}
-                            cards={allCards}
-                            cardSet={cardSet}
-                            query={query}/>
-    }
+    // } else {
+    //   return <FilterSidebar name={name}
+    //                         race={race}
+    //                         mechanics={mechanics}
+    //                         type={type}
+    //                         faction={faction}
+    //                         cards={allCards}
+    //                         query={query}/>
+    // }
   };
 
   return (
