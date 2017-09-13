@@ -18,6 +18,7 @@ import {resetFocus} from "./right-container/content-assets/utils/reset-focus";
 import Loader from "../../../../components/loader";
 import {updateCardSearchValue} from "../../../../redux/actions/create-deck/create-deck.action";
 import {toggleImgReadyDecklist} from "../../../../redux/actions/create-deck/create-deck.action";
+import {toggleImportedDeckstringPopover} from "../../../../redux/actions/create-deck/create-deck.action";
 
 class CreateDeckClassSelected extends PureComponent {
 
@@ -92,10 +93,9 @@ class CreateDeckClassSelected extends PureComponent {
   }, 300);
 
   render() {
-    const {authenticated, cards, deck, patch, deckstring, deckMechanics, editingTool, filters, udpateCardSearchValue, cardSearchValue, searchBox, filtersQuery, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
+    const {authenticated, cards, deck, patch, deckstring, filteredCards, deckMechanics, editingTool, filters, udpateCardSearchValue, cardSearchValue, searchBox, filtersQuery, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
     const {query} = location;
     const playerClass = params.class;
-
     return (
         <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
              className="container__page container__page--twoSided create-deck">
@@ -120,6 +120,7 @@ class CreateDeckClassSelected extends PureComponent {
                           handleInputChange={this.handleInputChange}
                           handleCardSearch={this.handleCardSearch}
                           cards={cards}
+                          filteredCards={filteredCards}
                           cardSearchValue={cardSearchValue}
                           udpateCardSearchValue={udpateCardSearchValue}
                           patch={patch}
@@ -170,6 +171,7 @@ const mapDispatchToProps = (dispatch) => {
     toggleDeckMechanics: deckMechanics => dispatch(toggleDeckMechanics(deckMechanics)),
     editDeck: deck => dispatch(editDeck(deck)),
     toggleImgReadyDecklist: decklist => dispatch(toggleImgReadyDecklist(decklist)),
+    toggleImportedDeckstringPopover: deckstring => dispatch(toggleImportedDeckstringPopover(deckstring)),
     updateCardSearchValue: card => dispatch(updateCardSearchValue(card)),
     updateCurrentCardsLoaded: currentCardsLoaded => dispatch(updateCurrentCardsLoaded(currentCardsLoaded)),
     updateImportedDeckstring: importedDeckstring => dispatch(updateImportedDeckstring(importedDeckstring)),

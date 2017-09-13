@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import Topbar from './right-container/topbar';
 import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
@@ -7,10 +8,12 @@ import Search from "./right-container/content-assets/cards/search";
 const RightContainer = ({cards, authenticated, deck, deckstring, udpateCardSearchValue, patch, filteredCards, cardSearchValue, handleCardClick, handleCardSearch, handleInputChange, playerClass,
                           query, simplifiedDeck, filtersQuery, editingTool, user, searchBox, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
 
+
   const activeView = () => {
     return !editingTool
         ? <Cards cards={cards}
                  deck={deck}
+                 filteredCards={filteredCards}
                  playerClass={playerClass}
                  handleCardClick={handleCardClick}
                  updateCurrentCardsLoaded={updateCurrentCardsLoaded}
@@ -26,7 +29,7 @@ const RightContainer = ({cards, authenticated, deck, deckstring, udpateCardSearc
 
   const searchBoxView = () =>{
     if(searchBox){
-      return <Search cards={cards.allCards}
+      return <Search cards={filteredCards || cards.allCards.filter(card => (card.playerClass === 'Neutral') || card.playerClass === _.startCase(playerClass))}
                      cardSearchValue={cardSearchValue}
                      handleInputChange={handleInputChange}/>
     }

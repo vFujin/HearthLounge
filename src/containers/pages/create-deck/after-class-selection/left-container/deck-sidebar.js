@@ -22,7 +22,7 @@ const DeckSidebar = ({countCards, deck, deckDetails, handleDeckMechanicsToggle, 
       <div className="sidebar__body">
         <div className="container__mana-curve" id="decklist-to-img">
           <h3>Cards/Mana Cost</h3>
-          <ManaCurve deck={deck} max={max}/>
+          <ManaCurve deck={deck} max={max} padding="1vh 0" barHeight="70%"/>
 
           <h3>Chosen Cards{decklistHeaderView()}</h3>
           {!deckDetails
