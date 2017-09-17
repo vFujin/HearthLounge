@@ -14,7 +14,7 @@ import {
 
 const initialState = {
   filters: false,
-  editingTool: false,
+  editingTool: true,
   deckMechanics: false,
   imgReadyDecklist: false,
   deck: [],

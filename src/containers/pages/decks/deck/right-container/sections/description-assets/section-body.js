@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
-import TextEditor from '../../../../../../shared-assets/editor/text-editor';
+import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
+import TextEditor from '../../../../../../../components/text-editor/text-editor';
 
 const SectionBody = ({description, deckEditing, editingDeckDescription, handleInputChange}) => {
 

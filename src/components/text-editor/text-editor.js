@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {toolbar} from '../../../data/editor-icons';
-import {handleBBCodeClick} from './text-editor-functions';
+import {toolbar} from '../../data/editor-icons';
+import {handleBBCodeClick} from './utils/handle-bbcode-click';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
+import Icon from "../icon";
 
 const TextEditor = ({handleInputChange, editorId, previewId, value, handleTagInsertion}) => {
+
   const mapToolbar = () => {
     return toolbar.map(tool => {
       return (
           <li key={tool.name}>
             <Tooltip title={_.startCase(tool.name === 'hs-logo' ? tool.abbreviation : tool.name)} placement="bottom">
               <button onClick={(e)=>handleBBCodeClick(e, value, handleTagInsertion, editorId, previewId)} value={tool.abbreviation}>
-                <span className={`hs-icon icon-${tool.name}`}></span>
+                <Icon name={tool.name}/>
               </button>
             </Tooltip>
           </li>

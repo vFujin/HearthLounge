@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from '../comment';
 import Loader from '../../../../../../../components/loader';
-import {convertBBCode} from '../../../../../../shared-assets/editor/text-editor-functions';
+import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 
 const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments}) => {
   const listComments = () =>{
-
     if(comments === undefined){
       return <Loader/>
     } else {

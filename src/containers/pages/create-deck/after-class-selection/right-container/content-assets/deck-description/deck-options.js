@@ -7,18 +7,20 @@ import Preview from './save-deck-assets/preview';
 import {default as saveDeck} from '../../../../../../../firebase/decks/deck/create/deck';
 import {error} from '../../../../../../../utils/messages';
 import {updateDeckProperty} from "../../../../../../../redux/actions/create-deck/deck-options.action";
+import {previewCardProps} from "../../../../../../../components/text-editor/utils/preview-card-props";
 
-const updateDeckText = _.debounce((updateDeckProperty, value) => {
-  updateDeckProperty({deckText: value})
+const updateDeckText = _.debounce((updateDeckProperty, value, cards) => {
+  let deckText = !cards.loading && previewCardProps(value, cards.allCards) || value;
+  updateDeckProperty({deckText})
 }, 300);
 
-const DeckOptions = ({authenticated, playerClass, deckstring, patch, user, deckMode, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
+const DeckOptions = ({authenticated, cards, playerClass, deckstring, patch, user, deckMode, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, deckTextControlled, simplifiedDeck, updateDeckProperty}) => {
   const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
     if(target === 'deckTextControlled') {
       updateDeckProperty({deckTextControlled: value});
-      updateDeckText(updateDeckProperty, value);
+      updateDeckText(updateDeckProperty, value, cards);
     } else {
       updateDeckProperty({[target]: value});
     }
@@ -38,7 +40,6 @@ const DeckOptions = ({authenticated, playerClass, deckstring, patch, user, deckM
       error("You have to be logged in in order to save your deck.", 6)
     }
   };
-
   return (
       <div className='container__details'>
         <AboutDeck playerClass={playerClass}

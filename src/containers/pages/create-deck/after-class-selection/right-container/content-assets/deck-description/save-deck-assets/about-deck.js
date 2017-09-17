@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextEditor from '../../../../../../../shared-assets/editor/text-editor';
+import TextEditor from '../../../../../../../../components/text-editor/text-editor';
 import InnerLeftContainer from './about-deck-inner-left-container';
 import InnerRightContainer from './about-deck-inner-right-container';
 
@@ -9,7 +9,7 @@ const AboutDeck = ({playerClass, deckTitle, deckMode, deckArchetype, deckAdventu
       <div className="container__details--section container__details--description v-rows-2">
         <div className="section__header">
           <div className="line"></div>
-          <h1>About deck</h1>
+          <h1>Deck Details</h1>
         </div>
         <div className="section__body">
           <form onSubmit={handleSaveDeckSubmit} className="inline section__body--background">

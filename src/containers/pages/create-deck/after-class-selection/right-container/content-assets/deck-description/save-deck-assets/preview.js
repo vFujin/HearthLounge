@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {convertBBCode} from '../../../../../../../shared-assets/editor/text-editor-functions';
+import {convertBBCode} from '../../../../../../../../components/text-editor/utils/convert-bbcode';
+
 
 const Preview = ({deckText}) =>{
   return (
@@ -9,7 +10,7 @@ const Preview = ({deckText}) =>{
           <div className="line"></div>
           <h1>Preview</h1>
         </div>
-        <div className="section__body default-style">
+        <div id="foo" className="section__body default-style">
           {convertBBCode(deckText)}
         </div>
       </div>

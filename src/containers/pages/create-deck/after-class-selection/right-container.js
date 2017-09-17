@@ -8,7 +8,6 @@ import Search from "./right-container/content-assets/cards/search";
 const RightContainer = ({cards, authenticated, deck, deckstring, udpateCardSearchValue, patch, filteredCards, cardSearchValue, handleCardClick, handleCardSearch, handleInputChange, playerClass,
                           query, simplifiedDeck, filtersQuery, editingTool, user, searchBox, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
 
-
   const activeView = () => {
     return !editingTool
         ? <Cards cards={cards}
@@ -22,6 +21,7 @@ const RightContainer = ({cards, authenticated, deck, deckstring, udpateCardSearc
         : <DeckOptions playerClass={playerClass}
                        simplifiedDeck={simplifiedDeck}
                        patch={patch}
+                       cards={cards}
                        deckstring={deckstring}
                        authenticated={authenticated}
                        user={user}/>

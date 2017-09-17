@@ -515,6 +515,9 @@ a {
     background: transparent; }
   .druid.icon-font-active {
     color: #474143; }
+  .druid.in-text:hover {
+    background: transparent;
+    color: #FF7D0A; }
   .druid.table-row {
     color: #474143; }
     .druid.table-row:nth-child(odd) {
@@ -578,6 +581,9 @@ a {
     background: transparent; }
   .hunter.icon-font-active {
     color: #474143; }
+  .hunter.in-text:hover {
+    background: transparent;
+    color: #ABD473; }
   .hunter.table-row {
     color: #474143; }
     .hunter.table-row:nth-child(odd) {
@@ -641,6 +647,9 @@ a {
     background: transparent; }
   .mage.icon-font-active {
     color: #474143; }
+  .mage.in-text:hover {
+    background: transparent;
+    color: #69CCF0; }
   .mage.table-row {
     color: #474143; }
     .mage.table-row:nth-child(odd) {
@@ -704,6 +713,9 @@ a {
     background: transparent; }
   .paladin.icon-font-active {
     color: #474143; }
+  .paladin.in-text:hover {
+    background: transparent;
+    color: #F58CBA; }
   .paladin.table-row {
     color: #474143; }
     .paladin.table-row:nth-child(odd) {
@@ -767,6 +779,9 @@ a {
     background: transparent; }
   .priest.icon-font-active {
     color: #474143; }
+  .priest.in-text:hover {
+    background: transparent;
+    color: #FFFFFF; }
   .priest.table-row {
     color: #474143; }
     .priest.table-row:nth-child(odd) {
@@ -830,6 +845,9 @@ a {
     background: transparent; }
   .rogue.icon-font-active {
     color: #474143; }
+  .rogue.in-text:hover {
+    background: transparent;
+    color: #FFF569; }
   .rogue.table-row {
     color: #474143; }
     .rogue.table-row:nth-child(odd) {
@@ -893,6 +911,9 @@ a {
     background: transparent; }
   .shaman.icon-font-active {
     color: #474143; }
+  .shaman.in-text:hover {
+    background: transparent;
+    color: #0070DE; }
   .shaman.table-row {
     color: #474143; }
     .shaman.table-row:nth-child(odd) {
@@ -956,6 +977,9 @@ a {
     background: transparent; }
   .warlock.icon-font-active {
     color: #474143; }
+  .warlock.in-text:hover {
+    background: transparent;
+    color: #9482C9; }
   .warlock.table-row {
     color: #474143; }
     .warlock.table-row:nth-child(odd) {
@@ -1019,6 +1043,9 @@ a {
     background: transparent; }
   .warrior.icon-font-active {
     color: #474143; }
+  .warrior.in-text:hover {
+    background: transparent;
+    color: #C79C6E; }
   .warrior.table-row {
     color: #474143; }
     .warrior.table-row:nth-child(odd) {
@@ -1082,6 +1109,9 @@ a {
     background: transparent; }
   .death-knight.icon-font-active {
     color: #474143; }
+  .death-knight.in-text:hover {
+    background: transparent;
+    color: #C41F3B; }
   .death-knight.table-row {
     color: #474143; }
     .death-knight.table-row:nth-child(odd) {
@@ -1145,6 +1175,9 @@ a {
     background: transparent; }
   .monk.icon-font-active {
     color: #474143; }
+  .monk.in-text:hover {
+    background: transparent;
+    color: #00FF96; }
   .monk.table-row {
     color: #474143; }
     .monk.table-row:nth-child(odd) {
@@ -1208,6 +1241,9 @@ a {
     background: transparent; }
   .demon-hunter.icon-font-active {
     color: #474143; }
+  .demon-hunter.in-text:hover {
+    background: transparent;
+    color: #A330C9; }
   .demon-hunter.table-row {
     color: #474143; }
     .demon-hunter.table-row:nth-child(odd) {
@@ -1274,6 +1310,9 @@ a {
     background: transparent; }
   .naxxramas.icon-font-active {
     color: #474143; }
+  .naxxramas.in-text:hover {
+    background: transparent;
+    color: #b5de3f; }
   .naxxramas.table-row {
     color: #474143; }
     .naxxramas.table-row:nth-child(odd) {
@@ -1337,6 +1376,9 @@ a {
     background: transparent; }
   .blackrock-mountain.icon-font-active {
     color: #474143; }
+  .blackrock-mountain.in-text:hover {
+    background: transparent;
+    color: #fa5210; }
   .blackrock-mountain.table-row {
     color: #474143; }
     .blackrock-mountain.table-row:nth-child(odd) {
@@ -1400,6 +1442,9 @@ a {
     background: transparent; }
   .the-league-of-explorers.icon-font-active {
     color: #474143; }
+  .the-league-of-explorers.in-text:hover {
+    background: transparent;
+    color: #14a9a1; }
   .the-league-of-explorers.table-row {
     color: #474143; }
     .the-league-of-explorers.table-row:nth-child(odd) {
@@ -1463,6 +1508,9 @@ a {
     background: transparent; }
   .karazhan.icon-font-active {
     color: #474143; }
+  .karazhan.in-text:hover {
+    background: transparent;
+    color: #e2b4df; }
   .karazhan.table-row {
     color: #474143; }
     .karazhan.table-row:nth-child(odd) {
@@ -1529,6 +1577,9 @@ a {
     background: transparent; }
   .goblins-vs-gnomes.icon-font-active {
     color: #474143; }
+  .goblins-vs-gnomes.in-text:hover {
+    background: transparent;
+    color: #fae43f; }
   .goblins-vs-gnomes.table-row {
     color: #474143; }
     .goblins-vs-gnomes.table-row:nth-child(odd) {
@@ -1592,6 +1643,9 @@ a {
     background: transparent; }
   .the-grand-tournament.icon-font-active {
     color: #474143; }
+  .the-grand-tournament.in-text:hover {
+    background: transparent;
+    color: #f00; }
   .the-grand-tournament.table-row {
     color: #474143; }
     .the-grand-tournament.table-row:nth-child(odd) {
@@ -1655,6 +1709,9 @@ a {
     background: transparent; }
   .whispers-of-the-old-gods.icon-font-active {
     color: #474143; }
+  .whispers-of-the-old-gods.in-text:hover {
+    background: transparent;
+    color: #cc00ff; }
   .whispers-of-the-old-gods.table-row {
     color: #474143; }
     .whispers-of-the-old-gods.table-row:nth-child(odd) {
@@ -1718,6 +1775,9 @@ a {
     background: transparent; }
   .mean-streets-of-gadgetzan.icon-font-active {
     color: #474143; }
+  .mean-streets-of-gadgetzan.in-text:hover {
+    background: transparent;
+    color: #d2cac5; }
   .mean-streets-of-gadgetzan.table-row {
     color: #474143; }
     .mean-streets-of-gadgetzan.table-row:nth-child(odd) {
@@ -1781,6 +1841,9 @@ a {
     background: transparent; }
   .journey-to-ungoro.icon-font-active {
     color: #474143; }
+  .journey-to-ungoro.in-text:hover {
+    background: transparent;
+    color: #3d9e2c; }
   .journey-to-ungoro.table-row {
     color: #474143; }
     .journey-to-ungoro.table-row:nth-child(odd) {
@@ -1844,6 +1907,9 @@ a {
     background: transparent; }
   .knights-of-the-frozen-throne.icon-font-active {
     color: #474143; }
+  .knights-of-the-frozen-throne.in-text:hover {
+    background: transparent;
+    color: #a5f2f3; }
   .knights-of-the-frozen-throne.table-row {
     color: #474143; }
     .knights-of-the-frozen-throne.table-row:nth-child(odd) {
@@ -1910,6 +1976,9 @@ a {
     background: transparent; }
   .common.icon-font-active {
     color: #474143; }
+  .common.in-text:hover {
+    background: transparent;
+    color: #fff; }
   .common.table-row {
     color: #474143; }
     .common.table-row:nth-child(odd) {
@@ -1973,6 +2042,9 @@ a {
     background: transparent; }
   .rare.icon-font-active {
     color: #474143; }
+  .rare.in-text:hover {
+    background: transparent;
+    color: blue; }
   .rare.table-row {
     color: #474143; }
     .rare.table-row:nth-child(odd) {
@@ -2036,6 +2108,9 @@ a {
     background: transparent; }
   .epic.icon-font-active {
     color: #474143; }
+  .epic.in-text:hover {
+    background: transparent;
+    color: purple; }
   .epic.table-row {
     color: #474143; }
     .epic.table-row:nth-child(odd) {
@@ -2099,6 +2174,9 @@ a {
     background: transparent; }
   .legendary.icon-font-active {
     color: #474143; }
+  .legendary.in-text:hover {
+    background: transparent;
+    color: orange; }
   .legendary.table-row {
     color: #474143; }
     .legendary.table-row:nth-child(odd) {
@@ -2165,6 +2243,9 @@ a {
     background: transparent; }
   .mammoth.icon-font-active, .kraken.icon-font-active {
     color: #474143; }
+  .mammoth.in-text:hover, .kraken.in-text:hover {
+    background: transparent;
+    color: #318e2f; }
   .mammoth.table-row, .kraken.table-row {
     color: #474143; }
     .mammoth.table-row:nth-child(odd), .kraken.table-row:nth-child(odd) {
@@ -2228,6 +2309,9 @@ a {
     background: transparent; }
   .wild.icon-font-active {
     color: #474143; }
+  .wild.in-text:hover {
+    background: transparent;
+    color: #695840; }
   .wild.table-row {
     color: #474143; }
     .wild.table-row:nth-child(odd) {
@@ -3492,6 +3576,11 @@ nav {
 
 footer {
   background-color: #474143; }
+
+card {
+  font-weight: bold; }
+  card:hover {
+    background: transparent; }
 
 .table-scroll {
   overflow: auto; }

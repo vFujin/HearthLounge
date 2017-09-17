@@ -4,7 +4,10 @@ const initialState = {
   deckMode: "standard",
   deckArchetype: "quest",
   deckAdventure: '',
-  deckBoss: ''
+  deckBoss: '',
+  deckText: '',
+  deckTextControlled: ''
+
 };
 export default function(state=initialState, action){
   switch(action.type){

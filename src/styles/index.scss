@@ -170,6 +170,12 @@ nav {
 footer{
   background-color: $dark-grey;
 }
+card{
+  font-weight: bold;
+  &:hover {
+    background: transparent;
+  }
+}
 .table-scroll {
   overflow: auto;
   table {

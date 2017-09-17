@@ -6,6 +6,7 @@
   span {
     border-color: $color;
   }
+
   &:hover {
     background-color: $color;
     color: $dark-grey;
@@ -13,15 +14,18 @@
       border-color: $dark-grey;
     }
   }
+
   &.active {
     background-color: $color;
     color: $dark-grey;
     border-color: $color;
   }
+
   &.active-without-background{
     color: $color !important;
     background-color: transparent;
   }
+
   &.active-shadow{
     color: $dark-grey;
     background: $color;
@@ -32,6 +36,7 @@
       @include box-shadow(0,0,10px, $color);
     }
   }
+
   &.active-on-hover{
     color: $dark-grey;
     &:hover{
@@ -40,13 +45,22 @@
       border: $dark-grey;
     }
   }
+
   &.active-border{
     border: 1px solid $color;
     color: $dark-grey;
     background: transparent;
   }
+
   &.icon-font-active {
     color: $dark-grey;
+  }
+
+  &.in-text{
+    &:hover{
+      background: transparent;
+      color: $color;
+    }
   }
 
   &.table-row{
