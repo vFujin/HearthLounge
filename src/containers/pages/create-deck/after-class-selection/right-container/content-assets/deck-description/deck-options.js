@@ -20,6 +20,9 @@ const DeckOptions = ({authenticated, cards, playerClass, deckstring, patch, user
     let value = e.target.value;
     if(target === 'deckTextControlled') {
       updateDeckProperty({deckTextControlled: value});
+      if(e.keyCode === 13){
+        value += '<br>\n';
+      }
       updateDeckText(updateDeckProperty, value, cards);
     } else {
       updateDeckProperty({[target]: value});

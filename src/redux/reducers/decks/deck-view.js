@@ -22,7 +22,9 @@ const initialState = {
     downvoted: 0,
     votes: 0,
     id: ""
-  }
+  },
+  deckComment: '',
+  deckCommentControlled: ''
 };
 
 export default function(state=initialState, action) {

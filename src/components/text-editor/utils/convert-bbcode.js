@@ -31,6 +31,6 @@ export const convertBBCode = (text) =>{
     function createMarkup(){
       return {__html: s}
     }
-    return <div dangerouslySetInnerHTML={createMarkup()} />
+    return <div className="markup" dangerouslySetInnerHTML={createMarkup()} />
   }
 };

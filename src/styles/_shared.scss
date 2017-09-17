@@ -41,6 +41,11 @@
       }
     }
   }
+  ol{
+    li{
+      list-style-type: decimal;
+    }
+  }
   a{
     &:link {
       color: #0000EE;

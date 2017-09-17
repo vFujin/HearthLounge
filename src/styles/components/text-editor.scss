@@ -1,21 +1,36 @@
 @import '../colors';
 @import '../mixins';
 
+.markup{
+  white-space: pre-wrap;
+}
+
 .text-editor{
   display: grid;
   background: $dark-grey;
-  height: 100%;
+  //height: calc(100% - 40px);
+  overflow: hidden;
   grid-template-rows: 40px auto;
   border: 1px solid grey;
   padding: 1vh;
+  letter-spacing: .5px;
   .toolbar{
     display: flex;
     border-bottom: 1px solid $light-grey;
     padding-bottom: 1vh;
+    position: relative;
     li{
       @include transition(all ease .4s);
       border: 1px solid $light-grey;
       margin-right: 5px;
+      &.active{
+
+        border-color: $pearl;
+        background: $white-020;
+        span{
+          color: $pearl;
+        }
+      }
       &:hover{
         border:1px solid $pearl;
         background: $white-020;
@@ -27,6 +42,8 @@
       }
       &:last-child{
         margin-right: 0;
+        position: absolute;
+        right:0;
       }
       button{
         cursor: pointer;
@@ -48,15 +65,114 @@
 
     }
   }
-  textarea{
-    @include slim-scrollbar();
-    resize: none;
-    outline:none;
-    width: calc(100% - 6px);
-    color: $pearl;
-    border: 0;
-    background: transparent;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 1vh;
-    font-size: 14px;
+    position: relative;
+    height: 100%;
+    &.grid-1-1 {
+      height: calc(100% - 13.5vh  - 1px);
+      textarea, > div {
+        width: calc(50% - 5px);
+      }
+      > div {
+          .formatting-help {
+            width: 100%;
+          }
+      }
+    }
+    &.grid-1-0 {
+      textarea {
+        width: 100%;
+      }
+    }
+    textarea {
+      @include slim-scrollbar();
+      margin-top: 0;
+      height: calc(100% - 10px);
+      resize: none;
+      outline: none;
+      color: $pearl;
+      border: 0;
+      background: transparent;
+      font-size: 14px;
+    }
+    > div {
+      height: calc(100% - 10px);
+      overflow: auto;
+      border: 1px solid $pearl;
+      @include scrollbar($pearl);
+      .close {
+        cursor: pointer;
+        position: absolute;
+        right: -5px;
+        top: -7px;
+        background: $dark-grey;
+        border-radius: 50%;
+        padding: 5px;
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $pearl;
+        border: 2px solid $pearl;
+        @include transition(all ease .4s);
+        &:hover {
+          background: $pearl;
+          color: $dark-grey;
+          @include box-shadow(0, 0, 10px, $pearl);
+        }
+        span {
+          font-size: 10px;
+          margin-left: 1px;
+        }
+      }
+      .formatting-help {
+        text-align: center;
+        background: rgba(255, 255, 255, .1);
+        height: 100%;
+        border-collapse: collapse;
+        .lists {
+          p {
+            text-align: left;
+            margin: 0 0 0 10px;
+          }
+          ol, ul {
+            margin-right: 10px;
+          }
+        }
+        tr {
+          td {
+            padding: 5px 0;
+            font-size: 14px;
+          }
+        }
+        thead {
+          td {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $sea-color;
+          }
+        }
+        tbody {
+          tr {
+            td {
+              &:first-child {
+                color: $light-grey;
+              }
+              &:last-child {
+                color: $pearl;
+              }
+            }
+            &:nth-child(odd) {
+              background-color: rgba(255, 255, 255, .1);
+            }
+          }
+        }
+      }
+    }
   }
 }
