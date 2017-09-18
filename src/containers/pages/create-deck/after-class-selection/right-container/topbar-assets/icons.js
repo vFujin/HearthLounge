@@ -32,14 +32,14 @@ export const topbar_icons = (active_class) => {
         allowCopy: false
       },
       {
-        title: 'import deck to hearth lounge',
-        icon: 'download',
+        title: 'import deck',
+        icon: 'import',
         popover: false,
         allowCopy: false
       },
       {
         title: 'save deck in hearth lounge',
-        icon: 'fire',
+        icon: 'save',
         popover: true,
         allowCopy: false
       },

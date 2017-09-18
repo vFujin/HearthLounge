@@ -51,7 +51,7 @@ class TextEditor extends Component{
             <li key="cancel" className={formattingHelp && 'active'}>
               <Tooltip title="Formatting Help" placement="bottom">
                 <button value="cancel" type="button" onClick={() => this.handleFormattingHelp()}>
-                  <Icon name="cross"/>
+                  <Icon name="help"/>
                 </button>
               </Tooltip>
             </li>

@@ -12,8 +12,8 @@ import Icon from "../../../../../../components/icon";
 const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptionsClick, handleImgSaveClick, handleInputChange, handleDeckImport, imgReadyDecklist, importedDeckstringPopover}) => {
   const popoverVisibility = (obj) =>{
     switch(obj.icon){
-      case 'image': return imgReadyDecklist;
-      case 'fire': return importedDeckstringPopover;
+      case 'save': return imgReadyDecklist;
+      case 'import': return importedDeckstringPopover;
       default: return obj.popover;
     }
   };
@@ -34,14 +34,14 @@ const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptions
           <Popover placement="bottomRight"
                    overlayClassName={obj.icon} title={_.startCase(obj.title)}
                    visible={popoverVisibility(obj)}
-                   content={obj.icon === "fire" ? deckstringInputPopover : saveImgPopover}
+                   content={obj.icon === "import" ? deckstringInputPopover : saveImgPopover}
                    trigger="click"
                    arrowPointAtCenter={true}>
             <CopyToClipboard text={allowCopy(obj, deckstring)} onCopy={allowCopy(obj, ()=>success('Successfully copied deckstring to clipboard!'))}>
                 <Icon name={obj.icon}
                       title={obj.title}
                       tooltip={true}
-                      tooltipPlacement={obj.icon === 'fire' ? 'bottomRight' : 'bottom'}/>
+                      tooltipPlacement={obj.icon === 'save' ? 'bottomRight' : 'bottom'}/>
             </CopyToClipboard>
           </Popover>
         </li>)
