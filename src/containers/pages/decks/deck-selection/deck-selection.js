@@ -9,11 +9,18 @@ import {updateViews} from '../../../../firebase/decks/deck/update';
 import Loader from '../../../../components/loader';
 import NotFound from '../../../shared-assets/not-found';
 import {getFilteredDecks} from "../../../../firebase/decks/deck/read/index";
+import {navItems} from "../../../../data/nav";
+import {addQuery} from "../../../../utils/utils-router";
 
 
 class DeckSelection extends Component {
   componentDidMount() {
-    getLazyloadDecks(v => this.props.updateDeckList(v));
+    console.log(this.props);
+    if(this.props.location.query.playerClass){
+      getFilteredDecks(decks => this.props.updateDeckList(decks), 'playerClass', this.props.location.query.playerClass);
+    } else {
+      getLazyloadDecks(v => this.props.updateDeckList(v));
+    }
   }
 
 
@@ -49,7 +56,7 @@ class DeckSelection extends Component {
     const {activeMode, activeClass, updateModeFilter, updateClassFilter, updateDeckList} = this.props;
     let targetId = e.currentTarget.id;
     let targetFilter = e.currentTarget.dataset.filter;
-
+    addQuery({[targetFilter]: targetId});
     switch(targetFilter){
       case 'playerClass': {
         updateClassFilter(targetId);

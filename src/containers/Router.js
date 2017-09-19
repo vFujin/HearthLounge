@@ -50,7 +50,6 @@ import Rank from './pages/rank/rank';
 import Issues from './pages/issues/issues';
 import Main from './Main';
 
-// getCurrentUserInfo(updateActiveUser);
 const App = ({store}) =>{
   const history = syncHistoryWithStore(browserHistory, store);
   return (
@@ -60,9 +59,8 @@ const App = ({store}) =>{
         <Redirect from="home" to="/" />
         <Route path=""                  component={Home} />
 
-        <Route path="decks"             component={DeckSelection}>
-          {/*<Route path=":class/:deckId"  component={Deck}/>*/}
-          <Route path=":class/:deckId/:deckTitle"  component={Deck}/>
+        <Route path="decks"     component={DeckSelection}>
+          <Route path=":deckId/:deckTitle"   component={Deck}/>
         </Route>
 
         <Route path="cards"             component={Cards} />

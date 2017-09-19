@@ -4,9 +4,10 @@ import {Link} from 'react-router';
 import Loader from '../../../../../components/loader';
 import {wrapDate} from '../../../../../utils/wrap-date';
 import {checkIfStickied, checkIfBlizzardPost, stripDomains, checkTopbarIconFilters, checkDomain} from '../../../../../utils/reddit/posts';
-import Icon from '../../domain-icons';
+import Icon from "../../../../../components/icon";
 
-const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
+const PostSelection = ({location, posts, handlePostClick}) => {
+
   const {all, loading} = posts;
 
   const mapPosts = () =>{
@@ -16,7 +17,7 @@ const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
               key={post.id}
               onClick={() => handlePostClick(post.id)}>
             <td className="upvotes"><Link to={checkDomain(post)}><span>{post.ups}</span></Link></td>
-            <td className="domain"><Link to={checkDomain(post)}>{Icon(post)}</Link></td>
+            <td className="domain"><Link to={checkDomain(post)}>{<Icon type="reddit" domain={post.domain} linkFlairText={post.link_flair_text}/>}</Link></td>
             <td className="comments"><Link to={checkDomain(post)}><span>{post.num_comments}</span></Link></td>
             <td className="title"><Link to={checkDomain(post)}>{post.title.replace('&amp;', '&').replace('&gt;', '>')}</Link></td>
             <td className="created"><Link to={checkDomain(post)}>{wrapDate(post.created, post.edited)}</Link></td>
@@ -25,7 +26,7 @@ const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
   };
 
   return (
-      <div className="content scrollable" style={(loading || (filteredPosts && filteredPosts.length < 1)) ? {overflow: "hidden"} : {overflow: "inherit"}}>
+      <div className="content scrollable" style={(loading) ? {overflow: "hidden"} : {overflow: "inherit"}}>
           <div className="table-scroll">
             <table>
               <thead>

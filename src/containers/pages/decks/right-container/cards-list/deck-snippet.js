@@ -8,7 +8,7 @@ import _ from 'lodash';
 
 export const DeckSnippet = (props) => {
   const {playerClass, deckId, title, author, deck, created, handleDeckSnippetClick} = props;
-  const deckUrl = `/decks/${playerClass}/${deckId}/${_.snakeCase(title)}`;
+  const deckUrl = `/decks/${deckId}/${_.snakeCase(title)}`;
   const cells = (el) =>{
     switch(el) {
       case 'title': return <TitleCell deckUrl={`${deckUrl}`} playerClass={playerClass} title={title} author={author}/>;

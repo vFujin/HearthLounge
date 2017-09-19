@@ -13,7 +13,7 @@ const selectType = (
     type = null,
     tooltip = false,
     tooltipPlacement = "bottom",
-    domain,
+    domain = null,
     linkFlairText = null) => {
 
   const validateSet = () =>{
@@ -43,11 +43,13 @@ const selectType = (
       let self = domain.includes(supported_domains[2]);
 
       if (domain.includes(supported_domains[0])) return icon("battlenet");
-      if (domain.includes(supported_domains[1]) || domain.includes(supported_domains[4])) return icon("youtube");
-      if (self && flair_text !== "tournament") return icon("bubbles2");
-      if (self && flair_text === "tournament") return icon("trophy");
-      return icon("redirect");
+      else if (domain.includes(supported_domains[1]) || domain.includes(supported_domains[4])) return icon("youtube");
+      else if (self && flair_text !== "tournament") return icon("bubbles2");
+      else if (self && flair_text === "tournament") return icon("trophy");
+      else if(domain.includes(supported_domains[5])) return icon("twitch");
+      else return icon("redirect");
     }
+    return icon("redirect")
   };
 
   let icon = (name) => {

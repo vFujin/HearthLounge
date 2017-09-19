@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
 import EntryNode from './entry-node';
+import Icon from "../../components/icon";
 
 const Navbar = ({handleSignOut, activeUser, playerClass}) => {
 
@@ -10,15 +11,14 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
     return (
       navItems[index].submenu.map((item, id) =>
           <li className={sub[id].url} key={id}>
-            <Link to={`/${el.url}/${item.url}/overview`}>
-              <span className={`submenu__icon hs-icon icon-${sub[id].url}`}></span>
+            <Link to={`/${el.url}/${item.url}${el.url === "decks" ? '' : "/overview"}`}>
+              <Icon name={sub[id].url} className="submenu__icon"/>
               <div className="icon-label">{sub[id].name}</div>
             </Link>
           </li>
       )
     )
   };
-
 
   const dropdown = (el, index) => {
     if (!el.hasOwnProperty('submenu')) return;
@@ -34,7 +34,7 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
       <ul className="nav__list">
         <li className="nav__list--item logo">
           <div className="logo-wrapper">
-            <span className="hs-icon icon-hl-logo"></span>
+            <Icon name="hl-logo"/>
             <div className="text-wrapper">
               <p>Hearth</p>
               <p>Lounge</p>
@@ -50,7 +50,7 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
                             : `/${element.url}`
                         : `/${element.url}`} activeClassName="active">
                 <div className="nav__list--link">
-                  <span className={`hs-icon ${element.icon}`}></span>
+                  <Icon name={element.icon} />
                   <div>{element.name}</div>
                   {dropdown(element, index)}
                 </div>
