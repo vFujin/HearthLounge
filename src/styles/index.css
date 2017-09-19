@@ -4724,6 +4724,10 @@ card {
             .container__index.home .home__list .reddit > div ul li a .title .created {
               font-weight: normal;
               font-size: 12px; }
+              .container__index.home .home__list .reddit > div ul li a .title .created .author {
+                color: #d84315; }
+                .container__index.home .home__list .reddit > div ul li a .title .created .author span {
+                  font-size: 14px; }
 
 .decks .container__page--left .sidebar table {
   width: 100%; }

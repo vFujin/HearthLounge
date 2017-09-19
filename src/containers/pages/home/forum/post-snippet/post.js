@@ -28,7 +28,7 @@ const PostSnippet = ({post, handleRedditPostClick}) => {
           <div className="title">
             <p>{title}</p>
             <div className="created">
-              {wrapDate(created, false, '', false)} by u/{author}
+              posted {wrapDate(created, false, '', false)} by  <span className="author"><Icon name="reddit"/> {author}</span>
             </div>
           </div>
         </Link>

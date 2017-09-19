@@ -1397,6 +1397,12 @@ card{
                 .created {
                   font-weight: normal;
                   font-size: 12px;
+                  .author{
+                    color: #d84315;
+                    span{
+                      font-size: 14px;
+                    }
+                  }
                 }
               }
             }
