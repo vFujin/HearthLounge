@@ -9,10 +9,7 @@ import Icon from '../../domain-icons';
 const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
   const {all, loading} = posts;
 
-  const mapPosts = (posts) =>{
-    if(loading){
-      return <Loader/>
-    } else {
+  const mapPosts = () =>{
       return all.map(post => (
           <tr id={post.id}
               className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} ${checkTopbarIconFilters(location, post)}`}
@@ -25,27 +22,30 @@ const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
             <td className="created"><Link to={checkDomain(post)}>{wrapDate(post.created, post.edited)}</Link></td>
           </tr>
       ))
-    }
   };
 
   return (
       <div className="content scrollable" style={(loading || (filteredPosts && filteredPosts.length < 1)) ? {overflow: "hidden"} : {overflow: "inherit"}}>
-        <div className="table-scroll">
-          <table>
-            <thead>
-            <tr>
-              <th className="upvotes">Upvotes</th>
-              <th className="domain">Domain</th>
-              <th className="comments">Comments</th>
-              <th className="title"><div>Title</div></th>
-              <th className="created"><div>Created</div></th>
-            </tr>
-            </thead>
-            <tbody>
-              {mapPosts()}
-            </tbody>
-          </table>
-        </div>
+          <div className="table-scroll">
+            <table>
+              <thead>
+              <tr>
+                <th className="upvotes">Upvotes</th>
+                <th className="domain">Domain</th>
+                <th className="comments">Comments</th>
+                <th className="title"><div>Title</div></th>
+                <th className="created"><div>Created</div></th>
+              </tr>
+              </thead>
+              {
+                loading
+                  ? <Loader />
+                  : <tbody>
+                      {mapPosts()}
+                    </tbody>
+              }
+            </table>
+          </div>
       </div>
   )
 };
