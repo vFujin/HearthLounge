@@ -9,25 +9,20 @@ import NotFound from '../../../shared-assets/not-found';
 import 'react-treeview/react-treeview.css';
 
 import Content from './content';
+import * as types from "../../../../redux/types/reddit";
 
 class RedditPost extends Component{
 
   componentDidMount(){
-    fetch(`https://www.reddit.com/r/hearthstone/comments/${this.props.params.id}.json`)
-        .then(res => res.json())
-        .then(res=>{
-          if(res.error && res.error === 404){
-            this.props.updatePostComments({error: res.error});
-          } else {
-            const comments = res[1].data.children.map(obj => obj.data);
-            this.props.updatePostComments(comments);
-          }
-        });
-
+    const {updateActivePost, activePost, params} = this.props;
+    const {id} = params;
+    if(activePost.loading) {
+      updateActivePost(id);
+    }
   }
 
   componentWillUnmount(){
-    this.props.updatePostComments(null);
+    // this.props.updatePostComments(null);
   }
 
   handleCollapseClick = (i) => {
@@ -36,13 +31,14 @@ class RedditPost extends Component{
   };
 
   render() {
-    if(this.props.postComments && this.props.postComments.error){
-      return <NotFound page={`reddit/post/${this.props.params.id}`} redirect="reddit/posts"/>
-    }
+    const {activePost} = this.props;
+    // if(this.props.postComments && this.props.postComments.error){
+    //   return <NotFound page={`reddit/post/${this.props.params.id}`} redirect="reddit/posts"/>
+    // }
     return (
         <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
           <div className="container__page--inner container__page--left">
-            <h3 className="sidebar__header">Filters</h3>
+            <h3 className="sidebar__header">stuff</h3>
             <Sidebar/>
           </div>
           <div className="container__page--inner container__page--right">
@@ -50,22 +46,24 @@ class RedditPost extends Component{
             <Content cards={this.props.cards}
                      collapsedComments={this.props.collapsedComments}
                      handleCollapseClick={this.handleCollapseClick}
-                     posts={this.props.posts}
-                     postComments={this.props.postComments}
-                     params={this.props.params}/>
+                     activePost={activePost}/>
           </div>
         </div>
     )
   }
 }
 
+
 const mapStateToProps = (state) =>{
-  const {postComments, collapsedComments} = state.redditPosts;
-  return {postComments, collapsedComments};
+  const {activePost, collapsedComments} = state.redditPosts;
+  return {activePost, collapsedComments};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    updateActivePost: payload => dispatch({
+      type: types.FETCH_REDDIT_POST_REQUEST, payload
+    }),
     updatePostComments: (postComments) => dispatch({
       type: 'UPDATE_POST_COMMENTS', postComments
     }),

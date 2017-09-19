@@ -12,14 +12,14 @@ import Icon from "../../../../../../components/icon";
 const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptionsClick, handleImgSaveClick, handleInputChange, handleDeckImport, imgReadyDecklist, importedDeckstringPopover}) => {
   const popoverVisibility = (obj) =>{
     switch(obj.icon){
-      case 'save': return imgReadyDecklist;
+      case 'image': return imgReadyDecklist;
       case 'import': return importedDeckstringPopover;
       default: return obj.popover;
     }
   };
-  const allowCopy = (obj, copyItem) =>{
+  const allowCopy = (obj, textToCopy) =>{
     if(obj.allowCopy){
-      return copyItem
+      return textToCopy
     }
   };
 
@@ -37,7 +37,7 @@ const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptions
                    content={obj.icon === "import" ? deckstringInputPopover : saveImgPopover}
                    trigger="click"
                    arrowPointAtCenter={true}>
-            <CopyToClipboard text={allowCopy(obj, deckstring)} onCopy={allowCopy(obj, ()=>success('Successfully copied deckstring to clipboard!'))}>
+            <CopyToClipboard text={deckstring} onCopy={() => success('Successfully copied deckstring to clipboard!')}>
                 <Icon name={obj.icon}
                       title={obj.title}
                       tooltip={true}

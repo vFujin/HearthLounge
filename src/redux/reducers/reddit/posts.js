@@ -4,12 +4,18 @@ const initialState = {
   posts: {
     loading: true
   },
+  activePost: {
+    loading: true,
+  },
   collapsedComments: [],
   activeCategoryFilter: 'hot'
 };
 
 export default function(state=initialState, {type, payload}){
   switch(type){
+      /**
+       * All Posts
+       */
     case types.FETCH_REDDIT_POSTS_REQUEST:
       return {
         ...state,
@@ -33,14 +39,77 @@ export default function(state=initialState, {type, payload}){
           error: payload
         }
       };
-    case types.UPDATE_ACTIVE_POST: return {
-      ...state,
-      activePost: payload
-    };
-    case types.UPDATE_POST_COMMENTS: return {
+      /**
+       * Active Post
+       */
+    case types.FETCH_REDDIT_POST_REQUEST:
+      return {
         ...state,
-      postComments: payload
+        activePost: {
+          loading: true
+        }
+      };
+    case types.FETCH_REDDIT_POST_SUCCESS:
+      return {
+        ...state,
+        activePost: {
+          loading: false,
+          ...payload
+        }
+      };
+    case types.FETCH_REDDIT_POST_FAILURE:
+      return {
+        ...state,
+        activePost: {
+          loading: false,
+          error: payload
+        }
+      };
+      /**
+       * For already loaded posts
+       */
+    case types.UPDATE_ACTIVE_POST:
+      return {
+      ...state,
+      activePost: {
+        loading: false,
+        post: payload
+      }
     };
+    case types.FETCH_REDDIT_POST_COMMENTS_REQUEST:
+      return {
+        ...state,
+        activePost: {
+          post: state.activePost.post,
+          comments: {
+            loading: true
+          }
+        }
+      };
+    case types.FETCH_REDDIT_POST_COMMENTS_SUCCESS:
+      return {
+        ...state,
+        activePost: {
+          post: state.activePost.post,
+          comments: {
+            loading: false,
+            all: payload
+          }
+        }
+      };
+    case types.FETCH_REDDIT_POST_COMMENTS_FAILURE:
+      return {
+        ...state,
+        activePost: {
+          post: state.activePost.post,
+          comments: {
+            loading: false,
+            error: payload
+          }
+        }
+      };
+
+
     case types.TOGGLE_COLLAPSE: return {
         ...state,
         collapsedComments: payload

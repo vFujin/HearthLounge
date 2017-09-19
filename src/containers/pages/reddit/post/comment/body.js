@@ -5,23 +5,12 @@ import {createMarkup} from '../../../../../utils/reddit/post';
 // import _ from 'lodash';
 // import Tooltip from 'antd/lib/tooltip';
 
-const CommentBody = ({cards, comment, comments, isOfficialDev, renderComment}) =>{
-  const {body_html} = comment;
+const CommentBody = ({comment, comments, isOfficialDev, renderComment}) =>{
+  const {body_html, replies} = comment;
 
-
-  // const foo = () =>{
-  //   if(body_html && comments.length > 0 && (body_html.includes('[[') && body_html.includes(']]'))){
-  //     findSubstring(body_html, cards);
-  //   }
-  // };
-  //
-  // foo();
-  const renderReplies = (comment) => {
-    if(comment.replies){
-      return comment.replies.data.children.map(c => {
-
-        return renderComment(c.data)
-      })
+  const renderReplies = () => {
+    if(replies){
+      return replies.data.children.map(c => renderComment(c.data))
     }
     else return [];
   };
@@ -30,7 +19,7 @@ const CommentBody = ({cards, comment, comments, isOfficialDev, renderComment}) =
       <div className="comment__body">
           <p className={isOfficialDev === "blizzard" ? "blizzard_post" : ''}
              dangerouslySetInnerHTML={createMarkup(body_html)}/>
-        {renderReplies(comment)}
+        {renderReplies()}
       </div>
   )
 };

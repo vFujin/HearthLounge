@@ -17,7 +17,7 @@ const PostSelection = ({location, posts, filteredPosts, handlePostClick}) => {
           <tr id={post.id}
               className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} ${checkTopbarIconFilters(location, post)}`}
               key={post.id}
-              onClick={handlePostClick}>
+              onClick={() => handlePostClick(post.id)}>
             <td className="upvotes"><Link to={checkDomain(post)}><span>{post.ups}</span></Link></td>
             <td className="domain"><Link to={checkDomain(post)}>{Icon(post)}</Link></td>
             <td className="comments"><Link to={checkDomain(post)}><span>{post.num_comments}</span></Link></td>
@@ -54,5 +54,8 @@ export default PostSelection;
 
 PostSelection.propTypes = {
   handleRedditPostClick: PropTypes.func,
-  posts: PropTypes.array
+  posts: PropTypes.shape({
+    all: PropTypes.array,
+    loading: PropTypes.bool
+  })
 };

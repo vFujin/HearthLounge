@@ -16,13 +16,12 @@ export const createMarkup = (obj) =>{
   }
 };
 
-export const iframe = (src, index)=>{
+export const iframe = (src)=>{
   const height= 500, width= 500;
-  return <iframe key={index} height={height} width={width} src={src}></iframe>
+  return <iframe height={height} width={width} src={src}></iframe>
 };
 
-export const filterPosts = (posts, params) => {
-  return posts.filter(post => post.id === params.id).map((post, index) => {
+export const content = (post) => {
     const {author_flair_css_class, domain, selftext_html, url} = post;
 
     let replacedYTUrl = url.replace("watch?v=", "embed/");
@@ -31,18 +30,16 @@ export const filterPosts = (posts, params) => {
 
     switch (domain) {
       case 'self.hearthstone':
-        return <div key={index}
-                    className={`section__body--content default-style ${author_flair_css_class === "blizzard" ? "blizzard_post" : ""}`}
+        return <div className={`section__body--content default-style ${author_flair_css_class === "blizzard" ? "blizzard_post" : ""}`}
                     dangerouslySetInnerHTML={createMarkup(selftext_html)}/>;
       case 'youtube.com':
-        return iframe(replacedYTUrl, index);
+        return iframe(replacedYTUrl);
       case 'youtu.be':
-        return iframe(replacedYTShortenerUrl, index);
+        return iframe(replacedYTShortenerUrl);
       case 'clips.twitch.tv':
-        return iframe(`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`, index);
+        return iframe(`https://clips.twitch.tv/embed?clip=${replacedTwitchUrl}`);
       default:
         window.open(url);
         break;
     }
-  })
 };

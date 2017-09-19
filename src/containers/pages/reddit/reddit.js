@@ -15,7 +15,9 @@ class Reddit extends Component {
     let domainQuery = domain || false;
     let preload = id && posts.length < 1;
     // console.log(posts);
-    updatePosts(categoryQuery);
+    if(posts.loading) {
+      updatePosts(categoryQuery);
+    }
     // fetch(`https://www.reddit.com/r/hearthstone/${preload ? params.id : categoryQuery}.json`)
     //     .then(res => res.json())
     //     .then(res => {
@@ -30,10 +32,8 @@ class Reddit extends Component {
   }
 
   render() {
-    const {cards, children, posts, location, filteredPosts } = this.props;
-    const {domain} = location.query;
+    const {cards, children, posts } = this.props;
       return React.cloneElement(children, {
-        filteredPosts: domain ? filteredPosts : null,
         cards,
         posts
       });
@@ -41,17 +41,14 @@ class Reddit extends Component {
 }
 
 const mapStateToProps = (state) =>{
-  const {posts, filteredPosts} = state.redditPosts;
-  return {posts, filteredPosts};
+  const {posts} = state.redditPosts;
+  return {posts};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updatePosts: (payload) => dispatch({
       type: FETCH_REDDIT_POSTS_REQUEST, payload
-    }),
-    updateFilteredPosts: (filteredPosts) => dispatch({
-      type: 'UPDATE_FILTERED_POSTS', filteredPosts
     })
   }
 };

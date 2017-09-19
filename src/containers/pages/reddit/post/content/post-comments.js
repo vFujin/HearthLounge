@@ -5,15 +5,14 @@ import Loader from '../../../../../components/loader';
 import CommentHeader from '../comment/header';
 import CommentBody from '../comment/body';
 
-const PostComments = ({cards, collapsedComments, handleCollapseClick, params, posts, postComments}) =>{
-
+const PostComments = ({cards, collapsedComments, handleCollapseClick, post, comments}) =>{
   const isOfficialDev = (comment) => {
     const {author_flair_css_class} = comment;
     return author_flair_css_class === "blizzard" ? "blizzard" : ''
   };
 
   const collapsed = i =>{
-    return postComments ? collapsedComments[i] : false;
+    return comments ? collapsedComments[i] : false;
   };
 
   const renderComment = (comment, i) => {
@@ -29,8 +28,8 @@ const PostComments = ({cards, collapsedComments, handleCollapseClick, params, po
             <div className="comment">
               <div className="details">
                 <CommentBody comment={comment}
-                             cards={cards.allCards}
-                             comments={postComments}
+                             cards={cards}
+                             comments={comments}
                              isOfficialDev={isOfficialDev(comment)}
                              renderComment={renderComment}/>
               </div>
@@ -40,24 +39,15 @@ const PostComments = ({cards, collapsedComments, handleCollapseClick, params, po
     }
   };
 
-  const isPlural = () =>{
-    let amountOfComments = posts.filter(post=>post.id === params.id).map(post=>post.num_comments)[0];
-    if(amountOfComments === 1){
-      return `${amountOfComments} comment`;
-    }
-    return `${amountOfComments} comments`;
-  };
-
   return (
       <div className="container__details--section container__details--comments">
         <div className="section__header">
           <div className="line"></div>
-          {/*TODO: add if-else for 1 comment / multiple comments */}
-          <h1>{isPlural()}</h1>
+          <h1>{post.num_comments} {post.num_comments === 1 ? "comment" : "comments"}</h1>
         </div>
         <div className="section__body">
           <div className="comments">
-            {postComments ? postComments.map((comment, i) => renderComment(comment, i)) : <Loader />}
+            {comments.loading ? <Loader /> : comments.all.map((comment, i) => renderComment(comment, i))}
           </div>
         </div>
       </div>

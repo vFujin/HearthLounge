@@ -36,16 +36,18 @@ class Topbar extends Component {
     createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck));
   };
 
-  handleOptionsClick = (event, icon) => {
-    const {editingTool, deck, imgReadyDecklist, importedDeckstringPopover, showDeckEditingTool, simplifyDeck, toggleImportedDeckstringPopover} = this.props;
-    topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck, importedDeckstringPopover, toggleImportedDeckstringPopover);
-  };
-
   handleCopyDeckStringClick = () => {
     const {updateDeckstring, deck, playerClass} = this.props;
     let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
 
     updateDeckstring(deckstring);
+  };
+
+
+
+  handleOptionsClick = (event, icon) => {
+    const {editingTool, deck, imgReadyDecklist, importedDeckstringPopover, showDeckEditingTool, simplifyDeck, toggleImportedDeckstringPopover} = this.props;
+    topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck, importedDeckstringPopover, toggleImportedDeckstringPopover);
   };
 
   activeView = () =>{
