@@ -1,13 +1,13 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {getGithubIssues} from "../../../api/github-issues";
+// import {getGithubIssues} from "../../../api/github-issues";
 import {updateGithubIssues} from "../../../redux/actions/githubIssues";
 
 class Issues extends PureComponent {
 
   componentDidMount(){
     const {updateGithubIssues} = this.props;
-    getGithubIssues(data => updateGithubIssues(data))
+    // getGithubIssues(data => updateGithubIssues(data))
   }
 
 

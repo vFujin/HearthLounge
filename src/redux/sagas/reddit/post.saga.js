@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {call, put, takeEvery} from 'redux-saga/effects';
 import * as types from "../../types/reddit";
-import * as actions from "../../actions/reddit";
+import * as actions from "../../actions/reddit/post";
 
 export const fetchRedditPost = id => axios.get(`https://www.reddit.com/r/hearthstone/comments/${id}.json`)
     .then(({data}) => {

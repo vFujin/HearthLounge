@@ -1,6 +1,6 @@
 import {call, put} from 'redux-saga/effects';
 import {fetchRedditPostsSaga, fetchRedditPosts} from "../posts.saga";
-import * as actions from "../../../actions/reddit";
+import * as actions from "../../../actions/reddit/posts";
 
 describe('reddit posts saga', () =>{
   describe('#fetchRedditPostsSaga', () =>{

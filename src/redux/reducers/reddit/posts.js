@@ -5,9 +5,8 @@ const initialState = {
     loading: true
   },
   activePost: {
-    loading: true,
+    loading: true
   },
-  collapsedComments: [],
   activeCategoryFilter: 'hot'
 };
 
@@ -109,11 +108,13 @@ export default function(state=initialState, {type, payload}){
         }
       };
 
-
-    case types.TOGGLE_COLLAPSE: return {
-        ...state,
-        collapsedComments: payload
+    case types.CLEAR_REDDIT_POST: return {
+      ...state,
+      activePost: {
+        loading: true
+      }
     };
+
     case types.TOGGLE_DOMAIN_FILTER: return {
       ...state,
       activeDomainFilter: payload

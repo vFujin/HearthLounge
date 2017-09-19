@@ -38,24 +38,15 @@ const selectType = (
   };
 
   const redditDomainIcons = (domain) => {
-    console.log(linkFlairText, domain);
     if(linkFlairText !== null){
       let flair_text = linkFlairText.toLowerCase();
       let self = domain.includes(supported_domains[2]);
 
-      if (domain.includes(supported_domains[0]))
-        return icon("battlenet");
-      else if (domain.includes(supported_domains[1]) || domain.includes(supported_domains[4]))
-        return icon("youtube");
-      else if (self && flair_text !== "tournament")
-        return icon("bubbles2");
-      else if (self && flair_text === "tournament")
-        return icon("trophy");
-      else if (domain !== supported_domains[2]) {
-        let strippedDomain = domain.replace(/\.com|clips\.|\.tv/g, "").toLowerCase();
-        return icon(strippedDomain);
-      }
-      else return icon('redirect');
+      if (domain.includes(supported_domains[0])) return icon("battlenet");
+      if (domain.includes(supported_domains[1]) || domain.includes(supported_domains[4])) return icon("youtube");
+      if (self && flair_text !== "tournament") return icon("bubbles2");
+      if (self && flair_text === "tournament") return icon("trophy");
+      return icon("redirect");
     }
   };
 
