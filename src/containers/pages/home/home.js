@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import _ from 'lodash';
 import DecksBlock from './decks/decks';
 // import ArenaPickerBlock from './arena-picker/arena-picker';
 import CardsBlock from './cards/cards';
@@ -13,18 +12,31 @@ import {getDecks} from "../../../firebase/decks/deck/read";
 import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
 import {fetchFilteredDecks, isFilterActive} from "./utils/deck-filters";
-import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/types/reddit";
+import {
+  FETCH_REDDIT_POST_COMMENTS_REQUEST, FETCH_REDDIT_POSTS_REQUEST,
+  UPDATE_ACTIVE_POST
+} from "../../../redux/types/reddit";
 import {FETCH_DECKS_REQUEST} from "../../../redux/types/decks";
 class Home extends PureComponent{
 
   componentDidMount() {
-    this.props.updateDecks();
-    this.props.updateRedditPosts();
+    const {updateDecks, updateRedditPosts, posts, decks} = this.props;
+    if(decks.loading) {
+      updateDecks();
+    }
+    if(posts.loading) {
+      updateRedditPosts();
+    }
   }
 
   handleDeckClick = (e) =>{
     let deckId = e.currentTarget.id;
     updateViews(deckId);
+  };
+
+  handleRedditPostClick = post =>{
+    this.props.updateActivePost(post);
+    this.props.updatePostComments(post.id);
   };
 
   handleFilterClick = (e) =>{
@@ -56,7 +68,8 @@ class Home extends PureComponent{
               <ExtensionsBlock/>
             </HomeBlock>
             <HomeBlock icon="reddit">
-              <ForumBlock posts={posts}/>
+              <ForumBlock posts={posts}
+                          handleRedditPostClick={this.handleRedditPostClick}/>
             </HomeBlock>
             <HomeBlock icon="card" title="cards">
               <CardsBlock/>
@@ -87,7 +100,13 @@ const mapDispatchToProps = (dispatch) => {
     updateDeckFilters: (deckFilters) => dispatch({
       type: 'UPDATE_DECK_FILTERS', deckFilters
     }),
-    updateRedditPosts: () => dispatch({type: FETCH_REDDIT_POSTS_REQUEST})
+    updateRedditPosts: () => dispatch({type: FETCH_REDDIT_POSTS_REQUEST}),
+    updateActivePost: payload => dispatch({
+      type: UPDATE_ACTIVE_POST, payload
+    }),
+    updatePostComments: payload => dispatch({
+      type: FETCH_REDDIT_POST_COMMENTS_REQUEST, payload
+    }),
   };
 };
 

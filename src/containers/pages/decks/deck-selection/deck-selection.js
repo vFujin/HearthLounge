@@ -33,8 +33,6 @@ class DeckSelection extends Component {
   //
   // }
 
-
-
   handleModeFilterClick = (e) =>{
     let targetId = e.currentTarget.id;
     this.props.updateModeFilter(targetId);

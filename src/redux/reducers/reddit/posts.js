@@ -72,7 +72,10 @@ export default function(state=initialState, {type, payload}){
       ...state,
       activePost: {
         loading: false,
-        post: payload
+        post: payload,
+        comments:{
+          loading: true
+        }
       }
     };
     case types.FETCH_REDDIT_POST_COMMENTS_REQUEST:
