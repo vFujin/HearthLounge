@@ -59,7 +59,7 @@ class Main extends Component{
             location
           })}
 
-          <Footer/>
+          <Footer pathname={pathname}/>
         </div>
     );
   }

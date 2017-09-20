@@ -168,7 +168,75 @@ nav {
   }
 }
 footer{
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% / 3));
   background-color: $dark-grey;
+  justify-content: center;
+  > div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .copyright{
+    color: $light-grey;
+    font-size: 13px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    > div{
+      background: $dark-grey;
+      padding: 0 10px;
+      z-index: 1;
+      p{
+        margin-bottom: 2px;
+      }
+      > div {
+        a{
+          color: $sea-color;
+          @include transition(all ease .4s);
+          &:hover{
+            color: $pearl;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 70%;
+      background: $light-grey;
+      top: calc(50% - .5px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .media{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+      cursor: pointer;
+      &:last-child {
+        margin-right: 30px;
+      }
+      span {
+        font-size: 25px;
+        padding: 5px;
+        @include transition(color ease .4s);
+        &:hover {
+          color: $pearl;
+        }
+      }
+    }
+  }
 }
 card{
   font-weight: bold;

@@ -3680,7 +3680,69 @@ nav {
             width: 100%; }
 
 footer {
-  background-color: #474143; }
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% / 3));
+  background-color: #474143;
+  justify-content: center; }
+  footer > div {
+    height: 100%;
+    display: flex;
+    align-items: center; }
+  footer .copyright {
+    color: #A69E9D;
+    font-size: 13px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center; }
+    footer .copyright > div {
+      background: #474143;
+      padding: 0 10px;
+      z-index: 1; }
+      footer .copyright > div p {
+        margin-bottom: 2px; }
+      footer .copyright > div > div a {
+        color: #00a99c;
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        -ms-transition: all ease 0.4s;
+        -o-transition: all ease 0.4s;
+        transition: all ease 0.4s; }
+        footer .copyright > div > div a:hover {
+          color: #E7E2DA;
+          text-decoration: underline; }
+    footer .copyright:before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 70%;
+      background: #A69E9D;
+      top: calc(50% - .5px);
+      left: 50%;
+      transform: translateX(-50%); }
+  footer .media {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+    footer .media a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin-right: 5px;
+      cursor: pointer; }
+      footer .media a:last-child {
+        margin-right: 30px; }
+      footer .media a span {
+        font-size: 25px;
+        padding: 5px;
+        -webkit-transition: color ease 0.4s;
+        -moz-transition: color ease 0.4s;
+        -ms-transition: color ease 0.4s;
+        -o-transition: color ease 0.4s;
+        transition: color ease 0.4s; }
+        footer .media a span:hover {
+          color: #E7E2DA; }
 
 card {
   font-weight: bold; }
