@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
 import EntryNode from './entry-node';
@@ -11,7 +12,7 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
     return (
       navItems[index].submenu.map((item, id) =>
           <li className={sub[id].url} key={id}>
-            <Link to={`/${el.url}/${item.url}${el.url === "decks" ? '' : "/overview"}`}>
+            <Link to={`/${el.name}/${item.url}${el.url === "decks" ? '' : "/overview"}`}>
               <Icon name={sub[id].url} className="submenu__icon"/>
               <div className="icon-label">{sub[id].name}</div>
             </Link>
@@ -29,6 +30,17 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
     )
   };
 
+  const redirect = (name, playerClass) =>{
+    switch(name){
+      case 'home': return '';
+      case 'create-deck': {
+        if(playerClass) return `${name}/${playerClass}`;
+        return name;
+      }
+      default: return name;
+    }
+  };
+
   return (
     <nav>
       <ul className="nav__list">
@@ -42,16 +54,12 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
           </div>
         </li>
         {navItems.map((element, index) =>
-            <li key={index} className={`nav__list--item ${element.url}`}>
+            <li key={index} className={`nav__list--item ${element.name}`}>
               <Link className="nav__list--linkContainer"
-                    to={element.url === 'create-deck'
-                        ? playerClass
-                            ? `/${element.url}/${playerClass}`
-                            : `/${element.url}`
-                        : `/${element.url}`} activeClassName="active">
+                    to={`/${redirect(element.name, playerClass)}`} activeClassName={element.name !== 'home' && "active"}>
                 <div className="nav__list--link">
                   <Icon name={element.icon} />
-                  <div>{element.name}</div>
+                  <div>{_.camelCase(element.name)}</div>
                   {dropdown(element, index)}
                 </div>
               </Link>

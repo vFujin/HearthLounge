@@ -1,13 +1,11 @@
 export const navItems = [
   {
     name: "home",
-    url: "home",
     icon: "hs-logo",
     homepage_block_width: 0
   },
   {
     name: "decks",
-    url: "decks",
     icon: "deck",
     homepage_block_width: 3,
     submenu: [
@@ -52,7 +50,6 @@ export const navItems = [
   },
   {
     name: "cards",
-    url: "cards",
     icon: "card",
     homepage_block_width: 1
   },
@@ -64,7 +61,6 @@ export const navItems = [
   // },
   {
     name: "expansions",
-    url: 'expansions',
     icon: "expansions",
     homepage_block_width: 2,
     submenu: [
@@ -96,7 +92,6 @@ export const navItems = [
   },
   {
     name: "adventures",
-    url: 'adventures',
     icon: "adventures",
     homepage_block_width: 0,
     submenu: [
@@ -119,8 +114,7 @@ export const navItems = [
     ]
   },
   {
-    name: "create deck",
-    url: "create-deck",
+    name: "create-deck",
     icon: "create-deck",
     homepage_block_width: 1
   },
@@ -131,8 +125,7 @@ export const navItems = [
   //   homepage_block_width: 1
   // },
   {
-    name: "Tournaments",
-    url: 'tournaments',
+    name: "tournaments",
     icon: "trophy",
     homepage_block_width: 1
   },
@@ -144,7 +137,6 @@ export const navItems = [
   // },
   {
     name: "Reddit",
-    url: 'reddit',
     icon: "reddit",
     homepage_block_width: 2
   }
