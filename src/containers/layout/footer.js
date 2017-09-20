@@ -25,9 +25,7 @@ const Footer = ({pathname}) =>{
               <div>
                 <p>Hearth Lounge © 2017</p>
                 <div>
-                  <Link to="/terms-of-service">Terms </Link>
-                  &
-                  <Link to="/privacy-policy"> Privacy</Link>
+                  <Link to="/terms-of-service">Terms</Link> & <Link to="/privacy-policy">Privacy</Link>
                 </div>
               </div>
             </div>

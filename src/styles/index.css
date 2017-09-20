@@ -2745,7 +2745,10 @@ form .divider {
   top: 10vh;
   padding-top: 1vh;
   margin-left: -1px;
-  z-index: 2; }
+  z-index: 2;
+  -webkit-box-shadow: 0 1px 5px #E7E2DA;
+  -moz-box-shadow: 0 1px 5px #E7E2DA;
+  box-shadow: 0 1px 5px #E7E2DA; }
   .submenu li {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
@@ -5785,6 +5788,9 @@ card {
       width: 40%;
       left: 50%;
       transform: translateX(-50%); }
+  .privacy-policy .introduction {
+    padding: 0 10px;
+    text-align: center; }
   .privacy-policy .wrapper {
     margin: 0 10px 10px 10px;
     overflow: hidden;
@@ -5848,7 +5854,7 @@ card {
       .privacy-policy .wrapper .content h3 {
         color: #00a99c; }
       .privacy-policy .wrapper .content ul {
-        padding: 0 20px; }
+        padding: 0 0 0 20px; }
       .privacy-policy .wrapper .content > li {
         list-style: decimal;
         margin-left: 20px;
