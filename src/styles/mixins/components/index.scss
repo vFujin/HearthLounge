@@ -17,16 +17,16 @@
   }
 }
 
-@mixin scrollbar($border_color){
+@mixin scrollbar($border_color, $thumb_color: $dark-grey, $track_color: $light-grey){
   &::-webkit-scrollbar{width: 13px;}
-  &::-webkit-scrollbar-thumb{background-color: $dark-grey; border-radius: 0; border-left: 1px solid $border_color;}
-  &::-webkit-scrollbar-thumb:hover{background-color: $dark-grey;}
-  &::-webkit-scrollbar-track{background-color: $light-grey; border-left: 1px solid $border_color;}
+  &::-webkit-scrollbar-thumb{background-color: $thumb_color; border-radius: 0; border-left: 1px solid $border_color;}
+  &::-webkit-scrollbar-thumb:hover{background-color: $thumb_color;}
+  &::-webkit-scrollbar-track{background-color: $track_color; border-left: 1px solid $border_color;}
 }
 
-@mixin slim-scrollbar(){
+@mixin slim-scrollbar($thumb_color: $pearl){
   &::-webkit-scrollbar{width: 8px;}
-  &::-webkit-scrollbar-thumb{background-color: rgba(255,255,255, .2); border-radius: 4px}
+  &::-webkit-scrollbar-thumb{background-color: rgba($thumb_color, .2); border-radius: 4px}
   &::-webkit-scrollbar-thumb:hover{background-color: $pearl}
   &::-webkit-scrollbar-track{background-color: transparent}
 }

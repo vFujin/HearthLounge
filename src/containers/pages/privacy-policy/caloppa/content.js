@@ -3,14 +3,15 @@ import React from 'react';
 const ContentCalOPPA = () => {
   return (
       <li>
-        <h3 id="#caloppa">California Online Privacy Protection Act (CalOPPA)</h3>
+        <h3 id="caloppa">California Online Privacy Protection Act (CalOPPA)</h3>
         <p>
-          CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law's reach stretches well beyond California to require any person or company in the United States (and conceivably the world) that operates websites collecting Personally Identifiable Information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals or companies with whom it is being shared. - See more at: http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf
+          CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law's reach stretches well beyond California to require any person or company in the United States (and conceivably the world) that operates websites collecting Personally Identifiable Information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals or companies with whom it is being shared. -
+           See more at: <a href="http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf" target="_blank" rel="noopener noreferrer">http://consumercal.org/california-online-privacy-protection-act-caloppa</a>
         </p>
         <ul>
           <li>
             <h4 id="caloppa-agreement">CalOPPA Agreement</h4>
-            <p>Hearth Lounge agrees tp tje following:</p>
+            <p>Hearth Lounge agrees to the following:</p>
             <ul>
               <li>Users can visit our site anonymously.</li>
               <li>Once this privacy policy is created, you can find a link to it on our footer.</li>

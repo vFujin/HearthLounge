@@ -10,7 +10,7 @@ import ContentFairInformationPracticies from "./fair-information-practicies/cont
 
 const Content = () => {
   return (
-      <ul className="content">
+      <ul className="content default-style">
         <ContentInformationProtection />
         <ContentCookies />
         <ContentThirdPartyServices />

@@ -10,7 +10,7 @@ import ToCFairInformationPracticies from "./fair-information-practicies/table-of
 
 const TableOfContents = () =>{
   return (
-      <ul className="table-of-contents">
+      <ul className="table-of-contents default-style">
         <ToCInformationProtection />
         <ToCCookies />
         <ToCThirdPartyServices />

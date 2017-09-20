@@ -3,7 +3,7 @@ import React from 'react';
 const ContentFairInformationPracticies = () => {
   return (
       <li>
-        <h3 id="#fair-information-practicies">Fair Information Practices</h3>
+        <h3 id="fair-information-practicies">Fair Information Practices</h3>
         <p>
           The Fair Information Practices Principles form the backbone of privacy law in the United States and the concepts they include have played a significant role in the development of data protection laws around the globe. Understanding the Fair Information Practice Principles and how they should be implemented is critical to comply with the various privacy laws that protect personal information.</p>
         <ul>
@@ -51,8 +51,8 @@ const ContentFairInformationPracticies = () => {
             <h4 id="contact-us">Contacting Us</h4>
             <p>If there are any questions regarding this privacy policy, you may contact us using the information below.</p>
             <ul>
-              <li>Private message on https://www.twitch.tv/vfujin</li>
-              <li>Private message to Fujin on Hearth Lounge <a href="https://discord.gg/GXQBTJ">Discord channel</a></li>
+              <li>Private message on <a href="https://www.twitch.tv/vfujin" target="_blank" rel="noopener noreferrer">Twitch.tv</a></li>
+              <li>Private message to <span>Fujin</span> on Hearth Lounge <a href="https://discord.gg/GXQBTJ" target="_blank" rel="noopener noreferrer">Discord channel</a></li>
             </ul>
           </li>
         </ul>

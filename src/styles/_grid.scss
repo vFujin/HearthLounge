@@ -173,6 +173,13 @@
   .container__page--twoSided{
     grid-template-columns: 20vw auto;
   }
+  .container__page--twoSidedCentralized{
+    .wrapper{
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 15px));
+      grid-column-gap: 10px;
+    }
+  }
 }
 
 

@@ -3,7 +3,7 @@ import React from 'react';
 const ContentThirdPartyServices = () => {
   return (
       <li>
-        <h3 id="#third-party">Third-Party Websites and Services</h3>
+        <h3 id="third-party">Third-Party Websites and Services</h3>
         <ul>
           <li>
             <h4 id="third-party-disclosure">Third-Party Disclosure</h4>

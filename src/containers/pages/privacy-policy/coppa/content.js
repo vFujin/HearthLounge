@@ -3,7 +3,7 @@ import React from 'react';
 const ContentCOPPA = () => {
   return (
       <li>
-        <h3 id="#coppa">COPPA (Children Online Privacy Protection Act)</h3>
+        <h3 id="coppa">COPPA (Children Online Privacy Protection Act)</h3>
         <p>
           When it comes to the collection of personal information from children under the age of 13 years old, the Children's Online Privacy Protection Act (COPPA) puts parents in control. The Federal Trade Commission, United States' consumer protection agency, enforces the COPPA Rule, which spells out what operators of websites and online services must do to protect children's privacy and safety online.
         </p>

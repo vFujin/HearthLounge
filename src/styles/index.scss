@@ -2807,6 +2807,131 @@ card{
   }
 }
 
+.privacy-policy{
+  height: 100%;
+  margin: 0 10px;
+  background:$dark-grey;
+  color: $light-grey;
+  h2{
+    width: 100%;
+    color: $pearl;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      height: 1px;
+      background: $pearl;
+      width: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .wrapper {
+    margin: 0 10px 10px 10px;
+    overflow: hidden;
+    position: relative;
+    //&:before{
+    //  content: "";
+    //  position: absolute;
+    //  top: 0;
+    //  left: 50%;
+    //  transform: translateX(calc(-50% - 12px));
+    //  width: 1px;
+    //  height:100%;
+    //  background: $pearl;
+    //}
+    .inner-wrapper {
+      padding: 10px;
+      border: 1px solid $light-grey;
+      overflow: hidden;
+      margin-top: 25px;
+      > h3 {
+        top: 12px;
+        color: $light-grey;
+        background: $dark-grey;
+        position: absolute;
+        padding: 0 10px;
+        border: 1px solid $light-grey;
+      }
+      > ul {
+        overflow: auto;
+        height: 100%;
+        @include slim-scrollbar();
+      }
+    }
+    .table-of-contents {
+      h3{
+        margin: 10px 0 5px 0;
+      }
+      > li {
+        margin-left: 20px;
+        color: $pearl;
+        list-style-type: decimal;
+      }
+      li {
+        ul {
+          padding-left: 20px;
+        }
+        a {
+          color: $sea-color;
+          @include transition(color ease .4s);
+          &:hover {
+            color: $pearl;
+            text-decoration: underline;
+          }
+          &:visited {
+            color: #6e6a69;
+            &:hover {
+              color: $pearl
+            }
+          }
+        }
+      }
+    }
+    .content {
+      list-style-type: decimal;
+      p {
+        color: $light-grey;
+      }
+      a{
+        color: $sea-color;
+        text-decoration: underline;
+      }
+      h4 {
+        color: $pearl;
+        margin: 1.33em 0 0;;
+      }
+      h3{
+        color: $sea-color;
+      }
+      ul{
+        padding: 0 0 0 20px;
+      }
+      > li {
+        list-style: decimal;
+        margin-left: 20px;
+        color: $pearl;
+        ul {
+          li {
+            color: $pearl;
+            ul {
+              li{
+                list-style-type: circle;
+                  color: $light-grey;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
 .not-found{
   display: flex;
   justify-content: center;
@@ -2857,4 +2982,6 @@ card{
   margin: auto;
   height: 100%;
 }
+
+
 
