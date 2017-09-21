@@ -48,7 +48,8 @@ import NotFound from './shared-assets/not-found';
 import {Dashboard} from './pages/dashboard/dashboard';
 import Rank from './pages/rank/rank';
 import Issues from './pages/issues/issues';
-import PrivacyPolicy from './pages/privacy-policy/privacy-policy';
+import Miscellaneous from './pages/miscellaneous/container';
+import PrivacyPolicy from './pages/miscellaneous/privacy-policy/privacy-policy';
 import Main from './Main';
 
 const App = ({store}) =>{
@@ -127,7 +128,10 @@ const App = ({store}) =>{
         </Route>
 
         <Route path="dashboard" component={Dashboard} />
-        <Route path="privacy-policy" component={PrivacyPolicy} />
+        <Route component={Miscellaneous}>
+          <Route path="privacy-policy" component={PrivacyPolicy} />
+        </Route>
+
         <Route path="rank" component={Rank} />
         <Route path="issues" component={Issues}/>
         <Route path="*" component={NotFound} />

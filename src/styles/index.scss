@@ -2807,9 +2807,9 @@ card{
   }
 }
 
-.privacy-policy{
-  height: 100%;
-  margin: 0 10px;
+.miscellaneous{
+  margin:0 10px;
+  overflow: hidden;
   background:$dark-grey;
   color: $light-grey;
   h2{
@@ -2829,112 +2829,142 @@ card{
       transform: translateX(-50%);
     }
   }
-
-  .introduction {
-    padding: 0 10px;
-    text-align:center;
+  .sidebar{
+    text-align: center;
+    h2{
+      margin-top: 0;
+      padding-top:0;
+      &:before{
+        width: 100%;
+      }
+    }
+    margin: 10px 0 10px 10px;
+    border-right: 1px solid $sea-color;
+    padding: 0 10px 10px 0;
+    ul{
+      li{
+        width: 100%;
+        margin-bottom: 10px;
+        a{
+          color: $light-grey;
+          border: 1px solid $light-grey;
+          display: block;
+          height: 100%;
+          width: 100%;
+          padding: 10px;
+          @include transition(all ease .4s);
+          &.active, &:hover{
+            border-color: $pearl;
+            color: $pearl;
+            background: $white-010;
+          }
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
   }
-  .wrapper {
-    margin: 0 10px 10px 10px;
+  .content{
+    display: grid;
     overflow: hidden;
-    position: relative;
-    //&:before{
-    //  content: "";
-    //  position: absolute;
-    //  top: 0;
-    //  left: 50%;
-    //  transform: translateX(calc(-50% - 12px));
-    //  width: 1px;
-    //  height:100%;
-    //  background: $pearl;
-    //}
-    .inner-wrapper {
-      padding: 10px;
-      border: 1px solid $light-grey;
+    .introduction {
+      padding: 0 10px;
+      text-align:center;
+    }
+    .wrapper {
+      margin: 0 10px 10px 10px;
       overflow: hidden;
-      margin-top: 25px;
-      > h3 {
-        top: 12px;
-        color: $light-grey;
-        background: $dark-grey;
-        position: absolute;
-        padding: 0 10px;
-        border: 1px solid $light-grey;
-      }
-      > ul {
-        overflow: auto;
-        height: 100%;
-        @include slim-scrollbar();
-      }
-    }
-    .table-of-contents {
-      h3{
-        margin: 10px 0 5px 0;
-      }
-      > li {
-        margin-left: 20px;
-        color: $pearl;
-        list-style-type: decimal;
-      }
-      li {
-        ul {
-          padding-left: 20px;
+      position: relative;
+      .inner-wrapper {
+        padding: 10px;
+        border: 1px solid $pearl;
+        overflow: hidden;
+        margin-top: 25px;
+        > h3 {
+          top: 12px;
+          color: $pearl;
+          background: $dark-grey;
+          position: absolute;
+          padding: 0 10px;
+          border: 1px solid $pearl;
         }
-        a {
-          color: $sea-color;
-          @include transition(color ease .4s);
-          &:hover {
-            color: $pearl;
-            text-decoration: underline;
+        > ul {
+          overflow: auto;
+          height: 100%;
+          @include slim-scrollbar();
+        }
+      }
+      .table-of-contents {
+        h3{
+          margin: 10px 0 5px 0;
+        }
+        > li {
+          margin-left: 20px;
+          color: $pearl;
+          list-style-type: decimal;
+        }
+        li {
+          ul {
+            padding-left: 20px;
           }
-          &:visited {
-            color: #6e6a69;
+          a {
+            color: $sea-color;
+            @include transition(color ease .4s);
             &:hover {
-              color: $pearl
+              color: $pearl;
+              text-decoration: underline;
             }
-          }
-        }
-      }
-    }
-    .content {
-      list-style-type: decimal;
-      p {
-        color: $light-grey;
-      }
-      a{
-        color: $sea-color;
-        text-decoration: underline;
-      }
-      h4 {
-        color: $pearl;
-        margin: 1.33em 0 0;;
-      }
-      h3{
-        color: $sea-color;
-      }
-      ul{
-        padding: 0 0 0 20px;
-      }
-      > li {
-        list-style: decimal;
-        margin-left: 20px;
-        color: $pearl;
-        ul {
-          li {
-            color: $pearl;
-            ul {
-              li{
-                list-style-type: circle;
-                  color: $light-grey;
+            &:visited {
+              color: #6e6a69;
+              &:hover {
+                color: $pearl
               }
             }
+          }
+        }
+      }
+      .content {
+        list-style-type: decimal;
+        p {
+          color: $light-grey;
+        }
+        a{
+          color: $sea-color;
+          text-decoration: underline;
+        }
+        h4 {
+          color: $pearl;
+          margin: 1.33em 0 0;;
+        }
+        h3{
+          color: $sea-color;
+        }
+        ul{
+          padding: 0 0 0 20px;
+        }
+        > li {
+          list-style: decimal;
+          margin-left: 20px;
+          color: $pearl;
+          ul {
+            li {
+              color: $pearl;
+              ul {
+                li{
+                  list-style-type: circle;
+                  color: $light-grey;
+                }
+              }
 
+            }
           }
         }
       }
     }
   }
 }
+
 
 .not-found{
   display: flex;
