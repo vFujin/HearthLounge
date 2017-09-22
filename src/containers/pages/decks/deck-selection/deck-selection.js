@@ -11,15 +11,20 @@ import NotFound from '../../../shared-assets/not-found';
 import {getFilteredDecks} from "../../../../firebase/decks/deck/read/index";
 import {navItems} from "../../../../data/nav";
 import {addQuery} from "../../../../utils/utils-router";
+import {FETCH_DECKS_REQUEST} from "../../../../redux/types/decks";
+import {infiniteScroll} from "../../../../utils/infinite-scroll";
 
 
 class DeckSelection extends Component {
   componentDidMount() {
-    console.log(this.props);
+    const {updateDecklist, decks} = this.props;
     if(this.props.location.query.playerClass){
-      getFilteredDecks(decks => this.props.updateDeckList(decks), 'playerClass', this.props.location.query.playerClass);
+      // getFilteredDecks(decks => this.props.updateDeckList(decks), 'playerClass', this.props.location.query.playerClass);
     } else {
-      getLazyloadDecks(v => this.props.updateDeckList(v));
+      // getLazyloadDecks(v => );
+    }
+    if(decks.loading) {
+      updateDecklist()
     }
   }
 
@@ -91,13 +96,13 @@ class DeckSelection extends Component {
     this.props.updateActiveDeck(deckObject);
     updateViews(deckId);
   };
-
-  infiniteScroll = (updateDeckList) => {
+  //
+  infiniteScroll = (updateDecklist) => {
     const el = document.querySelector('.table-scroll');
     if (el) {
       el.addEventListener("scroll", function () {
             if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-              getLazyloadDecks((v) => updateDeckList(v))
+              updateDecklist()
             }
           }
       )
@@ -106,7 +111,7 @@ class DeckSelection extends Component {
 
   render() {
     const {children, location, decks, activeUser, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
-    this.infiniteScroll(this.props.updateDeckList);
+    this.infiniteScroll(this.props.updateDecklist);
 
     if(location.pathname !== "/decks"){
       if(!currentDeck){
@@ -145,26 +150,24 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDeckList: (decks) => dispatch({
-      type: 'UPDATE_DECK_LIST', decks
+    updateDecklist: () => dispatch({type: FETCH_DECKS_REQUEST}),
+    updateUserList: payload => dispatch({
+      type: 'UPDATE_USER_LIST', payload
     }),
-    updateUserList: (users) => dispatch({
-      type: 'UPDATE_USER_LIST', users
+    updateActiveDeck: payload => dispatch({
+      type: 'UPDATE_ACTIVE_DECK', payload
     }),
-    updateActiveDeck: (currentDeck) => dispatch({
-      type: 'UPDATE_ACTIVE_DECK', currentDeck
+    toggleAdventureFilters: payload => dispatch({
+      type: 'TOGGLE_ADVENTURE_FILTERS', payload
     }),
-    toggleAdventureFilters: (adventuresToggled) => dispatch({
-      type: 'TOGGLE_ADVENTURE_FILTERS', adventuresToggled
+    updateModeFilter: payload => dispatch({
+      type: 'UPDATE_MODE_FILTER', payload
     }),
-    updateModeFilter: (activeMode) => dispatch({
-      type: 'UPDATE_MODE_FILTER', activeMode
+    updateAdventureFilter: payload => dispatch({
+      type: 'UPDATE_ADVENTURE_FILTER', payload
     }),
-    updateAdventureFilter: (activeAdventure) => dispatch({
-      type: 'UPDATE_ADVENTURE_FILTER', activeAdventure
-    }),
-    updateClassFilter: (activeClass) => dispatch({
-      type: 'UPDATE_CLASS_FILTER', activeClass
+    updateClassFilter: payload => dispatch({
+      type: 'UPDATE_CLASS_FILTER', payload
     })
 
   }

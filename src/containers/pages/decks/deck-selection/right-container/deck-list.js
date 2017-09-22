@@ -5,12 +5,7 @@ import DeckSnippet from '../../right-container/cards-list/deck-snippet';
 
 const DeckList = ({decks, handleDeckSnippetClick}) => {
   const mapDecks = () =>{
-
-    if(decks && decks.length < 1){
-      return <tr><td><Loader/></td></tr>
-    }
-    else {
-      return _.map(decks).map(d  => {
+      return _.map(decks.all).map(d  => {
         const {deckId, playerClass, title, votes, deck, created, archetype, author, type, views} = d;
         return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
                             key={deckId}
@@ -25,7 +20,6 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
                             type={type}
                             views={views}/>
       })
-    }
   };
 
 
@@ -44,9 +38,14 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
         <td className="created"><p>Created</p></td>
       </tr>
       </thead>
-      <tbody>
-      {mapDecks()}
-      </tbody>
+      {
+        decks.loading
+          ? <Loader/>
+          : <tbody>
+            {mapDecks()}
+            </tbody>
+      }
+
     </table>
   </div>
   )

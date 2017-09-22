@@ -1,4 +1,4 @@
-import {getDecks} from "../../../../firebase/decks/deck/read/index";
+import {getHotDecks} from "../../../../firebase/decks/deck/read/index";
 
 export const isFilterActive = (filter, targetId, isActive, updateFilters) =>{
   if(isActive){
@@ -14,12 +14,12 @@ export const fetchFilteredDecks = (deckFilters, filter, targetId, updateDecks) =
   const secondaryFilter = () => (mode && filter === "playerClass") ? targetId : playerClass;
 
   if (playerClass && mode) {
-    getDecks(mainFilter(), null, secondaryFilter(), decks => updateDecks(decks));
+    getHotDecks(mainFilter(), null, secondaryFilter(), decks => updateDecks(decks));
 
   } else if ((!playerClass && filter === "playerClass") || (!mode && filter === "mode")) {
-    getDecks(targetId, filter, false, decks => updateDecks(decks));
+    getHotDecks(targetId, filter, false, decks => updateDecks(decks));
   } else {
-    getDecks(false, null, false, decks => updateDecks(decks));
+    getHotDecks(false, null, false, decks => updateDecks(decks));
   }
 
 };

@@ -1,39 +1,68 @@
+
+
+import * as types from "../../types/decks";
+
 const initialState = {
-  decks: [],
+  decks: {
+    loading: true
+  },
   users: [],
   adventuresToggled: false
 };
 
 
-export default function(state=initialState, action){
-  switch(action.type){
+export default function(state=initialState, {type, payload}){
+  switch(type){
+    case types.FETCH_DECKS_REQUEST:
+      return {
+        ...state,
+        decks: {
+          loading: true
+        }
+      };
+    case types.FETCH_DECKS_SUCCESS:
+      return {
+        ...state,
+        decks: {
+          loading: false,
+          all: payload
+        }
+      };
+    case types.FETCH_DECKS_FAILURE:
+      return {
+        ...state,
+        decks: {
+          loading: false,
+          error: payload
+        }
+      };
     case 'UPDATE_DECK_LIST': return {
         ...state,
-        decks: action.decks
+        decks: payload
     };
     case 'UPDATE_USER_LIST': return {
         ...state,
-      users: action.users
+      users: payload
     };
     case 'UPDATE_ACTIVE_DECK': return {
       ...state,
-      currentDeck: action.currentDeck
+      currentDeck: payload
     };
     case 'TOGGLE_ADVENTURE_FILTERS': return {
       ...state,
-      adventuresToggled: action.adventuresToggled
+      adventuresToggled: payload
     };
     case 'UPDATE_MODE_FILTER': return {
       ...state,
-      activeMode: action.activeMode
+      activeMode: payload
     };
     case 'UPDATE_ADVENTURE_FILTER': return {
       ...state,
-      activeAdventure: action.activeAdventure
+      activeAdventure: payload
     };
     case 'UPDATE_CLASS_FILTER': return {
       ...state,
-      activeClass: action.activeClass
+      activeClass: payload
     };
     default: return state;
   }

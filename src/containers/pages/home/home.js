@@ -8,7 +8,6 @@ import TournamentsBlock from './tournament/tournaments';
 import CreateDeckBlock from './create-deck/create-deck';
 import HomeBlock from './block';
 import { TwitchBlock } from './twitch/twitch';
-import {getDecks} from "../../../firebase/decks/deck/read";
 import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
 import {fetchFilteredDecks, isFilterActive} from "./utils/deck-filters";
@@ -16,7 +15,7 @@ import {
   FETCH_REDDIT_POST_COMMENTS_REQUEST, FETCH_REDDIT_POSTS_REQUEST,
   UPDATE_ACTIVE_POST
 } from "../../../redux/types/reddit";
-import {FETCH_DECKS_REQUEST} from "../../../redux/types/decks";
+import {FETCH_HOT_DECKS_REQUEST} from "../../../redux/types/decks";
 class Home extends PureComponent{
 
   componentDidMount() {
@@ -96,7 +95,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDecks: () => dispatch({type: FETCH_DECKS_REQUEST}),
+    updateDecks: () => dispatch({type: FETCH_HOT_DECKS_REQUEST}),
     updateDeckFilters: (deckFilters) => dispatch({
       type: 'UPDATE_DECK_FILTERS', deckFilters
     }),

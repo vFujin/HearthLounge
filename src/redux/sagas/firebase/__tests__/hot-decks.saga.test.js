@@ -1,6 +1,6 @@
 import {call, put} from 'redux-saga/effects';
-import {fetchDecksSaga, fetchDecks} from "../decks.saga";
-import * as actions from "../../actions/decks/decks";
+import {fetchDecksSaga, fetchDecks} from "../hot-decks.saga";
+import * as actions from "../../../actions/decks/hot-decks";
 
 describe('fetch decks saga', () =>{
   describe('#fetchDecks', () =>{
@@ -11,7 +11,7 @@ describe('fetch decks saga', () =>{
             response = {decks: []};
 
         expect(saga.next().value).toEqual(call(fetchDecks));
-        expect(saga.next(response).value).toEqual(put(actions.fetchDecksSuccess(response.decks)))
+        expect(saga.next(response).value).toEqual(put(actions.fetchHotDecksSuccess(response.decks)))
       });
     });
 
@@ -21,7 +21,7 @@ describe('fetch decks saga', () =>{
             response = {err: {message: 'fake err'}};
 
         expect(saga.next().value).toEqual(call(fetchDecks));
-        expect(saga.next(response).value).toEqual(put(actions.fetchDecksFailure(response.err)))
+        expect(saga.next(response).value).toEqual(put(actions.fetchHotDecksFailure(response.err)))
       });
     });
 

@@ -12,14 +12,14 @@ const initialState = {
 
 export default function(state=initialState, {type, payload}){
   switch(type){
-    case types.FETCH_DECKS_REQUEST:
+    case types.FETCH_HOT_DECKS_REQUEST:
       return {
         ...state,
         decks: {
           loading: true
         }
       };
-    case types.FETCH_DECKS_SUCCESS:
+    case types.FETCH_HOT_DECKS_SUCCESS:
       return {
         ...state,
         decks: {
@@ -27,7 +27,7 @@ export default function(state=initialState, {type, payload}){
             all: payload
         }
       };
-    case types.FETCH_DECKS_FAILURE:
+    case types.FETCH_HOT_DECKS_FAILURE:
       return {
         ...state,
         decks: {

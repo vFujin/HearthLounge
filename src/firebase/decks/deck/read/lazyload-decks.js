@@ -4,48 +4,54 @@ import {ref} from '../../../../keys';
 let now = new Date();
 let week = now.setDate(now.getDate() - 7);
 
-export default function (callback) {
+export default function (resolve, reject) {
   let decksRef = ref.child('decks');
   let lastKnownDeck = null;
   let pageQuery =  decksRef.orderByChild('created').limitToFirst(15);
 
   pageQuery.once('value', snapshot=>{
+
     snapshot.forEach(childSnapshot=>{
       // if(childSnapshot.child('created').val() < week){
       //   return null;
       // }
+      console.log(snapshot.val(), childSnapshot.child('created').val(), lastKnownDeck);
       lastKnownDeck = childSnapshot.child('created').val();
+      console.log(lastKnownDeck)
     });
-  });
+  }, err => reject(err));
 
-  let nextQuery = decksRef.orderByChild('created').startAt(lastKnownDeck).limitToFirst(15);
-
-  nextQuery.once('value', snapshot => {
+    let nextQuery = decksRef.orderByChild('created').startAt(lastKnownDeck).limitToFirst(15);
     let snapshotWithoutVotes = {};
-    snapshot.forEach(childSnapshot =>{
-      const {archetype, authorId, created, deck, deckId, deckstring, description, downvotes, playerClass, patch, title, type, upvotes, views, votes} = childSnapshot.val();
-      Object.assign(snapshotWithoutVotes, {
-        [deckId]: {
-          archetype,
-          authorId,
-          created,
-          deck,
-          deckId,
-          deckstring,
-          description,
-          downvotes,
-          playerClass,
-          patch,
-          title,
-          type,
-          upvotes,
-          views,
-          votes
-        }
+    nextQuery.once('value', snapshot => {
+      // console.log("nextQ");
+
+      snapshot.forEach(childSnapshot => {
+        const {archetype, authorId, created, deck, deckId, deckstring, description, downvotes, playerClass, patch, title, type, upvotes, views, votes} = childSnapshot.val();
+        Object.assign(snapshotWithoutVotes, {
+          [deckId]: {
+            archetype,
+            authorId,
+            created,
+            deck,
+            deckId,
+            deckstring,
+            description,
+            downvotes,
+            playerClass,
+            patch,
+            title,
+            type,
+            upvotes,
+            views,
+            votes
+          }
+        });
       });
-    });
-    callback(snapshotWithoutVotes);
-  })
+      console.log(snapshotWithoutVotes, lastKnownDeck, nextQuery);
+      resolve(snapshotWithoutVotes)
+    }, err => reject(err));
+
 }
 
 
