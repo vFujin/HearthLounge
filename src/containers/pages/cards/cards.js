@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import _ from 'lodash';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
 import Loader from '../../../components/loader';
@@ -9,9 +8,9 @@ import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
 import {infiniteScroll} from "../../../utils/infinite-scroll"
 import {filterByUrl} from "../../../utils/filter/cards/by-url";
-import {CARDS_LOADED} from "../../../redux/types/cards";
-class Cards extends PureComponent {
+import {CARDS_LOADED} from "../../../redux/cards/types";
 
+class Cards extends PureComponent {
   componentWillUnmount(){
     this.props.updateCardsLoaded(37);
   }

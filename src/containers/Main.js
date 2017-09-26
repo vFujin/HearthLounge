@@ -11,7 +11,7 @@ import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
 import {FETCH_PATCH_REQUEST} from "../redux/patch/types";
 import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/types/firebase";
-import * as types from "../redux/types/cards";
+import * as types from "../redux/cards/types";
 
 
 class Main extends Component{

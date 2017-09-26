@@ -1,6 +1,6 @@
 import {call, put} from 'redux-saga/effects';
-import {fetchCardsSaga, fetchCards} from "../cards.saga";
-import * as actions from "../../actions/cards";
+import {fetchCardsSaga, fetchCards} from "../../cards/saga";
+import * as actions from "../../cards/actions";
 
 describe('cards saga', () =>{
   describe('#fetchCardsSaga', () =>{

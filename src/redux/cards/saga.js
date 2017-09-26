@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {call, put, takeEvery} from 'redux-saga/effects';
-import * as types from "../types/cards";
-import * as actions from "../actions/cards";
+import * as types from "./types";
+import * as actions from "./actions";
 import {MashapeKey} from "../../keys";
 
 export const fetchCards = () => axios.get(`https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1`, {

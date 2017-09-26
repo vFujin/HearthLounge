@@ -7,7 +7,7 @@ import {watchFirebaseReauthenticate} from "./firebase/user/utils/reauthenticate.
 import {watchFirebaseResetPassword} from "./firebase/user/utils/reset-password.saga";
 import {watchDecks} from "../decks/fetch-decks/saga";
 import {watchHotDecks} from "../decks/home-decks/saga";
-import {watchCards} from "./cards.saga";
+import {watchCards} from "../cards/saga";
 import {watchRedditPost} from "../reddit/active-post/saga";
 import {watchRedditPostComments} from "../reddit/comments/saga";
 import {watchDecksUpdate} from "../decks/update-decks/saga";

@@ -1,4 +1,4 @@
-import * as types from "../types/cards";
+import * as types from "./types";
 
 const initialState = {
   cards: {

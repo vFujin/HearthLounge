@@ -4,7 +4,7 @@ import {routerReducer} from 'react-router-redux';
 import patch from '../patch/reducer';
 import entry from './entry/entry'
 import users from './users';
-import cards from './cards';
+import cards from '../cards/reducer';
 import issues from './issues';
 import expansions from './expansions/expansions';
 import adventures from './adventures/adventure'
