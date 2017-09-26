@@ -7,6 +7,7 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
   const mapDecks = () =>{
       return _.map(decks.all).map(d  => {
         const {deckId, playerClass, title, votes, deck, created, archetype, author, type, views} = d;
+        console.log(_.trimStart(votes, '0'));
         return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
                             key={deckId}
                             deckId={deckId}

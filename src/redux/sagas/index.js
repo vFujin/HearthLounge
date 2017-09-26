@@ -5,21 +5,29 @@ import {watchFirebaseSignIn} from "./firebase/user/utils/sign-in.saga";
 import {watchFirebaseSignOut} from "./firebase/user/utils/sign-out.saga";
 import {watchFirebaseReauthenticate} from "./firebase/user/utils/reauthenticate.saga";
 import {watchFirebaseResetPassword} from "./firebase/user/utils/reset-password.saga";
-import {watchDecks} from "./firebase/decks.saga";
-import {watchHotDecks} from "./firebase/hot-decks.saga";
+import {watchDecks} from "./firebase/decks/decks.saga";
+import {watchHotDecks} from "./firebase/decks/hot-decks.saga";
 import {watchCards} from "./cards.saga";
 import {watchRedditPost} from "./reddit/post.saga";
 import {watchRedditPostComments} from "./reddit/post-comments.saga";
+import {watchDecksUpdate} from "./firebase/decks/decks-update.saga";
+import {watchDeck} from "./firebase/decks/deck.saga";
 
 export default function* rootSaga() {
   yield all([
-    watchHotDecks(),
-    watchDecks(),
+    //App
     watchPatch(),
+    watchCards(),
+    //Home
+    watchHotDecks(),
+    // Decks & Deck page
+    watchDecks(),
+    watchDeck(),
+    watchDecksUpdate(),
+    //Reddit
     watchRedditPosts(),
     watchRedditPost(),
     watchRedditPostComments(),
-    watchCards(),
     //Firebase
     watchFirebaseSignIn(),
     watchFirebaseSignOut(),

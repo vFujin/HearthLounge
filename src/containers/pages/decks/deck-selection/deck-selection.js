@@ -4,99 +4,63 @@ import 'whatwg-fetch';
 import _ from 'lodash';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
-import {getDeckDetails, getLazyloadDecks} from '../../../../firebase/decks/deck/read';
+import {getDeckDetails} from '../../../../firebase/decks/deck/read';
 import {updateViews} from '../../../../firebase/decks/deck/update';
 import Loader from '../../../../components/loader';
 import NotFound from '../../../shared-assets/not-found';
-import {getFilteredDecks} from "../../../../firebase/decks/deck/read/index";
-import {navItems} from "../../../../data/nav";
-import {addQuery} from "../../../../utils/utils-router";
-import {FETCH_DECKS_REQUEST} from "../../../../redux/types/decks";
-import {infiniteScroll} from "../../../../utils/infinite-scroll";
+// import {getFilteredDecks} from "../../../../firebase/decks/deck/read/index";
+// import {addQuery} from "../../../../utils/utils-router";
+import {FETCH_DECKS_REQUEST, UPDATE_DECKS_REQUEST} from "../../../../redux/types/decks";
 
 
 class DeckSelection extends Component {
   componentDidMount() {
-    const {updateDecklist, decks} = this.props;
-    if(this.props.location.query.playerClass){
-      // getFilteredDecks(decks => this.props.updateDeckList(decks), 'playerClass', this.props.location.query.playerClass);
-    } else {
-      // getLazyloadDecks(v => );
-    }
+    const {fetchDecks, updateDecks, decks, location} = this.props;
+    const {playerClass} = location.query;
+
     if(decks.loading) {
-      updateDecklist()
+      playerClass ? fetchDecks(playerClass) : fetchDecks();
     }
+    this.infiniteScroll(updateDecks);
   }
 
-
-  // shouldComponentUpdate(nextProps){
-  //   return !(
-  //       this.props.activeUser !== nextProps.activeUser ||
-  //       this.props.cards !== nextProps.cards ||
-  //       this.props.cards.patch !== nextProps.cards.patch
-  //   );
-  //
-  // }
-
-  handleModeFilterClick = (e) =>{
-    let targetId = e.currentTarget.id;
-    this.props.updateModeFilter(targetId);
-    if(targetId === "adventures"){
-      this.props.toggleAdventureFilters(true);
-    }
-    else {
-      this.props.toggleAdventureFilters(false);
-    }
-  };
-
-  handleAdventureFilterClick = (e) =>{
-    // let targetId = e.currentTarget.id;
-    // this.props.updateAdventureFilter(targetId);
-  };
-
-
   handleFiltersClick = e =>{
-    const {activeMode, activeClass, updateModeFilter, updateClassFilter, updateDeckList} = this.props;
-    let targetId = e.currentTarget.id;
-    let targetFilter = e.currentTarget.dataset.filter;
-    addQuery({[targetFilter]: targetId});
-    switch(targetFilter){
-      case 'playerClass': {
-        updateClassFilter(targetId);
-        if(activeMode && activeClass){
-          getFilteredDecks(decks => updateDeckList(decks), 'mode_class', `${activeMode}_${targetId}`);
-        } else {
-          getFilteredDecks(decks => updateDeckList(decks), 'playerClass', targetId);
-        }
-        break;
-      }
-      case 'mode': {
-        updateModeFilter(targetId);
-        if(activeMode && activeClass){
-          getFilteredDecks(decks => updateDeckList(decks), 'mode_class', `${targetId}_${activeClass}`);
-        } else {
-          getFilteredDecks(decks => updateDeckList(decks), 'mode', targetId);
-        }
-        break;
-      }
-      default: return null;
-    }
-  };
-
-
-  handleClassFilterClick = (e) =>{
-    let targetId = e.currentTarget.id;
-    this.props.updateClassFilter(targetId);
-    getLazyloadDecks((v) => this.props.updateDeckList(v), targetId);
+    // const {activeMode, activeClass, updateModeFilter, updateClassFilter, updateDeckList} = this.props;
+    // let targetId = e.currentTarget.id;
+    // let targetFilter = e.currentTarget.dataset.filter;
+    // addQuery({[targetFilter]: targetId});
+    // switch(targetFilter){
+    //   case 'playerClass': {
+    //     // this.props.updateDecks(`${this.props.location.query.playerClass}_timestamp_votes`);
+    //     this.props.fetchDecks();
+    //     // if(activeMode && activeClass){
+    //     //   getFilteredDecks(decks => updateDeckList(decks), 'mode_class', `${activeMode}_${targetId}`);
+    //     // } else {
+    //     //   getFilteredDecks(decks => updateDeckList(decks), 'playerClass', targetId);
+    //     // }
+    //     break;
+    //   }
+    //   case 'mode': {
+    //     updateModeFilter(targetId);
+    //     if(activeMode && activeClass){
+    //       getFilteredDecks(decks => updateDeckList(decks), 'mode_class', `${targetId}_${activeClass}`);
+    //     } else {
+    //       getFilteredDecks(decks => updateDeckList(decks), 'mode', targetId);
+    //     }
+    //     break;
+    //   }
+    //   default: return null;
+    // }
   };
 
   handleDeckSnippetClick = (e) =>{
     let deckId = e.currentTarget.id;
-    let deckObject = _.head(_.map(this.props.decks).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
+    let deckObject = _.head(_.map(this.props.decks.all).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
+    console.log(deckObject);
     this.props.updateActiveDeck(deckObject);
     updateViews(deckId);
   };
-  //
+
   infiniteScroll = (updateDecklist) => {
     const el = document.querySelector('.table-scroll');
     if (el) {
@@ -111,7 +75,7 @@ class DeckSelection extends Component {
 
   render() {
     const {children, location, decks, activeUser, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
-    this.infiniteScroll(this.props.updateDecklist);
+
 
     if(location.pathname !== "/decks"){
       if(!currentDeck){
@@ -150,7 +114,8 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDecklist: () => dispatch({type: FETCH_DECKS_REQUEST}),
+    fetchDecks: () => dispatch({type: FETCH_DECKS_REQUEST}),
+    updateDecks: () => dispatch({type: UPDATE_DECKS_REQUEST}),
     updateUserList: payload => dispatch({
       type: 'UPDATE_USER_LIST', payload
     }),

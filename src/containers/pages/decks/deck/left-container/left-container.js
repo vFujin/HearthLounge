@@ -54,7 +54,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
   };
 
   const search = () => {
-    if(cards.allCards.length > 0) {
+    if(!cards.loading) {
       const Option = Select.Option;
       const options = cards.allCards
           .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(currentDeck.playerClass) || card.playerClass === 'Neutral')))

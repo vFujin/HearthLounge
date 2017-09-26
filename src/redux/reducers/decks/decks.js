@@ -36,6 +36,28 @@ export default function(state=initialState, {type, payload}){
           error: payload
         }
       };
+
+    case types.UPDATE_DECKS_SUCCESS:
+      return {
+        ...state,
+        decks: {
+          loading: false,
+          all: {
+            ...state.decks.all,
+            ...payload
+          }
+        }
+      };
+
+    case types.UPDATE_DECKS_FAILURE:
+      return {
+        ...state,
+        decks: {
+          loading: false,
+          all: state.decks.all,
+          updateErr: payload
+        }
+      };
     case 'UPDATE_DECK_LIST': return {
         ...state,
         decks: payload

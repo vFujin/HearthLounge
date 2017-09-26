@@ -25,8 +25,6 @@ const SidebarBody = ({allCards, currentDeck, editingDecklist, deckEditing, searc
           <Background playerClass={playerClass}/>
         </div>
     )
-  } else {
-    return <Loader />
   }
 };
 

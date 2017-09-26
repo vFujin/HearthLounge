@@ -8,46 +8,43 @@ import {getUser} from '../../../../firebase/user/read';
 import {rateDeck} from '../../../../firebase/decks/deck/read/lazyload-decks';
 import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
 import {alertUnload} from "./utils/alert-unload";
+import * as types from "../../../../redux/types/decks/deck-view";
 
 class Deck extends Component{
 
   componentDidMount(){
-    const {currentDeck, updateDecklist, updateDeckAuthorDetails, editingDecklist} = this.props;
+    const {activeDeck, fetchDeck, params, currentDeck, updateDecklist, updateDeckAuthorDetails, editingDecklist} = this.props;
     const {deck} = currentDeck;
+    const {deckId} = params;
 
-    if(currentDeck){
-      updateDecklist(deck);
-      getUser(currentDeck.authorId, deckAuthor=>{
-        const { avatar, username, rank, region, battletag, facebook, twitter, twitch, youtube, favouriteClass} = deckAuthor;
-
-        updateDeckAuthorDetails({
-          avatar,
-          username,
-          rank,
-          region,
-          battletag,
-          facebook,
-          twitter,
-          twitch,
-          youtube,
-          favouriteClass
-        })
-      });
+    if(activeDeck.loading){
+      fetchDeck(deckId)
     }
 
-    if(this.props.deckEditing && (JSON.stringify(editingDecklist) !==  JSON.stringify(deck))){
-      window.addEventListener("beforeunload", this.onUnload)
-    }
-  }
 
-  componentWillUpdate(nextProps){
-    //need proper testing
-    const {editingDecklist, editingDeckDescription, currentDeck, updateDecklist} = this.props;
-    alertUnload(nextProps, editingDecklist, editingDeckDescription, currentDeck, updateDecklist, this.onUnload);
+    // if(currentDeck){
+    //   getUser(currentDeck.authorId, deckAuthor=>{
+    //     const { avatar, username, rank, region, battletag, facebook, twitter, twitch, youtube, favouriteClass} = deckAuthor;
+    //
+    //     updateDeckAuthorDetails({
+    //       avatar,
+    //       username,
+    //       rank,
+    //       region,
+    //       battletag,
+    //       facebook,
+    //       twitter,
+    //       twitch,
+    //       youtube,
+    //       favouriteClass
+    //     })
+    //   });
+    // }
   }
 
   componentWillUnmount(){
-    this.props.toggleDeckEditing(false);
+    const {resetActiveDeck} = this.props;
+    resetActiveDeck();
   }
 
   onUnload = (e) =>{
@@ -88,7 +85,7 @@ class Deck extends Component{
     let manacurveAfterCostRemoval = manaCurve.map((c, i) => i == cardCost ? c-1 : c);
     let max = _.max(manacurveAfterCostRemoval);
 
-    this.props.updateDecklist({
+    this.props.fetchDecks({
         cards: decklistAfterCardRemoval,
         manaCurve: manacurveAfterCostRemoval,
         max
@@ -102,12 +99,12 @@ class Deck extends Component{
     let descriptionsNotEqual = editingDeckDescription && (editingDeckDescription !== currentDeck.description);
     return (
         <div className="container__page container__page--twoSided deck">
-          <LeftContainer currentDeck={currentDeck}
-                         cards={this.props.cards}
-                         editingDecklist={editingDecklist}
-                         deckEditing={deckEditing}
-                         updateDecklist={updateDecklist}
-                         handleCardRemovalClick={this.handleCardRemovalClick}/>
+          {/*<LeftContainer currentDeck={currentDeck}*/}
+                         {/*cards={this.props.cards}*/}
+                         {/*editingDecklist={editingDecklist}*/}
+                         {/*deckEditing={deckEditing}*/}
+                         {/*updateDecklist={updateDecklist}*/}
+                         {/*handleCardRemovalClick={this.handleCardRemovalClick}/>*/}
           <RightContainer currentDeck={currentDeck}
                           params={params}
                           patch={patch}
@@ -124,20 +121,22 @@ class Deck extends Component{
 }
 
 const mapStateToProps = (state) => {
-  const {deckVote, deckEditing, editingDecklist, editingDeckDescription, deckAuthor} = state.deckView;
+  const {activeDeck, deckVote, deckEditing, editingDecklist, editingDeckDescription, deckAuthor} = state.deckView;
   const {cards} = state.cards;
-  return {deckVote, cards, deckEditing, editingDecklist, editingDeckDescription, deckAuthor}
+  return {activeDeck, deckVote, cards, deckEditing, editingDecklist, editingDeckDescription, deckAuthor}
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    fetchDeck: payload => dispatch({type: types.FETCH_DECK_REQUEST, payload}),
+    resetActiveDeck: () => dispatch({type: types.RESET_ACTIVE_DECK}),
     updateDeckRating: (deckVote) => (dispatch({
       type: 'UPDATE_DECK_RATING', deckVote
     })),
     toggleDeckEditing: (deckEditing) => (dispatch({
       type: 'TOGGLE_DECK_EDITING', deckEditing
     })),
-    updateDecklist: (editingDecklist) => (dispatch({
+    fetchDecks: (editingDecklist) => (dispatch({
       type: 'UPDATE_DECKLIST', editingDecklist
     })),
     updateDeckAuthorDetails: deckAuthor => dispatch({

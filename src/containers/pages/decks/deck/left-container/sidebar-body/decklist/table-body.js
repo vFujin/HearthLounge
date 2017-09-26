@@ -4,6 +4,7 @@ import _ from 'lodash';
 import Card from './table-row-card';
 
 const TableBody = ({allCards, cards, deckEditing, handleCardRemovalClick}) => {
+  console.log(allCards);
   const listCards = () =>{
     let cardNames = Object.keys(cards);
     return _.map(cards).map((card, i) =>

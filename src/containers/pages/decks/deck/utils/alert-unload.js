@@ -1,4 +1,4 @@
-export function alertUnload(nextProps, editingDecklist, editingDeckDescription, currentDeck, updateDecklist, onUnload){
+export function alertUnload(nextProps, editingDecklist, editingDeckDescription, currentDeck, onUnload){
   const {deck, description} = currentDeck;
   let decksEqual = JSON.stringify(editingDecklist) ===  JSON.stringify(deck);
   let decksNotEqual = JSON.stringify(editingDecklist) !==  JSON.stringify(deck);
@@ -13,12 +13,12 @@ export function alertUnload(nextProps, editingDecklist, editingDeckDescription, 
   }
   if(!nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
     window.removeEventListener("beforeunload", onUnload);
-    updateDecklist(deck)
+    // updateDecklist(deck)
     //add description reducer
   }
   if(!nextProps.deckEditing && (decksNotEqual || descriptionsNotEqual)){
     window.removeEventListener("beforeunload", onUnload);
-    updateDecklist(deck)
+    // updateDecklist(deck)
     //add description reducer
   }
 }
