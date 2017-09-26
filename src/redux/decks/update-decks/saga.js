@@ -1,7 +1,7 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
-import {getLazyloadDecks} from "../../../../firebase/decks/deck/read/index";
-import * as actions from "../../../actions/decks/decks-update";
-import * as types from "../../../types/decks";
+import {getLazyloadDecks} from "../../../firebase/decks/deck/read/index";
+import * as actions from "./actions";
+import * as types from "./types";
 
 //TODO stop calling requests when the resolved value is the last in db
 export const fetchDecksUpdate = () => {

@@ -1,7 +1,7 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
-import {getLazyloadDecks} from "../../../../firebase/decks/deck/read/index";
-import * as actions from "../../../actions/decks/decks";
-import * as types from "../../../types/decks";
+import {getLazyloadDecks} from "../../../firebase/decks/deck/read/index";
+import * as actions from "./actions";
+import * as types from "./types";
 
 export const fetchDecks = () => {
   let deckPromise = new Promise((resolve, reject) => getLazyloadDecks(resolve, reject));

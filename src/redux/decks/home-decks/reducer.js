@@ -1,27 +1,34 @@
-import * as types from "../types/current-hs-patch";
+import * as types from "./types";
 
 const initialState = {
-  current: null
+  loading: true,
+  deckFilters: {}
 };
 
 export default function(state=initialState, {type, payload}) {
   switch (type) {
-    case types.FETCH_PATCH_REQUEST:
+    case types.FETCH_HOT_DECKS_REQUEST:
       return {
         ...state,
         loading: true
       };
-    case types.FETCH_PATCH_SUCCESS:
+    case types.FETCH_HOT_DECKS_SUCCESS:
       return {
         ...state,
         loading: false,
-        current: payload
+        all: payload
       };
-    case types.FETCH_PATCH_FAILURE:
+    case types.FETCH_HOT_DECKS_FAILURE:
       return {
         ...state,
         loading: false,
         error: payload
+      };
+    case 'UPDATE_DECK_FILTERS':
+      return {
+        ...state,
+        ...state.deckFilters,
+        ...payload
       };
     default:
       return state;

@@ -1,4 +1,4 @@
-import * as types from "../../types/decks";
+import * as types from "./types";
 
 export function fetchDecksRequest(){
   return {

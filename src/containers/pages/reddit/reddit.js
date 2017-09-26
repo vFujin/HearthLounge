@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/types/reddit";
+import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/reddit/posts/types";
 
 class Reddit extends Component {
   componentDidMount() {

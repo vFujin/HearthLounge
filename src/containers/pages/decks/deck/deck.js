@@ -94,17 +94,17 @@ class Deck extends Component{
   };
 
   render() {
-    const {activeUser, patch, currentDeck, params, editingDecklist, deckEditing, updateDecklist, editingDeckDescription, deckAuthor} = this.props;
+    const {activeDeck, activeUser, patch, currentDeck, params, editingDecklist, deckEditing, updateDecklist, editingDeckDescription, deckAuthor} = this.props;
     let decksNotEqual = JSON.stringify(editingDecklist) !==  JSON.stringify(currentDeck.deck);
     let descriptionsNotEqual = editingDeckDescription && (editingDeckDescription !== currentDeck.description);
     return (
         <div className="container__page container__page--twoSided deck">
-          {/*<LeftContainer currentDeck={currentDeck}*/}
-                         {/*cards={this.props.cards}*/}
-                         {/*editingDecklist={editingDecklist}*/}
-                         {/*deckEditing={deckEditing}*/}
-                         {/*updateDecklist={updateDecklist}*/}
-                         {/*handleCardRemovalClick={this.handleCardRemovalClick}/>*/}
+          <LeftContainer activeDeck={activeDeck}
+                         cards={this.props.cards}
+                         editingDecklist={editingDecklist}
+                         deckEditing={deckEditing}
+                         updateDecklist={updateDecklist}
+                         handleCardRemovalClick={this.handleCardRemovalClick}/>
           {/*<RightContainer currentDeck={currentDeck}*/}
                           {/*params={params}*/}
                           {/*patch={patch}*/}

@@ -1,6 +1,6 @@
 import {call, put} from 'redux-saga/effects';
-import {fetchPatchSaga, fetchPatch} from "../current-hs-patch.saga";
-import * as actions from "../../actions/current-hs-patch";
+import {fetchPatchSaga, fetchPatch} from "../../patch/saga";
+import * as actions from "../../patch/actions";
 
 describe('current hs patch saga', () =>{
   describe('#fetchPatchSaga', () =>{

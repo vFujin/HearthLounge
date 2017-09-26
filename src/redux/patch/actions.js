@@ -1,4 +1,4 @@
-import * as types from "../types/current-hs-patch";
+import * as types from "./types";
 
 export function fetchPatchRequest(){
   return {

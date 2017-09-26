@@ -8,9 +8,10 @@ import {getDeckDetails} from '../../../../firebase/decks/deck/read';
 import {updateViews} from '../../../../firebase/decks/deck/update';
 import Loader from '../../../../components/loader';
 import NotFound from '../../../shared-assets/not-found';
+import {FETCH_DECKS_REQUEST} from "../../../../redux/decks/fetch-decks/types";
+import {UPDATE_DECKS_REQUEST} from "../../../../redux/decks/update-decks/types";
 // import {getFilteredDecks} from "../../../../firebase/decks/deck/read/index";
 // import {addQuery} from "../../../../utils/utils-router";
-import {FETCH_DECKS_REQUEST, UPDATE_DECKS_REQUEST} from "../../../../redux/types/decks";
 
 
 class DeckSelection extends Component {
@@ -56,7 +57,6 @@ class DeckSelection extends Component {
   handleDeckSnippetClick = (e) =>{
     let deckId = e.currentTarget.id;
     let deckObject = _.head(_.map(this.props.decks.all).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
-    console.log(deckObject);
     this.props.updateActiveDeck(deckObject);
     updateViews(deckId);
   };
@@ -107,7 +107,7 @@ class DeckSelection extends Component {
 }
 
 const mapStateToProps = (state) =>{
-  const {decks, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.deckList;
+  const {decks, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.decks;
   const {activeUser} = state.users;
   return {decks, activeUser, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
 };

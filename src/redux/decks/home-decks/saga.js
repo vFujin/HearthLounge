@@ -1,7 +1,7 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
-import {getHotDecks} from "../../../../firebase/decks/deck/read/index";
-import * as actions from "../../../actions/decks/hot-decks";
-import * as types from "../../../types/decks";
+import {getHotDecks} from "../../../firebase/decks/deck/read/index";
+import * as actions from "./actions";
+import * as types from "./types";
 
 export const fetchHotDecks = () => {
     let deckPromise = new Promise((resolve, reject) => getHotDecks(false, null, false, resolve, reject));

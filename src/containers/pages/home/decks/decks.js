@@ -7,16 +7,15 @@ import DeckSnippet from '../../../../components/deck-snippet/deck-snippet';
 import SearchDecks from './filters/search-decks';
 import Loader from "../../../../components/loader";
 import Icon from "../../../../components/icon";
-const DecksBlock = ({decks, deckFilters, handleDeckClick, handleFilterClick}) => {
+const DecksBlock = ({hotDecks, deckFilters, handleDeckClick, handleFilterClick}) => {
   const {playerClass, mode} = deckFilters;
-  console.log(decks.all);
   const listDecks = () =>{
-    if(decks.all){
-      return decks.all.map((deck, i) => <DeckSnippet key={i}
-                                                     d={deck}
-                                                     handleDeckClick={handleDeckClick}/>)
+    if(hotDecks.all){
+      return hotDecks.all.map((deck, i) => <DeckSnippet key={i}
+                                                        d={deck}
+                                                        handleDeckClick={handleDeckClick}/>)
     } else {
-      return <p>{decks.error}</p>
+      return <p>{hotDecks.error}</p>
     }
 
   };
@@ -39,7 +38,7 @@ const DecksBlock = ({decks, deckFilters, handleDeckClick, handleFilterClick}) =>
           </div>
           <div className="right-container">
             <div className="hot-decks">
-              {decks.loading ? <Loader theme="light"/> : listDecks()}
+              {hotDecks.loading ? <Loader theme="light"/> : listDecks()}
             </div>
           </div>
         </div>

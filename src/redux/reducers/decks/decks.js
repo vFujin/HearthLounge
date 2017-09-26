@@ -1,63 +1,10 @@
-
-
-import * as types from "../../types/decks";
-
 const initialState = {
-  decks: {
-    loading: true
-  },
   users: [],
   adventuresToggled: false
 };
 
-
 export default function(state=initialState, {type, payload}){
   switch(type){
-    case types.FETCH_DECKS_REQUEST:
-      return {
-        ...state,
-        decks: {
-          loading: true
-        }
-      };
-    case types.FETCH_DECKS_SUCCESS:
-      return {
-        ...state,
-        decks: {
-          loading: false,
-          all: payload
-        }
-      };
-    case types.FETCH_DECKS_FAILURE:
-      return {
-        ...state,
-        decks: {
-          loading: false,
-          error: payload
-        }
-      };
-
-    case types.UPDATE_DECKS_SUCCESS:
-      return {
-        ...state,
-        decks: {
-          loading: false,
-          all: {
-            ...state.decks.all,
-            ...payload
-          }
-        }
-      };
-
-    case types.UPDATE_DECKS_FAILURE:
-      return {
-        ...state,
-        decks: {
-          loading: false,
-          all: state.decks.all,
-          updateErr: payload
-        }
-      };
     case 'UPDATE_DECK_LIST': return {
         ...state,
         decks: payload

@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DeckDetails from "./deck-details";
 import Background from "./background";
-import Loader from "../../../../../../components/loader";
 
-const SidebarBody = ({allCards, currentDeck, editingDecklist, deckEditing, search, handleCardRemovalClick}) =>{
-  const {playerClass, deckstring} = currentDeck;
+const SidebarBody = ({allCards, activeDeck, editingDecklist, deckEditing, search, handleCardRemovalClick}) =>{
+  const {playerClass, deckstring} = activeDeck;
   if(editingDecklist) {
     return (
         <div className="sidebar__body">
@@ -31,8 +30,9 @@ const SidebarBody = ({allCards, currentDeck, editingDecklist, deckEditing, searc
 export default SidebarBody;
 
 SidebarBody.propTypes = {
-  currentDeck: PropTypes.shape({
-    playerClass: PropTypes.string
+  activeDeck: PropTypes.shape({
+    playerClass: PropTypes.string,
+    deckstring: PropTypes.string
   }).isRequired,
   deckEditing: PropTypes.bool.isRequired,
   handleCardRemovalClick: PropTypes.func.isRequired,

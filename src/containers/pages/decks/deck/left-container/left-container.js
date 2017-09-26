@@ -5,7 +5,7 @@ import Select from 'antd/lib/select';
 import SidebarHeader from "./sidebar-header/sidebar-header";
 import SidebarBody from "./sidebar-body/sidebar-body";
 
-const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
+const LeftContainer = ({activeDeck, cards, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
 
   const handleCardAddition = (value) => {
     let filteredCard = cards.allCards.find(card => card.name === value);
@@ -25,7 +25,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
       }
 
       if (card === filteredCard.name) {
-        console.log("before, ",card, result[card].amount)
+        console.log("before, ",card, result[card].amount);
         result[card].amount = 2;
         console.log("after, ",card, result[card].amount)
       }
@@ -57,7 +57,7 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
     if(!cards.loading) {
       const Option = Select.Option;
       const options = cards.allCards
-          .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(currentDeck.playerClass) || card.playerClass === 'Neutral')))
+          .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(activeDeck.playerClass) || card.playerClass === 'Neutral')))
           .slice(0, 30)
           .map(card => <Option value={card.name} key={card.name}>{card.name}</Option>);
       return (
@@ -78,8 +78,8 @@ const LeftContainer = ({cards, currentDeck, editingDecklist, deckEditing, handle
 
   return(
       <div className={`container__page--inner container__page--left ${deckEditing ? 'edit-mode' : ''}`}>
-        <SidebarHeader currentDeck={currentDeck}/>
-        <SidebarBody currentDeck={currentDeck}
+        <SidebarHeader activeDeck={activeDeck}/>
+        <SidebarBody activeDeck={activeDeck}
                      allCards={cards.allCards}
                      deckEditing={deckEditing}
                      handleCardRemovalClick={handleCardRemovalClick}

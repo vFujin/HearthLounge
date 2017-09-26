@@ -1,8 +1,8 @@
 import axios from 'axios';
 import {call, put, takeEvery} from 'redux-saga/effects';
 import {MashapeKey} from "../../keys";
-import * as actions from '../actions/current-hs-patch';
-import * as types from '../types/current-hs-patch';
+import * as actions from './actions';
+import * as types from './types';
 
 export const fetchPatch = () => axios.get('https://omgvamp-hearthstone-v1.p.mashape.com/info', {
   headers: {

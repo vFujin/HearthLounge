@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from "../../../../../../components/icon";
 
-const SidebarHeader = ({currentDeck}) =>{
-  const {type} = currentDeck;
+const SidebarHeader = ({activeDeck}) =>{
+  const {type} = activeDeck;
+
   return (
       <h3 className="sidebar__header">
         Deck Details
@@ -15,7 +16,7 @@ const SidebarHeader = ({currentDeck}) =>{
 export default SidebarHeader;
 
 SidebarHeader.propTypes = {
-  currentDeck: PropTypes.shape({
+  activeDeck: PropTypes.shape({
     type: PropTypes.string
   }).isRequired
 };

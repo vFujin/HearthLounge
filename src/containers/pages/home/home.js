@@ -11,16 +11,15 @@ import { TwitchBlock } from './twitch/twitch';
 import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
 import {fetchFilteredDecks, isFilterActive} from "./utils/deck-filters";
-import {
-  FETCH_REDDIT_POST_COMMENTS_REQUEST, FETCH_REDDIT_POSTS_REQUEST,
-  UPDATE_ACTIVE_POST
-} from "../../../redux/types/reddit";
-import {FETCH_HOT_DECKS_REQUEST} from "../../../redux/types/decks";
+import {FETCH_HOT_DECKS_REQUEST} from "../../../redux/decks/home-decks/types";
+import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/reddit/posts/types";
+import {UPDATE_ACTIVE_POST} from "../../../redux/reddit/active-post/types";
+import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../redux/reddit/comments/types";
 class Home extends PureComponent{
 
   componentDidMount() {
-    const {updateDecks, updateRedditPosts, posts, decks} = this.props;
-    if(decks.loading) {
+    const {updateDecks, updateRedditPosts, posts, hotDecks} = this.props;
+    if(hotDecks.loading) {
       updateDecks();
     }
     if(posts.loading) {
@@ -34,8 +33,11 @@ class Home extends PureComponent{
   };
 
   handleRedditPostClick = post =>{
-    this.props.updateActivePost(post);
-    this.props.updatePostComments(post.id);
+    const {updateActivePost, updatePostComments} = this.props;
+    const {id} = post;
+
+    updateActivePost(post);
+    updatePostComments(id);
   };
 
   handleFilterClick = (e) =>{
@@ -49,11 +51,11 @@ class Home extends PureComponent{
   };
 
   render() {
-    const {decks, posts, deckFilters} = this.props;
+    const {hotDecks, posts, deckFilters} = this.props;
     return (
         <div className="container__index home">
           <ul className="home__list">
-            <DecksBlock decks={decks}
+            <DecksBlock hotDecks={hotDecks}
                         deckFilters={deckFilters}
                         handleDeckClick={this.handleDeckClick}
                         handleFilterClick={this.handleFilterClick}/>
@@ -88,9 +90,10 @@ class Home extends PureComponent{
 }
 
 const mapStateToProps = (state) => {
-  const {decks, deckFilters} = state.home;
+  const {hotDecks} = state.home;
+  const {deckFilters} = hotDecks;
   const {posts} = state.redditPosts;
-  return {decks, posts, deckFilters};
+  return {hotDecks, posts, deckFilters};
 };
 
 const mapDispatchToProps = (dispatch) => {

@@ -7,12 +7,10 @@ import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar';
 import PostSelection from './right-container/post-selection';
 import {stripDomains} from '../../../../utils/reddit/posts';
-import {addQuery, removeQuery} from '../../../../utils/utils-router';
-import {
-  FETCH_REDDIT_POST_COMMENTS_REQUEST, FETCH_REDDIT_POSTS_REQUEST,
-  UPDATE_ACTIVE_POST
-} from "../../../../redux/types/reddit";
-import * as types from "../../../../redux/types/reddit";
+import {addQuery} from '../../../../utils/utils-router';
+import {FETCH_REDDIT_POSTS_REQUEST} from "../../../../redux/reddit/posts/types";
+import {UPDATE_ACTIVE_POST} from "../../../../redux/reddit/active-post/types";
+import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../../redux/reddit/comments/types";
 
 class RedditPosts extends Component {
 
@@ -22,11 +20,12 @@ class RedditPosts extends Component {
     if (all) {
       let post = all.find(p => p.id === id);
       updateActivePost(post);
-      updatePostComments(id);
+      updatePostComments(post.id);
     }
   };
 
   handleCategoryClick = (e) => {
+
     const {updatePosts, toggleCategoryFilter, location} = this.props;
     const {category} = location.query;
     e.preventDefault();
@@ -84,7 +83,7 @@ class RedditPosts extends Component {
         </div>
     )
   }
-};
+}
 
 const mapStateToProps = (state) =>{
   const {posts, activePost, activeCategoryFilter, activeDomainFilter} = state.redditPosts;

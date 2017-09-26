@@ -4,13 +4,12 @@ import {connect} from 'react-redux';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
-import {fetchData} from '../data/cards-data';
 import 'antd/lib/tooltip/style/css';
 import 'antd/lib/dropdown/style/css';
 import 'antd/lib/popover/style/css';
 import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
-import {FETCH_PATCH_REQUEST} from "../redux/types/current-hs-patch";
+import {FETCH_PATCH_REQUEST} from "../redux/patch/types";
 import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/types/firebase";
 import * as types from "../redux/types/cards";
 
