@@ -8,19 +8,19 @@ import {getUser} from '../../../../firebase/user/read';
 import {rateDeck} from '../../../../firebase/decks/deck/read/lazyload-decks';
 import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
 import {alertUnload} from "./utils/alert-unload";
-import * as types from "../../../../redux/types/decks/deck-view";
+import {FETCH_ACTIVE_DECK_REQUEST, RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
+import {FETCH_DECK_AUTHOR_REQUEST} from "../../../../redux/deck/deck-author/types";
 
 class Deck extends Component{
 
   componentDidMount(){
-    const {activeDeck, fetchDeck, params, currentDeck, updateDecklist, updateDeckAuthorDetails, editingDecklist} = this.props;
+    const {activeDeck, fetchDeck, fetchDeckAuthor, params, currentDeck, updateDecklist, updateDeckAuthorDetails, editingDecklist} = this.props;
     const {deck} = currentDeck;
     const {deckId} = params;
 
     if(activeDeck.loading){
       fetchDeck(deckId)
     }
-
 
     // if(currentDeck){
     //   getUser(currentDeck.authorId, deckAuthor=>{
@@ -105,43 +105,32 @@ class Deck extends Component{
                          {/*deckEditing={deckEditing}*/}
                          {/*updateDecklist={updateDecklist}*/}
                          {/*handleCardRemovalClick={this.handleCardRemovalClick}/>*/}
-          <RightContainer currentDeck={currentDeck}
-                          params={params}
-                          patch={patch}
-                          deckAuthor={deckAuthor}
-                          decksNotEqual={decksNotEqual}
-                          descriptionsNotEqual={descriptionsNotEqual}
-                          activeUser={activeUser}
-                          deckEditing={deckEditing}
-                          handleDeckEditingClick={this.handleDeckEditingClick}
-                          handleDeckVotingClick={this.handleDeckVotingClick}/>
+          {/*<RightContainer currentDeck={currentDeck}*/}
+                          {/*params={params}*/}
+                          {/*patch={patch}*/}
+                          {/*deckAuthor={deckAuthor}*/}
+                          {/*decksNotEqual={decksNotEqual}*/}
+                          {/*descriptionsNotEqual={descriptionsNotEqual}*/}
+                          {/*activeUser={activeUser}*/}
+                          {/*deckEditing={deckEditing}*/}
+                          {/*handleDeckEditingClick={this.handleDeckEditingClick}*/}
+                          {/*handleDeckVotingClick={this.handleDeckVotingClick}/>*/}
         </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  const {activeDeck, deckVote, deckEditing, editingDecklist, editingDeckDescription, deckAuthor} = state.deckView;
+  const {activeDeck, deckAuthor, deckVote, deckEditing, editingDecklist, editingDeckDescription} = state.deckView;
   const {cards} = state.cards;
-  return {activeDeck, deckVote, cards, deckEditing, editingDecklist, editingDeckDescription, deckAuthor}
+  return {activeDeck, deckAuthor, deckVote, cards, deckEditing, editingDecklist, editingDeckDescription}
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchDeck: payload => dispatch({type: types.FETCH_DECK_REQUEST, payload}),
-    resetActiveDeck: () => dispatch({type: types.RESET_ACTIVE_DECK}),
-    updateDeckRating: (deckVote) => (dispatch({
-      type: 'UPDATE_DECK_RATING', deckVote
-    })),
-    toggleDeckEditing: (deckEditing) => (dispatch({
-      type: 'TOGGLE_DECK_EDITING', deckEditing
-    })),
-    fetchDecks: (editingDecklist) => (dispatch({
-      type: 'UPDATE_DECKLIST', editingDecklist
-    })),
-    updateDeckAuthorDetails: deckAuthor => dispatch({
-      type: 'UPDATE_DECK_AUTHOR_DETAILS', deckAuthor
-    })
+    fetchDeck: payload => dispatch({type: FETCH_ACTIVE_DECK_REQUEST, payload}),
+    fetchDeckAuthor: payload => dispatch({type: FETCH_DECK_AUTHOR_REQUEST, payload}),
+    resetActiveDeck: () => dispatch({type: RESET_ACTIVE_DECK})
   };
 };
 

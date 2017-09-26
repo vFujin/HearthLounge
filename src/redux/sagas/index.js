@@ -11,7 +11,9 @@ import {watchCards} from "./cards.saga";
 import {watchRedditPost} from "./reddit/post.saga";
 import {watchRedditPostComments} from "./reddit/post-comments.saga";
 import {watchDecksUpdate} from "./firebase/decks/decks-update.saga";
-import {watchDeck} from "./firebase/decks/deck.saga";
+
+import {watchDeckAuthor} from "../deck/deck-author/saga";
+import {watchActiveDeck} from "../deck/active-deck/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -22,8 +24,9 @@ export default function* rootSaga() {
     watchHotDecks(),
     // Decks & Deck page
     watchDecks(),
-    watchDeck(),
     watchDecksUpdate(),
+    watchActiveDeck(),
+    watchDeckAuthor(),
     //Reddit
     watchRedditPosts(),
     watchRedditPost(),

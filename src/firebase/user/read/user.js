@@ -1,4 +1,4 @@
-import {refParent} from '../../../keys';
+import {ref} from '../../../keys';
 
 /**
  * Reads user details
@@ -6,6 +6,6 @@ import {refParent} from '../../../keys';
  * @param {string} uid - User ID
  * @param {function} callback - returns user details
  */
-export default function (uid, callback) {
-  return refParent('users').once("value", (snapshot)=>callback(snapshot.child(uid).val()))
+export default function (uid, resolve, reject) {
+  return ref.child(`users/${uid}`).once("value", (snapshot)=>resolve(snapshot.val()), err => reject(err))
 }

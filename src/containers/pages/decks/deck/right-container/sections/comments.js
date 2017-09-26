@@ -11,7 +11,7 @@ import {getSimplifiedUser} from "../../../../../../firebase/user/read/index";
 import {getComment, getComments} from '../../../../../../firebase/decks/comments/read';
 import {updateCommentRating} from '../../../../../../firebase/decks/comments/update';
 import {postComment} from '../../../../../../firebase/decks/comments/create/comment';
-import * as deckCommentActions from "../../../../../../redux/actions/decks/deck-view.action";
+import * as deckCommentActions from "../../../../../../redux/actions/deck/deck-view.action";
 
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})

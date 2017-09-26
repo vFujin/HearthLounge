@@ -1,34 +1,39 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
-import Home from './home';
-import CurrentHsPatch from './current-hs-patch';
-import Entry from './entry/entry'
-import Users from './users';
-import Cards from './cards';
-import Issues from './issues';
-import Expansions from './expansions/expansions';
-import Adventures from './adventures/adventure'
-import DeckDetails from './create-deck/deck-options';
-import DeckCreation from './create-deck/create-deck';
-import DeckList from './decks/decks';
-import DeckView from './decks/deck-view';
-import RedditPosts from './reddit/posts'
+import home from './home';
+import patch from './current-hs-patch';
+import entry from './entry/entry'
+import users from './users';
+import cards from './cards';
+import issues from './issues';
+import expansions from './expansions/expansions';
+import adventures from './adventures/adventure'
+import deckDetails from './create-deck/deck-options';
+import deckCreation from './create-deck/create-deck';
+import deckList from './decks/decks';
+import {tools, activeDeck, deckAuthor} from './deck-view';
+import redditPosts from './reddit/posts'
+
 
 const rootReducer = combineReducers({
-  home: Home,
-  patch: CurrentHsPatch,
-  entry: Entry,
-  users: Users,
-  cards: Cards,
-  expansions: Expansions,
-  adventures: Adventures,
-  deckDetails: DeckDetails,
-  deckCreation: DeckCreation,
-  deckList: DeckList,
-  deckView: DeckView,
-  redditPosts: RedditPosts,
-  issues: Issues,
+  home,
+  patch,
+  entry,
+  users,
+  cards,
+  expansions,
+  adventures,
+  deckDetails,
+  deckCreation,
+  deckList,
+  deckView: combineReducers({
+    tools,
+    activeDeck,
+    deckAuthor
+  }),
+  redditPosts,
+  issues,
   routing: routerReducer
 });
 

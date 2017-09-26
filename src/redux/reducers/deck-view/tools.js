@@ -12,9 +12,6 @@ import {
 import * as types from "../../types/decks/deck-view";
 
 const initialState = {
-  activeDeck:{
-    loading: true
-  },
   deckEditing: false,
   comments: [],
   editingDecklist: true,
@@ -34,36 +31,6 @@ const initialState = {
 
 export default function(state=initialState, {payload, type}) {
   switch (type) {
-    case types.FETCH_DECK_REQUEST:
-      return {
-        ...state,
-        deck: {
-          loading: true
-        }
-      };
-    case types.FETCH_DECK_SUCCESS:
-      return {
-        ...state,
-        activeDeck: {
-          loading: false,
-          ...payload
-        }
-      };
-    case types.FETCH_DECK_FAILURE:
-      return {
-        ...state,
-        deck: {
-          loading: false,
-          err: payload
-        }
-      };
-
-    case types.RESET_ACTIVE_DECK: return {
-        ...state,
-      deck: {
-          loading: true
-      }
-    };
       // case 'UPDATE_DECK_RATING':
       //   return {
       //     ...state,
