@@ -9,7 +9,7 @@
 @import 'components';
 @import 'components/index';
 @import 'antd';
-
+@import 'mobile/mobile';
 /*
   Layout
  */
@@ -168,8 +168,7 @@ nav {
   }
 }
 footer{
-  display: grid;
-  grid-template-columns: repeat(3, calc(100% / 3));
+
   background-color: $dark-grey;
   justify-content: center;
   > div{

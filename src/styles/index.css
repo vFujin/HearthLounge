@@ -487,6 +487,9 @@ a {
       display: grid;
       grid-template-columns: repeat(2, calc(50% - 5px));
       grid-column-gap: 10px; }
+  #container footer {
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3)); }
 
 .druid {
   color: #FF7D0A; }
@@ -3559,6 +3562,58 @@ input::-webkit-search-cancel-button {
             height: 100%;
             width: 100%; }
 
+@media only screen and (max-width: 767px) {
+  #container .container__index.home .home__list .home__block.decks .home__block--header {
+    grid-template-columns: 100%; }
+  #container footer {
+    grid-template-columns: repeat(2, 50%); }
+    #container footer .path {
+      display: none; } }
+@media only screen and (max-width: 767px) {
+  #container nav ul {
+    justify-content: space-between; }
+    #container nav ul li {
+      border-right: 0; }
+      #container nav ul li:not(.logo):not(.login) {
+        display: none; }
+      #container nav ul li.login {
+        width: 20%; }
+        #container nav ul li.login a span {
+          font-size: 1em; }
+        #container nav ul li.login a .nav__list--labelWrapper {
+          font-size: .5em; }
+  #container .container__index {
+    margin-right: 0; }
+    #container .container__index .home__list .home__block {
+      width: calc(50% - 1vh);
+      height: 27vh; }
+      #container .container__index .home__list .home__block .home__block--header {
+        height: 100%;
+        padding: 0; }
+        #container .container__index .home__list .home__block .home__block--header a {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-direction: column;
+          width: 100%; }
+          #container .container__index .home__list .home__block .home__block--header a span {
+            font-size: 4em; }
+          #container .container__index .home__list .home__block .home__block--header a p {
+            margin-top: 10px;
+            margin-left: 0; }
+        #container .container__index .home__list .home__block .home__block--header ul {
+          display: none; }
+      #container .container__index .home__list .home__block .home__block--body {
+        display: none;
+        height: 0; }
+  #container footer .copyright {
+    justify-content: flex-start; }
+    #container footer .copyright:before {
+      display: none; }
+  #container footer .media a:last-child {
+    margin-right: 0; }
+  #container footer .media a span {
+    font-size: 1em; } }
 /*
   Layout
  */
@@ -3689,8 +3744,6 @@ nav {
             width: 100%; }
 
 footer {
-  display: grid;
-  grid-template-columns: repeat(3, calc(100% / 3));
   background-color: #474143;
   justify-content: center; }
   footer > div {

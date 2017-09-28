@@ -1,0 +1,21 @@
+@import '../mixins';
+
+@include screen('mobile') {
+  #container {
+    .container__index.home {
+      .home__list {
+        .home__block.decks {
+          .home__block--header {
+            grid-template-columns: 100%;
+          }
+        }
+      }
+    }
+    footer{
+      grid-template-columns: repeat(2, 50%);
+      .path{
+        display: none;
+      }
+    }
+  }
+}

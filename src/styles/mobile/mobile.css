@@ -1,0 +1,33 @@
+@media only screen and (max-width: 767px) {
+  #container .container__index.home .home__list .home__block.decks .home__block--header {
+    grid-template-columns: 100%;
+    background: blue; } }
+@media only screen and (max-width: 767px) {
+  #container .container__index {
+    margin-right: 0; }
+    #container .container__index .home__list .home__block.decks .home__block--header {
+      display: none; }
+    #container .container__index .home__list .home__block {
+      width: calc(50% - 1vh);
+      height: 27vh; }
+      #container .container__index .home__list .home__block .home__block--header {
+        height: 100%;
+        padding: 0; }
+        #container .container__index .home__list .home__block .home__block--header a {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-direction: column;
+          width: 100%; }
+          #container .container__index .home__list .home__block .home__block--header a span {
+            font-size: 5em; }
+          #container .container__index .home__list .home__block .home__block--header a p {
+            margin-top: 10px;
+            margin-left: 0; }
+        #container .container__index .home__list .home__block .home__block--header ul {
+          display: none; }
+      #container .container__index .home__list .home__block .home__block--body {
+        display: none;
+        height: 0; } }
+
+/*# sourceMappingURL=mobile.css.map */

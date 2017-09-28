@@ -181,6 +181,10 @@
       grid-column-gap: 10px;
     }
   }
+  footer{
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+  }
 }
 
 
