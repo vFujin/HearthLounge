@@ -36,7 +36,7 @@ class Sidebar extends PureComponent {
   handleEditClick(e){
     //either "Edit" or "Cancel" buttons
     let target = e.target.id;
-    let isActive = this.state[target] === false ? true : false;
+    let isActive = !this.state[target];
     this.setState({
       [target]: isActive
     });
@@ -88,7 +88,7 @@ class Sidebar extends PureComponent {
   }
 
   handleDeleteAccountClick = () =>{
-    deleteUser(this.props.user);
+    deleteUser(this.props.activeUser);
   };
 
   handleAvatarDeletion = () =>{

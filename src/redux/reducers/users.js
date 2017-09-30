@@ -129,6 +129,30 @@ export default function(state=initialState, {type, payload}) {
           error: payload
         }
       };
+    case types.FIREBASE_DELETE_ACTIVE_USER_REQUEST:
+      return {
+        ...state,
+        activeUser: {
+          loading: true
+        }
+      };
+    case types.FIREBASE_DELETE_ACTIVE_USER_SUCCESS:
+      return {
+        ...state,
+        activeUser: {
+          loading: true,
+          authenticated: false
+        }
+      };
+    case types.FIREBASE_DELETE_ACTIVE_USER_FAILURE:
+      return {
+        ...state,
+        activeUser: {
+          ...state.activeUser,
+          loading: false,
+          deleteError: payload
+        }
+      };
     case 'UPDATE_ACTIVE_USER':
       return {
         ...state,

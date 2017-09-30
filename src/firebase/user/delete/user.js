@@ -22,6 +22,7 @@ export default function (activeUser){
   }
 
   user.delete().then(()=>{
+        console.log(activeUser);
         success("Account has been deleted!");
         browserHistory.push('/adventures');
       },
