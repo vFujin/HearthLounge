@@ -4,9 +4,8 @@ import Decklist from "./decklist/decklist";
 import ManaCurve from "../../../../../../components/mana-curve/mana-curve";
 import CopyDeck from "./copy-deck";
 
-const DeckDetails = ({allCards, editingDecklist, deckEditing, deckstring, playerClass, handleCardRemovalClick}) => {
-  const {cards, max} = editingDecklist;
-
+const DeckDetails = ({allCards, activeDeckCopy, deckEditView, deckstring, playerClass, handleCardRemovalClick}) => {
+  const {cards, max} = activeDeckCopy;
 
   return (
       <div className="container__mana-curve">
@@ -14,9 +13,9 @@ const DeckDetails = ({allCards, editingDecklist, deckEditing, deckstring, player
         <ManaCurve deck={cards} max={max} barHeight="70%" padding="1vh 0"/>
 
         <h3>Cards <CopyDeck deckstring={deckstring} playerClass={playerClass}/></h3>
-        <Decklist cards={cards}
+        <Decklist cards={cards || []}
                   allCards={allCards}
-                  deckEditing={deckEditing}
+                  deckEditView={deckEditView}
                   handleCardRemovalClick={handleCardRemovalClick}/>
       </div>
   )
@@ -26,7 +25,7 @@ const DeckDetails = ({allCards, editingDecklist, deckEditing, deckstring, player
 export default DeckDetails;
 
 Decklist.propTypes = {
-  deckEditing: PropTypes.bool.isRequired,
+  deckEditView: PropTypes.bool.isRequired,
   handleCardRemovalClick: PropTypes.func.isRequired,
   deckstring: PropTypes.string,
   playerClass: PropTypes.string,

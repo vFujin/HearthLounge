@@ -39,7 +39,7 @@ ManaCurveBar.propTypes = {
   deck: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array
-  ]).isRequired,
+  ]),
   barHeight: PropTypes.string,
   barWidth: PropTypes.string,
   barSpacing: PropTypes.string,

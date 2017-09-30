@@ -10,36 +10,18 @@ import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
 import {alertUnload} from "./utils/alert-unload";
 import {FETCH_ACTIVE_DECK_REQUEST, RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
 import {FETCH_DECK_AUTHOR_REQUEST} from "../../../../redux/deck/deck-author/types";
+import Loader from "../../../../components/loader";
+import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
+import {TOGGLE_DECK_EDIT_VIEW} from "../../../../redux/deck/tools/types";
 
 class Deck extends Component{
-
   componentDidMount(){
-    const {activeDeck, fetchDeck, fetchDeckAuthor, params, currentDeck, updateDecklist, updateDeckAuthorDetails, editingDecklist} = this.props;
-    const {deck} = currentDeck;
+    const {activeDeck, fetchDeck, params} = this.props;
     const {deckId} = params;
 
     if(activeDeck.loading){
       fetchDeck(deckId)
     }
-
-    // if(currentDeck){
-    //   getUser(currentDeck.authorId, deckAuthor=>{
-    //     const { avatar, username, rank, region, battletag, facebook, twitter, twitch, youtube, favouriteClass} = deckAuthor;
-    //
-    //     updateDeckAuthorDetails({
-    //       avatar,
-    //       username,
-    //       rank,
-    //       region,
-    //       battletag,
-    //       facebook,
-    //       twitter,
-    //       twitch,
-    //       youtube,
-    //       favouriteClass
-    //     })
-    //   });
-    // }
   }
 
   componentWillUnmount(){
@@ -47,22 +29,15 @@ class Deck extends Component{
     resetActiveDeck();
   }
 
-  onUnload = (e) =>{
-    e.returnValue = "foo";
-  };
-
   handleDeckVotingClick = (e) =>{
-    const {activeUser, currentDeck, updateDeckRating} = this.props;
+    const {activeUser, activeDeck, updateDeckRating} = this.props;
     let vote = e.currentTarget.id;
-    const {deckId} = currentDeck;
+    const {deckId} = activeDeck;
     const {uid} = activeUser;
+
     udpateDeckRating(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
   };
 
-  handleDeckEditingClick = () =>{
-    const {toggleDeckEditing, deckEditing} = this.props;
-    toggleDeckEditing(!deckEditing)
-  };
 
   handleCardRemovalClick = (e) =>{
     const {editingDecklist} = this.props;
@@ -94,42 +69,46 @@ class Deck extends Component{
   };
 
   render() {
-    const {activeDeck, activeUser, patch, currentDeck, params, editingDecklist, deckEditing, updateDecklist, editingDeckDescription, deckAuthor} = this.props;
-    let decksNotEqual = JSON.stringify(editingDecklist) !==  JSON.stringify(currentDeck.deck);
-    let descriptionsNotEqual = editingDeckDescription && (editingDeckDescription !== currentDeck.description);
-    return (
-        <div className="container__page container__page--twoSided deck">
-          <LeftContainer activeDeck={activeDeck}
-                         cards={this.props.cards}
-                         editingDecklist={editingDecklist}
-                         deckEditing={deckEditing}
-                         updateDecklist={updateDecklist}
-                         handleCardRemovalClick={this.handleCardRemovalClick}/>
-          {/*<RightContainer currentDeck={currentDeck}*/}
-                          {/*params={params}*/}
-                          {/*patch={patch}*/}
-                          {/*deckAuthor={deckAuthor}*/}
-                          {/*decksNotEqual={decksNotEqual}*/}
-                          {/*descriptionsNotEqual={descriptionsNotEqual}*/}
-                          {/*activeUser={activeUser}*/}
-                          {/*deckEditing={deckEditing}*/}
-                          {/*handleDeckEditingClick={this.handleDeckEditingClick}*/}
-                          {/*handleDeckVotingClick={this.handleDeckVotingClick}/>*/}
-        </div>
-    )
+    const {activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, deckAuthor, updateActiveDeckCopy} = this.props;
+
+    if(activeDeck.loading){
+      return <Loader/>
+    } else {
+      return (
+          <div className="container__page container__page--twoSided deck">
+            <LeftContainer activeDeck={activeDeck}
+                           activeDeckCopy={activeDeckCopy}
+                           updateActiveDeckCopy={updateActiveDeckCopy}
+                           deckEditView={deckEditView}
+                           cards={this.props.cards}
+                           handleCardRemovalClick={this.handleCardRemovalClick}/>
+            <RightContainer activeDeck={activeDeck}
+                            deckEditView={deckEditView}
+                            params={params}
+                            patch={patch}
+                            deckAuthor={deckAuthor}
+                            activeUser={activeUser}
+                            handleDeckVotingClick={this.handleDeckVotingClick}/>
+          </div>
+      )
+    }
   }
 }
 
 const mapStateToProps = (state) => {
-  const {activeDeck, deckAuthor, deckVote, deckEditing, editingDecklist, editingDeckDescription} = state.deckView;
+  const {activeDeck, activeDeckCopy, deckAuthor, tools} = state.deckView;
+  const {deckEditView} = tools;
   const {cards} = state.cards;
-  return {activeDeck, deckAuthor, deckVote, cards, deckEditing, editingDecklist, editingDeckDescription}
+
+  return {activeDeck, activeDeckCopy, deckAuthor, cards, deckEditView};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchDeck: payload => dispatch({type: FETCH_ACTIVE_DECK_REQUEST, payload}),
     fetchDeckAuthor: payload => dispatch({type: FETCH_DECK_AUTHOR_REQUEST, payload}),
+    updateActiveDeckCopy: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY, payload}),
+    cancelDeckUpdate: () => dispatch({type: CANCEL_ACTIVE_DECK_COPY_UPDATE}),
     resetActiveDeck: () => dispatch({type: RESET_ACTIVE_DECK})
   };
 };

@@ -4,7 +4,7 @@ import Icon from '../../../../../../../components/icon';
 import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background";
 import Tooltip from 'antd/lib/tooltip';
 import CardImg from "./card-img";
-const Card = ({allCards, index, card, cardNames, deckEditing, handleCardRemovalClick}) => {
+const Card = ({allCards, index, card, cardNames, deckEditView, handleCardRemovalClick}) => {
 
   return(
       <Tooltip title={<CardImg allCards={allCards} hoveredCardName={cardNames[index]}/>}
@@ -21,7 +21,7 @@ const Card = ({allCards, index, card, cardNames, deckEditing, handleCardRemovalC
             <Icon name={card.cost} type="mana"/>
           </td>
 
-          {deckEditing
+          {deckEditView
               ? <td>
                 <div id={cardNames[index]}
                      data-cost={card.cost}
@@ -40,7 +40,7 @@ export default Card;
 Card.propTypes = {
   card: PropTypes.object.isRequired,
   cardNames: PropTypes.array.isRequired,
-  deckEditing: PropTypes.bool.isRequired,
+  deckEditView: PropTypes.bool.isRequired,
   handleCardRemovalClick: PropTypes.func.isRequired,
   index: PropTypes.number
 };

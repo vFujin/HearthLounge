@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Card from './table-row-card';
 
-const TableBody = ({allCards, cards, deckEditing, handleCardRemovalClick}) => {
-  console.log(allCards);
+const TableBody = ({allCards, cards, deckEditView, handleCardRemovalClick}) => {
   const listCards = () =>{
     let cardNames = Object.keys(cards);
     return _.map(cards).map((card, i) =>
@@ -13,7 +12,7 @@ const TableBody = ({allCards, cards, deckEditing, handleCardRemovalClick}) => {
               card={card}
               allCards={allCards}
               cardNames={cardNames}
-              deckEditing={deckEditing}
+              deckEditView={deckEditView}
               handleCardRemovalClick={handleCardRemovalClick}/>
     )
   };
@@ -28,7 +27,7 @@ const TableBody = ({allCards, cards, deckEditing, handleCardRemovalClick}) => {
 export default TableBody;
 
 TableBody.propTypes = {
-  deckEditing: PropTypes.bool.isRequired,
+  deckEditView: PropTypes.bool.isRequired,
   handleCardRemovalClick: PropTypes.func.isRequired,
   cards: PropTypes.object
 };

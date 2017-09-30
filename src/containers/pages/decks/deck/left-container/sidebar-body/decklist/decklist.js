@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import TableBody from "./table-body";
 import TableHead from "./table-head";
 
-const Decklist = ({allCards, cards, deckEditing, handleCardRemovalClick}) => {
+const Decklist = ({allCards, cards, deckEditView, handleCardRemovalClick}) => {
   return (
       <div className="list cards-list">
         <div className="table-scroll">
           <table>
-            <TableHead deckEditing={deckEditing}/>
+            <TableHead deckEditView={deckEditView}/>
             <TableBody cards={cards}
                        allCards={allCards}
-                       deckEditing={deckEditing}
+                       deckEditView={deckEditView}
                        handleCardRemovalClick={handleCardRemovalClick}/>
           </table>
         </div>
@@ -22,7 +22,7 @@ const Decklist = ({allCards, cards, deckEditing, handleCardRemovalClick}) => {
 export default Decklist;
 
 Decklist.propTypes = {
-  deckEditing: PropTypes.bool.isRequired,
+  deckEditView: PropTypes.bool.isRequired,
   handleCardRemovalClick: PropTypes.func.isRequired,
   cards: PropTypes.object
 };

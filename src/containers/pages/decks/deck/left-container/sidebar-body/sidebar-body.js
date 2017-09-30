@@ -3,18 +3,17 @@ import PropTypes from 'prop-types';
 import DeckDetails from "./deck-details";
 import Background from "./background";
 
-const SidebarBody = ({allCards, activeDeck, editingDecklist, deckEditing, search, handleCardRemovalClick}) =>{
+const SidebarBody = ({allCards, activeDeck, activeDeckCopy, deckEditView, search, handleCardRemovalClick}) =>{
   const {playerClass, deckstring} = activeDeck;
-  if(editingDecklist) {
     return (
         <div className="sidebar__body">
-          <DeckDetails editingDecklist={editingDecklist}
-                       deckEditing={deckEditing}
+          <DeckDetails activeDeckCopy={activeDeckCopy}
+                       deckEditView={deckEditView}
                        deckstring={deckstring}
                        playerClass={playerClass}
                        allCards={allCards}
                        handleCardRemovalClick={handleCardRemovalClick}/>
-          {deckEditing
+          {deckEditView
               ? <div className="addCard-wrapper">
                 {search()}
                 <span>+</span>
@@ -24,7 +23,6 @@ const SidebarBody = ({allCards, activeDeck, editingDecklist, deckEditing, search
           <Background playerClass={playerClass}/>
         </div>
     )
-  }
 };
 
 export default SidebarBody;
@@ -34,7 +32,7 @@ SidebarBody.propTypes = {
     playerClass: PropTypes.string,
     deckstring: PropTypes.string
   }).isRequired,
-  deckEditing: PropTypes.bool.isRequired,
+  deckEditView: PropTypes.bool.isRequired,
   handleCardRemovalClick: PropTypes.func.isRequired,
   editingDecklist: PropTypes.shape({
     cards: PropTypes.object,

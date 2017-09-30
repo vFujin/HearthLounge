@@ -4,7 +4,7 @@ import AuthorDetails from './section-footer-assets/section-footer-deck-author-de
 import Loader from '../../../../../../../components/loader';
 import SectionFooterHeader from './section-footer-assets/section-footer-header';
 
-const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditing, handleDeckEditingClick, descriptionsNotEqual, decksNotEqual}) => {
+const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditView, handleDeckEditingClick, descriptionsNotEqual, decksNotEqual}) => {
 
   const authorDetails = () => {
     return deckAuthor
@@ -17,7 +17,7 @@ const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditing, handleDec
         <div className="section_footer--wrapper">
           <SectionFooterHeader authorId={authorId}
                                activeUser={activeUser}
-                               deckEditing={deckEditing}
+                               deckEditView={deckEditView}
                                descriptionsNotEqual={descriptionsNotEqual}
                                decksNotEqual={decksNotEqual}
                                handleDeckEditingClick={handleDeckEditingClick}

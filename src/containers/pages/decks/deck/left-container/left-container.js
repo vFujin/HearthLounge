@@ -5,17 +5,16 @@ import Select from 'antd/lib/select';
 import SidebarHeader from "./sidebar-header/sidebar-header";
 import SidebarBody from "./sidebar-body/sidebar-body";
 
-const LeftContainer = ({activeDeck, cards, editingDecklist, deckEditing, handleCardRemovalClick, updateDecklist}) =>{
+const LeftContainer = ({activeDeck, activeDeckCopy, cards, deckEditView, updateActiveDeckCopy, handleCardRemovalClick}) =>{
 
   const handleCardAddition = (value) => {
+    const {cards, manaCurve} = activeDeckCopy;
     let filteredCard = cards.allCards.find(card => card.name === value);
-    let editingDecklistCards = editingDecklist.cards;
     // console.log(Object.entries(editingDecklistCards).filter(k => k[0] === filteredCard.name));
-    let manaCurve = editingDecklist.manaCurve;
 
-    let decklistAfterCardAddition = Object.keys(editingDecklistCards).reduce((result, card) => {
+    let decklistAfterCardAddition = Object.keys(cards).reduce((result, card) => {
       if(card !== filteredCard.name){
-        result = Object.assign(editingDecklistCards, {
+        result = Object.assign(cards, {
           [filteredCard.name]: {
             amount: 1,
             cost: filteredCard.cost,
@@ -30,11 +29,11 @@ const LeftContainer = ({activeDeck, cards, editingDecklist, deckEditing, handleC
         console.log("after, ",card, result[card].amount)
       }
 
-    }, editingDecklistCards);
+    }, cards);
 
     let manacurveAfterCostAddition =  manaCurve.map((c, i) => {
       //edge case for 7+ cost cards
-      return Object.entries(editingDecklistCards).filter(k => k[0] === filteredCard.name).map(card => {
+      return Object.entries(cards).filter(k => k[0] === filteredCard.name).map(card => {
         if ((i == filteredCard.cost) && !(card[1].amount >= 2)) {
           return Number(c) + 1;
         }
@@ -44,7 +43,7 @@ const LeftContainer = ({activeDeck, cards, editingDecklist, deckEditing, handleC
 
     let max = _.max(manacurveAfterCostAddition);
 
-    updateDecklist({
+    updateActiveDeckCopy({
       cards: decklistAfterCardAddition,
       manaCurve: manacurveAfterCostAddition,
       max
@@ -65,7 +64,7 @@ const LeftContainer = ({activeDeck, cards, editingDecklist, deckEditing, handleC
                   placeholder="Card name..."
                   style={{width: '80%'}}
                   allowClear={true}
-                  disabled={_.map(editingDecklist.card).length >= 30}
+                  disabled={activeDeckCopy.length >= 30}
                   showSearch={true}
                   onSelect={(v)=>handleCardAddition(v)}>
             {options}
@@ -75,16 +74,15 @@ const LeftContainer = ({activeDeck, cards, editingDecklist, deckEditing, handleC
     return "foo"
   };
 
-
   return(
-      <div className={`container__page--inner container__page--left ${deckEditing ? 'edit-mode' : ''}`}>
+      <div className={`container__page--inner container__page--left ${deckEditView ? 'edit-mode' : ''}`}>
         <SidebarHeader activeDeck={activeDeck}/>
         <SidebarBody activeDeck={activeDeck}
+                     activeDeckCopy={activeDeckCopy}
                      allCards={cards.allCards}
-                     deckEditing={deckEditing}
+                     deckEditView={deckEditView}
                      handleCardRemovalClick={handleCardRemovalClick}
-                     search={search}
-                     editingDecklist={editingDecklist}/>
+                     search={search}/>
       </div>
   )
 };
@@ -92,23 +90,5 @@ const LeftContainer = ({activeDeck, cards, editingDecklist, deckEditing, handleC
 export default LeftContainer;
 
 LeftContainer.propTypes = {
-  currentDeck: PropTypes.shape({
-    archetype: PropTypes.string,
-    author: PropTypes.string,
-    created: PropTypes.number,
-    deck: PropTypes.shape({
-      cards: PropTypes.object,
-      manaCurve: PropTypes.array,
-      types: PropTypes.object,
-    }),
-    deckId: PropTypes.string,
-    description: PropTypes.string,
-    playerClass: PropTypes.string,
-    patch: PropTypes.string,
-    title: PropTypes.string,
-    type: PropTypes.string,
-    views: PropTypes.number,
-    upvotes: PropTypes.number,
-    downvotes: PropTypes.number,
-  })
+  activeDeck: PropTypes.object
 };

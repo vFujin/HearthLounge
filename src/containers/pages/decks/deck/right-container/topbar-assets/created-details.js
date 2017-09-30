@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {timeDifference} from '../../../../../../utils/unix-to-date';
 
-const CreatedDetails = ({currentDeck}) =>{
-  const {patch, created} = currentDeck;
+const CreatedDetails = ({activeDeck}) =>{
+  const {patch, created} = activeDeck;
 
   return (
       <div className="created-details">
@@ -16,5 +16,5 @@ const CreatedDetails = ({currentDeck}) =>{
 export default CreatedDetails;
 
 CreatedDetails.propTypes = {
-  currentDeck: PropTypes.object
+  activeDeck: PropTypes.object
 };

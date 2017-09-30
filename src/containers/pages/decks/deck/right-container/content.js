@@ -3,18 +3,17 @@ import PropTypes from 'prop-types';
 import DeckDescription from './sections/description';
 import DeckComments from './sections/comments';
 
-const Content = ({activeUser, patch, deckAuthor, currentDeck, handleDeckEditingClick, deckEditing, decksNotEqual, descriptionsNotEqual, params}) =>{
+const Content = ({activeUser, patch, deckAuthor, activeDeck, deckEditView, decksNotEqual, descriptionsNotEqual, params}) =>{
   return (
       <div className="content scrollable">
         <div className="container__details">
-          <DeckDescription currentDeck={currentDeck}
+          <DeckDescription activeDeck={activeDeck}
                            deckAuthor={deckAuthor}
                            activeUser={activeUser}
-                           deckEditing={deckEditing}
+                           deckEditView={deckEditView}
                            decksNotEqual={decksNotEqual}
-                           descriptionsNotEqual={descriptionsNotEqual}
-                           handleDeckEditingClick={handleDeckEditingClick}/>
-          <DeckComments currentDeck={currentDeck} patch={patch} activeUser={activeUser} params={params}/>
+                           descriptionsNotEqual={descriptionsNotEqual}/>
+          {/*<DeckComments currentDeck={currentDeck} patch={patch} activeUser={activeUser} params={params}/>*/}
         </div>
       </div>
   )

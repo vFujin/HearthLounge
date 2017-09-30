@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Votes = ({currentDeck, handleDeckVotingClick}) =>{
-  const {upvotes, downvotes} = currentDeck;
+const Votes = ({activeDeck, handleDeckVotingClick}) =>{
+  const {upvotes, downvotes} = activeDeck;
   let votes = upvotes - downvotes;
   let voteResClass = votes >= 0 ? 'pos' : 'neg';
   
@@ -18,5 +18,9 @@ const Votes = ({currentDeck, handleDeckVotingClick}) =>{
 export default Votes;
 
 Votes.propTypes = {
-  currentDeck: PropTypes.object
+  activeDeck: PropTypes.shape({
+    upvotes: PropTypes.number,
+    downvotes: PropTypes.number,
+  }),
+  handleDeckVotingClick: PropTypes.func
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Archetype = ({currentDeck}) =>{
-  const {playerClass, archetype} = currentDeck;
+const Archetype = ({activeDeck}) =>{
+  const {playerClass, archetype} = activeDeck;
 
   return (
       <div className="deck-details-wrapper archetype">
@@ -16,5 +16,8 @@ const Archetype = ({currentDeck}) =>{
 export default Archetype;
 
 Archetype.propTypes = {
-  currentDeck: PropTypes.object
+  activeDeck: PropTypes.shape({
+    playerClass: PropTypes.string,
+    archetype: PropTypes.string
+  })
 };

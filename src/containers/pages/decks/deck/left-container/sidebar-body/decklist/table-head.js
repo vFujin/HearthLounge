@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TableHead = ({deckEditing}) => {
-  const colSpan = deckEditing ? 2 : null;
+const TableHead = ({deckEditView}) => {
+  const colSpan = deckEditView ? 2 : null;
 
   return (
     <thead>
@@ -19,5 +19,5 @@ const TableHead = ({deckEditing}) => {
 export default TableHead;
 
 TableHead.propTypes = {
-  deckEditing: PropTypes.bool.isRequired
+  deckEditView: PropTypes.bool.isRequired
 };

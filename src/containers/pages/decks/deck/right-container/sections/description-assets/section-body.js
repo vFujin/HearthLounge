@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 import TextEditor from '../../../../../../../components/text-editor/text-editor';
 
-const SectionBody = ({description, deckEditing, editingDeckDescription, handleInputChange}) => {
+const SectionBody = ({description, deckEditView, editingDeckDescription, handleInputChange}) => {
 
   return (
       <div className="section__body">
 
-        {deckEditing
+        {deckEditView
             ? <TextEditor handleInputChange={handleInputChange}
                           editorId="deck-description"
                           value={editingDeckDescription || description}

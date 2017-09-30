@@ -74,20 +74,14 @@ class DeckSelection extends Component {
   };
 
   render() {
-    const {children, location, decks, activeUser, adventuresToggled, activeAdventure, activeMode, activeClass, currentDeck, params} = this.props;
-
+    const {children, location, decks, activeUser, adventuresToggled, activeAdventure, activeMode, activeClass, activeDeck, params} = this.props;
 
     if(location.pathname !== "/decks"){
-      if(!currentDeck){
-        getDeckDetails(params.deckId, v=>{
-          this.props.updateActiveDeck(v);
-        });
-        if(currentDeck === null){
-          return <NotFound/>
-        }
-        return <Loader/>
-      }
-      return React.cloneElement(children, {activeUser, currentDeck});
+      // if(activeDeck.loading){
+      //   getDeckDetails(params.deckId, v => this.props.updateActiveDeck(v), e => console.log('err', e));
+      //     return <Loader/>
+      // }
+      return React.cloneElement(children, {activeUser, activeDeck});
     }
     else {
       return (
@@ -107,9 +101,10 @@ class DeckSelection extends Component {
 }
 
 const mapStateToProps = (state) =>{
-  const {decks, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass} = state.decks;
+  const {decks, adventuresToggled, activeAdventure, activeMode, activeClass} = state.decks;
+  const {activeDeck} = state.deckView;
   const {activeUser} = state.users;
-  return {decks, activeUser, currentDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
+  return {decks, activeUser, activeDeck, adventuresToggled, activeAdventure, activeMode, activeClass};
 };
 
 const mapDispatchToProps = (dispatch) => {

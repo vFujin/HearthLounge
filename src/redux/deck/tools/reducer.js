@@ -11,10 +11,11 @@
 // } from "../../types/decks/deck-view";
 // import * as types from "../../types/decks/deck-view";
 
+import * as types from "./types";
+
 const initialState = {
-  deckEditing: false,
+  deckEditView: false,
   comments: [],
-  editingDecklist: true,
   votedComments: {},
   commentBoxIsActive: false,
   previewIsActive: false,
@@ -36,11 +37,11 @@ export default function(state=initialState, {payload, type}) {
       //     ...state,
       //     deckVote: action.deckVote
       //   };
-      // case 'TOGGLE_DECK_EDITING':
-      //   return {
-      //     ...state,
-      //     deckEditing: action.deckEditing
-      //   };
+      case types.TOGGLE_DECK_EDIT_VIEW:
+        return {
+          ...state,
+          deckEditView: !state.deckEditView
+        };
       // case 'UPDATE_DECK_DESCRIPTION':
       //   return {
       //     ...state,
@@ -50,11 +51,6 @@ export default function(state=initialState, {payload, type}) {
       //   return {
       //     ...state,
       //     deckAuthor: action.deckAuthor
-      //   };
-      // case 'UPDATE_DECKLIST':
-      //   return {
-      //     ...state,
-      //     editingDecklist: action.editingDecklist
       //   };
       // case FETCH_COMMENTS:
       //   return {

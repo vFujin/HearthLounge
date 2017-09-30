@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from "../../../../../../components/icon";
 
-const Stats = ({currentDeck, deckEditing}) =>{
-  let type = currentDeck.deck.types;
-
+const Stats = ({activeDeck, deckEditView}) =>{
+  const {Minion, Spell, Weapon} = activeDeck.deck.types;
   return (
-      <div className={`deck-details-wrapper stats ${deckEditing ? 'edit-mode' : ''}`}>
-        <span className="hs-icon icon-minions"></span><p>{type.Minion || 0}</p>
-        <span className="hs-icon icon-fire"></span><p>{type.Spell || 0}</p>
-        <span className="hs-icon icon-warrior"></span><p>{type.Weapon || 0}</p>
+      <div className={`deck-details-wrapper stats ${deckEditView ? 'edit-mode' : ''}`}>
+        <Icon name="minions"/><p>{Minion || 0}</p>
+        <Icon name="fire"/><p>{Spell || 0}</p>
+        <Icon name="warrior"/><p>{Weapon || 0}</p>
       </div>
   )
 };
@@ -16,5 +16,13 @@ const Stats = ({currentDeck, deckEditing}) =>{
 export default Stats;
 
 Stats.propTypes = {
-  currentDeck: PropTypes.object
+  activeDeck: PropTypes.shape({
+    deck: PropTypes.shape({
+        types: PropTypes.shape({
+          Minion: PropTypes.number,
+          Spell: PropTypes.number,
+          Weapon: PropTypes.number,
+        })
+    })
+  })
 };

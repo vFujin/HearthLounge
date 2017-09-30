@@ -4,13 +4,18 @@ import {connect} from 'react-redux';
 import SectionHeader from './description-assets/section-header';
 import SectionBody from './description-assets/section-body';
 import SectionFooter from './description-assets/section-footer';
+import {TOGGLE_DECK_EDIT_VIEW} from "../../../../../../redux/deck/tools/types";
 
-const DeckDescription = ({activeUser, deckAuthor, currentDeck, deckEditing, handleDeckEditingClick, editingDeckDescription, decksNotEqual, descriptionsNotEqual, updateDeckDescription}) =>{
-  const {title, description, author, authorId} = currentDeck;
+const DeckDescription = ({activeUser, deckAuthor, activeDeck, deckEditView, editingDeckDescription, decksNotEqual, descriptionsNotEqual, updateDeckDescription, toggleDeckEditView}) =>{
+  const {title, description, author, authorId} = activeDeck;
 
   const handleInputChange = (e) => {
     let value = e.target.value;
     updateDeckDescription(value);
+  };
+
+  const handleDeckEditingClick = () =>{
+    toggleDeckEditView();
   };
 
   return (
@@ -19,11 +24,11 @@ const DeckDescription = ({activeUser, deckAuthor, currentDeck, deckEditing, hand
         <SectionBody description={description}
                      handleInputChange={handleInputChange}
                      editingDeckDescription={editingDeckDescription}
-                     deckEditing={deckEditing}/>
+                     deckEditView={deckEditView}/>
         <SectionFooter author={author}
                        authorId={authorId}
                        deckAuthor={deckAuthor}
-                       deckEditing={deckEditing}
+                       deckEditView={deckEditView}
                        activeUser={activeUser}
                        descriptionsNotEqual={descriptionsNotEqual}
                        decksNotEqual={decksNotEqual}
@@ -42,6 +47,7 @@ const mapDispatchToProps = dispatch => {
     updateDeckDescription: editingDeckDescription => dispatch({
       type: 'UPDATE_DECK_DESCRIPTION', editingDeckDescription
     }),
+    toggleDeckEditView: () => dispatch({type: TOGGLE_DECK_EDIT_VIEW}),
   }
 };
 
