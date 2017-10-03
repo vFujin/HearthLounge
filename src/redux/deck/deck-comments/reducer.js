@@ -6,22 +6,24 @@ const initialState = {
 
 export default function(state=initialState, {payload, type}) {
   switch (type) {
-    case types.FETCH_DECK_AUTHOR_REQUEST:
+    case types.FETCH_ACTIVE_DECK_COMMENTS_REQUEST:
       return {
         state
       };
-    case types.FETCH_DECK_AUTHOR_SUCCESS:
+
+    case types.FETCH_ACTIVE_DECK_COMMENTS_SUCCESS:
       return {
         loading: false,
-        ...payload
+        all: {...payload}
       };
-    case types.FETCH_DECK_AUTHOR_FAILURE:
+
+    case types.FETCH_ACTIVE_DECK_COMMENTS_FAILURE:
       return {
         loading: false,
         err: payload
       };
 
-    case types.RESET_ACTIVE_DECK_AUTHOR:
+    case types.RESET_ACTIVE_DECK_COMMENTS:
       return {
         loading: true
       };

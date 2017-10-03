@@ -8,27 +8,23 @@ export default function(state=initialState, {payload, type}) {
   switch (type) {
     case types.FETCH_ACTIVE_DECK_REQUEST:
       return {
-        ...state,
-        loading: true
+        state
       };
 
     case types.FETCH_ACTIVE_DECK_SUCCESS:
       return {
-        ...state,
         loading: false,
         ...payload
       };
 
     case types.FETCH_ACTIVE_DECK_FAILURE:
       return {
-        ...state,
         loading: false,
         err: payload
       };
 
     case types.RESET_ACTIVE_DECK:
       return {
-        ...state,
         loading: true
       };
     default:

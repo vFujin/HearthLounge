@@ -12,6 +12,7 @@ import {getComment, getComments} from '../../../../../../firebase/decks/comments
 import {updateCommentRating} from '../../../../../../firebase/decks/comments/update';
 import {postComment} from '../../../../../../firebase/decks/comments/create/comment';
 import * as deckCommentActions from "../../../../../../redux/actions/deck/deck-view.action";
+import {FETCH_ACTIVE_DECK_COMMENTS_REQUEST} from "../../../../../../redux/deck/deck-comments/types";
 
 const updateCommentText = _.debounce((updateComment, value) => {
   updateComment({deckComment: value})
@@ -19,21 +20,24 @@ const updateCommentText = _.debounce((updateComment, value) => {
 
 class DeckComments extends PureComponent {
   componentDidMount() {
-    const {activeUser, params, updateComments, updateUsersDetails} = this.props;
+    const {activeUser, params, updateComments, fetchComments, updateUsersDetails} = this.props;
     const {deckId} = params;
+
+
     if(activeUser){
       const {uid} = activeUser;
-      getComments(deckId, uid, comments => updateComments(deckId, comments));
+      fetchComments({deckId, uid});
     }
-    getComments(deckId, false, comments => {
-      let users = {};
-      updateComments(deckId, comments);
-      comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>{
-        let updateUsers = Object.assign(users, {[c.authorId]: userDetails});
-        updateUsersDetails(users);
-        return updateUsers;
-      }));
-    });
+    fetchComments({deckId});
+    // getComments(deckId, false, comments => {
+    //   let users = {};
+    //   updateComments(deckId, comments);
+    //   comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>{
+    //     let updateUsers = Object.assign(users, {[c.authorId]: userDetails});
+    //     updateUsersDetails(users);
+    //     return updateUsers;
+    //   }));
+    // });
   }
 
   componentWillUnmount(){
@@ -124,7 +128,8 @@ class DeckComments extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const {comments, vote, commentId, commentVotes, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = state.deckView;
+  const {comments, vote, commentId, commentVotes, deckComment, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = state.deckView.tools;
+  // const {}
   return {comments, vote, deckComment, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments, usersDetails}
 };
 
@@ -134,6 +139,7 @@ const mapDispatchToProps = (dispatch) => {
     updateCommentVote, updateUsersDetails, updateUserVotedDeckComments, updateCommentVotes, updateActiveCommentId} = deckCommentActions;
 
   return {
+    fetchComments: props => dispatch({type: FETCH_ACTIVE_DECK_COMMENTS_REQUEST}),
     updateComment: props => dispatch(updateComment(props)),
     updateCommentVote: vote => dispatch(updateCommentVote(vote)),
     toggleCommentBox: commentBoxIsActive => dispatch(toggleCommentBox(commentBoxIsActive)),

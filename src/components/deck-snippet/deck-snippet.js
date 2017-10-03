@@ -10,7 +10,7 @@ const DeckSnippet = ({d, handleDeckClick}) => {
   const {adventure, archetype, comments, created, deck, class_timestamp_votes, deckId, playerClass, title, mode, username, views} = d;
 
   return (
-      <Link to={`decks/${playerClass}/${deckId}/${_.kebabCase(title)}`}
+      <Link to={`decks/${deckId}/${_.kebabCase(title)}`}
             onClick={handleDeckClick}
             id={deckId}
             className={`deckSnippet ${playerClass} active-on-hover`}>

@@ -2859,6 +2859,38 @@ input::-webkit-search-cancel-button {
   input::-webkit-search-cancel-button:hover {
     background: linear-gradient(to bottom, transparent 45%, #E7E2DA 45%, #E7E2DA 55%, transparent 55%), linear-gradient(to right, transparent 45%, #E7E2DA 45%, #E7E2DA 55%, transparent 55%); }
 
+svg#logo:hover {
+  animation: initOpacity .4s linear; }
+  svg#logo:hover .circle {
+    animation: opacity 2s linear;
+    animation-delay: .4s; }
+  svg#logo:hover .circle1 {
+    animation: opacity 1s linear;
+    animation-delay: .4s; }
+  svg#logo:hover .circle2 {
+    animation: opacity 4s linear;
+    animation-delay: .4s; }
+  svg#logo:hover .line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear forwards;
+    animation-delay: 2.4s; }
+
+@keyframes initOpacity {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes opacity {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000; }
+  to {
+    stroke-dashoffset: 0; } }
 .deckSnippet-wrapper {
   display: grid;
   grid-row-gap: 1vh;

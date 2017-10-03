@@ -10,6 +10,8 @@ import Loader from '../../../../components/loader';
 import NotFound from '../../../shared-assets/not-found';
 import {FETCH_DECKS_REQUEST} from "../../../../redux/decks/fetch-decks/types";
 import {UPDATE_DECKS_REQUEST} from "../../../../redux/decks/update-decks/types";
+import {FETCH_ACTIVE_DECK_SUCCESS} from "../../../../redux/deck/active-deck/types";
+import {UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
 // import {getFilteredDecks} from "../../../../firebase/decks/deck/read/index";
 // import {addQuery} from "../../../../utils/utils-router";
 
@@ -58,6 +60,7 @@ class DeckSelection extends Component {
     let deckId = e.currentTarget.id;
     let deckObject = _.head(_.map(this.props.decks.all).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
     this.props.updateActiveDeck(deckObject);
+    this.props.updateActiveDeckCopy(deckObject);
     updateViews(deckId);
   };
 
@@ -77,10 +80,7 @@ class DeckSelection extends Component {
     const {children, location, decks, activeUser, adventuresToggled, activeAdventure, activeMode, activeClass, activeDeck, params} = this.props;
 
     if(location.pathname !== "/decks"){
-      // if(activeDeck.loading){
-      //   getDeckDetails(params.deckId, v => this.props.updateActiveDeck(v), e => console.log('err', e));
-      //     return <Loader/>
-      // }
+
       return React.cloneElement(children, {activeUser, activeDeck});
     }
     else {
@@ -115,7 +115,10 @@ const mapDispatchToProps = (dispatch) => {
       type: 'UPDATE_USER_LIST', payload
     }),
     updateActiveDeck: payload => dispatch({
-      type: 'UPDATE_ACTIVE_DECK', payload
+      type: FETCH_ACTIVE_DECK_SUCCESS, payload
+    }),
+    updateActiveDeckCopy: payload => dispatch({
+      type: UPDATE_ACTIVE_DECK_COPY, payload
     }),
     toggleAdventureFilters: payload => dispatch({
       type: 'TOGGLE_ADVENTURE_FILTERS', payload

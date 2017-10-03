@@ -15,6 +15,8 @@ import {FETCH_HOT_DECKS_REQUEST} from "../../../redux/decks/home-decks/types";
 import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/reddit/posts/types";
 import {UPDATE_ACTIVE_POST} from "../../../redux/reddit/active-post/types";
 import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../redux/reddit/comments/types";
+import {FETCH_ACTIVE_DECK_SUCCESS} from "../../../redux/deck/active-deck/types";
+import {fetchActiveDeckSuccess} from "../../../redux/deck/active-deck/actions";
 class Home extends PureComponent{
 
   componentDidMount() {
@@ -29,6 +31,9 @@ class Home extends PureComponent{
 
   handleDeckClick = (e) =>{
     let deckId = e.currentTarget.id;
+    let activeDeck = this.props.hotDecks.all.find(deck => deck.deckId === deckId);
+    console.log(activeDeck);
+    fetchActiveDeckSuccess(activeDeck)
     updateViews(deckId);
   };
 

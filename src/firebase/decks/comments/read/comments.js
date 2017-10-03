@@ -1,6 +1,6 @@
 import {refParent} from '../../../../keys';
 
-export default function (deckId, uid, callback) {
+export default function (deckId, resolve, reject, uid = null) {
   return refParent('deck-comments').once("value", snapshot => {
     if (snapshot.child(deckId).val()) {
       let arr = [];
@@ -19,9 +19,9 @@ export default function (deckId, uid, callback) {
           voteType: uid ? comment[uid] : null
         });
       });
-      callback(arr)
+      resolve(arr)
     } else {
-      callback([])
+      resolve([])
     }
-  });
+  }, err => reject(err));
 }

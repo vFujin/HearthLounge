@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import {navItems} from '../../data/nav';
 import EntryNode from './entry-node';
 import Icon from "../../components/icon";
+import LogoSVG from "../../components/logo";
 
 const Navbar = ({handleSignOut, activeUser, playerClass}) => {
 
@@ -46,7 +47,7 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
       <ul className="nav__list">
         <li className="nav__list--item logo">
           <div className="logo-wrapper">
-            <Icon name="hl-logo"/>
+            <LogoSVG />
             <div className="text-wrapper">
               <p>Hearth</p>
               <p>Lounge</p>
