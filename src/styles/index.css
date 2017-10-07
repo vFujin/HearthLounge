@@ -3709,7 +3709,8 @@ nav {
           background-color: #474143; }
         nav .nav__list .nav__list--item:first-child .logo-wrapper {
           display: flex;
-          align-items: center; }
+          align-items: center;
+          height: 100%; }
           nav .nav__list .nav__list--item:first-child .logo-wrapper span {
             font-size: 8vh;
             color: #00a99c; }

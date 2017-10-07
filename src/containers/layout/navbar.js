@@ -47,7 +47,7 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
       <ul className="nav__list">
         <li className="nav__list--item logo">
           <div className="logo-wrapper">
-            <LogoSVG />
+            <LogoSVG dotsColor="#00a99c"/>
             <div className="text-wrapper">
               <p>Hearth</p>
               <p>Lounge</p>
