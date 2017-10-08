@@ -1,6 +1,7 @@
-import {refParent} from '../../../../keys';
+import {refParent, firestore} from '../../../../keys';
 import {getSimplifiedUser} from "../../../user/read/index";
 import {endOfWeek, subDays, startOfWeek} from 'date-fns';
+import _ from 'lodash';
 
 /**
  * Filters decks
@@ -14,27 +15,35 @@ import {endOfWeek, subDays, startOfWeek} from 'date-fns';
 export default (mainFilter, filterName, secondaryFilter, resolve, reject) => {
   filterName = filterName === "playerClass" ? "class" : filterName;
 
-  let now = +new Date(),
-      start = +startOfWeek(subDays(now, 14)),
-      end = +endOfWeek(now),
-      orderBy, startAt, endAt;
+  // let now = +new Date(),
+  //     start = +startOfWeek(subDays(now, 14)),
+  //     end = +endOfWeek(now),
+  //     orderBy, startAt, endAt;
+  //
+  // if (mainFilter && !secondaryFilter) {
+  //   orderBy = `${filterName}_timestamp_votes`;
+  //   startAt = `${mainFilter}_${start}`;
+  //   endAt   = `${mainFilter}_${end}`;
+  //   return decksQuery(orderBy, startAt, endAt, resolve, reject);
+  //
+  // } else if (mainFilter && secondaryFilter) {
+  //   orderBy = 'mode_class_timestamp_votes';
+  //   startAt = `${mainFilter}_${secondaryFilter}_${start}`;
+  //   endAt   = `${mainFilter}_${secondaryFilter}_${end}`;
+  //   return decksQuery(orderBy, startAt, endAt, resolve, reject);
+  //
+  // } else {
+  //   orderBy = 'timestamp_votes';
+  //   return decksQuery(orderBy, start, end, resolve, reject)
+  // }
+  // firestore.collection('decks').where('votes', "<=", 200).get().then(querySnapshot=>querySnapshot.forEach(snapshot => console.log(snapshot.data())));
 
-  if (mainFilter && !secondaryFilter) {
-    orderBy = `${filterName}_timestamp_votes`;
-    startAt = `${mainFilter}_${start}`;
-    endAt   = `${mainFilter}_${end}`;
-    return decksQuery(orderBy, startAt, endAt, resolve, reject);
+  firestore.collection('decks').get().then(querySnapshot=>{
+    let decks = [];
+    querySnapshot.forEach(doc => decks.push(doc.data()));
+    console.log(decks);
+  });
 
-  } else if (mainFilter && secondaryFilter) {
-    orderBy = 'mode_class_timestamp_votes';
-    startAt = `${mainFilter}_${secondaryFilter}_${start}`;
-    endAt   = `${mainFilter}_${secondaryFilter}_${end}`;
-    return decksQuery(orderBy, startAt, endAt, resolve, reject);
-
-  } else {
-    orderBy = 'timestamp_votes';
-    return decksQuery(orderBy, start, end, resolve, reject)
-  }
 }
 
 /**

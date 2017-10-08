@@ -1,4 +1,4 @@
-import {ref, firebaseAuth} from '../../../keys';
+import {ref, firebaseAuth, firestore} from '../../../keys';
 import {success, error} from '../../../utils/messages';
 import {browserHistory} from 'react-router';
 
@@ -54,9 +54,11 @@ export function saveUser(user){
       uid
     };
 
-    let updates = {};
-    updates[`users/${uid}`] = newUser;
+    // let updates = {};
+    // updates[`users/${uid}`] = newUser;
+    //
+    // return ref.update(updates);
 
-    return ref.update(updates);
+    firestore.collection("users").doc(uid).set(newUser).then(() => console.log("success")).catch(err=>console.log(err));
   }
 }

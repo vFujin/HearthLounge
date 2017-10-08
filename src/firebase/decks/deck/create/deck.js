@@ -1,4 +1,5 @@
-import {ref} from '../../../../keys';
+import firebase from 'firebase';
+import {ref, firestore} from '../../../../keys';
 import {success, error} from '../../../../utils/messages';
 import startOfWeek from 'date-fns/start_of_week';
 import _ from 'lodash';
@@ -22,11 +23,10 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
     const validateAdventureType = (mode === 'adventures' && adventure && boss) ? 'wild' : mode,
           validateAdventure = (adventure && boss) ? adventure : null,
           validateBoss = (adventure && boss) ? boss : null,
-          initVotes = _.padStart(Math.floor(Math.random() * (1000 - 500 + 1 ) - 500), 4, '0'),
+          initVotes = Math.floor(Math.random() * (1000 - 500 + 1)),
           validateBossClassFilter = (adventure && boss) ? `${boss}_${playerClass}_${initVotes}` : null,
           deckId = ref.child(`decks`).push().key,
-          timestamp = +new Date(),
-          start = +startOfWeek(timestamp);
+          created = +new Date();
 
     let newDeck = {
       archetype,
@@ -37,30 +37,25 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       patch,
       title,
       deckId,
+      created,
       adventure: validateAdventure,
       authorId: uid,
       boss: validateBoss,
       comments: 0,
-      created: timestamp,
       downvotes: 0,
       mode: validateAdventureType,
       upvotes: 0,
       views: 0,
-      votes: initVotes,
-      class_timestamp: `${playerClass}_${timestamp}`,
-      mode_timestamp: `${mode}_${timestamp}`,
-      timestamp_votes: `${start}_${initVotes}`,
-      boss_class_votes: validateBossClassFilter,
-      mode_timestamp_votes: `${mode}_${start}_${initVotes}`,
-      class_timestamp_votes: `${playerClass}_${start}_${initVotes}`,
-      mode_class_timestamp_votes: `${mode}_${playerClass}_${start}_${initVotes}`
+      votes: initVotes
     };
 
-    let updates = {};
-    updates[`/decks/${deckId}`] = newDeck;
-    updates[`/user-decks/${uid}/${deckId}`] = newDeck.deckId;
+    // let updates = {};
+    // updates[`/decks/${deckId}`] = newDeck;
+    // updates[`/user-decks/${uid}/${deckId}`] = newDeck.deckId;
+    //
+    // return ref.update(updates, success("Deck has been uploaded!"));
 
-    return ref.update(updates, success("Deck has been uploaded!"));
+    firestore.collection('decks').doc(deckId).set(newDeck).then(()=>console.log('success')).catch(err => console.log(err));
   }
   else {
     console.log(patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid);

@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+import 'firebase/firestore';
 export const TwitchClientId = "jupouny3vvr7kl38jlsj7ssnyww80z";
 export const MashapeKey = 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q';
 export const FirebaseConfig = {
@@ -15,5 +16,6 @@ export const refParent = (parent) => {
 };
 
 export const ref = firebase.database().ref();
+export const firestore = firebase.firestore();
 export const firebaseAuth = firebase.auth;
 export const firebaseStorage = firebase.storage;

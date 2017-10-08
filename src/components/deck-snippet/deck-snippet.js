@@ -7,7 +7,7 @@ import DeckSnippetHeader from "./header/deck-snippet-header";
 import DeckSnippetBody from "./body/deck-snippet-body";
 
 const DeckSnippet = ({d, handleDeckClick}) => {
-  const {adventure, archetype, comments, created, deck, class_timestamp_votes, deckId, playerClass, title, mode, username, views} = d;
+  const {adventure, archetype, comments, created, deck, deckId, playerClass, title, mode, username, views, votes} = d;
 
   return (
       <Link to={`decks/${deckId}/${_.kebabCase(title)}`}
@@ -26,7 +26,7 @@ const DeckSnippet = ({d, handleDeckClick}) => {
                          archetype={archetype}
                          deck={deck}
                          views={views}
-                         votes={+class_timestamp_votes.split("_").splice(-1)[0]}/>
+                         votes={votes}/>
       </Link>
   );
 };

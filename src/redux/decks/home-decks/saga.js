@@ -1,11 +1,21 @@
+import {firestore} from "../../../keys";
 import {call, put, takeEvery} from 'redux-saga/effects';
-import {getHotDecks} from "../../../firebase/decks/deck/read/index";
 import * as actions from "./actions";
 import * as types from "./types";
+import {subDays, startOfWeek} from 'date-fns';
+
+const now = +Date.now();
+const twoWeeks = +startOfWeek(subDays(now, 14));
 
 export const fetchHotDecks = () => {
-    let deckPromise = new Promise((resolve, reject) => getHotDecks(false, null, false, resolve, reject));
-    return deckPromise.then(decks => ({decks})).catch(err => ({err: err.message}))
+  let decksRef = firestore.collection('decks').where('created', '>=', twoWeeks).limit(10).get();
+  return decksRef
+      .then(querySnapshot => {
+        let decks = [];
+        querySnapshot.forEach(doc => decks.push(doc.data()));
+        return {decks};
+      })
+      .catch(err => ({err: err.message}))
 };
 
 export function* fetchHotDecksSaga() {
