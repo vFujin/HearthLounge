@@ -58,10 +58,16 @@ const App = ({store}) =>{
     <Router history={history}>
       <Route path="/"                   component={Main}>
         <IndexRoute                     component={Home} />
+        <Redirect from="HearthLounge" to="/" />
+        <Redirect from="HearthLounge/" to="/" />
+        <Redirect from="/HearthLounge/" to="/" />
+        <Redirect from="/HearthLounge" to="/" />
         <Redirect from="home" to="/" />
         <Route path=""                  component={Home} />
 
+
         <Route path="decks"     component={DeckSelection}>
+          <Route path=":playerClass" component={DeckSelection} />
           <Route path=":deckId/:deckTitle"   component={Deck}/>
         </Route>
 

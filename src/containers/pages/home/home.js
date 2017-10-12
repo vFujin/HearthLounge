@@ -16,7 +16,7 @@ import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/reddit/posts/types";
 import {UPDATE_ACTIVE_POST} from "../../../redux/reddit/active-post/types";
 import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../redux/reddit/comments/types";
 import {FETCH_ACTIVE_DECK_SUCCESS} from "../../../redux/deck/active-deck/types";
-import {fetchActiveDeckSuccess} from "../../../redux/deck/active-deck/actions";
+import {UPDATE_ACTIVE_DECK_COPY} from "../../../redux/deck/active-deck-copy/types";
 class Home extends PureComponent{
 
   componentDidMount() {
@@ -30,10 +30,12 @@ class Home extends PureComponent{
   }
 
   handleDeckClick = (e) =>{
+    const {hotDecks, updateActiveDeck, updateActiveDeckCopy} = this.props;
+    const {all} = hotDecks;
     let deckId = e.currentTarget.id;
-    let activeDeck = this.props.hotDecks.all.find(deck => deck.deckId === deckId);
-    console.log(activeDeck);
-    fetchActiveDeckSuccess(activeDeck)
+    let activeDeck = all.find(deck => deck.deckId === deckId);
+    updateActiveDeckCopy(activeDeck);
+    updateActiveDeck(activeDeck);
     updateViews(deckId);
   };
 
@@ -104,6 +106,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     updateDecks: () => dispatch({type: FETCH_HOT_DECKS_REQUEST}),
+    updateActiveDeck: payload => dispatch({type: FETCH_ACTIVE_DECK_SUCCESS, payload}),
+    updateActiveDeckCopy: payload => dispatch({
+      type: UPDATE_ACTIVE_DECK_COPY, payload
+    }),
     updateDeckFilters: (deckFilters) => dispatch({
       type: 'UPDATE_DECK_FILTERS', deckFilters
     }),

@@ -7,7 +7,9 @@ const RightContainer = ({activeDeck, activeUser, patch, deckAuthor, handleDeckVo
   return (
       <div className="container__page--inner container__page--right">
 
-        <Topbar activeDeck={activeDeck} deckEditView={deckEditView} handleDeckVotingClick={handleDeckVotingClick}/>
+        <Topbar activeDeck={activeDeck}
+                deckEditView={deckEditView}
+                handleDeckVotingClick={handleDeckVotingClick}/>
         <Content activeDeck={activeDeck}
                  deckAuthor={deckAuthor}
                  patch={patch}

@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import Icon from "../../../../../../components/icon";
 
 const Stats = ({activeDeck, deckEditView}) =>{
-  console.log(activeDeck);
+  const {types} = activeDeck.deck;
+  const {Minion, Spell, Weapon} = types;
+
   return (
       <div className={`deck-details-wrapper stats ${deckEditView ? 'edit-mode' : ''}`}>
-        <Icon name="minions"/><p>{activeDeck.deck.types.Minion || 0}</p>
-        <Icon name="fire"/><p>{activeDeck.deck.types.Spell || 0}</p>
-        <Icon name="warrior"/><p>{activeDeck.deck.types.Weapon || 0}</p>
+        <Icon name="minions"/><p>{Minion || 0}</p>
+        <Icon name="fire"/><p>{Spell || 0}</p>
+        <Icon name="warrior"/><p>{Weapon || 0}</p>
       </div>
   )
 };

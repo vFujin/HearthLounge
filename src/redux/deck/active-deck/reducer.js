@@ -8,7 +8,7 @@ export default function(state=initialState, {payload, type}) {
   switch (type) {
     case types.FETCH_ACTIVE_DECK_REQUEST:
       return {
-        state
+          ...state
       };
 
     case types.FETCH_ACTIVE_DECK_SUCCESS:

@@ -18,7 +18,7 @@ class Deck extends Component{
   componentDidMount(){
     const {activeDeck, fetchDeck, params} = this.props;
     const {deckId} = params;
-
+    console.log(activeDeck);
     if(activeDeck.loading){
       fetchDeck(deckId)
     }
@@ -70,7 +70,6 @@ class Deck extends Component{
 
   render() {
     const {activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, deckAuthor, updateActiveDeckCopy} = this.props;
-
     if(activeDeck.loading){
       return <Loader/>
     } else {

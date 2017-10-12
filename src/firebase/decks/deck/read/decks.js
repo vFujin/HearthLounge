@@ -40,7 +40,11 @@ export default (mainFilter, filterName, secondaryFilter, resolve, reject) => {
 
   firestore.collection('decks').get().then(querySnapshot=>{
     let decks = [];
-    querySnapshot.forEach(doc => decks.push(doc.data()));
+    // assignUsername(decks, querySnapshot);
+    querySnapshot.forEach(doc => {
+
+      decks.push(doc.data())
+    });
     console.log(decks);
   });
 
@@ -52,13 +56,14 @@ export default (mainFilter, filterName, secondaryFilter, resolve, reject) => {
  * @param {array} decks
  * @param {object} snapshot - single deck object
  */
-const assignUsername = (decks, snapshot) => {
-  snapshot.forEach(childSnapshot => {
-    getSimplifiedUser(childSnapshot.child("authorId").val(), username => {
-      return decks.push(Object.assign(childSnapshot.val(), username));
-    });
-  });
-};
+// const assignUsername = (decks, snapshot) => {
+//   snapshot.forEach(doc => {
+//     firestore.collection('users').doc(doc.data().username).get().then(query => )
+//     getSimplifiedUser(doc.child("authorId").val(), username => {
+//       return decks.push(Object.assign(doc.val(), username));
+//     });
+//   });
+// };
 
 /**
  * Utility function for decks query
@@ -69,18 +74,18 @@ const assignUsername = (decks, snapshot) => {
  * @param resolve
  * @param reject
  */
-const decksQuery = (orderBy, startAt, endAt, resolve, reject) => {
-  let decksRef = refParent('decks');
-
-  let query = decksRef.orderByChild(orderBy)
-      .startAt(`${startAt}_0000`)
-      .endAt(`${endAt}_9999`)
-      .limitToLast(10);
-
-
-  return query.once('value', snapshot => {
-    let decks = [];
-    assignUsername(decks, snapshot);
-    resolve(decks);
-  }, err => reject(err));
-};
+// const decksQuery = (orderBy, startAt, endAt, resolve, reject) => {
+//   let decksRef = refParent('decks');
+//
+//   let query = decksRef.orderByChild(orderBy)
+//       .startAt(`${startAt}_0000`)
+//       .endAt(`${endAt}_9999`)
+//       .limitToLast(10);
+//
+//
+//   return query.once('value', snapshot => {
+//     let decks = [];
+//     assignUsername(decks, snapshot);
+//     resolve(decks);
+//   }, err => reject(err));
+// };

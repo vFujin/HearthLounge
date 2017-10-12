@@ -78,9 +78,7 @@ class DeckSelection extends Component {
 
   render() {
     const {children, location, decks, activeUser, adventuresToggled, activeAdventure, activeMode, activeClass, activeDeck, params} = this.props;
-
     if(location.pathname !== "/decks"){
-
       return React.cloneElement(children, {activeUser, activeDeck});
     }
     else {
