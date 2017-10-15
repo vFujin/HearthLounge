@@ -1,4 +1,4 @@
-import {refParent, firebaseAuth, firestore} from '../../../keys';
+import {refParent, firebaseAuth} from '../../../keys';
 
 /**
  * Reads active user details
@@ -16,11 +16,5 @@ export default function (callback){
 }
 
 function getUserData(uid, callback) {
-  const docRef = firestore.collection('users').doc(uid);
-  docRef.get().then(doc => {
-    if(doc.exists){
-      callback(doc.data());
-    }
-  }).catch(err =>console.log(err));
-  // return refParent('users').on("value", (snapshot) => callback(snapshot.child(uid).val()))
+  return refParent('users').on("value", (snapshot) => callback(snapshot.child(uid).val()))
 }

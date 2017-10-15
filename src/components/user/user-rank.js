@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {rankSystem} from '../../containers/pages/rank/rank-system';
+import {rankSystem} from '../../containers/pages/miscellaneous/rank/rank-system';
 const UserRank = ({rank}) => {
   return (
       <div>

@@ -20,8 +20,7 @@ class DeckSelection extends Component {
   componentDidMount() {
     const {fetchDecks, updateDecks, decks, location} = this.props;
     const {playerClass} = location.query;
-
-    if(decks.loading) {
+    if(decks.loading && location.pathname === "/decks") {
       playerClass ? fetchDecks(playerClass) : fetchDecks();
     }
     this.infiniteScroll(updateDecks);
@@ -60,7 +59,7 @@ class DeckSelection extends Component {
     let deckId = e.currentTarget.id;
     let deckObject = _.head(_.map(this.props.decks.all).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
     this.props.updateActiveDeck(deckObject);
-    this.props.updateActiveDeckCopy(deckObject);
+    // this.props.updateActiveDeckCopy(deckObject);
     updateViews(deckId);
   };
 
@@ -114,9 +113,6 @@ const mapDispatchToProps = (dispatch) => {
     }),
     updateActiveDeck: payload => dispatch({
       type: FETCH_ACTIVE_DECK_SUCCESS, payload
-    }),
-    updateActiveDeckCopy: payload => dispatch({
-      type: UPDATE_ACTIVE_DECK_COPY, payload
     }),
     toggleAdventureFilters: payload => dispatch({
       type: 'TOGGLE_ADVENTURE_FILTERS', payload

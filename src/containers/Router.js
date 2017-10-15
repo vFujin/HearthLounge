@@ -46,8 +46,8 @@ import SignIn from './pages/entry/right-container/sign-in/sign-in';
 import NotFound from './shared-assets/not-found';
 
 import {Dashboard} from './pages/dashboard/dashboard';
-import Rank from './pages/rank/rank';
-import Issues from './pages/issues/issues';
+import Rank from './pages/miscellaneous/rank/rank';
+import Issues from './pages/miscellaneous/issues/issues';
 import Miscellaneous from './pages/miscellaneous/container';
 import PrivacyPolicy from './pages/miscellaneous/privacy-policy/privacy-policy';
 import Main from './Main';

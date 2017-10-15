@@ -3,16 +3,27 @@ import {call, put, takeEvery} from 'redux-saga/effects';
 import * as actions from "./actions";
 import * as types from "./types";
 import {subDays, startOfWeek} from 'date-fns';
+import {getSimplifiedUser} from "../../../firebase/user/read/index";
 
-const now = +Date.now();
-const twoWeeks = +startOfWeek(subDays(now, 14));
+
+const assignUsername = (decks, snapshot) => {
+  snapshot.forEach(deck => {
+    getSimplifiedUser(deck.data().authorId, username => {
+      //TODO: change that one to saga
+      return decks.push(Object.assign(deck.data(), username));
+    });
+  });
+};
 
 export const fetchHotDecks = () => {
+  const now = +Date.now();
+  const twoWeeks = +startOfWeek(subDays(now, 14));
+
   let decksRef = firestore.collection('decks').where('created', '>=', twoWeeks).limit(10).get();
   return decksRef
       .then(querySnapshot => {
         let decks = [];
-        querySnapshot.forEach(doc => decks.push(doc.data()));
+        assignUsername(decks, querySnapshot);
         return {decks};
       })
       .catch(err => ({err: err.message}))

@@ -8,17 +8,26 @@ import {success, error} from '../../../utils/messages';
  * @param {string} username - User's username
  * @param {function} updateSignUpStatus - updates sign up phase 2 progress bar state
  */
-export default function (activeUser, username, updateSignUpStatus){
-  if(!activeUser.updatedProfile) {
-    firestore.collection('users').doc(activeUser.uid).update({
+export default function (activeUser, username, updateSignUpStatus) {
+  if (!activeUser.updatedProfile) {
+    let updatedUsername = {
+      ...activeUser,
       username,
       updatedProfile: true
-    }).then(()=>{
-      updateSignUpStatus("success", "success");
-      success("Profile has been updated!");
-    }).catch(err =>{
-      updateSignUpStatus("success", "failure");
-      error(err, 4);
-    })
+    };
+
+    let updates = {};
+    updates[`users/${activeUser.uid}`] = updatedUsername;
+    updates[`usernames/${username}`] = activeUser.uid;
+
+    return ref.update(updates, function (err) {
+      if (err) {
+        updateSignUpStatus("success", "failure");
+        error("Something's not quite right. Try again later.", 4);
+      } else {
+        updateSignUpStatus("success", "success");
+        success("Profile has been updated!");
+      }
+    });
   } else error("Your profile has been already updated. You can update your profile in your dashboard", 10)
 }

@@ -54,11 +54,9 @@ export function saveUser(user){
       uid
     };
 
-    // let updates = {};
-    // updates[`users/${uid}`] = newUser;
-    //
-    // return ref.update(updates);
+    let updates = {};
+    updates[`users/${uid}`] = newUser;
 
-    firestore.collection("users").doc(uid).set(newUser).then(() => console.log("success")).catch(err=>console.log(err));
+    return ref.update(updates);
   }
 }
