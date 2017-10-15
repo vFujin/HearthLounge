@@ -30,11 +30,12 @@ class Home extends PureComponent{
   }
 
   handleDeckClick = (e) =>{
-    const {hotDecks, updateActiveDeck} = this.props;
+    const {hotDecks, updateActiveDeck, updateActiveDeckCopy} = this.props;
     const {all} = hotDecks;
     let deckId = e.currentTarget.id;
     let activeDeck = all.find(deck => deck.deckId === deckId);
     updateActiveDeck(activeDeck);
+    updateActiveDeckCopy(activeDeck);
     updateViews(deckId);
   };
 
@@ -85,10 +86,6 @@ class Home extends PureComponent{
             {/*<HomeBlock icon="twitch" width={2} title="top HS broadcasters">*/}
               {/*<TwitchBlock/>*/}
             {/*</HomeBlock>*/}
-            {/*<HomeBlock icon="bubbles2" title="forum" >*/}
-            {/*<ForumBlock />*/}
-            {/*</HomeBlock>*/}
-
           </ul>
         </div>
     );
@@ -106,6 +103,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     updateDecks: () => dispatch({type: FETCH_HOT_DECKS_REQUEST}),
     updateActiveDeck: payload => dispatch({type: FETCH_ACTIVE_DECK_SUCCESS, payload}),
+    updateActiveDeckCopy: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY, payload}),
     updateDeckFilters: (deckFilters) => dispatch({
       type: 'UPDATE_DECK_FILTERS', deckFilters
     }),

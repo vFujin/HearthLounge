@@ -1,13 +1,13 @@
-import {ref} from '../../../../keys';
+import {firestore} from '../../../../keys';
 
 export default function (deckId){
-  ref.child(`decks/${deckId}`).transaction(function(deck) {
-    if (deck) {
-      deck.views++;
-      if (!deck.views) {
-        deck.views = 0;
-      }
-    }
-    return deck;
-  });
+  const deckRef = firestore.collection('decks').doc(deckId);
+
+  firestore.runTransaction(transaction => {
+    return transaction.get(deckRef).then(deck => {
+      const views = deck.data().views + 1;
+      transaction.update(deckRef, {views})
+    })
+  }).then(()=>console.log("views updated")).catch(err=>console.log("f: ", err));
+
 }

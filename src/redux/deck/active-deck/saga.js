@@ -1,22 +1,26 @@
+import {firestore} from "../../../keys";
 import {call, put, takeEvery} from 'redux-saga/effects';
-import {getDeckDetails} from "../../../firebase/decks/deck/read/index";
 import * as actions from "./actions";
 import * as types from "./types";
-import {updateActiveDeckCopy} from "../active-deck-copy/actions";
 // import {fetchDeckAuthor} from "../deck-author/saga";
 
 export const fetchActiveDeck = (deckId) => {
-  let deckPromise = new Promise((resolve, reject) => getDeckDetails(deckId, resolve, reject));
-  return deckPromise.then(activeDeck => ({activeDeck})).catch(err => ({err: err.message}))
+  let deckRef = firestore.collection('decks').doc(deckId).get();
+
+  return deckRef.then(activeDeck => {
+    if(activeDeck.exists){
+      return ({activeDeck: activeDeck.data()})
+    }
+    return ({err: "Deck does not exist"})
+  }).catch(err => ({err: err.message}))
 };
 
 export function* fetchActiveDeckSaga({payload}) {
   const {activeDeck, err} = yield call(fetchActiveDeck, payload);
-  if(err){
+  if(err) {
     yield put(actions.fetchActiveDeckFailure(err));
   } else {
     yield put(actions.fetchActiveDeckSuccess(activeDeck));
-    yield put(updateActiveDeckCopy(activeDeck));
     // yield call(fetchDeckAuthor, activeDeck.authorId)
   }
 }

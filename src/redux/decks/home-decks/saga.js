@@ -8,9 +8,11 @@ import {getSimplifiedUser} from "../../../firebase/user/read/index";
 
 const assignUsername = (decks, snapshot) => {
   snapshot.forEach(deck => {
-    getSimplifiedUser(deck.data().authorId, username => {
+    const {authorId} = deck.data();
+    getSimplifiedUser(authorId, author => {
       //TODO: change that one to saga
-      return decks.push(Object.assign(deck.data(), username));
+      const {username} = author;
+      return decks.push(Object.assign(deck.data(), {username}));
     });
   });
 };

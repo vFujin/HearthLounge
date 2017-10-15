@@ -1,8 +1,6 @@
-import {ref} from '../../../../keys';
+import {firestore} from '../../../../keys';
 
 export default function (deckId, resolve, reject){
   // console.log(resolve);
-  ref.child(`decks/${deckId}`).once("value", snapshot => {
-    resolve(snapshot.val());
-  }, err => reject(err));
+  // firestore.collection('decks').doc(deckId).get().then;
 }
