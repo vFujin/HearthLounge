@@ -6,3 +6,23 @@ export function toggleDeckEditView(deckEditView){
     payload: deckEditView
   }
 }
+
+export function updateCommentText(payload){
+  return {
+    type: types.TOGGLE_COMMENT_BOX,
+    deckText: payload
+  }
+}
+export function toggleCommentBox(payload){
+  return {
+    type: types.TOGGLE_COMMENT_BOX,
+    payload
+  }
+}
+
+export function togglePreview(payload){
+  return {
+    type: types.TOGGLE_PREVIEW,
+    payload
+  }
+}

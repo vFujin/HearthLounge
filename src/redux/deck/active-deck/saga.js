@@ -2,7 +2,8 @@ import {firestore} from "../../../keys";
 import {call, put, takeEvery} from 'redux-saga/effects';
 import * as actions from "./actions";
 import * as types from "./types";
-// import {fetchDeckAuthor} from "../deck-author/saga";
+import {fetchDeckAuthor} from "../deck-author/saga";
+import {updateActiveDeckCopy} from "../active-deck-copy/actions";
 
 export const fetchActiveDeck = (deckId) => {
   let deckRef = firestore.collection('decks').doc(deckId).get();
@@ -21,7 +22,8 @@ export function* fetchActiveDeckSaga({payload}) {
     yield put(actions.fetchActiveDeckFailure(err));
   } else {
     yield put(actions.fetchActiveDeckSuccess(activeDeck));
-    // yield call(fetchDeckAuthor, activeDeck.authorId)
+    yield put(updateActiveDeckCopy(activeDeck));
+    yield call(fetchDeckAuthor, activeDeck.authorId)
   }
 }
 

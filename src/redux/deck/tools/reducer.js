@@ -9,7 +9,6 @@
 //   UPDATE_COMMENT_VOTE,
 //   UPDATE_COMMENT_VOTES
 // } from "../../types/decks/deck-view";
-// import * as types from "../../types/decks/deck-view";
 
 import * as types from "./types";
 
@@ -69,11 +68,11 @@ export default function(state=initialState, {payload, type}) {
       //     ...state,
       //     votedComments: action.votedComments
       //   };
-      // case UPDATE_COMMENT:
-      //   return {
-      //     ...state,
-      //     ...action.props
-      //   };
+    case types.UPDATE_COMMENT_TEXT:
+        return {
+          ...state,
+          deckComment: {...payload}
+        };
       // case UPDATE_COMMENT_VOTE:
       //   return {
       //     ...state,
@@ -84,16 +83,16 @@ export default function(state=initialState, {payload, type}) {
       //     ...state,
       //     commentVotes: action.commentVotes
       //   };
-      // case TOGGLE_COMMENT_BOX:
-      //   return {
-      //     ...state,
-      //     commentBoxIsActive: action.commentBoxIsActive
-      //   };
-      // case TOGGLE_PREVIEW:
-      //   return {
-      //     ...state,
-      //     previewIsActive: action.previewIsActive
-      //   };
+      case types.TOGGLE_COMMENT_BOX:
+        return {
+          ...state,
+          commentBoxIsActive: payload
+        };
+      case types.TOGGLE_PREVIEW:
+        return {
+          ...state,
+          previewIsActive: payload
+        };
       // case UPDATE_ACTIVE_COMMENT_ID:
       //   return {
       //     ...state,
