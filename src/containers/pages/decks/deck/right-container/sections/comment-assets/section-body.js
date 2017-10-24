@@ -4,22 +4,26 @@ import Comment from '../comment';
 import Loader from '../../../../../../../components/loader';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 
-const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments}) => {
-  const listComments = () =>{
-    if(deckComment.loading){
+const SectionBody = ({comments, countComments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments}) => {
+  const listComments = () => {
+    if (deckComment.loading) {
       return <Loader/>
-    } else {
-      return comments.map((comment, i)=> <Comment key={i}
-                                                  comment={comment}
-                                                  deckId={deckId}
-                                                  usersDetails={usersDetails}
-                                                  commentId={commentId}
-                                                  commentVotes={commentVotes}
-                                                  votedComments={votedComments}
-                                                  handleCommentClick={handleCommentClick}
-                                                  handleCommentVotingClick={handleCommentVotingClick}/>
-      )
     }
+
+    if (countComments === 0) {
+      return <p>There are no comments yet.</p>
+    }
+
+    return comments.map((comment, i) => <Comment key={i}
+                                                 comment={comment}
+                                                 deckId={deckId}
+                                                 usersDetails={usersDetails}
+                                                 commentId={commentId}
+                                                 commentVotes={commentVotes}
+                                                 votedComments={votedComments}
+                                                 handleCommentClick={handleCommentClick}
+                                                 handleCommentVotingClick={handleCommentVotingClick}/>
+    )
   };
 
   return (
@@ -28,7 +32,7 @@ const SectionBody = ({comments, deckComment, deckId, previewIsActive, commentVot
           {listComments()}
         </div>
         <div className={!previewIsActive ? "display-none" : "comment-preview"}>
-          {convertBBCode(deckComment)}
+          {/*{convertBBCode(deckComment)}*/}
         </div>
       </div>
   )

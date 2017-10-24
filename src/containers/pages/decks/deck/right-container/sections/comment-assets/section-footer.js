@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import SectionFooterCommentBox from './section-footer-commentbox';
-import {postComment} from '../../../../../../../firebase/decks/comments/create/comment';
 import {getComments} from "../../../../../../../firebase/decks/comments/read/index";
 import {getSimplifiedUser} from "../../../../../../../firebase/user/read/index";
 import * as actions from "../../../../../../../redux/deck/tools/actions";
+import {postDeckCommentRequest} from "../../../../../../../redux/deck/comments/post-comment/actions";
 
 const updateCommentText = _.debounce((updateCommentText, value) => {
   updateCommentText({deckComment: value})
@@ -39,20 +39,18 @@ class SectionFooter extends PureComponent {
   };
 
   handlePostCommentClick = () => {
-    const {patch, params, activeUser, deckComment, updateComments} = this.props;
-    const {deckId} = params;
-    const {uid} = activeUser;
-    postComment(patch, deckComment, deckId, uid);
-    getComments(deckId, uid, (comments)=>{
-      updateComments(deckId, comments);
-      let users = {};
-      comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>Object.assign(users, {[c.authorId]: userDetails})));
-      this.props.updateUsersDetails(users)
-    })
+    const {current, deckId, deckComment, postComment, updateComments, uid} = this.props;
+    postComment({current, deckComment, deckId, uid});
+    // getComments(deckId, uid, (comments)=>{
+    //   updateComments(deckId, comments);
+    //   let users = {};
+    //   comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>Object.assign(users, {[c.authorId]: userDetails})));
+    //   this.props.updateUsersDetails(users)
+    // })
   };
 
   render() {
-    const {commentBoxIsActive, deckCommentControlled, updateComment, previewIsActive, deckComment} = this.props;
+    const {commentBoxIsActive, deckCommentControlled, updateComment, previewIsActive, deckComment, deckCommentPostingStatus} = this.props;
     return (
         <div className="section__footer">
 
@@ -63,6 +61,7 @@ class SectionFooter extends PureComponent {
               : <SectionFooterCommentBox deckCommentControlled={deckCommentControlled}
                                          updateComment={deckComment}
                                          previewIsActive={previewIsActive}
+                                         deckCommentPostingStatus={deckCommentPostingStatus}
                                          handlePostCommentClick={this.handlePostCommentClick}
                                          handleInputChange={this.handleInputChange}
                                          handleHideCommentClick={this.handleHideCommentClick}
@@ -75,14 +74,19 @@ class SectionFooter extends PureComponent {
 
 const mapStateToProps = (state) => {
   const {deckCommentControlled, commentBoxIsActive, previewIsActive, deckComment} = state.deckView.tools;
-  return {deckCommentControlled, commentBoxIsActive, previewIsActive, deckComment}
+  const {uid} = state.users.activeUser;
+  const {current} = state.patch;
+  const {deckId} = state.deckView.activeDeck;
+  const {deckCommentPostingStatus} = state.deckView;
+  return {deckCommentControlled, commentBoxIsActive, previewIsActive, deckComment, uid, current, deckId, deckCommentPostingStatus};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateCommentText: payload => dispatch(actions.updateCommentText(payload)),
     toggleCommentBox: payload => dispatch(actions.toggleCommentBox(payload)),
-    togglePreview: payload => dispatch(actions.togglePreview(payload))
+    togglePreview: payload => dispatch(actions.togglePreview(payload)),
+    postComment: payload => dispatch(postDeckCommentRequest(payload))
   }
 };
 

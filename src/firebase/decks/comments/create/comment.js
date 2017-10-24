@@ -10,9 +10,9 @@ import {updateCommentsCount} from "../../deck/update/index";
  * @param {string} deckId - deck id
  * @param {string} uid - user id
  */
-export function postComment(patch, text, deckId, uid){
+export function postComment(patch, text, deckId, uid, callback){
   if(patch && text && deckId && uid){
-    const newCommentKey = ref.child(`decks/${deckId}/comments}`).push().key;
+    const newCommentKey = ref.child(`decks/${deckId}/comments`).push().key;
 
     let newComment = {
       patch,
@@ -29,11 +29,7 @@ export function postComment(patch, text, deckId, uid){
     updates[`/deck-comments/${deckId}/${newCommentKey}`] = newComment;
     updates[`/user-deck-comments/${uid}/${deckId}/${newCommentKey}`] = newCommentKey;
 
-    return ref.update(updates).then(()=>{
-          success('Successfully added comment!');
-          updateCommentsCount(deckId);
-        }, err=>error("Couldn't add comment. Try again later.")
-    );
+    return updates;
   } else {
     return error("Something's not quite right. Try again later.")
   }

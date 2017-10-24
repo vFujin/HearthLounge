@@ -4,10 +4,10 @@ import Loader from "../../../../../../../components/loader";
 
 const CardImg = ({allCards, hoveredCardName}) =>{
 
-    if(allCards.length < 1){
+    if(allCards.loading){
       return <Loader />
     } else {
-      let card = allCards.find(card => hoveredCardName === card.name);
+      let card = allCards.allCards.find(card => hoveredCardName === card.name);
       return <img src={card.img} alt={hoveredCardName} />
     }
 };

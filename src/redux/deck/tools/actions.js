@@ -9,8 +9,8 @@ export function toggleDeckEditView(deckEditView){
 
 export function updateCommentText(payload){
   return {
-    type: types.TOGGLE_COMMENT_BOX,
-    deckText: payload
+    type: types.UPDATE_COMMENT_TEXT,
+    payload
   }
 }
 export function toggleCommentBox(payload){

@@ -15,15 +15,15 @@ import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../
 import {TOGGLE_DECK_EDIT_VIEW} from "../../../../redux/deck/tools/types";
 
 class Deck extends Component{
-  componentDidMount(){
+  componentDidMount() {
     const {activeDeck, fetchDeck, params, updateActiveDeckCopy} = this.props;
     const {deckId} = params;
 
-    if(activeDeck.loading){
+    if (activeDeck.loading) {
       fetchDeck(deckId)
+    } else {
+      updateActiveDeckCopy(activeDeck);
     }
-
-    updateActiveDeckCopy(activeDeck);
   }
 
   componentWillUnmount(){

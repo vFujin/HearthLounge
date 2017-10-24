@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import SectionFooterHeader from './section-footer-header';
 import TextEditor from '../../../../../../../components/text-editor/text-editor';
 
-const SectionFooterCommentBox = ({deckCommentControlled, updateComment, previewIsActive, handleInputChange, handleHideCommentClick, handlePreviewClick, handlePostCommentClick}) => {
-
+const SectionFooterCommentBox = ({deckCommentControlled, updateComment, previewIsActive, deckCommentPostingStatus, handleInputChange, handleHideCommentClick, handlePreviewClick, handlePostCommentClick}) => {
   return (
       <div className="section_footer--wrapper">
         <SectionFooterHeader handleHideCommentClick={handleHideCommentClick}
                              previewIsActive={previewIsActive}
+                             deckCommentPostingStatus={deckCommentPostingStatus}
                              handlePreviewClick={handlePreviewClick}
                              handlePostCommentClick={handlePostCommentClick}/>
         <TextEditor editorId="deckCommentControlled"

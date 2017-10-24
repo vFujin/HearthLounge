@@ -71,7 +71,7 @@ export default function(state=initialState, {payload, type}) {
     case types.UPDATE_COMMENT_TEXT:
         return {
           ...state,
-          deckComment: {...payload}
+          ...payload
         };
       // case UPDATE_COMMENT_VOTE:
       //   return {

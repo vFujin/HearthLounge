@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loader from "../../../../../../../components/loader";
+import UploadStatusBtn from "../../../../../../../components/buttons/upload-status";
 
-const SectionFooterHeader = ({handleHideCommentClick, handlePreviewClick, handlePostCommentClick, previewIsActive}) => {
-
+const SectionFooterHeader = ({handleHideCommentClick, handlePreviewClick, handlePostCommentClick, previewIsActive, deckCommentPostingStatus}) => {
   return (
           <div className="section__footer--header">
             <h4>Comment</h4>
             <div>
               <button onClick={handleHideCommentClick} className="btn btn-pearl">Hide</button>
               <button onClick={handlePreviewClick} className="btn btn-pearl">{!previewIsActive ? 'Show' : 'Hide'} Preview</button>
-              <button onClick={handlePostCommentClick} className="btn btn-pearl">Post Comment</button>
+              <UploadStatusBtn uploadStateKey={deckCommentPostingStatus} buttonValue="Post Comment" handleClick={handlePostCommentClick}/>
             </div>
           </div>
   )

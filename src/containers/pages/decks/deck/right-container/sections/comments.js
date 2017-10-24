@@ -11,7 +11,7 @@ import {getSimplifiedUser} from "../../../../../../firebase/user/read/index";
 import {getComment, getComments} from '../../../../../../firebase/decks/comments/read';
 import {updateCommentRating} from '../../../../../../firebase/decks/comments/update';
 import * as deckCommentActions from "../../../../../../redux/actions/deck/deck-view.action";
-import {FETCH_ACTIVE_DECK_COMMENTS_REQUEST} from "../../../../../../redux/deck/deck-comments/types";
+import {FETCH_ACTIVE_DECK_COMMENTS_REQUEST} from "../../../../../../redux/deck/comments/fetch-comments/types";
 
 
 
@@ -59,25 +59,25 @@ class DeckComments extends PureComponent {
   };
 
   render() {
-    const {comments, params, commentVotes, commentId, deckComments, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
+    const {activeDeck, comments, params, commentVotes, commentId, deckComments, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
     const { deckId } = params.deckId;
     let mappedComments = Object.values(comments)[0];
+    const countComments = activeDeck.comments;
 
     return (
         <div className={`container__details--section container__details--comments v-rows-3 ${commentBoxIsActive ? 'editorActive' : ''}`}>
-          <SectionHeader comments={comments}/>
-          <div>foo</div>
-          {/*<SectionBody comments={mappedComments}*/}
-                       {/*handleCommentClick={this.handleCommentClick}*/}
-                       {/*commentId={commentId}*/}
-                       {/*deckId={deckId}*/}
-                       {/*commentVotes={commentVotes}*/}
-                       {/*votedComments={votedComments}*/}
-                       {/*deckComment={deckComments}*/}
-                       {/*previewIsActive={previewIsActive}*/}
-                       {/*usersDetails={usersDetails}*/}
-                       {/*handleCommentVotingClick={this.handleCommentVotingClick}/>*/}
-
+          <SectionHeader countComments={countComments}/>
+          <SectionBody comments={_.map(deckComments.all)}
+                       countComments={countComments}
+                       handleCommentClick={this.handleCommentClick}
+                       commentId={commentId}
+                       deckId={deckId}
+                       commentVotes={commentVotes}
+                       votedComments={votedComments}
+                       deckComment={deckComments}
+                       previewIsActive={previewIsActive}
+                       usersDetails={usersDetails}
+                       handleCommentVotingClick={this.handleCommentVotingClick}/>
           <SectionFooter />
         </div>
     )

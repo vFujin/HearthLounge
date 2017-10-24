@@ -10,7 +10,7 @@ import expansions from './expansions/expansions';
 import adventures from './adventures/adventure'
 import deckDetails from './create-deck/deck-options';
 import deckCreation from './create-deck/create-deck';
-import {tools, activeDeck, activeDeckCopy, deckComments, deckAuthor} from '../deck/reducers';
+import {tools, activeDeck, activeDeckCopy, deckComments, deckAuthor, deckCommentPostingStatus} from '../deck/reducers';
 import {decks, hotDecks, updateDecks} from '../decks/reducers';
 import {posts, activePost} from '../reddit/reducers';
 
@@ -36,7 +36,8 @@ const rootReducer = combineReducers({
     activeDeck,
     activeDeckCopy,
     deckComments,
-    deckAuthor
+    deckAuthor,
+    deckCommentPostingStatus
   }),
   redditPosts: combineReducers({
     posts,

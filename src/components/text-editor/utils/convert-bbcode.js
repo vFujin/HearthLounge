@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const convertBBCode = (text) =>{
+  console.log(text);
   if(text !== undefined || text !==null) {
     let s = text.replace(/</g, '<')
         .replace(/>/g, '>')

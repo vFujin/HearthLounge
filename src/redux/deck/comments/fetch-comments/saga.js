@@ -1,7 +1,7 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
 import * as actions from "./actions";
 import * as types from "./types";
-import {getComments} from "../../../firebase/decks/comments/read/index";
+import {getComments} from "../../../../firebase/decks/comments/read/index";
 
 export const fetchDeckComments= ({deckId, uid}) => {
   let deckPromise = new Promise((resolve, reject) => getComments(deckId, resolve, reject, uid));
