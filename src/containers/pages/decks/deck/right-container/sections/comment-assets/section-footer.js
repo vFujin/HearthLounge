@@ -100,5 +100,5 @@ SectionFooterCommentBox.propTypes = {
   handleHideCommentClick: PropTypes.func,
   handlePreviewClick: PropTypes.func,
   deckCommentControlled: PropTypes.string,
-  updateComment: PropTypes.func,
+  updateComment: PropTypes.string,
 };

@@ -27,7 +27,7 @@ const UploadStatusBtn = ({uploadStateKey, buttonValue, handleClick, className}) 
 export default UploadStatusBtn;
 
 UploadStatusBtn.propTypes = {
-  uploadStateKey: PropTypes.string.isRequired,
+  uploadStateKey: PropTypes.object.isRequired,
   buttonValue: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
   className: PropTypes.string

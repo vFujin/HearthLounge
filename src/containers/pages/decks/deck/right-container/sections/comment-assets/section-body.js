@@ -42,7 +42,7 @@ export default SectionBody;
 
 SectionBody.propTypes = {
   comments: PropTypes.array,
-  deckComment: PropTypes.string,
+  deckComment: PropTypes.object,
   deckId: PropTypes.string,
   previewIsActive: PropTypes.bool,
   commentVotes: PropTypes.shape({

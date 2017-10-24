@@ -15,6 +15,6 @@ const CardImg = ({allCards, hoveredCardName}) =>{
 export default CardImg;
 
 CardImg.propTypes = {
-  allCards: PropTypes.array,
+  allCards: PropTypes.object,
   hoveredCardName: PropTypes.string
 };

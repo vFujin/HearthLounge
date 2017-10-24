@@ -29,5 +29,4 @@ export default TableBody;
 TableBody.propTypes = {
   deckEditView: PropTypes.bool.isRequired,
   handleCardRemovalClick: PropTypes.func.isRequired,
-  cards: PropTypes.object
 };
