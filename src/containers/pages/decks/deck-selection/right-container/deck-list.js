@@ -5,9 +5,8 @@ import DeckSnippet from '../../right-container/cards-list/deck-snippet';
 
 const DeckList = ({decks, handleDeckSnippetClick}) => {
   const mapDecks = () =>{
-      return _.map(decks.all).map(d  => {
-        const {deckId, playerClass, title, votes, deck, created, archetype, author, type, views} = d;
-        console.log(_.trimStart(votes, '0'));
+      return decks.all.map(d  => {
+        const {deckId, playerClass, title, votes, deck, created, archetype, author, mode, views} = d;
         return <DeckSnippet handleDeckSnippetClick={handleDeckSnippetClick}
                             key={deckId}
                             deckId={deckId}
@@ -18,7 +17,7 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
                             created={created}
                             archetype={archetype}
                             author={author}
-                            type={type}
+                            mode={mode}
                             views={views}/>
       })
   };
@@ -35,7 +34,7 @@ const DeckList = ({decks, handleDeckSnippetClick}) => {
         <td className="votes"><p>Rating</p></td>
         <td className="views"><p>Views</p></td>
         <td className="mana-curve"><p>Mana</p></td>
-        <td className="type"><p>Type</p></td>
+        <td className="mode"><p>mode</p></td>
         <td className="created"><p>Created</p></td>
       </tr>
       </thead>

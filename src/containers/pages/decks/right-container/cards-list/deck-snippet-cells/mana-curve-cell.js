@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 
 const ManaCurve = ({deckUrl, deck}) =>{
-
+  console.log(deck);
   return <Link to={deckUrl}>
           <ul>
             {deck.manaCurve.map((el, i)=> {
@@ -14,7 +14,6 @@ const ManaCurve = ({deckUrl, deck}) =>{
               )})}
           </ul>
         </Link>
-      ;
 };
 
 export default ManaCurve;

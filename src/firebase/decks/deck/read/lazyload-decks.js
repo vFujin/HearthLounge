@@ -1,4 +1,4 @@
-import {ref} from '../../../../keys';
+import {ref, firestore} from '../../../../keys';
 import _ from 'lodash';
 let now = new Date();
 let week = now.setDate(now.getDate() - 7);
@@ -8,6 +8,7 @@ export default function (resolve, reject) {
   let decksRef = ref.child('decks');
 
   console.log("bar");
+
   decksRef
       .orderByChild('created')
       .startAt(lastKnownDeck)

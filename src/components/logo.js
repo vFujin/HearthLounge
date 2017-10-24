@@ -38,7 +38,6 @@ const LogoSVG = ({dotsColor}) =>{
               strokeWidth="1.5"
               vectorEffect="non-scaling-stroke"/>
       </svg>
-
   )
 };
 

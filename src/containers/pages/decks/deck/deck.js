@@ -16,12 +16,14 @@ import {TOGGLE_DECK_EDIT_VIEW} from "../../../../redux/deck/tools/types";
 
 class Deck extends Component{
   componentDidMount(){
-    const {activeDeck, fetchDeck, params} = this.props;
+    const {activeDeck, fetchDeck, params, updateActiveDeckCopy} = this.props;
     const {deckId} = params;
 
     if(activeDeck.loading){
       fetchDeck(deckId)
     }
+
+    updateActiveDeckCopy(activeDeck);
   }
 
   componentWillUnmount(){
