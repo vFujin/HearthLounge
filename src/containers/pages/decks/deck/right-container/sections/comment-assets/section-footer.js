@@ -29,17 +29,13 @@ class SectionFooter extends PureComponent {
     this.props.togglePreview(!this.props.previewIsActive);
   };
 
-  handleAddCommentClick = () => {
-    this.props.toggleCommentBox(true);
-  };
-
   handleHideCommentClick = () => {
     this.props.toggleCommentBox(false);
     this.props.togglePreview(false);
   };
 
   handlePostCommentClick = () => {
-    const {current, deckId, deckComment, postComment, updateComments, uid} = this.props;
+    const {current, deckId, deckComment, postComment, uid} = this.props;
     postComment({current, deckComment, deckId, uid});
     // getComments(deckId, uid, (comments)=>{
     //   updateComments(deckId, comments);
@@ -53,20 +49,14 @@ class SectionFooter extends PureComponent {
     const {commentBoxIsActive, deckCommentControlled, updateComment, previewIsActive, deckComment, deckCommentPostingStatus} = this.props;
     return (
         <div className="section__footer">
-
-          {!commentBoxIsActive ?
-              <div className="add-comment">
-                <button onClick={this.handleAddCommentClick} className="btn btn-pearl">Add comment</button>
-              </div>
-              : <SectionFooterCommentBox deckCommentControlled={deckCommentControlled}
-                                         updateComment={deckComment}
-                                         previewIsActive={previewIsActive}
-                                         deckCommentPostingStatus={deckCommentPostingStatus}
-                                         handlePostCommentClick={this.handlePostCommentClick}
-                                         handleInputChange={this.handleInputChange}
-                                         handleHideCommentClick={this.handleHideCommentClick}
-                                         handlePreviewClick={this.handlePreviewClick}/>
-          }
+          <SectionFooterCommentBox deckCommentControlled={deckCommentControlled}
+                                   updateComment={deckComment}
+                                   previewIsActive={previewIsActive}
+                                   deckCommentPostingStatus={deckCommentPostingStatus}
+                                   handlePostCommentClick={this.handlePostCommentClick}
+                                   handleInputChange={this.handleInputChange}
+                                   handleHideCommentClick={this.handleHideCommentClick}
+                                   handlePreviewClick={this.handlePreviewClick}/>
         </div>
     )
   }

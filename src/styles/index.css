@@ -2555,46 +2555,6 @@ a {
     .topbar .topbar-right li span {
       padding: .5vh; }
 
-.btn-pearl {
-  cursor: pointer;
-  background: #474143;
-  border: 1px solid #E7E2DA;
-  color: #E7E2DA;
-  outline: 0;
-  font-size: 1.2vh;
-  padding: .3vh .5vh;
-  position: relative;
-  -webkit-box-shadow: 0 0 5px #474143;
-  -moz-box-shadow: 0 0 5px #474143;
-  box-shadow: 0 0 5px #474143;
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
-  transition: all ease 0.4s; }
-  .btn-pearl:after {
-    -webkit-box-shadow: 0 0 5px #00a99c;
-    -moz-box-shadow: 0 0 5px #00a99c;
-    box-shadow: 0 0 5px #00a99c;
-    content: '';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
-    transition: all ease 0.4s; }
-  .btn-pearl:hover {
-    background: #474143;
-    border-color: #00a99c;
-    color: #00a99c; }
-    .btn-pearl:hover:after {
-      opacity: 1; }
-
 .btn-padding-small {
   padding: 1px 5px; }
 
@@ -2796,52 +2756,6 @@ form .divider {
     display: flex; }
     .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div span {
       font-size: 12px; }
-.component.btn {
-  font-size: 12px;
-  cursor: pointer;
-  outline: 0;
-  -webkit-transition: all ease 0.2s;
-  -moz-transition: all ease 0.2s;
-  -ms-transition: all ease 0.2s;
-  -o-transition: all ease 0.2s;
-  transition: all ease 0.2s;
-  -webkit-box-shadow: 0 0 5px #474143;
-  -moz-box-shadow: 0 0 5px #474143;
-  box-shadow: 0 0 5px #474143; }
-  .component.btn__default {
-    background: #474143;
-    color: #E7E2DA;
-    border: 1px solid #E7E2DA;
-    -webkit-transition: all ease 0.2;
-    -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
-    transition: all ease 0.2; }
-    .component.btn__default:hover {
-      color: #00a99c;
-      border-color: #00a99c; }
-  .component.btn__delete {
-    background: #C41F3B;
-    color: #E7E2DA;
-    border: 1px solid #E7E2DA;
-    -webkit-transition: all ease 0.2;
-    -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
-    transition: all ease 0.2; }
-    .component.btn__delete:hover {
-      background: #98182e; }
-  .component.btn__update {
-    background: #2e7d32;
-    color: #E7E2DA;
-    border: 1px solid #E7E2DA;
-    -webkit-transition: all ease 0.2;
-    -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
-    transition: all ease 0.2; }
-    .component.btn__update:hover {
-      background: #205823; }
 
 input::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -2891,6 +2805,83 @@ svg#logo:hover {
     stroke-dashoffset: 1000; }
   to {
     stroke-dashoffset: 0; } }
+button {
+  font-size: 12px;
+  padding: 2px 5px;
+  cursor: pointer;
+  outline: 0;
+  position: relative;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  transition: all ease 0.2s; }
+  button.btn {
+    /*
+     * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+     */ }
+    button.btn__default {
+      background: #474143;
+      color: #E7E2DA;
+      border: 1px solid #E7E2DA;
+      -webkit-transition: all ease 0.2;
+      -moz-transition: all ease 0.2;
+      -ms-transition: all ease 0.2;
+      -o-transition: all ease 0.2;
+      transition: all ease 0.2; }
+      button.btn__default:hover {
+        color: #00a99c;
+        border-color: #00a99c; }
+    button.btn__delete {
+      background: #C41F3B;
+      color: #E7E2DA;
+      border: 1px solid #E7E2DA;
+      -webkit-transition: all ease 0.2;
+      -moz-transition: all ease 0.2;
+      -ms-transition: all ease 0.2;
+      -o-transition: all ease 0.2;
+      transition: all ease 0.2; }
+      button.btn__delete:hover {
+        background: #98182e; }
+    button.btn__update {
+      background: #2e7d32;
+      color: #E7E2DA;
+      border: 1px solid #E7E2DA;
+      -webkit-transition: all ease 0.2;
+      -moz-transition: all ease 0.2;
+      -ms-transition: all ease 0.2;
+      -o-transition: all ease 0.2;
+      transition: all ease 0.2; }
+      button.btn__update:hover {
+        background: #205823; }
+    button.btn:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-box-shadow: 0 0 5px #00a99c;
+      -moz-box-shadow: 0 0 5px #00a99c;
+      box-shadow: 0 0 5px #00a99c;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+    button.btn:hover {
+      background: #474143;
+      color: #00a99c;
+      border-color: #00a99c; }
+      button.btn:hover:after {
+        opacity: 1; }
+  button:disabled {
+    background: #dedbd5;
+    color: #A69E9D;
+    border: 1px solid #474143;
+    outline: 0; }
+
 .deckSnippet-wrapper {
   display: grid;
   grid-row-gap: 1vh;
@@ -4298,7 +4289,8 @@ card {
           position: relative;
           overflow: hidden;
           display: flex;
-          align-items: center; }
+          align-items: center;
+          justify-content: space-between; }
           .container__page .container__page--right .content .container__details .container__details--section .section__header .line {
             height: 1px;
             position: absolute;
@@ -4316,6 +4308,8 @@ card {
               white-space: normal;
               overflow: visible;
               max-width: 100%; }
+          .container__page .container__page--right .content .container__details .container__details--section .section__header .section__header--options {
+            margin-right: 5px; }
         .container__page .container__page--right .content .container__details .container__details--section .section__body {
           overflow: auto; }
           .container__page .container__page--right .content .container__details .container__details--section .section__body::-webkit-scrollbar {
@@ -4993,11 +4987,13 @@ card {
 .deck .container__page--right .content .container__details .container__details--description .section__footer .details img {
   width: 45px;
   height: 45px; }
-.deck .container__page--right .content .container__details .container__details--comments .section__footer {
-  padding: 2vh 1vh 0 1vh;
-  border: 1px solid #474143; }
-  .deck .container__page--right .content .container__details .container__details--comments .section__footer .text-editor {
-    height: calc(100% - 3vh - 2px); }
+.deck .container__page--right .content .container__details .container__details--comments {
+  position: relative; }
+  .deck .container__page--right .content .container__details .container__details--comments .section__footer {
+    padding: 2vh 1vh 0 1vh;
+    border: 1px solid #474143; }
+    .deck .container__page--right .content .container__details .container__details--comments .section__footer .text-editor {
+      height: calc(100% - 1vh); }
 
 .cards .left-container .sidebar .sidebar-icons {
   margin: 1em 0;

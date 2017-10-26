@@ -6,6 +6,7 @@
   color: $color;
   border: 1px solid $color;
   @include transition(all ease .2);
+
   &:hover{
     @if $hover_color {
       color: $hover_color;

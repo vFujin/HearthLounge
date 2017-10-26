@@ -1,15 +1,32 @@
 import React from 'react';
-import _ from 'lodash';
+import {connect} from 'react-redux';
+import Tooltip from 'antd/lib/tooltip';
+import {toggleCommentBox} from "../../../../../../../redux/deck/tools/actions";
 
-const SectionHeader = ({countComments}) => {
+const SectionHeader = ({authenticated, countComments, commentBoxIsActive, toggleCommentBox}) => {
+
+  const handleAddCommentClick = () => {
+    toggleCommentBox(!commentBoxIsActive);
+  };
+
   return (
       <div className="section__header">
         <div className="line"></div>
         <h1>{countComments} {countComments === 1 ? 'comment' : 'comments'}</h1>
+        <div className="section__header--options">
+          <Tooltip title="You have to be Signed In!" trigger={authenticated ? "none" : "hover"} placement="bottom" arrowPointAtCenter>
+            <button onClick={authenticated && handleAddCommentClick} disabled={!authenticated} className={`btn ${commentBoxIsActive && "btn-pearl-active"}`}>Add Comment</button>
+          </Tooltip>
+        </div>
       </div>
   )
 };
 
-export default SectionHeader;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleCommentBox: payload => dispatch(toggleCommentBox(payload))
+  }
+};
 
-//No proptypes, comments is an object with dynamic {string} `deckId` keys and array of comments object values
+export default connect(null, mapDispatchToProps)(SectionHeader);
+

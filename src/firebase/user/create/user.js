@@ -32,10 +32,6 @@ export default function (email, password, updateSignUpStatus, reducer){
       });
 }
 
-// export function resetPassword(email) {
-//   return firebaseAuth().sendPasswordResetEmail(email);
-// }
-
 /**
  * Saves user to Firebase.
  *

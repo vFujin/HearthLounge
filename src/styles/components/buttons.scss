@@ -1,0 +1,53 @@
+@import '../colors';
+@import '../mixins';
+
+button{
+  font-size: 12px;
+  padding: 2px 5px;
+  cursor: pointer;
+  outline: 0;
+  position: relative;
+
+    @include transition(all ease .2s);
+
+  &.btn{
+    &__default{
+      @include button($pearl, $dark-grey, $sea-color);
+    }
+    &__delete{
+      @include button($pearl, $death_knight);
+    }
+    &__update{
+      @include button($pearl, $dark-green);
+    }
+
+    /*
+     * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+     */
+    &:after{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      opacity: 0;
+      @include box-shadow(0, 0, 5px, $sea-color);
+      @include transition(all ease .4s);
+    }
+    &:hover {
+      background: $dark-grey;
+      color: $sea-color;
+      border-color: $sea-color;
+      &:after{
+        opacity: 1;
+      }
+    }
+  }
+  &:disabled{
+    background: #dedbd5;
+    color: $light-grey;
+    border: 1px solid $dark-grey;
+    outline: 0;
+  }
+}

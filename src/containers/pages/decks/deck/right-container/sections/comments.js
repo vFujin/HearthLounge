@@ -61,12 +61,13 @@ class DeckComments extends PureComponent {
   render() {
     const {activeDeck, comments, params, commentVotes, commentId, deckComments, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
     const { deckId } = params.deckId;
-    let mappedComments = Object.values(comments)[0];
     const countComments = activeDeck.comments;
 
     return (
-        <div className={`container__details--section container__details--comments v-rows-3 ${commentBoxIsActive ? 'editorActive' : ''}`}>
-          <SectionHeader countComments={countComments}/>
+        <div className={`container__details--section container__details--comments v-rows-${commentBoxIsActive ? '3 editorActive' : '2'}`}>
+          <SectionHeader authenticated={this.props.activeUser.authenticated}
+                         countComments={countComments}
+                         commentBoxIsActive={commentBoxIsActive}/>
           <SectionBody comments={_.map(deckComments.all)}
                        countComments={countComments}
                        handleCommentClick={this.handleCommentClick}
@@ -78,7 +79,7 @@ class DeckComments extends PureComponent {
                        previewIsActive={previewIsActive}
                        usersDetails={usersDetails}
                        handleCommentVotingClick={this.handleCommentVotingClick}/>
-          <SectionFooter />
+          {commentBoxIsActive ? <SectionFooter /> : null}
         </div>
     )
   }

@@ -739,6 +739,7 @@ card{
             overflow: hidden;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             .line{
               height: 1px;
               position: absolute;
@@ -758,6 +759,9 @@ card{
                 overflow: visible;
                 max-width: 100%;
               }
+            }
+            .section__header--options{
+              margin-right: 5px;
             }
           }
           .section__body {
@@ -1666,11 +1670,12 @@ card{
           }
         }
         .container__details--comments {
+          position: relative;
           .section__footer {
             padding: 2vh 1vh 0 1vh;
             border: 1px solid $dark-grey;
             .text-editor{
-              height: calc(100% - 3vh - 2px);
+              height: calc(100% - 1vh);
             }
           }
         }
