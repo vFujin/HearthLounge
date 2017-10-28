@@ -821,6 +821,7 @@ card{
         .container__details--comments {
           .section__body{
             font-family: 'Arial', sans-serif;
+            //box-shadow: inset 0 -10px 10px -10px black, inset 0 10px 10px -10px black;
             .comment {
               height:100%;
               border-bottom: 1px solid black;

@@ -1,22 +1,53 @@
 @import '../../colors';
 @import 'icons';
 
-@mixin button($color, $background_color, $hover_color: false){
+@mixin buttonShadow($color){
+  &:after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    top: 0;
+    left: 0;
+    opacity: 0;
+    @include box-shadow(0, 0, 5px, $color);
+    @include transition(all ease .4s);
+  }
+  &:hover {
+    &:after{
+      opacity: 1;
+    }
+  }
+}
+
+@mixin button($color, $background_color, $hover_color: false, $border_color: false, $border_hover_color: false){
   background: $background_color;
   color: $color;
-  border: 1px solid $color;
-  @include transition(all ease .2);
+  border: 1px solid;
 
+  @if $border_color{
+     border-color: $border_color;
+  } @else {
+    border-color: $color;
+  }
   &:hover{
     @if $hover_color {
       color: $hover_color;
-      border-color: $hover_color;
+      @if $border_hover_color{
+        border-color: $border_hover_color;
+      } @else {
+        border-color: $hover_color;
+      }
     }
     @else {
       background: darken($background_color, 10%);
     }
   }
+  @include transition(all ease .2);
+  @include buttonShadow($background_color);
 }
+
+
 
 @mixin scrollbar($border_color, $thumb_color: $dark-grey, $track_color: $light-grey){
   &::-webkit-scrollbar{width: 13px;}

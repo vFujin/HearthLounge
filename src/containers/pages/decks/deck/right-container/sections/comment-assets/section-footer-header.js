@@ -8,8 +8,8 @@ const SectionFooterHeader = ({handleHideCommentClick, handlePreviewClick, handle
           <div className="section__footer--header">
             <h4>Comment</h4>
             <div>
-              <button onClick={handleHideCommentClick} className="btn btn-pearl">Hide</button>
-              <button onClick={handlePreviewClick} className="btn btn-pearl">{!previewIsActive ? 'Show' : 'Hide'} Preview</button>
+              <button onClick={handleHideCommentClick} className="btn btn__default--active btn__darkBorder">Hide</button>
+              <button onClick={handlePreviewClick} className={`btn btn__default--dark btn__darkBorder ${previewIsActive && "btn__default--active"}`}>{!previewIsActive ? 'Show' : 'Hide'} Preview</button>
               <UploadStatusBtn uploadStateKey={deckCommentPostingStatus} buttonValue="Post Comment" handleClick={handlePostCommentClick}/>
             </div>
           </div>

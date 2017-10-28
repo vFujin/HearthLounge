@@ -12,7 +12,16 @@ button{
 
   &.btn{
     &__default{
-      @include button($pearl, $dark-grey, $sea-color);
+      @include button($pearl, $dark-grey, $sea-color, $sea-color, $dark-grey);
+      &--dark{
+        @include button($pearl, $dark-grey, $sea-color, false, $sea-color);
+      }
+      &--active{
+        @include button($pearl, $sea-color, $pearl, false, $dark-grey)
+      }
+    }
+    &__submit{
+      @include button($pearl, $shaman, false, $dark-grey);
     }
     &__delete{
       @include button($pearl, $death_knight);
@@ -20,29 +29,38 @@ button{
     &__update{
       @include button($pearl, $dark-green);
     }
+    &__success{
+      @include button($pearl, $dark-green, false, $dark-grey);
+    }
+    &__failure{
+      @include button($pearl, $death_knight);
+    }
+    &__darkBorder{
+      border-color: $dark-grey;
+    }
 
     /*
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
      */
-    &:after{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      content: '';
-      top: 0;
-      left: 0;
-      opacity: 0;
-      @include box-shadow(0, 0, 5px, $sea-color);
-      @include transition(all ease .4s);
-    }
-    &:hover {
-      background: $dark-grey;
-      color: $sea-color;
-      border-color: $sea-color;
-      &:after{
-        opacity: 1;
-      }
-    }
+    //&:after{
+    //  position: absolute;
+    //  width: 100%;
+    //  height: 100%;
+    //  content: '';
+    //  top: 0;
+    //  left: 0;
+    //  opacity: 0;
+    //  @include box-shadow(0, 0, 5px, $sea-color);
+    //  @include transition(all ease .4s);
+    //}
+    //&:hover {
+    //  //background: $dark-grey;
+    //  //color: $sea-color;
+    //  //border-color: $sea-color;
+    //  &:after{
+    //    opacity: 1;
+    //  }
+    //}
   }
   &:disabled{
     background: #dedbd5;

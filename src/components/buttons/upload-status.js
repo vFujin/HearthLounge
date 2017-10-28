@@ -21,7 +21,7 @@ const UploadStatusBtn = ({uploadStateKey, buttonValue, handleClick, className}) 
     return buttonValue;
   };
 
-  return <button onClick={handleClick} className={`component btn btn-pearl btn__submit ${className}`}>{status()}</button>
+  return <button onClick={handleClick} className={`component btn btn__submit btn__darkBorder${err ? 'btn__failure' : ''} ${response ? 'btn__success' : ''} ${className}`}>{status()}</button>
 };
 
 export default UploadStatusBtn;
