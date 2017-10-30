@@ -1,6 +1,5 @@
 import React from 'react';
-import  _ from 'lodash';
-import Loader from '../../../../../components/loader';
+import Loader from '../../../../../components/loaders/loader';
 import DeckSnippet from '../../right-container/cards-list/deck-snippet';
 
 const DeckList = ({decks, handleDeckSnippetClick}) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PostSnippet from './post-snippet/post'
-import Loader from "../../../../components/loader";
+import Loader from "../../../../components/loaders/loader";
 import FetchError from "../../../../components/fetch-error";
 const ForumBlock = ({posts, handleRedditPostClick}) => {
   const {loading, all} = posts;

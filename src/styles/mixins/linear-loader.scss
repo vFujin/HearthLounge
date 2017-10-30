@@ -1,0 +1,17 @@
+@import '../colors';
+
+@mixin linearLoader($primary-color: rgba($light-grey, .3), $secondary-color: $pearl){
+  background: linear-gradient(to left, $primary-color 0%, $secondary-color 50%, $primary-color 100%);
+  background-size: 200%;
+  animation: linearKeyframes 2s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -200%;
+  }
+}

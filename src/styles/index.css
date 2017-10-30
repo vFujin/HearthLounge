@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&subset=latin-ext");
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 body {
   background: #E7E2DA; }
 
@@ -386,6 +391,11 @@ a {
 .icon-redirect:before {
   content: "\ea7e"; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .block-width-1 {
   margin-right: 1vh;
   width: calc(25% - 1vh); }
@@ -491,6 +501,16 @@ a {
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3)); }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .druid {
   color: #FF7D0A; }
   .druid span {
@@ -1283,6 +1303,11 @@ a {
     background-attachment: fixed;
     border-left: 10px solid #A330C9; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 /*
  * Adventures
  */
@@ -1949,6 +1974,11 @@ a {
     background-attachment: fixed;
     border-left: 10px solid #a5f2f3; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 /*
  * Rarity
  */
@@ -2351,6 +2381,11 @@ a {
     background-attachment: fixed;
     border-left: 10px solid #695840; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .facebook {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
@@ -2447,6 +2482,11 @@ a {
     .false.hearthstone.active:not(.hearthstone) .domain a, .false.hearthstone:hover .domain a, .false.default.active:not(.hearthstone) .domain a, .false.default:hover .domain a {
       color: #474143; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .default-style {
   font-family: 'Arial', sans-serif; }
   .default-style h1 {
@@ -2697,6 +2737,11 @@ form .divider {
 .post:hover .peripheral, .comment:hover .peripheral {
   opacity: 1; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .decks .submenu {
   width: 12vw; }
 
@@ -2737,11 +2782,21 @@ form .divider {
       align-items: center;
       justify-content: space-between; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .component.simplifiedUser {
   display: flex; }
   .component.simplifiedUser .simplifiedUser__avatar {
     height: 50px;
-    width: 50px; }
+    width: 50px;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
     .component.simplifiedUser .simplifiedUser__avatar span {
       height: 100%;
       display: flex;
@@ -2752,10 +2807,38 @@ form .divider {
     .component.simplifiedUser .simplifiedUser__avatar img {
       width: 100%;
       height: 100%; }
-  .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div {
-    display: flex; }
-    .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div span {
-      font-size: 12px; }
+    .component.simplifiedUser .simplifiedUser__avatar--placeholder {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to left, rgba(166, 158, 157, 0.3) 0%, #E7E2DA 50%, rgba(166, 158, 157, 0.3) 100%);
+      background-size: 200%;
+      animation: linearKeyframes 2s infinite;
+      animation-timing-function: linear; }
+  .component.simplifiedUser .simplifiedUser__details {
+    width: calc(100% - 60px);
+    margin-left: 10px; }
+    .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--username {
+      width: 100%;
+      overflow: hidden; }
+      .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--username-placeholder {
+        margin-bottom: 10px;
+        height: 12px;
+        background: linear-gradient(to left, rgba(166, 158, 157, 0.3) 0%, #E7E2DA 50%, rgba(166, 158, 157, 0.3) 100%);
+        background-size: 200%;
+        animation: linearKeyframes 2s infinite;
+        animation-timing-function: linear; }
+    .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank {
+      width: 100%; }
+      .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div {
+        display: flex; }
+        .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div span {
+          font-size: 12px; }
+      .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank-placeholder {
+        height: 12px;
+        background: linear-gradient(to left, rgba(166, 158, 157, 0.3) 0%, #E7E2DA 50%, rgba(166, 158, 157, 0.3) 100%);
+        background-size: 200%;
+        animation: linearKeyframes 2s infinite;
+        animation-timing-function: linear; }
 
 input::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -2805,6 +2888,11 @@ svg#logo:hover {
     stroke-dashoffset: 1000; }
   to {
     stroke-dashoffset: 0; } }
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 button {
   font-size: 12px;
   padding: 2px 5px;
@@ -2816,24 +2904,57 @@ button {
   -ms-transition: all ease 0.2s;
   -o-transition: all ease 0.2s;
   transition: all ease 0.2s; }
-  button.btn {
+  button.btn__default {
+    background: #474143;
+    color: #E7E2DA;
+    border: 1px solid;
+    border-color: #00a99c;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2;
     /*
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
      */ }
-    button.btn__default {
+    button.btn__default:hover {
+      color: #00a99c;
+      border-color: #474143; }
+    button.btn__default:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-box-shadow: 0 0 5px #474143;
+      -moz-box-shadow: 0 0 5px #474143;
+      box-shadow: 0 0 5px #474143;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+    button.btn__default:hover:after {
+      opacity: 1; }
+    button.btn__default--dark {
       background: #474143;
       color: #E7E2DA;
       border: 1px solid;
-      border-color: #00a99c;
+      border-color: #E7E2DA;
       -webkit-transition: all ease 0.2;
       -moz-transition: all ease 0.2;
       -ms-transition: all ease 0.2;
       -o-transition: all ease 0.2;
-      transition: all ease 0.2; }
-      button.btn__default:hover {
+      transition: all ease 0.2;
+      /*
+       * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+       */ }
+      button.btn__default--dark:hover {
         color: #00a99c;
-        border-color: #474143; }
-      button.btn__default:after {
+        border-color: #00a99c; }
+      button.btn__default--dark:after {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -2849,83 +2970,25 @@ button {
         -ms-transition: all ease 0.4s;
         -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
-      button.btn__default:hover:after {
+      button.btn__default--dark:hover:after {
         opacity: 1; }
-      button.btn__default--dark {
-        background: #474143;
+    button.btn__default--active {
+      background: #00a99c;
+      color: #E7E2DA;
+      border: 1px solid;
+      border-color: #E7E2DA;
+      -webkit-transition: all ease 0.2;
+      -moz-transition: all ease 0.2;
+      -ms-transition: all ease 0.2;
+      -o-transition: all ease 0.2;
+      transition: all ease 0.2;
+      /*
+       * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+       */ }
+      button.btn__default--active:hover {
         color: #E7E2DA;
-        border: 1px solid;
-        border-color: #E7E2DA;
-        -webkit-transition: all ease 0.2;
-        -moz-transition: all ease 0.2;
-        -ms-transition: all ease 0.2;
-        -o-transition: all ease 0.2;
-        transition: all ease 0.2; }
-        button.btn__default--dark:hover {
-          color: #00a99c;
-          border-color: #00a99c; }
-        button.btn__default--dark:after {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          content: '';
-          top: 0;
-          left: 0;
-          opacity: 0;
-          -webkit-box-shadow: 0 0 5px #474143;
-          -moz-box-shadow: 0 0 5px #474143;
-          box-shadow: 0 0 5px #474143;
-          -webkit-transition: all ease 0.4s;
-          -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
-          transition: all ease 0.4s; }
-        button.btn__default--dark:hover:after {
-          opacity: 1; }
-      button.btn__default--active {
-        background: #00a99c;
-        color: #E7E2DA;
-        border: 1px solid;
-        border-color: #E7E2DA;
-        -webkit-transition: all ease 0.2;
-        -moz-transition: all ease 0.2;
-        -ms-transition: all ease 0.2;
-        -o-transition: all ease 0.2;
-        transition: all ease 0.2; }
-        button.btn__default--active:hover {
-          color: #E7E2DA;
-          border-color: #474143; }
-        button.btn__default--active:after {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          content: '';
-          top: 0;
-          left: 0;
-          opacity: 0;
-          -webkit-box-shadow: 0 0 5px #00a99c;
-          -moz-box-shadow: 0 0 5px #00a99c;
-          box-shadow: 0 0 5px #00a99c;
-          -webkit-transition: all ease 0.4s;
-          -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
-          transition: all ease 0.4s; }
-        button.btn__default--active:hover:after {
-          opacity: 1; }
-    button.btn__submit {
-      background: #0070DE;
-      color: #E7E2DA;
-      border: 1px solid;
-      border-color: #474143;
-      -webkit-transition: all ease 0.2;
-      -moz-transition: all ease 0.2;
-      -ms-transition: all ease 0.2;
-      -o-transition: all ease 0.2;
-      transition: all ease 0.2; }
-      button.btn__submit:hover {
-        background: #0056ab; }
-      button.btn__submit:after {
+        border-color: #474143; }
+      button.btn__default--active:after {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -2933,144 +2996,194 @@ button {
         top: 0;
         left: 0;
         opacity: 0;
-        -webkit-box-shadow: 0 0 5px #0070DE;
-        -moz-box-shadow: 0 0 5px #0070DE;
-        box-shadow: 0 0 5px #0070DE;
+        -webkit-box-shadow: 0 0 5px #00a99c;
+        -moz-box-shadow: 0 0 5px #00a99c;
+        box-shadow: 0 0 5px #00a99c;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
         -ms-transition: all ease 0.4s;
         -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
-      button.btn__submit:hover:after {
+      button.btn__default--active:hover:after {
         opacity: 1; }
-    button.btn__delete {
-      background: #C41F3B;
-      color: #E7E2DA;
-      border: 1px solid;
-      border-color: #E7E2DA;
-      -webkit-transition: all ease 0.2;
-      -moz-transition: all ease 0.2;
-      -ms-transition: all ease 0.2;
-      -o-transition: all ease 0.2;
-      transition: all ease 0.2; }
-      button.btn__delete:hover {
-        background: #98182e; }
-      button.btn__delete:after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: '';
-        top: 0;
-        left: 0;
-        opacity: 0;
-        -webkit-box-shadow: 0 0 5px #C41F3B;
-        -moz-box-shadow: 0 0 5px #C41F3B;
-        box-shadow: 0 0 5px #C41F3B;
-        -webkit-transition: all ease 0.4s;
-        -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
-        transition: all ease 0.4s; }
-      button.btn__delete:hover:after {
-        opacity: 1; }
-    button.btn__update {
-      background: #2e7d32;
-      color: #E7E2DA;
-      border: 1px solid;
-      border-color: #E7E2DA;
-      -webkit-transition: all ease 0.2;
-      -moz-transition: all ease 0.2;
-      -ms-transition: all ease 0.2;
-      -o-transition: all ease 0.2;
-      transition: all ease 0.2; }
-      button.btn__update:hover {
-        background: #205823; }
-      button.btn__update:after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: '';
-        top: 0;
-        left: 0;
-        opacity: 0;
-        -webkit-box-shadow: 0 0 5px #2e7d32;
-        -moz-box-shadow: 0 0 5px #2e7d32;
-        box-shadow: 0 0 5px #2e7d32;
-        -webkit-transition: all ease 0.4s;
-        -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
-        transition: all ease 0.4s; }
-      button.btn__update:hover:after {
-        opacity: 1; }
-    button.btn__success {
-      background: #2e7d32;
-      color: #E7E2DA;
-      border: 1px solid;
-      border-color: #474143;
-      -webkit-transition: all ease 0.2;
-      -moz-transition: all ease 0.2;
-      -ms-transition: all ease 0.2;
-      -o-transition: all ease 0.2;
-      transition: all ease 0.2; }
-      button.btn__success:hover {
-        background: #205823; }
-      button.btn__success:after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: '';
-        top: 0;
-        left: 0;
-        opacity: 0;
-        -webkit-box-shadow: 0 0 5px #2e7d32;
-        -moz-box-shadow: 0 0 5px #2e7d32;
-        box-shadow: 0 0 5px #2e7d32;
-        -webkit-transition: all ease 0.4s;
-        -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
-        transition: all ease 0.4s; }
-      button.btn__success:hover:after {
-        opacity: 1; }
-    button.btn__failure {
-      background: #C41F3B;
-      color: #E7E2DA;
-      border: 1px solid;
-      border-color: #E7E2DA;
-      -webkit-transition: all ease 0.2;
-      -moz-transition: all ease 0.2;
-      -ms-transition: all ease 0.2;
-      -o-transition: all ease 0.2;
-      transition: all ease 0.2; }
-      button.btn__failure:hover {
-        background: #98182e; }
-      button.btn__failure:after {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: '';
-        top: 0;
-        left: 0;
-        opacity: 0;
-        -webkit-box-shadow: 0 0 5px #C41F3B;
-        -moz-box-shadow: 0 0 5px #C41F3B;
-        box-shadow: 0 0 5px #C41F3B;
-        -webkit-transition: all ease 0.4s;
-        -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
-        transition: all ease 0.4s; }
-      button.btn__failure:hover:after {
-        opacity: 1; }
-    button.btn__darkBorder {
-      border-color: #474143; }
+  button.btn__submit {
+    background: #0070DE;
+    color: #E7E2DA;
+    border: 1px solid;
+    border-color: #474143;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2;
+    /*
+     * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+     */ }
+    button.btn__submit:hover {
+      background: #0056ab; }
+    button.btn__submit:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-box-shadow: 0 0 5px #0070DE;
+      -moz-box-shadow: 0 0 5px #0070DE;
+      box-shadow: 0 0 5px #0070DE;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+    button.btn__submit:hover:after {
+      opacity: 1; }
+  button.btn__delete {
+    background: #C41F3B;
+    color: #E7E2DA;
+    border: 1px solid;
+    border-color: #E7E2DA;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2;
+    /*
+     * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+     */ }
+    button.btn__delete:hover {
+      background: #98182e; }
+    button.btn__delete:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-box-shadow: 0 0 5px #C41F3B;
+      -moz-box-shadow: 0 0 5px #C41F3B;
+      box-shadow: 0 0 5px #C41F3B;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+    button.btn__delete:hover:after {
+      opacity: 1; }
+  button.btn__update {
+    background: #2e7d32;
+    color: #E7E2DA;
+    border: 1px solid;
+    border-color: #E7E2DA;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2;
+    /*
+     * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+     */ }
+    button.btn__update:hover {
+      background: #205823; }
+    button.btn__update:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-box-shadow: 0 0 5px #2e7d32;
+      -moz-box-shadow: 0 0 5px #2e7d32;
+      box-shadow: 0 0 5px #2e7d32;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+    button.btn__update:hover:after {
+      opacity: 1; }
+  button.btn__success {
+    background: #2e7d32;
+    color: #E7E2DA;
+    border: 1px solid;
+    border-color: #474143;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2;
+    /*
+     * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+     */ }
+    button.btn__success:hover {
+      background: #205823; }
+    button.btn__success:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-box-shadow: 0 0 5px #2e7d32;
+      -moz-box-shadow: 0 0 5px #2e7d32;
+      box-shadow: 0 0 5px #2e7d32;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+    button.btn__success:hover:after {
+      opacity: 1; }
+  button.btn__failure {
+    background: #C41F3B;
+    color: #E7E2DA;
+    border: 1px solid;
+    border-color: #E7E2DA;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2;
+    /*
+     * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+     */ }
+    button.btn__failure:hover {
+      background: #98182e; }
+    button.btn__failure:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      opacity: 0;
+      -webkit-box-shadow: 0 0 5px #C41F3B;
+      -moz-box-shadow: 0 0 5px #C41F3B;
+      box-shadow: 0 0 5px #C41F3B;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      -ms-transition: all ease 0.4s;
+      -o-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+    button.btn__failure:hover:after {
+      opacity: 1; }
+  button.btn__darkBorder {
+    border-color: #474143; }
   button:disabled {
     background: #dedbd5;
     color: #A69E9D;
     border: 1px solid #474143;
     outline: 0; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .deckSnippet-wrapper {
   display: grid;
   grid-row-gap: 1vh;
@@ -3196,6 +3309,11 @@ button {
         justify-content: flex-end;
         color: #2e7d32; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .graph {
   text-align: center;
   display: inline-flex;
@@ -3318,6 +3436,11 @@ button {
   align-items: center;
   justify-content: center; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 .markup {
   white-space: pre-wrap; }
 
@@ -3476,6 +3599,11 @@ button {
         .text-editor > div > div .formatting-help tbody tr:nth-child(odd) {
           background-color: rgba(255, 255, 255, 0.1); }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 /*
  *  Select
  */
@@ -3774,6 +3902,11 @@ button {
             height: 100%;
             width: 100%; }
 
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 @media only screen and (max-width: 767px) {
   #container .container__index.home .home__list .home__block.decks .home__block--header {
     grid-template-columns: 100%; }
@@ -3781,6 +3914,11 @@ button {
     grid-template-columns: repeat(2, 50%); }
     #container footer .path {
       display: none; } }
+@keyframes linearKeyframes {
+  0% {
+    background-position: 0; }
+  100% {
+    background-position: -200%; } }
 @media only screen and (max-width: 767px) {
   #container nav ul {
     justify-content: space-between; }

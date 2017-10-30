@@ -13,6 +13,7 @@ import deckCreation from './create-deck/create-deck';
 import {tools, activeDeck, activeDeckCopy, deckComments, deckAuthor, deckCommentPostingStatus} from '../deck/reducers';
 import {decks, hotDecks, updateDecks} from '../decks/reducers';
 import {posts, activePost} from '../reddit/reducers';
+import {shortenedUserDetails} from "../user/reducers";
 
 
 const rootReducer = combineReducers({
@@ -37,7 +38,8 @@ const rootReducer = combineReducers({
     activeDeckCopy,
     deckComments,
     deckAuthor,
-    deckCommentPostingStatus
+    deckCommentPostingStatus,
+    shortenedUserDetails
   }),
   redditPosts: combineReducers({
     posts,

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import UserAvatar from './user-avatar';
 import UserRank from './user-rank';
 
-const SimplifiedUserSnippet = ({rank, avatar, role, username}) =>{
+const SimplifiedUserSnippet = ({user}) =>{
+  const {avatar, username, rank} = user;
+
   return (
       <div className="component simplifiedUser">
         <div className="simplifiedUser__avatar">

@@ -15,7 +15,7 @@ import {
   scToggleSearchBox
 } from "./right-container/content-assets/utils/shortcuts/index";
 import {resetFocus} from "./right-container/content-assets/utils/reset-focus";
-import Loader from "../../../../components/loader";
+import Loader from "../../../../components/loaders/loader";
 import {updateCardSearchValue} from "../../../../redux/actions/create-deck/create-deck.action";
 import {toggleImgReadyDecklist} from "../../../../redux/actions/create-deck/create-deck.action";
 import {toggleImportedDeckstringPopover} from "../../../../redux/actions/create-deck/create-deck.action";

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
-import Loader from '../../../../../components/loader';
+import Loader from '../../../../../components/loaders/loader';
 import {wrapDate} from '../../../../../utils/wrap-date';
 import {checkIfStickied, checkIfBlizzardPost, stripDomains, checkTopbarIconFilters, checkDomain} from '../../../../../utils/reddit/posts';
 import Icon from "../../../../../components/icon";

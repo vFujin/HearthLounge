@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Loader from '../../../../../components/loader'
+import Loader from '../../../../../components/loaders/loader'
 const TopLiveStreamersList = props => {
 
   const list = () =>{

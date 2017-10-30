@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Select from 'antd/lib/select';
-import Loader from '../../../../../components/loader';
 import 'antd/lib/select/style/css';
 
 const LeftContainer = () => {

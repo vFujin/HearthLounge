@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Select from 'antd/lib/select';
 import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
-import Loader from "../../../components/loader";
+import Loader from "../../../components/loaders/loader";
 
 const InputFilter = ({data, dataLoading, filter, multiple, query}) => {
   const Option = Select.Option;

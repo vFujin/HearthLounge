@@ -4,11 +4,8 @@ import {IsGoldenFilter} from '../../../shared-assets/filters/is-golden';
 import IconFilter from '../../../shared-assets/filters/icon-filter';
 import InputFilter from '../../../shared-assets/filters/input-filter';
 import SliderFilter from '../../../shared-assets/filters/slider-filter';
-import Loader from "../../../../components/loader";
 
 const Sidebar = ({cards, query}) => {
-
-
   return (
     <div className="sidebar__body">
       <InputFilter data={cards.allCards} dataLoading={cards.loading} filter="name"      query={query} multiple={false}/>

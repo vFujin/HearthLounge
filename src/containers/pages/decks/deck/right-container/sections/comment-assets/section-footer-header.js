@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loader from "../../../../../../../components/loader";
 import UploadStatusBtn from "../../../../../../../components/buttons/upload-status";
 
 const SectionFooterHeader = ({handleHideCommentClick, handlePreviewClick, handlePostCommentClick, previewIsActive, deckCommentPostingStatus}) => {

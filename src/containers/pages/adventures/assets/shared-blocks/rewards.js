@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loader from "../../../../../components/loader";
+import Loader from "../../../../../components/loaders/loader";
 
 const Rewards = ({extensionCards, cardsLoading, bossReward}) => {
   const rewardType = () =>{

@@ -1,11 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from "../icon";
 
-const UserAvatar = ({avatar, username}) => {
-  return avatar
-      ? <img src={avatar} alt={`${username}'s avatar`} />
-      : <span className="hs-icon icon-login"></span>
-};
+const UserAvatar = ({avatar, username}) => avatar ? <img src={avatar} alt={`${username}'s avatar`}/> : <Icon name="login"/>;
 
 export default UserAvatar;
 

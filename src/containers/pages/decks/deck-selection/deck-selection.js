@@ -6,7 +6,7 @@ import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
 import {getDeckDetails} from '../../../../firebase/decks/deck/read';
 import {updateViews} from '../../../../firebase/decks/deck/update';
-import Loader from '../../../../components/loader';
+import Loader from '../../../../components/loaders/loader';
 import NotFound from '../../../shared-assets/not-found';
 import {FETCH_DECKS_REQUEST} from "../../../../redux/decks/fetch-decks/types";
 import {UPDATE_DECKS_REQUEST} from "../../../../redux/decks/update-decks/types";

@@ -10,7 +10,7 @@ import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
 import {alertUnload} from "./utils/alert-unload";
 import {FETCH_ACTIVE_DECK_REQUEST, RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
 import {FETCH_DECK_AUTHOR_REQUEST} from "../../../../redux/deck/deck-author/types";
-import Loader from "../../../../components/loader";
+import Loader from "../../../../components/loaders/loader";
 import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
 import {TOGGLE_DECK_EDIT_VIEW} from "../../../../redux/deck/tools/types";
 

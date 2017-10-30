@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Sidebar from './left-container/sidebar';
 import CardsTopbarFilters from './right-container/topbar';
-import Loader from '../../../components/loader';
+import Loader from '../../../components/loaders/loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from './right-container/card-details';
 import {infiniteScroll} from "../../../utils/infinite-scroll"

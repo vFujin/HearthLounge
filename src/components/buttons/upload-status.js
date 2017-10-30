@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from "../loader";
+import Loader from "../loaders/loader";
 import PropTypes from 'prop-types';
 
 const UploadStatusBtn = ({uploadStateKey, buttonValue, handleClick, className}) => {

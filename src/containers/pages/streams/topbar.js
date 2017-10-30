@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from '../../../components/loader';
+import Loader from '../../../components/loaders/loader';
 
 const Topbar = props => {
   // let path = props.params.channel;

@@ -16,6 +16,7 @@ import {watchDeckAuthor} from "../deck/deck-author/saga";
 import {watchActiveDeck} from "../deck/active-deck/saga";
 import {watchDeckComments} from "../deck/comments/fetch-comments/saga";
 import {watchDeckCommentPostingStatus} from "../deck/comments/post-comment/saga";
+import {watchUserShortenedDetails} from "../user/shortened-details/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -35,10 +36,12 @@ export default function* rootSaga() {
     watchRedditPosts(),
     watchRedditPost(),
     watchRedditPostComments(),
-    //Firebase
+    //Firebase - Utils
     watchFirebaseSignIn(),
     watchFirebaseSignOut(),
     watchFirebaseReauthenticate(),
     watchFirebaseResetPassword(),
+    //Firebase - User
+    watchUserShortenedDetails()
   ]);
 }

@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Sidebar from './sidebar';
 import Topbar from './topbar';
 import NotFound from '../../../shared-assets/not-found';
 import Content from './content';
-import Loader from "../../../../components/loader";
+import Loader from "../../../../components/loaders/loader";
 import 'react-treeview/react-treeview.css';
 import * as types from "../../../../redux/reddit/active-post/types";
 

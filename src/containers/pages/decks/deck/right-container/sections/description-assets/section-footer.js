@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AuthorDetails from './section-footer-assets/section-footer-deck-author-details';
-import Loader from '../../../../../../../components/loader';
+import Loader from '../../../../../../../components/loaders/loader';
 import SectionFooterHeader from './section-footer-assets/section-footer-header';
 
 const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditView, handleDeckEditingClick, descriptionsNotEqual, decksNotEqual}) => {
@@ -23,7 +23,7 @@ const SectionFooter = ({authorId, deckAuthor, activeUser, deckEditView, handleDe
                                handleDeckEditingClick={handleDeckEditingClick}
 
           />
-          {authorDetails()}
+          {/*{authorDetails()}*/}
         </div>
       </div>
   )

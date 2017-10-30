@@ -2,6 +2,9 @@
 @import 'icons';
 
 @mixin buttonShadow($color){
+  /*
+   * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+   */
   &:after{
     position: absolute;
     width: 100%;
