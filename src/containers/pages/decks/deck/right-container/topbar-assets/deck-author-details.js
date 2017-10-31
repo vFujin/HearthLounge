@@ -15,7 +15,6 @@ class DeckAuthorDetails extends PureComponent{
   }
 
   render() {
-    console.log(this.props.deckAuthor);
     const {username, rank, avatar} = this.props.deckAuthor;
     return (
         <div className="details">

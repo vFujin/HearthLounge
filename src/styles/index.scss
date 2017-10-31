@@ -1655,18 +1655,31 @@ card{
       .container__details {
         .container__details--description {
           .section__body {
-            background: $light-grey;
-            border:0;
-            .section__body--background {
-              background: $light-grey;
-            }
-          }
-          .section__footer{
-            .details{
-              img{
-                width: 45px;
-                height: 45px;
+            border: 0;
+            display: grid;
+            grid-template-rows: 35px auto;
+            height: 100%;
+            .section__body--options {
+              display: flex;
+              justify-content: space-between;
+              div {
+                display: flex;
+                align-content: center;
+                span {
+                  display: flex;
+                  align-items: center;
+                  padding: 5px;
+                  font-size: 25px;
+                  background: $dark-grey;
+                  color: $pearl;
+                  &.icon-save {
+                    background: $shaman;
+                  }
+                }
               }
+            }
+            .markup {
+              border: 1px solid $dark-grey;
             }
           }
         }

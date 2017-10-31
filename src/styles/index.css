@@ -85,47 +85,50 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-delete-deck:before {
+  content: "\e900"; }
+
+.icon-edit-deck:before {
+  content: "\e948"; }
+
+.icon-text:before {
+  content: "\e926"; }
+
 .icon-import:before {
   content: "\e9c5"; }
 
 .icon-save:before {
   content: "\e9c7"; }
 
-.icon-prestige-2:before {
+.icon-rank-2:before {
   content: "\e93f"; }
 
-.icon-prestige-3:before {
+.icon-rank-3:before {
   content: "\e940"; }
 
-.icon-prestige-1:before {
+.icon-rank-1:before {
   content: "\e941"; }
 
-.icon-prestige-4:before {
+.icon-rank-4:before {
   content: "\e942"; }
 
-.icon-prestige-5:before {
+.icon-rank-5:before {
   content: "\e943"; }
 
-.icon-prestige-6:before {
+.icon-rank-6:before {
   content: "\e944"; }
 
-.icon-prestige-7:before {
+.icon-rank-7:before {
   content: "\e945"; }
 
-.icon-prestige-8:before {
+.icon-rank-8:before {
   content: "\e946"; }
 
 .icon-help:before {
   content: "\e947"; }
 
-.icon-hl-logo:before {
-  content: "\e93c"; }
-
 .icon-adventures:before {
   content: "\e915"; }
-
-.icon-arena-picker:before {
-  content: "\e900"; }
 
 .icon-card:before {
   content: "\e918"; }
@@ -182,10 +185,10 @@ a {
   content: "\e939"; }
 
 .icon-karazhan:before {
-  content: "\e926"; }
+  content: "\e927"; }
 
 .icon-kraken:before {
-  content: "\e927"; }
+  content: "\e929"; }
 
 .icon-knights-of-the-frozen-throne:before {
   content: "\e93e"; }
@@ -371,7 +374,7 @@ a {
   content: "\e925"; }
 
 .icon-jade-lotus:before {
-  content: "\e929"; }
+  content: "\e93c"; }
 
 .icon-rarity:before {
   content: "\e930"; }
@@ -5309,13 +5312,27 @@ card {
     text-align: right;
     margin-right: 1vh; }
 .deck .container__page--right .content .container__details .container__details--description .section__body {
-  background: #A69E9D;
-  border: 0; }
-  .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--background {
-    background: #A69E9D; }
-.deck .container__page--right .content .container__details .container__details--description .section__footer .details img {
-  width: 45px;
-  height: 45px; }
+  border: 0;
+  display: grid;
+  grid-template-rows: 35px auto;
+  height: 100%; }
+  .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options {
+    display: flex;
+    justify-content: space-between; }
+    .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options div {
+      display: flex;
+      align-content: center; }
+      .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options div span {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        font-size: 25px;
+        background: #474143;
+        color: #E7E2DA; }
+        .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options div span.icon-save {
+          background: #0070DE; }
+  .deck .container__page--right .content .container__details .container__details--description .section__body .markup {
+    border: 1px solid #474143; }
 .deck .container__page--right .content .container__details .container__details--comments {
   position: relative; }
   .deck .container__page--right .content .container__details .container__details--comments .section__footer {

@@ -14,7 +14,9 @@ const selectType = (
     tooltip = false,
     tooltipPlacement = "bottom",
     domain = null,
-    linkFlairText = null) => {
+    linkFlairText = null,
+    handleClick = null
+    ) => {
 
   const validateSet = () =>{
     switch(iconName){
@@ -53,12 +55,12 @@ const selectType = (
   };
 
   let icon = (name) => {
-    let icon = <span className={`hs-icon icon-${name} ${className}`}></span>;
+    let icon = <span onClick={handleClick} className={`hs-icon icon-${name} ${className}`}></span>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 
   let manaIcon = (name) => {
-    let icon = <span className={`hs-icon icon-mana-${name} ${className}`}></span>;
+    let icon = <span onClick={handleClick} className={`hs-icon icon-mana-${name} ${className}`}></span>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 
@@ -71,7 +73,7 @@ const selectType = (
   }
 };
 
-const Icon = ({name, title, className, type, tooltip, tooltipPlacement, domain, linkFlairText}) => selectType(name, title, className, type, tooltip, tooltipPlacement, domain, linkFlairText);
+const Icon = ({name, title, className, type, tooltip, tooltipPlacement, domain, linkFlairText, handleClick}) => selectType(name, title, className, type, tooltip, tooltipPlacement, domain, linkFlairText, handleClick);
 
 export default Icon;
 
