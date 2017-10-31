@@ -8,7 +8,7 @@ export default function(state=initialState, {type, payload}) {
   switch (type) {
     case types.FETCH_SHORTENED_USER_DETAILS_REQUEST:
       return {
-        ...state
+          ...state
       };
 
     case types.FETCH_SHORTENED_USER_DETAILS_SUCCESS:
@@ -20,7 +20,6 @@ export default function(state=initialState, {type, payload}) {
 
     case types.FETCH_SHORTENED_USER_DETAILS_FAILURE:
       return {
-        ...state,
         loading: false,
         error: payload
       };

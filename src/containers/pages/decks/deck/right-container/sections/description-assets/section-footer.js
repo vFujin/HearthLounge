@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AuthorDetails from './section-footer-assets/section-footer-deck-author-details';
+import AuthorDetails from '../../topbar-assets/deck-author-details';
 import Loader from '../../../../../../../components/loaders/loader';
 import SectionFooterHeader from './section-footer-assets/section-footer-header';
 

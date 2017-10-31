@@ -6,7 +6,7 @@ import SectionBody from './description-assets/section-body';
 import SectionFooter from './description-assets/section-footer';
 import {TOGGLE_DECK_EDIT_VIEW} from "../../../../../../redux/deck/tools/types";
 
-const DeckDescription = ({activeUser, deckAuthor, activeDeck, deckEditView, editingDeckDescription, decksNotEqual, descriptionsNotEqual, updateDeckDescription, toggleDeckEditView}) =>{
+const DeckDescription = ({activeUser, activeDeck, deckEditView, editingDeckDescription, decksNotEqual, descriptionsNotEqual, updateDeckDescription, toggleDeckEditView}) =>{
   const {title, description, author, authorId} = activeDeck;
 
   const handleInputChange = (e) => {
@@ -19,20 +19,20 @@ const DeckDescription = ({activeUser, deckAuthor, activeDeck, deckEditView, edit
   };
 
   return (
-      <div className="container__details--section container__details--description v-rows-3">
+      <div className="container__details--section container__details--description v-rows-2">
         <SectionHeader title={title} />
         <SectionBody description={description}
                      handleInputChange={handleInputChange}
                      editingDeckDescription={editingDeckDescription}
                      deckEditView={deckEditView}/>
-        <SectionFooter author={author}
-                       authorId={authorId}
-                       deckAuthor={deckAuthor}
-                       deckEditView={deckEditView}
-                       activeUser={activeUser}
-                       descriptionsNotEqual={descriptionsNotEqual}
-                       decksNotEqual={decksNotEqual}
-                       handleDeckEditingClick={handleDeckEditingClick}/>
+        {/*<SectionFooter author={author}*/}
+                       {/*authorId={authorId}*/}
+                       {/*deckAuthor={deckAuthor}*/}
+                       {/*deckEditView={deckEditView}*/}
+                       {/*activeUser={activeUser}*/}
+                       {/*descriptionsNotEqual={descriptionsNotEqual}*/}
+                       {/*decksNotEqual={decksNotEqual}*/}
+                       {/*handleDeckEditingClick={handleDeckEditingClick}/>*/}
       </div>
   )
 };

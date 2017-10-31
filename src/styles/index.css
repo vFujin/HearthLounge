@@ -449,6 +449,8 @@ a {
         grid-template-columns: repeat(2, 50%); }
       #container .container__page .container__page--right .topbar__grid.topbar__grid--1-2-1 {
         grid-template-columns: 20vw 40vw 20vw; }
+      #container .container__page .container__page--right .topbar__grid.topbar__grid--3-4-1 {
+        grid-template-columns: 30vw 40vw 10vw; }
     #container .container__page .content .container__cards {
       display: grid;
       grid-template-columns: repeat(7, 11vw);

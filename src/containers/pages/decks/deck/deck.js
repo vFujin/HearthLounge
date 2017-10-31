@@ -71,7 +71,7 @@ class Deck extends Component{
   };
 
   render() {
-    const {activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, deckAuthor, updateActiveDeckCopy} = this.props;
+    const {activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, updateActiveDeckCopy} = this.props;
     if(activeDeck.loading){
       return <Loader/>
     } else {
@@ -87,7 +87,6 @@ class Deck extends Component{
                             deckEditView={deckEditView}
                             params={params}
                             patch={patch}
-                            deckAuthor={deckAuthor}
                             activeUser={activeUser}
                             handleDeckVotingClick={this.handleDeckVotingClick}/>
           </div>
@@ -97,17 +96,16 @@ class Deck extends Component{
 }
 
 const mapStateToProps = (state) => {
-  const {activeDeck, activeDeckCopy, deckAuthor, tools} = state.deckView;
+  const {activeDeck, activeDeckCopy, tools} = state.deckView;
   const {deckEditView} = tools;
   const {cards} = state.cards;
 
-  return {activeDeck, activeDeckCopy, deckAuthor, cards, deckEditView};
+  return {activeDeck, activeDeckCopy, cards, deckEditView};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchDeck: payload => dispatch({type: FETCH_ACTIVE_DECK_REQUEST, payload}),
-    fetchDeckAuthor: payload => dispatch({type: FETCH_DECK_AUTHOR_REQUEST, payload}),
     updateActiveDeckCopy: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY, payload}),
     cancelDeckUpdate: () => dispatch({type: CANCEL_ACTIVE_DECK_COPY_UPDATE}),
     resetActiveDeck: () => dispatch({type: RESET_ACTIVE_DECK})
