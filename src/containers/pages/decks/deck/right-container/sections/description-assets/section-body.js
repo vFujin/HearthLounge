@@ -19,6 +19,10 @@ const SectionBody = (props) => {
     updateDeckDescription(value);
   };
 
+  const handleTextEditorBBcodeClick = ({editingDeckDescription}) => {
+    updateDeckDescription(editingDeckDescription);
+  };
+
   const handleDeckEditingClick = () =>{
     toggleDeckEditView();
 
@@ -44,9 +48,9 @@ const SectionBody = (props) => {
         {
           deckEditView
             ? <TextEditor handleInputChange={handleInputChange}
-                          editorId="deck-description"
+                          editorId="editingDeckDescription"
                           value={editingDeckDescription || description}
-                          handleTagInsertion={null}/>
+                          handleTagInsertion={handleTextEditorBBcodeClick}/>
             : convertBBCode(description)
         }
       </div>

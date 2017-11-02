@@ -4,9 +4,9 @@ import Comment from '../comment';
 import Loader from '../../../../../../../components/loaders/loader';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 
-const SectionBody = ({comments, countComments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments}) => {
+const SectionBody = ({comments, countComments, deckComments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments}) => {
   const listComments = () => {
-    if (deckComment.loading) {
+    if (deckComments.loading) {
       return <Loader/>
     }
 
@@ -32,7 +32,7 @@ const SectionBody = ({comments, countComments, deckComment, deckId, previewIsAct
           {listComments()}
         </div>
         <div className={!previewIsActive ? "display-none" : "comment-preview"}>
-          {/*{convertBBCode(deckComment)}*/}
+          {convertBBCode(deckComment)}
         </div>
       </div>
   )

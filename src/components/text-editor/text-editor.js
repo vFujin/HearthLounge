@@ -8,7 +8,6 @@ import Icon from "../icon";
 import FormattingHelp from "./formatting-help/formatting-help";
 
 class TextEditor extends Component{
-
   constructor(){
    super();
 

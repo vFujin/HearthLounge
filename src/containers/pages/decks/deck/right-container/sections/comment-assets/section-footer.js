@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import SectionFooterCommentBox from './section-footer-commentbox';
-import {getComments} from "../../../../../../../firebase/decks/comments/read/index";
-import {getSimplifiedUser} from "../../../../../../../firebase/user/read/index";
 import * as actions from "../../../../../../../redux/deck/tools/actions";
 import {postDeckCommentRequest} from "../../../../../../../redux/deck/comments/post-comment/actions";
 
@@ -34,6 +32,10 @@ class SectionFooter extends PureComponent {
     this.props.togglePreview(false);
   };
 
+  handleTextEditorBBcodeClick = (v) => {
+    this.props.updateCommentText(v);
+  };
+
   handlePostCommentClick = () => {
     const {current, deckId, deckComment, postComment, uid} = this.props;
     postComment({current, deckComment, deckId, uid});
@@ -46,7 +48,7 @@ class SectionFooter extends PureComponent {
   };
 
   render() {
-    const {commentBoxIsActive, deckCommentControlled, updateComment, previewIsActive, deckComment, deckCommentPostingStatus} = this.props;
+    const {deckCommentControlled, previewIsActive, deckComment, deckCommentPostingStatus} = this.props;
     return (
         <div className="section__footer">
           <SectionFooterCommentBox deckCommentControlled={deckCommentControlled}
@@ -56,6 +58,7 @@ class SectionFooter extends PureComponent {
                                    handlePostCommentClick={this.handlePostCommentClick}
                                    handleInputChange={this.handleInputChange}
                                    handleHideCommentClick={this.handleHideCommentClick}
+                                   handleTextEditorBBcodeClick={this.handleTextEditorBBcodeClick}
                                    handlePreviewClick={this.handlePreviewClick}/>
         </div>
     )
@@ -63,12 +66,12 @@ class SectionFooter extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const {deckCommentControlled, commentBoxIsActive, previewIsActive, deckComment} = state.deckView.tools;
+  const {deckCommentControlled, previewIsActive, deckComment} = state.deckView.tools;
   const {uid} = state.users.activeUser;
   const {current} = state.patch;
   const {deckId} = state.deckView.activeDeck;
   const {deckCommentPostingStatus} = state.deckView;
-  return {deckCommentControlled, commentBoxIsActive, previewIsActive, deckComment, uid, current, deckId, deckCommentPostingStatus};
+  return {deckCommentControlled, previewIsActive, deckComment, uid, current, deckId, deckCommentPostingStatus};
 };
 
 const mapDispatchToProps = (dispatch) => {

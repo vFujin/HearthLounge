@@ -7,6 +7,7 @@ import Tooltip from 'antd/lib/tooltip';
 import {FETCH_SHORTENED_USER_DETAILS_REQUEST} from "../../../../../../redux/user/shortened-details/types";
 import Icon from "../../../../../../components/icon";
 import ShortenedUserDetailsLoader from "../../../../../../components/loaders/shortened-user-details-loader";
+import {convertBBCode} from "../../../../../../components/text-editor/utils/convert-bbcode";
 
 class Comment extends PureComponent {
   // ;
@@ -46,7 +47,7 @@ class Comment extends PureComponent {
               </div>
             </div>
             <div className="body">
-              {text}
+              {convertBBCode(text)}
             </div>
             <div className="footer">
               <div data-commentid={commentId}

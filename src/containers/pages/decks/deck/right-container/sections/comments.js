@@ -49,7 +49,7 @@ class DeckComments extends PureComponent {
   };
 
   render() {
-    const {activeDeck, params, commentVotes, commentId, deckComments, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
+    const {activeDeck, params, commentVotes, commentId, deckComments, deckComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
     const { deckId } = params.deckId;
     const countComments = activeDeck.comments;
 
@@ -65,7 +65,8 @@ class DeckComments extends PureComponent {
                        deckId={deckId}
                        commentVotes={commentVotes}
                        votedComments={votedComments}
-                       deckComment={deckComments}
+                       deckComments={deckComments}
+                       deckComment={deckComment}
                        previewIsActive={previewIsActive}
                        usersDetails={usersDetails}
                        handleCommentVotingClick={this.handleCommentVotingClick}/>
@@ -77,9 +78,9 @@ class DeckComments extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const {vote, commentId, commentVotes, activeComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = state.deckView.tools;
+  const {vote, commentId, commentVotes, activeComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails, deckComment} = state.deckView.tools;
   const {deckComments} = state.deckView;
-  return {vote, deckComments, commentId, commentVotes, activeComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails}
+  return {vote, deckComments, commentId, commentVotes, activeComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails, deckComment}
 };
 
 const mapDispatchToProps = (dispatch) => {
