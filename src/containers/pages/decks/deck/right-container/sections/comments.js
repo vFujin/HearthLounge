@@ -7,10 +7,9 @@ import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 
-import {getSimplifiedUser} from "../../../../../../firebase/user/read/index";
-import {getComment, getComments} from '../../../../../../firebase/decks/comments/read';
+import {getComment} from '../../../../../../firebase/decks/comments/read';
 import {updateCommentRating} from '../../../../../../firebase/decks/comments/update';
-import * as deckCommentActions from "../../../../../../redux/actions/deck/deck-view.action";
+// import * as deckCommentActions from "../../../../../../redux/actions/deck/deck-view.action";
 import {FETCH_ACTIVE_DECK_COMMENTS_REQUEST} from "../../../../../../redux/deck/comments/fetch-comments/types";
 
 
@@ -27,15 +26,6 @@ class DeckComments extends PureComponent {
     } else {
       fetchComments({deckId});
     }
-    // getComments(deckId, false, comments => {
-    //   let users = {};
-    //   updateComments(deckId, comments);
-    //   comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>{
-    //     let updateUsers = Object.assign(users, {[c.authorId]: userDetails});
-    //     updateUsersDetails(users);
-    //     return updateUsers;
-    //   }));
-    // });
   }
 
   componentWillUnmount(){
@@ -59,7 +49,7 @@ class DeckComments extends PureComponent {
   };
 
   render() {
-    const {activeDeck, comments, params, commentVotes, commentId, deckComments, deckCommentControlled, updateComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
+    const {activeDeck, params, commentVotes, commentId, deckComments, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
     const { deckId } = params.deckId;
     const countComments = activeDeck.comments;
 
@@ -87,25 +77,25 @@ class DeckComments extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const {comments, vote, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = state.deckView.tools;
+  const {vote, commentId, commentVotes, activeComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = state.deckView.tools;
   const {deckComments} = state.deckView;
-  return {comments, vote, deckComments, commentId, commentVotes, activeComment, deckCommentControlled, commentBoxIsActive, previewIsActive, votedComments, usersDetails}
+  return {vote, deckComments, commentId, commentVotes, activeComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails}
 };
 
 const mapDispatchToProps = (dispatch) => {
 
-  const {updateComment, updateComments,
-    updateCommentVote, updateUsersDetails, updateUserVotedDeckComments, updateCommentVotes, updateActiveCommentId} = deckCommentActions;
+  // const {updateComment, updateComments,
+    // updateCommentVote, updateUsersDetails, updateUserVotedDeckComments, updateCommentVotes, updateActiveCommentId} = deckCommentActions;
 
   return {
     fetchComments: payload => dispatch({type: FETCH_ACTIVE_DECK_COMMENTS_REQUEST, payload}),
 
-    updateCommentVote: vote => dispatch(updateCommentVote(vote)),
-    updateComments: (deckId, comments) => dispatch(updateComments(deckId, comments)),
-    updateUsersDetails: usersDetails => dispatch(updateUsersDetails(usersDetails)),
-    updateUserVotedDeckComments: (uid, deckId, votedComments) => dispatch(updateUserVotedDeckComments(uid, deckId, votedComments)),
-    updateCommentVotes: commentVotes => dispatch(updateCommentVotes(commentVotes)),
-    updateActiveCommentId: activeComment => dispatch(updateActiveCommentId(activeComment))
+    // updateCommentVote: vote => dispatch(updateCommentVote(vote)),
+    // updateComments: (deckId, comments) => dispatch(updateComments(deckId, comments)),
+    // updateUsersDetails: usersDetails => dispatch(updateUsersDetails(usersDetails)),
+    // updateUserVotedDeckComments: (uid, deckId, votedComments) => dispatch(updateUserVotedDeckComments(uid, deckId, votedComments)),
+    // updateCommentVotes: commentVotes => dispatch(updateCommentVotes(commentVotes)),
+    // updateActiveCommentId: activeComment => dispatch(updateActiveCommentId(activeComment))
   }
 };
 

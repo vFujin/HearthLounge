@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Popconfirm from 'antd/lib/popconfirm';
 
-const DeleteButton = ({element}) =>{
+const DeleteButton = ({element, darkBorder}) =>{
   return (
       <Popconfirm title={`Are you sure?`}
                   okText="Yes"
                   overlayClassName="popover"
                   arrowPointAtCenter={true}
                   cancelText="No">
-        <button className={`component btn btn__delete`}>Delete {element}</button>
+        <button className={`component btn btn__delete ${darkBorder && "btn__darkBorder"}`}>Delete {element}</button>
       </Popconfirm>
   )
 };

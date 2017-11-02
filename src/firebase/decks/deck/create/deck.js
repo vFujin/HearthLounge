@@ -1,8 +1,6 @@
-import firebase from 'firebase';
 import {ref, firestore} from '../../../../keys';
-import {success, error} from '../../../../utils/messages';
-import startOfWeek from 'date-fns/start_of_week';
-import _ from 'lodash';
+import {error} from '../../../../utils/messages';
+
 /**
  * Function representing deck saving to Firebase /decks and /users/:id/decks endpoint
  *
@@ -24,7 +22,6 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
           validateAdventure = (adventure && boss) ? adventure : null,
           validateBoss = (adventure && boss) ? boss : null,
           initVotes = Math.floor(Math.random() * (1000 - 500 + 1)),
-          validateBossClassFilter = (adventure && boss) ? `${boss}_${playerClass}_${initVotes}` : null,
           deckId = ref.child(`decks`).push().key,
           created = +new Date();
 
@@ -38,6 +35,7 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       title,
       deckId,
       created,
+      updated: null,
       adventure: validateAdventure,
       authorId: uid,
       boss: validateBoss,

@@ -18,9 +18,14 @@ const ExtensionsBlock = () => {
           let extensionType = _.keys(extension)[0];
 
           return (
-              <Link key={url} to={`/${extensionType}s/${url}/overview`}>
-                <img src={img} alt={`${url}'s art`}/>
-              </Link>
+              <div className="extension">
+                <div className="extension__sidebar">
+
+                </div>
+                <Link className="extension__content" key={url} to={`/${extensionType}s/${url}/overview`}>
+                  <img src={img} alt={`${url}'s art`}/>
+                </Link>
+              </div>
           )
         }
     )
@@ -29,7 +34,7 @@ const ExtensionsBlock = () => {
   return (
       <div className="slider">
        <Carousel autoplay
-                 autoplaySpeed={5000}>
+                 autoplaySpeed={1000*60*60}>
          {mapExtensions()}
        </Carousel>
       </div>

@@ -1,19 +1,28 @@
 import React from 'react';
-import Icon from "../../../../../../../components/icon";
+import DeleteButton from "../../../../../../../components/buttons/delete";
+import Button from "../../../../../../../components/buttons/button";
 
-const SectionBodyOptions = ({activeUser, authorId, handleDeckEditingClick}) =>{
+const SectionBodyOptions = ({activeUser, authorId, handleDeckEditingClick, deckEditView, deckDescriptionsNotEqual, decksNotEqual, handleDeckUpdateClick}) =>{
+  const editingBtnText = deckEditView ? 'Cancel editing' : 'Edit deck';
+
+  const deckUpdated = () =>{
+    if(deckEditView && (deckDescriptionsNotEqual || decksNotEqual)){
+      return <Button text="Update deck" type="update" handleClick={handleDeckUpdateClick} darkBorder/>
+    }
+  };
+
   return (
       <div className="section__body--options">
         <div className="section__body--deckGuide">
-          <Icon name="text"/>
+          <Button text="Description" handleClick={null} darkBorder/>
         </div>
         {
           activeUser && authorId === activeUser.uid
               ? <div className="section__body--authorTools">
-                  <Icon handleClick={handleDeckEditingClick} name="edit-deck"/>
-                  <Icon name="delete-deck"/>
-                  <Icon name="save"/>
-              </div>
+                  <Button text={editingBtnText} handleClick={handleDeckEditingClick} active={deckEditView} darkBorder/>
+                  <DeleteButton element="deck" darkBorder/>
+                  {deckUpdated()}
+                </div>
               : null
         }
       </div>

@@ -1655,31 +1655,24 @@ card{
       .container__details {
         .container__details--description {
           .section__body {
-            border: 0;
-            display: grid;
-            grid-template-rows: 35px auto;
-            height: 100%;
+            border:0;
             .section__body--options {
+              position: relative;
+              top: 1px;
               display: flex;
               justify-content: space-between;
               div {
                 display: flex;
                 align-content: center;
-                span {
-                  display: flex;
-                  align-items: center;
-                  padding: 5px;
-                  font-size: 25px;
-                  background: $dark-grey;
-                  color: $pearl;
-                  &.icon-save {
-                    background: $shaman;
-                  }
-                }
               }
             }
             .markup {
               border: 1px solid $dark-grey;
+              height: calc(100% - 20px);
+              overflow: auto;
+            }
+            .text-editor{
+              height: calc(100% - 20px);
             }
           }
         }

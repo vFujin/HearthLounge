@@ -27,7 +27,7 @@ button{
       @include button($pearl, $death_knight);
     }
     &__update{
-      @include button($pearl, $dark-green);
+      @include button($pearl, $shaman);
     }
     &__success{
       @include button($pearl, $dark-green, false, $dark-grey);

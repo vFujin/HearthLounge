@@ -13,14 +13,6 @@ const DeckDescription = ({activeUser, activeDeck, decksNotEqual, descriptionsNot
                      activeUser={activeUser}
                      descriptionsNotEqual={descriptionsNotEqual}
                      decksNotEqual={decksNotEqual}/>
-        {/*<SectionFooter author={author}*/}
-                       {/*authorId={authorId}*/}
-                       {/*deckAuthor={deckAuthor}*/}
-                       {/*deckEditView={deckEditView}*/}
-                       {/*activeUser={activeUser}*/}
-                       {/*descriptionsNotEqual={descriptionsNotEqual}*/}
-                       {/*decksNotEqual={decksNotEqual}*/}
-                       {/*handleDeckEditingClick={handleDeckEditingClick}/>*/}
       </div>
   )
 };

@@ -3078,7 +3078,7 @@ button {
     button.btn__delete:hover:after {
       opacity: 1; }
   button.btn__update {
-    background: #2e7d32;
+    background: #0070DE;
     color: #E7E2DA;
     border: 1px solid;
     border-color: #E7E2DA;
@@ -3091,7 +3091,7 @@ button {
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
      */ }
     button.btn__update:hover {
-      background: #205823; }
+      background: #0056ab; }
     button.btn__update:after {
       position: absolute;
       width: 100%;
@@ -3100,9 +3100,9 @@ button {
       top: 0;
       left: 0;
       opacity: 0;
-      -webkit-box-shadow: 0 0 5px #2e7d32;
-      -moz-box-shadow: 0 0 5px #2e7d32;
-      box-shadow: 0 0 5px #2e7d32;
+      -webkit-box-shadow: 0 0 5px #0070DE;
+      -moz-box-shadow: 0 0 5px #0070DE;
+      box-shadow: 0 0 5px #0070DE;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
       -ms-transition: all ease 0.4s;
@@ -5312,27 +5312,21 @@ card {
     text-align: right;
     margin-right: 1vh; }
 .deck .container__page--right .content .container__details .container__details--description .section__body {
-  border: 0;
-  display: grid;
-  grid-template-rows: 35px auto;
-  height: 100%; }
+  border: 0; }
   .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options {
+    position: relative;
+    top: 1px;
     display: flex;
     justify-content: space-between; }
     .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options div {
       display: flex;
       align-content: center; }
-      .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options div span {
-        display: flex;
-        align-items: center;
-        padding: 5px;
-        font-size: 25px;
-        background: #474143;
-        color: #E7E2DA; }
-        .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options div span.icon-save {
-          background: #0070DE; }
   .deck .container__page--right .content .container__details .container__details--description .section__body .markup {
-    border: 1px solid #474143; }
+    border: 1px solid #474143;
+    height: calc(100% - 20px);
+    overflow: auto; }
+  .deck .container__page--right .content .container__details .container__details--description .section__body .text-editor {
+    height: calc(100% - 20px); }
 .deck .container__page--right .content .container__details .container__details--comments {
   position: relative; }
   .deck .container__page--right .content .container__details .container__details--comments .section__footer {

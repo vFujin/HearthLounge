@@ -1,14 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 import TextEditor from '../../../../../../../components/text-editor/text-editor';
 import SectionBodyOptions from "./section-body-options";
 import {TOGGLE_DECK_EDIT_VIEW} from "../../../../../../../redux/deck/tools/types";
+import * as types from "../../../../../../../redux/deck/active-deck-editing/types";
 
 const SectionBody = (props) => {
-  const {activeUser, activeDeck, deckEditView, editingDeckDescription, updateDeckDescription, toggleDeckEditView} = props;
-  const {authorId, description} = activeDeck;
+  const {activeUser, activeDeck, deckEditView, activeDeckEditing, updateDeckDescription, toggleDeckEditView, decksNotEqual} = props;
+  const {authorId, description, deckId} = activeDeck;
+  const {editingDeckDescription} = activeDeckEditing;
+  const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
+
   const handleInputChange = (e) => {
     let value = e.target.value;
     updateDeckDescription(value);
@@ -16,16 +21,26 @@ const SectionBody = (props) => {
 
   const handleDeckEditingClick = () =>{
     toggleDeckEditView();
+
+    if(deckEditView && deckDescriptionsNotEqual){
+      updateDeckDescription("");
+    }
+  };
+
+  const handleDeckUpdateClick = () =>{
+    const dateNow = +new Date();
+    props.updateDeck({deckId, description: editingDeckDescription, updated: dateNow});
   };
 
   return (
       <div className="section__body">
         <SectionBodyOptions activeUser={activeUser}
                             authorId={authorId}
-                            handleDeckEditingClick={handleDeckEditingClick}
-                            // descriptionsNotEqual={descriptionsNotEqual}
-                            // decksNotEqual={decksNotEqual}
-        />
+                            deckEditView={deckEditView}
+                            deckDescriptionsNotEqual={deckDescriptionsNotEqual}
+                            decksNotEqual={decksNotEqual}
+                            handleDeckUpdateClick={handleDeckUpdateClick}
+                            handleDeckEditingClick={handleDeckEditingClick}/>
         {
           deckEditView
             ? <TextEditor handleInputChange={handleInputChange}
@@ -39,17 +54,18 @@ const SectionBody = (props) => {
 };
 
 const mapStateToProps = state =>{
-  const {editingDeckDescription, tools} = state.deckView;
+  const {activeDeckEditing, tools} = state.deckView;
   const {deckEditView} = tools;
-  return {editingDeckDescription, deckEditView};
+  return {activeDeckEditing, deckEditView};
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateDeckDescription: editingDeckDescription => dispatch({
-      type: 'UPDATE_DECK_DESCRIPTION', editingDeckDescription
+    updateDeckDescription: payload => dispatch({
+      type: types.UPDATE_DECK_DESCRIPTION, payload
     }),
     toggleDeckEditView: () => dispatch({type: TOGGLE_DECK_EDIT_VIEW}),
+    updateDeck: payload => dispatch({type: types.UPDATE_ACTIVE_DECK_REQUEST, payload})
   }
 };
 
