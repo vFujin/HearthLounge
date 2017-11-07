@@ -87,6 +87,10 @@ export const navItems = [
       {
         name: "Knights of the Frozen Throne",
         url: "knights-of-the-frozen-throne"
+      },
+      {
+        name: "Kobolds & Catacombs",
+        url: "kobolds-and-catacombs"
       }
     ]
   },

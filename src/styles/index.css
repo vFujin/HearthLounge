@@ -85,164 +85,137 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-delete-deck:before {
-  content: "\e900"; }
-
-.icon-edit-deck:before {
-  content: "\e948"; }
-
-.icon-text:before {
-  content: "\e926"; }
-
-.icon-import:before {
-  content: "\e9c5"; }
-
-.icon-save:before {
-  content: "\e9c7"; }
-
-.icon-rank-2:before {
-  content: "\e93f"; }
-
-.icon-rank-3:before {
-  content: "\e940"; }
-
-.icon-rank-1:before {
-  content: "\e941"; }
-
-.icon-rank-4:before {
-  content: "\e942"; }
-
-.icon-rank-5:before {
-  content: "\e943"; }
-
-.icon-rank-6:before {
-  content: "\e944"; }
-
-.icon-rank-7:before {
-  content: "\e945"; }
-
-.icon-rank-8:before {
-  content: "\e946"; }
-
-.icon-help:before {
-  content: "\e947"; }
-
 .icon-adventures:before {
   content: "\e915"; }
-
-.icon-card:before {
-  content: "\e918"; }
-
-.icon-create-deck:before {
-  content: "\e919"; }
-
-.icon-deck:before {
-  content: "\e91a"; }
-
-.icon-expansions:before {
-  content: "\e91c"; }
-
-.icon-bubbles2:before {
-  content: "\e91f"; }
-
-.icon-hs-logo:before {
-  content: "\e923"; }
-
-.icon-login:before {
-  content: "\e928"; }
-
-.icon-trophy:before {
-  content: "\e934"; }
-
-.icon-twitch:before {
-  content: "\e935"; }
-
-.icon-druid:before {
-  content: "\e91b"; }
-
-.icon-hunter:before {
-  content: "\e924"; }
-
-.icon-mage:before {
-  content: "\e92a"; }
-
-.icon-paladin:before {
-  content: "\e92e"; }
-
-.icon-priest:before {
-  content: "\e92f"; }
-
-.icon-rogue:before {
-  content: "\e931"; }
-
-.icon-shaman:before {
-  content: "\e932"; }
-
-.icon-warlock:before {
-  content: "\e936"; }
-
-.icon-warrior:before {
-  content: "\e939"; }
-
-.icon-karazhan:before {
-  content: "\e927"; }
-
-.icon-kraken:before {
-  content: "\e929"; }
-
-.icon-knights-of-the-frozen-throne:before {
-  content: "\e93e"; }
-
-.icon-hall-of-fame:before {
-  content: "\e93b"; }
-
-.icon-journey-to-ungoro:before {
-  content: "\e938"; }
-
-.icon-mammoth:before {
-  content: "\e913"; }
 
 .icon-basic:before {
   content: "\e916"; }
 
+.icon-battlenet:before {
+  content: "\e901"; }
+
 .icon-blackrock-mountain:before {
   content: "\e917"; }
 
-.icon-the-league-of-explorers:before {
-  content: "\e91e"; }
+.icon-blizzardapp:before {
+  content: "\e902"; }
 
-.icon-mean-streets-of-gadgetzan:before {
-  content: "\e920"; }
+.icon-bold:before {
+  content: "\ea62"; }
+
+.icon-brawl:before {
+  content: "\e911"; }
+
+.icon-bubbles2:before {
+  content: "\e91f"; }
+
+.icon-bubbles22:before {
+  content: "\e96d"; }
+
+.icon-card:before {
+  content: "\e918"; }
+
+.icon-circle-down:before {
+  content: "\ea43"; }
+
+.icon-circle-up:before {
+  content: "\ea41"; }
+
+.icon-copy:before {
+  content: "\e937"; }
+
+.icon-create-deck:before {
+  content: "\e919"; }
+
+.icon-cross:before {
+  content: "\ea0f"; }
+
+.icon-deck:before {
+  content: "\e91a"; }
+
+.icon-delete-deck:before {
+  content: "\e900"; }
+
+.icon-discord:before {
+  content: "\e93d"; }
+
+.icon-druid:before {
+  content: "\e91b"; }
+
+.icon-dust:before {
+  content: "\e912"; }
+
+.icon-edit-deck:before {
+  content: "\e948"; }
+
+.icon-embed:before {
+  content: "\ea7f"; }
+
+.icon-expansions:before {
+  content: "\e91c"; }
+
+.icon-eye:before {
+  content: "\e9ce"; }
+
+.icon-facebook:before {
+  content: "\ea90"; }
+
+.icon-fire:before {
+  content: "\e9a9"; }
+
+.icon-flag:before {
+  content: "\e153"; }
+
+.icon-github:before {
+  content: "\eab0"; }
 
 .icon-goblins-vs-gnomes:before {
   content: "\e922"; }
 
-.icon-missions:before {
-  content: "\e92b"; }
+.icon-grid:before {
+  content: "\e903"; }
 
-.icon-naxxramas:before {
-  content: "\e92c"; }
+.icon-grimy-goons:before {
+  content: "\e921"; }
 
-.icon-whispers-of-the-old-gods:before {
-  content: "\e92d"; }
+.icon-hall-of-fame:before {
+  content: "\e93b"; }
 
-.icon-the-grand-tournament:before {
-  content: "\e933"; }
+.icon-help:before {
+  content: "\e947"; }
 
-.icon-wild:before {
-  content: "\e93a"; }
+.icon-hs-logo:before {
+  content: "\e923"; }
+
+.icon-hunter:before {
+  content: "\e924"; }
 
 .icon-image:before {
   content: "\e90d"; }
 
-.icon-quote:before {
-  content: "\e977"; }
+.icon-import:before {
+  content: "\e9c5"; }
 
-.icon-ordered-list:before {
-  content: "\e9b9"; }
+.icon-italic:before {
+  content: "\ea64"; }
 
-.icon-unordered-list:before {
-  content: "\e9bb"; }
+.icon-jade-lotus:before {
+  content: "\e93c"; }
+
+.icon-journey-to-ungoro:before {
+  content: "\e938"; }
+
+.icon-kabal:before {
+  content: "\e925"; }
+
+.icon-karazhan:before {
+  content: "\e927"; }
+
+.icon-knights-of-the-frozen-throne:before {
+  content: "\e93e"; }
+
+.icon-kraken:before {
+  content: "\e929"; }
 
 .icon-link:before {
   content: "\e9cb"; }
@@ -250,26 +223,32 @@ a {
 .icon-list-item:before {
   content: "\ea56"; }
 
-.icon-bold:before {
-  content: "\ea62"; }
+.icon-login:before {
+  content: "\e928"; }
 
-.icon-underline:before {
-  content: "\ea63"; }
+.icon-logout:before {
+  content: "\ea14"; }
 
-.icon-italic:before {
-  content: "\ea64"; }
+.icon-mage:before {
+  content: "\e92a"; }
 
-.icon-strikethrough:before {
-  content: "\ea65"; }
-
-.icon-embed:before {
-  content: "\ea7f"; }
+.icon-mammoth:before {
+  content: "\e913"; }
 
 .icon-mana-0:before {
   content: "\e904"; }
 
 .icon-mana-1:before {
   content: "\e905"; }
+
+.icon-mana-10:before {
+  content: "\e949"; }
+
+.icon-mana-11:before {
+  content: "\e94a"; }
+
+.icon-mana-12:before {
+  content: "\e94b"; }
 
 .icon-mana-2:before {
   content: "\e906"; }
@@ -301,98 +280,134 @@ a {
 .icon-mana-9-plus:before {
   content: "\e910"; }
 
-.icon-upload:before {
-  content: "\e961"; }
-
-.icon-paypal:before {
-  content: "\ead8"; }
-
-.icon-discord:before {
-  content: "\e93d"; }
-
-.icon-circle-down:before {
-  content: "\ea43"; }
-
-.icon-copy:before {
-  content: "\e937"; }
-
-.icon-stats-dots:before {
-  content: "\e99b"; }
-
-.icon-fire:before {
-  content: "\e9a9"; }
-
-.icon-promo:before {
-  content: "\e9b4"; }
-
-.icon-eye:before {
-  content: "\e9ce"; }
-
-.icon-circle-up:before {
-  content: "\ea41"; }
-
-.icon-facebook:before {
-  content: "\ea90"; }
-
-.icon-twitter:before {
-  content: "\ea96"; }
-
-.icon-youtube:before {
-  content: "\ea9d"; }
-
-.icon-github:before {
-  content: "\eab0"; }
-
-.icon-reddit:before {
-  content: "\eac6"; }
+.icon-mean-streets-of-gadgetzan:before {
+  content: "\e920"; }
 
 .icon-minions:before {
   content: "\e91d"; }
 
-.icon-battlenet:before {
-  content: "\e901"; }
+.icon-missions:before {
+  content: "\e92b"; }
 
-.icon-blizzardapp:before {
-  content: "\e902"; }
+.icon-mode-edit:before {
+  content: "\e254"; }
 
-.icon-grid:before {
-  content: "\e903"; }
+.icon-naxxramas:before {
+  content: "\e92c"; }
 
-.icon-brawl:before {
-  content: "\e911"; }
+.icon-ordered-list:before {
+  content: "\e9b9"; }
 
-.icon-dust:before {
-  content: "\e912"; }
+.icon-paladin:before {
+  content: "\e92e"; }
 
-.icon-reward:before {
-  content: "\e914"; }
+.icon-paypal:before {
+  content: "\ead8"; }
 
-.icon-grimy-goons:before {
-  content: "\e921"; }
+.icon-priest:before {
+  content: "\e92f"; }
 
-.icon-kabal:before {
-  content: "\e925"; }
+.icon-promo:before {
+  content: "\e9b4"; }
 
-.icon-jade-lotus:before {
-  content: "\e93c"; }
+.icon-quote:before {
+  content: "\e977"; }
+
+.icon-rank-1:before {
+  content: "\e941"; }
+
+.icon-rank-2:before {
+  content: "\e93f"; }
+
+.icon-rank-3:before {
+  content: "\e940"; }
+
+.icon-rank-4:before {
+  content: "\e942"; }
+
+.icon-rank-5:before {
+  content: "\e943"; }
+
+.icon-rank-6:before {
+  content: "\e944"; }
+
+.icon-rank-7:before {
+  content: "\e945"; }
+
+.icon-rank-8:before {
+  content: "\e946"; }
 
 .icon-rarity:before {
   content: "\e930"; }
 
-.icon-bubbles22:before {
-  content: "\e96d"; }
+.icon-reddit:before {
+  content: "\eac6"; }
 
-.icon-cross:before {
-  content: "\ea0f"; }
+.icon-redirect:before {
+  content: "\ea7e"; }
 
-.icon-logout:before {
-  content: "\ea14"; }
+.icon-reward:before {
+  content: "\e914"; }
+
+.icon-rogue:before {
+  content: "\e931"; }
+
+.icon-save:before {
+  content: "\e9c7"; }
+
+.icon-shaman:before {
+  content: "\e932"; }
 
 .icon-share:before {
   content: "\ea7d"; }
 
-.icon-redirect:before {
-  content: "\ea7e"; }
+.icon-stats-dots:before {
+  content: "\e99b"; }
+
+.icon-strikethrough:before {
+  content: "\ea65"; }
+
+.icon-text:before {
+  content: "\e926"; }
+
+.icon-the-grand-tournament:before {
+  content: "\e933"; }
+
+.icon-the-league-of-explorers:before {
+  content: "\e91e"; }
+
+.icon-trophy:before {
+  content: "\e934"; }
+
+.icon-twitch:before {
+  content: "\e935"; }
+
+.icon-twitter:before {
+  content: "\ea96"; }
+
+.icon-underline:before {
+  content: "\ea63"; }
+
+.icon-unordered-list:before {
+  content: "\e9bb"; }
+
+.icon-upload:before {
+  content: "\e961"; }
+
+.icon-warlock:before {
+  content: "\e936"; }
+
+.icon-warrior:before {
+  content: "\e939"; }
+
+.icon-whispers-of-the-old-gods:before {
+  content: "\e92d"; }
+
+.icon-wild:before {
+  content: "\e93a"; }
+
+.icon-youtube:before {
+  content: "\ea9d"; }
 
 @keyframes linearKeyframes {
   0% {
@@ -1978,6 +1993,72 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #a5f2f3; }
+
+.kobolds-and-catacombs {
+  color: #ffd989; }
+  .kobolds-and-catacombs span {
+    border-color: #ffd989; }
+  .kobolds-and-catacombs:hover {
+    background-color: #ffd989;
+    color: #474143; }
+    .kobolds-and-catacombs:hover span {
+      border-color: #474143; }
+  .kobolds-and-catacombs.active {
+    background-color: #ffd989;
+    color: #474143;
+    border-color: #ffd989; }
+  .kobolds-and-catacombs.active-without-background {
+    color: #ffd989 !important;
+    background-color: transparent; }
+  .kobolds-and-catacombs.active-shadow {
+    color: #474143;
+    background: #ffd989;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .kobolds-and-catacombs.active-shadow:hover {
+      color: black;
+      background: #ffd170;
+      -webkit-box-shadow: 0 0 10px #ffd989;
+      -moz-box-shadow: 0 0 10px #ffd989;
+      box-shadow: 0 0 10px #ffd989; }
+  .kobolds-and-catacombs.active-on-hover {
+    color: #474143; }
+    .kobolds-and-catacombs.active-on-hover:hover {
+      background-color: #ffd989;
+      color: #474143;
+      border: #474143; }
+  .kobolds-and-catacombs.active-border {
+    border: 1px solid #ffd989;
+    color: #474143;
+    background: transparent; }
+  .kobolds-and-catacombs.icon-font-active {
+    color: #474143; }
+  .kobolds-and-catacombs.in-text:hover {
+    background: transparent;
+    color: #ffd989; }
+  .kobolds-and-catacombs.table-row {
+    color: #474143; }
+    .kobolds-and-catacombs.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .kobolds-and-catacombs.table-row:nth-child(odd):hover {
+        background: #ffd989; }
+    .kobolds-and-catacombs.table-row:hover {
+      background-color: #ffd989;
+      color: #474143;
+      border: #474143; }
+  .kobolds-and-catacombs.blizzard-official {
+    background-color: #ffd989;
+    color: #000; }
+  .kobolds-and-catacombs.gradient {
+    background: -moz-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 217, 137, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #ffd989; }
 
 @keyframes linearKeyframes {
   0% {

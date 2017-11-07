@@ -74,6 +74,16 @@ export const icon_filters = {
       name: "Journey to Un'Goro",
       url: 'journey-to-ungoro',
       isStandard: true
+    },
+    {
+      name: 'Knights of the Frozen Throne',
+      url: 'knights-of-the-frozen-throne',
+      isStandard: true
+    },
+    {
+      name: 'Kobolds & Catacombs',
+      url: 'kobolds-and-catacombs',
+      isStandard: true
     }
   ],
   adventures: [
@@ -156,6 +166,10 @@ export const icon_filters = {
     {
       name: "Knights of the Frozen Throne",
       url: 'knights-of-the-frozen-throne'
+    },
+    {
+      name: "Kobolds & Catacombs",
+      url: 'kobolds-and-catacombs'
     }
   ],
   cost: [

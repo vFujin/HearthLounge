@@ -282,5 +282,108 @@ export const expansion_details = [
         }
       ]
     },
+  },
+  {
+    expansion: 'Kobolds & Catacombs',
+    url: 'kobolds-and-catacombs',
+    overview: {
+      about: {
+        announce_date: '03.11.2017',
+        release_date: '',
+        no_cards: 0,
+      },
+      cardback_heroic: '',
+      cardback_event: '',
+      cinematic: 'https://www.youtube.com/watch?v=INuc1RR23DE',
+      description: '',
+      img: '',
+      gameboard: '',
+      new_mechanics_keywords: [
+        {
+          name: 'Recruit',
+          description: ''
+        }
+      ]
+    },
+    expansion_topbar_tabs: [
+      {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
+        name: 'Cards',
+        url: 'cards'
+      },
+      {
+        name: 'Dungeon Run',
+        url: 'dungeon-run'
+      }
+    ],
+    wings: {
+      description: "",
+      details: [
+        {
+          wing_title: "Prologue",
+          url: 'prologue',
+          reward: 'random hero card',
+          bosses: [
+            {
+              name: "A Fateful Encounter",
+              url: 'a-fateful-encounter',
+            }
+          ]
+        },
+        {
+          wing_title: "Lower Citadel",
+          url: "lower-citadel",
+          reward: 'kotft pack',
+          bosses: [
+            {
+              name: "Lord Marrowgar",
+              url: 'lord-marrowgar',
+            },
+            {
+              name: "Deathbringer Saurfang",
+              url: 'deathbringer-saurfang',
+            },
+            {
+              name: "Lady Deathwhisper",
+              url: 'lady-deathwhisper',
+            }
+          ]
+        },
+        {
+          wing_title: "Upper Reaches",
+          url: 'upper-reaches',
+          reward: 'kotft pack',
+          bosses: [
+            {
+              name: "Blood-Queen Lana'thel",
+              url: 'blood-queen-lanathel'
+            },
+            {
+              name: "Professor Putricide",
+              url: 'professor-putricide'
+            },
+            {
+              name: "Sindragosa",
+              url: 'sindragosa'
+            }
+          ]
+        },
+        {
+          wing_title: "The Frozen Throne",
+          url: 'the-frozen-throne',
+          reward: 'kotft pack + alternate hero',
+          bosses: [
+            {
+              name: "The Lich King",
+              url: 'the-lich-king'
+            }
+          ]
+        }
+      ]
+    },
   }
+
 ];
