@@ -1,4 +1,4 @@
-import {deckSimplification} from "../../../../../../../utils/deck/index";
+import {deckSimplification} from "../../../../../../../utils/deck/edit-mode/index";
 
 /**
  * Handles deck creation topbar options selection

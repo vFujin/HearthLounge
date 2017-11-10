@@ -28,12 +28,12 @@ const SectionBody = (props) => {
   const handleDeckEditingClick = () =>{
     toggleDeckEditView();
 
-    console.log(deckEditView, decksNotEqual);
     if(deckEditView && deckDescriptionsNotEqual){
       updateDeckDescription("");
     }
+
     if(deckEditView && decksNotEqual){
-      props.updateActiveDeck(activeDeckCopy);
+      props.updateActiveDeck(activeDeck);
     }
   };
 
@@ -76,7 +76,7 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateActiveDeck: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY}),
+    updateActiveDeck: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY, payload}),
     updateDeckDescription: payload => dispatch({
       type: types.UPDATE_DECK_DESCRIPTION, payload
     }),

@@ -5,7 +5,7 @@
 // };
 
 import decode from "./decode";
-import {deckSimplification} from "../index";
+import {deckSimplification} from "../edit-mode/index";
 
 export default function (allCards, deckstring, callback, callbackSimplifiedDeck) {
 

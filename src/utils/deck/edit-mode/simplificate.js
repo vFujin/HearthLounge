@@ -1,5 +1,5 @@
-import addCard from './add-card';
-import {cardTypes, calcManaCurve, deckLength, maxCardsCostAmount} from './calculate';
+import {addCard} from "./index";
+import {cardTypes, calcManaCurve, deckLength, maxCardsCostAmount} from '../calculate/index';
 
 export default function (deck){
   let cards = addCard(deck);

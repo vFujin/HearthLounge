@@ -1,6 +1,6 @@
 import kebabCase from 'lodash/kebabCase';
-import {removeApostrophe} from '../remove-apostrophe';
-
+import {removeApostrophe} from '../../remove-apostrophe';
+//TODO: that should be renamed to convert deck array to object or something like that
 export default function (deck){
   let cards = {};
 

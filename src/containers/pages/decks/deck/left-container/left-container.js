@@ -4,8 +4,9 @@ import _ from 'lodash';
 import Select from 'antd/lib/select';
 import SidebarHeader from "./sidebar-header/sidebar-header";
 import SidebarBody from "./sidebar-body/sidebar-body";
-import {deckBroaden, deckSimplification} from "../../../../../utils/deck/index";
-const LeftContainer = ({activeDeck, activeDeckCopy, cards, deckEditView, updateActiveDeckCopy, handleCardRemovalClick}) =>{
+import {deckBroaden, deckSimplification} from "../../../../../utils/deck/edit-mode/index";
+
+const LeftContainer = ({activeDeck, activeDeckCopy, cards, deckEditView, updateActiveDeckCopy}) =>{
   const deck = deckBroaden(activeDeckCopy, cards);
 
   const handleCardAddition = (value) => {
@@ -16,6 +17,14 @@ const LeftContainer = ({activeDeck, activeDeckCopy, cards, deckEditView, updateA
       let simplifiedDeck = deckSimplification(deck);
       updateActiveDeckCopy({deck: simplifiedDeck});
     }
+  };
+
+  const handleCardRemovalClick = (e) =>{
+    let targetCardId = e.currentTarget.id;
+    let updatedDeck = deck.filter(c => c.cardId !== targetCardId);
+    let simplifiedDeck = deckSimplification(updatedDeck);
+
+    updateActiveDeckCopy({deck: simplifiedDeck});
   };
 
   const search = () => {

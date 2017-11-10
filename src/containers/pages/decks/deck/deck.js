@@ -1,18 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
-import {getUser} from '../../../../firebase/user/read';
-import {rateDeck} from '../../../../firebase/decks/deck/read/lazyload-decks';
 import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
-import {alertUnload} from "./utils/alert-unload";
 import {FETCH_ACTIVE_DECK_REQUEST, RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
-import {FETCH_DECK_AUTHOR_REQUEST} from "../../../../redux/deck/deck-author/types";
 import Loader from "../../../../components/loaders/loader";
 import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
-import {TOGGLE_DECK_EDIT_VIEW} from "../../../../redux/deck/tools/types";
 import {updateDeck} from "../../create-deck/after-class-selection/right-container/content-assets/utils/index";
 
 class Deck extends Component{
@@ -48,38 +42,6 @@ class Deck extends Component{
     updateDeck(e, card, deck, editDeck);
   };
 
-
-  handleCardRemovalClick = (e) =>{
-    const {activeDeckCopy} = this.props;
-    let cards = activeDeckCopy.cards;
-    let manaCurve = activeDeckCopy.manaCurve;
-    let target = e.currentTarget;
-    let targetDataset = target.dataset;
-    let cardName = target.id;
-    let cardCost = targetDataset.cost;
-    let length = activeDeckCopy.length;
-
-    let decklistAfterCardRemoval = Object.keys(cards).reduce((acc, card) => {
-      const currCard = cards[card];
-      if(card !== cardName) {
-        acc[card] = currCard;
-      }
-      return acc;
-    }, {});
-    //need amount of card here
-    let manacurveAfterCostRemoval = _.map(manaCurve).map((c, i) => i == cardCost ? c-1 : c);
-    let max = _.max(manacurveAfterCostRemoval);
-    this.props.updateActiveDeckCopy({
-      deck: {
-        cards: decklistAfterCardRemoval,
-        manaCurve: manacurveAfterCostRemoval,
-        max
-      }
-      //add type and rarity
-    });
-    // console.log(foo);
-  };
-
   render() {
     const {cards, activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, updateActiveDeckCopy} = this.props;
     if(activeDeck.loading){
@@ -92,8 +54,7 @@ class Deck extends Component{
                            updateActiveDeckCopy={updateActiveDeckCopy}
                            deckEditView={deckEditView}
                            cards={cards}
-                           handleCardClick={this.handleCardClick}
-                           handleCardRemovalClick={this.handleCardRemovalClick}/>
+                           handleCardClick={this.handleCardClick}/>
             <RightContainer activeDeck={activeDeck}
                             activeDeckCopy={activeDeckCopy}
                             deckEditView={deckEditView}

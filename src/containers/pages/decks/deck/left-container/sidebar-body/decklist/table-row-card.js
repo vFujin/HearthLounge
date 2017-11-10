@@ -5,7 +5,6 @@ import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-
 import Tooltip from 'antd/lib/tooltip';
 import CardImg from "./card-img";
 const Card = ({allCards, index, card, cardNames, deckEditView, handleCardRemovalClick}) => {
-
   return(
       <Tooltip title={<CardImg allCards={allCards} hoveredCardName={cardNames[index]}/>}
                overlayClassName="decklist-card-img"
@@ -21,15 +20,17 @@ const Card = ({allCards, index, card, cardNames, deckEditView, handleCardRemoval
             <Icon name={card.cost} type="mana"/>
           </td>
 
-          {deckEditView
+          {
+            deckEditView
               ? <td>
-                <div id={cardNames[index]}
+                <div id={card.cardId}
                      data-cost={card.cost}
                      data-amount={card.amount} onClick={(e) => handleCardRemovalClick(e)}>
                   <Icon name="cross" tooltip={false}/>
                 </div>
               </td>
-              : null}
+              : null
+          }
         </tr>
       </Tooltip>
     )
