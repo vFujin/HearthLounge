@@ -2,15 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from "../../../../../../../components/icon";
 
-const Stats = ({activeDeck, deckEditView}) =>{
-  const {types} = activeDeck.deck;
-  const {Minion, Spell, Weapon} = types;
+const Stats = ({activeDeckCopy, deckEditView}) => {
+  const minionCount = activeDeckCopy.types && activeDeckCopy.types.Minion,
+        spellCount = activeDeckCopy.types && activeDeckCopy.types.Spell,
+        weaponCount = activeDeckCopy.types && activeDeckCopy.types.Weapon;
 
   return (
       <div className={`deck-details-wrapper stats ${deckEditView ? 'edit-mode' : ''}`}>
-        <Icon name="minions"/><p>{Minion || 0}</p>
-        <Icon name="fire"/><p>{Spell || 0}</p>
-        <Icon name="warrior"/><p>{Weapon || 0}</p>
+        <Icon name="minions"/><p>{minionCount || 0}</p>
+        <Icon name="fire"/><p>{spellCount || 0}</p>
+        <Icon name="warrior"/><p>{weaponCount || 0}</p>
       </div>
   )
 };
@@ -18,13 +19,11 @@ const Stats = ({activeDeck, deckEditView}) =>{
 export default Stats;
 
 Stats.propTypes = {
-  activeDeck: PropTypes.shape({
-    deck: PropTypes.shape({
-        types: PropTypes.shape({
-          Minion: PropTypes.number,
-          Spell: PropTypes.number,
-          Weapon: PropTypes.number,
-        })
+  activeDeckCopy: PropTypes.shape({
+    types: PropTypes.shape({
+      Minion: PropTypes.number,
+      Spell: PropTypes.number,
+      Weapon: PropTypes.number,
     })
   })
 };

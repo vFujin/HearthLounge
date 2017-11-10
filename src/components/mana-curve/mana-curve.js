@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ManaCurveBar from './mana-curve-graph';
 
 const ManaCurve = ({deck, max, barHeight, barWidth, barSpacing, showCount, showIcons, padding}) => {
+  // console.log(deck);
   return (
       <ul className="graph" style={{padding: padding || 0}}>
         {[...new Array(7)].map((bar, i)=>

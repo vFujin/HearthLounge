@@ -6,7 +6,6 @@ import CopyDeck from "./copy-deck";
 
 const DeckDetails = ({allCards, activeDeckCopy, deckEditView, deckstring, playerClass, handleCardRemovalClick}) => {
   const {cards, max} = activeDeckCopy;
-
   return (
       <div className="container__mana-curve">
         <h3>Mana Curve</h3>

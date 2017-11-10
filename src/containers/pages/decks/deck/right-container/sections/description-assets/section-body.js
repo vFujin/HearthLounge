@@ -7,12 +7,14 @@ import TextEditor from '../../../../../../../components/text-editor/text-editor'
 import SectionBodyOptions from "./section-body-options";
 import {TOGGLE_DECK_EDIT_VIEW} from "../../../../../../../redux/deck/tools/types";
 import * as types from "../../../../../../../redux/deck/active-deck-editing/types";
+import {UPDATE_ACTIVE_DECK_COPY} from "../../../../../../../redux/deck/active-deck-copy/types";
 
 const SectionBody = (props) => {
-  const {activeUser, activeDeck, deckEditView, activeDeckEditing, updateDeckDescription, toggleDeckEditView, decksNotEqual} = props;
+  const {activeUser, activeDeck, deckEditView, activeDeckEditing, updateDeckDescription, toggleDeckEditView, activeDeckCopy} = props;
   const {authorId, description, deckId} = activeDeck;
   const {editingDeckDescription} = activeDeckEditing;
   const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
+  const decksNotEqual = !_.isEqual(activeDeckCopy, activeDeck.deck);
 
   const handleInputChange = (e) => {
     let value = e.target.value;
@@ -26,14 +28,23 @@ const SectionBody = (props) => {
   const handleDeckEditingClick = () =>{
     toggleDeckEditView();
 
+    console.log(deckEditView, decksNotEqual);
     if(deckEditView && deckDescriptionsNotEqual){
       updateDeckDescription("");
+    }
+    if(deckEditView && decksNotEqual){
+      props.updateActiveDeck(activeDeckCopy);
     }
   };
 
   const handleDeckUpdateClick = () =>{
-    const dateNow = +new Date();
-    props.updateDeck({deckId, description: editingDeckDescription, updated: dateNow});
+    const now = +new Date();
+    props.updateDeck({
+      deckId,
+      description: editingDeckDescription,
+      updated: now,
+      deck: activeDeckCopy
+    });
   };
 
   return (
@@ -58,13 +69,14 @@ const SectionBody = (props) => {
 };
 
 const mapStateToProps = state =>{
-  const {activeDeckEditing, tools} = state.deckView;
+  const {activeDeckEditing, tools, activeDeckCopy} = state.deckView;
   const {deckEditView} = tools;
-  return {activeDeckEditing, deckEditView};
+  return {activeDeckEditing, deckEditView, activeDeckCopy};
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    updateActiveDeck: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY}),
     updateDeckDescription: payload => dispatch({
       type: types.UPDATE_DECK_DESCRIPTION, payload
     }),

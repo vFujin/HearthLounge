@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import Topbar from './topbar';
 import Content from './content';
 
-const RightContainer = ({activeDeck, activeUser, patch, handleDeckVotingClick, deckEditView, descriptionsNotEqual, decksNotEqual, params}) =>{
+const RightContainer = ({activeDeck, activeDeckCopy, activeUser, patch, handleDeckVotingClick, deckEditView, descriptionsNotEqual, decksNotEqual, params}) =>{
   return (
       <div className="container__page--inner container__page--right">
         <Topbar activeDeck={activeDeck}
+                activeDeckCopy={activeDeckCopy}
                 deckEditView={deckEditView}
                 handleDeckVotingClick={handleDeckVotingClick}/>
         <Content activeDeck={activeDeck}

@@ -13,6 +13,7 @@ import {FETCH_DECK_AUTHOR_REQUEST} from "../../../../redux/deck/deck-author/type
 import Loader from "../../../../components/loaders/loader";
 import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
 import {TOGGLE_DECK_EDIT_VIEW} from "../../../../redux/deck/tools/types";
+import {updateDeck} from "../../create-deck/after-class-selection/right-container/content-assets/utils/index";
 
 class Deck extends Component{
   componentDidMount() {
@@ -40,38 +41,47 @@ class Deck extends Component{
     udpateDeckRating(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
   };
 
+  handleCardClick = (e, card) => {
+    const {deck, editDeck} = this.props;
+    e.preventDefault();
+
+    updateDeck(e, card, deck, editDeck);
+  };
+
 
   handleCardRemovalClick = (e) =>{
-    const {editingDecklist} = this.props;
-    let cards = editingDecklist.cards;
-    let manaCurve = editingDecklist.manaCurve;
+    const {activeDeckCopy} = this.props;
+    let cards = activeDeckCopy.cards;
+    let manaCurve = activeDeckCopy.manaCurve;
     let target = e.currentTarget;
     let targetDataset = target.dataset;
     let cardName = target.id;
     let cardCost = targetDataset.cost;
+    let length = activeDeckCopy.length;
 
     let decklistAfterCardRemoval = Object.keys(cards).reduce((acc, card) => {
       const currCard = cards[card];
       if(card !== cardName) {
-        acc[card] = currCard
+        acc[card] = currCard;
       }
       return acc;
     }, {});
-
     //need amount of card here
-    let manacurveAfterCostRemoval = manaCurve.map((c, i) => i == cardCost ? c-1 : c);
+    let manacurveAfterCostRemoval = _.map(manaCurve).map((c, i) => i == cardCost ? c-1 : c);
     let max = _.max(manacurveAfterCostRemoval);
-
-    this.props.fetchDecks({
+    this.props.updateActiveDeckCopy({
+      deck: {
         cards: decklistAfterCardRemoval,
         manaCurve: manacurveAfterCostRemoval,
         max
+      }
       //add type and rarity
     });
+    // console.log(foo);
   };
 
   render() {
-    const {activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, updateActiveDeckCopy} = this.props;
+    const {cards, activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, updateActiveDeckCopy} = this.props;
     if(activeDeck.loading){
       return <Loader/>
     } else {
@@ -81,9 +91,11 @@ class Deck extends Component{
                            activeDeckCopy={activeDeckCopy}
                            updateActiveDeckCopy={updateActiveDeckCopy}
                            deckEditView={deckEditView}
-                           cards={this.props.cards}
+                           cards={cards}
+                           handleCardClick={this.handleCardClick}
                            handleCardRemovalClick={this.handleCardRemovalClick}/>
             <RightContainer activeDeck={activeDeck}
+                            activeDeckCopy={activeDeckCopy}
                             deckEditView={deckEditView}
                             params={params}
                             patch={patch}
