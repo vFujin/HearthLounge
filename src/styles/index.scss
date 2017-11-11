@@ -1649,6 +1649,28 @@ card{
           text-align: right;
           margin-right: 1vh;
         }
+        .author-details{
+          .social-media-wrapper{
+            display: grid;
+            grid-template-rows: repeat(2, 20px);
+            grid-template-columns: repeat(2, 20px);
+            grid-column-gap: 2px;
+            grid-row-gap: 2px;
+            a {
+              &.profile-not-defined{
+                cursor: default;
+              }
+              span {
+                font-size: 12px;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+        }
       }
     }
     .content {

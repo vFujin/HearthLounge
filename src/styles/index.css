@@ -3855,6 +3855,9 @@ button {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0; }
+    .ant-tooltip .ant-tooltip-inner .tooltip-redirect {
+      text-decoration: underline;
+      color: #00a99c; }
     .ant-tooltip .ant-tooltip-inner .card-tooltip-wrapper .card-details {
       height: 370px;
       margin-top: 10px;
@@ -5392,6 +5395,21 @@ card {
     display: grid;
     text-align: right;
     margin-right: 1vh; }
+  .deck .container__page--right .topbar .topbar__container .author-details .social-media-wrapper {
+    display: grid;
+    grid-template-rows: repeat(2, 20px);
+    grid-template-columns: repeat(2, 20px);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px; }
+    .deck .container__page--right .topbar .topbar__container .author-details .social-media-wrapper a.profile-not-defined {
+      cursor: default; }
+    .deck .container__page--right .topbar .topbar__container .author-details .social-media-wrapper a span {
+      font-size: 12px;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
 .deck .container__page--right .content .container__details .container__details--description .section__body {
   border: 0; }
   .deck .container__page--right .content .container__details .container__details--description .section__body .section__body--options {

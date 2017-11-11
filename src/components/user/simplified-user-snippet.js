@@ -24,11 +24,13 @@ const SimplifiedUserSnippet = ({user}) =>{
 export default SimplifiedUserSnippet;
 
 SimplifiedUserSnippet.propTypes = {
-  rank: PropTypes.number,
-  role: PropTypes.string,
-  username: PropTypes.string,
-  avatar: PropTypes.oneOfType([
+  user: PropTypes.shape({
+    rank: PropTypes.number,
+    role: PropTypes.string,
+    username: PropTypes.string,
+    avatar: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.bool
-  ])
+    ])
+  }).isRequired
 };

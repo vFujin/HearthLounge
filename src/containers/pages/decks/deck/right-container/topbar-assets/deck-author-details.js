@@ -6,6 +6,7 @@ import UserAvatar from '../../../../../../components/user/user-avatar'
 import GameDetails from "./deck-author-details/game";
 import SocialMediaDetails from "./deck-author-details/social-media";
 import GeneralDetails from "./deck-author-details/general";
+import SimplifiedUserSnippet from "../../../../../../components/user/simplified-user-snippet";
 
 class DeckAuthorDetails extends PureComponent{
   componentDidMount(){
@@ -15,13 +16,14 @@ class DeckAuthorDetails extends PureComponent{
   }
 
   render() {
-    const {username, rank, avatar} = this.props.deckAuthor;
+    const {deckAuthor} = this.props;
     return (
-        <div className="details">
-          <UserAvatar avatar={avatar} username={username}/>
-          <GeneralDetails username={username} rank={rank}/>
-          <GameDetails />
-          <SocialMediaDetails/>
+        <div className="author-details">
+          <SimplifiedUserSnippet user={deckAuthor}/>
+          {/*<UserAvatar deckAuthor={deckAuthor}/>*/}
+          {/*<GeneralDetails deckAuthor={deckAuthor}/>*/}
+          {/*<GameDetails deckAuthor={deckAuthor}/>*/}
+          <SocialMediaDetails deckAuthor={deckAuthor}/>
         </div>
     )
   }

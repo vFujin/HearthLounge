@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from "../icon";
 
-const UserAvatar = ({avatar, username}) => avatar ? <img src={avatar} alt={`${username}'s avatar`}/> : <Icon name="login"/>;
+const UserAvatar = ({deckAuthor}) => deckAuthor && deckAuthor.avatar ? <img src={deckAuthor.avatar} alt={`${deckAuthor.username}'s avatar`}/> : <Icon name="login"/>;
 
 export default UserAvatar;
 
 UserAvatar.propTypes = {
-  avatar: PropTypes.oneOfType([
+  deckAuthor: PropTypes.shape({
+    avatar: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.bool
-  ]),
-  username: PropTypes.string
+    ]),
+    username: PropTypes.string
+  })
 };

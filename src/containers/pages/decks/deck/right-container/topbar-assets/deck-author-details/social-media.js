@@ -1,14 +1,28 @@
 import React from 'react';
+import Tooltip from 'antd/lib/tooltip';
+import {Link} from 'react-router';
 import Icon from "../../../../../../../components/icon";
 
-const SocialMediaDetails = () =>{
+const SocialMediaDetails = ({deckAuthor}) =>{
+  const {username, facebook, twitter, twitch, youtube} = deckAuthor;
+
+  const wrapper = (media, profile, affix = "com") =>{
+    return (
+      <Link to={profile && `https://www.${media}.${affix}/${profile}`} className={!profile && "profile-not-defined"}>
+        <Icon name={media} className={profile && `${media} active`}/>
+      </Link>
+    )
+  };
+
   return (
+    <Tooltip title={`${username}'s social media`} placement="bottom">
       <div className="social-media-wrapper">
-        <Icon name="facebook"/>
-        <Icon name="twitter"/>
-        <Icon name="twitch"/>
-        <Icon name="youtube"/>
+        {wrapper("facebook", facebook)}
+        {wrapper("twitter", twitter)}
+        {wrapper("twitch", twitch, "tv")}
+        {wrapper("youtube", youtube)}
       </div>
+    </Tooltip>
   )
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const GeneralDetails = ({username, rank}) =>{
+const GeneralDetails = ({deckAuthor}) =>{
+  const {username, rank} = deckAuthor;
   return (
       <div className="general-info-wrapper">
         <p>{username}</p>
