@@ -59,6 +59,7 @@ class DeckComments extends PureComponent {
                          countComments={countComments}
                          commentBoxIsActive={commentBoxIsActive}/>
           <SectionBody comments={_.map(deckComments.all)}
+                       authenticated={this.props.activeUser.authenticated}
                        countComments={countComments}
                        handleCommentClick={this.handleCommentClick}
                        commentId={commentId}

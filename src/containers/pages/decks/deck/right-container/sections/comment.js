@@ -1,13 +1,9 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {timeDifference} from '../../../../../../utils/unix-to-date';
-import MoreOptions from '../../../../../shared-assets/posts/more-options';
 import SimplifiedUserSnippet from '../../../../../../components/user/simplified-user-snippet';
-import Tooltip from 'antd/lib/tooltip';
-import {FETCH_SHORTENED_USER_DETAILS_REQUEST} from "../../../../../../redux/user/shortened-details/types";
-import Icon from "../../../../../../components/icon";
 import ShortenedUserDetailsLoader from "../../../../../../components/loaders/shortened-user-details-loader";
-import {convertBBCode} from "../../../../../../components/text-editor/utils/convert-bbcode";
+import {CommentHeader, CommentBody, CommentFooter} from "./comment-assets/comment/index";
+import {FETCH_SHORTENED_USER_DETAILS_REQUEST} from "../../../../../../redux/user/shortened-details/types";
 
 class Comment extends PureComponent {
   // ;
@@ -25,45 +21,27 @@ class Comment extends PureComponent {
   }
 
   render() {
-    const {comment, deckId, commentVotes, votedComments, usersDetails, handleCommentVotingClick, shortenedUserDetails} = this.props;
+    const {authenticated, comment, deckId, commentVotes, votedComments, usersDetails, handleCommentVotingClick, shortenedUserDetails} = this.props;
     const {authorId, created, patch, text, commentId, votes, voteType} = comment;
     let user = Object.entries(shortenedUserDetails).filter(o => o[0] === authorId);
 
     // console.log(shortenedUserDetails);
     // const {rank, role, avatar, username} = user[1];
-    const commented = timeDifference(created, false);
-    const detailedDate = timeDifference(created, true);
+
     return (
         <div className="comment">
           {shortenedUserDetails[authorId] ? <SimplifiedUserSnippet user={user[0][1]} /> : <ShortenedUserDetailsLoader />}
           <div className="details">
-            <div className="header">
-              <Tooltip title={detailedDate} placement="right">
-                <div className="commented">{commented}</div>
-              </Tooltip>
-              <div className="header-right">
-                <div className="patch">{patch}</div>
-                <MoreOptions/>
-              </div>
-            </div>
-            <div className="body">
-              {convertBBCode(text)}
-            </div>
-            <div className="footer">
-              <div data-commentid={commentId}
-                   onClick={handleCommentVotingClick}
-                   id="upvote"
-                   className={`up peripheral ${(voteType && voteType === "upvote") ? 'voted' : ''}`}>
-                <Icon name="circle-up"/>
-              </div>
-              <div className="votes peripheral">{(commentVotes && commentVotes.id === commentId) ? commentVotes.votes : votes}</div>
-              <div data-commentid={commentId}
-                   onClick={handleCommentVotingClick}
-                   id="downvote"
-                   className={`down peripheral ${(voteType && voteType === "downvote") ? 'voted' : ''}`}>
-                <Icon name="circle-down"/>
-              </div>
-            </div>
+            <CommentHeader created={created}
+                           authenticated={authenticated}
+                           patch={patch}/>
+            <CommentBody commentText={text}/>
+            <CommentFooter commentId={commentId}
+                           authenticated={authenticated}
+                           voteType={voteType}
+                           handleCommentVotingClick={handleCommentVotingClick}
+                           commentVotes={commentVotes}
+                           votes={votes}/>
           </div>
         </div>
     );

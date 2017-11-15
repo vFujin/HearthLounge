@@ -459,7 +459,7 @@ a {
       height: 100%; }
       #container .container__page .container__page--right .topbar__grid div {
         height: 100%; }
-        #container .container__page .container__page--right .topbar__grid div:last-child {
+        > #container .container__page .container__page--right .topbar__grid div:last-child {
           justify-content: flex-end; }
       #container .container__page .container__page--right .topbar__grid.topbar__grid--2-1-1 {
         grid-template-columns: 40vw 20vw 20vw; }
@@ -2801,28 +2801,6 @@ form .divider {
     .post-more-options .options li:last-child {
       margin-bottom: 0; }
 
-.post .details .header, .comment .details .header {
-  font-size: 11px; }
-  .post .details .header .header-right, .comment .details .header .header-right {
-    display: flex; }
-.post .details .footer .up, .post .details .footer .down, .comment .details .footer .up, .comment .details .footer .down {
-  cursor: pointer; }
-  .post .details .footer .up span, .post .details .footer .down span, .comment .details .footer .up span, .comment .details .footer .down span {
-    font-size: 12px; }
-  .post .details .footer .up.voted, .post .details .footer .down.voted, .comment .details .footer .up.voted, .comment .details .footer .down.voted {
-    opacity: 1; }
-    .post .details .footer .up.voted span, .post .details .footer .down.voted span, .comment .details .footer .up.voted span, .comment .details .footer .down.voted span {
-      border-radius: 50%;
-      -webkit-box-shadow: 0 0 5px #474143;
-      -moz-box-shadow: 0 0 5px #474143;
-      box-shadow: 0 0 5px #474143;
-      background: #474143;
-      color: #E7E2DA; }
-.post .peripheral, .comment .peripheral {
-  opacity: .2; }
-.post:hover .peripheral, .comment:hover .peripheral {
-  opacity: 1; }
-
 @keyframes linearKeyframes {
   0% {
     background-position: 0; }
@@ -4787,7 +4765,10 @@ card {
             display: flex;
             align-items: center; }
           .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header {
-            justify-content: space-between; }
+            justify-content: space-between;
+            font-size: 11px; }
+            .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .header .header-right {
+              display: flex; }
           .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .body {
             padding: 1vh 0;
             word-break: break-word; }
@@ -4795,6 +4776,27 @@ card {
             align-items: center; }
             .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .votes {
               padding: 0 1vh; }
+              .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .votes.default {
+                padding: 0; }
+            .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .up, .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .down {
+              cursor: pointer; }
+              .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .up span, .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .down span {
+                font-size: 12px; }
+              .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .up.voted, .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .down.voted {
+                opacity: 1; }
+                .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .up.voted span, .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .details .footer .down.voted span {
+                  border-radius: 50%;
+                  -webkit-box-shadow: 0 0 5px #474143;
+                  -moz-box-shadow: 0 0 5px #474143;
+                  box-shadow: 0 0 5px #474143;
+                  background: #474143;
+                  color: #E7E2DA; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .peripheral {
+            opacity: .2; }
+          .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment:hover .peripheral {
+            opacity: 1; }
+            .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment:hover .peripheral.default {
+              opacity: .2; }
       .container__page .container__page--right .content .container__details.post .section__body {
         margin-bottom: 0; }
     .container__page .container__page--right .content .container__extension .before-extension-pick {
@@ -5373,14 +5375,16 @@ card {
       align-items: center; }
       .deck .container__page--right .topbar .topbar__container div .deck-details-wrapper:first-child {
         margin-left: 1vh; }
-      .deck .container__page--right .topbar .topbar__container div .deck-details-wrapper.stats {
-        padding: 0 10px; }
       .deck .container__page--right .topbar .topbar__container div .deck-details-wrapper span, .deck .container__page--right .topbar .topbar__container div .deck-details-wrapper p {
         margin-right: .5vh; }
         .deck .container__page--right .topbar .topbar__container div .deck-details-wrapper span:last-child, .deck .container__page--right .topbar .topbar__container div .deck-details-wrapper p:last-child {
           margin-right: 0; }
       .deck .container__page--right .topbar .topbar__container div .deck-details-wrapper span {
         font-size: 1vw; }
+    .deck .container__page--right .topbar .topbar__container div .stats {
+      padding: 0 10px;
+      flex-grow: 2;
+      justify-content: center; }
     .deck .container__page--right .topbar .topbar__container div .votes {
       padding: 0 .5vh; }
       .deck .container__page--right .topbar .topbar__container div .votes p.pos {
@@ -5388,9 +5392,14 @@ card {
       .deck .container__page--right .topbar .topbar__container div .votes p.neg {
         color: #C41F3B; }
     .deck .container__page--right .topbar .topbar__container div .archetype {
-      text-transform: capitalize; }
+      text-transform: capitalize;
+      flex-grow: 2;
+      justify-content: flex-start; }
       .deck .container__page--right .topbar .topbar__container div .archetype p {
-        padding: .5vh; }
+        padding: .5vh;
+        -webkit-box-shadow: 0 0 10px #474143;
+        -moz-box-shadow: 0 0 10px #474143;
+        box-shadow: 0 0 10px #474143; }
   .deck .container__page--right .topbar .topbar__container .created-details {
     display: grid;
     text-align: right;

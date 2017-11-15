@@ -846,6 +846,10 @@ card{
                 }
                 .header{
                   justify-content: space-between;
+                  font-size:11px;
+                  .header-right {
+                    display: flex;
+                  }
                 }
                 .body{
                   padding: 1vh 0;
@@ -855,6 +859,35 @@ card{
                   align-items: center;
                   .votes{
                     padding: 0 1vh;
+                    &.default{
+                      padding: 0;
+                    }
+                  }
+                  .up, .down{
+                    cursor: pointer;
+                    span{
+                      font-size: 12px;
+                    }
+                    &.voted{
+                      opacity: 1;
+                      span {
+                        border-radius: 50%;
+                        @include box-shadow(0, 0, 5px, $dark-grey);
+                        background: $dark-grey;
+                        color: $pearl;
+                      }
+                    }
+                  }
+                }
+              }
+              .peripheral {
+                opacity: .2;
+              }
+              &:hover{
+                .peripheral {
+                  opacity: 1;
+                  &.default{
+                    opacity: .2;
                   }
                 }
               }
@@ -1612,9 +1645,6 @@ card{
             &:first-child {
               margin-left: 1vh;
             }
-            &.stats{
-              padding: 0 10px;
-            }
             span, p {
               margin-right: .5vh;
               &:last-child {
@@ -1624,6 +1654,11 @@ card{
             span {
               font-size: 1vw;
             }
+          }
+          .stats{
+            padding: 0 10px;
+            flex-grow: 2;
+            justify-content: center;
           }
           .votes {
             padding: 0 .5vh;
@@ -1638,8 +1673,11 @@ card{
           }
           .archetype {
             text-transform: capitalize;
+            flex-grow: 2;
+            justify-content: flex-start;
             p {
               padding: .5vh;
+              @include box-shadow(0, 0, 10px, $dark-grey);
             }
           }
 

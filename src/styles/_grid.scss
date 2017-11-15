@@ -68,7 +68,7 @@
         height:100%;
         div{
           height:100%;
-          &:last-child{
+          > &:last-child{
             justify-content: flex-end;
           }
         }

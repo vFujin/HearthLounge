@@ -3,6 +3,7 @@ import {Link} from 'react-router';
 import PropTypes from 'prop-types';
 import {wrapDate} from '../../../../../../utils/wrap-date';
 import {wrapScore} from '../../../../../../utils/wrap-score';
+import Icon from "../../../../../../components/icon";
 
 const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
   const {author, created_utc, edited, score} = comment;
@@ -12,8 +13,8 @@ const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
         <div className="author">
           <Link target="_blank" rel="noreferrer noopener" to={`https://www.reddit.com/user/${author}`}>
             {isOfficialDev === "blizzard"
-                ? <span className="hs-icon icon-blizzardapp"></span>
-                : <span className="hs-icon icon-reddit"></span>
+                ? <Icon name="blizzardapp"/>
+                : <Icon name="reddit"/>
             }
             <p className={isOfficialDev === "blizzard" ? "blizzard_post" : ''}>{author}</p>
             </Link>

@@ -13,7 +13,7 @@ import format from 'date-fns/format';
  */
 export const notEdited = (created, createdFormatted, placement, tooltip) =>{
   return tooltip
-      ? <Tooltip title={`created ${createdFormatted}`} placement={placement || "bottom"}>
+      ? <Tooltip title={`created ${createdFormatted}`} placement={placement}>
           {created}
         </Tooltip>
       : created;
@@ -34,8 +34,8 @@ export const notEdited = (created, createdFormatted, placement, tooltip) =>{
 export const editedWrapper = (created, createdFormatted, edited, editedFormatted, placement, tooltip) =>{
   return tooltip
       ? <p>
-          <Tooltip title={`created ${createdFormatted}`} placement={placement || "bottom"}>{created}</Tooltip>
-          <Tooltip title={`last edited ${editedFormatted}`} placement={placement || "bottom"}>{' *'}</Tooltip>
+          <Tooltip title={`created ${createdFormatted}`} placement={placement}>{created}</Tooltip>
+          <Tooltip title={`last edited ${editedFormatted}`} placement={placement}>{' *'}</Tooltip>
         </p>
       : created;
 };
@@ -61,7 +61,7 @@ export const toSeconds = (time) =>{
  * @param {bool} tooltip - show or hide tooltip
  * @returns {String}
  */
-export const wrapDate = (created, edited = false, placement, tooltip = true) => {
+export const wrapDate = (created, edited = false, placement = "bottom", tooltip = true) => {
   const options = {includeSeconds: true, addSuffix: true};
   const dateFormat = 'DD-MM-YYYY HH:mm';
 
