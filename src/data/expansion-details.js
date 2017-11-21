@@ -296,7 +296,7 @@ export const expansion_details = [
       cardback_event: '',
       cinematic: 'https://www.youtube.com/watch?v=INuc1RR23DE',
       description: '',
-      img: '',
+      img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/kobolds-and-catacombs.jpg',
       gameboard: '',
       new_mechanics_keywords: [
         {
