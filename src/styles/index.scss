@@ -1677,6 +1677,7 @@ card{
             justify-content: flex-start;
             p {
               padding: .5vh;
+              text-align: center;
               @include box-shadow(0, 0, 10px, $dark-grey);
             }
           }

@@ -16,9 +16,9 @@ import {error} from '../../../../utils/messages';
  * @param {string} deckstring - Deck string
  * @param {string} uid - User ID
  */
-export default function (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid) {
-  if (patch && playerClass && title && mode && archetype && deck && description && deckstring && uid) {
-    const validateAdventureType = (mode === 'adventures' && adventure && boss) ? 'wild' : mode,
+export default function (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid, author) {
+  if (patch && playerClass && title && mode && archetype && deck && description && deckstring && uid && author) {
+    const validateAdventureType = (mode === "adventures" && adventure && boss) ? "wild" : mode,
           validateAdventure = (adventure && boss) ? adventure : null,
           validateBoss = (adventure && boss) ? boss : null,
           initVotes = Math.floor(Math.random() * (1000 - 500 + 1)),
@@ -33,6 +33,7 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       playerClass,
       patch,
       title,
+      author,
       deckId,
       created,
       updated: null,
@@ -53,7 +54,7 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
     //
     // return ref.update(updates, success("Deck has been uploaded!"));
 
-    firestore.collection('decks').doc(deckId).set(newDeck).then(()=>console.log('success')).catch(err => console.log(err));
+    firestore.collection("decks").doc(deckId).set(newDeck).then(()=>console.log("success")).catch(err => console.log(err));
   }
   else {
     console.log(patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid);

@@ -41,7 +41,7 @@ const SectionBody = (props) => {
     const now = +new Date();
     props.updateDeck({
       deckId,
-      description: editingDeckDescription,
+      description: deckDescriptionsNotEqual ? editingDeckDescription : description,
       updated: now,
       deck: activeDeckCopy
     });

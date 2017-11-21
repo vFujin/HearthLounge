@@ -5397,6 +5397,7 @@ card {
       justify-content: flex-start; }
       .deck .container__page--right .topbar .topbar__container div .archetype p {
         padding: .5vh;
+        text-align: center;
         -webkit-box-shadow: 0 0 10px #474143;
         -moz-box-shadow: 0 0 10px #474143;
         box-shadow: 0 0 10px #474143; }

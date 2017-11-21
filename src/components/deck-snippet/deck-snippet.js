@@ -7,18 +7,18 @@ import DeckSnippetHeader from "./header/deck-snippet-header";
 import DeckSnippetBody from "./body/deck-snippet-body";
 
 const DeckSnippet = ({d, handleDeckClick}) => {
-  const {adventure, archetype, comments, created, deck, deckId, playerClass, title, mode, username, views, votes} = d;
+  const {adventure, archetype, author, comments, created, deck, deckId, playerClass, title, mode, views, votes} = d;
 
   return (
       <Link to={`decks/${deckId}/${_.kebabCase(title)}`}
             onClick={handleDeckClick}
             id={deckId}
             className={`deckSnippet ${playerClass} active-on-hover`}>
-        <Icon name={mode === 'adventures' ? _.kebabCase(adventure) : mode}
+        <Icon name={mode === "adventures" ? _.kebabCase(adventure) : mode}
               className="background-icon"
-              type={mode === "standard" ? "mode" : "set"} />
+              type={mode === "standard" ? "mode" : "set"}/>
         <DeckSnippetHeader title={title}
-                           username={username}
+                           author={author}
                            playerClass={playerClass}
                            created={created}/>
         <DeckSnippetBody comments={comments}
@@ -38,6 +38,7 @@ DeckSnippet.propTypes = {
   d: PropTypes.shape({
     adventure: PropTypes.string,
     archetype: PropTypes.string,
+    author: PropTypes.string,
     comments: PropTypes.number,
     created: PropTypes.number,
     deck: PropTypes.object,
@@ -46,7 +47,6 @@ DeckSnippet.propTypes = {
     playerClass: PropTypes.string,
     title: PropTypes.string,
     mode: PropTypes.string,
-    username: PropTypes.string,
     views: PropTypes.number,
     votes: PropTypes.number
   })

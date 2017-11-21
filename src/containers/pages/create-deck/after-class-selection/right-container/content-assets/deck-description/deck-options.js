@@ -1,11 +1,11 @@
-import React from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import AboutDeck from './save-deck-assets/about-deck';
-import Preview from './save-deck-assets/preview';
-import {default as saveDeck} from '../../../../../../../firebase/decks/deck/create/deck';
-import {error} from '../../../../../../../utils/messages';
+import React from "react";
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import AboutDeck from "./save-deck-assets/about-deck";
+import Preview from "./save-deck-assets/preview";
+import {default as saveDeck} from "../../../../../../../firebase/decks/deck/create/deck";
+import {error} from "../../../../../../../utils/messages";
 import {updateDeckProperty} from "../../../../../../../redux/actions/create-deck/deck-options.action";
 import {previewCardProps} from "../../../../../../../components/text-editor/utils/preview-card-props";
 
@@ -18,10 +18,10 @@ const DeckOptions = ({authenticated, cards, playerClass, deckstring, patch, user
   const handleInputChange = (e) => {
     let target = e.target.id;
     let value = e.target.value;
-    if(target === 'deckTextControlled') {
+    if(target === "deckTextControlled") {
       updateDeckProperty({deckTextControlled: value});
       if(e.keyCode === 13){
-        value += '<br>\n';
+        value += "<br>\n";
       }
       updateDeckText(updateDeckProperty, value, cards);
     } else {
@@ -37,14 +37,14 @@ const DeckOptions = ({authenticated, cards, playerClass, deckstring, patch, user
   const handleSaveDeckSubmit = (e) => {
     e.preventDefault();
     if(authenticated && user){
-      console.log(user, authenticated);
-      saveDeck(patch, playerClass, deckTitle, deckMode, deckArchetype, _.kebabCase(deckAdventure), _.kebabCase(deckBoss), simplifiedDeck, deckText, deckstring, user.uid);
+      const {uid, username} = user;
+      saveDeck(patch, playerClass, deckTitle, deckMode, deckArchetype, _.kebabCase(deckAdventure), _.kebabCase(deckBoss), simplifiedDeck, deckText, deckstring, uid, username);
     } else {
       error("You have to be logged in in order to save your deck.", 6)
     }
   };
   return (
-      <div className='container__details'>
+      <div className="container__details">
         <AboutDeck playerClass={playerClass}
                    deckTitle={deckTitle}
                    deckMode={deckMode}
