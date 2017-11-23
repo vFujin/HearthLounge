@@ -1,14 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import {adventure_detail_tabs} from '../../../../../data/adventure-details';
+import {adventure_details} from '../../../../../data/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
-import {
-  Overview,
-  ClassChallenges,
-  Cost,
-  Structure,
-} from '../../assets';
+import {Overview, ClassChallenges} from '../../assets';
 import Cards from '../../../../../components/extension-blocks/cards';
 import {Boss, Bosses} from "../../../../../components/extensions/bosses";
 
@@ -17,8 +12,6 @@ const components = {
   Bosses,
   Cards,
   ClassChallenges,
-  Cost,
-  Structure,
   Boss,
 };
 
@@ -26,7 +19,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
   const extensionCards = cards[adventure.url === 'naxxramas' ? 'Naxxramas' : adventure.adventure];
 
   const activeView = () => {
-    return adventure_detail_tabs.filter(adventure => adventure.url === details).map(page => {
+    return adventure_details.find(a=>a.url === adventure.url).extension_topbar_tabs.filter(adventure => adventure.url === details).map(page => {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
       return <Page key={page.url}

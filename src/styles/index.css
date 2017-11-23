@@ -85,6 +85,12 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-knights-of-the-frozen-throne:before {
+  content: "\e93e"; }
+
+.icon-kobolds-and-catacombs:before {
+  content: "\e94c"; }
+
 .icon-adventures:before {
   content: "\e915"; }
 
@@ -210,9 +216,6 @@ a {
 
 .icon-karazhan:before {
   content: "\e927"; }
-
-.icon-knights-of-the-frozen-throne:before {
-  content: "\e93e"; }
 
 .icon-kraken:before {
   content: "\e929"; }

@@ -2,7 +2,7 @@ import React  from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {Link} from 'react-router';
-import {adventure_detail_tabs} from '../../../../data/adventure-details';
+import {adventure_details} from '../../../../data/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../utils/checkIfPathExist';
 
 const Topbar = ({adventure, details, boss}) => {
@@ -15,8 +15,9 @@ const Topbar = ({adventure, details, boss}) => {
   };
 
   const listDetails = () =>{
+    console.log(adventure_details.find(a => a.url === adventure));
     return (
-      adventure_detail_tabs.map((detail, index) =>
+      adventure_details.find(a => a.url === adventure).extension_topbar_tabs.map((detail, index) =>
           <li key={index} className={`${adventure} ${detail.url === details && 'active'}`}>
             <Link to={`/adventures/${adventure}/${detail.url}`}>
               {detail.url === 'bosses' ? bossesTab(detail) : detail.name}

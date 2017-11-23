@@ -8,7 +8,6 @@ import {refParent, firebaseAuth} from '../../../keys';
 export default function (callback){
   firebaseAuth().onAuthStateChanged(user => {
     if (user) {
-      console.log(user);
       return getUserData(user.uid, (v)=> callback(true, v));
     } else {
       callback(false, null);

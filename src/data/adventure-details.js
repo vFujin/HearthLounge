@@ -1,80 +1,92 @@
-export const adventure_detail_tabs = [
-  {
-    name: 'Overview',
-    url: 'overview'
-  },
-  {
-    name: 'Cards',
-    url: 'cards'
-  },
-  {
-    name: 'Cost',
-    url: 'cost'
-  },
-  {
-    name: 'Structure',
-    url: 'structure'
-  },
-  {
-    name: 'Bosses',
-    url: 'bosses'
-  },
-  {
-    name: 'Class Challenges',
-    url: 'class-challenges'
-  }
-];
-
 export const adventure_details = [
   {
     adventure: "Curse of Naxxramas",
     url: 'naxxramas',
     overview: {
+      about: {
+        announce_date: '03.11.2017',
+        release_date: '',
+        no_cards: 30,
+      },
       cardback_heroic: '7',
       cinematic: 'https://www.youtube.com/embed/5SDJgW3A_sw',
       description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/curse-of-naxxramas.jpg',
-      gameboard: ''
-    },
-    cost: {
-      wings: [
+      gameboard: '',
+      new_mechanics_keywords: [
         {
-          desc: 'First',
-          gold: 700,
-          usd: 6.99,
-          eur: 5.99,
-          gbp: 4.99,
-        },
-        {
-          desc: 'Second',
-          gold: 1400,
-          usd: 9.99,
-          eur: 8.99,
-          gbp: 6.99
-        },
-        {
-          desc: 'Third',
-          gold: 2100,
-          usd: 14.99,
-          eur: 13.99,
-          gbp: 11.49
-        },
-        {
-          desc: 'Fourth',
-          gold: 2800,
-          usd: 19.99,
-          eur: 17.99,
-          gbp: 13.99
-        },
-        {
-          desc: 'Fifth',
-          gold: 3500,
-          usd: 24.99,
-          eur: 21.99,
-          gbp: 17.49
+          name: 'Deathrattle',
+          description: ''
         }
-      ]
+      ],
+      cost: [
+          {
+            desc: 'First',
+            gold: 700,
+            usd: 6.99,
+            eur: 5.99,
+            gbp: 4.99,
+          },
+          {
+            desc: 'Second',
+            gold: 1400,
+            usd: 9.99,
+            eur: 8.99,
+            gbp: 6.99
+          },
+          {
+            desc: 'Third',
+            gold: 2100,
+            usd: 14.99,
+            eur: 13.99,
+            gbp: 11.49
+          },
+          {
+            desc: 'Fourth',
+            gold: 2800,
+            usd: 19.99,
+            eur: 17.99,
+            gbp: 13.99
+          },
+          {
+            desc: 'Fifth',
+            gold: 3500,
+            usd: 24.99,
+            eur: 21.99,
+            gbp: 17.49
+          }
+        ],
+      structure: {
+        wing_amount: 5,
+        wing_details: [
+          "Każde skrzydło było otwierane raz na tydzień przez 5 tygodni",
+          "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
+          "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+        ],
+        bosses_amount: 15,
+        bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+        class_challenges: 9,
+        class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+      }
     },
+    extension_topbar_tabs: [
+      {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
+        name: 'Cards',
+        url: 'cards'
+      },
+      {
+        name: 'Bosses',
+        url: 'bosses'
+      },
+      {
+        name: 'Class Challenges',
+        url: 'class-challenges'
+      }
+    ],
     wings: {
       description: "",
       details: [
@@ -93,7 +105,7 @@ export const adventure_details = [
               reward: "Nerub'ar Weblord"
             },
             {
-              name:"Maexxna",
+              name: "Maexxna",
               url: 'maexxna',
               reward: "Nerubian Egg"
             }
@@ -185,19 +197,6 @@ export const adventure_details = [
           ]
         }
       ]
-
-    },
-    structure: {
-      wing_amount: 5,
-      wing_details: [
-        "Każde skrzydło było otwierane raz na tydzień przez 5 tygodni",
-        "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
-        "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
-      ],
-      bosses_amount: 15,
-      bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
-      class_challenges: 9,
-      class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
     },
     class_challenges: [
       {
@@ -236,26 +235,30 @@ export const adventure_details = [
         playerClass: 'warrior',
         reward: "Obsidian Destroyer"
       }
-    ],
-    cards: {
-      card_amount: 30,
-      legendary: 5,
-      class_ones: 18
-    }
+    ]
   },
   {
     adventure: "Blackrock Mountain",
     url: "blackrock-mountain",
     overview: {
+      about: {
+        announce_date: '03.11.2017',
+        release_date: '',
+        no_cards: 45,
+      },
       cardback_event: '18',
       cardback_heroic: '21',
       cinematic: 'https://www.youtube.com/embed/jsH9w5HW-9w',
-      description:'',
+      description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/blackrock-mountain.jpg',
-      gameboard: ''
-    },
-    cost: {
-      wings: [
+      gameboard: '',
+      new_mechanics_keywords: [
+        {
+          name: 'Deathrattle',
+          description: ''
+        }
+      ],
+      cost: [
         {
           desc: 'First',
           gold: 700,
@@ -291,8 +294,38 @@ export const adventure_details = [
           eur: 21.99,
           gbp: 17.49
         }
-      ]
+      ],
+      structure: {
+        wing_amount: 5,
+        wing_details: [
+          "Każde skrzydło było otwierane raz na tydzień przez 5 tygodni",
+          "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
+          "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+        ],
+        bosses_amount: 17,
+        bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+        class_challenges: 9,
+        class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+      }
     },
+    extension_topbar_tabs: [
+      {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
+        name: 'Cards',
+        url: 'cards'
+      },
+      {
+        name: 'Bosses',
+        url: 'bosses'
+      },
+      {
+        name: 'Class Challenges',
+        url: 'class-challenges'
+      }
+    ],
     wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
@@ -311,7 +344,7 @@ export const adventure_details = [
               reward: "Gang Up"
             },
             {
-              name:"Emperor Thaurissan",
+              name: "Emperor Thaurissan",
               url: 'emperor-thaurissan',
               reward: "Resurrect"
             }
@@ -413,18 +446,6 @@ export const adventure_details = [
         }
       ]
     },
-    structure: {
-      wing_amount: 5,
-      wing_details: [
-        "Każde skrzydło było otwierane raz na tydzień przez 5 tygodni",
-        "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
-        "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
-      ],
-      bosses_amount: 17,
-      bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
-      class_challenges: 9,
-      class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
-    },
     class_challenges: [
       {
         playerClass: 'druid',
@@ -462,55 +483,89 @@ export const adventure_details = [
         playerClass: 'warrior',
         reward: "Axe Flinger"
       }
-    ],
-    cards: {
-      card_amount: 31,
-      legendary: 5,
-      class_ones: 18
-    }
+    ]
   },
   {
     adventure: "The League of Explorers",
     url: "the-league-of-explorers",
     overview: {
+      about: {
+        announce_date: '03.11.2017',
+        release_date: '',
+        no_cards: 31,
+      },
       cardback_heroic: '37',
       cinematic: 'https://www.youtube.com/embed/wmu0XXpUYog',
       description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/the-league-of-explorers.jpg',
-      gameboard: ''
-    },
-    cost: {
-      wings: [
+      gameboard: '',
+      new_mechanics_keywords: [
         {
-          desc: 'First',
-          gold: 700,
-          usd: 6.99,
-          eur: 5.99,
-          gbp: 4.99,
-        },
-        {
-          desc: 'Second',
-          gold: 1400,
-          usd: 9.99,
-          eur: 8.99,
-          gbp: 6.99
-        },
-        {
-          desc: 'Third',
-          gold: 2100,
-          usd: 14.99,
-          eur: 13.99,
-          gbp: 11.49
-        },
-        {
-          desc: 'Fourth',
-          gold: 2800,
-          usd: 19.99,
-          eur: 17.99,
-          gbp: 13.99
+          name: 'Deathrattle',
+          description: ''
         }
-      ]
+      ],
+      cost: [
+          {
+            desc: 'First',
+            gold: 700,
+            usd: 6.99,
+            eur: 5.99,
+            gbp: 4.99,
+          },
+          {
+            desc: 'Second',
+            gold: 1400,
+            usd: 9.99,
+            eur: 8.99,
+            gbp: 6.99
+          },
+          {
+            desc: 'Third',
+            gold: 2100,
+            usd: 14.99,
+            eur: 13.99,
+            gbp: 11.49
+          },
+          {
+            desc: 'Fourth',
+            gold: 2800,
+            usd: 19.99,
+            eur: 17.99,
+            gbp: 13.99
+          }
+        ],
+      structure: {
+        wing_amount: 4,
+        wing_details: [
+          "Każde skrzydło było otwierane raz na tydzień przez 4 tygodnie",
+          "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
+          "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+        ],
+        bosses_amount: 13,
+        bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+        class_challenges: 9,
+        class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+      }
     },
+    extension_topbar_tabs: [
+      {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
+        name: 'Cards',
+        url: 'cards'
+      },
+      {
+        name: 'Bosses',
+        url: 'bosses'
+      },
+      {
+        name: 'Class Challenges',
+        url: 'class-challenges'
+      }
+    ],
     wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
@@ -529,7 +584,7 @@ export const adventure_details = [
               reward: ["Anubisath Sentinel", "Summoning Stone"]
             },
             {
-              name:"Temple Escape",
+              name: "Temple Escape",
               url: 'temple-escape',
               reward: ["Rumbling Elemental", "Sacred Trial"]
             }
@@ -605,18 +660,6 @@ export const adventure_details = [
         }
       ]
     },
-    structure: {
-      wing_amount: 4,
-      wing_details: [
-        "Każde skrzydło było otwierane raz na tydzień przez 4 tygodnie",
-        "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
-        "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
-      ],
-      bosses_amount: 13,
-      bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
-      class_challenges: 9,
-      class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
-    },
     class_challenges: [
       {
         playerClass: 'druid',
@@ -654,24 +697,30 @@ export const adventure_details = [
         playerClass: 'warrior',
         reward: "Axe Flinger"
       }
-    ],
-    cards: {
-      card_amount: 45
-    }
+    ]
   },
   {
     adventure: "One Night in Karazhan",
     url: "karazhan",
     overview: {
+      about: {
+        announce_date: '03.11.2017',
+        release_date: '',
+        no_cards: 45,
+      },
       cardback_event: '56',
       cardback_heroic: '53',
       cinematic: 'https://www.youtube.com/embed/wmu0XXpUYog',
       description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/one-night-in-karazhan.jpg',
-      gameboard: ''
-    },
-    cost: {
-      wings: [
+      gameboard: '',
+      new_mechanics_keywords: [
+        {
+          name: 'Deathrattle',
+          description: ''
+        }
+      ],
+      cost: [
         {
           desc: 'Prologue'
         },
@@ -710,8 +759,38 @@ export const adventure_details = [
           eur: 21.99,
           gbp: 17.49
         }
-      ]
+      ],
+      structure: {
+        wing_amount: 4,
+        wing_details: [
+          "Każde skrzydło było otwierane raz na tydzień przez 4 tygodnie",
+          "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
+          "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+        ],
+        bosses_amount: 13,
+        bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+        class_challenges: 9,
+        class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+      }
     },
+    extension_topbar_tabs: [
+      {
+        name: 'Overview',
+        url: 'overview'
+      },
+      {
+        name: 'Cards',
+        url: 'cards'
+      },
+      {
+        name: 'Bosses',
+        url: 'bosses'
+      },
+      {
+        name: 'Class Challenges',
+        url: 'class-challenges'
+      }
+    ],
     wings: {
       description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
       details: [
@@ -812,18 +891,6 @@ export const adventure_details = [
         }
       ]
     },
-    structure: {
-      wing_amount: 4,
-      wing_details: [
-        "Każde skrzydło było otwierane raz na tydzień przez 4 tygodnie",
-        "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
-        "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
-      ],
-      bosses_amount: 13,
-      bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
-      class_challenges: 9,
-      class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
-    },
     class_challenges: [
       {
         playerClass: 'druid',
@@ -861,9 +928,6 @@ export const adventure_details = [
         playerClass: 'warrior',
         reward: "Axe Flinger"
       }
-    ],
-    cards: {
-      card_amount: 45
-    }
+    ]
   }
 ];

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ExtensionBlock = ({page, title, element, blockWidth}) =>{
   return (
-      <li className={`container__blocks--block ${page} block-width-${blockWidth || 1}`}>
+      <li className={`container__blocks--block ${page || "overview"} block-width-${blockWidth || 1}`}>
         <h4 className="container__blocks--block-header">{title}</h4>
         {element}
       </li>
@@ -13,7 +13,8 @@ const ExtensionBlock = ({page, title, element, blockWidth}) =>{
 export default ExtensionBlock;
 
 ExtensionBlock.propTypes = {
-  page: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  element: PropTypes.element.isRequired
+  element: PropTypes.element.isRequired,
+  page: PropTypes.string,
+  blockWidth: PropTypes.number
 };

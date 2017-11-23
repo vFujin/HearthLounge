@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {adventure_detail_tabs} from '../../../../../data/adventure-details';
+import {adventure_details} from '../../../../../data/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
 import AdventureDetails from './details';
 import NotFound from '../../../../shared-assets/not-found';
 
 const Content = ({adventure, detailsChild, adventureCardbacks, details, decks}) => {
-  let detailsPath = adventure_detail_tabs.map(tab => tab.url).includes(details);
+  let detailsPath = adventure_details.find(a=>a.url === adventure.url).extension_topbar_tabs.map(tab => tab.url).includes(details);
+
   let wingDetailsPath = detailsChild
       ? adventureWingExists("adventures", adventure.url, details)
       : null;

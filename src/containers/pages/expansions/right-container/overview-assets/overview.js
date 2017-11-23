@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ExtensionBlock from "../../../../../components/extension-blocks/extension-block";
-import {Art, About, Rewards, Cinematic, Gameboard} from "../../../../../components/extension-blocks/overview-blocks";
-import {NewMechanicsKeywords} from "./index";
+import {Art, About, Rewards, Cinematic, Gameboard, NewMechanicsKeywords} from "../../../../../components/extension-blocks/overview-blocks";
+
 
 const Overview = ({extension, expansionCardbacks}) => {
   const {overview, name} = extension;
   const {cinematic, gameboard, img, about, new_mechanics_keywords} = overview;
-
 
   const expansionArt = <Art src={img} name={name} />;
   const expansionAbout= <About about={about} />;
   const expansionRewards = <Rewards extensionCardbacks={expansionCardbacks} />;
   const expansionCinematic = <Cinematic src={cinematic} />;
   const expansionGameboard = <Gameboard src={gameboard} adventureName={name} />;
-  const expansionNewMechanicsKeywords = <NewMechanicsKeywords newMechanicsKeywords={new_mechanics_keywords}/>;
+  const expansionNewMechanicsKeywords = <NewMechanicsKeywords extensionMechanics={new_mechanics_keywords}/>;
 
 
   return (

@@ -290,7 +290,7 @@ export const expansion_details = [
       about: {
         announce_date: '03.11.2017',
         release_date: '',
-        no_cards: 0,
+        no_cards: 135,
       },
       cardback_heroic: '',
       cardback_event: '',
