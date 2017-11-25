@@ -15,7 +15,6 @@ const Overview = ({extension, expansionCardbacks}) => {
   const expansionGameboard = <Gameboard src={gameboard} adventureName={name} />;
   const expansionNewMechanicsKeywords = <NewMechanicsKeywords extensionMechanics={new_mechanics_keywords}/>;
 
-
   return (
       <ul className="container__blocks">
         <ExtensionBlock page="overview" title="about" element={expansionAbout}/>

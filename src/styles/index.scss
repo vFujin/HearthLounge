@@ -985,7 +985,7 @@ card{
           }
           .container__blocks--block-content {
             padding: 1vh;
-            height: calc(100% - 40px - 2vh);
+            height: calc(100% - 40px);
             &.rewards {
               display: flex;
               justify-content: center;

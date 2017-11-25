@@ -22,7 +22,6 @@ const Overview = ({extension, adventureCardbacks}) => {
   const adventureCost = <Cost extensionCost={cost}/>;
   const adventureStructure = <Structure extensionStructure={structure}/>;
   const adventureMechanics = <NewMechanicsKeywords extensionMechanics={new_mechanics_keywords} />;
-
   return (
       <ul className="container__blocks">
         <ExtensionBlock title="about" element={adventureAbout}/>

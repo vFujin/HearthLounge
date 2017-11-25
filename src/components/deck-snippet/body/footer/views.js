@@ -5,7 +5,7 @@ import Icon from "../../../icon";
 export const DSViews = ({views}) => {
   return (
       <div className="deckSnippet__body--footer-views">
-        <Icon name="eye"/>
+        <Icon name="views"/>
         <p>{views || 0}</p>
       </div>
   );
