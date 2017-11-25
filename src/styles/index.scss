@@ -1352,18 +1352,55 @@ card{
     .expansions {
       div {
         .slider {
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
           height: 100%;
-          padding: 10px;
           width: 100%;
+        }
+        .extension{
+          display: flex;
+          width: 100%;
+          height: 100%;
+          .extension__sidebar{
+            display: flex;
+            position: relative;
+            width: 20%;
+            flex-direction: column;
+            background: $dark-grey;
+            color: $light-grey;
+            a{
+              text-align: center;
+              margin: 0 10px 10px 10px;
+
+              padding: 10px;
+              color: $light-grey;
+              border: 1px solid $light-grey;
+              @include transition(all ease .4s);
+              &:hover{
+                border-color: $pearl;
+                color: $pearl;
+                background-color: $white-020;
+              }
+            }
+            span{
+              position: absolute;
+              bottom: 10px;
+              width: 100%;
+              text-align: center;
+              font-size: 100px;
+              opacity: .2;
+            }
+          }
+          .extension__content{
+            padding: 10px;
+            img{
+              height: 100%;
+              width: 100%;
+            }
+          }
         }
       }
     }
 
-    .card, .create-deck {
+    .all-cards, .create-deck {
       > div {
         .icon-wrapper {
           @include transition(all ease .4s);

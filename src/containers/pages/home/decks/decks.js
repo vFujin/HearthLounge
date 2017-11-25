@@ -24,7 +24,7 @@ const DecksBlock = ({hotDecks, deckFilters, handleDeckClick, handleFilterClick})
       <li className={`home__block decks block-width-3`}>
         <div className="home__block--header">
           <Link to="/decks">
-            <Icon name="decks" />
+            <Icon name="deck" />
             <p>{_.upperCase("decks")}</p>
           </Link>
           <ClassSelection activePlayerClassFilter={playerClass || ''} handleFilterClick={handleFilterClick}/>

@@ -93,5 +93,5 @@ export const expansionExists = (expansionPath) =>
 
 export const expansionDetailExists = (expansionPath, detailsPath) =>
     expansion_details
-        .find(expansion => expansion.url === expansionPath).expansion_topbar_tabs
+        .find(expansion => expansion.url === expansionPath).extension_topbar_tabs
         .map(expansion => expansion.url).includes(detailsPath);

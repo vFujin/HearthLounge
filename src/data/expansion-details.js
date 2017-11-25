@@ -31,7 +31,7 @@ export const expansion_details = [
         }
       ]
     },
-    expansion_topbar_tabs: [
+    extension_topbar_tabs: [
       {
         name: 'Overview',
         url: 'overview'
@@ -64,7 +64,7 @@ export const expansion_details = [
         }
       ]
     },
-    expansion_topbar_tabs: [
+    extension_topbar_tabs: [
       {
         name: 'Overview',
         url: 'overview'
@@ -94,7 +94,7 @@ export const expansion_details = [
         }
       ]
     },
-    expansion_topbar_tabs: [
+    extension_topbar_tabs: [
       {
         name: 'Overview',
         url: 'overview'
@@ -130,7 +130,7 @@ export const expansion_details = [
         }
       ]
     },
-    expansion_topbar_tabs: [
+    extension_topbar_tabs: [
       {
         name: 'Overview',
         url: 'overview'
@@ -170,7 +170,7 @@ export const expansion_details = [
         }
       ]
     },
-    expansion_topbar_tabs: [
+    extension_topbar_tabs: [
       {
         name: 'Overview',
         url: 'overview'
@@ -203,7 +203,7 @@ export const expansion_details = [
         }
       ]
     },
-    expansion_topbar_tabs: [
+    extension_topbar_tabs: [
       {
         name: 'Overview',
         url: 'overview'
@@ -305,7 +305,7 @@ export const expansion_details = [
         }
       ]
     },
-    expansion_topbar_tabs: [
+    extension_topbar_tabs: [
       {
         name: 'Overview',
         url: 'overview'

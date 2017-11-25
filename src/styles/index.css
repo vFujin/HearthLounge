@@ -5149,14 +5149,47 @@ card {
           .container__index.home .home__list .decks > div .right-container .hot-decks .loading-wrapper {
             position: absolute; }
     .container__index.home .home__list .expansions div .slider {
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
       height: 100%;
-      padding: 10px;
       width: 100%; }
-    .container__index.home .home__list .card > div .icon-wrapper, .container__index.home .home__list .create-deck > div .icon-wrapper {
+    .container__index.home .home__list .expansions div .extension {
+      display: flex;
+      width: 100%;
+      height: 100%; }
+      .container__index.home .home__list .expansions div .extension .extension__sidebar {
+        display: flex;
+        position: relative;
+        width: 20%;
+        flex-direction: column;
+        background: #474143;
+        color: #A69E9D; }
+        .container__index.home .home__list .expansions div .extension .extension__sidebar a {
+          text-align: center;
+          margin: 0 10px 10px 10px;
+          padding: 10px;
+          color: #A69E9D;
+          border: 1px solid #A69E9D;
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          -ms-transition: all ease 0.4s;
+          -o-transition: all ease 0.4s;
+          transition: all ease 0.4s; }
+          .container__index.home .home__list .expansions div .extension .extension__sidebar a:hover {
+            border-color: #E7E2DA;
+            color: #E7E2DA;
+            background-color: rgba(225, 255, 255, 0.2); }
+        .container__index.home .home__list .expansions div .extension .extension__sidebar span {
+          position: absolute;
+          bottom: 10px;
+          width: 100%;
+          text-align: center;
+          font-size: 100px;
+          opacity: .2; }
+      .container__index.home .home__list .expansions div .extension .extension__content {
+        padding: 10px; }
+        .container__index.home .home__list .expansions div .extension .extension__content img {
+          height: 100%;
+          width: 100%; }
+    .container__index.home .home__list .all-cards > div .icon-wrapper, .container__index.home .home__list .create-deck > div .icon-wrapper {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
       -ms-transition: all ease 0.4s;
@@ -5166,9 +5199,9 @@ card {
       align-items: center;
       justify-content: center;
       height: 100%; }
-      .container__index.home .home__list .card > div .icon-wrapper .hs-icon, .container__index.home .home__list .create-deck > div .icon-wrapper .hs-icon {
+      .container__index.home .home__list .all-cards > div .icon-wrapper .hs-icon, .container__index.home .home__list .create-deck > div .icon-wrapper .hs-icon {
         font-size: 12vw; }
-    .container__index.home .home__list .card:hover .icon-wrapper, .container__index.home .home__list .create-deck:hover .icon-wrapper {
+    .container__index.home .home__list .all-cards:hover .icon-wrapper, .container__index.home .home__list .create-deck:hover .icon-wrapper {
       color: #E7E2DA; }
     .container__index.home .home__list .twitch .home__block--body {
       height: calc(100% - 5.5vh); }

@@ -1,4 +1,7 @@
 svg#logo{
+  //.outer{
+  //  opacity: 0;
+  //}
   &:hover{
     animation: initOpacity .4s linear;
     .circle{

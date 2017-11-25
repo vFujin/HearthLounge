@@ -69,17 +69,17 @@ class Home extends PureComponent{
             <HomeBlock icon="create-deck">
               <CreateDeckBlock/>
             </HomeBlock>
-            <HomeBlock icon="trophy" blockTitle="tournaments">
+            <HomeBlock icon="trophy" title="tournaments">
               <TournamentsBlock/>
             </HomeBlock>
-            <HomeBlock icon="expansions" blockTitle="extensions" width={2}>
+            <HomeBlock icon="expansions" title="latest extensions" width={2}>
               <ExtensionsBlock/>
             </HomeBlock>
             <HomeBlock icon="reddit">
               <ForumBlock posts={posts}
                           handleRedditPostClick={this.handleRedditPostClick}/>
             </HomeBlock>
-            <HomeBlock icon="card" title="cards">
+            <HomeBlock icon="all-cards" title="cards">
               <CardsBlock/>
             </HomeBlock>
 

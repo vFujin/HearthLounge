@@ -1,14 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router';
 import _ from 'lodash';
+import Icon from "../../../components/icon";
 
 const HomeBlock = ({title, width, icon, children}) =>{
+  const blockTitle = _.upperCase((title !== icon && title !== undefined) ? title : icon);
+
   return (
       <li className={`home__block ${icon} block-width-${width || 1}`}>
         <div className="home__block--header">
           <Link to={`/${icon}`}>
-            <span className={`hs-icon icon-${icon}`}></span>
-            <p>{_.upperCase(title || icon)}</p>
+            <Icon name={icon}/>
+            <p>{blockTitle}</p>
           </Link>
         </div>
         <div className="home__block--body">

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
 const Topbar = ({details, expansion}) => {
-  const {expansion_topbar_tabs} = expansion;
+  const {extension_topbar_tabs} = expansion;
   const listExpansionDetailTabs = () =>{
-    return expansion_topbar_tabs.map((detail, index) =>
+    return extension_topbar_tabs.map((detail, index) =>
         <li key={index} className={`${expansion.url} ${details === detail.url && 'active'}`}>
           <Link to={`/expansions/${expansion.url}/${detail.url}`}>
             {detail.name}

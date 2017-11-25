@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {carousel} from './data';
+import Icon from "../../../../../components/icon";
 export class Carousel extends Component {
   constructor(props){
     super(props);
@@ -33,7 +34,7 @@ export class Carousel extends Component {
             {carousel.map((slide, index) =>
               <li className="slide" key={index}>
                 <p>{slide.text}</p>
-                <span className={`hs hs-icon icon-${slide.icon}`}></span>
+                <Icon name={slide.icon}/>
               </li>
             )}
           </ul>

@@ -5,7 +5,7 @@ const CardsBlock = () => {
       <div>
         <Link to={'/cards'}>
           <div className="icon-wrapper">
-            <span className="hs-icon icon-card"></span>
+            <span className="hs-icon icon-all-cards"></span>
           </div>
         </Link>
       </div>

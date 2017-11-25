@@ -1,44 +1,68 @@
-import React from 'react';
+import React, {Component} from 'react';
 import _ from 'lodash';
-import Carousel from 'antd/lib/carousel';
-import {Link} from 'react-router';
 import {expansion_details} from "../../../../data/expansion-details";
 import {adventure_details} from "../../../../data/adventure-details";
-import 'antd/lib/carousel/style/index.css';
+import ExtensionSidebar from "./assets/sidebar";
+import ExtensionContent from "./assets/content";
 
-const ExtensionsBlock = () => {
-  const adventures = _.takeRight(adventure_details, 2);
-  const expansions = _.takeRight(expansion_details, 2);
-  let extensions = _.flatten(_.zip(adventures, expansions));
+class ExtensionsBlock extends Component {
+  constructor(){
+    super();
+    this.state = {
+      activeSlide: 0
+    }
+  }
 
-  const mapExtensions = () => {
-    return extensions.reverse().map(extension => {
-          const {url, overview} = extension;
-          const {img} = overview;
-          let extensionType = _.keys(extension)[0];
+  timer() {
+    if(this.state.activeSlide === 3){
+      this.setState({
+        activeSlide: 0
+      })
+    } else {
+      this.setState({
+        activeSlide: this.state.activeSlide + 1
+      });
+    }
+  }
 
-          return (
-              <div className="extension">
-                <div className="extension__sidebar">
+  componentDidMount(){
+    this.intervalId = setInterval(() => this.timer(), 10000);
+  }
 
-                </div>
-                <Link className="extension__content" key={url} to={`/${extensionType}s/${url}/overview`}>
-                  <img src={img} alt={`${url}'s art`}/>
-                </Link>
-              </div>
-          )
-        }
-    )
-  };
+  componentWillUnmount(){
+    clearInterval(this.intervalId);
+  }
 
-  return (
-      <div className="slider">
-       <Carousel autoplay
-                 autoplaySpeed={1000*60*60}>
-         {mapExtensions()}
-       </Carousel>
+  mapExtensions = (extensions) => extensions.reverse().map(extension => {
+    const {url, overview, extension_topbar_tabs} = extension;
+    const {img} = overview;
+    let extensionType = _.keys(extension)[0];
+
+    return (
+      <div className="extension">
+        <ExtensionSidebar extensionType={extensionType}
+                          extensionUrl={url}
+                          extensionTabs={extension_topbar_tabs}/>
+        <ExtensionContent extensionType={extensionType}
+                          url={url}
+                          img={img}/>
       </div>
-  );
+    )
+  })[this.state.activeSlide];
+
+  render(){
+    const adventures = _.takeRight(adventure_details, 2);
+    const expansions = _.takeRight(expansion_details, 2);
+    let extensions = _.flatten(_.zip(adventures, expansions));
+    // console.log(extensions.filter(ext => Object.keys(ext).includes('adventure')));
+
+    return (
+      <div className="slider">
+        {this.mapExtensions(extensions)}
+      </div>
+    );
+  }
+
 };
 
 export default ExtensionsBlock;

@@ -18,7 +18,7 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
   const extensionCards = cards[activeExpansion.expansion];
 
 
-  let activeExpansionTab = activeExpansion.expansion_topbar_tabs.filter(tab => tab.url === details);
+  let activeExpansionTab = activeExpansion.extension_topbar_tabs.filter(tab => tab.url === details);
   const activeView = () =>{
 
     return activeExpansionTab.map(page=> {
