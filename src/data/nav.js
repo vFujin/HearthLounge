@@ -50,7 +50,7 @@ export const navItems = [
   },
   {
     name: "cards",
-    icon: "card",
+    icon: "all-cards",
     homepage_block_width: 1
   },
   // {

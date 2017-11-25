@@ -19,14 +19,14 @@ class Sidebar extends PureComponent {
       editing_danger_zone: false,
 
 
-      email: null,
-      battletag: null,
-      favouriteClass: null,
-      region: null,
-      facebook: null,
-      twitter: null,
-      twitch: null,
-      youtube: null,
+      email: '',
+      battletag: '',
+      favouriteClass: '',
+      region: '',
+      facebook: '',
+      twitter: '',
+      twitch: '',
+      youtube: '',
 
       isReauthenticated: false,
       reauthPassword: ''
@@ -74,7 +74,6 @@ class Sidebar extends PureComponent {
   handleInputChange(e){
     let target = e.target.id;
     let value = e.target.value;
-    console.log(value);
     this.setState({
       [target]: value
     })
@@ -124,7 +123,7 @@ class Sidebar extends PureComponent {
                                 handleEditClick={(e)=>this.handleEditClick(e)}
                                 handleInputChange={(e)=>this.handleInputChange(e)}
                                 handleSelectChange={(v, selector)=>this.handleSelectChange(v, selector)}
-                                handleSaveClick={(e)=>this.handleSaveClick(e)}/>
+                                handleSaveClick={this.handleSaveClick}/>
             <SocialMediaDetails user={activeUser}
                                 isEditing={this.state.editing_social_media}
                                 handleEditClick={(e)=>this.handleEditClick(e)}
