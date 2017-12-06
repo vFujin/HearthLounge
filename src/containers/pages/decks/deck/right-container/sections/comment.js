@@ -27,14 +27,15 @@ class Comment extends PureComponent {
 
     // console.log(shortenedUserDetails);
     // const {rank, role, avatar, username} = user[1];
-
     return (
         <div className="comment">
           {shortenedUserDetails[authorId] ? <SimplifiedUserSnippet user={user[0][1]} /> : <ShortenedUserDetailsLoader />}
           <div className="details">
             <CommentHeader created={created}
+                           commentId={commentId}
                            authenticated={authenticated}
-                           patch={patch}/>
+                           patch={patch}
+                           handleCommentOptionsClick={this.props.handleCommentOptionsClick}/>
             <CommentBody commentText={text}/>
             <CommentFooter commentId={commentId}
                            authenticated={authenticated}

@@ -3,23 +3,25 @@ import Dropdown from 'antd/lib/dropdown';
 import Menu from 'antd/lib/menu';
 import Tooltip from 'antd/lib/tooltip';
 
-const MoreOptions = () =>{
+const MoreOptions = ({commentId, handleCommentOptionsClick}) =>{
+
   const menu = (
-      <Menu>
-        <Menu.Item>Report</Menu.Item>
+      <Menu onClick={(e) => handleCommentOptionsClick(e)}>
+        <Menu.Item key="delete" commentId={commentId}>Delete</Menu.Item>
+        <Menu.Item key="flag" commentId={commentId}>Flag</Menu.Item>
       </Menu>
   );
   return (
       <Tooltip title="More options" placement="topRight" arrowPointAtCenter>
-        <div className="post-more-options">
-            <Dropdown overlay={menu} placement="bottomCenter" trigger={['click']}>
+        <Dropdown overlay={menu} placement="bottomCenter" trigger={['click']}>
+          <div className="post-more-options">
               <ul className="options">
                 <li className="peripheral"></li>
                 <li className="peripheral"></li>
                 <li className="peripheral"></li>
               </ul>
-            </Dropdown>
-        </div>
+          </div>
+        </Dropdown>
       </Tooltip>
   )
 };

@@ -2,11 +2,11 @@ import {ref} from "../../../../keys";
 import {call, put, takeEvery} from 'redux-saga/effects';
 import * as actions from "./actions";
 import * as types from "./types";
-import {comment, updateDeckCommentsCount} from "../utils";
+import {newComment, updateDeckCommentsCount} from "../utils";
 
 export const postDeckComment = ({current, deckComment, deckId, uid}) => {
-  const c = comment(current, deckComment, deckId, uid);
-  return ref.update(c).then(()=> ({response: 200}), err => ({err})
+  const comment = newComment(current, deckComment, deckId, uid);
+  return ref.update(comment).then(()=> ({response: 200}), err => ({err})
   );
 };
 
@@ -18,7 +18,7 @@ export function* postDeckCommentSaga({payload}) {
     yield put(actions.postDeckCommentFailure(err));
   } else {
     yield put(actions.postDeckCommentSuccess(response));
-    yield updateDeckCommentsCount(deckId);
+    yield updateDeckCommentsCount(deckId, "increment");
   }
 }
 

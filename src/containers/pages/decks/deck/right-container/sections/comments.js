@@ -11,6 +11,7 @@ import {getComment} from '../../../../../../firebase/decks/comments/read';
 import {updateCommentRating} from '../../../../../../firebase/decks/comments/update';
 // import * as deckCommentActions from "../../../../../../redux/actions/deck/deck-view.action";
 import {FETCH_ACTIVE_DECK_COMMENTS_REQUEST} from "../../../../../../redux/deck/comments/fetch-comments/types";
+import {DELETE_DECK_COMMENT_REQUEST} from "../../../../../../redux/deck/comments/delete-comment/types";
 
 
 
@@ -48,6 +49,22 @@ class DeckComments extends PureComponent {
     // this.props.updateCommentVotes({upvotes: 0, downvotes: 0, votes: 0, id: ""})
   };
 
+  handleCommentOptionsClick = (e) =>{
+    const {deleteComment, params, activeUser} = this.props;
+    const {key, item} = e;
+    const {commentId} = item.props;
+    const {uid} = activeUser;
+    const {deckId} = params;
+
+    switch(key){
+      case "delete": {
+        const commentObj = {commentId, deckId, uid};
+        return deleteComment(commentObj);
+      }
+      case "flag": return;
+    }
+  };
+
   render() {
     const {activeDeck, params, commentVotes, commentId, deckComments, deckComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
     const { deckId } = params.deckId;
@@ -70,7 +87,8 @@ class DeckComments extends PureComponent {
                        deckComment={deckComment}
                        previewIsActive={previewIsActive}
                        usersDetails={usersDetails}
-                       handleCommentVotingClick={this.handleCommentVotingClick}/>
+                       handleCommentVotingClick={this.handleCommentVotingClick}
+                       handleCommentOptionsClick={this.handleCommentOptionsClick}/>
           {commentBoxIsActive ? <SectionFooter /> : null}
         </div>
     )
@@ -91,7 +109,7 @@ const mapDispatchToProps = (dispatch) => {
 
   return {
     fetchComments: payload => dispatch({type: FETCH_ACTIVE_DECK_COMMENTS_REQUEST, payload}),
-
+    deleteComment: payload => dispatch({type: DELETE_DECK_COMMENT_REQUEST, payload})
     // updateCommentVote: vote => dispatch(updateCommentVote(vote)),
     // updateComments: (deckId, comments) => dispatch(updateComments(deckId, comments)),
     // updateUsersDetails: usersDetails => dispatch(updateUsersDetails(usersDetails)),

@@ -18,6 +18,7 @@ import {watchDeckComments} from "../deck/comments/fetch-comments/saga";
 import {watchDeckCommentPostingStatus} from "../deck/comments/post-comment/saga";
 import {watchUserShortenedDetails} from "../user/shortened-details/saga";
 import {watchActiveDeckUpdate} from "../deck/active-deck-editing/saga";
+import {watchDeckCommentDeletingStatus} from "../deck/comments/delete-comment/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -31,9 +32,10 @@ export default function* rootSaga() {
     watchDecksUpdate(),
     watchActiveDeck(),
     watchDeckAuthor(),
+    watchActiveDeckUpdate(),
     watchDeckComments(),
     watchDeckCommentPostingStatus(),
-    watchActiveDeckUpdate(),
+    watchDeckCommentDeletingStatus(),
     //Reddit
     watchRedditPosts(),
     watchRedditPost(),

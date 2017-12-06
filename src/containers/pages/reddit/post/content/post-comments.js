@@ -8,7 +8,7 @@ const PostComments = ({post, comments}) =>{
       <div className="container__details--section container__details--comments">
         <div className="section__header">
           <div className="line"></div>
-          <h1>{post.num_comments} {post.num_comments === 1 ? "comment" : "comments"}</h1>
+          <h1>{post.num_comments} {post.num_comments === 1 ? "newComment" : "comments"}</h1>
         </div>
         <div className="section__body">
           <div className="comments">

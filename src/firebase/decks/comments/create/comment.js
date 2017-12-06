@@ -3,10 +3,10 @@
 // import {updateCommentsCount} from "../../deck/update/index";
 //
 // /**
-//  * Creates deck comment.
+//  * Creates deck newComment.
 //  *
 //  * @param {string} patch - current patch version in Hearthstone
-//  * @param {string} text - comment text
+//  * @param {string} text - newComment text
 //  * @param {string} deckId - deck id
 //  * @param {string} uid - user id
 //  */

@@ -51,8 +51,6 @@ a {
   cursor: pointer;
   -webkit-transition: none;
   -moz-transition: none;
-  -ms-transition: none;
-  -o-transition: none;
   transition: none; }
   a:active, a:hover, a:link, a:visited {
     color: inherit;
@@ -528,8 +526,6 @@ a {
     background: #FF7D0A;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .druid.active-shadow:hover {
       color: black;
@@ -594,8 +590,6 @@ a {
     background: #ABD473;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .hunter.active-shadow:hover {
       color: black;
@@ -660,8 +654,6 @@ a {
     background: #69CCF0;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .mage.active-shadow:hover {
       color: black;
@@ -726,8 +718,6 @@ a {
     background: #F58CBA;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .paladin.active-shadow:hover {
       color: black;
@@ -792,8 +782,6 @@ a {
     background: #FFFFFF;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .priest.active-shadow:hover {
       color: black;
@@ -858,8 +846,6 @@ a {
     background: #FFF569;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .rogue.active-shadow:hover {
       color: black;
@@ -924,8 +910,6 @@ a {
     background: #0070DE;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .shaman.active-shadow:hover {
       color: black;
@@ -990,8 +974,6 @@ a {
     background: #9482C9;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .warlock.active-shadow:hover {
       color: black;
@@ -1056,8 +1038,6 @@ a {
     background: #C79C6E;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .warrior.active-shadow:hover {
       color: black;
@@ -1122,8 +1102,6 @@ a {
     background: #C41F3B;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .death-knight.active-shadow:hover {
       color: black;
@@ -1188,8 +1166,6 @@ a {
     background: #00FF96;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .monk.active-shadow:hover {
       color: black;
@@ -1254,8 +1230,6 @@ a {
     background: #A330C9;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .demon-hunter.active-shadow:hover {
       color: black;
@@ -1328,8 +1302,6 @@ a {
     background: #b5de3f;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .naxxramas.active-shadow:hover {
       color: black;
@@ -1394,8 +1366,6 @@ a {
     background: #fa5210;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .blackrock-mountain.active-shadow:hover {
       color: black;
@@ -1460,8 +1430,6 @@ a {
     background: #14a9a1;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .the-league-of-explorers.active-shadow:hover {
       color: black;
@@ -1526,8 +1494,6 @@ a {
     background: #e2b4df;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .karazhan.active-shadow:hover {
       color: black;
@@ -1595,8 +1561,6 @@ a {
     background: #fae43f;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .goblins-vs-gnomes.active-shadow:hover {
       color: black;
@@ -1661,8 +1625,6 @@ a {
     background: #f00;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .the-grand-tournament.active-shadow:hover {
       color: black;
@@ -1727,8 +1689,6 @@ a {
     background: #cc00ff;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .whispers-of-the-old-gods.active-shadow:hover {
       color: black;
@@ -1793,8 +1753,6 @@ a {
     background: #d2cac5;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .mean-streets-of-gadgetzan.active-shadow:hover {
       color: black;
@@ -1859,8 +1817,6 @@ a {
     background: #3d9e2c;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .journey-to-ungoro.active-shadow:hover {
       color: black;
@@ -1925,8 +1881,6 @@ a {
     background: #a5f2f3;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .knights-of-the-frozen-throne.active-shadow:hover {
       color: black;
@@ -1991,8 +1945,6 @@ a {
     background: #ffd989;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .kobolds-and-catacombs.active-shadow:hover {
       color: black;
@@ -2065,8 +2017,6 @@ a {
     background: #fff;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .common.active-shadow:hover {
       color: black;
@@ -2131,8 +2081,6 @@ a {
     background: blue;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .rare.active-shadow:hover {
       color: black;
@@ -2197,8 +2145,6 @@ a {
     background: purple;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .epic.active-shadow:hover {
       color: black;
@@ -2263,8 +2209,6 @@ a {
     background: orange;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .legendary.active-shadow:hover {
       color: black;
@@ -2332,8 +2276,6 @@ a {
     background: #318e2f;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .mammoth.active-shadow:hover, .kraken.active-shadow:hover {
       color: black;
@@ -2398,8 +2340,6 @@ a {
     background: #695840;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .wild.active-shadow:hover {
       color: black;
@@ -2451,8 +2391,6 @@ a {
 .facebook {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   .facebook.active:not(.hearthstone), .facebook:hover {
     color: #fff;
@@ -2463,8 +2401,6 @@ a {
 .twitter {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   .twitter.active:not(.hearthstone), .twitter:hover {
     color: #55acee;
@@ -2475,8 +2411,6 @@ a {
 .youtube {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   .youtube.active:not(.hearthstone), .youtube:hover {
     color: #fff;
@@ -2487,8 +2421,6 @@ a {
 .reddit {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   .reddit.active:not(.hearthstone), .reddit:hover {
     color: #fff;
@@ -2499,8 +2431,6 @@ a {
 .battlenet {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   .battlenet.active:not(.hearthstone), .battlenet:hover {
     color: #00c0f6;
@@ -2511,8 +2441,6 @@ a {
 .twitch {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   .twitch.active:not(.hearthstone), .twitch:hover {
     color: #fff;
@@ -2523,8 +2451,6 @@ a {
 .hearthstone {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   .hearthstone.active:not(.hearthstone), .hearthstone:hover {
     color: inherit;
@@ -2535,8 +2461,6 @@ a {
 .false.hearthstone, .false.default {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   .false.hearthstone.active:not(.hearthstone), .false.hearthstone:hover, .false.default.active:not(.hearthstone), .false.default:hover {
     color: #474143;
@@ -2608,8 +2532,6 @@ a {
 .list-with-filters-layout .left-container ul li {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s;
   display: inline-block;
   color: #474143; }
@@ -2638,8 +2560,6 @@ a {
         line-height: 5.5vh;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         color: #474143; }
       .topbar .topbar-left li .mana.active, .topbar .topbar-right li .mana.active {
@@ -2671,8 +2591,6 @@ form .input-wrapper {
   form .input-wrapper input {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s;
     margin-bottom: 2vh;
     padding: 5px;
@@ -2760,8 +2678,6 @@ form .divider {
         padding: 5px;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
 
 .post-more-options {
@@ -2802,8 +2718,6 @@ form .divider {
   .submenu li {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
-    -ms-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
     background-color: #474143;
     height: 5.5vh;
@@ -2811,8 +2725,6 @@ form .divider {
     .submenu li .submenu__icon {
       -webkit-transition: border 0.4s ease;
       -moz-transition: border 0.4s ease;
-      -ms-transition: border 0.4s ease;
-      -o-transition: border 0.4s ease;
       transition: border 0.4s ease;
       border: 2px solid;
       padding: 5px; }
@@ -2834,8 +2746,6 @@ form .divider {
     width: 50px;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .component.simplifiedUser .simplifiedUser__avatar span {
       height: 100%;
@@ -2890,8 +2800,6 @@ input::-webkit-search-cancel-button {
   background: linear-gradient(to bottom, transparent 45%, #00a99c 45%, #00a99c 55%, transparent 55%), linear-gradient(to right, transparent 45%, #00a99c 45%, #00a99c 55%, transparent 55%);
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s; }
   input::-webkit-search-cancel-button:hover {
     background: linear-gradient(to bottom, transparent 45%, #E7E2DA 45%, #E7E2DA 55%, transparent 55%), linear-gradient(to right, transparent 45%, #E7E2DA 45%, #E7E2DA 55%, transparent 55%); }
@@ -2941,8 +2849,6 @@ button {
   position: relative;
   -webkit-transition: all ease 0.2s;
   -moz-transition: all ease 0.2s;
-  -ms-transition: all ease 0.2s;
-  -o-transition: all ease 0.2s;
   transition: all ease 0.2s; }
   button.btn__default {
     background: #474143;
@@ -2951,8 +2857,6 @@ button {
     border-color: #00a99c;
     -webkit-transition: all ease 0.2;
     -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
     transition: all ease 0.2;
     /*
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
@@ -2973,8 +2877,6 @@ button {
       box-shadow: 0 0 5px #474143;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
     button.btn__default:hover:after {
       opacity: 1; }
@@ -2985,8 +2887,6 @@ button {
       border-color: #E7E2DA;
       -webkit-transition: all ease 0.2;
       -moz-transition: all ease 0.2;
-      -ms-transition: all ease 0.2;
-      -o-transition: all ease 0.2;
       transition: all ease 0.2;
       /*
        * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
@@ -3007,8 +2907,6 @@ button {
         box-shadow: 0 0 5px #474143;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
       button.btn__default--dark:hover:after {
         opacity: 1; }
@@ -3019,8 +2917,6 @@ button {
       border-color: #E7E2DA;
       -webkit-transition: all ease 0.2;
       -moz-transition: all ease 0.2;
-      -ms-transition: all ease 0.2;
-      -o-transition: all ease 0.2;
       transition: all ease 0.2;
       /*
        * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
@@ -3041,8 +2937,6 @@ button {
         box-shadow: 0 0 5px #00a99c;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
       button.btn__default--active:hover:after {
         opacity: 1; }
@@ -3053,8 +2947,6 @@ button {
     border-color: #474143;
     -webkit-transition: all ease 0.2;
     -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
     transition: all ease 0.2;
     /*
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
@@ -3074,8 +2966,6 @@ button {
       box-shadow: 0 0 5px #0070DE;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
     button.btn__submit:hover:after {
       opacity: 1; }
@@ -3086,8 +2976,6 @@ button {
     border-color: #E7E2DA;
     -webkit-transition: all ease 0.2;
     -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
     transition: all ease 0.2;
     /*
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
@@ -3107,8 +2995,6 @@ button {
       box-shadow: 0 0 5px #C41F3B;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
     button.btn__delete:hover:after {
       opacity: 1; }
@@ -3119,8 +3005,6 @@ button {
     border-color: #E7E2DA;
     -webkit-transition: all ease 0.2;
     -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
     transition: all ease 0.2;
     /*
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
@@ -3140,8 +3024,6 @@ button {
       box-shadow: 0 0 5px #0070DE;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
     button.btn__update:hover:after {
       opacity: 1; }
@@ -3152,8 +3034,6 @@ button {
     border-color: #474143;
     -webkit-transition: all ease 0.2;
     -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
     transition: all ease 0.2;
     /*
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
@@ -3173,8 +3053,6 @@ button {
       box-shadow: 0 0 5px #2e7d32;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
     button.btn__success:hover:after {
       opacity: 1; }
@@ -3185,8 +3063,6 @@ button {
     border-color: #E7E2DA;
     -webkit-transition: all ease 0.2;
     -moz-transition: all ease 0.2;
-    -ms-transition: all ease 0.2;
-    -o-transition: all ease 0.2;
     transition: all ease 0.2;
     /*
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
@@ -3206,8 +3082,6 @@ button {
       box-shadow: 0 0 5px #C41F3B;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
     button.btn__failure:hover:after {
       opacity: 1; }
@@ -3237,8 +3111,6 @@ button {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
-  -ms-transition: all ease 0.4s;
-  -o-transition: all ease 0.4s;
   transition: all ease 0.4s;
   position: relative;
   background-color: #E7E2DA;
@@ -3374,8 +3246,6 @@ button {
       .graph li .bar span {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         width: 100%;
         position: absolute;
@@ -3500,8 +3370,6 @@ button {
     .text-editor .toolbar li {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s;
       border: 1px solid #A69E9D;
       margin-right: 5px; }
@@ -3533,8 +3401,6 @@ button {
         .text-editor .toolbar li button span {
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s;
           color: #A69E9D;
           font-size: 16px; }
@@ -3603,8 +3469,6 @@ button {
         border: 2px solid #E7E2DA;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
         .text-editor > div > div .close:hover {
           background: #E7E2DA;
@@ -3724,8 +3588,6 @@ button {
   .ant-select-dropdown ul li {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s;
     background: #474143;
     color: #A69E9D;
@@ -4054,8 +3916,6 @@ nav {
       position: relative;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s;
       color: #fff;
       text-transform: uppercase;
@@ -4119,8 +3979,6 @@ nav {
       nav .nav__list .nav__list--item .active {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         background-color: #E7E2DA;
         color: #474143; }
@@ -4161,8 +4019,6 @@ footer {
         color: #00a99c;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
         footer .copyright > div > div a:hover {
           color: #E7E2DA;
@@ -4194,8 +4050,6 @@ footer {
         padding: 5px;
         -webkit-transition: color ease 0.4s;
         -moz-transition: color ease 0.4s;
-        -ms-transition: color ease 0.4s;
-        -o-transition: color ease 0.4s;
         transition: color ease 0.4s; }
         footer .media a span:hover {
           color: #E7E2DA; }
@@ -4237,8 +4091,6 @@ card {
   .shared-table tbody tr {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s; }
     .shared-table tbody tr td {
       padding: 0;
@@ -4294,8 +4146,6 @@ card {
           .shared-table tbody tr .mana-curve ul li span {
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
-            -ms-transition: all ease 0.4s;
-            -o-transition: all ease 0.4s;
             transition: all ease 0.4s;
             width: 100%;
             position: absolute;
@@ -4323,8 +4173,6 @@ card {
       .container__page .container__class-selection ul li {
         -webkit-transition: all 0.4s ease;
         -moz-transition: all 0.4s ease;
-        -ms-transition: all 0.4s ease;
-        -o-transition: all 0.4s ease;
         transition: all 0.4s ease;
         width: 100%;
         height: 100%;
@@ -4389,8 +4237,6 @@ card {
       .container__page .container__page--left .sidebar__body .slider-filter-wrapper {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         border: 1px solid #474143;
         margin: 2vh 1vh;
@@ -4411,8 +4257,6 @@ card {
           .container__page .container__page--left .sidebar__body .slider-filter-wrapper .slider-filter-header button {
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
-            -ms-transition: all ease 0.4s;
-            -o-transition: all ease 0.4s;
             transition: all ease 0.4s;
             outline: none;
             border: 1px solid #474143;
@@ -4440,8 +4284,6 @@ card {
           .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons li span, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li span {
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
-            -ms-transition: all ease 0.4s;
-            -o-transition: all ease 0.4s;
             transition: all ease 0.4s;
             padding: .5vh;
             color: #474143; }
@@ -4452,8 +4294,6 @@ card {
       .container__page .container__page--left .sidebar__body.sidebar__body--extensions li {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
         .container__page .container__page--left .sidebar__body.sidebar__body--extensions li:hover {
           -webkit-box-shadow: 0 0 10px black;
@@ -4488,8 +4328,6 @@ card {
       .container__page .container__page--left .container__mana-curve .mechanics-list table tbody tr {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
         .container__page .container__page--left .container__mana-curve .mechanics-list table tbody tr:nth-child(odd) {
           background-color: rgba(0, 0, 0, 0.2); }
@@ -4519,8 +4357,6 @@ card {
         .container__page .container__page--left .container__extension-list ul li a {
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s;
           padding: 10px;
           display: flex; }
@@ -4538,8 +4374,6 @@ card {
       .container__page .container__page--right .topbar.has-icons span {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         color: #474143;
         padding: 5px;
@@ -4553,15 +4387,11 @@ card {
       height: 100%;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
       .container__page .container__page--right .topbar .topbar__extension-navigation li {
         height: 100%;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         cursor: pointer;
         border-right: 1px solid #474143; }
@@ -4619,8 +4449,6 @@ card {
         .container__page .container__page--right .content .container__cards li .img-wrapper:before {
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s;
           background: url(http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png) center center no-repeat;
           background-size: contain;
@@ -4637,8 +4465,6 @@ card {
           z-index: 2;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s;
           width: 100%; }
           .container__page .container__page--right .content .container__cards li .img-wrapper img.choosen {
@@ -4902,8 +4728,6 @@ card {
           align-content: space-evenly;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s; }
           .container__page .container__page--right .content .container__blocks li.container__blocks--block.boss .wing-bosses li {
             width: 100px;
@@ -4911,8 +4735,6 @@ card {
             align-items: center;
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
-            -ms-transition: all ease 0.4s;
-            -o-transition: all ease 0.4s;
             transition: all ease 0.4s; }
             .container__page .container__page--right .content .container__blocks li.container__blocks--block.boss .wing-bosses li a {
               cursor: pointer; }
@@ -4920,8 +4742,6 @@ card {
                 width: 100%;
                 -webkit-transition: all ease 0.2s;
                 -moz-transition: all ease 0.2s;
-                -ms-transition: all ease 0.2s;
-                -o-transition: all ease 0.2s;
                 transition: all ease 0.2s;
                 -webkit-box-shadow: 0 0 10px #474143;
                 -moz-box-shadow: 0 0 10px #474143;
@@ -4948,8 +4768,6 @@ card {
       .container__page .container__page--right .content .container__bosses table tbody tr td {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         padding: 10px;
         cursor: pointer;
@@ -4963,8 +4781,6 @@ card {
             box-shadow: 0 0 10px black;
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
-            -ms-transition: all ease 0.4s;
-            -o-transition: all ease 0.4s;
             transition: all ease 0.4s;
             width: 70px;
             height: 70px; }
@@ -5004,8 +4820,6 @@ card {
     .container__page .edit-mode .sidebar__body .container__mana-curve .cards-list .table-scroll table tbody tr {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
       .container__page .edit-mode .sidebar__body .container__mana-curve .cards-list .table-scroll table tbody tr td div {
         display: flex;
@@ -5013,8 +4827,6 @@ card {
         cursor: pointer;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
         .container__page .edit-mode .sidebar__body .container__mana-curve .cards-list .table-scroll table tbody tr td div .icon-cross {
           background: #474143;
@@ -5024,8 +4836,6 @@ card {
           font-size: 7px;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s; }
         .container__page .edit-mode .sidebar__body .container__mana-curve .cards-list .table-scroll table tbody tr td div:hover .icon-cross {
           background: #E7E2DA;
@@ -5087,8 +4897,6 @@ card {
         .container__index.home .home__list .decks > div .class-selection li {
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s;
           margin-right: 25px;
           display: inline-block;
@@ -5115,8 +4923,6 @@ card {
           .container__index.home .home__list .decks > div .left-container .sidebar .search-decks input {
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
-            -ms-transition: all ease 0.4s;
-            -o-transition: all ease 0.4s;
             transition: all ease 0.4s;
             outline: 0;
             font-size: 15px;
@@ -5170,8 +4976,6 @@ card {
           border: 1px solid #A69E9D;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s; }
           .container__index.home .home__list .expansions div .extension .extension__sidebar a:hover {
             border-color: #E7E2DA;
@@ -5193,8 +4997,6 @@ card {
     .container__index.home .home__list .all-cards > div .icon-wrapper, .container__index.home .home__list .create-deck > div .icon-wrapper {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s;
       display: flex;
       align-items: center;
@@ -5220,8 +5022,6 @@ card {
             .container__index.home .home__list .twitch .home__block--body > div .streams-body .live-broadcasters li a {
               -webkit-transition: all ease 0.4s;
               -moz-transition: all ease 0.4s;
-              -ms-transition: all ease 0.4s;
-              -o-transition: all ease 0.4s;
               transition: all ease 0.4s;
               display: flex;
               font-size: .8vw;
@@ -5460,8 +5260,6 @@ card {
   .cards .left-container .sidebar .sidebar-icons li span {
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
-    -ms-transition: all ease 0.4s;
-    -o-transition: all ease 0.4s;
     transition: all ease 0.4s;
     padding: 5px;
     color: #474143; }
@@ -5482,8 +5280,6 @@ card {
   .arena-picker .pick-class tr td, .create-deck .pick-class tr td {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
-    -ms-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
     cursor: pointer;
     width: 200px;
@@ -5513,8 +5309,6 @@ card {
     .arena-picker .choosen-class-view .right-container ul li .card {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s;
       height: 400px;
       align-items: center;
@@ -5560,8 +5354,6 @@ card {
     .adventures .container__page--right .content .classChallenges .classChallenges__sidebar li {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s; }
       .adventures .container__page--right .content .classChallenges .classChallenges__sidebar li a {
         display: block;
@@ -5627,8 +5419,6 @@ card {
     .create-deck .container__page--right .topbar .topbar__deckDetails .topbar__deckDetails--options span {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s;
       margin-right: 1vw;
       font-size: 2vh;
@@ -5727,8 +5517,6 @@ card {
           font-size: 15px;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s; }
           .create-deck .container__page--right .search .search__wrapper ul li p {
             margin-left: 10px; }
@@ -5844,8 +5632,6 @@ card {
     .subreddit .container__page--left button a {
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
-      -ms-transition: all ease 0.4s;
-      -o-transition: all ease 0.4s;
       transition: all ease 0.4s;
       display: block;
       width: 100%;
@@ -5929,8 +5715,6 @@ card {
           .subreddit .container__page--right .table-scroll table tbody tr .domain a {
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
-            -ms-transition: all ease 0.4s;
-            -o-transition: all ease 0.4s;
             transition: all ease 0.4s; }
     .subreddit .container__page--right .table-scroll table .upvotes, .subreddit .container__page--right .table-scroll table .comments, .subreddit .container__page--right .table-scroll table .domain {
       width: 10%; }
@@ -6056,8 +5840,6 @@ card {
       .container__page.entry .wrapper .container__page--left .topbar ul li {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
         .container__page.entry .wrapper .container__page--left .topbar ul li.active {
           color: #E7E2DA; }
@@ -6071,8 +5853,6 @@ card {
       .container__page.entry .wrapper .container__page--left .carousel .slides .slide {
         -webkit-transition: opacity 1s;
         -moz-transition: opacity 1s;
-        -ms-transition: opacity 1s;
-        -o-transition: opacity 1s;
         transition: opacity 1s;
         position: absolute;
         width: 90%;
@@ -6094,8 +5874,6 @@ card {
       .container__page.entry .wrapper .container__page--right .topbar a p {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s;
         color: #A69E9D;
         cursor: pointer;
@@ -6191,8 +5969,6 @@ card {
         .container__page.entry .wrapper .container__page--right form .favourite-class li span {
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
-          -ms-transition: all ease 0.4s;
-          -o-transition: all ease 0.4s;
           transition: all ease 0.4s;
           font-size: 1vw;
           padding: 3px;
@@ -6276,8 +6052,6 @@ card {
           .dashboard .container__page--left .sidebar ul li .details-content label .wrapper input {
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
-            -ms-transition: all ease 0.4s;
-            -o-transition: all ease 0.4s;
             transition: all ease 0.4s;
             font-size: 12px;
             padding: 4px 4px 4px 2px;
@@ -6353,8 +6127,6 @@ card {
         padding: 10px;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        -ms-transition: all ease 0.4s;
-        -o-transition: all ease 0.4s;
         transition: all ease 0.4s; }
         .miscellaneous .sidebar ul li a.active, .miscellaneous .sidebar ul li a:hover {
           border-color: #E7E2DA;
@@ -6408,8 +6180,6 @@ card {
         color: #00a99c;
         -webkit-transition: color ease 0.4s;
         -moz-transition: color ease 0.4s;
-        -ms-transition: color ease 0.4s;
-        -o-transition: color ease 0.4s;
         transition: color ease 0.4s; }
         .miscellaneous .content .wrapper .table-of-contents li a:hover {
           color: #E7E2DA;

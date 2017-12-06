@@ -11,8 +11,11 @@ import adventures from './adventures/adventure'
 import deckDetails from './create-deck/deck-options';
 import deckCreation from './create-deck/create-deck';
 import {
-  tools, activeDeck, activeDeckCopy, deckComments, deckAuthor, deckCommentPostingStatus,
-  activeDeckEditing
+  tools, activeDeck, activeDeckCopy, deckAuthor,
+  activeDeckEditing,
+  deckComments,
+  deckCommentPostingStatus,
+  deckCommentDeletingStatus
 } from '../deck/reducers';
 import {decks, hotDecks, updateDecks} from '../decks/reducers';
 import {posts, activePost} from '../reddit/reducers';
@@ -39,11 +42,12 @@ const rootReducer = combineReducers({
     tools,
     activeDeck,
     activeDeckCopy,
-    deckComments,
     deckAuthor,
-    deckCommentPostingStatus,
     shortenedUserDetails,
-    activeDeckEditing
+    activeDeckEditing,
+    deckComments,
+    deckCommentPostingStatus,
+    deckCommentDeletingStatus
   }),
   redditPosts: combineReducers({
     posts,

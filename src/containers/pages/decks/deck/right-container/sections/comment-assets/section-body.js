@@ -4,7 +4,7 @@ import Comment from '../comment';
 import Loader from '../../../../../../../components/loaders/loader';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 
-const SectionBody = ({authenticated, comments, countComments, deckComments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments}) => {
+const SectionBody = ({authenticated, comments, countComments, deckComments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments, handleCommentOptionsClick}) => {
   const listComments = () => {
     if (deckComments.loading) {
       return <Loader/>
@@ -23,7 +23,8 @@ const SectionBody = ({authenticated, comments, countComments, deckComments, deck
                                                  commentVotes={commentVotes}
                                                  votedComments={votedComments}
                                                  handleCommentClick={handleCommentClick}
-                                                 handleCommentVotingClick={handleCommentVotingClick}/>
+                                                 handleCommentVotingClick={handleCommentVotingClick}
+                                                 handleCommentOptionsClick={handleCommentOptionsClick}/>
     )
   };
 
@@ -32,7 +33,7 @@ const SectionBody = ({authenticated, comments, countComments, deckComments, deck
         <div className={previewIsActive ? "display-none" : "comments"}>
           {listComments()}
         </div>
-        <div className={!previewIsActive ? "display-none" : "comment-preview"}>
+        <div className={!previewIsActive ? "display-none" : "newComment-preview"}>
           {convertBBCode(deckComment)}
         </div>
       </div>

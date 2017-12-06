@@ -1,6 +1,6 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
 import {push} from 'react-router-redux';
-import {firebaseAuth, ref} from "../../../../../keys";
+import {ref} from "../../../../../keys";
 import {error, success} from "../../../../../utils/messages";
 import * as types from "../../../../types/firebase";
 import * as actions from '../../../../actions/firebase/user/utils/delete-active-user';
@@ -27,7 +27,7 @@ export function* firebaseDeleteActiveUserSaga({payload}) {
     getUserData('user-decks', uid);
     getUserData('user-deck-ratings', uid);
     getUserData('user-deck-comments', uid);
-    getUserData('user-deck-comment-ratings', uid);
+    getUserData('user-deck-newComment-ratings', uid);
     if(username !== email) {
       getUserData('usernames', username)
     }

@@ -15,7 +15,7 @@ export default function (activeUser){
   getUserData('user-decks', uid);
   getUserData('user-deck-ratings', uid);
   getUserData('user-deck-comments', uid);
-  getUserData('user-deck-comment-ratings', uid);
+  getUserData('user-deck-newComment-ratings', uid);
 
   if(activeUser.username !== activeUser.email) {
     getUserData('usernames', activeUser.username)
