@@ -1,10 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import _ from 'lodash';
 import Comment from '../comment';
 import Loader from '../../../../../../../components/loaders/loader';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 
-const SectionBody = ({authenticated, activeUserId, clickedCommentId, comments, countComments, deckComments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments, handleCommentOptionsClick}) => {
+const SectionBody = ({countComments, clickedCommentId, handleCommentOptionsClick, activeUser, deckComments, deckCommentDeletingStatus, tools}) => {
+  const {previewIsActive, commentId, commentVotes, votedComments, usersDetails, deckComment} = tools;
+  const {deletedCommentIds} = deckCommentDeletingStatus.deletedComments;
+  const {authenticated, uid} = activeUser;
+  let comments = _.map(deckComments.all).filter(comment => !deletedCommentIds.includes(comment.commentId));
+
   const listComments = () => {
     if (deckComments.loading) {
       return <Loader/>
@@ -16,16 +22,13 @@ const SectionBody = ({authenticated, activeUserId, clickedCommentId, comments, c
 
     return comments.map((comment, i) => <Comment key={i}
                                                  authenticated={authenticated}
-                                                 activeUserId={activeUserId}
+                                                 activeUserId={uid}
                                                  comment={comment}
-                                                 deckId={deckId}
                                                  usersDetails={usersDetails}
                                                  commentId={commentId}
                                                  commentVotes={commentVotes}
                                                  votedComments={votedComments}
                                                  clickedCommentId={clickedCommentId}
-                                                 handleCommentClick={handleCommentClick}
-                                                 handleCommentVotingClick={handleCommentVotingClick}
                                                  handleCommentOptionsClick={handleCommentOptionsClick}/>
     )
   };
@@ -35,32 +38,17 @@ const SectionBody = ({authenticated, activeUserId, clickedCommentId, comments, c
         <div className={previewIsActive ? "display-none" : "comments"}>
           {listComments()}
         </div>
-        <div className={!previewIsActive ? "display-none" : "newComment-preview"}>
+        <div className={!previewIsActive ? "display-none" : "comment-preview"}>
           {convertBBCode(deckComment)}
         </div>
       </div>
   )
 };
 
-export default SectionBody;
-
-SectionBody.propTypes = {
-  authenticated: PropTypes.bool,
-  comments: PropTypes.array,
-  deckComment: PropTypes.object,
-  deckId: PropTypes.string,
-  previewIsActive: PropTypes.bool,
-  commentVotes: PropTypes.shape({
-    downvotes: PropTypes.number,
-    upvotes: PropTypes.number,
-    votes: PropTypes.number,
-    id: PropTypes.string
-  }),
-  commentId: PropTypes.string,
-  handleCommentClick: PropTypes.func,
-  handleCommentVotingClick: PropTypes.func,
-  votedComments: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.array
-      ])
+const mapStateToProps = (state) => {
+  const {deckComments, deckCommentDeletingStatus, tools} = state.deckView;
+  const {activeUser} = state.users;
+  return {activeUser, deckComments, deckCommentDeletingStatus, tools}
 };
+
+export default connect(mapStateToProps)(SectionBody)

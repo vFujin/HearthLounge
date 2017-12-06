@@ -22,9 +22,9 @@ class Comment extends PureComponent {
   }
 
   render() {
-    const {authenticated, activeUserId, comment, deckId, commentVotes, votedComments, usersDetails, handleCommentVotingClick, shortenedUserDetails, deckCommentDeletingStatus} = this.props;
+    const {authenticated, activeUserId, comment, commentVotes, shortenedUserDetails, deckCommentDeletingStatus} = this.props;
 
-    const {authorId, created, patch, text, commentId, votes, voteType} = comment;
+    const {authorId, text, commentId, votes, voteType} = comment;
     let user = Object.entries(shortenedUserDetails).filter(o => o[0] === authorId);
     let deletingStatus = (deckCommentDeletingStatus.loading && (commentId === this.props.clickedCommentId)) || deckCommentDeletingStatus.deleted;
 
@@ -40,7 +40,6 @@ class Comment extends PureComponent {
             <CommentFooter commentId={commentId}
                            authenticated={authenticated}
                            voteType={voteType}
-                           handleCommentVotingClick={handleCommentVotingClick}
                            commentVotes={commentVotes}
                            votes={votes}/>
           </div>

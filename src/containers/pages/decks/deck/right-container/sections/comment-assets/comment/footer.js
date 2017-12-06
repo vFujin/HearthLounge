@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from "../../../../../../../../components/icon";
 
-export const CommentFooter = ({authenticated, commentId, voteType, handleCommentVotingClick, commentVotes, votes}) => {
+export const CommentFooter = ({authenticated, commentId, voteType, commentVotes, votes}) => {
 
   const VotingIcon = ({voteId}) =>{
     const iconType = voteId === "upvote" ? "up" : "down";
@@ -9,7 +9,6 @@ export const CommentFooter = ({authenticated, commentId, voteType, handleComment
 
     return (
       <div data-commentid={commentId}
-           onClick={handleCommentVotingClick}
            id={voteId}
            className={`${iconType} peripheral ${voted}`}>
         <Icon name={`circle-${iconType}`}/>

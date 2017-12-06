@@ -12,7 +12,7 @@ export const deleteDeckComment = ({commentId, deckId, uid}) => {
 };
 
 export function* deleteDeckCommentSaga({payload}) {
-  const {response, err} = yield call(deleteDeckComment, payload);
+  const {err} = yield call(deleteDeckComment, payload);
   const {deckId, commentId} = payload;
 
   if(err){

@@ -25,11 +25,17 @@ const SectionHeader = ({authenticated, countComments, commentBoxIsActive, toggle
   )
 };
 
+const mapStateToProps = state => {
+  const {authenticated} = state.users.activeUser;
+  const {commentBoxIsActive} = state.deckView.tools;
+  return {authenticated, commentBoxIsActive};
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleCommentBox: payload => dispatch(toggleCommentBox(payload))
   }
 };
 
-export default connect(null, mapDispatchToProps)(SectionHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(SectionHeader);
 
