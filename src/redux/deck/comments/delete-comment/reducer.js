@@ -3,8 +3,8 @@ import * as types from "./types";
 const initialState = {
   loading: false,
   deletedComments: {
-    deletedCommentIds: [],
-    countDeletedComments: 0
+    countDeletedComments: 0,
+    deletedCommentIds: []
   }
 };
 

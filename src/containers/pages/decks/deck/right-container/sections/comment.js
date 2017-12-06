@@ -6,16 +6,6 @@ import {CommentHeader, CommentBody, CommentFooter} from "./comment-assets/commen
 import {FETCH_SHORTENED_USER_DETAILS_REQUEST} from "../../../../../../redux/user/shortened-details/types";
 
 class Comment extends PureComponent {
-  // ;
-  // let user = {};
-  // Object.entries(usersDetails).filter(o => o[0] === authorId).map(o =>user = o[1]);
-  // const {rank, avatar, role, username} = user;
-  //
-  // let commented = timeDifference(created, false);
-  // let detailedDate = timeDifference(created, true);
-  // console.log(Object.values(votedComments)[0][id])
-
-
   componentDidMount(){
     const {authorId} = this.props.comment;
     this.props.fetchShortenedUserDetails(authorId);
@@ -23,10 +13,9 @@ class Comment extends PureComponent {
 
   render() {
     const {authenticated, activeUserId, comment, commentVotes, shortenedUserDetails, deckCommentDeletingStatus} = this.props;
-
     const {authorId, text, commentId, votes, voteType} = comment;
     let user = Object.entries(shortenedUserDetails).filter(o => o[0] === authorId);
-    let deletingStatus = (deckCommentDeletingStatus.loading && (commentId === this.props.clickedCommentId)) || deckCommentDeletingStatus.deleted;
+    let deletingStatus = deckCommentDeletingStatus.loading && (commentId === this.props.clickedCommentId);
 
     return (
         <div className={`comment ${deletingStatus && "deleting"}`}>

@@ -39,12 +39,6 @@ class SectionFooter extends PureComponent {
   handlePostCommentClick = () => {
     const {current, deckId, deckComment, postComment, uid} = this.props;
     postComment({current, deckComment, deckId, uid});
-    // getComments(deckId, uid, (comments)=>{
-    //   updateComments(deckId, comments);
-    //   let users = {};
-    //   comments.map(c=>getSimplifiedUser(c.authorId, userDetails=>Object.assign(users, {[c.authorId]: userDetails})));
-    //   this.props.updateUsersDetails(users)
-    // })
   };
 
   render() {

@@ -5,19 +5,21 @@ import * as types from "./types";
 import {newComment, updateDeckCommentsCount} from "../utils";
 
 export const postDeckComment = ({current, deckComment, deckId, uid}) => {
-  const comment = newComment(current, deckComment, deckId, uid);
-  return ref.update(comment).then(()=> ({response: 200}), err => ({err})
+  const commentId = ref.child(`decks/${deckId}/comments`).push().key;
+  const created = +new Date();
+  const comment = newComment(current, deckComment, deckId, uid, commentId, created);
+  return ref.update(comment).then(()=> ({commentId}), err => ({err})
   );
 };
 
 export function* postDeckCommentSaga({payload}) {
-  const {response, err} = yield call(postDeckComment, payload);
   const {deckId} = payload;
+  const {commentId, err} = yield call(postDeckComment, payload);
 
   if(err){
     yield put(actions.postDeckCommentFailure(err));
   } else {
-    yield put(actions.postDeckCommentSuccess(response));
+    yield put(actions.postDeckCommentSuccess(Object.assign(payload, {commentId})));
     yield updateDeckCommentsCount(deckId, "increment");
   }
 }

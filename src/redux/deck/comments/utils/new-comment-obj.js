@@ -1,15 +1,13 @@
-import {ref} from "../../../../keys";
 import {commentUpdates} from "./updates";
 
-export const newComment = (patch, text, deckId, uid) =>{
-  const commentId = ref.child(`decks/${deckId}/comments`).push().key;
+export const newComment = (patch, text, deckId, uid, commentId, created) =>{
 
   const commentObj = {
     patch,
     text,
     commentId,
+    created,
     authorId: uid,
-    created: +new Date(),
     votes: 0,
     upvotes: 0,
     downvotes: 0
