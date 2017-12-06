@@ -2,8 +2,8 @@ import {ref} from "../../../../keys";
 import {call, put, takeEvery} from 'redux-saga/effects';
 import * as actions from "./actions";
 import * as types from "./types";
-import {} from "../utils";
-import {commentUpdates, updateDeckCommentsCount} from "../utils/updates";
+import {commentUpdates, updateDeckCommentsCount} from "../utils";
+import {error} from "../../../../utils/messages";
 
 export const deleteDeckComment = ({commentId, deckId, uid}) => {
   const comment = commentUpdates(uid, deckId, commentId, "delete");
@@ -13,12 +13,13 @@ export const deleteDeckComment = ({commentId, deckId, uid}) => {
 
 export function* deleteDeckCommentSaga({payload}) {
   const {response, err} = yield call(deleteDeckComment, payload);
-  const {deckId} = payload;
+  const {deckId, commentId} = payload;
 
   if(err){
     yield put(actions.deleteDeckCommentFailure(err));
+    yield error("Something's not quite right.", 6)
   } else {
-    yield put(actions.deleteDeckCommentSuccess(response));
+    yield put(actions.deleteDeckCommentSuccess(commentId));
     yield updateDeckCommentsCount(deckId, "decrement");
   }
 }

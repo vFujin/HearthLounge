@@ -7,10 +7,10 @@ export function deleteDeckCommentRequest(payload){
   }
 }
 
-export function deleteDeckCommentSuccess(response){
+export function deleteDeckCommentSuccess(payload){
   return {
     type: types.DELETE_DECK_COMMENT_SUCCESS,
-    payload: response
+    payload
   }
 }
 

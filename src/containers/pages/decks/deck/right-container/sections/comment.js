@@ -15,26 +15,26 @@ class Comment extends PureComponent {
   // let detailedDate = timeDifference(created, true);
   // console.log(Object.values(votedComments)[0][id])
 
+
   componentDidMount(){
     const {authorId} = this.props.comment;
     this.props.fetchShortenedUserDetails(authorId);
   }
 
   render() {
-    const {authenticated, comment, deckId, commentVotes, votedComments, usersDetails, handleCommentVotingClick, shortenedUserDetails} = this.props;
+    const {authenticated, activeUserId, comment, deckId, commentVotes, votedComments, usersDetails, handleCommentVotingClick, shortenedUserDetails, deckCommentDeletingStatus} = this.props;
+
     const {authorId, created, patch, text, commentId, votes, voteType} = comment;
     let user = Object.entries(shortenedUserDetails).filter(o => o[0] === authorId);
+    let deletingStatus = (deckCommentDeletingStatus.loading && (commentId === this.props.clickedCommentId)) || deckCommentDeletingStatus.deleted;
 
-    // console.log(shortenedUserDetails);
-    // const {rank, role, avatar, username} = user[1];
     return (
-        <div className="comment">
+        <div className={`comment ${deletingStatus && "deleting"}`}>
           {shortenedUserDetails[authorId] ? <SimplifiedUserSnippet user={user[0][1]} /> : <ShortenedUserDetailsLoader />}
           <div className="details">
-            <CommentHeader created={created}
-                           commentId={commentId}
+            <CommentHeader comment={comment}
                            authenticated={authenticated}
-                           patch={patch}
+                           activeUserId={activeUserId}
                            handleCommentOptionsClick={this.props.handleCommentOptionsClick}/>
             <CommentBody commentText={text}/>
             <CommentFooter commentId={commentId}
@@ -50,8 +50,8 @@ class Comment extends PureComponent {
 }
 
 const mapStateToProps = state => {
-  const {shortenedUserDetails} = state.deckView;
-  return {shortenedUserDetails};
+  const {shortenedUserDetails, deckCommentDeletingStatus} = state.deckView;
+  return {shortenedUserDetails, deckCommentDeletingStatus};
 };
 
 const mapDispatchToProps = (dispatch) => {

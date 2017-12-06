@@ -4,7 +4,7 @@ import Comment from '../comment';
 import Loader from '../../../../../../../components/loaders/loader';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 
-const SectionBody = ({authenticated, comments, countComments, deckComments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments, handleCommentOptionsClick}) => {
+const SectionBody = ({authenticated, activeUserId, clickedCommentId, comments, countComments, deckComments, deckComment, deckId, previewIsActive, commentVotes, commentId, usersDetails, handleCommentClick, handleCommentVotingClick, votedComments, handleCommentOptionsClick}) => {
   const listComments = () => {
     if (deckComments.loading) {
       return <Loader/>
@@ -16,12 +16,14 @@ const SectionBody = ({authenticated, comments, countComments, deckComments, deck
 
     return comments.map((comment, i) => <Comment key={i}
                                                  authenticated={authenticated}
+                                                 activeUserId={activeUserId}
                                                  comment={comment}
                                                  deckId={deckId}
                                                  usersDetails={usersDetails}
                                                  commentId={commentId}
                                                  commentVotes={commentVotes}
                                                  votedComments={votedComments}
+                                                 clickedCommentId={clickedCommentId}
                                                  handleCommentClick={handleCommentClick}
                                                  handleCommentVotingClick={handleCommentVotingClick}
                                                  handleCommentOptionsClick={handleCommentOptionsClick}/>

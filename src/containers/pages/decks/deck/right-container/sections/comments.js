@@ -16,6 +16,14 @@ import {DELETE_DECK_COMMENT_REQUEST} from "../../../../../../redux/deck/comments
 
 
 class DeckComments extends PureComponent {
+  constructor(){
+    super();
+
+    this.state = {
+      clickedCommentId: ''
+    }
+  }
+
   componentDidMount() {
     const {activeUser, params, fetchComments} = this.props;
     const {deckId} = params;
@@ -56,6 +64,10 @@ class DeckComments extends PureComponent {
     const {uid} = activeUser;
     const {deckId} = params;
 
+    this.setState({
+      clickedCommentId: commentId
+    });
+
     switch(key){
       case "delete": {
         const commentObj = {commentId, deckId, uid};
@@ -66,17 +78,20 @@ class DeckComments extends PureComponent {
   };
 
   render() {
-    const {activeDeck, params, commentVotes, commentId, deckComments, deckComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
+    const {activeUser, activeDeck, params, commentVotes, commentId, deckComments, deckComment, deckCommentDeletingStatus, commentBoxIsActive, previewIsActive, votedComments, usersDetails} = this.props;
     const { deckId } = params.deckId;
-    const countComments = activeDeck.comments;
+    const {authenticated, uid} = activeUser;
+    const {deletedCommentIds, countDeletedComments} = deckCommentDeletingStatus.deletedComments;
+    const countComments = activeDeck.comments - countDeletedComments;
+    let comments = _.map(deckComments.all).filter(comment => !deletedCommentIds.includes(comment.commentId));
 
     return (
         <div className={`container__details--section container__details--comments v-rows-${commentBoxIsActive ? '3 editorActive' : '2'}`}>
-          <SectionHeader authenticated={this.props.activeUser.authenticated}
+          <SectionHeader authenticated={authenticated}
                          countComments={countComments}
                          commentBoxIsActive={commentBoxIsActive}/>
-          <SectionBody comments={_.map(deckComments.all)}
-                       authenticated={this.props.activeUser.authenticated}
+          <SectionBody comments={comments}
+                       authenticated={authenticated}
                        countComments={countComments}
                        handleCommentClick={this.handleCommentClick}
                        commentId={commentId}
@@ -88,6 +103,8 @@ class DeckComments extends PureComponent {
                        previewIsActive={previewIsActive}
                        usersDetails={usersDetails}
                        handleCommentVotingClick={this.handleCommentVotingClick}
+                       activeUserId={uid}
+                       clickedCommentId={this.state.clickedCommentId}
                        handleCommentOptionsClick={this.handleCommentOptionsClick}/>
           {commentBoxIsActive ? <SectionFooter /> : null}
         </div>
@@ -98,8 +115,9 @@ class DeckComments extends PureComponent {
 
 const mapStateToProps = (state) => {
   const {vote, commentId, commentVotes, activeComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails, deckComment} = state.deckView.tools;
-  const {deckComments} = state.deckView;
-  return {vote, deckComments, commentId, commentVotes, activeComment, commentBoxIsActive, previewIsActive, votedComments, usersDetails, deckComment}
+  const {deckComments, deckCommentDeletingStatus} = state.deckView;
+  const {activeUser} = state.users;
+  return {activeUser, vote, deckComments, commentId, commentVotes, activeComment, deckCommentDeletingStatus, commentBoxIsActive, previewIsActive, votedComments, usersDetails, deckComment}
 };
 
 const mapDispatchToProps = (dispatch) => {

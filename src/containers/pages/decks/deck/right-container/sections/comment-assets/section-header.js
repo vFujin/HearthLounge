@@ -4,7 +4,6 @@ import Tooltip from 'antd/lib/tooltip';
 import {toggleCommentBox} from "../../../../../../../redux/deck/tools/actions";
 
 const SectionHeader = ({authenticated, countComments, commentBoxIsActive, toggleCommentBox}) => {
-
   const handleAddCommentClick = () => {
     toggleCommentBox(!commentBoxIsActive);
   };
@@ -12,7 +11,7 @@ const SectionHeader = ({authenticated, countComments, commentBoxIsActive, toggle
   return (
       <div className="section__header">
         <div className="line"></div>
-        <h1>{countComments} {countComments === 1 ? 'comment' : 'comments'}</h1>
+        <h1>{countComments} {countComments  === 1 ? 'comment' : 'comments'}</h1>
         <div className="section__header--options">
           <Tooltip title="You have to be Signed In!" trigger={authenticated ? "none" : "hover"} placement="bottom" arrowPointAtCenter>
             <button onClick={authenticated && handleAddCommentClick}

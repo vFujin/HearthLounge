@@ -2,7 +2,8 @@ import React from 'react';
 import MoreOptions from "../../../../../../../shared-assets/posts/more-options";
 import {wrapDate} from "../../../../../../../../utils/wrap-date";
 
-export const CommentHeader = ({authenticated, created, patch, commentId, handleCommentOptionsClick}) =>{
+export const CommentHeader = ({authenticated, activeUserId, comment, handleCommentOptionsClick}) =>{
+  const {created, patch, commentId, authorId} = comment;
   const commented = wrapDate(created / 1000);
 
   return (
@@ -10,7 +11,10 @@ export const CommentHeader = ({authenticated, created, patch, commentId, handleC
       <div className="commented">{commented}</div>
       <div className="header-right">
         <div className="patch">{patch}</div>
-        {authenticated && <MoreOptions commentId={commentId} handleCommentOptionsClick={handleCommentOptionsClick}/>}
+        {authenticated && <MoreOptions commentId={commentId}
+                                       activeUserId={activeUserId}
+                                       authorId={authorId}
+                                       handleCommentOptionsClick={handleCommentOptionsClick}/>}
       </div>
     </div>
   )

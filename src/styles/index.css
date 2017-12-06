@@ -6251,4 +6251,7 @@ card {
   margin: auto;
   height: 100%; }
 
+.deleting {
+  color: rgba(0, 0, 0, 0.2); }
+
 /*# sourceMappingURL=index.css.map */

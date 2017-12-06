@@ -12,7 +12,7 @@ const Content = ({activeUser, patch, activeDeck, deckEditView, decksNotEqual, de
                            deckEditView={deckEditView}
                            decksNotEqual={decksNotEqual}
                            descriptionsNotEqual={descriptionsNotEqual}/>
-          <DeckComments activeDeck={activeDeck} patch={patch} activeUser={activeUser} params={params}/>
+          <DeckComments activeDeck={activeDeck} patch={patch} params={params}/>
         </div>
       </div>
   )
