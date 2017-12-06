@@ -1,5 +1,5 @@
-import {ref, firebaseAuth, firestore} from '../../../keys';
-import {success, error} from '../../../utils/messages';
+import {ref, firebaseAuth} from '../../../keys';
+import {error} from '../../../utils/messages';
 import {browserHistory} from 'react-router';
 
 /**
@@ -7,8 +7,8 @@ import {browserHistory} from 'react-router';
  *
  * @param {string} email - The user's email address.
  * @param {string} password - The user's chosen password.
- * @param {func} updateSignUpStatus - Callback function to pass data into signUpStatus reducer.
- * @param {func} reducer - Callback function to pass data into activeUser reducer.
+ * @param {function} updateSignUpStatus - Callback function to pass data into signUpStatus reducer.
+ * @param {function} reducer - Callback function to pass data into activeUser reducer.
  * @returns {!firebase.Promise.<*>}
  */
 export default function (email, password, updateSignUpStatus, reducer){

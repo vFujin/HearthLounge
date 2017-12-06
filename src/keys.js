@@ -10,7 +10,9 @@ export const FirebaseConfig = {
   storageBucket: "hearthlounge-32197.appspot.com",
   messagingSenderId: "313812762792"
 };
+
 firebase.initializeApp(FirebaseConfig);
+
 export const refParent = (parent) => {
   return firebase.database().ref(parent);
 };

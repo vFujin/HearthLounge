@@ -1,5 +1,5 @@
 import {ref, firestore} from '../../../../keys';
-import {error} from '../../../../utils/messages';
+import {error, success} from '../../../../utils/messages';
 
 /**
  * Function representing deck saving to Firebase /decks and /users/:id/decks endpoint
@@ -48,16 +48,9 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       votes: initVotes
     };
 
-    // let updates = {};
-    // updates[`/decks/${deckId}`] = newDeck;
-    // updates[`/user-decks/${uid}/${deckId}`] = newDeck.deckId;
-    //
-    // return ref.update(updates, success("Deck has been uploaded!"));
-
-    firestore.collection("decks").doc(deckId).set(newDeck).then(()=>console.log("success")).catch(err => console.log(err));
+    firestore.collection("decks").doc(deckId).set(newDeck).then(()=>success("success")).catch(err => error(err, 6));
   }
   else {
-    console.log(patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid);
     error("Couldn't upload deck.")
   }
 }

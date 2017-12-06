@@ -3783,11 +3783,11 @@ button {
   .ant-slider .ant-slider-handle {
     border-color: #474143;
     background: #E7E2DA;
-    margin-top: -7px; }
+    margin-top: -5px; }
   .ant-slider .ant-slider-track {
     background: #474143; }
   .ant-slider .ant-slider-dot {
-    top: -3px;
+    top: -1px;
     width: 6px;
     height: 6px;
     background: #A69E9D; }
@@ -5185,7 +5185,8 @@ card {
           font-size: 100px;
           opacity: .2; }
       .container__index.home .home__list .expansions div .extension .extension__content {
-        padding: 10px; }
+        padding: 10px;
+        width: 80%; }
         .container__index.home .home__list .expansions div .extension .extension__content img {
           height: 100%;
           width: 100%; }

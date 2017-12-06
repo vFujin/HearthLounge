@@ -1369,7 +1369,6 @@ card{
             a{
               text-align: center;
               margin: 0 10px 10px 10px;
-
               padding: 10px;
               color: $light-grey;
               border: 1px solid $light-grey;
@@ -1391,6 +1390,7 @@ card{
           }
           .extension__content{
             padding: 10px;
+            width: 80%;
             img{
               height: 100%;
               width: 100%;

@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import {icon_filters} from '../../../data/filters';
-import Tooltip from 'antd/lib/tooltip';
 import {removeQuery} from '../../../utils/utils-router';
+import Icon from "../../../components/icon";
 
 const IconFilter = ({filter, header, header_label, isStandard, query, wrapper_class}) => {
   const queries = (icon_url) =>{
     return Object.assign({}, query, {[filter]: icon_url});
   };
 
-  const iconUrl = (icon) =>{
+  const iconType = () =>{
     switch(filter){
-      case 'classic': return 'hs-logo';
+      case 'cost': return 'mana';
       case 'rarity': return `rarity`;
-      case 'cost':   return `mana-${icon.url} mana`;
-      default: return icon.url;
+      case 'cardSet':   return `set`;
+      default: return filter;
     }
   };
 
@@ -24,9 +24,11 @@ const IconFilter = ({filter, header, header_label, isStandard, query, wrapper_cl
       icon_filters[filter].filter(icon => icon.isStandard === isStandard).map((icon, index) =>
         <li key={index} id={icon.url}>
           <Link className={`icon-tooltip-wrapper`} to={{pathname: 'cards', query: queries(icon.name)}}>
-            <Tooltip title={icon.name} placement="bottom">
-              <span id={`${filter}-set`} className={`hs-icon ${iconUrl(icon)} icon-${iconUrl(icon)} ${query[filter] === icon.name ? 'active' : ''}`}></span>
-            </Tooltip>
+            <Icon id={`${filter}-set`}
+                  name={icon.url}
+                  type={iconType()}
+                  className={`${icon.url} ${query[filter] === icon.name ? 'active' : ''}`}
+                  tooltip={true}/>
           </Link>
         </li>
       ))

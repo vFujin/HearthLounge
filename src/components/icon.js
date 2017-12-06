@@ -15,7 +15,8 @@ const selectType = (
     tooltipPlacement = "bottom",
     domain = null,
     linkFlairText = null,
-    handleClick = null
+    handleClick = null,
+    id = null
     ) => {
 
   const validateSet = () =>{
@@ -55,12 +56,12 @@ const selectType = (
   };
 
   let icon = (name) => {
-    let icon = <span onClick={handleClick} className={`hs-icon icon-${name} ${className}`}></span>;
+    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-${name} ${className}`}></span>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 
   let manaIcon = (name) => {
-    let icon = <span onClick={handleClick} className={`hs-icon icon-mana-${name} ${className}`}></span>;
+    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-mana-${name} ${className}`}></span>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 
@@ -73,7 +74,7 @@ const selectType = (
   }
 };
 
-const Icon = ({name, title, className, type, tooltip, tooltipPlacement, domain, linkFlairText, handleClick}) => selectType(name, title, className, type, tooltip, tooltipPlacement, domain, linkFlairText, handleClick);
+const Icon = ({name, title, className, type, tooltip, tooltipPlacement, domain, linkFlairText, handleClick, id}) => selectType(name, title, className, type, tooltip, tooltipPlacement, domain, linkFlairText, handleClick, id);
 
 export default Icon;
 
@@ -85,5 +86,10 @@ Icon.propTypes = {
   title: PropTypes.string,
   className: PropTypes.string,
   type: PropTypes.string,
-  tooltipPlacement: PropTypes.string
+  tooltip: PropTypes.bool,
+  tooltipPlacement: PropTypes.string,
+  domain: PropTypes.string,
+  linkFlairText: PropTypes.string,
+  handleClick: PropTypes.func,
+  id: PropTypes.string
 };
