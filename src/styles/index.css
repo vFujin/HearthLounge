@@ -3634,6 +3634,28 @@ button {
   width: 35%;
   margin-left: -17.5%; }
 
+/**
+ * Dropdown
+ */
+.ant-dropdown-menu {
+  background: #474143;
+  border: 1px solid #E7E2DA;
+  border-radius: 0; }
+  .ant-dropdown-menu li {
+    color: #A69E9D;
+    border-bottom: 1px dashed #A69E9D; }
+    .ant-dropdown-menu li:last-child {
+      border-bottom: 0; }
+    .ant-dropdown-menu li.ant-dropdown-menu-item {
+      padding: 2px 8px; }
+      .ant-dropdown-menu li.ant-dropdown-menu-item:first-child, .ant-dropdown-menu li.ant-dropdown-menu-item > a {
+        border-radius: 0; }
+      .ant-dropdown-menu li.ant-dropdown-menu-item:hover {
+        background: rgba(225, 255, 255, 0.2);
+        color: #E7E2DA; }
+    .ant-dropdown-menu li.ant-dropdown-menu-submenu-title:first-child, .ant-dropdown-menu li.ant-dropdown-menu-submenu-title > a {
+      border-radius: 0; }
+
 /*
  *  Slider
  */

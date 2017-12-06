@@ -7,9 +7,10 @@ const MoreOptions = ({commentId, activeUserId, authorId, handleCommentOptionsCli
 
   const menu = (
       <Menu onClick={(e) => handleCommentOptionsClick(e)}>
-        {/*{(activeUserId === authorId) && <Menu.Item key="delete" commentId={commentId}>Delete</Menu.Item>}*/}
-        <Menu.Item key="delete" commentId={commentId}>Delete</Menu.Item>
-        <Menu.Item key="flag" commentId={commentId}>Flag</Menu.Item>
+        {(activeUserId === authorId) && <Menu.Item key="delete" commentId={commentId}>Delete</Menu.Item>}
+        {!(activeUserId === authorId) && <Menu.Item key="flag" commentId={commentId}>Flag</Menu.Item>}
+        {/*<Menu.Item key="delete" commentId={commentId}>Delete</Menu.Item>*/}
+        {/*<Menu.Item key="flag" commentId={commentId}>Flag</Menu.Item>*/}
       </Menu>
   );
   return (
