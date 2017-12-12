@@ -571,6 +571,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #FF7D0A; }
+  .druid.gradient-full {
+    background: -moz-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #FF7D0A; }
 
 .hunter {
   color: #ABD473; }
@@ -635,6 +641,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #ABD473; }
+  .hunter.gradient-full {
+    background: -moz-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #ABD473; }
 
 .mage {
   color: #69CCF0; }
@@ -699,6 +711,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #69CCF0; }
+  .mage.gradient-full {
+    background: -moz-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #69CCF0; }
 
 .paladin {
   color: #F58CBA; }
@@ -763,6 +781,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #F58CBA; }
+  .paladin.gradient-full {
+    background: -moz-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #F58CBA; }
 
 .priest {
   color: #FFFFFF; }
@@ -827,6 +851,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #FFFFFF; }
+  .priest.gradient-full {
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #FFFFFF; }
 
 .rogue {
   color: #FFF569; }
@@ -891,6 +921,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #FFF569; }
+  .rogue.gradient-full {
+    background: -moz-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #FFF569; }
 
 .shaman {
   color: #0070DE; }
@@ -955,6 +991,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #0070DE; }
+  .shaman.gradient-full {
+    background: -moz-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(0, 112, 222, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #0070DE; }
 
 .warlock {
   color: #9482C9; }
@@ -1019,6 +1061,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #9482C9; }
+  .warlock.gradient-full {
+    background: -moz-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #9482C9; }
 
 .warrior {
   color: #C79C6E; }
@@ -1083,6 +1131,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #C79C6E; }
+  .warrior.gradient-full {
+    background: -moz-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #C79C6E; }
 
 .death-knight {
   color: #C41F3B; }
@@ -1147,6 +1201,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #C41F3B; }
+  .death-knight.gradient-full {
+    background: -moz-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #C41F3B; }
 
 .monk {
   color: #00FF96; }
@@ -1211,6 +1271,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #00FF96; }
+  .monk.gradient-full {
+    background: -moz-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #00FF96; }
 
 .demon-hunter {
   color: #A330C9; }
@@ -1275,6 +1341,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #A330C9; }
+  .demon-hunter.gradient-full {
+    background: -moz-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #A330C9; }
 
 @keyframes linearKeyframes {
   0% {
@@ -1347,6 +1419,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #b5de3f; }
+  .naxxramas.gradient-full {
+    background: -moz-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #b5de3f; }
 
 .blackrock-mountain {
   color: #fa5210; }
@@ -1411,6 +1489,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #fa5210; }
+  .blackrock-mountain.gradient-full {
+    background: -moz-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #fa5210; }
 
 .the-league-of-explorers {
   color: #14a9a1; }
@@ -1475,6 +1559,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #14a9a1; }
+  .the-league-of-explorers.gradient-full {
+    background: -moz-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #14a9a1; }
 
 .karazhan {
   color: #e2b4df; }
@@ -1539,6 +1629,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #e2b4df; }
+  .karazhan.gradient-full {
+    background: -moz-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #e2b4df; }
 
 /*
  * Expansions
@@ -1606,6 +1702,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #fae43f; }
+  .goblins-vs-gnomes.gradient-full {
+    background: -moz-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #fae43f; }
 
 .the-grand-tournament {
   color: #f00; }
@@ -1670,6 +1772,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #f00; }
+  .the-grand-tournament.gradient-full {
+    background: -moz-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #f00; }
 
 .whispers-of-the-old-gods {
   color: #cc00ff; }
@@ -1734,6 +1842,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #cc00ff; }
+  .whispers-of-the-old-gods.gradient-full {
+    background: -moz-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(204, 0, 255, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #cc00ff; }
 
 .mean-streets-of-gadgetzan {
   color: #d2cac5; }
@@ -1798,6 +1912,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #d2cac5; }
+  .mean-streets-of-gadgetzan.gradient-full {
+    background: -moz-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #d2cac5; }
 
 .journey-to-ungoro {
   color: #3d9e2c; }
@@ -1862,6 +1982,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #3d9e2c; }
+  .journey-to-ungoro.gradient-full {
+    background: -moz-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #3d9e2c; }
 
 .knights-of-the-frozen-throne {
   color: #a5f2f3; }
@@ -1926,6 +2052,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #a5f2f3; }
+  .knights-of-the-frozen-throne.gradient-full {
+    background: -moz-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #a5f2f3; }
 
 .kobolds-and-catacombs {
   color: #ffd989; }
@@ -1990,6 +2122,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #ffd989; }
+  .kobolds-and-catacombs.gradient-full {
+    background: -moz-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #ffd989; }
 
 @keyframes linearKeyframes {
   0% {
@@ -2062,6 +2200,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #fff; }
+  .common.gradient-full {
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #fff; }
 
 .rare {
   color: blue; }
@@ -2126,6 +2270,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid blue; }
+  .rare.gradient-full {
+    background: -moz-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid blue; }
 
 .epic {
   color: purple; }
@@ -2190,6 +2340,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid purple; }
+  .epic.gradient-full {
+    background: -moz-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid purple; }
 
 .legendary {
   color: orange; }
@@ -2254,6 +2410,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid orange; }
+  .legendary.gradient-full {
+    background: -moz-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid orange; }
 
 /*
  * Modes
@@ -2321,6 +2483,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #318e2f; }
+  .mammoth.gradient-full, .kraken.gradient-full {
+    background: -moz-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #318e2f; }
 
 .wild {
   color: #695840; }
@@ -2385,6 +2553,12 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #695840; }
+  .wild.gradient-full {
+    background: -moz-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #695840; }
 
 @keyframes linearKeyframes {
   0% {
@@ -5381,10 +5555,37 @@ card {
         box-shadow: 0 0 10px #474143;
         color: #E7E2DA; }
 
-.expansions .container__page--right .content .container__extension .active-expansion {
-  display: block; }
-.expansions .container__page--right .content .container__extension div:hover {
-  background-color: transparent; }
+.expansions .container__page--right .content .container__classChallenges--content {
+  display: flex; }
+  .expansions .container__page--right .content .container__classChallenges--content .container__classChallenges--content-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #474143;
+    margin: 0 10px 0 0;
+    background: #A69E9D;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+    .expansions .container__page--right .content .container__classChallenges--content .container__classChallenges--content-option > p {
+      padding: 8px;
+      background: #474143;
+      color: #E7E2DA;
+      width: 100%;
+      text-align: center; }
+    .expansions .container__page--right .content .container__classChallenges--content .container__classChallenges--content-option ul {
+      width: 100%; }
+      .expansions .container__page--right .content .container__classChallenges--content .container__classChallenges--content-option ul li {
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        padding: 5px 3px; }
+        .expansions .container__page--right .content .container__classChallenges--content .container__classChallenges--content-option ul li p {
+          margin: 0 5px; }
+        .expansions .container__page--right .content .container__classChallenges--content .container__classChallenges--content-option ul li span {
+          font-size: 18px; }
 
 .adventures .container__page--right .content .cost .cost-description span {
   color: #E7E2DA; }

@@ -322,7 +322,16 @@ export const expansion_details = [
     class_challenges: [
       {
         playerClass: "druid",
-        options: []
+        options: [
+          {
+            label: "Wee Beasts",
+            cards: ["564", "830"]
+          },
+          {
+            label: "123",
+            cards: ["2050", "2061", "1937"]
+          }
+        ]
       },
       {
         playerClass: "hunter",

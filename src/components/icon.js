@@ -24,7 +24,7 @@ const selectType = (
       case "classic": return "hs-logo";
       case "curse-of-naxxramas": return "naxxramas";
       case "one-night-in-karazhan": return "karazhan";
-      default: return _.toLower(iconName);
+      default: return _.toLower(_.kebabCase(iconName));
     }
   };
   const validateMode = iconName === "standard" ? "mammoth" : iconName;
