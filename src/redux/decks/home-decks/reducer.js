@@ -24,11 +24,13 @@ export default function(state=initialState, {type, payload}) {
         loading: false,
         error: payload
       };
-    case 'UPDATE_DECK_FILTERS':
+    case types.FILTER_HOT_DECKS:
       return {
         ...state,
-        ...state.deckFilters,
-        ...payload
+        deckFilters: {
+          // ...state.deckFilters, TODO: when there will be proper backend that should be uncommented
+          ...payload
+        }
       };
     default:
       return state;

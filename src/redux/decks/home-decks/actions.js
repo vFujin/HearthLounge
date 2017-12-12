@@ -19,3 +19,10 @@ export function fetchHotDecksFailure(error){
     payload: error
   }
 }
+
+export function filterHotDecks(payload){
+  return {
+    type: types.FILTER_HOT_DECKS,
+    payload
+  }
+}

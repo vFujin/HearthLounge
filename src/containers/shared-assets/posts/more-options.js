@@ -5,12 +5,18 @@ import Tooltip from 'antd/lib/tooltip';
 
 const MoreOptions = ({commentId, activeUserId, authorId, handleCommentOptionsClick}) =>{
 
+  const options = () =>{
+    if(activeUserId === authorId) return (
+        <Menu.Item key="delete" commentId={commentId}>Delete</Menu.Item>
+    );
+    else return (
+        <Menu.Item key="flag" commentId={commentId}>Flag</Menu.Item>
+    )
+  };
+
   const menu = (
       <Menu onClick={(e) => handleCommentOptionsClick(e)}>
-        {(activeUserId === authorId) && <Menu.Item key="delete" commentId={commentId}>Delete</Menu.Item>}
-        {!(activeUserId === authorId) && <Menu.Item key="flag" commentId={commentId}>Flag</Menu.Item>}
-        {/*<Menu.Item key="delete" commentId={commentId}>Delete</Menu.Item>*/}
-        {/*<Menu.Item key="flag" commentId={commentId}>Flag</Menu.Item>*/}
+        {options()}
       </Menu>
   );
   return (
