@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ExtensionBlock from "../../../../components/extension-blocks/extension-block";
-import Art from "../../../../components/extension-blocks/overview-blocks/art";
-import Rewards from "../../../../components/extension-blocks/overview-blocks/rewards";
-import Cinematic from "../../../../components/extension-blocks/overview-blocks/cinematic";
-import Gameboard from "../../../../components/extension-blocks/overview-blocks/gameboard";
-import Cost from "../../../../components/extension-blocks/overview-blocks/cost";
-import About from "../../../../components/extension-blocks/overview-blocks/about";
-import Structure from "../../../../components/extension-blocks/overview-blocks/structure";
-import NewMechanicsKeywords from "../../../../components/extension-blocks/overview-blocks/mechanics";
+import {
+  Art,
+  Rewards,
+  Cinematic,
+  Gameboard,
+  Cost,
+  About,
+  Structure,
+  NewMechanicsKeywords
+} from "../../../../components/extension-blocks/overview-blocks";
 
 const Overview = ({extension, adventureCardbacks}) => {
   const {overview, name} = extension;
@@ -22,6 +24,7 @@ const Overview = ({extension, adventureCardbacks}) => {
   const adventureCost = <Cost extensionCost={cost}/>;
   const adventureStructure = <Structure extensionStructure={structure}/>;
   const adventureMechanics = <NewMechanicsKeywords extensionMechanics={new_mechanics_keywords} />;
+
   return (
       <ul className="container__blocks">
         <ExtensionBlock title="about" element={adventureAbout}/>

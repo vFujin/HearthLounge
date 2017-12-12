@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import _ from 'lodash'
 import Block from "../../extension-blocks/extension-block";
 import Overview from "./boss-blocks/overview";
-import Strategy from "../../../containers/pages/adventures/assets/shared-blocks/strategy";
-import Rewards from "../../../containers/pages/adventures/assets/shared-blocks/rewards";
+import Strategy from "../class-challenges/challenges/class-challenge/blocks/strategy";
+import Rewards from "../class-challenges/challenges/class-challenge/blocks/rewards";
 import WingBosses from "./boss-blocks/wing-bosses";
 import Decklist from "./boss-blocks/decklist";
 

@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from "../../../../../components/icon";
-import Block from "../../../../../components/extension-blocks/extension-block";
-import Overview from "./class-challenge-blocks/overview";
-import Rewards from "../shared-blocks/rewards";
-import Strategy from "../shared-blocks/strategy";
+import Icon from "../../../../icon";
+import Block from "../../../../extension-blocks/extension-block";
+import {Overview, Rewards, Strategy} from "./blocks";
 
 const ClassChallenge = ({cards, cardsLoading, challenge, playerClass}) => {
   const {reward} = challenge;
   const overview = <Overview />;
   const rewards = <Rewards extensionCards={cards} cardsLoading={cardsLoading} bossReward={reward}/>;
   const strategy = <Strategy />;
+
   return (
-      <ul className="classChallenges__content container__blocks">
+      <ul className="container__classChallenges--content container__blocks">
         <Block page="class-challenge" title="overview" element={overview}/>
         <Block page="class-challenge" title="rewards" element={rewards}/>
         <Block page="class-challenge" title="strategy" element={strategy}/>
         <Block page="class-challenge" title="your deck" element="deck"/>
-        <li className="container__blocks--block class-challenge">
+        <li className="container__blocks--block block-width-4 class-challenge">
           <Icon name={playerClass}/>
         </li>
       </ul>

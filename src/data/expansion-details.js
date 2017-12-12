@@ -319,71 +319,15 @@ export const expansion_details = [
         url: 'dungeon-run'
       }
     ],
-    wings: {
-      description: "",
-      details: [
-        {
-          wing_title: "Prologue",
-          url: 'prologue',
-          reward: 'random hero card',
-          bosses: [
-            {
-              name: "A Fateful Encounter",
-              url: 'a-fateful-encounter',
-            }
-          ]
-        },
-        {
-          wing_title: "Lower Citadel",
-          url: "lower-citadel",
-          reward: 'kotft pack',
-          bosses: [
-            {
-              name: "Lord Marrowgar",
-              url: 'lord-marrowgar',
-            },
-            {
-              name: "Deathbringer Saurfang",
-              url: 'deathbringer-saurfang',
-            },
-            {
-              name: "Lady Deathwhisper",
-              url: 'lady-deathwhisper',
-            }
-          ]
-        },
-        {
-          wing_title: "Upper Reaches",
-          url: 'upper-reaches',
-          reward: 'kotft pack',
-          bosses: [
-            {
-              name: "Blood-Queen Lana'thel",
-              url: 'blood-queen-lanathel'
-            },
-            {
-              name: "Professor Putricide",
-              url: 'professor-putricide'
-            },
-            {
-              name: "Sindragosa",
-              url: 'sindragosa'
-            }
-          ]
-        },
-        {
-          wing_title: "The Frozen Throne",
-          url: 'the-frozen-throne',
-          reward: 'kotft pack + alternate hero',
-          bosses: [
-            {
-              name: "The Lich King",
-              url: 'the-lich-king'
-            }
-          ]
-        }
-      ]
-    },
+    class_challenges: [
+      {
+        playerClass: "druid",
+        options: []
+      },
+      {
+        playerClass: "hunter",
+        options: []
+      }
+    ]
   }
-
 ];

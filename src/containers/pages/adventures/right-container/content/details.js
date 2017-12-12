@@ -3,9 +3,10 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import {adventure_details} from '../../../../../data/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
-import {Overview, ClassChallenges} from '../../assets';
 import Cards from '../../../../../components/extension-blocks/cards';
 import {Boss, Bosses} from "../../../../../components/extensions/bosses";
+import {default as ClassChallenges} from "../../../../../components/extensions/class-challenges/class-challenges";
+import Overview from "../../assets/overview";
 
 const components = {
   Overview,
@@ -25,6 +26,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
       return <Page key={page.url}
                    type="adventures"
                    extension={adventure}
+                   classChallengeType="class-challenges"
                    cards={extensionCards}
                    cardsLoading={cards.loading}
                    extensionUrl={adventure.url}

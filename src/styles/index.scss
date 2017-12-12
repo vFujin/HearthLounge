@@ -1130,6 +1130,45 @@ card{
           }
         }
       }
+      .container__classChallenges {
+        display: flex;
+        height: 100%;
+        .container__classChallenges--sidebar{
+          border-right: 1px solid $light-grey;
+          padding-right: 1vh;
+          li{
+            @include transition(all ease .4s);
+            a{
+              display: block;
+              padding: 10px;
+              span{
+                font-size: 40px;
+              }
+            }
+          }
+        }
+        .container__classChallenges--content{
+          padding-left: 1vh;
+          height: 100%;
+          width: 100%;
+          .container__classChallenges--class-selection{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+          }
+          .container__blocks--block:last-child{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            span{
+              opacity: .1;
+              font-size: 300px;
+            }
+          }
+        }
+      }
     }
   }
   .edit-mode{
@@ -1943,48 +1982,6 @@ card{
       }
       .structure {
 
-      }
-      .classChallenges {
-        display: flex;
-        height: 100%;
-        .classChallenges__sidebar{
-          border-right: 1px solid $light-grey;
-          padding-right: 1vh;
-          li{
-            @include transition(all ease .4s);
-            a{
-              display: block;
-              padding: 10px;
-              span{
-                font-size: 40px;
-              }
-            }
-          }
-        }
-        .classChallenges__selections{
-          display: flex;
-        }
-        .classChallenges__content{
-          padding-left: 1vh;
-          height: 100%;
-          width: 100%;
-          .classChallenges__selection{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-          }
-          .container__blocks--block:last-child{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            span{
-              opacity: .1;
-              font-size: 300px;
-            }
-          }
-        }
       }
     }
   }

@@ -400,6 +400,9 @@ a {
   margin-right: 1vh;
   width: calc(75% - 1vh); }
 
+.block-width-4 {
+  width: 100%; }
+
 #container {
   display: grid;
   grid-template-rows: 10vh 83vh 5vh;
@@ -4820,6 +4823,38 @@ card {
       .container__page .container__page--right .content .container__bosses table tbody tr:hover td:first-child {
         background-color: #00a99c;
         color: #E7E2DA; }
+    .container__page .container__page--right .content .container__classChallenges {
+      display: flex;
+      height: 100%; }
+      .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar {
+        border-right: 1px solid #A69E9D;
+        padding-right: 1vh; }
+        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar li {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          transition: all ease 0.4s; }
+          .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar li a {
+            display: block;
+            padding: 10px; }
+            .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar li a span {
+              font-size: 40px; }
+      .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content {
+        padding-left: 1vh;
+        height: 100%;
+        width: 100%; }
+        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content .container__classChallenges--class-selection {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%; }
+        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content .container__blocks--block:last-child {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: transparent; }
+          .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content .container__blocks--block:last-child span {
+            opacity: .1;
+            font-size: 300px; }
   .container__page .edit-mode .sidebar__body .container__mana-curve .graph {
     -webkit-box-shadow: inset 0 0 20px #474143;
     -moz-box-shadow: inset 0 0 20px #474143;
@@ -5367,40 +5402,6 @@ card {
       background-color: rgba(255, 255, 255, 0.6); }
     .adventures .container__page--right .content .cost table tr:nth-child(even) {
       background-color: rgba(255, 255, 255, 0.5); }
-.adventures .container__page--right .content .classChallenges {
-  display: flex;
-  height: 100%; }
-  .adventures .container__page--right .content .classChallenges .classChallenges__sidebar {
-    border-right: 1px solid #A69E9D;
-    padding-right: 1vh; }
-    .adventures .container__page--right .content .classChallenges .classChallenges__sidebar li {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      transition: all ease 0.4s; }
-      .adventures .container__page--right .content .classChallenges .classChallenges__sidebar li a {
-        display: block;
-        padding: 10px; }
-        .adventures .container__page--right .content .classChallenges .classChallenges__sidebar li a span {
-          font-size: 40px; }
-  .adventures .container__page--right .content .classChallenges .classChallenges__selections {
-    display: flex; }
-  .adventures .container__page--right .content .classChallenges .classChallenges__content {
-    padding-left: 1vh;
-    height: 100%;
-    width: 100%; }
-    .adventures .container__page--right .content .classChallenges .classChallenges__content .classChallenges__selection {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%; }
-    .adventures .container__page--right .content .classChallenges .classChallenges__content .container__blocks--block:last-child {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent; }
-      .adventures .container__page--right .content .classChallenges .classChallenges__content .container__blocks--block:last-child span {
-        opacity: .1;
-        font-size: 300px; }
 
 .create-deck .container__page--right {
   position: relative; }
