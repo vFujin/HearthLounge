@@ -14,6 +14,7 @@ const DungeonRun = ({classChallenge, loading, allCards}) =>{
       return {label, icon, cards: card}
     });
     updatedCards = _.concat(card, cards);
+    console.log(updatedCards);
     return <Options options={updatedCards}/>;
   }
   return (

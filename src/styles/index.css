@@ -83,6 +83,21 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-deathrattle:before {
+  content: "\e955"; }
+
+.icon-legendary:before {
+  content: "\e956"; }
+
+.icon-secret:before {
+  content: "\e957"; }
+
+.icon-shots:before {
+  content: "\e958"; }
+
+.icon-tracker:before {
+  content: "\e959"; }
+
 .icon-balance:before {
   content: "\e900"; }
 

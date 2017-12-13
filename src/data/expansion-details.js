@@ -341,7 +341,7 @@ export const expansion_details = [
             ]
           },
           {
-            label: "Natural Defence",
+            label: "Natural Defense",
             icon: "natural-defence",
             cards: [
               "Barkskin", "Claw", "Earthen Scales", "Lesser Jasper Spellstone", "Plated Beetle", "Feral Rage", "Gnash",
@@ -428,7 +428,108 @@ export const expansion_details = [
       },
       {
         playerClass: "hunter",
-        options: []
+        options: [
+          {
+            label: "Wee Beasts",
+            icon: "jungle",
+            cards: [
+              "Alleycat", "Fiery Bat", "Timber Wolf", "Crackling Razormaw", "Dire Wolf Alpha", "Haunted Creeper",
+              "Huge Toad", "Kindly Grandmother", "Stubborn Gastropod", "Bearshark", "Cave Hydra", "Rat Pack",
+              "Vicious Fledgling"
+            ]
+          },
+          {
+            label: "Big Beasts",
+            icon: "jungle",
+            cards: [
+              "Bittertide Hydra", "Bloodworm", "Nesting Roc", "Stampeding Kodo", "Stranglethorn Tiger",
+              "Tundra Rhino", "Deathstalker Rexxar", "Savannah Highmane", "Charged Devilsaur", "Giant Sand Worm",
+              "Kathrena Winterwisp"
+            ]
+          },
+          {
+            label: "Shots",
+            icon: "shots",
+            cards: [
+              "Arcane Shot", "Hunter's Mark", "Grievous Bite", "Quick Shot", "Snipe", "Toxic Arrow", "Deadly Shot", "Powershot",
+              "Flanking Strike", "Multi-Shot", "Cobra Shot", "Explosive Shot"
+            ]
+          },
+          {
+            label: "Summoner",
+            icon: "minions",
+            cards: [
+              "Alleycat", "Haunted Creeper", "Scavenging Hyena", "Animal Companion", "Eggnapper", "Infest", "Unleash the Hounds",
+              "Cult Master", "Infested Tauren", "Ball of Spiders", "Corridor Creeper", "Kathrena Winterwisp", "Call of the Wild"
+            ]
+          },
+          {
+            label: "Secrets",
+            icon: "secret",
+            cards: [
+              "Candleshot", "Secretkeeper", "Bear Trap", "Cat Trick", "Explosive Trap", "Freezing Trap", "Mad Scientist",
+              "Misdirection", "Snake Trap", "Snipe", "Venomstrike Trap", "Wandering Monster", "Cloaked Huntress", "Eaglehorn Bow",
+              "Professor Putricide", "Lesser Emerald Spellstone"
+            ]
+          },
+          {
+            label: "Beast Training",
+            icon: "jungle",
+            cards: [
+              "Stampede", "Timber Wolf", "Crackling Razormaw", "Dinomancy", "Kill Command", "Rat Pack", "Houndmaster",
+              "Ram Wrangler", "Tundra Rhino"
+            ]
+          },
+          {
+            label: "Weapons",
+            icon: "warrior",
+            cards: [
+              "Candleshot", "Small-Time Buccaneer", "Bloodsail Raider", "Glaivezooka", "Eaglehorn Bow", "Rummaging Kobold",
+              "Ebon Dragonsmith", "Blingtron 3000", "Piranha Launcher", "Furnacefire Colossus", "Gladiator's Longbow"
+            ]
+          },
+          {
+            label: "Tracker",
+            icon: "tracker",
+            cards: [
+              "Tracking", "Explorer's Hat", "Flare", "Jeweled Scarab", "King's Elekk", "Lock and Load", "Loot Hoarder",
+              "Dreadscale", "Stitched Tracker", "Deathstalker Rexxar"
+            ]
+          },
+          {
+            label: "Deathrattle",
+            icon: "deathrattle",
+            cards: [
+              "Play Dead", "Feign Death", "Kindly Grandmother", "Forlorn Stalker", "Terrorscale Stalker", "Arfus", "Exploding Bloatbat",
+              "Carnivorous Cube", "Corpse Widow", "Princess Huhuran", "Savannah Highmane", "Seeping Oozeling", "Sylvanas Windrunner",
+              "Abominable Bowman", "Kathrena Winterwisp", "N'Zoth, the Corruptor"
+            ]
+          },
+          {
+            label: "Legendary",
+            icon: "legendary",
+            cards: [
+              "Barnes", "Leeroy Jenkins", "Maexxna", "Dr. Boom", "Swamp King Dred", "Kel'Thuzad", "Sneed's Old Shredder",
+              "The Lich King", "King Krush", "Y'Shaarj, Rage Unbound"
+            ]
+          },
+          {
+            label: "Defense",
+            icon: "promo",
+            cards: [
+              "Bear Trap", "Doomsayer", "Explosive Trap", "Freezing Trap", "Deathlord", "Unleash the Hounds", "Defender of Argus",
+              "Antique Healbot", "Sludge Belcher", "Crushing Walls"
+            ]
+          },
+          {
+            label: "Smugglers",
+            icon: "reward",
+            cards: [
+              "Smuggler's Crate", "Hidden Cache", "Trogg Beastrager", "Shaky Zipgunner", "Dispatch Kodo", "Doppelgangster",
+              "Emperor Thaurissan", "Don Han'Cho"
+            ]
+          }
+        ]
       }
     ]
   }
