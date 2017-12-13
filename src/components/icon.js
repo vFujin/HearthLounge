@@ -24,6 +24,8 @@ const selectType = (
       case "classic": return "hs-logo";
       case "curse-of-naxxramas": return "naxxramas";
       case "one-night-in-karazhan": return "karazhan";
+      case "kobolds-catacombs": return "kobolds-and-catacombs";
+      case "journey-to-un-goro": return "journey-to-ungoro";
       default: return _.toLower(_.kebabCase(iconName));
     }
   };

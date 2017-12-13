@@ -9,12 +9,11 @@ const DungeonRun = ({classChallenge, loading, allCards}) =>{
     let updatedCards;
     let cards = [];
     let card = classChallenge.options.map(option => {
-      const {label, cards} = option;
-      const card = cards.map(card => allCards.find(c => card === c.dbfId));
-      return {label, cards: card}
+      const {label, icon, cards} = option;
+      const card = cards.map(card => allCards.find(c => card === c.name));
+      return {label, icon, cards: card}
     });
     updatedCards = _.concat(card, cards);
-
     return <Options options={updatedCards}/>;
   }
   return (

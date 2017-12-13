@@ -1938,26 +1938,41 @@ card{
     .content {
       .container__classChallenges--content{
         display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 100%;
+        overflow: auto;
+        @include scrollbar($pearl);
         .container__classChallenges--content-option{
+          position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
           width: 250px;
-          height: 250px;
+          height: calc(33% - 10px);
           border: 1px solid $dark-grey;
-          margin: 0 10px 0 0;
+          margin: 0 10px 10px 0;
           background: $light-grey;
           @include box-shadow(0, 0, 5px, $black-050, false);
-
           > p{
             padding: 8px;
             background: $dark-grey;
             color: $pearl;
             width: 100%;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span{
+              font-size: 20px;
+              margin-right: 10px;
+            }
           }
           ul{
             width: 100%;
+            height: calc(100% - 35px);
+            overflow: auto;
+            z-index: 2;
+            @include slim-scrollbar(black);
             li{
               display: flex;
               align-content: center;
@@ -1969,6 +1984,21 @@ card{
               span {
                 font-size: 18px;
               }
+            }
+          }
+          .background{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: .2;
+            z-index: 1;
+            span{
+              position: relative;
+              font-size: 150px;
+              top: 17.5px;
             }
           }
         }

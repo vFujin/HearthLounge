@@ -3,7 +3,7 @@
   font-family: 'hearthstone';
   src: url('../icons/hearthstone.ttf') format('truetype'),
        url('../icons/hearthstone.woff') format('woff'),
-       url('../icons/hearthstone.svg#Hearthstone') format('svg');
+       url('../icons/hearthstone.svg#hearthstone') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,6 +23,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-balance:before {
+  content: "\e900";
+}
+.icon-jungle:before {
+  content: "\e901";
+}
+.icon-mana-growth:before {
+  content: "\e902";
+}
+.icon-natural-defence:before {
+  content: "\e903";
+}
+.icon-restoration:before {
+  content: "\e904";
+}
+.icon-stampede:before {
+  content: "\e905";
+}
+.icon-stomp:before {
+  content: "\e906";
+}
+.icon-wise-decisions:before {
+  content: "\e907";
+}
+.icon-jade:before {
+  content: "\e908";
+}
+.icon-link:before {
+  content: "\e9cb";
+}
 .icon-redirect:before {
   content: "\ea7e";
 }
@@ -105,100 +135,100 @@
   content: "\eac6";
 }
 .icon-brawl:before {
-  content: "\e901";
+  content: "\e92f";
 }
 .icon-dust:before {
-  content: "\e902";
+  content: "\e930";
 }
 .icon-mammoth:before {
-  content: "\e903";
-}
-.icon-reward:before {
-  content: "\e904";
-}
-.icon-mana-0:before {
-  content: "\e905";
-}
-.icon-mana-1:before {
-  content: "\e906";
-}
-.icon-mana-2:before {
-  content: "\e907";
-}
-.icon-mana-3:before {
-  content: "\e908";
-}
-.icon-mana-4:before {
   content: "\e909";
 }
-.icon-mana-5:before {
+.icon-reward:before {
   content: "\e90a";
 }
-.icon-mana-6:before {
+.icon-mana-0:before {
   content: "\e90b";
 }
-.icon-mana-7:before {
+.icon-mana-1:before {
   content: "\e90c";
 }
-.icon-mana-7-plus:before {
+.icon-mana-2:before {
   content: "\e90e";
 }
-.icon-mana-8:before {
+.icon-mana-3:before {
   content: "\e90f";
 }
-.icon-mana-9:before {
+.icon-mana-4:before {
   content: "\e910";
 }
-.icon-mana-9-plus:before {
+.icon-mana-5:before {
   content: "\e911";
 }
-.icon-mana-10:before {
+.icon-mana-6:before {
   content: "\e912";
 }
-.icon-mana-11:before {
+.icon-mana-7:before {
   content: "\e913";
 }
-.icon-mana-12:before {
+.icon-mana-7-plus:before {
   content: "\e914";
 }
-.icon-rank-1:before {
+.icon-mana-8:before {
   content: "\e915";
 }
-.icon-rank-2:before {
+.icon-mana-9:before {
+  content: "\e93d";
+}
+.icon-mana-9-plus:before {
+  content: "\e93e";
+}
+.icon-mana-10:before {
+  content: "\e93f";
+}
+.icon-mana-11:before {
   content: "\e916";
 }
-.icon-rank-3:before {
+.icon-mana-12:before {
   content: "\e917";
 }
-.icon-rank-4:before {
+.icon-rank-1:before {
   content: "\e918";
 }
-.icon-rank-5:before {
+.icon-rank-2:before {
   content: "\e919";
 }
-.icon-rank-6:before {
+.icon-rank-3:before {
   content: "\e91a";
 }
-.icon-rank-7:before {
+.icon-rank-4:before {
   content: "\e91b";
 }
-.icon-rank-8:before {
+.icon-rank-5:before {
   content: "\e91c";
 }
-.icon-battlenet:before {
+.icon-rank-6:before {
   content: "\e91d";
 }
-.icon-blizzardapp:before {
+.icon-rank-7:before {
   content: "\e91e";
 }
-.icon-discord:before {
+.icon-rank-8:before {
   content: "\e91f";
 }
-.icon-grid:before {
+.icon-battlenet:before {
   content: "\e920";
 }
-.icon-minions:before {
+.icon-blizzardapp:before {
   content: "\e921";
+}
+.icon-discord:before {
+  content: "\e94c";
+}
+.icon-grid:before {
+  content: "\e94d";
+}
+.icon-minions:before {
+  content: "\e94e";
 }
 .icon-login:before {
   content: "\e922";
@@ -215,32 +245,35 @@
 .icon-adventures:before {
   content: "\e926";
 }
-.icon-trophy:before {
+.icon-marker:before {
   content: "\e927";
 }
-.icon-hs-logo:before {
+.icon-trophy:before {
   content: "\e928";
 }
-.icon-expansions:before {
+.icon-hs-logo:before {
   content: "\e929";
 }
-.icon-rarity:before {
+.icon-expansions:before {
   content: "\e92a";
 }
-.icon-missions:before {
+.icon-rarity:before {
   content: "\e92b";
 }
-.icon-hall-of-fame:before {
+.icon-missions:before {
   content: "\e92d";
 }
-.icon-basic:before {
+.icon-hall-of-fame:before {
   content: "\e92e";
 }
+.icon-basic:before {
+  content: "\e94f";
+}
 .icon-jade-lotus:before {
-  content: "\e92f";
+  content: "\e950";
 }
 .icon-kabal:before {
-  content: "\e930";
+  content: "\e951";
 }
 .icon-grimy-goons:before {
   content: "\e931";
@@ -279,13 +312,13 @@
   content: "\e93c";
 }
 .icon-druid:before {
-  content: "\e93d";
+  content: "\e952";
 }
 .icon-hunter:before {
-  content: "\e93e";
+  content: "\e953";
 }
 .icon-mage:before {
-  content: "\e93f";
+  content: "\e954";
 }
 .icon-paladin:before {
   content: "\e940";

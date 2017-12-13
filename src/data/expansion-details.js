@@ -324,12 +324,105 @@ export const expansion_details = [
         playerClass: "druid",
         options: [
           {
-            label: "Wee Beasts",
-            cards: ["564", "830"]
+            label: "Mana Growth",
+            icon: "mana-growth",
+            cards: [
+              "Innervate", "Darnassus Aspirant", "Wild Growth", "Greedy Sprite", "Grove Tender", "Pilfered Power",
+              "Astral Communion", "Mire Keeper", "Twig of the World Tree", "Nourish"
+            ]
           },
           {
-            label: "123",
-            cards: ["2050", "2061", "1937"]
+            label: "Jungle King",
+            icon: "jungle",
+            cards: [
+              "Enchanted Raven", "Druid of the Saber", "Mark of Y'Shaarj", "Mounted Raptor", "Vicious Fledgling",
+              "Arfus", "Savage Combatant", "Druid of the Fang", "Stranglethorn Tiger", "Verdant Longneck",
+              "Virmen Sensei", "Menagerie Warden", "Giant Anaconda", "Knight of the Wild"
+            ]
+          },
+          {
+            label: "Natural Defence",
+            icon: "natural-defence",
+            cards: [
+              "Barkskin", "Claw", "Earthen Scales", "Lesser Jasper Spellstone", "Plated Beetle", "Feral Rage", "Gnash",
+              "Branching Paths", "Ironwood Golem", "Oaken Summons", "Ultimate Infestation"
+            ]
+          },
+          {
+            label: "Jade Fangs",
+            icon: "jade",
+            cards: [
+              "Jade Idol", "Jade Blossom", "Jade Spirit", "Aya Blackpaw", "Jade Behemoth"
+            ]
+          },
+          {
+            label: "Stampede",
+            icon: "stampede",
+            cards: [
+              "Fire Fly", "Living Roots", "Mark of the Lotus", "Druid of the Swarm", "Haunted Creeper", "Power of the Wild",
+              "Crypt Lord", "Savage Roar", "Vicious Fledgling", "Soul of the Forest", "Fatespinner", "Force of Nature",
+              "Ixlid, Fungal Lord", "Living Mana"
+            ]
+          },
+          {
+            label: "Jungle Quest",
+            icon: "jungle",
+            cards: [
+              "Jungle Giants", "Tortollan Forager", "Celestial Dreamer", "Druid of the Flame", "Elder Longneck", "King Mukla",
+              "Cursed Disciple", "Shellshifter", "Stranglethorn Tiger", "Menagerie Warden", "Kun the Forgotten King",
+              "Tyrantus"
+            ]
+          },
+          {
+            label: "Cult of C'thun",
+            icon: "whispers-of-the-old-gods",
+            cards: [
+              "Beckoner of Evil", "Disciple of C'Thun", "Twilight Elder", "C'Thun's Chosen", "Klaxxi Amber-Weaver",
+              "Crazed Worshipper", "Dark Arakkoa", "Twin Emperor Vek'lor", "Doomcaller", "C'Thun"
+            ]
+          },
+          {
+            label: "Wise Decisions",
+            icon: "wise-decisions",
+            cards: [
+              "Living Roots", "Raven Idol", "Anodized Robo Cub", "Wrath", "Branching Paths", "Fandral Staghelm",
+              "Keeper of the Grove", "Fatespinner", "Nourish", "Dark Wispers", "Ancient of War", "Wisps of the Old Gods",
+              "Cenarius"
+            ]
+          },
+          {
+            label: "Balance",
+            icon: "balance",
+            cards: [
+              "Moonfire", "Bloodmage Thalnos", "Wrath", "Poison Seeds", "Swipe", "Azure Drake", "Starfall", "Starfire",
+              "Malygos"
+            ]
+          },
+          {
+            label: "Restoration",
+            icon: "restoration",
+            cards: [
+              "Mistress of Mixtures", "Naturalize", "Earthen Ring Farseer", "Healing Touch", "Mulch", "Refreshment Vendor",
+              "Antique Healbot", "Moonglade Portal", "Recycle", "Tree of Life"
+            ]
+          },
+          {
+            label: "Taunt",
+            icon: "promo",
+            cards: [
+              "Druid of the Swarm", "Crypt Lord", "Stonehill Defender", "Strongshell Scavenger", "Druid of the Claw", "Hungry Ettin",
+              "Spreading Plague", "Malfurion the Pestilent", "The Curator", "Grizzled Guardian", "Ironbark Protector",
+              "Primordial Drake", "Hadronox"
+            ]
+          },
+          {
+            label: "Stomp",
+            icon: "stomp",
+            cards: [
+              "Lunar Visions", "Giant Anaconda", "Primordial Drake", "Ragnaros the Firelord", "Sneed's Old Shredder",
+              "The Lich King", "Aviana", "Soggoth the Slitherer", "Ysera", "Deathwing", "Kun the Forgotten King",
+              "Tyrantus", "Y'Shaarj, Rage Unbound"
+            ]
           }
         ]
       },

@@ -4,12 +4,13 @@ import _ from 'lodash';
 import Icon from "../../../../icon";
 
 const OptionCards = ({card}) => {
-  const {dbfId, rarity, name, cost, cardSet} = card;
+  const {rarity, name, cost, cardSet} = card;
+  console.log(_.kebabCase(_.toLower(cardSet)));
   return (
-    <li key={dbfId} className={`${_.toLower(rarity)} gradient-full`}>
-      <Icon name={cardSet} type="set"/>
+    <li className={`${_.toLower(rarity)} gradient-full`}>
+      <Icon name={_.kebabCase(_.toLower(cardSet))} type="set"/>
       <p>{name}</p>
-     <Icon name={cost} type="mana"/>
+      <Icon name={cost} type="mana"/>
     </li>
   )
 };
