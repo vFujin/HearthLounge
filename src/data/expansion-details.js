@@ -530,6 +530,107 @@ export const expansion_details = [
             ]
           }
         ]
+      },
+      {
+        playerClass: "mage",
+        options: [
+          {
+            label: "Chaos",
+            icon: "chaos",
+            cards: [
+              "Shifting Scroll", "Babbling Book", "Open the Waygate", "Primordial Glyph", "Unstable Portal", "Kabal Courier",
+              "Mana Bind", "Spellslinger", "Leyline Manipulator", "Cabalist's Tome", "Cabalist's Tome", "Ethereal Conjurer"
+            ]
+          },
+          {
+            label: "Elementals",
+            icon: "elementals",
+            cards: [
+              "Fire Fly", "Lesser Ruby Spellstone", "Pyros", "Shimmering Tempest", "Volatile Elemental", "Steam Surger",
+              "Tol'vir Stoneshaper", "Water Elemental", "Servant of Kalimos", "Baron Geddon", "Blazecaller", "Ragnaros the Firelord",
+              "Frost Lich Jaina", "Ozruk"
+            ]
+          },
+          {
+            label: "Magical Friends",
+            icon: "elementals",
+            cards: [
+              "Arcane Blast", "Mana Wyrm", "Bloodmage Thalnos", "Cult Sorcerer", "Sorcerer's Apprentice", "Flamewaker",
+              "Violet Teacher", "Azure Drake", "Gadgetzan Auctioneer", "Archmage Antonidas", "Malygos"
+            ]
+          },
+          {
+            label: "Frost",
+            icon: "frost",
+            cards: [
+              "Breath of Sindragosa", "Glacial Shard", "Frostbolt", "Shatter", "Snowchugger", "Coldwraith", "Frost Nova",
+              "Cone of Cold", "Water Elemental", "Blizzard"
+            ]
+          },
+          {
+            label: "Fire",
+            icon: "fire",
+            cards: [
+              "Forgotten Torch", "Volcanic Potion", "Fireball", "Dragon's Fury", "Meteor", "Firelands Portal", "Flamestrike",
+              "Ragnaros the Firelord", "Pyroblast"
+            ]
+          },
+          {
+            label: "Heroic Power",
+            icon: "fire",
+            cards: [
+              "Fallen Hero", "Auctionmaster Beardo", "Dalaran Aspirant", "Kvaldir Raider", "Mukla's Champion",
+              "Nexus-Champion Saraad", "Coldarra Drake", "Kodorider", "Frost Lich Jaina"
+            ]
+          },
+          {
+            label: "Big Spells",
+            icon: "",
+            cards: [
+              "Raven Familiar", "Arcane Tyrant", "Deck of Wonders", "Dragon's Fury", "Dragon's Fury", "Blizzard",
+              "Meteor", "Spiteful Summoner", "Flamestrike", "Grand Archivist", "Dragoncaller Alanna", "Pyroblast"
+            ]
+          },
+          {
+            label: "Arcane",
+            icon: "",
+            cards: [
+              "Arcane Artificer", "Arcane Missiles", "Mirror Image", "Arcane Intellect", "Polymorph: Boar", "Potion of Polymorph",
+              "Polymorph", "Aluneth", "Rhonin"
+            ]
+          },
+          {
+            label: "Lost Secrets",
+            icon: "secret",
+            cards: [
+              "Arcanologist", "Mad Scientist", "Medivh's Valet", "Counterspell", "Duplicate", "Frozen Clone", "Ice Block",
+              "Mirror Entity", "Ethereal Arcanist", "Kabal Crystal Runner"
+            ]
+          },
+          {
+            label: "Giant Army",
+            icon: "",
+            cards: [
+              "Duplicate", "Ice Block", "Simulacrum", "Echo of Medivh", "Molten Reflection", "Carnivorous Cube", "Emperor Thaurissan",
+              "Arcane Giant", "Molten Giant"
+            ]
+          },
+          {
+            label: "Defense",
+            icon: "promo",
+            cards: [
+              "Mirror Image", "Doomsayer", "Frost Nova", "Ice Block", "Animated Armor", "Antique Healbot", "Sludge Belcher",
+              "Blizzard", "The Lich King"
+            ]
+          },
+          {
+            label: "Unique",
+            icon: "",
+            cards: [
+              "Kazakus", "Reno Jackson", "Inkmaster Solia"
+            ]
+          }
+        ]
       }
     ]
   }
