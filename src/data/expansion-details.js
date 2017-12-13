@@ -631,6 +631,113 @@ export const expansion_details = [
             ]
           }
         ]
+      },
+      {
+        playerClass: "paladin",
+        options: [
+          {
+            label: "Secrets",
+            icon: "secret",
+            cards: [
+              "Avenge", "Competitive Spirit", "Getaway Kodo", "Noble Sacrifice", "Redemption", "Repentance", "Secretkeeper",
+              "Hydrologist", "Mad Scientist", "Mysterious Challenger"
+            ]
+          },
+          {
+            label: "Healing",
+            icon: "restoration",
+            cards: [
+              "Mistress of Mixtures", "Lesser Pearl Spellstone", "Benevolent Djinn", "Wickerflame Burnbristle", "Chillblade Champion",
+              "Shroom Brewer", "Antique Healbot", "Blackguard", "Ivory Knight", "Ragnaros, Lightlord", "Uther of the Ebon Blade"
+            ]
+          },
+          {
+            label: "Divine Shield",
+            icon: " ",
+            cards: [
+              "Righteous Protector", "Shielded Minibot", "Tainted Zealot", "Argent Horserider", "Blood Knight", "Howling Commander",
+              "Scarlet Crusader", "Silent Knight", "Steward of Darkshire", "Wickerflame Burnbristle", "Light's Sorrow", "Bolvar, Fireblood",
+              "Argent Commander", "Sunwalker", "Tirion Fordring"
+            ]
+          },
+          {
+            label: "Justice",
+            icon: " ",
+            cards: [
+              "Humility", "Dark Conviction", "Equality", "Aldor Peacekeeper", "Consecration", "Hammer of Wrath", "Keeper of Uldaman",
+              "Avenging Wrath", "Enter the Coliseum", "Sunkeeper Tarim", "Eadric the Pure"
+            ]
+          },
+          {
+            label: "Helping Hand",
+            icon: " ",
+            cards: [
+              "Grimscale Chum", "Smuggler's Run", "Grimestreet Outfitter", "Grimestreet Smuggler", "Bolvar Fordragon", "Grimestreet Enforcer",
+              "Emperor Thaurissan", "Don Han'Cho"
+            ]
+          },
+          {
+            label: "Dragonmaster",
+            icon: " ",
+            cards: [
+              "Netherspite Historian", "Blackwing Technician", "Dragonkin Sorcerer", "Hungry Dragon", "Twilight Drake",
+              "Azure Drake", "Blackwing Corruptor", "Dragon Consort", "Scaled Nightmare", "Volcanic Drake", "Wrathion",
+              "Chromaggus", "Primordial Drake", "Dragonhatcher", "Malygos", "Onyxia", "Sleepy Dragon", "Ysera", "Deathwing",
+              "Deathwing, Dragonlord"
+            ]
+          },
+          {
+            label: "Silver Hand",
+            icon: " ",
+            cards: [
+              "Lost in the Jungle", "Drygulch Jailor", "Muster for Battle", "Silver Hand Regent", "Warhorse Trainer",
+              "Lightfused Stegodon", "Level Up!", "Quartermaster", "Stand Against Darkness", "Crystal Lion", "Vinecleaver"
+            ]
+          },
+          {
+            label: "Legendary",
+            icon: "legendary",
+            cards: [
+              "Auctionmaster Beardo", "Nexus-Champion Saraad", "Emperor Thaurissan", "The Black Knight", "Val'anyr", "Dr. Boom",
+              "The Curator", "Troggzor the Earthinator", "Marin the Fox", "Ragnaros the Firelord", "The Lich King"
+            ]
+          },
+          {
+            label: "Taunt",
+            icon: "promo",
+            cards: [
+              "Annoy-o-Tron", "Stubborn Gastropod", "Wickerflame Burnbristle", "Corpsetaker", "Psych-o-Tron", "Sludge Belcher",
+              "Hungry Ettin", "Sunkeeper Tarim", "Sunwalker", "Grimestreet Protector", "Grimestreet Protector", "The Curator",
+              "The Lich King", "Tirion Fordring"
+            ]
+          },
+          {
+            label: "Sacred Arms",
+            icon: " ",
+            cards: [
+              "Coghammer", "Muster for Battle", "Rallying Blade", "Sword of Justice", "Unidentified Maul", "Ebon Dragonsmith",
+              "Truesilver Champion", "Furnacefire Colossus", "Val'anyr", "Vinecleaver"
+            ]
+          },
+          {
+            label: "Murlocs",
+            icon: " ",
+            cards: [
+              "Grimscale Oracle", "Murloc Tidecaller", "Vilefin Inquisitor", "Bluegill Warrior", "Hydrologist", "Murloc Tidehunter",
+              "Murloc Warleader", "Primalfin Lookout", "Gentle Megasaur", "Murloc Knight", "Old Murk-Eye", "Finja, the Flying Star",
+              "Corrupted Seer", "Anyfin Can Happen"
+            ]
+          },
+          {
+            label: "Many Blessings",
+            icon: " ",
+            cards: [
+              "Adaptation", "Blessing of Might", "Blessing of Wisdom", "Divine Strength", "The Last Kaleidosaur",
+              "Desperate Stand", "Potion of Heroism", "Primalfin Champion", "Seal of Champions", "Blessing of Kings",
+              "Silvermoon Portal", "The Voraxx", "Blessed Champion", "Spikeridged Steed", "Lynessa Sunsorrow", "Dinosize"
+            ]
+          }
+        ]
       }
     ]
   }
