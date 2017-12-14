@@ -1076,7 +1076,7 @@ export const expansion_details = [
           },
           {
             label: "Unique",
-            icon: "whispers-of-the-old-gods",
+            icon: " ",
             cards: [
               "Kazakus", "Reno Jackson", "Krul the Unshackled"
             ]
@@ -1152,6 +1152,115 @@ export const expansion_details = [
             cards: [
               "Sunfury Protector", "Defender of Argus", "Twilight Drake", "Nexus-Champion Saraad", "Emperor Thaurissan",
               "Wilfred Fizzlebang", "Chromaggus", "Lord Jaraxxus", "Mountain Giant", "Molten Giant"
+            ]
+          }
+        ]
+      },
+      {
+        playerClass: "warrior",
+        options: [
+          {
+            label: "Berserker",
+            icon: "",
+            cards: [
+              "Inner Rage", "Cruel Taskmaster", "Execute", "Rampage", "Acolyte of Pain", "Frothing Berserker", "Val'kyr Soulclaimer",
+              "Axe Flinger", "Bloodhoof Brave", "Death's Bite", "Grim Patron", "Crush", "Hogger, Doom of Elwynn",
+              "Grommash Hellscream", "Rotface"
+            ]
+          },
+          {
+            label: "Everybody Hurts",
+            icon: "",
+            cards: [
+              "Whirlwind", "Battle Rage", "Commanding Shout", "Execute", "Sleep with the Fishes", "Unstable Ghoul",
+              "Blood Warriors", "Bouncing Blade", "Ravaging Ghoul", "Blood Razor", "Death's Bite", "Brawl", "Sudden Genesis",
+              "Primordial Drake", "Scourgelord Garrosh", "King Mosh"
+            ]
+          },
+          {
+            label: "Charge!",
+            icon: "",
+            cards: [
+              "Charge", "Patches the Pirate", "Southsea Deckhand", "Argent Horserider", "Kor'kron Elite", "Leeroy Jenkins",
+              "Argent Commander", "Skycap'n Kragg", "Charged Devilsaur", "Grommash Hellscream", "Icehowl"
+            ]
+          },
+          {
+            label: "Weapons",
+            icon: "warrior",
+            cards: [
+              "Upgrade!", "Forge of Souls", "Fiery War Axe", "Orgrimmar Aspirant", "Rummaging Kobold", "Blood Razor",
+              "Death's Bite", "Ebon Dragonsmith", "Grave Shambler", "Arcanite Reaper", "Tentacles for Arms", "Furnacefire Colossus",
+              "Gorehowl", "Lesser Mithril Spellstone", "Malkorok"
+            ]
+          },
+          {
+            label: "Armor",
+            icon: "promo",
+            cards: [
+              "Shield Slam", "Armorsmith", "Bladed Gauntlet", "Bring It On!", "Drywhisker Armorer", "Bash", "Mountainfire Armor",
+              "Reckless Flurry", "Shield Block", "Alley Armorsmith", "Ironforge Portal", "Gemstudded Golem", "Shieldmaiden",
+              "Unidentified Shield", "Geosculptor Yip"
+            ]
+          },
+          {
+            label: "Pirates",
+            icon: "",
+            cards: [
+              "N'Zoth's First Mate", "Patches the Pirate", "Small-Time Buccaneer", "Bloodsail Raider", "Ship's Cannon",
+              "Bloodsail Cultist", "Southsea Captain", "Dread Corsair", "Naga Corsair", "Captain Greenskin", "Skycap'n Kragg"
+            ]
+          },
+          {
+            label: "Taunt",
+            icon: "promo",
+            cards: [
+              "Fire Plume's Heart", "I Know a Guy", "Cornered Sentry", "Fierce Monkey", "King's Defender", "Stonehill Defender",
+              "Bloodhoof Brave", "Direhorn Hatchling", "Sludge Belcher", "Hungry Ettin", "Obsidian Destroyer", "The Curator",
+              "Primordial Drake", "The Lich King", "Sleepy Dragon", "Soggoth the Slitherer"
+            ]
+          },
+          {
+            label: "Smash!",
+            icon: "stomp",
+            cards: [
+              "Blood To Ichor", "Cleave", "Execute", "Heroic Strike", "Slam", "Bash", "Mortal Strike", "Fool's Bane", "Crush"
+            ]
+          },
+          {
+            label: "Re-Enforcer",
+            icon: "",
+            cards: [
+              "Hobart Grapplehammer", "Grimestreet Pawnbroker", "Grimestreet Smuggler", "Brass Knuckles", "Grimy Gadgeteer",
+              "Emperor Thaurissan", "Don Han'Cho"
+            ]
+          },
+          {
+            label: "Legendary",
+            icon: "legendary",
+            cards: [
+              "Zola the Gorgon", "Elise Starseeker", "Elise the Trailblazer", "Loatheb", "Nexus-Champion Saraad",
+              "Cairne Bloodhoof", "Hemet, Jungle Hunter", "Justicar Trueheart", "Sylvanas Windrunner", "Baron Geddon",
+              "Gruul", "Kel'Thuzad", "Marin the Fox", "Ragnaros the Firelord", "Sneed's Old Shredder", "The Boogeymonster",
+              "The Lich King", "Arch-Thief Rafaam", "Varian Wrynn"
+            ]
+          },
+          {
+            label: "Dragon Heart",
+            icon: "",
+            cards: [
+              "Alexstrasza's Champion", "Netherspite Historian", "Blackwing Technician", "Hoarding Dragon", "Hungry Dragon",
+              "Twilight Drake", "Twilight Guardian", "Azure Drake", "Blackwing Corruptor", "Book Wyrm", "Drakonid Crusher",
+              "Wrathion", "Chillmaw", "Primordial Drake", "Dragonhatcher", "Nefarian", "Sleepy Dragon", "Ysera", "Deathwing",
+              "Deathwing, Dragonlord"
+            ]
+          },
+          {
+            label: "Recruiter",
+            icon: "",
+            cards: [
+              "Dead Man's Hand", "Guild Recruiter", "Gather Your Party", "Madam Goya", "Silver Vanguard", "Geosculptor Yip",
+              "Woecleaver", "Master Oakheart", "Y'Shaarj, Rage Unbound"
             ]
           }
         ]

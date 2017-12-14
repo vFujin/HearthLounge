@@ -11,7 +11,7 @@ const Options = ({options}) => (
 
         return (
           <div className="container__classChallenges--content-option">
-            <p><Icon name={icon} /> {label}</p>
+            <p>{label}</p>
             <ul>{optionCards}</ul>
             <div className="background">
               <Icon name={icon} />
