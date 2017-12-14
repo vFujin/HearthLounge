@@ -738,6 +738,112 @@ export const expansion_details = [
             ]
           }
         ]
+      },
+      {
+        playerClass: "priest",
+        options: [
+          {
+            label: "Holy",
+            icon: "restoration",
+            cards: [
+              "Circle of Healing", "Flash Heal", "Light of the Naaru", "Lightwarden", "Northshire Cleric", "Holy Champion",
+              "Priest of the Feast", "Darkshire Alchemist", "Holy Nova", "Holy Fire", "Lightbomb", "Prophet Velen"
+            ]
+          },
+          {
+            label: "Last Rites",
+            icon: "deathrattle",
+            cards: [
+              "Awaken the Makers", "Crystalline Oracle", "Haunted Creeper", "Museum Curator", "Dark Cultist", "Deathlord",
+              "Shallow Gravedigger", "Twilight's Call", "Barnes", "Baron Rivendare", "Piloted Shredder", "Shifting Shade",
+              "Spiritsinger Umbra", "Tortollan Shellraiser", "Carnivorous Cube", "Corrupted Healbot", "Sludge Belcher",
+              "Tomb Lurker", "Cairne Bloodhoof", "Obsidian Statue", "N'Zoth, the Corruptor"
+            ]
+          },
+          {
+            label: "Domination",
+            icon: "views",
+            cards: [
+              "Crystalline Oracle", "Mind Vision", "Potion of Madness", "Psionic Probe", "Curious Glimmerroot", "Thoughtsteal",
+              "Mindgames", "Shadow Madness", "Shifting Shade", "Devour Mind", "Cabal Shadow Priest", "Embrace Darkness", "Entomb",
+              "Archbishop Benedictus", "King Togwaggle", "Mind Control"
+            ]
+          },
+          {
+            label: "Resurection",
+            icon: "deathrattle",
+            cards: [
+              "Resurrect", "Injured Blademaster", "Twilight's Call", "Eternal Servitude", "Tortollan Shellraiser", "Onyx Bishop",
+              "Sylvanas Windrunner", "Lesser Diamond Spellstone", "Kel'Thuzad", "Obsidian Statue"
+            ]
+          },
+          {
+            label: "Bag of Tricks",
+            icon: " ",
+            cards: [
+              "Pint-Size Potion", "Convert", "Shadow Word: Pain", "Shrinkmeister", "Spirit Lash", "Auctionmaster Beardo",
+              "Shadow Word: Death", "Elise Starseeker", "Shadow Word: Horror", "Elise the Trailblazer", "Excavated Evil",
+              "Kabal Songstealer", "Entomb", "Lightbomb", "Psychic Scream", "Obsidian Statue"
+            ]
+          },
+          {
+            label: "Shadow",
+            icon: " ",
+            cards: [
+              "Zombie Chow", "Shadow Ascendant", "Spirit Lash", "Acolyte of Agony", "Mirage Caller", "Shadowfiend", "Shadowform",
+              "Void Ripper", "Auchenai Soulpriest", "The Darkness", "Vol'jin", "Herald Volazj", "Shadow Essence", "Shadowreaper Anduin"
+            ]
+          },
+          {
+            label: "Dragon Priest",
+            icon: " ",
+            cards: [
+              "Twilight Whelp", "Netherspite Historian", "Wyrmrest Agent", "Blackwing Technician", "Duskbreaker",
+              "Hoarding Dragon", "Twilight Drake", "Twilight Guardian", "Azure Drake", "Blackwing Corruptor", "Drakonid Operative",
+              "Bone Drake", "Book Wyrm", "Dragonfire Potion", "Dragonhatcher", "Malygos", "Sleepy Dragon", "Ysera", "Deathwing, Dragonlord"
+            ]
+          },
+          {
+            label: "Discipline",
+            icon: " ",
+            cards: [
+              "Inner Fire", "Power Word: Shield", "Divine Spirit", "Eydis Darkbane", "Fjola Lightbane", "Unidentified Elixir",
+              "Velen's Chosen", "The Voraxx", "Djinni of Zephyrs"
+            ]
+          },
+          {
+            label: "Unique",
+            icon: " ",
+            cards: [
+              "Kazakus", "Raza the Chained", "Reno Jackson"
+            ]
+          },
+          {
+            label: "Elementals",
+            icon: " ",
+            cards: [
+              "Crystalline Oracle", "Fire Fly", "Radiant Elemental", "Tar Creeper", "Lightspawn", "Tol'vir Stoneshaper", "Lyra the Sunshard",
+              "Servant of Kalimos", "Blazecaller", "Ragnaros the Firelord", "Ozruk"
+            ]
+          },
+          {
+            label: "Cult of C'thun",
+            icon: "whispers-of-the-old-gods",
+            cards: [
+              "Beckoner of Evil", "Disciple of C'Thun", "Twilight Elder", "C'Thun's Chosen", "Hooded Acolyte",
+              "Crazed Worshipper", "Twilight Darkmender", "Twin Emperor Vek'lor", "Doomcaller", "C'Thun"
+            ]
+          },
+          {
+            label: "Combo Caster",
+            icon: " ",
+            cards: [
+              "Power Word: Shield", "Radiant Elemental", "Shadow Visions", "Wild Pyromancer", "Dragon Soul", "Priest of the Feast",
+              "Violet Teacher", "Lyra the Sunshard", "Grand Archivist", "Shadowreaper Anduin"
+            ]
+          },
+
+        ]
       }
     ]
   }
