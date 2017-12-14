@@ -948,6 +948,112 @@ export const expansion_details = [
             ]
           }
         ]
+      },
+      {
+        playerClass: "shaman",
+        options: [
+          {
+            label: "Destruction",
+            icon: " ",
+            cards: [
+              "Lightning Bolt", "Crackle", "Crushing Hand", "Lava Shock", "Maelstrom Portal", "Stormcrack", "Elemental Destruction",
+              "Lava Burst", "Lightning Storm", "Volcano"
+            ]
+          },
+          {
+            label: "Frost",
+            icon: " ",
+            cards: [
+              "Glacial Shard", "Brrrloc", "Cryostasis", "Hyldnir Frostrider", "Ice Breaker", "Avalanche", "Voodoo Hexxer",
+              "Frozen Crusher", "Moorabi"
+            ]
+          },
+          {
+            label: "Restoration",
+            icon: "restoration",
+            cards: [
+              "Ancestral Healing", "Mistress of Mixtures", "Vitality Totem", "Healing Rain", "Healing Wave", "Hot Spring Guardian",
+              "Jinyu Waterspeaker", "Tidal Surge", "Antique Healbot", "Hallazeal the Ascended"
+            ]
+          },
+          {
+            label: "Mutations",
+            icon: " ",
+            cards: [
+              "Evolve", "Unstable Evolution", "Devolve", "Tinkmaster Overspark", "Faceless Shambler", "Hex", "Lotus Illusionist",
+              "Master of Evolution", "Furbolg Mossbinder", "Thrall, Deathseer"
+            ]
+          },
+          {
+            label: "Battlecrier",
+            icon: " ",
+            cards: [
+              "Fire Plume Harbinger", "Murmuring Elemental", "Brann Bronzebeard", "Stonehill Defender", "Fireguard Destroyer",
+              "Saronite Chain Gang", "Azure Drake", "Doppelgangster", "Loatheb", "Lotus Agents", "Fire Elemental", "Gelbin Mekkatorque",
+              "Grumble, Worldshaker", "The Mistcaller", "Bonemare", "Marin the Fox"
+            ]
+          },
+          {
+            label: "Elementals",
+            icon: " ",
+            cards: [
+              "Fire Fly", "Fire Plume Harbinger", "Murmuring Elemental", "Igneous Elemental", "Tar Creeper", "Tol'vir Stoneshaper",
+              "Servant of Kalimos", "Blazecaller", "Stone Sentinel", "Al'Akir the Windlord", "Kalimos, Primal Lord", "Ragnaros the Firelord",
+              "Ozruk"
+            ]
+          },
+          {
+            label: "Murlocs",
+            icon: " ",
+            cards: [
+              "Deadscale Knight", "Murloc Tidecaller", "Unite the Murlocs", "Bluegill Warrior", "Ice Fishing", "Murloc Tidehunter",
+              "Murloc Tidehunter", "Rockpool Hunter", "Coldlight Oracle", "Coldlight Seer", "Murloc Warleader", "Primalfin Lookout",
+              "Call in the Finishers", "Gentle Megasaur", "Old Murk-Eye", "Siltfin Spiritwalker", "Finja, the Flying Star",
+              "Everyfin is Awesome"
+            ]
+          },
+          {
+            label: "Overload",
+            icon: " ",
+            cards: [
+              "Finders Keepers", "Tunnel Trogg", "Tunnel Trogg", "Ancestral Knowledge", "Eternal Sentinel", "Lava Shock",
+              "Totem Golem", "Drakkari Defender", "Feral Spirit", "Unbound Elemental", "Flamewreathed Faceless",
+              "Doomhammer", "Earth Elemental", "Lesser Sapphire Spellstone", "Snowfury Giant"
+            ]
+          },
+          {
+            label: "Totems",
+            icon: " ",
+            cards: [
+              "Primal Fusion", "Flametongue Totem", "Kobold Hermit", "Totem Golem", "Mana Tide Totem", "Primal Talismans",
+              "Tuskarr Totemic", "Wicked Witchdoctor", "Thunder Bluff Valiant", "Windshear Stormcaller", "Thing from Below"
+            ]
+          },
+          {
+            label: "Jade Lotus",
+            icon: "jade",
+            cards: [
+              "Jade Claws", "Jade Lightning", "Jade Spirit", "Aya Blackpaw", "Jade Chieftain"
+            ]
+          },
+          {
+            label: "Farseer",
+            icon: " ",
+            cards: [
+              "Ancestral Knowledge", "Ancestral Spirit", "Reincarnate", "Far Sight", "Spirit Echo", "Ancestor's Call", "Carnivorous Cube",
+              "Corpse Raiser", "White Eyes", "Cairne Bloodhoof", "Sylvanas Windrunner", "Kel'Thuzad", "The Runespear"
+            ]
+          },
+          {
+            label: "Mechanized",
+            icon: "goblins-vs-gnomes",
+            cards: [
+              "Annoy-o-Tron", "Mechwarper", "Micro Machine", "Whirling Zap-o-matic", "Harvest Golem", "Powermace",
+              "Enhance-o Mechano", "Gorillabot A-3", "Piloted Shredder", "Psych-o-Tron", "Piloted Sky Golem", "Sneed's Old Shredder"
+            ]
+          },
+
+        ]
       }
     ]
   }
