@@ -844,6 +844,110 @@ export const expansion_details = [
           },
 
         ]
+      },
+      {
+        playerClass: "rogue",
+        options: [
+          {
+            label: "Adrenaline Rush",
+            icon: " ",
+            cards: [
+              "Counterfeit Coin", "Preparation", "Razorpetal Volley", "Edwin VanCleef", "Mimic Pod", "Questing Adventurer",
+              "Sherazin, Corpse Flower", "Violet Teacher", "Xaril, Poisoned Mind", "Gadgetzan Auctioneer", "Illidan Stormrage",
+              "Spectral Pillager", "Sprint"
+            ]
+          },
+          {
+            label: "Evasive",
+            icon: " ",
+            cards: [
+              "Preparation", "Shadowstep", "Fire Fly", "The Caverns Below", "Cheat Death", "Gadgetzan Ferryman", "Novice Engineer",
+              "Youthful Brewmaster", "Sonya Shadowdancer", "Vanish"
+            ]
+          },
+          {
+            label: "Blademaster",
+            icon: " ",
+            cards: [
+              "Deadly Poison", "Doomerang", "Kingsbane", "Cavern Shinyfinder", "Goblin Auto-Barber", "Leeching Poison",
+              "Envenom Weapon", "Rummaging Kobold", "Shadowblade", "Blade Flurry", "Grave Shambler", "Runeforge Haunter",
+              "Tinker's Sharpsword Oil", "Furnacefire Colossus"
+            ]
+          },
+          {
+            label: "Death Dealer",
+            icon: "deathrattle",
+            cards: [
+              "Journey Below", "Bloodmage Thalnos", "Roll the Bones", "Undercity Huckster", "Shallow Gravedigger", "Unearthed Raptor",
+              "Arfus", "Baron Rivendare", "Infested Tauren", "Piloted Shredder", "Spiritsinger Umbra", "Twilight Summoner",
+              "Xaril, Poisoned Mind", "Carnivorous Cube", "Lesser Onyx Spellstone", "Sludge Belcher", "Sylvanas Windrunner",
+              "N'Zoth, the Corruptor"
+            ]
+          },
+          {
+            label: "Jade Lotus",
+            icon: "jade",
+            cards: [
+              "Jade Shuriken", "Jade Swarmer", "Jade Spirit", "Aya Blackpaw"
+            ]
+          },
+          {
+            label: "Greed",
+            icon: " ",
+            cards: [
+              "Counterfeit Coin", "Bloodmage Thalnos", "Cutpurse", "Loot Hoarder", "Coldlight Oracle", "Elven Minstrel",
+              "Genzo, the Shark", "Tomb Pillager", "Azure Drake", "Burgly Bully", "Marin the Fox"
+            ]
+          },
+          {
+            label: "Thief",
+            icon: " ",
+            cards: [
+              "Hallucination", "Swashburglar", "Lorewalker Cho", "Undercity Huckster", "Burgle", "Shaku, the Collector",
+              "Lilian Voss", "Obsidian Shard", "Ethereal Peddler", "Trade Prince Gallywix"
+            ]
+          },
+          {
+            label: "Assassin",
+            icon: " ",
+            cards: [
+              "Backstab", "Cold Blood", "Eviscerate", "Patient Assassin", "Shiv", "Fan of Knives", "Plague Scientist", "SI:7 Agent",
+              "Shadow Strike", "Assassinate", "Dark Iron Skulker", "Vilespine Slayer"
+            ]
+          },
+          {
+            label: "Outlaws",
+            icon: " ",
+            cards: [
+              "Buccaneer", "Patches the Pirate", "Small-Time Buccaneer", "Southsea Deckhand", "Bloodsail Raider", "One-eyed Cheat",
+              "Ship's Cannon", "Shady Dealer", "Southsea Captain", "Dread Corsair", "Naga Corsair", "Phantom Freebooter",
+              "Southsea Squidface", "Captain Greenskin", "Luckydo Buccaneer"
+            ]
+          },
+          {
+            label: "Bag of Tricks",
+            icon: " ",
+            cards: [
+              "Preparation", "Shadowstep", "Betrayal", "Evasion", "Gang Up", "Sudden Betrayal", "Beneath the Grounds", "Mimic Pod",
+              "Fal'dorei Strider", "Shadowcaster", "Thistle Tea", "Valeera the Hollow"
+            ]
+          },
+          {
+            label: "Cult of C'thun",
+            icon: "whispers-of-the-old-gods",
+            cards: [
+              "Beckoner of Evil", "Twilight Geomancer", "Disciple of C'Thun", "Twilight Elder", "C'Thun's Chosen",
+              "Crazed Worshipper", "Twin Emperor Vek'lor", "Doomcaller", "Blade of C'Thun", "C'Thun"
+            ]
+          },
+          {
+            label: "Exhaustion",
+            icon: " ",
+            cards: [
+              "Shadowstep", "Gang Up", "Sap", "Brann Bronzebeard", "Coldlight Oracle", "Deathlord", "King Mukla", "Violet Illusionist", "Vanish"
+            ]
+          }
+        ]
       }
     ]
   }
