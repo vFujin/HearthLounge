@@ -1054,6 +1054,107 @@ export const expansion_details = [
           },
 
         ]
+      },
+      {
+        playerClass: "warlock",
+        options: [
+          {
+            label: "Little Legion",
+            icon: "",
+            cards: [
+              "Flame Imp", "Voidwalker", "Mistress of Pain", "Vulgar Homunculus", "Bloodfury Potion", "Demonwrath", "Imp Gang Boss",
+              "Crystalweaver", "Dreadsteed", "Imp-losion", "Demonheart"
+            ]
+          },
+          {
+            label: "Cult of C'thun",
+            icon: "whispers-of-the-old-gods",
+            cards: [
+              "Beckoner of Evil", "Twilight Geomancer", "Disciple of C'Thun", "Twilight Elder", "C'Thun's Chosen",
+              "Crazed Worshipper", "Usher of Souls", "Twin Emperor Vek'lor", "Doomcaller", "C'Thun"
+            ]
+          },
+          {
+            label: "Unique",
+            icon: "whispers-of-the-old-gods",
+            cards: [
+              "Kazakus", "Reno Jackson", "Krul the Unshackled"
+            ]
+          },
+          {
+            label: "Discard",
+            icon: "",
+            cards: [
+              "Lakkari Sacrifice", "Malchezaar's Imp", "Soulfire", "Clutchmother Zavas", "Darkshire Librarian",
+              "Tiny Knight of Evil", "Silverware Golem", "Cataclysm", "Lakkari Felhound", "Blood-Queen Lana'thel", "Doomguard",
+              "Cruel Dinomancer"
+            ]
+          },
+          {
+            label: "Lifesteal",
+            icon: "",
+            cards: [
+              "Deadscale Knight", "Drain Soul", "Mistress of Pain", "Drain Life", "Deathaxe Punisher", "Lesser Amethyst Spellstone",
+              "Bloodworm", "Siphon Soul", "Bloodreaver Gul'dan"
+            ]
+          },
+          {
+            label: "Taunt",
+            icon: "promo",
+            cards: [
+              "Voidwalker", "Dirty Rat", "Sunfury Protector", "Vulgar Homunculus", "Stonehill Defender", "Tar Creeper",
+              "Saronite Chain Gang", "Green Jelly", "Sludge Belcher", "Tar Lurker", "Hungry Ettin", "The Lich King", "Voidlord"
+            ]
+          },
+          {
+            label: "Swarm",
+            icon: " ",
+            cards: [
+              "Kobold Librarian", "Possessed Villager", "Dire Wolf Alpha", "Haunted Creeper", "Knife Juggler", "Darkshire Councilman",
+              "Eggnapper", "Imp Gang Boss", "Imp Master", "Imp-losion", "Guild Recruiter", "Sea Giant"
+            ]
+          },
+          {
+            label: "Destruction",
+            icon: " ",
+            cards: [
+              "Darkbomb", "Defile", "Doomsayer", "Shadow Bolt", "Blastcrystal Potion", "Cataclysm", "Felfire Potion", "Twisting Nether", "DOOM!", "Deathwing"
+            ]
+          },
+          {
+            label: "Sacrifice",
+            icon: " ",
+            cards: [
+              "Dark Pact", "Power Overwhelming", "Sanguine Reveler", "Corrupting Mist", "Doomsayer", "Nerubian Egg",
+              "Devilsaur Egg", "Unwilling Sacrifice", "Void Terror", "Ravenous Pterrordax", "Shadowflame", "Carnivorous Cube",
+              "Dark Bargain", "Sylvanas Windrunner", "DOOM!"
+            ]
+          },
+          {
+            label: "Blood",
+            icon: " ",
+            cards: [
+              "Flame Imp", "Bloodbloom", "Vulgar Homunculus", "Chittering Tunneler", "Hellfire", "Lesser Amethyst Spellstone",
+              "Floating Watcher", "Felfire Potion", "Cho'gall", "Molten Giant"
+            ]
+          },
+          {
+            label: "Dire Demons",
+            icon: " ",
+            cards: [
+              "Voidcaller", "Doomguard", "Possessed Lackey", "Skull of the Man'ari", "Dread Infernal", "Kabal Trafficker",
+              "Abyssal Enforcer", "Lord Jaraxxus", "Mal'Ganis", "Voidlord", "Bloodreaver Gul'dan"
+            ]
+          },
+          {
+            label: "Huge Hand",
+            icon: " ",
+            cards: [
+              "Sunfury Protector", "Defender of Argus", "Twilight Drake", "Nexus-Champion Saraad", "Emperor Thaurissan",
+              "Wilfred Fizzlebang", "Chromaggus", "Lord Jaraxxus", "Mountain Giant", "Molten Giant"
+            ]
+          }
+        ]
       }
     ]
   }
