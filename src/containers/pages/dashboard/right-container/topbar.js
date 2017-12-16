@@ -2,7 +2,7 @@ import React from 'react';
 import Tooltip from 'antd/lib/tooltip';
 import Icon from "../../../../components/icon";
 
-const Topbar = () =>{
+const Topbar = ({handleUserDecksClick}) =>{
     return (
         <ul className="topbar has-icons">
             {/*<li className="home-grid">*/}
@@ -13,7 +13,7 @@ const Topbar = () =>{
               {/*</div>*/}
             {/*</li>*/}
 
-            <li className="deck">
+            <li className="deck" onClick={handleUserDecksClick}>
               <Icon name="deck" title="Your decks" tooltip={true}/>
             </li>
             {/*<li className="forum">*/}

@@ -2971,6 +2971,33 @@ card{
         }
       }
     }
+    .content{
+      .decks{
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        > ul{
+          height: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 50%);
+          overflow: auto;
+          @include scrollbar($pearl);
+          > li{
+            display: flex;
+            margin: 10px;
+            &:first-child{
+              margin-top: 0;
+            }
+            &:last-child{
+              margin-bottom: 0;
+            }
+            a{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

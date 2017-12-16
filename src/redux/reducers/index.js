@@ -3,7 +3,7 @@ import {routerReducer} from 'react-router-redux';
 
 import patch from '../patch/reducer';
 import entry from './entry/entry'
-import users from './users';
+import activeUser from './users';
 import cards from '../cards/reducer';
 import issues from './issues';
 import expansions from './expansions/expansions';
@@ -19,8 +19,7 @@ import {
 } from '../deck/reducers';
 import {decks, hotDecks, updateDecks} from '../decks/reducers';
 import {posts, activePost} from '../reddit/reducers';
-import {shortenedUserDetails} from "../user/reducers";
-
+import {activeUserDecks, shortenedUserDetails} from "../user/reducers";
 
 const rootReducer = combineReducers({
   home: combineReducers({
@@ -28,7 +27,10 @@ const rootReducer = combineReducers({
   }),
   patch,
   entry,
-  users,
+  users: combineReducers({
+    activeUser,
+    activeUserDecks
+  }),
   cards,
   expansions,
   adventures,

@@ -17,8 +17,6 @@ class Sidebar extends PureComponent {
       editing_hearthstone: false,
       editing_social_media: false,
       editing_danger_zone: false,
-
-
       email: '',
       battletag: '',
       favouriteClass: '',

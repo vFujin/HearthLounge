@@ -1,8 +1,6 @@
 import React, {PureComponent} from 'react';
 import {browserHistory} from 'react-router';
-import Sidebar from './left-container/sidebar';
-import Topbar from './right-container/topbar'
-import Content from './right-container/content';
+import Authenticated from './authenticated'
 import Loader from '../../../components/loaders/loader';
 
 export class Dashboard extends PureComponent{
@@ -12,28 +10,9 @@ export class Dashboard extends PureComponent{
       browserHistory.push('/sign-in');
     }
   }
-  isAuthed(){
-    if(this.props.activeUser.authenticated){
-
-      return (
-          <div className="container__page container__page--twoSided dashboard">
-            <div className="container__page--inner container__page--left">
-              <Sidebar activeUser={this.props.activeUser}/>
-            </div>
-            <div className="container__page--inner container__page--right">
-              <Topbar/>
-              <Content />
-            </div>
-          </div>
-      )
-    }
-    else{
-      return <div className="container__page"><Loader/></div>;
-    }
-  }
 
   render(){
-    return this.isAuthed();
+    return this.props.activeUser.authenticated ? <Authenticated /> : <div className="container__page"><Loader/></div>;
   }
 }
 

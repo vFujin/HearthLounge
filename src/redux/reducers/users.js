@@ -1,170 +1,120 @@
 import * as types from "../types/firebase";
 
 const initialState = {
-  activeUser: {
-    loading: true,
-    authenticated: false
-  },
-  users: []
+  loading: true,
+  authenticated: false,
 };
 
 export default function(state=initialState, {type, payload}) {
   switch (type) {
-      /**
-       * SIGN IN
-       */
+    /**
+     * SIGN IN
+     */
     case types.FIREBASE_SIGN_IN_REQUEST:
       return {
-        ...state,
-        activeUser: {
-          loading: true
-        }
+        loading: true
       };
     case types.FIREBASE_SIGN_IN_SUCCESS:
       return {
-        ...state,
-        activeUser: {
-          loading: false,
-          authenticated: true,
-          ...payload
-        }
+        loading: false,
+        authenticated: true,
+        ...payload
       };
     case types.FIREBASE_SIGN_IN_ERROR:
       return {
-        ...state,
-        activeUser: {
-          loading: false,
-          authenticated: false,
-          error: payload
-        }
+        loading: false,
+        authenticated: false,
+        error: payload
       };
 
-      /**
-       * SIGN OUT
-       */
+    /**
+     * SIGN OUT
+     */
     case types.FIREBASE_SIGN_OUT_REQUEST:
       return {
         ...state,
-        activeUser: {
-          loading: true,
-        }
+        loading: true,
       };
     case types.FIREBASE_SIGN_OUT_SUCCESS:
       return {
-        ...state,
-        activeUser: {
-          loading: false,
-          authenticated: false
-        }
+        loading: false,
+        authenticated: false
       };
     case types.FIREBASE_SIGN_OUT_ERROR:
       return {
         ...state,
-        activeUser: {
-          ...state.activeUser,
-          loading: false,
-          authenticated: true,
-          error: payload,
-
-        }
+        loading: false,
+        authenticated: true,
+        error: payload,
       };
 
-      /**
-       * RE-AUTHENTICATE
-       */
+    /**
+     * RE-AUTHENTICATE
+     */
     case types.FIREBASE_REAUTHENTICATE_REQUEST:
       return {
         ...state,
-        activeUser: {
-          ...state.activeUser,
-          loading: true,
-
-        }
+        loading: true,
       };
     case types.FIREBASE_REAUTHENTICATE_SUCCESS:
       return {
         ...state,
-        activeUser: {
-          ...state.activeUser,
-          loading: false,
-          reauthenticated: true
-        }
+        loading: false,
+        reauthenticated: true
       };
     case types.FIREBASE_REAUTHENTICATE_ERROR:
       return {
         ...state,
-        activeUser: {
-          ...state.activeUser,
-          loading: false,
-          error: payload
-        }
+        loading: false,
+        error: payload
       };
 
-      /**
-       * RESET PASSWORD
-       */
+    /**
+     * RESET PASSWORD
+     */
     case types.FIREBASE_RESET_PASSWORD_REQUEST:
       return {
         ...state,
-        activeUser: {
-          ...state.activeUser,
-          loading: true,
-        }
+        loading: true,
       };
     case types.FIREBASE_RESET_PASSWORD_SUCCESS:
       return {
         ...state,
-        activeUser: {
-          ...state.activeUser,
-          loading: false,
-          resetPassword: true
-        }
+        loading: false,
+        resetPassword: true
       };
     case types.FIREBASE_RESET_PASSWORD_ERROR:
       return {
         ...state,
-        activeUser: {
-          ...state.activeUser,
-          loading: false,
-          error: payload
-        }
+        loading: false,
+        error: payload
       };
+
+    /**
+     * DELETE ACCOUNT
+     */
     case types.FIREBASE_DELETE_ACTIVE_USER_REQUEST:
       return {
         ...state,
-        activeUser: {
-          loading: true
-        }
+        loading: true
       };
     case types.FIREBASE_DELETE_ACTIVE_USER_SUCCESS:
       return {
         ...state,
-        activeUser: {
-          loading: true,
-          authenticated: false
-        }
+        loading: true,
+        authenticated: false
       };
     case types.FIREBASE_DELETE_ACTIVE_USER_FAILURE:
       return {
         ...state,
-        activeUser: {
-          ...state.activeUser,
-          loading: false,
-          deleteError: payload
-        }
+        loading: false,
+        deleteError: payload
       };
     case 'UPDATE_ACTIVE_USER':
       return {
-        ...state,
-        activeUser: {
-          loading: false,
-          ...payload
-        },
+        loading: false,
+        ...payload
       };
-      // case 'UPDATE_USER_LIST': return {
-      //   ...state,
-      //   users: action.users
-      // };
     default:
       return state;
   }
