@@ -3194,6 +3194,35 @@ button {
       transition: all ease 0.4s; }
     button.btn__submit:hover:after {
       opacity: 1; }
+    button.btn__submit--light {
+      background: #0070DE;
+      color: #E7E2DA;
+      border: 1px solid;
+      border-color: #E7E2DA;
+      -webkit-transition: all ease 0.2;
+      -moz-transition: all ease 0.2;
+      transition: all ease 0.2;
+      /*
+       * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
+       */ }
+      button.btn__submit--light:hover {
+        background: #0056ab; }
+      button.btn__submit--light:after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        top: 0;
+        left: 0;
+        opacity: 0;
+        -webkit-box-shadow: 0 0 5px #0070DE;
+        -moz-box-shadow: 0 0 5px #0070DE;
+        box-shadow: 0 0 5px #0070DE;
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        transition: all ease 0.4s; }
+      button.btn__submit--light:hover:after {
+        opacity: 1; }
   button.btn__delete {
     background: #C41F3B;
     color: #E7E2DA;
@@ -6298,6 +6327,11 @@ card {
           border-color: #E7E2DA;
           background-color: rgba(225, 255, 255, 0.2);
           color: #E7E2DA; }
+    .container__page.entry .wrapper .container__page--right .sign-in .button-wrapper {
+      justify-content: space-between;
+      align-items: center; }
+      .container__page.entry .wrapper .container__page--right .sign-in .button-wrapper a {
+        font-size: 12px; }
   .container__page.entry .wrapper .breakline {
     height: 100%;
     width: 1px;
@@ -6310,14 +6344,6 @@ card {
       content: "";
       background: #A69E9D;
       width: 1px; }
-
-.entry .wrapper .container__page--right .sign-up form .username-wrapper {
-  display: flex; }
-.entry .wrapper .container__page--right .sign-up .summary {
-  text-align: center; }
-  .entry .wrapper .container__page--right .sign-up .summary p a {
-    text-decoration: underline;
-    color: #00a99c; }
 
 .dashboard .container__page--left .sidebar ul {
   margin: 0 auto;
@@ -6429,7 +6455,7 @@ card {
       margin: 10px; }
       .dashboard .container__page--right .content .decks > ul > li:first-child {
         margin-top: 0; }
-      .dashboard .container__page--right .content .decks > ul > li:last-child {
+      .dashboard .container__page--right .content .decks > ul > li:nth-last-child(-n+2) {
         margin-bottom: 0; }
       .dashboard .container__page--right .content .decks > ul > li a {
         width: 100%; }

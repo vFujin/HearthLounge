@@ -22,6 +22,9 @@ button{
     }
     &__submit{
       @include button($pearl, $shaman, false, $dark-grey);
+      &--light{
+        @include button($pearl, $shaman, false, $pearl);
+      }
     }
     &__delete{
       @include button($pearl, $death_knight);

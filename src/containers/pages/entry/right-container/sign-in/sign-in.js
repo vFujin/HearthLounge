@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
+import Button from "../../../../../components/buttons/button";
 
 const SignIn = ({handleInputChange, toggleResetPasswordViewClick, resetPasswordView, handleSignIn, handleResetPassword, signIn_email, resetPass_email }) => {
 
@@ -36,18 +37,18 @@ const SignIn = ({handleInputChange, toggleResetPasswordViewClick, resetPasswordV
           {
             resetPasswordView
               ? <div className="button-wrapper">
-                <button onClick={(e) => handleResetPassword(e, resetPass_email)} className="btn-pearl">
-                  Reset password
-                </button>
-                  <Link onClick={toggleResetPasswordViewClick} to="/sign-in">
-                    Cancel
-                  </Link>
+              <Button text="Reset password"
+                      handleClick={(e) => handleResetPassword(e, resetPass_email)}
+                      type="submit--light"/>
+                <Link to="/sign-in" onClick={toggleResetPasswordViewClick}>
+                  Cancel
+                </Link>
               </div>
               : <div className="button-wrapper">
-                <button onClick={(e) => handleSignIn(e, signIn_email)} className="btn-pearl">
-                  Submit
-                </button>
-                <Link onClick={toggleResetPasswordViewClick} to="/sign-in/reset-password">
+              <Button text="Submit"
+                      handleClick={(e) => handleSignIn(e, signIn_email)}
+                      type="submit--light"/>
+                <Link onClick={toggleResetPasswordViewClick} className="btn btn__default" to="/sign-in/reset-password">
                   Forgot password?
                 </Link>
               </div>

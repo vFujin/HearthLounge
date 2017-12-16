@@ -23,7 +23,7 @@ const UpdateProfileForm = ({activeUser, signUp_username, signUp_avatar, handleIn
         {imageStatus(activeUser, signUp_avatar, updateFormProperty)}
 
         <div className="button-wrapper">
-          <Button text="Complete registration" type="submit" />
+          <Button text="Complete registration" type="submit--light" />
         </div>
       </form>
   )

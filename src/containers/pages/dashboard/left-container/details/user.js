@@ -8,7 +8,7 @@ const UserDetails = ({user, handleEditClick, isEditing, handleAvatarDeletion, ha
     if(!user.avatar){
       return <div>Upload avatar: <input type="file" name="avatar" id="avatar" disabled={!isEditing}/></div>
     }
-    return <div><button onClick={handleAvatarDeletion} >Delete avatar</button> || <input type="file" name="avatar" id="avatar" disabled={!isEditing}/></div>
+    return <div><input type="file" name="avatar" id="avatar" disabled={!isEditing}/></div>
 
   };
 
@@ -21,7 +21,7 @@ const UserDetails = ({user, handleEditClick, isEditing, handleAvatarDeletion, ha
         <div className="details-content">
           <InputLabel id="email" title="e-mail" placeholder={user.email} disabled={isEditing} handleInputChange={handleInputChange}/>
           <label htmlFor="avatar" className="avatar">
-            <p>Avatar</p>
+            <p>Change avatar: </p>
             {hasAvatar()}
 
           </label>

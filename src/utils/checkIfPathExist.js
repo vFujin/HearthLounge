@@ -1,5 +1,5 @@
-import {adventure_details} from '../data/adventure-details';
-import {expansion_details} from '../data/expansion-details';
+import {adventure_details} from '../globals/adventure-details';
+import {expansion_details} from '../globals/expansion-details';
 
 const data = (type) => type === "adventures" ? adventure_details : expansion_details;
 

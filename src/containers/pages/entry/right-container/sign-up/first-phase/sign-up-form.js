@@ -1,10 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import Input from '../../../../../../components/inputs/input';
 import Button from "../../../../../../components/buttons/button";
 
-const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, handleInputChange, handleFormSubmit, handleCheckboxClick, tos}) =>{
+const SignUpForm = ({entry, handleInputChange, handleFormSubmit, handleCheckboxClick}) =>{
+  const {signUp_email, signUp_confirmEmail, signUp_password, signUp_confirmPassword, tos} = entry;
+
   return (
       <form onSubmit={handleFormSubmit}>
         <Input id="signUp_email"
@@ -25,7 +28,7 @@ const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_
         {/*place for captcha*/}
 
         <div className="button-wrapper">
-          <Button text="Submit"/>
+          <Button text="Submit" type="submit--light"/>
           <Link to="/sign-up/update-profile">redirect</Link>
         </div>
       </form>
@@ -33,13 +36,20 @@ const SignUpForm = ({signUp_email, signUp_confirmEmail, signUp_password, signUp_
 };
 
 
-export default SignUpForm;
+const mapStateToProps = state =>{
+  const {entry} = state;
+  return {entry};
+};
+
+export default connect(mapStateToProps, null)(SignUpForm);
 
 SignUpForm.propTypes = {
-  signUp_email: PropTypes.string,
-  signUp_confirmEmail: PropTypes.string,
-  signUp_password: PropTypes.string,
-  signUp_confirmPassword: PropTypes.string,
+  entry: PropTypes.shape({
+    signUp_email: PropTypes.string,
+    signUp_confirmEmail: PropTypes.string,
+    signUp_password: PropTypes.string,
+    signUp_confirmPassword: PropTypes.string
+  }),
   handleInputChange: PropTypes.func,
   handleFormSubmit: PropTypes.func,
   handleCheckboxClick: PropTypes.func

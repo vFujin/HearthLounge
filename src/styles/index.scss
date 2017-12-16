@@ -2814,6 +2814,15 @@ card{
           }
         }
       }
+      .sign-in{
+        .button-wrapper{
+          justify-content: space-between;
+          align-items: center;
+          a{
+            font-size: 12px;
+          }
+        }
+      }
     }
     .breakline{
       height: 100%;
@@ -2827,29 +2836,6 @@ card{
         content: "";
         background: $light-grey;
         width: 1px;
-      }
-    }
-  }
-}
-
-.entry{
-  .wrapper{
-    .container__page--right{
-      .sign-up{
-        form{
-          .username-wrapper{
-            display: flex;
-          }
-        }
-        .summary{
-          text-align: center;
-          p{
-            a{
-              text-decoration: underline;
-              color: $sea-color;
-            }
-          }
-        }
       }
     }
   }
@@ -2988,7 +2974,7 @@ card{
             &:first-child{
               margin-top: 0;
             }
-            &:last-child{
+            &:nth-last-child(-n+2){
               margin-bottom: 0;
             }
             a{
