@@ -16,13 +16,6 @@ const Topbar = ({handleUserDecksClick}) =>{
             <li className="deck" onClick={handleUserDecksClick}>
               <Icon name="deck" title="Your decks" tooltip={true}/>
             </li>
-            {/*<li className="forum">*/}
-              {/*<span className="hs-icon icon-bubbles2"></span>*/}
-              {/*<div className="tooltip">*/}
-                {/*<div className="caret-up"></div>*/}
-                {/*<p>Forum</p>*/}
-              {/*</div>*/}
-            {/*</li>*/}
             {/*<li className="tournaments">*/}
               {/*<span className="hs-icon icon-trophy"></span>*/}
               {/*<div className="tooltip">*/}
