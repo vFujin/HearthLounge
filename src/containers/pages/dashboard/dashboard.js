@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {browserHistory} from 'react-router';
 import Sidebar from './left-container/sidebar';
-import {Topbar} from './right-container/topbar'
+import Topbar from './right-container/topbar'
 import Content from './right-container/content';
 import Loader from '../../../components/loaders/loader';
 

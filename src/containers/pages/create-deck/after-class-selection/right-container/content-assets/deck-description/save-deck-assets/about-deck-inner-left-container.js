@@ -1,8 +1,20 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import FormSelect from './select';
+import {updateDeckProperty} from "../../../../../../../../redux/actions/create-deck/deck-options.action";
 
-const InnerLeftContainer = ({playerClass, deckTitle, deckMode, deckArchetype, deckAdventure, deckBoss, handleInputChange, handleSelectChange}) =>{
+const InnerLeftContainer = ({playerClass, deckDetails, handleInputChange, updateDeckProperty}) =>{
+  const {deckTitle, deckMode, deckArchetype, deckAdventure, deckBoss, isPrivate} = deckDetails;
+
+  const handleIsPrivateClick = () => updateDeckProperty({isPrivate: !isPrivate});
+
+  const handleSelectChange = (v, selector) => {
+    let key= `deck${_.upperFirst(selector)}`;
+    updateDeckProperty({[key]: v});
+  };
+
   const typeIsAdventure = () =>{
     if(deckMode === 'adventures'){
       return <FormSelect section="adventure" value={deckAdventure} handleSelectChange={handleSelectChange}/>
@@ -29,9 +41,23 @@ const InnerLeftContainer = ({playerClass, deckTitle, deckMode, deckArchetype, de
         {typeIsAdventure()}
         {adventureSelected()}
         <FormSelect section="archetype" value={deckArchetype} playerClass={playerClass} handleSelectChange={handleSelectChange}/>
+        <input onChange={handleIsPrivateClick} id="isPrivate" checked={isPrivate} type="checkbox"/>
       </div>
   )
 };
+
+const mapStateToProps = state => {
+  const {deckDetails} = state;
+  return{deckDetails}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateDeckProperty: props => dispatch(updateDeckProperty(props))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(InnerLeftContainer);
 
 InnerLeftContainer.propTypes = {
   playerClass: PropTypes.string.isRequired,
@@ -39,5 +65,3 @@ InnerLeftContainer.propTypes = {
   handleInputChange: PropTypes.func.isRequired,
   handleSelectChange: PropTypes.func.isRequired
 };
-
-export default InnerLeftContainer;

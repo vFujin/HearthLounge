@@ -6,8 +6,8 @@ const initialState = {
   deckAdventure: '',
   deckBoss: '',
   deckText: '',
-  deckTextControlled: ''
-
+  deckTextControlled: '',
+  isPrivate: false
 };
 export default function(state=initialState, action){
   switch(action.type){

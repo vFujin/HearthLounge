@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Tooltip from 'antd/lib/tooltip';
+import Icon from "../../../../components/icon";
 
-export class Topbar extends Component {
-  render() {
+const Topbar = () =>{
     return (
         <ul className="topbar has-icons">
             {/*<li className="home-grid">*/}
@@ -12,11 +12,10 @@ export class Topbar extends Component {
                 {/*<p>Homepage block scheme</p>*/}
               {/*</div>*/}
             {/*</li>*/}
-          <Tooltip title="decks" placement="bottom">
+
             <li className="deck">
-              <span className="hs-icon icon-deck"></span>
+              <Icon name="deck" title="Your decks" tooltip={true}/>
             </li>
-          </Tooltip>
             {/*<li className="forum">*/}
               {/*<span className="hs-icon icon-bubbles2"></span>*/}
               {/*<div className="tooltip">*/}
@@ -44,6 +43,7 @@ export class Topbar extends Component {
               </li>
             </Tooltip>
         </ul>
-    );
-  }
-}
+    )
+};
+
+export default Topbar;

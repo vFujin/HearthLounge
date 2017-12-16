@@ -5,8 +5,8 @@ import Cards from './right-container/content-assets/cards/cards'
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 import Search from "./right-container/content-assets/cards/search";
 
-const RightContainer = ({cards, authenticated, deck, deckstring, udpateCardSearchValue, patch, filteredCards, cardSearchValue, handleCardClick, handleCardSearch, handleInputChange, playerClass,
-                          query, simplifiedDeck, filtersQuery, editingTool, user, searchBox, imgReadyDecklist, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
+const RightContainer = ({cards, deck, filteredCards, cardSearchValue, handleCardClick, handleInputChange, playerClass,
+                          query, filtersQuery, editingTool, searchBox, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
 
   const activeView = () => {
     return !editingTool
@@ -18,13 +18,7 @@ const RightContainer = ({cards, authenticated, deck, deckstring, udpateCardSearc
                  updateCurrentCardsLoaded={updateCurrentCardsLoaded}
                  filtersQuery={filtersQuery}
                  currentCardsLoaded={currentCardsLoaded}/>
-        : <DeckOptions playerClass={playerClass}
-                       simplifiedDeck={simplifiedDeck}
-                       patch={patch}
-                       cards={cards}
-                       deckstring={deckstring}
-                       authenticated={authenticated}
-                       user={user}/>
+        : <DeckOptions playerClass={playerClass}/>
   };
 
   const searchBoxView = () =>{

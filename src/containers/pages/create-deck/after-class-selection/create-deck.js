@@ -111,22 +111,15 @@ class CreateDeckClassSelected extends PureComponent {
                          imgReadyDecklist={imgReadyDecklist}
                          query={query}/>
 
-          <RightContainer authenticated={authenticated}
-                          query={query}
+          <RightContainer query={query}
                           playerClass={playerClass}
                           deck={deck}
-                          simplifiedDeck={simplifiedDeck}
                           handleCardClick={this.handleCardClick}
                           handleInputChange={this.handleInputChange}
-                          handleCardSearch={this.handleCardSearch}
                           cards={cards}
                           filteredCards={filteredCards}
                           cardSearchValue={cardSearchValue}
-                          udpateCardSearchValue={udpateCardSearchValue}
-                          patch={patch}
-                          deckstring={deckstring}
                           editingTool={editingTool}
-                          user={user}
                           filtersQuery={filtersQuery}
                           searchBox={searchBox}
                           updateCurrentCardsLoaded={updateCurrentCardsLoaded}

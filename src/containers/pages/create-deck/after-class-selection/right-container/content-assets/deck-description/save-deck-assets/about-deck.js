@@ -1,10 +1,53 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import TextEditor from '../../../../../../../../components/text-editor/text-editor';
 import InnerLeftContainer from './about-deck-inner-left-container';
 import InnerRightContainer from './about-deck-inner-right-container';
+import {error} from "../../../../../../../../utils/messages";
+import saveDeck from "../../../../../../../../firebase/decks/deck/create/deck";
+import {updateDeckProperty} from "../../../../../../../../redux/actions/create-deck/deck-options.action";
+import {previewCardProps} from "../../../../../../../../components/text-editor/utils/preview-card-props";
 
-const AboutDeck = ({playerClass, deckTitle, deckMode, deckArchetype, deckAdventure, deckBoss, handleInputChange, handleSelectChange, handleSaveDeckSubmit, deckTextControlled, handleTagInsertion}) =>{
+const updateDeckText = _.debounce((updateDeckProperty, value, cards) => {
+  let deckText = !cards.loading && previewCardProps(value, cards.allCards) || value;
+  updateDeckProperty({deckText})
+}, 300);
+
+const AboutDeck = ({activeUser, patch, playerClass, deckDetails, deckCreation, cards, updateDeckProperty}) =>{
+
+  const handleSaveDeckSubmit = (e) => {
+    e.preventDefault();
+    const {authenticated} = activeUser;
+    if(authenticated && activeUser){
+      const {deckMode, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, isPrivate} = deckDetails;
+      const {uid, username} = activeUser;
+      const {simplifiedDeck, deckstring} = deckCreation;
+      const {current} = patch;
+      const kebabCasedAdventure = _.kebabCase(deckAdventure);
+      const kebabCasedBoss = _.kebabCase(deckBoss);
+
+      saveDeck(current, playerClass, deckTitle, deckMode, deckArchetype, kebabCasedAdventure, kebabCasedBoss, simplifiedDeck, deckText, deckstring, uid, username, isPrivate);
+    } else {
+      error("You have to be logged in in order to save your deck.", 6)
+    }
+  };
+
+  const handleInputChange = (e) => {
+    let target = e.target.id;
+    let value = e.target.value;
+    if(target === "deckTextControlled") {
+      updateDeckProperty({deckTextControlled: value});
+      if(e.keyCode === 13){
+        value += "<br>\n";
+      }
+      updateDeckText(updateDeckProperty, value, cards);
+    } else {
+      updateDeckProperty({[target]: value});
+    }
+  };
+
   return (
       <div className="container__details--section container__details--description v-rows-2">
         <div className="section__header">
@@ -12,37 +55,38 @@ const AboutDeck = ({playerClass, deckTitle, deckMode, deckArchetype, deckAdventu
           <h1>Deck Details</h1>
         </div>
         <div className="section__body">
-          <form onSubmit={handleSaveDeckSubmit} className="inline section__body--background">
+          <form onSubmit={(e)=>handleSaveDeckSubmit(e)} className="inline section__body--background">
             <div className="section__body--upperContainer">
-              <InnerLeftContainer playerClass={playerClass}
-                                  deckTitle={deckTitle}
-                                  deckMode={deckMode}
-                                  deckArchetype={deckArchetype}
-                                  deckAdventure={deckAdventure}
-                                  deckBoss={deckBoss}
-                                  handleInputChange={handleInputChange}
-                                  handleSelectChange={handleSelectChange}/>
+              <InnerLeftContainer playerClass={playerClass} handleInputChange={(e)=>handleInputChange(e)}/>
               <InnerRightContainer />
             </div>
 
             <TextEditor editorId="deckTextControlled"
                         previewId="deckText"
                         handleInputChange={handleInputChange}
-                        value={deckTextControlled}
-                        handleTagInsertion={handleTagInsertion}/>
+                        value={deckDetails.deckTextControlled}
+                        handleTagInsertion={updateDeckProperty}/>
           </form>
         </div>
       </div>
   )
 };
 
-AboutDeck.propTypes = {
-  playerClass: PropTypes.string.isRequired,
-  deckTitle: PropTypes.string,
-  deckText: PropTypes.string,
-  handleInputChange: PropTypes.func.isRequired,
-  handleSelectChange: PropTypes.func.isRequired,
-  handleSaveDeckSubmit: PropTypes.func.isRequired
+const mapStateToProps = state => {
+  const {users, patch, deckDetails, deckCreation} = state;
+  const {cards} = state.cards;
+  const {activeUser} = users;
+  return {activeUser, patch, deckDetails, deckCreation, cards};
 };
 
-export default AboutDeck;
+const mapDispatchToProps = dispatch =>{
+  return {
+    updateDeckProperty: props => dispatch(updateDeckProperty(props))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AboutDeck);
+
+AboutDeck.propTypes = {
+
+};

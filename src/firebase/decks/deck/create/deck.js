@@ -1,4 +1,4 @@
-import {ref, firestore} from '../../../../keys';
+import {ref, refParent, firestore} from '../../../../keys';
 import {error, success} from '../../../../utils/messages';
 
 /**
@@ -15,8 +15,10 @@ import {error, success} from '../../../../utils/messages';
  * @param {string} description - Deck description
  * @param {string} deckstring - Deck string
  * @param {string} uid - User ID
+ * @param {string} author - User's username
+ * @param {bool} isPrivate - If deck is either private or public
  */
-export default function (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid, author) {
+export default function saveDeck (patch, playerClass, title, mode, archetype, adventure, boss, deck, description, deckstring, uid, author, isPrivate) {
   if (patch && playerClass && title && mode && archetype && deck && description && deckstring && uid && author) {
     const validateAdventureType = (mode === "adventures" && adventure && boss) ? "wild" : mode,
           validateAdventure = (adventure && boss) ? adventure : null,
@@ -36,6 +38,7 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       author,
       deckId,
       created,
+      isPrivate,
       updated: null,
       adventure: validateAdventure,
       authorId: uid,
@@ -47,8 +50,14 @@ export default function (patch, playerClass, title, mode, archetype, adventure, 
       views: 0,
       votes: initVotes
     };
-
-    firestore.collection("decks").doc(deckId).set(newDeck).then(()=>success("success")).catch(err => error(err, 6));
+    //those 2 separate db's may fuck up user decks if one will success and other won't
+    firestore.collection("decks").doc(deckId).set(newDeck)
+      .then(()=>{
+        refParent(`user-decks/${uid}`).update({[deckId]: deckId})
+          .then(() => success("success"))
+          .catch(err => error(err, 6));
+      })
+      .catch(err => error(err, 6));
   }
   else {
     error("Couldn't upload deck.")
