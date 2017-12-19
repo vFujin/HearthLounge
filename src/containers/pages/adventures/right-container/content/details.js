@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import {adventure_details} from '../../../../../data/adventure-details';
+import {adventure_details} from '../../../../../globals/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
 import Cards from '../../../../../components/extension-blocks/cards';
 import {Boss, Bosses} from "../../../../../components/extensions/bosses";

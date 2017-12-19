@@ -1,5 +1,5 @@
 import React from 'react';
-import {icon_filters} from '../../../../../data/filters';
+import {icon_filters} from '../../../../../globals/filters';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
 

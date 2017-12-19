@@ -4,7 +4,6 @@ import Authenticated from './authenticated'
 import Loader from '../../../components/loaders/loader';
 
 export class Dashboard extends PureComponent{
-
   componentWillReceiveProps(nextProps){
     if(nextProps.authenticated === false){
       browserHistory.push('/sign-in');

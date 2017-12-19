@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {icon_filters} from '../../../data/filters';
+import {icon_filters} from '../../../globals/filters';
 import Tooltip from 'antd/lib/tooltip';
 
 const IconFilter = ({filter, header, headerLabel, isStandard, wrapperClass, value, handleIconClick}) => {

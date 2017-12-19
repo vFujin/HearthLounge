@@ -1,8 +1,9 @@
 import React from 'react';
-import Tooltip from 'antd/lib/tooltip';
+import {connect} from 'react-redux';
 import Icon from "../../../../components/icon";
 
-const Topbar = ({handleUserDecksClick}) =>{
+const Topbar = ({activeUser, handleUserDecksClick}) =>{
+    const {role} = activeUser;
     return (
         <ul className="topbar has-icons">
             {/*<li className="home-grid">*/}
@@ -16,6 +17,12 @@ const Topbar = ({handleUserDecksClick}) =>{
             <li className="deck" onClick={handleUserDecksClick}>
               <Icon name="deck" title="Your decks" tooltip={true}/>
             </li>
+          {
+            role < 3 &&
+            <li className="deck" onClick={handleUserDecksClick}>
+              <Icon name="login" title="Users" tooltip={true}/>
+            </li>
+          }
             {/*<li className="tournaments">*/}
               {/*<span className="hs-icon icon-trophy"></span>*/}
               {/*<div className="tooltip">*/}
@@ -30,13 +37,18 @@ const Topbar = ({handleUserDecksClick}) =>{
                 {/*<p>Streams</p>*/}
               {/*</div>*/}
             {/*</li>*/}
-            <Tooltip title="stats" placement="bottom">
-              <li className="stats">
-                <span className="hs-icon icon-stats-dots"></span>
-              </li>
-            </Tooltip>
+            {/*<Tooltip title="stats" placement="bottom">*/}
+              {/*<li className="stats">*/}
+                {/*<span className="hs-icon icon-stats-dots"></span>*/}
+              {/*</li>*/}
+            {/*</Tooltip>*/}
         </ul>
     )
 };
 
-export default Topbar;
+const mapStateToProps = state =>{
+  const {activeUser} = state.users;
+  return {activeUser};
+};
+
+export default connect(mapStateToProps, null)(Topbar);

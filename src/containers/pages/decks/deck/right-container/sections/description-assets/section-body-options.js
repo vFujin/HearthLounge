@@ -17,7 +17,7 @@ const SectionBodyOptions = ({activeUser, authorId, handleDeckEditingClick, deckE
           <Button text="Description" handleClick={null} darkBorder/>
         </div>
         {
-          activeUser && authorId === activeUser.uid
+          activeUser && (authorId === activeUser.uid || activeUser.role <= 2)
               ? <div className="section__body--authorTools">
                   <Button text={editingBtnText} handleClick={handleDeckEditingClick} active={deckEditView} darkBorder/>
                   <DeleteButton element="deck" darkBorder/>

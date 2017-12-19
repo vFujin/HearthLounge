@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import {icon_filters} from '../../../data/filters';
+import {icon_filters} from '../../../globals/filters';
 
 const ClassSelectionSnippet = ({page, updatePlayerClass}) =>{
 

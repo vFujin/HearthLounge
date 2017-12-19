@@ -1,5 +1,5 @@
 import React from 'react';
-import {requirementsObj} from '../../../data/form-requirements';
+import {requirementsObj} from '../../../globals/form-requirements';
 
 const FormTooltipText = props => {
 

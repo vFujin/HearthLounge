@@ -44,7 +44,7 @@ export function saveUser(user){
     let newUser = {
       updatedProfile: false,
       rank: 1,
-      role: 'user',
+      role: 3,
       username: email,
       email,
       uid

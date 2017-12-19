@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router';
-import {icon_filters} from '../../../data/filters';
+import {icon_filters} from '../../../globals/filters';
 import {removeQuery} from '../../../utils/utils-router';
 import Icon from "../../../components/icon";
 

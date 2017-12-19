@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Topbar from './topbar';
 import Content from './content/content'
-import {adventure_details} from "../../../../data/adventure-details";
+import {adventure_details} from "../../../../globals/adventure-details";
 import {getAdventureDecks} from "../../../../firebase/decks/read/adventure";
 import {
   fetchCardbacks, fetchAdventureDecks,

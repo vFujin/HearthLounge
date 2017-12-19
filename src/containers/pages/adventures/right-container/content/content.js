@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {adventure_details} from '../../../../../data/adventure-details';
+import {adventure_details} from '../../../../../globals/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
 import AdventureDetails from './details';
 import NotFound from '../../../../shared-assets/not-found';

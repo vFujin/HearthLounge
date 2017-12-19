@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-import {expansion_details} from "../../../../data/expansion-details";
-import {adventure_details} from "../../../../data/adventure-details";
+import {expansion_details} from "../../../../globals/expansion-details";
+import {adventure_details} from "../../../../globals/adventure-details";
 import ExtensionSidebar from "./assets/sidebar";
 import ExtensionContent from "./assets/content";
 

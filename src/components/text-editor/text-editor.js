@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {toolbar} from '../../data/editor-icons';
+import {toolbar} from '../../globals/editor-icons';
 import {handleBBCodeClick} from './utils/handle-bbcode-click';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';

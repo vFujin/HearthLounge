@@ -6364,15 +6364,8 @@ card {
         background: #A69E9D; }
       .dashboard .container__page--left .sidebar ul li .details-header div {
         display: flex; }
-        .dashboard .container__page--left .sidebar ul li .details-header div button {
-          background: #A69E9D;
-          border-color: #474143;
-          color: #474143; }
-          .dashboard .container__page--left .sidebar ul li .details-header div button:hover {
-            background: #474143;
-            color: #E7E2DA; }
-          .dashboard .container__page--left .sidebar ul li .details-header div button:last-child {
-            margin-left: 5px; }
+        .dashboard .container__page--left .sidebar ul li .details-header div button:last-child {
+          margin-left: 5px; }
     .dashboard .container__page--left .sidebar ul li .details-content {
       margin: 2vh 5px 2vh 1vh; }
       .dashboard .container__page--left .sidebar ul li .details-content label {

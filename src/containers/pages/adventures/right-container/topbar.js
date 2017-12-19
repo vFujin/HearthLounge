@@ -2,7 +2,7 @@ import React  from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {Link} from 'react-router';
-import {adventure_details} from '../../../../data/adventure-details';
+import {adventure_details} from '../../../../globals/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../utils/checkIfPathExist';
 
 const Topbar = ({adventure, details, boss}) => {

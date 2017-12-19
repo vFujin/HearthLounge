@@ -4,6 +4,7 @@ import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar'
 import Content from './right-container/content';
 import {fetchActiveUserDecksRequest} from "../../../redux/user/active-user-dashboard-decks/actions";
+import {fetchShortenedUserDetailsRequest} from "../../../redux/user/shortened-details/actions";
 
 class Authenticated extends Component{
 
@@ -33,7 +34,8 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch => {
   return{
-    fetchDecks: payload => dispatch(fetchActiveUserDecksRequest(payload))
+    fetchDecks: payload => dispatch(fetchActiveUserDecksRequest(payload)),
+    fetchUsers: () => dispatch(fetchShortenedUserDetailsRequest())
   }
 };
 

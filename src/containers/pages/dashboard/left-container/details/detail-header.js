@@ -13,10 +13,8 @@ const DetailHeader = ({isEditing, handleEditClick, handleSaveClick, title, hasSa
       <div className="details-header">
         <h3>{capitalizedTitle}</h3>
         <div>
-          <button onClick={(e)=>handleEditClick(e)} id={`editing_${snakeCasedTitle}`} className="btn btn__default">{editing}</button>
-          {hasSaveBtn === false
-              ?  null
-              : <button onClick={(e)=>handleSaveClick(e)} id={snakeCasedTitle} className={`btn btn__update btn__darkBorder ${toggleSave}`}>Save</button>}
+          <button onClick={(e)=>handleEditClick(e)} id={`editing_${snakeCasedTitle}`} className={`btn btn__default${isEditing ? "--active" : ""} btn__darkBorder`}>{editing}</button>
+          {!hasSaveBtn && <button onClick={(e)=>handleSaveClick(e)} id={snakeCasedTitle} className={`btn btn__update btn__darkBorder ${toggleSave}`}>Save</button>}
         </div>
       </div>
   )

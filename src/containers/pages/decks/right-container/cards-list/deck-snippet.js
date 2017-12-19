@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router'
-import {deckSnippetCells} from '../../../../../data/decks-snippet-cells';
+import {deckSnippetCells} from '../../../../../globals/decks-snippet-cells';
 import TitleCell from './deck-snippet-cells/title-cell';
 
 import {timeDifference} from '../../../../../utils/unix-to-date';

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import Topbar from './topbar';
 import Content from './content';
-import {expansion_details} from "../../../../data/expansion-details";
+import {expansion_details} from "../../../../globals/expansion-details";
 import {getAdventureDecks} from "../../../../firebase/decks/read/adventure";
 import {fetchAdventureDecks} from "../../../../redux/actions/expansions/expansions.action";
 

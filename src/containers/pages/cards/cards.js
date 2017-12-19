@@ -9,6 +9,7 @@ import {CardDetails} from './right-container/card-details';
 import {infiniteScroll} from "../../../utils/infinite-scroll"
 import {filterByUrl} from "../../../utils/filter/cards/by-url";
 import {CARDS_LOADED} from "../../../redux/cards/types";
+import _ from 'lodash';
 
 class Cards extends PureComponent {
   componentWillUnmount(){
@@ -24,6 +25,8 @@ class Cards extends PureComponent {
       return <Loader/>;
     } else {
       const {allCards} = cards;
+      console.log(allCards.filter(card => (
+        card.cardSet === "Whispers of the Old Gods") && (card.playerClass === "Mage" || card.playerClass === "Neutral")).length);
       infiniteScroll('.content', updateCardsLoaded);
       return filterByUrl(allCards, query, cardsLoaded).map(card =>
           <li key={card.cardId}>

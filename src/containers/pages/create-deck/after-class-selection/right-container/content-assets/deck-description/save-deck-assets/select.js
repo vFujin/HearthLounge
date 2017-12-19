@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'antd/lib/select';
-import {icon_filters} from '../../../../../../../../data/filters';
-import {adventure_details} from '../../../../../../../../data/adventure-details';
+import {icon_filters} from '../../../../../../../../globals/filters';
+import {adventure_details} from '../../../../../../../../globals/adventure-details';
 import _ from 'lodash';
 
 const FormSelect = ({playerClass, value, deckAdventure, section, handleSelectChange}) =>{
