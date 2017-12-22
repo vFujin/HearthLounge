@@ -6,10 +6,11 @@ const DeleteButton = ({element, handleClick, darkBorder}) =>{
   return (
       <Popconfirm title={`Are you sure?`}
                   okText="Yes"
+                  onConfirm={handleClick}
                   overlayClassName="popover"
                   arrowPointAtCenter={true}
                   cancelText="No">
-        <button onClick={handleClick} className={`component btn btn__delete ${darkBorder && "btn__darkBorder"}`}>Delete {element}</button>
+        <button className={`component btn btn__delete ${darkBorder && "btn__darkBorder"}`}>Delete {element}</button>
       </Popconfirm>
   )
 };

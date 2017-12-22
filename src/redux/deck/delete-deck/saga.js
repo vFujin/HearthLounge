@@ -3,9 +3,7 @@ import {call, put, takeEvery} from 'redux-saga/effects';
 import {browserHistory} from 'react-router';
 import * as actions from "./actions";
 import * as types from "./types";
-import {updateActiveDeckCopy} from "../active-deck-copy/actions";
 import {success} from "../../../utils/messages";
-import {fetchActiveDeckSuccess} from "../active-deck/actions";
 
 export const deleteDeck = (deckId) => {
   let deckRef = firestore.collection('decks').doc(deckId).delete();
@@ -24,9 +22,7 @@ export function* deleteDeckSaga({payload}) {
     yield put(actions.deleteDeckFailure(err));
   } else {
     yield put(actions.deleteDeckSuccess());
-    yield put(fetchActiveDeckSuccess(''));
-    yield put(updateActiveDeckCopy(''));
-    yield browserHistory.push('/decks');
+    yield browserHistory.push('/dashboard');
     yield success("Successfully deleted deck");
   }
 }

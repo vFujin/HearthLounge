@@ -15,9 +15,7 @@ class Authenticated extends Component{
   render() {
     return (
       <div className="container__page container__page--twoSided dashboard">
-        <div className="container__page--inner container__page--left">
-          <Sidebar/>
-        </div>
+        <Sidebar/>
         <div className="container__page--inner container__page--right">
           <Topbar handleUserDecksClick={this.handleUserDecksClick}/>
           <Content/>

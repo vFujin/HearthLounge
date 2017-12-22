@@ -2842,96 +2842,95 @@ card{
 }
 
 .dashboard{
-  .container__page--left{
-    .sidebar{
-      ul{
-        margin: 0 auto;
-        width: calc(100% - 2vh - 2px);
-        li{
-          margin-top: 2vh;
-          border: 1px solid $dark-grey;
-          position: relative;
-          .details-header{
-            position: absolute;
-            top: -11px;
-            margin: 0 5px;
-            display: flex;
-            justify-content: space-between;
-            width: calc(100% - 10px);
-            h3{
-              padding: 0 5px;
-              background: $light-grey;
-            }
-            div {
-              display: flex;
-              button {
-                &:last-child{
-                  margin-left: 5px;
-                }
-              }
-            }
-          }
-          .details-content{
-            margin: 2vh 5px 2vh 1vh;
-            label{
-              margin-top: 1vh;
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              .hs-icon{
-                font-size:20px;
-              }
-              .wrapper{
-                display: flex;
-                align-items: center;
-                justify-content:flex-end;
-                width: 85%;
-                p{
-                  background: rgba(255,255,255, .2);
-                  font-size: 12px;
-                  border: 1px solid $dark-grey;
-                  padding: 4px;
-                  border-right: 0;
-                  width: 50%;
-                  text-align: right;
-                }
-                input{
-                  @include transition(all ease .4s);
-                  font-size: 12px;
-                  padding: 4px 4px 4px 2px;
-                  background: transparent;
-                  border: 1px solid $dark-grey;
-                  text-align: center;
-                  color: $pearl;
-                  &[disabled]{
-                    background: rgba(255,255,255, .2);
-                    color: $dark-grey;
-                    cursor: not-allowed;
-                  }
-                }
-              }
-            }
-          }
+  .container__page--left {
+    .sidebar__body {
+      display: grid;
+      grid-template-rows: 20% 80%;
+      overflow: hidden;
+    }
 
-          &:first-child{
-            text-align: center;
-            border: 0;
-            div{
-              margin:0;
-            }
-            label{
-              input{
-                text-align: center;
+    .about {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    ul {
+      padding: 0 10px;
+      margin-bottom: 9px;
+      overflow: auto;
+      overflow-x: hidden;
+      @include scrollbar();
+      li {
+        margin-top: 2vh;
+        border: 1px solid $dark-grey;
+        position: relative;
+        &:first-child {
+          margin-top: calc(1vh + 1px);
+        }
+        .details-header {
+          position: absolute;
+          top: -11px;
+          margin: 0 5px;
+          display: flex;
+          justify-content: space-between;
+          width: calc(100% - 10px);
+          h3 {
+            padding: 0 5px;
+            background: $light-grey;
+          }
+          div {
+            display: flex;
+            button {
+              &:last-child {
+                margin-left: 5px;
               }
             }
           }
         }
-
-        .about{
-          img{
-            width: 150px;
-            height: 150px;
-            @include box-shadow(0, 0, 10px, black);
+        .details-content {
+          padding: 1vh calc(1vh - 5px) 1vh 1vh;
+          label {
+            margin-top: 1vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .hs-icon {
+              font-size: 20px;
+            }
+            .wrapper {
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              width: 85%;
+              p {
+                background: rgba(255, 255, 255, .2);
+                font-size: 12px;
+                border: 1px solid $dark-grey;
+                padding: 4px;
+                border-right: 0;
+                width: 50%;
+                text-align: right;
+              }
+              input {
+                @include transition(all ease .4s);
+                font-size: 12px;
+                padding: 4px 4px 4px 2px;
+                background: transparent;
+                border: 1px solid $dark-grey;
+                text-align: center;
+                color: $pearl;
+                &[disabled] {
+                  background: rgba(255, 255, 255, .2);
+                  color: $dark-grey;
+                  cursor: not-allowed;
+                }
+              }
+            }
           }
         }
       }

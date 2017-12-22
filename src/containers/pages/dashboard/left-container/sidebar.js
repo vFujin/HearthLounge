@@ -13,11 +13,14 @@ class Sidebar extends PureComponent {
     super(props);
 
     this.state = {
-      editing_details: false,
+      editing_account: false,
       editing_hearthstone: false,
       editing_social_media: false,
-      editing_danger_zone: false,
+      editing_delete_account: false,
       email: '',
+      avatar: '',
+      new_password: '',
+      confirm_new_password: '',
       battletag: '',
       favouriteClass: '',
       region: '',
@@ -44,21 +47,20 @@ class Sidebar extends PureComponent {
     return  this.state[value] !== null ? this.state[value] : user[value];
   }
 
-  handleSaveClick(e){
+  handleSaveClick = (e) => {
     /*
      * Changes will occur after relogging, need to reauthenticate or some other stuff
      */
-    const {user} = this.props;
-    const {uid} = user;
+    const {activeUser} = this.props;
+    const {uid} = activeUser;
     let target = e.target.id;
     let isActive = this.state[target] === false ? true : false;
     this.setState({
       [`editing_${target}`]: isActive
     });
 
-
     const validateInput = (value) => {
-      return this.state[value] !== null ? this.state[value] : user[value];
+      return this.state[value] !== null ? this.state[value] : activeUser[value];
     };
 
     switch(target){
@@ -88,10 +90,6 @@ class Sidebar extends PureComponent {
     deleteUser(this.props.activeUser);
   };
 
-  handleAvatarDeletion = () =>{
-    deleteAvatar(this.props.user);
-  };
-
   handleReauthenticationClick = () =>{
     const {reauthenticate} = this.props;
     reauthenticate(this.props.activeUser.email, this.state.reauthPassword);
@@ -100,41 +98,43 @@ class Sidebar extends PureComponent {
   render() {
     const {activeUser} = this.props;
     return (
-        <div className="sidebar">
+        <div className="container__page--inner container__page--left">
           <h3 className="sidebar__header">Profile</h3>
 
-          <ul className="sidebar__body">
-            <li className="about">
-              <div className="avatar">{activeUser.avatar ? <img src={activeUser.avatar} alt={`${activeUser.username}'s profile`}/> : <span className="hs-icon icon-login"></span>}</div>
-              <div className="username">{activeUser.username}</div>
-              <div className="rank">{activeUser.rank}</div>
-            </li>
+          <div className="sidebar__body">
+          <div className="about">
+            <div className="avatar">{activeUser.avatar ? <img src={activeUser.avatar} alt={`${activeUser.username}'s profile`}/> : <span className="hs-icon icon-login"></span>}</div>
+            <div className="username">{activeUser.username}</div>
+            <div className="rank">{activeUser.rank}</div>
+          </div>
 
-            <UserDetails user={activeUser}
-                         isEditing={this.state.editing_details}
-                         handleEditClick={(e)=>this.handleEditClick(e)}
-                         handleInputChange={(e)=>this.handleInputChange(e)}
-                         handleAvatarDeletion={this.handleAvatarDeletion}
-                         handleSaveClick={(e)=>this.handleSaveClick(e)}/>
-            <HearthstoneDetails user={activeUser}
-                                isEditing={this.state.editing_hearthstone}
-                                handleEditClick={(e)=>this.handleEditClick(e)}
-                                handleInputChange={(e)=>this.handleInputChange(e)}
-                                handleSelectChange={(v, selector)=>this.handleSelectChange(v, selector)}
-                                handleSaveClick={this.handleSaveClick}/>
-            <SocialMediaDetails user={activeUser}
-                                isEditing={this.state.editing_social_media}
-                                handleEditClick={(e)=>this.handleEditClick(e)}
-                                handleInputChange={(e)=>this.handleInputChange(e)}
-                                handleSaveClick={(e)=>this.handleSaveClick(e)}/>
-            <DangerZone isEditing={this.state.editing_danger_zone}
-                        reauthPassword={this.state.reauthPassword}
-                        handleDeleteAccountClick={this.handleDeleteAccountClick}
-                        handleReauthenticationClick={this.handleReauthenticationClick}
-                        handleEditClick={(e)=>this.handleEditClick(e)}
-                        handleInputChange={(e)=>this.handleInputChange(e)}
-                        handleSaveClick={(e)=>this.handleSaveClick(e)}/>
-          </ul>
+            <ul>
+              <UserDetails user={activeUser}
+                           newPassword={this.state.new_password}
+                           isEditing={this.state.editing_account}
+                           handleEditClick={(e)=>this.handleEditClick(e)}
+                           handleInputChange={(e)=>this.handleInputChange(e)}
+                           handleSaveClick={this.handleSaveClick}/>
+              <HearthstoneDetails user={activeUser}
+                                  isEditing={this.state.editing_hearthstone}
+                                  handleEditClick={(e)=>this.handleEditClick(e)}
+                                  handleInputChange={(e)=>this.handleInputChange(e)}
+                                  handleSelectChange={(v, selector)=>this.handleSelectChange(v, selector)}
+                                  handleSaveClick={this.handleSaveClick}/>
+              <SocialMediaDetails user={activeUser}
+                                  isEditing={this.state.editing_social_media}
+                                  handleEditClick={(e)=>this.handleEditClick(e)}
+                                  handleInputChange={(e)=>this.handleInputChange(e)}
+                                  handleSaveClick={this.handleSaveClick}/>
+              <DangerZone isEditing={this.state.editing_delete_account}
+                          reauthPassword={this.state.reauthPassword}
+                          handleDeleteAccountClick={this.handleDeleteAccountClick}
+                          handleReauthenticationClick={this.handleReauthenticationClick}
+                          handleEditClick={(e)=>this.handleEditClick(e)}
+                          handleInputChange={(e)=>this.handleInputChange(e)}
+                          handleSaveClick={this.handleSaveClick}/>
+            </ul>
+          </div>
         </div>
     );
   }

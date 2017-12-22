@@ -23,8 +23,9 @@ class Deck extends Component{
   }
 
   componentWillUnmount(){
-    const {resetActiveDeck} = this.props;
+    const {resetActiveDeck, updateActiveDeckCopy} = this.props;
     resetActiveDeck();
+    updateActiveDeckCopy('');
   }
 
   handleDeckVotingClick = (e) =>{

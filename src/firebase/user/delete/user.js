@@ -11,18 +11,14 @@ export default function (activeUser){
   let user = firebaseAuth().currentUser;
   let uid = user.uid;
 
-  getUserData('users', uid);
-  getUserData('user-decks', uid);
-  getUserData('user-deck-ratings', uid);
-  getUserData('user-deck-comments', uid);
-  getUserData('user-deck-newComment-ratings', uid);
-
-  if(activeUser.username !== activeUser.email) {
-    getUserData('usernames', activeUser.username)
-  }
-
   user.delete().then(()=>{
-        console.log(activeUser);
+        console.log(activeUser.username, activeUser.email);
+        getUserData('users', uid);
+        getUserData('user-decks', uid);
+        getUserData('user-deck-comments', uid);
+        if(activeUser.username !== activeUser.email) {
+          getUserData('usernames', activeUser.username)
+        }
         success("Account has been deleted!");
         browserHistory.push('/adventures');
       },

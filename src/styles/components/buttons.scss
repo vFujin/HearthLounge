@@ -3,7 +3,7 @@
 
 button{
   font-size: 12px;
-  padding: 2px 5px;
+  padding: 3px 5px;
   cursor: pointer;
   outline: 0;
   position: relative;
@@ -47,5 +47,6 @@ button{
     color: $light-grey;
     border: 1px solid $dark-grey;
     outline: 0;
+    cursor: not-allowed;
   }
 }

@@ -1,4 +1,4 @@
-import {isEmpty, refUpdate} from '../utils/';
+import {isEmpty, refUpdate} from '../utils';
 
 /**
  * Updates user's Hearthstone (+ Blizzard) related details
