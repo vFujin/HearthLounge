@@ -2,7 +2,7 @@ import React from 'react';
 import DeleteButton from "../../../../../../../components/buttons/delete";
 import Button from "../../../../../../../components/buttons/button";
 
-const SectionBodyOptions = ({activeUser, authorId, handleDeckEditingClick, deckEditView, deckDescriptionsNotEqual, decksNotEqual, handleDeckUpdateClick}) =>{
+const SectionBodyOptions = ({activeUser, authorId, handleDeckEditingClick, deckEditView, deckDescriptionsNotEqual, decksNotEqual, handleDeckUpdateClick, handleDeckDeletion}) =>{
   const editingBtnText = deckEditView ? 'Cancel editing' : 'Edit deck';
 
   const deckUpdated = () =>{
@@ -20,7 +20,7 @@ const SectionBodyOptions = ({activeUser, authorId, handleDeckEditingClick, deckE
           activeUser && (authorId === activeUser.uid || activeUser.role <= 2)
               ? <div className="section__body--authorTools">
                   <Button text={editingBtnText} handleClick={handleDeckEditingClick} active={deckEditView} darkBorder/>
-                  <DeleteButton element="deck" darkBorder/>
+                  <DeleteButton handleClick={handleDeckDeletion} element="deck" darkBorder/>
                   {deckUpdated()}
                 </div>
               : null

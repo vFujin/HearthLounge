@@ -8,6 +8,7 @@ import SectionBodyOptions from "./section-body-options";
 import {TOGGLE_DECK_EDIT_VIEW} from "../../../../../../../redux/deck/tools/types";
 import * as types from "../../../../../../../redux/deck/active-deck-editing/types";
 import {UPDATE_ACTIVE_DECK_COPY} from "../../../../../../../redux/deck/active-deck-copy/types";
+import {deleteDeckRequest} from "../../../../../../../redux/deck/delete-deck/actions";
 
 const SectionBody = (props) => {
   const {activeUser, activeDeck, deckEditView, activeDeckEditing, updateDeckDescription, toggleDeckEditView, activeDeckCopy} = props;
@@ -47,6 +48,10 @@ const SectionBody = (props) => {
     });
   };
 
+  const handleDeckDeletion = () => {
+    props.deleteDeck(deckId);
+  };
+
   return (
       <div className="section__body">
         <SectionBodyOptions activeUser={activeUser}
@@ -55,7 +60,8 @@ const SectionBody = (props) => {
                             deckDescriptionsNotEqual={deckDescriptionsNotEqual}
                             decksNotEqual={decksNotEqual}
                             handleDeckUpdateClick={handleDeckUpdateClick}
-                            handleDeckEditingClick={handleDeckEditingClick}/>
+                            handleDeckEditingClick={handleDeckEditingClick}
+                            handleDeckDeletion={handleDeckDeletion}/>
         {
           deckEditView
             ? <TextEditor handleInputChange={handleInputChange}
@@ -81,7 +87,8 @@ const mapDispatchToProps = dispatch => {
       type: types.UPDATE_DECK_DESCRIPTION, payload
     }),
     toggleDeckEditView: () => dispatch({type: TOGGLE_DECK_EDIT_VIEW}),
-    updateDeck: payload => dispatch({type: types.UPDATE_ACTIVE_DECK_REQUEST, payload})
+    updateDeck: payload => dispatch({type: types.UPDATE_ACTIVE_DECK_REQUEST, payload}),
+    deleteDeck: payload => dispatch(deleteDeckRequest(payload))
   }
 };
 

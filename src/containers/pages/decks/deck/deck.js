@@ -8,6 +8,7 @@ import {FETCH_ACTIVE_DECK_REQUEST, RESET_ACTIVE_DECK} from "../../../../redux/de
 import Loader from "../../../../components/loaders/loader";
 import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
 import {updateDeck} from "../../create-deck/after-class-selection/right-container/content-assets/utils/index";
+import NotFound from "../../../shared-assets/not-found";
 
 class Deck extends Component{
   componentDidMount() {
@@ -46,7 +47,11 @@ class Deck extends Component{
     const {cards, activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, updateActiveDeckCopy} = this.props;
     if(activeDeck.loading){
       return <Loader/>
-    } else {
+    }
+    else if(activeDeck.err){
+      return <NotFound page="123" redirect="decks"/>
+    }
+    else {
       return (
           <div className="container__page container__page--twoSided deck">
             <LeftContainer activeDeck={activeDeck}

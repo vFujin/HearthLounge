@@ -15,7 +15,7 @@ import {
   activeDeckEditing,
   deckComments,
   deckCommentPostingStatus,
-  deckCommentDeletingStatus
+  deckCommentDeletingStatus, deckDeletion
 } from '../deck/reducers';
 import {decks, hotDecks, updateDecks} from '../decks/reducers';
 import {posts, activePost} from '../reddit/reducers';
@@ -49,7 +49,8 @@ const rootReducer = combineReducers({
     activeDeckEditing,
     deckComments,
     deckCommentPostingStatus,
-    deckCommentDeletingStatus
+    deckCommentDeletingStatus,
+    deckDeletion
   }),
   redditPosts: combineReducers({
     posts,

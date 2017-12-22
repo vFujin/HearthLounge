@@ -20,6 +20,7 @@ import {watchUserShortenedDetails} from "../user/shortened-details/saga";
 import {watchActiveDeckUpdate} from "../deck/active-deck-editing/saga";
 import {watchDeckCommentDeletingStatus} from "../deck/comments/delete-comment/saga";
 import {watchUserDashboardDecks} from "../user/active-user-dashboard-decks/saga";
+import {watchDeckDeletion} from "../deck/delete-deck/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -37,6 +38,7 @@ export default function* rootSaga() {
     watchDeckComments(),
     watchDeckCommentPostingStatus(),
     watchDeckCommentDeletingStatus(),
+    watchDeckDeletion(),
     //Reddit
     watchRedditPosts(),
     watchRedditPost(),

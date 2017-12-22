@@ -6,3 +6,4 @@ export {default as activeDeckEditing} from './active-deck-editing/reducer';
 export {default as deckComments} from './comments/fetch-comments/reducer';
 export {default as deckCommentPostingStatus} from './comments/post-comment/reducer';
 export {default as deckCommentDeletingStatus} from './comments/delete-comment/reducer';
+export {default as deckDeletion} from './delete-deck/reducer';
