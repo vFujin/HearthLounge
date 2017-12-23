@@ -31,15 +31,10 @@ import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
 
 class Main extends Component{
-  constructor(props) {
-    super(props);
-
-  };
   handleSignOut = () =>{
     const {signOut} = this.props;
     signOut();
   };
-
 
   componentDidMount() {
     const {updateCurrentPatch, updateCards, updateActiveUser} = this.props;
@@ -50,8 +45,6 @@ class Main extends Component{
 
   render(){
     const {activeUser, playerClass, authenticated} = this.props;
-
-    console.log(authenticated);
     return (
       <BrowserRouter>
         <div id="container">
@@ -101,7 +94,6 @@ const mapStateToProps = state =>{
 };
 
 const mapDispatchToProps = (dispatch) => {
-
   return {
     updateCurrentPatch: () => dispatch({type: FETCH_PATCH_REQUEST}),
     updateCards: () => dispatch({type: types.FETCH_CARDS_REQUEST}),

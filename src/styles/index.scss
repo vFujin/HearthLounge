@@ -1805,11 +1805,11 @@ card{
             }
             .markup {
               border: 1px solid $dark-grey;
-              height: calc(100% - 20px);
+              height: calc(100% - 22px);
               overflow: auto;
             }
             .text-editor{
-              height: calc(100% - 20px);
+              height: calc(100% - 22px);
             }
           }
         }
@@ -1845,7 +1845,7 @@ card{
   }
 }
 
-.arena-picker, .create-deck{
+.create-deck{
   .pick-class{
     padding: 0 40px;
     @include box-shadow(0px, 0px, 70px, black);
@@ -1882,55 +1882,6 @@ card{
       }
     }
   }
-}
-
-.arena-picker{
-  .choosen-class-view{
-    .right-container{
-      ul{
-        display: flex;
-        width: 80%;
-        margin:0 auto;
-        justify-content: space-around;
-        height: calc(100% - 50px);
-        align-items: center;
-        li{
-          cursor: pointer;
-          width: 23%;
-          .card{
-            @include transition(all ease .4s);
-            height: 400px;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            font-size: 150px;
-            border:5px solid $dark-grey;
-            color: $dark-grey;
-            //background: rgba(0,0,0,.1);
-            background: $light-grey;
-            &:hover{
-                @include box-shadow(0, 0, 10px, $dark-grey);
-                color: $pearl;
-            }
-          }
-          //input{
-          //  @include transition(all ease .4s);
-          //  width: calc(100% - 20px);
-          //  font-size: 16px;
-          //  padding: 10px;
-          //  margin-top: 10px;
-          //  background: transparent;
-          //  border-bottom: 2px solid $dark-grey;
-          //  color: $dark-grey;
-          //  &:focus{
-          //    border-color: $sea-color;
-          //  }
-          //}
-        }
-      }
-    }
-  }
-
 }
 
 .expansions{
@@ -2226,62 +2177,6 @@ card{
         }
       }
     }
-  }
-}
-
-.pageContainer.forum{
-  width: calc(100% - 20px);
-  .caption{
-    width: 50%;
-    background-color: $light-grey;
-    margin-right: 1%;
-    h4{
-      background-color: $dark-grey;
-      color: $pearl;
-      font-weight: normal;
-      text-align: center;
-      padding: 10px;
-      margin:0;
-      text-transform: uppercase;
-    }
-    &:last-child{
-      margin-right:0 ;
-    }
-  }
-  table{
-    margin:10px;
-    width: calc(100% - 20px);
-    tr{
-      background-color: $pearl;
-      td{
-        text-align:left;
-        padding: 10px;
-        h5{
-          font-size: 16px;
-          margin:0;
-        }
-        p{
-          font-size: 12px;
-          margin:0;
-        }
-        &:nth-child(3),
-        &:nth-child(4){
-          text-align: center;
-        }
-      }
-      &:first-child{
-        td{
-          font-weight: bold;
-          text-align: center;
-        }
-        &:hover{
-          background-color: $pearl;
-        }
-      }
-      &:hover{
-        background-color: $sea-color;
-  }
-}
   }
 }
 
@@ -3137,7 +3032,6 @@ card{
   }
 }
 
-
 .not-found{
   display: flex;
   justify-content: center;
@@ -3192,5 +3086,3 @@ card{
 .deleting{
   color: rgba(0,0,0,.2);
 }
-
-

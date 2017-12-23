@@ -5551,10 +5551,10 @@ card {
       align-content: center; }
   .deck .container__page--right .content .container__details .container__details--description .section__body .markup {
     border: 1px solid #474143;
-    height: calc(100% - 20px);
+    height: calc(100% - 22px);
     overflow: auto; }
   .deck .container__page--right .content .container__details .container__details--description .section__body .text-editor {
-    height: calc(100% - 20px); }
+    height: calc(100% - 22px); }
 .deck .container__page--right .content .container__details .container__details--comments {
   position: relative; }
   .deck .container__page--right .content .container__details .container__details--comments .section__footer {
@@ -5573,7 +5573,7 @@ card {
     padding: 5px;
     color: #474143; }
 
-.arena-picker .pick-class, .create-deck .pick-class {
+.create-deck .pick-class {
   padding: 0 40px;
   -webkit-box-shadow: 0px 0px 70px black;
   -moz-box-shadow: 0px 0px 70px black;
@@ -5582,56 +5582,28 @@ card {
   margin: auto;
   text-transform: uppercase;
   text-align: center; }
-  .arena-picker .pick-class tr th, .create-deck .pick-class tr th {
+  .create-deck .pick-class tr th {
     padding: 40px 0;
     font-size: 26px;
     color: #E7E2DA; }
-  .arena-picker .pick-class tr td, .create-deck .pick-class tr td {
+  .create-deck .pick-class tr td {
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
     cursor: pointer;
     width: 200px;
     height: 200px; }
-    .arena-picker .pick-class tr td a, .create-deck .pick-class tr td a {
+    .create-deck .pick-class tr td a {
       width: 100%;
       height: 100%;
       display: block; }
-      .arena-picker .pick-class tr td a div, .create-deck .pick-class tr td a div {
+      .create-deck .pick-class tr td a div {
         position: relative;
         top: calc(50% - 52px); }
-        .arena-picker .pick-class tr td a div span, .create-deck .pick-class tr td a div span {
+        .create-deck .pick-class tr td a div span {
           font-size: 65px; }
-        .arena-picker .pick-class tr td a div p, .create-deck .pick-class tr td a div p {
+        .create-deck .pick-class tr td a div p {
           margin-top: 20px; }
-
-.arena-picker .choosen-class-view .right-container ul {
-  display: flex;
-  width: 80%;
-  margin: 0 auto;
-  justify-content: space-around;
-  height: calc(100% - 50px);
-  align-items: center; }
-  .arena-picker .choosen-class-view .right-container ul li {
-    cursor: pointer;
-    width: 23%; }
-    .arena-picker .choosen-class-view .right-container ul li .card {
-      -webkit-transition: all ease 0.4s;
-      -moz-transition: all ease 0.4s;
-      transition: all ease 0.4s;
-      height: 400px;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      font-size: 150px;
-      border: 5px solid #474143;
-      color: #474143;
-      background: #A69E9D; }
-      .arena-picker .choosen-class-view .right-container ul li .card:hover {
-        -webkit-box-shadow: 0 0 10px #474143;
-        -moz-box-shadow: 0 0 10px #474143;
-        box-shadow: 0 0 10px #474143;
-        color: #E7E2DA; }
 
 .expansions .container__page--right .content .container__classChallenges--content {
   display: flex;
@@ -5877,46 +5849,6 @@ card {
           .create-deck .container__page--right .search .search__wrapper ul li:hover {
             background: rgba(225, 255, 255, 0.1);
             color: #E7E2DA; }
-
-.pageContainer.forum {
-  width: calc(100% - 20px); }
-  .pageContainer.forum .caption {
-    width: 50%;
-    background-color: #A69E9D;
-    margin-right: 1%; }
-    .pageContainer.forum .caption h4 {
-      background-color: #474143;
-      color: #E7E2DA;
-      font-weight: normal;
-      text-align: center;
-      padding: 10px;
-      margin: 0;
-      text-transform: uppercase; }
-    .pageContainer.forum .caption:last-child {
-      margin-right: 0; }
-  .pageContainer.forum table {
-    margin: 10px;
-    width: calc(100% - 20px); }
-    .pageContainer.forum table tr {
-      background-color: #E7E2DA; }
-      .pageContainer.forum table tr td {
-        text-align: left;
-        padding: 10px; }
-        .pageContainer.forum table tr td h5 {
-          font-size: 16px;
-          margin: 0; }
-        .pageContainer.forum table tr td p {
-          font-size: 12px;
-          margin: 0; }
-        .pageContainer.forum table tr td:nth-child(3), .pageContainer.forum table tr td:nth-child(4) {
-          text-align: center; }
-      .pageContainer.forum table tr:first-child td {
-        font-weight: bold;
-        text-align: center; }
-      .pageContainer.forum table tr:first-child:hover {
-        background-color: #E7E2DA; }
-      .pageContainer.forum table tr:hover {
-        background-color: #00a99c; }
 
 .tournaments iframe html body {
   background: transparent; }

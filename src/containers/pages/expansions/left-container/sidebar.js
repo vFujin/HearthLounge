@@ -8,7 +8,7 @@ const Sidebar = ({expansion}) => {
 
   const listExpansions = () => {
     return icon_filters.expansions.map((e, index) =>
-        <li key={index} className={expansion === e.url && 'selected'}>
+        <li key={index} className={expansion === e.url ? 'selected' : undefined}>
           <Link to={`/expansions/${e.url}/overview`}
                 className={`${e.url} ${expansion === e.url && 'active'}`}>
             <Icon name={e.url} />

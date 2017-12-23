@@ -1,9 +1,6 @@
-import {ref, firestore} from '../../../../keys';
-import _ from 'lodash';
-let now = new Date();
-let week = now.setDate(now.getDate() - 7);
-let lastKnownDeck = null;
+import {ref} from '../../../../keys';
 
+let lastKnownDeck = null;
 export default function (resolve, reject) {
   let decksRef = ref.child('decks');
 

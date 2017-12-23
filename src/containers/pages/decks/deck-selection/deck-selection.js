@@ -11,7 +11,6 @@ import {FETCH_ACTIVE_DECK_SUCCESS} from "../../../../redux/deck/active-deck/type
 
 class DeckSelection extends Component {
   componentDidMount() {
-    console.log(this.props);
     const {fetchDecks, updateDecks, decks, match} = this.props;
     const {playerClass} = match.params;
     if(decks.loading && match.path === "/decks") {

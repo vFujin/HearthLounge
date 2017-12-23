@@ -84,7 +84,7 @@ Icon.propTypes = {
   name: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
-  ]).isRequired,
+  ]),
   title: PropTypes.string,
   className: PropTypes.string,
   type: PropTypes.string,

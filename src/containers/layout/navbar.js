@@ -57,7 +57,7 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
         {navItems.map((element, index) =>
             <li key={index} className={`nav__list--item ${element.name}`}>
               <NavLink className="nav__list--linkContainer"
-                    to={`/${redirect(element.name, playerClass)}`} activeClassName={element.name !== 'home' && "active"}>
+                    to={`/${redirect(element.name, playerClass)}`} activeClassName={element.name !== 'home' ? "active" : ""}>
                 <div className="nav__list--link">
                   <Icon name={element.icon} />
                   <div>{_.camelCase(element.name)}</div>
