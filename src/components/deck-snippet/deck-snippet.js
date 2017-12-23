@@ -1,6 +1,6 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import _ from "lodash";
 import Icon from "../icon";
 import DeckSnippetHeader from "./header/deck-snippet-header";
@@ -10,7 +10,7 @@ const DeckSnippet = ({d, handleDeckClick}) => {
   const {adventure, archetype, author, comments, created, deck, deckId, playerClass, title, mode, views, votes} = d;
 
   return (
-      <Link to={`decks/${deckId}/${_.kebabCase(title)}`}
+      <Link to={`/decks/${deckId}/${_.kebabCase(title)}`}
             onClick={handleDeckClick}
             id={deckId}
             className={`deckSnippet ${playerClass} active-on-hover`}>

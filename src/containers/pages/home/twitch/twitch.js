@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {TwitchClientId} from "../../../../keys";
 import TopLiveStreamersList from './twitch-snippet/top-livestreamers-list';
 import TwitchIframe from './twitch-snippet/twtch-iframe';
@@ -65,8 +66,8 @@ export class TwitchBlock extends Component {
 }
 
 TwitchBlock.propTypes = {
-  streams: React.PropTypes.array,
-  streamer: React.PropTypes.string,
-  activeStreamerTab: React.PropTypes.number,
-  handleStreamerSelectionClick: React.PropTypes.func
+  streams: PropTypes.array,
+  streamer: PropTypes.string,
+  activeStreamerTab: PropTypes.number,
+  handleStreamerSelectionClick: PropTypes.func
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router'
+import {Link} from 'react-router-dom'
 import {deckSnippetCells} from '../../../../../globals/decks-snippet-cells';
 import TitleCell from './deck-snippet-cells/title-cell';
 
@@ -8,7 +8,6 @@ import _ from 'lodash';
 import ManaCurve from "../../../../../components/mana-curve/mana-curve";
 
 export const DeckSnippet = (props) => {
-
   const {playerClass, deckId, title, votes, author, deck, created, handleDeckSnippetClick} = props;
   const deckUrl = `/decks/${deckId}/${_.snakeCase(title)}`;
   const cells = (el) =>{
@@ -30,7 +29,6 @@ export const DeckSnippet = (props) => {
       <tr id={deckId} key={deckId} className={`deck-snippet ${playerClass} table-row`} onClick={handleDeckSnippetClick}>
         {mapCells()}
       </tr>
-
   );
 };
 

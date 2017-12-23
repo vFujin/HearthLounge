@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Slider from 'antd/lib/slider';
 import Tooltip from 'antd/lib/tooltip';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {addQuery} from '../../../utils/utils-router';
 import 'antd/lib/slider/style/css';
 
@@ -18,7 +19,6 @@ const SliderFilter = props => {
 
   function x(values){
     let z = values;
-    console.log(z)
     addQuery(queries(z))
   }
 
@@ -41,11 +41,11 @@ const SliderFilter = props => {
 
 
 SliderFilter.propTypes = {
-  defaultValue: React.PropTypes.array,
-  filter: React.PropTypes.string,
-  marks: React.PropTypes.object,
-  max: React.PropTypes.number,
-  query: React.PropTypes.object
+  defaultValue: PropTypes.array,
+  filter: PropTypes.string,
+  marks: PropTypes.object,
+  max: PropTypes.number,
+  query: PropTypes.object
 };
 
 

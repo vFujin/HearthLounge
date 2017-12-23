@@ -23,7 +23,7 @@ class DeckAuthorDetails extends PureComponent{
           {/*<UserAvatar deckAuthor={deckAuthor}/>*/}
           {/*<GeneralDetails deckAuthor={deckAuthor}/>*/}
           {/*<GameDetails deckAuthor={deckAuthor}/>*/}
-          <SocialMediaDetails deckAuthor={deckAuthor}/>
+          {/*<SocialMediaDetails deckAuthor={deckAuthor}/>*/}
         </div>
     )
   }

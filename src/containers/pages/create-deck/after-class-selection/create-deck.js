@@ -80,11 +80,12 @@ class CreateDeckClassSelected extends PureComponent {
   };
 
   handleCardSearch = _.debounce(() => {
-      const {filterCards, cards, params, cardSearchValue} = this.props;
+      const {filterCards, cards, match, cardSearchValue} = this.props;
+      const {playerClass} = match.params;
       const {allCards, loading} = cards;
 
       if(cardSearchValue !== '') {
-        return filterCards(allCards.filter(card => (card.playerClass === 'Neutral') || card.playerClass === _.startCase(params.class) ).filter(card => {
+        return filterCards(allCards.filter(card => (card.playerClass === 'Neutral') || card.playerClass === _.startCase(playerClass) ).filter(card => {
           return _.toLower(card.name).includes(_.toLower(cardSearchValue))
         }).slice(0, 30));
       } else {
@@ -93,9 +94,9 @@ class CreateDeckClassSelected extends PureComponent {
   }, 300);
 
   render() {
-    const {authenticated, cards, deck, patch, deckstring, filteredCards, deckMechanics, editingTool, filters, udpateCardSearchValue, cardSearchValue, searchBox, filtersQuery, imgReadyDecklist, location, params, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
+    const {authenticated, cards, deck, patch, deckstring, filteredCards, deckMechanics, editingTool, filters, udpateCardSearchValue, cardSearchValue, searchBox, filtersQuery, imgReadyDecklist, location, match, simplifiedDeck, user, updateCurrentCardsLoaded, currentCardsLoaded} = this.props;
     const {query} = location;
-    const playerClass = params.class;
+    const {playerClass} = match.params;
     return (
         <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)}
              className="container__page container__page--twoSided create-deck">

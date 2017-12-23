@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import _ from 'lodash';
@@ -8,16 +8,19 @@ import {expansion_details} from "../../../../globals/expansion-details";
 import {getAdventureDecks} from "../../../../firebase/decks/read/adventure";
 import {fetchAdventureDecks} from "../../../../redux/actions/expansions/expansions.action";
 
-class Expansion extends PureComponent{
+class Expansion extends Component{
 
   componentDidMount(){
-    const {expansion, fetchAdventureDecks} = this.props;
-    getAdventureDecks(expansion, decks => fetchAdventureDecks(decks));
+    // const {match, fetchAdventureDecks} = this.props;
+    // getAdventureDecks(match.params.expansion, decks => fetchAdventureDecks(decks));
   }
 
   render() {
-    const {decks, details, detailsChild, expansion} = this.props;
-    let activeExpansion = expansion_details.filter(e => e.url === expansion)[0];
+    const {decks, match, location} = this.props;
+    const detailsChild = location.pathname.split("/")[4];
+    const {details, expansion} = match.params;
+    const activeExpansion = expansion_details.filter(e => e.url === expansion)[0];
+
     return (
         <div className="container__page--inner container__page--right">
           <Topbar expansion={activeExpansion} details={details}/>

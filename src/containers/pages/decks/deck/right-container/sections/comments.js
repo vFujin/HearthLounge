@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import _ from 'lodash';
 import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
@@ -18,6 +17,7 @@ class DeckComments extends PureComponent {
   }
 
   componentDidMount() {
+    console.log(this.props);
     const {activeUser, params, fetchComments} = this.props;
     const {deckId} = params;
 

@@ -7,11 +7,14 @@ import Cards from "../../../../components/extension-blocks/cards"
 import {Boss} from "../../../../components/extensions/bosses/index";
 import {adventureBossExists, adventureWingExists} from "../../../../utils/checkIfPathExist";
 import {default as DungeonRun} from "../../../../components/extensions/class-challenges/class-challenges";
+import Bosses from "../../../../components/extensions/bosses/bosses";
 
 const components = {
   Overview,
   Cards,
-  DungeonRun
+  DungeonRun,
+  Boss,
+  Bosses
 };
 
 const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}) => {

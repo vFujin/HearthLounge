@@ -140,7 +140,7 @@ export const navItems = [
   //   homepage_block_width: 2
   // },
   {
-    name: "Reddit",
+    name: "reddit",
     icon: "reddit",
     homepage_block_width: 2
   }

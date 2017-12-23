@@ -57,7 +57,7 @@ const rootReducer = combineReducers({
     activePost
   }),
   issues,
-  routing: routerReducer
+  router: routerReducer
 });
 
 

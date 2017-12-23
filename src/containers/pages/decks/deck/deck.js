@@ -12,8 +12,8 @@ import NotFound from "../../../shared-assets/not-found";
 
 class Deck extends Component{
   componentDidMount() {
-    const {activeDeck, fetchDeck, params, updateActiveDeckCopy} = this.props;
-    const {deckId} = params;
+    const {activeDeck, fetchDeck, match, updateActiveDeckCopy} = this.props;
+    const {deckId} = match.params;
 
     if (activeDeck.loading) {
       fetchDeck(deckId)
@@ -45,7 +45,7 @@ class Deck extends Component{
   };
 
   render() {
-    const {cards, activeDeck, activeDeckCopy, activeUser, deckEditView, patch, params, updateActiveDeckCopy} = this.props;
+    const {cards, activeDeck, activeDeckCopy, activeUser, deckEditView, patch, match, updateActiveDeckCopy} = this.props;
     if(activeDeck.loading){
       return <Loader/>
     }
@@ -64,7 +64,7 @@ class Deck extends Component{
             <RightContainer activeDeck={activeDeck}
                             activeDeckCopy={activeDeckCopy}
                             deckEditView={deckEditView}
-                            params={params}
+                            params={match.params}
                             patch={patch}
                             activeUser={activeUser}
                             handleDeckVotingClick={this.handleDeckVotingClick}/>

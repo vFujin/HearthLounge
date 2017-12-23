@@ -1,7 +1,6 @@
 import {call, put, takeEvery} from 'redux-saga/effects';
 import {firebaseAuth, refParent} from "../../../../../keys";
 import {error, success} from "../../../../../utils/messages";
-import {browserHistory} from "react-router";
 import * as types from "../../../../types/firebase";
 import * as actions from '../../../../actions/firebase/user/utils/sign-in.action';
 
@@ -34,7 +33,7 @@ export function* firebaseSignInSaga({payload}) {
     if(activeUser) {
       yield put(actions.firebaseSignInSuccess(activeUser));
       yield success('Signed in Successfully!');
-      yield browserHistory.push('/dashboard');
+      // yield browserHistory.push('/dashboard');
     } else {
       yield put(actions.firebaseSignInError(err));
       yield error(err)

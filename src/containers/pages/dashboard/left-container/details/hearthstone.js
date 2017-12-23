@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import DetailHeader from './detail-header';
 import IconLabel from './assets/icon-label';
 import SelectLabel from './assets/select-label';
@@ -37,12 +37,12 @@ const HearthstoneDetails = ({user, handleEditClick, isEditing, handleSaveClick, 
 };
 
 HearthstoneDetails.propTypes = {
-  user: React.PropTypes.object.isRequired,
-  isEditing: React.PropTypes.bool.isRequired,
-  handleEditClick: React.PropTypes.func.isRequired,
-  handleSaveClick: React.PropTypes.func.isRequired,
-  handleInputChange: React.PropTypes.func.isRequired,
-  handleSelectChange: React.PropTypes.func.isRequired
+  user: PropTypes.object.isRequired,
+  isEditing: PropTypes.bool.isRequired,
+  handleEditClick: PropTypes.func.isRequired,
+  handleSaveClick: PropTypes.func.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  handleSelectChange: PropTypes.func.isRequired
 };
 
 export default HearthstoneDetails;

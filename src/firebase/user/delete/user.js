@@ -1,6 +1,6 @@
 import {ref, firebaseAuth} from '../../../keys';
 import {success, error} from '../../../utils/messages';
-import {browserHistory} from 'react-router';
+// import {browserHistory} from 'react-router';
 
 /**
  * Deletes user from main db(only if user is currently logged in and after successful reauthentication)
@@ -20,7 +20,7 @@ export default function (activeUser){
           getUserData('usernames', activeUser.username)
         }
         success("Account has been deleted!");
-        browserHistory.push('/adventures');
+        // browserHistory.push('/adventures');
       },
       (err) =>{
         console.log(err);

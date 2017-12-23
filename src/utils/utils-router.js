@@ -1,12 +1,10 @@
-import { browserHistory } from 'react-router';
-import _ from 'lodash';
 /**
  * @param {Object} query
  */
 export const addQuery = (query) => {
-  const location = Object.assign({}, browserHistory.getCurrentLocation());
-  Object.assign(location.query, query);
-  browserHistory.push(location);
+  // const location = Object.assign({}, browserHistory.getCurrentLocation());
+  // Object.assign(location.query, query);
+  // browserHistory.push(location);
 };
 
 /**
@@ -14,7 +12,7 @@ export const addQuery = (query) => {
  */
 export const removeQuery = (...queryNames) => {
 
-  let location = Object.assign({}, browserHistory.getCurrentLocation());
+  // let location = Object.assign({}, browserHistory.getCurrentLocation());
   // let foo = _.without(location.query, queryNames);
   // console.log(queryNames);
   // let foo = queryNames.filter(q => _.keys(location.query) !== q );
@@ -34,5 +32,5 @@ export const removeQuery = (...queryNames) => {
   //
   // });
   // console.log(location.query);
-  browserHistory.push(location);
+  // browserHistory.push(location);
 };

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export class CardDetails extends Component {
   constructor(props){
@@ -76,5 +77,5 @@ export class CardDetails extends Component {
 }
 
 CardDetails.propTypes = {
-  card: React.PropTypes.object
+  card: PropTypes.object
 };

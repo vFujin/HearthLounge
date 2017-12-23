@@ -4,55 +4,24 @@ import 'whatwg-fetch';
 import _ from 'lodash';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
-import {getDeckDetails} from '../../../../firebase/decks/deck/read';
 import {updateViews} from '../../../../firebase/decks/deck/update';
-import Loader from '../../../../components/loaders/loader';
-import NotFound from '../../../shared-assets/not-found';
 import {FETCH_DECKS_REQUEST} from "../../../../redux/decks/fetch-decks/types";
 import {UPDATE_DECKS_REQUEST} from "../../../../redux/decks/update-decks/types";
 import {FETCH_ACTIVE_DECK_SUCCESS} from "../../../../redux/deck/active-deck/types";
-import {UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
-// import {getFilteredDecks} from "../../../../firebase/decks/deck/read/index";
-// import {addQuery} from "../../../../utils/utils-router";
-
 
 class DeckSelection extends Component {
   componentDidMount() {
-    const {fetchDecks, updateDecks, decks, location} = this.props;
-    const {playerClass} = location.query;
-    if(decks.loading && location.pathname === "/decks") {
+    console.log(this.props);
+    const {fetchDecks, updateDecks, decks, match} = this.props;
+    const {playerClass} = match.params;
+    if(decks.loading && match.path === "/decks") {
       playerClass ? fetchDecks(playerClass) : fetchDecks();
     }
     this.infiniteScroll(updateDecks);
   }
 
   handleFiltersClick = e =>{
-    // const {activeMode, activeClass, updateModeFilter, updateClassFilter, updateDeckList} = this.props;
-    // let targetId = e.currentTarget.id;
-    // let targetFilter = e.currentTarget.dataset.filter;
-    // addQuery({[targetFilter]: targetId});
-    // switch(targetFilter){
-    //   case 'playerClass': {
-    //     // this.props.updateDecks(`${this.props.location.query.playerClass}_timestamp_votes`);
-    //     this.props.fetchDecks();
-    //     // if(activeMode && activeClass){
-    //     //   getFilteredDecks(decks => updateDeckList(decks), 'mode_class', `${activeMode}_${targetId}`);
-    //     // } else {
-    //     //   getFilteredDecks(decks => updateDeckList(decks), 'playerClass', targetId);
-    //     // }
-    //     break;
-    //   }
-    //   case 'mode': {
-    //     updateModeFilter(targetId);
-    //     if(activeMode && activeClass){
-    //       getFilteredDecks(decks => updateDeckList(decks), 'mode_class', `${targetId}_${activeClass}`);
-    //     } else {
-    //       getFilteredDecks(decks => updateDeckList(decks), 'mode', targetId);
-    //     }
-    //     break;
-    //   }
-    //   default: return null;
-    // }
+
   };
 
   handleDeckSnippetClick = (e) =>{
@@ -76,12 +45,8 @@ class DeckSelection extends Component {
   };
 
   render() {
-    const {children, location, decks, activeUser, adventuresToggled, activeAdventure, activeMode, activeClass, activeDeck, params} = this.props;
-    if(location.pathname !== "/decks"){
-      return React.cloneElement(children, {activeUser, activeDeck});
-    }
-    else {
-      return (
+    const {decks, adventuresToggled, activeAdventure, activeMode, activeClass} = this.props;
+    return (
           <div className="container__page container__page--twoSided decks">
             <LeftContainer/>
             <RightContainer decks={decks}
@@ -91,9 +56,10 @@ class DeckSelection extends Component {
                             activeClass={activeClass}
                             handleFiltersClick={this.handleFiltersClick}
                             handleDeckSnippetClick={(e) => this.handleDeckSnippetClick(e)}/>
+
           </div>
       );
-    }
+
   };
 }
 

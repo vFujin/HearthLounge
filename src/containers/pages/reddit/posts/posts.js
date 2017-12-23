@@ -1,18 +1,20 @@
 import React, {Component} from 'react';
-// import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {browserHistory} from 'react-router';
 import 'whatwg-fetch';
 import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar';
 import PostSelection from './right-container/post-selection';
-import {stripDomains} from '../../../../utils/reddit/posts';
-import {addQuery} from '../../../../utils/utils-router';
 import {FETCH_REDDIT_POSTS_REQUEST} from "../../../../redux/reddit/posts/types";
 import {UPDATE_ACTIVE_POST} from "../../../../redux/reddit/active-post/types";
 import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../../redux/reddit/comments/types";
 
 class RedditPosts extends Component {
+  componentDidMount() {
+    const {category} = this.props.match.params;
+    if(category !== "hot") {
+      this.props.updatePosts(category);
+    }
+  }
 
   handlePostClick = (id) => {
     const {posts, updateActivePost, updatePostComments} = this.props;
@@ -25,56 +27,32 @@ class RedditPosts extends Component {
   };
 
   handleCategoryClick = (e) => {
-
-    const {updatePosts, toggleCategoryFilter, location} = this.props;
-    const {category} = location.query;
     e.preventDefault();
 
-    let filter = e.currentTarget.id;
+    const {updatePosts, toggleCategoryFilter, match} = this.props;
+    const {category} = match.params;
+    const filter = e.currentTarget.id;
+
     if (filter !== category) {
       updatePosts(filter);
-      addQuery({category: [filter]});
       toggleCategoryFilter(filter);
     }
   };
 
-  handleDomainClick = (e) => {
-    const {toggleDomainFilter, updateFilteredPosts, posts, location} = this.props;
-    const {category, domain} = location.query;
-    const {all} = posts;
-    let targetId = e.currentTarget.id;
-    let targetDomain = targetId !== 'bubbles2' ? targetId : 'hearthstone';
-    let filteredPosts = all.filter(post => stripDomains(post) === targetDomain);
-    if (targetDomain === domain) {
-      // removeQuery("domain");
-      if (category) {
-        browserHistory.push(`/reddit/posts?category=${category}`);
-      } else {
-        browserHistory.push(`/reddit/posts`);
-      }
-      toggleDomainFilter(null);
-      updateFilteredPosts(null);
-    } else {
-      addQuery({domain: [targetDomain]});
-      toggleDomainFilter(targetDomain);
-      updateFilteredPosts(filteredPosts);
-    }
-  };
-
   render() {
-    const {posts, location, activePost, filteredPosts} = this.props;
-    const {category} = location.query;
+    const {posts, match, activePost, filteredPosts} = this.props;
+    const {domain, category} = match.params;
     return (
         <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
           <div className="container__page--inner container__page--left">
             <h3 className="sidebar__header">Filters</h3>
-            <Sidebar category={category} handleCategoryClick={this.handleCategoryClick}/>
+            <Sidebar category={category || "hot"} domain={domain} handleCategoryClick={this.handleCategoryClick}/>
           </div>
           <div className="container__page--inner container__page--right">
-            <Topbar location={location}
-                    handleDomainClick={(e) => this.handleDomainClick(e)}/>
+            <Topbar domain={domain}
+                    category={category || "hot"}/>
             <PostSelection posts={posts}
-                           location={location}
+                           domain={domain}
                            filteredPosts={filteredPosts}
                            activePostPermalink={activePost}
                            handlePostClick={this.handlePostClick}/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import Tooltip from 'antd/lib/tooltip';
 import AdventureBossImg from "../../../images/adventure-boss";
 

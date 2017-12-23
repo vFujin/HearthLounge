@@ -1,6 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import Loader from '../../../components/loaders/loader';
+import Icon from "../../../components/icon";
 
 const Sidebar = props => {
 
@@ -20,7 +21,7 @@ const Sidebar = props => {
                 <div className="preview-topbar">
                   <div className="preview-name">{stream.channel.display_name}</div>
                   <div className="preview-viewers">
-                    <span className="hs-icon icon-login"></span>
+                    <Icon name="login />" />
                     <p>{stream.viewers}</p>
                   </div>
                 </div>

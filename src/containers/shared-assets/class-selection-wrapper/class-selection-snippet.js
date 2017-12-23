@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {icon_filters} from '../../../globals/filters';
+import Icon from "../../../components/icon";
 
 const ClassSelectionSnippet = ({page, updatePlayerClass}) =>{
 
@@ -12,14 +13,14 @@ const ClassSelectionSnippet = ({page, updatePlayerClass}) =>{
 
   const listClasses = () =>{
     return (
-        icon_filters.playerClass.map(hs_class =>
-            <li key={hs_class.url}
-                className={hs_class.url}
-                id={hs_class.url}
+        icon_filters.playerClass.map(playerClass =>
+            <li key={playerClass.url}
+                className={playerClass.url}
+                id={playerClass.url}
                 onClick={handleClassSelection}>
-              <Link to={`/${page}/${hs_class.url}`}>
-                <span className={`hs-icon icon-${hs_class.url}`}></span>
-                <p>{hs_class.name}</p>
+              <Link to={`/${page}/${playerClass.url}`}>
+                <Icon name={playerClass.url} />
+                <p>{playerClass.name}</p>
               </Link>
             </li>
         )

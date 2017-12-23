@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {icon_filters} from '../../../../globals/filters';
+import Icon from "../../../../components/icon";
 
 const Sidebar = ({adventure}) => {
 
@@ -11,7 +12,7 @@ const Sidebar = ({adventure}) => {
         <li key={index} className={adventure === a.url && 'selected'}>
           <Link to={`/adventures/${a.url}/overview`}
                 className={`${a.url} ${adventure === a.url && 'active'}`}>
-            <span className={`hs-icon icon-${a.url}`}></span>
+            <Icon name={a.url} />
             <p>{a.name}</p>
           </Link>
         </li>

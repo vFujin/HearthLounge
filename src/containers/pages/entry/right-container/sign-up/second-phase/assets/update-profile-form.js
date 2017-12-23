@@ -1,12 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import Input from '../../../../../../../components/inputs/input';
-import {imageStatus, usernameStatus} from "../utils";
+import {usernameStatus} from "../utils";
 import Button from "../../../../../../../components/buttons/button";
+import {updateUsername} from "../../../../../../../firebase/user/update";
 
-const UpdateProfileForm = ({activeUser, signUp_username, signUp_avatar, handleInputChange, handleUpdateProfileFormSubmit, updateFormProperty, usernameFree}) =>{
-  return (
-      <form onSubmit={handleUpdateProfileFormSubmit}>
+class UpdateProfileForm extends Component {
+
+  handleUpdateProfileFormSubmit = (e) => {
+    e.preventDefault();
+    const {activeUser, signUp_username, updateSignUpStatus} = this.props;
+    updateUsername(activeUser, signUp_username, updateSignUpStatus)
+  };
+
+  render() {
+    const {signUp_username, handleInputChange, usernameFree} = this.props;
+
+    return (
+      <form onSubmit={this.handleUpdateProfileFormSubmit}>
 
         <div className="divider"><span>Required</span></div>
 
@@ -20,28 +31,27 @@ const UpdateProfileForm = ({activeUser, signUp_username, signUp_avatar, handleIn
         </div>
 
         <div className="divider"><span>Optional</span></div>
-        {imageStatus(activeUser, signUp_avatar, updateFormProperty)}
 
         <div className="button-wrapper">
-          <Button text="Complete registration" type="submit--light" />
+          <Button text="Complete registration" type="submit--light"/>
         </div>
       </form>
-  )
+    )
+  }
+}
+
+const mapStateToProps = state =>{
+  const {signUp_username, usernameFree} = state.entry;
+  const {activeUser} = state.users;
+  return {signUp_username, usernameFree, activeUser};
 };
 
-
-export default UpdateProfileForm;
-
-UpdateProfileForm.propTypes = {
-  activeUser: PropTypes.object,
-  signUp_username: PropTypes.string.isRequired,
-  handleInputChange: PropTypes.func,
-  handleUpdateProfileFormSubmit: PropTypes.func,
-  signUp_avatar: PropTypes.bool,
-  usernameFree: PropTypes.bool,
-  uploadedImage: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element
-  ]),
-  updateFormProperty: PropTypes.func
+const mapDispatchToProps = dispatch =>{
+  return {
+    updateSignUpStatus: (signUp_firstStep, signUp_secondStep) => (dispatch({
+      type: 'UPDATE_SIGN_UP_STATUS', signUp_firstStep, signUp_secondStep
+    })),
+  }
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateProfileForm);

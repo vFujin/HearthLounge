@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IconFilter from '../../../shared-assets/filters/icon-filter';
 
 const CardsTopbarFilters = ({query}) => {
@@ -11,7 +12,7 @@ const CardsTopbarFilters = ({query}) => {
 };
 
 CardsTopbarFilters.propTypes = {
-  query: React.PropTypes.object
+  query: PropTypes.object
 };
 
 export default CardsTopbarFilters;

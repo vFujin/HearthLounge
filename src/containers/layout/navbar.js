@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import {navItems} from '../../globals/nav';
 import EntryNode from './entry-node';
 import Icon from "../../components/icon";

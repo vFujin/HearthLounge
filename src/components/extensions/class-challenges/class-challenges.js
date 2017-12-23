@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {ClassChallenge, DungeonRun} from "./challenges";
 import ClassChallengeSelection from "./class-challenge-selection";
 import Icon from "../../icon";

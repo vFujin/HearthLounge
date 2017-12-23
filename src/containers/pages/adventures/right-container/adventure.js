@@ -16,27 +16,29 @@ import {filterCardbacks} from "../../../../utils/filter/cardbacks";
 class Adventure extends PureComponent{
 
   componentDidMount(){
-    const {adventure, fetchAdventureDecks, fetchCardbacks, updateAdventureCardbacks} = this.props;
-    let activeAdventure = adventure_details.filter(a => a.url === adventure)[0];
-
-    getAdventureDecks(adventure, decks => fetchAdventureDecks(decks));
-    fetchCardback(cardbacks => {
-      fetchCardbacks(cardbacks);
-      filterCardbacks(activeAdventure, cardbacks, data => updateAdventureCardbacks(data))
-    });
+    // const {adventure, fetchAdventureDecks, fetchCardbacks, updateAdventureCardbacks} = this.props;
+    // let activeAdventure = adventure_details.filter(a => a.url === adventure)[0];
+    //
+    // getAdventureDecks(adventure, decks => fetchAdventureDecks(decks));
+    // fetchCardback(cardbacks => {
+    //   fetchCardbacks(cardbacks);
+    //   filterCardbacks(activeAdventure, cardbacks, data => updateAdventureCardbacks(data))
+    // });
   }
 
-  componentWillReceiveProps(nextProps){
-    const {adventure, cardbacks, fetchAdventureDecks, updateAdventureCardbacks} = this.props;
-    let nextAdventure = adventure_details.filter(a => a.url === nextProps.adventure)[0];
-    if(adventure !== nextProps.adventure){
-      filterCardbacks(nextAdventure, cardbacks, data => updateAdventureCardbacks(data));
-      getAdventureDecks(nextProps.adventure, decks => fetchAdventureDecks(decks));
-    }
-  }
+  // componentWillReceiveProps(nextProps){
+  //   const {adventure, cardbacks, fetchAdventureDecks, updateAdventureCardbacks} = this.props;
+  //   let nextAdventure = adventure_details.filter(a => a.url === nextProps.adventure)[0];
+  //   if(adventure !== nextProps.adventure){
+  //     filterCardbacks(nextAdventure, cardbacks, data => updateAdventureCardbacks(data));
+  //     getAdventureDecks(nextProps.adventure, decks => fetchAdventureDecks(decks));
+  //   }
+  // }
 
   render(){
-    const {adventure, adventureCardbacks, detailsChild, details, decks} = this.props;
+    const {adventureCardbacks, match, decks, location} = this.props;
+    const detailsChild = location.pathname.split("/")[4];
+    const {adventure, details} = match.params;
     let activeAdventure = adventure_details.filter(a => a.url === adventure)[0];
     return (
         <div className='container__page--inner container__page--right'>

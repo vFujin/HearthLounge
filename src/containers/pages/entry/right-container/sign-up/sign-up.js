@@ -1,42 +1,58 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import _ from 'lodash';
+import {Switch, Route} from 'react-router';
 import SignUpForm from './first-phase/sign-up-form';
 import StepProgressBar from './step-progress-bar';
+import {getUsername} from "../../../../../firebase/user/read";
+import UpdateProfileForm from "./second-phase/assets/update-profile-form";
+import Summary from "./second-phase/assets/summary";
 
-const SignUp = ({children, activeUser, usernameFree, signUp_username, signUp_avatar, signUp_firstStep, signUp_secondStep, handleInputChange, handleFormSubmit,
-                  handleCheckboxClick, location, updateFormProperty, handleUpdateProfileFormSubmit}) => {
+const findUsername = _.debounce((input, updateUsernameExistStatus) => {
+  getUsername(input, (value) => updateUsernameExistStatus(value))
+}, 500);
 
-  const signUp = () =>{
-    return (location.pathname === "/sign-up" || !activeUser)
-        ? <SignUpForm handleInputChange={handleInputChange}
-                      handleFormSubmit={handleFormSubmit}
-                      handleCheckboxClick={handleCheckboxClick}/>
-        : React.cloneElement(children, {
-            handleInputChange,
-            activeUser,
-            signUp_username,
-            usernameFree,
-            signUp_avatar,
-            updateFormProperty,
-            signUp_firstStep,
-            signUp_secondStep,
-            handleUpdateProfileFormSubmit
-          });
+class SignUp extends Component {
+  handleInputChange = (e) => {
+    const {updateFormProperty, updateUsernameExistStatus} = this.props;
+    let target = e.target;
+    let id = target.id;
+    let value = target.value;
+    updateFormProperty({[id]: value});
+    if (id === "signUp_username") {
+      findUsername(value, updateUsernameExistStatus);
+    }
   };
 
-  return (
+  render() {
+    const {signUp_firstStep, signUp_secondStep} = this.props;
+    return (
       <div className="sign sign-up active">
-        <StepProgressBar signUp_firstStep={signUp_firstStep}
-                         signUp_secondStep={signUp_secondStep}/>
-        {signUp()}
+        <StepProgressBar signUp_firstStep={signUp_firstStep} signUp_secondStep={signUp_secondStep}/>
+        <Switch>
+          <Route exact path="/sign-up" render={() => <SignUpForm handleInputChange={this.handleInputChange} />}/>
+          <Route exact path="/sign-up/update-profile" render={() => <UpdateProfileForm handleInputChange={this.handleInputChange} />}/>
+          <Route exact path="/sign-up/update-profile/complete" component={Summary}/>
+        </Switch>
       </div>
-  );
+    );
+  }
+}
+
+const mapStateToProps = state =>{
+  const {signUp_firstStep, signUp_secondStep} = state.entry;
+  return {signUp_firstStep, signUp_secondStep};
 };
 
-export default SignUp;
-
-SignUp.propTypes = {
-  handleInputChange: PropTypes.func,
-  handleFormSubmit: PropTypes.func,
-  handleCheckboxClick: PropTypes.func
+const mapDispatchToProps = dispatch =>{
+  return {
+    updateFormProperty: (props) => (dispatch({
+      type: 'EDIT_FORM_PROPERTY', props
+    })),
+    updateUsernameExistStatus: (usernameFree) => (dispatch({
+      type: 'UPDATE_USERNAME_EXIST_STATUS', usernameFree
+    })),
+  }
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

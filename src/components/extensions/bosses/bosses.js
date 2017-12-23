@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {adventure_details} from "../../../globals/adventure-details";
 import {expansion_details} from "../../../globals/expansion-details";
 

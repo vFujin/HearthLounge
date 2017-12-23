@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import Icon from "../../components/icon";
 
 const IconWithUrl = ({name, url, title}) => {

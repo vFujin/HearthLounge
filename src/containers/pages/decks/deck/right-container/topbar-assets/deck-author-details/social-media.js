@@ -1,6 +1,6 @@
 import React from 'react';
 import Tooltip from 'antd/lib/tooltip';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import Icon from "../../../../../../../components/icon";
 
 const SocialMediaDetails = ({deckAuthor}) =>{

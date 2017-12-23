@@ -1,67 +1,45 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'react-router';
-import Button from "../../../../../components/buttons/button";
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Switch, Route} from 'react-router';
+import ResetPasswordForm from './reset-password-form';
+import SignInForm from './sign-in-form';
 
-const SignIn = ({handleInputChange, toggleResetPasswordViewClick, resetPasswordView, handleSignIn, handleResetPassword, signIn_email, resetPass_email }) => {
+class SignIn extends Component {
+  handleInputChange = (e) => {
+    const {updateFormProperty} = this.props;
+    let target = e.target;
+    let id = target.id;
+    let value = target.value;
+    updateFormProperty({[id]: value});
+  };
 
-  return (
+  render() {
+    return (
       <div className="sign sign-in">
-        <form>
-          {resetPasswordView
-          ?<div className="input-wrapper">
-                <label htmlFor="resetPass_email">E-mail:</label>
-                <input id="resetPass_email"
-                       type="text"
-                       onChange={handleInputChange}
-                       value={resetPass_email}/>
-              </div>
-              :<div className="input-wrapper">
-                <label htmlFor="signIn_email">E-mail:</label>
-                <input id="signIn_email"
-                       type="text"
-                       onChange={handleInputChange}
-                       value={signIn_email}/>
-              </div>
-          }
-
-
-          {resetPasswordView
-              ? null
-              : <div className="input-wrapper">
-                <label htmlFor="signIn_password">Password:</label>
-                <input id="signIn_password" type="password"/>
-              </div>
-          }
-
-          {
-            resetPasswordView
-              ? <div className="button-wrapper">
-              <Button text="Reset password"
-                      handleClick={(e) => handleResetPassword(e, resetPass_email)}
-                      type="submit--light"/>
-                <Link to="/sign-in" onClick={toggleResetPasswordViewClick}>
-                  Cancel
-                </Link>
-              </div>
-              : <div className="button-wrapper">
-              <Button text="Submit"
-                      handleClick={(e) => handleSignIn(e, signIn_email)}
-                      type="submit--light"/>
-                <Link onClick={toggleResetPasswordViewClick} className="btn btn__default" to="/sign-in/reset-password">
-                  Forgot password?
-                </Link>
-              </div>
-          }
-        </form>
+        <Switch>
+          <Route exact path="/sign-in" render={() => <SignInForm handleInputChange={this.handleInputChange}/> } />
+          <Route exact path="/sign-in/reset-password" render={() => <ResetPasswordForm handleInputChange={this.handleInputChange}/> } />
+        </Switch>
       </div>
-  );
+    );
+  }
+}
+
+const mapStateToProps = state =>{
+  const {resetPasswordView} = state.entry;
+  return {resetPasswordView};
 };
 
-SignIn.reactProptypes = {
-  handleInputChange: PropTypes.func,
-  handleSignIn: PropTypes.func,
-  signIn_email: PropTypes.string
+const mapDispatchToProps = dispatch =>{
+  return {
+    toggleResetPasswordView: resetPasswordView => dispatch({
+      type: 'TOGGLE_RESET_PASSWORD_VIEW', resetPasswordView
+    }),
+    updateFormProperty: (props) => (dispatch({
+      type: 'EDIT_FORM_PROPERTY', props
+    })),
+  }
 };
 
-export default SignIn;
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import {icon_filters} from '../../../../globals/filters';
+import Icon from "../../../../components/icon";
 
 const Sidebar = ({expansion}) => {
 
@@ -10,7 +11,7 @@ const Sidebar = ({expansion}) => {
         <li key={index} className={expansion === e.url && 'selected'}>
           <Link to={`/expansions/${e.url}/overview`}
                 className={`${e.url} ${expansion === e.url && 'active'}`}>
-            <span className={`hs-icon icon-${e.url}`}></span>
+            <Icon name={e.url} />
             <p>{e.name}</p>
           </Link>
         </li>

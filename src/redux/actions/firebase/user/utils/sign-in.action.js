@@ -1,8 +1,9 @@
 import * as types from "../../../../types/firebase";
 
-export function firebaseSignInRequest(){
+export function firebaseSignInRequest(payload){
   return {
-    type: types.FIREBASE_SIGN_IN_REQUEST
+    type: types.FIREBASE_SIGN_IN_REQUEST,
+    payload
   }
 }
 

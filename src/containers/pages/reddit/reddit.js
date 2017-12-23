@@ -1,24 +1,20 @@
 import React, {Component} from 'react';
+import {Route} from 'react-router';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/reddit/posts/types";
+import RedditPosts from './posts/posts';
+import {fetchRedditPostsRequest} from "../../../redux/reddit/posts/actions";
 
 class Reddit extends Component {
   componentDidMount() {
-    const {location, posts, updatePosts} = this.props;
-    const {category} = location.query;
-    let categoryQuery = category || "hot";
+    const {posts, updatePosts} = this.props;
     if(posts.loading) {
-      updatePosts(categoryQuery);
+      updatePosts("hot");
     }
   }
 
   render() {
-    const {cards, children, posts } = this.props;
-      return React.cloneElement(children, {
-        cards,
-        posts
-      });
+    return <Route path="/reddit" component={RedditPosts} />
   }
 }
 
@@ -29,9 +25,7 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updatePosts: payload => dispatch({
-      type: FETCH_REDDIT_POSTS_REQUEST, payload
-    })
+    updatePosts: payload => dispatch(fetchRedditPostsRequest(payload))
   }
 };
 

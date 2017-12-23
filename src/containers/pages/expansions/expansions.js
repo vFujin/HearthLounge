@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import {Route} from 'react-router';
 import Sidebar from './left-container/sidebar';
 import Expansion from './right-container/expansion';
 import NotFound from '../../shared-assets/not-found';
 import SelectExtension from '../../shared-assets/extensions/select-extension';
 import {expansionExists} from '../../../utils/checkIfPathExist'
 
-const Expansions = ({params, location}) => {
-  const {details, expansion, detailsChild} = params;
-
+const Expansions = ({match, location}) => {
+  const expansion = location.pathname.split("/")[2];
 
   const rightContainer = () => {
-    let path = location.pathname.split("/")[2];
-    if(expansion !== undefined) {
-      return expansionExists(path)
-          ? <Expansion details={details} expansion={expansion} detailsChild={detailsChild}/>
-          : <NotFound page={_.startCase(expansion)} redirect="expansions"/>
+    if (expansion) {
+      return expansionExists(expansion)
+        ? <Route path={`${match.url}/:expansion/:details`} component={Expansion} />
+        : <NotFound page={_.startCase(expansion)} redirect="expansions"/>;
+    } else {
+      return <SelectExtension group="expansion"/>
     }
-    return <SelectExtension group="expansion"/>
   };
 
   return (

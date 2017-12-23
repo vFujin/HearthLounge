@@ -56,11 +56,8 @@ export const checkDomain = post =>{
   }
 };
 
-export const checkTopbarIconFilters = (location, post) =>{
-  if(location) {
-    let query = location.query.domain;
-    if (query !== undefined) {
-      return stripDomains(post) === query ? stripDomains(post) : "display-none";
-    }
+export const checkTopbarIconFilters = (domain, post) =>{
+  if (domain !== undefined) {
+    return stripDomains(post) === domain ? stripDomains(post) : "display-none";
   }
 };

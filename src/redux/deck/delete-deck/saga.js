@@ -1,6 +1,6 @@
 import {refParent, firestore} from "../../../keys";
 import {call, put, takeEvery} from 'redux-saga/effects';
-import {browserHistory} from 'react-router';
+// import {browserHistory} from 'react-router';
 import * as actions from "./actions";
 import * as types from "./types";
 import {success} from "../../../utils/messages";
@@ -22,7 +22,7 @@ export function* deleteDeckSaga({payload}) {
     yield put(actions.deleteDeckFailure(err));
   } else {
     yield put(actions.deleteDeckSuccess());
-    yield browserHistory.push('/dashboard');
+    // yield browserHistory.push('/dashboard');
     yield success("Successfully deleted deck");
   }
 }
