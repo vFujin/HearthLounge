@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import {Route, Switch} from 'react-router';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {LeftContainer} from './left-container/left-container';
 import SignUp from "./right-container/sign-up/sign-up";
 import SignIn from './right-container/sign-in/sign-in';
@@ -30,12 +30,12 @@ class Entry extends PureComponent {
 
             <div className="container__page--inner container__page--right">
               <div className="topbar">
-                <Link to="/sign-in" activeClassName="active">
+                <NavLink to="/sign-in" activeClassName="active">
                   <p>Sign In</p>
-                </Link>
-                <Link to="/sign-up" activeClassName="active">
+                </NavLink>
+                <NavLink to="/sign-up" activeClassName="active">
                   <p>Sign Up</p>
-                </Link>
+                </NavLink>
               </div>
               <Switch>
                 <Route path="/sign-in" component={SignIn} />

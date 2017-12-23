@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
-import {Switch, Route} from 'react-router';
+import {Switch, Route, Redirect} from 'react-router';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
@@ -17,7 +17,7 @@ import NotFound from "./shared-assets/not-found";
 import Adventures from "./pages/adventures/adventures";
 import Reddit from "./pages/reddit/reddit";
 import {Tournaments} from "./pages/tournaments/tournaments";
-import {Dashboard} from "./pages/dashboard/dashboard";
+import Dashboard from "./pages/dashboard/dashboard";
 import Entry from "./pages/entry/entry";
 import Home from "./pages/home/home";
 import Cards from "./pages/cards/cards";
@@ -48,8 +48,9 @@ class Main extends Component{
   }
 
   render(){
-    const {activeUser, playerClass} = this.props;
+    const {activeUser, playerClass, authenticated} = this.props;
 
+    console.log(authenticated);
     return (
       <BrowserRouter>
         <div id="container">
@@ -57,7 +58,6 @@ class Main extends Component{
                   activeUser={activeUser}
                   playerClass={playerClass}
                   handleSignOut={this.handleSignOut}/>
-
           <Switch>
             <Route exact path="/"                   component={Home} />
             <Route exact path="/decks"              component={DeckSelection} />
@@ -73,7 +73,7 @@ class Main extends Component{
             <Route exact path="/reddit/posts/:category/:domain" component={RedditPosts} />
             <Route path="/sign-in"                  component={Entry} />
             <Route path="/sign-up"                  component={Entry} />
-            <Route path="/dashboard"                component={Dashboard} />
+            <Route path="/dashboard"                render={() => !authenticated ? <Redirect to="/sign-in" /> : <Dashboard />} />
             <Route path="/:misc"                    component={Miscellaneous} />
             <Route path="*"                         component={NotFound} />
           </Switch>

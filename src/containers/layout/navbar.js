@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {navItems} from '../../globals/nav';
 import EntryNode from './entry-node';
 import Icon from "../../components/icon";
@@ -13,10 +13,10 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
     return (
       navItems[index].submenu.map((item, id) =>
           <li className={sub[id].url} key={id}>
-            <Link to={`/${el.name}/${item.url}${el.url === "decks" ? '' : "/overview"}`}>
+            <NavLink to={`/${el.name}/${item.url}${el.url === "decks" ? '' : "/overview"}`}>
               <Icon name={sub[id].url} className="submenu__icon"/>
               <div className="icon-label">{sub[id].name}</div>
-            </Link>
+            </NavLink>
           </li>
       )
     )
@@ -56,14 +56,14 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
         </li>
         {navItems.map((element, index) =>
             <li key={index} className={`nav__list--item ${element.name}`}>
-              <Link className="nav__list--linkContainer"
+              <NavLink className="nav__list--linkContainer"
                     to={`/${redirect(element.name, playerClass)}`} activeClassName={element.name !== 'home' && "active"}>
                 <div className="nav__list--link">
                   <Icon name={element.icon} />
                   <div>{_.camelCase(element.name)}</div>
                   {dropdown(element, index)}
                 </div>
-              </Link>
+              </NavLink>
             </li>
         )}
         <EntryNode handleSignOut={handleSignOut} activeUser={activeUser}/>
