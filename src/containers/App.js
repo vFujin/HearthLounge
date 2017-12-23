@@ -16,6 +16,7 @@ import DeckSelection from "./pages/decks/deck-selection/deck-selection";
 import NotFound from "./shared-assets/not-found";
 import Adventures from "./pages/adventures/adventures";
 import Reddit from "./pages/reddit/reddit";
+import RedditPost from "./pages/reddit/post/post";
 import {Tournaments} from "./pages/tournaments/tournaments";
 import Dashboard from "./pages/dashboard/dashboard";
 import Entry from "./pages/entry/entry";
@@ -71,6 +72,7 @@ class Main extends Component{
             <Route exact path="/reddit"             component={Reddit} />
             <Route exact path="/reddit/posts/:category"         component={RedditPosts} />
             <Route exact path="/reddit/posts/:category/:domain" component={RedditPosts} />
+            <Route exact path="/reddit/post/:postId/:postTitle" component={RedditPost} />
             <Route path="/sign-in"                  component={Entry} />
             <Route path="/sign-up"                  component={Entry} />
             <Route path="/dashboard"                render={() => !authenticated ? <Redirect to="/sign-in" /> : <Dashboard />} />

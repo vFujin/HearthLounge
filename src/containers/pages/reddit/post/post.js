@@ -11,11 +11,11 @@ import * as types from "../../../../redux/reddit/active-post/types";
 class RedditPost extends Component {
 
   componentDidMount() {
-    const {updateActivePost, activePost, params} = this.props;
-    const {id} = params;
+    const {updateActivePost, activePost, match} = this.props;
+    const {postId} = match.params;
 
     if (activePost.loading) {
-      updateActivePost(id);
+      updateActivePost(postId);
     }
   }
 
@@ -26,11 +26,11 @@ class RedditPost extends Component {
 
 
   render() {
-    const {activePost, params} = this.props;
+    const {activePost, match} = this.props;
     const {loading, error, post} = activePost;
 
     if (activePost.loading) return <Loader/>;
-    else if (!loading && error) return <NotFound page={`reddit/post/${params.id}`} redirect="reddit/posts"/>;
+    else if (!loading && error) return <NotFound page={`reddit/post/${match.params.postId}`} redirect="reddit/posts"/>;
     else return (
         <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
           <div className="container__page--inner container__page--left">
