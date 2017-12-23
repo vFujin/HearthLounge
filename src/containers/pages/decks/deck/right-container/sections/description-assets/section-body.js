@@ -77,7 +77,8 @@ const SectionBody = (props) => {
 const mapStateToProps = state =>{
   const {activeDeckEditing, tools, activeDeckCopy} = state.deckView;
   const {deckEditView} = tools;
-  return {activeDeckEditing, deckEditView, activeDeckCopy};
+  const {activeUser} = state.users;
+  return {activeUser, activeDeckEditing, deckEditView, activeDeckCopy};
 };
 
 const mapDispatchToProps = dispatch => {

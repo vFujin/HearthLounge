@@ -92,6 +92,12 @@
     border-left: 10px solid $color;
   }
 
+  &.gradient-linear-top{
+    background: -moz-linear-gradient(top, darken($color, 20%), $color);
+    background: -webkit-linear-gradient(top, darken($color, 20%), $color);
+    background: linear-gradient(to top, darken($color, 20%), $color);
+  }
+
   &.gradient-full{
     background: -moz-linear-gradient(left, rgba($color,.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba($color,.4) 0%, transparent 100%);

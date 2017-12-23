@@ -619,6 +619,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #FF7D0A; }
+  .druid.gradient-linear-top {
+    background: -moz-linear-gradient(top, #a34d00, #FF7D0A);
+    background: -webkit-linear-gradient(top, #a34d00, #FF7D0A);
+    background: linear-gradient(to top, #a34d00, #FF7D0A); }
   .druid.gradient-full {
     background: -moz-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
@@ -689,6 +693,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #ABD473; }
+  .hunter.gradient-linear-top {
+    background: -moz-linear-gradient(top, #7aac35, #ABD473);
+    background: -webkit-linear-gradient(top, #7aac35, #ABD473);
+    background: linear-gradient(to top, #7aac35, #ABD473); }
   .hunter.gradient-full {
     background: -moz-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
@@ -759,6 +767,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #69CCF0; }
+  .mage.gradient-linear-top {
+    background: -moz-linear-gradient(top, #16a8dd, #69CCF0);
+    background: -webkit-linear-gradient(top, #16a8dd, #69CCF0);
+    background: linear-gradient(to top, #16a8dd, #69CCF0); }
   .mage.gradient-full {
     background: -moz-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
@@ -829,6 +841,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #F58CBA; }
+  .paladin.gradient-linear-top {
+    background: -moz-linear-gradient(top, #ed2e82, #F58CBA);
+    background: -webkit-linear-gradient(top, #ed2e82, #F58CBA);
+    background: linear-gradient(to top, #ed2e82, #F58CBA); }
   .paladin.gradient-full {
     background: -moz-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
@@ -899,6 +915,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #FFFFFF; }
+  .priest.gradient-linear-top {
+    background: -moz-linear-gradient(top, #cccccc, #FFFFFF);
+    background: -webkit-linear-gradient(top, #cccccc, #FFFFFF);
+    background: linear-gradient(to top, #cccccc, #FFFFFF); }
   .priest.gradient-full {
     background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
@@ -969,6 +989,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #FFF569; }
+  .rogue.gradient-linear-top {
+    background: -moz-linear-gradient(top, #ffee03, #FFF569);
+    background: -webkit-linear-gradient(top, #ffee03, #FFF569);
+    background: linear-gradient(to top, #ffee03, #FFF569); }
   .rogue.gradient-full {
     background: -moz-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
@@ -1039,6 +1063,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #0070DE; }
+  .shaman.gradient-linear-top {
+    background: -moz-linear-gradient(top, #003d78, #0070DE);
+    background: -webkit-linear-gradient(top, #003d78, #0070DE);
+    background: linear-gradient(to top, #003d78, #0070DE); }
   .shaman.gradient-full {
     background: -moz-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 100%);
@@ -1109,6 +1137,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #9482C9; }
+  .warlock.gradient-linear-top {
+    background: -moz-linear-gradient(top, #5c45a0, #9482C9);
+    background: -webkit-linear-gradient(top, #5c45a0, #9482C9);
+    background: linear-gradient(to top, #5c45a0, #9482C9); }
   .warlock.gradient-full {
     background: -moz-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
@@ -1179,6 +1211,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #C79C6E; }
+  .warrior.gradient-linear-top {
+    background: -moz-linear-gradient(top, #95693a, #C79C6E);
+    background: -webkit-linear-gradient(top, #95693a, #C79C6E);
+    background: linear-gradient(to top, #95693a, #C79C6E); }
   .warrior.gradient-full {
     background: -moz-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
@@ -1249,6 +1285,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #C41F3B; }
+  .death-knight.gradient-linear-top {
+    background: -moz-linear-gradient(top, #6c1120, #C41F3B);
+    background: -webkit-linear-gradient(top, #6c1120, #C41F3B);
+    background: linear-gradient(to top, #6c1120, #C41F3B); }
   .death-knight.gradient-full {
     background: -moz-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
@@ -1319,6 +1359,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #00FF96; }
+  .monk.gradient-linear-top {
+    background: -moz-linear-gradient(top, #00995a, #00FF96);
+    background: -webkit-linear-gradient(top, #00995a, #00FF96);
+    background: linear-gradient(to top, #00995a, #00FF96); }
   .monk.gradient-full {
     background: -moz-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
@@ -1389,6 +1433,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #A330C9; }
+  .demon-hunter.gradient-linear-top {
+    background: -moz-linear-gradient(top, #601c77, #A330C9);
+    background: -webkit-linear-gradient(top, #601c77, #A330C9);
+    background: linear-gradient(to top, #601c77, #A330C9); }
   .demon-hunter.gradient-full {
     background: -moz-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
@@ -1467,6 +1515,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #b5de3f; }
+  .naxxramas.gradient-linear-top {
+    background: -moz-linear-gradient(top, #7b9c1b, #b5de3f);
+    background: -webkit-linear-gradient(top, #7b9c1b, #b5de3f);
+    background: linear-gradient(to top, #7b9c1b, #b5de3f); }
   .naxxramas.gradient-full {
     background: -moz-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
@@ -1537,6 +1589,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #fa5210; }
+  .blackrock-mountain.gradient-linear-top {
+    background: -moz-linear-gradient(top, #a13003, #fa5210);
+    background: -webkit-linear-gradient(top, #a13003, #fa5210);
+    background: linear-gradient(to top, #a13003, #fa5210); }
   .blackrock-mountain.gradient-full {
     background: -moz-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
@@ -1607,6 +1663,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #14a9a1; }
+  .the-league-of-explorers.gradient-linear-top {
+    background: -moz-linear-gradient(top, #094e4a, #14a9a1);
+    background: -webkit-linear-gradient(top, #094e4a, #14a9a1);
+    background: linear-gradient(to top, #094e4a, #14a9a1); }
   .the-league-of-explorers.gradient-full {
     background: -moz-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
@@ -1677,6 +1737,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #e2b4df; }
+  .karazhan.gradient-linear-top {
+    background: -moz-linear-gradient(top, #c66ac0, #e2b4df);
+    background: -webkit-linear-gradient(top, #c66ac0, #e2b4df);
+    background: linear-gradient(to top, #c66ac0, #e2b4df); }
   .karazhan.gradient-full {
     background: -moz-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
@@ -1750,6 +1814,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #fae43f; }
+  .goblins-vs-gnomes.gradient-linear-top {
+    background: -moz-linear-gradient(top, #ceb605, #fae43f);
+    background: -webkit-linear-gradient(top, #ceb605, #fae43f);
+    background: linear-gradient(to top, #ceb605, #fae43f); }
   .goblins-vs-gnomes.gradient-full {
     background: -moz-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
@@ -1820,6 +1888,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #f00; }
+  .the-grand-tournament.gradient-linear-top {
+    background: -moz-linear-gradient(top, #990000, #f00);
+    background: -webkit-linear-gradient(top, #990000, #f00);
+    background: linear-gradient(to top, #990000, #f00); }
   .the-grand-tournament.gradient-full {
     background: -moz-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 100%);
@@ -1890,6 +1962,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #cc00ff; }
+  .whispers-of-the-old-gods.gradient-linear-top {
+    background: -moz-linear-gradient(top, #7a0099, #cc00ff);
+    background: -webkit-linear-gradient(top, #7a0099, #cc00ff);
+    background: linear-gradient(to top, #7a0099, #cc00ff); }
   .whispers-of-the-old-gods.gradient-full {
     background: -moz-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 100%);
@@ -1960,6 +2036,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #d2cac5; }
+  .mean-streets-of-gadgetzan.gradient-linear-top {
+    background: -moz-linear-gradient(top, #a5968c, #d2cac5);
+    background: -webkit-linear-gradient(top, #a5968c, #d2cac5);
+    background: linear-gradient(to top, #a5968c, #d2cac5); }
   .mean-streets-of-gadgetzan.gradient-full {
     background: -moz-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
@@ -2030,6 +2110,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #3d9e2c; }
+  .journey-to-ungoro.gradient-linear-top {
+    background: -moz-linear-gradient(top, #1e4e16, #3d9e2c);
+    background: -webkit-linear-gradient(top, #1e4e16, #3d9e2c);
+    background: linear-gradient(to top, #1e4e16, #3d9e2c); }
   .journey-to-ungoro.gradient-full {
     background: -moz-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
@@ -2100,6 +2184,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #a5f2f3; }
+  .knights-of-the-frozen-throne.gradient-linear-top {
+    background: -moz-linear-gradient(top, #4be5e7, #a5f2f3);
+    background: -webkit-linear-gradient(top, #4be5e7, #a5f2f3);
+    background: linear-gradient(to top, #4be5e7, #a5f2f3); }
   .knights-of-the-frozen-throne.gradient-full {
     background: -moz-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
@@ -2170,6 +2258,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #ffd989; }
+  .kobolds-and-catacombs.gradient-linear-top {
+    background: -moz-linear-gradient(top, #ffb823, #ffd989);
+    background: -webkit-linear-gradient(top, #ffb823, #ffd989);
+    background: linear-gradient(to top, #ffb823, #ffd989); }
   .kobolds-and-catacombs.gradient-full {
     background: -moz-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
@@ -2248,6 +2340,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #fff; }
+  .common.gradient-linear-top {
+    background: -moz-linear-gradient(top, #cccccc, #fff);
+    background: -webkit-linear-gradient(top, #cccccc, #fff);
+    background: linear-gradient(to top, #cccccc, #fff); }
   .common.gradient-full {
     background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
@@ -2318,6 +2414,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid blue; }
+  .rare.gradient-linear-top {
+    background: -moz-linear-gradient(top, #000099, blue);
+    background: -webkit-linear-gradient(top, #000099, blue);
+    background: linear-gradient(to top, #000099, blue); }
   .rare.gradient-full {
     background: -moz-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
@@ -2388,6 +2488,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid purple; }
+  .epic.gradient-linear-top {
+    background: -moz-linear-gradient(top, #1a001a, purple);
+    background: -webkit-linear-gradient(top, #1a001a, purple);
+    background: linear-gradient(to top, #1a001a, purple); }
   .epic.gradient-full {
     background: -moz-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
@@ -2458,6 +2562,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid orange; }
+  .legendary.gradient-linear-top {
+    background: -moz-linear-gradient(top, #996300, orange);
+    background: -webkit-linear-gradient(top, #996300, orange);
+    background: linear-gradient(to top, #996300, orange); }
   .legendary.gradient-full {
     background: -moz-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
@@ -2531,6 +2639,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #318e2f; }
+  .mammoth.gradient-linear-top, .kraken.gradient-linear-top {
+    background: -moz-linear-gradient(top, #174116, #318e2f);
+    background: -webkit-linear-gradient(top, #174116, #318e2f);
+    background: linear-gradient(to top, #174116, #318e2f); }
   .mammoth.gradient-full, .kraken.gradient-full {
     background: -moz-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
@@ -2601,6 +2713,10 @@ a {
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #695840; }
+  .wild.gradient-linear-top {
+    background: -moz-linear-gradient(top, #2a2319, #695840);
+    background: -webkit-linear-gradient(top, #2a2319, #695840);
+    background: linear-gradient(to top, #2a2319, #695840); }
   .wild.gradient-full {
     background: -moz-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
@@ -3506,10 +3622,7 @@ button {
         position: absolute;
         bottom: 0;
         left: 0;
-        background: #3b679e;
-        background: -moz-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
-        background: -webkit-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
-        background: linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); }
+        box-shadow: 0 0 5px #00000075; }
     .graph li .hs-icon {
       font-size: 1.2vw; }
 

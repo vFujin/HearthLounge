@@ -8,11 +8,12 @@ export const DSHeader = ({archetype, playerClass, deck}) => {
   return (
       <div className="deckSnippet__body--header">
         <DSType archetype={archetype} playerClass={playerClass} />
-        <ManaCurve deck={deck.cards}
+        <ManaCurve manaCurveObj={deck.manaCurve}
                    max={deck.max}
                    barHeight="15px"
                    barWidth="4px"
                    barSpacing="2px"
+                   barColor={playerClass}
                    showCount={false}
                    showIcons={false}/>
       </div>

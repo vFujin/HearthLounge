@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Icon from "../icon";
 
-const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true}) => {
+const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true, barColor, manaCurveObj}) => {
 
   const costBelowSeven = (number) =>{
     return _.filter(deck, {cost: number}).length
@@ -13,7 +13,7 @@ const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.
 
   const count = () => {
     if(showCount){
-      return <div className="count">{s}</div>;
+      return <div className="count">{manaCurveObj ? manaCurveObj : s}</div>;
     }
   };
 
@@ -27,7 +27,7 @@ const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.
       <li style={{marginRight: barSpacing}}>
         {count()}
         <div className="bar" style={{"width": barWidth, height: barHeight}}>
-          <span style={{height: `${(s/max)*100 || 0}%`}}></span>
+          <span className={`${barColor} gradient-linear-top`} style={{height: `${((manaCurveObj ? manaCurveObj : s)/max)*100 || 0}%`}}></span>
         </div>
         {showIcon()}
       </li>

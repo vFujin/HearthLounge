@@ -45,7 +45,7 @@ class Deck extends Component{
   };
 
   render() {
-    const {cards, activeDeck, activeDeckCopy, activeUser, deckEditView, patch, match, updateActiveDeckCopy} = this.props;
+    const {cards, activeDeck, activeDeckCopy, deckEditView, patch, match, updateActiveDeckCopy} = this.props;
     if(activeDeck.loading){
       return <Loader/>
     }
@@ -66,7 +66,6 @@ class Deck extends Component{
                             deckEditView={deckEditView}
                             params={match.params}
                             patch={patch}
-                            activeUser={activeUser}
                             handleDeckVotingClick={this.handleDeckVotingClick}/>
           </div>
       )

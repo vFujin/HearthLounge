@@ -5,11 +5,11 @@ import ManaCurve from "../../../../../../components/mana-curve/mana-curve";
 import CopyDeck from "./copy-deck";
 
 const DeckDetails = ({allCards, activeDeckCopy, deckEditView, deckstring, playerClass, handleCardRemovalClick}) => {
-  const {cards, max} = activeDeckCopy;
+  const {cards, max, manaCurve} = activeDeckCopy;
   return (
       <div className="container__mana-curve">
         <h3>Mana Curve</h3>
-        <ManaCurve deck={cards} max={max} barHeight="70%" padding="1vh 0"/>
+        <ManaCurve deck={cards} max={max} barHeight="70%" padding="1vh 0" manaCurveObj={manaCurve} barColor={playerClass}/>
 
         <h3>Cards <CopyDeck deckstring={deckstring} playerClass={playerClass}/></h3>
         <Decklist cards={cards || []}

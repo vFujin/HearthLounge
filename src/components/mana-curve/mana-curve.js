@@ -1,34 +1,57 @@
 import React from 'react';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import ManaCurveBar from './mana-curve-graph';
 
-const ManaCurve = ({deck, max, barHeight, barWidth, barSpacing, showCount, showIcons, padding}) => {
-  // console.log(deck);
-  return (
+const ManaCurve = ({deck, max, barHeight, barWidth, barSpacing, showCount, showIcons, padding, barColor, manaCurveObj}) => {
+  if(manaCurveObj){
+    return (
       <ul className="graph" style={{padding: padding || 0}}>
-        {[...new Array(7)].map((bar, i)=>
-            <ManaCurveBar key={i}
-                          cost={i}
-                          icon={i}
-                          deck={deck}
-                          max={max}
-                          barHeight={barHeight}
-                          barWidth={barWidth}
-                          barSpacing={barSpacing}
-                          showCount={showCount}
-                          showIcons={showIcons}/>
+        {_.map(manaCurveObj).map((bar, i)=>
+          <ManaCurveBar key={i}
+                        cost={i}
+                        icon={i === 7 ? "7-plus" : i}
+                        deck={deck}
+                        max={max}
+                        barHeight={barHeight}
+                        barWidth={barWidth}
+                        barSpacing={barSpacing}
+                        showCount={showCount}
+                        manaCurveObj={bar}
+                        barColor={barColor}
+                        showIcons={showIcons}/>
+        )}
+      </ul>
+    )
+  } else {
+    return (
+      <ul className="graph" style={{padding: padding || 0}}>
+        {[...new Array(7)].map((bar, i) =>
+          <ManaCurveBar key={i}
+                        cost={i}
+                        icon={i}
+                        deck={deck}
+                        max={max}
+                        barColor={barColor}
+                        barHeight={barHeight}
+                        barWidth={barWidth}
+                        barSpacing={barSpacing}
+                        showCount={showCount}
+                        showIcons={showIcons}/>
         )}
         <ManaCurveBar cost={7}
                       icon="7-plus"
                       deck={deck}
                       max={max}
+                      barColor={barColor}
                       barHeight={barHeight}
                       barWidth={barWidth}
                       barSpacing={barSpacing}
                       showCount={showCount}
                       showIcons={showIcons}/>
       </ul>
-  )
+    )
+  }
 };
 
 export default ManaCurve;
@@ -45,4 +68,5 @@ ManaCurve.propTypes = {
   showCount: PropTypes.bool,
   showIcons: PropTypes.bool,
   padding: PropTypes.string,
+  manaCurveObj: PropTypes.object
 };
