@@ -23,6 +23,34 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-bag:before {
+  content: "\e95a";
+}
+.icon-discipline:before {
+  content: "\e95b";
+}
+.icon-dragons:before {
+  content: "\e95c";
+}
+.icon-elementals:before {
+  content: "\e95d";
+}
+.icon-frost:before {
+  content: "\e95e";
+}
+.icon-greed:before {
+  content: "\e95f";
+}
+.icon-shadow:before {
+  content: "\e960";
+}
+.icon-unique:before {
+  content: "\e961";
+}
+.icon-overload:before {
+  content: "\e9b5";
+}
 .icon-deathrattle:before {
   content: "\e955";
 }

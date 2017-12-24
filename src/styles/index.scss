@@ -2858,6 +2858,7 @@ card{
           > li{
             display: flex;
             margin: 10px;
+            max-height: 150px;
             &:first-child{
               margin-top: 0;
             }

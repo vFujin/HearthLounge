@@ -25,8 +25,6 @@ class Cards extends PureComponent {
       return <Loader/>;
     } else {
       const {allCards} = cards;
-      console.log(allCards.filter(card => (
-        card.cardSet === "Whispers of the Old Gods") && (card.playerClass === "Mage" || card.playerClass === "Neutral")).length);
       infiniteScroll('.content', updateCardsLoaded);
       return filterByUrl(allCards, query, cardsLoaded).map(card =>
           <li key={card.cardId}>

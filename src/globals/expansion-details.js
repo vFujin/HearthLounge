@@ -536,7 +536,7 @@ export const expansion_details = [
         options: [
           {
             label: "Chaos",
-            icon: "chaos",
+            icon: "shadow",
             cards: [
               "Shifting Scroll", "Babbling Book", "Open the Waygate", "Primordial Glyph", "Unstable Portal", "Kabal Courier",
               "Mana Bind", "Spellslinger", "Leyline Manipulator", "Cabalist's Tome", "Cabalist's Tome", "Ethereal Conjurer"
@@ -625,7 +625,7 @@ export const expansion_details = [
           },
           {
             label: "Unique",
-            icon: "",
+            icon: "unique",
             cards: [
               "Kazakus", "Reno Jackson", "Inkmaster Solia"
             ]
@@ -653,7 +653,7 @@ export const expansion_details = [
           },
           {
             label: "Divine Shield",
-            icon: " ",
+            icon: "discipline",
             cards: [
               "Righteous Protector", "Shielded Minibot", "Tainted Zealot", "Argent Horserider", "Blood Knight", "Howling Commander",
               "Scarlet Crusader", "Silent Knight", "Steward of Darkshire", "Wickerflame Burnbristle", "Light's Sorrow", "Bolvar, Fireblood",
@@ -678,7 +678,7 @@ export const expansion_details = [
           },
           {
             label: "Dragonmaster",
-            icon: " ",
+            icon: "dragons",
             cards: [
               "Netherspite Historian", "Blackwing Technician", "Dragonkin Sorcerer", "Hungry Dragon", "Twilight Drake",
               "Azure Drake", "Blackwing Corruptor", "Dragon Consort", "Scaled Nightmare", "Volcanic Drake", "Wrathion",
@@ -730,7 +730,7 @@ export const expansion_details = [
           },
           {
             label: "Many Blessings",
-            icon: " ",
+            icon: "discipline",
             cards: [
               "Adaptation", "Blessing of Might", "Blessing of Wisdom", "Divine Strength", "The Last Kaleidosaur",
               "Desperate Stand", "Potion of Heroism", "Primalfin Champion", "Seal of Champions", "Blessing of Kings",
@@ -779,7 +779,7 @@ export const expansion_details = [
           },
           {
             label: "Bag of Tricks",
-            icon: " ",
+            icon: "bag",
             cards: [
               "Pint-Size Potion", "Convert", "Shadow Word: Pain", "Shrinkmeister", "Spirit Lash", "Auctionmaster Beardo",
               "Shadow Word: Death", "Elise Starseeker", "Shadow Word: Horror", "Elise the Trailblazer", "Excavated Evil",
@@ -788,7 +788,7 @@ export const expansion_details = [
           },
           {
             label: "Shadow",
-            icon: " ",
+            icon: "shadow",
             cards: [
               "Zombie Chow", "Shadow Ascendant", "Spirit Lash", "Acolyte of Agony", "Mirage Caller", "Shadowfiend", "Shadowform",
               "Void Ripper", "Auchenai Soulpriest", "The Darkness", "Vol'jin", "Herald Volazj", "Shadow Essence", "Shadowreaper Anduin"
@@ -796,7 +796,7 @@ export const expansion_details = [
           },
           {
             label: "Dragon Priest",
-            icon: " ",
+            icon: "dragons",
             cards: [
               "Twilight Whelp", "Netherspite Historian", "Wyrmrest Agent", "Blackwing Technician", "Duskbreaker",
               "Hoarding Dragon", "Twilight Drake", "Twilight Guardian", "Azure Drake", "Blackwing Corruptor", "Drakonid Operative",
@@ -805,7 +805,7 @@ export const expansion_details = [
           },
           {
             label: "Discipline",
-            icon: " ",
+            icon: "discipline",
             cards: [
               "Inner Fire", "Power Word: Shield", "Divine Spirit", "Eydis Darkbane", "Fjola Lightbane", "Unidentified Elixir",
               "Velen's Chosen", "The Voraxx", "Djinni of Zephyrs"
@@ -813,14 +813,14 @@ export const expansion_details = [
           },
           {
             label: "Unique",
-            icon: " ",
+            icon: "unique",
             cards: [
               "Kazakus", "Raza the Chained", "Reno Jackson"
             ]
           },
           {
             label: "Elementals",
-            icon: " ",
+            icon: "elementals",
             cards: [
               "Crystalline Oracle", "Fire Fly", "Radiant Elemental", "Tar Creeper", "Lightspawn", "Tol'vir Stoneshaper", "Lyra the Sunshard",
               "Servant of Kalimos", "Blazecaller", "Ragnaros the Firelord", "Ozruk"
@@ -836,7 +836,7 @@ export const expansion_details = [
           },
           {
             label: "Combo Caster",
-            icon: " ",
+            icon: "shadow",
             cards: [
               "Power Word: Shield", "Radiant Elemental", "Shadow Visions", "Wild Pyromancer", "Dragon Soul", "Priest of the Feast",
               "Violet Teacher", "Lyra the Sunshard", "Grand Archivist", "Shadowreaper Anduin"
@@ -867,7 +867,7 @@ export const expansion_details = [
           },
           {
             label: "Blademaster",
-            icon: " ",
+            icon: "rogue",
             cards: [
               "Deadly Poison", "Doomerang", "Kingsbane", "Cavern Shinyfinder", "Goblin Auto-Barber", "Leeching Poison",
               "Envenom Weapon", "Rummaging Kobold", "Shadowblade", "Blade Flurry", "Grave Shambler", "Runeforge Haunter",
@@ -893,7 +893,7 @@ export const expansion_details = [
           },
           {
             label: "Greed",
-            icon: " ",
+            icon: "greed",
             cards: [
               "Counterfeit Coin", "Bloodmage Thalnos", "Cutpurse", "Loot Hoarder", "Coldlight Oracle", "Elven Minstrel",
               "Genzo, the Shark", "Tomb Pillager", "Azure Drake", "Burgly Bully", "Marin the Fox"
@@ -901,7 +901,7 @@ export const expansion_details = [
           },
           {
             label: "Thief",
-            icon: " ",
+            icon: "greed",
             cards: [
               "Hallucination", "Swashburglar", "Lorewalker Cho", "Undercity Huckster", "Burgle", "Shaku, the Collector",
               "Lilian Voss", "Obsidian Shard", "Ethereal Peddler", "Trade Prince Gallywix"
@@ -909,7 +909,7 @@ export const expansion_details = [
           },
           {
             label: "Assassin",
-            icon: " ",
+            icon: "rogue",
             cards: [
               "Backstab", "Cold Blood", "Eviscerate", "Patient Assassin", "Shiv", "Fan of Knives", "Plague Scientist", "SI:7 Agent",
               "Shadow Strike", "Assassinate", "Dark Iron Skulker", "Vilespine Slayer"
@@ -926,7 +926,7 @@ export const expansion_details = [
           },
           {
             label: "Bag of Tricks",
-            icon: " ",
+            icon: "bag",
             cards: [
               "Preparation", "Shadowstep", "Betrayal", "Evasion", "Gang Up", "Sudden Betrayal", "Beneath the Grounds", "Mimic Pod",
               "Fal'dorei Strider", "Shadowcaster", "Thistle Tea", "Valeera the Hollow"
@@ -954,7 +954,7 @@ export const expansion_details = [
         options: [
           {
             label: "Destruction",
-            icon: " ",
+            icon: "shadow",
             cards: [
               "Lightning Bolt", "Crackle", "Crushing Hand", "Lava Shock", "Maelstrom Portal", "Stormcrack", "Elemental Destruction",
               "Lava Burst", "Lightning Storm", "Volcano"
@@ -962,7 +962,7 @@ export const expansion_details = [
           },
           {
             label: "Frost",
-            icon: " ",
+            icon: "frost",
             cards: [
               "Glacial Shard", "Brrrloc", "Cryostasis", "Hyldnir Frostrider", "Ice Breaker", "Avalanche", "Voodoo Hexxer",
               "Frozen Crusher", "Moorabi"
@@ -995,7 +995,7 @@ export const expansion_details = [
           },
           {
             label: "Elementals",
-            icon: " ",
+            icon: "elementals",
             cards: [
               "Fire Fly", "Fire Plume Harbinger", "Murmuring Elemental", "Igneous Elemental", "Tar Creeper", "Tol'vir Stoneshaper",
               "Servant of Kalimos", "Blazecaller", "Stone Sentinel", "Al'Akir the Windlord", "Kalimos, Primal Lord", "Ragnaros the Firelord",
@@ -1014,7 +1014,7 @@ export const expansion_details = [
           },
           {
             label: "Overload",
-            icon: " ",
+            icon: "overload",
             cards: [
               "Finders Keepers", "Tunnel Trogg", "Tunnel Trogg", "Ancestral Knowledge", "Eternal Sentinel", "Lava Shock",
               "Totem Golem", "Drakkari Defender", "Feral Spirit", "Unbound Elemental", "Flamewreathed Faceless",
@@ -1038,7 +1038,7 @@ export const expansion_details = [
           },
           {
             label: "Farseer",
-            icon: " ",
+            icon: "view",
             cards: [
               "Ancestral Knowledge", "Ancestral Spirit", "Reincarnate", "Far Sight", "Spirit Echo", "Ancestor's Call", "Carnivorous Cube",
               "Corpse Raiser", "White Eyes", "Cairne Bloodhoof", "Sylvanas Windrunner", "Kel'Thuzad", "The Runespear"
@@ -1060,7 +1060,7 @@ export const expansion_details = [
         options: [
           {
             label: "Little Legion",
-            icon: "",
+            icon: "stampede",
             cards: [
               "Flame Imp", "Voidwalker", "Mistress of Pain", "Vulgar Homunculus", "Bloodfury Potion", "Demonwrath", "Imp Gang Boss",
               "Crystalweaver", "Dreadsteed", "Imp-losion", "Demonheart"
@@ -1076,7 +1076,7 @@ export const expansion_details = [
           },
           {
             label: "Unique",
-            icon: " ",
+            icon: "unique",
             cards: [
               "Kazakus", "Reno Jackson", "Krul the Unshackled"
             ]
@@ -1108,7 +1108,7 @@ export const expansion_details = [
           },
           {
             label: "Swarm",
-            icon: " ",
+            icon: "stampede",
             cards: [
               "Kobold Librarian", "Possessed Villager", "Dire Wolf Alpha", "Haunted Creeper", "Knife Juggler", "Darkshire Councilman",
               "Eggnapper", "Imp Gang Boss", "Imp Master", "Imp-losion", "Guild Recruiter", "Sea Giant"
@@ -1116,7 +1116,7 @@ export const expansion_details = [
           },
           {
             label: "Destruction",
-            icon: " ",
+            icon: "shadow",
             cards: [
               "Darkbomb", "Defile", "Doomsayer", "Shadow Bolt", "Blastcrystal Potion", "Cataclysm", "Felfire Potion", "Twisting Nether", "DOOM!", "Deathwing"
             ]
@@ -1140,7 +1140,7 @@ export const expansion_details = [
           },
           {
             label: "Dire Demons",
-            icon: " ",
+            icon: "stampede",
             cards: [
               "Voidcaller", "Doomguard", "Possessed Lackey", "Skull of the Man'ari", "Dread Infernal", "Kabal Trafficker",
               "Abyssal Enforcer", "Lord Jaraxxus", "Mal'Ganis", "Voidlord", "Bloodreaver Gul'dan"
@@ -1229,7 +1229,7 @@ export const expansion_details = [
           },
           {
             label: "Re-Enforcer",
-            icon: "",
+            icon: "discipline",
             cards: [
               "Hobart Grapplehammer", "Grimestreet Pawnbroker", "Grimestreet Smuggler", "Brass Knuckles", "Grimy Gadgeteer",
               "Emperor Thaurissan", "Don Han'Cho"
@@ -1247,7 +1247,7 @@ export const expansion_details = [
           },
           {
             label: "Dragon Heart",
-            icon: "",
+            icon: "dragons",
             cards: [
               "Alexstrasza's Champion", "Netherspite Historian", "Blackwing Technician", "Hoarding Dragon", "Hungry Dragon",
               "Twilight Drake", "Twilight Guardian", "Azure Drake", "Blackwing Corruptor", "Book Wyrm", "Drakonid Crusher",
