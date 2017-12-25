@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import Card from "./assets/card";
-import Loader from "../loaders/loader";
 import {lazyloadCards} from "./utils/lazyload";
-import IconFilter from "../../containers/shared-assets/filters/icon-filter";
 import {mapCards} from "./utils/map-cards";
-import Topbar from "./assets/topbar";
+import Topbar from "./right-container/topbar";
+import Sidebar from "./left-container/sidebar";
+import {updateFilters} from "./utils/update-filters";
 
 class ComponentCards extends Component {
   constructor(props){
@@ -15,7 +14,7 @@ class ComponentCards extends Component {
 
     this.state = {
       loadedCards: 40,
-      mode: props.mode || null,
+      mode: props.mode || 'wild',
       filters: {}
     }
   }
@@ -28,26 +27,22 @@ class ComponentCards extends Component {
     document.querySelector('.content').scrollTop = 0;
     const filter = e.currentTarget.dataset.filter;
     const value = _.startCase(e.currentTarget.id);
-    this.setState({
-      filters: {
-        ...this.state.filters,
-        [filter]: value
-      },
-      loadedCards: 40
-    });
+    const {filters} = this.state;
+
+    updateFilters(state => this.setState(state), filters, filter, value);
   };
 
   render() {
-    const {filters} = this.props;
+    const {filters} = this.state;
+    console.log(filters)
     return (
       <div className="container__page container__page--twoSided cards">
         <div className="container__page--inner  container__page--left">
           <h3 className="sidebar__header">Filters</h3>
-          {/*<Sidebar cards={cards}*/}
-          {/*query={query}/>*/}
+          <Sidebar filters={filters} handleFilterClick={this.handleFilterClick} />
         </div>
         <div className="container__page--inner container__page--right">
-          <Topbar filters={this.props} handleFilterClick={this.handleFilterClick}/>
+          <Topbar filters={filters} handleFilterClick={this.handleFilterClick}/>
           <div className="content">
             <ul className="container__cards">
               {mapCards(this.props, this.state)}

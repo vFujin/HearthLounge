@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import _ from 'lodash';
 import {icon_filters} from '../../../globals/filters';
-import {removeQuery} from '../../../utils/utils-router';
 import Icon from "../../../components/icon";
 
 const IconFilter = ({handleClick, filter, header, header_label, isStandard, filters, wrapper_class}) => {
@@ -24,7 +23,7 @@ const IconFilter = ({handleClick, filter, header, header_label, isStandard, filt
             onClick={handleClick}>
           <Icon name={icon.url}
                 type={iconType()}
-                className={`${icon.url} ${filters[filter] === icon.name ? 'active' : ''}`}
+                className={`${icon.url} ${_.toLower(_.kebabCase(filters[filter])) === _.toLower(_.kebabCase(icon.name)) ? 'active' : ''}`}
                 tooltip={true}/>
         </li>
       ))
@@ -37,8 +36,7 @@ const IconFilter = ({handleClick, filter, header, header_label, isStandard, filt
         <div className="icon-filter-wrapper">
           <h3>
             {header_label}
-            <button onClick={() => removeQuery(filter)} className={`btn-pearl btn-padding-small ${showBtn}`}>x
-              </button>
+            <button className={`btn-pearl btn-padding-small ${showBtn}`}>x</button>
           </h3>
           <ul className={`${wrapper_class} ${filter}`}>
             {listIcons()}
