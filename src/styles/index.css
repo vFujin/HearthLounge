@@ -544,12 +544,6 @@ a {
         grid-template-columns: 20vw 40vw 20vw; }
       #container .container__page .container__page--right .topbar__grid.topbar__grid--3-4-1 {
         grid-template-columns: 30vw 40vw 10vw; }
-    #container .container__page .content .container__cards {
-      display: grid;
-      grid-template-columns: repeat(7, 11vw);
-      grid-column-gap: .4vh; }
-      #container .container__page .content .container__cards .loading-wrapper {
-        grid-column-start: 4; }
     #container .container__page .content .container__details {
       display: grid;
       grid-template-columns: repeat(2, calc(50% - 1vh));
@@ -4808,6 +4802,8 @@ card {
             line-height: 50px; }
   .container__page .container__page--right .topbar {
     background-color: #A69E9D; }
+    .container__page .container__page--right .topbar .cost li span.active {
+      color: darkblue; }
     .container__page .container__page--right .topbar.has-icons {
       cursor: pointer;
       position: relative; }
@@ -4857,7 +4853,8 @@ card {
   .container__page .container__page--right .content {
     position: relative;
     margin: 1vh 1vh 0 1vh;
-    overflow: auto; }
+    overflow-y: auto;
+    overflow-x: hidden; }
     .container__page .container__page--right .content::-webkit-scrollbar {
       width: 13px; }
     .container__page .container__page--right .content::-webkit-scrollbar-thumb {
@@ -4873,10 +4870,14 @@ card {
       padding-right: 1vh; }
     .container__page .container__page--right .content .container__cards {
       justify-content: center;
-      height: 100%; }
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap; }
       .container__page .container__page--right .content .container__cards li {
         cursor: pointer;
-        position: relative; }
+        position: relative;
+        overflow: hidden;
+        width: calc(100% / 8); }
         .container__page .container__page--right .content .container__cards li .tooltip-count {
           position: absolute;
           padding: .5vh;
@@ -4886,33 +4887,20 @@ card {
             background-color: #474143;
             color: #E7E2DA;
             padding: .5vh 1vh; }
-        .container__page .container__page--right .content .container__cards li .img-wrapper:before {
-          -webkit-transition: all ease 0.4s;
-          -moz-transition: all ease 0.4s;
-          transition: all ease 0.4s;
-          background: url(http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png) center center no-repeat;
-          background-size: contain;
-          content: '';
-          position: absolute;
-          height: 75%;
-          top: 15%;
-          width: 81%;
-          left: 1vw;
-          z-index: 1;
-          opacity: 1; }
-        .container__page .container__page--right .content .container__cards li .img-wrapper img {
+        .container__page .container__page--right .content .container__cards li img {
           position: relative;
           z-index: 2;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
           transition: all ease 0.4s;
-          width: 100%; }
-          .container__page .container__page--right .content .container__cards li .img-wrapper img.choosen {
+          width: 100%;
+          top: -20px; }
+          .container__page .container__page--right .content .container__cards li img.choosen {
             opacity: .3; }
-          .container__page .container__page--right .content .container__cards li .img-wrapper img.disabled {
+          .container__page .container__page--right .content .container__cards li img.disabled {
             background: rgba(255, 0, 0, 0.3);
             cursor: not-allowed; }
-          .container__page .container__page--right .content .container__cards li .img-wrapper img.choosen.disabled {
+          .container__page .container__page--right .content .container__cards li img.choosen.disabled {
             background: transparent;
             cursor: pointer; }
         .container__page .container__page--right .content .container__cards li.choosen .img-wrapper:before {

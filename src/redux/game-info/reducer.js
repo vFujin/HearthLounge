@@ -1,23 +1,23 @@
 import * as types from "./types";
 
 const initialState = {
-  current: null
+  loading: false
 };
 
 export default function(state=initialState, {type, payload}) {
   switch (type) {
-    case types.FETCH_PATCH_REQUEST:
+    case types.FETCH_GAME_INFO_REQUEST:
       return {
         ...state,
         loading: true
       };
-    case types.FETCH_PATCH_SUCCESS:
+    case types.FETCH_GAME_INFO_SUCCESS:
       return {
         ...state,
         loading: false,
-        current: payload
+        ...payload
       };
-    case types.FETCH_PATCH_FAILURE:
+    case types.FETCH_GAME_INFO_FAILURE:
       return {
         ...state,
         loading: false,

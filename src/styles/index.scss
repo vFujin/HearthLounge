@@ -608,6 +608,15 @@ card{
   .container__page--right {
     .topbar{
       background-color: $light-grey;
+      .cost{
+        li{
+          span{
+            &.active{
+              color: darkblue;
+            }
+          }
+        }
+      }
       &.has-icons {
         cursor: pointer;
         position: relative;
@@ -672,13 +681,18 @@ card{
       &.scrollable{
         padding-right: 1vh;
       }
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
       .container__cards{
         justify-content: center;
         height:100%;
+        display: flex;
+        flex-wrap: wrap;
         li{
           cursor: pointer;
           position: relative;
+          overflow: hidden;
+          width: calc(100% / 8);
           .tooltip-count{
             position: absolute;
             padding: .5vh;
@@ -693,7 +707,7 @@ card{
           .img-wrapper {
             &:before {
               @include transition(all ease .4s);
-              background: url(http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png) center center no-repeat;
+              background: url('http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png') center center no-repeat;
               background-size: contain;
               content: '';
               position: absolute;
@@ -704,23 +718,24 @@ card{
               z-index: 1;
               opacity: 1;
             }
-            img {
-              position: relative;
-              z-index: 2;
-              @include transition(all ease .4s);
-              width: 100%;
-              &.choosen {
-                opacity: .3;
-              }
-              &.disabled {
-                background: rgba(255, 0, 0, .3);
-                cursor: not-allowed;
-              }
-              &.choosen.disabled {
-                background: transparent;
-                cursor: pointer;
-              }
-
+          }
+          img {
+            position: relative;
+            z-index: 2;
+            @include transition(all ease .4s);
+            width: 100%;
+            top: -20px;
+            //transform: scale(0.80);
+            &.choosen {
+              opacity: .3;
+            }
+            &.disabled {
+              background: rgba(255, 0, 0, .3);
+              cursor: not-allowed;
+            }
+            &.choosen.disabled {
+              background: transparent;
+              cursor: pointer;
             }
           }
           &.choosen{

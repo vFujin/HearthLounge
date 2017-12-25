@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
-import patch from '../patch/reducer';
+import info from '../game-info/reducer';
 import entry from './entry/entry'
 import activeUser from './users';
 import cards from '../cards/reducer';
@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
   home: combineReducers({
     hotDecks
   }),
-  patch,
+  info,
   entry,
   users: combineReducers({
     activeUser,

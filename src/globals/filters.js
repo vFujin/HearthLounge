@@ -202,16 +202,8 @@ export const icon_filters = {
       url: 6
     },
     {
-      name: '7',
+      name: '7-plus',
       url: 7
-    },
-    {
-      name: '8',
-      url: 8
-    },
-    {
-      name: '10',
-      url: 10
     }
   ],
   mode: [

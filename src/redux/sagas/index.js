@@ -1,5 +1,5 @@
 import {all} from 'redux-saga/effects';
-import {watchPatch} from "../patch/saga";
+import {watchGameInfo} from "../game-info/saga";
 import {watchRedditPosts} from "../reddit/posts/saga";
 import {watchFirebaseSignIn} from "./firebase/user/utils/sign-in.saga";
 import {watchFirebaseSignOut} from "./firebase/user/utils/sign-out.saga";
@@ -25,7 +25,7 @@ import {watchDeckDeletion} from "../deck/delete-deck/saga";
 export default function* rootSaga() {
   yield all([
     //App
-    watchPatch(),
+    watchGameInfo(),
     watchCards(),
     //Home
     watchHotDecks(),

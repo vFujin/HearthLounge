@@ -33,10 +33,6 @@ export default function(state=initialState, {type, payload}) {
           error: payload
         }
       };
-      case types.CARDS_LOADED: return {
-          ...state,
-        cardsLoaded: payload
-      };
 
     default:
       return state;

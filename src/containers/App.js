@@ -5,7 +5,6 @@ import {Switch, Route, Redirect} from 'react-router';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
-import {FETCH_PATCH_REQUEST} from "../redux/patch/types";
 import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/types/firebase";
 import * as types from "../redux/cards/types";
 import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
@@ -29,6 +28,7 @@ import 'antd/lib/dropdown/style/css';
 import 'antd/lib/popover/style/css';
 import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
+import {fetchGameInfoRequest} from "../redux/game-info/actions";
 
 class Main extends Component{
   handleSignOut = () =>{
@@ -37,9 +37,9 @@ class Main extends Component{
   };
 
   componentDidMount() {
-    const {updateCurrentPatch, updateCards, updateActiveUser} = this.props;
+    const {updateGameInfo, updateCards, updateActiveUser} = this.props;
     getActiveUser((authenticated, data) => updateActiveUser({authenticated, ...data}));
-    updateCurrentPatch();
+    updateGameInfo();
     updateCards();
   }
 
@@ -86,16 +86,15 @@ class Main extends Component{
 }
 
 const mapStateToProps = state =>{
-  const {current} = state.patch;
   const {activeUser} = state.users;
   const {playerClass} = state.deckCreation;
   const {authenticated} = activeUser;
-  return {current, authenticated, activeUser, playerClass};
+  return {authenticated, activeUser, playerClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateCurrentPatch: () => dispatch({type: FETCH_PATCH_REQUEST}),
+    updateGameInfo: () => dispatch(fetchGameInfoRequest()),
     updateCards: () => dispatch({type: types.FETCH_CARDS_REQUEST}),
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser

@@ -5,11 +5,7 @@ import {icon_filters} from '../../../globals/filters';
 import {removeQuery} from '../../../utils/utils-router';
 import Icon from "../../../components/icon";
 
-const IconFilter = ({filter, header, header_label, isStandard, query, wrapper_class}) => {
-  const queries = (icon_url) =>{
-    return Object.assign({}, query, {[filter]: icon_url});
-  };
-
+const IconFilter = ({handleClick, filter, header, header_label, isStandard, filters, wrapper_class}) => {
   const iconType = () =>{
     switch(filter){
       case 'cost': return 'mana';
@@ -19,31 +15,29 @@ const IconFilter = ({filter, header, header_label, isStandard, query, wrapper_cl
     }
   };
 
-  const listIcons = () =>{
+  const listIcons = () => {
     return (
       icon_filters[filter].filter(icon => icon.isStandard === isStandard).map((icon, index) =>
-        <li key={index} id={icon.url}>
-          <Link className={`icon-tooltip-wrapper`} to={{pathname: 'cards', query: queries(icon.name)}}>
-            <Icon id={`${filter}-set`}
-                  name={icon.url}
-                  type={iconType()}
-                  className={`${icon.url} ${query[filter] === icon.name ? 'active' : ''}`}
-                  tooltip={true}/>
-          </Link>
+        <li key={index}
+            id={icon.url}
+            data-filter={filter}
+            onClick={handleClick}>
+          <Icon name={icon.url}
+                type={iconType()}
+                className={`${icon.url} ${filters[filter] === icon.name ? 'active' : ''}`}
+                tooltip={true}/>
         </li>
       ))
   };
 
   const showHeader = () =>{
     if(header === true && filter !== null) {
-      let showBtn = query[filter] ? 'display-block' : 'display-none';
+      let showBtn = filters[filter] ? 'display-block' : 'display-none';
       return (
         <div className="icon-filter-wrapper">
           <h3>
             {header_label}
-            <button onClick={() => removeQuery(filter)} className={`btn-pearl btn-padding-small ${showBtn}`}>
-              {/*<Link className={`icon-tooltip-wrapper`} to={{pathname: 'cards', query: this.queries(icon.name)}}>x</Link>*/}
-            x
+            <button onClick={() => removeQuery(filter)} className={`btn-pearl btn-padding-small ${showBtn}`}>x
               </button>
           </h3>
           <ul className={`${wrapper_class} ${filter}`}>
@@ -69,8 +63,9 @@ IconFilter.propTypes = {
   header: PropTypes.bool.isRequired,
   header_label: PropTypes.string,
   filter: PropTypes.string.isRequired,
-  query: PropTypes.object.isRequired,
+  filters: PropTypes.object.isRequired,
   wrapper_class: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
   isStandard: PropTypes.bool,
 };
 
