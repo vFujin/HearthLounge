@@ -5,12 +5,13 @@ import Card from "../assets/card";
 
 export const matchFilteredCards = (filters, card) =>{
   const filterObj = Object.entries(filters);
-
   if (filterObj.length > 0) {
     return filterObj.every(filter => {
       const filterKey = filter[0],
             filterValue = filter[1];
-
+      if(filterValue.constructor === Array && filterValue.every(element => typeof element === 'number')){
+          return card[filterKey] && (card[filterKey] >= filterValue[0] && card[filterKey] <= filterValue[1]);
+      }
       return _.kebabCase(_.toLower(card[filterKey])) == _.kebabCase(_.toLower(filterValue));
     });
   }

@@ -21,7 +21,7 @@ class ComponentCards extends Component {
     lazyloadCards('.content', loadedCards => this.setState({loadedCards}));
   }
 
-  handleFilterClick = (e) =>{
+  handleIconClick = (e) =>{
     document.querySelector('.content').scrollTop = 0;
     const filter = e.currentTarget.dataset.filter;
     const value = _.kebabCase(e.currentTarget.id);
@@ -30,17 +30,24 @@ class ComponentCards extends Component {
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
+  handleSliderClick = (value, filter) =>{
+    const {filters} = this.state;
+    updateFilters(state => this.setState(state), filters, filter, value);
+  };
+
   render() {
     const {filters} = this.state;
-
+    console.log(filters);
     return (
       <div className="container__page container__page--twoSided cards">
         <div className="container__page--inner  container__page--left">
           <h3 className="sidebar__header">Filters</h3>
-          <Sidebar filters={filters} handleFilterClick={this.handleFilterClick} />
+          <Sidebar filters={filters}
+                   handleSliderClick={this.handleSliderClick}
+                   handleIconClick={this.handleIconClick} />
         </div>
         <div className="container__page--inner container__page--right">
-          <Topbar filters={filters} handleFilterClick={this.handleFilterClick}/>
+          <Topbar filters={filters} handleIconClick={this.handleIconClick}/>
           <div className="content">
             <ul className="container__cards">
               {mapCards(this.props, this.state)}

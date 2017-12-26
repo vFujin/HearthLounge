@@ -4,7 +4,7 @@ import _ from 'lodash';
 import {icon_filters} from '../../../globals/filters';
 import Icon from "../../../components/icon";
 
-const IconFilter = ({handleClick, filter, header, header_label, isStandard, filters, wrapper_class}) => {
+const IconFilter = ({handleIconClick, filter, header, header_label, isStandard, filters, wrapper_class}) => {
   const iconType = () =>{
     switch(filter){
       case 'cost': return 'mana';
@@ -27,7 +27,7 @@ const IconFilter = ({handleClick, filter, header, header_label, isStandard, filt
         <li key={index}
             id={icon.url}
             data-filter={filter}
-            onClick={handleClick}>
+            onClick={handleIconClick}>
 
           <Icon name={icon.url}
                 type={iconType()}
@@ -71,7 +71,7 @@ IconFilter.propTypes = {
   filter: PropTypes.string.isRequired,
   filters: PropTypes.object.isRequired,
   wrapper_class: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  handleIconClick: PropTypes.func.isRequired,
   isStandard: PropTypes.bool,
 };
 

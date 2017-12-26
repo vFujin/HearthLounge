@@ -6,21 +6,15 @@ import {Link} from 'react-router-dom';
 import {addQuery} from '../../../utils/utils-router';
 import 'antd/lib/slider/style/css';
 
-const SliderFilter = props => {
-  const {defaultValue, marks, max, filter, query} = props;
+const SliderFilter = ({defaultValue, marks, max, filter, filters, handleSliderClick}) => {
 
   const queries = attr =>{
-    return Object.assign({}, query, {[filter]: attr});
+    return Object.assign({}, filters, {[filter]: attr});
   };
 
   const checkHealthProp = () => {
-    if (filter in query) return true;
+    if (filter in filters) return true;
   };
-
-  function x(values){
-    let z = values;
-    addQuery(queries(z))
-  }
 
   return (
       <div className="slider-filter-wrapper">
@@ -32,7 +26,7 @@ const SliderFilter = props => {
             </Link>
           </Tooltip>
         </div>
-        <Slider range marks={marks} defaultValue={defaultValue} max={max} onChange={x}/>
+        <Slider range marks={marks} defaultValue={defaultValue} max={max} onAfterChange={(e)=>handleSliderClick(e, filter)}/>
       </div>
   );
 };
