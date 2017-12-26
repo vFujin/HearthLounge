@@ -5,49 +5,42 @@ import {addQuery, removeQuery} from '../../../utils/utils-router';
 import 'antd/lib/select/style/css';
 import Loader from "../../../components/loaders/loader";
 
-const InputFilter = ({data, dataLoading, filter, multiple, query}) => {
+const InputFilter = ({cards, filter, multiple, filters, handleInputChange}) => {
   const Option = Select.Option;
+  const cardsArrayIsArray = cards.constructor === Array;
+  const options = cardsArrayIsArray && cards.map(card=> (
+      <Option instancePrefix={card.dbfId} optionIndex={card.dbfId} option={card.name} value={card.name} key={card.dbfId}>{card.name}</Option>
+  ));
 
-  const getUniqueAttributes = (filter) => {
-    if(!dataLoading) {
-      let initialFiltering = data.filter(x => x[filter]).map(x => x[filter]);
-      switch (filter) {
-        case 'name':
-        case 'faction':
-        case 'race':
-        case 'cardSet':
-        case 'type':
-          return initialFiltering.map(x => x).filter((x, i, a) => a.indexOf(x) === i);
-        case 'cost':
-          return data.filter(x => x.cost).map(x => x.cost).filter((x, i, a) => a.indexOf(x) === i);
-        case 'mechanics':
-          return initialFiltering.reduce((a, b) => a.concat(b)).map(x => x.name).filter((x, i, a) => a.indexOf(x) === i);
+  const placeholder = () => {
+    if (cards.length === 0) {
+      return <Loader theme="light" sideLength={10}/>;
+    }
+
+    else if(!cardsArrayIsArray){
+      return cards.error;
+    }
+    else {
+      const length = 3;
+      const placeholder = cardsArrayIsArray && cards.slice(0, length).map(card => card.name).join(", ");
+      if (cardsArrayIsArray && cards.length <= length) {
+        return placeholder;
       }
+      return `${placeholder}...`;
     }
   };
 
-  const queries = attr =>{
-    return Object.assign({}, query, {[filter]: attr});
-  };
-
-  const options = dataLoading ? null : getUniqueAttributes(filter).map(a=> (
-      <Option instancePrefix={a} optionIndex={a} option={a} value={a} key={a}>{a}</Option>
-  ));
-
-
-  const placeholder = dataLoading ? "Loading" : getUniqueAttributes(filter).slice(0,3).map(x=>x).join(", ").toLowerCase();
   return (
       <div className="input-filter-wrapper">
         <h4>{filter}</h4>
-        <Select mode={multiple ? "multiple" : null}
-                showSearch={multiple === false ? true : false}
-                allowClear={multiple === false ? true : false}
+        <Select mode={multiple && "multiple"}
+                showSearch={!multiple}
+                allowClear={!multiple}
                 style={{width: "100%"}}
-                notFoundContent={dataLoading ? <Loader/> : null}
-                placeholder={`${placeholder}...`}
-                onChange={(e)=>addQuery(queries(e))}
-                onDeselect={()=>removeQuery(filter)}
-                value={query[filter]}>
+                notFoundContent={cards.error}
+                placeholder={placeholder()}
+                onChange={(e)=>handleInputChange(e, filter)}
+                value={filters[filter]}>
           {options}
         </Select>
       </div>

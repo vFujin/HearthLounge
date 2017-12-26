@@ -5,12 +5,12 @@ import IconFilter from '../../../containers/shared-assets/filters/icon-filter';
 import InputFilter from '../../../containers/shared-assets/filters/input-filter';
 import SliderFilter from '../../../containers/shared-assets/filters/slider-filter';
 
-const Sidebar = ({cards, filters, handleSliderClick, handleIconClick}) => {
+const Sidebar = ({cards, filters, handleInputChange, handleSliderClick, handleIconClick}) => {
 
   return (
     <div className="sidebar__body">
-      {/*<InputFilter data={cards.allCards} dataLoading={cards.loading} filter="name"      query={query} multiple={false}/>*/}
-      {/*<InputFilter data={cards.allCards} dataLoading={cards.loading} filter="race"      query={query} multiple={true}/>*/}
+      <InputFilter cards={cards} filter="name"  filters={filters} multiple={false} handleInputChange={handleInputChange}/>
+      {/*<InputFilter cards={cards} filter="race"  filters={filters} multiple={true} handleInputChange={handleInputChange}/>*/}
       {/*<InputFilter data={cards.allCards} dataLoading={cards.loading} filter="mechanics" query={query} multiple={true}/>*/}
       {/*<InputFilter data={cards.allCards} dataLoading={cards.loading} filter="faction"   query={query} multiple={true}/>*/}
       {/*<InputFilter data={cards.allCards} dataLoading={cards.loading} filter="type"      query={query} multiple={true}/>*/}

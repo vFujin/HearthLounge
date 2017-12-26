@@ -9,7 +9,7 @@ export const matchFilteredCards = (filters, card) =>{
     return filterObj.every(filter => {
       const filterKey = filter[0],
             filterValue = filter[1];
-      if(filterValue.constructor === Array && filterValue.every(element => typeof element === 'number')){
+      if(filterValue && (filterValue.constructor === Array && filterValue.every(element => typeof element === 'number'))){
           return card[filterKey] && (card[filterKey] >= filterValue[0] && card[filterKey] <= filterValue[1]);
       }
       return _.kebabCase(_.toLower(card[filterKey])) == _.kebabCase(_.toLower(filterValue));
@@ -34,19 +34,33 @@ export const filterCards = (props, state) => {
   return filteredCardsByMode(info, cards, mode)
     .slice(9)
     .filter(card => matchFilteredCards(filters, card))
-    .slice(0, loadedCards)
-    .map(card => <Card key={card.dbfId} card={card}/>);
+    .slice(0, loadedCards);
+};
+
+export const mapInputCards = (props, state) => {
+  const {cards} = props;
+  const {cardNotFound} = state;
+  if (cards.loading) {
+    return []
+  } else {
+    const filteredCards = filterCards(props, state);
+    if(filteredCards.length === 0){
+      return {error: cardNotFound};
+    }
+    return filteredCards;
+  }
 };
 
 export const mapCards = (props, state) => {
   const {cards} = props;
+  const {cardNotFound} = state;
 
   if (cards.loading) {
     return <Loader/>
   } else {
-    const filteredCards = filterCards(props, state);
+    const filteredCards = filterCards(props, state).map(card => <Card key={card.dbfId} card={card}/>);
     if(filteredCards.length === 0){
-      return <div>Couldn't find cards that match your query</div>
+      return <div>{cardNotFound}</div>
     }
     return filteredCards;
   }
