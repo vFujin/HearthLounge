@@ -21,7 +21,7 @@ const Sidebar = ({cards, filters, handleFilterClick}) => {
 
       <IconFilter header={true} header_label="standard sets" filter="cardSet"         filters={filters} wrapper_class="sidebar-icons" isStandard={true} handleClick={handleFilterClick}/>
       {
-        filters.cardSet === "Mean Streets Of Gadgetzan"
+        filters.cardSet === "mean-streets-of-gadgetzan"
           ? <IconFilter header={true} header_label="Family"        filter="multiClassGroup" filters={filters} wrapper_class="sidebar-icons" handleClick={handleFilterClick}/>
           : null
       }

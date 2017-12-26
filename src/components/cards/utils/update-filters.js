@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 export const updateFilters = (action, filters, filter, value) =>{
-  const msog = "Mean Streets Of Gadgetzan";
+  const msog = "mean-streets-of-gadgetzan";
   const multiClassGroup = 'multiClassGroup';
 
   if(filter === "cardSet" && value !== msog && filters.multiClassGroup){

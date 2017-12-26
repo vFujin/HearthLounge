@@ -9,9 +9,9 @@ export const matchFilteredCards = (filters, card) =>{
   if (filterObj.length > 0) {
     return filterObj.every(filter => {
       const filterKey = filter[0],
-        filterValue = filter[1];
+            filterValue = filter[1];
 
-      return _.toLower(card[filterKey]) == _.toLower(filterValue);
+      return _.kebabCase(_.toLower(card[filterKey])) == _.kebabCase(_.toLower(filterValue));
     });
   }
   return card;
@@ -34,7 +34,7 @@ export const filterCards = (props, state) => {
     .slice(9)
     .filter(card => matchFilteredCards(filters, card))
     .slice(0, loadedCards)
-    .map(card => <Card card={card}/>);
+    .map(card => <Card key={card.dbfId} card={card}/>);
 };
 
 export const mapCards = (props, state) => {

@@ -427,7 +427,7 @@ a {
 .icon-the-grand-tournament:before {
   content: "\e939"; }
 
-.icon-kobolds-and-catacombs:before {
+.icon-kobolds-catacombs:before {
   content: "\e93a"; }
 
 .icon-knights-of-the-frozen-throne:before {
@@ -2239,74 +2239,74 @@ a {
     color: black;
     border-left: 4px solid #a5f2f3; }
 
-.kobolds-and-catacombs {
+.kobolds-catacombs {
   color: #ffd989; }
-  .kobolds-and-catacombs span {
+  .kobolds-catacombs span {
     border-color: #ffd989; }
-  .kobolds-and-catacombs:hover {
+  .kobolds-catacombs:hover {
     background-color: #ffd989;
     color: #474143; }
-    .kobolds-and-catacombs:hover span {
+    .kobolds-catacombs:hover span {
       border-color: #474143; }
-  .kobolds-and-catacombs.active {
+  .kobolds-catacombs.active {
     background-color: #ffd989;
     color: #474143;
     border-color: #ffd989; }
-  .kobolds-and-catacombs.active-without-background {
+  .kobolds-catacombs.active-without-background {
     color: #ffd989 !important;
     background-color: transparent; }
-  .kobolds-and-catacombs.active-shadow {
+  .kobolds-catacombs.active-shadow {
     color: #474143;
     background: #ffd989;
     -webkit-transition: all ease 0.4s;
     -moz-transition: all ease 0.4s;
     transition: all ease 0.4s; }
-    .kobolds-and-catacombs.active-shadow:hover {
+    .kobolds-catacombs.active-shadow:hover {
       color: black;
       background: #ffd170;
       -webkit-box-shadow: 0 0 10px #ffd989;
       -moz-box-shadow: 0 0 10px #ffd989;
       box-shadow: 0 0 10px #ffd989; }
-  .kobolds-and-catacombs.active-on-hover {
+  .kobolds-catacombs.active-on-hover {
     color: #474143; }
-    .kobolds-and-catacombs.active-on-hover:hover {
+    .kobolds-catacombs.active-on-hover:hover {
       background-color: #ffd989;
       color: #474143;
       border: #474143; }
-  .kobolds-and-catacombs.active-border {
+  .kobolds-catacombs.active-border {
     border: 1px solid #ffd989;
     color: #474143;
     background: transparent; }
-  .kobolds-and-catacombs.icon-font-active {
+  .kobolds-catacombs.icon-font-active {
     color: #474143; }
-  .kobolds-and-catacombs.in-text:hover {
+  .kobolds-catacombs.in-text:hover {
     background: transparent;
     color: #ffd989; }
-  .kobolds-and-catacombs.table-row {
+  .kobolds-catacombs.table-row {
     color: #474143; }
-    .kobolds-and-catacombs.table-row:nth-child(odd) {
+    .kobolds-catacombs.table-row:nth-child(odd) {
       background-color: rgba(0, 0, 0, 0.1); }
-      .kobolds-and-catacombs.table-row:nth-child(odd):hover {
+      .kobolds-catacombs.table-row:nth-child(odd):hover {
         background: #ffd989; }
-    .kobolds-and-catacombs.table-row:hover {
+    .kobolds-catacombs.table-row:hover {
       background-color: #ffd989;
       color: #474143;
       border: #474143; }
-  .kobolds-and-catacombs.blizzard-official {
+  .kobolds-catacombs.blizzard-official {
     background-color: #ffd989;
     color: #000; }
-  .kobolds-and-catacombs.gradient {
+  .kobolds-catacombs.gradient {
     background: -moz-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 15%);
     background: -webkit-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 15%);
     background: linear-gradient(to right, rgba(255, 217, 137, 0.4) 0%, transparent 15%);
     color: black;
     background-attachment: fixed;
     border-left: 10px solid #ffd989; }
-  .kobolds-and-catacombs.gradient-linear-top {
+  .kobolds-catacombs.gradient-linear-top {
     background: -moz-linear-gradient(top, #ffb823, #ffd989);
     background: -webkit-linear-gradient(top, #ffb823, #ffd989);
     background: linear-gradient(to top, #ffb823, #ffd989); }
-  .kobolds-and-catacombs.gradient-full {
+  .kobolds-catacombs.gradient-full {
     background: -moz-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
     background: -webkit-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
@@ -2767,6 +2767,80 @@ a {
     background: linear-gradient(to right, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #695840; }
+
+.grimy-goons, .jade-lotus, .kabal {
+  color: #ecbf42; }
+  .grimy-goons span, .jade-lotus span, .kabal span {
+    border-color: #ecbf42; }
+  .grimy-goons:hover, .jade-lotus:hover, .kabal:hover {
+    background-color: #ecbf42;
+    color: #474143; }
+    .grimy-goons:hover span, .jade-lotus:hover span, .kabal:hover span {
+      border-color: #474143; }
+  .grimy-goons.active, .jade-lotus.active, .kabal.active {
+    background-color: #ecbf42;
+    color: #474143;
+    border-color: #ecbf42; }
+  .grimy-goons.active-without-background, .jade-lotus.active-without-background, .kabal.active-without-background {
+    color: #ecbf42 !important;
+    background-color: transparent; }
+  .grimy-goons.active-shadow, .jade-lotus.active-shadow, .kabal.active-shadow {
+    color: #474143;
+    background: #ecbf42;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .grimy-goons.active-shadow:hover, .jade-lotus.active-shadow:hover, .kabal.active-shadow:hover {
+      color: black;
+      background: #eab72b;
+      -webkit-box-shadow: 0 0 10px #ecbf42;
+      -moz-box-shadow: 0 0 10px #ecbf42;
+      box-shadow: 0 0 10px #ecbf42; }
+  .grimy-goons.active-on-hover, .jade-lotus.active-on-hover, .kabal.active-on-hover {
+    color: #474143; }
+    .grimy-goons.active-on-hover:hover, .jade-lotus.active-on-hover:hover, .kabal.active-on-hover:hover {
+      background-color: #ecbf42;
+      color: #474143;
+      border: #474143; }
+  .grimy-goons.active-border, .jade-lotus.active-border, .kabal.active-border {
+    border: 1px solid #ecbf42;
+    color: #474143;
+    background: transparent; }
+  .grimy-goons.icon-font-active, .jade-lotus.icon-font-active, .kabal.icon-font-active {
+    color: #474143; }
+  .grimy-goons.in-text:hover, .jade-lotus.in-text:hover, .kabal.in-text:hover {
+    background: transparent;
+    color: #ecbf42; }
+  .grimy-goons.table-row, .jade-lotus.table-row, .kabal.table-row {
+    color: #474143; }
+    .grimy-goons.table-row:nth-child(odd), .jade-lotus.table-row:nth-child(odd), .kabal.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .grimy-goons.table-row:nth-child(odd):hover, .jade-lotus.table-row:nth-child(odd):hover, .kabal.table-row:nth-child(odd):hover {
+        background: #ecbf42; }
+    .grimy-goons.table-row:hover, .jade-lotus.table-row:hover, .kabal.table-row:hover {
+      background-color: #ecbf42;
+      color: #474143;
+      border: #474143; }
+  .grimy-goons.blizzard-official, .jade-lotus.blizzard-official, .kabal.blizzard-official {
+    background-color: #ecbf42;
+    color: #000; }
+  .grimy-goons.gradient, .jade-lotus.gradient, .kabal.gradient {
+    background: -moz-linear-gradient(left, rgba(236, 191, 66, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(236, 191, 66, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(236, 191, 66, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #ecbf42; }
+  .grimy-goons.gradient-linear-top, .jade-lotus.gradient-linear-top, .kabal.gradient-linear-top {
+    background: -moz-linear-gradient(top, #b68a12, #ecbf42);
+    background: -webkit-linear-gradient(top, #b68a12, #ecbf42);
+    background: linear-gradient(to top, #b68a12, #ecbf42); }
+  .grimy-goons.gradient-full, .jade-lotus.gradient-full, .kabal.gradient-full {
+    background: -moz-linear-gradient(left, rgba(236, 191, 66, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(236, 191, 66, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(236, 191, 66, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #ecbf42; }
 
 @keyframes linearKeyframes {
   0% {
@@ -4872,7 +4946,9 @@ card {
       justify-content: center;
       height: 100%;
       display: flex;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center; }
       .container__page .container__page--right .content .container__cards li {
         cursor: pointer;
         position: relative;
@@ -4887,14 +4963,26 @@ card {
             background-color: #474143;
             color: #E7E2DA;
             padding: .5vh 1vh; }
+        .container__page .container__page--right .content .container__cards li .img-wrapper {
+          -webkit-transition: all ease 0.4s;
+          -moz-transition: all ease 0.4s;
+          transition: all ease 0.4s;
+          background: url("http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png") center center no-repeat;
+          background-size: contain;
+          position: absolute;
+          height: 75%;
+          top: 15%;
+          width: 100%;
+          left: 0;
+          z-index: 1;
+          opacity: 1; }
         .container__page .container__page--right .content .container__cards li img {
           position: relative;
           z-index: 2;
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
           transition: all ease 0.4s;
-          width: 100%;
-          top: -20px; }
+          width: 100%; }
           .container__page .container__page--right .content .container__cards li img.choosen {
             opacity: .3; }
           .container__page .container__page--right .content .container__cards li img.disabled {

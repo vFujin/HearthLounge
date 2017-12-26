@@ -2,11 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
-import {lazyloadCards} from "./utils/lazyload";
-import {mapCards} from "./utils/map-cards";
+import {lazyloadCards, mapCards, updateFilters} from "./utils";
 import Topbar from "./right-container/topbar";
 import Sidebar from "./left-container/sidebar";
-import {updateFilters} from "./utils/update-filters";
 
 class ComponentCards extends Component {
   constructor(props){
@@ -26,7 +24,7 @@ class ComponentCards extends Component {
   handleFilterClick = (e) =>{
     document.querySelector('.content').scrollTop = 0;
     const filter = e.currentTarget.dataset.filter;
-    const value = _.startCase(e.currentTarget.id);
+    const value = _.kebabCase(e.currentTarget.id);
     const {filters} = this.state;
 
     updateFilters(state => this.setState(state), filters, filter, value);
@@ -34,7 +32,7 @@ class ComponentCards extends Component {
 
   render() {
     const {filters} = this.state;
-    console.log(filters)
+    // console.log(filters)
     return (
       <div className="container__page container__page--twoSided cards">
         <div className="container__page--inner  container__page--left">

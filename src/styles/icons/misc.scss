@@ -31,3 +31,8 @@
 //.expansions, .adventures{
 //  @include icon_color($extensions);
 //}
+
+//Mean Streets of Gadgetzan's Families
+.grimy-goons, .jade-lotus, .kabal{
+  @include icon_color($family);
+}

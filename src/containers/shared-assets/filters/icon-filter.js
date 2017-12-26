@@ -14,6 +14,13 @@ const IconFilter = ({handleClick, filter, header, header_label, isStandard, filt
     }
   };
 
+  const iconName = (name) => {
+    switch(name){
+      case 'one-night-in-karazhan': return 'karazhan';
+      default: return name;
+    }
+  };
+
   const listIcons = () => {
     return (
       icon_filters[filter].filter(icon => icon.isStandard === isStandard).map((icon, index) =>
@@ -21,9 +28,10 @@ const IconFilter = ({handleClick, filter, header, header_label, isStandard, filt
             id={icon.url}
             data-filter={filter}
             onClick={handleClick}>
+
           <Icon name={icon.url}
                 type={iconType()}
-                className={`${icon.url} ${_.toLower(_.kebabCase(filters[filter])) === _.toLower(_.kebabCase(icon.name)) ? 'active' : ''}`}
+                className={`${iconName(icon.url)} ${_.kebabCase(_.toLower(filters[filter])) === _.kebabCase(_.toLower(icon.url)) ? 'active' : ''}`}
                 tooltip={true}/>
         </li>
       ))

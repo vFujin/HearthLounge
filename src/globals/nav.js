@@ -90,7 +90,7 @@ export const navItems = [
       },
       {
         name: "Kobolds & Catacombs",
-        url: "kobolds-and-catacombs"
+        url: "kobolds-catacombs"
       }
     ]
   },

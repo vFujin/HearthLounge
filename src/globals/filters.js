@@ -47,7 +47,7 @@ export const icon_filters = {
     },
     {
       name: 'Karazhan',
-      url: 'karazhan',
+      url: 'one-night-in-karazhan',
       isStandard: true
     },
     {
@@ -82,7 +82,7 @@ export const icon_filters = {
     },
     {
       name: 'Kobolds & Catacombs',
-      url: 'kobolds-and-catacombs',
+      url: 'kobolds-catacombs',
       isStandard: true
     }
   ],
@@ -100,7 +100,7 @@ export const icon_filters = {
       url: 'the-league-of-explorers'
     },
     {
-      name: 'One Night at Karazhan',
+      name: 'One Night in Karazhan',
       url: 'karazhan'
     }
   ],
@@ -169,7 +169,7 @@ export const icon_filters = {
     },
     {
       name: "Kobolds & Catacombs",
-      url: 'kobolds-and-catacombs'
+      url: 'kobolds-catacombs'
     }
   ],
   cost: [

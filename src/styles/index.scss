@@ -688,6 +688,8 @@ card{
         height:100%;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         li{
           cursor: pointer;
           position: relative;
@@ -705,26 +707,22 @@ card{
             }
           }
           .img-wrapper {
-            &:before {
               @include transition(all ease .4s);
               background: url('http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png') center center no-repeat;
               background-size: contain;
-              content: '';
               position: absolute;
               height: 75%;
               top: 15%;
-              width: 81%;
-              left: 1vw;
+              width: 100%;
+              left: 0;
               z-index: 1;
               opacity: 1;
-            }
           }
           img {
             position: relative;
             z-index: 2;
             @include transition(all ease .4s);
             width: 100%;
-            top: -20px;
             //transform: scale(0.80);
             &.choosen {
               opacity: .3;

@@ -285,7 +285,7 @@ export const expansion_details = [
   },
   {
     expansion: 'Kobolds & Catacombs',
-    url: 'kobolds-and-catacombs',
+    url: 'kobolds-catacombs',
     overview: {
       about: {
         announce_date: '03.11.2017',
