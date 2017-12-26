@@ -32,7 +32,7 @@ class ComponentCards extends Component {
 
   render() {
     const {filters} = this.state;
-    // console.log(filters)
+
     return (
       <div className="container__page container__page--twoSided cards">
         <div className="container__page--inner  container__page--left">

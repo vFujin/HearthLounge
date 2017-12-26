@@ -24,6 +24,10 @@
   &.active-without-background{
     color: $color !important;
     background-color: transparent;
+    &:hover, &.active{
+      color: $light-grey !important;
+      background-color: $color;
+    }
   }
 
   &.active-shadow{

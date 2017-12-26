@@ -56,13 +56,19 @@ const selectType = (
     return icon("redirect")
   };
 
+
   let icon = (name) => {
-    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-${name} ${className}`}></span>;
+    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-${_.toLower(name)} ${className}`}></span>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 
   let manaIcon = (name) => {
-    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-mana-${name} ${className}`}></span>;
+    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-mana-${_.toLower(name)} ${className}`}></span>;
+    return tooltip ? iconWrapper(icon) : icon;
+  };
+
+  let rarityIcon = () => {
+    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-rarity active-without-background ${_.toLower(className)}`}></span>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 
@@ -70,6 +76,7 @@ const selectType = (
     case 'set': return icon(validateSet(iconName));
     case 'mode': return icon(validateMode);
     case 'mana': return manaIcon(iconName);
+    case 'rarity': return rarityIcon(iconName);
     case 'reddit': return redditDomainIcons(domain);
     default: return icon(iconName);
   }

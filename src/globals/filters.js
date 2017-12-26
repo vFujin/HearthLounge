@@ -250,24 +250,24 @@ export const icon_filters = {
   ],
   rarity: [
     {
-      name: 'Free',
-      url: 'rarity'
+      name: 'rarity',
+      url: 'Free'
     },
     {
-      name: 'Common',
-      url: 'rarity'
+      name: 'rarity',
+      url: 'Common'
     },
     {
-      name: 'Rare',
-      url: 'rarity'
+      name: 'rarity',
+      url: 'Rare'
     },
     {
-      name: 'Epic',
-      url: 'rarity'
+      name: 'rarity',
+      url: 'Epic'
     },
     {
-      name: 'Legendary',
-      url: 'rarity'
+      name: 'rarity',
+      url: 'Legendary'
     }
   ]
 };
