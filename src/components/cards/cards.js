@@ -49,14 +49,16 @@ class ComponentCards extends Component {
 
   render() {
     const {filters} = this.state;
-
+    const {info, cards} = this.props;
     console.log(filters);
     return (
       <div className="container__page container__page--twoSided cards">
         <div className="container__page--inner  container__page--left">
           <h3 className="sidebar__header">Filters</h3>
           <Sidebar filters={filters}
+                   info={info}
                    cards={mapInputCards(this.props, this.state)}
+                   allCards={cards}
                    handleInputChange={this.handleInputChange}
                    handleSliderClick={this.handleSliderClick}
                    handleIconClick={this.handleIconClick} />

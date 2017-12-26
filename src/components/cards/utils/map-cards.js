@@ -9,9 +9,21 @@ export const matchFilteredCards = (filters, card) =>{
     return filterObj.every(filter => {
       const filterKey = filter[0],
             filterValue = filter[1];
-      if(filterValue && (filterValue.constructor === Array && filterValue.every(element => typeof element === 'number'))){
-          return card[filterKey] && (card[filterKey] >= filterValue[0] && card[filterKey] <= filterValue[1]);
+
+      if(filterValue && card[filterKey] && filterValue.constructor === Array){
+          if(filterValue.every(element => typeof element === 'number')) {
+            return card[filterKey] >= filterValue[0] && card[filterKey] <= filterValue[1];
+          }
+        if(filterValue.every(element => typeof element === 'string')){
+          return filterValue.includes(card[filterKey]);
+        }
       }
+
+      if(filterKey === "mechanic" && card[`${filterKey}s`]){
+        const mappedCardMechanics = card[`${filterKey}s`].map(mechanic=>mechanic[`name`]);
+        return filterValue.some(mechanic => mappedCardMechanics.includes(mechanic));
+      }
+
       return _.kebabCase(_.toLower(card[filterKey])) == _.kebabCase(_.toLower(filterValue));
     });
   }

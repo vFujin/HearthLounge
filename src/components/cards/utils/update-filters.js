@@ -12,8 +12,9 @@ export const updateFilters = (action, filters, filter, value) =>{
       }
     })
   }
+
   console.log("equals: ", filters[filter], value);
-  if(filters[filter] && (filters[filter] === value || value === undefined)) {
+  if(filters[filter] && (filters[filter] === value || value === undefined || value.length === 0)) {
     if(filter === "cardSet" && value === msog){
       return action({filters: _.omit(filters, [filter, multiClassGroup])})
     }
