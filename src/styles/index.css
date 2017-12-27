@@ -4132,6 +4132,18 @@ button {
     .ant-select .ant-select-selection .ant-select-selection__clear {
       background: #A69E9D;
       color: #474143; }
+    .ant-select .ant-select-selection .zoom-enter.zoom-enter-active {
+      -webkit-animation-name: antZoomInCustom;
+      animation-name: antZoomInCustom;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+      pointer-events: none; }
+    .ant-select .ant-select-selection .zoom-leave.zoom-leave-active {
+      -webkit-animation-name: antZoomOutCustom;
+      animation-name: antZoomOutCustom;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+      pointer-events: none; }
 
 .select-wrapper .ant-select .ant-select-selection {
   border-bottom: 1px solid #A69E9D; }
@@ -4405,6 +4417,24 @@ button {
             height: 100%;
             width: 100%; }
 
+@keyframes antZoomInCustom {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.2) translateZ(0);
+    transform: scale(0.2) translateZ(0);
+    -webkit-backface-visibility: hidden; }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0); } }
+@-webkit-keyframes antZoomOutCustom {
+  0% {
+    -webkit-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.2) translateZ(0);
+    transform: scale(0.2) translateZ(0); } }
 @keyframes linearKeyframes {
   0% {
     background-position: 0; }
@@ -5072,7 +5102,11 @@ card {
           -webkit-transition: all ease 0.4s;
           -moz-transition: all ease 0.4s;
           transition: all ease 0.4s;
-          width: 100%; }
+          width: 100%;
+          -webkit-backface-visibility: hidden;
+          -webkit-transform: translateZ(0);
+          /* Chrome, Safari, Opera */
+          transform: translateZ(0); }
           .container__page .container__page--right .content .container__cards li img.choosen {
             opacity: .3; }
           .container__page .container__page--right .content .container__cards li img.disabled {

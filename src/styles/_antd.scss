@@ -63,6 +63,20 @@
       background: $light-grey;
       color: $dark-grey;
     }
+    .zoom-enter.zoom-enter-active{
+      -webkit-animation-name: antZoomInCustom;
+      animation-name: antZoomInCustom;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+      pointer-events: none;
+    }
+    .zoom-leave.zoom-leave-active{
+      -webkit-animation-name: antZoomOutCustom;
+      animation-name: antZoomOutCustom;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+      pointer-events: none;
+    }
   }
 }
 .select-wrapper{
@@ -438,5 +452,30 @@
         }
       }
     }
+  }
+}
+
+@keyframes antZoomInCustom {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.2) translateZ(0);
+    transform: scale(0.2) translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+  }
+}
+@-webkit-keyframes antZoomOutCustom {
+  0% {
+    -webkit-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.2) translateZ(0);
+    transform: scale(0.2) translateZ(0);
   }
 }

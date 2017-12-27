@@ -19,13 +19,13 @@ const Sidebar = ({cards, allCards, info, filters, handleInputChange, handleSlide
       <SliderFilter filter="attack"     filters={filters} handleSliderClick={handleSliderClick} defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}/>
       <SliderFilter filter="durability" filters={filters} handleSliderClick={handleSliderClick} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}/>
 
-      <IconFilter header={true} header_label="standard sets" filter="cardSet"         filters={filters} wrapper_class="sidebar-icons" isStandard={true} handleIconClick={handleIconClick}/>
+      <IconFilter data={info} header={true} header_label="standard sets" filter="cardSet"         filters={filters} wrapper_class="sidebar-icons" mode="standard" handleIconClick={handleIconClick}/>
       {
         filters.cardSet === "mean-streets-of-gadgetzan"
           ? <IconFilter header={true} header_label="Family"        filter="multiClassGroup" filters={filters} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
           : null
       }
-      <IconFilter header={true} header_label="wild sets"     filter="cardSet"         filters={filters} wrapper_class="sidebar-icons" isStandard={false} handleIconClick={handleIconClick} />
+      <IconFilter data={info}  header={true} header_label="wild sets"     filter="cardSet"        filters={filters} wrapper_class="sidebar-icons" mode="wild" handleIconClick={handleIconClick} />
       <IconFilter header={true} header_label="rarity"        filter="rarity"          filters={filters} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
 
       <IsGoldenFilter/>

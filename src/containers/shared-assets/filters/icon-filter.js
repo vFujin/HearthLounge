@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {icon_filters} from '../../../globals/filters';
 import Icon from "../../../components/icon";
+import Loader from "../../../components/loaders/loader";
 
-const IconFilter = ({handleIconClick, filter, header, header_label, isStandard, filters, wrapper_class}) => {
+const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, filters, wrapper_class}) => {
   const iconType = () =>{
     switch(filter){
       case 'cost': return 'mana';
@@ -14,27 +15,34 @@ const IconFilter = ({handleIconClick, filter, header, header_label, isStandard, 
     }
   };
 
-  const iconName = (name) => {
-    switch(name){
-      case 'one-night-in-karazhan': return 'karazhan';
-      default: return name;
-    }
-  };
-
   const listIcons = () => {
-    return (
-      icon_filters[filter].filter(icon => icon.isStandard === isStandard).map((icon, index) =>
-        <li key={index}
-            id={icon.url}
-            data-filter={filter}
-            onClick={handleIconClick}>
+    if(data && data.loading){
+      return <Loader theme="light" />
+    }
+    else {
 
-          <Icon name={icon.url}
-                type={iconType()}
-                className={`${iconName(icon.url)} ${_.kebabCase(_.toLower(filters[filter])) === _.kebabCase(_.toLower(icon.url)) ? 'active' : ''}`}
-                tooltip={true}/>
-        </li>
-      ))
+      const isCardSet = (data && data[mode])
+        ? mode === "wild"
+          ? data[mode].filter(set => !data.standard.includes(set))
+          : data[mode]
+        : icon_filters[filter];
+
+      return isCardSet.map((icon, index) => {
+          return (
+            <li key={index}
+                id={mode ? _.kebabCase(_.toLower(icon)) : icon.url}
+                data-filter={filter}
+                onClick={handleIconClick}>
+
+              <Icon name={mode ? _.kebabCase(_.toLower(icon)) : icon.url}
+                    type={iconType()}
+                    className={`${mode ? _.kebabCase(_.toLower(icon)) : icon.url} ${_.kebabCase(_.toLower(filters[filter])) === _.kebabCase(_.toLower(mode ? icon : icon.url)) ? 'active' : ''}`}
+                    tooltip={true}/>
+            </li>
+          )
+        }
+      )
+    }
   };
 
   const showHeader = () =>{

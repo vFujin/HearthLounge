@@ -444,6 +444,7 @@ card{
         padding: 0 1vh;
         margin: 1vh 0;
       }
+
       .slider-filter-wrapper{
         @include transition(all ease .4s);
         border: 1px solid $dark-grey;
@@ -723,6 +724,9 @@ card{
             z-index: 2;
             @include transition(all ease .4s);
             width: 100%;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+            transform: translateZ(0);
             //transform: scale(0.80);
             &.choosen {
               opacity: .3;

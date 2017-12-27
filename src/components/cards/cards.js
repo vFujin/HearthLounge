@@ -24,8 +24,9 @@ class ComponentCards extends Component {
   }
 
   handleInputChange = (value, filter) => {
+    document.querySelector('.content').scrollTop = 0;
     const {filters} = this.state;
-    console.log("input: ", value, filter);
+
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
@@ -42,15 +43,14 @@ class ComponentCards extends Component {
   handleSliderClick = (value, filter) =>{
     document.querySelector('.content').scrollTop = 0;
     const {filters} = this.state;
+
     updateFilters(state => this.setState(state), filters, filter, value);
   };
-
-
 
   render() {
     const {filters} = this.state;
     const {info, cards} = this.props;
-    console.log(filters);
+
     return (
       <div className="container__page container__page--twoSided cards">
         <div className="container__page--inner  container__page--left">
@@ -70,7 +70,6 @@ class ComponentCards extends Component {
               {mapCards(this.props, this.state)}
             </ul>
           </div>
-
         </div>
       </div>
     )
