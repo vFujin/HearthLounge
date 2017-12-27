@@ -207,7 +207,7 @@
  *  Slider
  */
 .ant-slider{
-  margin: 25px 10px 27px;
+  margin: 10px 10px 15px;
   border-radius: 0;
   border:0 solid $dark-grey;
   height:4px;
@@ -215,6 +215,7 @@
     border-color: $dark-grey;
     background: $pearl;
     margin-top:-5px;
+    outline: none;
   }
   .ant-slider-track{
     background: $dark-grey;
@@ -226,13 +227,23 @@
     background: $light-grey;
   }
   .ant-slider-mark{
-    top: 12px;
+    top: 15px;
   }
   .ant-tooltip-open{
     padding: 0;
   }
   .ant-slider-dot-active{
     border-color: $pearl;
+  }
+  &:hover{
+    .ant-slider-track{
+      background-color: #00c99a;
+      box-shadow: 0 0 5px $dark-grey;
+    }
+    .ant-slider-handle{
+      border-color: #00c99a;
+      box-shadow: 0 0 10px $dark-grey;
+    }
   }
 }
 

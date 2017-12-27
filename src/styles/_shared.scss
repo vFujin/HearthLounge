@@ -162,42 +162,6 @@
   }
 }
 
-//.btn-pearl {
-//  cursor: pointer;
-//  background: $dark-grey;
-//  border: 1px solid $pearl;
-//  color: $pearl;
-//  outline: 0;
-//  font-size: 1.2vh;
-//  padding: .3vh .5vh;
-//  position: relative;
-//  @include box-shadow(0, 0, 5px, $dark-grey);
-//  @include transition(all ease .4s);
-//  &:after{
-//    @include box-shadow(0, 0, 5px, $sea-color);
-//    content: '';
-//    position: absolute;
-//    opacity: 0;
-//    top: 0;
-//    left: 0;
-//    width: 100%;
-//    height: 100%;
-//    @include transition(all ease .4s);
-//  }
-//  &:hover {
-//    background: $dark-grey;
-//    border-color: $sea-color;
-//    color: $sea-color;
-//    &:after{
-//      opacity: 1;
-//    }
-//  }
-//}
-
-.btn-padding-small{
-  padding: 1px 5px;
-}
-
 form {
   &.inline{
     .input-wrapper {

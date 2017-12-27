@@ -438,35 +438,26 @@ card{
           }
         }
       }
-      .input-filter-wrapper, .slider-filter-wrapper{
-        text-transform: capitalize;
-        font-weight:normal;
-        padding: 0 1vh;
-        margin: 1vh 0;
-      }
-
-      .slider-filter-wrapper{
-        @include transition(all ease .4s);
+      .sidebar__body--filter-wrapper{
         border: 1px solid $dark-grey;
         margin: 2vh 1vh;
         position: relative;
-        &:hover{
-          border: 1px solid $pearl;
-          .slider-filter-header{
-            button{
-              border-color: $pearl;
-            }
-          }
-        }
-        .slider-filter-header{
+        text-transform: capitalize;
+        font-weight:normal;
+        padding: 1.5vh 1vh;
+        @include transition(all ease .4s);
+
+        .sidebar__body--filter-wrapper__header{
           width: calc(100% - 2vh);
           position: absolute;
-          top: -.95vh;
+          top: calc(-.95vh - 2px);
           display: flex;
           justify-content:space-between;
+          @include transition(all ease .4s);
           h4 {
+            @include transition(all ease .4s);
             background: $light-grey;
-            padding:0 .4vh;
+            padding:0 1vh;
           }
           button{
             @include transition(all ease .4s);
@@ -483,7 +474,22 @@ card{
             }
           }
         }
-
+        &:hover, &:focus{
+          border-color: $pearl;
+          .sidebar__body--filter-wrapper__header{
+            h4{
+              color: $pearl;
+            }
+            button{
+              border-color: $pearl;
+            }
+          }
+          .ant-select{
+            > div{
+              border-color: $pearl;
+            }
+          }
+        }
       }
       .icon-filter-wrapper, .container__mana-curve {
         h3{

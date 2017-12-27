@@ -49,15 +49,15 @@ const InputFilter = ({data, type, filter, multiple, filters, handleInputChange})
     }
   };
 
-
   return (
-      <div className="input-filter-wrapper" id={`id-${filter}`}>
-        <h4>{filter}</h4>
+      <div className="sidebar__body--filter-wrapper" id={`id-${filter}`}>
+        <div className="sidebar__body--filter-wrapper__header">
+          <h4>{filter}</h4>
+        </div>
         <Select mode={multiple && "multiple"}
                 showSearch={!multiple}
                 allowClear={!multiple}
                 style={{width: "100%"}}
-                getPopupContainer={()=>document.getElementById(`id-${filter}`)}
                 notFoundContent={validateData().error || "Couldn't find cards that match your query"}
                 placeholder={placeholder()}
                 onChange={(e)=>handleInputChange(e, filter)}

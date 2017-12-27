@@ -7,8 +7,8 @@ import {addQuery} from '../../../utils/utils-router';
 import 'antd/lib/slider/style/css';
 
 const SliderFilter = ({defaultValue, marks, max, filter, filters, handleSliderClick}) => (
-  <div className="slider-filter-wrapper">
-    <div className="slider-filter-header">
+  <div className="sidebar__body--filter-wrapper">
+    <div className="sidebar__body--filter-wrapper__header">
       <h4>{filter}</h4>
       <Tooltip placement="left" title="Clear">
         <Link to={'/cards'}>

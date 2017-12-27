@@ -15,6 +15,7 @@ const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, 
     }
   };
 
+
   const listIcons = () => {
     if(data && data.loading){
       return <Loader theme="light" />
