@@ -2,19 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'antd/lib/select';
 import _ from 'lodash';
-import {cardsPlaceholder, gameInfoPlaceholder, customInfoPlaceholder} from "../../../components/cards/utils/input-placeholders";
+import {cardsPlaceholder, gameInfoPlaceholder, customInfoPlaceholder} from "../cards/utils/input-placeholders";
+import FilterHeader from "./filter-header";
 import 'antd/lib/select/style/css';
 
 const InputFilter = ({data, type, filter, multiple, filters, handleInputChange}) => {
   const Option = Select.Option;
+
   const validateData = () =>{
     if(!data.loading && filter === "mechanic"){
       let mechanics = data.allCards.filter(c => c[`${filter}s`])
         .map(x => x[`${filter}s`])
         .reduce((a, b) => a.concat(b))
         .map(x => x.name);
-      let uniqueMechanis = [...new Set(mechanics)];
-      return uniqueMechanis;
+
+      return [...new Set(mechanics)];
     }
     return data;
   };
@@ -25,18 +27,17 @@ const InputFilter = ({data, type, filter, multiple, filters, handleInputChange})
     switch(type) {
       case "cards":
         return dataArrayIsArray && validateData().map(card => (
-          <Option instancePrefix={card.dbfId} optionIndex={card.dbfId} option={card.name} value={card.name}
-                  key={card.dbfId}>{_.startCase(card.name)}</Option>
+          <Option value={card.name} key={card.dbfId}>{_.startCase(card.name)}</Option>
         ));
 
       case "customInfo":
         return !data.loading && validateData().map((info, i) => (
-          <Option instancePrefix={i} optionIndex={i} option={info} value={info} key={i}>{_.startCase(info)}</Option>
+          <Option value={info} key={i}>{_.startCase(info)}</Option>
         ));
 
       default:
         return validateData()[`${filter}s`] && validateData()[`${filter}s`].map((info, i) => (
-          <Option instancePrefix={i} optionIndex={i} option={info} value={info} key={i}>{_.startCase(info)}</Option>
+          <Option value={info} key={i}>{_.startCase(info)}</Option>
         ));
     }
   };
@@ -51,9 +52,7 @@ const InputFilter = ({data, type, filter, multiple, filters, handleInputChange})
 
   return (
       <div className="sidebar__body--filter-wrapper" id={`id-${filter}`}>
-        <div className="sidebar__body--filter-wrapper__header">
-          <h4>{filter}</h4>
-        </div>
+        <FilterHeader filter={filter} filters={filters}/>
         <Select mode={multiple && "multiple"}
                 showSearch={!multiple}
                 allowClear={!multiple}

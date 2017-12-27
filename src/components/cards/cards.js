@@ -86,5 +86,5 @@ const mapStateToProps = state =>{
 export default connect(mapStateToProps, null)(ComponentCards);
 
 ComponentCards.propTypes = {
-  mode: PropTypes.string.isRequired
+  mode: PropTypes.string
 };

@@ -7,9 +7,7 @@ button{
   cursor: pointer;
   outline: 0;
   position: relative;
-
-    @include transition(all ease .2s);
-
+  @include transition(all ease .2s);
   &.btn{
     &__default{
       @include button($pearl, $dark-grey, $sea-color, $sea-color, $dark-grey);
@@ -17,7 +15,7 @@ button{
         @include button($pearl, $dark-grey, $sea-color, false, $sea-color);
       }
       &--active{
-        @include button($pearl, $sea-color, $pearl, false, $dark-grey)
+        @include button($pearl, $sea-color, false, false, $dark-grey)
       }
     }
     &__submit{

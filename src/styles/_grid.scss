@@ -48,18 +48,10 @@
     display: grid;
     .container__page--inner {
       display: grid;
-      grid-template-rows: 5.5vh auto;
+      grid-template-rows: 5.5vh 77.5vh;
     }
     .container__page--left{
       .sidebar__body{
-        .icon-filter-wrapper{
-          .sidebar-icons{
-            display: grid;
-            grid-template-columns: repeat(5, auto);
-            grid-column-gap: 1vh;
-            grid-auto-rows: 7vh;
-          }
-        }
         .container__mana-curve{
           display: grid;
           grid-template-rows: 3vh 18vh 3vh auto;
@@ -127,28 +119,6 @@
           }
         }
       }
-      //.container__blocks {
-      //  display: grid;
-      //  height: 100%;
-      //  grid-template-rows: repeat(2, calc(50% - .5vh));
-      //  grid-row-gap: 1vh;
-      //  grid-template-columns: repeat(4, calc(25% - .75vh));
-      //  grid-column-gap: 1vh;
-      //  .container__blocks--block {
-      //    &.overview {
-      //      &:first-child {
-      //        grid-column-start: 1;
-      //        grid-column-end: 3;
-      //      }
-      //    }
-      //    &.boss, &.class-challenge {
-      //      &:last-child {
-      //        grid-column-start: 1;
-      //        grid-column-end: 5;
-      //      }
-      //    }
-      //  }
-      //}
       form{
         display: grid;
         grid-template-rows: 20vh auto;

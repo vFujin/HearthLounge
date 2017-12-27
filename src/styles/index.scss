@@ -422,7 +422,7 @@ card{
       @include scrollbar($light-grey);
       overflow-y: auto;
       overflow-x: hidden;
-      margin: 1vh 0 0 0;
+      margin: 1vh 0;
       h3, h4 {
         display: flex;
         align-items: center;
@@ -446,7 +446,9 @@ card{
         font-weight:normal;
         padding: 1.5vh 1vh;
         @include transition(all ease .4s);
-
+        &:last-child{
+          margin-bottom: 1px;
+        }
         .sidebar__body--filter-wrapper__header{
           width: calc(100% - 2vh);
           position: absolute;
@@ -459,31 +461,17 @@ card{
             background: $light-grey;
             padding:0 1vh;
           }
+
           button{
-            @include transition(all ease .4s);
-            outline:none;
-            border:1px solid $dark-grey;
-            background: $light-grey;
-            font-size: .8vh;
-            padding: 0 .5vh;
-            font-weight: bold;
-            cursor: pointer;
-            &:hover{
-              background: $dark-grey;
-              color: $pearl;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            span{
+              font-size: 8px;
             }
           }
         }
-        &:hover, &:focus{
-          border-color: $pearl;
-          .sidebar__body--filter-wrapper__header{
-            h4{
-              color: $pearl;
-            }
-            button{
-              border-color: $pearl;
-            }
-          }
+        &:hover{
           .ant-select{
             > div{
               border-color: $pearl;
@@ -491,7 +479,7 @@ card{
           }
         }
       }
-      .icon-filter-wrapper, .container__mana-curve {
+      .sidebar__body--filter-wrapper, .container__mana-curve {
         h3{
           background: $dark-grey;
           text-transform: capitalize;
@@ -501,22 +489,25 @@ card{
           font-size: .9vw;
         }
         .sidebar-icons {
-          margin: 2vh 0;
+          display: flex;
+          flex-wrap: wrap;
           justify-content: center;
           align-items: center;
           li {
-            display: inline-block;
-            span {
-              @include transition(all ease .4s);
-              padding: .5vh;
-              color: $dark-grey;
-              &.hs {
-                padding: 1vh;
+            margin: 10px 5px;
+            cursor: pointer;
+            &:hover{
+              span {
+                @include transition(all ease .4s);
+                @include box-shadow(0, 0, 10px, black);
               }
             }
-            &:hover {
-              div {
-                display: block;
+            span{
+              font-size: 30px;
+              color: $dark-grey;
+              padding: .5vh;
+              &.active{
+                @include box-shadow(0, 0, 5px, black);
               }
             }
           }

@@ -519,12 +519,7 @@ a {
     display: grid; }
     #container .container__page .container__page--inner {
       display: grid;
-      grid-template-rows: 5.5vh auto; }
-    #container .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons {
-      display: grid;
-      grid-template-columns: repeat(5, auto);
-      grid-column-gap: 1vh;
-      grid-auto-rows: 7vh; }
+      grid-template-rows: 5.5vh 77.5vh; }
     #container .container__page .container__page--left .sidebar__body .container__mana-curve {
       display: grid;
       grid-template-rows: 3vh 18vh 3vh auto; }
@@ -3468,8 +3463,7 @@ button {
        * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
        */ }
       button.btn__default--active:hover {
-        color: #E7E2DA;
-        border-color: #474143; }
+        background: #00766d; }
       button.btn__default--active:after {
         position: absolute;
         width: 100%;
@@ -4837,7 +4831,7 @@ card {
     .container__page .container__page--left .sidebar__body {
       overflow-y: auto;
       overflow-x: hidden;
-      margin: 1vh 0 0 0; }
+      margin: 1vh 0; }
       .container__page .container__page--left .sidebar__body::-webkit-scrollbar {
         width: 13px; }
       .container__page .container__page--left .sidebar__body::-webkit-scrollbar-thumb {
@@ -4871,6 +4865,8 @@ card {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
         transition: all ease 0.4s; }
+        .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:last-child {
+          margin-bottom: 1px; }
         .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar__body--filter-wrapper__header {
           width: calc(100% - 2vh);
           position: absolute;
@@ -4887,50 +4883,43 @@ card {
             background: #A69E9D;
             padding: 0 1vh; }
           .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar__body--filter-wrapper__header button {
-            -webkit-transition: all ease 0.4s;
-            -moz-transition: all ease 0.4s;
-            transition: all ease 0.4s;
-            outline: none;
-            border: 1px solid #474143;
-            background: #A69E9D;
-            font-size: .8vh;
-            padding: 0 .5vh;
-            font-weight: bold;
-            cursor: pointer; }
-            .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar__body--filter-wrapper__header button:hover {
-              background: #474143;
-              color: #E7E2DA; }
-        .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:hover, .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:focus {
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar__body--filter-wrapper__header button span {
+              font-size: 8px; }
+        .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:hover .ant-select > div {
           border-color: #E7E2DA; }
-          .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:hover .sidebar__body--filter-wrapper__header h4, .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:focus .sidebar__body--filter-wrapper__header h4 {
-            color: #E7E2DA; }
-          .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:hover .sidebar__body--filter-wrapper__header button, .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:focus .sidebar__body--filter-wrapper__header button {
-            border-color: #E7E2DA; }
-          .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:hover .ant-select > div, .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper:focus .ant-select > div {
-            border-color: #E7E2DA; }
-      .container__page .container__page--left .sidebar__body .icon-filter-wrapper h3, .container__page .container__page--left .sidebar__body .container__mana-curve h3 {
+      .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper h3, .container__page .container__page--left .sidebar__body .container__mana-curve h3 {
         background: #474143;
         text-transform: capitalize;
         font-weight: normal;
         color: #E7E2DA;
         padding: .5vh;
         font-size: .9vw; }
-      .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons {
-        margin: 2vh 0;
+      .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar-icons, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons {
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center; }
-        .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons li, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li {
-          display: inline-block; }
-          .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons li span, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li span {
+        .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar-icons li, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li {
+          margin: 10px 5px;
+          cursor: pointer; }
+          .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar-icons li:hover span, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li:hover span {
             -webkit-transition: all ease 0.4s;
             -moz-transition: all ease 0.4s;
             transition: all ease 0.4s;
-            padding: .5vh;
-            color: #474143; }
-            .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons li span.hs, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li span.hs {
-              padding: 1vh; }
-          .container__page .container__page--left .sidebar__body .icon-filter-wrapper .sidebar-icons li:hover div, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li:hover div {
-            display: block; }
+            -webkit-box-shadow: 0 0 10px black;
+            -moz-box-shadow: 0 0 10px black;
+            box-shadow: 0 0 10px black; }
+          .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar-icons li span, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li span {
+            font-size: 30px;
+            color: #474143;
+            padding: .5vh; }
+            .container__page .container__page--left .sidebar__body .sidebar__body--filter-wrapper .sidebar-icons li span.active, .container__page .container__page--left .sidebar__body .container__mana-curve .sidebar-icons li span.active {
+              -webkit-box-shadow: 0 0 5px black;
+              -moz-box-shadow: 0 0 5px black;
+              box-shadow: 0 0 5px black; }
       .container__page .container__page--left .sidebar__body.sidebar__body--extensions li {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;

@@ -1,11 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {IsGoldenFilter} from '../../../containers/shared-assets/filters/is-golden';
-import IconFilter from '../../../containers/shared-assets/filters/icon-filter';
-import InputFilter from '../../../containers/shared-assets/filters/input-filter';
-import SliderFilter from '../../../containers/shared-assets/filters/slider-filter';
+import {InputFilter, SliderFilter, IconFilter} from '../../filters';
 
 const Sidebar = ({cards, allCards, info, filters, handleInputChange, handleSliderClick, handleIconClick}) => {
+  const toggleFamiliesFilter = () =>{
+    if(filters.cardSet === "mean-streets-of-gadgetzan"){
+      return <IconFilter header={true}
+                         header_label="Family"
+                         filter="multiClassGroup"
+                         filters={filters}
+                         wrapper_class="sidebar-icons"
+                         handleIconClick={handleIconClick}/>
+    }
+  };
 
   return (
     <div className="sidebar__body">
@@ -20,26 +26,13 @@ const Sidebar = ({cards, allCards, info, filters, handleInputChange, handleSlide
       <SliderFilter filter="durability" filters={filters} handleSliderClick={handleSliderClick} defaultValue={[0, 7]}  max={10} marks={{0:0, 7:7, 10:10}}/>
 
       <IconFilter data={info} header={true} header_label="standard sets" filter="cardSet" filters={filters} wrapper_class="sidebar-icons" mode="standard" handleIconClick={handleIconClick}/>
-      {
-        filters.cardSet === "mean-streets-of-gadgetzan"
-          ? <IconFilter header={true} header_label="Family" filter="multiClassGroup" filters={filters} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
-          : null
-      }
+      {toggleFamiliesFilter()}
       <IconFilter data={info}  header={true} header_label="wild sets" filter="cardSet" filters={filters} wrapper_class="sidebar-icons" mode="wild" handleIconClick={handleIconClick} />
       <IconFilter header={true} header_label="rarity" filter="rarity" filters={filters} wrapper_class="sidebar-icons" handleIconClick={handleIconClick}/>
 
-      <IsGoldenFilter/>
+      {/*<IsGoldenFilter/>*/}
     </div>
   );
-};
-
-Sidebar.propTypes = {
-  faction: PropTypes.array,
-  mechanics: PropTypes.array,
-  name: PropTypes.array,
-  query: PropTypes.object,
-  race: PropTypes.array,
-  type: PropTypes.array,
 };
 
 export default Sidebar;

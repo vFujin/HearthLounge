@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {icon_filters} from '../../../globals/filters';
-import Icon from "../../../components/icon";
-import Loader from "../../../components/loaders/loader";
+import {icon_filters} from '../../globals/filters';
+import Icon from "../icon";
+import Loader from "../loaders/loader";
+import FilterHeader from "./filter-header";
 
 const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, filters, wrapper_class}) => {
   const iconType = () =>{
@@ -14,7 +15,6 @@ const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, 
       default: return filter;
     }
   };
-
 
   const listIcons = () => {
     if(data && data.loading){
@@ -48,13 +48,9 @@ const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, 
 
   const showHeader = () =>{
     if(header === true && filter !== null) {
-      let showBtn = filters[filter] ? 'display-block' : 'display-none';
       return (
-        <div className="icon-filter-wrapper">
-          <h3>
-            {header_label}
-            <button className={`btn-pearl btn-padding-small ${showBtn}`}>x</button>
-          </h3>
+        <div className="sidebar__body--filter-wrapper">
+          <FilterHeader headerTitle={header_label} filter={filter} filters={filters}/>
           <ul className={`${wrapper_class} ${filter}`}>
             {listIcons()}
           </ul>
