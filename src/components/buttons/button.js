@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from 'antd/lib/tooltip';
 
-const Button = ({text, handleClick, type, darkBorder, active, tooltip = false, tooltipTitle, tooltipPlacement = "bottom"}) =>{
+const Button = ({text, handleClick, type, darkBorder, active, tooltip = false, tooltipTitle, tooltipPlacement = "bottom", dataAttr}) =>{
   const disabled = type === 'disabled' ? true : null;
   const btnType = type || "default";
 
@@ -10,7 +10,8 @@ const Button = ({text, handleClick, type, darkBorder, active, tooltip = false, t
     return (
       <Tooltip title={tooltipTitle} placement={tooltipPlacement}>
         <button disabled={disabled}
-                className={`component btn btn__${btnType} ${darkBorder && "btn__darkBorder"} ${active && `btn__${btnType}--active`}`}
+                data-attr={dataAttr}
+                className={`component btn btn__${btnType} ${darkBorder ? "btn__darkBorder" : undefined} ${active ? `btn__${btnType}--active` : undefined}`}
                 onClick={handleClick}>
           {text}
         </button>
@@ -19,7 +20,8 @@ const Button = ({text, handleClick, type, darkBorder, active, tooltip = false, t
   }
   return (
     <button disabled={disabled}
-            className={`component btn btn__${btnType} ${darkBorder && "btn__darkBorder"} ${active && `btn__${btnType}--active`}`}
+            data-attr={dataAttr}
+            className={`component btn btn__${btnType} ${darkBorder ? "btn__darkBorder" : undefined} ${active ? `btn__${btnType}--active` : undefined}`}
             onClick={handleClick}>
       {text}
     </button>
@@ -42,5 +44,6 @@ Button.propTypes = {
     PropTypes.string,
     PropTypes.element
   ]),
-  tooltipPlacement: PropTypes.string
+  tooltipPlacement: PropTypes.string,
+  dataAttr: PropTypes.string
 };

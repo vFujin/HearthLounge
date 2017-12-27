@@ -6,7 +6,7 @@ import {cardsPlaceholder, gameInfoPlaceholder, customInfoPlaceholder} from "../c
 import FilterHeader from "./filter-header";
 import 'antd/lib/select/style/css';
 
-const InputFilter = ({data, type, filter, multiple, filters, handleInputChange}) => {
+const InputFilter = ({data, type, filter, multiple, filters, handleInputChange, handleFilterReset}) => {
   const Option = Select.Option;
 
   const validateData = () =>{
@@ -52,7 +52,7 @@ const InputFilter = ({data, type, filter, multiple, filters, handleInputChange})
 
   return (
       <div className="sidebar__body--filter-wrapper" id={`id-${filter}`}>
-        <FilterHeader filter={filter} filters={filters}/>
+        <FilterHeader filter={filter} filters={filters} handleFilterReset={handleFilterReset}/>
         <Select mode={multiple && "multiple"}
                 showSearch={!multiple}
                 allowClear={!multiple}

@@ -6,7 +6,7 @@ import Icon from "../icon";
 import Loader from "../loaders/loader";
 import FilterHeader from "./filter-header";
 
-const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, filters, wrapper_class}) => {
+const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, filters, wrapper_class, handleFilterReset}) => {
   const iconType = () =>{
     switch(filter){
       case 'cost': return 'mana';
@@ -54,7 +54,7 @@ const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, 
     if(header === true && filter !== null) {
       return (
         <div className="sidebar__body--filter-wrapper">
-          <FilterHeader headerTitle={header_label} filter={filter} filters={filters}/>
+          <FilterHeader headerTitle={header_label} filter={filter} filters={filters} handleFilterReset={handleFilterReset}/>
           <ul className={`${wrapper_class} ${filter}`}>
             {listIcons()}
           </ul>

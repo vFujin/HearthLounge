@@ -47,6 +47,14 @@ class ComponentCards extends Component {
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
+  handleFilterReset = (e) =>{
+    document.querySelector('.content').scrollTop = 0;
+    const filter = e.currentTarget.dataset.attr;
+    const {filters} = this.state;
+
+    updateFilters(state => this.setState(state), filters, filter, undefined)
+  };
+
   render() {
     const {filters} = this.state;
     const {info, cards} = this.props;
@@ -59,6 +67,7 @@ class ComponentCards extends Component {
                    info={info}
                    cards={mapInputCards(this.props, this.state)}
                    allCards={cards}
+                   handleFilterReset={this.handleFilterReset}
                    handleInputChange={this.handleInputChange}
                    handleSliderClick={this.handleSliderClick}
                    handleIconClick={this.handleIconClick} />
