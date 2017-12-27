@@ -11,7 +11,6 @@ export const fetchCards = () => axios.get(`https://omgvamp-hearthstone-v1.p.mash
 export function* fetchCardsSaga({payload}) {
   const {cards, error} = yield call(fetchCards, payload);
   if(error){
-
     yield put(actions.fetchCardsFailure(error.message));
   } else {
     yield put(actions.fetchCardsSuccess(cards));
