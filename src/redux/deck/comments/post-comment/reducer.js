@@ -17,8 +17,8 @@ export default function(state=initialState, {payload, type}) {
       };
 
     case types.POST_DECK_COMMENT_SUCCESS: {
-      const {commentId, uid, current, deckComment} = payload;
-      state.postedComments.comments.push({upvotes: 0, downvotes: 0, votes: 0, commentId, authorId: uid, created: +new Date(), patch: current, text: deckComment});
+      const {commentId, uid, patch, deckComment} = payload;
+      state.postedComments.comments.push({upvotes: 0, downvotes: 0, votes: 0, commentId, authorId: uid, created: +new Date(), patch, text: deckComment});
 
       return {
         loading: false,

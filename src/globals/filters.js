@@ -224,6 +224,16 @@ export const icon_filters = {
       url: "adventures"
     }
   ],
+  archetype: [
+    {
+      name: "n'zoth",
+      url: "n'zoth",
+    },
+    {
+      name: "jade",
+      url: "jade",
+    }
+  ],
   multiClassGroup:[
     {
       name: "Grimy Goons",

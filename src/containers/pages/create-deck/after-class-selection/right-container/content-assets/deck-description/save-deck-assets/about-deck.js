@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import PropTypes from 'prop-types';
 import TextEditor from '../../../../../../../../components/text-editor/text-editor';
 import InnerLeftContainer from './about-deck-inner-left-container';
 import InnerRightContainer from './about-deck-inner-right-container';
@@ -24,11 +23,10 @@ const AboutDeck = ({activeUser, patch, playerClass, deckDetails, deckCreation, c
       const {deckMode, deckTitle, deckArchetype, deckText, deckAdventure, deckBoss, isPrivate} = deckDetails;
       const {uid, username} = activeUser;
       const {simplifiedDeck, deckstring} = deckCreation;
-      const {current} = patch;
       const kebabCasedAdventure = _.kebabCase(deckAdventure);
       const kebabCasedBoss = _.kebabCase(deckBoss);
 
-      saveDeck(current, playerClass, deckTitle, deckMode, deckArchetype, kebabCasedAdventure, kebabCasedBoss, simplifiedDeck, deckText, deckstring, uid, username, isPrivate);
+      saveDeck(patch, playerClass, deckTitle, deckMode, deckArchetype, kebabCasedAdventure, kebabCasedBoss, simplifiedDeck, deckText, deckstring, uid, username, isPrivate);
     } else {
       error("You have to be logged in in order to save your deck.", 6)
     }
@@ -73,7 +71,8 @@ const AboutDeck = ({activeUser, patch, playerClass, deckDetails, deckCreation, c
 };
 
 const mapStateToProps = state => {
-  const {users, patch, deckDetails, deckCreation} = state;
+  const {users, deckDetails, deckCreation} = state;
+  const {patch} = state.info;
   const {cards} = state.cards;
   const {activeUser} = users;
   return {activeUser, patch, deckDetails, deckCreation, cards};

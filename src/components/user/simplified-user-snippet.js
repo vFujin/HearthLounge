@@ -26,7 +26,7 @@ export default SimplifiedUserSnippet;
 SimplifiedUserSnippet.propTypes = {
   user: PropTypes.shape({
     rank: PropTypes.number,
-    role: PropTypes.string,
+    role: PropTypes.number,
     username: PropTypes.string,
     avatar: PropTypes.oneOfType([
       PropTypes.string,

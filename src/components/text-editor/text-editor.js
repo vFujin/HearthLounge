@@ -47,7 +47,7 @@ class TextEditor extends Component{
           <ul className="toolbar">
             {this.mapToolbar(editorId, previewId, value, handleTagInsertion)}
 
-            <li key="cancel" className={formattingHelp && 'active'}>
+            <li key="cancel" className={formattingHelp ? 'active' : undefined}>
               <Tooltip title="Formatting Help" placement="bottom">
                 <button value="cancel" type="button" onClick={() => this.handleFormattingHelp()}>
                   <Icon name="help"/>

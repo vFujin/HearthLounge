@@ -1,14 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import PropTypes from 'prop-types';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 import TextEditor from '../../../../../../../components/text-editor/text-editor';
 import SectionBodyOptions from "./section-body-options";
-import {TOGGLE_DECK_EDIT_VIEW} from "../../../../../../../redux/deck/tools/types";
-import * as types from "../../../../../../../redux/deck/active-deck-editing/types";
-import {UPDATE_ACTIVE_DECK_COPY} from "../../../../../../../redux/deck/active-deck-copy/types";
 import {deleteDeckRequest} from "../../../../../../../redux/deck/delete-deck/actions";
+import {toggleDeckEditView} from "../../../../../../../redux/deck/tools/actions";
+import {
+  updateActiveDeckRequest,
+  updateDeckDescription
+} from "../../../../../../../redux/deck/active-deck-editing/actions";
+import {updateActiveDeckCopy} from "../../../../../../../redux/deck/active-deck-copy/actions";
 
 const SectionBody = (props) => {
   const {activeUser, activeDeck, deckEditView, activeDeckEditing, updateDeckDescription, toggleDeckEditView, activeDeckCopy} = props;
@@ -83,17 +85,12 @@ const mapStateToProps = state =>{
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateActiveDeck: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY, payload}),
-    updateDeckDescription: payload => dispatch({
-      type: types.UPDATE_DECK_DESCRIPTION, payload
-    }),
-    toggleDeckEditView: () => dispatch({type: TOGGLE_DECK_EDIT_VIEW}),
-    updateDeck: payload => dispatch({type: types.UPDATE_ACTIVE_DECK_REQUEST, payload}),
+    updateActiveDeck: payload => dispatch(updateActiveDeckCopy(payload)),
+    updateDeckDescription: payload => dispatch(updateDeckDescription(payload)),
+    toggleDeckEditView: () => dispatch(toggleDeckEditView()),
+    updateDeck: payload => dispatch(updateActiveDeckRequest(payload)),
     deleteDeck: payload => dispatch(deleteDeckRequest(payload))
   }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SectionBody);
-SectionBody.propTypes = {
-  description: PropTypes.string.isRequired
-};

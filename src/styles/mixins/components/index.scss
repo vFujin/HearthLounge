@@ -44,6 +44,7 @@
     }
     @else {
       background: darken($background_color, 10%);
+      color: $color;
     }
   }
   @include transition(all ease .2);

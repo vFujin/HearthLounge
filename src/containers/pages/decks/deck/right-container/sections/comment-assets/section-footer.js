@@ -37,8 +37,8 @@ class SectionFooter extends PureComponent {
   };
 
   handlePostCommentClick = () => {
-    const {current, deckId, deckComment, postComment, uid} = this.props;
-    postComment({current, deckComment, deckId, uid});
+    const {patch, deckId, deckComment, postComment, uid} = this.props;
+    postComment({patch, deckComment, deckId, uid});
   };
 
   render() {
@@ -62,10 +62,10 @@ class SectionFooter extends PureComponent {
 const mapStateToProps = (state) => {
   const {deckCommentControlled, previewIsActive, deckComment} = state.deckView.tools;
   const {uid} = state.users.activeUser;
-  const {current} = state.patch;
+  const {patch} = state.info;
   const {deckId} = state.deckView.activeDeck;
   const {deckCommentPostingStatus} = state.deckView;
-  return {deckCommentControlled, previewIsActive, deckComment, uid, current, deckId, deckCommentPostingStatus};
+  return {deckCommentControlled, previewIsActive, deckComment, uid, patch, deckId, deckCommentPostingStatus};
 };
 
 const mapDispatchToProps = (dispatch) => {
