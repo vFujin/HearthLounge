@@ -10,10 +10,11 @@ const FilterHeader = ({headerTitle, filter, filters}) =>{
       return <Button text={<Icon name="cross" />}
                      darkBorder
                      type="default--active"
-                     tooltip={true}
+                     tooltip
                      tooltipTitle="Clear"/>
     }
   };
+
   return(
     <div className="sidebar__body--filter-wrapper__header">
       <h4>{header}</h4>
@@ -25,5 +26,10 @@ const FilterHeader = ({headerTitle, filter, filters}) =>{
 export default FilterHeader;
 
 FilterHeader.propTypes = {
-  filter: PropTypes.string.isRequired
+  filter: PropTypes.string.isRequired,
+  filters: PropTypes.object.isRequired,
+  headerTitle: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ])
 };

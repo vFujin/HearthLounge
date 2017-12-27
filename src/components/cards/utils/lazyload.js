@@ -4,10 +4,12 @@ export const lazyloadCards = (selector, action, quantity = 40, throttleDuration 
   const el = document.querySelector(selector);
   let end = quantity;
 
+
   const calculateHeight = () => {
     if (el.clientHeight === el.scrollHeight - el.scrollTop) {
-      end += quantity;
-      action(end);
+        end += quantity;
+        console.log("INFINITE SCROLL FUNC - end: ", end, "quantity: ", quantity);
+        action(end);
     }
   };
 

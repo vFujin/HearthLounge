@@ -50,7 +50,7 @@ class ComponentCards extends Component {
   render() {
     const {filters} = this.state;
     const {info, cards} = this.props;
-
+    console.log("\nSTATE - cards loaded: ", this.state.loadedCards);
     return (
       <div className="container__page container__page--twoSided cards">
         <div className="container__page--inner  container__page--left">

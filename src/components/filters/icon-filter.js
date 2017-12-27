@@ -16,19 +16,23 @@ const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, 
     }
   };
 
+  const isCardSet = () => {
+    if(data && data[mode]){
+      if(mode === "wild") return data[mode].filter(set => !data.standard.includes(set));
+      return data[mode];
+    }
+    return icon_filters[filter];
+  };
+
   const listIcons = () => {
     if(data && data.loading){
       return <Loader theme="light" />
     }
     else {
 
-      const isCardSet = (data && data[mode])
-        ? mode === "wild"
-          ? data[mode].filter(set => !data.standard.includes(set))
-          : data[mode]
-        : icon_filters[filter];
 
-      return isCardSet.map((icon, index) => {
+
+      return isCardSet().map((icon, index) => {
           return (
             <li key={index}
                 id={mode ? _.kebabCase(_.toLower(icon)) : icon.url}
