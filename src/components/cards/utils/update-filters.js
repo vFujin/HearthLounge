@@ -4,6 +4,13 @@ export const updateFilters = (action, filters, filter, value) =>{
   const msog = "mean-streets-of-gadgetzan";
   const multiClassGroup = 'multiClassGroup';
 
+  if(filter === "clearAll"){
+    return action({
+      filters: {},
+      loadedCards: 40
+    })
+  }
+
   if(filter === "cardSet" && value !== msog && filters.multiClassGroup){
     return action({
       filters: {
@@ -28,6 +35,7 @@ export const updateFilters = (action, filters, filter, value) =>{
     filters: {
       ...filters,
       [filter]: value
-    }
+    },
+    loadedCards: 40
   });
 };

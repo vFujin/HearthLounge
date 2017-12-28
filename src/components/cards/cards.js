@@ -6,6 +6,7 @@ import {lazyloadCards, mapCards, updateFilters } from "./utils";
 import Topbar from "./right-container/topbar";
 import Sidebar from "./left-container/sidebar";
 import {mapInputCards} from './utils/map-cards';
+import Button from "../buttons/button";
 
 class ComponentCards extends Component {
   constructor(props){
@@ -66,7 +67,10 @@ class ComponentCards extends Component {
     return (
       <div className="container__page container__page--twoSided cards">
         <div className="container__page--inner  container__page--left">
-          <h3 className="sidebar__header">Filters</h3>
+          <h3 className="sidebar__header">
+            Filters
+            {!_.isEmpty(filters) && <Button handleClick={this.handleFilterReset} type="delete" dataAttr="clearAll" text="Clear filters"/>}
+          </h3>
           <Sidebar filters={filters}
                    info={info}
                    cards={mapInputCards(this.props, this.state)}
