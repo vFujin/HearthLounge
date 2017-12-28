@@ -6,7 +6,6 @@ import {lazyloadCards, mapCards, updateFilters } from "./utils";
 import Topbar from "./right-container/topbar";
 import Sidebar from "./left-container/sidebar";
 import {mapInputCards} from './utils/map-cards';
-import Button from "../buttons/button";
 
 class ComponentCards extends Component {
   constructor(props){
@@ -22,7 +21,7 @@ class ComponentCards extends Component {
       playerClass: props.playerClass || undefined,
       cardSet: props.cardSet || undefined,
       inExtensions: props.cardSet || undefined,
-      inDeckCreation: props.inDeckCreation || false,
+      inDeckCreation: props.inDeckCreation || undefined,
       filterView: props.filterView || false
     }
   }
@@ -119,5 +118,6 @@ export default connect(mapStateToProps, null)(ComponentCards);
 ComponentCards.propTypes = {
   mode: PropTypes.string,
   playerClass: PropTypes.string,
-  inDeckCreation: PropTypes.bool
+  inDeckCreation: PropTypes.bool,
+  filterView: PropTypes.bool
 };

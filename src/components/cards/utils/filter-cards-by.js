@@ -71,6 +71,10 @@ export const matchFilteredCards = (filters, card) =>{
         }
       }
 
+      if(filterValue === "7-plus"){
+        return card[filterKey] >= 7;
+      }
+
       if(filterKey === "mechanic" && card[`${filterKey}s`]){
         const mappedCardMechanics = card[`${filterKey}s`].map(mechanic=>mechanic[`name`]);
         return filterValue.some(mechanic => mappedCardMechanics.includes(mechanic));
@@ -95,8 +99,8 @@ export const matchFilteredCards = (filters, card) =>{
 export const filterCards = (loadedCards, filters, prefilter) => {
   if(prefilter) {
     return prefilter
-      .slice(9)
       .filter(card => matchFilteredCards(filters, card))
+      // .filter(card => (card.type === "Hero" && !card.armor) && card) need to filter out heroes
       .slice(0, loadedCards);
   }
 };

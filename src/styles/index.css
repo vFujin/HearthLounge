@@ -169,6 +169,12 @@ a {
 .icon-jade:before {
   content: "\e908"; }
 
+.icon-neutral:before {
+  content: "\e962"; }
+
+.icon-filters:before {
+  content: "\e992"; }
+
 .icon-knights-of-the-frozen-throne:before {
   content: "\e93a"; }
 
@@ -581,6 +587,8 @@ a {
       display: grid;
       grid-template-columns: repeat(2, calc(50% - 5px));
       grid-column-gap: 10px; }
+  #container .content > .container__page--twoSided.cards {
+    grid-template-columns: 15vw auto; }
   #container footer {
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3)); }

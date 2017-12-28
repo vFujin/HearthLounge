@@ -5,7 +5,7 @@ const Card = ({card}) => {
   return (
     <li>
       <div className="img-wrapper"></div>
-      <img src={img} alt={name}/>
+      <img style={card.type === "Hero" ? {"top": "-12px"} : undefined} src={img} alt={name}/>
     </li>
   )
 };

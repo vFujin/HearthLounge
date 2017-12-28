@@ -44,6 +44,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 .icon-bag:before {
   content: "\e95a";
 }
@@ -112,6 +113,12 @@
 }
 .icon-jade:before {
   content: "\e908";
+}
+.icon-neutral:before {
+  content: "\e962";
+}
+.icon-filters:before {
+  content: "\e992";
 }
 .icon-knights-of-the-frozen-throne:before {
   content: "\e93a";

@@ -154,6 +154,9 @@
       grid-column-gap: 10px;
     }
   }
+  .content > .container__page--twoSided.cards{
+    grid-template-columns: 15vw auto;
+  }
   footer{
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3));

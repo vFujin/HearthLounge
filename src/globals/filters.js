@@ -207,7 +207,7 @@ export const icon_filters = {
     },
     {
       name: '7-plus',
-      url: 7
+      url: '7-plus'
     }
   ],
   mode: [
