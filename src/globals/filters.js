@@ -106,6 +106,10 @@ export const icon_filters = {
   ],
   playerClass: [
     {
+      name: 'Neutral',
+      url: 'neutral'
+    },
+    {
       name: 'Warlock',
       url: 'warlock'
     },

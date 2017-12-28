@@ -6,7 +6,7 @@ import Icon from "../icon";
 import Loader from "../loaders/loader";
 import FilterHeader from "./filter-header";
 
-const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, filters, wrapper_class, handleFilterReset}) => {
+const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, inDeckCreation, filters, wrapper_class, handleFilterReset}) => {
   const iconType = () =>{
     switch(filter){
       case 'cost': return 'mana';
@@ -21,6 +21,9 @@ const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, 
       if(mode === "wild") return data[mode].filter(set => !data.standard.includes(set));
       return data[mode];
     }
+    if(inDeckCreation){
+      return icon_filters[filter].filter(filter => filter.name === inDeckCreation.playerClass || filter.name === "Neutral");
+    }
     return icon_filters[filter];
   };
 
@@ -29,9 +32,6 @@ const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, 
       return <Loader theme="light" />
     }
     else {
-
-
-
       return isCardSet().map((icon, index) => {
           return (
             <li key={index}

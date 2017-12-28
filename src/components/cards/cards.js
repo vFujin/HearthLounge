@@ -13,9 +13,14 @@ class ComponentCards extends Component {
 
     this.state = {
       loadedCards: 40,
-      mode: props.mode || 'wild',
       filters: {},
-      cardNotFound: "Couldn't find cards that match your query"
+      cardNotFound: "Couldn't find cards that match your query",
+
+      mode: props.mode || 'wild',
+      playerClass: props.playerClass || undefined,
+      cardSet: props.cardSet || undefined,
+      inExtensions: props.cardSet || undefined,
+      inDeckCreation: props.inDeckCreation || false
     }
   }
 
@@ -29,7 +34,6 @@ class ComponentCards extends Component {
 
     updateFilters(state => this.setState(state), filters, filter, value);
   };
-
 
   handleIconClick = (e) =>{
     document.querySelector('.content').scrollTop = 0;
@@ -56,7 +60,7 @@ class ComponentCards extends Component {
   };
 
   render() {
-    const {filters} = this.state;
+    const {filters, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
     const {info, cards} = this.props;
     console.log("\nSTATE - cards loaded: ", this.state.loadedCards);
     return (
@@ -67,13 +71,16 @@ class ComponentCards extends Component {
                    info={info}
                    cards={mapInputCards(this.props, this.state)}
                    allCards={cards}
+                   inExtensions={(inExtensions && cardSet) && {cardSet}}
                    handleFilterReset={this.handleFilterReset}
                    handleInputChange={this.handleInputChange}
                    handleSliderClick={this.handleSliderClick}
                    handleIconClick={this.handleIconClick} />
         </div>
         <div className="container__page--inner container__page--right">
-          <Topbar filters={filters} handleIconClick={this.handleIconClick}/>
+          <Topbar filters={filters}
+                  inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
+                  handleIconClick={this.handleIconClick}/>
           <div className="content">
             <ul className="container__cards">
               {mapCards(this.props, this.state)}
@@ -83,7 +90,6 @@ class ComponentCards extends Component {
       </div>
     )
   }
-
 }
 
 const mapStateToProps = state =>{
@@ -95,5 +101,7 @@ const mapStateToProps = state =>{
 export default connect(mapStateToProps, null)(ComponentCards);
 
 ComponentCards.propTypes = {
-  mode: PropTypes.string
+  mode: PropTypes.string,
+  playerClass: PropTypes.string,
+  inDeckCreation: PropTypes.bool
 };
