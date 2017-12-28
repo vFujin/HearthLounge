@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import {Overview} from './overview-assets/index';
-import Cards from "../../../../components/extension-blocks/cards"
+import {default as Cards} from "../../../../components/cards/cards"
 import {Boss} from "../../../../components/extensions/bosses/index";
 import {adventureBossExists, adventureWingExists} from "../../../../utils/checkIfPathExist";
 import {default as DungeonRun} from "../../../../components/extensions/class-challenges/class-challenges";
@@ -20,12 +20,13 @@ const components = {
 const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}) => {
   const extensionCards = cards[activeExpansion.expansion];
   let activeExpansionTab = activeExpansion.extension_topbar_tabs.filter(tab => tab.url === details);
-
   const activeView = () => activeExpansionTab.map(page=> {
     let componentName = _.upperFirst(_.camelCase(page.name));
     let Page = components[componentName];
     return <Page key={page.url}
                  type="expansions"
+                 inExtensions
+                 cardSet={activeExpansion.expansion}
                  extension={activeExpansion}
                  classChallengeType="dungeon-run"
                  extensionUrl={activeExpansion.url}

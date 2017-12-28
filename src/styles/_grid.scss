@@ -48,7 +48,7 @@
     display: grid;
     .container__page--inner {
       display: grid;
-      grid-template-rows: 5.5vh 77.5vh;
+      grid-template-rows: 5.5vh auto;
       &.no-filters{
         display: flex;
       }

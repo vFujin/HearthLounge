@@ -4,12 +4,14 @@ import {mapInputCards} from "../utils/map-cards";
 import SidebarBody from "./sidebar-body";
 import SidebarHeader from "./sidebar-header";
 
-const Sidebar = ({cards, allCards, info, filters, inExtensions, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick}) => {
+const Sidebar = ({cards, allCards, info, filters, inExtensions, handleFilterViewToggle, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick}) => {
 
 
   return (
     <div className="container__page--inner  container__page--left">
       <SidebarHeader filters={filters}
+                     inExtensions={inExtensions}
+                     handleFilterViewToggle={handleFilterViewToggle}
                      handleFilterReset={handleFilterReset} />
       <SidebarBody filters={filters}
                info={info}

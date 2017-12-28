@@ -1842,6 +1842,8 @@ card{
   }
 }
 .cards{
+  position: relative;
+  height: 100%;
   .left-container{
     .sidebar{
       .sidebar-icons {
@@ -1856,6 +1858,14 @@ card{
         }
       }
     }
+  }
+  .toggle-filters{
+    position: absolute;
+    z-index: 3;
+    border: 1px solid black;
+    padding: 1vh;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
   }
 }
 

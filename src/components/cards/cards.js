@@ -23,7 +23,7 @@ class ComponentCards extends Component {
       cardSet: props.cardSet || undefined,
       inExtensions: props.cardSet || undefined,
       inDeckCreation: props.inDeckCreation || false,
-      filterView: props.filterView || undefined
+      filterView: props.filterView || false
     }
   }
 
@@ -62,6 +62,12 @@ class ComponentCards extends Component {
     updateFilters(state => this.setState(state), filters, filter, undefined)
   };
 
+  handleFilterViewToggle = () =>{
+    this.setState({
+      filterView: !this.state.filterView
+    })
+  };
+
   render() {
     const {filters, filterView, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
     const {info, cards} = this.props;
@@ -69,22 +75,23 @@ class ComponentCards extends Component {
 
 
     return (
-      <div className={`container__page container__page--${!filterView ? "two" : "one"}Sided cards`}>
+      <div className={`container__page container__page--${filterView ? "two" : "one"}Sided cards`}>
         {
-          !filterView &&
+          filterView &&
           <Sidebar filters={filters}
                  info={info}
                  cards={mapInputCards(this.props, this.state)}
                  allCards={cards}
                  inExtensions={(inExtensions && cardSet) && {cardSet}}
+                 handleFilterViewToggle={this.handleFilterViewToggle}
                  handleFilterReset={this.handleFilterReset}
                  handleInputChange={this.handleInputChange}
                  handleSliderClick={this.handleSliderClick}
                  handleIconClick={this.handleIconClick}/>
         }
-        <div className={`container__page--inner container__page--right ${!filterView ? undefined : "no-filters"}`}>
+        <div className={`container__page--inner container__page--right ${filterView ? undefined : "no-filters"}`}>
           {
-            !filterView &&
+            filterView &&
             <Topbar filters={filters}
                     inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
                     handleIconClick={this.handleIconClick}/>
@@ -95,7 +102,7 @@ class ComponentCards extends Component {
             </ul>
           </div>
         </div>
-        <div className="toggle-filters">Toggle Filters</div>
+        {!filterView && <div className="toggle-filters" onClick={this.handleFilterViewToggle}>Toggle Filters</div>}
       </div>
     )
   }

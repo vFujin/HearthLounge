@@ -519,7 +519,7 @@ a {
     display: grid; }
     #container .container__page .container__page--inner {
       display: grid;
-      grid-template-rows: 5.5vh 77.5vh; }
+      grid-template-rows: 5.5vh auto; }
       #container .container__page .container__page--inner.no-filters {
         display: flex; }
     #container .container__page .container__page--left .sidebar__body .container__mana-curve {
@@ -5934,15 +5934,25 @@ card {
     .deck .container__page--right .content .container__details .container__details--comments .section__footer .text-editor {
       height: calc(100% - 1vh); }
 
-.cards .left-container .sidebar .sidebar-icons {
-  margin: 1em 0;
-  text-align: center; }
-  .cards .left-container .sidebar .sidebar-icons li span {
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    transition: all ease 0.4s;
-    padding: 5px;
-    color: #474143; }
+.cards {
+  position: relative;
+  height: 100%; }
+  .cards .left-container .sidebar .sidebar-icons {
+    margin: 1em 0;
+    text-align: center; }
+    .cards .left-container .sidebar .sidebar-icons li span {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      padding: 5px;
+      color: #474143; }
+  .cards .toggle-filters {
+    position: absolute;
+    z-index: 3;
+    border: 1px solid black;
+    padding: 1vh;
+    box-shadow: 0 0 10px black;
+    cursor: pointer; }
 
 .create-deck .pick-class {
   padding: 0 40px;
