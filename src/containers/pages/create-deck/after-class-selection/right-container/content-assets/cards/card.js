@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CardTooltip from "./card-tooltip";
+import CardTooltip from "../../../../../../../components/cards/assets/card-tooltip";
 
 const Card = ({card, deck, handleCardClick}) =>{
   const deckLength = deck.length;

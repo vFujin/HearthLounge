@@ -13,7 +13,7 @@ const ClassSelectionSnippet = ({page, updatePlayerClass}) =>{
 
   const listClasses = () =>{
     return (
-        icon_filters.playerClass.map(playerClass =>
+        icon_filters.playerClass.filter(playerClass=> playerClass.url !== "neutral").map(playerClass =>
             <li key={playerClass.url}
                 className={playerClass.url}
                 id={playerClass.url}
@@ -28,13 +28,20 @@ const ClassSelectionSnippet = ({page, updatePlayerClass}) =>{
   };
 
   return (
-    <div className={`container__page container__page--oneSided create-deck`}>
+    <div className={`container__page container__page--oneSided class-selection create-deck`}>
       <div className="container__page--inner container__class-selection">
-        <h3>Choose class</h3>
+        <h3>Create deck from scratch</h3>
         <ul>
           {listClasses()}
         </ul>
       </div>
+      {/*<div className="separator"><p>or</p></div>*/}
+      {/*<div className="container__page--inner container__class-selection">*/}
+        {/*<h3>Import deck</h3>*/}
+        {/*<ul>*/}
+          {/*{listClasses()}*/}
+        {/*</ul>*/}
+      {/*</div>*/}
     </div>
   );
 };

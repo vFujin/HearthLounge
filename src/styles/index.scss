@@ -686,7 +686,6 @@ card{
         height:100%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         align-items: center;
         li{
           cursor: pointer;
@@ -738,7 +737,7 @@ card{
             }
           }
           &.choosen{
-             .img-wrapper:before{
+             .img-wrapper{
               opacity:0;
             }
           }
@@ -1869,45 +1868,6 @@ card{
   }
 }
 
-.create-deck{
-  .pick-class{
-    padding: 0 40px;
-    @include box-shadow(0px, 0px, 70px, black);
-    background-color: $dark-grey;
-    margin:auto;
-    text-transform: uppercase;
-    text-align: center;
-    tr{
-      th{
-        padding: 40px 0;
-        font-size: 26px;
-        color: $pearl;
-      }
-      td{
-        @include transition(all .4s ease);
-        cursor: pointer;
-        width: 200px;
-        height: 200px;
-        a{
-          width:100%;
-          height:100%;
-          display: block;
-          div{
-            position: relative;
-            top: calc(50% - 52px);
-            span{
-              font-size: 65px;
-            }
-            p{
-              margin-top: 20px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 .expansions, .adventures{
   .select-extension{
     display: flex;
@@ -2043,6 +2003,35 @@ card{
   }
 }
 
+//.class-selection.create-deck{
+//  display: flex !important;
+//  .separator{
+//    display: flex;
+//    align-items: center;
+//    background: $dark-grey;
+//    position: relative;
+//
+//    &:before{
+//      position: absolute;
+//      content: '';
+//      width: 1px;
+//      height: 95%;
+//      top: 2.5%;
+//      left: calc(50% - .5px);
+//      background-color: $light-grey;
+//    }
+//    p{
+//      background: $dark-grey;
+//      color: $light-grey;
+//      border: 1px solid $light-grey;
+//      padding: 15px;
+//      position: relative;
+//      text-transform: uppercase;
+//      border-radius: 50%;
+//    }
+//
+//  }
+//}
 .create-deck {
   .container__page--right {
     position: relative;

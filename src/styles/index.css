@@ -532,7 +532,8 @@ a {
       display: grid;
       grid-template-rows: 3vh 18vh 3vh auto; }
     #container .container__page .container__page--right .topbar__grid {
-      display: grid; }
+      display: grid;
+      height: 100%; }
       #container .container__page .container__page--right .topbar__grid div {
         height: 100%; }
         > #container .container__page .container__page--right .topbar__grid div:last-child {
@@ -5083,7 +5084,6 @@ card {
       height: 100%;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       align-items: center; }
       .container__page .container__page--right .content .container__cards li {
         cursor: pointer;
@@ -5131,7 +5131,7 @@ card {
           .container__page .container__page--right .content .container__cards li img.choosen.disabled {
             background: transparent;
             cursor: pointer; }
-        .container__page .container__page--right .content .container__cards li.choosen .img-wrapper:before {
+        .container__page .container__page--right .content .container__cards li.choosen .img-wrapper {
           opacity: 0; }
     .container__page .container__page--right .content .container__details {
       width: calc(100% + 1vh); }
@@ -5961,38 +5961,6 @@ card {
     padding: 1vh;
     box-shadow: 0 0 10px black;
     cursor: pointer; }
-
-.create-deck .pick-class {
-  padding: 0 40px;
-  -webkit-box-shadow: 0px 0px 70px black;
-  -moz-box-shadow: 0px 0px 70px black;
-  box-shadow: 0px 0px 70px black;
-  background-color: #474143;
-  margin: auto;
-  text-transform: uppercase;
-  text-align: center; }
-  .create-deck .pick-class tr th {
-    padding: 40px 0;
-    font-size: 26px;
-    color: #E7E2DA; }
-  .create-deck .pick-class tr td {
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-    cursor: pointer;
-    width: 200px;
-    height: 200px; }
-    .create-deck .pick-class tr td a {
-      width: 100%;
-      height: 100%;
-      display: block; }
-      .create-deck .pick-class tr td a div {
-        position: relative;
-        top: calc(50% - 52px); }
-        .create-deck .pick-class tr td a div span {
-          font-size: 65px; }
-        .create-deck .pick-class tr td a div p {
-          margin-top: 20px; }
 
 .expansions .select-extension, .adventures .select-extension {
   display: flex;

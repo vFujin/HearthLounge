@@ -12,8 +12,8 @@ import {filterCardsByCardSet, filterCardsByMode, filterCardsByPlayerClass, filte
  * @return {object | object[] | element} - if card(s) is/are not found returns error object (for input) or element (for DOM),
  *                                         if cards are loaded and/or filtered, returns array of card names (for input) or card objects (for DOM)
  */
-export const filter = (state, prefilter, inputMapping = false) =>{
-  const {cardNotFound, loadedCards, filters} = state;
+export const filter = (state, prefilter, inputMapping = false, props = undefined) =>{
+  const {cardNotFound, loadedCards, filters, inDeckCreation} = state;
   let filteredCards;
 
   if(inputMapping) {
@@ -24,10 +24,14 @@ export const filter = (state, prefilter, inputMapping = false) =>{
     return filteredCards;
   }
 
-  filteredCards = filterCards(loadedCards, filters, prefilter).map(card => <Card key={card.dbfId} card={card}/>);
+  filteredCards = filterCards(loadedCards, filters, prefilter).map(card => <Card key={card.dbfId}
+                                                                                 deck={(inDeckCreation && props) && props.deck}
+                                                                                 handleCardClick={(inDeckCreation && props) && props.handleCardClick}
+                                                                                 card={card}/>);
   if (filteredCards.length === 0) {
     return <div>{cardNotFound}</div>;
   }
+
   return filteredCards;
 };
 
@@ -50,7 +54,7 @@ export const mapInputCards = (props, state) => {
   } else {
     if(inDeckCreation){
       const prefilter = filterCardsByPlayerClass(info, cards, playerClass, mode);
-      return filter(state, prefilter, true);
+      return filter(state, prefilter, true, props);
     }
 
     if(inExtensions){
@@ -83,7 +87,7 @@ export const mapCards = (props, state) => {
   } else {
     if(inDeckCreation){
       const prefilter = filterCardsByPlayerClass(info, cards, playerClass, mode);
-      return filter(state, prefilter);
+      return filter(state, prefilter, false, props);
     }
 
     if(inExtensions){

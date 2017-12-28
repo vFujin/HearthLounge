@@ -64,6 +64,7 @@
     .container__page--right{
       .topbar__grid{
         display: grid;
+        height: 100%;
         div{
           height:100%;
           > &:last-child{

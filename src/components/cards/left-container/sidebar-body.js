@@ -1,7 +1,7 @@
 import React from 'react';
 import {InputFilter, SliderFilter, IconFilter} from '../../filters';
 
-const SidebarBody = ({cards, allCards, info, filters, inExtensions, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick}) => {
+const SidebarBody = ({cards, mode, allCards, info, filters, inExtensions, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick}) => {
   const toggleFamiliesFilter = () =>{
     if(filters.cardSet === "mean-streets-of-gadgetzan"){
       return <IconFilter header_label="Family"
@@ -18,7 +18,12 @@ const SidebarBody = ({cards, allCards, info, filters, inExtensions, handleFilter
         <div>
           <IconFilter data={info} header_label="standard sets" filter="cardSet" filters={filters} wrapper_class="sidebar-icons" mode="standard" handleIconClick={handleIconClick} handleFilterReset={handleFilterReset}/>
           {toggleFamiliesFilter()}
-          <IconFilter data={info} header_label="wild sets" filter="cardSet" filters={filters} wrapper_class="sidebar-icons" mode="wild" handleIconClick={handleIconClick} handleFilterReset={handleFilterReset}/>
+          {
+            mode !== "standard" &&
+            <IconFilter data={info} header_label="wild sets" filter="cardSet" filters={filters}
+                      wrapper_class="sidebar-icons" mode="wild" handleIconClick={handleIconClick}
+                      handleFilterReset={handleFilterReset}/>
+          }
         </div>
       )
     }

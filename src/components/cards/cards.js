@@ -68,7 +68,7 @@ class ComponentCards extends Component {
   };
 
   render() {
-    const {filters, filterView, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
+    const {filters, mode, filterView, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
     const {info, cards} = this.props;
     // console.log("\nSTATE - cards loaded: ", this.state.loadedCards);
 
@@ -78,15 +78,17 @@ class ComponentCards extends Component {
         {
           filterView &&
           <Sidebar filters={filters}
-                 info={info}
-                 cards={mapInputCards(this.props, this.state)}
-                 allCards={cards}
-                 inExtensions={(inExtensions && cardSet) && {cardSet}}
-                 handleFilterViewToggle={this.handleFilterViewToggle}
-                 handleFilterReset={this.handleFilterReset}
-                 handleInputChange={this.handleInputChange}
-                 handleSliderClick={this.handleSliderClick}
-                 handleIconClick={this.handleIconClick}/>
+                   info={info}
+                   cards={mapInputCards(this.props, this.state)}
+                   allCards={cards}
+                   mode={mode}
+                   inExtensions={(inExtensions && cardSet) && {cardSet}}
+                   inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
+                   handleFilterViewToggle={this.handleFilterViewToggle}
+                   handleFilterReset={this.handleFilterReset}
+                   handleInputChange={this.handleInputChange}
+                   handleSliderClick={this.handleSliderClick}
+                   handleIconClick={this.handleIconClick}/>
         }
         <div className={`container__page--inner container__page--right ${filterView ? undefined : "no-filters"}`}>
           {

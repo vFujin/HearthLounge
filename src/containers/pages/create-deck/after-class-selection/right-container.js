@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import Topbar from './right-container/topbar';
-import Cards from './right-container/content-assets/cards/cards'
+import {default as Cards} from '../../../../components/cards/cards';
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 import Search from "./right-container/content-assets/cards/search";
 
@@ -10,14 +10,11 @@ const RightContainer = ({cards, deck, filteredCards, cardSearchValue, handleCard
 
   const activeView = () => {
     return !editingTool
-        ? <Cards cards={cards}
+        ? <Cards inDeckCreation
+                 mode="standard"
+                 playerClass={_.startCase(playerClass)}
                  deck={deck}
-                 filteredCards={filteredCards}
-                 playerClass={playerClass}
-                 handleCardClick={handleCardClick}
-                 updateCurrentCardsLoaded={updateCurrentCardsLoaded}
-                 filtersQuery={filtersQuery}
-                 currentCardsLoaded={currentCardsLoaded}/>
+                 handleCardClick={handleCardClick}/>
         : <DeckOptions playerClass={playerClass}/>
   };
 
