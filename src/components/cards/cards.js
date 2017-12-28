@@ -69,7 +69,7 @@ class ComponentCards extends Component {
         <div className="container__page--inner  container__page--left">
           <h3 className="sidebar__header">
             Filters
-            {!_.isEmpty(filters) && <Button handleClick={this.handleFilterReset} type="delete" dataAttr="clearAll" text="Clear filters"/>}
+            {!_.isEmpty(filters) && <Button handleClick={this.handleFilterReset} type="default--active" dataAttr="clearAll" text="Clear filters"/>}
           </h3>
           <Sidebar filters={filters}
                    info={info}

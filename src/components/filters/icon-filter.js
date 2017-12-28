@@ -6,7 +6,7 @@ import Icon from "../icon";
 import Loader from "../loaders/loader";
 import FilterHeader from "./filter-header";
 
-const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, inDeckCreation, filters, wrapper_class, handleFilterReset}) => {
+const IconFilter = ({handleIconClick, tooltip = true, filter, header, header_label, data, mode, inDeckCreation, filters, wrapper_class, handleFilterReset}) => {
   const iconType = () =>{
     switch(filter){
       case 'cost': return 'mana';
@@ -42,7 +42,7 @@ const IconFilter = ({handleIconClick, filter, header, header_label, data, mode, 
               <Icon name={mode ? _.kebabCase(_.toLower(icon)) : icon.url}
                     type={iconType()}
                     className={`${mode ? _.kebabCase(_.toLower(icon)) : icon.url} ${_.kebabCase(_.toLower(filters[filter])) === _.kebabCase(_.toLower(mode ? icon : icon.url)) ? 'active' : ''}`}
-                    tooltip={true}/>
+                    tooltip={tooltip}/>
             </li>
           )
         }
