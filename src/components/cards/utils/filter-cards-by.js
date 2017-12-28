@@ -86,7 +86,7 @@ export const matchFilteredCards = (filters, card) =>{
  * Final filtering function.
  *
  * @param {number} loadedCards - Currently loaded cards
- * @param {object} filters
+ * @param {object} filters - I.e {playerClass: "Rogue", attack: 2}
  * @param {object[]} prefilter - Cards that are set by default requirements. I.e during creating deck there is playerClass filter.
  *                               For extensions there is cardSet predefined.
  *                               These filters are also prefiltered by mode.
