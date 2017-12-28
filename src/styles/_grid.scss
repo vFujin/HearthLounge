@@ -49,6 +49,9 @@
     .container__page--inner {
       display: grid;
       grid-template-rows: 5.5vh 77.5vh;
+      &.no-filters{
+        display: flex;
+      }
     }
     .container__page--left{
       .sidebar__body{
@@ -61,8 +64,6 @@
     .container__page--right{
       .topbar__grid{
         display: grid;
-        width: 100%;
-        height:100%;
         div{
           height:100%;
           > &:last-child{

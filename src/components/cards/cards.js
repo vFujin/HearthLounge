@@ -16,81 +16,86 @@ class ComponentCards extends Component {
       loadedCards: 40,
       filters: {},
       cardNotFound: "Couldn't find cards that match your query",
+      infiniteScrollContainer: ".content__cards",
 
       mode: props.mode || 'wild',
       playerClass: props.playerClass || undefined,
       cardSet: props.cardSet || undefined,
       inExtensions: props.cardSet || undefined,
-      inDeckCreation: props.inDeckCreation || false
+      inDeckCreation: props.inDeckCreation || false,
+      filterView: props.filterView || undefined
     }
   }
 
   componentDidMount() {
-    lazyloadCards('.content', loadedCards => this.setState({loadedCards}));
+    lazyloadCards(this.state.infiniteScrollContainer, loadedCards => this.setState({loadedCards}));
   }
 
   handleInputChange = (value, filter) => {
-    document.querySelector('.content').scrollTop = 0;
-    const {filters} = this.state;
+    const {filters, infiniteScrollContainer} = this.state;
 
+    document.querySelector(infiniteScrollContainer).scrollTop = 0;
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
   handleIconClick = (e) =>{
-    document.querySelector('.content').scrollTop = 0;
     const filter = e.currentTarget.dataset.filter;
     const value = _.kebabCase(e.currentTarget.id);
-    const {filters} = this.state;
+    const {filters, infiniteScrollContainer} = this.state;
 
+    document.querySelector(infiniteScrollContainer).scrollTop = 0;
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
   handleSliderClick = (value, filter) =>{
-    document.querySelector('.content').scrollTop = 0;
-    const {filters} = this.state;
+    const {filters, infiniteScrollContainer} = this.state;
 
+    document.querySelector(infiniteScrollContainer).scrollTop = 0;
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
   handleFilterReset = (e) =>{
-    document.querySelector('.content').scrollTop = 0;
+    const {filters, infiniteScrollContainer} = this.state;
     const filter = e.currentTarget.dataset.attr;
-    const {filters} = this.state;
 
+    document.querySelector(infiniteScrollContainer).scrollTop = 0;
     updateFilters(state => this.setState(state), filters, filter, undefined)
   };
 
   render() {
-    const {filters, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
+    const {filters, filterView, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
     const {info, cards} = this.props;
-    console.log("\nSTATE - cards loaded: ", this.state.loadedCards);
+    // console.log("\nSTATE - cards loaded: ", this.state.loadedCards);
+
+
     return (
-      <div className="container__page container__page--twoSided cards">
-        <div className="container__page--inner  container__page--left">
-          <h3 className="sidebar__header">
-            Filters
-            {!_.isEmpty(filters) && <Button handleClick={this.handleFilterReset} type="default--active" dataAttr="clearAll" text="Clear filters"/>}
-          </h3>
+      <div className={`container__page container__page--${!filterView ? "two" : "one"}Sided cards`}>
+        {
+          !filterView &&
           <Sidebar filters={filters}
-                   info={info}
-                   cards={mapInputCards(this.props, this.state)}
-                   allCards={cards}
-                   inExtensions={(inExtensions && cardSet) && {cardSet}}
-                   handleFilterReset={this.handleFilterReset}
-                   handleInputChange={this.handleInputChange}
-                   handleSliderClick={this.handleSliderClick}
-                   handleIconClick={this.handleIconClick} />
-        </div>
-        <div className="container__page--inner container__page--right">
-          <Topbar filters={filters}
-                  inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
-                  handleIconClick={this.handleIconClick}/>
-          <div className="content">
+                 info={info}
+                 cards={mapInputCards(this.props, this.state)}
+                 allCards={cards}
+                 inExtensions={(inExtensions && cardSet) && {cardSet}}
+                 handleFilterReset={this.handleFilterReset}
+                 handleInputChange={this.handleInputChange}
+                 handleSliderClick={this.handleSliderClick}
+                 handleIconClick={this.handleIconClick}/>
+        }
+        <div className={`container__page--inner container__page--right ${!filterView ? undefined : "no-filters"}`}>
+          {
+            !filterView &&
+            <Topbar filters={filters}
+                    inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
+                    handleIconClick={this.handleIconClick}/>
+          }
+          <div className="content content__cards">
             <ul className="container__cards">
               {mapCards(this.props, this.state)}
             </ul>
           </div>
         </div>
+        <div className="toggle-filters">Toggle Filters</div>
       </div>
     )
   }

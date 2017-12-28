@@ -6,7 +6,7 @@ import {cardsPlaceholder, gameInfoPlaceholder, customInfoPlaceholder} from "../c
 import FilterHeader from "./filter-header";
 import 'antd/lib/select/style/css';
 
-const InputFilter = ({data, type, filter, multiple, filters, handleInputChange, handleFilterReset}) => {
+const InputFilter = ({data, type, filter, multiple = true, filters, handleInputChange, handleFilterReset}) => {
   const Option = Select.Option;
 
   const validateData = () =>{

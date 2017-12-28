@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import {adventure_details} from '../../../../../globals/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
-import Cards from '../../../../../components/extension-blocks/cards';
+import {default as Cards} from '../../../../../components/cards/cards';
 import {Boss, Bosses} from "../../../../../components/extensions/bosses";
 import {default as ClassChallenges} from "../../../../../components/extensions/class-challenges/class-challenges";
 import Overview from "../../assets/overview";
@@ -28,6 +28,8 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
                    extension={adventure}
                    classChallengeType="class-challenges"
                    cards={extensionCards}
+                   isExtension
+                   cardSet={adventure.adventure}
                    cardsLoading={cards.loading}
                    extensionUrl={adventure.url}
                    detailsChild={detailsChild}

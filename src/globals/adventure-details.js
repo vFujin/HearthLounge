@@ -1,6 +1,6 @@
 export const adventure_details = [
   {
-    adventure: "Curse of Naxxramas",
+    adventure: "Naxxramas",
     url: 'naxxramas',
     overview: {
       about: {

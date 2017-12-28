@@ -1,6 +1,6 @@
 import React from 'react';
 import ComponentCards from "../../../components/cards/cards";
 
-const Cards = () => <ComponentCards />;
+const Cards = () => <ComponentCards filterView={true}/>;
 
 export default Cards

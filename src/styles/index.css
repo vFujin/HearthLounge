@@ -520,13 +520,13 @@ a {
     #container .container__page .container__page--inner {
       display: grid;
       grid-template-rows: 5.5vh 77.5vh; }
+      #container .container__page .container__page--inner.no-filters {
+        display: flex; }
     #container .container__page .container__page--left .sidebar__body .container__mana-curve {
       display: grid;
       grid-template-rows: 3vh 18vh 3vh auto; }
     #container .container__page .container__page--right .topbar__grid {
-      display: grid;
-      width: 100%;
-      height: 100%; }
+      display: grid; }
       #container .container__page .container__page--right .topbar__grid div {
         height: 100%; }
         > #container .container__page .container__page--right .topbar__grid div:last-child {

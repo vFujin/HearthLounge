@@ -6,7 +6,7 @@ import Icon from "../icon";
 import Loader from "../loaders/loader";
 import FilterHeader from "./filter-header";
 
-const IconFilter = ({handleIconClick, tooltip = true, filter, header, header_label, data, mode, inDeckCreation, filters, wrapper_class, handleFilterReset}) => {
+const IconFilter = ({tooltip = true, header = true, handleIconClick, filter, header_label, data, mode, inDeckCreation, filters, wrapper_class, handleFilterReset}) => {
   const iconType = () =>{
     switch(filter){
       case 'cost': return 'mana';
@@ -75,12 +75,12 @@ const IconFilter = ({handleIconClick, tooltip = true, filter, header, header_lab
 };
 
 IconFilter.propTypes = {
-  header: PropTypes.bool.isRequired,
   header_label: PropTypes.string,
   filter: PropTypes.string.isRequired,
   filters: PropTypes.object.isRequired,
   wrapper_class: PropTypes.string.isRequired,
   handleIconClick: PropTypes.func.isRequired,
+  header: PropTypes.bool,
   isStandard: PropTypes.bool,
 };
 
