@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background"
 import Icon from "../../../../../../../components/icon";
+import {uniqueCards} from "../../../../../../../utils/deck/calculate";
 
-const ChoosenCards = ({countCards, deck}) => {
+const ChoosenCards = ({deck}) => {
+  const countCards = (e) => uniqueCards(deck, e);
 
   const removeApostrophe = (string) =>{
     return _.replace(string.toLowerCase(), "'", "");

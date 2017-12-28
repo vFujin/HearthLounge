@@ -46,7 +46,7 @@ class Main extends Component{
   render(){
     const {activeUser, playerClass, authenticated} = this.props;
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div id="container">
           <Navbar url="123"
                   activeUser={activeUser}

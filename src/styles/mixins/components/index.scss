@@ -27,7 +27,6 @@
   background: $background_color;
   color: $color;
   border: 1px solid;
-
   @if $border_color{
      border-color: $border_color;
   } @else {

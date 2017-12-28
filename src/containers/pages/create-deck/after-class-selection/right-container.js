@@ -1,43 +1,59 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import _ from 'lodash';
 import Topbar from './right-container/topbar';
 import {default as Cards} from '../../../../components/cards/cards';
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
-import Search from "./right-container/content-assets/cards/search";
+import {updateDeck} from "./right-container/content-assets/utils";
+import {editDeck, updateImportedDeckstring} from "../../../../redux/actions/create-deck/create-deck.action";
 
-const RightContainer = ({cards, deck, filteredCards, cardSearchValue, handleCardClick, handleInputChange, playerClass,
-                          query, filtersQuery, editingTool, searchBox, updateCurrentCardsLoaded, currentCardsLoaded}) =>{
+class RightContainer extends Component {
 
-  const activeView = () => {
-    return !editingTool
-        ? <Cards inDeckCreation
-                 mode="standard"
-                 playerClass={_.startCase(playerClass)}
-                 deck={deck}
-                 handleCardClick={handleCardClick}/>
-        : <DeckOptions playerClass={playerClass}/>
+  handleInputChange = e =>{
+    const {updateImportedDeckstring} = this.props;
+    let value = e.currentTarget.dataset.value || e.target.value;
+    updateImportedDeckstring(value);
   };
 
-  const searchBoxView = () =>{
-    if(searchBox){
-      return <Search cards={filteredCards || cards.allCards.filter(card => (card.playerClass === 'Neutral') || card.playerClass === _.startCase(playerClass))}
-                     cardSearchValue={cardSearchValue}
-                     handleInputChange={handleInputChange}/>
-    }
+  handleCardClick = (e, card) => {
+    const {deck, editDeck} = this.props;
+    e.preventDefault();
+    updateDeck(e, card, deck, editDeck);
   };
 
-  return (
+  render() {
+    const {deck, editingTool, handleInputChange, playerClass} = this.props;
+    return (
       <div className="container__page--inner container__page--right">
-        <Topbar query={query}
-                playerClass={playerClass}
+        <Topbar playerClass={playerClass}
                 deck={deck}
                 handleInputChange={handleInputChange}/>
-        <div className="content scrollable">
-          {activeView()}
+        <div className="content">
+          {
+            editingTool
+              ? <Cards inDeckCreation
+                       mode="standard"
+                       playerClass={_.startCase(playerClass)}
+                       deck={deck}
+                       handleCardClick={this.handleCardClick}/>
+              : <DeckOptions playerClass={playerClass}/>
+          }
         </div>
-        {searchBoxView()}
       </div>
-  )
+    )
+  }
+}
+
+const mapStateToProps = state =>{
+  const {deck, editingTool} = state.deckCreation;
+  return {deck, editingTool}
 };
 
-export default RightContainer;
+const mapDispatchToProps = dispatch => {
+  return {
+    editDeck: deck => dispatch(editDeck(deck)),
+    updateImportedDeckstring: importedDeckstring => dispatch(updateImportedDeckstring(importedDeckstring)),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(RightContainer);

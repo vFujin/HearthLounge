@@ -29,7 +29,7 @@ const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptions
   const saveImgPopover = <PopoverSaveImg handleImgSaveClick={handleImgSaveClick}/>;
 
   const generateSet = () => {
-    return topbar_icons(null)[set].map(obj=>
+    return topbar_icons[set].map(obj=>
         <li key={obj.icon} id={obj.icon} onClick={(e)=>handleOptionsClick(e, obj.icon)}>
           <Popover placement="bottomRight"
                    overlayClassName={obj.icon} title={_.startCase(obj.title)}

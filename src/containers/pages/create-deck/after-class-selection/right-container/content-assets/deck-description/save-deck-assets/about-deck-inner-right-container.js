@@ -1,9 +1,10 @@
 import React from 'react';
+import Button from "../../../../../../../../components/buttons/button";
 
 const InnerRightContainer = () =>{
   return(
       <div className="inner inner__right">
-        <button type="submit" className="btn-pearl">Submit</button>
+        <Button type="submit--light" text="Submit"/>
       </div>
   )
 };

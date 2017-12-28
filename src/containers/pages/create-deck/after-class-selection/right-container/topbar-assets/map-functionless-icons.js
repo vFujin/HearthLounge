@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {topbar_icons} from './icons';
 import Tooltip from 'antd/lib/tooltip';
+import Icon from "../../../../../../components/icon";
 
-const MapFunctionlessIcons = ({deck, playerClass, filtersActive, set}) => {
+const MapFunctionlessIcons = ({deck, set}) => {
   const countTypes = _.countBy(deck, 'type');
 
   const deckCardTypes = (type) =>{
@@ -17,11 +18,11 @@ const MapFunctionlessIcons = ({deck, playerClass, filtersActive, set}) => {
   };
 
   const generateSet = () => {
-      return topbar_icons(playerClass)[set].map(obj =>
+      return topbar_icons[set].map(obj =>
           <li key={obj.icon}>
             <Tooltip key={obj.title} title={checkSuffix(obj.title)} placement="bottom">
-                <span className={`hs-icon icon-${obj.icon}`}></span>
-                <p className={filtersActive ? 'display-none' : ''}>{deckCardTypes(_.upperFirst(obj.title))}</p>
+                <Icon name={obj.icon} />
+                <p>{deckCardTypes(_.upperFirst(obj.title))}</p>
             </Tooltip>
           </li>);
   };
@@ -34,9 +35,8 @@ const MapFunctionlessIcons = ({deck, playerClass, filtersActive, set}) => {
 };
 
 MapFunctionlessIcons.propTypes = {
-  deck: PropTypes.array,
-  playerClass: PropTypes.string.isRequired,
-  set: PropTypes.string.isRequired
+  set: PropTypes.string.isRequired,
+  deck: PropTypes.array
 };
 
 export default MapFunctionlessIcons;

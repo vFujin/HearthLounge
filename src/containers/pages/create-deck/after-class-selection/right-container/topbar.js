@@ -1,23 +1,20 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import StatsOptions from './topbar-assets/stats-options';
-import Filters from './topbar-assets/filters';
-import {
-  createDeckFromDeckstringObj, encodeDeckstring,
-  setDeckstringObj
-} from "../../../../../utils/deck/deckstring/index";
+import { createDeckFromDeckstringObj, encodeDeckstring, setDeckstringObj }from "../../../../../utils/deck/deckstring/index";
 import {imgCaptureBox, topbarOptions} from "./content-assets/utils/index";
 import {
   editDeck,
   showDeckEditingTool, simplifyDeck, toggleImgReadyDecklist, toggleImportedDeckstringPopover,
   updateDeckstring
 } from "../../../../../redux/actions/create-deck/create-deck.action";
+import MapFunctionlessIcons from "./topbar-assets/map-functionless-icons";
+import MapFunctionfulIcons from "./topbar-assets/map-functionful-icons";
 
 class Topbar extends Component {
 
   switchDecklistClasses = (param) => {
-    const {toggleImgReadyDecklist, imgReadyDecklist} = this.props;
+    const {toggleImgReadyDecklist, deckCreation} = this.props;
+    const {imgReadyDecklist} = deckCreation;
 
     toggleImgReadyDecklist(param);
     !imgReadyDecklist
@@ -30,67 +27,55 @@ class Topbar extends Component {
   };
 
   handleDeckImport = () => {
-    const {cards, importedDeckstring, editDeck, simplifyDeck} = this.props;
+    const {cards, editDeck, simplifyDeck, deckCreation} = this.props;
+    const {importedDeckstring} = deckCreation;
     const {allCards} = cards;
 
     createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck));
   };
 
   handleCopyDeckStringClick = () => {
-    const {updateDeckstring, deck, playerClass} = this.props;
+    const {playerClass, updateDeckstring, deckCreation} = this.props;
+    const {deck} = deckCreation;
     let deckstring = encodeDeckstring(setDeckstringObj(deck, playerClass));
 
     updateDeckstring(deckstring);
   };
 
-
-
   handleOptionsClick = (event, icon) => {
-    const {editingTool, deck, imgReadyDecklist, importedDeckstringPopover, showDeckEditingTool, simplifyDeck, toggleImportedDeckstringPopover} = this.props;
+    const {simplifyDeck, showDeckEditingTool, toggleImportedDeckstringPopover} = this.props;
+    const {editingTool, deck, imgReadyDecklist, importedDeckstringPopover} = this.props.deckCreation;
     topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck, importedDeckstringPopover, toggleImportedDeckstringPopover);
   };
 
-  activeView = () =>{
-    const {deck, deckstring, importedDeckstring, importedDeckstringPopover, filtersView, playerClass, query, imgReadyDecklist} = this.props;
-    return filtersView
-        ? <Filters deck={deck} playerClass={playerClass} query={query} filtersActive={filtersView}/>
-        : <StatsOptions deck={deck}
-                        deckstring={deckstring}
-                        playerClass={playerClass}
-                        importedDeckstring={importedDeckstring}
-                        importedDeckstringPopover={importedDeckstringPopover}
-                        handleImgSaveClick={this.handleImgSaveClick}
-                        handleOptionsClick={this.handleOptionsClick}
-                        handleInputChange={this.props.handleInputChange}
-                        handleDeckImport={this.handleDeckImport}
-                        filtersActive={filtersView}
-                        imgReadyDecklist={imgReadyDecklist}/>
-  };
-
   render() {
+    const {handleInputChange, deckCreation} = this.props;
+    const {deck, deckstring, importedDeckstring, importedDeckstringPopover, playerClass, imgReadyDecklist} = deckCreation;
     return (
         <div className="topbar">
-          {this.activeView()}
+          <div className="topbar__container topbar__grid topbar__grid--1-2-1 topbar__deckDetails">
+            <MapFunctionlessIcons deck={deck} playerClass={playerClass} set="types" />
+            <div className="deck-length"><p>{deck.length} / 30</p></div>
+            <MapFunctionfulIcons set="options"
+                                 handleInputChange={handleInputChange}
+                                 handleDeckImport={this.handleDeckImport}
+                                 importedDeckstring={importedDeckstring}
+                                 importedDeckstringPopover={importedDeckstringPopover}
+                                 deckstring={deckstring}
+                                 handleOptionsClick={this.handleOptionsClick}
+                                 handleImgSaveClick={this.handleImgSaveClick}
+                                 imgReadyDecklist={imgReadyDecklist}/>
+          </div>
         </div>
     );
   }
 }
 
 const mapStateToProps = state =>{
-  const {
-    deckstring, importedDeckstring, importedDeckstringPopover, filtersView, imgReadyDecklist, editingTool, simplifiedDeck
-  } = state.deckCreation;
+  const {deckCreation} = state;
   const {cards} = state.cards;
-  return {
-    deckstring,
-    importedDeckstring,
-    importedDeckstringPopover,
-    filtersView,
-    imgReadyDecklist,
-    editingTool,
-    cards,
-    simplifiedDeck
-  }
+
+  return {deckCreation, cards}
 };
 
 const mapDispatchToProps = dispatch => {
@@ -106,10 +91,3 @@ const mapDispatchToProps = dispatch => {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Topbar);
-
-Topbar.propTypes = {
-  deck: PropTypes.array.isRequired,
-  filtersView: PropTypes.bool,
-  playerClass: PropTypes.string,
-  query: PropTypes.object
-};

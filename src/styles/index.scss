@@ -2707,15 +2707,6 @@ card{
         }
       }
       form{
-        .avatar-wrapper{
-          margin-bottom:1vh;
-          input::-webkit-file-upload-button{
-            background: transparent;
-            outline: none;
-            color: $light-grey;
-            border: 1px solid $light-grey;
-          }
-        }
         .favourite-class{
           display: flex;
           margin-bottom: 1vh;

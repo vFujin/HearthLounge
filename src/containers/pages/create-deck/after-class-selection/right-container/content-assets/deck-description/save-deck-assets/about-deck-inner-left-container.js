@@ -41,7 +41,10 @@ const InnerLeftContainer = ({playerClass, deckDetails, handleInputChange, update
         {typeIsAdventure()}
         {adventureSelected()}
         <FormSelect section="archetype" value={deckArchetype} playerClass={playerClass} handleSelectChange={handleSelectChange}/>
-        <input onChange={handleIsPrivateClick} id="isPrivate" checked={isPrivate} type="checkbox"/>
+        <div className="input-wrapper">
+          <label htmlFor="isPrivate">Make deck private?</label>
+          <input onChange={handleIsPrivateClick} id="isPrivate" checked={isPrivate} type="checkbox"/>
+        </div>
       </div>
   )
 };

@@ -1,34 +1,40 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import Tooltip from 'antd/lib/tooltip';
 
-const Button = ({text, handleClick, type, darkBorder, active, tooltip = false, tooltipTitle, tooltipPlacement = "bottom", dataAttr}) =>{
-  const disabled = type === 'disabled' ? true : null;
+const Button = ({activeUser, text, handleClick, type, darkBorder, active, tooltip = false, tooltipTitle = "You have to be Signed In!", tooltipPlacement = "bottom", dataAttr}) =>{
+  const disabled = ((type === "submit" || type === "submit--light") && (!activeUser || !activeUser.authenticated)) && true;
   const btnType = type || "default";
+  const className = `component btn btn__${btnType} ${darkBorder ? "btn__darkBorder" : undefined} ${active ? `btn__${btnType}--active` : undefined}`;
 
-  if(tooltip) {
+  const btn = () =>{
+    return (
+      <button disabled={disabled}
+              data-attr={dataAttr}
+              className={className}
+              onClick={handleClick}>
+        {text}
+      </button>
+    )
+  };
+
+  if(tooltip || disabled) {
     return (
       <Tooltip title={tooltipTitle} placement={tooltipPlacement}>
-        <button disabled={disabled}
-                data-attr={dataAttr}
-                className={`component btn btn__${btnType} ${darkBorder ? "btn__darkBorder" : undefined} ${active ? `btn__${btnType}--active` : undefined}`}
-                onClick={handleClick}>
-          {text}
-        </button>
+        {btn()}
       </Tooltip>
     )
   }
-  return (
-    <button disabled={disabled}
-            data-attr={dataAttr}
-            className={`component btn btn__${btnType} ${darkBorder ? "btn__darkBorder" : undefined} ${active ? `btn__${btnType}--active` : undefined}`}
-            onClick={handleClick}>
-      {text}
-    </button>
-  )
+  return btn();
 };
 
-export default Button;
+const mapStateToProps = state =>{
+  const {activeUser} = state.users;
+  return {activeUser};
+};
+
+export default connect(mapStateToProps, null)(Button);
 
 Button.propTypes = {
   text: PropTypes.oneOfType([
