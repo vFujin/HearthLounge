@@ -99,6 +99,7 @@ export const matchFilteredCards = (filters, card) =>{
 export const filterCards = (loadedCards, filters, prefilter) => {
   if(prefilter) {
     return prefilter
+      .filter(card => card.type !== "Hero")
       .filter(card => matchFilteredCards(filters, card))
       // .filter(card => (card.type === "Hero" && !card.armor) && card) need to filter out heroes
       .slice(0, loadedCards);

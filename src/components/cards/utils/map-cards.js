@@ -6,9 +6,10 @@ import {filterCardsByCardSet, filterCardsByMode, filterCardsByPlayerClass, filte
 /**
  * Function to divide the filtered cards between card name input field and DOM container
  *
- * @param {object} state - Cards component state
+ * @param {object} state - Cards component state.
  * @param {object | object[]} prefilter - Initial filtering if filters are predefined (returns single object if it's card name)
  * @param {boolean} inputMapping - If mapping should be in input or DOM
+ * @param {object} props - Cards component props. Getting handleCardClick func & deck objects from it.
  * @return {object | object[] | element} - if card(s) is/are not found returns error object (for input) or element (for DOM),
  *                                         if cards are loaded and/or filtered, returns array of card names (for input) or card objects (for DOM)
  */
