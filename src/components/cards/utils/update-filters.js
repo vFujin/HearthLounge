@@ -6,8 +6,7 @@ export const updateFilters = (action, filters, filter, value) =>{
 
   if(filter === "clearAll"){
     return action({
-      filters: {},
-      loadedCards: 40
+      filters: {}
     })
   }
 

@@ -4,8 +4,8 @@ export const expansion_details = [
     url: 'goblins-vs-gnomes',
     overview: {
       about: {
-        announce_date: '07.11.2014',
-        release_date: '08.12.2014',
+        announce_date: '07 nov 2014',
+        release_date: '08 dec 2014',
         no_cards: 120,
       },
       cardback_heroic: '15',
@@ -14,22 +14,28 @@ export const expansion_details = [
       description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/goblins-vs-gnomes.jpg',
       gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/gvg.jpg',
-      new_mechanics_keywords: [
-        {
-          name: "Mech",
-          description: ""
-        }
-      ],
-      new_game_functions: [
-        {
-          name: "Spectator Mode",
-          description: ""
-        },
-        {
-          name: "Hearthstone on Android",
-          description: ""
-        }
-      ]
+      game_changes: {
+        new_mechanics_keywords: [
+          {
+            name: "Mech",
+            description: ""
+          },
+          {
+            name: "Mega-Windfury",
+            description: "Can attack four times each turn."
+          }
+        ],
+        new_game_functions: [
+          {
+            name: "Spectator Mode",
+            description: ""
+          },
+          {
+            name: "Hearthstone on Android",
+            description: ""
+          }
+        ]
+      }
     },
     extension_topbar_tabs: [
       {

@@ -4,21 +4,23 @@ export const adventure_details = [
     url: 'naxxramas',
     overview: {
       about: {
-        announce_date: '03.11.2017',
-        release_date: '',
+        announce_date: '03 nov 2014',
+        release_date: '22 jul 2014',
         no_cards: 30,
       },
       cardback_heroic: '7',
       cinematic: 'https://www.youtube.com/embed/5SDJgW3A_sw',
-      description: '',
+      description: "Curse of Naxxramas is Hearthstone's first adventure. Set in the Scourge necropolis of Naxxramas, Curse of Naxxramas is a five-wing adventure, with each wing representing one of the wings of the World of Warcraft Naxxramas raid instance.",
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/curse-of-naxxramas.jpg',
-      gameboard: '',
-      new_mechanics_keywords: [
-        {
-          name: 'Deathrattle',
-          description: ''
-        }
-      ],
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/curse-of-naxxramas.jpg',
+      game_changes:{
+        new_mechanics_keywords: [
+          {
+            name: 'Deathrattle',
+            description: 'Deathrattle is an ability where the stated effect occurs when the minion or weapon is destroyed. Cards with Deathrattle appear with a skull and crossbones when in play.'
+          }
+        ]
+      },
       cost: [
           {
             desc: 'First',
@@ -59,14 +61,14 @@ export const adventure_details = [
       structure: {
         wing_amount: 5,
         wing_details: [
-          "Każde skrzydło było otwierane raz na tydzień przez 5 tygodni",
-          "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
-          "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+          "Wings have been opened once per week for 5 weeks",
+          "Completing a wing will give you a neutral Legendary of the last boss in that wing (one copy).",
+          "Completing a wing on normal difficulty unlocks it's heroic version"
         ],
         bosses_amount: 15,
-        bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+        bosses_difficulty: 'Each boss has two difficulties: Normal and Heroic',
         class_challenges: 9,
-        class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+        class_challenges_details: "Each class challenge rewards you with one class card (two copies)"
       }
     },
     extension_topbar_tabs: [
@@ -242,22 +244,16 @@ export const adventure_details = [
     url: "blackrock-mountain",
     overview: {
       about: {
-        announce_date: '03.11.2017',
-        release_date: '',
+        announce_date: '03 nov 2017',
+        release_date: '02 apr 2017',
         no_cards: 45,
       },
       cardback_event: '18',
       cardback_heroic: '21',
       cinematic: 'https://www.youtube.com/embed/jsH9w5HW-9w',
-      description: '',
+      description: "Blackrock Mountain is Hearthstone's second adventure, with each wing representing a raid or dungeon instance from the World of Warcraft Blackrock Mountain zone, a high-level area inhabited by fire elementals, Blackrock orcs, Dark Iron dwarves and the black dragonflight.",
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/blackrock-mountain.jpg',
-      gameboard: '',
-      new_mechanics_keywords: [
-        {
-          name: 'Deathrattle',
-          description: ''
-        }
-      ],
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/blackrock-mountain.jpg',
       cost: [
         {
           desc: 'First',
@@ -298,14 +294,14 @@ export const adventure_details = [
       structure: {
         wing_amount: 5,
         wing_details: [
-          "Każde skrzydło było otwierane raz na tydzień przez 5 tygodni",
-          "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
-          "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+          "Wings have been opened once per week for 5 weeks",
+          "Completing a wing will give you a neutral Legendary of the last boss in that wing (one copy).",
+          "Completing a wing on normal difficulty unlocks it's heroic version"
         ],
         bosses_amount: 17,
-        bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+        bosses_difficulty: 'Each boss has two difficulties: Normal and Heroic',
         class_challenges: 9,
-        class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+        class_challenges_details: "Each class challenge rewards you with one class card (two copies)"
       }
     },
     extension_topbar_tabs: [
@@ -490,21 +486,32 @@ export const adventure_details = [
     url: "the-league-of-explorers",
     overview: {
       about: {
-        announce_date: '03.11.2017',
-        release_date: '',
+        announce_date: '03 nov 2017',
+        release_date: '13 dec 2017',
         no_cards: 31,
       },
       cardback_heroic: '37',
       cinematic: 'https://www.youtube.com/embed/wmu0XXpUYog',
-      description: '',
+      description: 'The League of Explorers is the third adventure for Hearthstone, with a strong theme of exploration.',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/the-league-of-explorers.jpg',
-      gameboard: '',
-      new_mechanics_keywords: [
-        {
-          name: 'Deathrattle',
-          description: ''
-        }
+      gameboard: [
+        'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/the-league-of-explorers.jpg',
+        'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/the-league-of-explorers2.jpg'
       ],
+      game_changes:{
+        new_mechanics_keywords: [
+          {
+            name: 'Discover',
+            description: 'Choose one card from three random class-appropriate cards, then add it to your hand'
+          }
+        ],
+        new_game_functions: [
+          {
+            name: "New encounter type",
+            description: "Player must survive through several rounds of traps, ambushes and environmental events to escape to safety"
+          }
+        ]
+      },
       cost: [
           {
             desc: 'First',
@@ -538,14 +545,14 @@ export const adventure_details = [
       structure: {
         wing_amount: 4,
         wing_details: [
-          "Każde skrzydło było otwierane raz na tydzień przez 4 tygodnie",
-          "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
-          "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+          "Wings have been opened once per week for 5 weeks",
+          "Completing a wing will give you a neutral Legendary of the last boss in that wing (one copy).",
+          "Completing a wing on normal difficulty unlocks it's heroic version"
         ],
         bosses_amount: 13,
-        bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+        bosses_difficulty: 'Each boss has two difficulties: Normal and Heroic',
         class_challenges: 9,
-        class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+        class_challenges_details: "Each class challenge rewards you with one class card (two copies)"
       }
     },
     extension_topbar_tabs: [
@@ -704,22 +711,16 @@ export const adventure_details = [
     url: "karazhan",
     overview: {
       about: {
-        announce_date: '03.11.2017',
-        release_date: '',
+        announce_date: '28 jul 2016',
+        release_date: '11 aug 2016',
         no_cards: 45,
       },
       cardback_event: '56',
       cardback_heroic: '53',
       cinematic: 'https://www.youtube.com/embed/wmu0XXpUYog',
-      description: '',
+      description: 'One Night in Karazhan is the fourth adventure for Hearthstone. The adventure is set in the reimagined glory days of the mystical tower of Karazhan, when a young Medivh was not only the Guardian of Azeroth, but also its most eligible bachelor.',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/one-night-in-karazhan.jpg',
-      gameboard: '',
-      new_mechanics_keywords: [
-        {
-          name: 'Deathrattle',
-          description: ''
-        }
-      ],
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/one-night-in-karazhan.jpg',
       cost: [
         {
           desc: 'Prologue'
@@ -763,14 +764,14 @@ export const adventure_details = [
       structure: {
         wing_amount: 4,
         wing_details: [
-          "Każde skrzydło było otwierane raz na tydzień przez 4 tygodnie",
-          "Ukończenie jednego ze skrzydeł odblokowuje legendarną kartę odkrywcy, którym grasz w danym skrzydle",
-          "Przechodząc skrzydło odblokowujemy jego heroiczną wersję."
+          "Wings have been opened once per week for 4 weeks",
+          "Completing a wing will give you a neutral Legendary of the last boss in that wing (one copy).",
+          "Completing a wing on normal difficulty unlocks it's heroic version"
         ],
         bosses_amount: 13,
-        bosses_difficulty: 'Każdy boss posiada dwa poziomy trudności, Normalny oraz Heroiczny.',
+        bosses_difficulty: 'Each boss has two difficulties: Normal and Heroic',
         class_challenges: 9,
-        class_challenges_details: "Każde wyzwanie klasowe ma nagrodę w postaci jednej karty klasowej (2 kopie)."
+        class_challenges_details: "Each class challenge rewards you with one class card (two copies)"
       }
     },
     extension_topbar_tabs: [

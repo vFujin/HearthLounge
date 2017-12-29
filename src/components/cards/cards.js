@@ -27,7 +27,7 @@ class ComponentCards extends Component {
   }
 
   componentDidMount() {
-    lazyloadCards(this.state.infiniteScrollContainer, loadedCards => this.setState({loadedCards}));
+    lazyloadCards(this.state.infiniteScrollContainer, loadedCards => this.setState({loadedCards}), this.state.loadedCards);
   }
 
   handleInputChange = (value, filter) => {
@@ -70,8 +70,7 @@ class ComponentCards extends Component {
   render() {
     const {filters, mode, filterView, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
     const {info, cards} = this.props;
-    // console.log("\nSTATE - cards loaded: ", this.state.loadedCards);
-
+    console.log("\nSTATE - cards loaded: ", this.state.loadedCards);
 
     return (
       <div className={`container__page container__page--${filterView ? "two" : "one"}Sided cards`}>
