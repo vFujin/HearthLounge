@@ -2,52 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'antd/lib/select';
 import _ from 'lodash';
-import {cardsPlaceholder, gameInfoPlaceholder, customInfoPlaceholder} from "../cards/utils/input-placeholders";
+import {cardsPlaceholder, gameInfoPlaceholder} from "../cards/utils/input-placeholders";
 import FilterHeader from "./filter-header";
 import 'antd/lib/select/style/css';
 
 const InputFilter = ({data, type, filter, multiple = true, filters, handleInputChange, handleFilterReset}) => {
   const Option = Select.Option;
-
-  const validateData = () =>{
-    if(!data.loading && filter === "mechanic"){
-      let mechanics = data.allCards.filter(c => c[`${filter}s`])
-        .map(x => x[`${filter}s`])
-        .reduce((a, b) => a.concat(b))
-        .map(x => x.name);
-
-      return [...new Set(mechanics)];
-    }
-    return data;
-  };
-
-  const dataArrayIsArray = validateData().constructor === Array;
+  const dataArrayIsArray = data.constructor === Array;
 
   const options = () => {
-    switch(type) {
-      case "cards":
-        return dataArrayIsArray && validateData().map(card => (
-          <Option value={card.name} key={card.dbfId}>{_.startCase(card.name)}</Option>
-        ));
-
-      case "customInfo":
-        return !data.loading && validateData().map((info, i) => (
-          <Option value={info} key={i}>{_.startCase(info)}</Option>
-        ));
-
-      default:
-        return validateData()[`${filter}s`] && validateData()[`${filter}s`].map((info, i) => (
-          <Option value={info} key={i}>{_.startCase(info)}</Option>
-        ));
+    if (type === "cards") {
+      return dataArrayIsArray && data.map(card => (
+        <Option value={card.name} key={card.dbfId}>{_.startCase(card.name)}</Option>
+      ));
     }
+    return data[`${filter}s`] && data[`${filter}s`].map((info, i) => (
+      <Option value={info} key={i}>{_.startCase(info)}</Option>
+    ));
   };
 
   const placeholder = () => {
-    switch(type){
-      case "cards": return cardsPlaceholder(validateData(), dataArrayIsArray);
-      case "customInfo": return customInfoPlaceholder(data.loading, data.error, validateData());
-      default: return gameInfoPlaceholder(validateData(), `${filter}s`);
+    if(type === "cards"){
+      return cardsPlaceholder(data, dataArrayIsArray);
     }
+    return gameInfoPlaceholder(data, `${filter}s`);
   };
 
   return (
@@ -57,7 +35,7 @@ const InputFilter = ({data, type, filter, multiple = true, filters, handleInputC
                 showSearch={!multiple}
                 allowClear={!multiple}
                 style={{width: "100%"}}
-                notFoundContent={validateData().error || "Couldn't find cards that match your query"}
+                notFoundContent={data.error || "Couldn't find cards that match your query"}
                 placeholder={placeholder()}
                 onChange={(e)=>handleInputChange(e, filter)}
                 onDeselect={e=>handleInputChange(e, filter)}

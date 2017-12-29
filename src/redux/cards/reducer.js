@@ -7,6 +7,14 @@ const initialState = {
   }
 };
 
+const getUniqueCardMechanics = payload => {
+  const mechanics = Object.values(payload)
+    .reduce((a, b) => a.concat(b))
+    .filter(c=> c.mechanics)
+    .map(c => c.mechanics[0].name);
+  return [...new Set(mechanics)];
+};
+
 export default function(state=initialState, {type, payload}) {
   switch (type) {
     case types.FETCH_CARDS_REQUEST:
@@ -22,6 +30,7 @@ export default function(state=initialState, {type, payload}) {
         cards: {
           loading: false,
           allCards: Object.values(payload).reduce((a, b) => a.concat(b)),
+          mechanics: getUniqueCardMechanics(payload),
           ...payload
         }
       };

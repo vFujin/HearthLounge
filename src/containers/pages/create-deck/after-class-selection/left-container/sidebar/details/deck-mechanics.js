@@ -4,12 +4,12 @@ import _ from 'lodash';
 import Loader from "../../../../../../../components/loaders/loader";
 
 const DeckMechanics = ({deck, cards}) => {
-  const {loading, allCards} = cards;
+  const {loading} = cards;
   let deckMechanics = [].concat.apply([], _.map(deck, (value)=>value.hasOwnProperty('mechanics') ? value.mechanics : null));
   let countMechanics = _.countBy(deckMechanics, 'name');
 
   const listMechanics = () =>{
-    const {mechanics} = allCards;
+    const {mechanics} = cards;
 
     return _.sortBy(mechanics).map(mechanic=>
         <tr className={`${countMechanics[mechanic] > 0 ? 'has-mechanic' : ''}`} key={mechanic}>

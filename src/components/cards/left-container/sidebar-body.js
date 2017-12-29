@@ -31,11 +31,11 @@ const SidebarBody = ({cards, mode, allCards, info, filters, inExtensions, handle
 
   return (
     <div className="sidebar__body">
-      <InputFilter data={cards}    filter="name"     type="cards"      filters={filters} multiple={false} handleInputChange={handleInputChange} handleFilterReset={handleFilterReset}/>
+      <InputFilter data={cards}    filter="name"     type="cards"      filters={filters} handleInputChange={handleInputChange} handleFilterReset={handleFilterReset} multiple={false} />
       <InputFilter data={info}     filter="race"     type="gameInfo"   filters={filters} handleInputChange={handleInputChange} handleFilterReset={handleFilterReset}/>
       <InputFilter data={info}     filter="faction"  type="gameInfo"   filters={filters} handleInputChange={handleInputChange} handleFilterReset={handleFilterReset}/>
       <InputFilter data={info}     filter="type"     type="gameInfo"   filters={filters} handleInputChange={handleInputChange} handleFilterReset={handleFilterReset}/>
-      <InputFilter data={allCards} filter="mechanic" type="customInfo" filters={filters} handleInputChange={handleInputChange} handleFilterReset={handleFilterReset}/>
+      <InputFilter data={allCards} filter="mechanic" type="gameInfo"   filters={filters} handleInputChange={handleInputChange} handleFilterReset={handleFilterReset}/>
 
       <SliderFilter filter="health"     filters={filters} handleSliderClick={handleSliderClick} defaultValue={[0, 30]} max={50} marks={{0:0, 30:30, 50:50}} handleFilterReset={handleFilterReset}/>
       <SliderFilter filter="attack"     filters={filters} handleSliderClick={handleSliderClick} defaultValue={[0, 5]}  max={30} marks={{0:0, 5:5, 30:30}}   handleFilterReset={handleFilterReset}/>

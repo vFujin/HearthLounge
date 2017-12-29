@@ -39,22 +39,3 @@ export const gameInfoPlaceholder = (data, filter) =>{
     return `${placeholder}...`;
   }
 };
-
-export const customInfoPlaceholder = (dataLoading, dataError, filteredData) =>{
-  if (dataLoading) {
-    return <Loader theme="light" sideLength={10}/>;
-  }
-
-  if (dataError) {
-    return dataError;
-  }
-
-  if (filteredData) {
-    const length = 3;
-    const placeholder = filteredData.slice(0, length).map(gameInfo => _.startCase(gameInfo)).join(", ");
-    if (filteredData.length <= length) {
-      return placeholder;
-    }
-    return `${placeholder}...`;
-  }
-};
