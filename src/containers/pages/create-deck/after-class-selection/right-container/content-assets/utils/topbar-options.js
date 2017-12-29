@@ -1,40 +1,39 @@
-import {deckSimplification} from "../../../../../../../utils/deck/edit-mode/index";
+import {deckSimplification} from "../../../../../../../utils/deck/edit-mode";
 
 /**
  * Handles deck creation topbar options selection
  *
- * @param event
- * @param {bool} editingTool
- * @param {object[]} deck
+ * @param e - event
  * @param {string} icon
- * @param {bool} imgReadyDecklist
+ * @param {object} props
  * @param {function} handleCopyDeckStringClick
  * @param {function} switchDecklistClasses
- * @param {function} showDeckEditingTool
- * @param {function} simplifyDeck
- * @param {bool} importedDeckstringPopover
- * @param {function} toggleImportedDeckstringPopover
+ * @param {function} toggleActiveClass
  * @return {*}
  */
-export default function(event, editingTool, deck, icon, imgReadyDecklist, handleCopyDeckStringClick, switchDecklistClasses, showDeckEditingTool, simplifyDeck, importedDeckstringPopover, toggleImportedDeckstringPopover){
-  const simplifiedDeck = deckSimplification(deck);
+export default function (e, icon, props, handleCopyDeckStringClick, switchDecklistClasses, toggleActiveClass){
+  const {simplifyDeck, showDeckEditingTool, toggleImportedDeckstringPopover, deckCreation} = props;
+  const {editingTool, deck, imgReadyDecklist, importedDeckstringPopover} = deckCreation;
+
   switch (icon) {
     case 'copy': return handleCopyDeckStringClick();
     case 'image': {
       switchDecklistClasses(!imgReadyDecklist);
+      toggleActiveClass(e, !imgReadyDecklist, "import");
       toggleImportedDeckstringPopover(false);
       break;
     }
-    case 'save':
-      editingTool
-          ? document.getElementById(event.currentTarget.id).className += "active"
-          : document.getElementById(event.currentTarget.id).className = "";
+    case 'save': {
+      const simplifiedDeck = deckSimplification(deck);
+      toggleActiveClass(e, editingTool);
       showDeckEditingTool(!editingTool);
       simplifyDeck(simplifiedDeck);
       break;
+    }
     case 'import': {
-      toggleImportedDeckstringPopover(!importedDeckstringPopover);
+      toggleActiveClass(e, !importedDeckstringPopover, "image");
       switchDecklistClasses(false);
+      toggleImportedDeckstringPopover(!importedDeckstringPopover);
       break;
     }
     default: return icon;

@@ -6,7 +6,7 @@ const PopoverSaveImg = ({handleImgSaveClick}) =>{
   return (
       <div className="popover-save-img">
         <Button handleClick={handleImgSaveClick} id="save-img" text="Save as JPEG" type="update"/>
-        <Button handleClick={handleImgSaveClick} id="cancel-save-img" text="Cancel" type="default--active"/>
+        <Button handleClick={handleImgSaveClick} id="cancel-img-save" text="Cancel" type="default--active"/>
       </div>
   )
 };

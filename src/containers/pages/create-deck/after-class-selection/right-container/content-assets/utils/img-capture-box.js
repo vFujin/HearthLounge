@@ -1,22 +1,25 @@
 import {captureDecklist} from "../../../../../../../utils/capture-decklist";
-import {loading} from "../../../../../../../utils/messages";
 
 /**
  * Handles user deck capturing selection
  *
  * @param event
  * @param switchDecklistClasses
+ * @param {string} parentId
  * @return {*}
  */
-export default function(event, switchDecklistClasses){
+export default function(event, switchDecklistClasses, parentId){
   let target = event.currentTarget.id;
 
   switch(target){
     case 'save-img':
-      let closeLoadingMessage = loading('Creating image...');
-      captureDecklist('decklist-to-img', switchDecklistClasses, closeLoadingMessage);
+      captureDecklist('decklist-to-img', switchDecklistClasses, parentId);
       break;
-    case 'cancel-img-save': return switchDecklistClasses(false);
+    case 'cancel-img-save': {
+      switchDecklistClasses(false);
+      document.getElementById(parentId).className = "";
+      break;
+    }
     default: return target;
   }
 };

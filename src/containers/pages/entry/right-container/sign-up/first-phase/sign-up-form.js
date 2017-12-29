@@ -58,7 +58,7 @@ class SignUpForm extends Component {
         {/*place for captcha*/}
 
         <div className="button-wrapper">
-          <Button text="Submit" type="submit--light"/>
+          <Button text="Submit" type="submit--light" requiresAuth={false}/>
           <Link to="/sign-up/update-profile">redirect</Link>
         </div>
       </form>

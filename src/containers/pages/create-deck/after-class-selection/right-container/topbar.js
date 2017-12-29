@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { createDeckFromDeckstringObj, encodeDeckstring, setDeckstringObj }from "../../../../../utils/deck/deckstring/index";
-import {imgCaptureBox, topbarOptions} from "./content-assets/utils/index";
+import {imgCaptureBox} from "./content-assets/utils/index";
 import {
   editDeck,
   showDeckEditingTool, simplifyDeck, toggleImgReadyDecklist, toggleImportedDeckstringPopover,
@@ -9,21 +9,32 @@ import {
 } from "../../../../../redux/actions/create-deck/create-deck.action";
 import MapFunctionlessIcons from "./topbar-assets/map-functionless-icons";
 import MapFunctionfulIcons from "./topbar-assets/map-functionful-icons";
+import {topbarOptions} from "./content-assets/utils";
 
 class Topbar extends Component {
 
-  switchDecklistClasses = (param) => {
-    const {toggleImgReadyDecklist, deckCreation} = this.props;
-    const {imgReadyDecklist} = deckCreation;
+  toggleActiveClass = (e, state, siblingId) =>{
+    const targetId = document.getElementById(e.currentTarget.id);
+    if(siblingId){
+      const sibling = document.getElementById(siblingId);
+      const siblingClasslist = sibling.classList;
+      if(siblingClasslist.contains("active")) {
+        sibling.className = "";
+      }
+    }
 
+    state
+      ? targetId.className += "active"
+      : targetId.className = "";
+  };
+
+  switchDecklistClasses = (param) => {
+    const {toggleImgReadyDecklist} = this.props;
     toggleImgReadyDecklist(param);
-    !imgReadyDecklist
-        ? document.getElementById('image').className += "active"
-        : document.getElementById('image').className = "";
   };
 
   handleImgSaveClick = e => {
-    imgCaptureBox(e, this.switchDecklistClasses);
+    imgCaptureBox(e, this.switchDecklistClasses, "image");
   };
 
   handleDeckImport = () => {
@@ -42,10 +53,8 @@ class Topbar extends Component {
     updateDeckstring(deckstring);
   };
 
-  handleOptionsClick = (event, icon) => {
-    const {simplifyDeck, showDeckEditingTool, toggleImportedDeckstringPopover} = this.props;
-    const {editingTool, deck, imgReadyDecklist, importedDeckstringPopover} = this.props.deckCreation;
-    topbarOptions(event, editingTool, deck, icon, imgReadyDecklist, this.handleCopyDeckStringClick, this.switchDecklistClasses, showDeckEditingTool, simplifyDeck, importedDeckstringPopover, toggleImportedDeckstringPopover);
+  handleOptionsClick = (e, icon) => {
+    topbarOptions(e, icon, this.props, this.handleCopyDeckStringClick, this.switchDecklistClasses, this.toggleActiveClass)
   };
 
   render() {
@@ -57,14 +66,14 @@ class Topbar extends Component {
             <MapFunctionlessIcons deck={deck} playerClass={playerClass} set="types" />
             <div className="deck-length"><p>{deck.length} / 30</p></div>
             <MapFunctionfulIcons set="options"
-                                 handleInputChange={handleInputChange}
-                                 handleDeckImport={this.handleDeckImport}
+                                 imgReadyDecklist={imgReadyDecklist}
                                  importedDeckstring={importedDeckstring}
                                  importedDeckstringPopover={importedDeckstringPopover}
                                  deckstring={deckstring}
+                                 handleInputChange={handleInputChange}
+                                 handleDeckImport={this.handleDeckImport}
                                  handleOptionsClick={this.handleOptionsClick}
-                                 handleImgSaveClick={this.handleImgSaveClick}
-                                 imgReadyDecklist={imgReadyDecklist}/>
+                                 handleImgSaveClick={this.handleImgSaveClick}/>
           </div>
         </div>
     );

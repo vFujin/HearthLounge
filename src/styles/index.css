@@ -6190,8 +6190,7 @@ card {
           width: 100%;
           align-items: flex-end; }
           .create-deck .container__page--right .container__details--description .section__body form .section__body--upperContainer .inner__right button {
-            width: 50%;
-            padding: 7px 0; }
+            padding: 7px; }
   .create-deck .container__page--right .search {
     position: absolute;
     bottom: 0;

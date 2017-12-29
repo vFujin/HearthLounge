@@ -28,6 +28,7 @@ class ResetPasswordForm extends Component{
         <div className="button-wrapper">
           <Button text="Reset password"
                   handleClick={(e) => this.handleResetPassword(e, resetPass_email)}
+                  requiresAuth={false}
                   type="submit--light"/>
           <Link to="/sign-in">Cancel</Link>
         </div>
