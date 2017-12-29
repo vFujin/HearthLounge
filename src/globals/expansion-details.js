@@ -1,24 +1,24 @@
 export const expansion_details = [
   {
-    expansion: 'Goblins vs Gnomes',
+    name: 'Goblins vs Gnomes',
     url: 'goblins-vs-gnomes',
     overview: {
       about: {
         announce_date: '07 nov 2014',
         release_date: '08 dec 2014',
-        no_cards: 120,
+        no_cards: 123,
+        description: 'Goblins vs Gnomes is the first expansion for Hearthstone with strong mechanical theme.',
       },
       cardback_heroic: '15',
       cardback_event: '11',
       cinematic: 'https://www.youtube.com/embed/ijyMZPIsj5E',
-      description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/goblins-vs-gnomes.jpg',
-      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/gvg.jpg',
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/goblins-vs-gnomes.jpg',
       game_changes: {
         new_mechanics_keywords: [
           {
             name: "Mech",
-            description: ""
+            description: "Mech is a type of minion, depicting mechanical constructs ranging from piloted vehicles to fully sentient mechanical beings."
           },
           {
             name: "Mega-Windfury",
@@ -28,11 +28,7 @@ export const expansion_details = [
         new_game_functions: [
           {
             name: "Spectator Mode",
-            description: ""
-          },
-          {
-            name: "Hearthstone on Android",
-            description: ""
+            description: "Spectator mode, also known as observer mode, is a game mode that allows players to watch other players' matches."
           }
         ]
       }
@@ -49,26 +45,46 @@ export const expansion_details = [
     ]
   },
   {
-    expansion: 'The Grand Tournament',
+    name: 'The Grand Tournament',
     url: 'the-grand-tournament',
     overview: {
       about: {
-        announce_date: '22.06.2015',
-        release_date: '24.08.2015',
+        announce_date: '22 jun 2015',
+        release_date: '24 aug 2015',
         no_cards: 132,
+        description: 'The Grand Tournament is the second expansion to Hearthstone, with strong Hero Power theme, with numerous ways to modify, augment and replace Hero Powers.',
       },
       cardback_heroic: '31',
       cardback_event: '32',
       cinematic: 'https://www.youtube.com/embed/Fe7XDBtlQzg',
-      description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/the-grand-tournament.jpg',
-      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/tgt.jpg',
-      new_mechanics_keywords: [
-        {
-          name: 'Inspire',
-          description: "Activates the card's effect every time you use your Hero Power"
-        }
-      ]
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/the-grand-tournament.jpg',
+      game_changes: {
+        new_mechanics_keywords: [
+          {
+            name: 'Inspire',
+            description: "Activates the card's effect every time you use your Hero Power"
+          },
+          {
+            name: 'Triggered effect',
+            description: "An effect or behaviour which only activates in response to a certain event. On minions, these are denoted by a lightning bolt icon at the bottom of the portrait"
+          },
+          {
+            name: "Joust",
+            description: "Reveals a random minion from each player's deck. If the player who initiated the Joust produces a minion with a higher mana cost, they win the Joust, activating a secondary effect. Both minions are then shuffled back into their respective decks"
+          }
+        ],
+        new_game_functions: [
+          {
+            name: "Highest Rank Bonus chest",
+            description: "At the end of each season, players who have reached Rank 20 or higher in either game format (Standard or Wild) will be granted a Highest Rank Bonus chest (also known as a Ranked Chest) containing rewards based on their highest rank attained that season, using whichever is higher of their Standard or Wild ranks"
+          },
+          {
+            name: "Arena card pack reward change",
+            description: "Arena was for the first time changed to award random card packs, previously only awarding those from Goblins vs Gnomes"
+          }
+        ]
+      }
     },
     extension_topbar_tabs: [
       {
@@ -82,23 +98,27 @@ export const expansion_details = [
     ]
   },
   {
-    expansion: 'Whispers of the Old Gods',
+    name: 'Whispers of the Old Gods',
     url: 'whispers-of-the-old-gods',
     overview: {
       about: {
-        announce_date: '11.03.2016',
-        release_date: '26.04.2016',
+        announce_date: '11 mar 2016',
+        release_date: '26 apr 2016',
         no_cards: 134,
+        description: "Whispers of the Old Gods is the third expansion to Hearthstone, with strong theme about dark influence of the Old Gods, ancient and unspeakably evil creatures that have long lay hidden, imprisoned in the dark places of the world millennia ago",
       },
       cardback_event: '45',
       cinematic: 'https://www.youtube.com/embed/cKjUgLrDEbI',
-      description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/whispers-of-the-old-gods.jpg',
-      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/wotog.jpg',
-      new_mechanics_keywords: [
-        {
-        }
-      ]
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/whispers-of-the-old-gods.jpg',
+      game_changes: {
+        new_game_functions: [
+          {
+            name: "Game formats",
+            description: "Game formats present distinct ways to play Hearthstone. There are two official game formats: Standard and Wild. Standard format only allows using cards from the last two years, as well as from the Basic and Classic sets, whereas Wild format allows players to use cards from any card set."
+          }
+        ]
+      }
     },
     extension_topbar_tabs: [
       {
@@ -112,29 +132,31 @@ export const expansion_details = [
     ]
   },
   {
-    expansion: 'Mean Streets of Gadgetzan',
+    name: 'Mean Streets of Gadgetzan',
     url: 'mean-streets-of-gadgetzan',
     overview: {
       about: {
-        announce_date: '04.11.2016',
-        release_date: '01.12.2016',
+        announce_date: '04 nov 2016',
+        release_date: '01 dec 2016',
         no_cards: 132,
+        description: "Mean Streets of Gadgetzan is the fourth expansion to Hearthstone. Features lawless port city of Gadgetzan and characters from the city's three ruling crime families - the brutish Grimy Goons, the shadowy assassins of the Jade Lotus, and the crazed spellcasters of the Kabal",
       },
       cardback_event: '66',
       cinematic: 'https://www.youtube.com/embed/fTyeE5oK7LQ',
-      description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/mean-streets-of-gadgetzan.jpg',
-      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/msog.jpg',
-      new_mechanics_keywords: [
-        {
-          name: "multi class cards",
-          description: ""
-        },
-        {
-          name: "jade golem mechanic",
-          description: ""
-        }
-      ]
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/mean-streets-of-gadgetzan.jpg',
+      game_changes: {
+        new_mechanics_keywords: [
+          {
+            name: "Multi class cards",
+            description: "Mean Streets of Gadgetzan is the first expansion to feature tri-class cards, special cards usable by any of the three specific classes corresponding to the matching crime family. Fittingly, many tri-class cards feature effects that cross the normal class lines, such as allowing players to Discover cards from any of the three matching classes. The boss of each crime family is a legendary tri-class card"
+          },
+          {
+            name: "Jade Golem mechanic",
+            description: "Mean Streets of Gadgetzan features Hearthstone's first dynamic card text, based on player actions and choices within each match. Any card text that summons a Jade Golem changes automatically to reflect the stats of the coming Golem"
+          }
+        ]
+      },
     },
     extension_topbar_tabs: [
       {
@@ -148,33 +170,35 @@ export const expansion_details = [
     ]
   },
   {
-    expansion: "Journey to Un'Goro",
+    name: "Journey to Un'Goro",
     url: 'journey-to-ungoro',
     overview: {
       about: {
-        announce_date: '27.02.2017',
-        release_date: '06.04.2017',
+        announce_date: '27 feb 2017',
+        release_date: '06 apr 2017',
         no_cards: 135,
+        description: "Journey to Un'Goro is the fifth expansion to Hearthstone with strong focus on dinosaurs, raging elementals and unusually active plants."
       },
       cardback_event: '70',
       cinematic: 'https://www.youtube.com/embed/MG3nb7Oam4k',
-      description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/journey-to-ungoro.jpg',
-      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/ungoro.jpg',
-      new_mechanics_keywords:[
-        {
-          name: 'Adapt',
-          description: ''
-        },
-        {
-          name: 'Quest',
-          description: ''
-        },
-        {
-          name: 'Elemental',
-          description: ""
-        }
-      ]
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/journey-to-ungoro.jpg',
+      game_changes: {
+        new_mechanics_keywords: [
+          {
+            name: 'Adapt',
+            description: "Choose from one of three possible upgrades to the possessing minion."
+          },
+          {
+            name: 'Quest',
+            description: "Similar to Secrets, Quests are a special type of spell card that does not take effect until certain requirements are met, triggering its effect. Unlike Secrets, Quests can be seen by the opponent, and the conditions must be met by the possessing player rather than the opponent. Each deck can include only one Quest, which will be automatically included in the player's mulligan. All Quests are legendary."
+          },
+          {
+            name: 'Elemental',
+            description: "Journey to Un'Goro introduced Elemental minion type"
+          }
+        ]
+      }
     },
     extension_topbar_tabs: [
       {
@@ -188,24 +212,46 @@ export const expansion_details = [
     ]
   },
   {
-    expansion: 'Knights of the Frozen Throne',
+    name: 'Knights of the Frozen Throne',
     url: 'knights-of-the-frozen-throne',
     overview: {
       about: {
-        announce_date: '06.07.2017',
-        release_date: '10.08.2017',
+        announce_date: '06 jul 2017',
+        release_date: '10 aug 2017',
         no_cards: 135,
+        description: "Knights of the Frozen Throne is the sixth expansion to Hearthstone. Expansion sees each of Hearthstone's nine heroes embrace the power of the Undead Scourge, becoming death knights in the service of the mighty Lich King.",
       },
       cardback_heroic: '103',
       cardback_event: '99',
       cinematic: 'https://www.youtube.com/embed/CCJq7lE3JQs',
-      description: '',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/knights-of-the-frozen-throne.jpg',
-      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/kotft.jpg',
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/knights-of-the-frozen-throne.jpg',
       new_mechanics_keywords: [
+        {
+          name: "Hero Card",
+          description: "Upon being played, a hero card will replace the player's hero, give them a small amount of Armor and replace their Hero Power with a new one. However, the player's current and maximum Health remains the same."
+        },
+        {
+          name: "Enemy turn only Deathrattles",
+          description: "Deathrattle effects that can only activate on the enemy's turn."
+        },
         {
           name: 'lifesteal',
           description: 'When you deal damage with Lifesteal, your hero heals for the amount of damage dealt.'
+        },
+        {
+          name: "Recurring cards",
+          description: "Recurring cards are spells which can re-cast themselves if certain conditions are met."
+        },
+        {
+          name: "Enemy deck manipulation",
+          description: "Cards that can remove or destroy cards from enemy's deck."
+        }
+      ],
+      new_game_functions: [
+        {
+          name: "Missions",
+          description: "Knights of the Frozen Throne is also the first expansion to feature Missions, a new type of free single-player content. The expansion features a total of eight Missions which take the player through Icecrown Citadel, culminating in a battle with the Lich King himself."
         }
       ]
     },
@@ -223,93 +269,102 @@ export const expansion_details = [
         url: 'bosses',
       }
     ],
-    wings: {
-      description: "",
-      details: [
-        {
-          wing_title: "Prologue",
-          url: 'prologue',
-          reward: 'random hero card',
-          bosses: [
-            {
-              name: "A Fateful Encounter",
-              url: 'a-fateful-encounter',
-            }
-          ]
-        },
-        {
-          wing_title: "Lower Citadel",
-          url: "lower-citadel",
-          reward: 'kotft pack',
-          bosses: [
-            {
-              name: "Lord Marrowgar",
-              url: 'lord-marrowgar',
-            },
-            {
-              name: "Deathbringer Saurfang",
-              url: 'deathbringer-saurfang',
-            },
-            {
-              name: "Lady Deathwhisper",
-              url: 'lady-deathwhisper',
-            }
-          ]
-        },
-        {
-          wing_title: "Upper Reaches",
-          url: 'upper-reaches',
-          reward: 'kotft pack',
-          bosses: [
-            {
-              name: "Blood-Queen Lana'thel",
-              url: 'blood-queen-lanathel'
-            },
-            {
-              name: "Professor Putricide",
-              url: 'professor-putricide'
-            },
-            {
-              name: "Sindragosa",
-              url: 'sindragosa'
-            }
-          ]
-        },
-        {
-          wing_title: "The Frozen Throne",
-          url: 'the-frozen-throne',
-          reward: 'kotft pack + alternate hero',
-          bosses: [
-            {
-              name: "The Lich King",
-              url: 'the-lich-king'
-            }
-          ]
-        }
-      ]
-    },
+    wings: [
+      {
+        wing_title: "Prologue",
+        url: 'prologue',
+        reward: 'random hero card',
+        bosses: [
+          {
+            name: "A Fateful Encounter",
+            url: 'a-fateful-encounter',
+          }
+        ]
+      },
+      {
+        wing_title: "Lower Citadel",
+        url: "lower-citadel",
+        reward: 'kotft pack',
+        bosses: [
+          {
+            name: "Lord Marrowgar",
+            url: 'lord-marrowgar',
+          },
+          {
+            name: "Deathbringer Saurfang",
+            url: 'deathbringer-saurfang',
+          },
+          {
+            name: "Lady Deathwhisper",
+            url: 'lady-deathwhisper',
+          }
+        ]
+      },
+      {
+        wing_title: "Upper Reaches",
+        url: 'upper-reaches',
+        reward: 'kotft pack',
+        bosses: [
+          {
+            name: "Blood-Queen Lana'thel",
+            url: 'blood-queen-lanathel'
+          },
+          {
+            name: "Professor Putricide",
+            url: 'professor-putricide'
+          },
+          {
+            name: "Sindragosa",
+            url: 'sindragosa'
+          }
+        ]
+      },
+      {
+        wing_title: "The Frozen Throne",
+        url: 'the-frozen-throne',
+        reward: 'kotft pack + alternate hero',
+        bosses: [
+          {
+            name: "The Lich King",
+            url: 'the-lich-king'
+          }
+        ]
+      }
+    ]
   },
   {
-    expansion: 'Kobolds & Catacombs',
+    name: 'Kobolds & Catacombs',
     url: 'kobolds-catacombs',
     overview: {
       about: {
-        announce_date: '03.11.2017',
-        release_date: '',
+        announce_date: '03 nov 2017',
+        release_date: '07 dec 2017',
         no_cards: 135,
+        description: "Kobolds and Catacombs is Hearthstone's seventh expansion featuring dark dungeons and winding catacombs in search of treasure and loot, encountering monsters, traps, rival adventurers, and — above all — slovenly, candle-obsessed kobolds along the way.",
       },
-      cardback_heroic: '',
-      cardback_event: '',
-      cinematic: 'https://www.youtube.com/watch?v=INuc1RR23DE',
-      description: '',
+      cardback_heroic: '119',
+      cardback_event: '118',
+      cinematic: 'https://www.youtube.com/watch?v=zdbnXv8UsVc',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/kobolds-and-catacombs.jpg',
-      gameboard: '',
-      new_mechanics_keywords: [
-        {
-          name: 'Recruit',
-          description: ''
-        }
-      ]
+      gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/kobolds-and-catacombs.jpg',
+      game_changes: {
+        new_mechanics_keywords: [
+          {
+            name: 'Recruit',
+            description: "Summons a random minion from the player's deck"
+          },
+          {
+            name: "Rogue secrets",
+            description: "Kobolds and Catacombs introduced 2-mana cost secrets for Rogue."
+          }
+        ],
+        new_game_functions: [
+          {
+            name: "Dungeon Run",
+            description: "New single-player game mode."
+          }
+        ]
+      }
     },
     extension_topbar_tabs: [
       {

@@ -18,7 +18,7 @@ const components = {
 };
 
 const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}) => {
-  const extensionCards = cards[activeExpansion.expansion];
+  const extensionCards = cards[activeExpansion.name];
   let activeExpansionTab = activeExpansion.extension_topbar_tabs.filter(tab => tab.url === details);
   const activeView = () => activeExpansionTab.map(page=> {
     let componentName = _.upperFirst(_.camelCase(page.name));
@@ -26,7 +26,7 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
     return <Page key={page.url}
                  type="expansions"
                  inExtensions
-                 cardSet={activeExpansion.expansion}
+                 cardSet={activeExpansion.name}
                  extension={activeExpansion}
                  classChallengeType="dungeon-run"
                  extensionUrl={activeExpansion.url}
@@ -36,7 +36,7 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
   });
 
   const bossDetails = () => {
-    let wing = activeExpansion.wings.details.find(wing => wing.url === details);
+    let wing = activeExpansion.wings.find(wing => wing.url === details);
     let activeBoss = wing.bosses.find(b => b.url === detailsChild);
     return <Boss extensionCards={extensionCards}
                  cardsLoading={cards.loading}
