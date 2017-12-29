@@ -4,14 +4,14 @@ import {Link} from 'react-router-dom';
 import Tooltip from 'antd/lib/tooltip';
 import AdventureBossImg from "../../../images/adventure-boss";
 
-const WingBosses = ({adventure, wing, activeBoss, wingBosses}) => {
+const WingBosses = ({adventure, wing, activeBoss, wingBosses, type}) => {
 
   const mapBosses = () =>{
     return wingBosses.map(boss =>
         <Tooltip key={boss.url} title={boss.name} placement="bottom">
           <li className={boss.url === activeBoss ? 'active-boss' : ''}>
-            <Link to={`/adventures/${adventure}/${wing}/${boss.url}`}>
-              <AdventureBossImg adventure={adventure} wing={wing} boss={boss.url}/>
+            <Link to={`/${type}/${adventure}/${wing}/${boss.url}`}>
+              <AdventureBossImg adventure={adventure} wing={wing} boss={boss.url} type={type} />
             </Link>
           </li>
         </Tooltip>

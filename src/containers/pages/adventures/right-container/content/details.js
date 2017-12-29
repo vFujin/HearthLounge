@@ -46,6 +46,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
                  key={adventure.url}
                  adventure={adventure}
                  wing={wing}
+                 type="adventures"
                  boss={activeBoss}
                  decks={decks}/>
   };

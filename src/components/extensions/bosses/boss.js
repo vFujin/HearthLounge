@@ -8,11 +8,10 @@ import Rewards from "../class-challenges/challenges/class-challenge/blocks/rewar
 import WingBosses from "./boss-blocks/wing-bosses";
 import Decklist from "./boss-blocks/decklist";
 
-const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading}) => {
-  let filteredDecks = _.filter(decks, deck => deck.boss === boss.url);
-
-
+const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading, type}) => {
+  const filteredDecks = _.filter(decks, deck => deck.boss === boss.url);
   const bossOverview = <Overview adventure={adventure.url}
+                                 type={type}
                                  wing={wing}
                                  boss={boss}/>;
   const bossStrategy = <Strategy />;
@@ -21,6 +20,7 @@ const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading}) => {
                                bossReward={boss.reward}/>;
   const wingBosses = <WingBosses adventure={adventure.url}
                                  wing={wing.url}
+                                 type={type}
                                  activeBoss={boss.url}
                                  wingBosses={wing.bosses}/>;
   const bossDecklist = <Decklist adventure={adventure.name}

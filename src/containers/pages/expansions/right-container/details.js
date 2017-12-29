@@ -43,6 +43,7 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
                  key={activeExpansion.url}
                  adventure={activeExpansion}
                  wing={wing}
+                 type="expansions"
                  boss={activeBoss}
                  decks={decks}/>
   };
