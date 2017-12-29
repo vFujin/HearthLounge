@@ -372,6 +372,7 @@
       background-color: $dark-grey;
       border:1px solid $pearl;
       border-radius: 0;
+      display: flex;
       .ant-popover-title{
         color: $pearl;
         border-bottom-color: $light-grey;
@@ -381,6 +382,16 @@
           display: flex;
           justify-content: space-around;
         }
+      }
+    }
+  }
+  &.import{
+    .ant-popover-inner-content{
+      input{
+        background: transparent;
+        color: $pearl;
+        border-bottom: 1px solid $pearl;
+        margin-right: 10px;
       }
     }
   }

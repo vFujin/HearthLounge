@@ -22,12 +22,12 @@ class RightContainer extends Component {
   };
 
   render() {
-    const {deck, editingTool, handleInputChange, playerClass} = this.props;
+    const {deck, editingTool, playerClass} = this.props;
     return (
       <div className="container__page--inner container__page--right">
         <Topbar playerClass={playerClass}
                 deck={deck}
-                handleInputChange={handleInputChange}/>
+                handleInputChange={this.handleInputChange}/>
         <div className="content">
           {
             editingTool

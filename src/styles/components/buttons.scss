@@ -36,6 +36,9 @@ button{
     &__failure{
       @include button($pearl, $death_knight);
     }
+    &__import{
+      @include button($pearl, $purple)
+    }
     &__darkBorder{
       border-color: $dark-grey;
     }

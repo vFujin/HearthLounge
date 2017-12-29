@@ -21,7 +21,7 @@ class CreateDeckClassSelected extends PureComponent {
     const {match} = this.props;
     const {playerClass} = match.params;
     return (
-        <div tabIndex="0" onKeyDown={(e) => this.handleKeyShortcuts(e)} className="container__page container__page--twoSided create-deck">
+        <div className="container__page container__page--twoSided create-deck">
           <LeftContainer playerClass={playerClass}/>
           <RightContainer playerClass={playerClass}/>
         </div>

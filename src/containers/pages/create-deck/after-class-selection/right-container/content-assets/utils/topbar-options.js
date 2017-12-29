@@ -26,7 +26,7 @@ export default function(event, editingTool, deck, icon, imgReadyDecklist, handle
       break;
     }
     case 'save':
-      !editingTool
+      editingTool
           ? document.getElementById(event.currentTarget.id).className += "active"
           : document.getElementById(event.currentTarget.id).className = "";
       showDeckEditingTool(!editingTool);

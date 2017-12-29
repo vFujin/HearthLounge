@@ -44,7 +44,7 @@ class DeckSidebar extends Component {
           }
         </div>
         <div className="background">
-          <Icon name={playerClass}/>
+          <Icon name={playerClass} />
         </div>
       </div>
     );

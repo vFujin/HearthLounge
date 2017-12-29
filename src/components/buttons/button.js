@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import Tooltip from 'antd/lib/tooltip';
 
-const Button = ({activeUser, text, handleClick, type, darkBorder, active, tooltip = false, tooltipTitle = "You have to be Signed In!", tooltipPlacement = "bottom", dataAttr}) =>{
-  const disabled = ((type === "submit" || type === "submit--light") && (!activeUser || !activeUser.authenticated)) && true;
+const Button = ({activeUser, text, handleClick, type, darkBorder, active, tooltip = false, tooltipTitle = "You have to be Signed In!", tooltipPlacement = "bottom", dataAttr, needAuth}) =>{
+  const disabled = (!needAuth && (type === "submit" || type === "submit--light") && (!activeUser || !activeUser.authenticated)) && true;
   const btnType = type || "default";
   const className = `component btn btn__${btnType} ${darkBorder ? "btn__darkBorder" : undefined} ${active ? `btn__${btnType}--active` : undefined}`;
 
