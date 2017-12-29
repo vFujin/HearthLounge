@@ -17,7 +17,7 @@ const components = {
 };
 
 const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detailsChild, decks}) => {
-  const extensionCards = cards[adventure.url === 'naxxramas' ? 'Naxxramas' : adventure.adventure];
+  const extensionCards = cards[adventure.url === 'naxxramas' ? 'Naxxramas' : adventure.name];
 
   const activeView = () => {
     return adventure_details.find(a=>a.url === adventure.url).extension_topbar_tabs.filter(adventure => adventure.url === details).map(page => {
@@ -29,7 +29,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
                    classChallengeType="class-challenges"
                    cards={extensionCards}
                    isExtension
-                   cardSet={adventure.adventure}
+                   cardSet={adventure.name}
                    cardsLoading={cards.loading}
                    extensionUrl={adventure.url}
                    detailsChild={detailsChild}
@@ -38,7 +38,7 @@ const AdventureDetails = ({cards, adventureCardbacks, adventure, details, detail
   };
 
   const bossDetails = () => {
-    let wing = adventure.wings.details.find(wing => wing.url === details);
+    let wing = adventure.wings.find(wing => wing.url === details);
     let activeBoss = wing.bosses.find(b => b.url === detailsChild);
 
     return <Boss extensionCards={extensionCards}

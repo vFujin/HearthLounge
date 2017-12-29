@@ -10,8 +10,8 @@ const data = (type) =>{
 
 const Bosses = ({type, extension}) => {
   const tableData = (wing, extensionUrl) => {
-    let extensionDetailsFromUrl = data(type).filter(e => e.url === extensionUrl)
-        .map(e => e.wings.details.map(w => w.url).some(w => w === wing.url))[0];
+    let extensionDetailsFromUrl = data(type).filter(extension => extension.url === extensionUrl)
+        .map(e => e.wings.map(w => w.url).some(w => w === wing.url))[0];
 
     const checkAdventure = (extension, boss) => {
       let src = `https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/${type}/${extension}/${wing.url}/${boss.url}.jpg`;
@@ -32,10 +32,10 @@ const Bosses = ({type, extension}) => {
   };
 
   const bosses = () =>{
-    return data(type).filter(e => e.url === extension.url).map((a, index) =>
+    return data(type).filter(e => e.url === extension.url).map((adventure, index) =>
         <table key={index}>
           <tbody>
-          {a.wings.details.map((wing, i) =>
+          {adventure.wings.map((wing, i) =>
               <tr key={i}>
                 <th className={`${extension.url} active`}>{wing.wing_title}</th>
                 {tableData(wing, extension.url)}

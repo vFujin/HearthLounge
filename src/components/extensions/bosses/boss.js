@@ -23,7 +23,7 @@ const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading}) => {
                                  wing={wing.url}
                                  activeBoss={boss.url}
                                  wingBosses={wing.bosses}/>;
-  const bossDecklist = <Decklist adventure={adventure.adventure}
+  const bossDecklist = <Decklist adventure={adventure.name}
                                  decks={filteredDecks}/>;
 
   return (

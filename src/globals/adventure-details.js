@@ -1,10 +1,10 @@
 export const adventure_details = [
   {
-    adventure: "Naxxramas",
+    name: "Naxxramas",
     url: 'naxxramas',
     overview: {
       about: {
-        announce_date: '03 nov 2014',
+        announce_date: '11 apr 2014',
         release_date: '22 jul 2014',
         no_cards: 30,
       },
@@ -13,7 +13,7 @@ export const adventure_details = [
       description: "Curse of Naxxramas is Hearthstone's first adventure. Set in the Scourge necropolis of Naxxramas, Curse of Naxxramas is a five-wing adventure, with each wing representing one of the wings of the World of Warcraft Naxxramas raid instance.",
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/curse-of-naxxramas.jpg',
       gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/curse-of-naxxramas.jpg',
-      game_changes:{
+      game_changes: {
         new_mechanics_keywords: [
           {
             name: 'Deathrattle',
@@ -22,42 +22,42 @@ export const adventure_details = [
         ]
       },
       cost: [
-          {
-            desc: 'First',
-            gold: 700,
-            usd: 6.99,
-            eur: 5.99,
-            gbp: 4.99,
-          },
-          {
-            desc: 'Second',
-            gold: 1400,
-            usd: 9.99,
-            eur: 8.99,
-            gbp: 6.99
-          },
-          {
-            desc: 'Third',
-            gold: 2100,
-            usd: 14.99,
-            eur: 13.99,
-            gbp: 11.49
-          },
-          {
-            desc: 'Fourth',
-            gold: 2800,
-            usd: 19.99,
-            eur: 17.99,
-            gbp: 13.99
-          },
-          {
-            desc: 'Fifth',
-            gold: 3500,
-            usd: 24.99,
-            eur: 21.99,
-            gbp: 17.49
-          }
-        ],
+        {
+          desc: 'First',
+          gold: 700,
+          usd: 6.99,
+          eur: 5.99,
+          gbp: 4.99,
+        },
+        {
+          desc: 'Second',
+          gold: 1400,
+          usd: 9.99,
+          eur: 8.99,
+          gbp: 6.99
+        },
+        {
+          desc: 'Third',
+          gold: 2100,
+          usd: 14.99,
+          eur: 13.99,
+          gbp: 11.49
+        },
+        {
+          desc: 'Fourth',
+          gold: 2800,
+          usd: 19.99,
+          eur: 17.99,
+          gbp: 13.99
+        },
+        {
+          desc: 'Fifth',
+          gold: 3500,
+          usd: 24.99,
+          eur: 21.99,
+          gbp: 17.49
+        }
+      ],
       structure: {
         wing_amount: 5,
         wing_details: [
@@ -89,117 +89,114 @@ export const adventure_details = [
         url: 'class-challenges'
       }
     ],
-    wings: {
-      description: "",
-      details: [
-        {
-          wing_title: "The Arachnid Quarter",
-          url: 'the-arachnid-quarter',
-          bosses: [
-            {
-              name: "Anub'Rekhan",
-              url: 'anub-rekhan',
-              reward: 'Haunted Creeper'
-            },
-            {
-              name: "Grand Widow Faerlina",
-              url: "grand-widow-faerlina",
-              reward: "Nerub'ar Weblord"
-            },
-            {
-              name: "Maexxna",
-              url: 'maexxna',
-              reward: "Nerubian Egg"
-            }
-          ]
-        },
-        {
-          wing_title: "The Plague Quarter",
-          url: "the-plague-quarter",
-          bosses: [
-            {
-              name: "Noth the Plaguebringer",
-              url: 'noth-the-plaguebringer',
-              reward: "Stoneskin Gargoyle"
-            },
-            {
-              name: "Heigan the Unclean",
-              url: 'heigan-the-unclean',
-              reward: "Unstable Ghoul"
-            },
-            {
-              name: "Loatheb",
-              url: 'loatheb',
-              reward: "Sludge Belcher"
-            }
-          ]
-        },
-        {
-          wing_title: "The Military Quarter",
-          url: 'the-military-quarter',
-          bosses: [
-            {
-              name: "Instructor Razuvious",
-              url: 'instructor-razuvious',
-              reward: "Dancing Swords"
-            },
-            {
-              name: "Gothik the Harvester",
-              url: 'gothik-the-harvester',
-              reward: "Spectral Knight"
-            },
-            {
-              name: "The Four Horsemen",
-              url: 'the-four-horsemen',
-              reward: "Deathlord"
+    wings: [
+      {
+        wing_title: "The Arachnid Quarter",
+        url: 'the-arachnid-quarter',
+        bosses: [
+          {
+            name: "Anub'Rekhan",
+            url: 'anub-rekhan',
+            reward: 'Haunted Creeper'
+          },
+          {
+            name: "Grand Widow Faerlina",
+            url: "grand-widow-faerlina",
+            reward: "Nerub'ar Weblord"
+          },
+          {
+            name: "Maexxna",
+            url: 'maexxna',
+            reward: "Nerubian Egg"
+          }
+        ]
+      },
+      {
+        wing_title: "The Plague Quarter",
+        url: "the-plague-quarter",
+        bosses: [
+          {
+            name: "Noth the Plaguebringer",
+            url: 'noth-the-plaguebringer',
+            reward: "Stoneskin Gargoyle"
+          },
+          {
+            name: "Heigan the Unclean",
+            url: 'heigan-the-unclean',
+            reward: "Unstable Ghoul"
+          },
+          {
+            name: "Loatheb",
+            url: 'loatheb',
+            reward: "Sludge Belcher"
+          }
+        ]
+      },
+      {
+        wing_title: "The Military Quarter",
+        url: 'the-military-quarter',
+        bosses: [
+          {
+            name: "Instructor Razuvious",
+            url: 'instructor-razuvious',
+            reward: "Dancing Swords"
+          },
+          {
+            name: "Gothik the Harvester",
+            url: 'gothik-the-harvester',
+            reward: "Spectral Knight"
+          },
+          {
+            name: "The Four Horsemen",
+            url: 'the-four-horsemen',
+            reward: "Deathlord"
 
-            }
-          ]
-        },
-        {
-          wing_title: "The Construct Quarter",
-          url: 'the-construct-quarter',
-          bosses: [
-            {
-              name: "Patchwerk",
-              url: 'patchwerk',
-              reward: "Undertaker"
-            },
-            {
-              name: "Grobbulus",
-              url: 'grobbulus',
-              reward: "Mad Scientist"
-            },
-            {
-              name: "Gluth",
-              url: 'gluth',
-              reward: "Zombie Chow"
-            },
-            {
-              name: "Thaddius",
-              url: 'thaddius',
-              reward: "Wailing Soul"
-            }
-          ]
-        },
-        {
-          wing_title: "Frostwyrm Lair",
-          url: 'frostwyrm-lair',
-          bosses: [
-            {
-              name: "Sapphiron",
-              url: 'sapphiron',
-              reward: "Echoing Ooze"
-            },
-            {
-              name: "Kel'Thuzad",
-              url: 'kel-thuzad',
-              reward: "Shade of Naxxramas"
-            }
-          ]
-        }
-      ]
-    },
+          }
+        ]
+      },
+      {
+        wing_title: "The Construct Quarter",
+        url: 'the-construct-quarter',
+        bosses: [
+          {
+            name: "Patchwerk",
+            url: 'patchwerk',
+            reward: "Undertaker"
+          },
+          {
+            name: "Grobbulus",
+            url: 'grobbulus',
+            reward: "Mad Scientist"
+          },
+          {
+            name: "Gluth",
+            url: 'gluth',
+            reward: "Zombie Chow"
+          },
+          {
+            name: "Thaddius",
+            url: 'thaddius',
+            reward: "Wailing Soul"
+          }
+        ]
+      },
+      {
+        wing_title: "Frostwyrm Lair",
+        url: 'frostwyrm-lair',
+        bosses: [
+          {
+            name: "Sapphiron",
+            url: 'sapphiron',
+            reward: "Echoing Ooze"
+          },
+          {
+            name: "Kel'Thuzad",
+            url: 'kel-thuzad',
+            reward: "Shade of Naxxramas"
+          }
+        ]
+      }
+    ],
     class_challenges: [
       {
         playerClass: 'druid',
@@ -240,12 +237,12 @@ export const adventure_details = [
     ]
   },
   {
-    adventure: "Blackrock Mountain",
+    name: "Blackrock Mountain",
     url: "blackrock-mountain",
     overview: {
       about: {
-        announce_date: '03 nov 2017',
-        release_date: '02 apr 2017',
+        announce_date: '06 mar 2015',
+        release_date: '02 apr 2015',
         no_cards: 45,
       },
       cardback_event: '18',
@@ -322,126 +319,123 @@ export const adventure_details = [
         url: 'class-challenges'
       }
     ],
-    wings: {
-      description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
-      details: [
-        {
-          wing_title: "Blackrock Depths",
-          url: 'blackrock-depths',
-          bosses: [
-            {
-              name: "Grim Guzzler",
-              url: 'grim-guzzler',
-              reward: "Grim Patron"
-            },
-            {
-              name: "Dark Iron Arena",
-              url: 'dark-iron-arena',
-              reward: "Gang Up"
-            },
-            {
-              name: "Emperor Thaurissan",
-              url: 'emperor-thaurissan',
-              reward: "Resurrect"
-            }
-          ]
-        },
-        {
-          wing_title: "Molten Core",
-          url: "molten-core",
-          bosses: [
-            {
-              name: "Garr",
-              url: 'garr',
-              reward: "Druid of the Flame"
-            },
-            {
-              name: "Baron Geddon",
-              url: 'baron-geddon',
-              reward: "Blackwing Technican"
-            },
-            {
-              name: "Ragnaros the Firelord",
-              url: 'ragnaros-the-firelord',
-              reward: "Imp Gang Boss"
-            }
-          ]
-        },
-        {
-          wing_title: "Blackrock Spire",
-          url: "blackrock-spire",
-          bosses: [
-            {
-              name: "Highlord Omokk",
-              url: 'highlord-omokk',
-              reward: "Core Rager"
-            },
-            {
-              name: "General Drakkisath",
-              url: 'general-drakkisath',
-              reward: "Dragon Consort"
-            },
-            {
-              name: "Rend Blackhand",
-              url: "rend-blackhand",
-              reward: "Dragon Egg"
-            }
-          ]
-        },
-        {
-          wing_title: "Blackwing Lair",
-          url: "blackwing-lair",
-          bosses: [
-            {
-              name: "Razorgore the Untamed",
-              url: 'razorgore-the-untamed',
-              reward: "Revenge"
-            },
-            {
-              name: "Vaelastrasz the Corrupt",
-              url: 'vaelastrasz-the-corrupt',
-              reward: "Flamewaker"
-            },
-            {
-              name: "Chromaggus",
-              url: 'chromaggus',
-              reward: "Hungry Dragon"
-            },
-            {
-              name: "Lord Victor Nefarius",
-              url: 'lord-victor-nefarius',
-              reward: "Fireguard Destroyer"
-            }
-          ]
-        },
-        {
-          wing_title: "Hidden Laboratory",
-          url: "hidden-laboratory",
-          bosses: [
-            {
-              name: "Omnotron Defense System",
-              url: 'omnotron-defense-system',
-              reward: "Volcanic Drake"
-            },
-            {
-              name: "Maloriak",
-              url: 'maloriak',
-              reward: "Blackwing Corruptor"
-            },
-            {
-              name: "Atramedes",
-              url: 'atramedes',
-              reward: "Drakonid Crusher"
-            },
-            {
-              name: "Nefarian",
-              url: 'nefarian',
-              reward: "Dragonkin Sorcerer"
-            }
-          ]
-        }
-      ]
-    },
+    wings: [
+      {
+        wing_title: "Blackrock Depths",
+        url: 'blackrock-depths',
+        bosses: [
+          {
+            name: "Grim Guzzler",
+            url: 'grim-guzzler',
+            reward: "Grim Patron"
+          },
+          {
+            name: "Dark Iron Arena",
+            url: 'dark-iron-arena',
+            reward: "Gang Up"
+          },
+          {
+            name: "Emperor Thaurissan",
+            url: 'emperor-thaurissan',
+            reward: "Resurrect"
+          }
+        ]
+      },
+      {
+        wing_title: "Molten Core",
+        url: "molten-core",
+        bosses: [
+          {
+            name: "Garr",
+            url: 'garr',
+            reward: "Druid of the Flame"
+          },
+          {
+            name: "Baron Geddon",
+            url: 'baron-geddon',
+            reward: "Blackwing Technican"
+          },
+          {
+            name: "Ragnaros the Firelord",
+            url: 'ragnaros-the-firelord',
+            reward: "Imp Gang Boss"
+          }
+        ]
+      },
+      {
+        wing_title: "Blackrock Spire",
+        url: "blackrock-spire",
+        bosses: [
+          {
+            name: "Highlord Omokk",
+            url: 'highlord-omokk',
+            reward: "Core Rager"
+          },
+          {
+            name: "General Drakkisath",
+            url: 'general-drakkisath',
+            reward: "Dragon Consort"
+          },
+          {
+            name: "Rend Blackhand",
+            url: "rend-blackhand",
+            reward: "Dragon Egg"
+          }
+        ]
+      },
+      {
+        wing_title: "Blackwing Lair",
+        url: "blackwing-lair",
+        bosses: [
+          {
+            name: "Razorgore the Untamed",
+            url: 'razorgore-the-untamed',
+            reward: "Revenge"
+          },
+          {
+            name: "Vaelastrasz the Corrupt",
+            url: 'vaelastrasz-the-corrupt',
+            reward: "Flamewaker"
+          },
+          {
+            name: "Chromaggus",
+            url: 'chromaggus',
+            reward: "Hungry Dragon"
+          },
+          {
+            name: "Lord Victor Nefarius",
+            url: 'lord-victor-nefarius',
+            reward: "Fireguard Destroyer"
+          }
+        ]
+      },
+      {
+        wing_title: "Hidden Laboratory",
+        url: "hidden-laboratory",
+        bosses: [
+          {
+            name: "Omnotron Defense System",
+            url: 'omnotron-defense-system',
+            reward: "Volcanic Drake"
+          },
+          {
+            name: "Maloriak",
+            url: 'maloriak',
+            reward: "Blackwing Corruptor"
+          },
+          {
+            name: "Atramedes",
+            url: 'atramedes',
+            reward: "Drakonid Crusher"
+          },
+          {
+            name: "Nefarian",
+            url: 'nefarian',
+            reward: "Dragonkin Sorcerer"
+          }
+        ]
+      }
+    ],
     class_challenges: [
       {
         playerClass: 'druid',
@@ -482,12 +476,12 @@ export const adventure_details = [
     ]
   },
   {
-    adventure: "The League of Explorers",
+    name: "The League of Explorers",
     url: "the-league-of-explorers",
     overview: {
       about: {
-        announce_date: '03 nov 2017',
-        release_date: '13 dec 2017',
+        announce_date: '06 nov 2015',
+        release_date: '12 nov 2015',
         no_cards: 31,
       },
       cardback_heroic: '37',
@@ -498,7 +492,7 @@ export const adventure_details = [
         'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/the-league-of-explorers.jpg',
         'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/the-league-of-explorers2.jpg'
       ],
-      game_changes:{
+      game_changes: {
         new_mechanics_keywords: [
           {
             name: 'Discover',
@@ -513,35 +507,35 @@ export const adventure_details = [
         ]
       },
       cost: [
-          {
-            desc: 'First',
-            gold: 700,
-            usd: 6.99,
-            eur: 5.99,
-            gbp: 4.99,
-          },
-          {
-            desc: 'Second',
-            gold: 1400,
-            usd: 9.99,
-            eur: 8.99,
-            gbp: 6.99
-          },
-          {
-            desc: 'Third',
-            gold: 2100,
-            usd: 14.99,
-            eur: 13.99,
-            gbp: 11.49
-          },
-          {
-            desc: 'Fourth',
-            gold: 2800,
-            usd: 19.99,
-            eur: 17.99,
-            gbp: 13.99
-          }
-        ],
+        {
+          desc: 'First',
+          gold: 700,
+          usd: 6.99,
+          eur: 5.99,
+          gbp: 4.99,
+        },
+        {
+          desc: 'Second',
+          gold: 1400,
+          usd: 9.99,
+          eur: 8.99,
+          gbp: 6.99
+        },
+        {
+          desc: 'Third',
+          gold: 2100,
+          usd: 14.99,
+          eur: 13.99,
+          gbp: 11.49
+        },
+        {
+          desc: 'Fourth',
+          gold: 2800,
+          usd: 19.99,
+          eur: 17.99,
+          gbp: 13.99
+        }
+      ],
       structure: {
         wing_amount: 4,
         wing_details: [
@@ -573,100 +567,97 @@ export const adventure_details = [
         url: 'class-challenges'
       }
     ],
-    wings: {
-      description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
-      details: [
-        {
-          wing_title: "Temple of Orsis",
-          url: "temple-of-orsis",
-          bosses: [
-            {
-              name: "Zinaar",
-              url: 'zinaar',
-              reward: ["Djinni of Zephyrs", "Jeweled Scarab"]
-            },
-            {
-              name: "Sun Raider Phaerix",
-              url: 'sun-raider-phaerix',
-              reward: ["Anubisath Sentinel", "Summoning Stone"]
-            },
-            {
-              name: "Temple Escape",
-              url: 'temple-escape',
-              reward: ["Rumbling Elemental", "Sacred Trial"]
-            }
-          ]
-        },
-        {
-          wing_title: "Uldaman",
-          url: "uldaman",
-          bosses: [
-            {
-              name: "Chieftain Scarvash",
-              url: 'chieftain-scarvash',
-              reward: ["Tunnel Trogg", "Ethereal Conjurer"]
-            },
-            {
-              name: "Mine Cart Rush",
-              url: 'mine-cart-rush',
-              reward: ["Tomb Spider", "Unearthed Raptor"]
-            },
-            {
-              name: "Archaedas",
-              url: 'archaedas',
-              reward: ["Fierce Monkey", "Reliquary Seeker"]
-            }
-          ]
-        },
-        {
-          wing_title: "The Ruined City",
-          url: "the-ruined-city",
-          bosses: [
-            {
-              name: "Lord Slitherspear",
-              url: 'lord-slitherspear',
-              reward: ["Huge Toad", "Gorillabot A-3"]
-            },
-            {
-              name: "Giantfin",
-              url: 'giantfin',
-              reward: ["Anyfin Can Happen", "Murloc Tinyfin"]
-            },
-            {
-              name: "Lady Naz'Jar",
-              url: 'lady-nazjar',
-              reward: ["Pit Snake", "Naga Sea Witch"]
-            }
-          ]
-        },
-        {
-          wing_title: "Hall of Explorers",
-          url: "hall-of-explorers",
-          bosses: [
-            {
-              name: "Skelesaurus Hex",
-              url: 'skelesaurus-hex',
-              reward: ["Fossilized Devilsaur", "Raven Idol"]
-            },
-            {
-              name: "The Steel Sentinel",
-              url: 'the-steel-sentinel',
-              reward: ["Cursed Blade", "Museum Curator"]
-            },
-            {
-              name: "Arch-Thief Rafaam",
-              url: 'arch-thief-rafaam',
-              reward: ["Curse of Rafaam", "Wobbling Runts"]
-            },
-            {
-              name: "Rafaam Unleashed",
-              url: 'rafaam-unleashed',
-              reward: ["Desert Camel", "Eerie Statue"]
-            }
-          ]
-        }
-      ]
-    },
+    wings: [
+      {
+        wing_title: "Temple of Orsis",
+        url: "temple-of-orsis",
+        bosses: [
+          {
+            name: "Zinaar",
+            url: 'zinaar',
+            reward: ["Djinni of Zephyrs", "Jeweled Scarab"]
+          },
+          {
+            name: "Sun Raider Phaerix",
+            url: 'sun-raider-phaerix',
+            reward: ["Anubisath Sentinel", "Summoning Stone"]
+          },
+          {
+            name: "Temple Escape",
+            url: 'temple-escape',
+            reward: ["Rumbling Elemental", "Sacred Trial"]
+          }
+        ]
+      },
+      {
+        wing_title: "Uldaman",
+        url: "uldaman",
+        bosses: [
+          {
+            name: "Chieftain Scarvash",
+            url: 'chieftain-scarvash',
+            reward: ["Tunnel Trogg", "Ethereal Conjurer"]
+          },
+          {
+            name: "Mine Cart Rush",
+            url: 'mine-cart-rush',
+            reward: ["Tomb Spider", "Unearthed Raptor"]
+          },
+          {
+            name: "Archaedas",
+            url: 'archaedas',
+            reward: ["Fierce Monkey", "Reliquary Seeker"]
+          }
+        ]
+      },
+      {
+        wing_title: "The Ruined City",
+        url: "the-ruined-city",
+        bosses: [
+          {
+            name: "Lord Slitherspear",
+            url: 'lord-slitherspear',
+            reward: ["Huge Toad", "Gorillabot A-3"]
+          },
+          {
+            name: "Giantfin",
+            url: 'giantfin',
+            reward: ["Anyfin Can Happen", "Murloc Tinyfin"]
+          },
+          {
+            name: "Lady Naz'Jar",
+            url: 'lady-nazjar',
+            reward: ["Pit Snake", "Naga Sea Witch"]
+          }
+        ]
+      },
+      {
+        wing_title: "Hall of Explorers",
+        url: "hall-of-explorers",
+        bosses: [
+          {
+            name: "Skelesaurus Hex",
+            url: 'skelesaurus-hex',
+            reward: ["Fossilized Devilsaur", "Raven Idol"]
+          },
+          {
+            name: "The Steel Sentinel",
+            url: 'the-steel-sentinel',
+            reward: ["Cursed Blade", "Museum Curator"]
+          },
+          {
+            name: "Arch-Thief Rafaam",
+            url: 'arch-thief-rafaam',
+            reward: ["Curse of Rafaam", "Wobbling Runts"]
+          },
+          {
+            name: "Rafaam Unleashed",
+            url: 'rafaam-unleashed',
+            reward: ["Desert Camel", "Eerie Statue"]
+          }
+        ]
+      }
+    ],
     class_challenges: [
       {
         playerClass: 'druid',
@@ -707,7 +698,7 @@ export const adventure_details = [
     ]
   },
   {
-    adventure: "One Night in Karazhan",
+    name: "One Night in Karazhan",
     url: "karazhan",
     overview: {
       about: {
@@ -723,7 +714,11 @@ export const adventure_details = [
       gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/one-night-in-karazhan.jpg',
       cost: [
         {
-          desc: 'Prologue'
+          desc: 'Prologue',
+          gold: "-",
+          usd: "-",
+          eur: "-",
+          gbp: "-",
         },
         {
           desc: 'First',
@@ -752,13 +747,6 @@ export const adventure_details = [
           usd: 19.99,
           eur: 17.99,
           gbp: 13.99
-        },
-        {
-          desc: 'Fifth',
-          gold: 3500,
-          usd: 24.99,
-          eur: 21.99,
-          gbp: 17.49
         }
       ],
       structure: {
@@ -792,106 +780,103 @@ export const adventure_details = [
         url: 'class-challenges'
       }
     ],
-    wings: {
-      description: "Szczegółowe informacje, poradniki, karty do odblokowania po pokonaniu bossa oraz najlepsze talie kart do pokonania bossa znajdują się po kliknięciu na danego bossa.",
-      details: [
-        {
-          wing_title: "The Spire",
-          url: "the-spire",
-          bosses: [
-            {
-              name: "Shade of Aran",
-              url: "shade-of-aran",
-              reward: ["Medivh's Valet", "Spirit Claws"]
-            },
-            {
-              name: "Netherspite",
-              url: 'netherspite',
-              reward: ["Netherspite Historian", "Book Wyrm"]
-            },
-            {
-              name: "Free Medivh!",
-              url: 'free-medivh',
-              reward: ["Malchezaar's Imp", "Ironforge Portal"]
-            }
-          ]
-        },
-        {
-          wing_title: "The Menagerie",
-          url: "the-menagerie",
-          bosses: [
-            {
-              name: "Curator",
-              url: "curator",
-              reward: ["Zoobot", "Menagerie Warden"]
-            },
-            {
-              name: "Nightbane",
-              url: 'nightbane',
-              reward: ["Nightbane Templar", "Runic Egg"]
-            },
-            {
-              name: "Teresian Illhoof",
-              url: 'terestian-illhoof',
-              reward: ["Purify", "Avian Watcher"]
-            }
-          ]
-        },
-        {
-          wing_title: "The Opera",
-          url: "the-opera",
-          bosses: [
-            {
-              name: "Julianne",
-              url: 'julianne',
-              reward: ["Pompous Thespian", "Onyx Bishop"]
-            },
-            {
-              name: "Big Bad Wolf",
-              url: 'big-bad-wolf',
-              reward: ["Kindly Grandmother", "Arcane Giant"]
-            },
-            {
-              name: "The Crone",
-              url: 'the-crone',
-              reward: ["Wicked Witchdoctor", "Moat Lurker"]
-            }
-          ]
-        },
-        {
-          wing_title: "The Parlor",
-          url: "the-parlor",
-          bosses: [
-            {
-              name: "Silverware Golem",
-              url: 'silverware-golem',
-              reward: ["Deadly Fork", "Silverware Golem"]
-            },
-            {
-              name: "Magic Mirror",
-              url: 'magic-mirror',
-              reward: ["Arcane Anomaly", "Pantry Spider"]
-            },
-            {
-              name: "Chess",
-              url: 'chess',
-              reward: ["Ivory Knight", "Protect the King!"]
-            }
-          ]
-        },
-        {
-          wing_title: "The Prologue",
-          url: "the-prologue",
-          bosses: [
-            {
-              name: "An Uninvited Guest",
-              url: "an-uninvited-guest",
-              reward: ["Enchanted Raven", "Firelands Portal"]
-            }
-          ]
-        }
-      ]
-    },
+    wings: [
+      {
+        wing_title: "The Spire",
+        url: "the-spire",
+        bosses: [
+          {
+            name: "Shade of Aran",
+            url: "shade-of-aran",
+            reward: ["Medivh's Valet", "Spirit Claws"]
+          },
+          {
+            name: "Netherspite",
+            url: 'netherspite',
+            reward: ["Netherspite Historian", "Book Wyrm"]
+          },
+          {
+            name: "Free Medivh!",
+            url: 'free-medivh',
+            reward: ["Malchezaar's Imp", "Ironforge Portal"]
+          }
+        ]
+      },
+      {
+        wing_title: "The Menagerie",
+        url: "the-menagerie",
+        bosses: [
+          {
+            name: "Curator",
+            url: "curator",
+            reward: ["Zoobot", "Menagerie Warden"]
+          },
+          {
+            name: "Nightbane",
+            url: 'nightbane',
+            reward: ["Nightbane Templar", "Runic Egg"]
+          },
+          {
+            name: "Teresian Illhoof",
+            url: 'terestian-illhoof',
+            reward: ["Purify", "Avian Watcher"]
+          }
+        ]
+      },
+      {
+        wing_title: "The Opera",
+        url: "the-opera",
+        bosses: [
+          {
+            name: "Julianne",
+            url: 'julianne',
+            reward: ["Pompous Thespian", "Onyx Bishop"]
+          },
+          {
+            name: "Big Bad Wolf",
+            url: 'big-bad-wolf',
+            reward: ["Kindly Grandmother", "Arcane Giant"]
+          },
+          {
+            name: "The Crone",
+            url: 'the-crone',
+            reward: ["Wicked Witchdoctor", "Moat Lurker"]
+          }
+        ]
+      },
+      {
+        wing_title: "The Parlor",
+        url: "the-parlor",
+        bosses: [
+          {
+            name: "Silverware Golem",
+            url: 'silverware-golem',
+            reward: ["Deadly Fork", "Silverware Golem"]
+          },
+          {
+            name: "Magic Mirror",
+            url: 'magic-mirror',
+            reward: ["Arcane Anomaly", "Pantry Spider"]
+          },
+          {
+            name: "Chess",
+            url: 'chess',
+            reward: ["Ivory Knight", "Protect the King!"]
+          }
+        ]
+      },
+      {
+        wing_title: "The Prologue",
+        url: "the-prologue",
+        bosses: [
+          {
+            name: "An Uninvited Guest",
+            url: "an-uninvited-guest",
+            reward: ["Enchanted Raven", "Firelands Portal"]
+          }
+        ]
+      }
+    ],
     class_challenges: [
       {
         playerClass: 'druid',

@@ -15,16 +15,16 @@ const FormSelect = ({playerClass, value, deckAdventure, section, handleSelectCha
 
   const mapAdventures = () =>{
     return _.map(adventure_details, adventure =>
-        <Option value={adventure.adventure}
-                title={adventure.adventure}
+        <Option value={adventure.name}
+                title={adventure.name}
                 key={adventure.url}>
-          <span className={`hs-icon icon-${adventure.url}`}></span> {adventure.adventure}
+          <span className={`hs-icon icon-${adventure.url}`}></span> {adventure.name}
         </Option>
     )
   };
 
   const mapBosses = () =>{
-    const wing = adventure_details.filter(adventure => adventure.adventure === deckAdventure)[0].wings.details;
+    const wing = adventure_details.filter(adventure => adventure.name === deckAdventure)[0].wings.details;
     const bosses = wing => wing.bosses.map(boss => <Option value={boss.name} key={boss.name}>{boss.name}</Option>);
 
     return _.map(wing, wing =>

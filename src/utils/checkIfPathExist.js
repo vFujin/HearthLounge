@@ -33,7 +33,7 @@ export const adventureExists = (adventurePath) =>{
 export const adventureWingExists = (type, adventurePath, detailsPath) => {
   const adventureExists = data(type).find(adventure => adventure.url === adventurePath);
   if (adventureExists.hasOwnProperty('wings')) {
-    return adventureExists.wings.details
+    return adventureExists.wings
         .map(wing => wing.url)
         .includes(detailsPath);
   }
@@ -56,7 +56,7 @@ export const adventureWingExists = (type, adventurePath, detailsPath) => {
 export const adventureBossExists = (type, adventurePath, detailsPath, bossPath) => {
   const adventureExists = data(type).find(adventure => adventure.url === adventurePath);
   if(adventureExists.hasOwnProperty('wings')) {
-    return adventureExists.wings.details
+    return adventureExists.wings
           .filter(wing => wing.url === detailsPath)
           .map(wing => wing.bosses)[0]
           .map(boss => boss.url)
