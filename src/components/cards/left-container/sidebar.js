@@ -1,6 +1,4 @@
 import React from 'react';
-import {InputFilter, SliderFilter, IconFilter} from '../../filters';
-import {mapInputCards} from "../utils/map-cards";
 import SidebarBody from "./sidebar-body";
 import SidebarHeader from "./sidebar-header";
 

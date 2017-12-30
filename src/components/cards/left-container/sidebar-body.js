@@ -1,5 +1,5 @@
 import React from 'react';
-import {InputFilter, SliderFilter, IconFilter} from '../../filters';
+import {InputFilter, SliderFilter, IconFilter} from '../filters';
 
 const SidebarBody = ({cards, mode, allCards, info, filters, inExtensions, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick}) => {
   const toggleFamiliesFilter = () =>{

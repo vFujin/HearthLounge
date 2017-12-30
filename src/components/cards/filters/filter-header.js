@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from "../buttons/button";
-import Icon from "../icon";
+import Button from "../../buttons/button";
+import Icon from "../../icon";
 
 const FilterHeader = ({headerTitle, filter, filters, handleFilterReset}) =>{
   const header = headerTitle ? headerTitle : filter;

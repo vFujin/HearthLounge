@@ -1,5 +1,5 @@
 import React from 'react';
-import IconFilter from "../../filters/icon-filter";
+import IconFilter from "../filters/icon-filter";
 
 const Topbar = ({filters, inDeckCreation, handleIconClick}) => {
   return (

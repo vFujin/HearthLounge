@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {icon_filters} from '../../globals/filters';
-import Icon from "../icon";
-import Loader from "../loaders/loader";
+import {icon_filters} from '../../../globals/filters';
+import Icon from "../../icon";
+import Loader from "../../loaders/loader";
 import FilterHeader from "./filter-header";
 
 const IconFilter = ({tooltip = true, header = true, handleIconClick, filter, header_label, data, mode, inDeckCreation, filters, wrapper_class, handleFilterReset}) => {

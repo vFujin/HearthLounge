@@ -1960,6 +1960,28 @@ card{
     box-shadow: 0 0 10px black;
     cursor: pointer;
   }
+  .container__page--right{
+    .topbar {
+      .topbar-left {
+        li {
+          &:hover {
+            span {
+              color: navy;
+            }
+          }
+        }
+      }
+      .topbar-right {
+        li {
+          span {
+            &:hover, &.active {
+              @include box-shadow(0, 0, 5px, black);
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .expansions, .adventures{

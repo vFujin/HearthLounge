@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'antd/lib/select';
 import _ from 'lodash';
-import {cardsPlaceholder, gameInfoPlaceholder} from "../cards/utils/input-placeholders";
+import {cardsPlaceholder, gameInfoPlaceholder} from "../utils/input-placeholders";
 import FilterHeader from "./filter-header";
 import 'antd/lib/select/style/css';
 

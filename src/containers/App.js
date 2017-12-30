@@ -6,7 +6,6 @@ import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
 import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/types/firebase";
-import * as types from "../redux/cards/types";
 import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
 import RedditPosts from "./pages/reddit/posts/posts";
 import Deck from "./pages/decks/deck/deck";
@@ -30,6 +29,7 @@ import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
 import {fetchGameInfoRequest} from "../redux/game-info/actions";
 import {fetchCardbacksRequest} from "../redux/cardbacks/actions";
+import {fetchCardsRequest} from "../redux/cards/actions";
 
 class Main extends Component{
   handleSignOut = () =>{
@@ -98,7 +98,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = (dispatch) => {
   return {
     updateGameInfo: () => dispatch(fetchGameInfoRequest()),
-    updateCards: () => dispatch({type: types.FETCH_CARDS_REQUEST}),
+    updateCards: () => dispatch(fetchCardsRequest()),
     fetchCardbacks: ()=> dispatch(fetchCardbacksRequest()),
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser
