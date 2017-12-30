@@ -8,7 +8,7 @@ const About = ({about}) => {
   const Li = ({label, value}) =>{
     return (
       <li>
-        <p>{_.startCase(label)}: <span>{value}</span></p>
+        <p>{_.startCase(label)} <span>{value}</span></p>
       </li>
     )
   };

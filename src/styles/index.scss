@@ -24,7 +24,7 @@ body{
   overflow: hidden;
   font-size: inherit;
   line-height: inherit;
-  color: black;
+  color: $dark-grey;
   .hs-icon{
     font-family: 'Hearthstone';
     font-size: 2vw;
@@ -675,7 +675,7 @@ card{
     .content{
       @include scrollbar($pearl);
       position: relative;
-      margin: 1vh 1vh 0 1vh;
+      margin: 1vh 0 0 1vh;
       &.scrollable{
         padding-right: 1vh;
       }
@@ -966,7 +966,7 @@ card{
           height: calc(50% - .5vh);
           background: $light-grey;
           margin-bottom: 1vh;
-          &:nth-last-child(-n+3){
+          &:nth-last-child(-n+4){
             margin-bottom:0;
           }
           .container__blocks--block-header {
@@ -1018,7 +1018,12 @@ card{
               display: flex;
               flex-direction: column;
               li {
+                text-align: center;
+                margin-bottom: 1vh;
                 p {
+                  display: flex;
+                  justify-content: center;
+                  flex-direction: column;
                   color: $pearl;
                   span {
                     color: $dark-grey;
@@ -1030,6 +1035,57 @@ card{
                 text-align: center;
                 display: flex;
                 align-items: center;
+              }
+            }
+            .gameChanges {
+              .gameChanges__buttons {
+                display: flex;
+                height: 30px;
+                button {
+                  width: 50%;
+                }
+              }
+              ul {
+                height: calc(100% - 30px);
+                border: 1px solid $dark-grey;
+                border-top: 0;
+                overflow: auto;
+                @include scrollbar($dark-grey);
+
+                li {
+                  display: grid;
+                  grid-template-columns: 30% auto;
+                  border-bottom: 1px solid $dark-grey;
+                  &:nth-child(even) {
+                    background-color: $white-020;
+                  }
+                  &:last-child {
+                    border-bottom: 0;
+                  }
+                  &:first-child:nth-last-child(2),
+                  &:first-child:nth-last-child(2) ~ li{
+                    border-bottom: 1px solid $dark-grey;
+                  }
+                  &:only-child{
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-bottom: 0;
+                  }
+                  p {
+                    padding: 1vh;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    &:first-child {
+                      width: 100%;
+                      border-right: 1px solid $dark-grey;
+                    }
+                  }
+                }
               }
             }
           }

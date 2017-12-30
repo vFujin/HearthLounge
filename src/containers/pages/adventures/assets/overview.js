@@ -9,12 +9,12 @@ import {
   Cost,
   About,
   Structure,
-  NewMechanicsKeywords
+  GameChanges
 } from "../../../../components/extension-blocks/overview-blocks";
 
 const Overview = ({extension, adventureCardbacks}) => {
   const {overview, name} = extension;
-  const {about, cinematic, gameboard, img, cost, structure, new_mechanics_keywords} = overview;
+  const {about, cinematic, gameboard, img, cost, structure, game_changes} = overview;
 
   const adventureAbout = <About about={about}/>;
   const adventureArt = <Art src={img} name={name} />;
@@ -23,7 +23,6 @@ const Overview = ({extension, adventureCardbacks}) => {
   const adventureGameboard = <Gameboard src={gameboard} adventureName={name} />;
   const adventureCost = <Cost extensionCost={cost}/>;
   const adventureStructure = <Structure extensionStructure={structure}/>;
-  const adventureMechanics = <NewMechanicsKeywords extensionMechanics={new_mechanics_keywords} />;
 
   return (
       <ul className="container__blocks">
@@ -34,7 +33,12 @@ const Overview = ({extension, adventureCardbacks}) => {
         <ExtensionBlock title="gameboard" element={adventureGameboard}/>
         <ExtensionBlock title="cost" element={adventureCost}/>
         <ExtensionBlock title="structure" element={adventureStructure}/>
-        <ExtensionBlock title="new mechanics & keywords" element={adventureMechanics}/>
+        {
+          game_changes &&
+          <ExtensionBlock page="overview"
+                          title="game changes"
+                          element={<GameChanges gameChanges={game_changes}/>}/>
+        }
       </ul>
   );
 };

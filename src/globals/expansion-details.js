@@ -232,34 +232,36 @@ export const expansion_details = [
       cinematic: 'https://www.youtube.com/embed/CCJq7lE3JQs',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/knights-of-the-frozen-throne.jpg',
       gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/expansions/gameboards/knights-of-the-frozen-throne.jpg',
-      new_mechanics_keywords: [
-        {
-          name: "Hero Card",
-          description: "Upon being played, a hero card will replace the player's hero, give them a small amount of Armor and replace their Hero Power with a new one. However, the player's current and maximum Health remains the same."
-        },
-        {
-          name: "Enemy turn only Deathrattles",
-          description: "Deathrattle effects that can only activate on the enemy's turn."
-        },
-        {
-          name: 'lifesteal',
-          description: 'When you deal damage with Lifesteal, your hero heals for the amount of damage dealt.'
-        },
-        {
-          name: "Recurring cards",
-          description: "Recurring cards are spells which can re-cast themselves if certain conditions are met."
-        },
-        {
-          name: "Enemy deck manipulation",
-          description: "Cards that can remove or destroy cards from enemy's deck."
-        }
-      ],
-      new_game_functions: [
-        {
-          name: "Missions",
-          description: "Knights of the Frozen Throne is also the first expansion to feature Missions, a new type of free single-player content. The expansion features a total of eight Missions which take the player through Icecrown Citadel, culminating in a battle with the Lich King himself."
-        }
-      ]
+      game_changes: {
+        new_mechanics_keywords: [
+          {
+            name: "Hero Card",
+            description: "Upon being played, a hero card will replace the player's hero, give them a small amount of Armor and replace their Hero Power with a new one. However, the player's current and maximum Health remains the same."
+          },
+          {
+            name: "Enemy Turn Only Deathrattles",
+            description: "Deathrattle effects that can only activate on the enemy's turn."
+          },
+          {
+            name: 'Lifesteal',
+            description: 'When you deal damage with Lifesteal, your hero heals for the amount of damage dealt.'
+          },
+          {
+            name: "Recurring Cards",
+            description: "Recurring cards are spells which can re-cast themselves if certain conditions are met."
+          },
+          {
+            name: "Enemy Deck Manipulation",
+            description: "Cards that can remove or destroy cards from enemy's deck."
+          }
+        ],
+        new_game_functions: [
+          {
+            name: "Missions",
+            description: "Knights of the Frozen Throne is also the first expansion to feature Missions, a new type of free single-player content. The expansion features a total of eight Missions which take the player through Icecrown Citadel, culminating in a battle with the Lich King himself."
+          }
+        ]
+      }
     },
     extension_topbar_tabs: [
       {

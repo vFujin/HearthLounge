@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ExtensionBlock from "../../../../../components/extension-blocks/extension-block";
-import {Art, About, Rewards, Cinematic, Gameboard, NewMechanicsKeywords} from "../../../../../components/extension-blocks/overview-blocks";
+import {Art, About, Rewards, Cinematic, Gameboard, GameChanges} from "../../../../../components/extension-blocks/overview-blocks";
 
 
 const Overview = ({extension, expansionCardbacks}) => {
   const {overview, name} = extension;
-  const {cinematic, gameboard, img, about, new_mechanics_keywords} = overview;
+  const {cinematic, gameboard, img, about, game_changes} = overview;
 
   const expansionArt = <Art src={img} name={name} />;
   const expansionAbout= <About about={about} />;
   const expansionRewards = <Rewards extensionCardbacks={expansionCardbacks} />;
   const expansionCinematic = <Cinematic src={cinematic} />;
   const expansionGameboard = <Gameboard src={gameboard} adventureName={name} />;
-  const expansionNewMechanicsKeywords = <NewMechanicsKeywords extensionMechanics={new_mechanics_keywords}/>;
 
   return (
       <ul className="container__blocks">
@@ -22,7 +21,12 @@ const Overview = ({extension, expansionCardbacks}) => {
         <ExtensionBlock page="overview" title="cardbacks" element={expansionRewards} />
         <ExtensionBlock page="overview" title="cinematic" element={expansionCinematic}/>
         <ExtensionBlock page="overview" title="gameboard" element={expansionGameboard}/>
-        <ExtensionBlock page="overview" title="new mechanics & keywords" element={expansionNewMechanicsKeywords}/>
+        {
+          game_changes &&
+          <ExtensionBlock page="overview"
+                          title="game changes"
+                          element={<GameChanges gameChanges={game_changes}/>}/>
+        }
       </ul>
   );
 };
