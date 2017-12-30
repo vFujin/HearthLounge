@@ -1,7 +1,7 @@
 import * as types from "./types";
 
 const initialState = {
-  loading: true
+  loading: false
 };
 
 
@@ -9,7 +9,7 @@ export default function(state=initialState, {type, payload}) {
   switch (type) {
     case types.FETCH_CARDBACKS_REQUEST:
       return {
-        ...state
+        loading: true
       };
     case types.FETCH_CARDBACKS_SUCCESS:
       return {

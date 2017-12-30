@@ -20,7 +20,6 @@ const components = {
 const ExpansionDetails = ({cards, cardbacks, details, detailsChild, activeExpansion}) => {
   const extensionCards = cards[activeExpansion.name];
   let activeExpansionTab = activeExpansion.extension_topbar_tabs.filter(tab => tab.url === details);
-  const extensionCardbacks = !cardbacks.loading && _.map(cardbacks).filter(cardback => activeExpansion.overview.cardbacks.includes(cardback.cardBackId));
 
   const activeView = () => activeExpansionTab.map(page=> {
     let componentName = _.upperFirst(_.camelCase(page.name));
@@ -34,7 +33,7 @@ const ExpansionDetails = ({cards, cardbacks, details, detailsChild, activeExpans
                  extensionUrl={activeExpansion.url}
                  cardsLoading={cards.loading}
                  detailsChild={detailsChild}
-                 extensionCardbacks={extensionCardbacks}
+                 gameCardbacks={cardbacks}
                  cards={extensionCards}/>
   });
 

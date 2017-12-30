@@ -18,7 +18,6 @@ const components = {
 
 const AdventureDetails = ({cards, cardbacks, adventure, details, detailsChild}) => {
   const extensionCards = cards[adventure.url === 'naxxramas' ? 'Naxxramas' : adventure.name];
-  const extensionCardbacks = !cardbacks.loading ? _.map(cardbacks).filter(cardback => adventure.overview.cardbacks.includes(cardback.cardBackId)) : {error: cardbacks.error};
 
   const activeView = () => {
     return adventure_details.find(a=>a.url === adventure.url).extension_topbar_tabs.filter(adventure => adventure.url === details).map(page => {
@@ -34,7 +33,7 @@ const AdventureDetails = ({cards, cardbacks, adventure, details, detailsChild}) 
                    cardsLoading={cards.loading}
                    extensionUrl={adventure.url}
                    detailsChild={detailsChild}
-                   extensionCardbacks={extensionCardbacks} />
+                   gameCardbacks={cardbacks} />
     })
   };
 

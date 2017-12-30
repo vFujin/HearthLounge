@@ -56,5 +56,5 @@ class GameChanges extends Component {
 export default GameChanges;
 
 GameChanges.propTypes = {
-  gameChanges: PropTypes.array
+  gameChanges: PropTypes.object
 };

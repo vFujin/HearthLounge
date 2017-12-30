@@ -9,9 +9,9 @@ const Sidebar = ({adventure}) => {
   const listAdventures = () =>{
     return (
       icon_filters.adventures.map((a, index) =>
-        <li key={index} className={adventure === a.url && 'selected'}>
+        <li key={index} className={adventure === a.url ? 'selected' : undefined}>
           <Link to={`/adventures/${a.url}/overview`}
-                className={`${a.url} ${adventure === a.url && 'active'}`}>
+                className={`${a.url} ${adventure === a.url ? 'active' : undefined}`}>
             <Icon name={a.url} />
             <p>{a.name}</p>
           </Link>

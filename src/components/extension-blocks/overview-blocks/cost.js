@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Cost = ({extensionCost}) => {
-  const PriceTableRows = ({price, i}) => {
+  const PriceTableRows = ({price}) => {
     return (
-      <tr key={i}>
+      <tr>
         <th>{price.desc}</th>
         <td>{price.gold}</td>
         <td>{price.usd}</td>
@@ -27,7 +27,7 @@ const Cost = ({extensionCost}) => {
         </tr>
         </thead>
         <tbody>
-        {cost.map((price, i) => <PriceTableRows price={price} i={i}/>)}
+        {cost.map((price, i) => <PriceTableRows key={i} price={price}/>)}
         </tbody>
       </table>
     )

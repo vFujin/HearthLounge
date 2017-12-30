@@ -12,13 +12,13 @@ import {
   GameChanges
 } from "../../../../components/extension-blocks/overview-blocks";
 
-const Overview = ({extension, extensionCardbacks}) => {
+const Overview = ({extension, gameCardbacks}) => {
   const {overview, name} = extension;
-  const {about, cinematic, gameboard, img, cost, structure, game_changes} = overview;
+  const {about, cinematic, gameboard, img, cost, structure, game_changes, cardbacks} = overview;
 
   const adventureAbout = <About about={about}/>;
   const adventureArt = <Art src={img} name={name} />;
-  const adventureRewards = <Rewards extensionCardbacks={extensionCardbacks} />;
+  const adventureRewards = <Rewards gameCardbacks={gameCardbacks} cardbacks={cardbacks} />;
   const adventureCinematic = <Cinematic src={cinematic} />;
   const adventureGameboard = <Gameboard src={gameboard} adventureName={name} />;
   const adventureCost = <Cost extensionCost={cost}/>;
@@ -47,5 +47,5 @@ export default Overview;
 
 Overview.propTypes = {
   extension: PropTypes.object.isRequired,
-  adventureCardbacks: PropTypes.array.isRequired,
+  gameCardbacks: PropTypes.object,
 };

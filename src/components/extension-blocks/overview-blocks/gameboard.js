@@ -12,6 +12,9 @@ const Gameboard = ({src, adventureName}) => {
 export default Gameboard;
 
 Gameboard.propTypes = {
-  src: PropTypes.string,
+  src: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.string
+  ]),
   adventureName: PropTypes.string
 };
