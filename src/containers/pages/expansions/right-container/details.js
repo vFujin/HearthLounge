@@ -17,9 +17,11 @@ const components = {
   Bosses
 };
 
-const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}) => {
+const ExpansionDetails = ({cards, cardbacks, details, detailsChild, activeExpansion}) => {
   const extensionCards = cards[activeExpansion.name];
   let activeExpansionTab = activeExpansion.extension_topbar_tabs.filter(tab => tab.url === details);
+  const extensionCardbacks = !cardbacks.loading && _.map(cardbacks).filter(cardback => activeExpansion.overview.cardbacks.includes(cardback.cardBackId));
+
   const activeView = () => activeExpansionTab.map(page=> {
     let componentName = _.upperFirst(_.camelCase(page.name));
     let Page = components[componentName];
@@ -32,6 +34,7 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
                  extensionUrl={activeExpansion.url}
                  cardsLoading={cards.loading}
                  detailsChild={detailsChild}
+                 extensionCardbacks={extensionCardbacks}
                  cards={extensionCards}/>
   });
 
@@ -44,8 +47,7 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
                  adventure={activeExpansion}
                  wing={wing}
                  type="expansions"
-                 boss={activeBoss}
-                 decks={decks}/>
+                 boss={activeBoss}/>
   };
 
   return <div className="content">
@@ -58,7 +60,8 @@ const ExpansionDetails = ({cards, decks, details, detailsChild, activeExpansion}
 
 const mapStateToProps = state =>{
   const {cards} = state.cards;
-  return {cards};
+  const {cardbacks} = state;
+  return {cards, cardbacks};
 };
 
 export default connect(mapStateToProps, null)(ExpansionDetails);

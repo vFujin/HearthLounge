@@ -12,13 +12,13 @@ import {
   GameChanges
 } from "../../../../components/extension-blocks/overview-blocks";
 
-const Overview = ({extension, adventureCardbacks}) => {
+const Overview = ({extension, extensionCardbacks}) => {
   const {overview, name} = extension;
   const {about, cinematic, gameboard, img, cost, structure, game_changes} = overview;
 
   const adventureAbout = <About about={about}/>;
   const adventureArt = <Art src={img} name={name} />;
-  const adventureRewards = <Rewards extensionCardbacks={adventureCardbacks} />;
+  const adventureRewards = <Rewards extensionCardbacks={extensionCardbacks} />;
   const adventureCinematic = <Cinematic src={cinematic} />;
   const adventureGameboard = <Gameboard src={gameboard} adventureName={name} />;
   const adventureCost = <Cost extensionCost={cost}/>;

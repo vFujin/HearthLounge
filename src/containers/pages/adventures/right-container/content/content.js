@@ -1,12 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {adventure_details} from '../../../../../globals/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
 import AdventureDetails from './details';
 import NotFound from '../../../../shared-assets/not-found';
 
-const Content = ({adventure, detailsChild, adventureCardbacks, details, decks}) => {
+const Content = ({adventure, detailsChild, details}) => {
   let detailsPath = adventure_details.find(a=>a.url === adventure.url).extension_topbar_tabs.map(tab => tab.url).includes(details);
 
   let wingDetailsPath = detailsChild
@@ -21,19 +20,9 @@ const Content = ({adventure, detailsChild, adventureCardbacks, details, decks}) 
   return (detailsPath || (wingDetailsPath && bossDetailsPath))
       ? <AdventureDetails adventure={adventure}
                           detailsChild={detailsChild}
-                          adventureCardbacks={adventureCardbacks}
-                          details={details}
-                          decks={decks}/>
+                          details={details}/>
       : <NotFound page={notFoundPage} redirect="expansions"/>
 
 };
 
 export default Content;
-
-Content.propTypes = {
-  adventure: PropTypes.object.isRequired,
-  adventureCardbacks: PropTypes.array.isRequired,
-  detailsChild: PropTypes.string,
-  details: PropTypes.string,
-  decks: PropTypes.array
-};

@@ -4,13 +4,13 @@ import ExtensionBlock from "../../../../../components/extension-blocks/extension
 import {Art, About, Rewards, Cinematic, Gameboard, GameChanges} from "../../../../../components/extension-blocks/overview-blocks";
 
 
-const Overview = ({extension, expansionCardbacks}) => {
+const Overview = ({extension, extensionCardbacks}) => {
   const {overview, name} = extension;
   const {cinematic, gameboard, img, about, game_changes} = overview;
 
   const expansionArt = <Art src={img} name={name} />;
   const expansionAbout= <About about={about} />;
-  const expansionRewards = <Rewards extensionCardbacks={expansionCardbacks} />;
+  const expansionRewards = <Rewards extensionCardbacks={extensionCardbacks} />;
   const expansionCinematic = <Cinematic src={cinematic} />;
   const expansionGameboard = <Gameboard src={gameboard} adventureName={name} />;
 

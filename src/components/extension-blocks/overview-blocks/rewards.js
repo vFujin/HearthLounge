@@ -4,15 +4,18 @@ import Loader from "../../loaders/loader";
 
 const Rewards = ({extensionCardbacks}) => {
 
-  const mapCardbacks = () =>{
-    if(!extensionCardbacks){
-      return <Loader />
-    } else {
-      return extensionCardbacks.map(cardback => {
-        const {cardBackId, imgAnimated, name} = cardback;
-        return <img key={cardBackId} src={imgAnimated} alt={name} />
-      })
+  const mapCardbacks = () => {
+    if (!extensionCardbacks) {
+      return <Loader theme="light"/>
     }
+    if (extensionCardbacks.error) {
+      return <div>{extensionCardbacks.error}</div>
+    }
+    return extensionCardbacks.map(cardback => {
+      const {cardBackId, imgAnimated, name} = cardback;
+      return <img key={cardBackId} src={imgAnimated} alt={name}/>
+    })
+
   };
 
   return (

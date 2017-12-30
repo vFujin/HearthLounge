@@ -10,7 +10,7 @@ export const adventure_details = [
         no_cards: 30,
         description: "Curse of Naxxramas is Hearthstone's first adventure. Set in the Scourge necropolis of Naxxramas, Curse of Naxxramas is a five-wing adventure, with each wing representing one of the wings of the World of Warcraft Naxxramas raid instance."
       },
-      cardback_heroic: '7',
+      cardbacks: ['7'],
       cinematic: 'https://www.youtube.com/embed/5SDJgW3A_sw',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/curse-of-naxxramas.jpg',
       gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/curse-of-naxxramas.jpg',
@@ -248,8 +248,7 @@ export const adventure_details = [
         no_cards: 45,
         description: "Blackrock Mountain is Hearthstone's second adventure, with each wing representing a raid or dungeon instance from the World of Warcraft Blackrock Mountain zone, a high-level area inhabited by fire elementals, Blackrock orcs, Dark Iron dwarves and the black dragonflight."
       },
-      cardback_event: '18',
-      cardback_heroic: '21',
+      cardbacks: ['18', '21'],
       cinematic: 'https://www.youtube.com/embed/jsH9w5HW-9w',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/blackrock-mountain.jpg',
       gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/blackrock-mountain.jpg',
@@ -488,7 +487,7 @@ export const adventure_details = [
         no_cards: 31,
         description: 'The League of Explorers is the third adventure for Hearthstone, with a strong theme of exploration.'
       },
-      cardback_heroic: '37',
+      cardbacks: ['37'],
       cinematic: 'https://www.youtube.com/embed/wmu0XXpUYog',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/the-league-of-explorers.jpg',
       gameboard: [
@@ -711,8 +710,7 @@ export const adventure_details = [
         no_cards: 45,
         description: 'One Night in Karazhan is the fourth adventure for Hearthstone. The adventure is set in the reimagined glory days of the mystical tower of Karazhan, when a young Medivh was not only the Guardian of Azeroth, but also its most eligible bachelor.'
       },
-      cardback_event: '56',
-      cardback_heroic: '53',
+      cardbacks: ['53', '56'],
       cinematic: 'https://www.youtube.com/embed/wmu0XXpUYog',
       img: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/one-night-in-karazhan.jpg',
       gameboard: 'https://raw.githubusercontent.com/vFujin/HearthLounge/master/src/images/adventures/gameboards/one-night-in-karazhan.jpg',

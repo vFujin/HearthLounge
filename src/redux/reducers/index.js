@@ -8,7 +8,6 @@ import cards from '../cards/reducer';
 import cardbacks from '../cardbacks/reducer';
 import issues from './issues';
 import expansions from './expansions/expansions';
-import adventures from './adventures/adventure'
 import deckDetails from './create-deck/deck-options';
 import deckCreation from './create-deck/create-deck';
 import {
@@ -35,7 +34,6 @@ const rootReducer = combineReducers({
   cardbacks,
   cards,
   expansions,
-  adventures,
   deckDetails,
   deckCreation,
   decks: combineReducers({
