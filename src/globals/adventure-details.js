@@ -2,6 +2,7 @@ export const adventure_details = [
   {
     name: "Naxxramas",
     url: 'naxxramas',
+    extensionType: "adventure",
     overview: {
       about: {
         announce_date: '11 apr 2014',
@@ -239,6 +240,7 @@ export const adventure_details = [
   {
     name: "Blackrock Mountain",
     url: "blackrock-mountain",
+    extensionType: "adventure",
     overview: {
       about: {
         announce_date: '06 mar 2015',
@@ -478,6 +480,7 @@ export const adventure_details = [
   {
     name: "The League of Explorers",
     url: "the-league-of-explorers",
+    extensionType: "adventure",
     overview: {
       about: {
         announce_date: '06 nov 2015',
@@ -700,6 +703,7 @@ export const adventure_details = [
   {
     name: "One Night in Karazhan",
     url: "karazhan",
+    extensionType: "adventure",
     overview: {
       about: {
         announce_date: '28 jul 2016',

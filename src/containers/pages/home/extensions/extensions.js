@@ -34,9 +34,8 @@ class ExtensionsBlock extends Component {
   }
 
   mapExtensions = (extensions) => extensions.reverse().map(extension => {
-    const {url, overview, extension_topbar_tabs} = extension;
+    const {url, extensionType, overview, extension_topbar_tabs} = extension;
     const {img} = overview;
-    let extensionType = _.keys(extension)[0];
 
     return (
       <div className="extension">
@@ -54,7 +53,6 @@ class ExtensionsBlock extends Component {
     const adventures = _.takeRight(adventure_details, 2);
     const expansions = _.takeRight(expansion_details, 2);
     let extensions = _.flatten(_.zip(adventures, expansions));
-    // console.log(extensions.filter(ext => Object.keys(ext).includes('adventure')));
 
     return (
       <div className="slider">
@@ -62,7 +60,6 @@ class ExtensionsBlock extends Component {
       </div>
     );
   }
-
-};
+}
 
 export default ExtensionsBlock;

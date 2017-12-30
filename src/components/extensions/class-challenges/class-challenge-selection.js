@@ -1,8 +1,9 @@
 import React from 'react';
+import SelectExtension from "../../../containers/shared-assets/extensions/select-extension";
 
 const ClassChallengeSelection = () => (
       <div className="container__classChallenges--content">
-        <p className="container__classChallenges--class-selection">left arrow select class</p>
+        <SelectExtension group="class challenge"/>
       </div>
 );
 

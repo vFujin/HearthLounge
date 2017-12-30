@@ -2,6 +2,7 @@ export const expansion_details = [
   {
     name: 'Goblins vs Gnomes',
     url: 'goblins-vs-gnomes',
+    extensionType: "expansion",
     overview: {
       about: {
         announce_date: '07 nov 2014',
@@ -47,6 +48,7 @@ export const expansion_details = [
   {
     name: 'The Grand Tournament',
     url: 'the-grand-tournament',
+    extensionType: "expansion",
     overview: {
       about: {
         announce_date: '22 jun 2015',
@@ -100,6 +102,7 @@ export const expansion_details = [
   {
     name: 'Whispers of the Old Gods',
     url: 'whispers-of-the-old-gods',
+    extensionType: "expansion",
     overview: {
       about: {
         announce_date: '11 mar 2016',
@@ -134,6 +137,7 @@ export const expansion_details = [
   {
     name: 'Mean Streets of Gadgetzan',
     url: 'mean-streets-of-gadgetzan',
+    extensionType: "expansion",
     overview: {
       about: {
         announce_date: '04 nov 2016',
@@ -172,6 +176,7 @@ export const expansion_details = [
   {
     name: "Journey to Un'Goro",
     url: 'journey-to-ungoro',
+    extensionType: "expansion",
     overview: {
       about: {
         announce_date: '27 feb 2017',
@@ -214,6 +219,7 @@ export const expansion_details = [
   {
     name: 'Knights of the Frozen Throne',
     url: 'knights-of-the-frozen-throne',
+    extensionType: "expansion",
     overview: {
       about: {
         announce_date: '06 jul 2017',
@@ -335,6 +341,7 @@ export const expansion_details = [
   {
     name: 'Kobolds & Catacombs',
     url: 'kobolds-catacombs',
+    extensionType: "expansion",
     overview: {
       about: {
         announce_date: '03 nov 2017',
