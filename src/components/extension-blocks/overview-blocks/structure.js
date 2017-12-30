@@ -7,13 +7,10 @@ const Structure = ({extensionStructure}) => {
     return (
         <ul>
           <li>{wing_amount} wings</li>
-          <li>
-            <ul>
+
               {wing_details.map((element, index) =>
                   <li key={index}>{element}</li>
               )}
-            </ul>
-          </li>
           <li>{bosses_amount} bosses</li>
           <li>{bosses_difficulty}</li>
           <li>{class_challenges} class challanges</li>
