@@ -956,22 +956,6 @@ card{
           .inner-container{
             padding: 10px;
           }
-          .cards.cards-container {
-            @include scrollbar($pearl);
-            background: $pearl;
-            text-align: center;
-            overflow: auto;
-            width: 100%;
-            height: 100% ;
-            li {
-              width: 16%;
-              display: inline-block;
-              img {
-                width: 100%;
-                height: 100%;
-              }
-            }
-          }
         }
       }
       .container__blocks {
@@ -1010,24 +994,42 @@ card{
               }
             }
           }
-          &.overview{
-            .art{
+          &.overview {
+            .art {
               img {
                 width: 100%;
                 height: 100%;
               }
             }
-            .cinematic{
-              iframe{
+            .cinematic {
+              iframe {
                 border: none;
                 width: 100%;
                 height: 100%;
               }
             }
-            .gameboard{
-              img{
+            .gameboard {
+              img {
                 width: 100%;
                 height: 100%;
+              }
+            }
+            .about {
+              display: flex;
+              flex-direction: column;
+              li {
+                p {
+                  color: $pearl;
+                  span {
+                    color: $dark-grey;
+                  }
+                }
+              }
+              .description{
+                height: 100%;
+                text-align: center;
+                display: flex;
+                align-items: center;
               }
             }
           }
