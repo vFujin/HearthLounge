@@ -38,7 +38,7 @@ export default function (deck, playerClass, mode) {
       cardArr = [Number(dbfId), 0];
       deckstringObj.cards.push(cardArr);
     }
-    cardArr[1]++;
+    return cardArr[1]++;
   });
   return deckstringObj;
 }

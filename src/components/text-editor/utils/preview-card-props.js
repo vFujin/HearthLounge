@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 export const previewCardProps = (value, cards) =>{
-  let pattern = /(?:\[)(\w+)(?:\])([^\[\]]+)(?:\[)(\/\1)(?:\])/g;
+  let pattern = /(?:\[)(\w+)(?:])([^[\]]+)(?:\[)(\/\1)(?:])/g;
 
     function getClassForCard(name) {
       let rv = {

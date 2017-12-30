@@ -8,7 +8,7 @@ export default function (deck){
     const {cardId, cardSet, cost, name, rarity, type} = c;
     const amount = (self.indexOf(c) !== i) ? 2 : 1;
 
-    Object.assign(cards, {
+    return Object.assign(cards, {
       [name]: {
         amount,
         cost,

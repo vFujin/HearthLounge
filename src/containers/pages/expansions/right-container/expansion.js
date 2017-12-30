@@ -1,22 +1,12 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import _ from 'lodash';
 import Topbar from './topbar';
 import Content from './content';
 import {expansion_details} from "../../../../globals/expansion-details";
-import {getAdventureDecks} from "../../../../firebase/decks/read/adventure";
-import {fetchAdventureDecks} from "../../../../redux/actions/expansions/expansions.action";
 
-class Expansion extends Component{
-
-  componentDidMount(){
-    // const {match, fetchAdventureDecks} = this.props;
-    // getAdventureDecks(match.params.expansion, decks => fetchAdventureDecks(decks));
-  }
-
+class Expansion extends PureComponent{
   render() {
-    const {decks, match, location} = this.props;
+    const {match, location} = this.props;
     const detailsChild = location.pathname.split("/")[4];
     const {details, expansion} = match.params;
     const activeExpansion = expansion_details.filter(e => e.url === expansion)[0];
@@ -24,8 +14,7 @@ class Expansion extends Component{
     return (
         <div className="container__page--inner container__page--right">
           <Topbar expansion={activeExpansion} details={details}/>
-          <Content decks={decks}
-                   details={details}
+          <Content details={details}
                    detailsChild={detailsChild}
                    activeExpansion={activeExpansion}
                    expansion={expansion}/>
@@ -34,18 +23,8 @@ class Expansion extends Component{
   }
 }
 
-const mapStateToProps = state =>{
-  const {decks, bossDecks} = state.expansions;
-  return {decks, bossDecks};
-};
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchAdventureDecks: decks => dispatch(fetchAdventureDecks(_.map(decks))),
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Expansion);
+export default Expansion;
 
 Expansion.propTypes = {
   decks: PropTypes.array,

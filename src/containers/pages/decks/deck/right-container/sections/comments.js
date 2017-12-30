@@ -4,8 +4,8 @@ import _ from 'lodash';
 import SectionHeader from './comment-assets/section-header';
 import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
-import {FETCH_ACTIVE_DECK_COMMENTS_REQUEST} from "../../../../../../redux/deck/comments/fetch-comments/types";
-import {DELETE_DECK_COMMENT_REQUEST} from "../../../../../../redux/deck/comments/delete-comment/types";
+import {deleteDeckCommentRequest} from "../../../../../../redux/deck/comments/delete-comment/actions";
+import {fetchActiveDeckCommentsRequest} from "../../../../../../redux/deck/comments/fetch-comments/actions";
 
 class DeckComments extends PureComponent {
   constructor(){
@@ -17,7 +17,6 @@ class DeckComments extends PureComponent {
   }
 
   componentDidMount() {
-    console.log(this.props);
     const {activeUser, params, fetchComments} = this.props;
     const {deckId} = params;
 
@@ -46,6 +45,7 @@ class DeckComments extends PureComponent {
         return deleteComment(commentObj);
       }
       case "flag": return;
+      default: return null;
     }
   };
 
@@ -81,8 +81,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchComments: payload => dispatch({type: FETCH_ACTIVE_DECK_COMMENTS_REQUEST, payload}),
-    deleteComment: payload => dispatch({type: DELETE_DECK_COMMENT_REQUEST, payload})
+    fetchComments: payload => dispatch(fetchActiveDeckCommentsRequest(payload)),
+    deleteComment: payload => dispatch(deleteDeckCommentRequest(payload))
   }
 };
 

@@ -10,7 +10,7 @@ import {updateDeckProperty} from "../../../../../../../../redux/actions/create-d
 import {previewCardProps} from "../../../../../../../../components/text-editor/utils/preview-card-props";
 
 const updateDeckText = _.debounce((updateDeckProperty, value, cards) => {
-  let deckText = !cards.loading && previewCardProps(value, cards.allCards) || value;
+  let deckText = (!cards.loading && previewCardProps(value, cards.allCards)) || value;
   updateDeckProperty({deckText})
 }, 300);
 

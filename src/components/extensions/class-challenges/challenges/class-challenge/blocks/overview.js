@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Overview = ({}) => {
+const Overview = () => {
   return (
       <div className="container__blocks--block-content overview">
         overview content
@@ -9,7 +9,3 @@ const Overview = ({}) => {
 };
 
 export default Overview;
-
-Overview.propTypes = {
-
-};

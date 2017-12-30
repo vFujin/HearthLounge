@@ -17,11 +17,11 @@ const MapFunctionfulIcons = ({set, deckstring, importedDeckstring, handleOptions
       default: return obj.popover;
     }
   };
-  const allowCopy = (obj, textToCopy) =>{
-    if(obj.allowCopy){
-      return textToCopy
-    }
-  };
+  // const allowCopy = (obj, textToCopy) =>{
+  //   if(obj.allowCopy){
+  //     return textToCopy
+  //   }
+  // };
 
   const deckstringInputPopover = <DeckstringInput importedDeckstring={importedDeckstring}
                                            handleInputChange={handleInputChange}

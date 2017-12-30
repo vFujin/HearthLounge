@@ -20,10 +20,10 @@ class DeckAuthorDetails extends PureComponent{
     return (
         <div className="author-details">
           <SimplifiedUserSnippet user={deckAuthor}/>
-          {/*<UserAvatar deckAuthor={deckAuthor}/>*/}
-          {/*<GeneralDetails deckAuthor={deckAuthor}/>*/}
-          {/*<GameDetails deckAuthor={deckAuthor}/>*/}
-          {/*<SocialMediaDetails deckAuthor={deckAuthor}/>*/}
+          <UserAvatar deckAuthor={deckAuthor}/>
+          <GeneralDetails deckAuthor={deckAuthor}/>
+          <GameDetails deckAuthor={deckAuthor}/>
+          <SocialMediaDetails deckAuthor={deckAuthor}/>
         </div>
     )
   }

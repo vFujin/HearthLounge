@@ -1,5 +1,4 @@
-import {updateTimestampClassVotes} from "./updateTimestampClassVotes";
-import {ref, refParent, firestore} from "../../keys";
+// import {ref, refParent, firestore} from "../../keys";
 
 /**
  *  Updates `selector` votes via Firebase transaction method; See https://firebase.google.com/docs/database/web/read-and-write#save_data_as_transactions

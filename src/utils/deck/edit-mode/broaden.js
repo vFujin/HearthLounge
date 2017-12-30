@@ -14,6 +14,7 @@ export default function(deck, cards){
         deckCopy[i] = filteredCard
       }
     }
+    return deckCopy;
   });
 
   return deckCopy;

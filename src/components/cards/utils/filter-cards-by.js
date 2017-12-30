@@ -80,7 +80,7 @@ export const matchFilteredCards = (filters, card) =>{
         return filterValue.some(mechanic => mappedCardMechanics.includes(mechanic));
       }
 
-      return _.kebabCase(_.toLower(card[filterKey])) == _.kebabCase(_.toLower(filterValue));
+      return _.kebabCase(_.toLower(card[filterKey])) === _.kebabCase(_.toLower(filterValue));
     });
   }
   return card;

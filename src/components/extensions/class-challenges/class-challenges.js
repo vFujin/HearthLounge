@@ -28,6 +28,7 @@ export default ({type, extension, classChallengeType, cards, cardsLoading, detai
                                playerClass={detailsChild}/>;
       case 'dungeon-run':
         return <DungeonRun classChallenge={classChallenge}/>;
+      default: return null;
     }
   };
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const handleBBCodeClick = (e, textContainer, handleTagInsertion, id, previewId) =>{
   e.preventDefault();
   let bbcode = e.currentTarget.value;

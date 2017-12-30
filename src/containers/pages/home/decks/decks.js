@@ -4,7 +4,7 @@ import _ from 'lodash';
 import ClassSelection from './filters/class-selection';
 import ModeSelection from './filters/mode-selection';
 import DeckSnippet from '../../../../components/deck-snippet/deck-snippet';
-import SearchDecks from './filters/search-decks';
+// import SearchDecks from './filters/search-decks';
 import Loader from "../../../../components/loaders/loader";
 import Icon from "../../../../components/icon";
 const DecksBlock = ({hotDecks, deckFilters, handleDeckClick, handleFilterClick}) => {

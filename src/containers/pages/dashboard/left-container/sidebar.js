@@ -5,8 +5,9 @@ import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
 import DangerZone from './details/danger-zone';
 import {updateEmail, updateHearthstoneData, updateSocialMediaData} from '../../../../firebase/user/update';
-import {deleteUser, deleteAvatar} from '../../../../firebase/user/delete';
+import {deleteUser} from '../../../../firebase/user/delete';
 import {FIREBASE_REAUTHENTICATE_REQUEST} from "../../../../redux/types/firebase";
+import Icon from "../../../../components/icon";
 
 class Sidebar extends PureComponent {
   constructor(props){
@@ -54,7 +55,7 @@ class Sidebar extends PureComponent {
     const {activeUser} = this.props;
     const {uid} = activeUser;
     let target = e.target.id;
-    let isActive = this.state[target] === false ? true : false;
+    let isActive = !this.state[target];
     this.setState({
       [`editing_${target}`]: isActive
     });
@@ -69,7 +70,7 @@ class Sidebar extends PureComponent {
       case 'social_media': return updateSocialMediaData(uid, validateInput('facebook'), validateInput('twitter'), validateInput('twitch'), validateInput('youtube'));
       default: return target;
     }
-  }
+  };
 
   handleInputChange(e){
     let target = e.target.id;
@@ -103,7 +104,7 @@ class Sidebar extends PureComponent {
 
           <div className="sidebar__body">
           <div className="about">
-            <div className="avatar">{activeUser.avatar ? <img src={activeUser.avatar} alt={`${activeUser.username}'s profile`}/> : <span className="hs-icon icon-login"></span>}</div>
+            <div className="avatar">{activeUser.avatar ? <img src={activeUser.avatar} alt={`${activeUser.username}'s profile`}/> : <Icon name="login"/>}</div>
             <div className="username">{activeUser.username}</div>
             <div className="rank">{activeUser.rank}</div>
           </div>

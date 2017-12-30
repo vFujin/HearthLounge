@@ -1,13 +1,12 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import DecksBlock from './decks/decks';
-// import ArenaPickerBlock from './arena-picker/arena-picker';
 import CardsBlock from './cards/cards';
 import ExtensionsBlock from './extensions/extensions';
 import TournamentsBlock from './tournament/tournaments';
 import CreateDeckBlock from './create-deck/create-deck';
 import HomeBlock from './block';
-import { TwitchBlock } from './twitch/twitch';
+// import { TwitchBlock } from './twitch/twitch';
 import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
 import {isFilterActive} from "../../../utils/filters";

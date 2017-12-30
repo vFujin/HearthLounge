@@ -32,8 +32,7 @@ CommentBody.propTypes = {
     ])
   }),
   isOfficialDev: PropTypes.oneOfType([
-    PropTypes.string,
-    null
+    PropTypes.string
   ]),
   renderComment: PropTypes.func
 };

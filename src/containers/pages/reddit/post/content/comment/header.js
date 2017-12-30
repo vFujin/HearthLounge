@@ -38,8 +38,7 @@ CommentHeader.propTypes = {
     score: PropTypes.number
   }),
   isOfficialDev: PropTypes.oneOfType([
-      PropTypes.string,
-      null
+      PropTypes.string
   ]),
   handleCollapseClick: PropTypes.func
 };

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Select from 'antd/lib/select';
-import 'antd/lib/select/style/css';
+// import Select from 'antd/lib/select';
+// import 'antd/lib/select/style/css';
 
 const LeftContainer = () => {
-  const Option = Select.Option;
+  // const Option = Select.Option;
 
   // let options = users.map(a => <Option value={a} option={a} key={a}>{a}</Option>);
   return (

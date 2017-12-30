@@ -13,6 +13,7 @@ export const commentUpdates = (uid, deckId, commentId, action, commentObj = null
       updates[`/user-deck-comments/${uid}/${deckId}/${commentId}`] = null;
       return updates;
     }
+    default: return null;
   }
 };
 

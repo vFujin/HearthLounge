@@ -19,6 +19,7 @@ export default function (allCards, deckstring, callback, callbackSimplifiedDeck)
           deck.push(filteredCard);
         }
       }
+      return card;
     });
 
   callback(deck);

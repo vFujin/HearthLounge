@@ -5,6 +5,7 @@ const TournamentsBlock = () => {
   return (
       <div>
         <iframe
+          title="iframe"
             src={calendar}
             style={{border: 'none', margin: '10px'}}
             width="96%"
