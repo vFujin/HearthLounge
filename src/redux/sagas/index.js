@@ -8,6 +8,7 @@ import {watchFirebaseResetPassword} from "./firebase/user/utils/reset-password.s
 import {watchDecks} from "../decks/fetch-decks/saga";
 import {watchHotDecks} from "../decks/home-decks/saga";
 import {watchCards} from "../cards/saga";
+
 import {watchRedditPost} from "../reddit/active-post/saga";
 import {watchRedditPostComments} from "../reddit/comments/saga";
 import {watchDecksUpdate} from "../decks/update-decks/saga";
@@ -21,12 +22,14 @@ import {watchActiveDeckUpdate} from "../deck/active-deck-editing/saga";
 import {watchDeckCommentDeletingStatus} from "../deck/comments/delete-comment/saga";
 import {watchUserDashboardDecks} from "../user/active-user-dashboard-decks/saga";
 import {watchDeckDeletion} from "../deck/delete-deck/saga";
+import {watchCardbacks} from "../cardbacks/saga";
 
 export default function* rootSaga() {
   yield all([
     //App
     watchGameInfo(),
     watchCards(),
+    watchCardbacks(),
     //Home
     watchHotDecks(),
     // Decks & Deck page

@@ -14,9 +14,7 @@ const Topbar = ({adventure, details, boss}) => {
     else return detail.name
   };
 
-  const listDetails = () =>{
-    console.log(adventure_details.find(a => a.url === adventure));
-    return (
+  const listDetails = () => (
       adventure_details.find(a => a.url === adventure).extension_topbar_tabs.map((detail, index) =>
           <li key={index} className={`${adventure} ${detail.url === details && 'active'}`}>
             <Link to={`/adventures/${adventure}/${detail.url}`}>
@@ -24,8 +22,7 @@ const Topbar = ({adventure, details, boss}) => {
             </Link>
           </li>
       )
-    )
-  };
+  );
 
   return (
       <div className='topbar'>

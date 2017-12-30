@@ -4673,6 +4673,7 @@ nav {
             width: 100%; }
 
 footer {
+  color: black;
   background-color: #474143;
   justify-content: center; }
   footer > div {
@@ -5410,7 +5411,7 @@ card {
               background-color: rgba(255, 255, 255, 0.5); }
         .container__page .container__page--right .content .container__blocks li.container__blocks--block.overview .structure {
           height: calc(100% - 40px);
-          margin: 1vh;
+          padding: 1vh;
           overflow: hidden; }
           .container__page .container__page--right .content .container__blocks li.container__blocks--block.overview .structure ul {
             height: calc(100% - 2vh);

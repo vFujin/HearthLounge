@@ -29,6 +29,7 @@ import 'antd/lib/popover/style/css';
 import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
 import {fetchGameInfoRequest} from "../redux/game-info/actions";
+import {fetchCardbacksRequest} from "../redux/cardbacks/actions";
 
 class Main extends Component{
   handleSignOut = () =>{
@@ -37,10 +38,11 @@ class Main extends Component{
   };
 
   componentDidMount() {
-    const {updateGameInfo, updateCards, updateActiveUser} = this.props;
+    const {updateActiveUser, updateGameInfo, updateCards, fetchCardbacks} = this.props;
     getActiveUser((authenticated, data) => updateActiveUser({authenticated, ...data}));
     updateGameInfo();
     updateCards();
+    fetchCardbacks();
   }
 
   render(){
@@ -85,6 +87,7 @@ class Main extends Component{
   }
 }
 
+
 const mapStateToProps = state =>{
   const {activeUser} = state.users;
   const {playerClass} = state.deckCreation;
@@ -96,6 +99,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     updateGameInfo: () => dispatch(fetchGameInfoRequest()),
     updateCards: () => dispatch({type: types.FETCH_CARDS_REQUEST}),
+    fetchCardbacks: ()=> dispatch(fetchCardbacksRequest()),
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser
     }),

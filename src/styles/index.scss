@@ -169,7 +169,7 @@ nav {
   }
 }
 footer{
-
+  color: black;
   background-color: $dark-grey;
   justify-content: center;
   > div{
@@ -1061,7 +1061,7 @@ card{
             }
             .structure{
               height: calc(100% - 40px);
-              margin: 1vh;
+              padding: 1vh;
               overflow: hidden;
               ul {
                 height: calc(100% - 2vh);

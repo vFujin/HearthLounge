@@ -5,6 +5,7 @@ import info from '../game-info/reducer';
 import entry from './entry/entry'
 import activeUser from './users';
 import cards from '../cards/reducer';
+import cardbacks from '../cardbacks/reducer';
 import issues from './issues';
 import expansions from './expansions/expansions';
 import adventures from './adventures/adventure'
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
     activeUser,
     activeUserDecks
   }),
+  cardbacks,
   cards,
   expansions,
   adventures,
