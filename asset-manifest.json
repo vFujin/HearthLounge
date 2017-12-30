@@ -1,9 +1,10 @@
 {
-  "main.css": "static/css/main.c910e822.css",
-  "main.css.map": "static/css/main.c910e822.css.map",
-  "main.js": "static/js/main.5dcfaf22.js",
-  "main.js.map": "static/js/main.5dcfaf22.js.map",
-  "static\\media\\hearthstone.svg": "static/media/hearthstone.06abc216.svg",
-  "static\\media\\hearthstone.ttf": "static/media/hearthstone.fb08d36b.ttf",
-  "static\\media\\hearthstone.woff": "static/media/hearthstone.162ee94e.woff"
+  "main.css": "static/css/main.5b157749.css",
+  "main.css.map": "static/css/main.5b157749.css.map",
+  "main.js": "static/js/main.872bc814.js",
+  "main.js.map": "static/js/main.872bc814.js.map",
+  "static\\media\\OPTIBelwe-Medium.otf": "static/media/OPTIBelwe-Medium.7f30622d.otf",
+  "static\\media\\hearthstone.svg": "static/media/hearthstone.6e3f9368.svg",
+  "static\\media\\hearthstone.ttf": "static/media/hearthstone.918501f3.ttf",
+  "static\\media\\hearthstone.woff": "static/media/hearthstone.de376cd6.woff"
 }
