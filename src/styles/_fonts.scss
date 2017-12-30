@@ -44,7 +44,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 .icon-bag:before {
   content: "\e95a";
 }
@@ -113,6 +112,9 @@
 }
 .icon-jade:before {
   content: "\e908";
+}
+.icon-reddit:before {
+  content: "\e963";
 }
 .icon-neutral:before {
   content: "\e962";
@@ -212,9 +214,6 @@
 }
 .icon-github:before {
   content: "\eab0";
-}
-.icon-reddit:before {
-  content: "\eac6";
 }
 .icon-brawl:before {
   content: "\e92f";

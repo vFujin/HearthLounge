@@ -169,6 +169,9 @@ a {
 .icon-jade:before {
   content: "\e908"; }
 
+.icon-reddit:before {
+  content: "\e963"; }
+
 .icon-neutral:before {
   content: "\e962"; }
 
@@ -267,9 +270,6 @@ a {
 
 .icon-github:before {
   content: "\eab0"; }
-
-.icon-reddit:before {
-  content: "\eac6"; }
 
 .icon-brawl:before {
   content: "\e92f"; }
@@ -6453,8 +6453,8 @@ card {
             .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author {
               color: orangered; }
               .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author span {
-                font-size: 16px;
-                margin-right: 5px; }
+                font-size: 20px;
+                margin-right: 2px; }
               .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author a p {
                 margin-top: 2px; }
               .subreddit .container__page--right .content .container__details .container__details--comments .section__body .comments .tree-view .tree-view_item .comment__header .author a:hover p {
