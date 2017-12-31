@@ -6,7 +6,7 @@ import InputFilter from '../../../../shared-assets/filters/redux-input-filter';
 import SliderFilter from '../../../../shared-assets/filters/redux-slider-filter';
 import {connect} from 'react-redux';
 import {toggleSelectedIcon} from "../../../../../utils/filter/toggle-selected-icon";
-import {updateDeckCreationFilters} from "../../../../../redux/actions/create-deck/create-deck.action";
+import {updateDeckCreationFilters} from "../../../../../redux/create-deck/actions/create-deck.action";
 
 const FilterSidebar = ({faction, mechanics, name, race, type, cardName, cardRace, cardMechanics, cardFaction, cardType, cardHealth, cardAttack, cardDurability, cardStandardSet, cardWildSet, cardRarity, updateDeckCreationFilters}) => {
 

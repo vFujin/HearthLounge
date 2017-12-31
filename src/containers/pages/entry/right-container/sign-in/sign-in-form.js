@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Button from "../../../../../components/buttons/button";
 import {Link} from "react-router-dom";
 import inputVal from "../utils/input-val";
-import {firebaseSignInRequest} from "../../../../../redux/actions/firebase/user/utils/sign-in.action";
+import {firebaseSignInRequest} from "../../../../../redux/firebase/actions/sign-in.action";
 
 class SignInForm extends Component {
 

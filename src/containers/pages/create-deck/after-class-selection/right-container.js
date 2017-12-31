@@ -5,7 +5,7 @@ import Topbar from './right-container/topbar';
 import {default as Cards} from '../../../../components/cards/cards';
 import DeckOptions from './right-container/content-assets/deck-description/deck-options';
 import {updateDeck} from "./right-container/content-assets/utils";
-import {editDeck, updateImportedDeckstring} from "../../../../redux/actions/create-deck/create-deck.action";
+import {editDeck, updateImportedDeckstring} from "../../../../redux/create-deck/actions/create-deck.action";
 
 class RightContainer extends Component {
 

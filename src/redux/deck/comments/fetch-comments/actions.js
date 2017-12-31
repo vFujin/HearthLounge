@@ -1,8 +1,9 @@
 import * as types from "./types";
 
-export function fetchActiveDeckCommentsRequest(){
+export function fetchActiveDeckCommentsRequest(payload){
   return {
-    type: types.FETCH_ACTIVE_DECK_COMMENTS_REQUEST
+    type: types.FETCH_ACTIVE_DECK_COMMENTS_REQUEST,
+    payload
   }
 }
 

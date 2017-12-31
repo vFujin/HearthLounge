@@ -6,7 +6,7 @@ import InnerLeftContainer from './about-deck-inner-left-container';
 import InnerRightContainer from './about-deck-inner-right-container';
 import {error} from "../../../../../../../../utils/messages";
 import saveDeck from "../../../../../../../../firebase/decks/deck/create/deck";
-import {updateDeckProperty} from "../../../../../../../../redux/actions/create-deck/deck-options.action";
+import {updateDeckProperty} from "../../../../../../../../redux/create-deck/actions/deck-options.action";
 import {previewCardProps} from "../../../../../../../../components/text-editor/utils/preview-card-props";
 
 const updateDeckText = _.debounce((updateDeckProperty, value, cards) => {

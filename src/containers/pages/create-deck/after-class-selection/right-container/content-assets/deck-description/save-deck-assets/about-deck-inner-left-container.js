@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import FormSelect from './select';
-import {updateDeckProperty} from "../../../../../../../../redux/actions/create-deck/deck-options.action";
+import {updateDeckProperty} from "../../../../../../../../redux/create-deck/actions/deck-options.action";
 
 const InnerLeftContainer = ({playerClass, deckDetails, handleInputChange, updateDeckProperty}) =>{
   const {deckTitle, deckMode, deckArchetype, deckAdventure, deckBoss, isPrivate} = deckDetails;

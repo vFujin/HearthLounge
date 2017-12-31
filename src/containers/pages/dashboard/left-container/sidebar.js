@@ -6,7 +6,7 @@ import SocialMediaDetails from './details/social-media';
 import DangerZone from './details/danger-zone';
 import {updateEmail, updateHearthstoneData, updateSocialMediaData} from '../../../../firebase/user/update';
 import {deleteUser} from '../../../../firebase/user/delete';
-import {FIREBASE_REAUTHENTICATE_REQUEST} from "../../../../redux/types/firebase";
+import {FIREBASE_REAUTHENTICATE_REQUEST} from "../../../../redux/firebase/types";
 import Icon from "../../../../components/icon";
 
 class Sidebar extends PureComponent {

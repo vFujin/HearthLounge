@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Button from "../../../../../components/buttons/button";
 import {Link} from "react-router-dom";
-import {firebaseResetPasswordRequest} from "../../../../../redux/actions/firebase/user/utils/reset-password.action";
+import {firebaseResetPasswordRequest} from "../../../../../redux/firebase/actions/reset-password.action";
 
 class ResetPasswordForm extends Component{
 

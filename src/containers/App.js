@@ -5,7 +5,7 @@ import {Switch, Route, Redirect} from 'react-router';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
-import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/types/firebase";
+import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/firebase/types";
 import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
 import RedditPosts from "./pages/reddit/posts/posts";
 import Deck from "./pages/decks/deck/deck";

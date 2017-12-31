@@ -6,7 +6,7 @@ import {
   editDeck,
   showDeckEditingTool, simplifyDeck, toggleImgReadyDecklist, toggleImportedDeckstringPopover,
   updateDeckstring
-} from "../../../../../redux/actions/create-deck/create-deck.action";
+} from "../../../../../redux/create-deck/actions/create-deck.action";
 import MapFunctionlessIcons from "./topbar-assets/map-functionless-icons";
 import MapFunctionfulIcons from "./topbar-assets/map-functionful-icons";
 import {topbarOptions} from "./content-assets/utils";

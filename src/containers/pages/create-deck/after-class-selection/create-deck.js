@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import {resetFocus} from "./right-container/content-assets/utils/reset-focus";
-import {toggleDeckMechanics, toggleImgReadyDecklist, toggleImportedDeckstringPopover} from "../../../../redux/actions/create-deck/create-deck.action";
+import {toggleDeckMechanics, toggleImgReadyDecklist, toggleImportedDeckstringPopover} from "../../../../redux/create-deck/actions/create-deck.action";
 
 class CreateDeckClassSelected extends PureComponent {
   componentDidMount(){

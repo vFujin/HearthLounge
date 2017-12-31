@@ -7,7 +7,7 @@ import MapFunctionlessIcons from '../right-container/topbar-assets/map-functionl
 import ManaCurve from "../../../../../components/mana-curve/mana-curve";
 import Icon from "../../../../../components/icon";
 import Button from "../../../../../components/buttons/button";
-import {toggleDeckMechanics} from "../../../../../redux/actions/create-deck/create-deck.action";
+import {toggleDeckMechanics} from "../../../../../redux/create-deck/actions/create-deck.action";
 
 class DeckSidebar extends Component {
 

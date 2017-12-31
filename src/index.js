@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import { createStore, applyMiddleware } from "redux"
 import createSagaMiddleware from "redux-saga"
-import rootReducer from "./redux/reducers/index";
-import rootSaga from "./redux/sagas/index";
+import rootReducer from "./redux/root-reducer";
+import rootSaga from "./redux/root-saga";
 import App from "./containers/App";
 import "./styles/index.css";
 
