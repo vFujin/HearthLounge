@@ -1,6 +1,6 @@
 import {ref, firebaseAuth} from '../../../keys';
 import {error} from '../../../utils/messages';
-// import {browserHistory} from 'react-router';
+import history from '../../../globals/history';
 
 /**
  * Creates new user.
@@ -23,7 +23,7 @@ export default function (email, password, updateSignUpStatus, reducer){
           rank: 1,
           role: 'user'
         });
-        // browserHistory.push('/sign-up/update-profile');
+        history.push('/sign-up/update-profile');
         saveUser(user);
       })
       .catch(e => {

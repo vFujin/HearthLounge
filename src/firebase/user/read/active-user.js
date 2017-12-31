@@ -1,5 +1,5 @@
 import {refParent, firebaseAuth} from '../../../keys';
-
+import history from '../../../globals/history';
 /**
  * Reads active user details
  *
@@ -16,5 +16,11 @@ export default function (callback){
 }
 
 function getUserData(uid, callback) {
-  return refParent('users').on("value", (snapshot) => callback(snapshot.child(uid).val()))
+  if(history.location.pathname === "/sign-up" || history.location.pathname === "/sign-in") {
+    history.push('/dashboard');
+  }
+  return refParent('users').on("value", (snapshot) => {
+    let user = snapshot.child(uid).val();
+    callback(user);
+  })
 }

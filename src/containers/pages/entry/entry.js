@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import {Route, Switch, Redirect} from 'react-router';
+import {Route, Switch} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import {LeftContainer} from './left-container/left-container';
 import SignUp from "./right-container/sign-up/sign-up";
@@ -16,14 +16,12 @@ class Entry extends PureComponent {
       signUp_secondStep: "",
       signUp_confirmEmail: "",
       signUp_password: "",
-      signUp_confirmPassword: ""
+      signUp_confirmPassword: "",
+      tos: false
     });
   }
 
   render(){
-    if(this.props.authenticated){
-      return <Redirect to="/dashboard" push />
-    }
     return (
         <div className={`container__page container__page--oneSided entry`}>
           <div className="wrapper">
@@ -51,11 +49,6 @@ class Entry extends PureComponent {
   }
 }
 
-const mapStateToProps = state =>{
-  const {authenticated} = state.users.activeUser;
-  return {authenticated};
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     updateFormProperty: (props) => (dispatch({
@@ -64,4 +57,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Entry);
+export default connect(null, mapDispatchToProps)(Entry);

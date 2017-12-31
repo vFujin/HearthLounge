@@ -3150,6 +3150,16 @@ form .input-wrapper {
     border-bottom: 1px solid #A69E9D; }
     form .input-wrapper input:focus {
       border-bottom: 1px solid #E7E2DA; }
+    form .input-wrapper input.siblings-not-matched {
+      border-color: #C41F3B;
+      color: #C41F3B; }
+      form .input-wrapper input.siblings-not-matched:focus {
+        border-color: #C41F3B; }
+    form .input-wrapper input.siblings-matched {
+      border-color: #7cb342;
+      color: #7cb342; }
+      form .input-wrapper input.siblings-matched:focus {
+        border-color: #7cb342; }
   form .input-wrapper .tos {
     display: flex;
     justify-content: flex-start;
@@ -3157,6 +3167,10 @@ form .input-wrapper {
     font-size: 12px;
     color: #A69E9D;
     margin-bottom: 20px; }
+    form .input-wrapper .tos input {
+      display: flex;
+      margin-bottom: 0;
+      width: 30px; }
     form .input-wrapper .tos label a {
       color: #E7E2DA;
       text-decoration: underline; }
@@ -3215,26 +3229,26 @@ form .divider {
       margin-bottom: 0; }
 
 input[type=checkbox] {
-  width: 30px;
   height: 0;
   font-size: 10px;
   visibility: hidden;
   margin-bottom: 0;
-  padding: 0; }
+  padding: 0;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center; }
   input[type=checkbox]:after {
     content: " ";
     background-color: transparent;
     color: #A69E9D;
     border: 1px solid #A69E9D;
+    width: 14px;
+    height: 14px;
+    padding: 2px;
+    visibility: visible;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 10px;
-    height: 10px;
-    visibility: visible;
-    margin-bottom: 5px;
-    margin-left: 3px;
-    padding: 3px 3px 4px 4px; }
+    align-items: center; }
   input[type=checkbox]:checked:after {
     content: '\2714';
     color: #E7E2DA;
@@ -6081,10 +6095,6 @@ card {
     -webkit-box-shadow: 0 0 5px black;
     -moz-box-shadow: 0 0 5px black;
     box-shadow: 0 0 5px black; }
-  .cards .container__page--right .topbar .topbar-right li span.active {
-    -webkit-box-shadow: 0 0 5px black;
-    -moz-box-shadow: 0 0 5px black;
-    box-shadow: 0 0 5px black; }
 
 .expansions .select-extension, .adventures .select-extension {
   display: flex;
@@ -6711,27 +6721,6 @@ card {
         color: #C41F3B; }
       .container__page.entry .wrapper .container__page--right .step-progress-bar.step-2-failure:before {
         background: linear-gradient(90deg, #00FF96 50%, #C41F3B 50%); }
-    .container__page.entry .wrapper .container__page--right form .favourite-class {
-      display: flex;
-      margin-bottom: 1vh; }
-      .container__page.entry .wrapper .container__page--right form .favourite-class li {
-        cursor: pointer;
-        margin-top: 5px;
-        margin-right: 10px; }
-        .container__page.entry .wrapper .container__page--right form .favourite-class li:last-child {
-          margin-right: 0; }
-        .container__page.entry .wrapper .container__page--right form .favourite-class li span {
-          -webkit-transition: all ease 0.4s;
-          -moz-transition: all ease 0.4s;
-          transition: all ease 0.4s;
-          font-size: 1vw;
-          padding: 3px;
-          color: #A69E9D;
-          border: 1px solid #A69E9D; }
-        .container__page.entry .wrapper .container__page--right form .favourite-class li:hover span {
-          border-color: #E7E2DA;
-          background-color: rgba(225, 255, 255, 0.2);
-          color: #E7E2DA; }
     .container__page.entry .wrapper .container__page--right .sign-in .button-wrapper {
       justify-content: space-between;
       align-items: center; }

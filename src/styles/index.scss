@@ -2784,34 +2784,6 @@ card{
           }
         }
       }
-      form{
-        .favourite-class{
-          display: flex;
-          margin-bottom: 1vh;
-          li{
-            cursor: pointer;
-            margin-top: 5px;
-            margin-right: 10px;
-            &:last-child{
-              margin-right:0;
-            }
-            span{
-              @include transition(all ease .4s);
-              font-size: 1vw;
-              padding: 3px;
-              color: $light-grey;
-              border: 1px solid $light-grey
-            }
-            &:hover{
-              span{
-                border-color: $pearl;
-                background-color: $white-020;
-                color: $pearl;
-              }
-            }
-          }
-        }
-      }
       .sign-in{
         .button-wrapper{
           justify-content: space-between;

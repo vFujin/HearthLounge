@@ -110,6 +110,10 @@ export default function(state=initialState, {type, payload}) {
         loading: false,
         deleteError: payload
       };
+
+    /**
+     * UPDATE ACTIVE USER AFTER SIGN IN
+     */
     case 'UPDATE_ACTIVE_USER':
       return {
         loading: false,

@@ -1,5 +1,6 @@
 import {ref} from '../../../keys';
 import {success, error} from '../../../utils/messages';
+import history from '../../../globals/history';
 
 /**
  * Updates User's username (if it wasn't set yet)
@@ -27,6 +28,9 @@ export default function (activeUser, username, updateSignUpStatus) {
       } else {
         updateSignUpStatus("success", "success");
         success("Profile has been updated!");
+        if(history.location.pathname === "/sign-up/update-profile") {
+          history.push('/sign-up/update-profile/complete');
+        }
       }
     });
   } else error("Your profile has been already updated. You can update your profile in your dashboard", 10)

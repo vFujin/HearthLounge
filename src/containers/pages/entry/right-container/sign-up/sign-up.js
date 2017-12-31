@@ -13,6 +13,7 @@ const findUsername = _.debounce((input, updateUsernameExistStatus) => {
 }, 500);
 
 class SignUp extends Component {
+
   handleInputChange = (e) => {
     const {updateFormProperty, updateUsernameExistStatus} = this.props;
     let target = e.target;
@@ -31,7 +32,7 @@ class SignUp extends Component {
         <StepProgressBar signUp_firstStep={signUp_firstStep} signUp_secondStep={signUp_secondStep}/>
         <Switch>
           <Route exact path="/sign-up" render={() => <SignUpForm handleInputChange={this.handleInputChange} />}/>
-          <Route exact path="/sign-up/update-profile" render={() => <UpdateProfileForm handleInputChange={this.handleInputChange} />}/>
+          <Route exact path="/sign-up/update-profile" render={()=> <UpdateProfileForm handleInputChange={this.handleInputChange} />} />
           <Route exact path="/sign-up/update-profile/complete" component={Summary}/>
         </Switch>
       </div>

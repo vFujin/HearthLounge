@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter} from 'react-router-dom';
-import {Switch, Route, Redirect} from 'react-router';
+import history from '../globals/history';
+import {Router} from 'react-router-dom';
+import {Switch, Route} from 'react-router';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
@@ -46,9 +47,9 @@ class Main extends Component{
   }
 
   render(){
-    const {activeUser, playerClass, authenticated} = this.props;
+    const {activeUser, playerClass} = this.props;
     return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Router basename={process.env.PUBLIC_URL} history={history}>
         <div id="container">
           <Navbar url="123"
                   activeUser={activeUser}
@@ -70,7 +71,7 @@ class Main extends Component{
             <Route exact path="/reddit/post/:postId/:postTitle" component={RedditPost} />
             <Route path="/sign-in"                  component={Entry} />
             <Route path="/sign-up"                  component={Entry} />
-            <Route path="/dashboard"                render={() => !authenticated ? <Redirect to="/sign-in" /> : <Dashboard />} />
+            <Route path="/dashboard"                component={Dashboard} />
             <Route path="/:misc"                    component={Miscellaneous} />
             <Route path="*"                         component={NotFound} />
           </Switch>
@@ -82,7 +83,7 @@ class Main extends Component{
 
           <Footer pathname="123"/>
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
@@ -91,8 +92,7 @@ class Main extends Component{
 const mapStateToProps = state =>{
   const {activeUser} = state.users;
   const {playerClass} = state.deckCreation;
-  const {authenticated} = activeUser;
-  return {authenticated, activeUser, playerClass};
+  return {activeUser, playerClass};
 };
 
 const mapDispatchToProps = (dispatch) => {
