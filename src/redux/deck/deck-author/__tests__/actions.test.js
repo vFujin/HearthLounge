@@ -2,7 +2,7 @@ import * as actions from '../actions';
 import * as types from '../types';
 import lowerCase from 'lodash/lowerCase';
 
-describe('#postCommentActions', () =>{
+describe('#deckAuthorActions', () =>{
   const testActions = (action, type, key, state) =>{
     test(`should create an action to ${lowerCase(type)}`, () =>{
       if(key && state !== undefined) {
@@ -20,8 +20,7 @@ describe('#postCommentActions', () =>{
     })
   };
 
-  testActions(actions.postDeckCommentRequest, types.POST_DECK_COMMENT_REQUEST);
-  testActions(actions.postDeckCommentSuccess, types.POST_DECK_COMMENT_SUCCESS, 'payload', []);
-  testActions(actions.postDeckCommentFailure, types.POST_DECK_COMMENT_FAILURE, 'payload', {});
-  testActions(actions.resetPostingLimit, types.RESET_POSTING_LIMIT);
+  testActions(actions.fetchDeckAuthorRequest, types.FETCH_DECK_AUTHOR_REQUEST);
+  testActions(actions.fetchDeckAuthorSuccess, types.FETCH_DECK_AUTHOR_SUCCESS, 'payload', {});
+  testActions(actions.fetchDeckAuthorFailure, types.FETCH_DECK_AUTHOR_FAILURE, 'payload', {});
 });
