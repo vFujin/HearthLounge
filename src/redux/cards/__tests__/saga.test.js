@@ -18,10 +18,10 @@ describe('cards saga', () =>{
     describe('when error', () =>{
       test('should dispatch an error action', () =>{
         const saga = fetchCardsSaga({payload}),
-            response = { error: 'fake err'};
+            response = { error: {message: 'fake err'}};
 
         expect(saga.next().value).toEqual(call(fetchCards, payload));
-        expect(saga.next(response).value).toEqual(put(actions.fetchCardsFailure(response.error)))
+        expect(saga.next(response).value).toEqual(put(actions.fetchCardsFailure(response.error.message)))
       })
     });
 
