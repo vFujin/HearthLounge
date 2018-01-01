@@ -2,7 +2,7 @@ import * as actions from '../actions';
 import * as types from '../types';
 import lowerCase from 'lodash/lowerCase';
 
-describe('#gameInfoActions', () =>{
+describe('#redditCommentsActions', () =>{
   const testActions = (action, type, key, state) =>{
     test(`should create an action to ${lowerCase(type)}`, () =>{
       if(key && state !== undefined) {
@@ -20,7 +20,7 @@ describe('#gameInfoActions', () =>{
     })
   };
 
-  testActions(actions.fetchGameInfoRequest, types.FETCH_GAME_INFO_REQUEST);
-  testActions(actions.fetchGameInfoSuccess, types.FETCH_GAME_INFO_SUCCESS, 'payload', []);
-  testActions(actions.fetchGameInfoFailure, types.FETCH_GAME_INFO_FAILURE, 'payload', {});
+  testActions(actions.fetchRedditPostCommentsRequest, types.FETCH_REDDIT_POST_COMMENTS_REQUEST);
+  testActions(actions.fetchRedditPostCommentsSuccess, types.FETCH_REDDIT_POST_COMMENTS_SUCCESS, 'payload', []);
+  testActions(actions.fetchRedditPostCommentsFailure, types.FETCH_REDDIT_POST_COMMENTS_FAILURE, 'payload', {});
 });
