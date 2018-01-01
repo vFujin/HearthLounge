@@ -29,8 +29,6 @@ export const fetchHotDecks = ({payload}) => {
     const filterKey = filter[0];
     const filterValue = filter[1];
 
-    console.log(Object.entries(payload), filterKey, filterValue);
-
     return collection
       .where(filterKey, "==", filterValue)
       // .where("votes", ">", 0)

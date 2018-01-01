@@ -1,8 +1,9 @@
 import * as types from "./types";
 
-export function fetchActiveDeckRequest(){
+export function fetchActiveDeckRequest(payload){
   return {
-    type: types.FETCH_ACTIVE_DECK_REQUEST
+    type: types.FETCH_ACTIVE_DECK_REQUEST,
+    payload
   }
 }
 

@@ -9,11 +9,12 @@ import history from '../../../globals/history';
  * @param {string} username - User's username
  * @param {function} updateSignUpStatus - updates sign up phase 2 progress bar state
  */
-export default function (activeUser, username, updateSignUpStatus) {
+export default function (activeUser, username, avatar, updateSignUpStatus) {
   if (!activeUser.updatedProfile) {
     let updatedUsername = {
       ...activeUser,
       username,
+      avatar: avatar ? avatar: null,
       updatedProfile: true
     };
 

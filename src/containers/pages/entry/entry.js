@@ -17,6 +17,7 @@ class Entry extends PureComponent {
       signUp_confirmEmail: "",
       signUp_password: "",
       signUp_confirmPassword: "",
+      signUp_avatar: "",
       tos: false
     });
   }

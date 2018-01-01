@@ -8,6 +8,8 @@ import {updateViews} from '../../../../firebase/decks/deck/update';
 import {FETCH_DECKS_REQUEST} from "../../../../redux/decks/fetch-decks/types";
 import {UPDATE_DECKS_REQUEST} from "../../../../redux/decks/update-decks/types";
 import {FETCH_ACTIVE_DECK_SUCCESS} from "../../../../redux/deck/active-deck/types";
+import {fetchDecksRequest} from "../../../../redux/decks/fetch-decks/actions";
+import {fetchActiveDeckSuccess} from "../../../../redux/deck/active-deck/actions";
 
 class DeckSelection extends Component {
   componentDidMount() {
@@ -71,14 +73,12 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchDecks: () => dispatch({type: FETCH_DECKS_REQUEST}),
+    fetchDecks: () => dispatch(fetchDecksRequest()),
     updateDecks: () => dispatch({type: UPDATE_DECKS_REQUEST}),
     updateUserList: payload => dispatch({
       type: 'UPDATE_USER_LIST', payload
     }),
-    updateActiveDeck: payload => dispatch({
-      type: FETCH_ACTIVE_DECK_SUCCESS, payload
-    }),
+    updateActiveDeck: payload => dispatch(fetchActiveDeckSuccess(payload)),
     toggleAdventureFilters: payload => dispatch({
       type: 'TOGGLE_ADVENTURE_FILTERS', payload
     }),

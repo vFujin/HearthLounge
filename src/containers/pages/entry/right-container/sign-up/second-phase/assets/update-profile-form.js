@@ -11,8 +11,8 @@ class UpdateProfileForm extends Component {
   }
   handleUpdateProfileFormSubmit = (e) => {
     e.preventDefault();
-    const {activeUser, signUp_username, updateSignUpStatus} = this.props;
-    updateUsername(activeUser, signUp_username, updateSignUpStatus)
+    const {activeUser, signUp_username, signUp_avatar, updateSignUpStatus} = this.props;
+    updateUsername(activeUser, signUp_username, signUp_avatar, updateSignUpStatus)
   };
 
   render() {
@@ -50,9 +50,9 @@ class UpdateProfileForm extends Component {
 }
 
 const mapStateToProps = state =>{
-  const {signUp_username, usernameFree} = state.entry;
+  const {signUp_username, signUp_avatar, usernameFree} = state.entry;
   const {activeUser} = state.users;
-  return {signUp_username, usernameFree, activeUser};
+  return {signUp_username, signUp_avatar, usernameFree, activeUser};
 };
 
 const mapDispatchToProps = dispatch =>{

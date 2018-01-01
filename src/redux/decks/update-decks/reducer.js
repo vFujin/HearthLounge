@@ -1,11 +1,17 @@
 import * as types from "./types";
 
 const initialState = {
-  loading: true
+  loading: false
 };
 
 export default function(state=initialState, {payload, type}) {
   switch (type) {
+    case types.UPDATE_DECKS_REQUEST:{
+      return {
+        ...state,
+        loading: true
+      }
+    }
     case types.UPDATE_DECKS_SUCCESS:
       return {
         ...state,

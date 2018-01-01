@@ -10,12 +10,12 @@ import HomeBlock from './block';
 import {updateViews} from "../../../firebase/decks/deck/update";
 import ForumBlock from './forum/forum';
 import {isFilterActive} from "../../../utils/filters";
-import {FETCH_HOT_DECKS_REQUEST, FILTER_HOT_DECKS} from "../../../redux/decks/home-decks/types";
-import {FETCH_REDDIT_POSTS_REQUEST} from "../../../redux/reddit/posts/types";
 import {UPDATE_ACTIVE_POST} from "../../../redux/reddit/active-post/types";
-import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../redux/reddit/comments/types";
-import {FETCH_ACTIVE_DECK_SUCCESS} from "../../../redux/deck/active-deck/types";
-import {UPDATE_ACTIVE_DECK_COPY} from "../../../redux/deck/active-deck-copy/types";
+import {fetchHotDecksRequest, filterHotDecks} from "../../../redux/decks/home-decks/actions";
+import {fetchActiveDeckSuccess} from "../../../redux/deck/active-deck/actions";
+import {updateActiveDeckCopy} from "../../../redux/deck/active-deck-copy/actions";
+import {fetchRedditPostsRequest} from "../../../redux/reddit/posts/actions";
+import {fetchRedditPostCommentsRequest} from "../../../redux/reddit/comments/actions";
 class Home extends PureComponent{
 
   componentDidMount() {
@@ -106,17 +106,15 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateDecks: payload => dispatch({type: FETCH_HOT_DECKS_REQUEST, payload}),
-    updateActiveDeck: payload => dispatch({type: FETCH_ACTIVE_DECK_SUCCESS, payload}),
-    updateActiveDeckCopy: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY, payload}),
-    updateDeckFilters: payload => dispatch({type: FILTER_HOT_DECKS, payload}),
-    updateRedditPosts: () => dispatch({type: FETCH_REDDIT_POSTS_REQUEST}),
+    updateDecks: payload => dispatch(fetchHotDecksRequest(payload)),
+    updateActiveDeck: payload => dispatch(fetchActiveDeckSuccess(payload)),
+    updateActiveDeckCopy: payload => dispatch(updateActiveDeckCopy(payload)),
+    updateDeckFilters: payload => dispatch(filterHotDecks(payload)),
+    updateRedditPosts: () => dispatch(fetchRedditPostsRequest()),
     updateActivePost: payload => dispatch({
       type: UPDATE_ACTIVE_POST, payload
     }),
-    updatePostComments: payload => dispatch({
-      type: FETCH_REDDIT_POST_COMMENTS_REQUEST, payload
-    }),
+    updatePostComments: payload => dispatch(fetchRedditPostCommentsRequest(payload)),
   };
 };
 
