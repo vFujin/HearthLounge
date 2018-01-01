@@ -8,7 +8,6 @@ export function postDeckCommentRequest(payload){
 }
 
 export function postDeckCommentSuccess(payload){
-  console.log(payload);
   return {
     type: types.POST_DECK_COMMENT_SUCCESS,
     payload
