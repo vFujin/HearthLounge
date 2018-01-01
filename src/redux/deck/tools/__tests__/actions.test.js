@@ -2,7 +2,7 @@ import * as actions from '../actions';
 import * as types from '../types';
 import lowerCase from 'lodash/lowerCase';
 
-describe('#deleteDeckActions', () =>{
+describe('#deckToolsActions', () =>{
   const testActions = (action, type, key, state) =>{
     test(`should create an action to ${lowerCase(type)}`, () =>{
         const expectedAction = {
