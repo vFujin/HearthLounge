@@ -1,4 +1,3 @@
-import React from 'react';
 import * as actions from '../create-deck.action';
 import * as types from '../../types/create-deck';
 import lowerCase from 'lodash/lowerCase';
