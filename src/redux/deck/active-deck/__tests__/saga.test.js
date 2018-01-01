@@ -19,10 +19,10 @@ describe('active deck saga', () =>{
     describe('when error', () =>{
       test('should dispatch an error action', () =>{
         const saga = fetchActiveDeckSaga({payload}),
-          response = { error: {message: 'fake err'}};
+          response = { err: {message: 'fake err'}};
 
         expect(saga.next().value).toEqual(call(fetchActiveDeck, payload));
-        expect(saga.next(response).value).toEqual(put(actions.fetchActiveDeckFailure(response.error.message)))
+        expect(saga.next(response).value).toEqual(put(actions.fetchActiveDeckFailure(response.err.message)))
       })
     });
   })
