@@ -2,10 +2,11 @@ import {call, put} from 'redux-saga/effects';
 import {firebaseSignIn, firebaseSignInSaga} from "../sign-in.saga";
 import {success, error} from '../../../../utils/messages';
 import * as actions from "../../actions/sign-in.action";
-import jsdom from 'jsdom';
-const {JSDOM} = jsdom;
-const {document} = (new JSDOM(`<!DOCTYPE html><html><body><div></div></body></html>`));
-global.document = document;
+import {createDocument} from "../../../../utils/test-helpers";
+
+beforeAll(()=>{
+  createDocument();
+});
 
 describe('firebase sign in saga', () =>{
   describe('#firebaseSignIn', () =>{
@@ -19,9 +20,7 @@ describe('firebase sign in saga', () =>{
       });
 
       describe('when user exists', () =>{
-        // probably could add user actions
         describe('when success', () =>{
-
           test('should fetch user id', ()=> {
             const saga = firebaseSignInSaga({payload}),
                 resultSignIn = {activeUserId: 'uid123'};

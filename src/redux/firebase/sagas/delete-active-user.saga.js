@@ -3,7 +3,7 @@ import {push} from 'react-router-redux';
 import {ref} from "../../../keys";
 import {error, success} from "../../../utils/messages";
 import * as types from "../types";
-import * as actions from '../actions/delete-active-user';
+import * as actions from '../actions/delete-active-user.action';
 import {activeUser} from "../../../utils/active-user";
 
 //that function should be a separate saga

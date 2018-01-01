@@ -22,7 +22,7 @@ export function* firebaseReauthenticateSaga({payload}) {
     yield success('Reauthenticated successfully!');
   } else {
     yield put(actions.firebaseReauthenticateError(err));
-    yield error(err);
+    yield error("Couldn't reauthenticate. Try again later.");
   }
 }
 

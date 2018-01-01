@@ -8,10 +8,10 @@ describe('current hs patch saga', () =>{
     describe('when success', () =>{
       test('should dispatch success action', () =>{
         const saga = fetchGameInfoSaga(),
-            response = { current: 'patch'};
+            response = {data: {}};
 
         expect(saga.next().value).toEqual(call(fetchGameInfo));
-        expect(saga.next(response).value).toEqual(put(actions.fetchInfoSuccess(response.current)))
+        expect(saga.next(response).value).toEqual(put(actions.fetchGameInfoSuccess(response.data)))
       })
     });
 
@@ -21,7 +21,7 @@ describe('current hs patch saga', () =>{
             response = { error: 'fake err'};
 
         expect(saga.next().value).toEqual(call(fetchGameInfo));
-        expect(saga.next(response).value).toEqual(put(actions.fetchInfoFailure(response.error)))
+        expect(saga.next(response).value).toEqual(put(actions.fetchGameInfoFailure(response.error)))
       })
     });
 
