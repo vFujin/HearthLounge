@@ -9,7 +9,6 @@ export const fetchDeckComments= ({deckId, uid}) => {
 };
 
 export function* fetchDeckCommentsSaga({payload}) {
-  console.log(payload);
   const {deckComments, err} = yield call(fetchDeckComments, payload);
   if(err){
     yield put(actions.fetchActiveDeckCommentsFailure(err));
