@@ -9,6 +9,7 @@ const initialState = {
   signUp_confirmEmail: "",
   signUp_password: "",
   signUp_confirmPassword: "",
+  signUp_avatar: "",
   tos: false,
 };
 

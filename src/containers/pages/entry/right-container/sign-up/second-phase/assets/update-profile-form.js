@@ -6,7 +6,9 @@ import Button from "../../../../../../../components/buttons/button";
 import {updateUsername} from "../../../../../../../firebase/user/update";
 
 class UpdateProfileForm extends Component {
-
+  componentDidMount(){
+    this.props.updateSignUpStatus('success', '')
+  }
   handleUpdateProfileFormSubmit = (e) => {
     e.preventDefault();
     const {activeUser, signUp_username, updateSignUpStatus} = this.props;
@@ -14,7 +16,7 @@ class UpdateProfileForm extends Component {
   };
 
   render() {
-    const {signUp_username, handleInputChange, usernameFree} = this.props;
+    const {signUp_username, signUp_avatar, handleInputChange, usernameFree} = this.props;
 
     return (
       <form onSubmit={this.handleUpdateProfileFormSubmit}>
@@ -32,6 +34,13 @@ class UpdateProfileForm extends Component {
 
         <div className="divider"><span>Optional</span></div>
 
+        <div className="username-wrapper">
+          <Input id="signUp_avatar"
+                 type="text"
+                 placeholder="https://imgur..."
+                 handleInputChange={handleInputChange}
+                 value={signUp_avatar}/>
+        </div>
         <div className="button-wrapper">
           <Button text="Complete registration" type="submit--light"/>
         </div>
