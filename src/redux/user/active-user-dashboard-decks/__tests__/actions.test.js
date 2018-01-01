@@ -20,7 +20,7 @@ describe('#redditActivePostActions', () =>{
     })
   };
 
-  testActions(actions.fetchRedditPostRequest, types.FETCH_REDDIT_POST_REQUEST);
-  testActions(actions.fetchRedditPostSuccess, types.FETCH_REDDIT_POST_SUCCESS, 'payload', []);
-  testActions(actions.fetchRedditPostFailure, types.FETCH_REDDIT_POST_FAILURE, 'payload', {});
+  testActions(actions.fetchActiveUserDecksRequest, types.FETCH_ACTIVE_USER_DECKS_REQUEST);
+  testActions(actions.fetchActiveUserDecksSuccess, types.FETCH_ACTIVE_USER_DECKS_SUCCESS, 'payload', []);
+  testActions(actions.fetchActiveUserDecksFailure, types.FETCH_ACTIVE_USER_DECKS_FAILURE, 'payload', {});
 });
