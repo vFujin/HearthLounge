@@ -21,9 +21,9 @@ export const fetchUserShortenedDetails = (uid) => {
 };
 
 export function* fetchUserShortenedDetailsSaga({payload}) {
-  const {details, error} = yield call(fetchUserShortenedDetails, payload);
-  if(error){
-    yield put(actions.fetchShortenedUserDetailsFailure(error));
+  const {details, err} = yield call(fetchUserShortenedDetails, payload);
+  if(err){
+    yield put(actions.fetchShortenedUserDetailsFailure(err));
   } else {
     yield put(actions.fetchShortenedUserDetailsSuccess(details));
   }
