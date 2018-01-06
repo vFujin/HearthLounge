@@ -7,58 +7,13 @@ export const navItems = [
   {
     name: "decks",
     icon: "deck",
-    homepage_block_width: 3,
-    submenu: [
-      //url has to be in case if blizzard adds demon hunter / death knight classes
-      {
-        name: "warlock",
-        url: "warlock"
-      },
-      {
-        name: "druid",
-        url: "druid"
-      },
-      {
-        name: "priest",
-        url: "priest"
-      },
-      {
-        name: "rogue",
-        url: "rogue"
-      },
-      {
-        name: "hunter",
-        url: "hunter"
-      },
-      {
-        name: "mage",
-        url: "mage"
-      },
-      {
-        name: "paladin",
-        url: "paladin"
-      },
-      {
-        name: "shaman",
-        url: "shaman"
-      },
-      {
-        name: "warrior",
-        url: "warrior"
-      }
-    ]
+    homepage_block_width: 3
   },
   {
     name: "cards",
     icon: "all-cards",
     homepage_block_width: 1
   },
-  // {
-  //   name: "Arena Picker",
-  //   url: "arena-picker",
-  //   icon: "icon-arena-picker",
-  //   homepage_block_width: 1
-  // },
   {
     name: "expansions",
     icon: "expansions",
@@ -108,11 +63,11 @@ export const navItems = [
         url: "blackrock-mountain"
       },
       {
-        name: "The Leage of Explorers",
+        name: "The League of Explorers",
         url: "the-league-of-explorers"
       },
       {
-        name: "One Night at Karazhan",
+        name: "One Night in Karazhan",
         url: "karazhan",
       }
     ]
@@ -122,12 +77,6 @@ export const navItems = [
     icon: "create-deck",
     homepage_block_width: 1
   },
-  // {
-  //   name: "forum",
-  //   url: 'forum',
-  //   icon: "icon-bubbles2",
-  //   homepage_block_width: 1
-  // },
   {
     name: "tournaments",
     icon: "trophy",

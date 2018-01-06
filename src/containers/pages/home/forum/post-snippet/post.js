@@ -7,7 +7,7 @@ import {stripDomains} from "../../../../../utils/reddit/posts";
 import Icon from "../../../../../components/icon";
 
 const PostSnippet = ({post, handleRedditPostClick}) => {
-  const {id, title, ups, domain, link_flair_text, num_comments, author, created} = post;
+  const {id, title, ups, domain, link_flair_text, num_comments, author, created_utc} = post;
   return (
       <li className="post" onClick={()=>handleRedditPostClick(post)}>
         <Link to={`/reddit/post/${id}/${_.kebabCase(title)}`} className={`${stripDomains(post)}`}>
@@ -28,7 +28,7 @@ const PostSnippet = ({post, handleRedditPostClick}) => {
           <div className="title">
             <p>{title}</p>
             <div className="created">
-              posted {wrapDate(created, false, '', false)} by  <span className="author"><Icon name="reddit"/> {author}</span>
+              posted {wrapDate(created_utc, false, '', false)} by  <span className="author"><Icon name="reddit"/> {author}</span>
             </div>
           </div>
         </Link>

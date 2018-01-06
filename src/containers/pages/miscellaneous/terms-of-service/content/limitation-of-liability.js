@@ -1,0 +1,33 @@
+import React from 'react';
+
+const LimitationOfLiability = () => {
+  return (
+    <li>
+      <h3 id="limitation-of-liability">Limitation of Liability</h3>
+      <p>
+        IN NO EVENT WILL HEARTHLOUNGE, OR ITS SUPPLIERS OR LICENSORS, BE LIABLE WITH RESPECT TO ANY SUBJECT MATTER OF
+        THIS AGREEMENT UNDER ANY CONTRACT, NEGLIGENCE, STRICT LIABILITY OR OTHER LEGAL OR EQUITABLE THEORY FOR:
+      </p>
+      <ul>
+        <li>
+          ANY SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES
+        </li>
+        <li>
+          THE COST OF PROCUREMENT FOR SUBSTITUTE PRODUCTS OR SERVICES
+        </li>
+        <li>
+          FOR INTERRUPTION OF USE OR LOSS OR CORRUPTION OF DATA
+        </li>
+        <li>
+          FOR ANY AMOUNTS THAT EXCEED THE FEES PAID BY YOU TO HEARTHLOUNGE UNDER THIS AGREEMENT DURING THE TWELVE (12) MONTH PERIOD PRIOR TO THE CAUSE OF ACTION
+        </li>
+      </ul>
+      <p>
+        HEARTHLOUNGE SHALL HAVE NO LIABILITY FOR ANY FAILURE OR DELAY DUE TO MATTERS BEYOND THEIR REASONABLE CONTROL. THE
+        FOREGOING SHALL NOT APPLY TO THE EXTENT PROHIBITED BY APPLICABLE LAW.
+      </p>
+    </li>
+  )
+};
+
+export default LimitationOfLiability;

@@ -588,6 +588,8 @@ a {
       display: grid;
       grid-template-columns: repeat(2, calc(50% - 5px));
       grid-column-gap: 10px; }
+    #container .container__page--twoSidedCentralized .terms-of-service .wrapper {
+      grid-template-columns: calc(25% - 5px) calc(75% - 5px); }
   #container .content > .container__page--twoSided.cards {
     grid-template-columns: 15vw auto; }
   #container footer {
@@ -6948,7 +6950,7 @@ card {
       .miscellaneous .content .wrapper .table-of-contents h3 {
         margin: 10px 0 5px 0; }
       .miscellaneous .content .wrapper .table-of-contents > li {
-        margin-left: 20px;
+        margin-left: 25px;
         color: #E7E2DA;
         list-style-type: decimal; }
       .miscellaneous .content .wrapper .table-of-contents li ul {
@@ -6981,7 +6983,7 @@ card {
           padding: 0 0 0 20px; }
         .miscellaneous .content .wrapper .content > li {
           list-style: decimal;
-          margin-left: 20px;
+          margin-left: 25px;
           color: #E7E2DA; }
           .miscellaneous .content .wrapper .content > li ul li {
             color: #E7E2DA; }

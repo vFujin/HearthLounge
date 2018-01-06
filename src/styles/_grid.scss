@@ -154,6 +154,12 @@
       grid-template-columns: repeat(2, calc(50% - 5px));
       grid-column-gap: 10px;
     }
+    .terms-of-service{
+      .wrapper{
+
+        grid-template-columns: calc(25% - 5px) calc(75% - 5px);
+      }
+    }
   }
   .content > .container__page--twoSided.cards{
     grid-template-columns: 15vw auto;

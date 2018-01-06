@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Route} from 'react-router';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import _ from 'lodash';
 import PrivacyPolicy from "./privacy-policy/privacy-policy";
 import NotFound from "../../shared-assets/not-found";
+import TermsOfService from "./terms-of-service/terms-of-service";
 
 const misc = [
     "terms-of-service",
@@ -15,7 +16,8 @@ const misc = [
 ];
 
 const components = {
-  PrivacyPolicy
+  PrivacyPolicy,
+  TermsOfService
 };
 
 const Miscellaneous = ({match}) =>{
@@ -26,7 +28,12 @@ const Miscellaneous = ({match}) =>{
   }
 
   const mapMisc = () =>{
-    return misc.map(m => <li key={m}><Link to={`/${_.toLower(_.kebabCase(m))}`} activeClassName="active">{_.startCase(m)}</Link></li>)
+    return misc.map(m =>
+      <li key={m}>
+        <NavLink to={`/${_.toLower(_.kebabCase(m))}`} activeClassName="active">
+          {_.startCase(m)}
+        </NavLink>
+      </li>)
   };
 
   return (
