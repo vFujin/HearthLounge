@@ -1,7 +1,7 @@
 @import './grid';
 @import '../mixins';
 
-@include screen('mobile') {
+@include screen('mobile', 500px) {
   #container {
     nav{
       ul {
@@ -73,6 +73,127 @@
           }
           span{
             font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screen('tablet', 800px){
+  #container{
+    .container__index {
+      .home__list {
+        .decks {
+          > div {
+            > a {
+              width: calc(20% - 8px);
+            }
+            .class-selection {
+              width: calc(80% + 8px);
+            }
+          }
+          .home__block--body{
+            .left-container{
+              width: 20%;
+            }
+            .right-container{
+              width: 80%;
+              padding: 1vh;
+              .hot-decks{
+                display: flex;
+                padding: 0;
+                overflow-x: auto;
+                @include scrollbar();
+                a {
+                  min-width: calc(25% - 1vh + 2px);
+                  margin-right: 1vh;
+                  margin-bottom: 1vh;
+                  &:last-child{
+                    margin-right: 0;
+                  }
+                  .deckSnippet__body--footer{
+                    flex-direction: column-reverse;
+                    align-items: center;
+                    .wrapper{
+                      width: 100%;
+                      justify-content: space-evenly;
+                      margin-top: 5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .expansions {
+          div {
+            .extension {
+              .extension__sidebar {
+                width: 30%;
+              }
+              .extension__content {
+                width: 70%;
+              }
+            }
+          }
+        }
+        .reddit {
+          a {
+            grid-template-columns: 20% calc(80% - 5px);
+            .upvotes{
+              flex-direction: initial;
+              justify-content: space-around;
+              align-items: center;
+              margin-top: 3px;
+              span{
+                margin-bottom: 0;
+                padding-top: 2px;
+              }
+              p{
+                font-size: 13px;
+              }
+            }
+            .title {
+              display: flex;
+              align-items: center;
+            }
+            .created, .comments {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screen('tablet_mini') {
+  #container {
+    .container__index {
+      .home__list {
+        .decks {
+          > div {
+            > a {
+              width: calc(25% - 7px);
+            }
+            .class-selection {
+              width: calc(75% + 7px);
+            }
+          }
+          .home__block--body {
+            .left-container {
+              width: 25%;
+            }
+            .right-container {
+              width: 75%;
+              .hot-decks {
+                a {
+                  min-width: calc(33% - 0.33vh + -1px);
+                }
+              }
+            }
           }
         }
       }

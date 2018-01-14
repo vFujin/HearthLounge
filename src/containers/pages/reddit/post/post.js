@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Sidebar from './sidebar';
 import Topbar from './topbar';
-import NotFound from '../../../shared-assets/not-found';
+import NotFound from '../../../../components/not-found';
 import Content from './content';
 import Loader from "../../../../components/loaders/loader";
 import 'react-treeview/react-treeview.css';

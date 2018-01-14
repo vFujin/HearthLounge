@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectExtension from "../../../containers/shared-assets/extensions/select-extension";
+import SelectExtension from "../select-extension";
 
 const ClassChallengeSelection = () => (
       <div className="container__classChallenges--content">

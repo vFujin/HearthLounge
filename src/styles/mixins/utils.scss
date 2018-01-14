@@ -23,11 +23,12 @@
   text-overflow: ellipsis;
 }
 
-@mixin screen($size) {
+@mixin screen($size, $height: false) {
   $desktop: "(min-width: 1600px)";
   $laptop: "(min-width: 1366px) and (max-width: 1600px)";
-  $tablet: "(min-width: 768px) and (max-width: 1365px)";
-  $mobile: "(max-width: 767px)";
+  $tablet: "(min-width: 816px) and (max-width: 1365px)";
+  $tablet_mini: "(min-width: 816px) and (max-width: 1000px)";
+  $mobile: "(max-width: 815px)";
   @if $size == desktop {
     @media only screen and #{$desktop} {
       @content;
@@ -39,13 +40,32 @@
     }
   }
   @else if $size == tablet {
-    @media only screen and #{$tablet} {
+    @if ($height) {
+      @media only screen and #{$tablet}, screen and (max-height: $height) {
+        @content;
+      }
+    }
+    @else {
+      @media only screen and #{$tablet} {
+        @content;
+      }
+    }
+  }
+    @else if $size == tablet_mini {
+    @media only screen and #{$tablet_mini}{
       @content;
     }
   }
   @else if $size == mobile {
-    @media only screen and #{$mobile} {
-      @content;
+    @if ($height) {
+      @media only screen and #{$mobile}, screen and (max-height: $height) {
+        @content;
+      }
+    }
+    @else {
+      @media only screen and #{$mobile} {
+        @content;
+      }
     }
   }
   @else {

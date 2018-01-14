@@ -8,8 +8,10 @@ const DSBodyFooter = ({views, comments, votes}) => {
 
   return (
       <div className="deckSnippet__body--footer">
-        <DSViews views={views}/>
-        <DSComments comments={comments}/>
+        <div className="wrapper">
+          <DSViews views={views}/>
+          <DSComments comments={comments}/>
+        </div>
         <DSVotes votes={votes}/>
       </div>
   );

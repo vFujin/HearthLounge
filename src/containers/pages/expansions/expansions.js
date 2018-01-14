@@ -4,8 +4,8 @@ import _ from 'lodash';
 import {Route} from 'react-router';
 import Sidebar from './left-container/sidebar';
 import Expansion from './right-container/expansion';
-import NotFound from '../../shared-assets/not-found';
-import SelectExtension from '../../shared-assets/extensions/select-extension';
+import NotFound from '../../../components/not-found';
+import SelectExtension from '../../../components/extensions/select-extension';
 import {expansionExists} from '../../../utils/checkIfPathExist'
 
 const Expansions = ({match, location}) => {

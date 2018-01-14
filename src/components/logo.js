@@ -5,7 +5,7 @@ const LogoSVG = ({dotsColor}) =>{
   const circleRadius = "2.5%";
 
   return (
-      <svg width="100" height="100%" id="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-12 -4 100 100" preserveAspectRatio="none">
+      <svg width="10vh" height="10vh" id="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-12 -4 100 100" preserveAspectRatio="none">
         <g>
           {/*col-1*/}
           <circle className="circle2 outer" cx="2.5%" cy="25%" r={circleRadius} fill={dotsColor}/>

@@ -15,33 +15,40 @@
   position: relative;
   background-color: $pearl;
   padding: 1vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   &:hover{
     @include box-shadow(0, 0, 10px, $dark-grey);
     cursor: pointer;
   }
   .background-icon {
     position: absolute;
-    font-size: 8.125em;
+    font-size: calc(6em);
+    justify-content: center;
     opacity: 0.15;
-    top: 50%;
-    right: 10px;
-    transform: translate(0, -50%);
+    display: flex;
+    height: calc(100% - 2vh);
+    width: calc(100% - 2vh);
+    align-items: center;
   }
   &__header{
-    display: grid;
-    grid-template-columns: 25% calc(75% - 1vh);
-    grid-column-gap: 1vh;
-    padding-bottom: 4.5px;
+    display: flex;
+    padding-bottom: 5px;
     border-bottom: 1px solid $dark-grey;
     align-items: center;
     &--playerClass {
+      display: flex;
+      height: 100%;
       span {
-        font-size: 35px;
+        font-size: xx-large !important;
         padding: 5px;
         border: 1px solid black;
       }
     }
     &--about{
+      overflow: hidden;
+      margin-left: 5px;
       &-title{
         font-weight: bold;
         font-size: 16px;
@@ -50,16 +57,21 @@
       &-author,
       &-created{
         font-size:12px;
+        @include truncate(100%);
       }
     }
   }
   &__body{
-    margin-top: 4.5px;
-    height: calc(9.5vh - 10px);
+    margin-top: 5px;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     &--header{
       display: flex;
       width: 100%;
       justify-content: space-between;
+      text-transform: capitalize;
       &-mode {
         width: 10%;
         text-align: center;
@@ -71,18 +83,7 @@
           margin-left: 5px ;
         }
       }
-      &graph{
-        display: flex;
-        li{
-          width: 4px;
-          background-color: $dark-grey;
-          height: 100%;
-          margin-right: 2px;
-          &:last-child{
-            margin-right:0;
-          }
-        }
-      }
+
       &-type{
         height: 20px;
         line-height: 20px;
@@ -92,25 +93,16 @@
     &--body{
       margin-top: 10px;
       display: flex;
+      justify-content: center;
       div{
         text-align: left;
         padding: 0 5px;
-        &:after{
-          position: absolute;
-          content: "\00b7";
-          margin-left: 2.5px;
-          color: $dark-grey;
-        }
         &:first-child{
           padding-left:0;
         }
         &:last-child{
           padding-right:0;
           border-right:0;
-          &:after{
-            position: absolute;
-            content: "";
-          }
         }
         span{
           font-size: 16px;
@@ -121,10 +113,15 @@
       margin-top: 10px;
       display: flex;
       justify-content: space-between;
+      .wrapper{
+        display: flex;
+        flex-grow: 2;
+        justify-content: space-between;
+      }
       div{
         align-items: center;
         display: flex;
-        opacity: .6;
+        opacity: .7;
         span{
           font-size: 16px;
           margin-right: 5px;
@@ -143,6 +140,21 @@
       &-votes{
         justify-content: flex-end;
         color: $dark-green;
+        flex-grow: 2;
+      }
+    }
+  }
+}
+
+@include screen('tablet'){
+  .deckSnippet{
+    .deckSnippet__body--header{
+      display: flex;
+      width: inherit;
+      flex-direction: column;
+      text-align: center;
+      &-type{
+        margin-bottom: 3px;
       }
     }
   }

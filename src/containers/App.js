@@ -6,13 +6,12 @@ import {Switch, Route} from 'react-router';
 import Navbar from './layout/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
-import {FIREBASE_SIGN_OUT_REQUEST} from "../redux/firebase/types";
 import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
 import RedditPosts from "./pages/reddit/posts/posts";
 import Deck from "./pages/decks/deck/deck";
 import Expansions from "./pages/expansions/expansions";
 import DeckSelection from "./pages/decks/deck-selection/deck-selection";
-import NotFound from "./shared-assets/not-found";
+import NotFound from "../components/not-found";
 import Adventures from "./pages/adventures/adventures";
 import Reddit from "./pages/reddit/reddit";
 import RedditPost from "./pages/reddit/post/post";
@@ -31,6 +30,7 @@ import 'antd/lib/select/style/css';
 import {fetchGameInfoRequest} from "../redux/game-info/actions";
 import {fetchCardbacksRequest} from "../redux/cardbacks/actions";
 import {fetchCardsRequest} from "../redux/cards/actions";
+import {firebaseSignOutRequest} from "../redux/firebase/actions/sign-out.action";
 
 class Main extends Component{
   handleSignOut = () =>{
@@ -103,7 +103,7 @@ const mapDispatchToProps = (dispatch) => {
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser
     }),
-    signOut: () => dispatch({type: FIREBASE_SIGN_OUT_REQUEST})
+    signOut: () => dispatch(firebaseSignOutRequest())
   }
 };
 

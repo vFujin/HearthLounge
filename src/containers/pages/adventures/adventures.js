@@ -4,8 +4,8 @@ import _ from 'lodash';
 import {Route} from 'react-router';
 import Sidebar from './left-container/sidebar';
 import Adventure from './right-container/adventure';
-import NotFound from '../../shared-assets/not-found';
-import SelectExtension from '../../shared-assets/extensions/select-extension';
+import NotFound from '../../../components/not-found';
+import SelectExtension from '../../../components/extensions/select-extension';
 import {adventureExists} from '../../../utils/checkIfPathExist';
 
 const Adventures = ({match, location})=> {

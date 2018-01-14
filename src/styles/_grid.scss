@@ -23,12 +23,7 @@
 
   .container__index {
     .home__list {
-      .home__block.decks {
-        .home__block--header{
-          display: grid;
-          grid-template-columns: calc(15% - 10px) auto;
-          align-items: center;
-        }
+      .decks {
         .home__block--body{
           .right-container{
             .hot-decks{

@@ -53,7 +53,7 @@
 
 
 @mixin scrollbar($border_color: transparent, $thumb_color: $dark-grey, $track_color: $light-grey){
-  &::-webkit-scrollbar{width: 13px;}
+  &::-webkit-scrollbar{width: 13px; height: 13px}
   &::-webkit-scrollbar-thumb{background-color: $thumb_color; border-radius: 0; border-left: 1px solid $border_color;}
   &::-webkit-scrollbar-thumb:hover{background-color: $thumb_color;}
   &::-webkit-scrollbar-track{background-color: $track_color; border-left: 1px solid $border_color;}

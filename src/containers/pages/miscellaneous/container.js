@@ -4,7 +4,7 @@ import {Route} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import _ from 'lodash';
 import PrivacyPolicy from "./privacy-policy/privacy-policy";
-import NotFound from "../../shared-assets/not-found";
+import NotFound from "../../../components/not-found";
 import TermsOfService from "./terms-of-service/terms-of-service";
 
 const misc = [
@@ -24,7 +24,7 @@ const Miscellaneous = ({match}) =>{
   const casedParam = _.startCase(match.params.misc).replace(/\s/g, '');
 
   if(!misc.includes(match.params.misc)){
-    return <NotFound page={match.params.misc} redirect="/"/>
+    return <NotFound page={match.params.misc}/>
   }
 
   const mapMisc = () =>{

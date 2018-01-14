@@ -10,9 +10,7 @@
 @import 'components/index';
 @import 'antd';
 @import 'mobile/mobile';
-/*
-  Layout
- */
+
 html{
   line-height: normal;
 }
@@ -22,12 +20,12 @@ html, body{
 body{
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
-  font-size: inherit;
+  font-size: calc(0.5em + 1vmin);
   line-height: inherit;
-  color: $dark-grey;
+  color:black;
   .hs-icon{
     font-family: 'Hearthstone';
-    font-size: 2vw;
+    font-size: calc(1em + 1vmin);
   }
   .mana-crystal{
     &.active, &.active:hover {
@@ -1378,8 +1376,7 @@ card{
         height: 5.5vh;
         background-color: $dark-grey;
         color: $pearl;
-        font-size: 16px;
-        padding: 0 10px;
+        padding-left: 10px;
         a {
           display: flex;
           align-items: center;
@@ -1398,19 +1395,20 @@ card{
     .decks {
       > div {
         display: flex;
-
+        > a {
+          width: 15%;
+        }
         .class-selection {
+          width: 85%;
           display: flex;
+          align-items: center;
           justify-content: center;
           li {
             @include transition(all ease .4s);
-            margin-right: 25px;
-            display: inline-block;
+            margin-right: 15px;
+            display: flex;
             padding: 3px;
             cursor: pointer;
-            span {
-              font-size: 34px;
-            }
             &:last-child {
               margin-right: 0;
             }
@@ -1418,11 +1416,15 @@ card{
         }
 
         .left-container {
-          padding-left: 10px;
+          padding: 0 10px;
           background-color: $dark-grey;
           width: 15%;
           height: 100%;
+
           .sidebar {
+            height: calc(100% - 20px);
+            overflow: auto;
+            @include slim-scrollbar();
             .search-decks {
               padding-top: 10px;
               width: calc(100% - 10px);
@@ -1449,18 +1451,17 @@ card{
               }
             }
             .mode-selection {
-              margin-top: 10px;
               li {
                 color: $light-grey;
                 display: flex;
-                span {
-                  font-size: 34px;
-                }
+                margin-bottom: 10px;
+                cursor: pointer;
+                align-items: center;
+                padding: 5px;
                 p {
                   text-transform: uppercase;
-                  height: 40px;
-                  line-height: 40px;
-                  margin: 0 0 0 10px;
+                  margin-left: 10px;
+                  font-size: calc(.25em + 1vmin);
                 }
               }
             }
@@ -1473,13 +1474,6 @@ card{
             width: 100%;
             padding: 10px;
             position: relative;
-            //.upper-row, .bottom-row {
-            //  width: 100%;
-            //  display: flex;
-            //}
-            //.bottom-row {
-            //  margin-top: 10px;
-            //}
             .loading-wrapper{
               position: absolute;
             }
@@ -1512,6 +1506,9 @@ card{
             flex-direction: column;
             background: $dark-grey;
             color: $light-grey;
+            padding-top: 10px;
+            overflow: auto;
+            @include slim-scrollbar();
             a{
               text-align: center;
               margin: 0 10px 10px 10px;
@@ -1664,7 +1661,7 @@ card{
                 align-items: center;
                 justify-content: flex-end;
                 span {
-                  font-size: 14px;
+                  font-size: calc(.5em + 1vmin);
                   margin-bottom: 2px;
                 }
                 p{
@@ -1693,6 +1690,9 @@ card{
                     }
                   }
                 }
+              }
+              .created{
+                @include truncate(100%);
               }
             }
           }
@@ -2950,18 +2950,18 @@ card{
   }
 }
 
-.miscellaneous{
-  margin:0 10px;
+.miscellaneous {
+  margin: 0 10px;
   overflow: hidden;
-  background:$dark-grey;
+  background: $dark-grey;
   color: $light-grey;
-  h2{
+  h2 {
     width: 100%;
     color: $pearl;
     text-align: center;
     padding: 10px 0;
     position: relative;
-    &:before{
+    &:before {
       content: "";
       position: absolute;
       bottom: 5px;
@@ -2972,23 +2972,23 @@ card{
       transform: translateX(-50%);
     }
   }
-  .sidebar{
+  .sidebar {
     text-align: center;
-    h2{
+    h2 {
       margin-top: 0;
-      padding-top:0;
-      &:before{
+      padding-top: 0;
+      &:before {
         width: 100%;
       }
     }
     margin: 10px 0 10px 10px;
     border-right: 1px solid $sea-color;
     padding: 0 10px 10px 0;
-    ul{
-      li{
+    ul {
+      li {
         width: 100%;
         margin-bottom: 10px;
-        a{
+        a {
           color: $light-grey;
           border: 1px solid $light-grey;
           display: block;
@@ -2996,24 +2996,24 @@ card{
           width: 100%;
           padding: 10px;
           @include transition(all ease .4s);
-          &.active, &:hover{
+          &.active, &:hover {
             border-color: $pearl;
             color: $pearl;
             background: $white-010;
           }
         }
-        &:last-child{
+        &:last-child {
           margin-bottom: 0;
         }
       }
     }
   }
-  .content{
+  .content {
     display: grid;
     overflow: hidden;
     .introduction {
       padding: 0 10px;
-      text-align:center;
+      text-align: center;
     }
     .wrapper {
       margin: 0 10px 10px 10px;
@@ -3039,7 +3039,7 @@ card{
         }
       }
       .table-of-contents {
-        h3{
+        h3 {
           margin: 10px 0 5px 0;
         }
         > li {
@@ -3072,7 +3072,7 @@ card{
         p {
           color: $light-grey;
         }
-        a{
+        a {
           color: $sea-color;
           text-decoration: underline;
         }
@@ -3080,10 +3080,10 @@ card{
           color: $pearl;
           margin: 1.33em 0 0;;
         }
-        h3{
+        h3 {
           color: $sea-color;
         }
-        ul{
+        ul {
           padding: 0 0 0 20px;
         }
         > li {
@@ -3094,7 +3094,7 @@ card{
             li {
               color: $pearl;
               ul {
-                li{
+                li {
                   list-style-type: circle;
                   color: $light-grey;
                 }
@@ -3105,8 +3105,23 @@ card{
         }
       }
     }
+    &.terms-of-service {
+      .wrapper {
+        .content {
+          > li {
+            ul{
+              li{
+                color: $light-grey;
+              }
+            }
+          }
+        }
+      }
+    }
   }
+
 }
+
 
 .not-found{
   display: flex;
@@ -3153,3 +3168,4 @@ card{
 .deleting{
   color: rgba(0,0,0,.2);
 }
+

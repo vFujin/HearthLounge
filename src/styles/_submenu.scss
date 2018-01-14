@@ -36,6 +36,10 @@
       padding: 5px;
       align-items: center;
       justify-content: space-between;
+      div{
+        font-size: calc(.25em + 1vmin);
+        margin-left: 5px;
+      }
     }
   }
 }
