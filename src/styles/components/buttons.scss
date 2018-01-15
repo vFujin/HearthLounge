@@ -19,16 +19,16 @@ button{
       }
     }
     &__submit{
-      @include button($pearl, $shaman, false, $dark-grey);
+      @include button($pearl, $submit, false, $dark-grey);
       &--light{
-        @include button($pearl, $shaman, false, $pearl);
+        @include button($pearl, $submit, false, $pearl);
       }
     }
     &__delete{
       @include button($pearl, $death_knight);
     }
     &__update{
-      @include button($pearl, $shaman);
+      @include button($pearl, $submit);
     }
     &__success{
       @include button($pearl, $dark-green, false, $dark-grey);

@@ -33,7 +33,7 @@ class SignInForm extends Component {
           <input id="signIn_password" type="password"/>
         </div>
         <div className="button-wrapper">
-          <Button text="Submit" type="submit--light" requiresAuth={false}/>
+          <Button text="Submit" type="submit" requiresAuth={false}/>
           <Link to="/sign-in/reset-password" className="btn btn__default" >
             Forgot password?
           </Link>

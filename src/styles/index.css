@@ -3528,7 +3528,7 @@ button {
       button.btn__default--active:hover:after {
         opacity: 1; }
   button.btn__submit {
-    background: #87D0B7;
+    background: #0070DE;
     color: #E7E2DA;
     border: 1px solid;
     border-color: #474143;
@@ -3539,7 +3539,7 @@ button {
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
      */ }
     button.btn__submit:hover {
-      background: #62c2a1;
+      background: #0056ab;
       color: #E7E2DA; }
     button.btn__submit:after {
       position: absolute;
@@ -3549,16 +3549,16 @@ button {
       top: 0;
       left: 0;
       opacity: 0;
-      -webkit-box-shadow: 0 0 5px #87D0B7;
-      -moz-box-shadow: 0 0 5px #87D0B7;
-      box-shadow: 0 0 5px #87D0B7;
+      -webkit-box-shadow: 0 0 5px #0070DE;
+      -moz-box-shadow: 0 0 5px #0070DE;
+      box-shadow: 0 0 5px #0070DE;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
       transition: all ease 0.4s; }
     button.btn__submit:hover:after {
       opacity: 1; }
     button.btn__submit--light {
-      background: #87D0B7;
+      background: #0070DE;
       color: #E7E2DA;
       border: 1px solid;
       border-color: #E7E2DA;
@@ -3569,7 +3569,7 @@ button {
        * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
        */ }
       button.btn__submit--light:hover {
-        background: #62c2a1;
+        background: #0056ab;
         color: #E7E2DA; }
       button.btn__submit--light:after {
         position: absolute;
@@ -3579,9 +3579,9 @@ button {
         top: 0;
         left: 0;
         opacity: 0;
-        -webkit-box-shadow: 0 0 5px #87D0B7;
-        -moz-box-shadow: 0 0 5px #87D0B7;
-        box-shadow: 0 0 5px #87D0B7;
+        -webkit-box-shadow: 0 0 5px #0070DE;
+        -moz-box-shadow: 0 0 5px #0070DE;
+        box-shadow: 0 0 5px #0070DE;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
         transition: all ease 0.4s; }
@@ -3618,7 +3618,7 @@ button {
     button.btn__delete:hover:after {
       opacity: 1; }
   button.btn__update {
-    background: #87D0B7;
+    background: #0070DE;
     color: #E7E2DA;
     border: 1px solid;
     border-color: #E7E2DA;
@@ -3629,7 +3629,7 @@ button {
      * Box-shadow has frame issues on buttons, so we have to do some hacks with :after / :hover for that shiny ~60fps
      */ }
     button.btn__update:hover {
-      background: #62c2a1;
+      background: #0056ab;
       color: #E7E2DA; }
     button.btn__update:after {
       position: absolute;
@@ -3639,9 +3639,9 @@ button {
       top: 0;
       left: 0;
       opacity: 0;
-      -webkit-box-shadow: 0 0 5px #87D0B7;
-      -moz-box-shadow: 0 0 5px #87D0B7;
-      box-shadow: 0 0 5px #87D0B7;
+      -webkit-box-shadow: 0 0 5px #0070DE;
+      -moz-box-shadow: 0 0 5px #0070DE;
+      box-shadow: 0 0 5px #0070DE;
       -webkit-transition: all ease 0.4s;
       -moz-transition: all ease 0.4s;
       transition: all ease 0.4s; }

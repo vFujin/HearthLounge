@@ -20,4 +20,3 @@ export const refParent = (parent) => {
 export const ref = firebase.database().ref();
 export const firestore = firebase.firestore();
 export const firebaseAuth = firebase.auth;
-export const firebaseStorage = firebase.storage;
