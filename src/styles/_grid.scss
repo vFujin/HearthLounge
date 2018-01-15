@@ -13,7 +13,7 @@
 }
 
 .block-width-4{
-  width: 100%
+  width: calc(100% - 1vh + 1px);
 }
 
 #container {
@@ -43,7 +43,7 @@
     display: grid;
     .container__page--inner {
       display: grid;
-      grid-template-rows: 5.5vh auto;
+      grid-template-rows: 5.5vh 77.5vh;
       &.no-filters{
         display: flex;
       }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import {Route} from 'react-router';
@@ -7,8 +8,9 @@ import Adventure from './right-container/adventure';
 import NotFound from '../../../components/not-found';
 import SelectExtension from '../../../components/extensions/select-extension';
 import {adventureExists} from '../../../utils/checkIfPathExist';
+import Icon from "../../../components/icon";
 
-const Adventures = ({match, location})=> {
+const Adventures = ({match, location, windowWidth})=> {
   document.title = "Adventures";
   let adventure = location.pathname.split("/")[2];
 
@@ -24,6 +26,9 @@ const Adventures = ({match, location})=> {
   return (
       <div className="container__page container__page--twoSided adventures">
         <div className="container__page--inner container__page--left">
+          <h3 className="sidebar__header">
+            {windowWidth <= 600 ? <Icon name="adventures"/> : "Adventures"}
+          </h3>
           <Sidebar adventure={adventure}/>
         </div>
         {rightContainer()}
@@ -31,7 +36,12 @@ const Adventures = ({match, location})=> {
   );
 };
 
-export default Adventures;
+const mapStateToProps = state =>{
+  const {windowWidth} = state.app.windowSize;
+  return {windowWidth};
+};
+
+export default connect(mapStateToProps)(Adventures);
 
 Adventures.propTypes = {
   params: PropTypes.shape({

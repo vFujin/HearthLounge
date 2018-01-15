@@ -20,7 +20,6 @@ const Sidebar = ({expansion}) => {
 
   return (
       <div className="sidebar container__extension-list">
-        <h3 className="sidebar__header">Expansions</h3>
         <ul className="sidebar__body sidebar__body--extensions">
           {listExpansions()}
         </ul>

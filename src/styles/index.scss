@@ -522,12 +522,13 @@ card{
         }
       }
       &.sidebar__body--extensions{
+
         li {
           @include transition(all ease .4s);
           &:hover {
             @include box-shadow(0, 0, 10px, black);
           }
-          &.selected{
+          .active {
             @include box-shadow(0, 0, 10px, $dark-grey);
           }
         }
@@ -587,24 +588,30 @@ card{
       }
     }
     .container__extension-list{
-      background: $dark-grey;
+      margin: 10px 0 0 0;
+      overflow: auto;
+      @include scrollbar();
       ul{
+        margin: 0;
         li{
           background-color: $pearl;
           color: $dark-grey;
           margin: 10px;
 
+          &:first-child{
+            margin-top: 0;
+          }
           a{
             @include transition(all ease .4s);
-            padding: 10px ;
+            padding: 10px;
             display: flex;
+            width: 100%;
+            align-items: center;
             span{
-              font-size: 50px;
+              font-size: calc(1.5em + 1vmin);
             }
             p{
               margin-left: 10px;
-              margin-bottom:0;
-              line-height: 50px;
             }
           }
         }
@@ -921,51 +928,6 @@ card{
           }
         }
       }
-      .container__extension{
-        .before-extension-pick{
-          width: calc(100% - 10px);
-          height: 100%;
-          margin: 0 10px;
-          p{
-            width: 100%;
-            font-size: 40px;
-            text-transform: uppercase;
-            opacity: .4;
-            padding-top: 64px;
-          }
-        }
-        .about-extension{
-          .false-view{
-            display: none;
-          }
-          .active-view{
-            color: $dark-grey;
-            display: block;
-          }
-          div{
-            width: 100%;
-            text-align: center;
-            padding-top: 10px;
-          }
-        }
-        .extension-content {
-          @include scrollbar($pearl);
-          margin: 10px 0 0 10px;
-          background-color: $light-grey;
-          height: calc(100% - 60px);
-          overflow: auto;
-          .false-view{
-            display: none;
-          }
-          .active-view{
-            color: $dark-grey;
-            display: block;
-          }
-          .inner-container{
-            padding: 10px;
-          }
-        }
-      }
       .container__blocks {
         display: flex;
         height: 100%;
@@ -974,8 +936,11 @@ card{
           height: calc(50% - .5vh);
           background: $light-grey;
           margin-bottom: 1vh;
-          &:nth-last-child(-n+4){
+          &:not(&.block-width-4):nth-last-child(-n+4){
             margin-bottom:0;
+          }
+          &:last-child{
+            margin-bottom: 0;
           }
           .container__blocks--block-header {
             padding: 0;
@@ -1014,8 +979,13 @@ card{
                   justify-content: center;
                   flex-direction: column;
                   color: $pearl;
+                  height: 100%;
+                  overflow: auto;
+
+                  @include slim-scrollbar($dark-grey);
                   span {
                     color: $dark-grey;
+                    height: 100%;
                   }
                 }
               }
@@ -1046,11 +1016,15 @@ card{
               }
             }
             .cost{
-              height: calc(100% - 40px);
+              height: calc(100% - 60px);
               display: flex;
               justify-content: center;
               align-items: center;
+              overflow: auto;
+              margin: 10px;
+              @include scrollbar();
               table {
+                width: 100%;
                 tr {
                   text-align: center;
                   text-transform: uppercase;
@@ -1187,12 +1161,15 @@ card{
         }
       }
       .container__bosses {
+        overflow: auto;
+        margin-right: 1vh;
+        height: 100%;
+        @include scrollbar();
         p {
           padding: 5px;
           background-color: $odd-row;
         }
         table {
-          margin-top: 10px;
           width: calc(100% - 1px);
           text-align: center;
           border-collapse: collapse;
@@ -1201,6 +1178,7 @@ card{
               th {
                 width: 15%;
                 border: 1px solid $dark-grey;
+                padding: 5px;
               }
               td {
                 @include transition(all ease .4s);
@@ -1250,14 +1228,21 @@ card{
         height: 100%;
         .container__classChallenges--sidebar{
           border-right: 1px solid $light-grey;
-          padding-right: 1vh;
+          padding: 0 1vh;
           li{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
             @include transition(all ease .4s);
+            &.active, &:hover{
+              @include box-shadow(0, 0, 10px, black);
+            }
             a{
               display: block;
               padding: 10px;
               span{
-                font-size: 40px;
+                font-size: calc(1.5em + 1vmin);
               }
             }
           }
@@ -1266,11 +1251,11 @@ card{
           padding-left: 1vh;
           height: 100%;
           width: 100%;
-          .container__classChallenges--class-selection{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
+          overflow: auto;
+          @include scrollbar();
+
+          .container__blocks--block:nth-last-child(2){
+            margin-bottom: 0;
           }
           .container__blocks--block:last-child{
             display: flex;
@@ -1490,13 +1475,6 @@ card{
           }
         }
       }
-    }
-
-    .arena-picker {
-
-    }
-
-    .tournaments {
     }
 
     .expansions {
@@ -2005,12 +1983,13 @@ card{
     height: 100%;
     opacity: 0.2;
     span{
-      font-size: 300px;
+      font-size: calc(10em + 1vmin);
       margin-bottom: 50px;
     }
     p{
       text-transform: uppercase;
-      font-size: 50px;
+      text-align: center;
+      font-size: calc(3em + 1vmin);
     }
   }
 }

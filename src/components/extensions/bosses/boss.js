@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash'
 import Block from "../../extension-blocks/extension-block";
@@ -7,8 +8,9 @@ import Strategy from "../class-challenges/challenges/class-challenge/blocks/stra
 import Rewards from "../class-challenges/challenges/class-challenge/blocks/rewards";
 import WingBosses from "./boss-blocks/wing-bosses";
 import Decklist from "./boss-blocks/decklist";
+import {blockSize} from "../../../utils/block-size";
 
-const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading, type}) => {
+const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading, type, windowWidth}) => {
   const filteredDecks = _.filter(decks, deck => deck.boss === boss.url);
   const bossOverview = <Overview adventure={adventure.url}
                                  type={type}
@@ -28,11 +30,11 @@ const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading, type}
 
   return (
       <ul className="container__blocks">
-        <Block page="boss" title="overview" element={bossOverview}/>
-        <Block page="boss" title="strategy" element={bossStrategy}/>
-        <Block page="boss" title="rewards" element={bossRewards}/>
-        <Block page="boss" title="wing bosses" element={wingBosses}/>
-        <Block page="boss" title="decks" element={bossDecklist}/>
+        <Block page="boss" title="overview" blockWidth={blockSize(1, windowWidth)} element={bossOverview}/>
+        <Block page="boss" title="strategy" blockWidth={blockSize(1, windowWidth)} element={bossStrategy}/>
+        <Block page="boss" title="rewards" blockWidth={blockSize(1, windowWidth)} element={bossRewards}/>
+        <Block page="boss" title="wing bosses" blockWidth={blockSize(1, windowWidth)} element={wingBosses}/>
+        <Block page="boss" title="decks" blockWidth={4} element={bossDecklist}/>
       </ul>
   )
 };
@@ -46,4 +48,9 @@ Boss.propTypes = {
   cardsLoading: PropTypes.bool
 };
 
-export default Boss;
+const mapStateToProps = state =>{
+  const {windowWidth} = state.app.windowSize;
+  return {windowWidth};
+};
+
+export default connect(mapStateToProps)(Boss);

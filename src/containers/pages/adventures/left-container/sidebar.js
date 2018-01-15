@@ -22,7 +22,6 @@ const Sidebar = ({adventure}) => {
 
   return (
       <div className="sidebar container__extension-list">
-        <h3 className="sidebar__header">Adventures</h3>
         <ul className="sidebar__body sidebar__body--extensions">
           {listAdventures()}
         </ul>

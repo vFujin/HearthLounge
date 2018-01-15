@@ -32,6 +32,7 @@ import {fetchCardbacksRequest} from "../redux/cardbacks/actions";
 import {fetchCardsRequest} from "../redux/cards/actions";
 import {firebaseSignOutRequest} from "../redux/firebase/actions/sign-out.action";
 import LogoSVG from "../components/logo";
+import {updateWindowWidth} from "../redux/app/windowSize/actions";
 
 class App extends Component{
   constructor(){
@@ -46,6 +47,9 @@ class App extends Component{
     signOut();
   };
 
+
+  updateWindowWidth = () => this.props.updateWindowWidth(window.innerWidth);
+
   componentDidMount() {
     document.title = "HearthLounge";
     setTimeout(() => this.setState({ loading: false }), 1000);
@@ -54,6 +58,11 @@ class App extends Component{
     updateGameInfo();
     updateCards();
     fetchCardbacks();
+    window.addEventListener("resize", this.updateWindowWidth);
+  }
+
+  componentWillUnmount(){
+    window.addEventListener("resize", this.updateWindowWidth);
   }
 
   render(){
@@ -123,7 +132,8 @@ const mapDispatchToProps = (dispatch) => {
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser
     }),
-    signOut: () => dispatch(firebaseSignOutRequest())
+    signOut: () => dispatch(firebaseSignOutRequest()),
+    updateWindowWidth: payload => dispatch(updateWindowWidth(payload))
   }
 };
 

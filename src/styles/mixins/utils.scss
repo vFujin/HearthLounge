@@ -29,46 +29,79 @@
   $tablet: "(min-width: 816px) and (max-width: 1365px)";
   $tablet_mini: "(min-width: 816px) and (max-width: 1000px)";
   $mobile: "(max-width: 815px)";
+  $mobile_mini: "(max-width: 600px)";
+
+  /*
+   * Desktop
+   */
   @if $size == desktop {
     @media only screen and #{$desktop} {
       @content;
     }
   }
+
+  /*
+   * Laptop
+   */
   @else if $size == laptop {
     @media only screen and #{$laptop} {
       @content;
     }
   }
+
+  /*
+   * Tablet
+   */
   @else if $size == tablet {
     @if ($height) {
       @media only screen and #{$tablet}, screen and (max-height: $height) {
         @content;
       }
-    }
-    @else {
+    } @else {
       @media only screen and #{$tablet} {
         @content;
       }
     }
   }
-    @else if $size == tablet_mini {
+
+  /*
+   * Tablet Mini
+   */
+  @else if $size == tablet_mini {
     @media only screen and #{$tablet_mini}{
       @content;
     }
   }
+
+  /*
+   * Mobile
+   */
   @else if $size == mobile {
     @if ($height) {
       @media only screen and #{$mobile}, screen and (max-height: $height) {
         @content;
       }
-    }
-    @else {
+    } @else {
       @media only screen and #{$mobile} {
         @content;
       }
     }
   }
-  @else {
+
+  /*
+   * Mobile Mini
+   */
+  @else if $size == mobile_mini {
+    @if ($height) {
+      @media only screen and #{$mobile_mini}, screen and (max-height: $height) {
+        @content;
+      }
+    } @else {
+      @media only screen and #{$mobile_mini} {
+        @content;
+      }
+    }
+  } @else {
     @media only screen and #{$size} {
       @content;
     }

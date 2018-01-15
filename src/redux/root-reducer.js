@@ -18,8 +18,12 @@ import {
 import {decks, hotDecks, updateDecks} from './decks/reducers';
 import {posts, activePost} from './reddit/reducers';
 import {activeUserDecks, shortenedUserDetails} from "./user/reducers";
+import windowSize from "./app/windowSize/reducer";
 
 const rootReducer = combineReducers({
+  app: combineReducers({
+    windowSize
+  }),
   home: combineReducers({
     hotDecks
   }),

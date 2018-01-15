@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import ExtensionBlock from "../../../../components/extension-blocks/extension-block";
 import {
@@ -11,8 +12,9 @@ import {
   Structure,
   GameChanges
 } from "../../../../components/extension-blocks/overview-blocks";
+import {blockSize} from "../../../../utils/block-size";
 
-const Overview = ({extension, gameCardbacks}) => {
+const Overview = ({extension, gameCardbacks, windowWidth}) => {
   const {overview, name} = extension;
   const {about, cinematic, gameboard, img, cost, structure, game_changes, cardbacks} = overview;
 
@@ -26,24 +28,30 @@ const Overview = ({extension, gameCardbacks}) => {
 
   return (
       <ul className="container__blocks">
-        <ExtensionBlock title="about" element={adventureAbout}/>
-        <ExtensionBlock title="art" element={adventureArt} blockWidth={2} />
-        <ExtensionBlock title="cardbacks" element={adventureRewards} />
-        <ExtensionBlock title="cinematic" element={adventureCinematic}/>
-        <ExtensionBlock title="gameboard" element={adventureGameboard}/>
-        <ExtensionBlock title="cost" element={adventureCost}/>
-        <ExtensionBlock title="structure" element={adventureStructure}/>
+        <ExtensionBlock title="about" blockWidth={blockSize(1, windowWidth)} element={adventureAbout}/>
+        <ExtensionBlock title="art" blockWidth={blockSize(2, windowWidth)} element={adventureArt} />
+        <ExtensionBlock title="cardbacks" blockWidth={blockSize(1, windowWidth)} element={adventureRewards} />
+        <ExtensionBlock title="cinematic" blockWidth={blockSize(1, windowWidth)} element={adventureCinematic}/>
+        <ExtensionBlock title="gameboard" blockWidth={blockSize(1, windowWidth)} element={adventureGameboard}/>
+        <ExtensionBlock title="cost" blockWidth={blockSize(1, windowWidth)} element={adventureCost}/>
+        <ExtensionBlock title="structure" blockWidth={blockSize(1, windowWidth)} element={adventureStructure}/>
         {
           game_changes &&
           <ExtensionBlock page="overview"
                           title="game changes"
+                          blockWidth={blockSize(1, windowWidth)}
                           element={<GameChanges gameChanges={game_changes}/>}/>
         }
       </ul>
   );
 };
 
-export default Overview;
+const mapStateToProps = state =>{
+  const {windowWidth} = state.app.windowSize;
+  return {windowWidth};
+};
+
+export default connect(mapStateToProps)(Overview);
 
 Overview.propTypes = {
   extension: PropTypes.object.isRequired,
