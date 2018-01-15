@@ -9,6 +9,7 @@ import SelectExtension from '../../../components/extensions/select-extension';
 import {adventureExists} from '../../../utils/checkIfPathExist';
 
 const Adventures = ({match, location})=> {
+  document.title = "Adventures";
   let adventure = location.pathname.split("/")[2];
 
   const rightContainer = () => {

@@ -8,6 +8,10 @@ import {fetchShortenedUserDetailsRequest} from "../../../redux/user/shortened-de
 
 class Dashboard extends Component{
 
+  componentDidMount(){
+    document.title = "Dashboard";
+  }
+
   handleUserDecksClick = () =>{
     this.props.fetchDecks(this.props.activeUser.uid);
   };

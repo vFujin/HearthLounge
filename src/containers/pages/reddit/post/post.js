@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 import Sidebar from './sidebar';
 import Topbar from './topbar';
 import NotFound from '../../../../components/not-found';
@@ -12,7 +13,8 @@ class RedditPost extends Component {
 
   componentDidMount() {
     const {updateActivePost, activePost, match} = this.props;
-    const {postId} = match.params;
+    const {postId, postTitle} = match.params;
+    document.title= _.startCase(postTitle);
 
     if (activePost.loading) {
       updateActivePost(postId);

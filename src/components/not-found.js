@@ -5,6 +5,7 @@ import Button from "./buttons/button";
 import history from '../globals/history';
 
 const NotFound = ({page, redirect, below_topbar}) => {
+  document.title = "Something's not quite right";
 
   const pluralize = () =>{
     if(redirect) {

@@ -7,8 +7,10 @@ import {updateUsername} from "../../../../../../../firebase/user/update";
 
 class UpdateProfileForm extends Component {
   componentDidMount(){
+    document.title = "Sign Up - Update Profile";
     this.props.updateSignUpStatus('success', '')
   }
+
   handleUpdateProfileFormSubmit = (e) => {
     e.preventDefault();
     const {activeUser, signUp_username, signUp_avatar, updateSignUpStatus} = this.props;

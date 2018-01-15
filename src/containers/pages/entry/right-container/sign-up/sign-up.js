@@ -13,7 +13,6 @@ const findUsername = _.debounce((input, updateUsernameExistStatus) => {
 }, 500);
 
 class SignUp extends Component {
-
   handleInputChange = (e) => {
     const {updateFormProperty, updateUsernameExistStatus} = this.props;
     let target = e.target;

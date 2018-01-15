@@ -19,6 +19,8 @@ import {fetchRedditPostCommentsRequest} from "../../../redux/reddit/comments/act
 class Home extends PureComponent{
 
   componentDidMount() {
+    document.title = "Home";
+
     const {updateDecks, updateRedditPosts, posts, hotDecks} = this.props;
     if(hotDecks.loading) {
       updateDecks();

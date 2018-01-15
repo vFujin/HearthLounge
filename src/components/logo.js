@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LogoSVG = ({dotsColor}) =>{
+const LogoSVG = ({dotsColor, id = "logo"}) =>{
   const circleRadius = "2.5%";
 
   return (
-      <svg width="10vh" height="10vh" id="logo" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-12 -4 100 100" preserveAspectRatio="none">
+      <svg width="10vh" height="10vh" id={id} version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-12 -4 100 100" preserveAspectRatio="none">
         <g>
           {/*col-1*/}
           <circle className="circle2 outer" cx="2.5%" cy="25%" r={circleRadius} fill={dotsColor}/>
@@ -33,6 +33,7 @@ const LogoSVG = ({dotsColor}) =>{
           <circle className="circle2 outer" cx="72.5%" cy="65%" r={circleRadius} fill={dotsColor}/>
         </g>
         {/*lines | starting from center*/}
+
         <path className="line" d="M 37.5 45 L 20 55 L 20 35 L 37.5 25  L 55 35 L 55 55 L 37.5 65"
               stroke={dotsColor}
               fill="rgba(0,0,0,0)"

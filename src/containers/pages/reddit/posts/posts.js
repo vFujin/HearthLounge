@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 import 'whatwg-fetch';
 import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar';
@@ -11,6 +12,7 @@ import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../../redux/reddit/comme
 class RedditPosts extends Component {
   componentDidMount() {
     const {category} = this.props.match.params;
+    document.title=`r/hearthstone - ${_.startCase(category)}`;
     if(category !== "hot") {
       this.props.updatePosts(category);
     }

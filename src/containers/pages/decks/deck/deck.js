@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
@@ -13,7 +14,8 @@ import NotFound from "../../../../components/not-found";
 class Deck extends Component{
   componentDidMount() {
     const {activeDeck, fetchDeck, match, updateActiveDeckCopy} = this.props;
-    const {deckId} = match.params;
+    const {deckId, deckTitle} = match.params;
+    document.title = _.startCase(deckTitle) || "Deck";
 
     if (activeDeck.loading) {
       fetchDeck(deckId)

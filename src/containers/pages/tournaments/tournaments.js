@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 export class Tournaments extends Component {
+  componentDidMount(){
+    document.title = "Tournaments";
+  }
   render() {
     return (
         <div className="pageContainer tournaments">

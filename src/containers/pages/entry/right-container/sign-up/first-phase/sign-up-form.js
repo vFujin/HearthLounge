@@ -8,6 +8,11 @@ import {createUser} from "../../../../../../firebase/user/create";
 import {error} from "../../../../../../utils/messages";
 
 class SignUpForm extends Component {
+
+  componentDidMount(){
+    document.title = "Sign Up";
+  }
+
   componentWillUnmount(){
     this.props.updateFormProperty({
       signUp_password: "",

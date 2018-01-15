@@ -9,6 +9,7 @@ import SelectExtension from '../../../components/extensions/select-extension';
 import {expansionExists} from '../../../utils/checkIfPathExist'
 
 const Expansions = ({match, location}) => {
+  document.title = "Expansions";
   const expansion = location.pathname.split("/")[2];
 
   const rightContainer = () => {

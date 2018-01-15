@@ -5,14 +5,13 @@ import _ from 'lodash';
 import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
 import {updateViews} from '../../../../firebase/decks/deck/update';
-import {FETCH_DECKS_REQUEST} from "../../../../redux/decks/fetch-decks/types";
 import {UPDATE_DECKS_REQUEST} from "../../../../redux/decks/update-decks/types";
-import {FETCH_ACTIVE_DECK_SUCCESS} from "../../../../redux/deck/active-deck/types";
 import {fetchDecksRequest} from "../../../../redux/decks/fetch-decks/actions";
 import {fetchActiveDeckSuccess} from "../../../../redux/deck/active-deck/actions";
 
 class DeckSelection extends Component {
   componentDidMount() {
+    document.title = "Decks";
     const {fetchDecks, updateDecks, decks, match} = this.props;
     const {playerClass} = match.params;
     if(decks.loading && match.path === "/decks") {

@@ -3383,6 +3383,31 @@ svg#logo:hover {
     animation: dash 3s linear forwards;
     animation-delay: 2.4s; }
 
+svg#preload .circle {
+  opacity: 0;
+  animation: appPreloadOpacity 4s linear;
+  animation-iteration-count: infinite; }
+svg#preload .circle1 {
+  opacity: 0;
+  animation: appPreloadOpacity 3s linear;
+  animation-iteration-count: infinite; }
+svg#preload .circle2 {
+  opacity: 0;
+  animation: appPreloadOpacity 8s linear;
+  animation-iteration-count: infinite; }
+svg#preload .line {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  animation: dash 6s linear none;
+  animation-iteration-count: infinite; }
+
+@keyframes appPreloadOpacity {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 @keyframes initOpacity {
   0% {
     opacity: 1; }
@@ -4667,6 +4692,14 @@ body {
     color: navy; }
   body .mana-crystal:hover a span {
     color: #87D0B7; }
+  body #root {
+    height: 100%; }
+    body #root .preload {
+      background: #E7E2DA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%; }
 
 .container__index {
   overflow-y: auto; }

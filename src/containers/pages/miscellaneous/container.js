@@ -27,6 +27,9 @@ const Miscellaneous = ({match}) =>{
     return <NotFound page={match.params.misc}/>
   }
 
+
+  document.title = _.startCase(match.params.misc);
+
   const mapMisc = () =>{
     return misc.map(m =>
       <li key={m}>

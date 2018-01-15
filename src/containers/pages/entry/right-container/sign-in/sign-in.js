@@ -5,6 +5,7 @@ import ResetPasswordForm from './reset-password-form';
 import SignInForm from './sign-in-form';
 
 class SignIn extends Component {
+
   handleInputChange = (e) => {
     const {updateFormProperty} = this.props;
     let target = e.target;

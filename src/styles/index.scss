@@ -43,6 +43,16 @@ body{
       }
     }
   }
+  #root {
+    height: 100%;
+    .preload{
+      background: $pearl;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
 }
 
 .container__index{

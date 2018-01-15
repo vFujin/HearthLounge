@@ -22,12 +22,18 @@ class ComponentCards extends Component {
       cardSet: props.cardSet || undefined,
       inExtensions: props.cardSet || undefined,
       inDeckCreation: props.inDeckCreation || undefined,
-      filterView: props.filterView || false
+      filterView: props.filterView || false,
+      documentTitle: props.documentTitle || false
     }
   }
 
   componentDidMount() {
-    lazyloadCards(this.state.infiniteScrollContainer, loadedCards => this.setState({loadedCards}), this.state.loadedCards);
+    const {documentTitle, infiniteScrollContainer, loadedCards} = this.state;
+    if(documentTitle) {
+      document.title = "Cards";
+    }
+
+    lazyloadCards(infiniteScrollContainer, loadedCards => this.setState({loadedCards}), loadedCards);
   }
 
   handleInputChange = (value, filter) => {
@@ -120,5 +126,6 @@ ComponentCards.propTypes = {
   mode: PropTypes.string,
   playerClass: PropTypes.string,
   inDeckCreation: PropTypes.bool,
-  filterView: PropTypes.bool
+  filterView: PropTypes.bool,
+  documentTitle: PropTypes.bool
 };

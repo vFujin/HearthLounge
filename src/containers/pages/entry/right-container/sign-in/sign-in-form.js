@@ -7,6 +7,10 @@ import {firebaseSignInRequest} from "../../../../../redux/firebase/actions/sign-
 
 class SignInForm extends Component {
 
+  componentDidMount(){
+    document.title = "Sign In"
+  }
+
   handleSignIn = (e) => {
     e.preventDefault();
     const {signIn_email, updateSignInStatus} = this.props;

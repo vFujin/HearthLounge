@@ -7,6 +7,7 @@ import {fetchRedditPostsRequest} from "../../../redux/reddit/posts/actions";
 
 class Reddit extends Component {
   componentDidMount() {
+    document.title = "r/hearthstone - Hot";
     const {posts, updatePosts} = this.props;
     if(posts.loading) {
       updatePosts("hot");

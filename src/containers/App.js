@@ -31,14 +31,24 @@ import {fetchGameInfoRequest} from "../redux/game-info/actions";
 import {fetchCardbacksRequest} from "../redux/cardbacks/actions";
 import {fetchCardsRequest} from "../redux/cards/actions";
 import {firebaseSignOutRequest} from "../redux/firebase/actions/sign-out.action";
+import LogoSVG from "../components/logo";
 
-class Main extends Component{
+class App extends Component{
+  constructor(){
+    super();
+    this.state = {
+      loading: true
+    };
+  }
+
   handleSignOut = () =>{
     const {signOut} = this.props;
     signOut();
   };
 
   componentDidMount() {
+    document.title = "HearthLounge";
+    setTimeout(() => this.setState({ loading: false }), 1000);
     const {updateActiveUser, updateGameInfo, updateCards, fetchCardbacks} = this.props;
     getActiveUser((authenticated, data) => updateActiveUser({authenticated, ...data}));
     updateGameInfo();
@@ -47,9 +57,19 @@ class Main extends Component{
   }
 
   render(){
+    const {loading} = this.state;
     const {activeUser, playerClass} = this.props;
+
+    if(loading){
+      return (
+        <div className="preload">
+          <LogoSVG dotsColor="#00a99c" id="preload"/>
+        </div>
+      );
+    }
+
     return (
-      <Router basename={process.env.PUBLIC_URL} history={history}>
+      <Router history={history}>
         <div id="container">
           <Navbar url="123"
                   activeUser={activeUser}
@@ -107,4 +127,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

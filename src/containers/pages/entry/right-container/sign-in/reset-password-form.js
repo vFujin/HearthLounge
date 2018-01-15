@@ -6,6 +6,10 @@ import {firebaseResetPasswordRequest} from "../../../../../redux/firebase/action
 
 class ResetPasswordForm extends Component{
 
+  componentDidMount(){
+    document.title = "Restore Password";
+  }
+
   handleResetPassword = (e) =>{
     e.preventDefault();
     const {resetPassword, resetPass_email} = this.props;

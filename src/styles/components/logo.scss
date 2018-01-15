@@ -25,6 +25,36 @@ svg#logo{
   }
 }
 
+svg#preload{
+  .circle{
+    opacity: 0;
+    animation: appPreloadOpacity 4s linear;
+    animation-iteration-count: infinite;
+  }
+  .circle1{
+    opacity: 0;
+    animation: appPreloadOpacity 3s linear;
+    animation-iteration-count: infinite;
+  }
+  .circle2{
+    opacity: 0;
+    animation: appPreloadOpacity 8s linear;
+    animation-iteration-count: infinite;
+  }
+  .line{
+    stroke-dasharray: 250;
+    stroke-dashoffset: 250;
+    animation: dash 6s linear none;
+    animation-iteration-count: infinite;
+  }
+}
+
+@keyframes appPreloadOpacity {
+  0% { opacity: 0; }
+  50% {opacity: 1;}
+  100% { opacity: 0; }
+}
+
 @keyframes initOpacity {
   0% { opacity: 1; }
   100% { opacity: 0; }

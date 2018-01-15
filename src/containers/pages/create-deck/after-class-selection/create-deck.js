@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
+import _ from 'lodash';
 import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import {resetFocus} from "./right-container/content-assets/utils/reset-focus";
@@ -7,6 +8,8 @@ import {toggleDeckMechanics, toggleImgReadyDecklist, toggleImportedDeckstringPop
 
 class CreateDeckClassSelected extends PureComponent {
   componentDidMount(){
+    const {playerClass} = this.props.match.params;
+    document.title = `Deck Creation - ${_.startCase(playerClass)}`;
     resetFocus();
   }
 
