@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Icon from "../../../../components/icon";
 
-const Topbar = ({activeUser, handleUserDecksClick}) =>{
+const Topbar = ({activeUser, handleUserDecksClick, handleFetchAllUsers}) =>{
     const {role} = activeUser;
     return (
         <ul className="topbar has-icons">
@@ -19,7 +19,7 @@ const Topbar = ({activeUser, handleUserDecksClick}) =>{
             </li>
           {
             role < 3 &&
-            <li className="deck" onClick={handleUserDecksClick}>
+            <li className="deck" onClick={handleFetchAllUsers}>
               <Icon name="login" title="Users" tooltip={true}/>
             </li>
           }

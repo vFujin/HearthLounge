@@ -4,10 +4,9 @@ import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar'
 import Content from './right-container/content';
 import {fetchActiveUserDecksRequest} from "../../../redux/user/active-user-dashboard-decks/actions";
-import {fetchShortenedUserDetailsRequest} from "../../../redux/user/shortened-details/actions";
+import {fetchAllUsersRequest} from "../../../redux/user/all-users/actions";
 
 class Dashboard extends Component{
-
   componentDidMount(){
     document.title = "Dashboard";
   }
@@ -16,12 +15,20 @@ class Dashboard extends Component{
     this.props.fetchDecks(this.props.activeUser.uid);
   };
 
+  handleFetchAllUsers = () =>{
+    if(this.props.activeUser && this.props.activeUser.role < 3) {
+      this.props.fetchAllUsers();
+    }
+  };
+
   render() {
+
     return (
       <div className="container__page container__page--twoSided dashboard">
         <Sidebar/>
         <div className="container__page--inner container__page--right">
-          <Topbar handleUserDecksClick={this.handleUserDecksClick}/>
+          <Topbar handleUserDecksClick={this.handleUserDecksClick}
+                  handleFetchAllUsers={this.handleFetchAllUsers}/>
           <Content/>
         </div>
       </div>
@@ -37,7 +44,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch => {
   return{
     fetchDecks: payload => dispatch(fetchActiveUserDecksRequest(payload)),
-    fetchUsers: () => dispatch(fetchShortenedUserDetailsRequest())
+    fetchAllUsers: () => dispatch(fetchAllUsersRequest())
   }
 };
 

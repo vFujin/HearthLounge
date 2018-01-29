@@ -17,7 +17,7 @@ import {
 } from './deck/reducers';
 import {decks, hotDecks, updateDecks} from './decks/reducers';
 import {posts, activePost} from './reddit/reducers';
-import {activeUserDecks, shortenedUserDetails} from "./user/reducers";
+import {activeUserDecks, allUsers, shortenedUserDetails} from "./user/reducers";
 import windowSize from "./app/windowSize/reducer";
 
 const rootReducer = combineReducers({
@@ -31,7 +31,8 @@ const rootReducer = combineReducers({
   entry,
   users: combineReducers({
     activeUser,
-    activeUserDecks
+    activeUserDecks,
+    allUsers
   }),
   cardbacks,
   cards,

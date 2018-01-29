@@ -23,6 +23,7 @@ import {watchDeckCommentDeletingStatus} from "./deck/comments/delete-comment/sag
 import {watchUserDashboardDecks} from "./user/active-user-dashboard-decks/saga";
 import {watchDeckDeletion} from "./deck/delete-deck/saga";
 import {watchCardbacks} from "./cardbacks/saga";
+import {watchAllUsers} from "./user/all-users/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -53,6 +54,7 @@ export default function* rootSaga() {
     watchFirebaseResetPassword(),
     //Firebase - User
     watchUserShortenedDetails(),
-    watchUserDashboardDecks()
+    watchUserDashboardDecks(),
+    watchAllUsers()
   ]);
 }

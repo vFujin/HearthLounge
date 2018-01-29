@@ -1,18 +1,19 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Decks from "./assets/decks";
+import Users from "./assets/users";
 
-const Content = ({activeUserDecks}) =>{
+const Content = ({activeUserDecks, allUsers}) =>{
   return (
       <div className="content">
         <Decks activeUserDecks={activeUserDecks}/>
-        <div className="deck-comments"></div>
+        <Users allUsers={allUsers}/>
       </div>
   )
 };
 const mapStateToProps = state =>{
-  const {activeUserDecks} = state.users;
-  return {activeUserDecks}
+  const {activeUserDecks, allUsers} = state.users;
+  return {activeUserDecks, allUsers}
 };
 
 

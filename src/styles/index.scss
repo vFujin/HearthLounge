@@ -1925,21 +1925,6 @@ card{
 .cards{
   position: relative;
   height: 100%;
-  .left-container{
-    .sidebar{
-      .sidebar-icons {
-        margin: 1em 0;
-        text-align: center;
-        li {
-          span{
-            @include transition(all ease .4s);
-            padding: 5px;
-            color: $dark-grey;
-          }
-        }
-      }
-    }
-  }
   .toggle-filters{
     position: absolute;
     z-index: 3;
@@ -1947,28 +1932,6 @@ card{
     padding: 1vh;
     box-shadow: 0 0 10px black;
     cursor: pointer;
-  }
-  .container__page--right{
-    .topbar {
-      .topbar-left {
-        li {
-          &:hover {
-            span {
-              color: navy;
-            }
-          }
-        }
-      }
-      .topbar-right {
-        li {
-          span {
-            &:hover, &.active {
-              @include box-shadow(0, 0, 5px, black);
-            }
-          }
-        }
-      }
-    }
   }
 }
 
