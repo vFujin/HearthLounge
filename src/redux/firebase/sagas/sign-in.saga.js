@@ -4,6 +4,7 @@ import history from '../../../globals/history';
 import {error, success} from "../../../utils/messages";
 import * as types from "../types";
 import * as actions from '../actions/sign-in.action';
+import {firebaseSignOutSaga} from "./sign-out.saga";
 
 export const firebaseSignIn = (payload) => {
   const {email, pass} = payload;
@@ -36,6 +37,7 @@ export function* firebaseSignInSaga({payload}) {
       yield success('Signed in Successfully!');
       yield history.push('/dashboard');
     } else {
+      yield firebaseSignOutSaga();
       yield put(actions.firebaseSignInError(err));
       yield error(err)
     }

@@ -4,7 +4,7 @@ import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar'
 import Content from './right-container/content';
 import {fetchActiveUserDecksRequest} from "../../../redux/user/active-user-dashboard-decks/actions";
-import {fetchAllUsersRequest} from "../../../redux/user/all-users/actions";
+import {fetchAllUsersRequest} from "../../../redux/admin/fetch-all-users/actions";
 
 class Dashboard extends Component{
   componentDidMount(){

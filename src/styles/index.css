@@ -7077,37 +7077,39 @@ card {
       margin-left: 10px; }
     .dashboard .container__page--right .topbar li:last-child {
       margin-right: 0; }
-.dashboard .container__page--right .content .decks {
-  width: 50%;
-  height: 100%;
-  overflow: hidden; }
-  .dashboard .container__page--right .content .decks > ul {
+.dashboard .container__page--right .content {
+  display: flex; }
+  .dashboard .container__page--right .content .decks {
+    width: 50%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    overflow: auto; }
-    .dashboard .container__page--right .content .decks > ul::-webkit-scrollbar {
-      width: 13px;
-      height: 13px; }
-    .dashboard .container__page--right .content .decks > ul::-webkit-scrollbar-thumb {
-      background-color: #474143;
-      border-radius: 0;
-      border-left: 1px solid #E7E2DA; }
-    .dashboard .container__page--right .content .decks > ul::-webkit-scrollbar-thumb:hover {
-      background-color: #474143; }
-    .dashboard .container__page--right .content .decks > ul::-webkit-scrollbar-track {
-      background-color: #A69E9D;
-      border-left: 1px solid #E7E2DA; }
-    .dashboard .container__page--right .content .decks > ul > li {
-      display: flex;
-      margin: 10px;
-      max-height: 150px; }
-      .dashboard .container__page--right .content .decks > ul > li:first-child {
-        margin-top: 0; }
-      .dashboard .container__page--right .content .decks > ul > li:nth-last-child(-n+2) {
-        margin-bottom: 0; }
-      .dashboard .container__page--right .content .decks > ul > li a {
-        width: 100%; }
+    overflow: hidden; }
+    .dashboard .container__page--right .content .decks > ul {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      overflow: auto; }
+      .dashboard .container__page--right .content .decks > ul::-webkit-scrollbar {
+        width: 13px;
+        height: 13px; }
+      .dashboard .container__page--right .content .decks > ul::-webkit-scrollbar-thumb {
+        background-color: #474143;
+        border-radius: 0;
+        border-left: 1px solid #E7E2DA; }
+      .dashboard .container__page--right .content .decks > ul::-webkit-scrollbar-thumb:hover {
+        background-color: #474143; }
+      .dashboard .container__page--right .content .decks > ul::-webkit-scrollbar-track {
+        background-color: #A69E9D;
+        border-left: 1px solid #E7E2DA; }
+      .dashboard .container__page--right .content .decks > ul > li {
+        display: flex;
+        margin: 10px;
+        max-height: 150px; }
+        .dashboard .container__page--right .content .decks > ul > li:first-child {
+          margin-top: 0; }
+        .dashboard .container__page--right .content .decks > ul > li:nth-last-child(-n+2) {
+          margin-bottom: 0; }
+        .dashboard .container__page--right .content .decks > ul > li a {
+          width: 100%; }
 
 .miscellaneous {
   margin: 0 10px;

@@ -5,9 +5,9 @@ import HearthstoneDetails from './details/hearthstone';
 import SocialMediaDetails from './details/social-media';
 import DangerZone from './details/danger-zone';
 import {updateEmail, updateHearthstoneData, updateSocialMediaData} from '../../../../firebase/user/update';
-import {deleteUser} from '../../../../firebase/user/delete';
 import {FIREBASE_REAUTHENTICATE_REQUEST} from "../../../../redux/firebase/types";
 import Icon from "../../../../components/icon";
+import {firebaseDeleteActiveUserRequest} from "../../../../redux/firebase/actions/delete-active-user.action";
 
 class Sidebar extends PureComponent {
   constructor(props){
@@ -88,7 +88,7 @@ class Sidebar extends PureComponent {
   }
 
   handleDeleteAccountClick = () =>{
-    deleteUser(this.props.activeUser);
+    this.props.deleteUser(this.props.activeUser);
   };
 
   handleReauthenticationClick = () =>{
@@ -149,6 +149,7 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    deleteUser: () => dispatch(firebaseDeleteActiveUserRequest()),
     reauthenticate: (email, password) => dispatch({
       type: FIREBASE_REAUTHENTICATE_REQUEST, payload: {email, password}
     }),

@@ -23,7 +23,10 @@ import {watchDeckCommentDeletingStatus} from "./deck/comments/delete-comment/sag
 import {watchUserDashboardDecks} from "./user/active-user-dashboard-decks/saga";
 import {watchDeckDeletion} from "./deck/delete-deck/saga";
 import {watchCardbacks} from "./cardbacks/saga";
-import {watchAllUsers} from "./user/all-users/saga";
+import {watchAllUsers} from "./admin/fetch-all-users/saga";
+import {watchFirebaseDeleteActiveUser} from "./firebase/sagas/delete-active-user.saga";
+import {watchUserDeletion} from "./admin/remove-user/saga";
+import {watchUserUpdate} from "./admin/update-user/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -52,9 +55,13 @@ export default function* rootSaga() {
     watchFirebaseSignOut(),
     watchFirebaseReauthenticate(),
     watchFirebaseResetPassword(),
+    watchFirebaseDeleteActiveUser(),
     //Firebase - User
     watchUserShortenedDetails(),
     watchUserDashboardDecks(),
-    watchAllUsers()
+    watchAllUsers(),
+    //Dashboard - Admin
+    watchUserUpdate(),
+    watchUserDeletion()
   ]);
 }

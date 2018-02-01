@@ -1,0 +1,1 @@
+export {default as allUsers} from './fetch-all-users/reducer';
