@@ -9,7 +9,7 @@ const SocialMediaDetails = ({deckAuthor}) =>{
   const wrapper = (media, profile, affix = "com") =>{
     console.log(profile, media);
     return (
-      <Link to={profile ? `https://www.${media}.${affix}/${profile}` :""} className={!profile ? "profile-not-defined" : undefined}>
+      <Link to={profile ? `https://www.${media}.${affix}/${profile}` : ""} target="_blank" className={!profile ? "profile-not-defined" : undefined}>
         <Icon name={media} className={profile && `${media} active`}/>
       </Link>
     )
