@@ -19,3 +19,10 @@ export function fetchCardsFailure(error){
     payload: error
   }
 }
+
+export function getCardsComponentWidth(width) {
+  return {
+    type: types.GET_CARDS_COMPONENT_WIDTH,
+    payload: width
+  }
+}

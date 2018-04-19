@@ -6,6 +6,7 @@ import {lazyloadCards, mapCards, updateFilters } from "./utils";
 import Topbar from "./right-container/topbar";
 import Sidebar from "./left-container/sidebar";
 import {mapInputCards} from './utils/map-cards';
+import {getCardsComponentWidth} from "../../redux/cards/actions";
 
 class ComponentCards extends Component {
   constructor(props){
@@ -27,13 +28,25 @@ class ComponentCards extends Component {
     }
   }
 
+  updateCardsComponentWidth = () => {
+    this.props.getCardsComponentWidth(document.getElementById("cardsContainer") && document.getElementById("cardsContainer").offsetWidth);
+  };
+
   componentDidMount() {
     const {documentTitle, infiniteScrollContainer, loadedCards} = this.state;
+    const cardsContainerWidth = document.getElementById("cardsContainer") && document.getElementById("cardsContainer").offsetWidth;
     if(documentTitle) {
       document.title = "Cards";
     }
 
+    this.props.getCardsComponentWidth(cardsContainerWidth);
     lazyloadCards(infiniteScrollContainer, loadedCards => this.setState({loadedCards}), loadedCards);
+    window.addEventListener("resize", this.updateCardsComponentWidth);
+  }
+
+  componentWillUnmount(){
+    this.props.getCardsComponentWidth(null);
+    window.removeEventListener("resize", this.updateCardsComponentWidth);
   }
 
   handleInputChange = (value, filter) => {
@@ -76,10 +89,9 @@ class ComponentCards extends Component {
   render() {
     const {filters, mode, filterView, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
     const {info, cards} = this.props;
-    console.log("\nSTATE - cards loaded: ", this.state.loadedCards);
 
     return (
-      <div className={`container__page container__page--${filterView ? "two" : "one"}Sided cards`}>
+      <div className={`container__page container__page--${filterView ? "two" : "one"}Sided cards`} id="cardsContainer">
         {
           filterView &&
           <Sidebar filters={filters}
@@ -120,7 +132,13 @@ const mapStateToProps = state =>{
   return {cards, info};
 };
 
-export default connect(mapStateToProps, null)(ComponentCards);
+const mapDispatchToProps = dispatch => {
+  return {
+    getCardsComponentWidth: payload => dispatch(getCardsComponentWidth(payload))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ComponentCards);
 
 ComponentCards.propTypes = {
   mode: PropTypes.string,

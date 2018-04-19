@@ -4,7 +4,8 @@ const initialState = {
   cards: {
     loading: true,
     allCards: []
-  }
+  },
+  componentWidth: null
 };
 
 const getUniqueCardMechanics = payload => {
@@ -24,6 +25,7 @@ export default function(state=initialState, {type, payload}) {
           loading: true
         }
       };
+
     case types.FETCH_CARDS_SUCCESS:
       return {
         ...state,
@@ -34,6 +36,7 @@ export default function(state=initialState, {type, payload}) {
           ...payload
         }
       };
+
     case types.FETCH_CARDS_FAILURE:
       return {
         ...state,
@@ -41,6 +44,12 @@ export default function(state=initialState, {type, payload}) {
           loading: false,
           error: payload
         }
+      };
+
+    case types.GET_CARDS_COMPONENT_WIDTH:
+      return {
+        ...state,
+        componentWidth: payload
       };
 
     default:

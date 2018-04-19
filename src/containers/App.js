@@ -50,6 +50,7 @@ class App extends Component{
 
   updateWindowWidth = () => this.props.updateWindowWidth(window.innerWidth);
 
+
   componentDidMount() {
     document.title = "HearthLounge";
     setTimeout(() => this.setState({ loading: false }), 1000);
@@ -62,7 +63,7 @@ class App extends Component{
   }
 
   componentWillUnmount(){
-    window.addEventListener("resize", this.updateWindowWidth);
+    window.removeEventListener("resize", this.updateWindowWidth);
   }
 
   render(){
