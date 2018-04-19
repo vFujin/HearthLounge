@@ -28,11 +28,11 @@ import 'antd/lib/popover/style/css';
 import 'antd/lib/message/style/css';
 import 'antd/lib/select/style/css';
 import {fetchGameInfoRequest} from "../redux/game-info/actions";
-import {fetchCardbacksRequest} from "../redux/cardbacks/actions";
-import {fetchCardsRequest} from "../redux/cards/actions";
 import {firebaseSignOutRequest} from "../redux/firebase/actions/sign-out.action";
 import LogoSVG from "../components/logo";
 import {updateWindowWidth} from "../redux/app/windowSize/actions";
+import {fetchCardsSuccess} from "../redux/cards/actions";
+import {fetchCardbacksSuccess} from "../redux/cardbacks/actions";
 
 class App extends Component{
   constructor(){
@@ -47,18 +47,20 @@ class App extends Component{
     signOut();
   };
 
-
   updateWindowWidth = () => this.props.updateWindowWidth(window.innerWidth);
-
 
   componentDidMount() {
     document.title = "HearthLounge";
     setTimeout(() => this.setState({ loading: false }), 1000);
-    const {updateActiveUser, updateGameInfo, updateCards, fetchCardbacks} = this.props;
+    const {updateActiveUser, updateGameInfo, updateCards, updateCardbacks} = this.props;
     getActiveUser((authenticated, data) => updateActiveUser({authenticated, ...data}));
     updateGameInfo();
-    updateCards();
-    fetchCardbacks();
+    if(localStorage.hearthloungeCards){
+      updateCards(JSON.parse(localStorage.hearthloungeCards));
+    }
+    if(localStorage.hearthloungeCardbacks){
+      updateCardbacks(JSON.parse(localStorage.hearthloungeCardbacks));
+    }
     window.addEventListener("resize", this.updateWindowWidth);
   }
 
@@ -121,15 +123,16 @@ class App extends Component{
 
 const mapStateToProps = state =>{
   const {activeUser} = state.users;
+  const {patch} = state.info;
   const {playerClass} = state.deckCreation;
-  return {activeUser, playerClass};
+  return {activeUser, playerClass, patch};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     updateGameInfo: () => dispatch(fetchGameInfoRequest()),
-    updateCards: () => dispatch(fetchCardsRequest()),
-    fetchCardbacks: ()=> dispatch(fetchCardbacksRequest()),
+    updateCards: cards => dispatch(fetchCardsSuccess(cards)),
+    updateCardbacks: cards => dispatch(fetchCardbacksSuccess(cards)),
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser
     }),

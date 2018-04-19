@@ -21,6 +21,6 @@ describe('#cardbacksActions', () =>{
   };
 
   testActions(actions.fetchCardbacksRequest, types.FETCH_CARDBACKS_REQUEST);
-  testActions(actions.fetchCardsbacksSuccess, types.FETCH_CARDBACKS_SUCCESS, 'payload', []);
+  testActions(actions.fetchCardbacksSuccess, types.FETCH_CARDBACKS_SUCCESS, 'payload', []);
   testActions(actions.fetchCardbacksFailure, types.FETCH_CARDBACKS_FAILURE, 'payload', {});
 });

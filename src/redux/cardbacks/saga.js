@@ -3,6 +3,7 @@ import {call, put, takeEvery} from 'redux-saga/effects';
 import * as types from "./types";
 import * as actions from "./actions";
 import {MashapeKey} from "../../keys";
+import {setLocalstorage} from "../../utils/localstore";
 
 export const fetchCardbacks = () => axios.get(`https://omgvamp-hearthstone-v1.p.mashape.com/cardbacks`, {
   headers: {'X-Mashape-Key': MashapeKey}
@@ -13,7 +14,8 @@ export function* fetchCardBacksSaga({payload}) {
   if(error){
     yield put(actions.fetchCardbacksFailure(error.message));
   } else {
-    yield put(actions.fetchCardsbacksSuccess(cardbacks));
+    yield put(actions.fetchCardbacksSuccess(cardbacks));
+    yield call(setLocalstorage, "hearthloungeCardbacks", cardbacks);
   }
 }
 

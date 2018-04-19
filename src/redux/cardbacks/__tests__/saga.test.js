@@ -12,7 +12,7 @@ describe('cardbacks saga', () =>{
           response = {cardbacks: []};
 
         expect(saga.next().value).toEqual(call(fetchCardbacks, payload));
-        expect(saga.next(response).value).toEqual(put(actions.fetchCardsbacksSuccess(response.cardbacks)))
+        expect(saga.next(response).value).toEqual(put(actions.fetchCardbacksSuccess(response.cardbacks)))
       })
     });
 

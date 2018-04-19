@@ -6,7 +6,7 @@ export function fetchCardbacksRequest(){
   }
 }
 
-export function fetchCardsbacksSuccess(cardbacks){
+export function fetchCardbacksSuccess(cardbacks){
   return {
     type: types.FETCH_CARDBACKS_SUCCESS,
     payload: cardbacks
