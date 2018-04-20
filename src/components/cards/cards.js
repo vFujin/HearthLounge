@@ -9,6 +9,7 @@ import {mapInputCards} from './utils/map-cards';
 import {getCardsComponentWidth} from "../../redux/cards/actions";
 import Button from '../buttons/button';
 import MobileSidebar from "./left-container/mobile/sidebar";
+import './cards-styles.css';
 
 class ComponentCards extends Component {
   constructor(props){
