@@ -3,13 +3,13 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import {lazyloadCards, mapCards, updateFilters } from "./utils";
-import Topbar from "./right-container/topbar";
-import Sidebar from "./left-container/sidebar";
+
 import {mapInputCards} from './utils/map-cards';
 import {getCardsComponentWidth} from "../../redux/cards/actions";
 import Button from '../buttons/button';
 import MobileSidebar from "./left-container/mobile/sidebar";
 import './cards-styles.css';
+import CardsDesktop from "./cards-desktop";
 
 class ComponentCards extends Component {
   constructor(props){
@@ -86,7 +86,7 @@ class ComponentCards extends Component {
     updateFilters(state => this.setState(state), filters, filter, undefined)
   };
 
-  handleFilterViewToggle = () =>{
+  handleFilterViewToggle = () => {
     this.setState({
       filterView: !this.state.filterView
     })
@@ -102,40 +102,16 @@ class ComponentCards extends Component {
     const {filters, mode, filterView, inExtensions, inDeckCreation, cardSet, playerClass, mobileActiveTab} = this.state;
     const {info, cards, componentWidth} = this.props;
 
+
     return componentWidth > 1024
-      ? (
-        <div className={`container__page container__page--${filterView ? "two" : "one"}Sided cards`} id="cardsContainer">
-          {
-            filterView &&
-            <Sidebar filters={filters}
-                     info={info}
-                     cards={mapInputCards(this.props, this.state)}
-                     allCards={cards}
-                     mode={mode}
-                     inExtensions={(inExtensions && cardSet) && {cardSet}}
-                     inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
-                     handleFilterViewToggle={this.handleFilterViewToggle}
-                     handleFilterReset={this.handleFilterReset}
-                     handleInputChange={this.handleInputChange}
-                     handleSliderClick={this.handleSliderClick}
-                     handleIconClick={this.handleIconClick}/>
-          }
-          <div className={`container__page--inner container__page--right ${filterView ? undefined : "no-filters"}`}>
-            {
-              filterView &&
-              <Topbar filters={filters}
-                      inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
-                      handleIconClick={this.handleIconClick}/>
-            }
-            <div className="content content__cards">
-              <ul className="container__cards">
-                {mapCards(this.props, this.state)}
-              </ul>
-            </div>
-          </div>
-          {!filterView && <div className="toggle-filters" onClick={this.handleFilterViewToggle}>Toggle Filters</div>}
-        </div>
-      )
+      ? <CardsDesktop props={this.props}
+                      state={this.state}
+                      handleFilterReset={this.handleFilterReset}
+                      handleInputChange={this.handleInputChange}
+                      handleSliderClick={this.handleSliderClick}
+                      handleIconClick={this.handleIconClick}
+                      handleFilterViewToggle={this.handleFilterViewToggle}
+      />
       : (
         <div className={`container__page container__page--mobile-${filterView ? "two" : "one"}Sided cards`} id="cardsContainer">
           <div className="container__page--mobileTopbar">
