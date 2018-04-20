@@ -5,7 +5,7 @@ import _ from 'lodash';
 import {Route} from 'react-router';
 import Sidebar from './left-container/sidebar';
 import Adventure from './right-container/adventure';
-import NotFound from '../../../components/not-found';
+import NotFound from '../../../components/not-found/not-found';
 import SelectExtension from '../../../components/extensions/select-extension';
 import {adventureExists} from '../../../utils/checkIfPathExist';
 import Icon from "../../../components/icon";

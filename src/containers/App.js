@@ -11,7 +11,7 @@ import RedditPosts from "./pages/reddit/posts/posts";
 import Deck from "./pages/decks/deck/deck";
 import Expansions from "./pages/expansions/expansions";
 import DeckSelection from "./pages/decks/deck-selection/deck-selection";
-import NotFound from "../components/not-found";
+import NotFound from "../components/not-found/not-found";
 import Adventures from "./pages/adventures/adventures";
 import Reddit from "./pages/reddit/reddit";
 import RedditPost from "./pages/reddit/post/post";
@@ -38,7 +38,7 @@ class App extends Component{
   constructor(){
     super();
     this.state = {
-      loading: true
+      loading: false
     };
   }
 
@@ -51,7 +51,7 @@ class App extends Component{
 
   componentDidMount() {
     document.title = "HearthLounge";
-    setTimeout(() => this.setState({ loading: false }), 1000);
+    // setTimeout(() => this.setState({ loading: false }), 1000);
     const {updateActiveUser, updateGameInfo, updateCards, updateCardbacks} = this.props;
     getActiveUser((authenticated, data) => updateActiveUser({authenticated, ...data}));
     updateGameInfo();

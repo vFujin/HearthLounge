@@ -1,0 +1,50 @@
+@import "../../styles/colors";
+
+.not-found{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 50vw;
+  margin: auto;
+  height: 100%;
+
+  &.below-topbar{
+    height: calc(100% - 50px);
+  }
+
+  .wrapper {
+    display: block;
+    text-align:center;
+    background: $dark-grey;
+    color: $pearl;
+    padding: 7vw;
+
+    .lost {
+      display: flex;
+      align-items: center;
+      justify-content:center;
+
+      span {
+        font-size: 10vw;
+        margin-right: 1vw;
+
+        &:last-child{
+          margin-right:0;
+        }
+      }
+    }
+    .description{
+      margin-top: 5vh;
+
+      p{
+        span{
+          color: $sea-color;
+        }
+      }
+    }
+
+    button{
+      margin-top: 5vh;
+    }
+  }
+}

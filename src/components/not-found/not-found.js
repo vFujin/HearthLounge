@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from "./icon";
-import Button from "./buttons/button";
-import history from '../globals/history';
+import Icon from "../icon";
+import Button from "../buttons/button";
+import history from '../../globals/history';
+import './not-found-styles.css';
 
 const NotFound = ({page, redirect, below_topbar}) => {
   document.title = "Something's not quite right";

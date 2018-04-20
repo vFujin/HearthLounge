@@ -5,7 +5,8 @@ const initialState = {
     loading: true,
     allCards: []
   },
-  componentWidth: null
+  componentWidth: null,
+  mobileActiveTab: "cards"
 };
 
 const getUniqueCardMechanics = payload => {

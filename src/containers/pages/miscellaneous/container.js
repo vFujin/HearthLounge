@@ -4,7 +4,7 @@ import {Route} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import _ from 'lodash';
 import PrivacyPolicy from "./privacy-policy/privacy-policy";
-import NotFound from "../../../components/not-found";
+import NotFound from "../../../components/not-found/not-found";
 import TermsOfService from "./terms-of-service/terms-of-service";
 
 const misc = [

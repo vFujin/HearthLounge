@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import _ from 'lodash';
 import Sidebar from './sidebar';
 import Topbar from './topbar';
-import NotFound from '../../../../components/not-found';
+import NotFound from '../../../../components/not-found/not-found';
 import Content from './content';
 import Loader from "../../../../components/loaders/loader";
 import 'react-treeview/react-treeview.css';

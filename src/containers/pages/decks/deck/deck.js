@@ -9,7 +9,7 @@ import {FETCH_ACTIVE_DECK_REQUEST, RESET_ACTIVE_DECK} from "../../../../redux/de
 import Loader from "../../../../components/loaders/loader";
 import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
 import {updateDeck} from "../../create-deck/after-class-selection/right-container/content-assets/utils/index";
-import NotFound from "../../../../components/not-found";
+import NotFound from "../../../../components/not-found/not-found";
 
 class Deck extends Component{
   componentDidMount() {

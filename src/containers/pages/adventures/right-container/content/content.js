@@ -3,7 +3,7 @@ import _ from 'lodash';
 import {adventure_details} from '../../../../../globals/adventure-details';
 import {adventureWingExists, adventureBossExists} from '../../../../../utils/checkIfPathExist';
 import AdventureDetails from './details';
-import NotFound from '../../../../../components/not-found';
+import NotFound from '../../../../../components/not-found/not-found';
 
 const Content = ({adventure, detailsChild, details}) => {
   let detailsPath = adventure_details.find(a=>a.url === adventure.url).extension_topbar_tabs.map(tab => tab.url).includes(details);

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NotFound from '../../../../components/not-found';
+import NotFound from '../../../../components/not-found/not-found';
 import _ from 'lodash';
 import {adventureBossExists, adventureWingExists, expansionDetailExists} from '../../../../utils/checkIfPathExist';
 import ExpansionDetails from './details';

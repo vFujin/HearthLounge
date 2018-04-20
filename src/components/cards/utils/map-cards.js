@@ -81,9 +81,10 @@ export const mapInputCards = (props, state) => {
  */
 export const mapCards = (props, state) => {
   const {cards, info} = props;
+
   const {playerClass, cardSet, mode, inDeckCreation, inExtensions} = state;
 
-  if (cards.loading) {
+  if (cards.loading || info.loading) {
     return <Loader/>
   } else {
     if(inDeckCreation){

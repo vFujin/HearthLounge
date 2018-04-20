@@ -7,6 +7,8 @@ import Topbar from "./right-container/topbar";
 import Sidebar from "./left-container/sidebar";
 import {mapInputCards} from './utils/map-cards';
 import {getCardsComponentWidth} from "../../redux/cards/actions";
+import Button from '../buttons/button';
+import MobileSidebar from "./left-container/mobile/sidebar";
 
 class ComponentCards extends Component {
   constructor(props){
@@ -17,6 +19,8 @@ class ComponentCards extends Component {
       filters: {},
       cardNotFound: "Couldn't find cards that match your query",
       infiniteScrollContainer: ".content__cards",
+      mobileThreshold: 1024,
+      mobileActiveTab: "mobileTabCards",
 
       mode: props.mode || 'wild',
       playerClass: props.playerClass || undefined,
@@ -24,7 +28,8 @@ class ComponentCards extends Component {
       inExtensions: props.cardSet || undefined,
       inDeckCreation: props.inDeckCreation || undefined,
       filterView: props.filterView || false,
-      documentTitle: props.documentTitle || false
+      documentTitle: props.documentTitle || false,
+
     }
   }
 
@@ -50,33 +55,33 @@ class ComponentCards extends Component {
   }
 
   handleInputChange = (value, filter) => {
-    const {filters, infiniteScrollContainer} = this.state;
+    const {filters, infiniteScrollContainer, mobileThreshold} = this.state;
 
-    document.querySelector(infiniteScrollContainer).scrollTop = 0;
+    this.props.componentWidth > mobileThreshold ? document.querySelector(infiniteScrollContainer).scrollTop = 0 : null;
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
   handleIconClick = (e) =>{
     const filter = e.currentTarget.dataset.filter;
     const value = _.kebabCase(e.currentTarget.id);
-    const {filters, infiniteScrollContainer} = this.state;
+    const {filters, infiniteScrollContainer, mobileThreshold} = this.state;
 
-    document.querySelector(infiniteScrollContainer).scrollTop = 0;
+    this.props.componentWidth > mobileThreshold ? document.querySelector(infiniteScrollContainer).scrollTop = 0 : null;
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
   handleSliderClick = (value, filter) =>{
-    const {filters, infiniteScrollContainer} = this.state;
+    const {filters, infiniteScrollContainer, mobileThreshold} = this.state;
 
-    document.querySelector(infiniteScrollContainer).scrollTop = 0;
+    this.props.componentWidth > mobileThreshold ? document.querySelector(infiniteScrollContainer).scrollTop = 0 : null;
     updateFilters(state => this.setState(state), filters, filter, value);
   };
 
   handleFilterReset = (e) =>{
-    const {filters, infiniteScrollContainer} = this.state;
+    const {filters, infiniteScrollContainer, mobileThreshold} = this.state;
     const filter = e.currentTarget.dataset.attr;
 
-    document.querySelector(infiniteScrollContainer).scrollTop = 0;
+    this.props.componentWidth > mobileThreshold ? document.querySelector(infiniteScrollContainer).scrollTop = 0 : null;
     updateFilters(state => this.setState(state), filters, filter, undefined)
   };
 
@@ -86,50 +91,97 @@ class ComponentCards extends Component {
     })
   };
 
-  render() {
-    const {filters, mode, filterView, inExtensions, inDeckCreation, cardSet, playerClass} = this.state;
-    const {info, cards} = this.props;
+  handleMobileActiveTabSwitch = (e) => {
+    const id = e.target.id;
 
-    return (
-      <div className={`container__page container__page--${filterView ? "two" : "one"}Sided cards`} id="cardsContainer">
-        {
-          filterView &&
-          <Sidebar filters={filters}
-                   info={info}
-                   cards={mapInputCards(this.props, this.state)}
-                   allCards={cards}
-                   mode={mode}
-                   inExtensions={(inExtensions && cardSet) && {cardSet}}
-                   inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
-                   handleFilterViewToggle={this.handleFilterViewToggle}
-                   handleFilterReset={this.handleFilterReset}
-                   handleInputChange={this.handleInputChange}
-                   handleSliderClick={this.handleSliderClick}
-                   handleIconClick={this.handleIconClick}/>
-        }
-        <div className={`container__page--inner container__page--right ${filterView ? undefined : "no-filters"}`}>
+    this.setState({mobileActiveTab: id})
+  };
+
+  render() {
+    const {filters, mode, filterView, inExtensions, inDeckCreation, cardSet, playerClass, mobileActiveTab} = this.state;
+    const {info, cards, componentWidth} = this.props;
+
+    return componentWidth > 1024
+      ? (
+        <div className={`container__page container__page--${filterView ? "two" : "one"}Sided cards`} id="cardsContainer">
           {
             filterView &&
-            <Topbar filters={filters}
-                    inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
-                    handleIconClick={this.handleIconClick}/>
+            <Sidebar filters={filters}
+                     info={info}
+                     cards={mapInputCards(this.props, this.state)}
+                     allCards={cards}
+                     mode={mode}
+                     inExtensions={(inExtensions && cardSet) && {cardSet}}
+                     inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
+                     handleFilterViewToggle={this.handleFilterViewToggle}
+                     handleFilterReset={this.handleFilterReset}
+                     handleInputChange={this.handleInputChange}
+                     handleSliderClick={this.handleSliderClick}
+                     handleIconClick={this.handleIconClick}/>
           }
-          <div className="content content__cards">
-            <ul className="container__cards">
-              {mapCards(this.props, this.state)}
-            </ul>
+          <div className={`container__page--inner container__page--right ${filterView ? undefined : "no-filters"}`}>
+            {
+              filterView &&
+              <Topbar filters={filters}
+                      inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
+                      handleIconClick={this.handleIconClick}/>
+            }
+            <div className="content content__cards">
+              <ul className="container__cards">
+                {mapCards(this.props, this.state)}
+              </ul>
+            </div>
+          </div>
+          {!filterView && <div className="toggle-filters" onClick={this.handleFilterViewToggle}>Toggle Filters</div>}
+        </div>
+      )
+      : (
+        <div className={`container__page container__page--mobile-${filterView ? "two" : "one"}Sided cards`} id="cardsContainer">
+          <div className="container__page--mobileTopbar">
+            <div>
+            <p onClick={this.handleMobileActiveTabSwitch} id="mobileTabFilters">Card Filters</p>
+              <div>
+                {!_.isEmpty(filters) && <Button handleClick={this.handleFilterReset} type="default--active" dataAttr="clearAll" text="Clear filters"/>}
+                {(inExtensions || inDeckCreation) && <Button handleClick={this.handleFilterViewToggle} type="default--active" text="Hide filters" />}
+              </div>
+            </div>
+            <p onClick={this.handleMobileActiveTabSwitch} id="mobileTabCards">Cards</p>
+          </div>
+          <div className="container__page--mobileContentWrapper">
+            {
+              mobileActiveTab === "mobileTabCards"
+                ? (
+                  <div className="content content__cards">
+                    <ul className="container__cards">
+                      {mapCards(this.props, this.state)}
+                    </ul>
+                  </div>
+                )
+                : (
+                  <div className="container__mobileFilters">
+                    <MobileSidebar filters={filters}
+                             info={info}
+                             cards={mapInputCards(this.props, this.state)}
+                             allCards={cards}
+                             mode={mode}
+                             inExtensions={(inExtensions && cardSet) && {cardSet}}
+                             inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
+                             handleInputChange={this.handleInputChange}
+                             handleSliderClick={this.handleSliderClick}
+                             handleIconClick={this.handleIconClick}/>
+                  </div>
+                )
+            }
           </div>
         </div>
-        {!filterView && <div className="toggle-filters" onClick={this.handleFilterViewToggle}>Toggle Filters</div>}
-      </div>
-    )
+      )
   }
 }
 
 const mapStateToProps = state =>{
   const {info} = state;
-  const {cards} = state.cards;
-  return {cards, info};
+  const {cards, componentWidth} = state.cards;
+  return {cards, info, componentWidth};
 };
 
 const mapDispatchToProps = dispatch => {
