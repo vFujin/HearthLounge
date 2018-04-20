@@ -1,6 +1,6 @@
 @import "../../styles/colors";
 
-.not-found{
+.not-found {
   display: flex;
   justify-content: center;
   align-items:center;
@@ -8,7 +8,7 @@
   margin: auto;
   height: 100%;
 
-  &.below-topbar{
+  &.below-topbar {
     height: calc(100% - 50px);
   }
 
@@ -33,17 +33,17 @@
         }
       }
     }
-    .description{
+    .description {
       margin-top: 5vh;
 
-      p{
-        span{
+      p {
+        span {
           color: $sea-color;
         }
       }
     }
 
-    button{
+    button {
       margin-top: 5vh;
     }
   }
