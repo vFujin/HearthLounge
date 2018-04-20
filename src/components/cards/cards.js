@@ -6,7 +6,10 @@ import {lazyloadCards, updateFilters } from "./utils";
 import {getCardsComponentWidth} from "../../redux/cards/actions";
 import CardsDesktop from "./cards-desktop";
 import CardsMobile from "./cards-mobile";
-import './cards-styles.css';
+import './styles/cards-styles.css';
+import './styles/cards-mobile-styles.css';
+import './styles/media-queries.css';
+
 
 class ComponentCards extends Component {
   constructor(props){

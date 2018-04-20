@@ -1,0 +1,127 @@
+@import '../../../styles/colors';
+@import '../../../styles/mixins';
+
+.container__page--mobile-twoSided {
+  grid-template-rows: 5.5vh 77.5vh;
+
+  .container__page--mobileTopbar {
+    height: 100%;
+    background: $dark-grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: $pearl;
+  }
+
+  .container__page--mobileContentWrapper {
+    .content {
+      height: 100%;
+      overflow: auto;
+
+      .container__cards {
+        justify-content: center;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        li {
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          width: calc(100% / 8);
+
+          .tooltip-count {
+            position: absolute;
+            padding: .5vh;
+            width: calc(100% - 1vh);
+            text-align: center;
+            span {
+              background-color: $dark-grey;
+              color: $pearl;
+              padding: .5vh 1vh;
+            }
+          }
+
+          .img-wrapper {
+            @include transition(all ease .4s);
+            background: url('http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png') center center no-repeat;
+            background-size: contain;
+            position: absolute;
+            height: 75%;
+            top: 15%;
+            width: 100%;
+            left: 0;
+            z-index: 1;
+            opacity: 1;
+          }
+
+          img {
+            position: relative;
+            z-index: 2;
+            @include transition(all ease .4s);
+            width: 100%;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+            transform: translateZ(0);
+            //transform: scale(0.80);
+            &.choosen {
+              opacity: .3;
+            }
+            &.disabled {
+              background: rgba(255, 0, 0, .3);
+              cursor: not-allowed;
+            }
+            &.choosen.disabled {
+              background: transparent;
+              cursor: pointer;
+            }
+          }
+
+          &.choosen {
+            .img-wrapper {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+    .container__mobileFilters {
+      height: 100%;
+      overflow: auto;
+
+      .topbar{
+        background: $light-grey;
+      }
+
+      .container__page--inner {
+        display: block !important;
+        height: 100%;
+        overflow: auto;
+
+
+        .sidebar__header {
+          display: none;
+        }
+
+        .sidebar__body {
+          margin: 0;
+          display: flex;
+          flex-wrap: wrap;
+          .sidebar__body--filter-wrapper {
+            width: calc(33% - 1.72vh);
+          }
+          .sidebar__body--filter-wrapper-sets {
+            display: flex;
+            width: calc(66% - .4vh);
+            justify-content: space-evenly;
+
+            > div {
+              width: 50% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
