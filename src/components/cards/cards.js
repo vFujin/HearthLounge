@@ -96,6 +96,7 @@ class ComponentCards extends Component {
     const {filters} = this.state;
     const filter = e.currentTarget.dataset.attr;
 
+    //shouldn't reset activeMobileTab
     this.scrollToTop();
     updateFilters(state => this.setState(state), filters, filter, undefined)
   };

@@ -11,12 +11,53 @@
     align-items: center;
     justify-content: space-evenly;
     color: $pearl;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    @include box-shadow(0, 2px, 5px, $dark-grey);
+
+    > div, > p {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include transition(all ease .4s);
+
+      &:hover {
+        background: darken($sea-color, 10%);
+      }
+
+      &.active {
+        background: $sea-color;
+        
+        &:hover {
+          background: $sea-color;
+        }
+      }
+    }
+
+    > div {
+      p {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        margin-left: 10px;
+      }
+    }
   }
 
   .container__page--mobileContentWrapper {
     .content {
-      height: 100%;
+      height: calc(100% - 10px);
       overflow: auto;
+      margin-right: 10px;
+      margin-top: 10px;
+      @include scrollbar();
 
       .container__cards {
         justify-content: center;

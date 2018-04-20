@@ -3,22 +3,30 @@ import PropTypes from 'prop-types';
 import _ from "lodash";
 import Button from '../../buttons/button';
 
-const MobileTopbar = ({filters, inExtensions, inDeckCreation, handleFilterViewToggle, handleFilterReset, handleMobileActiveTabSwitch}) => {
+const MobileTopbar = ({mobileActiveTab, filters, inExtensions, inDeckCreation, handleFilterViewToggle, handleFilterReset, handleMobileActiveTabSwitch}) => {
+  const activeFiltersClass = mobileActiveTab === "mobileTabFilters" ? "active" : undefined;
+  const activeCardsClass = mobileActiveTab === "mobileTabCards" ? "active" : undefined;
+
   return (
     <div className="container__page--mobileTopbar">
-      <div>
-        <p onClick={handleMobileActiveTabSwitch} id="mobileTabFilters">Card Filters</p>
+      <div onClick={handleMobileActiveTabSwitch}
+           id="mobileTabFilters"
+           className={activeFiltersClass}>
+        <p>Card Filters</p>
         <div>
           {!_.isEmpty(filters) && <Button handleClick={handleFilterReset} type="default--active" dataAttr="clearAll" text="Clear filters"/>}
           {(inExtensions || inDeckCreation) && <Button handleClick={handleFilterViewToggle} type="default--active" text="Hide filters" />}
         </div>
       </div>
-      <p onClick={handleMobileActiveTabSwitch} id="mobileTabCards">Cards</p>
+      <p onClick={handleMobileActiveTabSwitch}
+         className={activeCardsClass}
+         id="mobileTabCards">Cards</p>
     </div>
   )
 };
 
 MobileTopbar.propTypes = {
+  mobileActiveTab: PropTypes.string.isRequired,
   filters: PropTypes.object.isRequired,
   handleFilterViewToggle: PropTypes.func.isRequired,
   handleFilterReset: PropTypes.func.isRequired,
@@ -28,6 +36,7 @@ MobileTopbar.propTypes = {
 };
 
 MobileTopbar.defaultProps = {
+  mobileActiveTab: "mobileTabCards",
   filters: {},
   inExtensions: undefined,
   inDeckCreation: undefined,
