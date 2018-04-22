@@ -5,7 +5,6 @@ import {mapCards} from "../utils";
 import MobileSidebar from "../left-container/mobile/sidebar";
 
 const MobileContentWrapper = ({cardsProps, cardsState, mobileActiveTab, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick}) => {
-
   const {filters, mode, inExtensions, inDeckCreation, cardSet, playerClass} = cardsState;
   const {info, cards} = cardsProps;
 

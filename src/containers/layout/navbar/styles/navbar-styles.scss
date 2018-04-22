@@ -1,0 +1,96 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/mixins';
+
+nav {
+  background-color: $dark-grey;
+  //font-size: calc(1em + 2vmin);
+  .nav__list {
+    display: flex;
+    height:100%;
+
+    .nav__list--item {
+      width: 10%;
+      position: relative;
+      color: $primary-font-color;
+      text-transform: uppercase;
+      border-right: 1px solid #666;
+      @include transition(all ease .4s);
+
+      &:first-child {
+        width: 40%;
+        border-left: none;
+        display: flex;
+        align-items: center;
+        padding-left: 1vh;
+
+        &:hover{
+          background-color: $dark-grey;
+        }
+
+        .logo-wrapper{
+          display: flex;
+          align-items: center;
+          height: 100%;
+
+          span{
+            font-size: 8vh;
+            color: $sea-color;
+          }
+
+          .text-wrapper{
+            margin-left: 1vh;
+
+            p{
+              &:first-child{
+                margin-bottom: .5vh;
+                margin-top: .1vh;
+              }
+            }
+          }
+        }
+      }
+
+      &:last-child{
+        border-right: 0;
+      }
+
+      &:hover {
+        background-color: $sea-color;
+
+        .submenu{
+          display: block;
+        }
+      }
+
+      .active {
+        background-color: $pearl;
+        color: $dark-grey;
+        @include transition(all ease .4s);
+
+        &:hover{
+          color: $pearl;
+          background-color: $sea-color;
+        }
+      }
+
+      &.login{
+        a {
+          background-color: $sea-color;
+          color: $pearl;
+
+          div{
+            .submenu{
+              width: 100%;
+              background: transparent;
+              margin-left:0;
+
+              li{
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,28 +3,6 @@
 
 @include screen('mobile', 500px) {
   #container {
-    nav{
-      ul {
-        justify-content: space-between;
-        li{
-          border-right:0;
-          &:not(.logo):not(.login){
-            display: none;
-          }
-          &.login{
-            width: 20%;
-            a {
-              span {
-                font-size: 1em;
-              }
-              .nav__list--labelWrapper{
-                font-size: .5em;
-              }
-            }
-          }
-        }
-      }
-    }
     .container__index {
       margin-right: 0;
       .home__list {

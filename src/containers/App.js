@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import history from '../globals/history';
 import {Router} from 'react-router-dom';
 import {Switch, Route} from 'react-router';
-import Navbar from './layout/navbar';
+import Navbar from './layout/navbar/navbar';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
 import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
