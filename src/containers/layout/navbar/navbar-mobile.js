@@ -19,7 +19,11 @@ const NavbarMobile = ({handleSignOut, activeUser, playerClass, mobileMenuActive}
         <div>
           <ul className="nav__mobile--pages">
             <EntryNode handleSignOut={handleSignOut} activeUser={activeUser}/>
-            <ItemsList playerClass={playerClass}/>
+            <li className="nav__mobile--scrollWrapper">
+              <ul>
+                <ItemsList playerClass={playerClass}/>
+              </ul>
+            </li>
           </ul>
         </div>
       )}

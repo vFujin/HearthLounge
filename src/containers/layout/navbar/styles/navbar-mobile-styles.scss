@@ -1,4 +1,5 @@
 @import '../../../../styles/colors';
+@import '../../../../styles/mixins';
 
 .nav__mobile {
   .nav__mobile--header {
@@ -27,14 +28,24 @@
     z-index: 2;
   }
 
+  .nav__mobile--scrollWrapper{
+    height: 100%;
+    overflow: auto;
+    @include slim-scrollbar();
+  }
+
   .nav__mobile--pages {
     position: absolute;
     height: calc(100% - 15vh);
     z-index: 10;
     background: $dark-grey;
     width: 200px;
-    border-top: 1px solid $light-grey;
+    border-top: 1px solid $sea-color;
     border-bottom: 1px solid $light-grey;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    box-shadow: 3px 0 5px 0 $dark-grey;
+
 
     .nav__list--item {
       cursor: pointer;
@@ -43,11 +54,20 @@
         padding: 10px;
         color: $pearl;
         border-bottom: 1px dashed $light-grey;
+        @include transition(all ease .4s);
 
-        &.active, &:hover {
+        &:hover {
+          background: $sea-color;
+        }
+
+        &.active {
           background: #e7e2da;
           color: $dark-grey;
           border-bottom: 1px solid $dark-grey;
+
+          &:hover{
+            background: $pearl;
+          }
         }
 
         div {
@@ -57,13 +77,44 @@
           width: 100%;
           flex-direction: row;
 
-
           div {
             margin-top: 0;
             display: flex;
             justify-content: flex-end;
             font-size: calc(.8em + 1vmin);
           }
+        }
+      }
+
+      &.login {
+        a {
+          background: linear-gradient(135deg, $sea-color 0%, $dark-grey 100%);
+          border-bottom: 0;
+
+          &.active {
+            background: linear-gradient(135deg, $sea-color 0%, $dark-grey 100%);
+
+            &:hover{
+              background: $pearl;
+            }
+          }
+        }
+      }
+
+      &:first-child {
+        a {
+          @include transition(all ease .4s);
+          &:hover {
+            background: $pearl;
+            color: $dark-grey;
+            border-bottom: 1px solid $dark-grey;
+          }
+        }
+      }
+
+      &:last-child{
+        a {
+          border-bottom: 0;
         }
       }
     }
