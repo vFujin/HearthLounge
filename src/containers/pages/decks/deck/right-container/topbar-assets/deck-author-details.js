@@ -19,7 +19,6 @@ class DeckAuthorDetails extends PureComponent{
     const {deckAuthor} = this.props;
     return (
         <div className="author-details">
-          <SimplifiedUserSnippet user={deckAuthor}/>
           <UserAvatar deckAuthor={deckAuthor}/>
           <GeneralDetails deckAuthor={deckAuthor}/>
           <GameDetails deckAuthor={deckAuthor}/>

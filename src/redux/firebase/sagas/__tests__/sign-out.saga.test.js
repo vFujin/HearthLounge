@@ -58,6 +58,5 @@ describe('firebase sign out saga', () =>{
         expect(saga.next(response).value).toEqual(errorToast);
       });
     });
-
   })
 });
