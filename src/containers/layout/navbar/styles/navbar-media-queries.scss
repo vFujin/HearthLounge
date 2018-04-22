@@ -20,3 +20,38 @@
     }
   }
 }
+
+
+@include screen('tablet') {
+  nav {
+    .logo {
+      font-size: calc(.5em + .2vmin);
+    }
+
+    &.nav__mobile {
+      .nav__list--item {
+        span {
+          font-size: calc(1.5em + 2vmin);
+        }
+      }
+    }
+  }
+}
+
+
+@include screen('mobile') {
+  nav {
+    .logo {
+      font-size: calc(.5em + 1vmin);
+    }
+
+    &.nav__mobile {
+      .nav__list--item {
+        span {
+          font-size: calc(2em + 3vmin);
+        }
+      }
+    }
+  }
+}
+

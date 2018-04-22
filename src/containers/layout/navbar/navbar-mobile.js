@@ -8,17 +8,21 @@ import './styles/navbar-styles.css';
 import './styles/navbar-mobile-styles.css';
 import './styles/navbar-media-queries.css';
 
-const NavbarMobile = ({handleSignOut, activeUser, playerClass}) => {
+const NavbarMobile = ({handleSignOut, activeUser, playerClass, mobileMenuActive}) => {
   return (
     <nav className="nav__mobile">
-      <ul>
+      <ul className="nav__mobile--header">
         <LogoItem />
         <MobileMenuIcon />
       </ul>
-      <ul>
-        <EntryNode handleSignOut={handleSignOut} activeUser={activeUser}/>
-        <ItemsList playerClass={playerClass}/>
-      </ul>
+      {mobileMenuActive && (
+        <div>
+          <ul className="nav__mobile--pages">
+            <EntryNode handleSignOut={handleSignOut} activeUser={activeUser}/>
+            <ItemsList playerClass={playerClass}/>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

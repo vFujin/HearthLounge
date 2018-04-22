@@ -1,7 +1,7 @@
 @import '../../../../styles/colors';
 
 .nav__mobile {
-  ul:first-child{
+  .nav__mobile--header {
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -20,11 +20,56 @@
     }
   }
 
-  ul:last-child {
+  > div {
     position: absolute;
-    height: calc(100% - 10vh);
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .nav__mobile--pages {
+    position: absolute;
+    height: calc(100% - 15vh);
     z-index: 10;
-    background: black;
-    width: 250px;
+    background: $dark-grey;
+    width: 200px;
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
+
+    .nav__list--item {
+      cursor: pointer;
+
+      a {
+        padding: 10px;
+        color: $pearl;
+        border-bottom: 1px dashed $light-grey;
+
+        &.active, &:hover {
+          background: #e7e2da;
+          color: $dark-grey;
+          border-bottom: 1px solid $dark-grey;
+        }
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          flex-direction: row;
+
+
+          div {
+            margin-top: 0;
+            display: flex;
+            justify-content: flex-end;
+            font-size: calc(.8em + 1vmin);
+          }
+        }
+      }
+    }
+
+    .cards {
+      height: initial;
+    }
   }
 }

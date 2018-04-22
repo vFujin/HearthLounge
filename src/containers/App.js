@@ -54,6 +54,7 @@ class App extends Component{
     document.title = "HearthLounge";
     // setTimeout(() => this.setState({ loading: false }), 1000);
     const {updateActiveUser, updateGameInfo, updateCards, updateCardbacks} = this.props;
+
     getActiveUser((authenticated, data) => updateActiveUser({authenticated, ...data}));
     updateGameInfo();
     if(localStorage.hearthloungeCards){
@@ -71,7 +72,7 @@ class App extends Component{
 
   render(){
     const {loading} = this.state;
-    const {activeUser, playerClass, windowWidth} = this.props;
+    const {activeUser, playerClass, windowWidth, mobileMenuActive} = this.props;
 
     if(loading){
       return (
@@ -90,29 +91,31 @@ class App extends Component{
                              handleSignOut={this.handleSignOut}/>
             : <NavbarMobile activeUser={activeUser}
                             playerClass={playerClass}
+                            mobileMenuActive={mobileMenuActive}
                             handleSignOut={this.handleSignOut}/>
           }
-          <Switch>
-            <Route exact path="/"                   component={Home} />
-            <Route exact path="/decks"              component={DeckSelection} />
-            <Route path="/decks/:deckId/:deckTitle" component={Deck}/>
-            <Route path="/cards"                    component={Cards} />
-            <Route path="/expansions"               component={Expansions}/>
-            <Route path="/adventures"               component={Adventures} />
-            <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
-            <Route path="/create-deck/:playerClass" component={CreateDeckClassSelected} />
-            <Route path="/tournaments"              component={Tournaments} />
-            <Route exact path="/reddit"             component={Reddit} />
-            <Route exact path="/reddit/posts/:category"         component={RedditPosts} />
-            <Route exact path="/reddit/posts/:category/:domain" component={RedditPosts} />
-            <Route exact path="/reddit/post/:postId/:postTitle" component={RedditPost} />
-            <Route path="/sign-in"                  component={Entry} />
-            <Route path="/sign-up"                  component={Entry} />
-            <Route path="/dashboard"                component={Dashboard} />
-            <Route path="/:misc"                    component={Miscellaneous} />
-            <Route path="*"                         component={NotFound} />
-          </Switch>
-
+          <div className={mobileMenuActive ? "switch__wrapper--mobileMenuActive" : undefined}>
+            <Switch>
+              <Route exact path="/"                   component={Home} />
+              <Route exact path="/decks"              component={DeckSelection} />
+              <Route path="/decks/:deckId/:deckTitle" component={Deck}/>
+              <Route path="/cards"                    component={Cards} />
+              <Route path="/expansions"               component={Expansions}/>
+              <Route path="/adventures"               component={Adventures} />
+              <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
+              <Route path="/create-deck/:playerClass" component={CreateDeckClassSelected} />
+              <Route path="/tournaments"              component={Tournaments} />
+              <Route exact path="/reddit"             component={Reddit} />
+              <Route exact path="/reddit/posts/:category"         component={RedditPosts} />
+              <Route exact path="/reddit/posts/:category/:domain" component={RedditPosts} />
+              <Route exact path="/reddit/post/:postId/:postTitle" component={RedditPost} />
+              <Route path="/sign-in"                  component={Entry} />
+              <Route path="/sign-up"                  component={Entry} />
+              <Route path="/dashboard"                component={Dashboard} />
+              <Route path="/:misc"                    component={Miscellaneous} />
+              <Route path="*"                         component={NotFound} />
+            </Switch>
+          </div>
             {/*/!*<Redirect from="twitch" to="twitch/all" />*!/*/}
             {/*/!*<Route path="twitch"         component={Streams}>*!/*/}
             {/*/!*<Route path=":channel"     component={Iframe}/>*!/*/}
@@ -131,7 +134,8 @@ const mapStateToProps = state =>{
   const {patch} = state.info;
   const {playerClass} = state.deckCreation;
   const {windowWidth} = state.app.windowSize;
-  return {activeUser, playerClass, patch, windowWidth};
+  const {mobileMenuActive} = state.app.menu;
+  return {activeUser, playerClass, patch, windowWidth, mobileMenuActive};
 };
 
 const mapDispatchToProps = (dispatch) => {

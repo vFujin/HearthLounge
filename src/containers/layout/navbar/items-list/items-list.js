@@ -27,7 +27,7 @@ const ItemsList = ({playerClass}) => {
                activeClassName={element.name !== 'home' ? "active" : ""}>
         <div className="nav__list--link">
           <Icon name={element.icon}/>
-          <div>{_.camelCase(element.name)}</div>
+          <div>{_.startCase(element.name)}</div>
           <Dropdown element={element} index={index}/>
         </div>
       </NavLink>

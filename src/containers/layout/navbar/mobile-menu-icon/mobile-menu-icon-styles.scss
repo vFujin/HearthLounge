@@ -1,4 +1,5 @@
 @import '../../../../styles/colors';
+@import '../../../../styles/mixins';
 
 .mobileMenuIcon {
   width: 30px;
@@ -33,15 +34,15 @@
     transition: .25s ease-in-out;
 
     &:nth-child(1) {
-      top: calc(100% / 3 + 1.5px);
+      top: calc(35% - 1.5px);
     }
 
     &:nth-child(2), &:nth-child(3) {
-      top: calc(100% / 3 + 10px + 3px);
+      top: calc(50% - 1.5px);
     }
 
     &:nth-child(4) {
-      top: calc(100% / 3 + 20px + 3px);
+      top: calc(65% - 1.5px);
     }
   }
 
@@ -49,7 +50,7 @@
     span {
 
       &:nth-child(1){
-        top: calc(100% / 3 + 3px);
+        top: calc(35% - 1.5px);
         width: 0;
         left: 50%;
       }
@@ -69,10 +70,51 @@
       }
 
       &:nth-child(4){
-        top: calc(100% / 3 + 3px);
+        top: calc(35% - 1.5px);
         width: 0;
         left: 50%;
       }
     }
   }
 }
+
+@include screen('mobile') {
+  .mobileMenuIcon {
+    span {
+      &:nth-child(1) {
+        top: calc(35% - 1.5px);
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        top: calc(50% - 1.5px);
+      }
+
+      &:nth-child(4) {
+        top: calc(65% - 1.5px);
+      }
+    }
+  }
+}
+
+
+@media (max-height: 450px) and (max-width: 815px) {
+  .mobileMenuIcon {
+    span {
+      width: 25px;
+      height: 2px;
+
+      &:nth-child(1) {
+        top: calc(25% - 1px);
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        top: calc(50% - 1px);
+      }
+
+      &:nth-child(4) {
+        top: calc(75% - 1px);
+      }
+    }
+  }
+}
+

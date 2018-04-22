@@ -54,6 +54,18 @@ body{
       height: 100%;
     }
   }
+
+  #container {
+    .switch__wrapper--mobileMenuActive {
+      opacity: .2;
+      @include transition(all ease .5s);
+    }
+
+    > div {
+      opacity: 1;
+      @include transition(all ease .5s);
+    }
+  }
 }
 
 .container__index{

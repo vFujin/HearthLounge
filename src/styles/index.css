@@ -4750,6 +4750,16 @@ body {
       justify-content: center;
       align-items: center;
       height: 100%; }
+  body #container .switch__wrapper--mobileMenuActive {
+    opacity: .2;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s; }
+  body #container > div {
+    opacity: 1;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s; }
 
 .container__index {
   overflow-y: auto; }
