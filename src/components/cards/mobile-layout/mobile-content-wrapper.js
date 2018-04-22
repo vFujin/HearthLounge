@@ -9,7 +9,7 @@ const MobileContentWrapper = ({props, state, handleInputChange, handleSliderClic
   const {info, cards} = props;
 
   return (
-    <div className="container__page--mobileContentWrapper">
+    <div className="container__page--mobileContentWrapper" style={{background: mobileActiveTab === "mobileTabFilters" && "#A69E9D"}}>
       {
         mobileActiveTab === "mobileTabCards"
           ? (

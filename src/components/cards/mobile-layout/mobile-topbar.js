@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import _ from "lodash";
 import Button from '../../buttons/button';
 
-const MobileTopbar = ({mobileActiveTab, filters, inExtensions, inDeckCreation, handleFilterViewToggle, handleFilterReset, handleMobileActiveTabSwitch}) => {
+const MobileTopbar = ({mobileActiveTab, componentWidthAboveMobileThreshold, filters, inExtensions, inDeckCreation, handleFilterViewToggle, handleFilterReset, handleMobileActiveTabSwitch}) => {
   const activeFiltersClass = mobileActiveTab === "mobileTabFilters" ? "active" : undefined;
   const activeCardsClass = mobileActiveTab === "mobileTabCards" ? "active" : undefined;
 
@@ -15,7 +15,7 @@ const MobileTopbar = ({mobileActiveTab, filters, inExtensions, inDeckCreation, h
         <p>Card Filters</p>
         <div>
           {!_.isEmpty(filters) && <Button handleClick={handleFilterReset} type="default--active" dataAttr="clearAll" text="Clear filters"/>}
-          {(inExtensions || inDeckCreation) && <Button handleClick={handleFilterViewToggle} type="default--active" text="Hide filters" />}
+          {(inExtensions || inDeckCreation) && componentWidthAboveMobileThreshold && <Button handleClick={handleFilterViewToggle} type="default--active" text="Hide filters" />}
         </div>
       </div>
       <p onClick={handleMobileActiveTabSwitch}

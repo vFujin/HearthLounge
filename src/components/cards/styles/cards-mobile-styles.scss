@@ -52,8 +52,12 @@
   }
 
   .container__page--mobileContentWrapper {
+    padding-bottom: 10px;
+    height: 100%;
+
     .content {
-      height: calc(100% - 10px);
+      //height: calc(100% - 10px);
+      height: 100%;
       overflow: auto;
       margin-right: 10px;
       margin-top: 10px;
@@ -129,7 +133,6 @@
     }
     .container__mobileFilters {
       height: 100%;
-      overflow: auto;
 
       .topbar{
         background: $light-grey;
@@ -137,9 +140,11 @@
 
       .container__page--inner {
         display: block !important;
-        height: 100%;
+        height: calc(100% - 10px);
         overflow: auto;
-
+        margin-top: 10px;
+        margin-right: 10px;
+        @include slim-scrollbar($pearl);
 
         .sidebar__header {
           display: none;

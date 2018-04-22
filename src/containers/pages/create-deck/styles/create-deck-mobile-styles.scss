@@ -1,0 +1,7 @@
+.create-deck {
+  .container__page--mobile-twoSided {
+    .container__page--mobileContentWrapper {
+      height: calc(100% - 5.5vh - 10px);
+    }
+  }
+}

@@ -3,11 +3,13 @@ import MobileTopbar from "./mobile-layout/mobile-topbar";
 import MobileContentWrapper from "./mobile-layout/mobile-content-wrapper";
 
 const CardsMobile = ({props, state, handleMobileActiveTabSwitch, handleFilterReset, handleFilterViewToggle, handleInputChange, handleSliderClick, handleIconClick}) => {
-  const {filters, filterView, inExtensions, inDeckCreation, mobileActiveTab} = state;
-
+  const {filters, filterView, inExtensions, inDeckCreation, mobileActiveTab, mobileThreshold} = state;
+  const {componentWidth} = props;
+  const componentWidthAboveMobileThreshold = componentWidth > mobileThreshold;
   return (
     <div className={`container__page container__page--mobile-${filterView ? "two" : "one"}Sided cards`} id="cardsContainer">
       <MobileTopbar mobileActiveTab={mobileActiveTab}
+                    componentWidthAboveMobileThreshold={componentWidthAboveMobileThreshold}
                     filters={filters}
                     inExtensions={inExtensions}
                     inDeckCreation={inDeckCreation}

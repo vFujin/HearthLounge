@@ -8,7 +8,7 @@ import CardsDesktop from "./cards-desktop";
 import CardsMobile from "./cards-mobile";
 import './styles/cards-styles.css';
 import './styles/cards-mobile-styles.css';
-import './styles/media-queries.css';
+import './styles/cards-media-queries.css';
 
 
 class ComponentCards extends Component {
@@ -21,14 +21,14 @@ class ComponentCards extends Component {
       cardNotFound: "Couldn't find cards that match your query",
       infiniteScrollContainer: ".content__cards",
       mobileThreshold: 1024,
-      mobileActiveTab: "mobileTabCards",
+      mobileActiveTab: "mobileTabFilters",
 
       mode: props.mode || 'wild',
       playerClass: props.playerClass || undefined,
       cardSet: props.cardSet || undefined,
       inExtensions: props.cardSet || undefined,
       inDeckCreation: props.inDeckCreation || undefined,
-      filterView: props.filterView || false,
+      filterView: props.filterView || props.componentWidth <= 1024 && true,
       documentTitle: props.documentTitle || false,
 
     }
@@ -96,7 +96,6 @@ class ComponentCards extends Component {
     const {filters} = this.state;
     const filter = e.currentTarget.dataset.attr;
 
-    //shouldn't reset activeMobileTab
     this.scrollToTop();
     updateFilters(state => this.setState(state), filters, filter, undefined)
   };
@@ -106,7 +105,7 @@ class ComponentCards extends Component {
   };
 
   handleMobileActiveTabSwitch = (e) => {
-    const id = e.target.id;
+    const id = e.currentTarget.id;
     this.setState({mobileActiveTab: id})
   };
 

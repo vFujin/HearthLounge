@@ -11,6 +11,7 @@ const MobileSidebar = ({cards, allCards, info, mode, filters, inExtensions, inDe
                    cards={cards}
                    allCards={allCards}
                    inExtensions={inExtensions}
+                   inDeckCreation={inDeckCreation}
                    handleFilterReset={handleFilterReset}
                    handleInputChange={handleInputChange}
                    handleSliderClick={handleSliderClick}

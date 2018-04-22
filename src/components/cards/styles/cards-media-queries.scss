@@ -17,10 +17,22 @@
 }
 
 @include screen('mobile') {
+  .container__page--mobileTopbar{
+    //padding-right: 24px;
+  }
+
+  .container__page--inner {
+    @include slim-scrollbar();
+  }
+
   .container__cards {
     li {
       width: calc(100% / 4) !important;
     }
+  }
+
+  .sidebar__body--filter-wrapper {
+    width: calc(50% - 1vh - 10px) !important;
   }
 }
 
@@ -29,6 +41,10 @@
     li {
       width: calc(100% / 2) !important;
     }
+  }
+
+  .sidebar__body--filter-wrapper {
+    width: calc(100% - 10px) !important;
   }
 }
 
