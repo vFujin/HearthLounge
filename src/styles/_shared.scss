@@ -157,6 +157,10 @@
     li{
       span{
         padding: .5vh;
+
+        &:hover{
+          @include box-shadow(0, 0, 10px, $dark-grey);
+        }
       }
     }
   }
