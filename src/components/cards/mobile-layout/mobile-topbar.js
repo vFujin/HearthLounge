@@ -14,7 +14,7 @@ const MobileTopbar = ({mobileActiveTab, componentWidthAboveMobileThreshold, filt
            className={activeFiltersClass}>
         <p>Card Filters</p>
         <div>
-          {!_.isEmpty(filters) && <Button handleClick={handleFilterReset} type="default--active" dataAttr="clearAll" text="Clear filters"/>}
+          {!_.isEmpty(filters) && <Button handleClick={handleFilterReset} type="default--active" id="foo" dataAttr="clearAll" text="Clear filters"/>}
           {(inExtensions || inDeckCreation) && componentWidthAboveMobileThreshold && <Button handleClick={handleFilterViewToggle} type="default--active" text="Hide filters" />}
         </div>
       </div>
@@ -27,6 +27,7 @@ const MobileTopbar = ({mobileActiveTab, componentWidthAboveMobileThreshold, filt
 
 MobileTopbar.propTypes = {
   mobileActiveTab: PropTypes.string.isRequired,
+  componentWidthAboveMobileThreshold: PropTypes.bool.isRequired,
   filters: PropTypes.object.isRequired,
   handleFilterViewToggle: PropTypes.func.isRequired,
   handleFilterReset: PropTypes.func.isRequired,

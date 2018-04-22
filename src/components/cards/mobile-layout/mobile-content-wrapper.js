@@ -1,49 +1,45 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {mapInputCards} from "../utils/map-cards";
 import {mapCards} from "../utils";
 import MobileSidebar from "../left-container/mobile/sidebar";
 
-class MobileContentWrapper extends Component {
+const MobileContentWrapper = ({cardsProps, cardsState, mobileActiveTab, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick}) => {
 
+  const {filters, mode, inExtensions, inDeckCreation, cardSet, playerClass} = cardsState;
+  const {info, cards} = cardsProps;
 
-  render() {
-    const {cardsProps, cardsState, mobileActiveTab, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick} = this.props;
-    const {filters, mode, inExtensions, inDeckCreation, cardSet, playerClass} = cardsState;
-    const {info, cards} = cardsProps;
-
-    return (
-      <div className="container__page--mobileContentWrapper"
-           style={{background: mobileActiveTab === "mobileTabFilters" && "#A69E9D"}}>
-        {
-          mobileActiveTab === "mobileTabCards"
-            ? (
-              <div className="content content__cards">
-                <ul className="container__cards">
-                  {mapCards(cardsProps, cardsState)}
-                </ul>
-              </div>
-            )
-            : (
-              <div className="container__mobileFilters">
-                <MobileSidebar filters={filters}
-                               info={info}
-                               cards={mapInputCards(cardsProps, cardsState)}
-                               allCards={cards}
-                               mode={mode}
-                               inExtensions={(inExtensions && cardSet) && {cardSet}}
-                               inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
-                               handleFilterReset={handleFilterReset}
-                               handleInputChange={handleInputChange}
-                               handleSliderClick={handleSliderClick}
-                               handleIconClick={handleIconClick}/>
-              </div>
-            )
-        }
-      </div>
-    )
-  }
-}
+  return (
+    <div className="container__page--mobileContentWrapper"
+         style={{background: mobileActiveTab === "mobileTabFilters" && "#A69E9D"}}>
+      {
+        mobileActiveTab === "mobileTabCards"
+          ? (
+            <div className="content content__cards">
+              <ul className="container__cards">
+                {mapCards(cardsProps, cardsState)}
+              </ul>
+            </div>
+          )
+          : (
+            <div className="container__mobileFilters">
+              <MobileSidebar filters={filters}
+                             info={info}
+                             cards={mapInputCards(cardsProps, cardsState)}
+                             allCards={cards}
+                             mode={mode}
+                             inExtensions={(inExtensions && cardSet) && {cardSet}}
+                             inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
+                             handleFilterReset={handleFilterReset}
+                             handleInputChange={handleInputChange}
+                             handleSliderClick={handleSliderClick}
+                             handleIconClick={handleIconClick}/>
+            </div>
+          )
+      }
+    </div>
+  )
+};
 
 MobileContentWrapper.propTypes = {
   cardsProps: PropTypes.shape({

@@ -97,6 +97,7 @@ class ComponentCards extends Component {
   };
 
   handleFilterReset = (e) =>{
+    e.stopPropagation();
     const {filters} = this.state;
     const filter = e.currentTarget.dataset.attr;
 
