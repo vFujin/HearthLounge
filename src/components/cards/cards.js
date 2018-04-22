@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {lazyloadCards, updateFilters } from "./utils";
+import {updateFilters } from "./utils";
 import {getCardsComponentWidth} from "../../redux/cards/actions";
 import CardsDesktop from "./cards-desktop";
 import CardsMobile from "./cards-mobile";
@@ -21,7 +21,6 @@ class ComponentCards extends Component {
       cardNotFound: "Couldn't find cards that match your query",
       infiniteScrollContainer: ".content__cards",
       mobileThreshold: 1024,
-      mobileActiveTab: "mobileTabFilters",
 
       mode: props.mode || 'wild',
       playerClass: props.playerClass || undefined,
@@ -33,13 +32,16 @@ class ComponentCards extends Component {
     }
   }
 
+
   scrollToTop = () => {
     const {infiniteScrollContainer, mobileThreshold} = this.state;
     const {componentWidth} = this.props;
+    this.setState({loadedCards: 40});
 
     if(componentWidth > mobileThreshold) {
       return document.querySelector(infiniteScrollContainer).scrollTop = 0;
     }
+
   };
 
   updateCardsComponentWidth = () => {
@@ -48,7 +50,7 @@ class ComponentCards extends Component {
   };
 
   componentDidMount() {
-    const {documentTitle, infiniteScrollContainer, loadedCards} = this.state;
+    const {documentTitle} = this.state;
     const {getCardsComponentWidth} = this.props;
     const cardsContainer = document.getElementById("cardsContainer");
     const cardsContainerWidth = cardsContainer && cardsContainer.offsetWidth;
@@ -58,7 +60,6 @@ class ComponentCards extends Component {
     }
 
     getCardsComponentWidth(cardsContainerWidth);
-    lazyloadCards(infiniteScrollContainer, loadedCards => this.setState({loadedCards}), loadedCards);
     window.addEventListener("resize", this.updateCardsComponentWidth);
   }
 
@@ -67,6 +68,10 @@ class ComponentCards extends Component {
     getCardsComponentWidth(null);
     window.removeEventListener("resize", this.updateCardsComponentWidth);
   }
+
+  handleLazyloadUpdate = (loadedCards) =>{
+    this.setState({loadedCards})
+  };
 
   handleInputChange = (value, filter) => {
     const {filters} = this.state;
@@ -103,27 +108,23 @@ class ComponentCards extends Component {
     this.setState({ filterView: !this.state.filterView })
   };
 
-  handleMobileActiveTabSwitch = (e) => {
-    const id = e.currentTarget.id;
-    this.setState({mobileActiveTab: id})
-  };
-
   render() {
     const {mobileThreshold} = this.state;
     const {componentWidth} = this.props;
 
     return componentWidth > mobileThreshold
-      ? <CardsDesktop props={this.props}
-                      state={this.state}
+      ? <CardsDesktop cardsProps={this.props}
+                      cardsState={this.state}
+                      handleLazyloadUpdate={this.handleLazyloadUpdate}
                       handleFilterReset={this.handleFilterReset}
                       handleInputChange={this.handleInputChange}
                       handleSliderClick={this.handleSliderClick}
                       handleIconClick={this.handleIconClick}
                       handleFilterViewToggle={this.handleFilterViewToggle}
       />
-      : <CardsMobile props={this.props}
-                     state={this.state}
-                     handleMobileActiveTabSwitch={this.handleMobileActiveTabSwitch}
+      : <CardsMobile cardsProps={this.props}
+                     cardsState={this.state}
+                     handleLazyloadUpdate={this.handleLazyloadUpdate}
                      handleFilterReset={this.handleFilterReset}
                      handleFilterViewToggle={this.handleFilterViewToggle}
                      handleInputChange={this.handleInputChange}
