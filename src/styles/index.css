@@ -4755,13 +4755,9 @@ body {
     -webkit-transition: all ease 0.5s;
     -moz-transition: all ease 0.5s;
     transition: all ease 0.5s; }
-  body #container > div {
-    opacity: 1;
-    -webkit-transition: all ease 0.5s;
-    -moz-transition: all ease 0.5s;
-    transition: all ease 0.5s; }
 
 .container__index {
+  height: 100%;
   overflow-y: auto; }
   .container__index::-webkit-scrollbar {
     width: 13px;

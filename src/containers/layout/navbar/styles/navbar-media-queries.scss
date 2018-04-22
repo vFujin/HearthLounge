@@ -33,10 +33,15 @@
         span {
           font-size: calc(1.5em + 2vmin);
         }
+
+        div {
+          font-size: calc(.4em + 1vmin) !important;
+        }
       }
     }
   }
 }
+
 
 
 @include screen('mobile') {

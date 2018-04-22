@@ -58,6 +58,7 @@
 
         &:hover {
           background: $sea-color;
+          border-bottom: 1px solid $sea-color;
         }
 
         &.active {
@@ -101,7 +102,7 @@
         }
       }
 
-      &:first-child {
+      &.home {
         a {
           @include transition(all ease .4s);
           &:hover {
