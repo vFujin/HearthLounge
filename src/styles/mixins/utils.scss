@@ -26,6 +26,7 @@
 @mixin screen($size, $height: false) {
   $desktop: "(min-width: 1600px)";
   $laptop: "(min-width: 1366px) and (max-width: 1600px)";
+  $tabletBelow: "(max-width: 1365px)";
   $tablet: "(min-width: 816px) and (max-width: 1365px)";
   $tablet_mini: "(min-width: 816px) and (max-width: 1000px)";
   $mobile: "(max-width: 815px)";
@@ -45,6 +46,15 @@
    */
   @else if $size == laptop {
     @media only screen and #{$laptop} {
+      @content;
+    }
+  }
+
+  /*
+   * Screen sizes below tablet res
+   */
+  @else if $size == tabletBelow {
+    @media only screen and #{$tabletBelow} {
       @content;
     }
   }

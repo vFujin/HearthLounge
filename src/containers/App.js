@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import history from '../globals/history';
 import {Router} from 'react-router-dom';
 import {Switch, Route} from 'react-router';
-import Navbar from './layout/navbar/navbar';
+import NavbarDesktop from './layout/navbar/navbar-desktop';
 import Footer from './layout/footer';
 import {getActiveUser} from '../firebase/user/read';
 import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
@@ -30,9 +30,10 @@ import 'antd/lib/select/style/css';
 import {fetchGameInfoRequest} from "../redux/game-info/actions";
 import {firebaseSignOutRequest} from "../redux/firebase/actions/sign-out.action";
 import LogoSVG from "../components/logo";
-import {updateWindowWidth} from "../redux/app/windowSize/actions";
+import {updateWindowWidth} from "../redux/app/window-size/actions";
 import {fetchCardsSuccess} from "../redux/cards/actions";
 import {fetchCardbacksSuccess} from "../redux/cardbacks/actions";
+import NavbarMobile from "./layout/navbar/navbar-mobile";
 
 class App extends Component{
   constructor(){
@@ -70,7 +71,7 @@ class App extends Component{
 
   render(){
     const {loading} = this.state;
-    const {activeUser, playerClass} = this.props;
+    const {activeUser, playerClass, windowWidth} = this.props;
 
     if(loading){
       return (
@@ -83,10 +84,14 @@ class App extends Component{
     return (
       <Router history={history}>
         <div id="container">
-          <Navbar url="123"
-                  activeUser={activeUser}
-                  playerClass={playerClass}
-                  handleSignOut={this.handleSignOut}/>
+          {windowWidth > 1365
+            ? <NavbarDesktop activeUser={activeUser}
+                             playerClass={playerClass}
+                             handleSignOut={this.handleSignOut}/>
+            : <NavbarMobile activeUser={activeUser}
+                            playerClass={playerClass}
+                            handleSignOut={this.handleSignOut}/>
+          }
           <Switch>
             <Route exact path="/"                   component={Home} />
             <Route exact path="/decks"              component={DeckSelection} />
@@ -125,7 +130,8 @@ const mapStateToProps = state =>{
   const {activeUser} = state.users;
   const {patch} = state.info;
   const {playerClass} = state.deckCreation;
-  return {activeUser, playerClass, patch};
+  const {windowWidth} = state.app.windowSize;
+  return {activeUser, playerClass, patch, windowWidth};
 };
 
 const mapDispatchToProps = (dispatch) => {

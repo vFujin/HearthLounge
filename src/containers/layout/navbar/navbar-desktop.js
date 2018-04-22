@@ -4,8 +4,9 @@ import LogoItem from "./logo-item";
 import ItemsList from "./items-list/items-list";
 import EntryNode from '../entry-node';
 import './styles/navbar-styles.css';
+import './styles/navbar-media-queries.css';
 
-const Navbar = ({handleSignOut, activeUser, playerClass}) => {
+const NavbarDesktop = ({handleSignOut, activeUser, playerClass}) => {
   return (
     <nav>
       <ul className="nav__list">
@@ -18,8 +19,8 @@ const Navbar = ({handleSignOut, activeUser, playerClass}) => {
 };
 
 
-Navbar.propTypes = {
+NavbarDesktop.propTypes = {
   activeUser: PropTypes.object
 };
 
-export default Navbar;
+export default NavbarDesktop;

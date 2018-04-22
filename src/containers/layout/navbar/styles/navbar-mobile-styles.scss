@@ -1,0 +1,30 @@
+@import '../../../../styles/colors';
+
+.nav__mobile {
+  ul:first-child{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+
+    li {
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(.8em + 1vmin);
+        color: $pearl;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  ul:last-child {
+    position: absolute;
+    height: calc(100% - 10vh);
+    z-index: 10;
+    background: black;
+    width: 250px;
+  }
+}

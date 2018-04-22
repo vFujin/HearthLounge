@@ -4742,7 +4742,8 @@ body {
   body .mana-crystal:hover a span {
     color: #87D0B7; }
   body #root {
-    height: 100%; }
+    height: 100%;
+    position: relative; }
     body #root .preload {
       background: #E7E2DA;
       display: flex;
