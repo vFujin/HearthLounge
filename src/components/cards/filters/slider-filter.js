@@ -5,9 +5,11 @@ import FilterHeader from "./filter-header";
 import 'antd/lib/slider/style/css';
 
 const SliderFilter = ({defaultValue, marks, max, filter, filters, handleSliderClick, handleFilterReset}) => (
-  <div className="sidebar__body--filter-wrapper">
+  <div className="sidebar__body--filter-wrapper sidebar__body--filter-slider">
     <FilterHeader filter={filter} filters={filters} handleFilterReset={handleFilterReset}/>
-    <Slider range marks={marks} defaultValue={defaultValue} max={max} onAfterChange={(e)=>handleSliderClick(e, filter)}/>
+    <div className="sidebar__body--filter-slider-antd-wrapper">
+      <Slider range marks={marks} defaultValue={defaultValue} max={max} onAfterChange={(e)=>handleSliderClick(e, filter)}/>
+    </div>
   </div>
 );
 

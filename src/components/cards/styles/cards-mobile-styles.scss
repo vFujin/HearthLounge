@@ -154,9 +154,30 @@
           margin: 0;
           display: flex;
           flex-wrap: wrap;
+
           .sidebar__body--filter-wrapper {
             width: calc(33% - 1.72vh);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.sidebar__body--filter-slider{
+              display: inline;
+
+              .sidebar__body--filter-slider-antd-wrapper {
+                height: calc(100% - 17px);
+                width: 100%;
+                transform: translateY(25%);
+              }
+            }
+
+            ul {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
           }
+
           .sidebar__body--filter-wrapper-sets {
             display: flex;
             width: calc(66% - .4vh);

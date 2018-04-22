@@ -14,6 +14,15 @@
       width: calc(100% / 5) !important;
     }
   }
+
+  .sidebar__body--filter-wrapper {
+
+    &.sidebar__body--filter-slider{
+      .sidebar__body--filter-slider-antd-wrapper {
+        transform: translateY(30%) !important;
+      }
+    }
+  }
 }
 
 @include screen('mobile') {
@@ -33,6 +42,12 @@
 
   .sidebar__body--filter-wrapper {
     width: calc(50% - 1vh - 10px) !important;
+
+    &.sidebar__body--filter-slider{
+      .sidebar__body--filter-slider-antd-wrapper {
+        transform: translateY(25%) !important;
+      }
+    }
   }
 }
 
@@ -45,6 +60,12 @@
 
   .sidebar__body--filter-wrapper {
     width: calc(100% - 10px) !important;
+
+    &.sidebar__body--filter-slider{
+      .sidebar__body--filter-slider-antd-wrapper {
+        transform: none !important;
+      }
+    }
   }
 }
 

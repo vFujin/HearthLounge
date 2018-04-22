@@ -10,7 +10,6 @@ import './styles/cards-styles.css';
 import './styles/cards-mobile-styles.css';
 import './styles/cards-media-queries.css';
 
-
 class ComponentCards extends Component {
   constructor(props){
     super(props);
