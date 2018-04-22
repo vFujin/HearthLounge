@@ -29,8 +29,7 @@ class ComponentCards extends Component {
       inExtensions: props.cardSet || undefined,
       inDeckCreation: props.inDeckCreation || undefined,
       filterView: props.filterView || props.componentWidth <= 1024 && true,
-      documentTitle: props.documentTitle || false,
-
+      documentTitle: props.documentTitle || false
     }
   }
 

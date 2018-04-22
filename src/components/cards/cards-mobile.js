@@ -19,6 +19,7 @@ const CardsMobile = ({props, state, handleMobileActiveTabSwitch, handleFilterRes
       />
       <MobileContentWrapper props={props}
                             state={state}
+                            handleFilterReset={handleFilterReset}
                             handleInputChange={handleInputChange}
                             handleSliderClick={handleSliderClick}
                             handleIconClick={handleIconClick}/>

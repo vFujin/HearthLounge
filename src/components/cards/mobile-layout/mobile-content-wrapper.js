@@ -4,7 +4,7 @@ import {mapInputCards} from "../utils/map-cards";
 import {mapCards} from "../utils";
 import MobileSidebar from "../left-container/mobile/sidebar";
 
-const MobileContentWrapper = ({props, state, handleInputChange, handleSliderClick, handleIconClick}) => {
+const MobileContentWrapper = ({props, state, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick}) => {
   const {filters, mode, inExtensions, inDeckCreation, cardSet, playerClass, mobileActiveTab} = state;
   const {info, cards} = props;
 
@@ -28,6 +28,7 @@ const MobileContentWrapper = ({props, state, handleInputChange, handleSliderClic
                              mode={mode}
                              inExtensions={(inExtensions && cardSet) && {cardSet}}
                              inDeckCreation={(inDeckCreation && playerClass) && {playerClass}}
+                             handleFilterReset={handleFilterReset}
                              handleInputChange={handleInputChange}
                              handleSliderClick={handleSliderClick}
                              handleIconClick={handleIconClick}/>
