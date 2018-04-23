@@ -5,7 +5,8 @@ import {NavLink} from 'react-router-dom';
 import {LeftContainer} from './left-container/left-container';
 import SignUp from "./right-container/sign-up/sign-up";
 import SignIn from './right-container/sign-in/sign-in';
-import './entry-styles.css';
+import './styles/entry-styles.css';
+import './styles/entry-mobile-styles.css';
 
 class Entry extends PureComponent {
 
@@ -24,12 +25,14 @@ class Entry extends PureComponent {
   }
 
   render(){
+    const {windowWidth} = this.props;
+
     return (
-        <div className={`container__page container__page--oneSided entry`}>
+        <div className={`container__page container__page--oneSided entry ${windowWidth <= 1365 ? "mobile" : undefined}`}>
           <div className="wrapper">
             <LeftContainer/>
 
-            <div className="breakline v-breakline"></div>
+            <div className="breakline v-breakline"/>
 
             <div className="container__page--inner container__page--right">
               <div className="topbar">
@@ -51,6 +54,11 @@ class Entry extends PureComponent {
   }
 }
 
+const mapStateToProps = state => {
+  const { windowWidth } = state.app.windowSize;
+  return { windowWidth };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     updateFormProperty: (props) => (dispatch({
@@ -59,4 +67,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(Entry);
+export default connect(mapStateToProps, mapDispatchToProps)(Entry);

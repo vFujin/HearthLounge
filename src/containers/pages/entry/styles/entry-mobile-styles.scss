@@ -1,0 +1,29 @@
+@import '../../../../styles/colors';
+
+#container .entry.mobile {
+  grid-template-columns: 100%;
+
+  .wrapper {
+    margin: 1vh;
+    width: calc(100% - 2vh);
+    height: calc(100% - 2vh);
+  }
+
+  form {
+    .input-wrapper {
+      input {
+        width: 100%;
+
+        &[type=checkbox]{
+          width: 20%;
+        }
+      }
+
+      .tos {
+        label {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
