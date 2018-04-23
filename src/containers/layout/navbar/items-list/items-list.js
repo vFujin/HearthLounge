@@ -4,7 +4,6 @@ import _ from "lodash";
 import { NavLink } from 'react-router-dom';
 import {navItems} from "../../../../globals/nav";
 import Icon from "../../../../components/icon";
-import Dropdown from "./dropdown";
 import './items-list-styles.css';
 
 const ItemsList = ({playerClass}) => {
@@ -28,7 +27,6 @@ const ItemsList = ({playerClass}) => {
         <div className="nav__list--link">
           <Icon name={element.icon}/>
           <div>{_.startCase(element.name)}</div>
-          <Dropdown element={element} index={index}/>
         </div>
       </NavLink>
     </li>

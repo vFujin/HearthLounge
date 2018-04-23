@@ -12,14 +12,10 @@ const EntryNode = ({activeUser, handleSignOut}) =>{
       return (
           <div className="nav__list--labelWrapper">
             {username}
-            <ul className="submenu">
-              <li onClick={handleSignOut}>
-                <Link to="/">
-                  <Icon name="logout"/>
-                  Logout
-                </Link>
-              </li>
-            </ul>
+            <Link to="/" onClick={handleSignOut}>
+              <Icon name="logout"/>
+              Logout
+            </Link>
           </div>
       )
     }
