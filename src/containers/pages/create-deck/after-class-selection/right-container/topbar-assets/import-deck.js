@@ -12,7 +12,14 @@ const DeckstringInput = ({importedDeckstring, handleInputChange, handleDeckImpor
 };
 
 DeckstringInput.propTypes = {
-  handleDeckImport: PropTypes.func.isRequired
+  handleInputChange: PropTypes.func.isRequired,
+  handleDeckImport: PropTypes.func.isRequired,
+  importedDeckstring: PropTypes.string
 };
+
+DeckstringInput.defaultProps = {
+  importedDeckstring: ""
+};
+
 
 export default DeckstringInput;

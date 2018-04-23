@@ -5,7 +5,7 @@ import {imgCaptureBox} from "./content-assets/utils/index";
 import {
   editDeck,
   showDeckEditingTool, simplifyDeck, toggleImgReadyDecklist, toggleImportedDeckstringPopover,
-  updateDeckstring
+  updateDeckstring, updatePlayerClass
 } from "../../../../../redux/create-deck/actions/create-deck.action";
 import MapFunctionlessIcons from "./topbar-assets/map-functionless-icons";
 import MapFunctionfulIcons from "./topbar-assets/map-functionful-icons";
@@ -38,11 +38,11 @@ class Topbar extends Component {
   };
 
   handleDeckImport = () => {
-    const {cards, editDeck, simplifyDeck, deckCreation} = this.props;
+    const {cards, editDeck, simplifyDeck, deckCreation, updatePlayerClass} = this.props;
     const {importedDeckstring} = deckCreation;
     const {allCards} = cards;
 
-    createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck));
+    createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck), playerClass => updatePlayerClass(playerClass));
   };
 
   handleCopyDeckStringClick = () => {
@@ -90,6 +90,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch => {
   return {
     editDeck: deck => dispatch(editDeck(deck)),
+    updatePlayerClass: playerClass => dispatch(updatePlayerClass(playerClass)),
     simplifyDeck: simplifiedDeck => dispatch(simplifyDeck(simplifiedDeck)),
     showDeckEditingTool: editingTool => dispatch(showDeckEditingTool(editingTool)),
     toggleImgReadyDecklist: decklist => dispatch(toggleImgReadyDecklist(decklist)),

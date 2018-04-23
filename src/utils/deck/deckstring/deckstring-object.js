@@ -1,20 +1,6 @@
+import {playerClassId} from "./player-class-id";
+
 export default function (deck, playerClass, mode) {
-
-  const playerClassId = () =>{
-    switch(playerClass){
-      case 'priest': return 813;
-      case 'warrior': return 7;
-      case 'warlock': return 963;
-      case 'mage': return 637;
-      case 'druid': return 274;
-      case 'hunter': return 31;
-      case 'shaman': return 1066;
-      case 'paladin': return 671;
-      case 'rogue': return 930;
-      default: return 0;
-    }
-  };
-
   const modeId = () =>{
     switch(mode){
       case 'adventure':
