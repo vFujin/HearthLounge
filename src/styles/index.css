@@ -4840,7 +4840,8 @@ card {
 
 .container__page {
   outline: 0;
-  z-index: 1; }
+  z-index: 1;
+  height: 100%; }
   .container__page .container__page--inner {
     overflow: hidden; }
   .container__page .container__class-selection {

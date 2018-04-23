@@ -6,6 +6,10 @@
       background: linear-gradient(135deg, $sea-color 0%, $dark-grey 100%);
       border-bottom: 0;
 
+      &:hover {
+        background: linear-gradient(135deg, #00a99c 0%, #474143 100%) !important;
+      }
+
       &.active {
         background: linear-gradient(135deg, $sea-color 0%, $dark-grey 100%);
 
