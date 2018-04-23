@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import LogoItem from "./logo-item";
 import ItemsList from "./items-list/items-list";
-import EntryNode from '../entry-node';
+import EntryNode from './entry-node';
 import MobileMenuIcon from "./mobile-menu-icon/mobile-menu-icon";
 import './styles/navbar-styles.css';
 import './styles/navbar-mobile-styles.css';
@@ -27,10 +27,10 @@ class NavbarMobile extends Component {
         {mobileMenuActive && (
           <div onClick={this.handleCloseMenuClick}>
             <ul className="nav__mobile--pages">
-              <EntryNode handleSignOut={handleSignOut} activeUser={activeUser}/>
+              <EntryNode handleSignOut={handleSignOut} activeUser={activeUser} mobileMenuActive={mobileMenuActive}/>
               <li className="nav__mobile--scrollWrapper">
                 <ul>
-                  <ItemsList playerClass={playerClass}/>
+                  <ItemsList playerClass={playerClass} mobileMenuActive={mobileMenuActive}/>
                 </ul>
               </li>
             </ul>

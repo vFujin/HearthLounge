@@ -129,7 +129,6 @@ class App extends Component{
   }
 }
 
-
 const mapStateToProps = state =>{
   const {activeUser} = state.users;
   const {patch} = state.info;

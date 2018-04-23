@@ -1,30 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import Icon from "../../components/icon";
+import Icon from "../../../components/icon";
+import EntryMobile from "./entry-label/entry-mobile";
+import EntryDesktop from "./entry-label/entry-desktop";
 
-const EntryNode = ({activeUser, handleSignOut}) =>{
-  const {username, avatar, authenticated, rank} = activeUser;
-  const isAuthenticated = (activeUser && authenticated);
-
-  const entryLabel = () =>{
-    if(isAuthenticated) {
-      return (
-          <div className="nav__list--labelWrapper">
-            <div className="nav__list--aboutUser">
-              <p className="aboutUser__username">{username}</p>
-              <p className="aboutUser__rank">{rank}</p>
-            </div>
-
-            <div className="nav__list--logout" onClick={handleSignOut}>
-              <Icon name="login"/>
-              <p>Logout</p>
-            </div>
-          </div>
-      )
-    }
-    return <div>Sign In</div>
-  };
+const EntryNode = ({activeUser, handleSignOut, mobileMenuActive}) =>{
+  const {username, avatar, authenticated} = activeUser;
 
   return (
       <li className="nav__list--item login">
@@ -35,7 +17,9 @@ const EntryNode = ({activeUser, handleSignOut}) =>{
                     <img src={avatar} alt={`${username}'s profile`}/>
                   </div>
                 : <Icon name="login"/>}
-            {entryLabel()}
+            {mobileMenuActive
+              ? <EntryMobile handleSignOut={handleSignOut}/>
+              : <EntryDesktop handleSignOut={handleSignOut}/>}
           </div>
         </Link>
       </li>

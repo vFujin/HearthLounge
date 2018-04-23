@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LogoItem from "./logo-item";
 import ItemsList from "./items-list/items-list";
-import EntryNode from '../entry-node';
+import EntryNode from './entry-node';
 import './styles/navbar-styles.css';
 import './styles/navbar-media-queries.css';
 

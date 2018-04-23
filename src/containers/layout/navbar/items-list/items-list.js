@@ -5,8 +5,9 @@ import { NavLink } from 'react-router-dom';
 import {navItems} from "../../../../globals/nav";
 import Icon from "../../../../components/icon";
 import './items-list-styles.css';
+import Dropdown from "./dropdown";
 
-const ItemsList = ({playerClass}) => {
+const ItemsList = ({playerClass, mobileMenuActive}) => {
 
   const redirect = (name, playerClass) =>{
     switch(name){
@@ -27,6 +28,7 @@ const ItemsList = ({playerClass}) => {
         <div className="nav__list--link">
           <Icon name={element.icon}/>
           <div>{_.startCase(element.name)}</div>
+          {!mobileMenuActive && <Dropdown element={element} index={index}/>}
         </div>
       </NavLink>
     </li>
@@ -34,11 +36,13 @@ const ItemsList = ({playerClass}) => {
 };
 
 ItemsList.propTypes = {
-  playerClass: PropTypes.string
+  playerClass: PropTypes.string,
+  mobileMenuActive: PropTypes.bool
 };
 
 ItemsList.defaultProps = {
-  playerClass: undefined
+  playerClass: undefined,
+  mobileMenuActive: false,
 };
 
 export default ItemsList;
