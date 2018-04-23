@@ -88,11 +88,12 @@ class App extends Component{
 }
 
 const mapStateToProps = state =>{
-  const {activeUser} = state.users;
-  const {patch} = state.info;
-  const {playerClass} = state.deckCreation;
-  const {windowWidth} = state.app.windowSize;
-  const {mobileMenuActive} = state.app.menu;
+  const {users, info, deckCreation, app} = state;
+  const {activeUser} = users;
+  const {patch} = info;
+  const {playerClass} = deckCreation;
+  const {windowWidth} = app.windowSize;
+  const {mobileMenuActive} = app.menu;
   return {activeUser, playerClass, patch, windowWidth, mobileMenuActive};
 };
 

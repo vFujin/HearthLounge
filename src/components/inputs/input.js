@@ -2,12 +2,11 @@ import React from 'react';
 import _ from 'lodash';
 import Tooltip from 'antd/lib/tooltip';
 import FormTooltipText from '../../containers/shared-assets/form-assets/form-tooltip-text';
+import './input-styles.css';
 
 const Input = ({id, type, placeholder, handleInputChange, value, pattern, error, siblingValue}) =>{
   const label = _.startCase(_.trimStart(id, 'signUp'));
   const hideTooltip = (!_.isEmpty(siblingValue) && !_.isEmpty(value)) && (siblingValue === value);
-
-  console.log(hideTooltip);
 
   const inputClass = () =>{
     if(!siblingValue){
