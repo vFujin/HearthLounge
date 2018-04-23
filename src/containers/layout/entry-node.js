@@ -4,18 +4,22 @@ import {Link} from 'react-router-dom';
 import Icon from "../../components/icon";
 
 const EntryNode = ({activeUser, handleSignOut}) =>{
-  const {username, avatar, authenticated} = activeUser;
+  const {username, avatar, authenticated, rank} = activeUser;
   const isAuthenticated = (activeUser && authenticated);
 
   const entryLabel = () =>{
     if(isAuthenticated) {
       return (
           <div className="nav__list--labelWrapper">
-            {username}
-            <Link to="/" onClick={handleSignOut}>
-              <Icon name="logout"/>
-              Logout
-            </Link>
+            <div className="nav__list--aboutUser">
+              <p className="aboutUser__username">{username}</p>
+              <p className="aboutUser__rank">{rank}</p>
+            </div>
+
+            <div className="nav__list--logout" onClick={handleSignOut}>
+              <Icon name="login"/>
+              <p>Logout</p>
+            </div>
           </div>
       )
     }

@@ -34,6 +34,7 @@ import {updateWindowWidth} from "../redux/app/window-size/actions";
 import {fetchCardsSuccess} from "../redux/cards/actions";
 import {fetchCardbacksSuccess} from "../redux/cardbacks/actions";
 import NavbarMobile from "./layout/navbar/navbar-mobile";
+import {toggleMobileMenu} from "../redux/app/mobile-menu/actions";
 
 class App extends Component{
   constructor(){
@@ -146,6 +147,7 @@ const mapDispatchToProps = (dispatch) => {
     updateActiveUser: (activeUser) => dispatch({
       type: 'UPDATE_ACTIVE_USER', payload: activeUser
     }),
+    toggleMobileMenu: payload => dispatch(toggleMobileMenu(payload)),
     signOut: () => dispatch(firebaseSignOutRequest()),
     updateWindowWidth: payload => dispatch(updateWindowWidth(payload))
   }
