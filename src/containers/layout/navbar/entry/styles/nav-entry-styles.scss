@@ -1,0 +1,22 @@
+@import '../../../../../styles/colors';
+
+nav {
+  .login {
+    a {
+      background-color: $sea-color;
+      color: $pearl;
+
+      div {
+        .submenu {
+          width: 100%;
+          background: transparent;
+          margin-left: 0;
+
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import Icon from "../../../../components/icon";
+import './styles/nav-entry-mobile-styles.css';
 
 const EntryMobile = ({handleSignOut, activeUser}) => {
   const {authenticated, username, rank} = activeUser;

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Icon from "../../../components/icon";
-import EntryMobile from "./entry-label/entry-mobile";
-import EntryDesktop from "./entry-label/entry-desktop";
+import EntryMobile from "./entry/entry-mobile";
+import EntryDesktop from "./entry/entry-desktop";
 
 const EntryNode = ({activeUser, handleSignOut, mobileMenuActive}) =>{
   const {username, avatar, authenticated} = activeUser;
