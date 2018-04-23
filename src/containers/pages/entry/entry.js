@@ -5,6 +5,7 @@ import {NavLink} from 'react-router-dom';
 import {LeftContainer} from './left-container/left-container';
 import SignUp from "./right-container/sign-up/sign-up";
 import SignIn from './right-container/sign-in/sign-in';
+import './entry-styles.css';
 
 class Entry extends PureComponent {
 
