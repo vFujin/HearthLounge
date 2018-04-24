@@ -7,7 +7,7 @@ import history from '../../../globals/history';
 export default function (allCards, deckstring, callback, callbackSimplifiedDeck, callbackPlayerClass) {
 
     let deck = [];
-    const decodePromise = new Promise((res, rej) => {
+    const decodePromise = new Promise((res) => {
       const decodedDeckstring = decode(deckstring);
       if(decodedDeckstring){
         const playerClass = playerClassIdReverse(decodedDeckstring.heroes[0]);
@@ -29,18 +29,12 @@ export default function (allCards, deckstring, callback, callbackSimplifiedDeck,
 
 
         res(playerClass);
-      } else {
-        rej(decode(deckstring))
       }
     });
     decodePromise
       .then((playerClass) => {
         success("Successfuly imported deck!");
         history.push(`/create-deck/${playerClass}`);
-
       })
-      .catch((rej)=>error("Wrong deckstring format! "+rej));
-
-
-
+      .catch(()=>error("Wrong deckstring format!"));
 }

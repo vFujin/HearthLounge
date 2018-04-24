@@ -1886,35 +1886,35 @@ card{
   }
 }
 
-//.class-selection.create-deck{
-//  display: flex !important;
-//  .separator{
-//    display: flex;
-//    align-items: center;
-//    background: $dark-grey;
-//    position: relative;
-//
-//    &:before{
-//      position: absolute;
-//      content: '';
-//      width: 1px;
-//      height: 95%;
-//      top: 2.5%;
-//      left: calc(50% - .5px);
-//      background-color: $light-grey;
-//    }
-//    p{
-//      background: $dark-grey;
-//      color: $light-grey;
-//      border: 1px solid $light-grey;
-//      padding: 15px;
-//      position: relative;
-//      text-transform: uppercase;
-//      border-radius: 50%;
-//    }
-//
-//  }
-//}
+.class-selection.create-deck{
+  display: flex !important;
+  .separator{
+    display: flex;
+    align-items: center;
+    background: $dark-grey;
+    position: relative;
+
+    &:before{
+      position: absolute;
+      content: '';
+      width: 1px;
+      height: 95%;
+      top: 2.5%;
+      left: calc(50% - .5px);
+      background-color: $light-grey;
+    }
+    p{
+      background: $dark-grey;
+      color: $light-grey;
+      border: 1px solid $light-grey;
+      padding: 15px;
+      position: relative;
+      text-transform: uppercase;
+      border-radius: 50%;
+    }
+
+  }
+}
 
 .tournaments{
   iframe{

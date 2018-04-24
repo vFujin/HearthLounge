@@ -17,6 +17,13 @@ const getUniqueCardMechanics = payload => {
   return [...new Set(mechanics)];
 };
 
+const standardCards = (payload) => {
+  const standardSets = JSON.parse(localStorage.hearthloungeGameInfo).standard;
+  const standardCards = Object.entries(payload).filter(set => standardSets.includes(set[0])).map(set => set[1]);
+
+  return standardCards.reduce((a, b) => a.concat(b));
+};
+
 export default function(state=initialState, {type, payload}) {
   switch (type) {
     case types.FETCH_CARDS_REQUEST:
@@ -33,6 +40,7 @@ export default function(state=initialState, {type, payload}) {
         cards: {
           loading: false,
           allCards: Object.values(payload).reduce((a, b) => a.concat(b)),
+          standardCards: standardCards(payload),
           mechanics: getUniqueCardMechanics(payload),
           ...payload
         }
