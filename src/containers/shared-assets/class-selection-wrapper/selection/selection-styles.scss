@@ -1,19 +1,136 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/mixins';
+
 .container__selection {
+  background-color: $dark-grey;
+  justify-content: center;
+  align-content: center;
+
+  h3 {
+    position: relative;
+    color: $pearl;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    &:after {
+      position: absolute;
+      content: " ";
+      width: 60%;
+      height: 1px;
+      background: $light-grey;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
   ul{
     display: grid;
-    grid-template-columns: repeat(3, 10vw);
-    grid-auto-rows: 10vw;
+    grid-template-columns: repeat(3, 8vw);
+    grid-auto-rows: 8vw;
     grid-gap: 1vh;
+
+    li {
+      @include transition(all .4s ease);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        font-size: calc(2em + 2vmin);
+      }
+
+      p {
+        margin-top: 20px;
+        text-transform: capitalize;
+      }
+    }
   }
 }
 
 .container__selection--wrapper {
+  h4 {
+    font-size: calc(.7em + 1vmin);
+    color: $light-grey;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    @include transition(all ease .4s);
+
+    &.success{
+      color: $monk;
+    }
+
+    span {
+      border: 2px solid;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+    }
+  }
+
   > div {
     display: flex;
+    justify-content: space-evenly;
 
     > div {
       display: flex;
       flex-direction: column;
+
+      &:last-child {
+        .redirect {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $light-grey;
+
+          span {
+            font-size: calc(3em + 3vmin);
+            @include transition(all ease .4s);
+          }
+        }
+
+        &:hover {
+          h4 {
+            color: $pearl;
+          }
+          .redirect {
+            span {
+              color: $pearl;
+              margin-left: 20px;
+            }
+          }
+        }
+
+        &.not-allowed{
+          cursor: not-allowed;
+
+          &:hover {
+            h4 {
+              color: $death_knight;
+            }
+            .redirect {
+              cursor: not-allowed;
+              span {
+                color: $death_knight;
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

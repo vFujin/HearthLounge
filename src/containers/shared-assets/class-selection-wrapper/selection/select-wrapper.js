@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import SelectClass from './select-class';
 import SelectMode from './select-mode';
 import {Link} from "react-router-dom";
-import Button from '../../../../components/buttons/button';
 
 const SelectWrapper = ({deckMode, playerClass}) => {
   return (
@@ -11,18 +10,36 @@ const SelectWrapper = ({deckMode, playerClass}) => {
       <h3>Create deck from scratch</h3>
       <div>
         <div>
-          <h4><span>1</span> Select Mode</h4>
+          <h4 className={deckMode ? "success" : undefined}>
+            <span>{deckMode ? "✔" : 1}</span>
+            Select Mode
+          </h4>
           <SelectMode />
         </div>
         <div>
-          <h4><span>2</span> Select Class</h4>
+          <h4 className={playerClass ? "success" : undefined}>
+            <span>{playerClass ? "✔" : 2}</span>
+            Select Class
+          </h4>
           <SelectClass />
         </div>
+        <div className={!deckMode || !playerClass ? "not-allowed" : undefined}>
+          <h4>
+            <span>3</span>
+            Start Creating!
+          </h4>
+          {deckMode && playerClass
+            ? (
+              <Link className="redirect" to={`/create-deck/${playerClass}`}>
+                <span>❯</span>
+              </Link>
+            )
+            : <div className="redirect">
+              <span>❯</span>
+            </div>
+          }
+        </div>
       </div>
-
-      <Link to={`/create-deck/${playerClass}`}>
-        <Button text="Continue"/>
-      </Link>
     </div>
   )
 };
