@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {icon_filters} from "../../../globals/filters";
-import Icon from "../../../components/icon";
-import {updateDeckProperty} from "../../../redux/create-deck/actions/deck-options.action";
+import {icon_filters} from "../../../../globals/filters";
+import Icon from "../../../../components/icon";
+import {updateDeckProperty} from "../../../../redux/create-deck/actions/deck-options.action";
+import './selection-styles.css';
 
 class SelectMode extends Component {
   handleModeSelection = (e) =>{

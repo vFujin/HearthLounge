@@ -550,14 +550,6 @@ a {
       #container .container__page .content form .section__body--upperContainer {
         display: grid;
         grid-template-columns: 60% 40%; }
-    #container .container__page .container__class-selection {
-      display: grid;
-      grid-template-rows: 4vh auto; }
-      #container .container__page .container__class-selection ul {
-        display: grid;
-        grid-template-columns: repeat(3, 10vw);
-        grid-auto-rows: 10vw;
-        grid-gap: 1vh; }
   #container .container__page--twoSided {
     grid-template-columns: 20vw auto; }
   #container .container__page--twoSidedCentralized {
@@ -4844,37 +4836,6 @@ card {
   height: 100%; }
   .container__page .container__page--inner {
     overflow: hidden; }
-  .container__page .container__class-selection {
-    background-color: #474143;
-    justify-content: center;
-    align-content: center; }
-    .container__page .container__class-selection h3 {
-      font-size: 2.6vh;
-      justify-self: center;
-      align-self: center;
-      color: #E7E2DA;
-      margin-top: 1vh; }
-    .container__page .container__class-selection ul {
-      margin: 1vh; }
-      .container__page .container__class-selection ul li {
-        -webkit-transition: all 0.4s ease;
-        -moz-transition: all 0.4s ease;
-        transition: all 0.4s ease;
-        width: 100%;
-        height: 100%;
-        justify-self: center;
-        align-self: center; }
-        .container__page .container__class-selection ul li a {
-          cursor: pointer;
-          display: grid;
-          text-align: center;
-          width: 100%;
-          height: 100%;
-          align-content: center; }
-          .container__page .container__class-selection ul li a span {
-            font-size: 6.5vh; }
-          .container__page .container__class-selection ul li a p {
-            margin-top: 2vh; }
   .container__page .container__page--left {
     background-color: #A69E9D;
     position: relative; }
@@ -6204,30 +6165,6 @@ card {
         position: relative;
         font-size: 150px;
         top: 17.5px; }
-
-.class-selection.create-deck {
-  display: flex !important; }
-  .class-selection.create-deck .separator {
-    display: flex;
-    align-items: center;
-    background: #474143;
-    position: relative; }
-    .class-selection.create-deck .separator:before {
-      position: absolute;
-      content: '';
-      width: 1px;
-      height: 95%;
-      top: 2.5%;
-      left: calc(50% - .5px);
-      background-color: #A69E9D; }
-    .class-selection.create-deck .separator p {
-      background: #474143;
-      color: #A69E9D;
-      border: 1px solid #A69E9D;
-      padding: 15px;
-      position: relative;
-      text-transform: uppercase;
-      border-radius: 50%; }
 
 .tournaments iframe html body {
   background: transparent; }

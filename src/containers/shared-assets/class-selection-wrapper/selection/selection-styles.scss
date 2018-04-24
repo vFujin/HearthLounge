@@ -1,0 +1,19 @@
+.container__selection {
+  ul{
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    grid-auto-rows: 10vw;
+    grid-gap: 1vh;
+  }
+}
+
+.container__selection--wrapper {
+  > div {
+    display: flex;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

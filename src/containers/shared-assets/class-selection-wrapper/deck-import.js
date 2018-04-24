@@ -26,7 +26,7 @@ class DeckImport extends Component {
 
   render() {
     return (
-      <div className="container__page--inner container__class-selection">
+      <div className="container__page--inner container__selection container__selection--deckImport">
         <h3>Import deck</h3>
         <DeckstringInput handleDeckImport={this.handleDeckImport}
                          handleInputChange={this.handleInputChange}

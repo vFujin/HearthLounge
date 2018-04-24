@@ -123,21 +123,10 @@
         .section__body--upperContainer{
           display: grid;
           grid-template-columns: 60% 40%;
-
         }
       }
     }
-    .container__class-selection {
-      display: grid;
-      grid-template-rows: 4vh auto;
 
-      ul{
-        display: grid;
-        grid-template-columns: repeat(3, 10vw);
-        grid-auto-rows: 10vw;
-        grid-gap: 1vh;
-      }
-    }
   }
   .container__page--twoSided{
     grid-template-columns: 20vw auto;
