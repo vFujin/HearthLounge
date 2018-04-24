@@ -1,0 +1,28 @@
+.container__selection--deckImport {
+  grid-template-columns: 100%;
+
+  .deck-import {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: calc(-5.5vh + 5px);
+    justify-self: center;
+    align-items: center;
+
+    input {
+      background: transparent;
+      color: #E7E2DA;
+      border-bottom: 1px solid #E7E2DA;
+      padding: 10px 0;
+      font-size: calc(.5em + 1vmin);
+      width: 100%;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 0;
+      width: 70%;
+    }
+  }
+}

@@ -4,6 +4,7 @@
 .create-deck-selection.create-deck{
   display: grid;
   grid-template-columns: 70% 5% 25%;
+  margin: 0 10px;
 
   > div {
     width: 100%;

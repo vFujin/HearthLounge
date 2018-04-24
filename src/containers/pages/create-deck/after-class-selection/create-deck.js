@@ -5,8 +5,8 @@ import LeftContainer from './left-container';
 import RightContainer from './right-container';
 import {resetFocus} from "./right-container/content-assets/utils/reset-focus";
 import {toggleDeckMechanics, toggleImgReadyDecklist, toggleImportedDeckstringPopover} from "../../../../redux/create-deck/actions/create-deck.action";
-import '../styles/create-deck-styles.css';
-import '../styles/create-deck-mobile-styles.css';
+import './styles/create-deck-styles.css';
+import './styles/create-deck-mobile-styles.css';
 
 class CreateDeckClassSelected extends PureComponent {
   componentDidMount(){

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import DeckstringInput from "../../pages/create-deck/after-class-selection/right-container/topbar-assets/import-deck";
-import {createDeckFromDeckstringObj} from "../../../utils/deck/deckstring/index";
+import DeckstringInput from "../../../pages/create-deck/after-class-selection/right-container/topbar-assets/import-deck";
+import {createDeckFromDeckstringObj} from "../../../../utils/deck/deckstring/index";
 import {
   editDeck,
   simplifyDeck,
   updateImportedDeckstring, updatePlayerClass
-} from "../../../redux/create-deck/actions/create-deck.action";
+} from "../../../../redux/create-deck/actions/create-deck.action";
+import './deck-import-styles.css';
+
 
 class DeckImport extends Component {
 
