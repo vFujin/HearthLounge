@@ -21,10 +21,8 @@ class SelectMode extends Component {
               className={`${mode.icon} ${mode.url === deckMode ? "active" : undefined}`}
               id={mode.url}
               onClick={this.handleModeSelection}>
-            <a>
               <Icon name={mode.icon}/>
               <p>{mode.name}</p>
-            </a>
           </li>
         )}
       </ul>

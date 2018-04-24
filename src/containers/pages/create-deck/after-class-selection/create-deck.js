@@ -10,7 +10,7 @@ import '../styles/create-deck-mobile-styles.css';
 
 class CreateDeckClassSelected extends PureComponent {
   componentDidMount(){
-    const {playerClass} = this.props.match.params;
+    const {playerClass} = this.props;
     document.title = `Deck Creation - ${_.startCase(playerClass)}`;
     resetFocus();
   }
@@ -23,8 +23,8 @@ class CreateDeckClassSelected extends PureComponent {
   }
 
   render() {
-    const {match} = this.props;
-    const {playerClass} = match.params;
+    const {playerClass} = this.props;
+
     return (
         <div className="container__page container__page--twoSided create-deck">
           <LeftContainer playerClass={playerClass}/>
@@ -36,8 +36,7 @@ class CreateDeckClassSelected extends PureComponent {
 
 const mapStateToProps = (state) =>{
   const {deckMechanics, deck, imgReadyDecklist} = state.deckCreation;
-  const {cards} = state.cards;
-  return {cards, deckMechanics, deck, imgReadyDecklist};
+  return {deckMechanics, deck, imgReadyDecklist};
 };
 
 const mapDispatchToProps = (dispatch) => {

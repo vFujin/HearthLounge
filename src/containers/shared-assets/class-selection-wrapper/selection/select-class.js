@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {updatePlayerClass} from "../../../../redux/create-deck/actions/create-deck.action";
 import {icon_filters} from "../../../../globals/filters";
-import {Link} from "react-router-dom";
 import Icon from "../../../../components/icon";
 import './selection-styles.css';
 
@@ -14,17 +13,16 @@ class SelectClass extends Component {
   };
 
   render() {
+    const {deckCreation} = this.props;
     return (
       <ul>
         { icon_filters.playerClass.filter(playerClass => playerClass.url !== "neutral").map(playerClass =>
             <li key={playerClass.url}
-                className={playerClass.url}
+                className={`${playerClass.url} ${playerClass.url === deckCreation.playerClass ? "active" : undefined}`}
                 id={playerClass.url}
                 onClick={this.handleClassSelection}>
-              <Link to={`/create-deck/${playerClass.url}`}>
                 <Icon name={playerClass.url}/>
                 <p>{playerClass.name}</p>
-              </Link>
             </li>
           )
         }
@@ -33,10 +31,15 @@ class SelectClass extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  const {deckCreation} = state;
+  return { deckCreation };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     updatePlayerClass: (playerClass) => (dispatch(updatePlayerClass(playerClass))),
   }
 };
 
-export default connect(null, mapDispatchToProps)(SelectClass);
+export default connect(mapStateToProps, mapDispatchToProps)(SelectClass);

@@ -12,44 +12,39 @@
   }
 }
 
-.container__selection{
+.container__selection {
   background-color: $dark-grey;
   justify-content: center;
   align-content: center;
 
-  h3{
-    font-size:2.6vh;
+  h3 {
+    font-size: 2.6vh;
     justify-self: center;
     align-self: center;
     color: $pearl;
-    margin-top:1vh;
+    margin-top: 1vh;
   }
 
-  ul{
-    margin:1vh;
+  ul {
+    margin: 1vh;
 
-    li{
+    li {
       @include transition(all .4s ease);
       width: 100%;
       height: 100%;
-      justify-self: center;
-      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
 
-      a{
-        cursor: pointer;
-        display: grid;
-        text-align: center;
-        width: 100%;
-        height: 100%;
-        align-content: center;
+      span {
+        font-size: calc(2em + 2vmin);
+      }
 
-        span{
-          font-size: 6.5vh;
-        }
-
-        p{
-          margin-top: 2vh;
-        }
+      p {
+        margin-top: 20px;
+        text-transform: capitalize;
       }
     }
   }

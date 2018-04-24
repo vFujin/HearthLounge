@@ -13,7 +13,6 @@ export const fetchGameInfo = () => axios.get('https://omgvamp-hearthstone-v1.p.m
   }
 }).then(({ data }) => ({data})).catch(error => ({error}));
 
-
 export function* fetchGameInfoSaga() {
   const {data, error} = yield call(fetchGameInfo);
   if (error) {
@@ -21,14 +20,10 @@ export function* fetchGameInfoSaga() {
   } else {
     yield put(actions.fetchGameInfoSuccess(data));
 
-    if (localStorage.hearthloungeGameInfo && (data.patch !== JSON.parse(localStorage.hearthloungeGameInfo).patch)) {
-      yield console.log("foo");
+    if (!localStorage.hearthloungeGameInfo || (localStorage.hearthloungeGameInfo && data.patch !== JSON.parse(localStorage.hearthloungeGameInfo).patch)) {
+      yield call(setLocalstorage, "hearthloungeGameInfo", data);
       yield put(fetchCardsRequest());
       yield put(fetchCardbacksRequest());
-    } else {
-      if (!localStorage.hearthloungeGameInfo || data.patch !== JSON.parse(localStorage.hearthloungeGameInfo).patch) {
-        yield call(setLocalstorage, "hearthloungeGameInfo", data);
-      }
     }
   }
 }

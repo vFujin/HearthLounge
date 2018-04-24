@@ -17,8 +17,25 @@ import DeckSelection from "./pages/decks/deck-selection/deck-selection";
 import Miscellaneous from "./pages/miscellaneous/container";
 import RedditPosts from "./pages/reddit/posts/posts";
 import NotFound from "../components/not-found/not-found";
+import history from '../globals/history';
 
 const Routes = ({mobileMenuActive}) => {
+
+  const validatePlayerClass = ({playerClass}) => {
+    if(localStorage.hearthloungeGameInfo) {
+      const notStandardPlayerClasses = ["Neutral", "Dream", "Death Knight"];
+      const standardPlayerClasses = JSON.parse(localStorage.hearthloungeGameInfo).classes;
+      const filterPlayerClasses = standardPlayerClasses.filter(pc => !notStandardPlayerClasses.includes(pc)).map(pc => pc.toLowerCase());
+      const playerClassExist = filterPlayerClasses.includes(playerClass);
+
+      if (playerClassExist) return <CreateDeckClassSelected playerClass={playerClass}/>;
+      else return <NotFound page={playerClass}/>;
+    } else {
+      history.push('/create-deck');
+      return <CreateDeckClassSelection/>;
+    }
+  };
+
   return (
     <div className={mobileMenuActive ? "switch__wrapper--mobileMenuActive" : undefined}>
       <Switch>
@@ -29,7 +46,7 @@ const Routes = ({mobileMenuActive}) => {
         <Route path="/expansions"               component={Expansions}/>
         <Route path="/adventures"               component={Adventures} />
         <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
-        <Route path="/create-deck/:playerClass" component={CreateDeckClassSelected} />
+        <Route path="/create-deck/:playerClass" component={routeObj => validatePlayerClass(routeObj.match.params)} />
         <Route path="/tournaments"              component={Tournaments} />
         <Route exact path="/reddit"             component={Reddit} />
         <Route exact path="/reddit/posts/:category"         component={RedditPosts} />
