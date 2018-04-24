@@ -46,7 +46,7 @@ const Routes = ({mobileMenuActive}) => {
         <Route path="/expansions"               component={Expansions}/>
         <Route path="/adventures"               component={Adventures} />
         <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
-        <Route path="/create-deck/:playerClass" component={CreateDeckClassSelected} />
+        <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
         <Route path="/tournaments"              component={Tournaments} />
         <Route exact path="/reddit"             component={Reddit} />
         <Route exact path="/reddit/posts/:category"         component={RedditPosts} />

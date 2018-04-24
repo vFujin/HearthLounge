@@ -12,7 +12,7 @@ export default function (deck, playerClass, mode) {
 
   let deckstringObj = {
     cards: [],
-    heroes: [playerClassId()],
+    heroes: [playerClassId(playerClass)],
     format: modeId()
   };
 
