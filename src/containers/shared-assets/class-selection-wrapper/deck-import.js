@@ -5,7 +5,7 @@ import {createDeckFromDeckstringObj} from "../../../utils/deck/deckstring/index"
 import {
   editDeck,
   simplifyDeck,
-  updateImportedDeckstring
+  updateImportedDeckstring, updatePlayerClass
 } from "../../../redux/create-deck/actions/create-deck.action";
 
 class DeckImport extends Component {
@@ -45,6 +45,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    updatePlayerClass: (playerClass) => (dispatch(updatePlayerClass(playerClass))),
     simplifyDeck: simplifiedDeck => dispatch(simplifyDeck(simplifiedDeck)),
     editDeck: deck => dispatch(editDeck(deck)),
     updateImportedDeckstring: importedDeckstring => dispatch(updateImportedDeckstring(importedDeckstring)),

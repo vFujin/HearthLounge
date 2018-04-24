@@ -10,6 +10,7 @@ export default function (allCards, deckstring, callback, callbackSimplifiedDeck,
     const decodePromise = new Promise((res) => {
       const decodedDeckstring = decode(deckstring);
       if(decodedDeckstring){
+
         const playerClass = playerClassIdReverse(decodedDeckstring.heroes[0]);
 
         decodedDeckstring.cards.map(card => {
@@ -26,8 +27,6 @@ export default function (allCards, deckstring, callback, callbackSimplifiedDeck,
         callback(deck);
         callbackSimplifiedDeck(deckSimplification(deck));
         callbackPlayerClass(playerClass);
-
-
         res(playerClass);
       }
     });
@@ -36,5 +35,5 @@ export default function (allCards, deckstring, callback, callbackSimplifiedDeck,
         success("Successfuly imported deck!");
         history.push(`/create-deck/${playerClass}`);
       })
-      .catch(()=>error("Wrong deckstring format!"));
+      .catch(()=> error("Wrong deckstring format!"));
 }
