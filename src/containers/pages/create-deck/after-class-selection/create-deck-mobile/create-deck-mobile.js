@@ -6,10 +6,11 @@ import _ from "lodash";
 import DeckOptions from "../right-container/content-assets/deck-description/deck-options";
 import DeckSidebar from '../left-container/deck-sidebar';
 import {
-  changeActiveCreateDeckMobileTab,
+  changeActiveCreateDeckMobileTab, editDeck,
   toggleDeckMechanics
 } from "../../../../../redux/create-deck/actions/create-deck.action";
 import CreateDeckTopbarMobile from "./topbar/create-deck-topbar-mobile";
+import {updateDeck} from "../right-container/content-assets/utils";
 
 class CreateDeckClassSelectedMobile extends Component {
 
@@ -26,6 +27,12 @@ class CreateDeckClassSelectedMobile extends Component {
   handleTabClick = (e) => {
     const tab = e.currentTarget.id;
     this.props.changeActiveCreateDeckMobileTab(tab);
+  };
+
+  handleCardClick = (e, card) => {
+    const {deck, editDeck} = this.props;
+    e.preventDefault();
+    updateDeck(e, card, deck, editDeck);
   };
 
   content = () => {
@@ -66,6 +73,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    editDeck: deck => dispatch(editDeck(deck)),
     toggleDeckMechanics: deckMechanics => dispatch(toggleDeckMechanics(deckMechanics)),
     changeActiveCreateDeckMobileTab: tab => dispatch(changeActiveCreateDeckMobileTab(tab))
   }
