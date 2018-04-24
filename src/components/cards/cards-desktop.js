@@ -15,7 +15,9 @@ class CardsDesktop extends Component {
   render() {
     const {cardsProps, cardsState, handleFilterReset, handleInputChange, handleSliderClick, handleIconClick, handleFilterViewToggle} = this.props;
     const {cards, info} = cardsProps;
-    const {filters, mode, filterView, inExtensions, inDeckCreation, cardSet, playerClass} = cardsState;
+    const {filters, mode, inExtensions, inDeckCreation, cardSet, playerClass} = cardsState;
+    const filterView = (inDeckCreation || inExtensions) ? !cardsState.filterView : cardsState.filterView;
+
     return (
       <div className={`container__page container__page--${filterView ? "two" : "one"}Sided cards`} id="cardsContainer">
         {

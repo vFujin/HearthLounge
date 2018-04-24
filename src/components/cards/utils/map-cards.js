@@ -47,26 +47,30 @@ export const filter = (state, prefilter, inputMapping = false, props = undefined
  *                                         if filtering returns no results, returns error object
  */
 export const mapInputCards = (props, state) => {
-  const {cards, info} = props;
-  const {playerClass, cardSet, mode, inDeckCreation, inExtensions} = state;
+  if(localStorage.hearthloungeCards) {
+    const {cards, info} = props;
+    const {playerClass, cardSet, mode, inDeckCreation, inExtensions} = state;
 
-  if (cards.loading || info.loading) {
-    return []
+    if (cards.loading || info.loading) {
+      return []
+    } else {
+      if (inDeckCreation) {
+        const prefilter = filterCardsByPlayerClass(info, cards, playerClass, mode);
+        return filter(state, prefilter, true, props);
+      }
+
+      if (inExtensions) {
+        const prefilter = filterCardsByCardSet(cards, cardSet);
+        return filter(state, prefilter, true);
+      }
+
+      if (!inDeckCreation && !inExtensions) {
+        const prefilter = filterCardsByMode(info, cards, mode);
+        return filter(state, prefilter, true);
+      }
+    }
   } else {
-    if(inDeckCreation){
-      const prefilter = filterCardsByPlayerClass(info, cards, playerClass, mode);
-      return filter(state, prefilter, true, props);
-    }
-
-    if(inExtensions){
-      const prefilter = filterCardsByCardSet(cards, cardSet);
-      return filter(state, prefilter, true);
-    }
-
-    if(!inDeckCreation && !inExtensions){
-      const prefilter = filterCardsByMode(info, cards, mode);
-      return filter(state, prefilter, true);
-    }
+    return [];
   }
 };
 
@@ -80,25 +84,29 @@ export const mapInputCards = (props, state) => {
  *                                         if filtering returns no results, returns NotFound element
  */
 export const mapCards = (props, state) => {
-  const {cards, info} = props;
-  const {playerClass, cardSet, mode, inDeckCreation, inExtensions} = state;
+  if(localStorage.hearthloungeCards) {
+    const {cards, info} = props;
+    const {playerClass, cardSet, mode, inDeckCreation, inExtensions} = state;
 
-  if (cards.loading || info.loading) {
-    return <Loader/>
+    if (cards.loading || info.loading) {
+      return <Loader/>
+    } else {
+      if (inDeckCreation) {
+        const prefilter = filterCardsByPlayerClass(info, cards, playerClass, mode);
+        return filter(state, prefilter, false, props);
+      }
+
+      if (inExtensions) {
+        const prefilter = filterCardsByCardSet(cards, cardSet);
+        return filter(state, prefilter);
+      }
+
+      if (!inDeckCreation && !inExtensions) {
+        const prefilter = filterCardsByMode(info, cards, mode);
+        return filter(state, prefilter);
+      }
+    }
   } else {
-    if(inDeckCreation){
-      const prefilter = filterCardsByPlayerClass(info, cards, playerClass, mode);
-      return filter(state, prefilter, false, props);
-    }
-
-    if(inExtensions){
-      const prefilter = filterCardsByCardSet(cards, cardSet);
-      return filter(state, prefilter);
-    }
-
-    if(!inDeckCreation && !inExtensions){
-      const prefilter = filterCardsByMode(info, cards, mode);
-      return filter(state, prefilter);
-    }
+    return <Loader/>;
   }
 };

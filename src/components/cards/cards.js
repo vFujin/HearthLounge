@@ -24,13 +24,13 @@ class ComponentCards extends Component {
       mode: props.mode || 'wild',
       playerClass: props.playerClass || undefined,
       cardSet: props.cardSet || undefined,
+      inCardsPage: props.inCardsPage || undefined,
       inExtensions: props.cardSet || undefined,
       inDeckCreation: props.inDeckCreation || undefined,
-      filterView: props.filterView || (props.componentWidth <= 1024 && !props.inDeckCreation),
+      filterView: props.filterView || props.componentWidth <= 1024,
       documentTitle: props.documentTitle || false
     }
   }
-
 
   scrollToTop = () => {
     const {infiniteScrollContainer, mobileThreshold} = this.state;
