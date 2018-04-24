@@ -79,7 +79,7 @@ class App extends Component{
                             mobileMenuActive={mobileMenuActive}
                             handleSignOut={this.handleSignOut}/>
           }
-          <Routes mobileMenuActive={mobileMenuActive}/>
+          <Routes mobileMenuActive={mobileMenuActive} windowWidth={windowWidth}/>
           <Footer pathname="123"/>
         </div>
       </Router>

@@ -1,12 +1,4 @@
-import {
-  EDIT_DECK,
-  SHOW_DECK_EDITING_TOOL,
-  SIMPLIFY_DECK,
-  TOGGLE_DECK_MECHANICS,
-  TOGGLE_IMG_READY_DECKLIST, TOGGLE_IMPORTED_DECKSTRING_POPOVER,
-  UPDATE_DECKSTRING, UPDATE_IMPORTED_DECKSTRING,
-  UPDATE_PLAYERCLASS
-} from "../types/create-deck";
+import * as types from "../types/create-deck";
 
 
 const initialState = {
@@ -21,54 +13,60 @@ const initialState = {
     types: {}
   },
   importedDeckstring: '',
-  importedDeckstringPopover: false
+  importedDeckstringPopover: false,
+  activeCreateDeckMobileTab: "cards"
 };
 
 export default function(state=initialState, action){
   switch(action.type){
-    case SHOW_DECK_EDITING_TOOL: return {
+    case types.SHOW_DECK_EDITING_TOOL: return {
       ...state,
       editingTool: action.editingTool
     };
 
-    case TOGGLE_DECK_MECHANICS: return {
+    case types.TOGGLE_DECK_MECHANICS: return {
       ...state,
       deckMechanics: action.deckMechanics
     };
 
-    case TOGGLE_IMG_READY_DECKLIST: return {
+    case types.TOGGLE_IMG_READY_DECKLIST: return {
       ...state,
       imgReadyDecklist: action.imgReadyDecklist
     };
 
-    case EDIT_DECK: return {
+    case types.EDIT_DECK: return {
       ...state,
       deck: action.deck,
     };
 
-    case UPDATE_DECKSTRING: return {
+    case types.UPDATE_DECKSTRING: return {
       ...state,
       deckstring: action.deckstring,
     };
 
-    case SIMPLIFY_DECK: return {
+    case types.SIMPLIFY_DECK: return {
         ...state,
       simplifiedDeck: action.simplifiedDeck
     };
 
-    case UPDATE_PLAYERCLASS: return {
+    case types.UPDATE_PLAYERCLASS: return {
         ...state,
       playerClass: action.playerClass
     };
 
-    case UPDATE_IMPORTED_DECKSTRING: return {
+    case types.UPDATE_IMPORTED_DECKSTRING: return {
         ...state,
       importedDeckstring: action.importedDeckstring
     };
 
-    case TOGGLE_IMPORTED_DECKSTRING_POPOVER: return {
+    case types.TOGGLE_IMPORTED_DECKSTRING_POPOVER: return {
         ...state,
       importedDeckstringPopover: action.importedDeckstringPopover
+    };
+
+    case types.CHANGE_ACTIVE_CREATE_DECK_MOBILE_TAB: return {
+      ...state,
+      activeCreateDeckMobileTab: action.tab
     };
 
     default: return state;

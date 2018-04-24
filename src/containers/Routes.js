@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router';
 import Deck from "./pages/decks/deck/deck";
 import CreateDeckClassSelection from "./pages/create-deck/before-class-selection/class-selection";
 import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
+import CreateDeckClassSelectedMobile from "./pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile";
 import Dashboard from "./pages/dashboard/dashboard";
 import RedditPost from "./pages/reddit/post/post";
 import Reddit from "./pages/reddit/reddit";
@@ -19,7 +20,7 @@ import RedditPosts from "./pages/reddit/posts/posts";
 import NotFound from "../components/not-found/not-found";
 import history from '../globals/history';
 
-const Routes = ({mobileMenuActive}) => {
+const Routes = ({mobileMenuActive, windowWidth}) => {
 
   const validatePlayerClass = ({playerClass}) => {
     if(localStorage.hearthloungeGameInfo) {
@@ -28,7 +29,11 @@ const Routes = ({mobileMenuActive}) => {
       const filterPlayerClasses = standardPlayerClasses.filter(pc => !notStandardPlayerClasses.includes(pc)).map(pc => pc.toLowerCase());
       const playerClassExist = filterPlayerClasses.includes(playerClass);
 
-      if (playerClassExist) return <CreateDeckClassSelected playerClass={playerClass}/>;
+      if (playerClassExist) {
+        return windowWidth >= 816
+          ? <CreateDeckClassSelected playerClass={playerClass}/>
+          : <CreateDeckClassSelectedMobile playerClass={playerClass}/>
+      }
       else return <NotFound page={playerClass}/>;
     } else {
       history.push('/create-deck');
@@ -67,7 +72,8 @@ const Routes = ({mobileMenuActive}) => {
 };
 
 Routes.propTypes = {
-  mobileMenuActive: PropTypes.bool.isRequired
+  mobileMenuActive: PropTypes.bool.isRequired,
+  windowWidth: PropTypes.number.isRequired
 };
 
 Routes.defaultProptypes = {

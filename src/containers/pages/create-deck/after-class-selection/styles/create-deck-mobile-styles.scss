@@ -1,7 +1,55 @@
+@import '../../../../../styles/mixins';
+
 .create-deck {
   .container__page--mobile-twoSided {
     .container__page--mobileContentWrapper {
       height: calc(100% - 5.5vh - 10px);
     }
   }
+
+  .container__page--topbarMobile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    > div {
+      width: calc(100% / 3);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $dark-grey;
+      color: $pearl;
+      cursor: pointer;
+      @include transition(all ease .4s);
+
+      &.active {
+        background: $sea-color;
+
+        &:hover {
+          background: $sea-color;
+        }
+      }
+
+      &:hover {
+        background: darken($sea-color, 10%);
+      }
+    }
+  }
+}
+
+@include screen('mobile') {
+  #container .container__page {
+    &.create-deck{
+      grid-template-rows: 5.5vh 77.5vh;
+    }
+    .container__page--inner {
+      grid-template-rows: initial !important;
+
+      .content {
+        margin-left: 0;
+      }
+    }
+  }
+
 }
