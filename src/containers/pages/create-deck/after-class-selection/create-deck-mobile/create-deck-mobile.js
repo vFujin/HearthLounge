@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import {default as Cards} from '../../../../../components/cards/cards';
 import _ from "lodash";
 import DeckOptions from "../right-container/content-assets/deck-description/deck-options";
-import DeckSidebar from '../left-container/deck-sidebar';
+
 import {
   changeActiveCreateDeckMobileTab, editDeck,
   toggleDeckMechanics
 } from "../../../../../redux/create-deck/actions/create-deck.action";
 import CreateDeckTopbarMobile from "./topbar/create-deck-topbar-mobile";
 import {updateDeck} from "../right-container/content-assets/utils";
+import DecklistWrapper from "./deck-list/decklist-wrapper";
+import CreateDeckStatsMobile from './create-deck-stats-mobile';
 
 class CreateDeckClassSelectedMobile extends Component {
 
@@ -38,7 +40,7 @@ class CreateDeckClassSelectedMobile extends Component {
   content = () => {
     const {activeCreateDeckMobileTab, deck, playerClass} = this.props;
     switch(activeCreateDeckMobileTab){
-      case "deckList": return <DeckSidebar playerClass={playerClass}/>;
+      case "deckList": return <DecklistWrapper deck={deck} playerClass={playerClass}/>;
       case "deckDetails": return <DeckOptions playerClass={playerClass}/>;
       default: return <Cards inDeckCreation
                              mode="standard"
@@ -50,14 +52,15 @@ class CreateDeckClassSelectedMobile extends Component {
 
   render() {
     const {activeCreateDeckMobileTab} = this.props;
-
     const containerClassName = activeCreateDeckMobileTab === "deckList" ? "left" : "right";
+    const filterDeckDetails = activeCreateDeckMobileTab !== "deckDetails";
 
     return (
       <div className="container__page create-deck">
         <CreateDeckTopbarMobile handleTabClick={this.handleTabClick}/>
         <div className={`container__page--inner container__page--${containerClassName}`}>
-         <div className="content">
+         <div className={`content ${filterDeckDetails ? "contentWithStats" : undefined}`}>
+            {filterDeckDetails && <CreateDeckStatsMobile />}
             {this.content()}
           </div>
         </div>

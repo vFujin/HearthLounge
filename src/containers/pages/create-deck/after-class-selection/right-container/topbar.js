@@ -10,6 +10,7 @@ import {
 import MapFunctionlessIcons from "./topbar-assets/map-functionless-icons";
 import MapFunctionfulIcons from "./topbar-assets/map-functionful-icons";
 import {topbarOptions} from "./content-assets/utils";
+import Decklength from "./topbar-assets/decklength";
 
 class Topbar extends Component {
 
@@ -44,7 +45,7 @@ class Topbar extends Component {
 
     createDeckFromDeckstringObj(
       allCards,
-      importedDeckstring, 
+      importedDeckstring,
       deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck),
       playerClass => updatePlayerClass(playerClass)
     );
@@ -69,7 +70,7 @@ class Topbar extends Component {
         <div className="topbar">
           <div className="topbar__container topbar__grid topbar__grid--1-2-1 topbar__deckDetails">
             <MapFunctionlessIcons deck={deck} playerClass={playerClass} set="types" />
-            <div className="deck-length"><p>{deck.length} / 30</p></div>
+            <Decklength deck={deck}/>
             <MapFunctionfulIcons set="options"
                                  imgReadyDecklist={imgReadyDecklist}
                                  importedDeckstring={importedDeckstring}
