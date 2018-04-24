@@ -213,19 +213,23 @@ export const icon_filters = {
   mode: [
     {
       name: "standard",
-      url: "mammoth"
+      url: "standard",
+      icon: "mammoth",
     },
     {
       name: "wild",
-      url: "wild"
+      url: "wild",
+      icon: "wild"
     },
     {
       name: "tavern brawl",
-      url: "brawl"
+      url: "brawl",
+      icon: "brawl",
     },
     {
       name: "adventures",
-      url: "adventures"
+      url: "adventures",
+      icon: "adventures",
     }
   ],
   archetype: [

@@ -42,7 +42,12 @@ class Topbar extends Component {
     const {importedDeckstring} = deckCreation;
     const {allCards} = cards;
 
-    createDeckFromDeckstringObj(allCards, importedDeckstring, deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck), playerClass => updatePlayerClass(playerClass));
+    createDeckFromDeckstringObj(
+      allCards,
+      importedDeckstring, 
+      deck => editDeck(deck), simplifiedDeck => simplifyDeck(simplifiedDeck),
+      playerClass => updatePlayerClass(playerClass)
+    );
   };
 
   handleCopyDeckStringClick = () => {
