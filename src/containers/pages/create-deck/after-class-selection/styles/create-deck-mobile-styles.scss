@@ -11,7 +11,6 @@
     width: 100%;
     height: 100%;
     display: flex;
-    box-shadow: 0 2px 5px rgba(black, .5);
     position: relative;
     z-index: 1;
 
@@ -47,6 +46,9 @@
     font-size: calc(1em + 1vmin);
     color: $pearl;
     background: linear-gradient(to right, rgba(208, 228, 247, 0) 0%, #a69e9d 10%, #474143 50%, #a69e9d 90%, rgba(135, 188, 234, 0) 100%);
+    border-top: 1px solid $pearl;
+    border-bottom: 1px solid $pearl;
+
     span.hs-icon {
       font-size: calc(1em + 1vmin);
     }

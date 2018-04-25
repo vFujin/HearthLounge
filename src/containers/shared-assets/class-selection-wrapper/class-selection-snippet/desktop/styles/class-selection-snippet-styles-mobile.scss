@@ -68,6 +68,15 @@
         justify-content: space-evenly;
       }
     }
+
+    .deck-import {
+      input {
+        font-size: calc(1em + 1vmin);
+      }
+      button {
+        margin-top: 20px;
+      }
+    }
   }
 }
 

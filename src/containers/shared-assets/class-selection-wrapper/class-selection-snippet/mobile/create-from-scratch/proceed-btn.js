@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
-import Button from '../../../../../components/buttons/button';
+import Button from '../../../../../../components/buttons/button';
 import {Link} from "react-router-dom";
 
 const ProceedBtn = ({type, stage, deckMode, playerClass, handleStageChange}) => {

@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ClassSelectionSnippetTopbarMobile from './topbar/class-selection-snippet-topbar-mobile';
-import ProceedBtn from "./proceed-btn";
-import SelectModeWrapper from '../../selection/select-mode/select-mode-wrapper';
-import SelectClassWrapper from '../../selection/select-class/select-class-wrapper';
+
 import './class-selection-snippet-mobile-styles.css';
+import CreateDeckFromScratchMobile from "./create-from-scratch/create-from-scratch";
+import ImportDeckMobile from "./import/import-deck";
 
 class ClassSelectionSnippetMobile extends Component {
 
   state = {
-    stage: 1
+    stage: 1,
+    type: "fromScratch"
+  };
+
+  handleCreationTypeChange = e => {
+    const type = e.currentTarget.id;
+    this.setState({type})
   };
 
   handleStageChange = e => {
@@ -17,26 +23,18 @@ class ClassSelectionSnippetMobile extends Component {
     this.setState({stage})
   };
 
-  activeStage = (stage) => {
-    switch(stage) {
-      case 2: return <SelectClassWrapper />;
-      default: return <SelectModeWrapper />;
-    }
-  };
-
   render() {
-    const {stage} = this.state;
+    const {stage, type} = this.state;
 
     return (
       <div className="container__page create-deck-selection-mobile create-deck">
-        <ClassSelectionSnippetTopbarMobile/>
-        <div className="content active-stage container__selection">
-          {this.activeStage(stage)}
-          <div className="buttons">
-            <ProceedBtn type="backward" stage={stage} handleStageChange={this.handleStageChange}/>
-            <ProceedBtn type="forward" stage={stage} handleStageChange={this.handleStageChange}/>
-          </div>
-        </div>
+        <ClassSelectionSnippetTopbarMobile type={type}
+                                           handleCreationTypeChange={this.handleCreationTypeChange}/>
+        {
+          type === "fromScratch"
+          ? <CreateDeckFromScratchMobile stage={stage} handleStageChange={this.handleStageChange}/>
+          : <ImportDeckMobile />
+        }
       </div>
     );
   }
