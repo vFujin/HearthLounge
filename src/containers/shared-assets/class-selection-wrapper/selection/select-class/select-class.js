@@ -15,7 +15,7 @@ class SelectClass extends Component {
   render() {
     const {deckCreation} = this.props;
     return (
-      <ul>
+      <ul className="classes">
         { icon_filters.playerClass.filter(playerClass => playerClass.url !== "neutral").map(playerClass =>
             <li key={playerClass.url}
                 className={`${playerClass.url} ${playerClass.url === deckCreation.playerClass ? "active" : undefined}`}

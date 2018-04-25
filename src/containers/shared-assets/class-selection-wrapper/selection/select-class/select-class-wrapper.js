@@ -15,7 +15,7 @@ const SelectClassWrapper = ({playerClass}) => {
 };
 
 const mapStateToProps = state => {
-  const { playerClass } = state.deckDetails;
+  const { playerClass } = state.deckCreation;
   return { playerClass };
 };
 
