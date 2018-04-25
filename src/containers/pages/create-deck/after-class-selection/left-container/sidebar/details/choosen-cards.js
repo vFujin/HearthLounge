@@ -5,7 +5,7 @@ import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-
 import Icon from "../../../../../../../components/icon";
 import {uniqueCards} from "../../../../../../../utils/deck/calculate";
 
-const ChoosenCards = ({deck}) => {
+const ChoosenCards = ({deck, windowWidth}) => {
   const countCards = (e) => uniqueCards(deck, e);
 
   const removeApostrophe = (string) =>{
@@ -14,7 +14,7 @@ const ChoosenCards = ({deck}) => {
 
   const listCards = () => {
     return _.uniqBy(_.sortBy(deck, ['cost', 'name'])).map((card, i) =>
-        <tr key={i} className={cardRarityBackground(card.rarity)}>
+        <tr key={i} className={cardRarityBackground(card.rarity, windowWidth)}>
           <td><Icon name={removeApostrophe(_.kebabCase(card.cardSet))} type="set"/></td>
           <td>{card.name}</td>
           <td>{countCards(card)}</td>
@@ -45,9 +45,7 @@ const ChoosenCards = ({deck}) => {
 };
 
 ChoosenCards.propTypes = {
-  countCards: PropTypes.func,
   deck: PropTypes.array,
-  deckDetails: PropTypes.bool
 };
 
 export default ChoosenCards;

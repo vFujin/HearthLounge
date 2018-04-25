@@ -25,7 +25,7 @@ class DeckSidebar extends Component {
   };
 
   render() {
-    const {playerClass, cards, deckCreation} = this.props;
+    const {playerClass, cards, deckCreation, windowWidth} = this.props;
     const {deck, deckMechanics} = deckCreation;
     let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
     let max = _.max(Object.values(countByCost));
@@ -39,7 +39,7 @@ class DeckSidebar extends Component {
           <h3>Chosen Cards{this.decklistHeaderView()}</h3>
           {
             !deckMechanics
-              ? <ChoosenCards deck={deck}/>
+              ? <ChoosenCards deck={deck} windowWidth={windowWidth}/>
               : <DeckMechanics deck={deck} cards={cards}/>
           }
         </div>
@@ -53,9 +53,10 @@ class DeckSidebar extends Component {
 
 const mapStateToProps = state =>{
   const {deckCreation} = state;
+  const {windowWidth} = state.app.windowSize;
   const {cards} = state.cards;
 
-  return {deckCreation, cards};
+  return {deckCreation, cards, windowWidth};
 };
 
 const mapDispatchToProps = dispatch => {

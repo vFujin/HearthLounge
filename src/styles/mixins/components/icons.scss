@@ -108,6 +108,7 @@
     background: linear-gradient(to right, rgba($color,.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid $color;
+    background-attachment: fixed;
   }
 }
 

@@ -651,7 +651,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #FF7D0A; }
+    border-left: 4px solid #FF7D0A;
+    background-attachment: fixed; }
 
 .hunter {
   color: #ABD473; }
@@ -728,7 +729,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #ABD473; }
+    border-left: 4px solid #ABD473;
+    background-attachment: fixed; }
 
 .mage {
   color: #69CCF0; }
@@ -805,7 +807,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #69CCF0; }
+    border-left: 4px solid #69CCF0;
+    background-attachment: fixed; }
 
 .paladin {
   color: #F58CBA; }
@@ -882,7 +885,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #F58CBA; }
+    border-left: 4px solid #F58CBA;
+    background-attachment: fixed; }
 
 .priest {
   color: #FFFFFF; }
@@ -959,7 +963,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #FFFFFF; }
+    border-left: 4px solid #FFFFFF;
+    background-attachment: fixed; }
 
 .rogue {
   color: #FFF569; }
@@ -1036,7 +1041,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #FFF569; }
+    border-left: 4px solid #FFF569;
+    background-attachment: fixed; }
 
 .shaman {
   color: #87D0B7; }
@@ -1113,7 +1119,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(135, 208, 183, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(135, 208, 183, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #87D0B7; }
+    border-left: 4px solid #87D0B7;
+    background-attachment: fixed; }
 
 .warlock {
   color: #9482C9; }
@@ -1190,7 +1197,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #9482C9; }
+    border-left: 4px solid #9482C9;
+    background-attachment: fixed; }
 
 .warrior {
   color: #C79C6E; }
@@ -1267,7 +1275,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #C79C6E; }
+    border-left: 4px solid #C79C6E;
+    background-attachment: fixed; }
 
 .death-knight {
   color: #C41F3B; }
@@ -1344,7 +1353,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #C41F3B; }
+    border-left: 4px solid #C41F3B;
+    background-attachment: fixed; }
 
 .monk {
   color: #00FF96; }
@@ -1421,7 +1431,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #00FF96; }
+    border-left: 4px solid #00FF96;
+    background-attachment: fixed; }
 
 .demon-hunter {
   color: #A330C9; }
@@ -1498,7 +1509,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #A330C9; }
+    border-left: 4px solid #A330C9;
+    background-attachment: fixed; }
 
 @keyframes linearKeyframes {
   0% {
@@ -1583,7 +1595,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #b5de3f; }
+    border-left: 4px solid #b5de3f;
+    background-attachment: fixed; }
 
 .blackrock-mountain {
   color: #fa5210; }
@@ -1660,7 +1673,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #fa5210; }
+    border-left: 4px solid #fa5210;
+    background-attachment: fixed; }
 
 .the-league-of-explorers {
   color: #14a9a1; }
@@ -1737,7 +1751,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #14a9a1; }
+    border-left: 4px solid #14a9a1;
+    background-attachment: fixed; }
 
 .karazhan {
   color: #e2b4df; }
@@ -1814,7 +1829,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #e2b4df; }
+    border-left: 4px solid #e2b4df;
+    background-attachment: fixed; }
 
 /*
  * Expansions
@@ -1894,7 +1910,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #fae43f; }
+    border-left: 4px solid #fae43f;
+    background-attachment: fixed; }
 
 .the-grand-tournament {
   color: #C41F3B; }
@@ -1971,7 +1988,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #C41F3B; }
+    border-left: 4px solid #C41F3B;
+    background-attachment: fixed; }
 
 .whispers-of-the-old-gods {
   color: #9482C9; }
@@ -2048,7 +2066,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #9482C9; }
+    border-left: 4px solid #9482C9;
+    background-attachment: fixed; }
 
 .mean-streets-of-gadgetzan {
   color: #d2cac5; }
@@ -2125,7 +2144,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #d2cac5; }
+    border-left: 4px solid #d2cac5;
+    background-attachment: fixed; }
 
 .journey-to-ungoro {
   color: #3d9e2c; }
@@ -2202,7 +2222,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #3d9e2c; }
+    border-left: 4px solid #3d9e2c;
+    background-attachment: fixed; }
 
 .knights-of-the-frozen-throne {
   color: #a5f2f3; }
@@ -2279,7 +2300,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #a5f2f3; }
+    border-left: 4px solid #a5f2f3;
+    background-attachment: fixed; }
 
 .kobolds-catacombs {
   color: #ffd989; }
@@ -2356,7 +2378,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #ffd989; }
+    border-left: 4px solid #ffd989;
+    background-attachment: fixed; }
 
 @keyframes linearKeyframes {
   0% {
@@ -2441,7 +2464,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #fff; }
+    border-left: 4px solid #fff;
+    background-attachment: fixed; }
 
 .rare {
   color: blue; }
@@ -2518,7 +2542,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid blue; }
+    border-left: 4px solid blue;
+    background-attachment: fixed; }
 
 .epic {
   color: purple; }
@@ -2595,7 +2620,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid purple; }
+    border-left: 4px solid purple;
+    background-attachment: fixed; }
 
 .legendary {
   color: orange; }
@@ -2672,7 +2698,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid orange; }
+    border-left: 4px solid orange;
+    background-attachment: fixed; }
 
 /*
  * Modes
@@ -2752,7 +2779,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #318e2f; }
+    border-left: 4px solid #318e2f;
+    background-attachment: fixed; }
 
 .wild {
   color: #695840; }
@@ -2829,7 +2857,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #695840; }
+    border-left: 4px solid #695840;
+    background-attachment: fixed; }
 
 .grimy-goons, .jade-lotus, .kabal {
   color: #ecbf42; }
@@ -2906,7 +2935,8 @@ a {
     background: -webkit-linear-gradient(left, rgba(236, 191, 66, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(236, 191, 66, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #ecbf42; }
+    border-left: 4px solid #ecbf42;
+    background-attachment: fixed; }
 
 @keyframes linearKeyframes {
   0% {
