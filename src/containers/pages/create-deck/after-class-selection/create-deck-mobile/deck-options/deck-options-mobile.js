@@ -21,7 +21,7 @@ class DeckOptionsMobile extends Component {
     const {activeDeckDetailsTab} = this.state;
     const {playerClass} = this.props;
     return (
-      <div className="container__details">
+      <div className="container__details container__details--mobile">
         <DeckOptionsMobileTopbar handleTabClick={this.handleTabClick}
                                  activeDeckDetailsTab={activeDeckDetailsTab}/>
         <div className="container__details--wrapper">

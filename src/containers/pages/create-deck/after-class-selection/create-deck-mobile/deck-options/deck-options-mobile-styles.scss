@@ -1,7 +1,7 @@
 @import '../../../../../../styles/colors';
 @import '../../../../../../styles/mixins';
 
-.container__details {
+.container__details--mobile {
   grid-template-columns: initial !important;
   grid-template-rows: 4.5vh 71vh;
   grid-row-gap: 1vh;
