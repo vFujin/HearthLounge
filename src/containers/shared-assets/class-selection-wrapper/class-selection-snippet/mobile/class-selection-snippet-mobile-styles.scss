@@ -1,0 +1,8 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mixins';
+
+.create-deck-selection-mobile{
+  .container__page--inner{
+    grid-template-rows: inherit;
+  }
+}

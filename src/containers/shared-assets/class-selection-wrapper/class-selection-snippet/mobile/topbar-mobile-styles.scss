@@ -1,0 +1,30 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mixins';
+
+.subTopbar__mobile {
+  display: flex;
+
+  > div {
+    width: 50%;
+    height: 100%;
+    font-size: calc(1em + 1vmin);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $pearl;
+    background: $dark-grey;
+    @include transition(all ease .4s);
+
+    &:hover {
+      background: darken($sea-color, 10%);
+    }
+
+    &.active {
+      background: $sea-color;
+
+      &:hover {
+        background: $sea-color;
+      }
+    }
+  }
+}

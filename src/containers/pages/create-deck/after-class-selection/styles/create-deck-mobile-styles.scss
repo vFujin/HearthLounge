@@ -58,7 +58,7 @@
     &.create-deck{
       grid-template-rows: 5.5vh 77.5vh;
     }
-    .container__page--inner {
+    &.desktop .container__page--inner, .container__page--inner.afterClassSelection {
       grid-template-rows: initial !important;
 
       .content {

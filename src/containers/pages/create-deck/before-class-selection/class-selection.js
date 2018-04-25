@@ -1,11 +1,18 @@
 import React from 'react';
+import { connect } from "react-redux";
 import ClassSelectionSnippet from '../../../shared-assets/class-selection-wrapper/class-selection-snippet/class-selection-snippet';
+import ClassSelectionSnippetMobile from '../../../shared-assets/class-selection-wrapper/class-selection-snippet/mobile/class-selection-snippet-mobile';
 
-const CreateDeckClassSelection = () => {
+const CreateDeckClassSelection = ({windowWidth}) => {
   document.title = "Deck Creation";
-  return (
-      <ClassSelectionSnippet page="create-deck"/>
-  );
+  return windowWidth <= 815
+    ? <ClassSelectionSnippetMobile/>
+    : <ClassSelectionSnippet/>
 };
 
-export default CreateDeckClassSelection;
+const mapStateToProps = state => {
+  const {windowWidth } = state.app.windowSize;
+  return { windowWidth };
+};
+
+export default connect(mapStateToProps)(CreateDeckClassSelection);

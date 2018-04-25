@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {updatePlayerClass} from "../../../../redux/create-deck/actions/create-deck.action";
-import {icon_filters} from "../../../../globals/filters";
-import Icon from "../../../../components/icon";
-import './selection-styles.css';
+import {updatePlayerClass} from "../../../../../redux/create-deck/actions/create-deck.action";
+import {icon_filters} from "../../../../../globals/filters";
+import Icon from "../../../../../components/icon";
+import '../selection-styles.css';
 
 class SelectClass extends Component {
   handleClassSelection = (e) =>{

@@ -57,7 +57,7 @@ class CreateDeckClassSelectedMobile extends Component {
     return (
       <div className="container__page create-deck">
         <CreateDeckTopbarMobile handleTabClick={this.handleTabClick}/>
-        <div className={`container__page--inner container__page--${containerClassName}`}>
+        <div className={`container__page--inner container__page--${containerClassName} afterClassSelection`}>
          <div className={`content ${filterDeckDetails ? "contentWithStats" : undefined}`}>
             {filterDeckDetails && <CreateDeckStatsMobile />}
             {this.content()}

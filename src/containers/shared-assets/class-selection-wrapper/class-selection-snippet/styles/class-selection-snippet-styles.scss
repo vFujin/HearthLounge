@@ -1,5 +1,5 @@
-@import '../../../../styles/colors';
-@import '../../../../styles/mixins';
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mixins';
 
 .create-deck-selection.create-deck{
   display: grid;
@@ -12,4 +12,6 @@
     align-items: center;
     grid-template-columns: 100%;
   }
+
+
 }

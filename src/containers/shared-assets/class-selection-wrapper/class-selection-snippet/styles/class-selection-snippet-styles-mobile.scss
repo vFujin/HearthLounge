@@ -1,0 +1,30 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mixins';
+
+@include screen('tablet'){
+  .container__selection {
+    ul{
+      &.mode-list {
+        grid-template-columns: repeat(2, 10vw);
+        grid-auto-rows: 10vw;
+      }
+
+      li{
+
+        &.brawl {
+          p {
+            font-size: calc(.3em + 1vmin);
+          }
+        }
+
+        span{
+          font-size: calc(1em + 2vmin);
+        }
+
+        p{
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

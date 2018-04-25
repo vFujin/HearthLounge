@@ -26,7 +26,7 @@ class CreateDeckClassSelected extends PureComponent {
     const {playerClass} = this.props;
 
     return (
-        <div className="container__page container__page--twoSided create-deck">
+        <div className="container__page container__page--twoSided create-deck desktop">
           <LeftContainer playerClass={playerClass}/>
           <RightContainer playerClass={playerClass}/>
         </div>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {icon_filters} from "../../../../globals/filters";
-import Icon from "../../../../components/icon";
-import {updateDeckProperty} from "../../../../redux/create-deck/actions/deck-options.action";
-import './selection-styles.css';
+import {icon_filters} from "../../../../../globals/filters";
+import Icon from "../../../../../components/icon";
+import {updateDeckProperty} from "../../../../../redux/create-deck/actions/deck-options.action";
+import '../selection-styles.css';
 
 class SelectMode extends Component {
   handleModeSelection = (e) =>{
@@ -15,7 +15,7 @@ class SelectMode extends Component {
   render() {
     const {deckMode} = this.props;
     return (
-      <ul>
+      <ul className="mode-list">
         {icon_filters.mode.map(mode =>
           <li key={mode.url}
               className={`${mode.icon} ${mode.url === deckMode ? "active" : undefined}`}
