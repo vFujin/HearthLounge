@@ -41,7 +41,10 @@ const mapStateToProps = state =>{
 export default connect(mapStateToProps, null)(Button);
 
 Button.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   text: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element

@@ -1,5 +1,5 @@
-@import '../../../../../styles/colors';
-@import '../../../../../styles/mixins';
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/mixins';
 
 @include screen('mobile') {
   .container__selection {
@@ -62,6 +62,10 @@
             }
           }
         }
+      }
+
+      &.buttons {
+        justify-content: space-evenly;
       }
     }
   }

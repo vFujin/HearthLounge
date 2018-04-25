@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import ClassSelectionSnippet from '../../../shared-assets/class-selection-wrapper/class-selection-snippet/class-selection-snippet';
+import ClassSelectionSnippet from '../../../shared-assets/class-selection-wrapper/class-selection-snippet/desktop/class-selection-snippet';
 import ClassSelectionSnippetMobile from '../../../shared-assets/class-selection-wrapper/class-selection-snippet/mobile/class-selection-snippet-mobile';
 
 const CreateDeckClassSelection = ({windowWidth}) => {

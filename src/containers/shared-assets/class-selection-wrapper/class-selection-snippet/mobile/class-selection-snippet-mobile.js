@@ -4,7 +4,6 @@ import ClassSelectionSnippetTopbarMobile from './topbar/class-selection-snippet-
 import ProceedBtn from "./proceed-btn";
 import SelectModeWrapper from '../../selection/select-mode/select-mode-wrapper';
 import SelectClassWrapper from '../../selection/select-class/select-class-wrapper';
-import Continue from '../../selection/continue/continue';
 import './class-selection-snippet-mobile-styles.css';
 
 class ClassSelectionSnippetMobile extends Component {
@@ -21,7 +20,6 @@ class ClassSelectionSnippetMobile extends Component {
   activeStage = (stage) => {
     switch(stage) {
       case 2: return <SelectClassWrapper />;
-      case 3: return <Continue />;
       default: return <SelectModeWrapper />;
     }
   };
