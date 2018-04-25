@@ -1,0 +1,48 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/mixins';
+
+.container__details {
+  grid-template-columns: initial !important;
+  grid-template-rows: 4.5vh 71vh;
+  grid-row-gap: 1vh;
+
+  .deckDetails__topbar {
+    display: flex;
+
+    > div {
+      width: 50%;
+      height: 100%;
+      font-size: calc(1em + 1vmin);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $pearl;
+      background: $dark-grey;
+      @include transition(all ease .4s);
+
+      &:hover {
+        background: darken($sea-color, 10%);
+      }
+
+      &.active {
+        background: $sea-color;
+
+        &:hover {
+          background: $sea-color;
+        }
+      }
+    }
+  }
+
+  .container__details--wrapper {
+    .container__details--section {
+      height: 100% !important;
+      grid-template-rows: initial !important;
+
+      .section__header {
+        display: none !important;
+
+      }
+    }
+  }
+}

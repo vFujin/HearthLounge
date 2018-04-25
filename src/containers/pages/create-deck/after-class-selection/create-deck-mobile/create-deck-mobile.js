@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {default as Cards} from '../../../../../components/cards/cards';
 import _ from "lodash";
-import DeckOptions from "../right-container/content-assets/deck-description/deck-options";
-
 import {
   changeActiveCreateDeckMobileTab, editDeck,
   toggleDeckMechanics
@@ -13,6 +11,7 @@ import CreateDeckTopbarMobile from "./topbar/create-deck-topbar-mobile";
 import {updateDeck} from "../right-container/content-assets/utils";
 import DecklistWrapper from "./deck-list/decklist-wrapper";
 import CreateDeckStatsMobile from './create-deck-stats-mobile';
+import DeckOptionsMobile from "./deck-options/deck-options-mobile";
 
 class CreateDeckClassSelectedMobile extends Component {
 
@@ -41,7 +40,7 @@ class CreateDeckClassSelectedMobile extends Component {
     const {activeCreateDeckMobileTab, deck, playerClass} = this.props;
     switch(activeCreateDeckMobileTab){
       case "deckList": return <DecklistWrapper deck={deck} playerClass={playerClass}/>;
-      case "deckDetails": return <DeckOptions playerClass={playerClass}/>;
+      case "deckDetails": return <DeckOptionsMobile playerClass={playerClass}/>;
       default: return <Cards inDeckCreation
                              mode="standard"
                              playerClass={_.startCase(playerClass)}
