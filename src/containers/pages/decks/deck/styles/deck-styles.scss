@@ -9,64 +9,6 @@
       .topbar__container {
         align-content: center;
 
-        div {
-          display: flex;
-          .deck-details-wrapper {
-            margin-left: 2vh;
-            display: flex;
-            align-items: center;
-            &:first-child {
-              margin-left: 1vh;
-            }
-            span, p {
-              margin-right: .5vh;
-              &:last-child {
-                margin-right: 0;
-              }
-            }
-            span {
-              font-size: 1vw;
-            }
-          }
-
-          .stats{
-            padding: 0 10px;
-            flex-grow: 2;
-            justify-content: center;
-          }
-
-          .votes {
-            padding: 0 .5vh;
-            p {
-              &.pos {
-                color: $monk;
-              }
-              &.neg {
-                color: $death_knight;
-              }
-            }
-          }
-
-          .archetype {
-            text-transform: capitalize;
-            flex-grow: 2;
-            justify-content: flex-start;
-
-            p {
-              padding: .5vh;
-              text-align: center;
-              @include box-shadow(0, 0, 10px, $dark-grey);
-
-              &.loading {
-                height: 100%;
-                width: 100%;
-                box-shadow: none;
-                @include linearLoader();
-              }
-            }
-          }
-        }
-
         .created-details {
           display: grid;
           text-align: right;
@@ -81,6 +23,9 @@
         }
 
         .author-details{
+
+            display: flex;
+
           justify-content: center;
           align-items: center;
 

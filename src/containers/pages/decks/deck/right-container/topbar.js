@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CreatedDetails from './topbar-assets/created-details';
-import DeckDetails from "./topbar-assets/deck-details";
+import DeckDetails from "./topbar-assets/deck-details/deck-details";
 import DeckAuthorDetails from "./topbar-assets/deck-author-details";
 
 const Topbar = () => (

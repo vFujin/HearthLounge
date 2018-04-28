@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import PropTypes from 'prop-types';
-import {udpateDeckRating} from "../../../../../../../firebase/decks/deck/update";
 import Icon from "../../../../../../../components/icon";
+import {udpateDeckRating} from "../../../../../../../firebase/decks/deck/update";
 
 class DeckVotes extends Component {
 
@@ -49,11 +48,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckVotes);
-
-DeckVotes.propTypes = {
-  activeDeck: PropTypes.shape({
-    upvotes: PropTypes.number,
-    downvotes: PropTypes.number,
-  }),
-  handleDeckVotingClick: PropTypes.func
-};
