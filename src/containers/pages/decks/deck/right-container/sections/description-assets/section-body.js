@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
@@ -12,23 +12,31 @@ import {
 } from "../../../../../../../redux/deck/active-deck-editing/actions";
 import {updateActiveDeckCopy} from "../../../../../../../redux/deck/active-deck-copy/actions";
 
-const SectionBody = (props) => {
-  const {activeUser, activeDeck, deckEditView, activeDeckEditing, updateDeckDescription, toggleDeckEditView, activeDeckCopy} = props;
-  const {authorId, description, deckId} = activeDeck;
-  const {editingDeckDescription} = activeDeckEditing;
-  const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
-  const decksNotEqual = !_.isEqual(activeDeckCopy, activeDeck.deck);
+class SectionBody extends Component {
+  // const {activeUser, activeDeck, deckEditView, activeDeckEditing, updateDeckDescription, toggleDeckEditView, activeDeckCopy} = props;
+  // const {authorId, description, deckId} = activeDeck;
+  // const {editingDeckDescription} = activeDeckEditing;
+  // const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
+  // const decksNotEqual = !_.isEqual(activeDeckCopy, activeDeck.deck);
 
-  const handleInputChange = (e) => {
+  handleInputChange = (e) => {
+    const {updateDeckDescription} = this.props;
     let value = e.target.value;
     updateDeckDescription(value);
   };
 
-  const handleTextEditorBBcodeClick = ({editingDeckDescription}) => {
+  handleTextEditorBBcodeClick = ({editingDeckDescription}) => {
+    const {updateDeckDescription} = this.props;
     updateDeckDescription(editingDeckDescription);
   };
 
-  const handleDeckEditingClick = () =>{
+  handleDeckEditingClick = () =>{
+    const {toggleDeckEditView, deckEditView, activeDeck, activeDeckCopy, activeDeckEditing, updateDeckDescription, updateActiveDeck} = this.props;
+    const {description} = activeDeck;
+    const {editingDeckDescription} = activeDeckEditing;
+    const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
+    const decksNotEqual = !_.isEqual(activeDeckCopy, activeDeck.deck);
+
     toggleDeckEditView();
 
     if(deckEditView && deckDescriptionsNotEqual){
@@ -36,13 +44,18 @@ const SectionBody = (props) => {
     }
 
     if(deckEditView && decksNotEqual){
-      props.updateActiveDeck(activeDeck);
+      updateActiveDeck(activeDeck);
     }
   };
 
-  const handleDeckUpdateClick = () =>{
+  handleDeckUpdateClick = () =>{
+    const {activeDeck, activeDeckCopy, activeDeckEditing, updateDeck} = this.props;
+    const {description, deckId} = activeDeck;
+    const {editingDeckDescription} = activeDeckEditing;
+    const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
     const now = +new Date();
-    props.updateDeck({
+
+    updateDeck({
       deckId,
       description: deckDescriptionsNotEqual ? editingDeckDescription : description,
       updated: now,
@@ -50,31 +63,41 @@ const SectionBody = (props) => {
     });
   };
 
-  const handleDeckDeletion = () => {
-    props.deleteDeck(deckId);
-  };
+  handleDeckDeletion = () => {
+    const {activeDeck, deleteDeck} = this.props;
+    const {deckId} = activeDeck;
 
-  return (
+    deleteDeck(deckId);
+  };
+  render() {
+    const {activeUser, activeDeck, deckEditView, activeDeckEditing, activeDeckCopy} = this.props;
+    const {authorId, description} = activeDeck;
+    const {editingDeckDescription} = activeDeckEditing;
+    const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
+    const decksNotEqual = !_.isEqual(activeDeckCopy, activeDeck.deck);
+
+    return (
       <div className="section__body">
         <SectionBodyOptions activeUser={activeUser}
                             authorId={authorId}
                             deckEditView={deckEditView}
                             deckDescriptionsNotEqual={deckDescriptionsNotEqual}
                             decksNotEqual={decksNotEqual}
-                            handleDeckUpdateClick={handleDeckUpdateClick}
-                            handleDeckEditingClick={handleDeckEditingClick}
-                            handleDeckDeletion={handleDeckDeletion}/>
+                            handleDeckUpdateClick={this.handleDeckUpdateClick}
+                            handleDeckEditingClick={this.handleDeckEditingClick}
+                            handleDeckDeletion={this.handleDeckDeletion}/>
         {
           deckEditView
-            ? <TextEditor handleInputChange={handleInputChange}
+            ? <TextEditor handleInputChange={this.handleInputChange}
                           editorId="editingDeckDescription"
                           value={editingDeckDescription || description}
-                          handleTagInsertion={handleTextEditorBBcodeClick}/>
+                          handleTagInsertion={this.handleTextEditorBBcodeClick}/>
             : convertBBCode(description)
         }
       </div>
-  )
-};
+    )
+  }
+}
 
 const mapStateToProps = state =>{
   const {activeDeckEditing, tools, activeDeckCopy} = state.deckView;
