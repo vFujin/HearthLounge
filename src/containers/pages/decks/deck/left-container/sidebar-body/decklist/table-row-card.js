@@ -5,8 +5,10 @@ import Icon from '../../../../../../../components/icon';
 import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background";
 import Tooltip from 'antd/lib/tooltip';
 import CardImg from "./card-img";
+import {decklistRemoveCard} from "../../../../../../../utils/deck/edit-mode/decklist-remove-card";
+import {updateActiveDeckCopy} from "../../../../../../../redux/deck/active-deck-copy/actions";
 
-const Card = ({cards, index, card, cardNames, deckEditView, handleCardRemovalClick}) => {
+const Card = ({cards, index, card, cardNames, deckEditView, activeDeckCopy, updateActiveDeckCopy}) => {
   return(
       <Tooltip title={<CardImg allCards={cards.cards} hoveredCardName={cardNames[index]}/>}
                overlayClassName="decklist-card-img"
@@ -27,7 +29,8 @@ const Card = ({cards, index, card, cardNames, deckEditView, handleCardRemovalCli
               ? <td>
                 <div id={card.cardId}
                      data-cost={card.cost}
-                     data-amount={card.amount} onClick={(e) => handleCardRemovalClick(e)}>
+                     data-amount={card.amount}
+                     onClick={(e) => decklistRemoveCard(e, cards.cards, activeDeckCopy, (updatedDeck) => updateActiveDeckCopy(updatedDeck))}>
                   <Icon name="cross" tooltip={false}/>
                 </div>
               </td>
@@ -39,11 +42,19 @@ const Card = ({cards, index, card, cardNames, deckEditView, handleCardRemovalCli
 };
 
 const mapStateToProps = state => {
-  const { cards } = state;
-  return { cards };
+  const { cards, deckView } = state;
+  const {activeDeckCopy, tools} = deckView;
+  const { deckEditView } = tools;
+  return { cards, activeDeckCopy, deckEditView };
 };
 
-export default connect(mapStateToProps)(Card);
+const mapDispatchToProps = dispatch => {
+  return {
+    updateActiveDeckCopy: payload => dispatch(updateActiveDeckCopy(payload))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
 
 Card.propTypes = {
   card: PropTypes.object.isRequired,

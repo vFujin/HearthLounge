@@ -6,7 +6,7 @@ import SidebarBody from "./sidebar-body/sidebar-body";
 const LeftContainer = ({deckEditView}) => (
   <div className={`container__page--inner container__page--left ${deckEditView ? 'edit-mode' : ''}`}>
     <SidebarHeader />
-    <SidebarBody/>
+    <SidebarBody />
   </div>
 );
 
