@@ -24,18 +24,16 @@ const Card = ({cards, index, card, cardNames, deckEditView, activeDeckCopy, upda
             <Icon name={card.cost} type="mana"/>
           </td>
 
-          {
-            deckEditView
-              ? <td>
-                <div id={card.cardId}
-                     data-cost={card.cost}
-                     data-amount={card.amount}
-                     onClick={(e) => decklistRemoveCard(e, cards.cards, activeDeckCopy, (updatedDeck) => updateActiveDeckCopy(updatedDeck))}>
-                  <Icon name="cross" tooltip={false}/>
-                </div>
-              </td>
-              : null
-          }
+          {deckEditView && (
+            <td>
+              <div id={card.cardId}
+                   data-cost={card.cost}
+                   data-amount={card.amount}
+                   onClick={(e) => decklistRemoveCard(e, cards.cards, activeDeckCopy, (updatedDeck) => updateActiveDeckCopy(updatedDeck))}>
+                <Icon name="cross" tooltip={false}/>
+              </div>
+            </td>
+          )}
         </tr>
       </Tooltip>
     )
@@ -43,7 +41,7 @@ const Card = ({cards, index, card, cardNames, deckEditView, activeDeckCopy, upda
 
 const mapStateToProps = state => {
   const { cards, deckView } = state;
-  const {activeDeckCopy, tools} = deckView;
+  const { activeDeckCopy, tools } = deckView;
   const { deckEditView } = tools;
   return { cards, activeDeckCopy, deckEditView };
 };

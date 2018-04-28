@@ -15,12 +15,10 @@ const Decklist = ({activeDeck, cards, deckEditView}) => {
             <div className="table-scroll">
               <table>
                 <TableHead deckEditView={deckEditView}/>
-                <TableBody fetchedDeckCards={cards || []}
-                           deckEditView={deckEditView}/>
+                <TableBody fetchedDeckCards={cards || []} />
               </table>
             </div>
-          )
-        }
+          )}
       </div>
     )
 };

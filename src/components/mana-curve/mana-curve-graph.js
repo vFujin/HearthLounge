@@ -5,21 +5,10 @@ import Icon from "../icon";
 
 const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true, barColor, manaCurveObj}) => {
   const costBelowSeven = (number) => _.filter(deck, {cost: number}).length;
-  let costSevenOrMore = _.filter(deck, (value)=>value.cost >= 7).length;
-  let s = cost < 7 ? costBelowSeven(cost) : costSevenOrMore;
-
-  const count = () => {
-    if(showCount){
-      return <div className="count">{manaCurveObj ? manaCurveObj : s}</div>;
-    }
-  };
-
-  const showIcon = () =>{
-    if(showIcons){
-      return  <Icon name={icon} type="mana" />;
-    }
-  };
-
+  const costSevenOrMore = _.filter(deck, (value)=>value.cost >= 7).length;
+  const s = cost < 7 ? costBelowSeven(cost) : costSevenOrMore;
+  const count = () => showCount && <div className="count">{manaCurveObj ? manaCurveObj : s}</div>;
+  const showIcon = () => showIcons && <Icon name={icon} type="mana" />;
 
   return (
       <li style={{marginRight: barSpacing}}>

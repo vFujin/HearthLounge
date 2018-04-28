@@ -12,7 +12,7 @@ const LeftContainer = ({deckEditView}) => (
 );
 
 const mapStateToProps = state => {
-  const { deckEditView } = state.deckView;
+  const { deckEditView } = state.deckView.tools;
   return { deckEditView };
 };
 
