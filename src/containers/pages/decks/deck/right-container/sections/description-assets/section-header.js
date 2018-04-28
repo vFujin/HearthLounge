@@ -1,18 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 
-const SectionHeader = ({title}) => {
+const SectionHeader = ({title, loading}) => (
+  <div className="section__header">
+    {!loading && <div className="line"/>}
+    <h1 className={loading ? "loading" : undefined}>{title}</h1>
+  </div>
+);
 
-  return (
-      <div className="section__header">
-        <div className="line"></div>
-        <h1>{title}</h1>
-      </div>
-  )
+const mapStateToProps = state => {
+  const { title, loading } = state.deckView.activeDeck;
+  return { title, loading };
 };
 
-export default SectionHeader;
-
-SectionHeader.propTypes = {
-  title: PropTypes.string.isRequired
-};
+export default connect(mapStateToProps)(SectionHeader);

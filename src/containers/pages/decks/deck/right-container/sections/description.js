@@ -4,11 +4,10 @@ import SectionHeader from './description-assets/section-header';
 import SectionBody from './description-assets/section-body';
 
 const DeckDescription = ({activeDeck, decksNotEqual, descriptionsNotEqual}) =>{
-  const {title} = activeDeck;
 
   return (
       <div className="container__details--section container__details--description v-rows-2">
-        <SectionHeader title={title} />
+        <SectionHeader />
         <SectionBody activeDeck={activeDeck}
                      descriptionsNotEqual={descriptionsNotEqual}
                      decksNotEqual={decksNotEqual}/>
