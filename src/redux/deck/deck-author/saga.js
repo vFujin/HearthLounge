@@ -10,7 +10,6 @@ export const fetchDeckAuthor = (uid) => {
 
 export function* fetchDeckAuthorSaga({payload}) {
   const {deckAuthor, err} = yield call(fetchDeckAuthor, payload);
-  console.log(deckAuthor, err);
   if(err){
     yield put(actions.fetchDeckAuthorFailure(err));
   } else {

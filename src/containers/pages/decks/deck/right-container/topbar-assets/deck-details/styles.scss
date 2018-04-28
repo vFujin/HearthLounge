@@ -8,15 +8,19 @@
     margin-left: 2vh;
     display: flex;
     align-items: center;
+
     &:first-child {
       margin-left: 1vh;
     }
+
     span, p {
       margin-right: .5vh;
+
       &:last-child {
         margin-right: 0;
       }
     }
+
     span {
       font-size: 1vw;
     }
@@ -30,10 +34,12 @@
 
   .votes {
     padding: 0 .5vh;
+
     p {
       &.pos {
         color: $monk;
       }
+
       &.neg {
         color: $death_knight;
       }

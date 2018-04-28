@@ -14,7 +14,7 @@ const SectionHeader = ({authenticated, countComments, commentBoxIsActive, toggle
         <h1>{countComments || 0} {countComments  === 1 ? 'comment' : 'comments'}</h1>
         <div className="section__header--options">
           <Tooltip title="You have to be Signed In!" trigger={authenticated ? "none" : "hover"} placement="bottom" arrowPointAtCenter>
-            <button onClick={authenticated && handleAddCommentClick}
+            <button onClick={authenticated ? handleAddCommentClick : undefined}
                     disabled={!authenticated}
                     className={`btn btn__default--dark btn__darkBorder ${commentBoxIsActive && "btn__default--active"}`}>
               Add Comment

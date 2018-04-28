@@ -11,20 +11,18 @@ class DeckAuthorDetails extends Component{
   componentDidMount(){
     const {activeDeck, fetchDeckAuthorDetails} = this.props;
     const {authorId} = activeDeck;
-
     fetchDeckAuthorDetails(authorId);
   }
 
   render() {
     const {deckAuthor} = this.props;
     const {loading} = deckAuthor;
-
     return (
-        <div className={`${loading ? "loading" : undefined} author-details`}>
+        <div className={`${this.props.activeDeck.loading ? "loading" : undefined} author-details`}>
           {!this.props.activeDeck.loading && !loading && !deckAuthor.uid &&
             <div className="author-details deleted">[deleted]</div>
           }
-          {!loading && deckAuthor.uid && (
+          {!this.props.activeDeck.loading && !loading && deckAuthor.uid && (
             <div>
               <UserAvatar deckAuthor={deckAuthor}/>
               <GeneralDetails deckAuthor={deckAuthor}/>

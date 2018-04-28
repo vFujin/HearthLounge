@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-
-import startCase from 'lodash/startCase';
 import Tooltip from 'antd/lib/tooltip';
 import {supported_domains} from "../utils/reddit/posts";
 
@@ -33,7 +31,7 @@ const selectType = (
   const iconWrapper = (icon) => {
     let iconTitle = title ? title : iconName;
     return (
-        <Tooltip title={startCase(iconTitle)}
+        <Tooltip title={_.capitalize(iconTitle)}
                  placement={tooltipPlacement}
                  arrowPointAtCenter={true}>
           {icon}

@@ -1,7 +1,6 @@
 import * as types from "./types";
 
 export function fetchDeckAuthorRequest(authorId){
-  console.log(authorId);
   return {
     type: types.FETCH_DECK_AUTHOR_REQUEST,
     payload: authorId

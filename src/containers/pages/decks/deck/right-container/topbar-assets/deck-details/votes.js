@@ -25,7 +25,7 @@ class DeckVotes extends Component {
               name="circle-up"
               className="monk active-without-background"
               onClick={this.handleDeckVotingClick}/>
-        <p className={voteResClass}>{votes}</p>
+        <p className={voteResClass}>{String(votes)}</p>
         <Icon id="downvote"
               name="circle-down"
               className="death-knight active-without-background"

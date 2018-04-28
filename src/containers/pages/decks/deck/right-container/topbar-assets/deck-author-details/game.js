@@ -4,14 +4,26 @@ import Icon from "../../../../../../../components/icon";
 import PropTypes from "prop-types";
 
 const GameDetails = ({deckAuthor}) =>{
-  const {username} = deckAuthor;
+  const {username, region, battletag, favouriteClass} = deckAuthor;
 
   return (
     <Tooltip title={`${username}'s in-game info`} placement="bottom">
       <div className="game-details-wrapper">
-        <Icon name="battletag"/>
-        <p>EU</p>
-        <p><Icon name="priest"/></p>
+        {region && <p>{region}</p>}
+        {battletag && <Icon name="battlenet"
+                            className="battlenet active"
+                            tooltip={true}
+                            tooltipPlacement="right"
+                            title={`${username}'s battletag - ${battletag}`} />
+        }
+        {favouriteClass && (
+          <p>
+            <Icon name={favouriteClass}
+                  tooltip={true}
+                  title={`${username}'s favourite class - ${favouriteClass}`}
+                  tooltipPlacement="right"/>
+          </p>
+        )}
       </div>
     </Tooltip>
   )

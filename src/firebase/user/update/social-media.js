@@ -11,10 +11,10 @@ import {isEmpty, refUpdate} from '../utils/';
  */
 export default function (uid, facebook, twitter, twitch, youtube){
   let updates = {
-    facebook: isEmpty(facebook),
-    twitter: isEmpty(twitter),
-    twitch: isEmpty(twitch),
-    youtube: isEmpty(youtube)
+    facebook: isEmpty(String(facebook)),
+    twitter: isEmpty(String(twitter)),
+    twitch: isEmpty(String(twitch)),
+    youtube: isEmpty(String(youtube))
   };
 
   return refUpdate(`users/${uid}`, updates);

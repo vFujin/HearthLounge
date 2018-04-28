@@ -1,6 +1,5 @@
 import React from 'react';
 import Tooltip from 'antd/lib/tooltip';
-import {Link} from 'react-router-dom';
 import Icon from "../../../../../../../components/icon";
 import PropTypes from "prop-types";
 
@@ -9,9 +8,11 @@ const SocialMediaDetails = ({deckAuthor}) =>{
 
   const wrapper = (media, profile, affix = "com") =>{
     return (
-      <Link to={profile ? `https://www.${media}.${affix}/${profile}` : ""} target="_blank" className={!profile ? "profile-not-defined" : undefined}>
+      <a href={profile ? `https://www.${media}.${affix}/${profile}` : ""}
+         target="_blank"
+         className={!profile ? "profile-not-defined" : undefined}>
         <Icon name={media} className={profile && `${media} active`}/>
-      </Link>
+      </a>
     )
   };
 
