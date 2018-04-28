@@ -1,19 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Comment from '../comment';
-import Loader from '../../../../../../../components/loaders/loader';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 
 const SectionBody = ({comments, countComments, clickedCommentId, handleCommentOptionsClick, activeUser, deckComments, tools}) => {
   const {previewIsActive, commentId, commentVotes, votedComments, usersDetails, deckComment} = tools;
   const {authenticated, uid} = activeUser;
 
-
   const listComments = () => {
-    if (deckComments.loading) {
-      return <Loader/>
-    }
-
     if (countComments === 0) {
       return <p>There are no comments yet.</p>
     }

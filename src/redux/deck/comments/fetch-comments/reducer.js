@@ -1,14 +1,15 @@
 import * as types from "./types";
 
 const initialState = {
-  loading: true
+  loading: false
 };
 
 export default function(state=initialState, {payload, type}) {
   switch (type) {
     case types.FETCH_ACTIVE_DECK_COMMENTS_REQUEST:
       return {
-        state
+        ...state,
+        loading: true
       };
 
     case types.FETCH_ACTIVE_DECK_COMMENTS_SUCCESS:

@@ -6,6 +6,7 @@ import SectionBody from './comment-assets/section-body';
 import SectionFooter from './comment-assets/section-footer';
 import {deleteDeckCommentRequest} from "../../../../../../redux/deck/comments/delete-comment/actions";
 import {fetchActiveDeckCommentsRequest} from "../../../../../../redux/deck/comments/fetch-comments/actions";
+import Loader from "../../../../../../components/loaders/loader";
 
 class DeckComments extends PureComponent {
   constructor(){
@@ -61,15 +62,17 @@ class DeckComments extends PureComponent {
     return (
         <div className={`container__details--section container__details--comments v-rows-${commentBoxIsActive ? '3 editorActive' : '2'}`}>
           <SectionHeader countComments={countComments}/>
-          <SectionBody comments={mergedComments}
-                       countComments={countComments}
-                       clickedCommentId={this.state.clickedCommentId}
-                       handleCommentOptionsClick={this.handleCommentOptionsClick}/>
+          {deckComments.loading
+            ? <Loader/>
+            : <SectionBody comments={mergedComments}
+                           countComments={countComments}
+                           clickedCommentId={this.state.clickedCommentId}
+                           handleCommentOptionsClick={this.handleCommentOptionsClick}/>
+          }
           {commentBoxIsActive ? <SectionFooter /> : null}
         </div>
     )
   }
-
 }
 
 const mapStateToProps = (state) => {

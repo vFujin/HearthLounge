@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Icon from "../icon";
 
-const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true, barColor, manaCurveObj = 0}) => {
-  console.log(manaCurveObj);
-  const costBelowSeven = (number) =>{
-    return _.filter(deck, {cost: number}).length
-  };
+const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true, barColor, manaCurveObj}) => {
+  const costBelowSeven = (number) => _.filter(deck, {cost: number}).length;
   let costSevenOrMore = _.filter(deck, (value)=>value.cost >= 7).length;
   let s = cost < 7 ? costBelowSeven(cost) : costSevenOrMore;
 
