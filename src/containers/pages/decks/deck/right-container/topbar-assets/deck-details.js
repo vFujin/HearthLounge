@@ -1,22 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DeckVotes from "./deck-stats/votes";
-import Stats from "./deck-stats/stats";
-import Archetype from "./deck-stats/archetype";
+import DeckVotes from "./deck-details/votes";
+import DeckStats from "./deck-details/stats";
+import Archetype from "./deck-details/archetype";
 
-const DeckStats = ({activeDeck, activeDeckCopy, deckEditView}) =>{
+const DeckDetails = ({activeDeck}) =>{
   return (
       <div className="deck-details">
         <DeckVotes />
-        <Stats activeDeckCopy={activeDeckCopy} deckEditing={deckEditView}/>
+        <DeckStats />
         <Archetype activeDeck={activeDeck}/>
       </div>
   )
 };
 
-export default DeckStats;
+export default DeckDetails;
 
-DeckStats.propTypes = {
+DeckDetails.propTypes = {
   activeDeck: PropTypes.object,
   activeDeckCopy: PropTypes.object,
   deckEditView: PropTypes.bool,

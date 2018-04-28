@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Icon from "../../../../../../../components/icon";
+import {connect} from "react-redux";
 
-const Stats = ({activeDeckCopy, deckEditView}) => {
+const DeckStats = ({activeDeckCopy, deckEditView}) => {
   const minionCount = activeDeckCopy.types && activeDeckCopy.types.Minion,
         spellCount = activeDeckCopy.types && activeDeckCopy.types.Spell,
         weaponCount = activeDeckCopy.types && activeDeckCopy.types.Weapon;
@@ -16,9 +17,15 @@ const Stats = ({activeDeckCopy, deckEditView}) => {
   )
 };
 
-export default Stats;
+const mapStateToProps = state => {
+  const { activeDeckCopy, tools } = state.deckView;
+  const { deckEditView } = tools;
+  return { activeDeckCopy, deckEditView };
+};
 
-Stats.propTypes = {
+export default connect(mapStateToProps)(DeckStats);
+
+DeckStats.propTypes = {
   activeDeckCopy: PropTypes.shape({
     types: PropTypes.shape({
       Minion: PropTypes.number,
