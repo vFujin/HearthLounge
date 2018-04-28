@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Tooltip from 'antd/lib/tooltip';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import './styles.css';
 
 const CreatedDetails = ({patch, activeDeck}) => {
   const {created, updated} = activeDeck;

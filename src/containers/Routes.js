@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Switch, Route} from 'react-router';
 import Deck from "./pages/decks/deck/deck";
+import DeckMobile from "./pages/decks/deck/deck-mobile/deck-mobile";
 import CreateDeckClassSelection from "./pages/create-deck/before-class-selection/class-selection";
 import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
 import CreateDeckClassSelectedMobile from "./pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile";
@@ -41,12 +42,20 @@ const Routes = ({mobileMenuActive, windowWidth}) => {
     }
   };
 
+  const checkPlatform = (mobileComponent, desktopComponent) => {
+    if(windowWidth <= 1365){
+      return mobileComponent;
+    } else {
+      return desktopComponent;
+    }
+  };
+
   return (
     <div className={mobileMenuActive ? "switch__wrapper--mobileMenuActive" : undefined}>
       <Switch>
         <Route exact path="/"                   component={Home} />
         <Route exact path="/decks"              component={DeckSelection} />
-        <Route path="/decks/:deckId/:deckTitle" component={Deck}/>
+        <Route path="/decks/:deckId/:deckTitle" render={(routeObj) => checkPlatform(<DeckMobile match={routeObj.match}/>, <Deck match={routeObj.match}/>)}/>
         <Route path="/cards"                    component={Cards} />
         <Route path="/expansions"               component={Expansions}/>
         <Route path="/adventures"               component={Adventures} />

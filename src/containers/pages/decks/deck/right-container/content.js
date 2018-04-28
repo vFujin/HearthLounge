@@ -1,6 +1,6 @@
 import React from 'react';
-import DeckDescription from './sections/description';
-import DeckComments from './sections/comments';
+import DeckDescription from './sections/description/description';
+import DeckComments from './sections/comments/comments';
 
 const Content = ({params}) => (
   <div className="content scrollable">

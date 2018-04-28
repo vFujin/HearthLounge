@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import Icon from "../../../../../../../components/icon";
-import {udpateDeckRating} from "../../../../../../../firebase/decks/deck/update";
+import {udpateDeckRating} from "../../../../../../../firebase/decks/deck/update/index";
 
 class DeckVotes extends Component {
 

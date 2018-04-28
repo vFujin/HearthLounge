@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Comment from '../comment';
+import Comment from './comment/comment';
 import {convertBBCode} from '../../../../../../../components/text-editor/utils/convert-bbcode';
 
 const SectionBody = ({comments, countComments, clickedCommentId, handleCommentOptionsClick, activeUser, deckComments, tools}) => {

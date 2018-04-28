@@ -1,9 +1,9 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
-import SimplifiedUserSnippet from '../../../../../../components/user/simplified-user-snippet';
-import ShortenedUserDetailsLoader from "../../../../../../components/loaders/shortened-user-details-loader";
-import {CommentHeader, CommentBody, CommentFooter} from "./comment-assets/comment/index";
-import {FETCH_SHORTENED_USER_DETAILS_REQUEST} from "../../../../../../redux/user/shortened-details/types";
+import SimplifiedUserSnippet from '../../../../../../../../components/user/simplified-user-snippet';
+import ShortenedUserDetailsLoader from "../../../../../../../../components/loaders/shortened-user-details-loader";
+import {CommentHeader, CommentBody, CommentFooter} from "./index";
+import {FETCH_SHORTENED_USER_DETAILS_REQUEST} from "../../../../../../../../redux/user/shortened-details/types";
 
 class Comment extends PureComponent {
   componentDidMount(){

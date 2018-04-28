@@ -1,0 +1,14 @@
+@import '../../../../../../../styles/colors';
+
+.container__details--comments {
+  position: relative;
+
+  .section__footer {
+    padding: 2vh 1vh 0 1vh;
+    border: 1px solid $dark-grey;
+
+    .text-editor{
+      height: calc(100% - 1vh);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../../../../../../styles/mixins';
+
+.created-details {
+  display: grid;
+  text-align: right;
+  margin-right: 1vh;
+
+  &.loading {
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+    @include linearLoader();
+  }
+}

@@ -1,12 +1,14 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import SectionHeader from './comment-assets/section-header';
-import SectionBody from './comment-assets/section-body';
-import SectionFooter from './comment-assets/section-footer';
-import {deleteDeckCommentRequest} from "../../../../../../redux/deck/comments/delete-comment/actions";
-import {fetchActiveDeckCommentsRequest} from "../../../../../../redux/deck/comments/fetch-comments/actions";
-import Loader from "../../../../../../components/loaders/loader";
+import PropTypes from 'prop-types';
+import SectionHeader from './section-header';
+import SectionBody from './section-body';
+import SectionFooter from './section-footer';
+import {deleteDeckCommentRequest} from "../../../../../../../redux/deck/comments/delete-comment/actions";
+import {fetchActiveDeckCommentsRequest} from "../../../../../../../redux/deck/comments/fetch-comments/actions";
+import Loader from "../../../../../../../components/loaders/loader";
+import './comments-styles.css';
 
 class DeckComments extends PureComponent {
   state = {
@@ -86,4 +88,8 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeckComments)
+export default connect(mapStateToProps, mapDispatchToProps)(DeckComments);
+
+DeckComments.propTypes = {
+  params: PropTypes.object.isRequired
+};

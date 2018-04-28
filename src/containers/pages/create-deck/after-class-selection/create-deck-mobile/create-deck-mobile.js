@@ -7,11 +7,11 @@ import {
   changeActiveCreateDeckMobileTab, editDeck,
   toggleDeckMechanics
 } from "../../../../../redux/create-deck/actions/create-deck.action";
-import CreateDeckTopbarMobile from "./topbar/create-deck-topbar-mobile";
 import {updateDeck} from "../right-container/content-assets/utils";
 import DecklistWrapper from "./deck-list/decklist-wrapper";
 import CreateDeckStatsMobile from './create-deck-stats-mobile';
 import DeckOptionsMobile from "./deck-options/deck-options-mobile";
+import MobileTopbar from "../../../../../components/mobile/topbar/topbar";
 
 class CreateDeckClassSelectedMobile extends Component {
 
@@ -53,10 +53,13 @@ class CreateDeckClassSelectedMobile extends Component {
     const {activeCreateDeckMobileTab} = this.props;
     const containerClassName = activeCreateDeckMobileTab === "deckList" ? "left" : "right";
     const filterDeckDetails = activeCreateDeckMobileTab !== "deckDetails";
+    const mobileTopbarTabs = ["deckList", "cards", "deckDetails"];
 
     return (
       <div className="container__page create-deck">
-        <CreateDeckTopbarMobile handleTabClick={this.handleTabClick}/>
+        <MobileTopbar tabs={mobileTopbarTabs}
+                      activeMobileTab={activeCreateDeckMobileTab}
+                      handleTabClick={this.handleTabClick}/>
         <div className={`container__page--inner container__page--${containerClassName} afterClassSelection`}>
          <div className={`content ${filterDeckDetails ? "contentWithStats" : undefined}`}>
             {filterDeckDetails && <CreateDeckStatsMobile />}

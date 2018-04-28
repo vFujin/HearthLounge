@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CreatedDetails from './topbar-assets/created-details';
-import DeckDetails from "./topbar-assets/deck-details/deck-details";
-import DeckAuthorDetails from "./topbar-assets/deck-author-details/deck-author-details";
+import CreatedDetails from './created-details/created-details';
+import DeckDetails from "./deck-details/deck-details";
+import DeckAuthorDetails from "./deck-author-details/deck-author-details";
 
 const Topbar = () => (
   <div className="topbar">
@@ -13,6 +13,7 @@ const Topbar = () => (
     </div>
   </div>
 );
+
 
 export default Topbar;
 

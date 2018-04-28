@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Topbar from './topbar';
+import Topbar from './topbar/topbar';
 import Content from './content';
 
 const RightContainer = ({params}) => (

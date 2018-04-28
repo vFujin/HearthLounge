@@ -6,7 +6,6 @@ import RightContainer from "./right-container/right-container";
 import {RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
 import NotFound from "../../../../components/not-found/not-found";
 import {fetchActiveDeckRequest} from "../../../../redux/deck/active-deck/actions";
-import './styles/deck-styles.css';
 import {updateActiveDeckCopy} from "../../../../redux/deck/active-deck-copy/actions";
 
 class Deck extends Component{
@@ -31,16 +30,16 @@ class Deck extends Component{
   render() {
     const {activeDeck, match} = this.props;
     if(activeDeck.err){
-      return <NotFound page="123" redirect="decks"/>
+      return <NotFound page={match.params.deckId} redirect="decks"/>
     }
-    else {
-      return (
-        <div className="container__page container__page--twoSided deck">
-          <LeftContainer />
-          <RightContainer params={match.params}/>
-        </div>
-      )
-    }
+
+    return (
+      <div className="container__page container__page--twoSided deck">
+        <LeftContainer/>
+        <RightContainer params={match.params}/>
+      </div>
+    )
+
   }
 }
 
