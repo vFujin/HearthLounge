@@ -2,31 +2,6 @@
 @import '../../../../../styles/mixins';
 
 .container__page.deck {
-  .container__page--left{
-    .sidebar__body{
-      .addCard-wrapper{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 5vh;
-        z-index: 10;
-        display: flex;
-        background: $dark-grey;
-        input{
-          width: 80%;
-          height:100%;
-        }
-        //span{
-        //  display: flex;
-        //  align-items: center;
-        //  justify-content: center;
-        //  width: 20%;
-        //  height:100%;
-        //  font-size: 4vw;
-        //}
-      }
-    }
-  }
 
   .container__page--right {
 

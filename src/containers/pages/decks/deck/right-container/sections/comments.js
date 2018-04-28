@@ -69,7 +69,7 @@ class DeckComments extends PureComponent {
                            clickedCommentId={this.state.clickedCommentId}
                            handleCommentOptionsClick={this.handleCommentOptionsClick}/>
           }
-          {commentBoxIsActive ? <SectionFooter /> : null}
+          {commentBoxIsActive && <SectionFooter />}
         </div>
     )
   }

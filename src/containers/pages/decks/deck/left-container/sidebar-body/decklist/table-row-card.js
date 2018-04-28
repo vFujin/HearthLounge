@@ -59,7 +59,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(Card);
 Card.propTypes = {
   card: PropTypes.object.isRequired,
   cardNames: PropTypes.array.isRequired,
-  deckEditView: PropTypes.bool.isRequired,
-  handleCardRemovalClick: PropTypes.func.isRequired,
   index: PropTypes.number
 };

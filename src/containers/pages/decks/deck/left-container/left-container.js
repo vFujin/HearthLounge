@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SidebarHeader from "./sidebar-header/sidebar-header";
 import SidebarBody from "./sidebar-body/sidebar-body";
+import './styles/deck-left-container-styles.css';
 
 const LeftContainer = ({deckEditView}) => (
   <div className={`container__page--inner container__page--left ${deckEditView ? 'edit-mode' : ''}`}>
@@ -13,5 +14,9 @@ const LeftContainer = ({deckEditView}) => (
 export default LeftContainer;
 
 LeftContainer.propTypes = {
-  activeDeck: PropTypes.object
+  deckEditView: PropTypes.bool
+};
+
+LeftContainer.defaultProps = {
+  deckEditView: false
 };
