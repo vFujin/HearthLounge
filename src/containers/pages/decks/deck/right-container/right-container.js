@@ -6,7 +6,7 @@ import Content from './content';
 const RightContainer = ({activeDeck, activeDeckCopy, patch, deckEditView, descriptionsNotEqual, decksNotEqual, params}) =>{
   return (
       <div className="container__page--inner container__page--right">
-        <Topbar activeDeck={activeDeck} />
+        <Topbar />
         <Content activeDeck={activeDeck}
                  patch={patch}
                  deckEditView={deckEditView}

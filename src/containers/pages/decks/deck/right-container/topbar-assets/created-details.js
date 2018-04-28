@@ -1,13 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import Tooltip from 'antd/lib/tooltip';
-import {timeDifference} from '../../../../../../utils/unix-to-date';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
-const CreatedDetails = ({patch, activeDeck}) =>{
-
+const CreatedDetails = ({patch, activeDeck}) => {
   const {created, updated} = activeDeck;
-  const tooltip = updated && <Tooltip title={`Updated ${timeDifference(updated)}`} placement="bottomLeft" arrowPointAtCenter>*</Tooltip>;
+  const tooltip = updated && <Tooltip title={`Updated ${distanceInWordsToNow(updated)}`} placement="bottomLeft" arrowPointAtCenter>*</Tooltip>;
 
   const patchRedirect = (patch) =>{
     return (
@@ -30,22 +28,21 @@ const CreatedDetails = ({patch, activeDeck}) =>{
   };
 
   return (
-      <div className="created-details">
+      <div className={`created-details ${activeDeck.loading ? "loading" : undefined}`}>
         <Tooltip title={patchTooltip()} placement="bottomRight" arrowPointAtCenter>
           <p>{activeDeck.patch}</p>
         </Tooltip>
-        <p>{timeDifference(created)} {tooltip}</p>
+        {!activeDeck.loading && (
+          <p>{distanceInWordsToNow(created)} {tooltip}</p>)
+        }
       </div>
   )
 };
 
 const mapStateToProps = state =>{
   const {patch} = state.info;
-  return {patch}
+  const {activeDeck} = state.deckView;
+  return {patch, activeDeck}
 };
 
-export default connect(mapStateToProps, null)(CreatedDetails);
-
-CreatedDetails.propTypes = {
-  activeDeck: PropTypes.object
-};
+export default connect(mapStateToProps)(CreatedDetails);

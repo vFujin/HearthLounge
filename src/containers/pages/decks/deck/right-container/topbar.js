@@ -4,17 +4,15 @@ import CreatedDetails from './topbar-assets/created-details';
 import DeckDetails from "./topbar-assets/deck-details";
 import DeckAuthorDetails from "./topbar-assets/deck-author-details";
 
-const Topbar = ({activeDeck}) => {
-  return (
-      <div className="topbar">
-        <div className="topbar__container topbar__grid topbar__grid--3-4-1">
-          <DeckDetails />
-          <DeckAuthorDetails />
-          <CreatedDetails activeDeck={activeDeck}/>
-        </div>
-      </div>
-  )
-};
+const Topbar = () => (
+  <div className="topbar">
+    <div className="topbar__container topbar__grid topbar__grid--3-4-1">
+      <DeckDetails />
+      <DeckAuthorDetails />
+      <CreatedDetails />
+    </div>
+  </div>
+);
 
 export default Topbar;
 
