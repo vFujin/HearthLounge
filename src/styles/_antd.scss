@@ -252,16 +252,19 @@
  */
 .ant-tooltip{
   margin-top: 19px;
+
   .ant-tooltip-inner{
     padding: 2px 10px;
     min-height: 0;
     -webkit-border-radius:0;
     -moz-border-radius:0;
     border-radius:0;
-    .tooltip-redirect{
+
+    .tooltip-redirect, .reputation-tooltip{
       text-decoration: underline;
       color: $sea-color;
     }
+
     .card-tooltip-wrapper {
       .card-details {
         height: 370px;

@@ -5,19 +5,20 @@ import PropTypes from 'prop-types';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
-import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
+import {CANCEL_ACTIVE_DECK_COPY_UPDATE} from "../../../../redux/deck/active-deck-copy/types";
 import {updateDeck} from "../../create-deck/after-class-selection/right-container/content-assets/utils/index";
 import NotFound from "../../../../components/not-found/not-found";
 import {fetchActiveDeckRequest} from "../../../../redux/deck/active-deck/actions";
 import './styles/deck-styles.css';
+import {updateActiveDeckCopy} from "../../../../redux/deck/active-deck-copy/actions";
 
 class Deck extends Component{
   componentDidMount() {
-    const {activeDeck, fetchDeck, match, updateActiveDeckCopy} = this.props;
+    const {activeDeck, fetchDeck, match, decks, updateActiveDeckCopy} = this.props;
     const {deckId, deckTitle} = match.params;
     document.title = _.startCase(deckTitle) || "Deck";
 
-    if (!activeDeck.loading && !activeDeck.deckId) {
+    if (!activeDeck.loading && !activeDeck.deckId && !decks.all) {
       fetchDeck(deckId)
     } else {
       updateActiveDeckCopy(activeDeck);
@@ -61,16 +62,17 @@ class Deck extends Component{
 }
 
 const mapStateToProps = (state) => {
+  const {decks} = state.decks;
   const {activeDeck, activeDeckCopy, tools} = state.deckView;
   const {deckEditView} = tools;
 
-  return {activeDeck, activeDeckCopy, deckEditView};
+  return {activeDeck, activeDeckCopy, deckEditView, decks};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchDeck: payload => dispatch(fetchActiveDeckRequest(payload)),
-    updateActiveDeckCopy: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY, payload}),
+    updateActiveDeckCopy: payload => dispatch(updateActiveDeckCopy(payload)),
     cancelDeckUpdate: () => dispatch({type: CANCEL_ACTIVE_DECK_COPY_UPDATE}),
     resetActiveDeck: () => dispatch({type: RESET_ACTIVE_DECK})
   };

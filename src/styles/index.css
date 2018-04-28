@@ -4298,7 +4298,7 @@ button {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0; }
-    .ant-tooltip .ant-tooltip-inner .tooltip-redirect {
+    .ant-tooltip .ant-tooltip-inner .tooltip-redirect, .ant-tooltip .ant-tooltip-inner .reputation-tooltip {
       text-decoration: underline;
       color: #00a99c; }
     .ant-tooltip .ant-tooltip-inner .card-tooltip-wrapper .card-details {

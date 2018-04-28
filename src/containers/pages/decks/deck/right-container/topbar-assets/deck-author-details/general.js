@@ -10,7 +10,7 @@ const GeneralDetails = ({deckAuthor}) =>{
   return (
       <div className="general-info-wrapper">
         <p className="username">{username}</p>
-        <Tooltip title={<p className="reputation-tooltip">User <Link to="/rank-system"> reputation</Link></p>}
+        <Tooltip title={<p>User <Link className="reputation-tooltip" to="/rank-system"> reputation</Link></p>}
                  placement="bottom">
           <p className="reputation">
             <Icon name={`rank-${rankSystem(rank)}`}/>

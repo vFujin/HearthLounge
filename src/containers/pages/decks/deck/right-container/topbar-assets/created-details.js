@@ -5,7 +5,7 @@ import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
 const CreatedDetails = ({patch, activeDeck}) => {
   const {created, updated} = activeDeck;
-  const tooltip = updated && <Tooltip title={`Updated ${distanceInWordsToNow(updated)}`} placement="bottomLeft" arrowPointAtCenter>*</Tooltip>;
+  const tooltip = updated && <Tooltip title={`Updated ${distanceInWordsToNow(updated, {addSuffix: true})}`} placement="bottomLeft" arrowPointAtCenter>*</Tooltip>;
 
   const patchRedirect = (patch) =>{
     return (
@@ -33,7 +33,7 @@ const CreatedDetails = ({patch, activeDeck}) => {
           <p>{activeDeck.patch}</p>
         </Tooltip>
         {!activeDeck.loading && (
-          <p>{distanceInWordsToNow(created)} {tooltip}</p>)
+          <p>{distanceInWordsToNow(created, {addSuffix: true})} {tooltip}</p>)
         }
       </div>
   )
