@@ -31,8 +31,6 @@ class Deck extends Component{
     updateActiveDeckCopy('');
   }
 
-
-
   handleCardClick = (e, card) => {
     const {deck, editDeck} = this.props;
     e.preventDefault();
@@ -41,20 +39,15 @@ class Deck extends Component{
   };
 
   render() {
-    const {activeDeck, activeDeckCopy, deckEditView, patch, match} = this.props;
+    const {activeDeck, match} = this.props;
     if(activeDeck.err){
       return <NotFound page="123" redirect="decks"/>
     }
     else {
       return (
           <div className="container__page container__page--twoSided deck">
-            <LeftContainer deckEditView={deckEditView}
-                           handleCardClick={this.handleCardClick}/>
-            <RightContainer activeDeck={activeDeck}
-                            activeDeckCopy={activeDeckCopy}
-                            deckEditView={deckEditView}
-                            params={match.params}
-                            patch={patch}/>
+            <LeftContainer handleCardClick={this.handleCardClick}/>
+            <RightContainer params={match.params}/>
           </div>
       )
     }
@@ -63,10 +56,9 @@ class Deck extends Component{
 
 const mapStateToProps = (state) => {
   const {decks} = state.decks;
-  const {activeDeck, activeDeckCopy, tools} = state.deckView;
-  const {deckEditView} = tools;
+  const {activeDeck} = state.deckView;
 
-  return {activeDeck, activeDeckCopy, deckEditView, decks};
+  return {activeDeck, decks};
 };
 
 const mapDispatchToProps = (dispatch) => {

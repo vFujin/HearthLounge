@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 import SidebarHeader from "./sidebar-header/sidebar-header";
 import SidebarBody from "./sidebar-body/sidebar-body";
 import './styles/deck-left-container-styles.css';
@@ -11,12 +11,9 @@ const LeftContainer = ({deckEditView}) => (
   </div>
 );
 
-export default LeftContainer;
-
-LeftContainer.propTypes = {
-  deckEditView: PropTypes.bool
+const mapStateToProps = state => {
+  const { deckEditView } = state.deckView;
+  return { deckEditView };
 };
 
-LeftContainer.defaultProps = {
-  deckEditView: false
-};
+export default connect(mapStateToProps)(LeftContainer);

@@ -9,13 +9,9 @@ import {fetchActiveDeckCommentsRequest} from "../../../../../../redux/deck/comme
 import Loader from "../../../../../../components/loaders/loader";
 
 class DeckComments extends PureComponent {
-  constructor(){
-    super();
-
-    this.state = {
-      clickedCommentId: ''
-    }
-  }
+  state = {
+    clickedCommentId: ''
+  };
 
   componentDidMount() {
     const {activeUser, params, fetchComments} = this.props;
@@ -76,10 +72,11 @@ class DeckComments extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const {deckCommentDeletingStatus, deckCommentPostingStatus, deckComments, tools} = state.deckView;
+  const {activeDeck, deckCommentDeletingStatus, deckCommentPostingStatus, deckComments, tools} = state.deckView;
   const {commentBoxIsActive} = tools;
   const {activeUser} = state.users;
-  return {activeUser, commentBoxIsActive, deckCommentDeletingStatus, deckCommentPostingStatus, deckComments};
+  const {patch} = state.info;
+  return {activeUser, activeDeck, commentBoxIsActive, deckCommentDeletingStatus, deckCommentPostingStatus, deckComments, patch};
 };
 
 const mapDispatchToProps = (dispatch) => {

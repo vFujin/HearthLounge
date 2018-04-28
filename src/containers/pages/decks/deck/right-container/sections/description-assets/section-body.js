@@ -13,12 +13,6 @@ import {
 import {updateActiveDeckCopy} from "../../../../../../../redux/deck/active-deck-copy/actions";
 
 class SectionBody extends Component {
-  // const {activeUser, activeDeck, deckEditView, activeDeckEditing, updateDeckDescription, toggleDeckEditView, activeDeckCopy} = props;
-  // const {authorId, description, deckId} = activeDeck;
-  // const {editingDeckDescription} = activeDeckEditing;
-  // const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
-  // const decksNotEqual = !_.isEqual(activeDeckCopy, activeDeck.deck);
-
   handleInputChange = (e) => {
     const {updateDeckDescription} = this.props;
     let value = e.target.value;
@@ -100,10 +94,10 @@ class SectionBody extends Component {
 }
 
 const mapStateToProps = state =>{
-  const {activeDeckEditing, tools, activeDeckCopy} = state.deckView;
+  const {activeDeck, activeDeckEditing, tools, activeDeckCopy} = state.deckView;
   const {deckEditView} = tools;
   const {activeUser} = state.users;
-  return {activeUser, activeDeckEditing, deckEditView, activeDeckCopy};
+  return {activeDeck, activeUser, activeDeckEditing, deckEditView, activeDeckCopy};
 };
 
 const mapDispatchToProps = dispatch => {
