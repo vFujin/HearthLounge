@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
-import {FETCH_ACTIVE_DECK_REQUEST, RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
-import Loader from "../../../../components/loaders/loader";
+import {RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
 import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
 import {updateDeck} from "../../create-deck/after-class-selection/right-container/content-assets/utils/index";
 import NotFound from "../../../../components/not-found/not-found";
+import {fetchActiveDeckRequest} from "../../../../redux/deck/active-deck/actions";
 
 class Deck extends Component{
   componentDidMount() {
@@ -17,7 +17,7 @@ class Deck extends Component{
     const {deckId, deckTitle} = match.params;
     document.title = _.startCase(deckTitle) || "Deck";
 
-    if (activeDeck.loading) {
+    if (!activeDeck.loading && !activeDeck.deckId) {
       fetchDeck(deckId)
     } else {
       updateActiveDeckCopy(activeDeck);
@@ -47,21 +47,14 @@ class Deck extends Component{
   };
 
   render() {
-    const {cards, activeDeck, activeDeckCopy, deckEditView, patch, match, updateActiveDeckCopy} = this.props;
-    if(activeDeck.loading){
-      return <Loader/>
-    }
-    else if(activeDeck.err){
+    const {activeDeck, activeDeckCopy, deckEditView, patch, match} = this.props;
+    if(activeDeck.err){
       return <NotFound page="123" redirect="decks"/>
     }
     else {
       return (
           <div className="container__page container__page--twoSided deck">
-            <LeftContainer activeDeck={activeDeck}
-                           activeDeckCopy={activeDeckCopy}
-                           updateActiveDeckCopy={updateActiveDeckCopy}
-                           deckEditView={deckEditView}
-                           cards={cards}
+            <LeftContainer deckEditView={deckEditView}
                            handleCardClick={this.handleCardClick}/>
             <RightContainer activeDeck={activeDeck}
                             activeDeckCopy={activeDeckCopy}
@@ -78,14 +71,13 @@ class Deck extends Component{
 const mapStateToProps = (state) => {
   const {activeDeck, activeDeckCopy, tools} = state.deckView;
   const {deckEditView} = tools;
-  const {cards} = state.cards;
 
-  return {activeDeck, activeDeckCopy, cards, deckEditView};
+  return {activeDeck, activeDeckCopy, deckEditView};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchDeck: payload => dispatch({type: FETCH_ACTIVE_DECK_REQUEST, payload}),
+    fetchDeck: payload => dispatch(fetchActiveDeckRequest(payload)),
     updateActiveDeckCopy: payload => dispatch({type: UPDATE_ACTIVE_DECK_COPY, payload}),
     cancelDeckUpdate: () => dispatch({type: CANCEL_ACTIVE_DECK_COPY_UPDATE}),
     resetActiveDeck: () => dispatch({type: RESET_ACTIVE_DECK})

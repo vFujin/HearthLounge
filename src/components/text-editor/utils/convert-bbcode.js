@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const convertBBCode = (text) =>{
-  if(text !== undefined || text !==null) {
+export const convertBBCode = (text = "") => {
+  if(typeof text !== undefined || text !==null) {
     let s = text.replace(/</g, '<')
         .replace(/>/g, '>')
         .replace(/;/g, ';')
@@ -33,4 +33,5 @@ export const convertBBCode = (text) =>{
     }
     return <div className="markup" dangerouslySetInnerHTML={createMarkup()} />
   }
+  return null;
 };

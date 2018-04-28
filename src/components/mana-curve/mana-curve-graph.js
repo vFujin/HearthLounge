@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Icon from "../icon";
 
-const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true, barColor, manaCurveObj}) => {
-
+const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.5vh", barSpacing = ".2vh", showCount = true, showIcons = true, barColor, manaCurveObj = 0}) => {
+  console.log(manaCurveObj);
   const costBelowSeven = (number) =>{
     return _.filter(deck, {cost: number}).length
   };
@@ -23,11 +23,12 @@ const ManaCurveBar = ({cost, deck, icon, max, barHeight = "100%", barWidth = "1.
     }
   };
 
+
   return (
       <li style={{marginRight: barSpacing}}>
         {count()}
         <div className="bar" style={{"width": barWidth, height: barHeight}}>
-          <span className={`${barColor} gradient-linear-top`} style={{height: `${((manaCurveObj ? manaCurveObj : s)/max)*100 || 0}%`}}></span>
+          <span className={`${barColor} gradient-linear-top`} style={{height: `${((manaCurveObj ? manaCurveObj : s)/max)*100 || 0}%`}}/>
         </div>
         {showIcon()}
       </li>

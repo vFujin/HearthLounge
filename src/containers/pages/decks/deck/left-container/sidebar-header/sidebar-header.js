@@ -1,22 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 import Icon from "../../../../../../components/icon";
+import Loader from "../../../../../../components/loaders/loader";
 
 const SidebarHeader = ({activeDeck}) =>{
-  const {type} = activeDeck;
+  const {loading, type} = activeDeck;
 
   return (
       <h3 className="sidebar__header">
         Deck Details
-        <Icon name={type} type="mode"/>
+        {/*{loading*/}
+          {/*? <Icon name={type} type="mode"/>*/}
+          {/*: <div style={{height: "50%"}}> <Loader/> </div>*/}
+        {/*}*/}
       </h3>
   )
 };
 
-export default SidebarHeader;
-
-SidebarHeader.propTypes = {
-  activeDeck: PropTypes.shape({
-    type: PropTypes.string
-  }).isRequired
+const mapStateToProps = state => {
+  const { activeDeck } = state.deckView;
+  return { activeDeck };
 };
+
+export default connect(mapStateToProps)(SidebarHeader);

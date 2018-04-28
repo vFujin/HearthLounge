@@ -58,17 +58,17 @@ const selectType = (
 
 
   let icon = (name) => {
-    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-${_.toLower(name)} ${className}`}></span>;
+    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-${_.toLower(name)} ${className}`}/>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 
   let manaIcon = (name) => {
-    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-mana-${_.toLower(name)} ${className}`}></span>;
+    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-mana-${_.toLower(name)} ${className}`}/>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 
   let rarityIcon = () => {
-    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-rarity active-without-background ${_.toLower(className)}`}></span>;
+    let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-rarity active-without-background ${_.toLower(className)}`}/>;
     return tooltip ? iconWrapper(icon) : icon;
   };
 

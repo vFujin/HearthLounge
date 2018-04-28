@@ -3,7 +3,7 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import ManaCurveBar from './mana-curve-graph';
 
-const ManaCurve = ({deck, max, barHeight, barWidth, barSpacing, showCount, showIcons, padding, barColor, manaCurveObj}) => {
+const ManaCurve = ({deck = [], max = 1, barHeight, barWidth, barSpacing, showCount, showIcons, padding, barColor, manaCurveObj = 0}) => {
   if(manaCurveObj){
     return (
       <ul className="graph" style={{padding: padding || 0}}>

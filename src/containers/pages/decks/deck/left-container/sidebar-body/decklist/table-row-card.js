@@ -1,12 +1,14 @@
 import React from 'react';
+import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import Icon from '../../../../../../../components/icon';
 import {cardRarityBackground} from "../../../../../../../utils/deck/card-rarity-background";
 import Tooltip from 'antd/lib/tooltip';
 import CardImg from "./card-img";
-const Card = ({allCards, index, card, cardNames, deckEditView, handleCardRemovalClick}) => {
+
+const Card = ({cards, index, card, cardNames, deckEditView, handleCardRemovalClick}) => {
   return(
-      <Tooltip title={<CardImg allCards={allCards} hoveredCardName={cardNames[index]}/>}
+      <Tooltip title={<CardImg allCards={cards.cards} hoveredCardName={cardNames[index]}/>}
                overlayClassName="decklist-card-img"
                arrowPointAtCenter={true}
                placement="right">
@@ -36,7 +38,12 @@ const Card = ({allCards, index, card, cardNames, deckEditView, handleCardRemoval
     )
 };
 
-export default Card;
+const mapStateToProps = state => {
+  const { cards } = state;
+  return { cards };
+};
+
+export default connect(mapStateToProps)(Card);
 
 Card.propTypes = {
   card: PropTypes.object.isRequired,
