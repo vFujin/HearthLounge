@@ -1,8 +1,10 @@
 import * as types from "./types";
 
-export function fetchDeckAuthorRequest(){
+export function fetchDeckAuthorRequest(authorId){
+  console.log(authorId);
   return {
-    type: types.FETCH_DECK_AUTHOR_REQUEST
+    type: types.FETCH_DECK_AUTHOR_REQUEST,
+    payload: authorId
   }
 }
 

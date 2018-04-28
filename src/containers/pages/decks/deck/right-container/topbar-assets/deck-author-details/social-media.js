@@ -2,6 +2,7 @@ import React from 'react';
 import Tooltip from 'antd/lib/tooltip';
 import {Link} from 'react-router-dom';
 import Icon from "../../../../../../../components/icon";
+import PropTypes from "prop-types";
 
 const SocialMediaDetails = ({deckAuthor}) =>{
   const {username, facebook, twitter, twitch, youtube} = deckAuthor;
@@ -27,3 +28,13 @@ const SocialMediaDetails = ({deckAuthor}) =>{
 };
 
 export default SocialMediaDetails;
+
+SocialMediaDetails.propTypes = {
+  deckAuthor: PropTypes.shape({
+    username: PropTypes.string,
+    facebook: PropTypes.string,
+    twitter: PropTypes.string,
+    twitch: PropTypes.string,
+    youtube: PropTypes.string
+  })
+};
