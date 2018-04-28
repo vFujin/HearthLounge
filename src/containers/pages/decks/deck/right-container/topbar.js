@@ -8,7 +8,7 @@ const Topbar = ({activeDeck}) => {
   return (
       <div className="topbar">
         <div className="topbar__container topbar__grid topbar__grid--3-4-1">
-          <DeckDetails activeDeck={activeDeck}/>
+          <DeckDetails />
           <DeckAuthorDetails activeDeck={activeDeck}/>
           <CreatedDetails activeDeck={activeDeck}/>
         </div>

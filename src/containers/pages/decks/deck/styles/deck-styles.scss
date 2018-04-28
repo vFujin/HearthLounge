@@ -1,0 +1,181 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mixins';
+
+.container__page.deck {
+  .container__page--left{
+    .sidebar__body{
+      .addCard-wrapper{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 5vh;
+        z-index: 10;
+        display: flex;
+        background: $dark-grey;
+        input{
+          width: 80%;
+          height:100%;
+        }
+        //span{
+        //  display: flex;
+        //  align-items: center;
+        //  justify-content: center;
+        //  width: 20%;
+        //  height:100%;
+        //  font-size: 4vw;
+        //}
+      }
+    }
+  }
+
+  .container__page--right {
+
+    .topbar {
+      .topbar__container {
+        align-content: center;
+
+        div {
+          display: flex;
+          .deck-details-wrapper {
+            margin-left: 2vh;
+            display: flex;
+            align-items: center;
+            &:first-child {
+              margin-left: 1vh;
+            }
+            span, p {
+              margin-right: .5vh;
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+            span {
+              font-size: 1vw;
+            }
+          }
+
+          .stats{
+            padding: 0 10px;
+            flex-grow: 2;
+            justify-content: center;
+          }
+
+          .votes {
+            padding: 0 .5vh;
+            p {
+              &.pos {
+                color: $monk;
+              }
+              &.neg {
+                color: $death_knight;
+              }
+            }
+          }
+
+          .archetype {
+            text-transform: capitalize;
+            flex-grow: 2;
+            justify-content: flex-start;
+
+            p {
+              padding: .5vh;
+              text-align: center;
+              @include box-shadow(0, 0, 10px, $dark-grey);
+
+              &.loading {
+                height: 75%;
+                width: 100%;
+                box-shadow: none;
+                @include linearLoader();
+              }
+            }
+          }
+        }
+
+        .created-details {
+          display: grid;
+          text-align: right;
+          margin-right: 1vh;
+        }
+
+        .author-details{
+          justify-content: center;
+          align-items: center;
+          img{
+            width: 35px;
+            height: 35px;
+            margin-right: 10px;
+          }
+
+          > div:not(.social-media-wrapper){
+            align-items: center;
+            margin-right: 10px;
+          }
+          .game-details-wrapper{
+            p{
+              margin-right: 10px;
+            }
+          }
+          .social-media-wrapper{
+            display: grid;
+            grid-template-rows: repeat(2, 20px);
+            grid-template-columns: repeat(2, 20px);
+            grid-column-gap: 2px;
+            grid-row-gap: 2px;
+            a {
+              &.profile-not-defined{
+                cursor: default;
+              }
+              span {
+                font-size: 12px;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      .container__details {
+        .container__details--description {
+          .section__body {
+            border:0;
+            .section__body--options {
+              position: relative;
+              top: 1px;
+              display: flex;
+              justify-content: space-between;
+              div {
+                display: flex;
+                align-content: center;
+              }
+            }
+            .markup {
+              border: 1px solid $dark-grey;
+              height: calc(100% - 22px);
+              overflow: auto;
+            }
+            .text-editor{
+              height: calc(100% - 22px);
+            }
+          }
+        }
+        .container__details--comments {
+          position: relative;
+          .section__footer {
+            padding: 2vh 1vh 0 1vh;
+            border: 1px solid $dark-grey;
+            .text-editor{
+              height: calc(100% - 1vh);
+            }
+          }
+        }
+      }
+    }
+  }
+}

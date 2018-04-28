@@ -1,19 +1,25 @@
 import React from 'react';
+import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 
 const Archetype = ({activeDeck}) =>{
-  const {playerClass, archetype} = activeDeck;
+  const {loading, playerClass, archetype} = activeDeck;
 
   return (
       <div className="deck-details-wrapper archetype">
-        <p className={`${playerClass} active`}>
-          {`${archetype} ${playerClass}`}
+        <p className={`${playerClass} active ${loading ? "loading" : undefined}`}>
+          {archetype} {playerClass}
         </p>
       </div>
   )
 };
 
-export default Archetype;
+const mapStateToProps = state => {
+  const { activeDeck } = state.deckView;
+  return { activeDeck };
+};
+
+export default connect(mapStateToProps)(Archetype);
 
 Archetype.propTypes = {
   activeDeck: PropTypes.shape({

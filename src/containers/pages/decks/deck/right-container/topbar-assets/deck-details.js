@@ -4,12 +4,12 @@ import DeckVotes from "./deck-details/votes";
 import DeckStats from "./deck-details/stats";
 import Archetype from "./deck-details/archetype";
 
-const DeckDetails = ({activeDeck}) =>{
+const DeckDetails = () =>{
   return (
       <div className="deck-details">
         <DeckVotes />
         <DeckStats />
-        <Archetype activeDeck={activeDeck}/>
+        <Archetype />
       </div>
   )
 };

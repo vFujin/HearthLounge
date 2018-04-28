@@ -4,12 +4,12 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
-import {udpateDeckRating} from '../../../../firebase/decks/deck/update';
 import {RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
 import {CANCEL_ACTIVE_DECK_COPY_UPDATE, UPDATE_ACTIVE_DECK_COPY} from "../../../../redux/deck/active-deck-copy/types";
 import {updateDeck} from "../../create-deck/after-class-selection/right-container/content-assets/utils/index";
 import NotFound from "../../../../components/not-found/not-found";
 import {fetchActiveDeckRequest} from "../../../../redux/deck/active-deck/actions";
+import './styles/deck-styles.css';
 
 class Deck extends Component{
   componentDidMount() {

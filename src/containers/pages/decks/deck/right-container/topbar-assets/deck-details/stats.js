@@ -32,5 +32,6 @@ DeckStats.propTypes = {
       Spell: PropTypes.number,
       Weapon: PropTypes.number,
     })
-  })
+  }),
+  deckEditView: PropTypes.bool
 };
