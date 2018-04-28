@@ -30,14 +30,7 @@ class Deck extends Component{
     updateActiveDeckCopy('');
   }
 
-  handleDeckVotingClick = (e) =>{
-    const {activeUser, activeDeck, updateDeckRating} = this.props;
-    let vote = e.currentTarget.id;
-    const {deckId} = activeDeck;
-    const {uid} = activeUser;
 
-    udpateDeckRating(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
-  };
 
   handleCardClick = (e, card) => {
     const {deck, editDeck} = this.props;
@@ -60,8 +53,7 @@ class Deck extends Component{
                             activeDeckCopy={activeDeckCopy}
                             deckEditView={deckEditView}
                             params={match.params}
-                            patch={patch}
-                            handleDeckVotingClick={this.handleDeckVotingClick}/>
+                            patch={patch}/>
           </div>
       )
     }

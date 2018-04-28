@@ -1,23 +1,56 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { connect } from "react-redux";
 import PropTypes from 'prop-types';
+import {udpateDeckRating} from "../../../../../../../firebase/decks/deck/update";
+import Icon from "../../../../../../../components/icon";
 
-const Votes = ({activeDeck, handleDeckVotingClick}) =>{
-  const {upvotes, downvotes} = activeDeck;
-  let votes = upvotes - downvotes;
-  let voteResClass = votes >= 0 ? 'pos' : 'neg';
-  
-  return (
+class DeckVotes extends Component {
+
+  handleDeckVotingClick = (e) =>{
+    const {activeUser, activeDeck, updateDeckRating} = this.props;
+    const {deckId} = activeDeck;
+    const {uid} = activeUser;
+    let vote = e.currentTarget.id;
+
+    udpateDeckRating(deckId, uid, vote, (voteType)=>updateDeckRating(voteType));
+  };
+
+  render() {
+    const {loading, upvotes, downvotes} = this.props.activeDeck;
+    let votes = loading ? 0 : (upvotes - downvotes);
+    let voteResClass = votes >= 0 ? 'pos' : 'neg';
+
+    return (
       <div className="deck-details-wrapper votes">
-        <span onClick={handleDeckVotingClick} id="upvote" className="hs-icon monk active-without-background icon-circle-up"></span>
+        <Icon id="upvote"
+              name="circle-up"
+              className="monk active-without-background"
+              onClick={this.handleDeckVotingClick}/>
         <p className={voteResClass}>{votes}</p>
-        <span onClick={handleDeckVotingClick} id="downvote" className="hs-icon death-knight active-without-background icon-circle-down"></span>
+        <Icon id="downvote"
+              name="circle-down"
+              className="death-knight active-without-background"
+              onClick={this.handleDeckVotingClick}/>
       </div>
-  )
+    )
+  }
+}
+
+const mapStateToProps = state => {
+  const { activeUser } = state.users;
+  const { activeDeck } = state.deckView;
+  return { activeDeck, activeUser };
 };
 
-export default Votes;
+const mapDispatchToProps = dispatch => {
+  return {
+      // : payload => dispatch((payload))
+  }
+};
 
-Votes.propTypes = {
+export default connect(mapStateToProps, mapDispatchToProps)(DeckVotes);
+
+DeckVotes.propTypes = {
   activeDeck: PropTypes.shape({
     upvotes: PropTypes.number,
     downvotes: PropTypes.number,
