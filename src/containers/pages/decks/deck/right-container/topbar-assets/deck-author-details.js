@@ -1,12 +1,11 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import * as types from "../../../../../../redux/deck/deck-author/types";
 import UserAvatar from '../../../../../../components/user/user-avatar'
 import GameDetails from "./deck-author-details/game";
 import SocialMediaDetails from "./deck-author-details/social-media";
 import GeneralDetails from "./deck-author-details/general";
-import SimplifiedUserSnippet from "../../../../../../components/user/simplified-user-snippet";
+import {fetchDeckAuthorRequest} from "../../../../../../redux/deck/deck-author/actions";
 
 class DeckAuthorDetails extends PureComponent{
   componentDidMount(){
@@ -17,8 +16,10 @@ class DeckAuthorDetails extends PureComponent{
 
   render() {
     const {deckAuthor} = this.props;
+    const {loading} = deckAuthor;
+
     return (
-        <div className="author-details">
+        <div className={`${loading ? "loading" : undefined} author-details`}>
           <UserAvatar deckAuthor={deckAuthor}/>
           <GeneralDetails deckAuthor={deckAuthor}/>
           <GameDetails deckAuthor={deckAuthor}/>
@@ -29,15 +30,13 @@ class DeckAuthorDetails extends PureComponent{
 }
 
 const mapStateToProps = state =>{
-  const {deckAuthor} = state.deckView;
-  return {deckAuthor};
+  const {deckAuthor, activeDeck} = state.deckView;
+  return {deckAuthor, activeDeck};
 };
 
 const mapDispatchToProps = dispatch =>{
   return {
-    fetchDeckAuthorDetails: payload => dispatch({
-      type: types.FETCH_DECK_AUTHOR_REQUEST, payload
-    })
+    fetchDeckAuthorDetails: payload => dispatch(fetchDeckAuthorRequest(payload))
   }
 };
 

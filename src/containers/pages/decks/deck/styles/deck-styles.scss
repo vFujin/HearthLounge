@@ -83,7 +83,7 @@
               @include box-shadow(0, 0, 10px, $dark-grey);
 
               &.loading {
-                height: 75%;
+                height: 100%;
                 width: 100%;
                 box-shadow: none;
                 @include linearLoader();
@@ -101,6 +101,13 @@
         .author-details{
           justify-content: center;
           align-items: center;
+
+          &.loading{
+            height: 100%;
+            width: 100%;
+            @include linearLoader();
+          }
+
           img{
             width: 35px;
             height: 35px;
