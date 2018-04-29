@@ -3,12 +3,19 @@ import {connect} from 'react-redux';
 import SimplifiedUserSnippet from '../../../../../../../../components/user/simplified-user-snippet';
 import ShortenedUserDetailsLoader from "../../../../../../../../components/loaders/shortened-user-details-loader";
 import {CommentHeader, CommentBody, CommentFooter} from "./index";
-import {FETCH_SHORTENED_USER_DETAILS_REQUEST} from "../../../../../../../../redux/user/shortened-details/types";
+import {fetchShortenedUserDetailsRequest} from "../../../../../../../../redux/user/shortened-details/actions";
 
 class Comment extends PureComponent {
   componentDidMount(){
-    const {authorId} = this.props.comment;
-    this.props.fetchShortenedUserDetails(authorId);
+    const {deckComments, shortenedUserDetails} = this.props;
+    let deckCommentsAllValues = Object.values(deckComments.all);
+    let shortenedUserDetailsIds = Object.keys(shortenedUserDetails);
+    let shortenedUserDetailExist = deckCommentsAllValues.some(comment => shortenedUserDetailsIds.includes(comment.authorId));
+
+    if(!shortenedUserDetailExist) {
+      const {authorId} = this.props.comment;
+      this.props.fetchShortenedUserDetails(authorId);
+    }
   }
 
   render() {
@@ -38,13 +45,13 @@ class Comment extends PureComponent {
 }
 
 const mapStateToProps = state => {
-  const {shortenedUserDetails, deckCommentDeletingStatus} = state.deckView;
-  return {shortenedUserDetails, deckCommentDeletingStatus};
+  const {activeDeck, deckComments, shortenedUserDetails, deckCommentDeletingStatus} = state.deckView;
+  return {activeDeck, deckComments, shortenedUserDetails, deckCommentDeletingStatus};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchShortenedUserDetails: payload => dispatch({type: FETCH_SHORTENED_USER_DETAILS_REQUEST, payload}),
+    fetchShortenedUserDetails: payload => dispatch(fetchShortenedUserDetailsRequest(payload)),
   }
 };
 

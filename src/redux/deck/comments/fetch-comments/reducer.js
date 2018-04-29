@@ -26,7 +26,7 @@ export default function(state=initialState, {payload, type}) {
 
     case types.RESET_ACTIVE_DECK_COMMENTS:
       return {
-        loading: true
+        loading: false
       };
     default:
       return state;

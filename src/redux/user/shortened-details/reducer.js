@@ -1,13 +1,14 @@
 import * as types from './types';
 
 const initialState = {
-  loading: true
+  loading: false
 };
 
 export default function(state=initialState, {type, payload}) {
   switch (type) {
     case types.FETCH_SHORTENED_USER_DETAILS_REQUEST:
       return {
+        loading: true,
           ...state
       };
 
@@ -23,6 +24,12 @@ export default function(state=initialState, {type, payload}) {
         loading: false,
         error: payload
       };
+
+    case types.RESET_SHORTENED_USER_DETAILS:
+      return {
+        loading: false
+      };
+
     default:
       return state;
   }

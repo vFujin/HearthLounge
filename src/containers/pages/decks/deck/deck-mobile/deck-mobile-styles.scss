@@ -1,0 +1,15 @@
+.container__page--mobile {
+
+    .topbar__container {
+      width: 100%;
+      display: flex;
+      padding: 20px;
+      justify-content: space-between;
+
+      .deck-details {
+        span {
+          font-size: calc(1em + 1vmin);
+        }
+      }
+    }
+}

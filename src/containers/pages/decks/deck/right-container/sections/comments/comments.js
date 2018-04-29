@@ -16,14 +16,16 @@ class DeckComments extends PureComponent {
   };
 
   componentDidMount() {
-    const {activeUser, params, fetchComments} = this.props;
+    const {activeUser, params, fetchComments, deckComments} = this.props;
     const {deckId} = params;
 
-    if(activeUser){
-      const {uid} = activeUser;
-      fetchComments({deckId, uid});
-    } else {
-      fetchComments({deckId});
+    if(!deckComments.all) {
+      if (activeUser) {
+        const {uid} = activeUser;
+        fetchComments({deckId, uid});
+      } else {
+        fetchComments({deckId});
+      }
     }
   }
 

@@ -8,13 +8,21 @@ export const fetchUserShortenedDetails = (uid) => {
 
   return refParent('users').once("value", (snapshot) => {
     const user = snapshot.child(uid).val();
-    simplifiedUser = {
-      avatar: user.avatar ? user.avatar : null,
-      rank: user.rank,
-      role: user.role,
-      username: user.username,
-      loading: false
-    };
+
+    if(user) {
+      return simplifiedUser = {
+        avatar: user.avatar ? user.avatar : "",
+        rank: user.rank,
+        role: user.role,
+        username: user.username,
+        loading: false
+      };
+    } else {
+      return simplifiedUser = {
+        avatar: null,
+        username: "[deleted]",
+      }
+    }
   })
       .then(() => ({details: {[uid]: simplifiedUser}}))
       .catch(err => ({err: {[uid]: {err, loading: false}}}))

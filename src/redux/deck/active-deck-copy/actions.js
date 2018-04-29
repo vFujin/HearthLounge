@@ -6,3 +6,9 @@ export function updateActiveDeckCopy(activeDeckCopy){
     payload: activeDeckCopy
   }
 }
+
+export function resetActiveDeckCopy(){
+  return {
+    type: types.RESET_ACTIVE_DECK_COPY
+  }
+}

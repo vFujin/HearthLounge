@@ -9,9 +9,12 @@ import './styles.css';
 
 class DeckAuthorDetails extends Component{
   componentDidMount(){
-    const {activeDeck, fetchDeckAuthorDetails} = this.props;
+    const {activeDeck, fetchDeckAuthorDetails, deckAuthor} = this.props;
     const {authorId} = activeDeck;
-    fetchDeckAuthorDetails(authorId);
+
+    if(!deckAuthor.uid) {
+      fetchDeckAuthorDetails(authorId);
+    }
   }
 
   render() {

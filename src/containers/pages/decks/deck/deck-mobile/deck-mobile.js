@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import _ from 'lodash';
 import {RESET_ACTIVE_DECK} from "../../../../../redux/deck/active-deck/types";
 import NotFound from "../../../../../components/not-found/not-found";
 import {fetchActiveDeckRequest} from "../../../../../redux/deck/active-deck/actions";
@@ -9,29 +8,12 @@ import MobileTopbar from "../../../../../components/mobile/topbar/topbar";
 import DeckDetails from "./deck-details";
 import DeckDescription from "../right-container/sections/description/description";
 import DeckComments from "../right-container/sections/comments/comments";
+import './deck-mobile-styles.css';
 
 class DeckMobile extends Component{
   state = {
     activeMobileTab: "deckDetails"
   };
-
-  componentDidMount() {
-    const {activeDeck, fetchDeck, match, decks, updateActiveDeckCopy} = this.props;
-    const {deckId, deckTitle} = match.params;
-    document.title = _.startCase(deckTitle) || "Deck";
-
-    if (!activeDeck.loading && !activeDeck.deckId && !decks.all) {
-      fetchDeck(deckId);
-    } else {
-      updateActiveDeckCopy(activeDeck);
-    }
-  }
-
-  componentWillUnmount(){
-    const {resetActiveDeck, updateActiveDeckCopy} = this.props;
-    resetActiveDeck();
-    updateActiveDeckCopy('');
-  }
 
   handleMobileTopbarTabClick = e => {
     const id = e.currentTarget.id;
@@ -48,22 +30,21 @@ class DeckMobile extends Component{
   };
 
   render() {
-    const {activeDeck, match} = this.props;
+    const {activeDeck, params} = this.props;
     const {activeMobileTab} = this.state;
 
     if(activeDeck.err){
-      return <NotFound page={match.params.deckId} redirect="decks"/>
+      return <NotFound page={params.deckId} redirect="decks"/>
     }
 
     return (
-      <div className="container__page deck deck-mobile">
+      <div className="container__page container__page--mobile deck">
         <MobileTopbar tabs={["deckDetails", "guide", "comments"]} activeMobileTab={activeMobileTab} handleTabClick={this.handleMobileTopbarTabClick}/>
         <div className="content">
-          {this.content(match.params)}
+          {this.content(params)}
         </div>
       </div>
     )
-
   }
 }
 

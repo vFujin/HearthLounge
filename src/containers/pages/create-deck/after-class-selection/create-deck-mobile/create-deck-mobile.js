@@ -56,7 +56,7 @@ class CreateDeckClassSelectedMobile extends Component {
     const mobileTopbarTabs = ["deckList", "cards", "deckDetails"];
 
     return (
-      <div className="container__page create-deck">
+      <div className="container__page container__page--mobile create-deck">
         <MobileTopbar tabs={mobileTopbarTabs}
                       activeMobileTab={activeCreateDeckMobileTab}
                       handleTabClick={this.handleTabClick}/>

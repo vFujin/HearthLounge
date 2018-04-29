@@ -1,7 +1,7 @@
 import * as types from "./types";
 
 const initialState = {
-  loading: true
+  loading: false
 };
 
 export default function(state=initialState, {payload, type}) {
@@ -23,7 +23,7 @@ export default function(state=initialState, {payload, type}) {
 
     case types.RESET_ACTIVE_DECK_AUTHOR:
       return {
-        loading: true
+        loading: false
       };
     default:
       return state;

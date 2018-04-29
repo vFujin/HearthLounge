@@ -27,6 +27,7 @@
   $desktop: "(min-width: 1600px)";
   $laptop: "(min-width: 1366px) and (max-width: 1600px)";
   $tablet: "(min-width: 816px) and (max-width: 1365px)";
+  $tabletBelow: "(max-width: 1365px)";
   $tablet_mini: "(min-width: 816px) and (max-width: 1000px)";
   $mobile: "(max-width: 815px)";
   $mobile_mini: "(max-width: 600px)";
@@ -45,6 +46,15 @@
    */
   @else if $size == laptop {
     @media only screen and #{$laptop} {
+      @content;
+    }
+  }
+
+ /*
+  * Tablet Below 1365px
+  */
+  @else if $size == tabletBelow {
+    @media only screen and #{$tabletBelow}{
       @content;
     }
   }

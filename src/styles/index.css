@@ -6754,4 +6754,12 @@ card {
 .deleting {
   color: rgba(0, 0, 0, 0.2); }
 
+/*
+ * Desktop
+ */
+@media only screen and (max-width: 1365px) {
+  .container__page--mobile.create-deck, .container__page--mobile.deck {
+    display: grid;
+    grid-template-rows: 5.5vh 77.5vh; } }
+
 /*# sourceMappingURL=index.css.map */

@@ -20,3 +20,9 @@ export function fetchDeckAuthorFailure(error){
     payload: error
   }
 }
+
+export function resetDeckAuthor(){
+  return {
+    type: types.RESET_ACTIVE_DECK_AUTHOR
+  }
+}

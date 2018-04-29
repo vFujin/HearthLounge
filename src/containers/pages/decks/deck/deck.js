@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
+import DeckMobile from './deck-mobile/deck-mobile';
 import LeftContainer from "./left-container/left-container";
 import RightContainer from "./right-container/right-container";
 import {RESET_ACTIVE_DECK} from "../../../../redux/deck/active-deck/types";
 import NotFound from "../../../../components/not-found/not-found";
 import {fetchActiveDeckRequest} from "../../../../redux/deck/active-deck/actions";
-import {updateActiveDeckCopy} from "../../../../redux/deck/active-deck-copy/actions";
+import {resetActiveDeckCopy, updateActiveDeckCopy} from "../../../../redux/deck/active-deck-copy/actions";
+import {resetShortenedUserDetails} from "../../../../redux/user/shortened-details/actions";
+import {resetActiveDeckComments} from "../../../../redux/deck/comments/fetch-comments/actions";
+import {resetDeckAuthor} from "../../../../redux/deck/deck-author/actions";
 
 class Deck extends Component{
   componentDidMount() {
@@ -22,39 +26,48 @@ class Deck extends Component{
   }
 
   componentWillUnmount(){
-    const {resetActiveDeck, updateActiveDeckCopy} = this.props;
+    const {resetActiveDeck, resetActiveDeckCopy, resetDeckAuthor, resetActiveDeckComments, resetShortenedUserDetails} = this.props;
     resetActiveDeck();
-    updateActiveDeckCopy('');
+    resetActiveDeckCopy();
+    resetDeckAuthor();
+    resetActiveDeckComments();
+    resetShortenedUserDetails();
   }
 
   render() {
-    const {activeDeck, match} = this.props;
-    if(activeDeck.err){
+    const {activeDeck, match, windowWidth} = this.props;
+    if (activeDeck.err) {
       return <NotFound page={match.params.deckId} redirect="decks"/>
     }
 
-    return (
-      <div className="container__page container__page--twoSided deck">
-        <LeftContainer/>
-        <RightContainer params={match.params}/>
-      </div>
-    )
-
+    return windowWidth <= 1365
+      ? <DeckMobile params={match.params}/>
+      : (
+        <div className="container__page container__page--twoSided deck">
+          <LeftContainer/>
+          <RightContainer params={match.params}/>
+        </div>
+      )
   }
 }
 
 const mapStateToProps = (state) => {
   const {decks} = state.decks;
   const {activeDeck} = state.deckView;
+  const { windowWidth } = state.app.windowSize;
 
-  return {activeDeck, decks};
+  return {activeDeck, decks, windowWidth};
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchDeck: payload => dispatch(fetchActiveDeckRequest(payload)),
     updateActiveDeckCopy: payload => dispatch(updateActiveDeckCopy(payload)),
-    resetActiveDeck: () => dispatch({type: RESET_ACTIVE_DECK})
+    resetActiveDeck: () => dispatch({type: RESET_ACTIVE_DECK}),
+    resetActiveDeckCopy: () => dispatch(resetActiveDeckCopy()),
+    resetDeckAuthor: () => dispatch(resetDeckAuthor()),
+    resetActiveDeckComments: () => dispatch(resetActiveDeckComments()),
+    resetShortenedUserDetails: () => dispatch(resetShortenedUserDetails())
   };
 };
 
