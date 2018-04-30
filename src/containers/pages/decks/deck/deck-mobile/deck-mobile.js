@@ -8,6 +8,7 @@ import MobileTopbar from "../../../../../components/mobile/topbar/topbar";
 import DeckDetails from "./deck-details";
 import DeckDescription from "../right-container/sections/description/description";
 import DeckComments from "../right-container/sections/comments/comments";
+import DeckAuthorDetails from "../right-container/topbar/deck-author-details/deck-author-details";
 import './deck-mobile-styles.css';
 
 class DeckMobile extends Component{
@@ -23,6 +24,7 @@ class DeckMobile extends Component{
 
   content = (params) => {
     switch(this.state.activeMobileTab){
+      case "aboutAuthor": return <DeckAuthorDetails />;
       case "guide": return <DeckDescription />;
       case "comments": return <DeckComments params={params}/>;
       default: return <DeckDetails />;
@@ -39,9 +41,13 @@ class DeckMobile extends Component{
 
     return (
       <div className="container__page container__page--mobile deck">
-        <MobileTopbar tabs={["deckDetails", "guide", "comments"]} activeMobileTab={activeMobileTab} handleTabClick={this.handleMobileTopbarTabClick}/>
-        <div className="content">
-          {this.content(params)}
+        <MobileTopbar tabs={["aboutAuthor", "deckDetails", "guide", "comments"]} activeMobileTab={activeMobileTab} handleTabClick={this.handleMobileTopbarTabClick}/>
+        <div className="container__page--right">
+          <div className="content">
+            <div className="container__details">
+              {this.content(params)}
+            </div>
+          </div>
         </div>
       </div>
     )

@@ -20,6 +20,7 @@ class DeckAuthorDetails extends Component{
   render() {
     const {deckAuthor} = this.props;
     const {loading} = deckAuthor;
+
     return (
         <div className={`${this.props.activeDeck.loading ? "loading" : undefined} author-details`}>
           {!this.props.activeDeck.loading && !loading && !deckAuthor.uid &&

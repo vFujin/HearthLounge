@@ -269,7 +269,8 @@ card{
   z-index: 1;
   height: 100%;
   .container__page--inner{
-    overflow: hidden
+    display: grid;
+    grid-template-rows: 5.5vh 77.5vh;
   }
   .container__page--mobile {
 
@@ -400,6 +401,8 @@ card{
       position: relative;
       z-index: 1;
       height: 100%;
+      display: grid;
+      grid-template-rows: 3vh 18vh 3vh auto;
 
       .list {
         position: relative;
@@ -483,6 +486,7 @@ card{
   .container__page--right {
     .topbar{
       background-color: $light-grey;
+
       .cost{
         li{
           span{
@@ -492,6 +496,7 @@ card{
           }
         }
       }
+
       &.has-icons {
         cursor: pointer;
         position: relative;
@@ -511,6 +516,7 @@ card{
         }
 
       }
+
       .topbar__extension-navigation{
         display: flex;
         height: 100%;
@@ -537,6 +543,32 @@ card{
         }
       }
     }
+
+    .topbar__grid{
+      display: grid;
+      height: 100%;
+
+      div{
+        height:100%;
+        > &:last-child{
+          justify-content: flex-end;
+        }
+      }
+
+      &.topbar__grid--2-1-1 {
+        grid-template-columns: 40vw 20vw 20vw;
+      }
+      &.topbar__grid--1-1{
+        grid-template-columns: repeat(2, 50%);
+      }
+      &.topbar__grid--1-2-1{
+        grid-template-columns: 20vw 40vw 20vw;
+      }
+      &.topbar__grid--3-4-1{
+        grid-template-columns: 30vw 40vw 10vw;
+      }
+    }
+
     .display-block{
       height: calc(100% - 50px);
       .choosen-deck-details{
@@ -549,6 +581,7 @@ card{
         }
       }
     }
+
     .content{
       @include scrollbar($pearl);
       position: relative;
@@ -560,7 +593,12 @@ card{
       overflow-x: hidden;
 
       .container__details{
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - 1vh));
+        grid-column-gap: 1vh;
+        height: 100%;
         width: calc(100% + 1vh);
+
         .container__details--section {
           overflow: hidden;
           .section__header {
@@ -1144,10 +1182,80 @@ card{
       @include striped-background($white-010, $white-020)
     }
   }
+
+  &.container__page--mobile {
+
+    .container__page--left {
+      .container__mana-curve {
+        grid-template-rows: 4vh 18vh 4vh auto;
+
+        h3 {
+          font-size: calc(1em + 1vmin);
+        }
+
+        .graph {
+          span, .count {
+            font-size: calc(1em + 1vmin);
+          }
+
+          .bar {
+            height: 60% !important; //overwrites defined value in jsx component
+          }
+        }
+      }
+    }
+
+    &.deck {
+      .container__page--right {
+        .content {
+          height: calc(100% - 1vh);
+          width: calc(100% - 2vh);
+          overflow: hidden;
+
+          .container__details {
+            width: 100%;
+            grid-template-rows: 100%;
+            grid-template-columns: 100%;
+
+            .deckDetails {
+              .topbar__grid{
+                display: flex;
+                align-items: center;
+
+                .deck-details{
+                  align-items: center;
+
+                  .stats{
+                    padding: 0;
+                  }
+                }
+              }
+
+              .container__page--inner {
+                grid-template-rows: 4.5vh 8.5vh 63.5vh;
+
+                .sidebar__body {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 .container__page--oneSided{
   justify-content:center;
   align-content: center;
+
+  &.decks {
+    grid-template-columns: 100%;
+
+    .container__page--inner{
+      width: 100%;
+    }
+  }
 }
 
 /*

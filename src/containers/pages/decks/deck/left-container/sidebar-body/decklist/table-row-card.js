@@ -8,13 +8,13 @@ import CardImg from "./card-img";
 import {decklistRemoveCard} from "../../../../../../../utils/deck/edit-mode/decklist-remove-card";
 import {updateActiveDeckCopy} from "../../../../../../../redux/deck/active-deck-copy/actions";
 
-const Card = ({cards, index, card, cardNames, deckEditView, activeDeckCopy, updateActiveDeckCopy}) => {
+const Card = ({cards, index, card, cardNames, deckEditView, activeDeckCopy, windowWidth, updateActiveDeckCopy}) => {
   return(
       <Tooltip title={<CardImg allCards={cards.cards} hoveredCardName={cardNames[index]}/>}
                overlayClassName="decklist-card-img"
                arrowPointAtCenter={true}
                placement="right">
-        <tr key={index} className={cardRarityBackground(card.rarity)}>
+        <tr key={index} className={cardRarityBackground(card.rarity, windowWidth)}>
           <td>
             <Icon name={card.set} type="set" tooltip={true} tooltipPlacement="right"/>
           </td>
@@ -40,10 +40,11 @@ const Card = ({cards, index, card, cardNames, deckEditView, activeDeckCopy, upda
 };
 
 const mapStateToProps = state => {
-  const { cards, deckView } = state;
+  const { cards, deckView, app } = state;
+  const { windowWidth } = app.windowSize;
   const { activeDeckCopy, tools } = deckView;
   const { deckEditView } = tools;
-  return { cards, activeDeckCopy, deckEditView };
+  return { cards, activeDeckCopy, deckEditView, windowWidth };
 };
 
 const mapDispatchToProps = dispatch => {

@@ -66,23 +66,7 @@
               }
             }
 
-            .container__mana-curve {
-              grid-template-rows: 4vh 18vh 4vh auto;
 
-              h3 {
-                font-size: calc(1em + 1vmin);
-              }
-
-              .graph {
-                span, .count {
-                  font-size: calc(1em + 1vmin);
-                }
-
-                .bar {
-                  height: 60% !important; //overwrites defined value in jsx component
-                }
-              }
-            }
           }
         }
 

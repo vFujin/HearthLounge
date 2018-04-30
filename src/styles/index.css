@@ -501,48 +501,22 @@ a {
     grid-column-gap: 1vh; }
   #container .container__page {
     display: grid; }
-    #container .container__page .container__page--inner {
+    #container .container__page .container__page--inner.no-filters {
+      display: flex; }
+    #container .container__page .content .container__details.post .container__details--section {
+      grid-template-rows: 6vh 71vh; }
+    #container .container__page .content .container__details .container__details--section {
+      display: grid; }
+      #container .container__page .content .container__details .container__details--section.v-rows-3 {
+        grid-template-rows: 6vh 62.5vh 8vh; }
+      #container .container__page .content .container__details .container__details--section.v-rows-2 {
+        grid-template-rows: 6vh auto; }
+    #container .container__page .content .container__details .container__details--comments.editorActive {
+      grid-template-rows: 6vh 50.5vh 20vh; }
+    #container .container__page .content .container__details .container__details--comments .section__body .comment {
       display: grid;
-      grid-template-rows: 5.5vh 77.5vh; }
-      #container .container__page .container__page--inner.no-filters {
-        display: flex; }
-    #container .container__page .container__page--left .sidebar__body .container__mana-curve {
-      display: grid;
-      grid-template-rows: 3vh 18vh 3vh auto; }
-    #container .container__page .container__page--right .topbar__grid {
-      display: grid;
-      height: 100%; }
-      #container .container__page .container__page--right .topbar__grid div {
-        height: 100%; }
-        > #container .container__page .container__page--right .topbar__grid div:last-child {
-          justify-content: flex-end; }
-      #container .container__page .container__page--right .topbar__grid.topbar__grid--2-1-1 {
-        grid-template-columns: 40vw 20vw 20vw; }
-      #container .container__page .container__page--right .topbar__grid.topbar__grid--1-1 {
-        grid-template-columns: repeat(2, 50%); }
-      #container .container__page .container__page--right .topbar__grid.topbar__grid--1-2-1 {
-        grid-template-columns: 20vw 40vw 20vw; }
-      #container .container__page .container__page--right .topbar__grid.topbar__grid--3-4-1 {
-        grid-template-columns: 30vw 40vw 10vw; }
-    #container .container__page .content .container__details {
-      display: grid;
-      grid-template-columns: repeat(2, calc(50% - 1vh));
-      grid-column-gap: 1vh;
-      height: 100%; }
-      #container .container__page .content .container__details.post .container__details--section {
-        grid-template-rows: 6vh 71vh; }
-      #container .container__page .content .container__details .container__details--section {
-        display: grid; }
-        #container .container__page .content .container__details .container__details--section.v-rows-3 {
-          grid-template-rows: 6vh 62.5vh 8vh; }
-        #container .container__page .content .container__details .container__details--section.v-rows-2 {
-          grid-template-rows: 6vh auto; }
-      #container .container__page .content .container__details .container__details--comments.editorActive {
-        grid-template-rows: 6vh 50.5vh 20vh; }
-      #container .container__page .content .container__details .container__details--comments .section__body .comment {
-        display: grid;
-        grid-template-columns: 20% auto;
-        grid-column-gap: 1vh; }
+      grid-template-columns: 20% auto;
+      grid-column-gap: 1vh; }
     #container .container__page .content form {
       display: grid;
       grid-template-rows: 20vh auto;
@@ -4865,7 +4839,8 @@ card {
   z-index: 1;
   height: 100%; }
   .container__page .container__page--inner {
-    overflow: hidden; }
+    display: grid;
+    grid-template-rows: 5.5vh 77.5vh; }
   .container__page .container__page--left {
     background-color: #A69E9D;
     position: relative; }
@@ -4987,7 +4962,9 @@ card {
     .container__page .container__page--left .container__mana-curve {
       position: relative;
       z-index: 1;
-      height: 100%; }
+      height: 100%;
+      display: grid;
+      grid-template-rows: 3vh 18vh 3vh auto; }
       .container__page .container__page--left .container__mana-curve .list {
         position: relative;
         overflow: hidden;
@@ -5107,6 +5084,21 @@ card {
       .container__page .container__page--right .topbar .topbar__extension-navigation.active-view {
         color: #474143;
         display: flex; }
+  .container__page .container__page--right .topbar__grid {
+    display: grid;
+    height: 100%; }
+    .container__page .container__page--right .topbar__grid div {
+      height: 100%; }
+      > .container__page .container__page--right .topbar__grid div:last-child {
+        justify-content: flex-end; }
+    .container__page .container__page--right .topbar__grid.topbar__grid--2-1-1 {
+      grid-template-columns: 40vw 20vw 20vw; }
+    .container__page .container__page--right .topbar__grid.topbar__grid--1-1 {
+      grid-template-columns: repeat(2, 50%); }
+    .container__page .container__page--right .topbar__grid.topbar__grid--1-2-1 {
+      grid-template-columns: 20vw 40vw 20vw; }
+    .container__page .container__page--right .topbar__grid.topbar__grid--3-4-1 {
+      grid-template-columns: 30vw 40vw 10vw; }
   .container__page .container__page--right .display-block {
     height: calc(100% - 50px); }
     .container__page .container__page--right .display-block .choosen-deck-details {
@@ -5135,6 +5127,10 @@ card {
     .container__page .container__page--right .content.scrollable {
       padding-right: 1vh; }
     .container__page .container__page--right .content .container__details {
+      display: grid;
+      grid-template-columns: repeat(2, calc(50% - 1vh));
+      grid-column-gap: 1vh;
+      height: 100%;
       width: calc(100% + 1vh); }
       .container__page .container__page--right .content .container__details .container__details--section {
         overflow: hidden; }
@@ -5644,10 +5640,41 @@ card {
     -moz-box-shadow: inset 0 0 20px #474143;
     box-shadow: inset 0 0 20px #474143;
     background: repeating-linear-gradient(-45deg, rgba(225, 255, 255, 0.1), rgba(225, 255, 255, 0.1) 10px, rgba(225, 255, 255, 0.2) 10px, rgba(225, 255, 255, 0.2) 20px); }
+  .container__page.container__page--mobile .container__page--left .container__mana-curve {
+    grid-template-rows: 4vh 18vh 4vh auto; }
+    .container__page.container__page--mobile .container__page--left .container__mana-curve h3 {
+      font-size: calc(1em + 1vmin); }
+    .container__page.container__page--mobile .container__page--left .container__mana-curve .graph span, .container__page.container__page--mobile .container__page--left .container__mana-curve .graph .count {
+      font-size: calc(1em + 1vmin); }
+    .container__page.container__page--mobile .container__page--left .container__mana-curve .graph .bar {
+      height: 60% !important; }
+  .container__page.container__page--mobile.deck .container__page--right .content {
+    height: calc(100% - 1vh);
+    width: calc(100% - 2vh);
+    overflow: hidden; }
+    .container__page.container__page--mobile.deck .container__page--right .content .container__details {
+      width: 100%;
+      grid-template-rows: 100%;
+      grid-template-columns: 100%; }
+      .container__page.container__page--mobile.deck .container__page--right .content .container__details .deckDetails .topbar__grid {
+        display: flex;
+        align-items: center; }
+        .container__page.container__page--mobile.deck .container__page--right .content .container__details .deckDetails .topbar__grid .deck-details {
+          align-items: center; }
+          .container__page.container__page--mobile.deck .container__page--right .content .container__details .deckDetails .topbar__grid .deck-details .stats {
+            padding: 0; }
+      .container__page.container__page--mobile.deck .container__page--right .content .container__details .deckDetails .container__page--inner {
+        grid-template-rows: 4.5vh 8.5vh 63.5vh; }
+        .container__page.container__page--mobile.deck .container__page--right .content .container__details .deckDetails .container__page--inner .sidebar__body {
+          margin: 0; }
 
 .container__page--oneSided {
   justify-content: center;
   align-content: center; }
+  .container__page--oneSided.decks {
+    grid-template-columns: 100%; }
+    .container__page--oneSided.decks .container__page--inner {
+      width: 100%; }
 
 /*
   Pages

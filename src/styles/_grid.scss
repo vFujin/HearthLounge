@@ -41,59 +41,25 @@
 
   .container__page {
     display: grid;
+
     .container__page--inner {
-      display: grid;
-      grid-template-rows: 5.5vh 77.5vh;
+
       &.no-filters{
         display: flex;
       }
     }
-    .container__page--left{
-      .sidebar__body{
-        .container__mana-curve{
-          display: grid;
-          grid-template-rows: 3vh 18vh 3vh auto;
-        }
-      }
-    }
-    .container__page--right{
-      .topbar__grid{
-        display: grid;
-        height: 100%;
-        div{
-          height:100%;
-          > &:last-child{
-            justify-content: flex-end;
-          }
-        }
-        &.topbar__grid {
-          &--2-1-1 {
-            grid-template-columns: 40vw 20vw 20vw;
-          }
-          &--1-1{
-            grid-template-columns: repeat(2, 50%);
-          }
-          &--1-2-1{
-            grid-template-columns: 20vw 40vw 20vw;
-          }
-          &--3-4-1{
-            grid-template-columns: 30vw 40vw 10vw;
-          }
-        }
-      }
-    }
+
     .content {
+
       .container__details {
-        display: grid;
-        grid-template-columns: repeat(2, calc(50% - 1vh));
-        grid-column-gap: 1vh;
-        height: 100%;
+
 
         &.post{
           .container__details--section{
             grid-template-rows: 6vh 71vh;
           }
         }
+
         .container__details--section {
           display: grid;
           &.v-rows-3{

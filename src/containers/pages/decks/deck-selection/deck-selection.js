@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import 'whatwg-fetch';
 import _ from 'lodash';
-import LeftContainer from './left-container/left-container';
 import RightContainer from './right-container/right-container';
 import {updateViews} from '../../../../firebase/decks/deck/update';
 import {UPDATE_DECKS_REQUEST} from "../../../../redux/decks/update-decks/types";
@@ -20,15 +19,10 @@ class DeckSelection extends Component {
     this.infiniteScroll(updateDecks);
   }
 
-  handleFiltersClick = e =>{
-
-  };
-
   handleDeckSnippetClick = (e) =>{
     let deckId = e.currentTarget.id;
     let deckObject = _.head(_.map(this.props.decks.all).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
     this.props.updateActiveDeck(deckObject);
-    // this.props.updateActiveDeckCopy(deckObject);
     updateViews(deckId);
   };
 
@@ -47,8 +41,8 @@ class DeckSelection extends Component {
   render() {
     const {decks, adventuresToggled, activeAdventure, activeMode, activeClass} = this.props;
     return (
-          <div className="container__page container__page--twoSided decks">
-            <LeftContainer/>
+          <div className="container__page container__page--oneSided decks">
+            {/*<LeftContainer/>*/}
             <RightContainer decks={decks}
                             adventuresToggled={adventuresToggled}
                             activeMode={activeMode}
