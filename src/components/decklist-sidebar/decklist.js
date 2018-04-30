@@ -8,7 +8,6 @@ import './styles/decklist-sidebar-styles.css';
 const DecklistSidebar = ({activeDeck, cards, deckEditView}) => {
   const {loading} = activeDeck;
 
-
   return loading
     ? <Loader theme="light"/>
     : (
