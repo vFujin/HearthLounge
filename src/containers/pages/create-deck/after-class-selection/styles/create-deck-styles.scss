@@ -6,10 +6,8 @@
     position: relative;
 
     .topbar {
-
       .topbar__container {
         width: 100%;
-        display: flex;
 
         ul {
           display: flex;
@@ -34,7 +32,6 @@
       }
 
       .topbar__deckDetails {
-
         .deck-length {
           display: flex;
           align-items: center;
@@ -107,7 +104,6 @@
 
             .inner__left {
               border: 1px solid $light-grey;
-
               padding: 1vh;
 
               .input-wrapper {

@@ -1,8 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
-import Card from './table-row-card';
+import Card from './card';
 
-const TableBody = ({fetchedDeckCards}) => {
+const Content = ({fetchedDeckCards}) => {
   const listCards = () =>{
     let cardNames = Object.keys(fetchedDeckCards);
 
@@ -15,10 +15,10 @@ const TableBody = ({fetchedDeckCards}) => {
   };
 
   return (
-      <tbody>
+      <ul className="decklistSidebar__content">
         {listCards()}
-      </tbody>
+      </ul>
   )
 };
 
-export default TableBody;
+export default Content;

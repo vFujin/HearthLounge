@@ -625,8 +625,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #FF7D0A;
-    background-attachment: fixed; }
+    border-left: 4px solid #FF7D0A; }
 
 .hunter {
   color: #ABD473; }
@@ -703,8 +702,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #ABD473;
-    background-attachment: fixed; }
+    border-left: 4px solid #ABD473; }
 
 .mage {
   color: #69CCF0; }
@@ -781,8 +779,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #69CCF0;
-    background-attachment: fixed; }
+    border-left: 4px solid #69CCF0; }
 
 .paladin {
   color: #F58CBA; }
@@ -859,8 +856,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #F58CBA;
-    background-attachment: fixed; }
+    border-left: 4px solid #F58CBA; }
 
 .priest {
   color: #FFFFFF; }
@@ -937,8 +933,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #FFFFFF;
-    background-attachment: fixed; }
+    border-left: 4px solid #FFFFFF; }
 
 .rogue {
   color: #FFF569; }
@@ -1015,8 +1010,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #FFF569;
-    background-attachment: fixed; }
+    border-left: 4px solid #FFF569; }
 
 .shaman {
   color: #87D0B7; }
@@ -1093,8 +1087,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(135, 208, 183, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(135, 208, 183, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #87D0B7;
-    background-attachment: fixed; }
+    border-left: 4px solid #87D0B7; }
 
 .warlock {
   color: #9482C9; }
@@ -1171,8 +1164,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #9482C9;
-    background-attachment: fixed; }
+    border-left: 4px solid #9482C9; }
 
 .warrior {
   color: #C79C6E; }
@@ -1249,8 +1241,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #C79C6E;
-    background-attachment: fixed; }
+    border-left: 4px solid #C79C6E; }
 
 .death-knight {
   color: #C41F3B; }
@@ -1327,8 +1318,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #C41F3B;
-    background-attachment: fixed; }
+    border-left: 4px solid #C41F3B; }
 
 .monk {
   color: #00FF96; }
@@ -1405,8 +1395,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #00FF96;
-    background-attachment: fixed; }
+    border-left: 4px solid #00FF96; }
 
 .demon-hunter {
   color: #A330C9; }
@@ -1483,8 +1472,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #A330C9;
-    background-attachment: fixed; }
+    border-left: 4px solid #A330C9; }
 
 @keyframes linearKeyframes {
   0% {
@@ -1569,8 +1557,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #b5de3f;
-    background-attachment: fixed; }
+    border-left: 4px solid #b5de3f; }
 
 .blackrock-mountain {
   color: #fa5210; }
@@ -1647,8 +1634,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #fa5210;
-    background-attachment: fixed; }
+    border-left: 4px solid #fa5210; }
 
 .the-league-of-explorers {
   color: #14a9a1; }
@@ -1725,8 +1711,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #14a9a1;
-    background-attachment: fixed; }
+    border-left: 4px solid #14a9a1; }
 
 .karazhan {
   color: #e2b4df; }
@@ -1803,8 +1788,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #e2b4df;
-    background-attachment: fixed; }
+    border-left: 4px solid #e2b4df; }
 
 /*
  * Expansions
@@ -1884,8 +1868,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #fae43f;
-    background-attachment: fixed; }
+    border-left: 4px solid #fae43f; }
 
 .the-grand-tournament {
   color: #C41F3B; }
@@ -1962,8 +1945,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #C41F3B;
-    background-attachment: fixed; }
+    border-left: 4px solid #C41F3B; }
 
 .whispers-of-the-old-gods {
   color: #9482C9; }
@@ -2040,8 +2022,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #9482C9;
-    background-attachment: fixed; }
+    border-left: 4px solid #9482C9; }
 
 .mean-streets-of-gadgetzan {
   color: #d2cac5; }
@@ -2118,8 +2099,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #d2cac5;
-    background-attachment: fixed; }
+    border-left: 4px solid #d2cac5; }
 
 .journey-to-ungoro {
   color: #3d9e2c; }
@@ -2196,8 +2176,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #3d9e2c;
-    background-attachment: fixed; }
+    border-left: 4px solid #3d9e2c; }
 
 .knights-of-the-frozen-throne {
   color: #a5f2f3; }
@@ -2274,8 +2253,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #a5f2f3;
-    background-attachment: fixed; }
+    border-left: 4px solid #a5f2f3; }
 
 .kobolds-catacombs {
   color: #ffd989; }
@@ -2352,8 +2330,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #ffd989;
-    background-attachment: fixed; }
+    border-left: 4px solid #ffd989; }
 
 @keyframes linearKeyframes {
   0% {
@@ -2363,6 +2340,83 @@ a {
 /*
  * Rarity
  */
+.free {
+  color: #8e8482; }
+  .free span {
+    border-color: #8e8482; }
+  .free:hover {
+    background-color: #8e8482;
+    color: #474143; }
+    .free:hover span {
+      border-color: #474143; }
+  .free.active {
+    background-color: #8e8482;
+    color: #474143;
+    border-color: #8e8482; }
+  .free.active-without-background {
+    color: #8e8482 !important;
+    background-color: transparent; }
+    .free.active-without-background:hover, .free.active-without-background.active {
+      color: #A69E9D !important;
+      background-color: #8e8482; }
+  .free.active-shadow {
+    color: #474143;
+    background: #8e8482;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .free.active-shadow:hover {
+      color: black;
+      background: #817775;
+      -webkit-box-shadow: 0 0 10px #8e8482;
+      -moz-box-shadow: 0 0 10px #8e8482;
+      box-shadow: 0 0 10px #8e8482; }
+  .free.active-on-hover {
+    color: #474143; }
+    .free.active-on-hover:hover {
+      background-color: #8e8482;
+      color: #474143;
+      border: #474143; }
+  .free.active-border {
+    border: 1px solid #8e8482;
+    color: #474143;
+    background: transparent; }
+  .free.icon-font-active {
+    color: #474143; }
+  .free.in-text:hover {
+    background: transparent;
+    color: #8e8482; }
+  .free.table-row {
+    color: #474143; }
+    .free.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .free.table-row:nth-child(odd):hover {
+        background: #8e8482; }
+    .free.table-row:hover {
+      background-color: #8e8482;
+      color: #474143;
+      border: #474143; }
+  .free.blizzard-official {
+    background-color: #8e8482;
+    color: #000; }
+  .free.gradient {
+    background: -moz-linear-gradient(left, rgba(142, 132, 130, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(142, 132, 130, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(142, 132, 130, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #8e8482; }
+  .free.gradient-linear-top {
+    background: -moz-linear-gradient(top, #595251, #8e8482);
+    background: -webkit-linear-gradient(top, #595251, #8e8482);
+    background: linear-gradient(to top, #595251, #8e8482); }
+  .free.gradient-full {
+    background: -moz-linear-gradient(left, rgba(142, 132, 130, 0.4) 0%, transparent 100%);
+    background: -webkit-linear-gradient(left, rgba(142, 132, 130, 0.4) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(142, 132, 130, 0.4) 0%, transparent 100%);
+    color: black;
+    border-left: 4px solid #8e8482; }
+
 .common {
   color: #fff; }
   .common span {
@@ -2438,8 +2492,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #fff;
-    background-attachment: fixed; }
+    border-left: 4px solid #fff; }
 
 .rare {
   color: blue; }
@@ -2516,8 +2569,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid blue;
-    background-attachment: fixed; }
+    border-left: 4px solid blue; }
 
 .epic {
   color: purple; }
@@ -2594,8 +2646,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid purple;
-    background-attachment: fixed; }
+    border-left: 4px solid purple; }
 
 .legendary {
   color: orange; }
@@ -2672,8 +2723,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid orange;
-    background-attachment: fixed; }
+    border-left: 4px solid orange; }
 
 /*
  * Modes
@@ -2753,8 +2803,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #318e2f;
-    background-attachment: fixed; }
+    border-left: 4px solid #318e2f; }
 
 .wild {
   color: #695840; }
@@ -2831,8 +2880,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #695840;
-    background-attachment: fixed; }
+    border-left: 4px solid #695840; }
 
 .grimy-goons, .jade-lotus, .kabal {
   color: #ecbf42; }
@@ -2909,8 +2957,7 @@ a {
     background: -webkit-linear-gradient(left, rgba(236, 191, 66, 0.4) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(236, 191, 66, 0.4) 0%, transparent 100%);
     color: black;
-    border-left: 4px solid #ecbf42;
-    background-attachment: fixed; }
+    border-left: 4px solid #ecbf42; }
 
 @keyframes linearKeyframes {
   0% {
@@ -4840,7 +4887,8 @@ card {
   height: 100%; }
   .container__page .container__page--inner {
     display: grid;
-    grid-template-rows: 5.5vh 77.5vh; }
+    grid-template-rows: 5.5vh 77.5vh;
+    overflow: hidden; }
   .container__page .container__page--left {
     background-color: #A69E9D;
     position: relative; }
@@ -4964,26 +5012,8 @@ card {
       z-index: 1;
       height: 100%;
       display: grid;
-      grid-template-rows: 3vh 18vh 3vh auto; }
-      .container__page .container__page--left .container__mana-curve .list {
-        position: relative;
-        overflow: hidden;
-        margin-top: 1px; }
-        .container__page .container__page--left .container__mana-curve .list .table-scroll {
-          height: calc(100% - 30px);
-          margin-top: 30px; }
-          .container__page .container__page--left .container__mana-curve .list .table-scroll::-webkit-scrollbar {
-            width: 13px;
-            height: 13px; }
-          .container__page .container__page--left .container__mana-curve .list .table-scroll::-webkit-scrollbar-thumb {
-            background-color: #474143;
-            border-radius: 0;
-            border-left: 1px solid #A69E9D; }
-          .container__page .container__page--left .container__mana-curve .list .table-scroll::-webkit-scrollbar-thumb:hover {
-            background-color: #474143; }
-          .container__page .container__page--left .container__mana-curve .list .table-scroll::-webkit-scrollbar-track {
-            background-color: #A69E9D;
-            border-left: 1px solid #A69E9D; }
+      grid-template-rows: 3vh 18vh 3vh 51.5vh;
+      overflow: hidden; }
       .container__page .container__page--left .container__mana-curve .mechanics-list table tbody tr {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;

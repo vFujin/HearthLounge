@@ -4,6 +4,9 @@
 /*
  * Rarity
  */
+.free{
+  @include icon_color(darken($light-grey, 10%));
+}
 .common{
   @include icon_color($common);
 }

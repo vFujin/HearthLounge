@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import Decklist from "./decklist/decklist";
+import DecklistSidebar from "../../../../../../components/decklist-sidebar/decklist";
 import ManaCurve from "../../../../../../components/mana-curve/mana-curve";
 import CopyDeck from "./copy-deck";
 
@@ -14,7 +14,7 @@ const DeckDetails = ({activeDeck, activeDeckCopy}) => {
         <ManaCurve deck={cards} max={max} barHeight="70%" padding="1vh 0" manaCurveObj={manaCurve} barColor={playerClass}/>
 
         <h3>Cards <CopyDeck deckstring={deckstring} playerClass={playerClass}/></h3>
-        <Decklist />
+        <DecklistSidebar />
       </div>
   )
 };

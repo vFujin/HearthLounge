@@ -271,6 +271,7 @@ card{
   .container__page--inner{
     display: grid;
     grid-template-rows: 5.5vh 77.5vh;
+    overflow: hidden;
   }
   .container__page--mobile {
 
@@ -402,18 +403,9 @@ card{
       z-index: 1;
       height: 100%;
       display: grid;
-      grid-template-rows: 3vh 18vh 3vh auto;
+      grid-template-rows: 3vh 18vh 3vh 51.5vh;
+      overflow: hidden;
 
-      .list {
-        position: relative;
-        overflow: hidden;
-        margin-top:1px;
-        .table-scroll{
-          @include scrollbar($light-grey);
-          height:calc(100% - 30px);
-          margin-top: 30px;
-        }
-      }
       .mechanics-list{
         table{
           tbody{
@@ -586,11 +578,12 @@ card{
       @include scrollbar($pearl);
       position: relative;
       margin: 1vh 0 0 1vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+
       &.scrollable{
         padding-right: 1vh;
       }
-      overflow-y: auto;
-      overflow-x: hidden;
 
       .container__details{
         display: grid;
@@ -1218,14 +1211,14 @@ card{
             grid-template-columns: 100%;
 
             .deckDetails {
-              .topbar__grid{
+              .topbar__grid {
                 display: flex;
                 align-items: center;
 
-                .deck-details{
+                .deck-details {
                   align-items: center;
 
-                  .stats{
+                  .stats {
                     padding: 0;
                   }
                 }
