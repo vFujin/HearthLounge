@@ -6760,6 +6760,8 @@ card {
 @media only screen and (max-width: 1365px) {
   .container__page--mobile.create-deck, .container__page--mobile.deck {
     display: grid;
-    grid-template-rows: 5.5vh 77.5vh; } }
+    grid-template-rows: 5.5vh 77.5vh; }
+    .container__page--mobile.create-deck > .content .container__page--inner, .container__page--mobile.deck > .content .container__page--inner {
+      grid-template-rows: 4.5vh 64.5vh !important; } }
 
 /*# sourceMappingURL=index.css.map */

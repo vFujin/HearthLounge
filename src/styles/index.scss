@@ -2535,6 +2535,12 @@ card{
 
         display: grid;
         grid-template-rows: 5.5vh 77.5vh;
+
+        > .content {
+          .container__page--inner {
+            grid-template-rows: 4.5vh 64.5vh !important;
+          }
+        }
       }
     }
   }

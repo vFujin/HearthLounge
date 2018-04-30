@@ -14,11 +14,11 @@ import {resetDeckAuthor} from "../../../../redux/deck/deck-author/actions";
 
 class Deck extends Component{
   componentDidMount() {
-    const {activeDeck, fetchDeck, match, decks, updateActiveDeckCopy} = this.props;
+    const {activeDeck, fetchDeck, match, updateActiveDeckCopy} = this.props;
     const {deckId, deckTitle} = match.params;
     document.title = _.startCase(deckTitle) || "Deck";
 
-    if (!activeDeck.loading && !activeDeck.deckId && !decks.all) {
+    if (!activeDeck.loading && !activeDeck.deckId) {
       fetchDeck(deckId);
     } else {
       updateActiveDeckCopy(activeDeck);
@@ -52,11 +52,10 @@ class Deck extends Component{
 }
 
 const mapStateToProps = (state) => {
-  const {decks} = state.decks;
   const {activeDeck} = state.deckView;
   const { windowWidth } = state.app.windowSize;
 
-  return {activeDeck, decks, windowWidth};
+  return {activeDeck, windowWidth};
 };
 
 const mapDispatchToProps = (dispatch) => {
