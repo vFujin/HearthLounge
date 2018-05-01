@@ -3,17 +3,19 @@ import { connect } from "react-redux";
 import Content from "./content";
 import Topbar from "./topbar";
 import Loader from "../loaders/loader";
+import AddCardWrapper from "./add-card-wrapper/add-card-wrapper";
 import './styles/decklist-sidebar-styles.css';
 
-const DecklistSidebar = ({activeDeck, cards, deckEditView}) => {
+const DecklistSidebar = ({activeDeck, cards, deckEditView, showCardAdditionBox = false}) => {
   const {loading} = activeDeck;
 
   return loading
     ? <Loader theme="light"/>
     : (
-      <div className="decklistSidebar">
+      <div className={`decklistSidebar ${deckEditView ? "decklistSidebar__editing" : undefined}`}>
         <Topbar deckEditView={deckEditView}/>
         <Content fetchedDeckCards={cards || []}/>
+        {deckEditView && showCardAdditionBox && <AddCardWrapper />}
       </div>
     )
 };

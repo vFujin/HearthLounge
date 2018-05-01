@@ -6,6 +6,10 @@
   grid-template-rows: 30px auto;
   overflow: hidden;
 
+  ul {
+    width: 100%;
+  }
+
   &__topbar {
     background: $dark-grey;
     color: $pearl;
@@ -44,9 +48,31 @@
     &--cost {
       width: 15%;
     }
+
+    &--action {
+      display: flex;
+      cursor: pointer;
+      padding-right: 5px;
+      @include transition(all ease .4s);
+
+      .icon-cross {
+        background: $dark-grey;
+        padding: 5px;
+        color: $pearl;
+        border-radius: 50%;
+        font-size: 7px;
+        @include transition(all ease .4s);
+      }
+
+      &:hover {
+        .icon-cross {
+          background: $pearl;
+          color: $dark-grey;
+          @include box-shadow(0, 0, 10px, $dark-grey);
+        }
+      }
+    }
   }
-
-
 
   &__content {
     overflow: auto;
@@ -65,7 +91,10 @@
     }
   }
 
-  ul {
-    width: 100%;
+  &__editing {
+    .decklistSidebar__content {
+      @include box-shadow(-5px, 0, 20px, $dark-grey, true);
+      @include striped-background($white-010, $white-020);
+    }
   }
 }

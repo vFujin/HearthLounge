@@ -1110,65 +1110,8 @@ card{
           @include box-shadow(0, 0, 20px, $dark-grey, true);
           @include striped-background($white-010, $white-020)
         }
-        .cards-list{
-          .table-scroll{
-            height: calc(100% - 30px - 5vh);
-            @include box-shadow(-5px, 0, 20px, $dark-grey, true);
-            @include striped-background($white-010, $white-020);
-            table{
-              thead{
-                th {
-                  &:first-child {
-                    width: 5%;
-                  }
-                  &:nth-child(3) {
-                    width: 25%;
-                    text-align: left;
-                  }
-                  &:last-child{
-                    width: 35%;
-                    text-align: left;
-                  }
-                }
-              }
-              tbody{
-                tr{
-                  @include transition(all ease .4s);
-                  td{
-                    div {
-                      display: flex;
-                      margin-top: -2.5px;
-                      cursor: pointer;
-                      @include transition(all ease .4s);
-                      .icon-cross {
-                        background: $dark-grey;
-                        padding: 5px;
-                        color: $pearl;
-                        border-radius: 50%;
-                        font-size: 7px;
-                        @include transition(all ease .4s);
-                      }
-                      &:hover{
-                        .icon-cross{
-                          background: $pearl;
-                          color: $dark-grey;
-                          @include box-shadow(0, 0, 10px, $dark-grey);
-                        }
-                      }
-                    }
-                  }
-                  &:hover {
-                    background: $black-010
-                  }
-                }
-              }
-            }
-          }
-        }
       }
-      .addCard-wrapper{
-        display: flex;
-      }
+
     }
     &.stats{
       @include box-shadow(0, 0, 20px, $dark-grey, true);

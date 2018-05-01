@@ -5,14 +5,14 @@ import Select from "antd/lib/select/index";
 import {decklistAddCard} from "../../../utils/deck/edit-mode/decklist-add-card";
 import {updateActiveDeckCopy} from "../../../redux/deck/active-deck-copy/actions";
 
-const CardDecklistSearch = ({cards, deck, activeDeckCopy, updateActiveDeckCopy}) => {
+const CardDecklistSearch = ({cards, activeDeckCopy, updateActiveDeckCopy}) => {
   const {loading} = cards;
 
   if (!loading) {
     const Option = Select.Option;
-    const modeCards = deck.mode === "standard" ? "standardCards" : "allCards";
+    const modeCards = activeDeckCopy.mode === "standard" ? "standardCards" : "allCards";
     const options = cards[modeCards]
-      .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(deck.playerClass) || card.playerClass === 'Neutral')))
+      .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(activeDeckCopy.playerClass) || card.playerClass === 'Neutral')))
       .map(card => <Option value={card.name} key={card.name}>{card.name}</Option>);
 
     return (

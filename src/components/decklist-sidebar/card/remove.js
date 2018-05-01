@@ -4,7 +4,7 @@ import Icon from "../../icon";
 import {decklistRemoveCard} from "../../../utils/deck/edit-mode/decklist-remove-card";
 import {updateActiveDeckCopy} from "../../../redux/deck/active-deck-copy/actions";
 
-const CardRemove = ({card, cards, activeDeckCopy}) => {
+const CardRemove = ({card, cards, activeDeckCopy, updateActiveDeckCopy}) => {
   return (
     <div className="decklistSidebar__card--action">
       <div id={card.cardId}

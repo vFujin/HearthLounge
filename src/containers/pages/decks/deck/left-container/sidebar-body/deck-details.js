@@ -14,7 +14,7 @@ const DeckDetails = ({activeDeck, activeDeckCopy}) => {
         <ManaCurve deck={cards} max={max} barHeight="70%" padding="1vh 0" manaCurveObj={manaCurve} barColor={playerClass}/>
 
         <h3>Cards <CopyDeck deckstring={deckstring} playerClass={playerClass}/></h3>
-        <DecklistSidebar />
+        <DecklistSidebar showCardAdditionBox/>
       </div>
   )
 };

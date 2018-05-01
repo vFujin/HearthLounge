@@ -6,7 +6,7 @@ const Content = ({fetchedDeckCards}) => {
   const listCards = () =>{
     let cardNames = Object.keys(fetchedDeckCards);
 
-    return _.map(fetchedDeckCards).map((card, i) =>
+    return _.sortBy(fetchedDeckCards, "cost").map((card, i) =>
         <Card key={i}
               index={i}
               card={card}
