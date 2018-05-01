@@ -12,7 +12,7 @@ const CardDecklistSearch = ({cards, activeDeckCopy, updateActiveDeckCopy}) => {
     const Option = Select.Option;
     const modeCards = activeDeckCopy.mode === "standard" ? "standardCards" : "allCards";
     const options = cards[modeCards]
-      .filter(card => (card.type !== "Hero" && card.collectible === true && (card.playerClass === _.startCase(activeDeckCopy.playerClass) || card.playerClass === 'Neutral')))
+      .filter(card => (card.collectible === true && (card.playerClass === _.startCase(activeDeckCopy.playerClass) || card.playerClass === 'Neutral')))
       .map(card => <Option value={card.name} key={card.name}>{card.name}</Option>);
 
     return (
@@ -20,7 +20,7 @@ const CardDecklistSearch = ({cards, activeDeckCopy, updateActiveDeckCopy}) => {
               placeholder="Card name..."
               style={{width: '80%'}}
               allowClear={true}
-        // disabled={activeDeckCopy.length >= 30}
+              disabled={activeDeckCopy.length >= 30}
               showSearch={true}
               onSelect={(card) => decklistAddCard(card, cards, activeDeckCopy, updatedDeck => updateActiveDeckCopy(updatedDeck))}>
         {options}

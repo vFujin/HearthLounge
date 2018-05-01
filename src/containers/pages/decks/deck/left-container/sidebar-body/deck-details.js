@@ -16,7 +16,8 @@ const DeckDetails = ({activeDeck, activeDeckCopy}) => {
         <h3>Cards <CopyDeck deckstring={deckstring} playerClass={playerClass}/></h3>
         <DecklistSidebar showCardAdditionBox
                          inDeckCreation={false}
-                         deck={activeDeckCopy.cards}/>
+                         deck={activeDeckCopy.cards}
+                         deckLength={activeDeckCopy.length} />
       </div>
   )
 };

@@ -7,9 +7,9 @@ import AddCardWrapper from "./add-card-wrapper/add-card-wrapper";
 import './styles/decklist-sidebar-styles.css';
 import './styles/decklist-sidebar-mobile-styles.css';
 
-const DecklistSidebar = ({activeDeck, deck, deckEditView, inDeckCreation, showCardAdditionBox = false}) => {
+const DecklistSidebar = ({activeDeck, deck, deckEditView, inDeckCreation, deckLength, showCardAdditionBox = false}) => {
   const {loading} = activeDeck;
-
+  console.log(deck);
   return (loading && !inDeckCreation)
     ? <Loader theme="light"/>
     : (
@@ -20,7 +20,7 @@ const DecklistSidebar = ({activeDeck, deck, deckEditView, inDeckCreation, showCa
       }>
         <Topbar deckEditView={deckEditView}/>
         <Content deck={deck || []} inDeckCreation={inDeckCreation}/>
-        {deckEditView && showCardAdditionBox && <AddCardWrapper />}
+        {deckEditView && showCardAdditionBox && <AddCardWrapper disabled={deckLength >= 30}/>}
       </div>
     )
 };

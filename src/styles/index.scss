@@ -294,7 +294,7 @@ card{
       @include scrollbar($light-grey);
       overflow-y: auto;
       overflow-x: hidden;
-      margin: 1vh 0;
+      margin: 1vh 0 0;
       h3, h4 {
         display: flex;
         align-items: center;
@@ -403,7 +403,7 @@ card{
       z-index: 1;
       height: 100%;
       display: grid;
-      grid-template-rows: 3vh 18vh 3vh 51.5vh;
+      grid-template-rows: 3vh 18vh 3vh 52.5vh;
       overflow: hidden;
 
       .mechanics-list{

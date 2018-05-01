@@ -4905,7 +4905,7 @@ card {
     .container__page .container__page--left .sidebar__body {
       overflow-y: auto;
       overflow-x: hidden;
-      margin: 1vh 0; }
+      margin: 1vh 0 0; }
       .container__page .container__page--left .sidebar__body::-webkit-scrollbar {
         width: 13px;
         height: 13px; }
@@ -5012,7 +5012,7 @@ card {
       z-index: 1;
       height: 100%;
       display: grid;
-      grid-template-rows: 3vh 18vh 3vh 51.5vh;
+      grid-template-rows: 3vh 18vh 3vh 52.5vh;
       overflow: hidden; }
       .container__page .container__page--left .container__mana-curve .mechanics-list table tbody tr {
         -webkit-transition: all ease 0.4s;

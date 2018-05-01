@@ -2,10 +2,9 @@ import React from 'react';
 import CardDecklistSearch from "../../cards/assets/card-decklist-search";
 import './styles.css';
 
-const AddCardWrapper = () => (
-  <div className="decklistSidebar__card--add">
+const AddCardWrapper = ({disabled}) => (
+  <div className={`decklistSidebar__card--addCard ${disabled ? "decklistSidebar__card--addCard-disabled" : undefined}`}>
     <CardDecklistSearch/>
-    <span>+</span>
   </div>
 );
 
