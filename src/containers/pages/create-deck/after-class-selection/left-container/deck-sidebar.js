@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import ChoosenCards from './sidebar/details/choosen-cards';
 import DeckMechanics from './sidebar/details/deck-mechanics';
 import MapFunctionlessIcons from '../right-container/topbar-assets/map-functionless-icons';
 import ManaCurve from "../../../../../components/mana-curve/mana-curve";
 import Icon from "../../../../../components/icon";
+import DecklistSidebar from '../../../../../components/decklist-sidebar/decklist';
 import Button from "../../../../../components/buttons/button";
 import {toggleDeckMechanics} from "../../../../../redux/create-deck/actions/create-deck.action";
 
@@ -25,7 +25,7 @@ class DeckSidebar extends Component {
   };
 
   render() {
-    const {playerClass, cards, deckCreation, windowWidth} = this.props;
+    const {playerClass, cards, deckCreation} = this.props;
     const {deck, deckMechanics} = deckCreation;
     let countByCost = _.countBy(deck, (value)=>value.cost < 7 ? value.cost : 7);
     let max = _.max(Object.values(countByCost));
@@ -36,10 +36,11 @@ class DeckSidebar extends Component {
           <h3>Cards/Mana Cost</h3>
           <ManaCurve deck={deck} max={max} padding="1vh 0" barHeight="70%" barColor={playerClass}/>
 
+
           <h3>Chosen Cards{this.decklistHeaderView()}</h3>
           {
             !deckMechanics
-              ? <ChoosenCards deck={deck} windowWidth={windowWidth}/>
+              ? <DecklistSidebar deck={deck} inDeckCreation/>
               : <DeckMechanics deck={deck} cards={cards}/>
           }
         </div>
@@ -53,10 +54,9 @@ class DeckSidebar extends Component {
 
 const mapStateToProps = state =>{
   const {deckCreation} = state;
-  const {windowWidth} = state.app.windowSize;
   const {cards} = state.cards;
 
-  return {deckCreation, cards, windowWidth};
+  return {deckCreation, cards};
 };
 
 const mapDispatchToProps = dispatch => {

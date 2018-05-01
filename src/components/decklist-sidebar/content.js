@@ -1,22 +1,26 @@
 import React from 'react';
 import _ from 'lodash';
-import Card from './card';
+import Card from './card/card';
+import DeckCreationCard from "./card/deck-creation-card";
 
-const Content = ({fetchedDeckCards}) => {
+const Content = ({deck, inDeckCreation}) => {
   const listCards = () =>{
-    let cardNames = Object.keys(fetchedDeckCards);
+    let mergedDeckEntries = Object.entries(deck).map(c => Object.assign(c[1], {name: c[0]}));
 
-    return _.sortBy(fetchedDeckCards, "cost").map((card, i) =>
-        <Card key={i}
-              index={i}
-              card={card}
-              cardNames={cardNames}/>
+    return _.sortBy(mergedDeckEntries, ["cost", "name"]).map(card =>
+        <Card key={card.cardId} card={card}/>
     )
   };
 
+  const listDeckCreationCards = () => (
+    _.uniqBy(_.sortBy(deck, ['cost', 'name'])).map(card =>
+      <DeckCreationCard key={card.cardId} deck={deck} card={card} inDeckCreation={inDeckCreation} />
+    )
+  );
+
   return (
       <ul className="decklistSidebar__content">
-        {listCards()}
+        {inDeckCreation ? listDeckCreationCards() : listCards()}
       </ul>
   )
 };
