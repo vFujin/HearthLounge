@@ -14,17 +14,28 @@ export default function(e, card, deck, action, decklistClick = false){
   let ifLegendary = card.rarity !== "Legendary" ? uniqueCards(deck, card) < 2 : uniqueCards(deck, card) < 1;
   const deckLength = deck.length;
 
+
   if (e.button === 0 && !decklistClick && ifLegendary && deckLength < 30) {
     action(deck.concat(card));
   }
 
   if ((e.button === 2 || (e.button === 0 && decklistClick)) && uniqueCards(deck, card) > 0) {
     if(uniqueCards(deck, card) === 2) {
-      action(_.uniqWith(deck, _.isEqual));
+
+      const updatedDeck = deck.filter((c, i, self) => {
+        if(c.cardId === card.cardId) {
+          return self.indexOf(c) === i
+        } else {
+          return c;
+        }
+      });
+
+      action(updatedDeck);
     }
 
     if(uniqueCards(deck, card) === 1){
       action(_.filter(deck, c => c.cardId !== card.cardId));
     }
   }
+
 };

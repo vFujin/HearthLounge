@@ -1,0 +1,18 @@
+@import '../../../styles/colors';
+@import '../../../styles/mixins';
+
+
+@include screen('tabletBelow') {
+  .decklistSidebar {
+    &__card {
+      &--action {
+        .icon-cross {
+          &:before {
+            margin-left: 0;
+            margin-right: -1px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import Topbar from "./topbar";
 import Loader from "../loaders/loader";
 import AddCardWrapper from "./add-card-wrapper/add-card-wrapper";
 import './styles/decklist-sidebar-styles.css';
+import './styles/decklist-sidebar-mobile-styles.css';
 
 const DecklistSidebar = ({activeDeck, deck, deckEditView, inDeckCreation, showCardAdditionBox = false}) => {
   const {loading} = activeDeck;
@@ -12,7 +13,11 @@ const DecklistSidebar = ({activeDeck, deck, deckEditView, inDeckCreation, showCa
   return (loading && !inDeckCreation)
     ? <Loader theme="light"/>
     : (
-      <div className={`decklistSidebar ${deckEditView ? "decklistSidebar__editing" : undefined}`}>
+      <div className={
+        `decklistSidebar
+        ${deckEditView ? "decklistSidebar__editing" : undefined}
+        ${inDeckCreation ? "decklistSidebar__inDeckCreation" : undefined}`
+      }>
         <Topbar deckEditView={deckEditView}/>
         <Content deck={deck || []} inDeckCreation={inDeckCreation}/>
         {deckEditView && showCardAdditionBox && <AddCardWrapper />}

@@ -11,6 +11,7 @@ import {resetActiveDeckCopy, updateActiveDeckCopy} from "../../../../redux/deck/
 import {resetShortenedUserDetails} from "../../../../redux/user/shortened-details/actions";
 import {resetActiveDeckComments} from "../../../../redux/deck/comments/fetch-comments/actions";
 import {resetDeckAuthor} from "../../../../redux/deck/deck-author/actions";
+import {toggleDeckEditView} from "../../../../redux/deck/tools/actions";
 
 class Deck extends Component{
   componentDidMount() {
@@ -26,12 +27,13 @@ class Deck extends Component{
   }
 
   componentWillUnmount(){
-    const {resetActiveDeck, resetActiveDeckCopy, resetDeckAuthor, resetActiveDeckComments, resetShortenedUserDetails} = this.props;
+    const {resetActiveDeck, resetActiveDeckCopy, resetDeckAuthor, resetActiveDeckComments, resetShortenedUserDetails, toggleDeckEditView} = this.props;
     resetActiveDeck();
     resetActiveDeckCopy();
     resetDeckAuthor();
     resetActiveDeckComments();
     resetShortenedUserDetails();
+    toggleDeckEditView()
   }
 
   render() {
@@ -66,7 +68,8 @@ const mapDispatchToProps = (dispatch) => {
     resetActiveDeckCopy: () => dispatch(resetActiveDeckCopy()),
     resetDeckAuthor: () => dispatch(resetDeckAuthor()),
     resetActiveDeckComments: () => dispatch(resetActiveDeckComments()),
-    resetShortenedUserDetails: () => dispatch(resetShortenedUserDetails())
+    resetShortenedUserDetails: () => dispatch(resetShortenedUserDetails()),
+    toggleDeckEditView: () => dispatch(toggleDeckEditView()),
   };
 };
 

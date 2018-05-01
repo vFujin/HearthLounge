@@ -1,3 +1,3 @@
 export default function (deck) {
-  return deck.length;
+  return deck.length
 }
