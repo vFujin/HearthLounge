@@ -1,5 +1,27 @@
 export const supported_domains = ["battle.net", "youtu.be", "self.hearthstone", "twitter.com","youtube.com", "clips.twitch.tv", "reddit.com"];
 export const supported_domain_icons = ["battlenet", "youtube", "bubbles2", "twitter", "twitch", "reddit"];
+export const categories = [
+  {
+    name: "top",
+    icon: "fire"
+  },
+  {
+    name: "new",
+    icon: "greed"
+  },
+  {
+    name: "rising",
+    icon: "stats-dots"
+  },
+  {
+    name: "top",
+    icon: "rank-8"
+  },
+  {
+    name: "controversial",
+    icon: "overload"
+  }
+];
 
 export const checkIfStickied = (post) =>{
   const {stickied} = post;

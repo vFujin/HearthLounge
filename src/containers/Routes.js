@@ -7,7 +7,6 @@ import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/c
 import CreateDeckClassSelectedMobile from "./pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile";
 import Dashboard from "./pages/dashboard/dashboard";
 import RedditPost from "./pages/reddit/post/post";
-import Reddit from "./pages/reddit/reddit";
 import Cards from "./pages/cards/cards";
 import Expansions from "./pages/expansions/expansions";
 import Entry from "./pages/entry/entry";
@@ -53,7 +52,7 @@ const Routes = ({mobileMenuActive, windowWidth}) => {
         <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
         <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
         <Route path="/tournaments"              component={Tournaments} />
-        <Route exact path="/reddit"             component={Reddit} />
+        <Route exact path="/reddit"             component={RedditPosts} />
         <Route exact path="/reddit/posts/:category"         component={RedditPosts} />
         <Route exact path="/reddit/posts/:category/:domain" component={RedditPosts} />
         <Route exact path="/reddit/post/:postId/:postTitle" component={RedditPost} />

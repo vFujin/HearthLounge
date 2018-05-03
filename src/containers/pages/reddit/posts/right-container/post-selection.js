@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Loader from '../../../../../components/loaders/loader';
 import {wrapDate} from '../../../../../utils/wrap-date';
@@ -26,7 +25,7 @@ const PostSelection = ({domain, posts, handlePostClick}) => {
   };
 
   return (
-      <div className="content scrollable" style={(loading) ? {overflow: "hidden"} : {overflow: "inherit"}}>
+      <div className="content scrollable">
           <div className="table-scroll">
             <table>
               <thead>
@@ -52,11 +51,3 @@ const PostSelection = ({domain, posts, handlePostClick}) => {
 };
 
 export default PostSelection;
-
-PostSelection.propTypes = {
-  handleRedditPostClick: PropTypes.func,
-  posts: PropTypes.shape({
-    all: PropTypes.array,
-    loading: PropTypes.bool
-  })
-};

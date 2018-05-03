@@ -4,10 +4,10 @@ import CommentHeader from "../post/content/comment/header";
 import CommentBody from "../post/content/comment/body";
 
 export const isOfficialDev = (author_flair_css_class) => {
-  return author_flair_css_class === "blizzard" ? "blizzard" : ''
+  return author_flair_css_class === "blizzard" ? "blizzard" : undefined
 };
 
-export const renderComment = (comment, comments, i) => {
+export const renderComment = (comment, comments) => {
   if (comment && comment.body) {
     const {author_flair_css_class} = comment;
     return (

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import 'whatwg-fetch';
-import Sidebar from './left-container/sidebar';
 import Topbar from './right-container/topbar';
 import PostSelection from './right-container/post-selection';
 import {FETCH_REDDIT_POSTS_REQUEST} from "../../../../redux/reddit/posts/types";
@@ -11,10 +10,17 @@ import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../../redux/reddit/comme
 
 class RedditPosts extends Component {
   componentDidMount() {
-    const {category} = this.props.match.params;
+    const {posts, updatePosts, match} = this.props;
+    const {category} = match.params;
+
     document.title=`r/hearthstone - ${_.startCase(category)}`;
+
+    if(posts.loading) {
+      updatePosts("hot");
+    }
+
     if(category !== "hot") {
-      this.props.updatePosts(category);
+      updatePosts(category);
     }
   }
 
@@ -45,13 +51,10 @@ class RedditPosts extends Component {
     const {posts, match, activePost, filteredPosts} = this.props;
     const {domain, category} = match.params;
     return (
-        <div className="container__page container__page--twoSided subreddit list-with-filters-layout">
-          <div className="container__page--inner container__page--left">
-            <h3 className="sidebar__header">Filters</h3>
-            <Sidebar category={category || "hot"} domain={domain} handleCategoryClick={this.handleCategoryClick}/>
-          </div>
+        <div className="container__page container__page--oneSided subreddit">
           <div className="container__page--inner container__page--right">
             <Topbar domain={domain}
+                    handleCategoryClick={this.handleCategoryClick}
                     category={category || "hot"}/>
             <PostSelection posts={posts}
                            domain={domain}
