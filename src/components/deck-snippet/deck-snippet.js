@@ -8,7 +8,7 @@ import DeckSnippetBody from "./body/deck-snippet-body";
 
 const DeckSnippet = ({d, handleDeckClick}) => {
   const {adventure, archetype, author, comments, created, deck, deckId, playerClass, title, mode, views, votes} = d;
-  console.log(mode, d);
+
   return (
       <Link to={`/decks/${deckId}/${_.kebabCase(title)}`}
             onClick={handleDeckClick}

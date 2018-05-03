@@ -39,17 +39,16 @@ class DeckSelection extends Component {
   };
 
   render() {
-    const {decks, adventuresToggled, activeAdventure, activeMode, activeClass} = this.props;
+    const {adventuresToggled, activeAdventure, activeMode, activeClass} = this.props;
     return (
           <div className="container__page container__page--oneSided decks">
             {/*<LeftContainer/>*/}
-            <RightContainer decks={decks}
-                            adventuresToggled={adventuresToggled}
+            <RightContainer adventuresToggled={adventuresToggled}
                             activeMode={activeMode}
                             activeAdventure={activeAdventure}
                             activeClass={activeClass}
                             handleFiltersClick={this.handleFiltersClick}
-                            handleDeckSnippetClick={(e) => this.handleDeckSnippetClick(e)}/>
+                            handleDeckSnippetClick={this.handleDeckSnippetClick}/>
 
           </div>
       );
