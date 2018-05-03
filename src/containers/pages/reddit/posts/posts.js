@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import 'whatwg-fetch';
-import Topbar from './right-container/topbar';
-import PostSelection from './right-container/post-selection';
+import Topbar from './topbar';
+import Content from './content/content';
 import {FETCH_REDDIT_POSTS_REQUEST} from "../../../../redux/reddit/posts/types";
-import {UPDATE_ACTIVE_POST} from "../../../../redux/reddit/active-post/types";
-import {FETCH_REDDIT_POST_COMMENTS_REQUEST} from "../../../../redux/reddit/comments/types";
+import '../styles/reddit-styles.css';
 
 class RedditPosts extends Component {
   componentDidMount() {
@@ -24,16 +23,6 @@ class RedditPosts extends Component {
     }
   }
 
-  handlePostClick = (id) => {
-    const {posts, updateActivePost, updatePostComments} = this.props;
-    const {all} = posts;
-    if (all) {
-      let post = all.find(p => p.id === id);
-      updateActivePost(post);
-      updatePostComments(post.id);
-    }
-  };
-
   handleCategoryClick = (e) => {
     e.preventDefault();
 
@@ -48,20 +37,17 @@ class RedditPosts extends Component {
   };
 
   render() {
-    const {posts, match, activePost, filteredPosts} = this.props;
+    const {match, activePost, filteredPosts} = this.props;
     const {domain, category} = match.params;
     return (
         <div className="container__page container__page--oneSided subreddit">
-          <div className="container__page--inner container__page--right">
+          <div className="container__page--inner">
             <Topbar domain={domain}
                     handleCategoryClick={this.handleCategoryClick}
                     category={category || "hot"}/>
-            <PostSelection posts={posts}
-                           domain={domain}
-                           filteredPosts={filteredPosts}
-                           activePostPermalink={activePost}
-                           handlePostClick={this.handlePostClick}/>
-
+            <Content domain={domain}
+                     filteredPosts={filteredPosts}
+                     activePostPermalink={activePost}/>
           </div>
         </div>
     )
@@ -80,12 +66,6 @@ const mapDispatchToProps = (dispatch) => {
     }),
     updateFilteredPosts: (filteredPosts) => dispatch({
       type: 'UPDATE_FILTERED_POSTS', filteredPosts
-    }),
-    updateActivePost: payload => dispatch({
-      type: UPDATE_ACTIVE_POST, payload
-    }),
-    updatePostComments: payload => dispatch({
-      type: FETCH_REDDIT_POST_COMMENTS_REQUEST, payload
     }),
     toggleDomainFilter: (activeDomainFilter) => dispatch({
       type: 'TOGGLE_DOMAIN_FILTER', activeDomainFilter

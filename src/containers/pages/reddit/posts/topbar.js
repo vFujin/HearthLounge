@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {supported_domain_icons, categories} from '../../utils/posts';
-import Icon from "../../../../../components/icon";
+import {supported_domain_icons, categories} from '../utils/posts';
+import Icon from "../../../../components/icon";
 
 
 const Topbar = ({category, domain, handleCategoryClick}) => {
@@ -17,8 +17,8 @@ const Topbar = ({category, domain, handleCategoryClick}) => {
         )}
       </ul>
       <ul className="topbar-right">
-        {categories.map(category=>
-          <li key={category.name}
+        {categories.map((category, i)=>
+          <li key={i}
               onClick={handleCategoryClick}
               id={category.name}>
               <Icon name={category.icon}

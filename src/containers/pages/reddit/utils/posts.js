@@ -1,5 +1,5 @@
 export const supported_domains = ["battle.net", "youtu.be", "self.hearthstone", "twitter.com","youtube.com", "clips.twitch.tv", "reddit.com"];
-export const supported_domain_icons = ["battlenet", "youtube", "bubbles2", "twitter", "twitch", "reddit"];
+export const supported_domain_icons = ["battlenet", "youtube", "bubbles2", "twitter", "twitch", "reddit", "image"];
 export const categories = [
   {
     name: "top",
