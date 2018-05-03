@@ -2,6 +2,7 @@ import React from 'react';
 import {icon_filters} from '../../../../../globals/filters';
 import Tooltip from 'antd/lib/tooltip';
 import _ from 'lodash';
+import Icon from "../../../../../components/icon";
 
 const Topbar = ({adventuresToggled, handleFiltersClick, activeAdventure, activeMode, activeClass}) => {
 
@@ -12,7 +13,7 @@ const Topbar = ({adventuresToggled, handleFiltersClick, activeAdventure, activeM
             return (
                 <li id={adventure.url}>
                   <Tooltip placement="bottom" title={_.startCase(adventure.name)}>
-                    <span className={`hs-icon icon-${adventure.url} ${adventure.url} ${(adventure.url === activeAdventure) ? 'active' : ''}`}></span>
+                    <Icon name={adventure.url} />
                   </Tooltip>
                 </li>
             )
@@ -22,13 +23,13 @@ const Topbar = ({adventuresToggled, handleFiltersClick, activeAdventure, activeM
   };
   const mapFilters = (filter) => {
     return (
-        icon_filters[filter].map(el => {
+        icon_filters[filter].filter(i => i !== "Neutral").map(icon => {
           return (
-              <li key={el.url} id={el.url} data-filter={filter} onClick={handleFiltersClick}>
-                <Tooltip placement="bottom" title={_.startCase(el.name)}>
-                  <span className={`hs-icon ${el.url} icon-${el.url} ${el.url === activeMode ? "active-without-background" : el.url === activeClass ? "active" : "" }`}></span>
+              <li key={icon.url} id={icon.url} data-filter={filter} onClick={handleFiltersClick}>
+                <Tooltip placement="bottom" title={_.startCase(icon.name)}>
+                  <Icon name={icon.url} />
                 </Tooltip>
-                {(adventuresToggled && filter === 'type' && el.url === "adventures") ? adventures() : null}
+                {(adventuresToggled && filter === 'type' && icon.url === "adventures") ? adventures() : null}
               </li>
           )}
         )
