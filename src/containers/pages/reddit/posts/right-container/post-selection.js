@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Loader from '../../../../../components/loaders/loader';
 import {wrapDate} from '../../../../../utils/wrap-date';
-import {checkIfStickied, checkIfBlizzardPost, stripDomains, checkTopbarIconFilters, checkDomain} from '../../../../../utils/reddit/posts';
+import {checkIfStickied, checkIfBlizzardPost, stripDomains, checkTopbarIconFilters, checkDomain} from '../../utils/posts';
 import Icon from "../../../../../components/icon";
 
 const PostSelection = ({domain, posts, handlePostClick}) => {

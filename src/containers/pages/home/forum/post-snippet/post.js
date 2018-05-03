@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import _ from 'lodash';
 import {wrapDate} from "../../../../../utils/wrap-date";
-import {stripDomains} from "../../../../../utils/reddit/posts";
+import {stripDomains} from "../../../reddit/utils/posts";
 import Icon from "../../../../../components/icon";
 
 const PostSnippet = ({post, handleRedditPostClick}) => {

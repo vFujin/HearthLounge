@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {content} from '../../../../../utils/reddit/post'
+import {content} from '../../utils/post'
 
 const Post = ({post}) =>{
   const {title} = post;

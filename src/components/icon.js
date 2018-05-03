@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Tooltip from 'antd/lib/tooltip';
-import {supported_domains} from "../utils/reddit/posts";
+import {supported_domains} from "../containers/pages/reddit/utils/posts";
 
 const selectType = (
     iconName,

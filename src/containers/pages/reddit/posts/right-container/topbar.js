@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import {supported_domain_icons, categories} from '../../../../../utils/reddit/posts';
+import {supported_domain_icons, categories} from '../../utils/posts';
 import Icon from "../../../../../components/icon";
 
 
