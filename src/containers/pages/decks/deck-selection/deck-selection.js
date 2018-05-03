@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import 'whatwg-fetch';
-import _ from 'lodash';
 import RightContainer from './right-container/right-container';
 import {updateViews} from '../../../../firebase/decks/deck/update';
 import {UPDATE_DECKS_REQUEST} from "../../../../redux/decks/update-decks/types";
 import {fetchDecksRequest} from "../../../../redux/decks/fetch-decks/actions";
 import {fetchActiveDeckSuccess} from "../../../../redux/deck/active-deck/actions";
+import './deck-selection-styles.css';
 
 class DeckSelection extends Component {
   componentDidMount() {
@@ -21,7 +21,7 @@ class DeckSelection extends Component {
 
   handleDeckSnippetClick = (e) =>{
     let deckId = e.currentTarget.id;
-    let deckObject = _.head(_.map(this.props.decks.all).filter(deckObject=>deckObject.deckId === deckId ? deckObject : null));
+    let deckObject = this.props.decks.all.find(deckObject=>deckObject.deckId === deckId);
     this.props.updateActiveDeck(deckObject);
     updateViews(deckId);
   };
@@ -68,9 +68,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchDecks: () => dispatch(fetchDecksRequest()),
     updateDecks: () => dispatch({type: UPDATE_DECKS_REQUEST}),
-    updateUserList: payload => dispatch({
-      type: 'UPDATE_USER_LIST', payload
-    }),
     updateActiveDeck: payload => dispatch(fetchActiveDeckSuccess(payload)),
     toggleAdventureFilters: payload => dispatch({
       type: 'TOGGLE_ADVENTURE_FILTERS', payload

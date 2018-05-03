@@ -554,10 +554,10 @@ a {
   color: #FF7D0A; }
   .druid span {
     border-color: #FF7D0A; }
-  .druid:hover {
+  .druid:hover, .druid.table-row:hover {
     background-color: #FF7D0A;
     color: #474143; }
-    .druid:hover span {
+    .druid:hover span, .druid.table-row:hover span {
       border-color: #474143; }
   .druid.active {
     background-color: #FF7D0A;
@@ -596,16 +596,6 @@ a {
   .druid.in-text:hover {
     background: transparent;
     color: #FF7D0A; }
-  .druid.table-row {
-    color: #474143; }
-    .druid.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .druid.table-row:nth-child(odd):hover {
-        background: #FF7D0A; }
-    .druid.table-row:hover {
-      background-color: #FF7D0A;
-      color: #474143;
-      border: #474143; }
   .druid.blizzard-official {
     background-color: #FF7D0A;
     color: #000; }
@@ -626,15 +616,25 @@ a {
     background: linear-gradient(to right, rgba(255, 125, 10, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #FF7D0A; }
+  .druid.table-row {
+    color: #474143; }
+    .druid.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .druid.table-row:nth-child(odd):hover {
+        background: #FF7D0A; }
+    .druid.table-row:hover {
+      background-color: #FF7D0A;
+      color: #474143;
+      border: #474143; }
 
 .hunter {
   color: #ABD473; }
   .hunter span {
     border-color: #ABD473; }
-  .hunter:hover {
+  .hunter:hover, .hunter.table-row:hover {
     background-color: #ABD473;
     color: #474143; }
-    .hunter:hover span {
+    .hunter:hover span, .hunter.table-row:hover span {
       border-color: #474143; }
   .hunter.active {
     background-color: #ABD473;
@@ -673,16 +673,6 @@ a {
   .hunter.in-text:hover {
     background: transparent;
     color: #ABD473; }
-  .hunter.table-row {
-    color: #474143; }
-    .hunter.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .hunter.table-row:nth-child(odd):hover {
-        background: #ABD473; }
-    .hunter.table-row:hover {
-      background-color: #ABD473;
-      color: #474143;
-      border: #474143; }
   .hunter.blizzard-official {
     background-color: #ABD473;
     color: #000; }
@@ -703,15 +693,25 @@ a {
     background: linear-gradient(to right, rgba(171, 212, 115, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #ABD473; }
+  .hunter.table-row {
+    color: #474143; }
+    .hunter.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .hunter.table-row:nth-child(odd):hover {
+        background: #ABD473; }
+    .hunter.table-row:hover {
+      background-color: #ABD473;
+      color: #474143;
+      border: #474143; }
 
 .mage {
   color: #69CCF0; }
   .mage span {
     border-color: #69CCF0; }
-  .mage:hover {
+  .mage:hover, .mage.table-row:hover {
     background-color: #69CCF0;
     color: #474143; }
-    .mage:hover span {
+    .mage:hover span, .mage.table-row:hover span {
       border-color: #474143; }
   .mage.active {
     background-color: #69CCF0;
@@ -750,16 +750,6 @@ a {
   .mage.in-text:hover {
     background: transparent;
     color: #69CCF0; }
-  .mage.table-row {
-    color: #474143; }
-    .mage.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .mage.table-row:nth-child(odd):hover {
-        background: #69CCF0; }
-    .mage.table-row:hover {
-      background-color: #69CCF0;
-      color: #474143;
-      border: #474143; }
   .mage.blizzard-official {
     background-color: #69CCF0;
     color: #000; }
@@ -780,15 +770,25 @@ a {
     background: linear-gradient(to right, rgba(105, 204, 240, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #69CCF0; }
+  .mage.table-row {
+    color: #474143; }
+    .mage.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .mage.table-row:nth-child(odd):hover {
+        background: #69CCF0; }
+    .mage.table-row:hover {
+      background-color: #69CCF0;
+      color: #474143;
+      border: #474143; }
 
 .paladin {
   color: #F58CBA; }
   .paladin span {
     border-color: #F58CBA; }
-  .paladin:hover {
+  .paladin:hover, .paladin.table-row:hover {
     background-color: #F58CBA;
     color: #474143; }
-    .paladin:hover span {
+    .paladin:hover span, .paladin.table-row:hover span {
       border-color: #474143; }
   .paladin.active {
     background-color: #F58CBA;
@@ -827,16 +827,6 @@ a {
   .paladin.in-text:hover {
     background: transparent;
     color: #F58CBA; }
-  .paladin.table-row {
-    color: #474143; }
-    .paladin.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .paladin.table-row:nth-child(odd):hover {
-        background: #F58CBA; }
-    .paladin.table-row:hover {
-      background-color: #F58CBA;
-      color: #474143;
-      border: #474143; }
   .paladin.blizzard-official {
     background-color: #F58CBA;
     color: #000; }
@@ -857,15 +847,25 @@ a {
     background: linear-gradient(to right, rgba(245, 140, 186, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #F58CBA; }
+  .paladin.table-row {
+    color: #474143; }
+    .paladin.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .paladin.table-row:nth-child(odd):hover {
+        background: #F58CBA; }
+    .paladin.table-row:hover {
+      background-color: #F58CBA;
+      color: #474143;
+      border: #474143; }
 
 .priest {
   color: #FFFFFF; }
   .priest span {
     border-color: #FFFFFF; }
-  .priest:hover {
+  .priest:hover, .priest.table-row:hover {
     background-color: #FFFFFF;
     color: #474143; }
-    .priest:hover span {
+    .priest:hover span, .priest.table-row:hover span {
       border-color: #474143; }
   .priest.active {
     background-color: #FFFFFF;
@@ -904,16 +904,6 @@ a {
   .priest.in-text:hover {
     background: transparent;
     color: #FFFFFF; }
-  .priest.table-row {
-    color: #474143; }
-    .priest.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .priest.table-row:nth-child(odd):hover {
-        background: #FFFFFF; }
-    .priest.table-row:hover {
-      background-color: #FFFFFF;
-      color: #474143;
-      border: #474143; }
   .priest.blizzard-official {
     background-color: #FFFFFF;
     color: #000; }
@@ -934,15 +924,25 @@ a {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #FFFFFF; }
+  .priest.table-row {
+    color: #474143; }
+    .priest.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .priest.table-row:nth-child(odd):hover {
+        background: #FFFFFF; }
+    .priest.table-row:hover {
+      background-color: #FFFFFF;
+      color: #474143;
+      border: #474143; }
 
 .rogue {
   color: #FFF569; }
   .rogue span {
     border-color: #FFF569; }
-  .rogue:hover {
+  .rogue:hover, .rogue.table-row:hover {
     background-color: #FFF569;
     color: #474143; }
-    .rogue:hover span {
+    .rogue:hover span, .rogue.table-row:hover span {
       border-color: #474143; }
   .rogue.active {
     background-color: #FFF569;
@@ -981,16 +981,6 @@ a {
   .rogue.in-text:hover {
     background: transparent;
     color: #FFF569; }
-  .rogue.table-row {
-    color: #474143; }
-    .rogue.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .rogue.table-row:nth-child(odd):hover {
-        background: #FFF569; }
-    .rogue.table-row:hover {
-      background-color: #FFF569;
-      color: #474143;
-      border: #474143; }
   .rogue.blizzard-official {
     background-color: #FFF569;
     color: #000; }
@@ -1011,15 +1001,25 @@ a {
     background: linear-gradient(to right, rgba(255, 245, 105, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #FFF569; }
+  .rogue.table-row {
+    color: #474143; }
+    .rogue.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .rogue.table-row:nth-child(odd):hover {
+        background: #FFF569; }
+    .rogue.table-row:hover {
+      background-color: #FFF569;
+      color: #474143;
+      border: #474143; }
 
 .shaman {
   color: #87D0B7; }
   .shaman span {
     border-color: #87D0B7; }
-  .shaman:hover {
+  .shaman:hover, .shaman.table-row:hover {
     background-color: #87D0B7;
     color: #474143; }
-    .shaman:hover span {
+    .shaman:hover span, .shaman.table-row:hover span {
       border-color: #474143; }
   .shaman.active {
     background-color: #87D0B7;
@@ -1058,16 +1058,6 @@ a {
   .shaman.in-text:hover {
     background: transparent;
     color: #87D0B7; }
-  .shaman.table-row {
-    color: #474143; }
-    .shaman.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .shaman.table-row:nth-child(odd):hover {
-        background: #87D0B7; }
-    .shaman.table-row:hover {
-      background-color: #87D0B7;
-      color: #474143;
-      border: #474143; }
   .shaman.blizzard-official {
     background-color: #87D0B7;
     color: #000; }
@@ -1088,15 +1078,25 @@ a {
     background: linear-gradient(to right, rgba(135, 208, 183, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #87D0B7; }
+  .shaman.table-row {
+    color: #474143; }
+    .shaman.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .shaman.table-row:nth-child(odd):hover {
+        background: #87D0B7; }
+    .shaman.table-row:hover {
+      background-color: #87D0B7;
+      color: #474143;
+      border: #474143; }
 
 .warlock {
   color: #9482C9; }
   .warlock span {
     border-color: #9482C9; }
-  .warlock:hover {
+  .warlock:hover, .warlock.table-row:hover {
     background-color: #9482C9;
     color: #474143; }
-    .warlock:hover span {
+    .warlock:hover span, .warlock.table-row:hover span {
       border-color: #474143; }
   .warlock.active {
     background-color: #9482C9;
@@ -1135,16 +1135,6 @@ a {
   .warlock.in-text:hover {
     background: transparent;
     color: #9482C9; }
-  .warlock.table-row {
-    color: #474143; }
-    .warlock.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .warlock.table-row:nth-child(odd):hover {
-        background: #9482C9; }
-    .warlock.table-row:hover {
-      background-color: #9482C9;
-      color: #474143;
-      border: #474143; }
   .warlock.blizzard-official {
     background-color: #9482C9;
     color: #000; }
@@ -1165,15 +1155,25 @@ a {
     background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #9482C9; }
+  .warlock.table-row {
+    color: #474143; }
+    .warlock.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .warlock.table-row:nth-child(odd):hover {
+        background: #9482C9; }
+    .warlock.table-row:hover {
+      background-color: #9482C9;
+      color: #474143;
+      border: #474143; }
 
 .warrior {
   color: #C79C6E; }
   .warrior span {
     border-color: #C79C6E; }
-  .warrior:hover {
+  .warrior:hover, .warrior.table-row:hover {
     background-color: #C79C6E;
     color: #474143; }
-    .warrior:hover span {
+    .warrior:hover span, .warrior.table-row:hover span {
       border-color: #474143; }
   .warrior.active {
     background-color: #C79C6E;
@@ -1212,16 +1212,6 @@ a {
   .warrior.in-text:hover {
     background: transparent;
     color: #C79C6E; }
-  .warrior.table-row {
-    color: #474143; }
-    .warrior.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .warrior.table-row:nth-child(odd):hover {
-        background: #C79C6E; }
-    .warrior.table-row:hover {
-      background-color: #C79C6E;
-      color: #474143;
-      border: #474143; }
   .warrior.blizzard-official {
     background-color: #C79C6E;
     color: #000; }
@@ -1242,15 +1232,25 @@ a {
     background: linear-gradient(to right, rgba(199, 156, 110, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #C79C6E; }
+  .warrior.table-row {
+    color: #474143; }
+    .warrior.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .warrior.table-row:nth-child(odd):hover {
+        background: #C79C6E; }
+    .warrior.table-row:hover {
+      background-color: #C79C6E;
+      color: #474143;
+      border: #474143; }
 
 .death-knight {
   color: #C41F3B; }
   .death-knight span {
     border-color: #C41F3B; }
-  .death-knight:hover {
+  .death-knight:hover, .death-knight.table-row:hover {
     background-color: #C41F3B;
     color: #474143; }
-    .death-knight:hover span {
+    .death-knight:hover span, .death-knight.table-row:hover span {
       border-color: #474143; }
   .death-knight.active {
     background-color: #C41F3B;
@@ -1289,16 +1289,6 @@ a {
   .death-knight.in-text:hover {
     background: transparent;
     color: #C41F3B; }
-  .death-knight.table-row {
-    color: #474143; }
-    .death-knight.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .death-knight.table-row:nth-child(odd):hover {
-        background: #C41F3B; }
-    .death-knight.table-row:hover {
-      background-color: #C41F3B;
-      color: #474143;
-      border: #474143; }
   .death-knight.blizzard-official {
     background-color: #C41F3B;
     color: #000; }
@@ -1319,15 +1309,25 @@ a {
     background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #C41F3B; }
+  .death-knight.table-row {
+    color: #474143; }
+    .death-knight.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .death-knight.table-row:nth-child(odd):hover {
+        background: #C41F3B; }
+    .death-knight.table-row:hover {
+      background-color: #C41F3B;
+      color: #474143;
+      border: #474143; }
 
 .monk {
   color: #00FF96; }
   .monk span {
     border-color: #00FF96; }
-  .monk:hover {
+  .monk:hover, .monk.table-row:hover {
     background-color: #00FF96;
     color: #474143; }
-    .monk:hover span {
+    .monk:hover span, .monk.table-row:hover span {
       border-color: #474143; }
   .monk.active {
     background-color: #00FF96;
@@ -1366,16 +1366,6 @@ a {
   .monk.in-text:hover {
     background: transparent;
     color: #00FF96; }
-  .monk.table-row {
-    color: #474143; }
-    .monk.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .monk.table-row:nth-child(odd):hover {
-        background: #00FF96; }
-    .monk.table-row:hover {
-      background-color: #00FF96;
-      color: #474143;
-      border: #474143; }
   .monk.blizzard-official {
     background-color: #00FF96;
     color: #000; }
@@ -1396,15 +1386,25 @@ a {
     background: linear-gradient(to right, rgba(0, 255, 150, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #00FF96; }
+  .monk.table-row {
+    color: #474143; }
+    .monk.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .monk.table-row:nth-child(odd):hover {
+        background: #00FF96; }
+    .monk.table-row:hover {
+      background-color: #00FF96;
+      color: #474143;
+      border: #474143; }
 
 .demon-hunter {
   color: #A330C9; }
   .demon-hunter span {
     border-color: #A330C9; }
-  .demon-hunter:hover {
+  .demon-hunter:hover, .demon-hunter.table-row:hover {
     background-color: #A330C9;
     color: #474143; }
-    .demon-hunter:hover span {
+    .demon-hunter:hover span, .demon-hunter.table-row:hover span {
       border-color: #474143; }
   .demon-hunter.active {
     background-color: #A330C9;
@@ -1443,16 +1443,6 @@ a {
   .demon-hunter.in-text:hover {
     background: transparent;
     color: #A330C9; }
-  .demon-hunter.table-row {
-    color: #474143; }
-    .demon-hunter.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .demon-hunter.table-row:nth-child(odd):hover {
-        background: #A330C9; }
-    .demon-hunter.table-row:hover {
-      background-color: #A330C9;
-      color: #474143;
-      border: #474143; }
   .demon-hunter.blizzard-official {
     background-color: #A330C9;
     color: #000; }
@@ -1473,6 +1463,16 @@ a {
     background: linear-gradient(to right, rgba(163, 48, 201, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #A330C9; }
+  .demon-hunter.table-row {
+    color: #474143; }
+    .demon-hunter.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .demon-hunter.table-row:nth-child(odd):hover {
+        background: #A330C9; }
+    .demon-hunter.table-row:hover {
+      background-color: #A330C9;
+      color: #474143;
+      border: #474143; }
 
 @keyframes linearKeyframes {
   0% {
@@ -1486,10 +1486,10 @@ a {
   color: #b5de3f; }
   .naxxramas span {
     border-color: #b5de3f; }
-  .naxxramas:hover {
+  .naxxramas:hover, .naxxramas.table-row:hover {
     background-color: #b5de3f;
     color: #474143; }
-    .naxxramas:hover span {
+    .naxxramas:hover span, .naxxramas.table-row:hover span {
       border-color: #474143; }
   .naxxramas.active {
     background-color: #b5de3f;
@@ -1528,16 +1528,6 @@ a {
   .naxxramas.in-text:hover {
     background: transparent;
     color: #b5de3f; }
-  .naxxramas.table-row {
-    color: #474143; }
-    .naxxramas.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .naxxramas.table-row:nth-child(odd):hover {
-        background: #b5de3f; }
-    .naxxramas.table-row:hover {
-      background-color: #b5de3f;
-      color: #474143;
-      border: #474143; }
   .naxxramas.blizzard-official {
     background-color: #b5de3f;
     color: #000; }
@@ -1558,15 +1548,25 @@ a {
     background: linear-gradient(to right, rgba(181, 222, 63, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #b5de3f; }
+  .naxxramas.table-row {
+    color: #474143; }
+    .naxxramas.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .naxxramas.table-row:nth-child(odd):hover {
+        background: #b5de3f; }
+    .naxxramas.table-row:hover {
+      background-color: #b5de3f;
+      color: #474143;
+      border: #474143; }
 
 .blackrock-mountain {
   color: #fa5210; }
   .blackrock-mountain span {
     border-color: #fa5210; }
-  .blackrock-mountain:hover {
+  .blackrock-mountain:hover, .blackrock-mountain.table-row:hover {
     background-color: #fa5210;
     color: #474143; }
-    .blackrock-mountain:hover span {
+    .blackrock-mountain:hover span, .blackrock-mountain.table-row:hover span {
       border-color: #474143; }
   .blackrock-mountain.active {
     background-color: #fa5210;
@@ -1605,16 +1605,6 @@ a {
   .blackrock-mountain.in-text:hover {
     background: transparent;
     color: #fa5210; }
-  .blackrock-mountain.table-row {
-    color: #474143; }
-    .blackrock-mountain.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .blackrock-mountain.table-row:nth-child(odd):hover {
-        background: #fa5210; }
-    .blackrock-mountain.table-row:hover {
-      background-color: #fa5210;
-      color: #474143;
-      border: #474143; }
   .blackrock-mountain.blizzard-official {
     background-color: #fa5210;
     color: #000; }
@@ -1635,15 +1625,25 @@ a {
     background: linear-gradient(to right, rgba(250, 82, 16, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #fa5210; }
+  .blackrock-mountain.table-row {
+    color: #474143; }
+    .blackrock-mountain.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .blackrock-mountain.table-row:nth-child(odd):hover {
+        background: #fa5210; }
+    .blackrock-mountain.table-row:hover {
+      background-color: #fa5210;
+      color: #474143;
+      border: #474143; }
 
 .the-league-of-explorers {
   color: #14a9a1; }
   .the-league-of-explorers span {
     border-color: #14a9a1; }
-  .the-league-of-explorers:hover {
+  .the-league-of-explorers:hover, .the-league-of-explorers.table-row:hover {
     background-color: #14a9a1;
     color: #474143; }
-    .the-league-of-explorers:hover span {
+    .the-league-of-explorers:hover span, .the-league-of-explorers.table-row:hover span {
       border-color: #474143; }
   .the-league-of-explorers.active {
     background-color: #14a9a1;
@@ -1682,16 +1682,6 @@ a {
   .the-league-of-explorers.in-text:hover {
     background: transparent;
     color: #14a9a1; }
-  .the-league-of-explorers.table-row {
-    color: #474143; }
-    .the-league-of-explorers.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .the-league-of-explorers.table-row:nth-child(odd):hover {
-        background: #14a9a1; }
-    .the-league-of-explorers.table-row:hover {
-      background-color: #14a9a1;
-      color: #474143;
-      border: #474143; }
   .the-league-of-explorers.blizzard-official {
     background-color: #14a9a1;
     color: #000; }
@@ -1712,15 +1702,25 @@ a {
     background: linear-gradient(to right, rgba(20, 169, 161, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #14a9a1; }
+  .the-league-of-explorers.table-row {
+    color: #474143; }
+    .the-league-of-explorers.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .the-league-of-explorers.table-row:nth-child(odd):hover {
+        background: #14a9a1; }
+    .the-league-of-explorers.table-row:hover {
+      background-color: #14a9a1;
+      color: #474143;
+      border: #474143; }
 
 .karazhan {
   color: #e2b4df; }
   .karazhan span {
     border-color: #e2b4df; }
-  .karazhan:hover {
+  .karazhan:hover, .karazhan.table-row:hover {
     background-color: #e2b4df;
     color: #474143; }
-    .karazhan:hover span {
+    .karazhan:hover span, .karazhan.table-row:hover span {
       border-color: #474143; }
   .karazhan.active {
     background-color: #e2b4df;
@@ -1759,16 +1759,6 @@ a {
   .karazhan.in-text:hover {
     background: transparent;
     color: #e2b4df; }
-  .karazhan.table-row {
-    color: #474143; }
-    .karazhan.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .karazhan.table-row:nth-child(odd):hover {
-        background: #e2b4df; }
-    .karazhan.table-row:hover {
-      background-color: #e2b4df;
-      color: #474143;
-      border: #474143; }
   .karazhan.blizzard-official {
     background-color: #e2b4df;
     color: #000; }
@@ -1789,6 +1779,16 @@ a {
     background: linear-gradient(to right, rgba(226, 180, 223, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #e2b4df; }
+  .karazhan.table-row {
+    color: #474143; }
+    .karazhan.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .karazhan.table-row:nth-child(odd):hover {
+        background: #e2b4df; }
+    .karazhan.table-row:hover {
+      background-color: #e2b4df;
+      color: #474143;
+      border: #474143; }
 
 /*
  * Expansions
@@ -1797,10 +1797,10 @@ a {
   color: #fae43f; }
   .goblins-vs-gnomes span {
     border-color: #fae43f; }
-  .goblins-vs-gnomes:hover {
+  .goblins-vs-gnomes:hover, .goblins-vs-gnomes.table-row:hover {
     background-color: #fae43f;
     color: #474143; }
-    .goblins-vs-gnomes:hover span {
+    .goblins-vs-gnomes:hover span, .goblins-vs-gnomes.table-row:hover span {
       border-color: #474143; }
   .goblins-vs-gnomes.active {
     background-color: #fae43f;
@@ -1839,16 +1839,6 @@ a {
   .goblins-vs-gnomes.in-text:hover {
     background: transparent;
     color: #fae43f; }
-  .goblins-vs-gnomes.table-row {
-    color: #474143; }
-    .goblins-vs-gnomes.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .goblins-vs-gnomes.table-row:nth-child(odd):hover {
-        background: #fae43f; }
-    .goblins-vs-gnomes.table-row:hover {
-      background-color: #fae43f;
-      color: #474143;
-      border: #474143; }
   .goblins-vs-gnomes.blizzard-official {
     background-color: #fae43f;
     color: #000; }
@@ -1869,15 +1859,25 @@ a {
     background: linear-gradient(to right, rgba(250, 228, 63, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #fae43f; }
+  .goblins-vs-gnomes.table-row {
+    color: #474143; }
+    .goblins-vs-gnomes.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .goblins-vs-gnomes.table-row:nth-child(odd):hover {
+        background: #fae43f; }
+    .goblins-vs-gnomes.table-row:hover {
+      background-color: #fae43f;
+      color: #474143;
+      border: #474143; }
 
 .the-grand-tournament {
   color: #C41F3B; }
   .the-grand-tournament span {
     border-color: #C41F3B; }
-  .the-grand-tournament:hover {
+  .the-grand-tournament:hover, .the-grand-tournament.table-row:hover {
     background-color: #C41F3B;
     color: #474143; }
-    .the-grand-tournament:hover span {
+    .the-grand-tournament:hover span, .the-grand-tournament.table-row:hover span {
       border-color: #474143; }
   .the-grand-tournament.active {
     background-color: #C41F3B;
@@ -1916,16 +1916,6 @@ a {
   .the-grand-tournament.in-text:hover {
     background: transparent;
     color: #C41F3B; }
-  .the-grand-tournament.table-row {
-    color: #474143; }
-    .the-grand-tournament.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .the-grand-tournament.table-row:nth-child(odd):hover {
-        background: #C41F3B; }
-    .the-grand-tournament.table-row:hover {
-      background-color: #C41F3B;
-      color: #474143;
-      border: #474143; }
   .the-grand-tournament.blizzard-official {
     background-color: #C41F3B;
     color: #000; }
@@ -1946,15 +1936,25 @@ a {
     background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #C41F3B; }
+  .the-grand-tournament.table-row {
+    color: #474143; }
+    .the-grand-tournament.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .the-grand-tournament.table-row:nth-child(odd):hover {
+        background: #C41F3B; }
+    .the-grand-tournament.table-row:hover {
+      background-color: #C41F3B;
+      color: #474143;
+      border: #474143; }
 
 .whispers-of-the-old-gods {
   color: #9482C9; }
   .whispers-of-the-old-gods span {
     border-color: #9482C9; }
-  .whispers-of-the-old-gods:hover {
+  .whispers-of-the-old-gods:hover, .whispers-of-the-old-gods.table-row:hover {
     background-color: #9482C9;
     color: #474143; }
-    .whispers-of-the-old-gods:hover span {
+    .whispers-of-the-old-gods:hover span, .whispers-of-the-old-gods.table-row:hover span {
       border-color: #474143; }
   .whispers-of-the-old-gods.active {
     background-color: #9482C9;
@@ -1993,16 +1993,6 @@ a {
   .whispers-of-the-old-gods.in-text:hover {
     background: transparent;
     color: #9482C9; }
-  .whispers-of-the-old-gods.table-row {
-    color: #474143; }
-    .whispers-of-the-old-gods.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .whispers-of-the-old-gods.table-row:nth-child(odd):hover {
-        background: #9482C9; }
-    .whispers-of-the-old-gods.table-row:hover {
-      background-color: #9482C9;
-      color: #474143;
-      border: #474143; }
   .whispers-of-the-old-gods.blizzard-official {
     background-color: #9482C9;
     color: #000; }
@@ -2023,15 +2013,25 @@ a {
     background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #9482C9; }
+  .whispers-of-the-old-gods.table-row {
+    color: #474143; }
+    .whispers-of-the-old-gods.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .whispers-of-the-old-gods.table-row:nth-child(odd):hover {
+        background: #9482C9; }
+    .whispers-of-the-old-gods.table-row:hover {
+      background-color: #9482C9;
+      color: #474143;
+      border: #474143; }
 
 .mean-streets-of-gadgetzan {
   color: #d2cac5; }
   .mean-streets-of-gadgetzan span {
     border-color: #d2cac5; }
-  .mean-streets-of-gadgetzan:hover {
+  .mean-streets-of-gadgetzan:hover, .mean-streets-of-gadgetzan.table-row:hover {
     background-color: #d2cac5;
     color: #474143; }
-    .mean-streets-of-gadgetzan:hover span {
+    .mean-streets-of-gadgetzan:hover span, .mean-streets-of-gadgetzan.table-row:hover span {
       border-color: #474143; }
   .mean-streets-of-gadgetzan.active {
     background-color: #d2cac5;
@@ -2070,16 +2070,6 @@ a {
   .mean-streets-of-gadgetzan.in-text:hover {
     background: transparent;
     color: #d2cac5; }
-  .mean-streets-of-gadgetzan.table-row {
-    color: #474143; }
-    .mean-streets-of-gadgetzan.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .mean-streets-of-gadgetzan.table-row:nth-child(odd):hover {
-        background: #d2cac5; }
-    .mean-streets-of-gadgetzan.table-row:hover {
-      background-color: #d2cac5;
-      color: #474143;
-      border: #474143; }
   .mean-streets-of-gadgetzan.blizzard-official {
     background-color: #d2cac5;
     color: #000; }
@@ -2100,15 +2090,25 @@ a {
     background: linear-gradient(to right, rgba(210, 202, 197, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #d2cac5; }
+  .mean-streets-of-gadgetzan.table-row {
+    color: #474143; }
+    .mean-streets-of-gadgetzan.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .mean-streets-of-gadgetzan.table-row:nth-child(odd):hover {
+        background: #d2cac5; }
+    .mean-streets-of-gadgetzan.table-row:hover {
+      background-color: #d2cac5;
+      color: #474143;
+      border: #474143; }
 
 .journey-to-ungoro {
   color: #3d9e2c; }
   .journey-to-ungoro span {
     border-color: #3d9e2c; }
-  .journey-to-ungoro:hover {
+  .journey-to-ungoro:hover, .journey-to-ungoro.table-row:hover {
     background-color: #3d9e2c;
     color: #474143; }
-    .journey-to-ungoro:hover span {
+    .journey-to-ungoro:hover span, .journey-to-ungoro.table-row:hover span {
       border-color: #474143; }
   .journey-to-ungoro.active {
     background-color: #3d9e2c;
@@ -2147,16 +2147,6 @@ a {
   .journey-to-ungoro.in-text:hover {
     background: transparent;
     color: #3d9e2c; }
-  .journey-to-ungoro.table-row {
-    color: #474143; }
-    .journey-to-ungoro.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .journey-to-ungoro.table-row:nth-child(odd):hover {
-        background: #3d9e2c; }
-    .journey-to-ungoro.table-row:hover {
-      background-color: #3d9e2c;
-      color: #474143;
-      border: #474143; }
   .journey-to-ungoro.blizzard-official {
     background-color: #3d9e2c;
     color: #000; }
@@ -2177,15 +2167,25 @@ a {
     background: linear-gradient(to right, rgba(61, 158, 44, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #3d9e2c; }
+  .journey-to-ungoro.table-row {
+    color: #474143; }
+    .journey-to-ungoro.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .journey-to-ungoro.table-row:nth-child(odd):hover {
+        background: #3d9e2c; }
+    .journey-to-ungoro.table-row:hover {
+      background-color: #3d9e2c;
+      color: #474143;
+      border: #474143; }
 
 .knights-of-the-frozen-throne {
   color: #a5f2f3; }
   .knights-of-the-frozen-throne span {
     border-color: #a5f2f3; }
-  .knights-of-the-frozen-throne:hover {
+  .knights-of-the-frozen-throne:hover, .knights-of-the-frozen-throne.table-row:hover {
     background-color: #a5f2f3;
     color: #474143; }
-    .knights-of-the-frozen-throne:hover span {
+    .knights-of-the-frozen-throne:hover span, .knights-of-the-frozen-throne.table-row:hover span {
       border-color: #474143; }
   .knights-of-the-frozen-throne.active {
     background-color: #a5f2f3;
@@ -2224,16 +2224,6 @@ a {
   .knights-of-the-frozen-throne.in-text:hover {
     background: transparent;
     color: #a5f2f3; }
-  .knights-of-the-frozen-throne.table-row {
-    color: #474143; }
-    .knights-of-the-frozen-throne.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .knights-of-the-frozen-throne.table-row:nth-child(odd):hover {
-        background: #a5f2f3; }
-    .knights-of-the-frozen-throne.table-row:hover {
-      background-color: #a5f2f3;
-      color: #474143;
-      border: #474143; }
   .knights-of-the-frozen-throne.blizzard-official {
     background-color: #a5f2f3;
     color: #000; }
@@ -2254,15 +2244,25 @@ a {
     background: linear-gradient(to right, rgba(165, 242, 243, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #a5f2f3; }
+  .knights-of-the-frozen-throne.table-row {
+    color: #474143; }
+    .knights-of-the-frozen-throne.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .knights-of-the-frozen-throne.table-row:nth-child(odd):hover {
+        background: #a5f2f3; }
+    .knights-of-the-frozen-throne.table-row:hover {
+      background-color: #a5f2f3;
+      color: #474143;
+      border: #474143; }
 
 .kobolds-catacombs {
   color: #ffd989; }
   .kobolds-catacombs span {
     border-color: #ffd989; }
-  .kobolds-catacombs:hover {
+  .kobolds-catacombs:hover, .kobolds-catacombs.table-row:hover {
     background-color: #ffd989;
     color: #474143; }
-    .kobolds-catacombs:hover span {
+    .kobolds-catacombs:hover span, .kobolds-catacombs.table-row:hover span {
       border-color: #474143; }
   .kobolds-catacombs.active {
     background-color: #ffd989;
@@ -2301,16 +2301,6 @@ a {
   .kobolds-catacombs.in-text:hover {
     background: transparent;
     color: #ffd989; }
-  .kobolds-catacombs.table-row {
-    color: #474143; }
-    .kobolds-catacombs.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .kobolds-catacombs.table-row:nth-child(odd):hover {
-        background: #ffd989; }
-    .kobolds-catacombs.table-row:hover {
-      background-color: #ffd989;
-      color: #474143;
-      border: #474143; }
   .kobolds-catacombs.blizzard-official {
     background-color: #ffd989;
     color: #000; }
@@ -2331,6 +2321,16 @@ a {
     background: linear-gradient(to right, rgba(255, 217, 137, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #ffd989; }
+  .kobolds-catacombs.table-row {
+    color: #474143; }
+    .kobolds-catacombs.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .kobolds-catacombs.table-row:nth-child(odd):hover {
+        background: #ffd989; }
+    .kobolds-catacombs.table-row:hover {
+      background-color: #ffd989;
+      color: #474143;
+      border: #474143; }
 
 @keyframes linearKeyframes {
   0% {
@@ -2344,10 +2344,10 @@ a {
   color: #8e8482; }
   .free span {
     border-color: #8e8482; }
-  .free:hover {
+  .free:hover, .free.table-row:hover {
     background-color: #8e8482;
     color: #474143; }
-    .free:hover span {
+    .free:hover span, .free.table-row:hover span {
       border-color: #474143; }
   .free.active {
     background-color: #8e8482;
@@ -2386,16 +2386,6 @@ a {
   .free.in-text:hover {
     background: transparent;
     color: #8e8482; }
-  .free.table-row {
-    color: #474143; }
-    .free.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .free.table-row:nth-child(odd):hover {
-        background: #8e8482; }
-    .free.table-row:hover {
-      background-color: #8e8482;
-      color: #474143;
-      border: #474143; }
   .free.blizzard-official {
     background-color: #8e8482;
     color: #000; }
@@ -2416,15 +2406,25 @@ a {
     background: linear-gradient(to right, rgba(142, 132, 130, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #8e8482; }
+  .free.table-row {
+    color: #474143; }
+    .free.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .free.table-row:nth-child(odd):hover {
+        background: #8e8482; }
+    .free.table-row:hover {
+      background-color: #8e8482;
+      color: #474143;
+      border: #474143; }
 
 .common {
   color: #fff; }
   .common span {
     border-color: #fff; }
-  .common:hover {
+  .common:hover, .common.table-row:hover {
     background-color: #fff;
     color: #474143; }
-    .common:hover span {
+    .common:hover span, .common.table-row:hover span {
       border-color: #474143; }
   .common.active {
     background-color: #fff;
@@ -2463,16 +2463,6 @@ a {
   .common.in-text:hover {
     background: transparent;
     color: #fff; }
-  .common.table-row {
-    color: #474143; }
-    .common.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .common.table-row:nth-child(odd):hover {
-        background: #fff; }
-    .common.table-row:hover {
-      background-color: #fff;
-      color: #474143;
-      border: #474143; }
   .common.blizzard-official {
     background-color: #fff;
     color: #000; }
@@ -2493,15 +2483,25 @@ a {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #fff; }
+  .common.table-row {
+    color: #474143; }
+    .common.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .common.table-row:nth-child(odd):hover {
+        background: #fff; }
+    .common.table-row:hover {
+      background-color: #fff;
+      color: #474143;
+      border: #474143; }
 
 .rare {
   color: blue; }
   .rare span {
     border-color: blue; }
-  .rare:hover {
+  .rare:hover, .rare.table-row:hover {
     background-color: blue;
     color: #474143; }
-    .rare:hover span {
+    .rare:hover span, .rare.table-row:hover span {
       border-color: #474143; }
   .rare.active {
     background-color: blue;
@@ -2540,16 +2540,6 @@ a {
   .rare.in-text:hover {
     background: transparent;
     color: blue; }
-  .rare.table-row {
-    color: #474143; }
-    .rare.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .rare.table-row:nth-child(odd):hover {
-        background: blue; }
-    .rare.table-row:hover {
-      background-color: blue;
-      color: #474143;
-      border: #474143; }
   .rare.blizzard-official {
     background-color: blue;
     color: #000; }
@@ -2570,15 +2560,25 @@ a {
     background: linear-gradient(to right, rgba(0, 0, 255, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid blue; }
+  .rare.table-row {
+    color: #474143; }
+    .rare.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .rare.table-row:nth-child(odd):hover {
+        background: blue; }
+    .rare.table-row:hover {
+      background-color: blue;
+      color: #474143;
+      border: #474143; }
 
 .epic {
   color: purple; }
   .epic span {
     border-color: purple; }
-  .epic:hover {
+  .epic:hover, .epic.table-row:hover {
     background-color: purple;
     color: #474143; }
-    .epic:hover span {
+    .epic:hover span, .epic.table-row:hover span {
       border-color: #474143; }
   .epic.active {
     background-color: purple;
@@ -2617,16 +2617,6 @@ a {
   .epic.in-text:hover {
     background: transparent;
     color: purple; }
-  .epic.table-row {
-    color: #474143; }
-    .epic.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .epic.table-row:nth-child(odd):hover {
-        background: purple; }
-    .epic.table-row:hover {
-      background-color: purple;
-      color: #474143;
-      border: #474143; }
   .epic.blizzard-official {
     background-color: purple;
     color: #000; }
@@ -2647,15 +2637,25 @@ a {
     background: linear-gradient(to right, rgba(128, 0, 128, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid purple; }
+  .epic.table-row {
+    color: #474143; }
+    .epic.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .epic.table-row:nth-child(odd):hover {
+        background: purple; }
+    .epic.table-row:hover {
+      background-color: purple;
+      color: #474143;
+      border: #474143; }
 
 .legendary {
   color: orange; }
   .legendary span {
     border-color: orange; }
-  .legendary:hover {
+  .legendary:hover, .legendary.table-row:hover {
     background-color: orange;
     color: #474143; }
-    .legendary:hover span {
+    .legendary:hover span, .legendary.table-row:hover span {
       border-color: #474143; }
   .legendary.active {
     background-color: orange;
@@ -2694,16 +2694,6 @@ a {
   .legendary.in-text:hover {
     background: transparent;
     color: orange; }
-  .legendary.table-row {
-    color: #474143; }
-    .legendary.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .legendary.table-row:nth-child(odd):hover {
-        background: orange; }
-    .legendary.table-row:hover {
-      background-color: orange;
-      color: #474143;
-      border: #474143; }
   .legendary.blizzard-official {
     background-color: orange;
     color: #000; }
@@ -2724,6 +2714,16 @@ a {
     background: linear-gradient(to right, rgba(255, 165, 0, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid orange; }
+  .legendary.table-row {
+    color: #474143; }
+    .legendary.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .legendary.table-row:nth-child(odd):hover {
+        background: orange; }
+    .legendary.table-row:hover {
+      background-color: orange;
+      color: #474143;
+      border: #474143; }
 
 /*
  * Modes
@@ -2732,10 +2732,10 @@ a {
   color: #318e2f; }
   .mammoth span, .kraken span {
     border-color: #318e2f; }
-  .mammoth:hover, .kraken:hover {
+  .mammoth:hover, .mammoth.table-row:hover, .kraken:hover, .kraken.table-row:hover {
     background-color: #318e2f;
     color: #474143; }
-    .mammoth:hover span, .kraken:hover span {
+    .mammoth:hover span, .mammoth.table-row:hover span, .kraken:hover span, .kraken.table-row:hover span {
       border-color: #474143; }
   .mammoth.active, .kraken.active {
     background-color: #318e2f;
@@ -2774,16 +2774,6 @@ a {
   .mammoth.in-text:hover, .kraken.in-text:hover {
     background: transparent;
     color: #318e2f; }
-  .mammoth.table-row, .kraken.table-row {
-    color: #474143; }
-    .mammoth.table-row:nth-child(odd), .kraken.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .mammoth.table-row:nth-child(odd):hover, .kraken.table-row:nth-child(odd):hover {
-        background: #318e2f; }
-    .mammoth.table-row:hover, .kraken.table-row:hover {
-      background-color: #318e2f;
-      color: #474143;
-      border: #474143; }
   .mammoth.blizzard-official, .kraken.blizzard-official {
     background-color: #318e2f;
     color: #000; }
@@ -2804,15 +2794,25 @@ a {
     background: linear-gradient(to right, rgba(49, 142, 47, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #318e2f; }
+  .mammoth.table-row, .kraken.table-row {
+    color: #474143; }
+    .mammoth.table-row:nth-child(odd), .kraken.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .mammoth.table-row:nth-child(odd):hover, .kraken.table-row:nth-child(odd):hover {
+        background: #318e2f; }
+    .mammoth.table-row:hover, .kraken.table-row:hover {
+      background-color: #318e2f;
+      color: #474143;
+      border: #474143; }
 
 .wild {
   color: #695840; }
   .wild span {
     border-color: #695840; }
-  .wild:hover {
+  .wild:hover, .wild.table-row:hover {
     background-color: #695840;
     color: #474143; }
-    .wild:hover span {
+    .wild:hover span, .wild.table-row:hover span {
       border-color: #474143; }
   .wild.active {
     background-color: #695840;
@@ -2851,16 +2851,6 @@ a {
   .wild.in-text:hover {
     background: transparent;
     color: #695840; }
-  .wild.table-row {
-    color: #474143; }
-    .wild.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .wild.table-row:nth-child(odd):hover {
-        background: #695840; }
-    .wild.table-row:hover {
-      background-color: #695840;
-      color: #474143;
-      border: #474143; }
   .wild.blizzard-official {
     background-color: #695840;
     color: #000; }
@@ -2881,15 +2871,25 @@ a {
     background: linear-gradient(to right, rgba(105, 88, 64, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #695840; }
+  .wild.table-row {
+    color: #474143; }
+    .wild.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .wild.table-row:nth-child(odd):hover {
+        background: #695840; }
+    .wild.table-row:hover {
+      background-color: #695840;
+      color: #474143;
+      border: #474143; }
 
 .grimy-goons, .jade-lotus, .kabal {
   color: #ecbf42; }
   .grimy-goons span, .jade-lotus span, .kabal span {
     border-color: #ecbf42; }
-  .grimy-goons:hover, .jade-lotus:hover, .kabal:hover {
+  .grimy-goons:hover, .grimy-goons.table-row:hover, .jade-lotus:hover, .jade-lotus.table-row:hover, .kabal:hover, .kabal.table-row:hover {
     background-color: #ecbf42;
     color: #474143; }
-    .grimy-goons:hover span, .jade-lotus:hover span, .kabal:hover span {
+    .grimy-goons:hover span, .grimy-goons.table-row:hover span, .jade-lotus:hover span, .jade-lotus.table-row:hover span, .kabal:hover span, .kabal.table-row:hover span {
       border-color: #474143; }
   .grimy-goons.active, .jade-lotus.active, .kabal.active {
     background-color: #ecbf42;
@@ -2928,16 +2928,6 @@ a {
   .grimy-goons.in-text:hover, .jade-lotus.in-text:hover, .kabal.in-text:hover {
     background: transparent;
     color: #ecbf42; }
-  .grimy-goons.table-row, .jade-lotus.table-row, .kabal.table-row {
-    color: #474143; }
-    .grimy-goons.table-row:nth-child(odd), .jade-lotus.table-row:nth-child(odd), .kabal.table-row:nth-child(odd) {
-      background-color: rgba(0, 0, 0, 0.1); }
-      .grimy-goons.table-row:nth-child(odd):hover, .jade-lotus.table-row:nth-child(odd):hover, .kabal.table-row:nth-child(odd):hover {
-        background: #ecbf42; }
-    .grimy-goons.table-row:hover, .jade-lotus.table-row:hover, .kabal.table-row:hover {
-      background-color: #ecbf42;
-      color: #474143;
-      border: #474143; }
   .grimy-goons.blizzard-official, .jade-lotus.blizzard-official, .kabal.blizzard-official {
     background-color: #ecbf42;
     color: #000; }
@@ -2958,6 +2948,16 @@ a {
     background: linear-gradient(to right, rgba(236, 191, 66, 0.4) 0%, transparent 100%);
     color: black;
     border-left: 4px solid #ecbf42; }
+  .grimy-goons.table-row, .jade-lotus.table-row, .kabal.table-row {
+    color: #474143; }
+    .grimy-goons.table-row:nth-child(odd), .jade-lotus.table-row:nth-child(odd), .kabal.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .grimy-goons.table-row:nth-child(odd):hover, .jade-lotus.table-row:nth-child(odd):hover, .kabal.table-row:nth-child(odd):hover {
+        background: #ecbf42; }
+    .grimy-goons.table-row:hover, .jade-lotus.table-row:hover, .kabal.table-row:hover {
+      background-color: #ecbf42;
+      color: #474143;
+      border: #474143; }
 
 @keyframes linearKeyframes {
   0% {
@@ -5940,63 +5940,6 @@ card {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis; }
-
-.decks .container__page--left .sidebar table {
-  width: 100%; }
-  .decks .container__page--left .sidebar table tr td:last-child {
-    text-align: center; }
-.decks .container__page--right .content {
-  margin: 1vh 0 0 1vh; }
-  .decks .container__page--right .content .table-scroll {
-    height: calc(100% - 1vh - 61px);
-    margin-top: calc(61px + 1vh); }
-    .decks .container__page--right .content .table-scroll::-webkit-scrollbar {
-      width: 13px;
-      height: 13px; }
-    .decks .container__page--right .content .table-scroll::-webkit-scrollbar-thumb {
-      background-color: #474143;
-      border-radius: 0;
-      border-left: 1px solid #E7E2DA; }
-    .decks .container__page--right .content .table-scroll::-webkit-scrollbar-thumb:hover {
-      background-color: #474143; }
-    .decks .container__page--right .content .table-scroll::-webkit-scrollbar-track {
-      background-color: #A69E9D;
-      border-left: 1px solid #E7E2DA; }
-    .decks .container__page--right .content .table-scroll table {
-      width: calc(100% - 1vh - 1px); }
-      .decks .container__page--right .content .table-scroll table thead {
-        display: table;
-        width: calc(100% - 1vh - 1px); }
-        .decks .container__page--right .content .table-scroll table thead tr td {
-          padding: 20px; }
-      .decks .container__page--right .content .table-scroll table tr td.title {
-        width: 30%; }
-      .decks .container__page--right .content .table-scroll table tr td.playerClass, .decks .container__page--right .content .table-scroll table tr td.votes, .decks .container__page--right .content .table-scroll table tr td.views, .decks .container__page--right .content .table-scroll table tr td.mana-curve {
-        width: 10%; }
-      .decks .container__page--right .content .table-scroll table tr td.type, .decks .container__page--right .content .table-scroll table tr td.created {
-        width: 15%; }
-.decks .container__page--right .topbar .topbar-left #adventures {
-  display: flex; }
-  .decks .container__page--right .topbar .topbar-left #adventures ul {
-    display: flex; }
-    .decks .container__page--right .topbar .topbar-left #adventures ul li span {
-      padding: .5vh; }
-.decks .container__page--right .topbar .choosen-deck-topbar {
-  display: flex;
-  align-items: center; }
-  .decks .container__page--right .topbar .choosen-deck-topbar .mode, .decks .container__page--right .topbar .choosen-deck-topbar .cards, .decks .container__page--right .topbar .choosen-deck-topbar .dust-cost {
-    display: flex;
-    align-items: center; }
-  .decks .container__page--right .topbar .choosen-deck-topbar span {
-    font-size: 20px; }
-  .decks .container__page--right .topbar .choosen-deck-topbar li {
-    margin-left: 10px; }
-  .decks .container__page--right .topbar .choosen-deck-topbar .rating, .decks .container__page--right .topbar .choosen-deck-topbar .dust-cost {
-    height: 100%;
-    padding: 0 10px; }
-  .decks .container__page--right .topbar .choosen-deck-topbar .rating {
-    display: flex;
-    align-items: center; }
 
 .cards {
   position: relative;

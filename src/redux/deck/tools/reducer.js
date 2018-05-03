@@ -1,15 +1,3 @@
-// import {
-//   FETCH_COMMENTS,
-//   FETCH_USERS_DETAILS,
-//   FETCH_USER_VOTED_COMMENTS,
-//   TOGGLE_COMMENT_BOX,
-//   TOGGLE_PREVIEW,
-//   UPDATE_ACTIVE_COMMENT_ID,
-//   UPDATE_COMMENT,
-//   UPDATE_COMMENT_VOTE,
-//   UPDATE_COMMENT_VOTES
-// } from "../../types/decks/deck-view";
-
 import * as types from "./types";
 
 const initialState = {
@@ -21,7 +9,7 @@ const initialState = {
   usersDetails: {},
   commentVotes: {
     upvotes: 0,
-    downvoted: 0,
+    downvotes: 0,
     votes: 0,
     id: ""
   },
@@ -39,7 +27,7 @@ export default function(state=initialState, {payload, type}) {
       case types.TOGGLE_DECK_EDIT_VIEW:
         return {
           ...state,
-          deckEditView: !state.deckEditView
+          deckEditView: payload
         };
       // case 'UPDATE_DECK_DESCRIPTION':
       //   return {

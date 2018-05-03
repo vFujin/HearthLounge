@@ -1,0 +1,46 @@
+@import '../../../../styles/colors';
+@import '../../../../styles/mixins';
+.decks {
+  .container__page--right {
+    .content{
+      margin: 1vh 0 0 1vh;
+    }
+    .topbar {
+      .topbar-left{
+        #adventures{
+          display: flex;
+          ul{
+            display: flex;
+            li{
+              span{
+                padding:.5vh;
+              }
+            }
+          }
+        }
+      }
+      .choosen-deck-topbar {
+        display: flex;
+        align-items: center;
+        .mode, .cards, .dust-cost {
+          display: flex;
+          align-items: center;
+        }
+        span {
+          font-size: 20px;
+        }
+        li {
+          margin-left: 10px;
+        }
+        .rating, .dust-cost {
+          height: 100%;
+          padding: 0 10px;
+        }
+        .rating {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

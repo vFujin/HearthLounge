@@ -31,7 +31,7 @@ class SectionBody extends Component {
     const deckDescriptionsNotEqual = description !== editingDeckDescription && !_.isEmpty(editingDeckDescription);
     const decksNotEqual = !_.isEqual(activeDeckCopy, activeDeck.deck);
 
-    toggleDeckEditView();
+    toggleDeckEditView(!deckEditView);
 
     if(deckEditView && deckDescriptionsNotEqual){
       updateDeckDescription("");
@@ -104,7 +104,7 @@ const mapDispatchToProps = dispatch => {
   return {
     updateActiveDeck: payload => dispatch(updateActiveDeckCopy(payload)),
     updateDeckDescription: payload => dispatch(updateDeckDescription(payload)),
-    toggleDeckEditView: () => dispatch(toggleDeckEditView()),
+    toggleDeckEditView: payload => dispatch(toggleDeckEditView(payload)),
     updateDeck: payload => dispatch(updateActiveDeckRequest(payload)),
     deleteDeck: payload => dispatch(deleteDeckRequest(payload))
   }

@@ -9,7 +9,7 @@ import './styles/decklist-sidebar-mobile-styles.css';
 
 const DecklistSidebar = ({activeDeck, deck, deckEditView, inDeckCreation, deckLength, showCardAdditionBox = false}) => {
   const {loading} = activeDeck;
-  console.log(deck);
+
   return (loading && !inDeckCreation)
     ? <Loader theme="light"/>
     : (

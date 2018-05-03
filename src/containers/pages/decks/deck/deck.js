@@ -33,7 +33,7 @@ class Deck extends Component{
     resetDeckAuthor();
     resetActiveDeckComments();
     resetShortenedUserDetails();
-    toggleDeckEditView()
+    toggleDeckEditView(false)
   }
 
   render() {
@@ -69,7 +69,7 @@ const mapDispatchToProps = (dispatch) => {
     resetDeckAuthor: () => dispatch(resetDeckAuthor()),
     resetActiveDeckComments: () => dispatch(resetActiveDeckComments()),
     resetShortenedUserDetails: () => dispatch(resetShortenedUserDetails()),
-    toggleDeckEditView: () => dispatch(toggleDeckEditView()),
+    toggleDeckEditView: payload => dispatch(toggleDeckEditView(payload)),
   };
 };
 

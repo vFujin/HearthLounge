@@ -1,6 +1,6 @@
 import React from 'react';
 import Topbar from './topbar';
-import DeckList from './deck-list';
+import DeckList from './decklist/deck-list';
 
 const RightContainer = ({adventuresToggled, decks, handleFiltersClick, handleDeckSnippetClick, activeAdventure, activeMode, activeClass}) => {
   return (

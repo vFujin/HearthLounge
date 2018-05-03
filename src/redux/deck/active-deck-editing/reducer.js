@@ -1,7 +1,7 @@
 import * as types from "./types";
 
 const initialState = {
-  loading: true,
+  loading: false,
   editingDeckDescription: ""
 };
 
@@ -9,7 +9,8 @@ export default function(state=initialState, {payload, type}) {
   switch (type) {
     case types.UPDATE_ACTIVE_DECK_REQUEST:
       return {
-        ...state
+        ...state,
+        loading: true
       };
 
     case types.UPDATE_ACTIVE_DECK_SUCCESS:

@@ -1,0 +1,138 @@
+@import '../../../../../../styles/colors';
+@import '../../../../../../styles/mixins';
+
+.decks__decklist {
+  display: grid;
+  grid-template-rows: 4.5vh 71vh;
+  grid-row-gap: 1vh;
+  overflow: hidden;
+
+  &--topbar {
+    display: flex;
+    background: $dark-grey;
+    padding-right: calc(13px + 1vh);
+    color: $pearl;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        padding-left: 5px;
+      }
+
+      &:not(:first-child) {
+        justify-content: center;
+      }
+    }
+  }
+
+  .decks__decklist--content {
+    padding-right: 1vh;
+    overflow: auto;
+    @include scrollbar($pearl);
+
+    .decks__decklist--snippet {
+      border-bottom: 1px solid $dark-grey;
+      border-left: 1px solid $dark-grey;
+      border-right: 1px solid $dark-grey;
+      color: $dark-grey;
+      @include transition(all ease .4s);
+
+      &:first-child{
+        border-top: 1px solid $dark-grey;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $dark-grey;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $dark-grey;
+        border-left: 1px solid $dark-grey;
+        border-right: 1px solid $dark-grey;
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        padding: 10px 5px;
+        display: flex;
+        align-items: center;
+
+        > div:not(:first-child) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .decks__decklist--snippet {
+          &-title {
+            display: flex;
+            align-items: center;
+
+            span {
+              padding: 6px;
+              border: 2px solid;
+              border-radius: 50%;
+              margin-right: 5px;
+            }
+
+            .title {
+              font-weight: bold;
+            }
+
+            .author {
+              font-size: calc(.2em + 1vmin);
+              opacity: .7;
+            }
+          }
+
+          &-mana {
+            height: 25px;
+
+            span{
+              background: white;
+            }
+          }
+
+          &-created{
+            text-align: center;
+            font-size: calc(.3em + 1vmin);
+          }
+
+          &-hasIcon{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            span {
+              font-size: calc(.5em + 1vmin);
+              margin-bottom: 3px;
+            }
+
+            p {
+              font-size: calc(.3em + 1vmin);
+              opacity: .7;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .decks__decklist--snippet {
+    &-votes,
+    &-views,
+    &-mode,
+    &-mana,
+    &-created,
+    &-comments {
+      width: 10%;
+    }
+
+    &-title {
+      width: 40%;
+    }
+  }
+}
