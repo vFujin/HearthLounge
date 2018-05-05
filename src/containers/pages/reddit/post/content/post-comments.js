@@ -1,14 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 import Loader from '../../../../../components/loaders/loader';
 import {renderComment} from "../../utils/render-comment";
 
-const PostComments = ({post, comments}) =>{
+const PostComments = ({activePost}) =>{
+  const {post, comments} = activePost;
   return (
       <div className="container__details--section container__details--comments">
         <div className="section__header">
-          <div className="line"></div>
-          <h1>{post.num_comments} {post.num_comments === 1 ? "newComment" : "comments"}</h1>
+          <div className="line"/>
+          <h1>{post.num_comments} {post.num_comments === 1 ? "comment" : "comments"}</h1>
         </div>
         <div className="section__body">
           <div className="comments">
@@ -19,14 +20,9 @@ const PostComments = ({post, comments}) =>{
   )
 };
 
-export default PostComments;
-
-PostComments.propTypes = {
-  post: PropTypes.shape({
-    num_comments: PropTypes.number
-  }),
-  comments: PropTypes.shape({
-    loading: PropTypes.bool,
-    all: PropTypes.arrayOf(PropTypes.object)
-  })
+const mapStateToProps = state => {
+  const { activePost } = state.redditPosts;
+  return { activePost };
 };
+
+export default connect(mapStateToProps)(PostComments);

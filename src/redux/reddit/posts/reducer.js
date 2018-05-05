@@ -47,6 +47,7 @@ export default function(state=initialState, {type, payload}) {
     case types.RESET_REDDIT_STATE:
       return {
         ...initialState,
+        all: state.all
       };
     default:
       return state;

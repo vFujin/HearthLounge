@@ -2,8 +2,7 @@
 @import '../../../../../styles/mixins';
 
 .redditPosts {
-  margin-top: 1vh;
-  margin-left: 1vh;
+  margin: 1vh 1vh 0 1vh;
   display: grid;
   grid-template-rows: 4.5vh 71vh;
   grid-row-gap: 1vh;
@@ -30,12 +29,9 @@
       border-bottom: 1px solid $dark-grey !important;
 
       &:first-child {
-        border-top: 1px solid $dark-grey;
+        border-top: 1px solid $dark-grey !important;
       }
 
-      &:nth-child(odd):not(.active){
-        background: rgba(black, .1);
-      }
       a {
         display: flex;
         width: 100%;
@@ -61,6 +57,27 @@
 
     &--title {
       width: 60%;
+      display: flex;
+      align-items: center;
+
+      > span {
+        margin-right: 10px;
+
+      }
+
+      .author {
+        display: flex;
+        align-items: center;
+        font-size: calc(.5em + .5vmin);
+        opacity: .5;
+
+        > span {
+          display: flex;
+          align-items: center;
+          color: $reddit_background;
+          margin-left: 5px;
+        }
+      }
     }
 
     &--hasIcon{
@@ -76,7 +93,7 @@
 
       p {
         font-size: calc(.3em + 1vmin);
-        opacity: .7;
+        opacity: .5;
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import Sidebar from './sidebar';
@@ -10,18 +10,17 @@ import 'react-treeview/react-treeview.css';
 import * as types from "../../../../redux/reddit/active-post/types";
 import {fetchRedditPostRequest} from "../../../../redux/reddit/active-post/actions";
 
-class RedditPost extends Component {
+class RedditPost extends PureComponent {
 
   componentDidMount() {
-    const {updateActivePost, activePost, match, posts} = this.props;
+    const {updateActivePost, activePost, match} = this.props;
     const {postId, postTitle} = match.params;
     document.title= _.startCase(postTitle);
-    // const postFetched = posts.all.find(post => post.Id === postId);
+
     if (!activePost.post && !activePost.loading) {
       updateActivePost(postId);
     }
   }
-
 
   componentWillUnmount() {
     const {clearActivePost} = this.props;
@@ -46,8 +45,7 @@ class RedditPost extends Component {
           { !activePost.loading && activePost.post && (
             <div className="container__page--inner container__page--right">
               <Topbar post={post}/>
-              <Content cards={this.props.cards}
-                       activePost={activePost}/>
+              <Content />
             </div>
           )}
 
@@ -57,8 +55,8 @@ class RedditPost extends Component {
 }
 
 const mapStateToProps = (state) =>{
-  const {activePost, posts} = state.redditPosts;
-  return {activePost, posts};
+  const {activePost} = state.redditPosts;
+  return {activePost};
 };
 
 const mapDispatchToProps = (dispatch) => {

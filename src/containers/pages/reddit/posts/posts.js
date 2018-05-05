@@ -8,12 +8,12 @@ import '../styles/reddit-styles.css';
 
 class RedditPosts extends Component {
   componentDidMount() {
-    const {posts, updatePosts} = this.props;
+    const {posts, fetchRedditPostsRequest} = this.props;
     const {activeCategory} = posts;
     document.title = `r/hearthstone - ${_.startCase(activeCategory)}`;
 
     if(!posts.all) {
-      updatePosts("hot");
+      fetchRedditPostsRequest("hot");
     }
   }
 
@@ -40,7 +40,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updatePosts: (payload) => dispatch(fetchRedditPostsRequest(payload)),
+    fetchRedditPostsRequest: (payload) => dispatch(fetchRedditPostsRequest(payload)),
     resetRedditState: () => dispatch(resetRedditState())
   }
 };

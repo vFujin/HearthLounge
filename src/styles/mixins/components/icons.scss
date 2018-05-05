@@ -97,16 +97,27 @@
 
   &.table-row{
     color: $dark-grey;
-    &:nth-child(odd) {
+
+
+
+    &:nth-child(odd):not(&.stickied)
+    {
       background-color: rgba(0, 0, 0, .1);
       &:hover{
         background: $color;
       }
     }
+
     &:hover{
       background-color: $color;
       color: $dark-grey;
       border: $dark-grey;
+    }
+  }
+
+  &.stickied {
+    &:hover {
+      background: darken($color, 15%);
     }
   }
 }

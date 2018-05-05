@@ -3,8 +3,8 @@ import RedditHeaderItem from "./header-item";
 
 const RedditPostsHeader = () => (
   <ul className="redditPosts__header">
-    <RedditHeaderItem name="title"/>
     <RedditHeaderItem name="upvotes"/>
+    <RedditHeaderItem name="title"/>
     <RedditHeaderItem name="comments"/>
     <RedditHeaderItem name="created"/>
   </ul>

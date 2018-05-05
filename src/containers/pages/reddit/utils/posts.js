@@ -52,7 +52,7 @@ export const categories = [
 
 export const checkIfStickied = (post) =>{
   const {stickied} = post;
-  return stickied === true ? "hunter active" : stickied;
+  return stickied === true ? "hunter active stickied" : stickied;
 };
 
 export const checkIfBlizzardPost = post =>{
@@ -88,25 +88,5 @@ export const stripDomains = (post) => {
     }
 
     else return "default";
-  }
-};
-
-export const checkDomain = post =>{
-  const {id, permalink, domain, url} = post;
-  let selfURL = `/reddit/post/${id}/${stripRedditURL(permalink)}`;
-  switch (domain) {
-    case supported_domains[1]:
-    case supported_domains[2]:
-    case supported_domains[4]:
-    case supported_domains[5]:
-    case supported_domains[6]: return selfURL;
-    case supported_domains[3]:
-    default: return url;
-  }
-};
-
-export const checkTopbarIconFilters = (domain, post) =>{
-  if (domain !== undefined) {
-    return stripDomains(post) === domain ? stripDomains(post) : "display-none";
   }
 };
