@@ -1,70 +1,83 @@
 @import '../../../../../styles/colors';
 @import '../../../../../styles/mixins';
 
-.table-scroll {
-  @include scrollbar($pearl);
-  height: calc(100% - 1vh - 61px);
-  margin-top: calc(61px + 1vh);
-  table {
-    height: 100%;
-    width: calc(100% - 1vh);
-    border-collapse: collapse;
-    thead {
-      background-color: $black-050;
-      color: $pearl;
-      display: table;
-      width: calc(100% - 1vh + 1px);
-      th {
-        padding: 20px;
-        font-weight: normal;
-        div {
-          margin-right: calc(37px + 1vh);
-        }
-      }
-    }
-    tbody {
-      border: 1px solid $dark-grey;
-      tr {
-        border-bottom: 1px solid black;
-        td, th {
-          a {
-            display: block;
-            padding: 10px;
-            span {
-              font-size: 14px;
-            }
-            .hs-icon {
-              font-size: 20px;
-            }
-          }
-        }
-        .upvotes {
-          a {
-            span {
-              background-color: $dark-grey;
-              padding: 5px;
-              font-size: 14px;
-              color: $pearl;
-            }
+.redditPosts {
+  margin-top: 1vh;
+  margin-left: 1vh;
+  display: grid;
+  grid-template-rows: 4.5vh 71vh;
+  grid-row-gap: 1vh;
 
-          }
-        }
-        .title {
-          text-align: left;
-        }
-        .domain {
-          color: $dark-grey;
-          a {
-            @include transition(all ease .4s);
-          }
-        }
+  &__header {
+    background: $dark-grey;
+    color: $pearl;
+    display: flex;
+    align-items: center;
+    padding-right: calc(1vh + 14px);
+    text-align: center;
+    padding-left: 5px;
+  }
+
+  &__body {
+    height: 100%;
+    overflow: auto;
+    padding-right: 1vh;
+    @include scrollbar();
+
+    li {
+      border-left: 1px solid $dark-grey !important;
+      border-right: 1px solid $dark-grey !important;
+      border-bottom: 1px solid $dark-grey !important;
+
+      &:first-child {
+        border-top: 1px solid $dark-grey;
+      }
+
+      &:nth-child(odd):not(.active){
+        background: rgba(black, .1);
+      }
+      a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
       }
     }
-    .upvotes, .comments, .domain {
+  }
+
+  &__snippet {
+    &--upvotes,
+    &--comments {
       width: 10%;
     }
-    .created {
-      width: 15%;
+
+    &--created{
+      width: 20%;
+      text-align: center;
+      font-size: calc(.3em + 1vmin);
+    }
+
+    &--title {
+      width: 60%;
+    }
+
+    &--hasIcon{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        font-size: calc(.5em + 1vmin) !important;
+        margin-bottom: 3px;
+      }
+
+      p {
+        font-size: calc(.3em + 1vmin);
+        opacity: .7;
+      }
     }
   }
 }

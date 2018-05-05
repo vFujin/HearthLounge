@@ -2,10 +2,12 @@
 @import '../../../../styles/mixins';
 
 .subreddit{
-
+  grid-template-columns: 100%;
   .container__page--inner {
     .topbar {
       justify-content: inherit;
+      background: $light-grey;
+
       li {
         margin: 0 10px;
         a {
@@ -40,7 +42,6 @@
 
 
     .content {
-      margin: 1vh 0 0 1vh;
       .container__details {
         .container__details--comments {
           .section__body {

@@ -40,20 +40,34 @@ const selectType = (
   };
 
   const redditDomainIcons = (domain) => {
-    if(linkFlairText !== null){
-      let flair_text = linkFlairText.toLowerCase();
-      let self = domain.includes(supported_domains[2]);
+    //todo: refactor
+    const flairText = linkFlairText && linkFlairText.toLowerCase();
+    const self = domain.includes(supported_domains[2]);
+    const img = domain.includes(supported_domains[7]) || domain.includes(supported_domains[8]);
+
+    const discussionFlairTexts = ["fanmade content", "discussion", "news"];
+
+    if(!linkFlairText){
+      if (domain.includes(supported_domains[0])) return icon("battlenet");
+      else if (domain.includes(supported_domains[1]) || domain.includes(supported_domains[4])) return icon("youtube");
+      else if (self) return icon("bubbles2");
+      else if (domain.includes(supported_domains[3])) return icon("twitter");
+      else if(domain.includes(supported_domains[5])) return icon("twitch");
+      else if(img) return icon("image");
+    } else {
 
       if (domain.includes(supported_domains[0])) return icon("battlenet");
       else if (domain.includes(supported_domains[1]) || domain.includes(supported_domains[4])) return icon("youtube");
-      else if (self && flair_text !== "tournament") return icon("bubbles2");
-      else if (self && flair_text === "tournament") return icon("trophy");
-      else if(domain.includes(supported_domains[5])) return icon("twitch");
+      else if (self && discussionFlairTexts.includes(flairText)) return icon("bubbles2");
+
+      else if (self && (flairText === "tournament")) return icon("trophy");
+      else if (flairText === "competitive") return icon("trophy");
+      else if (domain.includes(supported_domains[3])) return icon("twitter");
+      else if (domain.includes(supported_domains[5])) return icon("twitch");
+      else if (img) return icon("image");
       else return icon("redirect");
     }
-    return icon("redirect")
   };
-
 
   let icon = (name) => {
     let icon = <span id={id} onClick={handleClick} className={`hs-icon icon-${_.toLower(name)} ${className}`}/>;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from "lodash";
 import { connect } from 'react-redux';
 import {fetchRedditPostCommentsRequest} from "../../../../../../redux/reddit/comments/actions";
 import {UPDATE_ACTIVE_POST} from "../../../../../../redux/reddit/active-post/types";
@@ -17,17 +18,29 @@ class RedditPostsBody extends Component {
     }
   };
 
-  mapPosts = () => this.props.posts.all.map(post => (
+  mapPosts = (posts) => posts.map(post => (
     <RedditPostsBodyItem post={post}
                          key={post.id}
                          handlePostClick={this.handlePostClick}/>
     )
   );
 
+  filterPostsByDomain = (posts) => {
+    return posts.all.filter(post => (
+      typeof posts.domain.obj.name === "string"
+        ? post.domain === posts.domain.obj.name
+        : posts.domain.obj.name.includes(post.domain)
+    ))
+  };
+
   render() {
+    const {posts} = this.props;
+    const {domain} = posts;
+    const allPosts = !_.isEmpty(domain.active) ? this.filterPostsByDomain(posts) : posts.all;
+
     return (
       <ul className="redditPosts__body">
-        {this.mapPosts()}
+        {this.mapPosts(allPosts)}
       </ul>
     )
   }

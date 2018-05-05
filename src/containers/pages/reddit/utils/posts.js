@@ -1,8 +1,35 @@
-export const supported_domains = ["battle.net", "youtu.be", "self.hearthstone", "twitter.com","youtube.com", "clips.twitch.tv", "reddit.com"];
-export const supported_domain_icons = ["battlenet", "youtube", "bubbles2", "twitter", "twitch", "reddit", "image"];
+export const supported_domains = ["battle.net", "youtu.be", "self.hearthstone", "twitter.com","youtube.com", "clips.twitch.tv", "reddit.com", "i.redd.it", "i.imgur.com"];
+
+export const supportedDomains = [
+  {
+    name: "battle.net",
+    icon: "battlenet"
+  },
+  {
+    name: ["youtube", "youtu.be"],
+    icon: "youtube"
+  },
+  {
+    name: "self.hearthstone",
+    icon: "bubbles2",
+  },
+  {
+    name: "twitter.com",
+    icon: "twitter"
+  },
+  {
+    name: "clips.twitch.tv",
+    icon: "twitch"
+  },
+  {
+    name: ["i.redd.it", "i.imgur.com"],
+    icon: "image"
+  },
+];
+
 export const categories = [
   {
-    name: "top",
+    name: "hot",
     icon: "fire"
   },
   {

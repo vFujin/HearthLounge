@@ -19,3 +19,23 @@ export function fetchRedditPostsFailure(error){
     payload: error
   }
 }
+
+export function selectRedditDomain(domain){
+  return {
+    type: types.SELECT_REDDIT_DOMAIN,
+    payload: domain
+  }
+}
+
+export function selectRedditCategory(category){
+  return {
+    type: types.SELECT_REDDIT_CATEGORY,
+    payload: category
+  }
+}
+
+export function resetRedditState(){
+  return {
+    type: types.RESET_REDDIT_STATE
+  }
+}

@@ -1,8 +1,9 @@
 import * as types from "./types";
 
-export function fetchRedditPostRequest(){
+export function fetchRedditPostRequest(payload){
   return {
-    type: types.FETCH_REDDIT_POST_REQUEST
+    type: types.FETCH_REDDIT_POST_REQUEST,
+    payload
   }
 }
 

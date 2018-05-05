@@ -2,61 +2,74 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
 import 'whatwg-fetch';
-import Topbar from './topbar';
+import Topbar from './topbar/topbar';
 import Content from './content/content';
 import {FETCH_REDDIT_POSTS_REQUEST} from "../../../../redux/reddit/posts/types";
 import '../styles/reddit-styles.css';
+import {
+  resetRedditState,
+  selectRedditCategory,
+  selectRedditDomain
+} from "../../../../redux/reddit/posts/actions";
 
 class RedditPosts extends Component {
   componentDidMount() {
-    const {posts, updatePosts, match} = this.props;
-    const {category} = match.params;
+    const {posts, updatePosts} = this.props;
+    const {activeCategory} = posts;
+    document.title = `r/hearthstone - ${_.startCase(activeCategory)}`;
 
-    document.title=`r/hearthstone - ${_.startCase(category)}`;
-
-    if(posts.loading) {
+    if(!posts.all) {
       updatePosts("hot");
-    }
-
-    if(category !== "hot") {
-      updatePosts(category);
     }
   }
 
+  handleDomainClick = (e, domainObj) => {
+    const {selectRedditDomain, posts} = this.props;
+    const {domain} = posts;
+    const selectedDomain = e.currentTarget.id;
+
+    if (selectedDomain !== domain.active) {
+      selectRedditDomain({active: selectedDomain, obj: domainObj});
+    }
+
+    if(selectedDomain === domain.active) {
+      selectRedditDomain({active: "", obj: {}});
+    }
+  };
+
   handleCategoryClick = (e) => {
-    e.preventDefault();
+    const {updatePosts, selectRedditCategory, posts} = this.props;
+    const {activeCategory} = posts;
+    const selectedCategory = e.currentTarget.id;
 
-    const {updatePosts, toggleCategoryFilter, match} = this.props;
-    const {category} = match.params;
-    const filter = e.currentTarget.id;
+    if (selectedCategory !== activeCategory) {
+      updatePosts(selectedCategory);
+      selectRedditCategory(selectedCategory);
+    }
 
-    if (filter !== category) {
-      updatePosts(filter);
-      toggleCategoryFilter(filter);
+    if(selectedCategory === activeCategory){
+      updatePosts("hot");
+      selectRedditCategory("hot");
     }
   };
 
   render() {
-    const {match, activePost, filteredPosts} = this.props;
-    const {domain, category} = match.params;
     return (
         <div className="container__page container__page--oneSided subreddit">
           <div className="container__page--inner">
-            <Topbar domain={domain}
-                    handleCategoryClick={this.handleCategoryClick}
-                    category={category || "hot"}/>
-            <Content domain={domain}
-                     filteredPosts={filteredPosts}
-                     activePostPermalink={activePost}/>
+            <Topbar
+                    handleDomainClick={this.handleDomainClick}
+                    handleCategoryClick={this.handleCategoryClick} />
+            <Content />
           </div>
         </div>
     )
   }
 }
 
-const mapStateToProps = (state) =>{
-  const {posts, activePost, activeCategoryFilter, activeDomainFilter} = state.redditPosts;
-  return {posts, activePost, activeCategoryFilter, activeDomainFilter};
+const mapStateToProps = (state) => {
+  const {posts, activeCategory, activeDomain} = state.redditPosts;
+  return {posts, activeCategory, activeDomain};
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -64,15 +77,9 @@ const mapDispatchToProps = (dispatch) => {
     updatePosts: (payload) => dispatch({
       type: FETCH_REDDIT_POSTS_REQUEST, payload
     }),
-    updateFilteredPosts: (filteredPosts) => dispatch({
-      type: 'UPDATE_FILTERED_POSTS', filteredPosts
-    }),
-    toggleDomainFilter: (activeDomainFilter) => dispatch({
-      type: 'TOGGLE_DOMAIN_FILTER', activeDomainFilter
-    }),
-    toggleCategoryFilter: (activeCategoryFilter) => dispatch({
-      type: 'TOGGLE_CATEGORY_FILTER', activeCategoryFilter
-    })
+    selectRedditDomain: domain => dispatch(selectRedditDomain(domain)),
+    selectRedditCategory: category => dispatch(selectRedditCategory(category)),
+    resetRedditState: () => dispatch(resetRedditState())
   }
 };
 

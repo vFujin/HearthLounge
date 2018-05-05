@@ -1,8 +1,12 @@
 import * as types from './types';
 
 const initialState = {
-  loading: true,
-  activeCategoryFilter: 'hot'
+  loading: false,
+  domain: {
+    active: "",
+    obj: {}
+  },
+  activeCategory: 'hot'
 };
 
 export default function(state=initialState, {type, payload}) {
@@ -28,15 +32,21 @@ export default function(state=initialState, {type, payload}) {
         error: payload
       };
 
-    case types.TOGGLE_DOMAIN_FILTER:
+    case types.SELECT_REDDIT_DOMAIN:
       return {
         ...state,
-        activeDomainFilter: payload
+        domain: payload
       };
-    case types.TOGGLE_CATEGORY_FILTER:
+
+    case types.SELECT_REDDIT_CATEGORY:
       return {
         ...state,
-        activeCategoryFilter: payload
+        activeCategory: payload
+      };
+
+    case types.RESET_REDDIT_STATE:
+      return {
+        ...initialState,
       };
     default:
       return state;

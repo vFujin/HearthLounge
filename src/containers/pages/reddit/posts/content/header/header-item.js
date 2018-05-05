@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 const RedditHeaderItem = ({name}) => (
-  <li className={name} key={name}>{_.startCase(name)}</li>
+  <li className={`redditPosts__snippet--${name}`} key={name}>{_.startCase(name)}</li>
 );
 
 RedditHeaderItem.propTypes = {

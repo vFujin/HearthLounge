@@ -3,30 +3,37 @@ import {Link} from "react-router-dom";
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import {
-  checkDomain,
   checkIfBlizzardPost,
   checkIfStickied,
-  checkTopbarIconFilters,
   stripDomains
 } from "../../../utils/posts";
 import Icon from "../../../../../../components/icon";
 import {wrapDate} from "../../../../../../utils/wrap-date";
 
 const RedditPostsBodyItem = ({post, handlePostClick}) => {
-  const {id, domain, ups, num_comments, title, created, edited} = post;
-  console.log(domain);
+  const {id, domain, ups, num_comments, title, author, created_utc, edited_utc, link_flair_text} = post;
+
   return (
       <li id={id}
           className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)}`}
           onClick={handlePostClick}>
-        <Link to={checkDomain(post)}>
-          <div className="redditPosts__snippet--upvotes">{ups}</div>
-          <div className="redditPosts__snippet--domain">
-            <Icon type="reddit" domain={domain} linkFlairText={post.link_flair_text}/>
+        <Link to={`/reddit/post/${id}/${_.kebabCase(title)}`}>
+          <div className="redditPosts__snippet--title">
+            <Icon name={domain} type="reddit" domain={domain} linkFlairText={link_flair_text}/>
+            <div className="name-details">
+              <p className="title">{_.unescape(title)}</p>
+              <p className="author">posted by <span><Icon name="reddit" />{author}</span></p>
+            </div>
           </div>
-          <div className="redditPosts__snippet--comments">{num_comments}</div>
-          <div className="redditPosts__snippet--title">{_.unescape(title)}</div>
-          <div className="redditPosts__snippet--created">{wrapDate(created, edited)}</div>
+          <div className="redditPosts__snippet--upvotes redditPosts__snippet--hasIcon">
+            <Icon name="circle-up" />
+            <p>{ups}</p>
+          </div>
+          <div className="redditPosts__snippet--comments redditPosts__snippet--hasIcon">
+            <Icon name="bubbles2" />
+            <p>{num_comments}</p>
+          </div>
+          <div className="redditPosts__snippet--created">{wrapDate(created_utc, edited_utc)}</div>
         </Link>
       </li>
   )

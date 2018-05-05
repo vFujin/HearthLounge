@@ -1,7 +1,7 @@
 import * as types from './types';
 
 const initialState = {
-  loading: true,
+  loading: false,
 };
 
 export default function(state=initialState, {type, payload}) {
@@ -11,7 +11,6 @@ export default function(state=initialState, {type, payload}) {
       return {
         ...state,
         loading: true
-
       };
     case types.FETCH_REDDIT_POST_SUCCESS:
       return {
@@ -66,7 +65,7 @@ export default function(state=initialState, {type, payload}) {
 
     case types.CLEAR_REDDIT_POST:
       return {
-        loading: true
+        loading: false
       };
 
     default:
