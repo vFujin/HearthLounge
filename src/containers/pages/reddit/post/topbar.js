@@ -1,25 +1,47 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from "react-redux";
 import Icon from "../../../../components/icon";
+import {wrapDate} from "../../../../utils/wrap-date";
 
-const Topbar = ({post}) => {
-  const {score, url} = post;
+const Topbar = ({activePost}) => {
+  const {score, url, link_flair_text, author, created_utc, edited, id} = activePost.post;
 
   return (
       <div className="topbar">
-        {score}
-        <a href={url} rel="noopener noreferrer" target="_blank">
+        <div>{link_flair_text}</div>
+        <div className="topbar__votes">
+          <Icon name="circle-up" />
+          <p>{score}</p>
+        </div>
+        <div className="topbar__author">
+          <p>Posted by:</p>
+          <div>
+            <Icon name="reddit" />
+            <a href={`https://www.reddit.com/user/${author}`} target="_blank" rel="noopener noreferrer">u/{author}</a>
+          </div>
+        </div>
+        <div className="topbar__redirect">
+          <a href={url} rel="noopener noreferrer" target="_blank">
+            <p>View on Reddit</p>
             <Icon name="redirect" tooltip={true} title="View on Reddit"/>
-        </a>
+          </a>
+        </div>
+
+        <div className="topbar__created">
+          <p>Posted</p>
+          <p>{wrapDate(created_utc, edited)}</p>
+        </div>
+        <div className="topbar__shortlink">
+          <p>Shortlink</p>
+          <p>https://redd.it/{id}</p>
+        </div>
       </div>
   )
 };
 
-export default Topbar;
-
-Topbar.propTypes = {
-  post: PropTypes.shape({
-    score: PropTypes.number,
-    url: PropTypes.string
-  })
+const mapStateToProps = state => {
+  const { activePost } = state.redditPosts;
+  return { activePost };
 };
+
+export default connect(mapStateToProps)(Topbar);

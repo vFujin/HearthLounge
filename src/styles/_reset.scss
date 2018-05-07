@@ -35,6 +35,7 @@ a{
   outline: none;
   cursor: pointer;
   @include transition(none);
+
   &:active, &:hover, &:link, &:visited{
     color: inherit;
     text-decoration: none;
@@ -43,10 +44,4 @@ a{
 
 .displayNone, .display-none{
   display: none;
-}
-.display-flex{
-  display: flex ;
-}
-.displayInlineFlex{
-  display: inline-flex;
 }

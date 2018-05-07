@@ -11,7 +11,7 @@ import Icon from "../../../../../../components/icon";
 import {wrapDate} from "../../../../../../utils/wrap-date";
 
 const RedditPostsBodyItem = ({post, handlePostClick}) => {
-  const {id, domain, ups, num_comments, title, author, created_utc, edited_utc, link_flair_text} = post;
+  const {id, domain, ups, num_comments, title, author, created_utc, edited, link_flair_text} = post;
 
   return (
       <li id={id}
@@ -34,7 +34,7 @@ const RedditPostsBodyItem = ({post, handlePostClick}) => {
             <Icon name="bubbles2" />
             <p>{num_comments}</p>
           </div>
-          <div className="redditPosts__snippet--created">{wrapDate(created_utc, edited_utc)}</div>
+          <div className="redditPosts__snippet--created">{wrapDate(created_utc, edited)}</div>
         </Link>
       </li>
   )

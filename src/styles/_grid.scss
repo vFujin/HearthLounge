@@ -53,26 +53,23 @@
 
       .container__details {
 
-
-        &.post{
-          .container__details--section{
-            grid-template-rows: 6vh 71vh;
-          }
-        }
-
         .container__details--section {
           display: grid;
+
           &.v-rows-3{
             grid-template-rows: 6vh 62.5vh 8vh;
           }
+
           &.v-rows-2{
             grid-template-rows: 6vh auto;
           }
         }
+
         .container__details--comments {
           &.editorActive{
             grid-template-rows: 6vh 50.5vh 20vh;
           }
+
           .section__body {
             .comment {
               display: grid;
@@ -82,6 +79,7 @@
           }
         }
       }
+
       form{
         display: grid;
         grid-template-rows: 20vh auto;
@@ -94,26 +92,31 @@
     }
 
   }
+
   .container__page--twoSided{
     grid-template-columns: 20vw auto;
   }
+
   .container__page--twoSidedCentralized{
     grid-template-columns: 15% 85%;
+
     .wrapper{
       display: grid;
       grid-template-columns: repeat(2, calc(50% - 5px));
       grid-column-gap: 10px;
     }
+
     .terms-of-service{
       .wrapper{
-
         grid-template-columns: calc(25% - 5px) calc(75% - 5px);
       }
     }
   }
+
   .content > .container__page--twoSided.cards{
     grid-template-columns: 15vw auto;
   }
+
   footer{
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3));

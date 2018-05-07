@@ -41,12 +41,6 @@ a {
 .displayNone, .display-none {
   display: none; }
 
-.display-flex {
-  display: flex; }
-
-.displayInlineFlex {
-  display: inline-flex; }
-
 @font-face {
   font-family: 'hearthstone';
   src: url("../icons/hearthstone.ttf") format("truetype"), url("../icons/hearthstone.woff") format("woff"), url("../icons/hearthstone.svg#hearthstone") format("svg");
@@ -503,8 +497,6 @@ a {
     display: grid; }
     #container .container__page .container__page--inner.no-filters {
       display: flex; }
-    #container .container__page .content .container__details.post .container__details--section {
-      grid-template-rows: 6vh 71vh; }
     #container .container__page .content .container__details .container__details--section {
       display: grid; }
       #container .container__page .content .container__details .container__details--section.v-rows-3 {
@@ -3114,16 +3106,22 @@ a {
 .default-style {
   font-family: 'Arial', sans-serif; }
   .default-style h1 {
+    font-size: calc(1em + 1vmin);
     margin: 0.67em 0; }
   .default-style h2 {
+    font-size: calc(.9em + 1vmin);
     margin: 0.83em 0; }
   .default-style h3 {
+    font-size: calc(.8em + 1vmin);
     margin: 1em 0; }
   .default-style h4 {
+    font-size: calc(.7em + 1vmin);
     margin: 1.33em 0; }
   .default-style h5 {
+    font-size: calc(.6em + 1vmin);
     margin: 1.67em 0; }
   .default-style h6 {
+    font-size: calc(.5em + 1vmin);
     margin: 2.33em 0; }
   .default-style p {
     margin: 10px 0; }
@@ -3166,23 +3164,6 @@ a {
     padding: 10px; }
   .blizzard_post strong {
     color: white; }
-
-.list-with-filters-layout .left-container ul li {
-  -webkit-transition: all ease 0.4s;
-  -moz-transition: all ease 0.4s;
-  transition: all ease 0.4s;
-  display: inline-block;
-  color: #474143; }
-  .list-with-filters-layout .left-container ul li:last-child {
-    margin-right: 0; }
-  .list-with-filters-layout .left-container ul li span {
-    font-family: 'Hearthstone';
-    font-size: 41px; }
-.list-with-filters-layout .right-container .topbar .filters {
-  justify-content: space-between;
-  width: 100%; }
-  .list-with-filters-layout .right-container .topbar .filters .create-deck {
-    cursor: pointer; }
 
 .topbar {
   display: flex;
@@ -5291,20 +5272,21 @@ card {
       .container__page .container__page--right .content .container__details .container__details--description .section__body {
         border: 1px solid rgba(0, 0, 0, 0.2); }
         .container__page .container__page--right .content .container__details .container__details--description .section__body .section__body--content {
-          padding: 10px; }
+          padding: 10px;
+          word-break: break-word; }
       .container__page .container__page--right .content .container__details .container__details--description .section__footer .details {
         display: flex; }
       .container__page .container__page--right .content .container__details .container__details--comments .section__body {
         font-family: 'Arial', sans-serif; }
         .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment {
           height: 100%;
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid #474143;
           margin: 1vh 1vh 0 0;
           padding-bottom: 1vh; }
           .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment:first-child {
             margin: 0 1vh 0 0; }
           .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment:last-child {
-            border: 0; }
+            border-bottom: 0; }
           .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .author {
             display: flex; }
             .container__page .container__page--right .content .container__details .container__details--comments .section__body .comment .author .name {

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
-import Loader from '../../../../../components/loaders/loader';
-import {renderComment} from "../../utils/render-comment";
+import Loader from '../../../../../../components/loaders/loader';
+import {renderComment} from "../../../utils/render-comment";
+import './styles.css';
 
 const PostComments = ({activePost}) =>{
   const {post, comments} = activePost;

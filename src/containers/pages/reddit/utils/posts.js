@@ -64,11 +64,6 @@ export const checkIfBlizzardPost = post =>{
   }
 };
 
-export const stripRedditURL = url => {
-  let split = url.split('/');
-  return split[split.length - 2];
-};
-
 export const stripDomains = (post) => {
   const {domain} = post;
 

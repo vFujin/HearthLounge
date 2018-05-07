@@ -5,21 +5,27 @@
   font-family: 'Arial', sans-serif;
 
   h1{
+    font-size: calc(1em + 1vmin);
     margin: 0.67em 0;
   }
   h2{
+    font-size: calc(.9em + 1vmin);
     margin: 0.83em 0;
   }
   h3{
+    font-size: calc(.8em + 1vmin);
     margin: 1em 0;
   }
   h4{
+    font-size: calc(.7em + 1vmin);
     margin: 1.33em 0;
   }
   h5{
+    font-size: calc(.6em + 1vmin);
     margin: 1.67em 0;
   }
   h6{
+    font-size: calc(.5em + 1vmin);
     margin: 2.33em 0;
   }
   p{
@@ -85,36 +91,6 @@
   }
   strong{
     color: white;
-  }
-}
-
-.list-with-filters-layout{
-  .left-container {
-    ul {
-      li {
-        @include transition(all ease .4s);
-        display: inline-block;
-        color: $dark-grey;
-        &:last-child {
-          margin-right: 0;
-        }
-        span {
-          font-family: 'Hearthstone';
-          font-size: 41px;
-        }
-      }
-    }
-  }
-  .right-container {
-    .topbar {
-      .filters {
-        justify-content: space-between;
-        width: 100%;
-        .create-deck {
-          cursor: pointer;
-        }
-      }
-    }
   }
 }
 

@@ -18,6 +18,6 @@ export const createMarkup = (obj) =>{
 
 export const iframe = (src)=> {
   const height= 500, width= 500;
-  return <iframe height={height} width={width} title="some clip" src={src}></iframe>
+  return <iframe height={height} width={width} title="some clip" src={src}/>
 };
 

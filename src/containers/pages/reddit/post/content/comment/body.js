@@ -14,7 +14,7 @@ const CommentBody = ({comment, isOfficialDev, renderComment}) =>{
 
   return (
       <div className="comment__body">
-          <p className={isOfficialDev === "blizzard" ? "blizzard_post" : ''}
+          <p className={isOfficialDev === "blizzard" ? "blizzard_post" : undefined}
              dangerouslySetInnerHTML={createMarkup(body_html)}/>
         {renderReplies()}
       </div>

@@ -23,7 +23,7 @@ class RedditPosts extends Component {
 
   render() {
     return (
-        <div className="container__page container__page--oneSided subreddit">
+        <div className="container__page container__page--oneSided subreddit subreddit__posts">
           <div className="container__page--inner">
             <Topbar />
             <Content />
