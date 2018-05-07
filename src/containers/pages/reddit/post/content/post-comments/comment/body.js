@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {createMarkup} from '../../../utils/post';
+import {createMarkup} from '../../../../utils/post';
 
 const CommentBody = ({comment, isOfficialDev, renderComment}) =>{
   const {body_html, replies} = comment;

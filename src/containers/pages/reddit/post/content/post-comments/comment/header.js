@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {wrapDate} from '../../../../../../utils/wrap-date';
-import {wrapScore} from '../../../../../../utils/wrap-score';
-import Icon from "../../../../../../components/icon";
+import {wrapDate} from '../../../../../../../utils/wrap-date';
+import {wrapScore} from '../../../../../../../utils/wrap-score';
+import Icon from "../../../../../../../components/icon";
 
 const CommentHeader = ({comment, isOfficialDev, handleCollapseClick}) =>{
   const {author, created_utc, edited, score} = comment;

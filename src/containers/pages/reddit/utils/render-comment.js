@@ -1,7 +1,7 @@
 import React from 'react';
 import TreeView from 'react-treeview';
-import CommentHeader from "../post/content/comment/header";
-import CommentBody from "../post/content/comment/body";
+import CommentHeader from "../post/content/post-comments/comment/header";
+import CommentBody from "../post/content/post-comments/comment/body";
 
 export const isOfficialDev = (author_flair_css_class) => {
   return author_flair_css_class === "blizzard" ? "blizzard" : undefined
