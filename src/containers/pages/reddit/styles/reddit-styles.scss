@@ -44,3 +44,29 @@
     }
   }
 }
+
+@include screen('mobile'){
+  .subreddit__posts {
+    .container__page--inner{
+      .topbar{
+        li {
+          margin: 0 5px;
+        }
+      }
+    }
+    .redditPosts {
+      grid-template-rows: 100%;
+      margin: 0;
+
+      .redditPosts__body{
+        padding: 1vh;
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar{
+          display: none;
+        }
+      }
+    }
+  }
+}

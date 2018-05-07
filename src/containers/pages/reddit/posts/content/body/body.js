@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import {fetchRedditPostCommentsRequest} from "../../../../../../redux/reddit/comments/actions";
 import {UPDATE_ACTIVE_POST} from "../../../../../../redux/reddit/active-post/types";
 import RedditPostsBodyItem from "./body-item";
+import {checkIfBlizzardPost, checkIfStickied, stripDomains} from "../../../utils/posts";
+import RedditPostsBodyItemMobile from "./body-item-mobile";
 
 class RedditPostsBody extends Component {
   handlePostClick = (e) => {
@@ -18,12 +20,37 @@ class RedditPostsBody extends Component {
     }
   };
 
-  mapPosts = (posts) => posts.map(post => (
-    <RedditPostsBodyItem post={post}
-                         key={post.id}
-                         handlePostClick={this.handlePostClick}/>
+  mapPosts = (posts) => posts.map(post => {
+    const {id, title} = post;
+    const url = `/reddit/post/${id}/${_.kebabCase(title)}`;
+
+    return (
+      <li id={id}
+          className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} table-row`}
+          onClick={this.handlePostClick}>
+        <RedditPostsBodyItem post={post}
+                             key={id}
+                             url={url}
+                             handlePostClick={this.handlePostClick}/>
+      </li>
     )
-  );
+  });
+
+  mapMobilePosts = (posts) => posts.map(post => {
+    const {id, title} = post;
+    const url = `/reddit/post/${id}/${_.kebabCase(title)}`;
+
+    return (
+      <li id={id}
+          className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} table-row redditPosts__body--mobile`}
+          onClick={this.handlePostClick}>
+        <RedditPostsBodyItemMobile post={post}
+                                   key={id}
+                                   url={url}
+                                   handlePostClick={this.handlePostClick}/>
+      </li>
+    )
+  });
 
   filterPostsByDomain = (posts) => {
     return posts.all.filter(post => (
@@ -34,21 +61,25 @@ class RedditPostsBody extends Component {
   };
 
   render() {
-    const {posts} = this.props;
+    const {posts, windowWidth} = this.props;
     const {domain} = posts;
     const allPosts = !_.isEmpty(domain.active) ? this.filterPostsByDomain(posts) : posts.all;
 
     return (
       <ul className="redditPosts__body">
-        {this.mapPosts(allPosts)}
+        {windowWidth <= 815
+          ? this.mapMobilePosts(allPosts)
+          : this.mapPosts(allPosts)
+        }
       </ul>
     )
   }
 }
 
 const mapStateToProps = state => {
+  const {windowWidth} = state.app.windowSize;
   const { posts } = state.redditPosts;
-  return { posts };
+  return {windowWidth, posts };
 };
 
 const mapDispatchToProps = dispatch => {

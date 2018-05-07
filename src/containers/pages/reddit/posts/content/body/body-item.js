@@ -1,47 +1,24 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import _ from 'lodash';
 import PropTypes from 'prop-types';
-import {
-  checkIfBlizzardPost,
-  checkIfStickied,
-  stripDomains
-} from "../../../utils/posts";
-import Icon from "../../../../../../components/icon";
-import {wrapDate} from "../../../../../../utils/wrap-date";
+import RedditPostUpvotes from './assets/upvotes';
+import RedditPostTitle from './assets/title';
+import RedditPostComments from "./assets/comments";
+import RedditPostCreated from "./assets/created";
 
-const RedditPostsBodyItem = ({post, handlePostClick}) => {
-  const {id, domain, ups, num_comments, title, author, created_utc, edited, link_flair_text} = post;
+const RedditPostsBodyItem = ({post, url}) => {
 
   return (
-      <li id={id}
-          className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} table-row`}
-          onClick={handlePostClick}>
-        <Link to={`/reddit/post/${id}/${_.kebabCase(title)}`}>
-
-          <div className="redditPosts__snippet--upvotes redditPosts__snippet--hasIcon">
-            <Icon name="circle-up" />
-            <p>{ups}</p>
-          </div>
-          <div className="redditPosts__snippet--title">
-            <Icon name={domain} type="reddit" domain={domain} linkFlairText={link_flair_text}/>
-            <div className="name-details">
-              <p className="title">{_.unescape(title)}</p>
-              <p className="author">posted by <span><Icon name="reddit" />{author}</span></p>
-            </div>
-          </div>
-          <div className="redditPosts__snippet--comments redditPosts__snippet--hasIcon">
-            <Icon name="bubbles2" />
-            <p>{num_comments}</p>
-          </div>
-          <div className="redditPosts__snippet--created">{wrapDate(created_utc, edited)}</div>
-        </Link>
-      </li>
+    <Link to={url}>
+      <RedditPostUpvotes post={post}/>
+      <RedditPostTitle post={post}/>
+      <RedditPostComments post={post}/>
+      <RedditPostCreated post={post}/>
+    </Link>
   )
 };
 
 RedditPostsBodyItem.propTypes = {
-  handlePostClick: PropTypes.func.isRequired,
   post: PropTypes.object
 };
 

@@ -10,7 +10,7 @@ class Content extends Component {
     const {all, loading} = this.props.posts;
     return (
       <div className="content redditPosts">
-        <RedditPostsHeader/>
+        {this.props.windowWidth > 815 && <RedditPostsHeader />}
         {loading && <Loader/>}
 
         {!loading && all && <RedditPostsBody />}
@@ -24,8 +24,9 @@ class Content extends Component {
 }
 
 const mapStateToProps = state => {
+  const {windowWidth} = state.app.windowSize;
   const { posts } = state.redditPosts;
-  return { posts };
+  return { windowWidth, posts };
 };
 
 export default connect(mapStateToProps)(Content);
