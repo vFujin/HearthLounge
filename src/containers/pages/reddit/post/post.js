@@ -9,6 +9,7 @@ import 'react-treeview/react-treeview.css';
 import * as types from "../../../../redux/reddit/active-post/types";
 import {fetchRedditPostRequest} from "../../../../redux/reddit/active-post/actions";
 import './styles/styles.css';
+import './styles/mobile-styles.css';
 
 class RedditPost extends PureComponent {
 

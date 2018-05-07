@@ -1,0 +1,33 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/mixins';
+
+@include screen('mobile') {
+  .subreddit__post {
+    grid-template-columns: 100%;
+
+    .container__page--inner {
+      .topbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        > div {
+          span {
+            font-size: inherit;
+          }
+        }
+
+        .topbar__redirect,
+        .topbar__shortlink {
+          display: none;
+        }
+
+        .topbar__created{
+          p:last-child{
+            font-size: inherit;
+          }
+        }
+      }
+    }
+  }
+}
