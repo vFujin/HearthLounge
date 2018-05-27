@@ -14,6 +14,7 @@ import Entry from "./pages/entry/entry";
 import Home from "./pages/home/home";
 import Adventures from "./pages/adventures/adventures";
 import {Tournaments} from "./pages/tournaments/tournaments";
+import Calendar from "../components/calendar/calendar";
 import DeckSelection from "./pages/decks/deck-selection/deck-selection";
 import Miscellaneous from "./pages/miscellaneous/container";
 import RedditPosts from "./pages/reddit/posts/posts";
@@ -52,7 +53,7 @@ const Routes = ({mobileMenuActive, windowWidth}) => {
         <Route path="/adventures"               component={Adventures} />
         <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
         <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
-        <Route path="/tournaments"              component={Tournaments} />
+        <Route path="/tournaments"              component={Calendar} />
         <Route exact path="/reddit"             component={Reddit} />
         <Route exact path="/reddit/posts/:category"         component={RedditPosts} />
         <Route exact path="/reddit/posts/:category/:domain" component={RedditPosts} />
