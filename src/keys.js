@@ -3,6 +3,7 @@ import 'firebase/firestore';
 
 export const TwitchClientId = "jupouny3vvr7kl38jlsj7ssnyww80z";
 export const MashapeKey = 'T15rGIqg2lmshwDGMsX3mZeWM7vBp1ZmfvVjsnFba6SXP2WK5Q';
+export const calendarKey = "AIzaSyDvwuwYmeMn2RP496TvxIaGM5GLG1-2zvc";
 export const FirebaseConfig = {
   apiKey: "AIzaSyC0llLdIXWVVcVkMc3r1sF_OpwrxctXe58",
   authDomain: "hearthlounge-32197.firebaseapp.com",

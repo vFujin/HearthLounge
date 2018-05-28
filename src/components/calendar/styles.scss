@@ -1,4 +1,5 @@
 @import '../../styles/colors';
+@import '../../styles/mixins';
 
 .calendar {
   display: block;
@@ -60,32 +61,66 @@
       transition: 0.2s linear;
       margin: 2px;
 
-      .number {
+      &__number {
         position: absolute;
         font-size: 82.5%;
         line-height: 1;
         top: .75em;
         right: .75em;
-        color: $pearl
+        color: $pearl;
+        z-index: 3;
+        opacity: 0;
       }
 
-      .bg {
+      &__background {
         line-height: 1;
-        color: $sea-color;
-        opacity: 0;
-        font-size: 6em;
+        color: $pearl;
+        opacity: 0.2;
+        font-size: 3em;
         position: absolute;
-        top: -.15em;
-        right: -.05em;
+        right: .1em;
         transition: .2s linear;
         letter-spacing: -.07em;
+        z-index: 1;
+      }
+
+      &__events {
+        height: calc(100% - 4px);
+        overflow: auto;
+        position: relative;
+        z-index: 2;
+        margin: 2px;
+        @include slim-scrollbar();
+
+        .event {
+          width: 100%;
+          display: flex;
+          margin-bottom: 15px;
+          align-items: center;
+
+          &:last-child{
+            margin-bottom: 0;
+          }
+
+          .event__date {
+            margin-right: 5px;
+            color: $light-grey;
+            font-size: .7em;
+          }
+
+          .event__title {
+            color: $pearl;
+            font-size: .8em;
+            @include truncate(100%);
+          }
+        }
       }
 
       &.disabled {
         pointer-events: none;
         background: lighten($dark-grey, 3%);
 
-        .number {
+        .cell__background {
           color: $light-grey;
         }
       }
@@ -96,7 +131,7 @@
         transition: 0.2s linear;
 
 
-        .bg {
+        .cell__background {
           opacity: 0.25;
           transition: .2s linear;
           color: $pearl;
@@ -104,18 +139,15 @@
       }
     }
 
-
     .selected {
       border-color: lighten($sea-color, 10%);
       background: rgba($sea-color, .3);
 
-      .bg {
+      .cell__background {
         opacity: 0.25;
         transition: .2s linear;
       }
     }
-
-
 
     .row {
       border-bottom: 1px solid $light-grey;
@@ -126,8 +158,6 @@
       flex-basis: calc(100%/7 - 4px);
       width: calc(100%/7);
     }
-
-
   }
 
   &__row {
