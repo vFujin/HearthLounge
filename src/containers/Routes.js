@@ -1,23 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Switch, Route} from 'react-router';
-import Deck from "./pages/decks/deck/deck";
-import CreateDeckClassSelection from "./pages/create-deck/before-class-selection/class-selection";
-import CreateDeckClassSelected from "./pages/create-deck/after-class-selection/create-deck";
-import CreateDeckClassSelectedMobile from "./pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile";
-import Dashboard from "./pages/dashboard/dashboard";
-import RedditPost from "./pages/reddit/post/post";
-import Cards from "./pages/cards/cards";
-import Expansions from "./pages/expansions/expansions";
-import Entry from "./pages/entry/entry";
-import Home from "./pages/home/home";
-import Adventures from "./pages/adventures/adventures";
-import Tournaments from "./pages/tournaments/tournaments";
-import DeckSelection from "./pages/decks/deck-selection/deck-selection";
-import Miscellaneous from "./pages/miscellaneous/container";
-import RedditPosts from "./pages/reddit/posts/posts";
-import NotFound from "../components/not-found/not-found";
 import history from '../globals/history';
+import asyncComponent from "../components/async-component";
+
+const AsyncHome = asyncComponent(() => import('./pages/home/home'));
+const AsyncDeckSelection = asyncComponent(() => import('./pages/decks/deck-selection/deck-selection'));
+const AsyncDeck = asyncComponent(()=>import('./pages/decks/deck/deck'));
+const AsyncCards = asyncComponent(()=>import('./pages/cards/cards'));
+const AsyncExpansions = asyncComponent(()=>import('./pages/expansions/expansions'));
+const AsyncAdventures = asyncComponent(()=>import('./pages/adventures/adventures'));
+const AsyncCreateDeckClassSelection = asyncComponent(()=>import('./pages/create-deck/before-class-selection/class-selection'));
+const AsyncCreateDeckClassSelected = asyncComponent(()=>import('./pages/create-deck/after-class-selection/create-deck'));
+const AsyncCreateDeckClassSelectedMobile = asyncComponent(()=>import('./pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile'));
+const AsyncRedditPosts = asyncComponent(()=>import('./pages/reddit/posts/posts'));
+const AsyncRedditPost = asyncComponent(()=>import('./pages/reddit/post/post'));
+const AsyncTournaments = asyncComponent(()=>import('./pages/tournaments/tournaments'));
+const AsyncEntry = asyncComponent(()=>import('./pages/entry/entry'));
+const AsyncDashboard = asyncComponent(()=>import('./pages/dashboard/dashboard'));
+const AsyncMiscellaneous = asyncComponent(()=>import('./pages/miscellaneous/container'));
+const AsyncNotFound = asyncComponent(()=>import('../components/not-found/not-found'));
+
 
 const Routes = ({mobileMenuActive, windowWidth}) => {
 
@@ -30,35 +33,35 @@ const Routes = ({mobileMenuActive, windowWidth}) => {
 
       if (playerClassExist) {
         return windowWidth >= 816
-          ? <CreateDeckClassSelected playerClass={playerClass}/>
-          : <CreateDeckClassSelectedMobile playerClass={playerClass}/>
+          ? <AsyncCreateDeckClassSelected playerClass={playerClass}/>
+          : <AsyncCreateDeckClassSelectedMobile playerClass={playerClass}/>
       }
-      else return <NotFound page={playerClass}/>;
+      else return <AsyncNotFound page={playerClass}/>;
     } else {
       history.push('/create-deck');
-      return <CreateDeckClassSelection/>;
+      return <AsyncCreateDeckClassSelection/>;
     }
   };
 
   return (
     <div className={mobileMenuActive ? "switch__wrapper--mobileMenuActive" : undefined}>
       <Switch>
-        <Route exact path="/"                   component={Home} />
-        <Route exact path="/decks"              component={DeckSelection} />
-        <Route path="/decks/:deckId/:deckTitle" component={Deck}/>
-        <Route path="/cards"                    component={Cards} />
-        <Route path="/expansions"               component={Expansions}/>
-        <Route path="/adventures"               component={Adventures} />
-        <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
+        <Route exact path="/"                   component={AsyncHome} />
+        <Route exact path="/decks"              component={AsyncDeckSelection} />
+        <Route path="/decks/:deckId/:deckTitle" component={AsyncDeck}/>
+        <Route path="/cards"                    component={AsyncCards} />
+        <Route path="/expansions"               component={AsyncExpansions}/>
+        <Route path="/adventures"               component={AsyncAdventures} />
+        <Route exact path="/create-deck"        component={AsyncCreateDeckClassSelection} />
         <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
-        <Route exact path="/reddit"                   component={RedditPosts} />
-        <Route path="/reddit/post/:postId"      component={RedditPost} />
-        <Route path="/tournaments"              component={Tournaments} />
-        <Route path="/sign-in"                  component={Entry} />
-        <Route path="/sign-up"                  component={Entry} />
-        <Route path="/dashboard"                component={Dashboard} />
-        <Route path="/:misc"                    component={Miscellaneous} />
-        <Route path="*"                         component={NotFound} />
+        <Route exact path="/reddit"             component={AsyncRedditPosts} />
+        <Route path="/reddit/post/:postId"      component={AsyncRedditPost} />
+        <Route path="/tournaments"              component={AsyncTournaments} />
+        <Route path="/sign-in"                  component={AsyncEntry} />
+        <Route path="/sign-up"                  component={AsyncEntry} />
+        <Route path="/dashboard"                component={AsyncDashboard} />
+        <Route path="/:misc"                    component={AsyncMiscellaneous} />
+        <Route path="*"                         component={AsyncNotFound} />
         {/*/!*<Redirect from="twitch" to="twitch/all" />*!/*/}
         {/*/!*<Route path="twitch"         component={Streams}>*!/*/}
         {/*/!*<Route path=":channel"     component={Iframe}/>*!/*/}
