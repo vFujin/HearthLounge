@@ -76,7 +76,7 @@ class Home extends PureComponent{
             <HomeBlock icon="create-deck">
               <CreateDeckBlock/>
             </HomeBlock>
-            <HomeBlock icon="trophy" title="tournaments">
+            <HomeBlock icon="trophy" title="upcoming tournaments">
               <TournamentsBlock/>
             </HomeBlock>
             <HomeBlock icon="expansions" title="latest extensions" width={2}>

@@ -1,19 +1,42 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { connect } from "react-redux";
+import {fetchUpcomingTournamentsRequest} from "../../../../redux/tournaments/upcoming/actions";
+import Loader from "../../../../components/loaders/loader";
+import Tournament from "./tournament";
 
-const TournamentsBlock = () => {
-  let calendar = "https://www.google.com/calendar/embed?src=kvaverirkumds90dnen1jlmmq0dcvgom%40import.calendar.google.com&ctz=Europe/London";
-  return (
-      <div>
-        <iframe
-          title="iframe"
-            src={calendar}
-            style={{border: 'none', margin: '10px'}}
-            width="96%"
-            height="94%"
-            frameBorder="0"
-            scrolling="no"></iframe>
-      </div>
-  );
+class TournamentsBlock extends Component {
+  componentDidMount() {
+    this.props.fetchUpcomingTournaments();
+  }
+
+  mapTournaments = () => {
+    const {items} = this.props;
+
+    if(items) {
+      return items.map(tournament => <Tournament tournament={tournament}/>)
+    }
+  };
+
+  render() {
+    const {loading} = this.props;
+
+    return loading ? <Loader /> : (
+      <ul>
+        {this.mapTournaments()}
+      </ul>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  const { items, loading } = state.tournaments.upcomingTournaments;
+  return { items, loading };
 };
 
-export default TournamentsBlock;
+const mapDispatchToProps = dispatch => {
+  return {
+      fetchUpcomingTournaments: () => dispatch(fetchUpcomingTournamentsRequest())
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TournamentsBlock);

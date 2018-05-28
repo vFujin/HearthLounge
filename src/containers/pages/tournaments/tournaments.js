@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Calendar from "../../../components/calendar/content/calendar";
-import {fetchTournamentsRequest} from "../../../redux/tournaments/actions";
+import {fetchTournamentsRequest} from "../../../redux/tournaments/current-month/actions";
 
 class Tournaments extends Component {
   componentDidMount() {
@@ -21,7 +21,7 @@ class Tournaments extends Component {
 }
 
 const mapStateToProps = state => {
-  const { items, loading } = state.tournaments;
+  const { items, loading } = state.tournaments.currentMonthTournaments;
   return { items, loading };
 };
 

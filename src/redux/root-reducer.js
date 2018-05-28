@@ -16,7 +16,7 @@ import {
   deckCommentDeletingStatus, deckDeletion
 } from './deck/reducers';
 import {decks, hotDecks, updateDecks} from './decks/reducers';
-import tournaments from './tournaments/reducer';
+import {currentMonthTournaments, upcomingTournaments} from './tournaments/reducers';
 import {posts, activePost} from './reddit/reducers';
 import {activeUserDecks, shortenedUserDetails} from "./user/reducers";
 import {allUsers} from "./admin/reducers";
@@ -58,7 +58,10 @@ const rootReducer = combineReducers({
     deckCommentDeletingStatus,
     deckDeletion
   }),
-  tournaments,
+  tournaments: combineReducers({
+    currentMonthTournaments,
+    upcomingTournaments
+  }),
   redditPosts: combineReducers({
     posts,
     activePost

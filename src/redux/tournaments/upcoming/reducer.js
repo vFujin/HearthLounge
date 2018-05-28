@@ -1,37 +1,36 @@
 import * as types from "./types";
 
 const initialState = {
-  tournaments: {
-    loading: false
-  }
+  loading: false
 };
 
 export default function(state = initialState, {type, payload}) {
   switch(type) {
-    case types.FETCH_TOURNAMENTS_REQUEST: {
+    case types.FETCH_UPCOMING_TOURNAMENTS_REQUEST: {
       return {
         ...state,
         loading: true
       }
     }
-
-    case types.FETCH_TOURNAMENTS_SUCCESS: {
+    
+    case types.FETCH_UPCOMING_TOURNAMENTS_SUCCESS: {
       return {
         ...state,
         ...payload,
         loading: false
       }
     }
-
-    case types.FETCH_TOURNAMENTS_FAILURE: {
+    
+    case types.FETCH_UPCOMING_TOURNAMENTS_FAILURE: {
       return {
         ...state,
         error: payload,
         loading: false
       }
     }
-
+    
     default: return state;
   }
 }
 
+ 
