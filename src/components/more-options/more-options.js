@@ -2,6 +2,7 @@ import React from 'react';
 import Dropdown from 'antd/lib/dropdown';
 import Menu from 'antd/lib/menu';
 import Tooltip from 'antd/lib/tooltip';
+import './styles.css';
 
 const MoreOptions = ({commentId, activeUserId, authorId, handleCommentOptionsClick}) =>{
 
@@ -24,9 +25,9 @@ const MoreOptions = ({commentId, activeUserId, authorId, handleCommentOptionsCli
         <Dropdown overlay={menu} placement="bottomCenter" trigger={['click']}>
           <div className="post-more-options">
               <ul className="options">
-                <li className="peripheral"></li>
-                <li className="peripheral"></li>
-                <li className="peripheral"></li>
+                <li className="peripheral"/>
+                <li className="peripheral"/>
+                <li className="peripheral"/>
               </ul>
           </div>
         </Dropdown>

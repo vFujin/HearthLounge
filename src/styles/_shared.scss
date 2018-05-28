@@ -1,88 +1,6 @@
 @import '_colors';
 @import '_mixins';
 
-.default-style{
-  font-family: 'Arial', sans-serif;
-
-  h1{
-    font-size: calc(1em + 1vmin);
-    margin: 0.67em 0;
-  }
-  h2{
-    font-size: calc(.9em + 1vmin);
-    margin: 0.83em 0;
-  }
-  h3{
-    font-size: calc(.8em + 1vmin);
-    margin: 1em 0;
-  }
-  h4{
-    font-size: calc(.7em + 1vmin);
-    margin: 1.33em 0;
-  }
-  h5{
-    font-size: calc(.6em + 1vmin);
-    margin: 1.67em 0;
-  }
-  h6{
-    font-size: calc(.5em + 1vmin);
-    margin: 2.33em 0;
-  }
-  p{
-    margin: 10px 0;
-  }
-  ol, ul{
-    list-style: initial;
-    margin: initial;
-    padding: 0 0 0 40px;
-    li{
-      display: list-item;
-      list-style-type: disc;
-      margin: 3px 0;
-      &:first-child{
-        margin-top: 0;
-      }
-      &:last-child{
-        margin-bottom: 0;
-      }
-    }
-  }
-  ol{
-    li{
-      list-style-type: decimal;
-    }
-  }
-  a{
-    &:link {
-      color: #0000EE;
-    }
-    &:hover {
-      text-decoration: underline
-    }
-    &:visited {
-      color: #551A8B;
-    }
-  }
-  &.blizzard_post {
-    ol, li {
-      list-style-type: square;
-      li{
-        list-style-type: square;
-      }
-    }
-    a {
-      color: #f8b700;
-      &:hover {
-        color: white;
-        text-decoration: none;
-      }
-      &:visited {
-        color: #f8b700;
-      }
-    }
-  }
-}
-
 .blizzard_post {
   color: #00c0f6;
   background-color: #1e293f;
@@ -162,22 +80,5 @@
   }
 }
 
-.post-more-options{
-  display: flex;
-  align-items:center;
-  padding: 0 10px;
-  cursor: pointer;
-  .options{
-    li{
-      width: 3px;
-      height: 3px;
-      background: black;
-      margin-bottom: 2px;
 
-      &:last-child{
-        margin-bottom: 0;
-      }
-    }
-  }
-}
 

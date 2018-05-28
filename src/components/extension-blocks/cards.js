@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Loader from '../loaders/loader';
+import Loader from '../loaders/diamond/loader';
 import Tooltip from 'antd/lib/tooltip';
 import {CardDetails} from "../../containers/pages/cards/right-container/card-details";
 

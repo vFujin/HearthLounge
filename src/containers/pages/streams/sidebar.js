@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Loader from '../../../components/loaders/loader';
+import Loader from '../../../components/loaders/diamond/loader';
 import Icon from "../../../components/icon";
 
 const Sidebar = props => {

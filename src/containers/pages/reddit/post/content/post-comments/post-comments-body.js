@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {renderComment} from "../../../utils/render-comment";
-import Loader from "../../../../../../components/loaders/loader";
+import Loader from "../../../../../../components/loaders/diamond/loader";
 
 const PostCommentsBody = ({comments}) => {
   return (

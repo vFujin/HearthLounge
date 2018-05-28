@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import Loader from "../../loaders/loader";
+import Loader from "../../loaders/diamond/loader";
 
 export const cardsPlaceholder = (data, dataArrayIsArray) =>{
   if (data.length === 0) {

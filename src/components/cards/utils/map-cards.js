@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from "../../loaders/loader";
+import Loader from "../../loaders/diamond/loader";
 import Card from "../assets/card";
 import {filterCardsByCardSet, filterCardsByMode, filterCardsByPlayerClass, filterCards} from "./filter-cards-by";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import MoreOptions from "../../../../../../../shared-assets/posts/more-options";
+import MoreOptions from "../../../../../../../../components/more-options/more-options";
 import {wrapDate} from "../../../../../../../../utils/wrap-date";
 
 export const CommentHeader = ({authenticated, activeUserId, comment, handleCommentOptionsClick}) =>{

@@ -5,7 +5,7 @@ import Topbar from './topbar';
 import NotFound from '../../../../components/not-found/not-found';
 import Content from './content';
 import ContentMobile from './content-mobile';
-import Loader from "../../../../components/loaders/loader";
+import Loader from "../../../../components/loaders/diamond/loader";
 import 'react-treeview/react-treeview.css';
 import * as types from "../../../../redux/reddit/active-post/types";
 import {fetchRedditPostRequest} from "../../../../redux/reddit/active-post/actions";

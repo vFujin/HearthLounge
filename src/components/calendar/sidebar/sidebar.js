@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import format from 'date-fns/format';
 import PropTypes from 'prop-types';
-import Loader from "../../loaders/loader";
+import Loader from "../../loaders/diamond/loader";
 
 class CalendarSidebar extends Component {
 

@@ -1,4 +1,4 @@
-@import '../colors';
+@import '../../../styles/colors';
 
 @mixin linearLoader($primary-color: rgba($light-grey, .3), $secondary-color: $pearl){
   background: linear-gradient(to left, $primary-color 0%, $secondary-color 50%, $primary-color 100%);

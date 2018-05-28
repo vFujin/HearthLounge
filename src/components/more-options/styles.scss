@@ -1,0 +1,18 @@
+.post-more-options{
+  display: flex;
+  align-items:center;
+  padding: 0 10px;
+  cursor: pointer;
+  .options{
+    li{
+      width: 3px;
+      height: 3px;
+      background: black;
+      margin-bottom: 2px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

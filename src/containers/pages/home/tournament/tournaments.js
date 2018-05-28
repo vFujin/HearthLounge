@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import {fetchUpcomingTournamentsRequest} from "../../../../redux/tournaments/upcoming/actions";
-import Loader from "../../../../components/loaders/loader";
+import Loader from "../../../../components/loaders/diamond/loader";
 import Tournament from "./tournament";
 
 class TournamentsBlock extends Component {

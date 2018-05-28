@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&subset=latin-ext");
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 body {
   background: #E7E2DA; }
 
@@ -38,8 +33,59 @@ a {
     color: inherit;
     text-decoration: none; }
 
-.displayNone, .display-none {
-  display: none; }
+.default-style {
+  font-family: 'Arial', sans-serif; }
+  .default-style h1 {
+    font-size: calc(1em + 1vmin);
+    margin: 0.67em 0; }
+  .default-style h2 {
+    font-size: calc(.9em + 1vmin);
+    margin: 0.83em 0; }
+  .default-style h3 {
+    font-size: calc(.8em + 1vmin);
+    margin: 1em 0; }
+  .default-style h4 {
+    font-size: calc(.7em + 1vmin);
+    margin: 1.33em 0; }
+  .default-style h5 {
+    font-size: calc(.6em + 1vmin);
+    margin: 1.67em 0; }
+  .default-style h6 {
+    font-size: calc(.5em + 1vmin);
+    margin: 2.33em 0; }
+  .default-style p {
+    margin: 10px 0; }
+  .default-style ol, .default-style ul {
+    list-style: initial;
+    margin: initial;
+    padding: 0 0 0 40px; }
+    .default-style ol li, .default-style ul li {
+      display: list-item;
+      list-style-type: disc;
+      margin: 3px 0; }
+      .default-style ol li:first-child, .default-style ul li:first-child {
+        margin-top: 0; }
+      .default-style ol li:last-child, .default-style ul li:last-child {
+        margin-bottom: 0; }
+  .default-style ol li {
+    list-style-type: decimal; }
+  .default-style a:link {
+    color: #0000EE; }
+  .default-style a:hover {
+    text-decoration: underline; }
+  .default-style a:visited {
+    color: #551A8B; }
+  .default-style.blizzard_post ol, .default-style.blizzard_post li {
+    list-style-type: square; }
+    .default-style.blizzard_post ol li, .default-style.blizzard_post li li {
+      list-style-type: square; }
+  .default-style.blizzard_post a {
+    color: #f8b700; }
+    .default-style.blizzard_post a:hover {
+      color: white;
+      text-decoration: none; }
+    .default-style.blizzard_post a:visited {
+      color: #f8b700; }
 
 @font-face {
   font-family: 'hearthstone';
@@ -463,11 +509,6 @@ a {
 .icon-edit-deck:before {
   content: "\e94b"; }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 .block-width-1 {
   margin-right: 1vh;
   width: calc(25% - 1vh); }
@@ -532,16 +573,6 @@ a {
     display: grid;
     grid-template-columns: repeat(3, calc(100% / 3)); }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 .druid {
   color: #FF7D0A; }
   .druid span {
@@ -1490,11 +1521,6 @@ a {
   .demon-hunter.stickied:hover {
     background: #71218b; }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 /*
  * Adventures
  */
@@ -2370,11 +2396,6 @@ a {
   .kobolds-catacombs.stickied:hover {
     background: #ffc03d; }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 /*
  * Rarity
  */
@@ -3013,11 +3034,6 @@ a {
   .grimy-goons.stickied:hover, .jade-lotus.stickied:hover, .kabal.stickied:hover {
     background: #cd9c15; }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 .facebook {
   -webkit-transition: all ease 0.4s;
   -moz-transition: all ease 0.4s;
@@ -3098,65 +3114,6 @@ a {
     .false.hearthstone.active:not(.hearthstone) .domain a, .false.hearthstone:hover .domain a, .false.default.active:not(.hearthstone) .domain a, .false.default:hover .domain a {
       color: #474143; }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
-.default-style {
-  font-family: 'Arial', sans-serif; }
-  .default-style h1 {
-    font-size: calc(1em + 1vmin);
-    margin: 0.67em 0; }
-  .default-style h2 {
-    font-size: calc(.9em + 1vmin);
-    margin: 0.83em 0; }
-  .default-style h3 {
-    font-size: calc(.8em + 1vmin);
-    margin: 1em 0; }
-  .default-style h4 {
-    font-size: calc(.7em + 1vmin);
-    margin: 1.33em 0; }
-  .default-style h5 {
-    font-size: calc(.6em + 1vmin);
-    margin: 1.67em 0; }
-  .default-style h6 {
-    font-size: calc(.5em + 1vmin);
-    margin: 2.33em 0; }
-  .default-style p {
-    margin: 10px 0; }
-  .default-style ol, .default-style ul {
-    list-style: initial;
-    margin: initial;
-    padding: 0 0 0 40px; }
-    .default-style ol li, .default-style ul li {
-      display: list-item;
-      list-style-type: disc;
-      margin: 3px 0; }
-      .default-style ol li:first-child, .default-style ul li:first-child {
-        margin-top: 0; }
-      .default-style ol li:last-child, .default-style ul li:last-child {
-        margin-bottom: 0; }
-  .default-style ol li {
-    list-style-type: decimal; }
-  .default-style a:link {
-    color: #0000EE; }
-  .default-style a:hover {
-    text-decoration: underline; }
-  .default-style a:visited {
-    color: #551A8B; }
-  .default-style.blizzard_post ol, .default-style.blizzard_post li {
-    list-style-type: square; }
-    .default-style.blizzard_post ol li, .default-style.blizzard_post li li {
-      list-style-type: square; }
-  .default-style.blizzard_post a {
-    color: #f8b700; }
-    .default-style.blizzard_post a:hover {
-      color: white;
-      text-decoration: none; }
-    .default-style.blizzard_post a:visited {
-      color: #f8b700; }
-
 .blizzard_post {
   color: #00c0f6;
   background-color: #1e293f; }
@@ -3218,24 +3175,6 @@ a {
         -moz-transition: all ease 0.4s;
         transition: all ease 0.4s; }
 
-.post-more-options {
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  cursor: pointer; }
-  .post-more-options .options li {
-    width: 3px;
-    height: 3px;
-    background: black;
-    margin-bottom: 2px; }
-    .post-more-options .options li:last-child {
-      margin-bottom: 0; }
-
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 .decks .submenu {
   width: 12vw; }
 
@@ -3249,7 +3188,7 @@ a {
   top: 10vh;
   padding-top: 1vh;
   margin-left: -1px;
-  z-index: 2;
+  z-index: 999;
   -webkit-box-shadow: 0 1px 5px #E7E2DA;
   -moz-box-shadow: 0 1px 5px #E7E2DA;
   box-shadow: 0 1px 5px #E7E2DA; }
@@ -3274,62 +3213,6 @@ a {
       .submenu li a div {
         font-size: calc(.25em + 1vmin);
         margin-left: 5px; }
-
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
-.component.simplifiedUser {
-  display: flex; }
-  .component.simplifiedUser .simplifiedUser__avatar {
-    height: 50px;
-    width: 50px;
-    -webkit-transition: all ease 0.4s;
-    -moz-transition: all ease 0.4s;
-    transition: all ease 0.4s; }
-    .component.simplifiedUser .simplifiedUser__avatar span {
-      height: 100%;
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      font-size: 39px; }
-    .component.simplifiedUser .simplifiedUser__avatar img {
-      width: 100%;
-      height: 100%; }
-    .component.simplifiedUser .simplifiedUser__avatar--placeholder {
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(to left, rgba(166, 158, 157, 0.3) 0%, #E7E2DA 50%, rgba(166, 158, 157, 0.3) 100%);
-      background-size: 200%;
-      animation: linearKeyframes 2s infinite;
-      animation-timing-function: linear; }
-  .component.simplifiedUser .simplifiedUser__details {
-    width: calc(100% - 60px);
-    margin-left: 10px; }
-    .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--username {
-      width: 100%;
-      overflow: hidden; }
-      .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--username-placeholder {
-        margin-bottom: 10px;
-        height: 12px;
-        background: linear-gradient(to left, rgba(166, 158, 157, 0.3) 0%, #E7E2DA 50%, rgba(166, 158, 157, 0.3) 100%);
-        background-size: 200%;
-        animation: linearKeyframes 2s infinite;
-        animation-timing-function: linear; }
-    .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank {
-      width: 100%; }
-      .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div {
-        display: flex; }
-        .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank div span {
-          font-size: 12px; }
-      .component.simplifiedUser .simplifiedUser__details .simplifiedUser__details--rank-placeholder {
-        height: 12px;
-        background: linear-gradient(to left, rgba(166, 158, 157, 0.3) 0%, #E7E2DA 50%, rgba(166, 158, 157, 0.3) 100%);
-        background-size: 200%;
-        animation: linearKeyframes 2s infinite;
-        animation-timing-function: linear; }
 
 input::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -3402,11 +3285,6 @@ svg#preload .line {
     stroke-dashoffset: 1000; }
   to {
     stroke-dashoffset: 0; } }
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 button {
   font-size: 12px;
   padding: 3px 5px;
@@ -3727,11 +3605,6 @@ button {
     button:disabled:hover {
       background: rgba(222, 219, 213, 0.8); }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 .deckSnippet-wrapper {
   display: grid;
   grid-row-gap: 1vh;
@@ -3872,11 +3745,6 @@ button {
     text-align: center; }
     .deckSnippet .deckSnippet__body--header-type {
       margin-bottom: 3px; } }
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 .graph {
   text-align: center;
   display: inline-flex;
@@ -3906,87 +3774,6 @@ button {
     .graph li .hs-icon {
       font-size: 1.2vw; }
 
-.loading-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%; }
-  .loading-wrapper.dark .sk-folding-cube .sk-cube:before {
-    background-color: #00a99c; }
-  .loading-wrapper.light .sk-folding-cube .sk-cube:before {
-    background-color: #E7E2DA; }
-  .loading-wrapper .sk-folding-cube {
-    width: 40px;
-    height: 40px;
-    position: relative;
-    -webkit-transform: rotateZ(45deg);
-    transform: rotateZ(45deg); }
-    .loading-wrapper .sk-folding-cube .sk-cube {
-      float: left;
-      width: 50%;
-      height: 50%;
-      position: relative;
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1); }
-      .loading-wrapper .sk-folding-cube .sk-cube:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
-        animation: sk-foldCubeAngle 2.4s infinite linear both;
-        -webkit-transform-origin: 100% 100%;
-        -ms-transform-origin: 100% 100%;
-        transform-origin: 100% 100%; }
-    .loading-wrapper .sk-folding-cube .sk-cube2 {
-      -webkit-transform: scale(1.1) rotateZ(90deg);
-      transform: scale(1.1) rotateZ(90deg); }
-      .loading-wrapper .sk-folding-cube .sk-cube2:before {
-        -webkit-animation-delay: 0.3s;
-        animation-delay: 0.3s; }
-    .loading-wrapper .sk-folding-cube .sk-cube3 {
-      -webkit-transform: scale(1.1) rotateZ(180deg);
-      transform: scale(1.1) rotateZ(180deg); }
-      .loading-wrapper .sk-folding-cube .sk-cube3:before {
-        -webkit-animation-delay: 0.6s;
-        animation-delay: 0.6s; }
-    .loading-wrapper .sk-folding-cube .sk-cube4 {
-      -webkit-transform: scale(1.1) rotateZ(270deg);
-      transform: scale(1.1) rotateZ(270deg); }
-      .loading-wrapper .sk-folding-cube .sk-cube4:before {
-        -webkit-animation-delay: 0.9s;
-        animation-delay: 0.9s; }
-
-@-webkit-keyframes sk-foldCubeAngle {
-  0%, 10% {
-    -webkit-transform: perspective(140px) rotateX(-180deg);
-    transform: perspective(140px) rotateX(-180deg);
-    opacity: 0; }
-  25%, 75% {
-    -webkit-transform: perspective(140px) rotateX(0deg);
-    transform: perspective(140px) rotateX(0deg);
-    opacity: 1; }
-  90%, 100% {
-    -webkit-transform: perspective(140px) rotateY(180deg);
-    transform: perspective(140px) rotateY(180deg);
-    opacity: 0; } }
-@keyframes sk-foldCubeAngle {
-  0%, 10% {
-    -webkit-transform: perspective(140px) rotateX(-180deg);
-    transform: perspective(140px) rotateX(-180deg);
-    opacity: 0; }
-  25%, 75% {
-    -webkit-transform: perspective(140px) rotateX(0deg);
-    transform: perspective(140px) rotateX(0deg);
-    opacity: 1; }
-  90%, 100% {
-    -webkit-transform: perspective(140px) rotateY(180deg);
-    transform: perspective(140px) rotateY(180deg);
-    opacity: 0; } }
 .fetch-error {
   height: 100%;
   text-align: center;
@@ -3994,11 +3781,6 @@ button {
   align-items: center;
   justify-content: center; }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 .markup {
   white-space: pre-wrap; }
 
@@ -4152,11 +3934,6 @@ button {
         .text-editor > div > div .formatting-help tbody tr:nth-child(odd) {
           background-color: rgba(255, 255, 255, 0.1); }
 
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 /*
  *  Select
  */
@@ -4522,11 +4299,6 @@ button {
     opacity: 0;
     -webkit-transform: scale(0.2) translateZ(0);
     transform: scale(0.2) translateZ(0); } }
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 /*
  * Desktop
  */
@@ -4537,11 +4309,6 @@ button {
     grid-template-columns: repeat(2, 50%); }
     #container footer .path {
       display: none; } }
-@keyframes linearKeyframes {
-  0% {
-    background-position: 0; }
-  100% {
-    background-position: -200%; } }
 /*
  * Desktop
  */
@@ -5945,7 +5712,6 @@ card {
         margin-bottom: 1vh;
         margin-right: 1vh;
         background: #e7e2da;
-        display: flex;
         cursor: pointer;
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
@@ -5956,7 +5722,9 @@ card {
         .container__index.home .home__list .trophy ul .tournament a {
           padding: 10px;
           width: 100%;
-          height: 100%; }
+          height: 100%;
+          display: flex;
+          font-size: .9em; }
           .container__index.home .home__list .trophy ul .tournament a p:first-child {
             margin-right: 10px;
             opacity: .5; }

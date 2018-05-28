@@ -7,7 +7,7 @@ import SectionBody from './section-body';
 import SectionFooter from './section-footer';
 import {deleteDeckCommentRequest} from "../../../../../../../redux/deck/comments/delete-comment/actions";
 import {fetchActiveDeckCommentsRequest} from "../../../../../../../redux/deck/comments/fetch-comments/actions";
-import Loader from "../../../../../../../components/loaders/loader";
+import Loader from "../../../../../../../components/loaders/diamond/loader";
 import './comments-styles.css';
 
 class DeckComments extends PureComponent {

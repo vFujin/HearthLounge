@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from "../../../../../components/loaders/loader";
+import Loader from "../../../../../components/loaders/diamond/loader";
 import DeckSnippet from "../../../../../components/deck-snippet/deck-snippet";
 
 const Decks = ({activeUserDecks}) =>{

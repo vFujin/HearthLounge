@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import SectionHeader from './section-header';
 import SectionBody from './section-body';
-import Loader from "../../../../../../../components/loaders/loader";
+import Loader from "../../../../../../../components/loaders/diamond/loader";
 import './description-styles.css';
 
 const DeckDescription = ({activeDeck}) => (

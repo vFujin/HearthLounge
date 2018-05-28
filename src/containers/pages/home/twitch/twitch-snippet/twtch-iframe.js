@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from '../../../../../components/loaders/loader';
+import Loader from '../../../../../components/loaders/diamond/loader';
 
 const TwitchIframe = props => {
   if (props.streams < 1) {

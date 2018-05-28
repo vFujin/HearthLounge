@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import Loader from '../../../../../../components/loaders/loader';
+import Loader from '../../../../../../components/loaders/diamond/loader';
 import DeckSnippetExtended from './content/deck-snippet-extended';
 import Topbar from "./topbar/topbar";
 import DeckSnippet from "../../../../../../components/deck-snippet/deck-snippet";

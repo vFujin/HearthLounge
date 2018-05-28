@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import SimplifiedUserSnippet from '../../../../../../../../components/user/simplified-user-snippet';
-import ShortenedUserDetailsLoader from "../../../../../../../../components/loaders/shortened-user-details-loader";
+import ShortenedUserDetailsLoader from "../../../../../../../../components/loaders/linear/shortened-user-details-loader";
 import {CommentHeader, CommentBody, CommentFooter} from "./index";
 import {fetchShortenedUserDetailsRequest} from "../../../../../../../../redux/user/shortened-details/actions";
 

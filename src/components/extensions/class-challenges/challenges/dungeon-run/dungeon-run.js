@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import {connect} from 'react-redux';
-import Loader from "../../../../loaders/loader";
+import Loader from "../../../../loaders/diamond/loader";
 import Options from "./options";
 
 const DungeonRun = ({classChallenge, loading, allCards}) =>{

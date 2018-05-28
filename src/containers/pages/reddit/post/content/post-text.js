@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import {createMarkup, iframe} from "../../utils/post";
-import Loader from "../../../../../components/loaders/loader";
+import Loader from "../../../../../components/loaders/diamond/loader";
 import Icon from "../../../../../components/icon";
 
 const PostText = ({activePost}) => {

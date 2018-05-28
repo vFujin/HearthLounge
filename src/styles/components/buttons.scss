@@ -8,6 +8,7 @@ button{
   outline: 0;
   position: relative;
   @include transition(all ease .2s);
+
   &.btn{
     &__default{
       @include button($pearl, $dark-grey, $sea-color, $sea-color, $dark-grey);

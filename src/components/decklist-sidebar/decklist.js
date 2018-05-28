@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import Content from "./content";
 import Topbar from "./topbar";
-import Loader from "../loaders/loader";
+import Loader from "../loaders/diamond/loader";
 import AddCardWrapper from "./add-card-wrapper/add-card-wrapper";
 import './styles/decklist-sidebar-styles.css';
 import './styles/decklist-sidebar-mobile-styles.css';

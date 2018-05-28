@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import _ from 'lodash';
-import Loader from "../../../../../components/loaders/loader";
+import Loader from "../../../../../components/loaders/diamond/loader";
 import {deleteUserRequest} from "../../../../../redux/admin/remove-user/actions";
 import {updateUserRequest} from "../../../../../redux/admin/update-user/actions";
 

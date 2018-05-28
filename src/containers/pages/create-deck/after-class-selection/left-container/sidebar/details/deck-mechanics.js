@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Loader from "../../../../../../../components/loaders/loader";
+import Loader from "../../../../../../../components/loaders/diamond/loader";
 
 const DeckMechanics = ({deck, cards}) => {
   const {loading} = cards;

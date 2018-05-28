@@ -2,28 +2,31 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import Tooltip from 'antd/lib/tooltip';
+import DonutLoader from "../loaders/donut/donut-loader";
 
-const Button = ({id, activeUser, text, handleClick, type, darkBorder, active, tooltip = false, tooltipTitle = "You have to be Signed In!", tooltipPlacement = "bottom", dataAttr, requiresAuth = true}) =>{
-  const disabled = requiresAuth
+const Button = ({id, activeUser, text, handleClick, type, darkBorder, active, tooltip = false, tooltipTitle = "You have to be Signed In!", tooltipPlacement = "bottom", dataAttr, requiresAuth = true, loading}) =>{
+  const isNotAuth = requiresAuth
     && (type === "submit" || type === "submit--light")
     && (!activeUser || !activeUser.authenticated)
     && true;
   const btnType = type || "default";
-  const className = `component btn btn__${btnType} ${darkBorder ? "btn__darkBorder" : undefined} ${active ? `btn__${btnType}--active` : undefined}`;
+  const btnActive = active ? `btn__${btnType}--active` : undefined;
+  const btnBorder = darkBorder ? "btn__darkBorder" : undefined;
+  const btnLoading = loading ? "btn__loading" : undefined;
 
-  const btn = () =>{
-    return (
-      <button id={id}
-              disabled={disabled}
-              data-attr={dataAttr}
-              className={className}
-              onClick={handleClick}>
-        {text}
-      </button>
-    )
-  };
+  const className = `btn btn__${btnType} ${btnBorder} ${btnActive} ${btnLoading}`;
 
-  if(tooltip || disabled) {
+  const btn = () => (
+    <button id={id}
+            disabled={isNotAuth || loading}
+            data-attr={dataAttr}
+            className={className}
+            onClick={handleClick}>
+      {loading ? <DonutLoader /> : text}
+    </button>
+  );
+
+  if(tooltip || isNotAuth) {
     return (
       <Tooltip title={tooltipTitle} placement={tooltipPlacement}>
         {btn()}

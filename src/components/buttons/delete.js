@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Popconfirm from 'antd/lib/popconfirm';
+import DonutLoader from "../loaders/donut/donut-loader";
 
-const DeleteButton = ({element, handleClick, darkBorder}) =>{
+const DeleteButton = ({element, handleClick, darkBorder, loading}) =>{
   return (
       <Popconfirm title={`Are you sure?`}
                   okText="Yes"
@@ -10,7 +11,7 @@ const DeleteButton = ({element, handleClick, darkBorder}) =>{
                   overlayClassName="popover"
                   arrowPointAtCenter={true}
                   cancelText="No">
-        <button className={`component btn btn__delete ${darkBorder && "btn__darkBorder"}`}>Delete {element}</button>
+        <button disabled={loading} className={`btn btn__delete ${darkBorder && "btn__darkBorder"}`}>{loading ? <DonutLoader /> : `Delete ${element}`}</button>
       </Popconfirm>
   )
 };

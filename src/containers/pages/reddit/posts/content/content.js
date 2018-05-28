@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import RedditPostsHeader from "./header/header";
 import RedditPostsBody from "./body/body";
 import './content-styles.css';
-import Loader from "../../../../../components/loaders/loader";
+import Loader from "../../../../../components/loaders/diamond/loader";
 
 class Content extends Component {
   render(){

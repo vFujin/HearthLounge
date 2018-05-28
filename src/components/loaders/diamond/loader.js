@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles.css';
 
 const Loader = ({theme = 'dark', sideLength = 40}) =>{
   return (
