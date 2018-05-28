@@ -2,194 +2,263 @@
 @import '../../styles/mixins';
 
 .calendar {
-  display: block;
   position: relative;
   width: 100%;
   background: $dark-grey;
+  display: grid;
+  grid-template-columns: 20% auto;
 
-  &__header {
-    text-transform: uppercase;
-    font-size: 115%;
-    padding: 1.5em 0;
-    border-bottom: 1px solid $pearl;
-    height: 5.5vh;
-    display: flex;
-    align-items: center;
-    color: $sea-color;
-
-    .icon {
-      cursor: pointer;
-      transition: .4s ease-out;
-
-      &:hover {
-        transform: scale(1.75);
-        transition: .4s ease-out;
-        color: $sea-color;
-      }
-
-      &:first-of-type {
-        margin-left: 1em;
-      }
-
-      &:last-of-type {
-        margin-right: 1em;
-      }
-    }
-  }
-
-  &__days {
-    text-transform: uppercase;
-    font-weight: 400;
-    color: $light-grey;
-    font-size: 70%;
-    padding: .75em 0;
-    border-bottom: 1px solid $pearl;
-    height: 4.5vh;
-    align-items: center;
-  }
-
-  &__body {
+  &__sidebar {
     display: grid;
-    padding: 2px;
+    grid-template-rows: 5.5vh 77.5vh;
+    border-right: 1px solid $pearl;
 
-    .cell {
-      position: relative;
-      border: 1px solid darken($light-grey, 15%);
-      overflow: hidden;
-      cursor: pointer;
-      background: $dark-grey;
-      transition: 0.2s linear;
+    &--header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid $pearl;
+      color: $sea-color;
+    }
+
+    &--events{
+      overflow: auto;
       margin: 2px;
+      @include slim-scrollbar();
+    }
 
-      &__number {
-        position: absolute;
-        font-size: 82.5%;
-        line-height: 1;
-        top: .75em;
-        right: .75em;
-        color: $pearl;
-        z-index: 3;
-        opacity: 0;
+    &--event {
+      border-bottom: 1px solid $light-grey;
+      margin: 10px;
+      padding-bottom: 10px;
+
+
+      &:last-child {
+        border: 0;
+        margin-bottom: 0;
       }
 
-      &__background {
-        line-height: 1;
-        color: $pearl;
-        opacity: 0.2;
-        font-size: 3em;
-        position: absolute;
-        right: .1em;
-        transition: .2s linear;
-        letter-spacing: -.07em;
-        z-index: 1;
-      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        word-break: break-word;
 
-      &__events {
-        height: calc(100% - 4px);
-        overflow: auto;
-        position: relative;
-        z-index: 2;
-        margin: 2px;
-        @include slim-scrollbar();
+        &.event__title {
+          text-align: center;
+          color: $pearl;
+        }
 
-        .event {
-          width: 100%;
-          display: flex;
-          margin-bottom: 15px;
-          align-items: center;
-
-          &:last-child{
-            margin-bottom: 0;
-          }
-
-          .event__date {
-            margin-right: 5px;
-            color: $light-grey;
-            font-size: .7em;
-          }
-
-          .event__title {
-            color: $pearl;
-            font-size: .8em;
-            @include truncate(100%);
+        &.event__date {
+          span {
+            color: $sea-color;
+            text-decoration: underline;
           }
         }
-      }
 
-      &.disabled {
-        pointer-events: none;
-        background: lighten($dark-grey, 3%);
-
-        .cell__background {
+        .label {
+          margin-right: 5px;
           color: $light-grey;
         }
       }
+    }
+  }
 
-      &:not(.selected):hover {
-        background: lighten($dark-grey, 5%);
-        border-color: $pearl;
-        transition: 0.2s linear;
+  &__content {
 
+    .calendar__header {
+      text-transform: uppercase;
+      font-size: 115%;
+      padding: 1.5em 0;
+      border-bottom: 1px solid $pearl;
+      height: 5.5vh;
+      display: flex;
+      align-items: center;
+      color: $sea-color;
 
-        .cell__background {
-          opacity: 0.25;
-          transition: .2s linear;
-          color: $pearl;
+      .icon {
+        cursor: pointer;
+        transition: .4s ease-out;
+
+        &:hover {
+          transform: scale(1.75);
+          transition: .4s ease-out;
+          color: $sea-color;
+
+        }
+
+        &:first-of-type {
+          margin-left: 1em;
+        }
+
+        &:last-of-type {
+          margin-right: 1em;
         }
       }
     }
 
-    .selected {
-      border-color: lighten($sea-color, 10%);
-      background: rgba($sea-color, .3);
+    .calendar__days {
+      text-transform: uppercase;
+      font-weight: 400;
+      color: $light-grey;
+      font-size: 70%;
+      padding: .75em 0;
+      border-bottom: 1px solid $pearl;
+      height: 4.5vh;
+      align-items: center;
+    }
 
-      .cell__background {
-        opacity: 0.25;
-        transition: .2s linear;
+    .calendar__body {
+      display: grid;
+      padding: 2px;
+
+      .cell {
+        position: relative;
+        border: 1px solid darken($light-grey, 15%);
+        overflow: hidden;
+        cursor: pointer;
+        background: $dark-grey;
+        transition: 0.2s linear;
+        margin: 2px;
+        backface-visibility: hidden;
+
+        &__number {
+          position: absolute;
+          font-size: 82.5%;
+          line-height: 1;
+          top: .75em;
+          right: .75em;
+          color: $pearl;
+          z-index: 3;
+          opacity: 0;
+        }
+
+        &__background {
+          line-height: 1;
+          color: $pearl;
+          opacity: 0.2;
+          font-size: 3em;
+          position: absolute;
+          right: .1em;
+          transition: .2s linear;
+          letter-spacing: -.07em;
+          z-index: 1;
+        }
+
+        &__events {
+          height: calc(100% - 4px);
+          overflow: auto;
+          position: relative;
+          z-index: 2;
+          margin: 2px;
+          @include slim-scrollbar();
+
+          .event {
+            width: 100%;
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+
+            &:last-child{
+              margin-bottom: 0;
+            }
+
+            .event__date {
+              margin-right: 5px;
+              color: $light-grey;
+              font-size: .7em;
+            }
+
+            .event__title {
+              color: $pearl;
+              font-size: .8em;
+              @include truncate(100%);
+            }
+          }
+        }
+
+        &.disabled {
+          pointer-events: none;
+          background: lighten($dark-grey, 3%);
+
+          .cell__background {
+            color: $light-grey;
+          }
+        }
+
+        &.current {
+          border-color: lighten($sea-color, 3%);
+          background: rgba($sea-color, .1);
+        }
+
+        &.selected {
+          border-color: lighten($sea-color, 10%);
+          background: rgba($sea-color, .25);
+
+          .cell__background {
+            opacity: 0.25;
+            transition: .2s linear;
+
+          }
+        }
+
+        &:not(.selected):not(.current):hover {
+          background: lighten($dark-grey, 5%);
+          border-color: $pearl;
+          transition: 0.2s linear;
+
+          .cell__background {
+            opacity: 0.25;
+            transition: .2s linear;
+            color: $pearl;
+          }
+        }
+      }
+
+
+
+      .row {
+        border-bottom: 1px solid $light-grey;
+      }
+
+      .col {
+        flex-grow: 0;
+        flex-basis: calc(100%/7 - 4px);
+        width: calc(100%/7);
       }
     }
 
-    .row {
-      border-bottom: 1px solid $light-grey;
+    .calendar__row {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      &--middle {
+        align-items: center;
+      }
     }
 
-    .col {
-      flex-grow: 0;
-      flex-basis: calc(100%/7 - 4px);
-      width: calc(100%/7);
-    }
-  }
+    .calendar__col {
+      flex-grow: 1;
+      flex-basis: 0;
+      max-width: 100%;
 
-  &__row {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    &--middle {
-      align-items: center;
-    }
-  }
+      &--start {
+        justify-content: flex-start;
+        text-align: left;
+      }
 
-  &__col {
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
+      &--center {
+        justify-content: center;
+        text-align: center;
+      }
 
-    &--start {
-      justify-content: flex-start;
-      text-align: left;
-    }
-
-    &--center {
-      justify-content: center;
-      text-align: center;
-    }
-
-    &--end {
-      justify-content: flex-end;
-      text-align: right;
+      &--end {
+        justify-content: flex-end;
+        text-align: right;
+      }
     }
   }
 }

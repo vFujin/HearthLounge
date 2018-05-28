@@ -1,10 +1,10 @@
 import React from 'react';
 import dateFns from "date-fns";
-import _ from 'lodash';
 import PropTypes from 'prop-types';
 import Cell from "../cell";
 import Rows from "../rows";
 import Row from "../row";
+import {filterEvents} from "../../utils/filter-events";
 
 const CalendarBody = ({currentMonth, selectedDate, events, handleDateClick}) => {
   const monthStart = dateFns.startOfMonth(currentMonth);
@@ -19,19 +19,11 @@ const CalendarBody = ({currentMonth, selectedDate, events, handleDateClick}) => 
   let day = startDate;
   let formattedDate = "";
 
-  const filterEvents = (dayStart, dayEnd) => {
-    if(events){
-      return events.filter(event => _.inRange(+new Date(event.start.dateTime), dayStart, dayEnd) && event);
-    }
-  };
-
   while (day <= endDate) {
     for (let i = 0; i < 7; i++) {
       formattedDate = dateFns.format(day, dateFormat);
       const parsedDate = dateFns.parse(day);
-      const dayStart = +dateFns.startOfDay(day);
-      const dayEnd = +dateFns.endOfDay(day);
-      const dayEvents = filterEvents(dayStart, dayEnd);
+      const dayEvents = filterEvents(events, day);
 
       days.push(
         <Cell key={day}
@@ -59,7 +51,8 @@ const CalendarBody = ({currentMonth, selectedDate, events, handleDateClick}) => 
 CalendarBody.propTypes = {
   currentMonth: PropTypes.instanceOf(Date).isRequired,
   selectedDate: PropTypes.instanceOf(Date).isRequired,
-  handleDateClick: PropTypes.func.isRequired
+  handleDateClick: PropTypes.func.isRequired,
+  events: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default CalendarBody;
