@@ -27,6 +27,7 @@ import {watchAllUsers} from "./admin/fetch-all-users/saga";
 import {watchFirebaseDeleteActiveUser} from "./firebase/sagas/delete-active-user.saga";
 import {watchUserDeletion} from "./admin/remove-user/saga";
 import {watchUserUpdate} from "./admin/update-user/saga";
+import {watchTournaments} from "./tournaments/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -46,6 +47,8 @@ export default function* rootSaga() {
     watchDeckCommentPostingStatus(),
     watchDeckCommentDeletingStatus(),
     watchDeckDeletion(),
+    //Tournaments
+    watchTournaments(),
     //Reddit
     watchRedditPosts(),
     watchRedditPost(),

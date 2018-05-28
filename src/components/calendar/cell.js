@@ -2,7 +2,7 @@ import React from 'react';
 import dateFns from "date-fns";
 import PropTypes from 'prop-types';
 
-const Cell = ({selectedDate, monthStart, day, handleDateClick, parsedDate, formattedDate}) => {
+const Cell = ({selectedDate, monthStart, day, handleDateClick, parsedDate, formattedDate, events}) => {
 
   const selected = dateFns.isSameDay(day, selectedDate) ? "selected" : undefined;
   const disabled = !dateFns.isSameMonth(day, monthStart) ? "disabled" : selected;

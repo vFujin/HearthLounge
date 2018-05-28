@@ -1,23 +1,43 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import Calendar from "../../../components/calendar/calendar";
+import {fetchTournamentsRequest} from "../../../redux/tournaments/actions";
 
-export class Tournaments extends Component {
+class Tournaments extends Component {
   componentDidMount(){
     document.title = "Tournaments";
+
+    this.props.fetchTournaments();
   }
+
   render() {
     return (
-        <div className="pageContainer tournaments">
+        <div className="container__page container__page--twoSided tournaments">
+          <div className="tournaments__sidebar">
+            <div className="tournaments__sidebar--header">
+              Today's tournaments
+            </div>
+            <ul className="tournaments__sidebar--events">
 
-          <iframe src="https://www.google.com/calendar/embed?src=kvaverirkumds90dnen1jlmmq0dcvgom%40import.calendar.google.com&ctz=America/New_York"
-                  name="myiframe"
-                  width="100%"
-                  title="Tournament calendar"
-                  height="100%"
-                  frameBorder="0"
-                  scrolling="no">
-          </iframe>
-
+            </ul>
+          </div>
+          <div className="tournaments__calendar">
+            <Calendar events={this.props.items} loading={this.props.loading}/>
+          </div>
         </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  const { items, loading } = state.tournaments;
+  return { items, loading };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchTournaments: () => dispatch(fetchTournamentsRequest())
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tournaments);

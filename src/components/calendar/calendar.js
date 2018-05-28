@@ -40,6 +40,7 @@ class Calendar extends PureComponent {
         <CalendarDays currentMonth={currentMonth}/>
         <CalendarBody currentMonth={currentMonth}
                       selectedDate={selectedDate}
+                      events={this.props.events}
                       handleDateClick={this.handleDateClick}/>
       </div>
     );
