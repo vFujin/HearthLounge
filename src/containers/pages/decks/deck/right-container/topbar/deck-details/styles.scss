@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
 
+
     &:first-child {
       margin-left: 1vh;
     }
@@ -55,6 +56,7 @@
     p {
       padding: .5vh;
       text-align: center;
+      border: 1px solid $dark-grey;
       @include box-shadow(0, 0, 10px, $dark-grey);
 
       &.loading {

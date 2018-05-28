@@ -386,11 +386,18 @@ card{
 
         li {
           @include transition(all ease .4s);
+          @include box-shadow(0, 0, 10px, lighten($dark-grey, 5%));
+
           &:hover {
             @include box-shadow(0, 0, 10px, black);
           }
+
           .active {
+            border: 1px solid $dark-grey;
             @include box-shadow(0, 0, 10px, $dark-grey);
+          }
+          a{
+            border: 1px solid transparent;
           }
         }
       }
@@ -766,7 +773,7 @@ card{
           height: calc(50% - .5vh);
           background: $light-grey;
           margin-bottom: 1vh;
-          &:not(&.block-width-4):nth-last-child(-n+4){
+          &:not(.block-width-4):nth-last-child(-n+4){
             margin-bottom:0;
           }
           &:last-child{
@@ -793,7 +800,7 @@ card{
               .card-img-wrapper {
                 display: flex;
                 margin-top: -1vh;
-                transform: scale(.5);
+                transform: scale(.4);
               }
             }
           }
@@ -1585,6 +1592,7 @@ card{
     padding: 1vh;
     box-shadow: 0 0 10px black;
     cursor: pointer;
+    background: $pearl;
   }
 }
 

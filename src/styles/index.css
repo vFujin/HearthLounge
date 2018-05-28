@@ -3770,7 +3770,8 @@ button {
         position: absolute;
         bottom: 0;
         left: 0;
-        box-shadow: 0 0 5px #00000075; }
+        box-shadow: 0 0 5px #00000075;
+        border: 1px solid black; }
     .graph li .hs-icon {
       font-size: 1.2vw; }
 
@@ -4808,15 +4809,21 @@ card {
       .container__page .container__page--left .sidebar__body.sidebar__body--extensions li {
         -webkit-transition: all ease 0.4s;
         -moz-transition: all ease 0.4s;
-        transition: all ease 0.4s; }
+        transition: all ease 0.4s;
+        -webkit-box-shadow: 0 0 10px #544d50;
+        -moz-box-shadow: 0 0 10px #544d50;
+        box-shadow: 0 0 10px #544d50; }
         .container__page .container__page--left .sidebar__body.sidebar__body--extensions li:hover {
           -webkit-box-shadow: 0 0 10px black;
           -moz-box-shadow: 0 0 10px black;
           box-shadow: 0 0 10px black; }
         .container__page .container__page--left .sidebar__body.sidebar__body--extensions li .active {
+          border: 1px solid #474143;
           -webkit-box-shadow: 0 0 10px #474143;
           -moz-box-shadow: 0 0 10px #474143;
           box-shadow: 0 0 10px #474143; }
+        .container__page .container__page--left .sidebar__body.sidebar__body--extensions li a {
+          border: 1px solid transparent; }
     .container__page .container__page--left .container__mana-curve {
       position: relative;
       z-index: 1;
@@ -5104,7 +5111,7 @@ card {
         height: calc(50% - .5vh);
         background: #A69E9D;
         margin-bottom: 1vh; }
-        .container__page .container__page--right .content .container__blocks li.container__blocks--block:not(.container__page .container__page--right .content .container__blocks li.container__blocks--block.block-width-4):nth-last-child(-n+4) {
+        .container__page .container__page--right .content .container__blocks li.container__blocks--block:not(.block-width-4):nth-last-child(-n+4) {
           margin-bottom: 0; }
         .container__page .container__page--right .content .container__blocks li.container__blocks--block:last-child {
           margin-bottom: 0; }
@@ -5128,7 +5135,7 @@ card {
             .container__page .container__page--right .content .container__blocks li.container__blocks--block .container__blocks--block-content.rewards .card-img-wrapper {
               display: flex;
               margin-top: -1vh;
-              transform: scale(0.5); }
+              transform: scale(0.4); }
         .container__page .container__page--right .content .container__blocks li.container__blocks--block.overview .about {
           display: flex;
           flex-direction: column; }
@@ -5802,7 +5809,8 @@ card {
     border: 1px solid black;
     padding: 1vh;
     box-shadow: 0 0 10px black;
-    cursor: pointer; }
+    cursor: pointer;
+    background: #E7E2DA; }
 
 .expansions .select-extension, .adventures .select-extension {
   display: flex;
