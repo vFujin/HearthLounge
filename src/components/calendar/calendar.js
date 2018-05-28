@@ -1,6 +1,7 @@
 import React from "react";
 import dateFns from "date-fns";
 import './styles.css';
+import Cells from "./cells";
 
 class Calendar extends React.Component {
   state = {
@@ -45,53 +46,7 @@ class Calendar extends React.Component {
     return <div className="calendar__days calendar__row">{days}</div>;
   }
 
-  renderCells() {
-    const { currentMonth, selectedDate } = this.state;
-    const monthStart = dateFns.startOfMonth(currentMonth);
-    const monthEnd = dateFns.endOfMonth(monthStart);
-    const startDate = dateFns.startOfWeek(monthStart);
-    const endDate = dateFns.endOfWeek(monthEnd);
-
-    const dateFormat = "D";
-    const rows = [];
-
-
-    let days = [];
-    let day = startDate;
-    let formattedDate = "";
-
-    while (day <= endDate) {
-      for (let i = 0; i < 7; i++) {
-        formattedDate = dateFns.format(day, dateFormat);
-        const cloneDay = day;
-        days.push(
-          <div
-            className={`col cell ${
-              !dateFns.isSameMonth(day, monthStart)
-                ? "disabled"
-                : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
-              }`}
-            key={day}
-            onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
-          >
-            <span className="number">{formattedDate}</span>
-            <span className="bg">{formattedDate}</span>
-          </div>
-        );
-        day = dateFns.addDays(day, 1);
-      }
-      rows.push(
-        <div className="calendar__row" key={day}>
-          {days}
-        </div>
-      );
-      days = [];
-    }
-    return <div className="calendar__body" style={{'grid-template-rows': `repeat(${rows.length}, calc(${73/rows.length}vh - ${4 / rows.length}px))`}}>{rows}</div>;
-  }
-
-
-  onDateClick = day => {
+  handleDateClick = day => {
     this.setState({
       selectedDate: day
     });
@@ -110,11 +65,14 @@ class Calendar extends React.Component {
   };
 
   render() {
+    const {currentMonth, selectedDate} = this.state;
     return (
       <div className="calendar">
         {this.renderHeader()}
         {this.renderDays()}
-        {this.renderCells()}
+        <Cells currentMonth={currentMonth}
+               selectedDate={selectedDate}
+               handleDateClick={this.handleDateClick}/>
       </div>
     );
   }
