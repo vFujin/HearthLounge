@@ -52,11 +52,9 @@ const Routes = ({mobileMenuActive, windowWidth}) => {
         <Route path="/adventures"               component={Adventures} />
         <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
         <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
-        <Route path="/tournaments"              component={Tournaments} />
-        <Route exact path="/reddit"             component={RedditPosts} />
+        <Route exact path="/reddit"                   component={RedditPosts} />
         <Route path="/reddit/post/:postId"      component={RedditPost} />
         <Route path="/tournaments"              component={Calendar} />
-        <Route path="/reddit/post/:postId"      component={RedditPost} />
         <Route path="/sign-in"                  component={Entry} />
         <Route path="/sign-up"                  component={Entry} />
         <Route path="/dashboard"                component={Dashboard} />

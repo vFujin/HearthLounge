@@ -10,9 +10,9 @@ import TermsOfService from "./terms-of-service/terms-of-service";
 const misc = [
     "terms-of-service",
     "privacy-policy",
-    "rank-system",
-    "FAQ",
-    "contributing",
+    // "rank-system",
+    // "FAQ",
+    // "contributing",
 ];
 
 const components = {

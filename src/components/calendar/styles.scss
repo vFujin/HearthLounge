@@ -1,14 +1,5 @@
 @import '../../styles/colors';
 
-:root {
-  --main-color: #1a8fff;
-  --text-color: #777;
-  --text-color-light: #ccc;
-  --border-color: #eee;
-  --bg-color: #f9f9f9;
-  --neutral-color: #fff;
-}
-
 .calendar {
   display: block;
   position: relative;
@@ -17,7 +8,6 @@
 
   &__header {
     text-transform: uppercase;
-    font-weight: 700;
     font-size: 115%;
     padding: 1.5em 0;
     border-bottom: 1px solid $pearl;
@@ -59,13 +49,16 @@
 
   &__body {
     display: grid;
+    padding: 2px;
+
     .cell {
       position: relative;
-      border-right: 1px solid $sea-color;
+      border: 1px solid darken($light-grey, 15%);
       overflow: hidden;
       cursor: pointer;
       background: $dark-grey;
-      transition: 0.25s ease-out;
+      transition: 0.2s linear;
+      margin: 2px;
 
       .number {
         position: absolute;
@@ -73,52 +66,52 @@
         line-height: 1;
         top: .75em;
         right: .75em;
-        font-weight: 700;
         color: $pearl
       }
 
       .bg {
-        font-weight: 700;
         line-height: 1;
         color: $sea-color;
         opacity: 0;
-        font-size: 10em;
+        font-size: 6em;
         position: absolute;
-        top: -.2em;
+        top: -.15em;
         right: -.05em;
-        transition: .25s ease-out;
+        transition: .2s linear;
         letter-spacing: -.07em;
       }
 
       &.disabled {
-        color: $light-grey;
         pointer-events: none;
-      }
+        background: lighten($dark-grey, 3%);
 
-      &:hover {
-        background: lighten($dark-grey, 5%);
-        transition: 0.5s ease-out;
-
-        .bg {
-          opacity: 0.3;
-          transition: .5s ease-in;
+        .number {
+          color: $light-grey;
         }
       }
 
-      &:last-child {
-        border-bottom: none;
+      &:not(.selected):hover {
+        background: lighten($dark-grey, 5%);
+        border-color: $pearl;
+        transition: 0.2s linear;
+
+
+        .bg {
+          opacity: 0.25;
+          transition: .2s linear;
+          color: $pearl;
+        }
       }
     }
 
 
     .selected {
-      border-left: 10px solid transparent;
-      border-image: linear-gradient(45deg, $sea-color 0%, $dark-grey 60%);
-      border-image-slice: 1;
+      border-color: lighten($sea-color, 10%);
+      background: rgba($sea-color, .3);
 
       .bg {
-        opacity: 0.05;
-        transition: .5s ease-in;
+        opacity: 0.25;
+        transition: .2s linear;
       }
     }
 
@@ -130,7 +123,7 @@
 
     .col {
       flex-grow: 0;
-      flex-basis: calc(100%/7);
+      flex-basis: calc(100%/7 - 4px);
       width: calc(100%/7);
     }
 

@@ -87,9 +87,9 @@ class Calendar extends React.Component {
       );
       days = [];
     }
-    // console.log(rows);
-    return <div className="calendar__body" style={{'grid-template-rows': `repeat(${rows.length}, ${73/rows.length}vh)`}}>{rows}</div>;
+    return <div className="calendar__body" style={{'grid-template-rows': `repeat(${rows.length}, calc(${73/rows.length}vh - ${4 / rows.length}px))`}}>{rows}</div>;
   }
+
 
   onDateClick = day => {
     this.setState({
