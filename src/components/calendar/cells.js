@@ -2,6 +2,7 @@ import React from 'react';
 import dateFns from "date-fns";
 import PropTypes from 'prop-types';
 import Cell from "./cell";
+import CalendarBody from "./layout/body";
 
 const Cells = ({currentMonth, selectedDate, handleDateClick}) => {
   const monthStart = dateFns.startOfMonth(currentMonth);
@@ -42,8 +43,7 @@ const Cells = ({currentMonth, selectedDate, handleDateClick}) => {
     days = [];
   }
 
-  return <div className="calendar__body"
-              style={{gridTemplateRows: `repeat(${rows.length}, calc(${73 / rows.length}vh - ${4 / rows.length}px))`}}>{rows}</div>;
+  return <CalendarBody rows={rows}/>
 };
 
 Cells.propTypes = {
