@@ -2,25 +2,88 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Switch, Route} from 'react-router';
 import history from '../globals/history';
-import asyncComponent from "../components/async-component";
+import Loadable from 'react-loadable';
+import PageLoader from "../components/loaders/page/page-loader";
 
-const AsyncHome = asyncComponent(() => import('./pages/home/home'));
-const AsyncDeckSelection = asyncComponent(() => import('./pages/decks/deck-selection/deck-selection'));
-const AsyncDeck = asyncComponent(()=>import('./pages/decks/deck/deck'));
-const AsyncCards = asyncComponent(()=>import('./pages/cards/cards'));
-const AsyncExpansions = asyncComponent(()=>import('./pages/expansions/expansions'));
-const AsyncAdventures = asyncComponent(()=>import('./pages/adventures/adventures'));
-const AsyncCreateDeckClassSelection = asyncComponent(()=>import('./pages/create-deck/before-class-selection/class-selection'));
-const AsyncCreateDeckClassSelected = asyncComponent(()=>import('./pages/create-deck/after-class-selection/create-deck'));
-const AsyncCreateDeckClassSelectedMobile = asyncComponent(()=>import('./pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile'));
-const AsyncRedditPosts = asyncComponent(()=>import('./pages/reddit/posts/posts'));
-const AsyncRedditPost = asyncComponent(()=>import('./pages/reddit/post/post'));
-const AsyncTournaments = asyncComponent(()=>import('./pages/tournaments/tournaments'));
-const AsyncEntry = asyncComponent(()=>import('./pages/entry/entry'));
-const AsyncDashboard = asyncComponent(()=>import('./pages/dashboard/dashboard'));
-const AsyncMiscellaneous = asyncComponent(()=>import('./pages/miscellaneous/container'));
-const AsyncNotFound = asyncComponent(()=>import('../components/not-found/not-found'));
+const AsyncHome = Loadable({
+  loader: () => import('./pages/home/home'),
+  loading: PageLoader
+});
 
+const AsyncDeckSelection = Loadable({
+  loader: () => import('./pages/decks/deck-selection/deck-selection'),
+  loading: PageLoader
+});
+
+const AsyncDeck = Loadable({
+  loader: ()=>import('./pages/decks/deck/deck'),
+  loading: PageLoader
+});
+
+const AsyncCards = Loadable({
+  loader: ()=>import('./pages/cards/cards'),
+  loading: PageLoader
+});
+
+const AsyncExpansions = Loadable({
+  loader: ()=>import('./pages/expansions/expansions'),
+  loading: PageLoader
+});
+
+const AsyncAdventures = Loadable({
+  loader: ()=>import('./pages/adventures/adventures'),
+  loading: PageLoader
+});
+
+const AsyncCreateDeckClassSelection = Loadable({
+  loader: ()=>import('./pages/create-deck/before-class-selection/class-selection'),
+  loading: PageLoader
+});
+
+const AsyncCreateDeckClassSelected = Loadable({
+  loader: ()=>import('./pages/create-deck/after-class-selection/create-deck'),
+  loading: PageLoader
+});
+
+const AsyncCreateDeckClassSelectedMobile = Loadable({
+  loader: ()=>import('./pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile'),
+  loading: PageLoader
+});
+
+const AsyncRedditPosts = Loadable({
+  loader: ()=>import('./pages/reddit/posts/posts'),
+  loading: PageLoader
+});
+
+const AsyncRedditPost = Loadable({
+  loader: ()=>import('./pages/reddit/post/post'),
+  loading: PageLoader
+});
+
+const AsyncTournaments = Loadable({
+  loader: ()=>import('./pages/tournaments/tournaments'),
+  loading: PageLoader
+});
+
+const AsyncEntry = Loadable({
+  loader: ()=>import('./pages/entry/entry'),
+  loading: PageLoader
+});
+
+const AsyncDashboard = Loadable({
+  loader: ()=>import('./pages/dashboard/dashboard'),
+  loading: PageLoader
+});
+
+const AsyncMiscellaneous = Loadable({
+  loader: ()=>import('./pages/miscellaneous/container'),
+  loading: PageLoader
+});
+
+const AsyncNotFound = Loadable({
+  loader: ()=>import('../components/not-found/not-found'),
+  loading: PageLoader
+});
 
 const Routes = ({mobileMenuActive, windowWidth}) => {
 
