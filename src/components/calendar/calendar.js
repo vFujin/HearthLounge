@@ -1,9 +1,9 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import dateFns from "date-fns";
 import './styles.css';
-import Cells from "./cells";
+import CalendarBody from "./layout/body";
 
-class Calendar extends React.Component {
+class Calendar extends PureComponent {
   state = {
     currentMonth: new Date(),
     selectedDate: new Date()
@@ -70,9 +70,9 @@ class Calendar extends React.Component {
       <div className="calendar">
         {this.renderHeader()}
         {this.renderDays()}
-        <Cells currentMonth={currentMonth}
-               selectedDate={selectedDate}
-               handleDateClick={this.handleDateClick}/>
+        <CalendarBody currentMonth={currentMonth}
+                      selectedDate={selectedDate}
+                      handleDateClick={this.handleDateClick}/>
       </div>
     );
   }
