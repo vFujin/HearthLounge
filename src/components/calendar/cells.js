@@ -1,6 +1,7 @@
 import React from 'react';
 import dateFns from "date-fns";
 import PropTypes from 'prop-types';
+import Cell from "./cell";
 
 const Cells = ({currentMonth, selectedDate, handleDateClick}) => {
   const monthStart = dateFns.startOfMonth(currentMonth);
@@ -18,25 +19,26 @@ const Cells = ({currentMonth, selectedDate, handleDateClick}) => {
   while (day <= endDate) {
     for (let i = 0; i < 7; i++) {
       formattedDate = dateFns.format(day, dateFormat);
-      const cloneDay = day;
-      const selected = dateFns.isSameDay(day, selectedDate) ? "selected" : undefined;
-      const disabled = !dateFns.isSameMonth(day, monthStart) ? "disabled" : selected;
+      const parsedDate = dateFns.parse(day);
 
       days.push(
-        <div className={`col cell ${disabled}`}
-             key={day}
-             onClick={() => handleDateClick(dateFns.parse(cloneDay))}>
-          <span className="number">{formattedDate}</span>
-          <span className="bg">{formattedDate}</span>
-        </div>
+        <Cell key={day}
+              selectedDate={selectedDate}
+              monthStart={monthStart}
+              day={day}
+              parsedDate={parsedDate}
+              formattedDate={formattedDate}
+              handleDateClick={handleDateClick}/>
       );
       day = dateFns.addDays(day, 1);
     }
+
     rows.push(
       <div className="calendar__row" key={day}>
         {days}
       </div>
     );
+
     days = [];
   }
 
