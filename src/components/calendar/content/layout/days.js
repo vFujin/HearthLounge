@@ -3,7 +3,6 @@ import dateFns from "date-fns";
 import PropTypes from 'prop-types';
 
 const CalendarDays = ({currentMonth, mobileBreakpoint}) => {
-  console.log(window.innerWidth);
   const dateFormat = window.innerWidth <= mobileBreakpoint ? "ddd" : "dddd";
   const days = [];
   let startDate = dateFns.startOfWeek(currentMonth);

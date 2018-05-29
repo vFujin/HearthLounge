@@ -29,7 +29,7 @@ class CalendarSidebar extends Component {
 
 
   render() {
-    const {selectedDate, loading, handleMobileActiveDayEventsViewCloseClick} = this.props;
+    const {selectedDate, selectedDateEvents, loading, handleMobileActiveDayEventsViewCloseClick} = this.props;
     const dateFormat = 'Do MMM';
 
     return (
@@ -39,7 +39,11 @@ class CalendarSidebar extends Component {
           <Icon name="cross" handleClick={handleMobileActiveDayEventsViewCloseClick}/>
         </div>
         <ul className="calendar__sidebar--events">
-          {loading ? <Loader/> : this.mapEvents()}
+          {loading
+            ? <Loader/>
+            : selectedDateEvents.length === 0
+              ? <div className="calendar__sidebar--no-events"><p>There are no tournaments for this day.</p><span>(╯°□°）╯︵ ┻━┻</span></div>
+              : this.mapEvents()}
         </ul>
       </div>
     )

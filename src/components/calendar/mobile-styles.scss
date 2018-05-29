@@ -19,6 +19,8 @@
       display: none;
 
       &--header {
+        font-size: 1.5em;
+
         span {
           position: absolute;
           right: 7px;
@@ -34,6 +36,16 @@
           &:hover {
             color: $sea-color;
           }
+        }
+      }
+
+      &--no-events {
+        p{
+          font-size: 1.5em;
+        }
+
+        span {
+          font-size: 2em;
         }
       }
     }
@@ -52,8 +64,8 @@
           &__number {
             position: relative;
             opacity: 1;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             border: 1px solid darken($light-grey, 15%);
             border-radius: 50%;
             display: flex;

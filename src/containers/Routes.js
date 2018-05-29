@@ -5,14 +5,11 @@ import history from '../globals/history';
 import Loadable from 'react-loadable';
 import PageLoader from "../components/loaders/page/page-loader";
 import Home from './pages/home/home';
+import Deck from './pages/decks/deck/deck';
+import RedditPost from './pages/reddit/post/post';
 
 const AsyncDeckSelection = Loadable({
   loader: () => import('./pages/decks/deck-selection/deck-selection'),
-  loading: PageLoader
-});
-
-const AsyncDeck = Loadable({
-  loader: ()=>import('./pages/decks/deck/deck'),
   loading: PageLoader
 });
 
@@ -48,11 +45,6 @@ const AsyncCreateDeckClassSelectedMobile = Loadable({
 
 const AsyncRedditPosts = Loadable({
   loader: ()=>import('./pages/reddit/posts/posts'),
-  loading: PageLoader
-});
-
-const AsyncRedditPost = Loadable({
-  loader: ()=>import('./pages/reddit/post/post'),
   loading: PageLoader
 });
 
@@ -109,14 +101,14 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
         <Switch>
           <Route exact path="/"                   component={Home} />
           <Route exact path="/decks"              component={AsyncDeckSelection} />
-          <Route path="/decks/:deckId/:deckTitle" component={AsyncDeck}/>
+          <Route path="/decks/:deckId/:deckTitle" component={Deck}/>
           <Route path="/cards"                    component={AsyncCards} />
           <Route path="/expansions"               component={AsyncExpansions}/>
           <Route path="/adventures"               component={AsyncAdventures} />
           <Route exact path="/create-deck"        component={AsyncCreateDeckClassSelection} />
           <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
           <Route exact path="/reddit"             component={AsyncRedditPosts} />
-          <Route path="/reddit/post/:postId"      component={AsyncRedditPost} />
+          <Route path="/reddit/post/:postId"      component={RedditPost} />
           <Route path="/tournaments"              component={AsyncTournaments} />
           <Route path="/sign-in"                  component={AsyncEntry} />
           <Route path="/sign-up"                  component={AsyncEntry} />

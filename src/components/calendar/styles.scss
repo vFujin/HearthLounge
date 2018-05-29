@@ -13,12 +13,14 @@
     grid-template-rows: 5.5vh 77.5vh;
     border-right: 1px solid $pearl;
 
+
     &--header {
       display: flex;
       align-items: center;
       justify-content: center;
       border-bottom: 1px solid $pearl;
       color: $sea-color;
+      text-align: center;
 
       span {
         display: none;
@@ -30,6 +32,25 @@
       margin: 2px;
       @include slim-scrollbar();
     }
+
+    &--no-events{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+
+      p{
+        color: $light-grey;
+      }
+
+      span {
+        margin-top: 20px;
+        color: $pearl
+      }
+    }
+
 
     &--event {
       border-bottom: 1px solid $light-grey;

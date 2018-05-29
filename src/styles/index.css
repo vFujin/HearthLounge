@@ -5910,8 +5910,8 @@ card {
         font-size: 150px;
         top: 17.5px; }
 
-.tournaments iframe html body {
-  background: transparent; }
+.tournaments {
+  margin: 0 1vh; }
 
 .streams .container__page--left ul {
   margin: 10px 0; }
