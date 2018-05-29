@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import format from 'date-fns/format';
 import PropTypes from 'prop-types';
 import Loader from "../../loaders/diamond/loader";
+import Icon from "../../icon";
 
 class CalendarSidebar extends Component {
 
@@ -28,13 +29,14 @@ class CalendarSidebar extends Component {
 
 
   render() {
-    const {selectedDate, loading} = this.props;
+    const {selectedDate, loading, handleMobileActiveDayEventsViewCloseClick} = this.props;
     const dateFormat = 'Do MMM';
 
     return (
       <div className="calendar__sidebar">
         <div className="calendar__sidebar--header">
           {format(selectedDate, dateFormat)} Tournaments
+          <Icon name="cross" handleClick={handleMobileActiveDayEventsViewCloseClick}/>
         </div>
         <ul className="calendar__sidebar--events">
           {loading ? <Loader/> : this.mapEvents()}
@@ -47,7 +49,8 @@ class CalendarSidebar extends Component {
 CalendarSidebar.propTypes = {
   selectedDate: PropTypes.object.isRequired,
   selectedDateEvents: PropTypes.arrayOf(PropTypes.object).isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
+  handleMobileActiveDayEventsViewCloseClick:PropTypes.func.isRequired
 };
 
 export default CalendarSidebar;

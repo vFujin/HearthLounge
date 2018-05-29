@@ -7,20 +7,30 @@ import CalendarDays from "./layout/days";
 import CalendarHeader from "./layout/header";
 import {filterEvents} from "../utils/filter-events";
 import '../styles.css';
+import '../mobile-styles.css';
 
 class Calendar extends PureComponent {
 
   state = {
     currentMonth: new Date(),
     selectedDate: new Date(),
-    selectedDateEvents: []
+    selectedDateEvents: [],
+    mobileBreakpoint: 815,
+    mobileActiveDayEventsView: false
   };
 
   handleDateClick = (day, events) => {
     this.setState({
       selectedDate: day,
-      selectedDateEvents: events
+      selectedDateEvents: events,
+      mobileActiveDayEventsView: true
     });
+  };
+
+  handleMobileActiveDayEventsViewCloseClick = () => {
+    this.setState({
+      mobileActiveDayEventsView: false
+    })
   };
 
   nextMonth = () => {
@@ -35,20 +45,23 @@ class Calendar extends PureComponent {
     });
   };
 
+
   render() {
-    const {currentMonth, selectedDate, selectedDateEvents} = this.state;
+    const {currentMonth, selectedDate, selectedDateEvents, mobileBreakpoint, mobileActiveDayEventsView} = this.state;
     const {events, loading} = this.props;
 
     return (
-      <div className="calendar">
+      <div className={`calendar ${mobileActiveDayEventsView ? "day-events-active" : undefined}`}>
         <CalendarSidebar selectedDate={selectedDate}
                          loading={loading}
+                         handleMobileActiveDayEventsViewCloseClick={this.handleMobileActiveDayEventsViewCloseClick}
                          selectedDateEvents={filterEvents(events, selectedDate) || selectedDateEvents}/>
         <div className="calendar__content">
           <CalendarHeader currentMonth={currentMonth}
                           prevMonth={this.prevMonth}
                           nextMonth={this.nextMonth}/>
-          <CalendarDays currentMonth={currentMonth}/>
+          <CalendarDays currentMonth={currentMonth}
+                        mobileBreakpoint={mobileBreakpoint}/>
           <CalendarBody currentMonth={currentMonth}
                         selectedDate={selectedDate}
                         events={events}

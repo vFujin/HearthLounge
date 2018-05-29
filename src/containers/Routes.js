@@ -4,11 +4,7 @@ import {Switch, Route} from 'react-router';
 import history from '../globals/history';
 import Loadable from 'react-loadable';
 import PageLoader from "../components/loaders/page/page-loader";
-
-const AsyncHome = Loadable({
-  loader: () => import('./pages/home/home'),
-  loading: PageLoader
-});
+import Home from './pages/home/home';
 
 const AsyncDeckSelection = Loadable({
   loader: () => import('./pages/decks/deck-selection/deck-selection'),
@@ -85,7 +81,8 @@ const AsyncNotFound = Loadable({
   loading: PageLoader
 });
 
-const Routes = ({mobileMenuActive, windowWidth}) => {
+const Routes = ({route, mobileMenuActive, windowWidth}) => {
+
 
   const validatePlayerClass = ({playerClass}) => {
     if(localStorage.hearthloungeGameInfo) {
@@ -106,30 +103,31 @@ const Routes = ({mobileMenuActive, windowWidth}) => {
     }
   };
 
+
   return (
     <div className={mobileMenuActive ? "switch__wrapper--mobileMenuActive" : undefined}>
-      <Switch>
-        <Route exact path="/"                   component={AsyncHome} />
-        <Route exact path="/decks"              component={AsyncDeckSelection} />
-        <Route path="/decks/:deckId/:deckTitle" component={AsyncDeck}/>
-        <Route path="/cards"                    component={AsyncCards} />
-        <Route path="/expansions"               component={AsyncExpansions}/>
-        <Route path="/adventures"               component={AsyncAdventures} />
-        <Route exact path="/create-deck"        component={AsyncCreateDeckClassSelection} />
-        <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
-        <Route exact path="/reddit"             component={AsyncRedditPosts} />
-        <Route path="/reddit/post/:postId"      component={AsyncRedditPost} />
-        <Route path="/tournaments"              component={AsyncTournaments} />
-        <Route path="/sign-in"                  component={AsyncEntry} />
-        <Route path="/sign-up"                  component={AsyncEntry} />
-        <Route path="/dashboard"                component={AsyncDashboard} />
-        <Route path="/:misc"                    component={AsyncMiscellaneous} />
-        <Route path="*"                         component={AsyncNotFound} />
-        {/*/!*<Redirect from="twitch" to="twitch/all" />*!/*/}
-        {/*/!*<Route path="twitch"         component={Streams}>*!/*/}
-        {/*/!*<Route path=":channel"     component={Iframe}/>*!/*/}
-        {/*/!*</Route>*!/*/}
-      </Switch>
+        <Switch>
+          <Route exact path="/"                   component={Home} />
+          <Route exact path="/decks"              component={AsyncDeckSelection} />
+          <Route path="/decks/:deckId/:deckTitle" component={AsyncDeck}/>
+          <Route path="/cards"                    component={AsyncCards} />
+          <Route path="/expansions"               component={AsyncExpansions}/>
+          <Route path="/adventures"               component={AsyncAdventures} />
+          <Route exact path="/create-deck"        component={AsyncCreateDeckClassSelection} />
+          <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
+          <Route exact path="/reddit"             component={AsyncRedditPosts} />
+          <Route path="/reddit/post/:postId"      component={AsyncRedditPost} />
+          <Route path="/tournaments"              component={AsyncTournaments} />
+          <Route path="/sign-in"                  component={AsyncEntry} />
+          <Route path="/sign-up"                  component={AsyncEntry} />
+          <Route path="/dashboard"                component={AsyncDashboard} />
+          <Route path="/:misc"                    component={AsyncMiscellaneous} />
+          <Route path="*"                         component={AsyncNotFound} />
+          {/*/!*<Redirect from="twitch" to="twitch/all" />*!/*/}
+          {/*/!*<Route path="twitch"         component={Streams}>*!/*/}
+          {/*/!*<Route path=":channel"     component={Iframe}/>*!/*/}
+          {/*/!*</Route>*!/*/}
+        </Switch>
     </div>
   )
 };
