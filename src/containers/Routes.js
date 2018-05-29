@@ -7,6 +7,9 @@ import PageLoader from "../components/loaders/page/page-loader";
 import Home from './pages/home/home';
 import Deck from './pages/decks/deck/deck';
 import RedditPost from './pages/reddit/post/post';
+import CreateDeckClassSelection  from './pages/create-deck/before-class-selection/class-selection';
+import CreateDeckClassSelected  from './pages/create-deck/after-class-selection/create-deck';
+import CreateDeckClassSelectedMobile from './pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile';
 
 const AsyncDeckSelection = Loadable({
   loader: () => import('./pages/decks/deck-selection/deck-selection'),
@@ -25,21 +28,6 @@ const AsyncExpansions = Loadable({
 
 const AsyncAdventures = Loadable({
   loader: ()=>import('./pages/adventures/adventures'),
-  loading: PageLoader
-});
-
-const AsyncCreateDeckClassSelection = Loadable({
-  loader: ()=>import('./pages/create-deck/before-class-selection/class-selection'),
-  loading: PageLoader
-});
-
-const AsyncCreateDeckClassSelected = Loadable({
-  loader: ()=>import('./pages/create-deck/after-class-selection/create-deck'),
-  loading: PageLoader
-});
-
-const AsyncCreateDeckClassSelectedMobile = Loadable({
-  loader: ()=>import('./pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile'),
   loading: PageLoader
 });
 
@@ -85,13 +73,13 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
 
       if (playerClassExist) {
         return windowWidth >= 816
-          ? <AsyncCreateDeckClassSelected playerClass={playerClass}/>
-          : <AsyncCreateDeckClassSelectedMobile playerClass={playerClass}/>
+          ? <CreateDeckClassSelected playerClass={playerClass}/>
+          : <CreateDeckClassSelectedMobile playerClass={playerClass}/>
       }
       else return <AsyncNotFound page={playerClass}/>;
     } else {
       history.push('/create-deck');
-      return <AsyncCreateDeckClassSelection/>;
+      return <CreateDeckClassSelection/>;
     }
   };
 
@@ -105,7 +93,7 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
           <Route path="/cards"                    component={AsyncCards} />
           <Route path="/expansions"               component={AsyncExpansions}/>
           <Route path="/adventures"               component={AsyncAdventures} />
-          <Route exact path="/create-deck"        component={AsyncCreateDeckClassSelection} />
+          <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
           <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
           <Route exact path="/reddit"             component={AsyncRedditPosts} />
           <Route path="/reddit/post/:postId"      component={RedditPost} />

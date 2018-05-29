@@ -4,6 +4,22 @@
 
 @include screen('tabletBelow') {
   .decklistSidebar {
+    grid-template-rows: 4vh auto;
+
+    &__topbar {
+      li {
+        font-size: 1.5em;
+      }
+    }
+
+    &__content {
+      li {
+        li {
+          font-size: 1.5em;
+        }
+      }
+    }
+
     &__card {
       &--action {
         .icon-cross {
@@ -12,6 +28,26 @@
             margin-right: -1px;
           }
         }
+      }
+    }
+  }
+}
+
+@include screen('tablet'){
+  .decklistSidebar{
+    &__content {
+      li {
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+@include screen('mobile'){
+  .decklistSidebar{
+    &__content {
+      li {
+        font-size: 2em;
       }
     }
   }

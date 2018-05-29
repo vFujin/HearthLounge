@@ -23,7 +23,6 @@
       justify-content: center;
       align-items: center;
       @include transition(all ease .4s);
-      //font-size: calc(.3em + 1vmin);
 
       &:hover {
         background: darken($sea-color, 10%);
@@ -53,12 +52,10 @@
   }
 
   .container__page--mobileContentWrapper {
-    padding-bottom: 10px;
     height: 100%;
 
     .content {
-      //height: calc(100% - 10px);
-      height: 100%;
+      height: calc(100% - 10px);
       overflow: auto;
       margin-right: 10px;
       margin-top: 10px;
@@ -141,10 +138,10 @@
 
       .container__page--inner {
         display: block !important;
-        height: calc(100% - 10px);
+        height: calc(100% - 1vh);
         overflow: auto;
-        margin-top: 10px;
-        margin-right: 10px;
+        margin-top: 1vh;
+        margin-right: 1vh;
         @include slim-scrollbar($pearl);
 
         .sidebar__header {
@@ -191,5 +188,22 @@
         }
       }
     }
+  }
+}
+
+//create deck cards
+.container__page.create-deck {
+  .container__page--mobile-twoSided {
+    .container__page--mobileContentWrapper {
+      .content {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.container__page.expansions, .container__page.adventures {
+  .container__page--mobile-twoSided {
+    grid-template-rows: 4.5vh 72vh;
   }
 }

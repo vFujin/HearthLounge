@@ -1131,7 +1131,7 @@ card{
         grid-template-rows: 4vh 18vh 4vh auto;
 
         h3 {
-          font-size: calc(1em + 1vmin);
+          font-size: 1em;
         }
 
         .graph {
@@ -1695,7 +1695,7 @@ card{
   }
 }
 
-.tournaments{
+.container__page.tournaments{
   margin: 0 1vh;
 }
 

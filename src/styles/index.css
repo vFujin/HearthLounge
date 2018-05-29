@@ -87,6 +87,28 @@ a {
     .default-style.blizzard_post a:visited {
       color: #f8b700; }
 
+/*
+ * Desktop
+ */
+@media only screen and (max-width: 815px) {
+  .default h1 {
+    font-size: 1em;
+    margin: 0.67em 0; }
+  .default h2 {
+    font-size: .9em;
+    margin: 0.83em 0; }
+  .default h3 {
+    font-size: .8em;
+    margin: 1em 0; }
+  .default h4 {
+    font-size: .7em;
+    margin: 1.33em 0; }
+  .default h5 {
+    font-size: .6em;
+    margin: 1.67em 0; }
+  .default h6 {
+    font-size: .5em;
+    margin: 2.33em 0; } }
 @font-face {
   font-family: 'hearthstone';
   src: url("../icons/hearthstone.ttf") format("truetype"), url("../icons/hearthstone.woff") format("woff"), url("../icons/hearthstone.svg#hearthstone") format("svg");
@@ -5447,7 +5469,7 @@ card {
   .container__page.container__page--mobile .container__page--left .container__mana-curve {
     grid-template-rows: 4vh 18vh 4vh auto; }
     .container__page.container__page--mobile .container__page--left .container__mana-curve h3 {
-      font-size: calc(1em + 1vmin); }
+      font-size: 1em; }
     .container__page.container__page--mobile .container__page--left .container__mana-curve .graph span, .container__page.container__page--mobile .container__page--left .container__mana-curve .graph .count {
       font-size: calc(1em + 1vmin); }
     .container__page.container__page--mobile .container__page--left .container__mana-curve .graph .bar {
@@ -5910,7 +5932,7 @@ card {
         font-size: 150px;
         top: 17.5px; }
 
-.tournaments {
+.container__page.tournaments {
   margin: 0 1vh; }
 
 .streams .container__page--left ul {

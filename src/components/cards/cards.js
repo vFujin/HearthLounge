@@ -15,6 +15,7 @@ class ComponentCards extends Component {
     super(props);
 
     this.state = {
+      initialAmountOfCards: window.innerWidth <= 1024 ? 20 : 40,
       loadedCards: 40,
       filters: {},
       cardNotFound: "Couldn't find cards that match your query",
@@ -33,14 +34,13 @@ class ComponentCards extends Component {
   }
 
   scrollToTop = () => {
-    const {infiniteScrollContainer, mobileThreshold} = this.state;
+    const {infiniteScrollContainer, mobileThreshold, initialAmountOfCards} = this.state;
     const {componentWidth} = this.props;
-    this.setState({loadedCards: 40});
+    this.setState({loadedCards: initialAmountOfCards});
 
     if(componentWidth > mobileThreshold) {
       return document.querySelector(infiniteScrollContainer).scrollTop = 0;
     }
-
   };
 
   updateCardsComponentWidth = () => {

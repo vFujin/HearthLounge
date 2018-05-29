@@ -123,3 +123,32 @@ a{
     }
   }
 }
+
+@include screen('mobile'){
+  .default {
+    h1{
+      font-size: 1em;
+      margin: 0.67em 0;
+    }
+    h2{
+      font-size: .9em;
+      margin: 0.83em 0;
+    }
+    h3{
+      font-size: .8em;
+      margin: 1em 0;
+    }
+    h4{
+      font-size: .7em;
+      margin: 1.33em 0;
+    }
+    h5{
+      font-size: .6em;
+      margin: 1.67em 0;
+    }
+    h6{
+      font-size: .5em;
+      margin: 2.33em 0;
+    }
+  }
+}
