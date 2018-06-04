@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Button from '../../../components/buttons/button';
+import Button from '../../../buttons/button';
 import PropTypes from 'prop-types';
 
 class GameChanges extends Component {

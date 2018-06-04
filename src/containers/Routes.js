@@ -21,13 +21,8 @@ const AsyncCards = Loadable({
   loading: PageLoader
 });
 
-const AsyncExpansions = Loadable({
-  loader: ()=>import('./pages/expansions/expansions'),
-  loading: PageLoader
-});
-
-const AsyncAdventures = Loadable({
-  loader: ()=>import('./pages/adventures/adventures'),
+const AsyncExtensions = Loadable({
+  loader: ()=>import('./pages/extensions/extensions'),
   loading: PageLoader
 });
 
@@ -83,16 +78,14 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
     }
   };
 
-
   return (
-    <div className={mobileMenuActive ? "switch__wrapper--mobileMenuActive" : undefined}>
+    <div className={mobileMenuActive ? "switch__wrapper--mobileMenuActive" : undefined} style={{overflow: "auto"}}>
         <Switch>
           <Route exact path="/"                   component={Home} />
           <Route exact path="/decks"              component={AsyncDeckSelection} />
           <Route path="/decks/:deckId/:deckTitle" component={Deck}/>
           <Route path="/cards"                    component={AsyncCards} />
-          <Route path="/expansions"               component={AsyncExpansions}/>
-          <Route path="/adventures"               component={AsyncAdventures} />
+          <Route path="/extensions"               component={AsyncExtensions} />
           <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
           <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
           <Route exact path="/reddit"             component={AsyncRedditPosts} />

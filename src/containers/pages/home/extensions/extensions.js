@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
-import {expansion_details} from "../../../../globals/expansion-details";
-import {adventure_details} from "../../../../globals/adventure-details";
+import {extension_details} from "../../../../globals/extension-details";
 import ExtensionSidebar from "./assets/sidebar";
 import ExtensionContent from "./assets/content";
 
@@ -50,8 +49,8 @@ class ExtensionsBlock extends Component {
   })[this.state.activeSlide];
 
   render(){
-    const adventures = _.takeRight(adventure_details, 2);
-    const expansions = _.takeRight(expansion_details, 2);
+    const adventures = _.takeRight(extension_details.adventures, 2);
+    const expansions = _.takeRight(extension_details.expansions, 2);
     let extensions = _.flatten(_.zip(adventures, expansions));
 
     return (

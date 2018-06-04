@@ -1,8 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import _ from 'lodash'
-import Block from "../../extension-blocks/extension-block";
+import Block from "../extension-block";
 import Overview from "./boss-blocks/overview";
 import Strategy from "../class-challenges/challenges/class-challenge/blocks/strategy";
 import Rewards from "../class-challenges/challenges/class-challenge/blocks/rewards";
@@ -10,22 +9,20 @@ import WingBosses from "./boss-blocks/wing-bosses";
 import Decklist from "./boss-blocks/decklist";
 import {blockSize} from "../../../utils/block-size";
 
-const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading, type, windowWidth}) => {
-  const filteredDecks = _.filter(decks, deck => deck.boss === boss.url);
-  const bossOverview = <Overview adventure={adventure.url}
-                                 type={type}
+const Boss = ({extensionCards, extension, wing, boss, decks, cardsLoading, extensionType, windowWidth}) => {
+  const filteredDecks = decks && decks.find(deck => deck.boss === boss.url);
+  const bossOverview = <Overview extension={extension.url}
                                  wing={wing}
                                  boss={boss}/>;
   const bossStrategy = <Strategy />;
   const bossRewards = <Rewards extensionCards={extensionCards}
                                cardsLoading={cardsLoading}
                                bossReward={boss.reward}/>;
-  const wingBosses = <WingBosses adventure={adventure.url}
+  const wingBosses = <WingBosses extension={extension.url}
                                  wing={wing.url}
-                                 type={type}
                                  activeBoss={boss.url}
                                  wingBosses={wing.bosses}/>;
-  const bossDecklist = <Decklist adventure={adventure.name}
+  const bossDecklist = <Decklist adventure={extension.name}
                                  decks={filteredDecks}/>;
 
   return (
@@ -40,10 +37,12 @@ const Boss = ({extensionCards, adventure, wing, boss, decks, cardsLoading, type,
 };
 
 Boss.propTypes = {
-  adventure: PropTypes.object,
+  extensionType: PropTypes.string.isRequired,
+  windowWidth: PropTypes.number.isRequired,
+  extensionCards: PropTypes.array,
+  extension: PropTypes.object,
   wing: PropTypes.object,
   boss: PropTypes.object,
-  extensionCards: PropTypes.array,
   decks: PropTypes.array,
   cardsLoading: PropTypes.bool
 };

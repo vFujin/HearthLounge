@@ -15,62 +15,9 @@ export const navItems = [
     homepage_block_width: 1
   },
   {
-    name: "expansions",
+    name: "extensions",
     icon: "expansions",
     homepage_block_width: 2,
-    submenu: [
-      {
-        name: "Goblins vs Gnomes",
-        url: "goblins-vs-gnomes"
-      },
-      {
-        name: "The Grand Tournament",
-        url: "the-grand-tournament"
-      },
-      {
-        name: "Whispers of the Old Gods",
-        url: "whispers-of-the-old-gods"
-      },
-      {
-        name: "Mean Streets of Gadgetzan",
-        url: "mean-streets-of-gadgetzan"
-      },
-      {
-        name: "Journey to Un'Goro",
-        url: "journey-to-ungoro"
-      },
-      {
-        name: "Knights of the Frozen Throne",
-        url: "knights-of-the-frozen-throne"
-      },
-      {
-        name: "Kobolds & Catacombs",
-        url: "kobolds-catacombs"
-      }
-    ]
-  },
-  {
-    name: "adventures",
-    icon: "adventures",
-    homepage_block_width: 0,
-    submenu: [
-      {
-        name: "Curse of Naxxramas",
-        url: "naxxramas"
-      },
-      {
-        name: "Blackrock Mountain",
-        url: "blackrock-mountain"
-      },
-      {
-        name: "The League of Explorers",
-        url: "the-league-of-explorers"
-      },
-      {
-        name: "One Night in Karazhan",
-        url: "karazhan",
-      }
-    ]
   },
   {
     name: "create-deck",

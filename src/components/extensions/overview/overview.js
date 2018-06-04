@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import ExtensionBlock from "../../../../../components/extension-blocks/extension-block";
-import {Art, About, Rewards, Cinematic, Gameboard, GameChanges} from "../../../../../components/extension-blocks/overview-blocks";
-import {blockSize} from "../../../../../utils/block-size";
+import ExtensionBlock from "../extension-block";
+import {Art, About, Rewards, Cinematic, Gameboard, GameChanges, Cost, Structure} from "./blocks";
+import {blockSize} from "../../../utils/block-size";
 
 const Overview = ({extension, gameCardbacks, windowWidth}) => {
     const {overview, name} = extension;
-    const {cinematic, gameboard, img, about, game_changes, cardbacks} = overview;
+    const {about, cinematic, gameboard, img, game_changes, cardbacks, cost, structure} = overview;
 
     const expansionArt = <Art src={img} name={name}/>;
     const expansionAbout = <About about={about}/>;
@@ -28,6 +28,20 @@ const Overview = ({extension, gameCardbacks, windowWidth}) => {
                           title="game changes"
                           blockWidth={blockSize(1, windowWidth)}
                           element={<GameChanges gameChanges={game_changes}/>}/>
+        }
+        {
+          cost &&
+          <ExtensionBlock page="overview"
+                          title="cost"
+                          blockWidth={blockSize(1, windowWidth)}
+                          element={<Cost extensionCost={cost}/>}/>
+        }
+        {
+          structure &&
+          <ExtensionBlock page="overview"
+                          title="cost"
+                          blockWidth={blockSize(1, windowWidth)}
+                          element={<Structure extensionStructure={structure}/>}/>
         }
       </ul>
     );

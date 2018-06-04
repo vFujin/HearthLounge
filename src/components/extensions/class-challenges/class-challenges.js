@@ -4,14 +4,14 @@ import {ClassChallenge, DungeonRun} from "./challenges";
 import ClassChallengeSelection from "./class-challenge-selection";
 import Icon from "../../icon";
 
-export default ({type, extension, classChallengeType, cards, cardsLoading, detailsChild}) => {
+export default ({extension, classChallengeType, cards, cardsLoading, detailsChild}) => {
   const classChallenge = extension.class_challenges.find(challenge => challenge.playerClass === detailsChild);
 
-  const listClassChallengeCards = () =>{
+  const listClassChallengeCards = () => {
     return (
         extension.class_challenges.map(challenge =>
             <li key={challenge.playerClass} className={`${challenge.playerClass} active-on-hover ${challenge.playerClass === detailsChild && 'active'}`}>
-              <Link to={`/${type}/${extension.url}/${classChallengeType}/${challenge.playerClass}`}>
+              <Link to={`/extensions/${extension.url}/${classChallengeType}/${challenge.playerClass}`}>
                 <Icon name={challenge.playerClass} />
               </Link>
             </li>

@@ -1,8 +1,9 @@
 import React from 'react';
 import Select from 'antd/lib/select';
 import {icon_filters} from '../../../../../../../../globals/filters';
-import {adventure_details} from '../../../../../../../../globals/adventure-details';
 import _ from 'lodash';
+import {extension_details} from "../../../../../../../../globals/extension-details";
+import Icon from "../../../../../../../../components/icon";
 
 const FormSelect = ({playerClass, value, deckAdventure, section, handleSelectChange}) =>{
   const {Option, OptGroup} = Select;
@@ -14,17 +15,17 @@ const FormSelect = ({playerClass, value, deckAdventure, section, handleSelectCha
   };
 
   const mapAdventures = () =>{
-    return _.map(adventure_details, adventure =>
+    return _.map(extension_details.adventures, adventure =>
         <Option value={adventure.name}
                 title={adventure.name}
                 key={adventure.url}>
-          <span className={`hs-icon icon-${adventure.url}`}></span> {adventure.name}
+          <Icon name={adventure.url} /> {adventure.name}
         </Option>
     )
   };
 
   const mapBosses = () =>{
-    const wing = adventure_details.filter(adventure => adventure.name === deckAdventure)[0].wings.details;
+    const wing = extension_details.adventures.find(adventure => adventure.name === deckAdventure).wings.details;
     const bosses = wing => wing.bosses.map(boss => <Option value={boss.name} key={boss.name}>{boss.name}</Option>);
 
     return _.map(wing, wing =>

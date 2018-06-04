@@ -1,22 +1,4 @@
-import {adventure_details} from '../globals/adventure-details';
-import {expansion_details} from '../globals/expansion-details';
-
-const data = (type) => type === "adventures" ? adventure_details : expansion_details;
-
-/**
- * Checks if adventure exists
- *
- * @example hearthlounge.firebaseapp.io/adventures/naxxramas
- * adventurePath -> naxxramas
- *
- * @param {string} adventurePath - adventure path taken from url
- * @returns {boolean}
- */
-export const adventureExists = (adventurePath) =>{
-  return adventure_details
-         .map(adventure => adventure.url)
-         .includes(adventurePath);
-};
+import {extension_details} from '../globals/extension-details';
 
 /**
  * Checks if adventure wing exists
@@ -25,15 +7,17 @@ export const adventureExists = (adventurePath) =>{
  * adventurePath -> naxxramas
  * detailsPath   -> the-arachnid-quarter
  *
- * @param {string} type
- * @param {string} adventurePath - adventure path taken from url
+ * @param {string} extensionType
+ * @param {string} extensionPath - adventure path taken from url
  * @param {string} detailsPath - adventure details path taken from url
  * @returns {boolean}
  */
-export const adventureWingExists = (type, adventurePath, detailsPath) => {
-  const adventureExists = data(type).find(adventure => adventure.url === adventurePath);
-  if (adventureExists.hasOwnProperty('wings')) {
-    return adventureExists.wings
+export const extensionWingExists = (extensionType, extensionPath, detailsPath) => {
+  const extensionExists = extension_details[extensionType]
+    .find(extension => extension.url === extensionPath);
+
+  if (extensionExists.hasOwnProperty('wings')) {
+    return extensionExists.wings
         .map(wing => wing.url)
         .includes(detailsPath);
   }
@@ -47,18 +31,19 @@ export const adventureWingExists = (type, adventurePath, detailsPath) => {
  * detailsPath   -> the-arachnid-quarter
  * bossPath      -> maexxna
  *
- * @param {string} type
- * @param {string} adventurePath - adventure path taken from url
+ * @param {string} extensionType
+ * @param {string} extensionPath - adventure path taken from url
  * @param {string} detailsPath - adventure details path taken from url
  * @param {string} bossPath - adventure details boss path taken from url
  * @returns {boolean}
  */
-export const adventureBossExists = (type, adventurePath, detailsPath, bossPath) => {
-  const adventureExists = data(type).find(adventure => adventure.url === adventurePath);
-  if(adventureExists.hasOwnProperty('wings')) {
-    return adventureExists.wings
-          .filter(wing => wing.url === detailsPath)
-          .map(wing => wing.bosses)[0]
+export const extensionBossExists = (extensionType, extensionPath, detailsPath, bossPath) => {
+  const extensionExists = extension_details[extensionType]
+    .find(extension => extension.url === extensionPath);
+
+  if(extensionExists.hasOwnProperty('wings')) {
+    return extensionExists.wings
+          .find(wing => wing.url === detailsPath).bosses
           .map(boss => boss.url)
           .includes(bossPath)
   }
@@ -70,28 +55,11 @@ export const adventureBossExists = (type, adventurePath, detailsPath, bossPath) 
  * @example hearthlounge.firebaseapp.io/expansions/goblins-vs-gnomes
  * expansionPath -> goblins-vs-gnomes
  *
- * @param {string} expansionPath - expansion path taken from url
+ * @param {string} expansionPath - extension path taken from url
+ * @param {string} extensionType - extension type f/e adventures, expansions
  * @returns {boolean}
  */
-export const expansionExists = (expansionPath) =>
-    expansion_details
+export const extensionExists = (expansionPath, extensionType) =>
+    extension_details[extensionType]
         .map(expansion => expansion.url)
         .includes(expansionPath);
-
-/**
- * Checks if expansion detail exists
- *
- * @example hearthlounge.firebaseapp.io/expansions/goblins-vs-gnomes/overview
- * expansionPath -> goblins-vs-gnomes
- * detailsPath   -> overview
- *
- *
- * @param {string} expansionPath - expansion path taken from url
- * @param {string} detailsPath - expansion details path taken from url
- * @returns {boolean}
- */
-
-export const expansionDetailExists = (expansionPath, detailsPath) =>
-    expansion_details
-        .find(expansion => expansion.url === expansionPath).extension_topbar_tabs
-        .map(expansion => expansion.url).includes(detailsPath);

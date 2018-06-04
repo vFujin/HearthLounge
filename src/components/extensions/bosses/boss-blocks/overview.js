@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AdventureBossImg from "../../../images/adventure-boss";
+import ExtensionBossImg from "../../../images/adventure-boss";
 
-const Overview = ({adventure, wing, boss, type}) => {
+const Overview = ({extension, wing, boss}) => {
   return (
     <div className="container__blocks--block-content overview">
-      <AdventureBossImg adventure={adventure} wing={wing.url} boss={boss.url} type={type}/>
+      <ExtensionBossImg extension={extension} wing={wing.url} boss={boss}/>
       <p><span>{boss.name}</span> is a part of <span>{wing.wing_title}</span> wing</p>
     </div>
   )
@@ -14,7 +14,7 @@ const Overview = ({adventure, wing, boss, type}) => {
 export default Overview;
 
 Overview.propTypes = {
-  adventure: PropTypes.string.isRequired,
+  extension: PropTypes.string.isRequired,
   wing: PropTypes.shape({
     wing_title: PropTypes.string,
     url: PropTypes.string

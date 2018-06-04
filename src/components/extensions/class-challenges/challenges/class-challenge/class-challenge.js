@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import Icon from "../../../../icon";
-import Block from "../../../../extension-blocks/extension-block";
+import Block from "../../../extension-block";
 import {Overview, Rewards, Strategy} from "./blocks";
 import {blockSize} from "../../../../../utils/block-size";
 

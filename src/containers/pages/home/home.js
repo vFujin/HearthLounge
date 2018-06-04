@@ -25,7 +25,7 @@ class Home extends PureComponent{
     if(hotDecks.loading) {
       updateDecks();
     }
-    if(posts.loading) {
+    if(!posts.loading && !posts.all) {
       updateRedditPosts();
     }
   }

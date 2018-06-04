@@ -2,22 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import Tooltip from 'antd/lib/tooltip';
-import AdventureBossImg from "../../../images/adventure-boss";
+import ExtensionBossImg from "../../../images/adventure-boss";
 
-const WingBosses = ({adventure, wing, activeBoss, wingBosses, type}) => {
+const WingBosses = ({extension, wing, activeBoss, wingBosses}) => {
 
   const mapBosses = () =>{
     return wingBosses.map(boss =>
         <Tooltip key={boss.url} title={boss.name} placement="bottom">
           <li className={boss.url === activeBoss ? 'active-boss' : ''}>
-            <Link to={`/${type}/${adventure}/${wing}/${boss.url}`}>
-              <AdventureBossImg adventure={adventure} wing={wing} boss={boss.url} type={type} />
+            <Link to={`/extensions/${extension}/${wing}/${boss.url}`}>
+              <ExtensionBossImg extension={extension}
+                                wing={wing}
+                                boss={boss} />
             </Link>
           </li>
         </Tooltip>
-    )  
+    )
   };
-  
+
   return (
     <ul className="container__blocks--block-content wing-bosses">
       {mapBosses()}
@@ -28,7 +30,7 @@ const WingBosses = ({adventure, wing, activeBoss, wingBosses, type}) => {
 export default WingBosses;
 
 WingBosses.propTypes = {
-  adventure: PropTypes.string.isRequired,
+  extension: PropTypes.string.isRequired,
   wing: PropTypes.string.isRequired,
   activeBoss: PropTypes.string.isRequired,
   wingBosses: PropTypes.array.isRequired,
