@@ -20,6 +20,7 @@ import {currentMonthTournaments, upcomingTournaments} from './tournaments/reduce
 import {posts, activePost} from './reddit/reducers';
 import {activeUserDecks, shortenedUserDetails} from "./user/reducers";
 import {allUsers} from "./admin/reducers";
+import streams from "./streams/reducer";
 import windowSize from "./app/window-size/reducer";
 import mobileMenuActive from "./app/mobile-menu/reducer";
 
@@ -58,6 +59,7 @@ const rootReducer = combineReducers({
     deckCommentDeletingStatus,
     deckDeletion
   }),
+  streams,
   tournaments: combineReducers({
     currentMonthTournaments,
     upcomingTournaments

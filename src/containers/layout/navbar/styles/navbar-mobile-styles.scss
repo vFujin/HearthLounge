@@ -18,6 +18,14 @@
         color: $pearl;
         text-transform: uppercase;
       }
+
+      .logo{
+        height: 100%;
+
+        svg {
+          height: 100%;
+        }
+      }
     }
   }
 

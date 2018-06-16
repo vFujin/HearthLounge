@@ -29,6 +29,8 @@ import {watchUserDeletion} from "./admin/remove-user/saga";
 import {watchUserUpdate} from "./admin/update-user/saga";
 import {watchTournaments} from "./tournaments/current-month/saga";
 import {watchUpcomingTournaments} from "./tournaments/upcoming/saga";
+import {watchStreamers} from "./streams/saga";
+import {watchStreamer} from "./streams/streamer/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -51,6 +53,9 @@ export default function* rootSaga() {
     //Tournaments
     watchTournaments(),
     watchUpcomingTournaments(),
+    //Streams
+    watchStreamers(),
+    watchStreamer(),
     //Reddit
     watchRedditPosts(),
     watchRedditPost(),

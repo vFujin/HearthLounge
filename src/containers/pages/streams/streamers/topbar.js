@@ -1,5 +1,5 @@
 import React from 'react';
-import Loader from '../../../components/loaders/diamond/loader';
+import Loader from '../../../../components/loaders/diamond/loader';
 
 const Topbar = props => {
   // let path = props.params.channel;

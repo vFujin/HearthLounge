@@ -22,6 +22,7 @@ nav {
         display: flex;
         align-items: center;
         padding-left: 1vh;
+        height: 100%;
 
         &:hover{
           background-color: $dark-grey;
@@ -31,6 +32,11 @@ nav {
           display: flex;
           align-items: center;
           height: 100%;
+
+          svg {
+            height: 100%;
+
+          }
 
           span{
             font-size: 8vh;

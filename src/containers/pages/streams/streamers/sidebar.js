@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Loader from '../../../components/loaders/diamond/loader';
-import Icon from "../../../components/icon";
+import Loader from '../../../../components/loaders/diamond/loader';
+import Icon from "../../../../components/icon";
 
 const Sidebar = props => {
 
@@ -16,7 +16,7 @@ const Sidebar = props => {
               className="preview"
               id={stream.channel.name}
               key={stream['_id']}>
-            <Link to={`/twitch/${stream.channel.name}`} >
+            <Link to={`/streamers/${stream.channel.name}`} >
               <div className="preview-info">
                 <div className="preview-topbar">
                   <div className="preview-name">{stream.channel.display_name}</div>

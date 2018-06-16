@@ -53,6 +53,16 @@ const AsyncDashboard = Loadable({
   loading: PageLoader
 });
 
+const AsyncStreams = Loadable({
+  loader: ()=>import('./pages/streams/streams'),
+  loading: PageLoader
+});
+
+const AsyncStreamer = Loadable({
+  loader: ()=>import('./pages/streams/streamer/streamer'),
+  loading: PageLoader
+});
+
 const AsyncMiscellaneous = Loadable({
   loader: ()=>import('./pages/miscellaneous/container'),
   loading: PageLoader
@@ -98,8 +108,11 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
               ? <AsyncExtensions routeObj={routeObj}/>
               : <NotFound page={routeObj.match.params.extension}/>
           } />
+
           <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
           <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
+          <Route path="/streamers"                component={AsyncStreams} />
+          <Route path="/streamers/:streamer"      component={AsyncStreamer} />
           <Route exact path="/reddit"             component={AsyncRedditPosts} />
           <Route path="/reddit/post/:postId"      component={RedditPost} />
           <Route path="/tournaments"              component={AsyncTournaments} />
@@ -108,10 +121,6 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
           <Route path="/dashboard"                component={AsyncDashboard} />
           <Route path="/:misc"                    component={AsyncMiscellaneous} />
           <Route path="*"                         component={AsyncNotFound} />
-          {/*/!*<Redirect from="twitch" to="twitch/all" />*!/*/}
-          {/*/!*<Route path="twitch"         component={Streams}>*!/*/}
-          {/*/!*<Route path=":channel"     component={Iframe}/>*!/*/}
-          {/*/!*</Route>*!/*/}
         </Switch>
     </div>
   )

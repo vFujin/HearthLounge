@@ -29,12 +29,12 @@ export const navItems = [
     icon: "trophy",
     homepage_block_width: 1
   },
-  // {
-  //   name: "Streamers",
-  //   url: 'twitch',
-  //   icon: "icon-twitch",
-  //   homepage_block_width: 2
-  // },
+  {
+    name: "streamers",
+    url: 'twitch',
+    icon: "twitch",
+    homepage_block_width: 2
+  },
   {
     name: "reddit",
     icon: "reddit",

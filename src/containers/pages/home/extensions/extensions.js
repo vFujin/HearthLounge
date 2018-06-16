@@ -49,9 +49,7 @@ class ExtensionsBlock extends Component {
   })[this.state.activeSlide];
 
   render(){
-    const adventures = _.takeRight(extension_details.adventures, 2);
-    const expansions = _.takeRight(extension_details.expansions, 2);
-    let extensions = _.flatten(_.zip(adventures, expansions));
+    let extensions = _.takeRight(extension_details, 4);
 
     return (
       <div className="slider">

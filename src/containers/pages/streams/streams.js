@@ -1,79 +1,69 @@
 import React, { Component } from 'react';
-import {TwitchClientId} from '../../../keys';
-import Sidebar from './sidebar';
-import Topbar from './topbar';
+import { connect } from "react-redux";
+import Sidebar from './streamers/sidebar';
+import Topbar from './streamers/topbar';
 import Loader from '../../../components/loaders/diamond/loader';
-import 'whatwg-fetch';
+import Streamer from './streamer/streamer';
+import {fetchStreamersRequest} from "../../../redux/streams/actions";
+import {fetchStreamerSuccess} from "../../../redux/streams/streamer/actions";
+import './styles.css';
 
-export class Streams extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      streams: [],
-      activeStreamer: null
-    };
-  }
-
+class Streams extends Component {
   componentDidMount() {
-    fetch('https://api.twitch.tv/kraken/search/streams?query=hearthstone&limit=10', {
-      headers: {
-        "Accept": 'application/vnd.twitchtv.v5+json',
-        "Client-Id": TwitchClientId
-      }
-    })
-      .then(r => r.json())
-      .then(data => {
-        console.log(data.streams);
-        this.setState({
-          streams: data.streams,
-          activeStreamer: data.streams[0].channel.name
-        })
-      })
+    this.props.fetchStreamersRequest();
   }
 
-  componentWillUnmount(){
-    this.setState({
-      streams: [],
-      activeStreamer: null
-    })
-  }
-
-  handlePreviewClick(e){
+  handlePreviewClick = (e) => {
     let streamer = e.currentTarget.id;
-    console.log(streamer);
-    this.setState({
-      activeStreamer: streamer
-    })
-  }
-
-  loadIframe() {
-    if (this.state.streams < 1) {
-      return <Loader/>;
-    }
-    else {
-      console.log(this.state.activeStreamer);
-      return React.cloneElement(this.props.children, {activeStreamer: this.state.activeStreamer})
-    }
+    this.props.fetchStreamerSuccess(streamer);
   };
 
-
   render() {
-    let path = this.props.params.channel;
+    const {loading, all, error, activeStreamer} = this.props.streams;
+
     return (
         <div className="container__page container__page--twoSided streams">
           <div className="container__page--inner  container__page--left">
-            <h3 className="sidebar__header">Filters</h3>
-            <Sidebar streams={this.state.streams} handlePreviewClick={(e)=>this.handlePreviewClick(e)}/>
+            <h3 className="sidebar__header">Streamers</h3>
+            <Sidebar streams={all} handlePreviewClick={this.handlePreviewClick}/>
           </div>
 
           <div className="container__page--inner container__page--right">
-            <Topbar streams={this.state.streams} activeStreamer={path}/>
+            <Topbar streams={all} activeStreamer={activeStreamer} />
             <div className="content">
-              {this.loadIframe()}
+              {
+                loading && <Loader/>
+              }
+              {
+                !loading && all.length > 0 && <Streamer />
+              }
+              {
+                !loading && all.length === 0 && !error && (
+                  <div>There are no streams currently.</div>
+                )
+              }
+              {
+                !loading && error && (
+                  <div>Couldn't load streams. Try again later.</div>
+                )
+              }
             </div>
           </div>
         </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  const { streams } = state;
+  return { streams };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchStreamersRequest: () => dispatch(fetchStreamersRequest()),
+    fetchStreamerSuccess: payload => dispatch(fetchStreamerSuccess(payload)),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Streams);
