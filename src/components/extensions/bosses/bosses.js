@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {extension_details} from "../../../globals/extension-details";
 
-const Bosses = ({extensionType, extension}) => {
+const Bosses = ({extension}) => {
   const tableData = (wing, extensionUrl) => {
-    let extensionDetailsFromUrl = extension_details[extensionType].filter(extension => extension.url === extensionUrl)
+    let extensionDetailsFromUrl = extension_details.filter(extension => extension.url === extensionUrl)
       .map(e => e.wings.map(w => w.url).some(w => w === wing.url))[0];
 
     const BossImg = ({boss}) => {
@@ -25,7 +25,7 @@ const Bosses = ({extensionType, extension}) => {
   };
 
   const bosses = () =>{
-    return extension_details[extensionType].filter(e => e.url === extension.url).map((ext, index) =>
+    return extension_details.filter(e => e.url === extension.url).map((ext, index) =>
         <table key={index}>
           <tbody>
           {ext.wings.map((wing, i) =>
@@ -45,6 +45,5 @@ const Bosses = ({extensionType, extension}) => {
 export default Bosses;
 
 Bosses.propTypes = {
-  extensionType: PropTypes.string.isRequired,
   extension: PropTypes.object.isRequired
 };

@@ -1,19 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import _ from "lodash";
 import {Link} from 'react-router-dom';
-import {icon_filters} from '../../../../globals/filters';
 import Icon from "../../../../components/icon";
+import {connect} from "react-redux";
+import Loader from "../../../../components/loaders/diamond/loader";
 
-const Sidebar = ({extensionType}) => {
+const Sidebar = ({extensionPath, info}) => {
+  const localStorageExtensions = localStorage.hearthloungeGameInfo && JSON.parse(localStorage.hearthloungeGameInfo).wild.slice(4);
 
-  const listExtensions = () =>{
+  const listExtensions = (extensions) =>{
+
     return (
-      icon_filters[extensionType].map((extension, index) =>
-        <li key={index} className={extensionType === extension.url ? 'selected' : undefined}>
-          <Link to={`/extensions/${extension.url}/overview`}
-                className={`${extension.url} ${extensionType === extension.url ? 'active' : undefined}`}>
-            <Icon name={extension.url} />
-            <p>{extension.name}</p>
+      extensions.map((extension, index) =>
+        <li key={index} className={extensionPath === _.kebabCase(extension) ? 'selected' : undefined}>
+          <Link to={`/extensions/${_.kebabCase(extension)}/overview`}
+                className={`${_.kebabCase(extension)} ${extensionPath === _.kebabCase(extension) ? 'active' : undefined}`}>
+            <Icon name={_.kebabCase(extension)} />
+            <p>{extension}</p>
           </Link>
         </li>
       )
@@ -23,13 +27,26 @@ const Sidebar = ({extensionType}) => {
   return (
     <div className="sidebar container__extension-list">
       <ul className="sidebar__body sidebar__body--extensions">
-        {listExtensions()}
+        {
+          info.loading && <Loader/>
+        }
+        {
+          ((!info.loading && info.wild) || localStorageExtensions) && listExtensions(localStorageExtensions)
+        }
+        {
+          !info.wild || !localStorageExtensions && <div>Couldn't load extensions. Try again later.</div>
+        }
       </ul>
     </div>
   );
 };
 
-export default Sidebar;
+const mapStateToProps = state => {
+  const { info } = state;
+  return { info };
+};
+
+export default connect(mapStateToProps)(Sidebar);;
 
 Sidebar.propTypes = {
   extensionType: PropTypes.string.isRequired

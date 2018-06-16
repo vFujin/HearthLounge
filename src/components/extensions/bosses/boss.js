@@ -9,7 +9,7 @@ import WingBosses from "./boss-blocks/wing-bosses";
 import Decklist from "./boss-blocks/decklist";
 import {blockSize} from "../../../utils/block-size";
 
-const Boss = ({extensionCards, extension, wing, boss, decks, cardsLoading, extensionType, windowWidth}) => {
+const Boss = ({extensionCards, extension, wing, boss, decks, cardsLoading, windowWidth}) => {
   const filteredDecks = decks && decks.find(deck => deck.boss === boss.url);
   const bossOverview = <Overview extension={extension.url}
                                  wing={wing}

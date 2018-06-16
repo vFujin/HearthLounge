@@ -12,9 +12,8 @@ import {extension_details} from '../globals/extension-details';
  * @param {string} detailsPath - adventure details path taken from url
  * @returns {boolean}
  */
-export const extensionWingExists = (extensionType, extensionPath, detailsPath) => {
-  const extensionExists = extension_details[extensionType]
-    .find(extension => extension.url === extensionPath);
+export const extensionWingExists = (extensionPath, detailsPath) => {
+  const extensionExists = extension_details.find(extension => extension.url === extensionPath);
 
   if (extensionExists.hasOwnProperty('wings')) {
     return extensionExists.wings
@@ -37,9 +36,8 @@ export const extensionWingExists = (extensionType, extensionPath, detailsPath) =
  * @param {string} bossPath - adventure details boss path taken from url
  * @returns {boolean}
  */
-export const extensionBossExists = (extensionType, extensionPath, detailsPath, bossPath) => {
-  const extensionExists = extension_details[extensionType]
-    .find(extension => extension.url === extensionPath);
+export const extensionBossExists = (extensionPath, detailsPath, bossPath) => {
+  const extensionExists = extension_details.find(extension => extension.url === extensionPath);
 
   if(extensionExists.hasOwnProperty('wings')) {
     return extensionExists.wings
@@ -55,11 +53,8 @@ export const extensionBossExists = (extensionType, extensionPath, detailsPath, b
  * @example hearthlounge.firebaseapp.io/expansions/goblins-vs-gnomes
  * expansionPath -> goblins-vs-gnomes
  *
- * @param {string} expansionPath - extension path taken from url
+ * @param {string} extension - extension path taken from url
  * @param {string} extensionType - extension type f/e adventures, expansions
  * @returns {boolean}
  */
-export const extensionExists = (expansionPath, extensionType) =>
-    extension_details[extensionType]
-        .map(expansion => expansion.url)
-        .includes(expansionPath);
+export const extensionExists = (extension) => extension_details.find(ext => ext.url === extension);

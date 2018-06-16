@@ -18,17 +18,15 @@ const components = {
   DungeonRun
 };
 
-const ExtensionDetails = ({cards, cardbacks,  extension, extensionType, details, detailsChild}) => {
+const ExtensionDetails = ({cards, cardbacks,  extension, details, detailsChild}) => {
   const extensionCards = cards[extension.url === 'naxxramas' ? 'Naxxramas' : extension.name];
-  const classChallengeType = extensionType === "expansions" ? "dungeon-run" : "class-challenges";
   const activeView = () => {
-    return extension_details[extensionType].find(a=>a.url === extension.url).extension_topbar_tabs.filter(extension => extension.url === details).map(page => {
+    return extension_details.find(a=>a.url === extension.url).extension_topbar_tabs.filter(extension => extension.url === details).map(page => {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
       return <Page key={page.url}
-                   extensionType={extensionType}
                    extension={extension}
-                   classChallengeType={classChallengeType}
+                   classChallengeType={"dungeon-run"}
                    cards={extensionCards}
                    isExtension
                    cardSet={extension.name}
@@ -48,12 +46,11 @@ const ExtensionDetails = ({cards, cardbacks,  extension, extensionType, details,
                  extensionCards={extensionCards}
                  cardsLoading={cards.loading}
                  wing={wing}
-                 extensionType={extensionType}
                  boss={activeBoss}/>
   };
 
   return <div className="content">
-    {(extensionWingExists(extensionType, extension.url, details) && extensionBossExists(extensionType, extension.url, details, detailsChild))
+    {(extensionWingExists(extension.url, details) && extensionBossExists(extension.url, details, detailsChild))
       ? bossDetails()
       : activeView()
     }

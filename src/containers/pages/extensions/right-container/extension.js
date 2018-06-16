@@ -6,11 +6,11 @@ import {extension_details} from "../../../../globals/extension-details";
 
 class Extension extends PureComponent{
   render() {
-    const {extensionType, routeObj} = this.props;
+    const {routeObj} = this.props;
     const {match, location} = routeObj;
     const {details, extension} = match.params;
     const detailsChild = location.pathname.split("/")[4];
-    const extensionObj = extension_details[extensionType].find(ext => ext.url === extension);
+    const extensionObj = extension_details.find(ext => ext.url === extension);
 
     return (
       <div className="container__page--inner container__page--right">
@@ -18,8 +18,7 @@ class Extension extends PureComponent{
                 details={details}/>
         <Content details={details}
                  detailsChild={detailsChild}
-                 extension={extensionObj}
-                 extensionType={extensionType}/>
+                 extension={extensionObj}/>
       </div>
     )
   }
@@ -28,7 +27,6 @@ class Extension extends PureComponent{
 export default Extension;
 
 Extension.propTypes = {
-  extensionType: PropTypes.string.isRequired,
   routeObj: PropTypes.shape({
     match: PropTypes.shape({
       params: PropTypes.shape({

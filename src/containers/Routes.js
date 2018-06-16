@@ -10,6 +10,8 @@ import RedditPost from './pages/reddit/post/post';
 import CreateDeckClassSelection  from './pages/create-deck/before-class-selection/class-selection';
 import CreateDeckClassSelected  from './pages/create-deck/after-class-selection/create-deck';
 import CreateDeckClassSelectedMobile from './pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile';
+import {extensionExists} from "../utils/checkIfPathExist";
+import NotFound from "../components/not-found/not-found";
 
 const AsyncDeckSelection = Loadable({
   loader: () => import('./pages/decks/deck-selection/deck-selection'),
@@ -23,6 +25,11 @@ const AsyncCards = Loadable({
 
 const AsyncExtensions = Loadable({
   loader: ()=>import('./pages/extensions/extensions'),
+  loading: PageLoader
+});
+
+const AsyncSelectExtension = Loadable({
+  loader: ()=>import('./pages/extensions/select-extension'),
   loading: PageLoader
 });
 
@@ -85,7 +92,12 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
           <Route exact path="/decks"              component={AsyncDeckSelection} />
           <Route path="/decks/:deckId/:deckTitle" component={Deck}/>
           <Route path="/cards"                    component={AsyncCards} />
-          <Route path="/extensions"               component={AsyncExtensions} />
+          <Route exact path="/extensions"         component={AsyncSelectExtension} />
+          <Route path="/extensions/:extension/:details"    render={routeObj =>
+            extensionExists(routeObj.match.params.extension)
+              ? <AsyncExtensions routeObj={routeObj}/>
+              : <NotFound page={routeObj.match.params.extension}/>
+          } />
           <Route exact path="/create-deck"        component={CreateDeckClassSelection} />
           <Route path="/create-deck/:playerClass" render={routeObj => validatePlayerClass(routeObj.match.params)} />
           <Route exact path="/reddit"             component={AsyncRedditPosts} />

@@ -4,24 +4,24 @@ import {extensionBossExists, extensionWingExists} from "../../../../utils/checkI
 import ExtensionDetails from './details';
 import NotFound from "../../../../components/not-found/not-found";
 
-const Content = ({detailsChild, details, extension, extensionType}) => {
+const Content = ({detailsChild, details, extension}) => {
 
   const detailsPath = extension.extension_topbar_tabs
     .map(tab => tab.url)
     .includes(details);
 
+
   const wingDetailsPath = detailsChild
-    ? extensionWingExists(extensionType, extension.url, details)
+    ? extensionWingExists(extension.url, details)
     : null;
   const bossDetailsPath = (detailsChild && wingDetailsPath)
-    ? extensionBossExists(extensionType, extension.url, details, detailsChild)
+    ? extensionBossExists(extension.url, details, detailsChild)
     : null;
 
   const notFoundPage = (detailsChild && wingDetailsPath) ? _.startCase(detailsChild) : _.startCase(details);
 
   return (detailsPath || (wingDetailsPath && bossDetailsPath))
     ? <ExtensionDetails extension={extension}
-                        extensionType={extensionType}
                         detailsChild={detailsChild}
                         details={details}/>
     : <NotFound page={notFoundPage} redirect="extensions"/>
