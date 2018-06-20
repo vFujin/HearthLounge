@@ -68,6 +68,11 @@ const AsyncMiscellaneous = Loadable({
   loading: PageLoader
 });
 
+const AsyncWelcome = Loadable({
+  loader: ()=>import('./pages/welcome/welcome'),
+  loading: PageLoader
+});
+
 const AsyncNotFound = Loadable({
   loader: ()=>import('../components/not-found/not-found'),
   loading: PageLoader
@@ -119,6 +124,7 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
           <Route path="/sign-in"                  component={AsyncEntry} />
           <Route path="/sign-up"                  component={AsyncEntry} />
           <Route path="/dashboard"                component={AsyncDashboard} />
+          <Route path="/welcome"                  component={AsyncWelcome} />
           <Route path="/:misc"                    component={AsyncMiscellaneous} />
           <Route path="*"                         component={AsyncNotFound} />
         </Switch>

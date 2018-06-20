@@ -1,0 +1,131 @@
+@import '../../../styles/colors';
+@import '../../../styles/mixins';
+
+#container .container__page.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 2vh);
+  margin: 0 1vh;
+  background: #474143;
+
+  //overflow: hidden;
+
+  .sections {
+    overflow: auto;
+    margin: 1vh;
+    @include slim-scrollbar();
+
+    section {
+      margin-bottom: 100px;
+      color: $pearl;
+
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h1 {
+          text-transform: uppercase;
+          color: $pearl;
+          position: relative;
+          display: inline-block;
+          margin-bottom: 20px;
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 1px;
+            background: $pearl;
+            width: 150%;
+            transform: translate(-50%);
+          }
+        }
+
+        h4 {
+          color: $light-grey;
+          font-style: italic;
+        }
+      }
+
+      .section__content {
+        display: flex;
+
+        img, > div {
+          flex-basis: 0;
+        }
+
+        img {
+          flex-grow: 5;
+        }
+
+        > div {
+          flex-grow: 7;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          ul {
+            position: relative;
+            z-index: 2;
+
+            .pageInfo {
+              display: flex;
+              color: $light-grey;
+              margin-bottom: 10px;
+              align-items: center;
+
+              &.implemented {
+                color: $mage;
+              }
+
+              &.not-implemented {
+                color: $bm
+              }
+
+              p {
+                font-style: italic;
+                &:first-letter{
+                  text-transform: capitalize;
+                }
+              }
+
+              span {
+                padding: 5px;
+                border: 2px solid;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+          }
+
+          .hs-icon {
+            position: absolute;
+            z-index: 1;
+            font-size: 200px;
+            opacity: .2;
+          }
+        }
+      }
+
+      &:nth-child(even){
+        > div {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+}
+

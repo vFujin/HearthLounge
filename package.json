@@ -7,10 +7,10 @@
     "babel-preset-latest": "^6.16.0",
     "enzyme": "^3.3.0",
     "faker": "^4.1.0",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^1.2.0",
     "jsdom": "11.2.0",
     "jsdom-global": "3.0.2",
-    "react-scripts": "1.0.12",
+    "react-scripts": "^1.1.4",
     "react-test-renderer": "^15.6.1"
   },
   "dependencies": {
@@ -44,5 +44,5 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://vfujin.github.io/HearthLounge"
+  "homepage": "http://sbsrnt.github.io/HearthLounge"
 }
