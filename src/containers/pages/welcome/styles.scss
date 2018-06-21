@@ -150,14 +150,32 @@
           padding: 0 20px;
           letter-spacing: 1.1px;
           line-height: 25px;
+          position: relative;
+
+          .hs-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 150px;
+            opacity: .2;
+          }
+
+          .hero {
+            position: absolute;
+            font-size: 30px;
+            top: -30px;
+            left: -30px;
+            opacity: .5;
+          }
 
           p {
             margin-bottom: 5px;
           }
+
           q{
             font-style: italic;
             color: $light-grey;
-
           }
 
           a {

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import CardInText from "../../../../../components/card/card-in-text";
+import Icon from "../../../../../components/icon";
 
 const ragnaros = <CardInText label="Ragnaros the Firelord" imgSrc="http://media.services.zam.com/v1/media/byName/hs/cards/enus/EX1_298.png" rarity="legendary"/>;
 const thrall = <CardInText label="Thrall" imgSrc="http://media.services.zam.com/v1/media/byName/hs/cards/enus/HERO_02.png" rarity="shaman"/>;
@@ -11,11 +12,13 @@ const neptulon = <CardInText label="Neptulon" imgSrc="http://media.services.zam.
 
 const CaseCards = () => (
     <div>
+      <span className="hero shaman in-text">Thrall</span>
       <p>After seeing what {ragnaros} has shown {thrall} about his vision of Azeroth and the destruction done to {firelands} with his deck {thrall} has thought: <q>My elementals are so weak...</q>.</p>
       <p>Orc was lost. He didn't know where to start finding new allies.</p>
       <p>Thankfully {adventurer} Shaman met during the exploration shown <Link to="/cards">HearthLounge Cards</Link> page.</p>
       <p><q>That's incredible!</q> - {thrall} shouted after filtering cards by Elemental race.</p>
       <p>Days passed and {thrall} was backed by no one other than {dustDevil} and {neptulon} himself.</p>
+      <Icon name="all-cards"/>
     </div>
 );
 
