@@ -1,0 +1,21 @@
+card {
+  font-weight: normal;
+  cursor: default;
+}
+
+.cardInText {
+  cursor: default;
+
+  .ant-tooltip-arrow{
+    display: none;
+  }
+
+  .ant-tooltip-inner {
+    background: transparent;
+    box-shadow: none;
+
+    img {
+      width: 200px;
+    }
+  }
+}

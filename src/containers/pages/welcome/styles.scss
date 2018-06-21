@@ -9,20 +9,23 @@
   margin: 0 1vh;
   background: #474143;
 
-  //overflow: hidden;
-
   .sections {
     overflow: auto;
     margin: 1vh;
     @include slim-scrollbar();
 
     section {
+      padding: 10px 10px 50px;
       margin-bottom: 100px;
+      margin-right: 1vh;
       color: $pearl;
 
+      &:nth-child(even){
+        background-color: rgba(white, .05);
 
-      &:last-child {
-        margin-bottom: 0;
+        > div {
+          flex-direction: row-reverse;
+        }
       }
 
       header {
@@ -49,7 +52,7 @@
         }
 
         h4 {
-          color: $light-grey;
+          color: $sea-color;
           font-style: italic;
         }
       }
@@ -81,9 +84,10 @@
               color: $light-grey;
               margin-bottom: 10px;
               align-items: center;
+              cursor: default;
 
               &.implemented {
-                color: $mage;
+                color: $naxx;
               }
 
               &.not-implemented {
@@ -112,20 +116,68 @@
           }
 
           .hs-icon {
+            will-change: transform;
             position: absolute;
             z-index: 1;
             font-size: 200px;
             opacity: .2;
+            animation: animate 5s infinite;
           }
         }
       }
 
-      &:nth-child(even){
+
+      .useCases {
+        display: flex;
+
+        &__prev, &__next {
+          flex-grow: 1;
+          padding: 20px;
+          font-size: 50px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          opacity: .3;
+          @include transition(all ease .4s);
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+
         > div {
-          flex-direction: row-reverse;
+          flex-grow: 5;
+          padding: 0 20px;
+          letter-spacing: 1.1px;
+          line-height: 25px;
+
+          p {
+            margin-bottom: 5px;
+          }
+          q{
+            font-style: italic;
+            color: $light-grey;
+
+          }
+
+          a {
+            color: $sea-color;
+            text-decoration: underline;
+          }
         }
       }
     }
   }
 }
 
+@keyframes animate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
