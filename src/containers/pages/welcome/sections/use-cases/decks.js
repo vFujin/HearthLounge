@@ -3,7 +3,6 @@ import CardInText from "../../../../../components/card/card-in-text";
 import {Link} from "react-router-dom";
 import Icon from "../../../../../components/icon";
 
-
 const valeera = <CardInText label="Valeera Sanguinar" imgSrc="http://media.services.zam.com/v1/media/byName/hs/cards/enus/HERO_03.png" rarity="rogue"/>;
 const jade = <CardInText label="Jade Druid" imgSrc="http://media.services.zam.com/v1/media/byName/hs/cards/enus/CFM_602.png" rarity="druid"/>;
 const malfurion = <CardInText label="Malfurion Stormrage" imgSrc="http://media.services.zam.com/v1/media/byName/hs/cards/enus/HERO_06.png" rarity="druid"/>;

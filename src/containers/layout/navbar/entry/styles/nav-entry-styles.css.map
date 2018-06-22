@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAII,YAAE;EACA,gBAAgB,ECGV,OAAO;EDFb,KAAK,ECCH,OAAO;EDEP,yBAAS;IACP,KAAK,EAAE,IAAI;IACX,UAAU,EAAE,WAAW;IACvB,WAAW,EAAE,CAAC;IAEd,4BAAG;MACD,KAAK,EAAE,IAAI",
+"sources": ["nav-entry-styles.scss","../../../../../styles/_colors.scss"],
+"names": [],
+"file": "nav-entry-styles.css"
+}

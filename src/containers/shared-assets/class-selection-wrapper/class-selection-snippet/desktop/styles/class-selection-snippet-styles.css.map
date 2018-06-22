@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,kCAAkC;EAChC,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,UAAU;EACjC,MAAM,EAAE,KAAK;EAEb,wCAAM;IACJ,KAAK,EAAE,IAAI;IACX,eAAe,EAAE,MAAM;IACvB,WAAW,EAAE,MAAM;IACnB,qBAAqB,EAAE,IAAI",
+"sources": ["class-selection-snippet-styles.scss"],
+"names": [],
+"file": "class-selection-snippet-styles.css"
+}

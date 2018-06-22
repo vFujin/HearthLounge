@@ -1,0 +1,19 @@
+/*
+ * Desktop
+ */
+@media only screen and (max-width: 815px) {
+  .subreddit__post {
+    grid-template-columns: 100%; }
+    .subreddit__post .container__page--inner .topbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      .subreddit__post .container__page--inner .topbar > div span {
+        font-size: inherit; }
+      .subreddit__post .container__page--inner .topbar .topbar__redirect,
+      .subreddit__post .container__page--inner .topbar .topbar__shortlink {
+        display: none; }
+      .subreddit__post .container__page--inner .topbar .topbar__created p:last-child {
+        font-size: inherit; } }
+
+/*# sourceMappingURL=mobile-styles.css.map */

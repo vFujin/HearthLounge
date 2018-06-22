@@ -1,0 +1,14 @@
+#container .entry.mobile {
+  grid-template-columns: 100%; }
+  #container .entry.mobile .wrapper {
+    margin: 1vh;
+    width: calc(100% - 2vh);
+    height: calc(100% - 2vh); }
+  #container .entry.mobile form .input-wrapper input {
+    width: 100%; }
+    #container .entry.mobile form .input-wrapper input[type=checkbox] {
+      width: 20%; }
+  #container .entry.mobile form .input-wrapper .tos label {
+    text-align: center; }
+
+/*# sourceMappingURL=entry-mobile-styles.css.map */

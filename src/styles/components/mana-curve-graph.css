@@ -1,0 +1,36 @@
+.graph {
+  text-align: center;
+  display: inline-flex;
+  align-self: center;
+  height: calc(100% - 2vh); }
+  .graph li {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .graph li:last-child {
+      margin-right: 0; }
+    .graph li div {
+      margin-bottom: 5px; }
+    .graph li .bar {
+      height: 100%;
+      background-color: #474143;
+      position: relative; }
+      .graph li .bar span {
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        -ms-transition: all ease 0.4s;
+        -o-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #3b679e;
+        background: -moz-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
+        background: -webkit-linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%);
+        background: linear-gradient(45deg, #3b679e 0%, #2b88d9 50%, #207cca 51%, #7db9e8 100%); }
+    .graph li .hs-icon {
+      font-size: 1.2vw; }
+
+/*# sourceMappingURL=mana-curve-graph.css.map */

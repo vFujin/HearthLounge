@@ -1,0 +1,48 @@
+button {
+  font-size: 12px;
+  cursor: pointer;
+  outline: 0;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  -ms-transition: all ease 0.2s;
+  -o-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  -webkit-box-shadow: 0 0 5px #474143;
+  -moz-box-shadow: 0 0 5px #474143;
+  box-shadow: 0 0 5px #474143; }
+  button.btn__default {
+    background: #474143;
+    color: #E7E2DA;
+    border: 1px solid #E7E2DA;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2; }
+    button.btn__default:hover {
+      color: #00a99c;
+      border-color: #00a99c; }
+  button.btn__delete {
+    background: #C41F3B;
+    color: #E7E2DA;
+    border: 1px solid #E7E2DA;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2; }
+    button.btn__delete:hover {
+      background: #98182e; }
+  button.btn__update {
+    background: #2e7d32;
+    color: #E7E2DA;
+    border: 1px solid #E7E2DA;
+    -webkit-transition: all ease 0.2;
+    -moz-transition: all ease 0.2;
+    -ms-transition: all ease 0.2;
+    -o-transition: all ease 0.2;
+    transition: all ease 0.2; }
+    button.btn__update:hover {
+      background: #205823; }
+
+/*# sourceMappingURL=buttons.css.map */

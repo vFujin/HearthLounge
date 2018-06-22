@@ -1,0 +1,13 @@
+.container__page--left .sidebar__body .addCard-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+  z-index: 10;
+  display: flex;
+  background: #474143; }
+  .container__page--left .sidebar__body .addCard-wrapper input {
+    width: 80%;
+    height: 100%; }
+
+/*# sourceMappingURL=deck-left-container-styles.css.map */

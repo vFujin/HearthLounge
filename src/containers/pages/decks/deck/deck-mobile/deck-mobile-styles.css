@@ -1,0 +1,9 @@
+.container__page--mobile .topbar__container {
+  width: 100%;
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between; }
+  .container__page--mobile .topbar__container .deck-details span {
+    font-size: calc(1em + 1vmin); }
+
+/*# sourceMappingURL=deck-mobile-styles.css.map */

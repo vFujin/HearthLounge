@@ -1,0 +1,28 @@
+/*
+ * Desktop
+ */
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  nav ul li a .nav__list--link > span {
+    font-size: calc(1em + 2vmin) !important; }
+  nav ul li a .nav__list--link > div {
+    font-size: calc(.3em + .7vmin) !important; } }
+/*
+ * Desktop
+ */
+@media only screen and (min-width: 816px) and (max-width: 1365px) {
+  nav .logo {
+    font-size: calc(.5em + .2vmin); }
+  nav.nav__mobile .nav__list--item span {
+    font-size: calc(1.5em + 2vmin); }
+  nav.nav__mobile .nav__list--item div {
+    font-size: calc(.4em + 1vmin) !important; } }
+/*
+ * Desktop
+ */
+@media only screen and (max-width: 815px) {
+  nav .logo {
+    font-size: calc(.5em + 1vmin); }
+  nav.nav__mobile .nav__list--item span {
+    font-size: calc(2em + 3vmin); } }
+
+/*# sourceMappingURL=navbar-media-queries.css.map */

@@ -1,0 +1,55 @@
+.subreddit__post {
+  grid-template-columns: 100%; }
+  .subreddit__post .container__page--inner .topbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .subreddit__post .container__page--inner .topbar > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center; }
+      .subreddit__post .container__page--inner .topbar > div span {
+        font-size: calc(.5em + 1vmin); }
+    .subreddit__post .container__page--inner .topbar__votes p {
+      opacity: .7; }
+    .subreddit__post .container__page--inner .topbar__created p:last-child {
+      opacity: 7;
+      font-size: calc(.5em + .5vmin); }
+    .subreddit__post .container__page--inner .topbar__redirect a {
+      display: flex;
+      align-items: center; }
+      .subreddit__post .container__page--inner .topbar__redirect a span {
+        margin-left: 5px; }
+  .subreddit__post .container__page--inner .content .container__details--section {
+    grid-template-rows: 5.5vh auto; }
+  .subreddit__post .container__page--inner .content .container__details--description {
+    position: relative; }
+    .subreddit__post .container__page--inner .content .container__details--description .section__body .section__body--content {
+      position: relative;
+      z-index: 2; }
+    .subreddit__post .container__page--inner .content .container__details--description .section__body .media-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .subreddit__post .container__page--inner .content .container__details--description .section__body .media-wrapper iframe {
+        width: 100%;
+        position: relative;
+        z-index: 10; }
+      .subreddit__post .container__page--inner .content .container__details--description .section__body .media-wrapper img {
+        width: 60%;
+        position: relative;
+        z-index: 10; }
+    .subreddit__post .container__page--inner .content .container__details--description .section__body .section__body--background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .1;
+      z-index: 1; }
+      .subreddit__post .container__page--inner .content .container__details--description .section__body .section__body--background span {
+        font-size: calc(17em + 1vmin); }
+
+/*# sourceMappingURL=styles.css.map */

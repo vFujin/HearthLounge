@@ -1,0 +1,46 @@
+.nav__mobile .login .nav__list--linkContainer {
+  background: linear-gradient(135deg, #00a99c 0%, #474143 100%);
+  border-bottom: 0; }
+  .nav__mobile .login .nav__list--linkContainer:hover {
+    background: linear-gradient(135deg, #00a99c 0%, #474143 100%) !important; }
+  .nav__mobile .login .nav__list--linkContainer.active {
+    background: linear-gradient(135deg, #00a99c 0%, #474143 100%); }
+    .nav__mobile .login .nav__list--linkContainer.active:hover {
+      background: #E7E2DA; }
+  .nav__mobile .login .nav__list--linkContainer .nav__list--link {
+    height: 100%; }
+    .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--imageWrapper {
+      height: 100%;
+      width: 50%; }
+      .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--imageWrapper img {
+        max-height: 100px;
+        max-width: 100px;
+        min-width: 50px;
+        min-height: 50px; }
+    .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--labelWrapper {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 100%;
+      width: calc(50% - 10px);
+      height: 100%;
+      margin: 0 5px; }
+      .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--labelWrapper .nav__list--aboutUser {
+        height: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column; }
+        .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--labelWrapper .nav__list--aboutUser p {
+          margin-bottom: 4px; }
+          .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--labelWrapper .nav__list--aboutUser p.aboutUser__rank {
+            color: #A69E9D; }
+          .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--labelWrapper .nav__list--aboutUser p:last-child {
+            margin-bottom: 0; }
+      .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--labelWrapper .nav__list--logout {
+        border-bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 5px; }
+        .nav__mobile .login .nav__list--linkContainer .nav__list--link .nav__list--labelWrapper .nav__list--logout span {
+          font-size: calc(1em + 1vmin); }
+
+/*# sourceMappingURL=nav-entry-mobile-styles.css.map */

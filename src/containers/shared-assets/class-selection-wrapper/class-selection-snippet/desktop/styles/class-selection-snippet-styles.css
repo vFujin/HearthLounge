@@ -1,0 +1,11 @@
+.create-deck-selection.create-deck {
+  display: grid;
+  grid-template-columns: 70% 5% 25%;
+  margin: 0 1vh; }
+  .create-deck-selection.create-deck > div {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 100%; }
+
+/*# sourceMappingURL=class-selection-snippet-styles.css.map */

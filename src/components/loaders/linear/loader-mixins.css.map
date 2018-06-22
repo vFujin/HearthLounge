@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AASA,0BAOC;EANC,EAAG;IACD,mBAAmB,EAAE,CAAC;EAExB,IAAK;IACH,mBAAmB,EAAE,KAAK",
+"sources": ["linear-loader.scss"],
+"names": [],
+"file": "linear-loader.css"
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,6BAA6B;EAC3B,kBAAkB,EAAE,uBAAuB;EAC3C,YAAY,EAAE,GAAG;EAEjB,qDAAuB;IACrB,kBAAkB,EAAE,OAAO",
+"sources": ["class-selection-snippet-mobile-styles.scss"],
+"names": [],
+"file": "class-selection-snippet-mobile-styles.css"
+}

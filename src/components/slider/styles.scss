@@ -1,0 +1,61 @@
+@import '../../styles/mixins';
+
+.slider {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__prev, &__next {
+    flex-grow: 1;
+    padding: 20px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    opacity: .3;
+    @include transition(all ease .4s);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__prev {
+    justify-content: flex-start;
+  }
+
+  &__next {
+    justify-content: flex-end;
+  }
+
+  &__dots {
+    position: absolute;
+    z-index: 9999;
+    bottom: -30px;
+    display: flex;
+  }
+
+  &__dot {
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    @include transition(all ease .4s);
+
+    &:hover, &--active {
+      opacity: 1;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  > div {
+    flex-grow: 5;
+    padding: 0 20px;
+    letter-spacing: 1.1px;
+    line-height: 25px;
+    position: relative;
+  }
+}

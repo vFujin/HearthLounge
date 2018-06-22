@@ -1,0 +1,57 @@
+.extensions-selection {
+  background: #474143;
+  margin: 0 1vh;
+  display: grid;
+  grid-template-rows: 5.5vh calc(100% - 5.5vh);
+  grid-template-columns: 100%;
+  align-items: center;
+  justify-items: center; }
+  .extensions-selection h3 {
+    color: #E7E2DA;
+    position: relative; }
+    .extensions-selection h3:after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: -30%;
+      height: 1px;
+      width: 150%;
+      background-color: #E7E2DA; }
+  .extensions-selection ul {
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100% - 2vh);
+    margin: 1vh;
+    overflow: auto;
+    justify-content: space-evenly;
+    align-content: space-evenly; }
+    .extensions-selection ul::-webkit-scrollbar {
+      width: 8px; }
+    .extensions-selection ul::-webkit-scrollbar-thumb {
+      background-color: rgba(231, 226, 218, 0.2);
+      border-radius: 4px; }
+    .extensions-selection ul::-webkit-scrollbar-thumb:hover {
+      background-color: #E7E2DA; }
+    .extensions-selection ul::-webkit-scrollbar-track {
+      background-color: transparent; }
+    .extensions-selection ul li {
+      margin: 20px;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+      .extensions-selection ul li a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1vh; }
+        .extensions-selection ul li a span {
+          padding: 10px;
+          font-size: 3em; }
+      .extensions-selection ul li:hover a span {
+        color: #474143; }
+      .extensions-selection ul li:hover a p {
+        color: #474143; }
+
+/*# sourceMappingURL=styles.css.map */

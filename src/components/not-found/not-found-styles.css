@@ -1,0 +1,32 @@
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  margin: auto;
+  height: 100%; }
+  .not-found.below-topbar {
+    height: calc(100% - 50px); }
+  .not-found .wrapper {
+    display: block;
+    text-align: center;
+    background: #474143;
+    color: #E7E2DA;
+    padding: 7vw; }
+    .not-found .wrapper .lost {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .not-found .wrapper .lost span {
+        font-size: 10vw;
+        margin-right: 1vw; }
+        .not-found .wrapper .lost span:last-child {
+          margin-right: 0; }
+    .not-found .wrapper .description {
+      margin-top: 5vh; }
+      .not-found .wrapper .description p span {
+        color: #00a99c; }
+    .not-found .wrapper button {
+      margin-top: 5vh; }
+
+/*# sourceMappingURL=not-found-styles.css.map */

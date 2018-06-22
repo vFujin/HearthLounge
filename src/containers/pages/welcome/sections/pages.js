@@ -2,6 +2,7 @@ import React from 'react';
 import Icon from "../../../../components/icon";
 import Tooltip from 'antd/lib/tooltip';
 import welcomeInfo from "../../../../globals/welcome";
+import Slider from "../../../../components/slider";
 
 const PagesSection = () => {
 
@@ -17,6 +18,8 @@ const PagesSection = () => {
     )
   };
 
+  const mapPageImgs = (img) => img.map(i => <img src={i} alt=""/>);
+
   return welcomeInfo.map(p => (
     <section className="welcomePage" key={p.page}>
       <header>
@@ -24,8 +27,10 @@ const PagesSection = () => {
         <h4>{p.about}</h4>
       </header>
       <div className="section__content">
-        <img src="" alt="foo"/>
-        <div>
+        <div className="section__content--img">
+          {p.img.length > 1 ? <Slider slides={[...mapPageImgs(p.img)]} /> : mapPageImgs(p.img)}
+        </div>
+        <div className="section__content--details">
           <ul>
             {mapPageInfos(p.info)}
           </ul>

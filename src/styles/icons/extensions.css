@@ -1,0 +1,637 @@
+/*
+ * Adventures
+ */
+.naxxramas {
+  color: #b5de3f; }
+  .naxxramas span {
+    border-color: #b5de3f; }
+  .naxxramas:hover {
+    background-color: #b5de3f;
+    color: #474143; }
+    .naxxramas:hover span {
+      border-color: #474143; }
+  .naxxramas.active {
+    background-color: #b5de3f;
+    color: #474143;
+    border-color: #b5de3f; }
+  .naxxramas.active-without-background {
+    color: #b5de3f !important;
+    background-color: transparent; }
+  .naxxramas.active-shadow {
+    color: #474143;
+    background: #b5de3f;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .naxxramas.active-shadow:hover {
+      color: black;
+      background: #adda29;
+      -webkit-box-shadow: 0 0 10px #b5de3f;
+      -moz-box-shadow: 0 0 10px #b5de3f;
+      box-shadow: 0 0 10px #b5de3f; }
+  .naxxramas.active-on-hover {
+    color: #474143; }
+    .naxxramas.active-on-hover:hover {
+      background-color: #b5de3f;
+      color: #474143;
+      border: #474143; }
+  .naxxramas.active-border {
+    border: 1px solid #b5de3f;
+    color: #474143;
+    background: transparent; }
+  .naxxramas.icon-font-active {
+    color: #474143; }
+  .naxxramas.table-row {
+    color: #474143; }
+    .naxxramas.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .naxxramas.table-row:nth-child(odd):hover {
+        background: #b5de3f; }
+    .naxxramas.table-row:hover {
+      background-color: #b5de3f;
+      color: #474143;
+      border: #474143; }
+  .naxxramas.blizzard-official {
+    background-color: #b5de3f;
+    color: #000; }
+  .naxxramas.gradient {
+    background: -moz-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(181, 222, 63, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(181, 222, 63, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #b5de3f; }
+
+.blackrock-mountain {
+  color: #fa5210; }
+  .blackrock-mountain span {
+    border-color: #fa5210; }
+  .blackrock-mountain:hover {
+    background-color: #fa5210;
+    color: #474143; }
+    .blackrock-mountain:hover span {
+      border-color: #474143; }
+  .blackrock-mountain.active {
+    background-color: #fa5210;
+    color: #474143;
+    border-color: #fa5210; }
+  .blackrock-mountain.active-without-background {
+    color: #fa5210 !important;
+    background-color: transparent; }
+  .blackrock-mountain.active-shadow {
+    color: #474143;
+    background: #fa5210;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .blackrock-mountain.active-shadow:hover {
+      color: black;
+      background: #ec4605;
+      -webkit-box-shadow: 0 0 10px #fa5210;
+      -moz-box-shadow: 0 0 10px #fa5210;
+      box-shadow: 0 0 10px #fa5210; }
+  .blackrock-mountain.active-on-hover {
+    color: #474143; }
+    .blackrock-mountain.active-on-hover:hover {
+      background-color: #fa5210;
+      color: #474143;
+      border: #474143; }
+  .blackrock-mountain.active-border {
+    border: 1px solid #fa5210;
+    color: #474143;
+    background: transparent; }
+  .blackrock-mountain.icon-font-active {
+    color: #474143; }
+  .blackrock-mountain.table-row {
+    color: #474143; }
+    .blackrock-mountain.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .blackrock-mountain.table-row:nth-child(odd):hover {
+        background: #fa5210; }
+    .blackrock-mountain.table-row:hover {
+      background-color: #fa5210;
+      color: #474143;
+      border: #474143; }
+  .blackrock-mountain.blizzard-official {
+    background-color: #fa5210;
+    color: #000; }
+  .blackrock-mountain.gradient {
+    background: -moz-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(250, 82, 16, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(250, 82, 16, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #fa5210; }
+
+.the-league-of-explorers {
+  color: #14a9a1; }
+  .the-league-of-explorers span {
+    border-color: #14a9a1; }
+  .the-league-of-explorers:hover {
+    background-color: #14a9a1;
+    color: #474143; }
+    .the-league-of-explorers:hover span {
+      border-color: #474143; }
+  .the-league-of-explorers.active {
+    background-color: #14a9a1;
+    color: #474143;
+    border-color: #14a9a1; }
+  .the-league-of-explorers.active-without-background {
+    color: #14a9a1 !important;
+    background-color: transparent; }
+  .the-league-of-explorers.active-shadow {
+    color: #474143;
+    background: #14a9a1;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .the-league-of-explorers.active-shadow:hover {
+      color: black;
+      background: #11928b;
+      -webkit-box-shadow: 0 0 10px #14a9a1;
+      -moz-box-shadow: 0 0 10px #14a9a1;
+      box-shadow: 0 0 10px #14a9a1; }
+  .the-league-of-explorers.active-on-hover {
+    color: #474143; }
+    .the-league-of-explorers.active-on-hover:hover {
+      background-color: #14a9a1;
+      color: #474143;
+      border: #474143; }
+  .the-league-of-explorers.active-border {
+    border: 1px solid #14a9a1;
+    color: #474143;
+    background: transparent; }
+  .the-league-of-explorers.icon-font-active {
+    color: #474143; }
+  .the-league-of-explorers.table-row {
+    color: #474143; }
+    .the-league-of-explorers.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .the-league-of-explorers.table-row:nth-child(odd):hover {
+        background: #14a9a1; }
+    .the-league-of-explorers.table-row:hover {
+      background-color: #14a9a1;
+      color: #474143;
+      border: #474143; }
+  .the-league-of-explorers.blizzard-official {
+    background-color: #14a9a1;
+    color: #000; }
+  .the-league-of-explorers.gradient {
+    background: -moz-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(20, 169, 161, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(20, 169, 161, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #14a9a1; }
+
+.karazhan {
+  color: #e2b4df; }
+  .karazhan span {
+    border-color: #e2b4df; }
+  .karazhan:hover {
+    background-color: #e2b4df;
+    color: #474143; }
+    .karazhan:hover span {
+      border-color: #474143; }
+  .karazhan.active {
+    background-color: #e2b4df;
+    color: #474143;
+    border-color: #e2b4df; }
+  .karazhan.active-without-background {
+    color: #e2b4df !important;
+    background-color: transparent; }
+  .karazhan.active-shadow {
+    color: #474143;
+    background: #e2b4df;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .karazhan.active-shadow:hover {
+      color: black;
+      background: #dba2d7;
+      -webkit-box-shadow: 0 0 10px #e2b4df;
+      -moz-box-shadow: 0 0 10px #e2b4df;
+      box-shadow: 0 0 10px #e2b4df; }
+  .karazhan.active-on-hover {
+    color: #474143; }
+    .karazhan.active-on-hover:hover {
+      background-color: #e2b4df;
+      color: #474143;
+      border: #474143; }
+  .karazhan.active-border {
+    border: 1px solid #e2b4df;
+    color: #474143;
+    background: transparent; }
+  .karazhan.icon-font-active {
+    color: #474143; }
+  .karazhan.table-row {
+    color: #474143; }
+    .karazhan.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .karazhan.table-row:nth-child(odd):hover {
+        background: #e2b4df; }
+    .karazhan.table-row:hover {
+      background-color: #e2b4df;
+      color: #474143;
+      border: #474143; }
+  .karazhan.blizzard-official {
+    background-color: #e2b4df;
+    color: #000; }
+  .karazhan.gradient {
+    background: -moz-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(226, 180, 223, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(226, 180, 223, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #e2b4df; }
+
+/*
+ * Expansions
+ */
+.goblins-vs-gnomes {
+  color: #fae43f; }
+  .goblins-vs-gnomes span {
+    border-color: #fae43f; }
+  .goblins-vs-gnomes:hover {
+    background-color: #fae43f;
+    color: #474143; }
+    .goblins-vs-gnomes:hover span {
+      border-color: #474143; }
+  .goblins-vs-gnomes.active {
+    background-color: #fae43f;
+    color: #474143;
+    border-color: #fae43f; }
+  .goblins-vs-gnomes.active-without-background {
+    color: #fae43f !important;
+    background-color: transparent; }
+  .goblins-vs-gnomes.active-shadow {
+    color: #474143;
+    background: #fae43f;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .goblins-vs-gnomes.active-shadow:hover {
+      color: black;
+      background: #f9e126;
+      -webkit-box-shadow: 0 0 10px #fae43f;
+      -moz-box-shadow: 0 0 10px #fae43f;
+      box-shadow: 0 0 10px #fae43f; }
+  .goblins-vs-gnomes.active-on-hover {
+    color: #474143; }
+    .goblins-vs-gnomes.active-on-hover:hover {
+      background-color: #fae43f;
+      color: #474143;
+      border: #474143; }
+  .goblins-vs-gnomes.active-border {
+    border: 1px solid #fae43f;
+    color: #474143;
+    background: transparent; }
+  .goblins-vs-gnomes.icon-font-active {
+    color: #474143; }
+  .goblins-vs-gnomes.table-row {
+    color: #474143; }
+    .goblins-vs-gnomes.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .goblins-vs-gnomes.table-row:nth-child(odd):hover {
+        background: #fae43f; }
+    .goblins-vs-gnomes.table-row:hover {
+      background-color: #fae43f;
+      color: #474143;
+      border: #474143; }
+  .goblins-vs-gnomes.blizzard-official {
+    background-color: #fae43f;
+    color: #000; }
+  .goblins-vs-gnomes.gradient {
+    background: -moz-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(250, 228, 63, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(250, 228, 63, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #fae43f; }
+
+.the-grand-tournament {
+  color: #f00; }
+  .the-grand-tournament span {
+    border-color: #f00; }
+  .the-grand-tournament:hover {
+    background-color: #f00;
+    color: #474143; }
+    .the-grand-tournament:hover span {
+      border-color: #474143; }
+  .the-grand-tournament.active {
+    background-color: #f00;
+    color: #474143;
+    border-color: #f00; }
+  .the-grand-tournament.active-without-background {
+    color: #f00 !important;
+    background-color: transparent; }
+  .the-grand-tournament.active-shadow {
+    color: #474143;
+    background: #f00;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .the-grand-tournament.active-shadow:hover {
+      color: black;
+      background: #e60000;
+      -webkit-box-shadow: 0 0 10px #f00;
+      -moz-box-shadow: 0 0 10px #f00;
+      box-shadow: 0 0 10px #f00; }
+  .the-grand-tournament.active-on-hover {
+    color: #474143; }
+    .the-grand-tournament.active-on-hover:hover {
+      background-color: #f00;
+      color: #474143;
+      border: #474143; }
+  .the-grand-tournament.active-border {
+    border: 1px solid #f00;
+    color: #474143;
+    background: transparent; }
+  .the-grand-tournament.icon-font-active {
+    color: #474143; }
+  .the-grand-tournament.table-row {
+    color: #474143; }
+    .the-grand-tournament.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .the-grand-tournament.table-row:nth-child(odd):hover {
+        background: #f00; }
+    .the-grand-tournament.table-row:hover {
+      background-color: #f00;
+      color: #474143;
+      border: #474143; }
+  .the-grand-tournament.blizzard-official {
+    background-color: #f00;
+    color: #000; }
+  .the-grand-tournament.gradient {
+    background: -moz-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #f00; }
+
+.whispers-of-the-old-gods {
+  color: #cc00ff; }
+  .whispers-of-the-old-gods span {
+    border-color: #cc00ff; }
+  .whispers-of-the-old-gods:hover {
+    background-color: #cc00ff;
+    color: #474143; }
+    .whispers-of-the-old-gods:hover span {
+      border-color: #474143; }
+  .whispers-of-the-old-gods.active {
+    background-color: #cc00ff;
+    color: #474143;
+    border-color: #cc00ff; }
+  .whispers-of-the-old-gods.active-without-background {
+    color: #cc00ff !important;
+    background-color: transparent; }
+  .whispers-of-the-old-gods.active-shadow {
+    color: #474143;
+    background: #cc00ff;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .whispers-of-the-old-gods.active-shadow:hover {
+      color: black;
+      background: #b800e6;
+      -webkit-box-shadow: 0 0 10px #cc00ff;
+      -moz-box-shadow: 0 0 10px #cc00ff;
+      box-shadow: 0 0 10px #cc00ff; }
+  .whispers-of-the-old-gods.active-on-hover {
+    color: #474143; }
+    .whispers-of-the-old-gods.active-on-hover:hover {
+      background-color: #cc00ff;
+      color: #474143;
+      border: #474143; }
+  .whispers-of-the-old-gods.active-border {
+    border: 1px solid #cc00ff;
+    color: #474143;
+    background: transparent; }
+  .whispers-of-the-old-gods.icon-font-active {
+    color: #474143; }
+  .whispers-of-the-old-gods.table-row {
+    color: #474143; }
+    .whispers-of-the-old-gods.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .whispers-of-the-old-gods.table-row:nth-child(odd):hover {
+        background: #cc00ff; }
+    .whispers-of-the-old-gods.table-row:hover {
+      background-color: #cc00ff;
+      color: #474143;
+      border: #474143; }
+  .whispers-of-the-old-gods.blizzard-official {
+    background-color: #cc00ff;
+    color: #000; }
+  .whispers-of-the-old-gods.gradient {
+    background: -moz-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(204, 0, 255, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(204, 0, 255, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #cc00ff; }
+
+.mean-streets-of-gadgetzan {
+  color: #d2cac5; }
+  .mean-streets-of-gadgetzan span {
+    border-color: #d2cac5; }
+  .mean-streets-of-gadgetzan:hover {
+    background-color: #d2cac5;
+    color: #474143; }
+    .mean-streets-of-gadgetzan:hover span {
+      border-color: #474143; }
+  .mean-streets-of-gadgetzan.active {
+    background-color: #d2cac5;
+    color: #474143;
+    border-color: #d2cac5; }
+  .mean-streets-of-gadgetzan.active-without-background {
+    color: #d2cac5 !important;
+    background-color: transparent; }
+  .mean-streets-of-gadgetzan.active-shadow {
+    color: #474143;
+    background: #d2cac5;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .mean-streets-of-gadgetzan.active-shadow:hover {
+      color: black;
+      background: #c7bdb7;
+      -webkit-box-shadow: 0 0 10px #d2cac5;
+      -moz-box-shadow: 0 0 10px #d2cac5;
+      box-shadow: 0 0 10px #d2cac5; }
+  .mean-streets-of-gadgetzan.active-on-hover {
+    color: #474143; }
+    .mean-streets-of-gadgetzan.active-on-hover:hover {
+      background-color: #d2cac5;
+      color: #474143;
+      border: #474143; }
+  .mean-streets-of-gadgetzan.active-border {
+    border: 1px solid #d2cac5;
+    color: #474143;
+    background: transparent; }
+  .mean-streets-of-gadgetzan.icon-font-active {
+    color: #474143; }
+  .mean-streets-of-gadgetzan.table-row {
+    color: #474143; }
+    .mean-streets-of-gadgetzan.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .mean-streets-of-gadgetzan.table-row:nth-child(odd):hover {
+        background: #d2cac5; }
+    .mean-streets-of-gadgetzan.table-row:hover {
+      background-color: #d2cac5;
+      color: #474143;
+      border: #474143; }
+  .mean-streets-of-gadgetzan.blizzard-official {
+    background-color: #d2cac5;
+    color: #000; }
+  .mean-streets-of-gadgetzan.gradient {
+    background: -moz-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(210, 202, 197, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(210, 202, 197, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #d2cac5; }
+
+.journey-to-ungoro {
+  color: #3d9e2c; }
+  .journey-to-ungoro span {
+    border-color: #3d9e2c; }
+  .journey-to-ungoro:hover {
+    background-color: #3d9e2c;
+    color: #474143; }
+    .journey-to-ungoro:hover span {
+      border-color: #474143; }
+  .journey-to-ungoro.active {
+    background-color: #3d9e2c;
+    color: #474143;
+    border-color: #3d9e2c; }
+  .journey-to-ungoro.active-without-background {
+    color: #3d9e2c !important;
+    background-color: transparent; }
+  .journey-to-ungoro.active-shadow {
+    color: #474143;
+    background: #3d9e2c;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .journey-to-ungoro.active-shadow:hover {
+      color: black;
+      background: #358a26;
+      -webkit-box-shadow: 0 0 10px #3d9e2c;
+      -moz-box-shadow: 0 0 10px #3d9e2c;
+      box-shadow: 0 0 10px #3d9e2c; }
+  .journey-to-ungoro.active-on-hover {
+    color: #474143; }
+    .journey-to-ungoro.active-on-hover:hover {
+      background-color: #3d9e2c;
+      color: #474143;
+      border: #474143; }
+  .journey-to-ungoro.active-border {
+    border: 1px solid #3d9e2c;
+    color: #474143;
+    background: transparent; }
+  .journey-to-ungoro.icon-font-active {
+    color: #474143; }
+  .journey-to-ungoro.table-row {
+    color: #474143; }
+    .journey-to-ungoro.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .journey-to-ungoro.table-row:nth-child(odd):hover {
+        background: #3d9e2c; }
+    .journey-to-ungoro.table-row:hover {
+      background-color: #3d9e2c;
+      color: #474143;
+      border: #474143; }
+  .journey-to-ungoro.blizzard-official {
+    background-color: #3d9e2c;
+    color: #000; }
+  .journey-to-ungoro.gradient {
+    background: -moz-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(61, 158, 44, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(61, 158, 44, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #3d9e2c; }
+
+.knights-of-the-frozen-throne {
+  color: #a5f2f3; }
+  .knights-of-the-frozen-throne span {
+    border-color: #a5f2f3; }
+  .knights-of-the-frozen-throne:hover {
+    background-color: #a5f2f3;
+    color: #474143; }
+    .knights-of-the-frozen-throne:hover span {
+      border-color: #474143; }
+  .knights-of-the-frozen-throne.active {
+    background-color: #a5f2f3;
+    color: #474143;
+    border-color: #a5f2f3; }
+  .knights-of-the-frozen-throne.active-without-background {
+    color: #a5f2f3 !important;
+    background-color: transparent; }
+  .knights-of-the-frozen-throne.active-shadow {
+    color: #474143;
+    background: #a5f2f3;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .knights-of-the-frozen-throne.active-shadow:hover {
+      color: black;
+      background: #8feff0;
+      -webkit-box-shadow: 0 0 10px #a5f2f3;
+      -moz-box-shadow: 0 0 10px #a5f2f3;
+      box-shadow: 0 0 10px #a5f2f3; }
+  .knights-of-the-frozen-throne.active-on-hover {
+    color: #474143; }
+    .knights-of-the-frozen-throne.active-on-hover:hover {
+      background-color: #a5f2f3;
+      color: #474143;
+      border: #474143; }
+  .knights-of-the-frozen-throne.active-border {
+    border: 1px solid #a5f2f3;
+    color: #474143;
+    background: transparent; }
+  .knights-of-the-frozen-throne.icon-font-active {
+    color: #474143; }
+  .knights-of-the-frozen-throne.table-row {
+    color: #474143; }
+    .knights-of-the-frozen-throne.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .knights-of-the-frozen-throne.table-row:nth-child(odd):hover {
+        background: #a5f2f3; }
+    .knights-of-the-frozen-throne.table-row:hover {
+      background-color: #a5f2f3;
+      color: #474143;
+      border: #474143; }
+  .knights-of-the-frozen-throne.blizzard-official {
+    background-color: #a5f2f3;
+    color: #000; }
+  .knights-of-the-frozen-throne.gradient {
+    background: -moz-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(165, 242, 243, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(165, 242, 243, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #a5f2f3; }
+
+/*# sourceMappingURL=extensions.css.map */

@@ -1,0 +1,46 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  position: relative; }
+  .slider__prev, .slider__next {
+    flex-grow: 1;
+    padding: 20px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    opacity: .3;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .slider__prev:hover, .slider__next:hover {
+      opacity: 1; }
+  .slider__prev {
+    justify-content: flex-start; }
+  .slider__next {
+    justify-content: flex-end; }
+  .slider__dots {
+    position: absolute;
+    z-index: 9999;
+    bottom: -30px;
+    display: flex; }
+  .slider__dot {
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .slider__dot:hover, .slider__dot--active {
+      opacity: 1; }
+    .slider__dot:last-child {
+      margin-right: 0; }
+  .slider > div {
+    flex-grow: 5;
+    padding: 0 20px;
+    letter-spacing: 1.1px;
+    line-height: 25px;
+    position: relative; }
+
+/*# sourceMappingURL=styles.css.map */

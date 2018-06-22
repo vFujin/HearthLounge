@@ -1,0 +1,40 @@
+.create-deck .container__page--mobile-twoSided .container__page--mobileContentWrapper {
+  height: calc(100% - 5.5vh - 10px); }
+.create-deck .createDeck__mobile--stats {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: calc(1em + 1vmin);
+  color: #E7E2DA;
+  background: linear-gradient(to right, rgba(208, 228, 247, 0) 0%, #a69e9d 10%, #474143 50%, #a69e9d 90%, rgba(135, 188, 234, 0) 100%);
+  border-top: 1px solid #E7E2DA;
+  border-bottom: 1px solid #E7E2DA; }
+  .create-deck .createDeck__mobile--stats span.hs-icon {
+    font-size: calc(1em + 1vmin); }
+
+/*
+ * Desktop
+ */
+@media only screen and (max-width: 815px) {
+  #container .container__page.create-deck {
+    grid-template-rows: 5.5vh 77.5vh; }
+  #container .container__page.desktop .container__page--inner, #container .container__page .container__page--inner.afterClassSelection {
+    grid-template-rows: initial !important; }
+    #container .container__page.desktop .container__page--inner .content, #container .container__page .container__page--inner.afterClassSelection .content {
+      margin-left: 0; }
+      #container .container__page.desktop .container__page--inner .content.contentWithStats, #container .container__page .container__page--inner.afterClassSelection .content.contentWithStats {
+        display: grid;
+        grid-template-rows: 5vh 72.5vh;
+        margin: 0; }
+      #container .container__page.desktop .container__page--inner .content .decklist__wrapper, #container .container__page .container__page--inner.afterClassSelection .content .decklist__wrapper {
+        display: flex;
+        height: 100%; }
+        #container .container__page.desktop .container__page--inner .content .decklist__wrapper .sidebar__body, #container .container__page .container__page--inner.afterClassSelection .content .decklist__wrapper .sidebar__body {
+          margin-top: 0;
+          width: 100%; }
+          #container .container__page.desktop .container__page--inner .content .decklist__wrapper .sidebar__body .table-scroll table thead tr, #container .container__page .container__page--inner.afterClassSelection .content .decklist__wrapper .sidebar__body .table-scroll table thead tr {
+            font-size: calc(1em + 1vmin); }
+      #container .container__page.desktop .container__page--inner .content .container__page--mobile-twoSided .container__page--mobileContentWrapper, #container .container__page .container__page--inner.afterClassSelection .content .container__page--mobile-twoSided .container__page--mobileContentWrapper {
+        height: calc(100% - 11.5vh); } }
+
+/*# sourceMappingURL=create-deck-mobile-styles.css.map */

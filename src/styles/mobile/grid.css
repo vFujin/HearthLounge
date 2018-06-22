@@ -1,0 +1,5 @@
+@media only screen and (max-width: 767px) {
+  #container .container__index.home .home__list .home__block .home__block--header {
+    grid-template-columns: 100%; } }
+
+/*# sourceMappingURL=grid.css.map */

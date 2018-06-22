@@ -1,0 +1,23 @@
+.separator {
+  display: flex;
+  align-items: center;
+  background: #474143;
+  position: relative; }
+  .separator:before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 95%;
+    top: 2.5%;
+    left: calc(50% - .5px);
+    background-color: #A69E9D; }
+  .separator p {
+    background: #474143;
+    color: #A69E9D;
+    border: 1px solid #A69E9D;
+    padding: 15px;
+    position: relative;
+    text-transform: uppercase;
+    border-radius: 50%; }
+
+/*# sourceMappingURL=separator-styles.css.map */

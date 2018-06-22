@@ -1,8 +1,20 @@
+import DecksImg from '../images/welcome/decks.jpg';
+import Deck1Img from '../images/welcome/deck.jpg';
+import Deck2Img from '../images/welcome/deck2.jpg';
+import CardsImg from '../images/welcome/cards.jpg';
+import ExtensionsImg from '../images/welcome/extensions.jpg';
+import CreateDeckImg from '../images/welcome/create-deck.jpg';
+import CreateDeck2Img from '../images/welcome/create-deck2.jpg';
+import TournamentsImg from '../images/welcome/tournaments.jpg';
+import RedditPostsImg from '../images/welcome/reddit-posts.jpg';
+import RedditPostImg from '../images/welcome/reddit-post.jpg';
+
 export default [
   {
     page: 'decks',
     icon: 'deck',
     about: 'Want to discover a new deck? This is the place.',
+    img: [DecksImg],
     info: [
       {
         text: 'search for decks created by other users',
@@ -22,6 +34,7 @@ export default [
     page: 'deck',
     icon: 'deck',
     about: 'Check the guide, check the decklist, check the comments. Everything you need to know about particular deck is right here.',
+    img: [Deck1Img, Deck2Img],
     info: [
       {
         text: 'deck details, guide and comments in one view',
@@ -73,6 +86,7 @@ export default [
     page: 'cards',
     icon: 'all-cards',
     about: 'YOU FACE.. yes, the Eredar Lord is here. So everyone get in here and explore all cards that are in the game!',
+    img: [CardsImg],
     info: [
       {
         text: 'instantaneous card filtering by name, set, cost and many more',
@@ -92,6 +106,7 @@ export default [
     page: 'extensions',
     icon: 'expansions',
     about: 'Having hard time beating Professor Putricide or searching information about extension? Good news everyone, because everything related to Hearthstone expansions and adventures as well as guides and boss strategies can be found in this page',
+    img: [ExtensionsImg],
     info: [
       {
         text: 'extensions in one view',
@@ -115,6 +130,7 @@ export default [
     page: 'create deck',
     icon: 'create-deck',
     about: 'Tired of using different services just to create or share your deck? Behold, the might of HearthLounge!',
+    img: [CreateDeckImg, CreateDeck2Img],
     info: [
       {
         text: 'create new deck or import existing one via deckstring',
@@ -150,6 +166,7 @@ export default [
     page: 'tournaments',
     icon: 'trophy',
     about: "Always wanted to join a tournament but didn't know where to find it? Or maybe you wanted to watch a tournament but couldn't find any channels broadcasting them? We got you covered.",
+    img: [TournamentsImg],
     info: [
       {
         text: 'tournaments shown this month',
@@ -181,6 +198,7 @@ export default [
     page: 'streamers',
     icon: 'twitch',
     about: 'Looking for a player who shows the real gameplay? Or maybe a tournament channel that is currently broadcasting? This is the page dedicated just for that.',
+    img: [],
     info: [
       {
         text: 'filter broadcasters by class they are playing',
@@ -208,6 +226,7 @@ export default [
     page: 'reddit',
     icon: 'reddit',
     about: 'Latest information about game, fresh memes, quality gameplay clips, top-notch RNG screenshots are right here, in subreddit dedicated just for Hearthstone',
+    img: [RedditPostsImg, RedditPostImg],
     info: [
       {
         text: 'filter reddit posts by clips, tweets, images or blizzard announcements',

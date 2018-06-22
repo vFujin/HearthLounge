@@ -1,0 +1,7 @@
+.create-deck-selection-mobile {
+  grid-template-rows: 5.5vh 76.5vh !important;
+  grid-row-gap: 1vh; }
+  .create-deck-selection-mobile .container__page--inner {
+    grid-template-rows: inherit; }
+
+/*# sourceMappingURL=class-selection-snippet-mobile-styles.css.map */

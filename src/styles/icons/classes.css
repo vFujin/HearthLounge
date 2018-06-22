@@ -1,0 +1,757 @@
+.druid {
+  color: #FF7D0A; }
+  .druid span {
+    border-color: #FF7D0A; }
+  .druid:hover {
+    background-color: #FF7D0A;
+    color: #474143; }
+    .druid:hover span {
+      border-color: #474143; }
+  .druid.active {
+    background-color: #FF7D0A;
+    color: #474143;
+    border-color: #FF7D0A; }
+  .druid.active-without-background {
+    color: #FF7D0A !important;
+    background-color: transparent; }
+  .druid.active-shadow {
+    color: #474143;
+    background: #FF7D0A;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .druid.active-shadow:hover {
+      color: black;
+      background: #f07000;
+      -webkit-box-shadow: 0 0 10px #FF7D0A;
+      -moz-box-shadow: 0 0 10px #FF7D0A;
+      box-shadow: 0 0 10px #FF7D0A; }
+  .druid.active-on-hover {
+    color: #474143; }
+    .druid.active-on-hover:hover {
+      background-color: #FF7D0A;
+      color: #474143;
+      border: #474143; }
+  .druid.active-border {
+    border: 1px solid #FF7D0A;
+    color: #474143;
+    background: transparent; }
+  .druid.icon-font-active {
+    color: #474143; }
+  .druid.table-row {
+    color: #474143; }
+    .druid.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .druid.table-row:nth-child(odd):hover {
+        background: #FF7D0A; }
+    .druid.table-row:hover {
+      background-color: #FF7D0A;
+      color: #474143;
+      border: #474143; }
+  .druid.blizzard-official {
+    background-color: #FF7D0A;
+    color: #000; }
+  .druid.gradient {
+    background: -moz-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 125, 10, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 125, 10, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #FF7D0A; }
+
+.hunter {
+  color: #ABD473; }
+  .hunter span {
+    border-color: #ABD473; }
+  .hunter:hover {
+    background-color: #ABD473;
+    color: #474143; }
+    .hunter:hover span {
+      border-color: #474143; }
+  .hunter.active {
+    background-color: #ABD473;
+    color: #474143;
+    border-color: #ABD473; }
+  .hunter.active-without-background {
+    color: #ABD473 !important;
+    background-color: transparent; }
+  .hunter.active-shadow {
+    color: #474143;
+    background: #ABD473;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .hunter.active-shadow:hover {
+      color: black;
+      background: #9fce5f;
+      -webkit-box-shadow: 0 0 10px #ABD473;
+      -moz-box-shadow: 0 0 10px #ABD473;
+      box-shadow: 0 0 10px #ABD473; }
+  .hunter.active-on-hover {
+    color: #474143; }
+    .hunter.active-on-hover:hover {
+      background-color: #ABD473;
+      color: #474143;
+      border: #474143; }
+  .hunter.active-border {
+    border: 1px solid #ABD473;
+    color: #474143;
+    background: transparent; }
+  .hunter.icon-font-active {
+    color: #474143; }
+  .hunter.table-row {
+    color: #474143; }
+    .hunter.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .hunter.table-row:nth-child(odd):hover {
+        background: #ABD473; }
+    .hunter.table-row:hover {
+      background-color: #ABD473;
+      color: #474143;
+      border: #474143; }
+  .hunter.blizzard-official {
+    background-color: #ABD473;
+    color: #000; }
+  .hunter.gradient {
+    background: -moz-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(171, 212, 115, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(171, 212, 115, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #ABD473; }
+
+.mage {
+  color: #69CCF0; }
+  .mage span {
+    border-color: #69CCF0; }
+  .mage:hover {
+    background-color: #69CCF0;
+    color: #474143; }
+    .mage:hover span {
+      border-color: #474143; }
+  .mage.active {
+    background-color: #69CCF0;
+    color: #474143;
+    border-color: #69CCF0; }
+  .mage.active-without-background {
+    color: #69CCF0 !important;
+    background-color: transparent; }
+  .mage.active-shadow {
+    color: #474143;
+    background: #69CCF0;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .mage.active-shadow:hover {
+      color: black;
+      background: #52c4ee;
+      -webkit-box-shadow: 0 0 10px #69CCF0;
+      -moz-box-shadow: 0 0 10px #69CCF0;
+      box-shadow: 0 0 10px #69CCF0; }
+  .mage.active-on-hover {
+    color: #474143; }
+    .mage.active-on-hover:hover {
+      background-color: #69CCF0;
+      color: #474143;
+      border: #474143; }
+  .mage.active-border {
+    border: 1px solid #69CCF0;
+    color: #474143;
+    background: transparent; }
+  .mage.icon-font-active {
+    color: #474143; }
+  .mage.table-row {
+    color: #474143; }
+    .mage.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .mage.table-row:nth-child(odd):hover {
+        background: #69CCF0; }
+    .mage.table-row:hover {
+      background-color: #69CCF0;
+      color: #474143;
+      border: #474143; }
+  .mage.blizzard-official {
+    background-color: #69CCF0;
+    color: #000; }
+  .mage.gradient {
+    background: -moz-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(105, 204, 240, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(105, 204, 240, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #69CCF0; }
+
+.paladin {
+  color: #F58CBA; }
+  .paladin span {
+    border-color: #F58CBA; }
+  .paladin:hover {
+    background-color: #F58CBA;
+    color: #474143; }
+    .paladin:hover span {
+      border-color: #474143; }
+  .paladin.active {
+    background-color: #F58CBA;
+    color: #474143;
+    border-color: #F58CBA; }
+  .paladin.active-without-background {
+    color: #F58CBA !important;
+    background-color: transparent; }
+  .paladin.active-shadow {
+    color: #474143;
+    background: #F58CBA;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .paladin.active-shadow:hover {
+      color: black;
+      background: #f375ac;
+      -webkit-box-shadow: 0 0 10px #F58CBA;
+      -moz-box-shadow: 0 0 10px #F58CBA;
+      box-shadow: 0 0 10px #F58CBA; }
+  .paladin.active-on-hover {
+    color: #474143; }
+    .paladin.active-on-hover:hover {
+      background-color: #F58CBA;
+      color: #474143;
+      border: #474143; }
+  .paladin.active-border {
+    border: 1px solid #F58CBA;
+    color: #474143;
+    background: transparent; }
+  .paladin.icon-font-active {
+    color: #474143; }
+  .paladin.table-row {
+    color: #474143; }
+    .paladin.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .paladin.table-row:nth-child(odd):hover {
+        background: #F58CBA; }
+    .paladin.table-row:hover {
+      background-color: #F58CBA;
+      color: #474143;
+      border: #474143; }
+  .paladin.blizzard-official {
+    background-color: #F58CBA;
+    color: #000; }
+  .paladin.gradient {
+    background: -moz-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(245, 140, 186, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(245, 140, 186, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #F58CBA; }
+
+.priest {
+  color: #FFFFFF; }
+  .priest span {
+    border-color: #FFFFFF; }
+  .priest:hover {
+    background-color: #FFFFFF;
+    color: #474143; }
+    .priest:hover span {
+      border-color: #474143; }
+  .priest.active {
+    background-color: #FFFFFF;
+    color: #474143;
+    border-color: #FFFFFF; }
+  .priest.active-without-background {
+    color: #FFFFFF !important;
+    background-color: transparent; }
+  .priest.active-shadow {
+    color: #474143;
+    background: #FFFFFF;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .priest.active-shadow:hover {
+      color: black;
+      background: #f2f2f2;
+      -webkit-box-shadow: 0 0 10px #FFFFFF;
+      -moz-box-shadow: 0 0 10px #FFFFFF;
+      box-shadow: 0 0 10px #FFFFFF; }
+  .priest.active-on-hover {
+    color: #474143; }
+    .priest.active-on-hover:hover {
+      background-color: #FFFFFF;
+      color: #474143;
+      border: #474143; }
+  .priest.active-border {
+    border: 1px solid #FFFFFF;
+    color: #474143;
+    background: transparent; }
+  .priest.icon-font-active {
+    color: #474143; }
+  .priest.table-row {
+    color: #474143; }
+    .priest.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .priest.table-row:nth-child(odd):hover {
+        background: #FFFFFF; }
+    .priest.table-row:hover {
+      background-color: #FFFFFF;
+      color: #474143;
+      border: #474143; }
+  .priest.blizzard-official {
+    background-color: #FFFFFF;
+    color: #000; }
+  .priest.gradient {
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #FFFFFF; }
+
+.rogue {
+  color: #FFF569; }
+  .rogue span {
+    border-color: #FFF569; }
+  .rogue:hover {
+    background-color: #FFF569;
+    color: #474143; }
+    .rogue:hover span {
+      border-color: #474143; }
+  .rogue.active {
+    background-color: #FFF569;
+    color: #474143;
+    border-color: #FFF569; }
+  .rogue.active-without-background {
+    color: #FFF569 !important;
+    background-color: transparent; }
+  .rogue.active-shadow {
+    color: #474143;
+    background: #FFF569;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .rogue.active-shadow:hover {
+      color: black;
+      background: #fff350;
+      -webkit-box-shadow: 0 0 10px #FFF569;
+      -moz-box-shadow: 0 0 10px #FFF569;
+      box-shadow: 0 0 10px #FFF569; }
+  .rogue.active-on-hover {
+    color: #474143; }
+    .rogue.active-on-hover:hover {
+      background-color: #FFF569;
+      color: #474143;
+      border: #474143; }
+  .rogue.active-border {
+    border: 1px solid #FFF569;
+    color: #474143;
+    background: transparent; }
+  .rogue.icon-font-active {
+    color: #474143; }
+  .rogue.table-row {
+    color: #474143; }
+    .rogue.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .rogue.table-row:nth-child(odd):hover {
+        background: #FFF569; }
+    .rogue.table-row:hover {
+      background-color: #FFF569;
+      color: #474143;
+      border: #474143; }
+  .rogue.blizzard-official {
+    background-color: #FFF569;
+    color: #000; }
+  .rogue.gradient {
+    background: -moz-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(255, 245, 105, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(255, 245, 105, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #FFF569; }
+
+.shaman {
+  color: #0070DE; }
+  .shaman span {
+    border-color: #0070DE; }
+  .shaman:hover {
+    background-color: #0070DE;
+    color: #474143; }
+    .shaman:hover span {
+      border-color: #474143; }
+  .shaman.active {
+    background-color: #0070DE;
+    color: #474143;
+    border-color: #0070DE; }
+  .shaman.active-without-background {
+    color: #0070DE !important;
+    background-color: transparent; }
+  .shaman.active-shadow {
+    color: #474143;
+    background: #0070DE;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .shaman.active-shadow:hover {
+      color: black;
+      background: #0063c5;
+      -webkit-box-shadow: 0 0 10px #0070DE;
+      -moz-box-shadow: 0 0 10px #0070DE;
+      box-shadow: 0 0 10px #0070DE; }
+  .shaman.active-on-hover {
+    color: #474143; }
+    .shaman.active-on-hover:hover {
+      background-color: #0070DE;
+      color: #474143;
+      border: #474143; }
+  .shaman.active-border {
+    border: 1px solid #0070DE;
+    color: #474143;
+    background: transparent; }
+  .shaman.icon-font-active {
+    color: #474143; }
+  .shaman.table-row {
+    color: #474143; }
+    .shaman.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .shaman.table-row:nth-child(odd):hover {
+        background: #0070DE; }
+    .shaman.table-row:hover {
+      background-color: #0070DE;
+      color: #474143;
+      border: #474143; }
+  .shaman.blizzard-official {
+    background-color: #0070DE;
+    color: #000; }
+  .shaman.gradient {
+    background: -moz-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(0, 112, 222, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(0, 112, 222, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #0070DE; }
+
+.warlock {
+  color: #9482C9; }
+  .warlock span {
+    border-color: #9482C9; }
+  .warlock:hover {
+    background-color: #9482C9;
+    color: #474143; }
+    .warlock:hover span {
+      border-color: #474143; }
+  .warlock.active {
+    background-color: #9482C9;
+    color: #474143;
+    border-color: #9482C9; }
+  .warlock.active-without-background {
+    color: #9482C9 !important;
+    background-color: transparent; }
+  .warlock.active-shadow {
+    color: #474143;
+    background: #9482C9;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .warlock.active-shadow:hover {
+      color: black;
+      background: #8570c1;
+      -webkit-box-shadow: 0 0 10px #9482C9;
+      -moz-box-shadow: 0 0 10px #9482C9;
+      box-shadow: 0 0 10px #9482C9; }
+  .warlock.active-on-hover {
+    color: #474143; }
+    .warlock.active-on-hover:hover {
+      background-color: #9482C9;
+      color: #474143;
+      border: #474143; }
+  .warlock.active-border {
+    border: 1px solid #9482C9;
+    color: #474143;
+    background: transparent; }
+  .warlock.icon-font-active {
+    color: #474143; }
+  .warlock.table-row {
+    color: #474143; }
+    .warlock.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .warlock.table-row:nth-child(odd):hover {
+        background: #9482C9; }
+    .warlock.table-row:hover {
+      background-color: #9482C9;
+      color: #474143;
+      border: #474143; }
+  .warlock.blizzard-official {
+    background-color: #9482C9;
+    color: #000; }
+  .warlock.gradient {
+    background: -moz-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(148, 130, 201, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(148, 130, 201, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #9482C9; }
+
+.warrior {
+  color: #C79C6E; }
+  .warrior span {
+    border-color: #C79C6E; }
+  .warrior:hover {
+    background-color: #C79C6E;
+    color: #474143; }
+    .warrior:hover span {
+      border-color: #474143; }
+  .warrior.active {
+    background-color: #C79C6E;
+    color: #474143;
+    border-color: #C79C6E; }
+  .warrior.active-without-background {
+    color: #C79C6E !important;
+    background-color: transparent; }
+  .warrior.active-shadow {
+    color: #474143;
+    background: #C79C6E;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .warrior.active-shadow:hover {
+      color: black;
+      background: #c08f5c;
+      -webkit-box-shadow: 0 0 10px #C79C6E;
+      -moz-box-shadow: 0 0 10px #C79C6E;
+      box-shadow: 0 0 10px #C79C6E; }
+  .warrior.active-on-hover {
+    color: #474143; }
+    .warrior.active-on-hover:hover {
+      background-color: #C79C6E;
+      color: #474143;
+      border: #474143; }
+  .warrior.active-border {
+    border: 1px solid #C79C6E;
+    color: #474143;
+    background: transparent; }
+  .warrior.icon-font-active {
+    color: #474143; }
+  .warrior.table-row {
+    color: #474143; }
+    .warrior.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .warrior.table-row:nth-child(odd):hover {
+        background: #C79C6E; }
+    .warrior.table-row:hover {
+      background-color: #C79C6E;
+      color: #474143;
+      border: #474143; }
+  .warrior.blizzard-official {
+    background-color: #C79C6E;
+    color: #000; }
+  .warrior.gradient {
+    background: -moz-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(199, 156, 110, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(199, 156, 110, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #C79C6E; }
+
+.death-knight {
+  color: #C41F3B; }
+  .death-knight span {
+    border-color: #C41F3B; }
+  .death-knight:hover {
+    background-color: #C41F3B;
+    color: #474143; }
+    .death-knight:hover span {
+      border-color: #474143; }
+  .death-knight.active {
+    background-color: #C41F3B;
+    color: #474143;
+    border-color: #C41F3B; }
+  .death-knight.active-without-background {
+    color: #C41F3B !important;
+    background-color: transparent; }
+  .death-knight.active-shadow {
+    color: #474143;
+    background: #C41F3B;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .death-knight.active-shadow:hover {
+      color: black;
+      background: #ae1c34;
+      -webkit-box-shadow: 0 0 10px #C41F3B;
+      -moz-box-shadow: 0 0 10px #C41F3B;
+      box-shadow: 0 0 10px #C41F3B; }
+  .death-knight.active-on-hover {
+    color: #474143; }
+    .death-knight.active-on-hover:hover {
+      background-color: #C41F3B;
+      color: #474143;
+      border: #474143; }
+  .death-knight.active-border {
+    border: 1px solid #C41F3B;
+    color: #474143;
+    background: transparent; }
+  .death-knight.icon-font-active {
+    color: #474143; }
+  .death-knight.table-row {
+    color: #474143; }
+    .death-knight.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .death-knight.table-row:nth-child(odd):hover {
+        background: #C41F3B; }
+    .death-knight.table-row:hover {
+      background-color: #C41F3B;
+      color: #474143;
+      border: #474143; }
+  .death-knight.blizzard-official {
+    background-color: #C41F3B;
+    color: #000; }
+  .death-knight.gradient {
+    background: -moz-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(196, 31, 59, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(196, 31, 59, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #C41F3B; }
+
+.monk {
+  color: #00FF96; }
+  .monk span {
+    border-color: #00FF96; }
+  .monk:hover {
+    background-color: #00FF96;
+    color: #474143; }
+    .monk:hover span {
+      border-color: #474143; }
+  .monk.active {
+    background-color: #00FF96;
+    color: #474143;
+    border-color: #00FF96; }
+  .monk.active-without-background {
+    color: #00FF96 !important;
+    background-color: transparent; }
+  .monk.active-shadow {
+    color: #474143;
+    background: #00FF96;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .monk.active-shadow:hover {
+      color: black;
+      background: #00e687;
+      -webkit-box-shadow: 0 0 10px #00FF96;
+      -moz-box-shadow: 0 0 10px #00FF96;
+      box-shadow: 0 0 10px #00FF96; }
+  .monk.active-on-hover {
+    color: #474143; }
+    .monk.active-on-hover:hover {
+      background-color: #00FF96;
+      color: #474143;
+      border: #474143; }
+  .monk.active-border {
+    border: 1px solid #00FF96;
+    color: #474143;
+    background: transparent; }
+  .monk.icon-font-active {
+    color: #474143; }
+  .monk.table-row {
+    color: #474143; }
+    .monk.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .monk.table-row:nth-child(odd):hover {
+        background: #00FF96; }
+    .monk.table-row:hover {
+      background-color: #00FF96;
+      color: #474143;
+      border: #474143; }
+  .monk.blizzard-official {
+    background-color: #00FF96;
+    color: #000; }
+  .monk.gradient {
+    background: -moz-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(0, 255, 150, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(0, 255, 150, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #00FF96; }
+
+.demon-hunter {
+  color: #A330C9; }
+  .demon-hunter span {
+    border-color: #A330C9; }
+  .demon-hunter:hover {
+    background-color: #A330C9;
+    color: #474143; }
+    .demon-hunter:hover span {
+      border-color: #474143; }
+  .demon-hunter.active {
+    background-color: #A330C9;
+    color: #474143;
+    border-color: #A330C9; }
+  .demon-hunter.active-without-background {
+    color: #A330C9 !important;
+    background-color: transparent; }
+  .demon-hunter.active-shadow {
+    color: #474143;
+    background: #A330C9;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    -ms-transition: all ease 0.4s;
+    -o-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .demon-hunter.active-shadow:hover {
+      color: black;
+      background: #922bb4;
+      -webkit-box-shadow: 0 0 10px #A330C9;
+      -moz-box-shadow: 0 0 10px #A330C9;
+      box-shadow: 0 0 10px #A330C9; }
+  .demon-hunter.active-on-hover {
+    color: #474143; }
+    .demon-hunter.active-on-hover:hover {
+      background-color: #A330C9;
+      color: #474143;
+      border: #474143; }
+  .demon-hunter.active-border {
+    border: 1px solid #A330C9;
+    color: #474143;
+    background: transparent; }
+  .demon-hunter.icon-font-active {
+    color: #474143; }
+  .demon-hunter.table-row {
+    color: #474143; }
+    .demon-hunter.table-row:nth-child(odd) {
+      background-color: rgba(0, 0, 0, 0.1); }
+      .demon-hunter.table-row:nth-child(odd):hover {
+        background: #A330C9; }
+    .demon-hunter.table-row:hover {
+      background-color: #A330C9;
+      color: #474143;
+      border: #474143; }
+  .demon-hunter.blizzard-official {
+    background-color: #A330C9;
+    color: #000; }
+  .demon-hunter.gradient {
+    background: -moz-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 15%);
+    background: -webkit-linear-gradient(left, rgba(163, 48, 201, 0.4) 0%, transparent 15%);
+    background: linear-gradient(to right, rgba(163, 48, 201, 0.4) 0%, transparent 15%);
+    color: black;
+    background-attachment: fixed;
+    border-left: 10px solid #A330C9; }
+
+/*# sourceMappingURL=classes.css.map */

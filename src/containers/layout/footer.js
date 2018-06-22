@@ -20,10 +20,10 @@ const Footer = ({pathname}) =>{
 
   return (
         <footer>
-            <div className="path">Current location: <br/> {path}</div>
+            <div className="path"/>
             <div className="copyright">
               <div>
-                <p>Hearth Lounge © 2017</p>
+                <p>Hearth Lounge © 2018</p>
                 <div>
                   <Link to="/terms-of-service">Terms</Link> & <Link to="/privacy-policy">Privacy</Link>
                 </div>

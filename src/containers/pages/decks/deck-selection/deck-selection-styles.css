@@ -1,0 +1,26 @@
+.decks .container__page--right .content {
+  margin: 1vh 0 0 1vh; }
+.decks .container__page--right .topbar .topbar-left #adventures {
+  display: flex; }
+  .decks .container__page--right .topbar .topbar-left #adventures ul {
+    display: flex; }
+    .decks .container__page--right .topbar .topbar-left #adventures ul li span {
+      padding: .5vh; }
+.decks .container__page--right .topbar .choosen-deck-topbar {
+  display: flex;
+  align-items: center; }
+  .decks .container__page--right .topbar .choosen-deck-topbar .mode, .decks .container__page--right .topbar .choosen-deck-topbar .cards, .decks .container__page--right .topbar .choosen-deck-topbar .dust-cost {
+    display: flex;
+    align-items: center; }
+  .decks .container__page--right .topbar .choosen-deck-topbar span {
+    font-size: 20px; }
+  .decks .container__page--right .topbar .choosen-deck-topbar li {
+    margin-left: 10px; }
+  .decks .container__page--right .topbar .choosen-deck-topbar .rating, .decks .container__page--right .topbar .choosen-deck-topbar .dust-cost {
+    height: 100%;
+    padding: 0 10px; }
+  .decks .container__page--right .topbar .choosen-deck-topbar .rating {
+    display: flex;
+    align-items: center; }
+
+/*# sourceMappingURL=deck-selection-styles.css.map */

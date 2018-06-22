@@ -1,0 +1,56 @@
+.container__cards {
+  justify-content: center;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; }
+  .container__cards li {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: calc(100% / 8); }
+    .container__cards li .tooltip-count {
+      position: absolute;
+      padding: .5vh;
+      width: calc(100% - 1vh);
+      text-align: center; }
+      .container__cards li .tooltip-count span {
+        background-color: #474143;
+        color: #E7E2DA;
+        padding: .5vh 1vh; }
+    .container__cards li .img-wrapper {
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      background: url("http://media-hearth.cursecdn.com/attachments/39/664/cardback_0.png") center center no-repeat;
+      background-size: contain;
+      position: absolute;
+      height: 75%;
+      top: 15%;
+      width: 100%;
+      left: 0;
+      z-index: 1;
+      opacity: 1; }
+    .container__cards li img {
+      position: relative;
+      z-index: 2;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      transition: all ease 0.4s;
+      width: 100%;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0);
+      /* Chrome, Safari, Opera */
+      transform: translateZ(0); }
+      .container__cards li img.choosen {
+        opacity: .3; }
+      .container__cards li img.disabled {
+        background: rgba(255, 0, 0, 0.3);
+        cursor: not-allowed; }
+      .container__cards li img.choosen.disabled {
+        background: transparent;
+        cursor: pointer; }
+    .container__cards li.choosen .img-wrapper {
+      opacity: 0; }
+
+/*# sourceMappingURL=cards-styles.css.map */

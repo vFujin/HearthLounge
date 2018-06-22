@@ -1,0 +1,9 @@
+.container__details--comments {
+  position: relative; }
+  .container__details--comments .section__footer {
+    padding: 2vh 1vh 0 1vh;
+    border: 1px solid #474143; }
+    .container__details--comments .section__footer .text-editor {
+      height: calc(100% - 1vh); }
+
+/*# sourceMappingURL=comments-styles.css.map */

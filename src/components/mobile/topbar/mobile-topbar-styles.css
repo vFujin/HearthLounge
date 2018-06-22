@@ -1,0 +1,25 @@
+.container__page--topbarMobile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  z-index: 1; }
+  .container__page--topbarMobile > div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #474143;
+    color: #E7E2DA;
+    cursor: pointer;
+    -webkit-transition: all ease 0.4s;
+    -moz-transition: all ease 0.4s;
+    transition: all ease 0.4s; }
+    .container__page--topbarMobile > div.active {
+      background: #00a99c; }
+      .container__page--topbarMobile > div.active:hover {
+        background: #00a99c; }
+    .container__page--topbarMobile > div:hover {
+      background: #00766d; }
+
+/*# sourceMappingURL=mobile-topbar-styles.css.map */
