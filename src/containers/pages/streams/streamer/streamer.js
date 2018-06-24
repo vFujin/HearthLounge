@@ -6,17 +6,13 @@ import {withRouter} from "react-router-dom";
 
 class Streamer extends Component {
   componentDidMount(){
-    const {match, activeStreamer, fetchStreamerRequest} = this.props;
+    const {match, activeStreamer, all, error, fetchStreamerRequest} = this.props;
     const {streamer} = match.params;
 
 
-    if(activeStreamer !== ""){
+    if(all.length === 0 && activeStreamer === "" && error){
       fetchStreamerRequest(streamer)
     }
-  }
-
-  componentWillUnmount(){
-    this.props.resetActiveStreamer();
   }
 
   render() {
@@ -46,8 +42,8 @@ class Streamer extends Component {
 }
 
 const mapStateToProps = state => {
-  const { loading, activeStreamer, error } = state.streams;
-  return { loading, activeStreamer, error };
+  const { loading, all, activeStreamer, error } = state.streams;
+  return { loading, all, activeStreamer, error };
 };
 
 const mapDispatchToProps = dispatch => {

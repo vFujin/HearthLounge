@@ -16,6 +16,7 @@ class Streams extends Component {
   handlePreviewClick = (e) => {
     let streamer = e.currentTarget.id;
     this.props.fetchStreamerSuccess(streamer);
+
   };
 
   render() {

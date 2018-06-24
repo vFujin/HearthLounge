@@ -49,7 +49,7 @@ class SelectExtension extends Component {
           loading && !storageExtensions && <Loader />
         }
         {
-          ((!loading && info.wild) && !storageExtensions) || storageExtensions && (
+          (((!loading && info.wild) && !storageExtensions) || storageExtensions) && (
             <ul>
               {this.mapExtensions(info.wild || storageExtensions)}
             </ul>
