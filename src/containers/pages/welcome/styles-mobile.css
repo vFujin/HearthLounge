@@ -1,0 +1,24 @@
+/*
+ * Desktop
+ */
+@media only screen and (max-width: 1365px) {
+  #container .container__page.welcome .sections section {
+    padding-bottom: 10px; }
+  #container .container__page.welcome .sections .section__content {
+    flex-direction: column !important;
+    align-items: center; }
+    #container .container__page.welcome .sections .section__content > div {
+      display: block !important; }
+      #container .container__page.welcome .sections .section__content > div ul {
+        margin-top: 30px; }
+      #container .container__page.welcome .sections .section__content > div .hs-icon {
+        top: 15px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+    #container .container__page.welcome .sections .section__content--img {
+      text-align: center; } }
+
+/*# sourceMappingURL=styles-mobile.css.map */
