@@ -52,7 +52,7 @@ class ExtensionsBlock extends Component {
     let extensions = _.takeRight(extension_details, 4);
 
     return (
-      <div className="slider">
+      <div className="homeSlider">
         {this.mapExtensions(extensions)}
       </div>
     );

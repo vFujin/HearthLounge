@@ -5611,7 +5611,7 @@ card {
           position: relative; }
           .container__index.home .home__list .decks > div .right-container .hot-decks .loading-wrapper {
             position: absolute; }
-    .container__index.home .home__list .expansions div .slider {
+    .container__index.home .home__list .expansions div .homeSlider {
       height: 100%;
       width: 100%; }
     .container__index.home .home__list .expansions div .extension {

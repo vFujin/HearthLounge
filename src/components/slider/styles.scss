@@ -8,7 +8,7 @@
   &__prev, &__next {
     flex-grow: 1;
     padding: 20px;
-    font-size: 50px;
+    font-size: calc(30px + .5vmin);
     display: flex;
     align-items: center;
     cursor: pointer;

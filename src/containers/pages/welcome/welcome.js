@@ -3,7 +3,9 @@ import _ from "lodash";
 import {animateOnScroll} from "../../../utils/animate-on-scroll";
 import PagesSection from "./sections/pages";
 import UseCasesSection from "./sections/use-cases";
+import IntroductionSection from "./sections/home";
 import './styles.css';
+import './styles-mobile.css';
 
 const greetings = [
   "Hello.", "My greetings.", "Greetings, traveler.", "Well met!", "Greetings.", "The pleasure is mine.", "Greetings, friend.", "I greet you.", "Heh, Greetings.",
@@ -23,6 +25,7 @@ class Welcome extends Component {
     return (
       <div className="container__page container__page--oneSided welcome">
         <div className="sections">
+          <IntroductionSection greetings={this.greetings} />
           <PagesSection />
           <UseCasesSection />
         </div>

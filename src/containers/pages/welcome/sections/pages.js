@@ -21,7 +21,7 @@ const PagesSection = () => {
   const mapPageImgs = (img) => img.map(i => <img src={i} alt=""/>);
 
   return welcomeInfo.map(p => (
-    <section className="welcomePage" key={p.page}>
+    <section className="welcomePage" key={p.page} id={p.page}>
       <header>
         <h1>{p.page}</h1>
         <h4>{p.about}</h4>

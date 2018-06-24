@@ -1,0 +1,40 @@
+@import '../../../styles/mixins';
+
+@include screen('tabletBelow'){
+  #container .container__page.welcome {
+    .sections {
+
+      section {
+        padding-bottom: 10px;
+      }
+
+      .section__content {
+        flex-direction: column !important;
+        align-items: center;
+
+        > div {
+          display: block !important;
+
+          ul{
+            margin-top: 30px;
+          }
+
+          .hs-icon {
+            top: 15px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        &--img {
+          text-align: center;
+        }
+      }
+    }
+
+  }
+
+}

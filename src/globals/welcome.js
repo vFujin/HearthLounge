@@ -13,7 +13,7 @@ export default [
   {
     page: 'decks',
     icon: 'deck',
-    about: 'Want to discover a new deck? This is the place.',
+    about: 'All decks created by our users in one place',
     img: [DecksImg],
     info: [
       {
@@ -105,7 +105,7 @@ export default [
   {
     page: 'extensions',
     icon: 'expansions',
-    about: 'Having hard time beating Professor Putricide or searching information about extension? Good news everyone, because everything related to Hearthstone expansions and adventures as well as guides and boss strategies can be found in this page',
+    about: 'Good news everyone, because everything related to Hearthstone expansions and adventures as well as guides and boss strategies are here aswell!',
     img: [ExtensionsImg],
     info: [
       {
@@ -129,7 +129,7 @@ export default [
   {
     page: 'create deck',
     icon: 'create-deck',
-    about: 'Tired of using different services just to create or share your deck? Behold, the might of HearthLounge!',
+    about: "Deck Creation is easier than before with HearthLounge's Deck Creator!",
     img: [CreateDeckImg, CreateDeck2Img],
     info: [
       {
@@ -197,7 +197,7 @@ export default [
   {
     page: 'streamers',
     icon: 'twitch',
-    about: 'Looking for a player who shows the real gameplay? Or maybe a tournament channel that is currently broadcasting? This is the page dedicated just for that.',
+    about: 'Looking for a player who shows THE REAL gameplay? Or maybe a tournament channel that is currently broadcasting? This is the page dedicated just for that.',
     img: [],
     info: [
       {
