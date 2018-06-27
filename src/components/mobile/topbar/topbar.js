@@ -4,9 +4,9 @@ import MobileTopbarTab from "./tab";
 import './mobile-topbar-styles.css';
 
 const MobileTopbar = ({tabs, activeMobileTab, handleTabClick}) => {
-
   const mapTabs = () => tabs.map(tab => {
     return <MobileTopbarTab name={tab}
+                            key={tab}
                             width={100 / tabs.length}
                             handleTabClick={handleTabClick}
                             activeMobileTab={activeMobileTab} />

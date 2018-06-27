@@ -1,21 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {Route} from 'react-router';
 import {NavLink} from 'react-router-dom';
 import _ from 'lodash';
 import PrivacyPolicy from "./privacy-policy/privacy-policy";
 import NotFound from "../../../components/not-found/not-found";
 import TermsOfService from "./terms-of-service/terms-of-service";
+import Welcome from "../welcome/welcome";
 
 const misc = [
-    "terms-of-service",
-    "privacy-policy",
+  "welcome",
+  "terms-of-service",
+  "privacy-policy"
     // "rank-system",
     // "FAQ",
     // "contributing",
 ];
 
 const components = {
+  Welcome,
   PrivacyPolicy,
   TermsOfService
 };
@@ -53,7 +55,3 @@ const Miscellaneous = ({match}) =>{
 };
 
 export default Miscellaneous;
-
-Miscellaneous.propTypes = {
-  children: PropTypes.element.isRequired
-};

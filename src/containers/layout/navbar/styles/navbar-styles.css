@@ -19,28 +19,25 @@ nav {
         height: 100%; }
         nav .nav__list .nav__list--item:first-child a {
           display: flex;
-          align-items: center; }
+          align-items: center;
+          height: 100%; }
           nav .nav__list .nav__list--item:first-child a:hover {
             background-color: #474143; }
-          nav .nav__list .nav__list--item:first-child a .logo-wrapper {
-            display: flex;
-            align-items: center;
+          nav .nav__list .nav__list--item:first-child a svg {
             height: 100%; }
-            nav .nav__list .nav__list--item:first-child a .logo-wrapper svg {
-              height: 100%; }
-            nav .nav__list .nav__list--item:first-child a .logo-wrapper span {
-              font-size: 8vh;
-              color: #00a99c; }
-            nav .nav__list .nav__list--item:first-child a .logo-wrapper .text-wrapper {
-              margin-left: 1vh; }
-              nav .nav__list .nav__list--item:first-child a .logo-wrapper .text-wrapper p:first-child {
-                margin-bottom: .5vh;
-                margin-top: .1vh; }
+          nav .nav__list .nav__list--item:first-child a span {
+            font-size: 8vh;
+            color: #00a99c; }
+          nav .nav__list .nav__list--item:first-child a .text-wrapper {
+            margin-left: 1vh; }
+            nav .nav__list .nav__list--item:first-child a .text-wrapper p:first-child {
+              margin-bottom: .5vh;
+              margin-top: .1vh; }
       nav .nav__list .nav__list--item:last-child {
         border-right: 0; }
-      nav .nav__list .nav__list--item:hover {
+      nav .nav__list .nav__list--item:not(:first-child):hover {
         background-color: #00a99c; }
-        nav .nav__list .nav__list--item:hover .submenu {
+        nav .nav__list .nav__list--item:not(:first-child):hover .submenu {
           display: block; }
       nav .nav__list .nav__list--item .active {
         background-color: #E7E2DA;

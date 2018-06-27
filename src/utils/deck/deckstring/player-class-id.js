@@ -9,7 +9,7 @@ export const playerClassId = (playerClass) =>{
     case 'shaman': return 1066;
     case 'paladin': return 671;
     case 'rogue': return 930;
-    default: return 0;
+    default: return 7;
   }
 };
 
@@ -24,5 +24,6 @@ export const playerClassIdReverse = (playerClass) =>{
     case 1066: return 'shaman';
     case 671: return 'paladin';
     case 930: return 'rogue';
+    default: return 'warrior';
   }
 };

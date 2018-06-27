@@ -13,7 +13,7 @@ class TournamentsBlock extends Component {
     const {items} = this.props;
 
     if(items) {
-      return items.map(tournament => <Tournament tournament={tournament}/>)
+      return items.map(tournament => <Tournament key={tournament.id} tournament={tournament}/>)
     }
   };
 

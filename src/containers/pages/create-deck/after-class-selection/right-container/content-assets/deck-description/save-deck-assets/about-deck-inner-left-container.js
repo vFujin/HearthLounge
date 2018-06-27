@@ -65,6 +65,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(InnerLeftContainer);
 InnerLeftContainer.propTypes = {
   playerClass: PropTypes.string.isRequired,
   deckTitle: PropTypes.string,
-  handleInputChange: PropTypes.func.isRequired,
-  handleSelectChange: PropTypes.func.isRequired
+  handleInputChange: PropTypes.func.isRequired
 };

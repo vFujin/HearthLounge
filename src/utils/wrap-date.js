@@ -9,7 +9,6 @@ import format from 'date-fns/format';
  * @param createdFormatted
  * @param placement
  * @param {bool} tooltip - show or hide tooltip
- * @returns {XML}
  */
 export const notEdited = (created, createdFormatted, placement, tooltip) =>{
   return tooltip
@@ -29,7 +28,6 @@ export const notEdited = (created, createdFormatted, placement, tooltip) =>{
  * @param {number} editedFormatted - Formatted date into `DD-MM-YYYY HH:mm`
  * @param {string} placement - Position of the tooltip (https://ant.design/components/tooltip/#Common-API)
  * @param {bool} tooltip - show or hide tooltip
- * @returns {XML}
  */
 export const editedWrapper = (created, createdFormatted, edited, editedFormatted, placement, tooltip) =>{
   return tooltip

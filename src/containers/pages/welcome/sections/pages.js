@@ -7,9 +7,10 @@ import Slider from "../../../../components/slider";
 const PagesSection = () => {
 
   const mapPageInfos = (pageInfo) => {
+
     return pageInfo.sort((a, b) => a.implemented < b.implemented).map((page, i) => (
-        <Tooltip title={!page.implemented && "Not implemented yet"} placement="bottom">
-          <li className={`pageInfo ${page.implemented ? "implemented" : "not-implemented"}`} key={i}>
+        <Tooltip key={`pageInfo_${i}`} title={!page.implemented && "Not implemented yet"} placement="bottom">
+          <li className={`pageInfo ${page.implemented ? "implemented" : "not-implemented"}`}>
             <span>{page.implemented ? "✓" : "|"}</span>
             <p>{page.text}</p>
           </li>
@@ -18,7 +19,7 @@ const PagesSection = () => {
     )
   };
 
-  const mapPageImgs = (img) => img.map(i => <img src={i} alt=""/>);
+  const mapPageImgs = (images) => images.map((img, i) => <img src={img} key={`pageImg_${i}`} alt=""/>);
 
   return welcomeInfo.map(p => (
     <section className="welcomePage" key={p.page} id={p.page}>

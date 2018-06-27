@@ -15,8 +15,8 @@ const IconWithUrl = ({name, url, title}) => {
   )
 };
 
-const Footer = ({pathname}) =>{
-  const path = pathname.split("/").splice(1).join(" > ");
+const Footer = () =>{
+  // const path = pathname.split("/").splice(1).join(" > ");
 
   return (
         <footer>

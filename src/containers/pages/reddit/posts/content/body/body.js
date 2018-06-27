@@ -26,10 +26,10 @@ class RedditPostsBody extends Component {
 
     return (
       <li id={id}
+          key={id}
           className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} table-row`}
           onClick={this.handlePostClick}>
         <RedditPostsBodyItem post={post}
-                             key={id}
                              url={url}
                              handlePostClick={this.handlePostClick}/>
       </li>
@@ -42,10 +42,10 @@ class RedditPostsBody extends Component {
 
     return (
       <li id={id}
+          key={id}
           className={`${checkIfStickied(post)} ${checkIfBlizzardPost(post)} ${stripDomains(post)} table-row redditPosts__body--mobile`}
           onClick={this.handlePostClick}>
         <RedditPostsBodyItemMobile post={post}
-                                   key={id}
                                    url={url}
                                    handlePostClick={this.handlePostClick}/>
       </li>

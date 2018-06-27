@@ -9,7 +9,6 @@ class Streamer extends Component {
     const {match, activeStreamer, all, error, fetchStreamerRequest} = this.props;
     const {streamer} = match.params;
 
-
     if(all.length === 0 && activeStreamer === "" && error){
       fetchStreamerRequest(streamer)
     }
@@ -25,8 +24,8 @@ class Streamer extends Component {
         {
           !loading && activeStreamer && (
             <div className="streamer__channel">
-              <iframe className="streamer__channel--video" src={`http://player.twitch.tv/?channel=${activeStreamer}&muted=true`} frameBorder="0"/>
-              <iframe className="streamer__channel--chat" src={`http://www.twitch.tv/embed/${activeStreamer}/chat?darkpopout`} frameBorder="0"/>
+              <iframe className="streamer__channel--video" title={`${activeStreamer} screen`} src={`http://player.twitch.tv/?channel=${activeStreamer}&muted=true`} frameBorder="0"/>
+              <iframe className="streamer__channel--chat" title={`${activeStreamer} chat`} src={`http://www.twitch.tv/embed/${activeStreamer}/chat?darkpopout`} frameBorder="0"/>
             </div>
 
           )

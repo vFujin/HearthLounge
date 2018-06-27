@@ -3,24 +3,28 @@ export const animateOnScroll = (parentSelector, childSelector, duration = 500, r
   const pClientHeight = pSelector.clientHeight;
   const selectorsToBeAnimated = [...document.querySelectorAll(childSelector)];
 
+
   selectorsToBeAnimated.map(el => {
     if(el.offsetTop >= pClientHeight){
       el.style.opacity= 0;
       el.style.transition = `all ${duration}ms ease`;
+      return el;
+    } else {
+      return null;
     }
   });
 
   const animate = (e) => selectorsToBeAnimated.map(el => {
     if (e.target.scrollTop > (el.offsetTop - pClientHeight)) {
-      el.style.opacity = 1;
-    }
+      return el.style.opacity = 1;
+    } else return null;
   });
 
   if(!reset) {
-    pSelector.addEventListener('scroll', e => animate(e));
+    return pSelector.addEventListener('scroll', e => animate(e));
   }
 
   if(reset){
-    pSelector.removeEventListener('scroll', e => animate(e))
+    return pSelector.removeEventListener('scroll', e => animate(e))
   }
 };

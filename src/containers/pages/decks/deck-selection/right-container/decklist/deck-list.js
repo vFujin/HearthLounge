@@ -9,10 +9,10 @@ import './styles/decklist-mobile-styles.css';
 
 const DeckList = ({decks, windowWidth, handleDeckSnippetClick}) => {
   const mapDecks = () => decks.all.map(deckObj  => {
-      if (windowWidth <= 815) {
-        return <li className="deckSnippet__wrapper"><DeckSnippet d={deckObj} handleDeckClick={handleDeckSnippetClick}/></li>
+    if (windowWidth <= 815) {
+        return <li className="deckSnippet__wrapper" key={deckObj.deckId}><DeckSnippet d={deckObj} handleDeckClick={handleDeckSnippetClick}/></li>
       } else {
-        return <DeckSnippetExtended handleDeckSnippetClick={handleDeckSnippetClick} deckObj={deckObj}/>
+        return <DeckSnippetExtended key={deckObj.deckId} handleDeckSnippetClick={handleDeckSnippetClick} deckObj={deckObj}/>
       }
     }
   );

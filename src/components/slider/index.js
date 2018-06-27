@@ -7,7 +7,6 @@ class Slider extends Component {
     super(props);
     const {dotSymbol, overlayClassName, showDots, slides} = props;
     const countSlides = slides.length;
-    console.log(props);
 
     this.state = {
       activeSlide: 0,
@@ -44,6 +43,7 @@ class Slider extends Component {
 
       return(
         <li className={`slider__dot slider__dot--${activeDot}`}
+            key={`slide_${index}`}
             onClick={() => this.handleDotClick(index)}>
           {dotSymbol}
         </li>
@@ -53,7 +53,7 @@ class Slider extends Component {
 
   render() {
     const {activeSlide, slides, overlayClassName, showDots} = this.state;
-    console.log(showDots);
+
     return (
       <div className={`slider ${overlayClassName}`}>
         <span className="slider__prev" onClick={this.handlePrevClick}>❮</span>

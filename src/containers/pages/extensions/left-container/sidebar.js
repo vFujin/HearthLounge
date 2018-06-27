@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import _ from "lodash";
 import {Link} from 'react-router-dom';
 import Icon from "../../../../components/icon";
@@ -34,7 +33,7 @@ const Sidebar = ({extensionPath, info}) => {
           ((!info.loading && info.wild) || localStorageExtensions) && listExtensions(localStorageExtensions)
         }
         {
-          !info.wild || !localStorageExtensions && <div>Couldn't load extensions. Try again later.</div>
+          (!info.wild || !localStorageExtensions) && <div>Couldn't load extensions. Try again later.</div>
         }
       </ul>
     </div>
@@ -46,8 +45,4 @@ const mapStateToProps = state => {
   return { info };
 };
 
-export default connect(mapStateToProps)(Sidebar);;
-
-Sidebar.propTypes = {
-  extensionType: PropTypes.string.isRequired
-};
+export default connect(mapStateToProps)(Sidebar);

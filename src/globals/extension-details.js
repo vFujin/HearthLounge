@@ -248,7 +248,7 @@ export const extension_details = [
           {
             name: "Loatheb",
             url: 'loatheb',
-            img: 'loatheb',
+            img: loatheb,
             reward: "Sludge Belcher"
           }
         ]
@@ -1418,7 +1418,7 @@ export const extension_details = [
           {
             name: "Sindragosa",
             url: 'sindragosa',
-            img: professorPutricide
+            img: sindragosa
           }
         ]
       },

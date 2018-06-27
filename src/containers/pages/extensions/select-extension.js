@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import PropTypes from 'prop-types';
 import _ from "lodash";
 import Icon from "../../../components/icon";
 import Loader from "../../../components/loaders/diamond/loader";
@@ -69,7 +68,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(SelectExtension);
-
-SelectExtension.propTypes = {
-  extensionType: PropTypes.string.isRequired
-};

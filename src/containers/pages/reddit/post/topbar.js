@@ -29,7 +29,7 @@ const Topbar = ({activePost}) => {
 
         <div className="topbar__created">
           <p>Posted</p>
-          <p>{wrapDate(created_utc, edited)}</p>
+          {wrapDate(created_utc, edited)}
         </div>
         <div className="topbar__shortlink">
           <p>Shortlink</p>

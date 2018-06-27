@@ -30,10 +30,14 @@ class Extensions extends Component {
 }
 
 Extensions.propTypes = {
-  match: PropTypes.object.isRequired,
-  location: PropTypes.string.isRequired,
   windowWidth: PropTypes.number.isRequired,
-  extensionType: PropTypes.string.isRequired
+  routeObj: PropTypes.shape({
+    match: PropTypes.shape({
+      params: PropTypes.shape({
+        extension: PropTypes.string
+      })
+    })
+  }).isRequired
 };
 
 

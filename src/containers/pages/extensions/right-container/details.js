@@ -24,9 +24,11 @@ const ExtensionDetails = ({cards, cardbacks,  extension, details, detailsChild})
     return extension_details.find(a=>a.url === extension.url).extension_topbar_tabs.filter(extension => extension.url === details).map(page => {
       let componentName = _.upperFirst(_.camelCase(page.name));
       let Page = components[componentName];
+      const classChallengeType = extension.extension_topbar_tabs.slice(-1)[0].url;
+
       return <Page key={page.url}
                    extension={extension}
-                   classChallengeType={"dungeon-run"}
+                   classChallengeType={classChallengeType}
                    cards={extensionCards}
                    isExtension
                    cardSet={extension.name}

@@ -19,7 +19,7 @@ export function getUserData(payload){
       ref.child(`usernames`).update({[payload[uid][entity]]: uid})
         .then(() => console.log(`User ${uid} entity ${entity} has been updated`),
           (err) => console.log(`Couldn't update user ${uid} ${entity} entity. ${err.message}`));
-
+      return entity;
     } else {
       return ref.child(`users/${uid}`).update({[entity]: payload[uid][entity]})
         .then(() => console.log(`User ${uid} entity ${entity} has been updated`),

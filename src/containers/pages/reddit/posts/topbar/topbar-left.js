@@ -24,9 +24,9 @@ class TopbarLeft extends Component {
     return (
       <ul className="topbar-left">
         {supportedDomains.map((supportedDomain, i) =>
-          <li key={i} id={supportedDomain.icon} onClick={(e) => this.handleDomainClick(e, supportedDomain)}>
+          <li key={`domain_${i}`} id={supportedDomain.icon} onClick={(e) => this.handleDomainClick(e, supportedDomain)}>
             <Icon name={supportedDomain.icon}
-                  domain={supportedDomain.name}
+                  domain={(typeof supportedDomain.name) === "object" ? supportedDomain.name[1] : supportedDomain.name}
                   type="reddit"
                   className={`${supportedDomain.icon} ${supportedDomain.icon === domain.active ? "active" : ""}`}/>
           </li>
