@@ -8,6 +8,7 @@
   #container .container__page.welcome .sections {
     overflow: auto;
     margin: 1vh;
+    width: calc(100% - 2vh);
     scroll-behavior: smooth; }
     #container .container__page.welcome .sections::-webkit-scrollbar {
       width: 8px; }

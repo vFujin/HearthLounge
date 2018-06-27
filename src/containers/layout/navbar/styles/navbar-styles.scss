@@ -19,37 +19,39 @@ nav {
       &:first-child {
         width: 40%;
         border-left: none;
-        display: flex;
-        align-items: center;
         padding-left: 1vh;
         height: 100%;
 
-        &:hover{
-          background-color: $dark-grey;
-        }
-
-        .logo-wrapper{
+        a {
           display: flex;
           align-items: center;
-          height: 100%;
 
-          svg {
+          &:hover {
+            background-color: $dark-grey;
+          }
+
+          .logo-wrapper {
+            display: flex;
+            align-items: center;
             height: 100%;
 
-          }
+            svg {
+              height: 100%;
+            }
 
-          span{
-            font-size: 8vh;
-            color: $sea-color;
-          }
+            span {
+              font-size: 8vh;
+              color: $sea-color;
+            }
 
-          .text-wrapper{
-            margin-left: 1vh;
+            .text-wrapper {
+              margin-left: 1vh;
 
-            p{
-              &:first-child{
-                margin-bottom: .5vh;
-                margin-top: .1vh;
+              p {
+                &:first-child {
+                  margin-bottom: .5vh;
+                  margin-top: .1vh;
+                }
               }
             }
           }

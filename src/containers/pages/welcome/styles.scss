@@ -12,8 +12,9 @@
   .sections {
     overflow: auto;
     margin: 1vh;
-    @include slim-scrollbar();
+    width: calc(100% - 2vh);
     scroll-behavior: smooth;
+    @include slim-scrollbar();
 
     section {
       padding: 10px 10px 50px;

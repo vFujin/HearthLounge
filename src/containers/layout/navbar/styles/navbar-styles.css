@@ -15,26 +15,27 @@ nav {
       nav .nav__list .nav__list--item:first-child {
         width: 40%;
         border-left: none;
-        display: flex;
-        align-items: center;
         padding-left: 1vh;
         height: 100%; }
-        nav .nav__list .nav__list--item:first-child:hover {
-          background-color: #474143; }
-        nav .nav__list .nav__list--item:first-child .logo-wrapper {
+        nav .nav__list .nav__list--item:first-child a {
           display: flex;
-          align-items: center;
-          height: 100%; }
-          nav .nav__list .nav__list--item:first-child .logo-wrapper svg {
+          align-items: center; }
+          nav .nav__list .nav__list--item:first-child a:hover {
+            background-color: #474143; }
+          nav .nav__list .nav__list--item:first-child a .logo-wrapper {
+            display: flex;
+            align-items: center;
             height: 100%; }
-          nav .nav__list .nav__list--item:first-child .logo-wrapper span {
-            font-size: 8vh;
-            color: #00a99c; }
-          nav .nav__list .nav__list--item:first-child .logo-wrapper .text-wrapper {
-            margin-left: 1vh; }
-            nav .nav__list .nav__list--item:first-child .logo-wrapper .text-wrapper p:first-child {
-              margin-bottom: .5vh;
-              margin-top: .1vh; }
+            nav .nav__list .nav__list--item:first-child a .logo-wrapper svg {
+              height: 100%; }
+            nav .nav__list .nav__list--item:first-child a .logo-wrapper span {
+              font-size: 8vh;
+              color: #00a99c; }
+            nav .nav__list .nav__list--item:first-child a .logo-wrapper .text-wrapper {
+              margin-left: 1vh; }
+              nav .nav__list .nav__list--item:first-child a .logo-wrapper .text-wrapper p:first-child {
+                margin-bottom: .5vh;
+                margin-top: .1vh; }
       nav .nav__list .nav__list--item:last-child {
         border-right: 0; }
       nav .nav__list .nav__list--item:hover {

@@ -10,6 +10,8 @@
     margin: 0 10px;
 
     li {
+      border: none;
+
       > div {
         display: flex;
         align-items: center;
@@ -25,6 +27,14 @@
         svg {
           height: 100%;
         }
+      }
+
+      &:hover {
+        background: transparent;
+      }
+
+      &:first-child {
+        padding: 0;
       }
     }
   }

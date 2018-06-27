@@ -20,7 +20,7 @@ class NavbarMobile extends Component {
     const {handleSignOut, activeUser, playerClass, mobileMenuActive} = this.props;
     return (
       <nav className="nav__mobile">
-        <ul className="nav__mobile--header">
+        <ul className="nav__mobile--header nav__list">
           <LogoItem/>
           <MobileMenuIcon/>
         </ul>
