@@ -30,9 +30,9 @@ const Footer = () =>{
               </div>
             </div>
             <div className="media">
-              <IconWithUrl name="github" url="https://github.com/vFujin/HearthLounge" title="Contribute"/>
-              <IconWithUrl name="twitch" url="https://www.twitch.tv/vfujin" title="development"/>
-              <IconWithUrl name="discord" url="https://discord.gg/fZgdKhV"/>
+              <IconWithUrl name="github" url="https://github.com/sbsrnt/HearthLounge" title="Contribute"/>
+              <IconWithUrl name="twitch" url="https://www.twitch.tv/sbsrnt" title="development"/>
+              {/*<IconWithUrl name="discord" url="https://discord.gg/fZgdKhV"/>*/}
               <Link to="/help">
                 <Icon name="help"
                       tooltip={true}
