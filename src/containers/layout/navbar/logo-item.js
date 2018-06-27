@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 const LogoItem = () => {
   const alphaStyles = {
-    opacity: .5,
+    opacity: .4,
     color: "grey",
     position: "absolute",
   };
