@@ -51,8 +51,8 @@ const ContentFairInformationPracticies = () => {
             <h4 id="contact-us">Contacting Us</h4>
             <p>If there are any questions regarding this privacy policy, you may contact us using the information below.</p>
             <ul>
-              <li>Private message on <a href="https://www.twitch.tv/vfujin" target="_blank" rel="noopener noreferrer">Twitch.tv</a></li>
-              <li>Private message to <span>Fujin</span> on Hearth Lounge <a href="https://discord.gg/GXQBTJ" target="_blank" rel="noopener noreferrer">Discord channel</a></li>
+              <li>Private message on <a href="https://www.twitch.tv/sbsrnt" target="_blank" rel="noopener noreferrer">Twitch.tv</a></li>
+              <li>Private message to <span>Sbsrnt</span> on Discord (sbsrnt#4780)</li>
             </ul>
           </li>
         </ul>
