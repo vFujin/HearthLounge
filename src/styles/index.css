@@ -4399,8 +4399,6 @@ button {
  * Desktop
  */
 @media only screen and (min-width: 816px) and (max-width: 1365px), screen and (max-height: 800px) {
-  #container .container__index.home .home__list .decks > div > a {
-    width: calc(20% - 8px); }
   #container .container__index.home .home__list .decks > div .class-selection {
     width: calc(80% + 8px); }
   #container .container__index.home .home__list .decks .home__block--body .left-container {
@@ -5835,23 +5833,6 @@ card {
     box-shadow: 0 0 10px black;
     cursor: pointer;
     background: #E7E2DA; }
-
-.expansions .select-extension, .adventures .select-extension {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: auto;
-  height: 100%;
-  opacity: 0.2; }
-  .expansions .select-extension span, .adventures .select-extension span {
-    font-size: calc(10em + 1vmin);
-    margin-bottom: 50px; }
-  .expansions .select-extension p, .adventures .select-extension p {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: calc(3em + 1vmin); }
 
 .expansions .container__page--right .content .container__classChallenges--content {
   display: flex;

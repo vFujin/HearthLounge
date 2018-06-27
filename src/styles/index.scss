@@ -1598,28 +1598,6 @@ card{
   }
 }
 
-.expansions, .adventures{
-  .select-extension{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    width: 100%;
-    margin: auto;
-    height: 100%;
-    opacity: 0.2;
-    span{
-      font-size: calc(10em + 1vmin);
-      margin-bottom: 50px;
-    }
-    p{
-      text-transform: uppercase;
-      text-align: center;
-      font-size: calc(3em + 1vmin);
-    }
-  }
-}
-
 .expansions{
   .container__page--right{
     .content {
