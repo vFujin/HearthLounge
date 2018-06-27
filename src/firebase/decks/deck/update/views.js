@@ -8,6 +8,6 @@ export default function (deckId){
       const views = deck.data().views + 1;
       transaction.update(deckRef, {views})
     })
-  }).then(()=>console.log("views updated")).catch(err=>console.log("f: ", err));
+  }).then(()=> null).catch(err=>null);
 
 }

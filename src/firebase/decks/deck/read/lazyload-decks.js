@@ -4,8 +4,6 @@ let lastKnownDeck = null;
 export default function (resolve, reject) {
   let decksRef = ref.child('decks');
 
-  console.log("bar");
-
   decksRef
       .orderByChild('created')
       .startAt(lastKnownDeck)

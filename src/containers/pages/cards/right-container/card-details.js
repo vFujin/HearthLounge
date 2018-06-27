@@ -30,7 +30,6 @@ export class CardDetails extends Component {
 
   handleButtonClick(e){
     let value = e.target.value;
-    console.log(value);
     this.setState({
       currentTab: value
     })

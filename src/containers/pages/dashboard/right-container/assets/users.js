@@ -23,7 +23,6 @@ class Users extends Component {
         updatedProfile: !(this.state[uid] && (this.state[uid].usernames.includes("@") || _.isEmpty(this.state[uid].usernames))) ? false : true
       }
     });
-    console.log(this.state)
   };
 
   handleUserDeletion = (e) =>{

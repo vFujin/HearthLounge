@@ -3,7 +3,7 @@ import Loader from "../../../loaders/diamond/loader";
 import DeckSnippet from "../../../deck-snippet/deck-snippet";
 
 const Decklist = ({decks}) => {
- const a = () => console.log('foo');
+ const a = () => null;
 
   const mapDecks = () =>{
     if(!decks){

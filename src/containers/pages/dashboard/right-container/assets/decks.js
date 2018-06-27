@@ -5,7 +5,7 @@ import DeckSnippet from "../../../../../components/deck-snippet/deck-snippet";
 const Decks = ({activeUserDecks}) =>{
   const {loading, all} = activeUserDecks;
 
-  const decks = () => all.map(deck => <li key={deck.deckId}><DeckSnippet d={deck} handleDeckClick={() => console.log(deck.deckId)}/></li>);
+  const decks = () => all.map(deck => <li key={deck.deckId}><DeckSnippet d={deck} handleDeckClick={() => null}/></li>);
 
   return (
     <div className="decks">
