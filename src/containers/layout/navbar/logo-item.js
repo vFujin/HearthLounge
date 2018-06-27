@@ -3,6 +3,12 @@ import LogoSVG from "../../../components/logo";
 import {Link} from "react-router-dom";
 
 const LogoItem = () => {
+  const alphaStyles = {
+    opacity: .5,
+    color: "grey",
+    position: "absolute",
+  };
+
   return (
     <li className="nav__list--item logo">
       <Link to="/" className="logo-wrapper">
@@ -11,6 +17,7 @@ const LogoItem = () => {
           <p>Hearth</p>
           <p>Lounge</p>
         </div>
+        <span className="alpha" style={alphaStyles}>ALPHA</span>
       </Link>
     </li>
   )
