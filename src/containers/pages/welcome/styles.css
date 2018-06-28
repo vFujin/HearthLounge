@@ -47,7 +47,7 @@
           #container .container__page.welcome .sections section.introduction .img-wrapper img {
             box-shadow: 0 0 20px black;
             width: 100%;
-            max-width: 800px; }
+            max-width: 600px; }
         #container .container__page.welcome .sections section.introduction .arrow {
           position: absolute;
           bottom: 20px;
