@@ -4,10 +4,12 @@ import {Link} from "react-router-dom";
 
 const LogoItem = () => {
   const alphaStyles = {
-    opacity: .5,
+    opacity: .4,
     color: "grey",
     position: "absolute",
   };
+  console.log("foo");
+
 
   return (
     <li className="nav__list--item logo">
