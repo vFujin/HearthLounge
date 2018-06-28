@@ -8,7 +8,8 @@ const LogoItem = () => {
     color: "grey",
     position: "absolute",
   };
-  console.log("foo")
+  console.log("foo");
+
 
   return (
     <li className="nav__list--item logo">
