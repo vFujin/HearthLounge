@@ -7,6 +7,7 @@ import PageLoader from "../components/loaders/page/page-loader";
 import Home from './pages/home/home';
 import Deck from './pages/decks/deck/deck';
 import RedditPost from './pages/reddit/post/post';
+import Welcome from './pages/welcome/welcome';
 import CreateDeckClassSelection  from './pages/create-deck/before-class-selection/class-selection';
 import CreateDeckClassSelected  from './pages/create-deck/after-class-selection/create-deck';
 import CreateDeckClassSelectedMobile from './pages/create-deck/after-class-selection/create-deck-mobile/create-deck-mobile';
@@ -68,10 +69,10 @@ const AsyncMiscellaneous = Loadable({
   loading: PageLoader
 });
 
-const AsyncWelcome = Loadable({
-  loader: ()=>import('./pages/welcome/welcome'),
-  loading: PageLoader
-});
+// const AsyncWelcome = Loadable({
+//   loader: ()=>import('./pages/welcome/welcome'),
+//   loading: PageLoader
+// });
 
 const AsyncNotFound = Loadable({
   loader: ()=>import('../components/not-found/not-found'),
@@ -124,7 +125,7 @@ const Routes = ({route, mobileMenuActive, windowWidth}) => {
           <Route path="/sign-in"                  component={AsyncEntry} />
           <Route path="/sign-up"                  component={AsyncEntry} />
           <Route path="/dashboard"                component={AsyncDashboard} />
-          <Route path="/welcome"                  component={AsyncWelcome} />
+          <Route path="/welcome"                  component={Welcome} />
           <Route path="/:misc"                    component={AsyncMiscellaneous} />
           <Route path="*"                         component={AsyncNotFound} />
         </Switch>
