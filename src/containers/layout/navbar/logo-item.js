@@ -9,6 +9,7 @@ const LogoItem = () => {
     position: "absolute",
   };
 
+
   return (
     <li className="nav__list--item logo">
       <Link to="/" className="logo-wrapper">
