@@ -3,19 +3,21 @@ import {Link} from 'react-router-dom';
 import {ClassChallenge, DungeonRun} from "./challenges";
 import ClassChallengeSelection from "./class-challenge-selection";
 import Icon from "../../icon";
+import './styles.css';
 
 export default ({extension, classChallengeType, cards, cardsLoading, detailsChild}) => {
   const classChallenge = extension.class_challenges.find(challenge => challenge.playerClass === detailsChild);
 
   const listClassChallengeCards = () => {
     return (
-        extension.class_challenges.map(challenge =>
-            <li key={challenge.playerClass} className={`${challenge.playerClass} active-on-hover ${challenge.playerClass === detailsChild && 'active'}`}>
-              <Link to={`/extensions/${extension.url}/${classChallengeType}/${challenge.playerClass}`}>
-                <Icon name={challenge.playerClass} />
-              </Link>
-            </li>
-        )
+      extension.class_challenges.map(challenge =>
+        <li key={challenge.playerClass}
+            className={`${challenge.playerClass} active-on-hover ${challenge.playerClass === detailsChild && 'active'}`}>
+          <Link to={`/extensions/${extension.url}/${classChallengeType}/${challenge.playerClass}`}>
+            <Icon name={challenge.playerClass}/>
+          </Link>
+        </li>
+      )
     )
   };
 
@@ -28,19 +30,23 @@ export default ({extension, classChallengeType, cards, cardsLoading, detailsChil
                                playerClass={detailsChild}/>;
       case 'dungeon-run':
         return <DungeonRun classChallenge={classChallenge}/>;
-      default: return null;
+      default:
+        return null;
     }
   };
 
-  return (
-    <div className="container__classChallenges">
-      <ul className="container__classChallenges--sidebar">
-        {listClassChallengeCards()}
-      </ul>
-      {detailsChild
-          ? classChallengeTypeSelection()
-          : <ClassChallengeSelection />
-      }
-    </div>
-  );
+  return detailsChild
+    ? (
+      <div className="container__classChallenges">
+        <ul className="container__classChallenges--sidebar">
+          {listClassChallengeCards()}
+        </ul>
+        {classChallengeTypeSelection()}
+      </div>
+    )
+    : (
+      <div className="container__classChallenges">
+        <ClassChallengeSelection/>
+      </div>
+    )
 };

@@ -1073,52 +1073,6 @@ card{
           }
         }
       }
-      .container__classChallenges {
-        display: flex;
-        height: 100%;
-        .container__classChallenges--sidebar{
-          border-right: 1px solid $light-grey;
-          padding: 0 1vh;
-          li{
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            @include transition(all ease .4s);
-            &.active, &:hover{
-              @include box-shadow(0, 0, 10px, black);
-            }
-            a{
-              display: block;
-              padding: 10px;
-              span{
-                font-size: calc(1.5em + 1vmin);
-              }
-            }
-          }
-        }
-        .container__classChallenges--content{
-          padding-left: 1vh;
-          height: 100%;
-          width: 100%;
-          overflow: auto;
-          @include scrollbar();
-
-          .container__blocks--block:nth-last-child(2){
-            margin-bottom: 0;
-          }
-          .container__blocks--block:last-child{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            span{
-              opacity: .1;
-              font-size: 300px;
-            }
-          }
-        }
-      }
     }
   }
   .edit-mode{

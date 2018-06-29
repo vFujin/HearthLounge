@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import Icon from "../../../components/icon";
 import Loader from "../../../components/loaders/diamond/loader";
 import {Link} from "react-router-dom";
-import './styles/styles.css';
 import setToIconFormat from "../../../utils/set-to-icon-format";
+import './styles/styles.css';
 
 class SelectExtension extends Component {
   mapExtensions = (extensions) => {

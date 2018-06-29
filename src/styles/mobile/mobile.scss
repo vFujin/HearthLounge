@@ -38,34 +38,6 @@
       }
     }
 
-    .container__page--twoSided {
-      &.expansions, &.adventures {
-        .container__page--right {
-          .topbar{
-            .topbar__extension-navigation{
-              width: 100%;
-              justify-content: space-between;
-              li{
-                width: 100%;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                &:last-child{
-                  border-right: 0;
-                }
-              }
-            }
-          }
-          .content {
-            .container__classChallenges {
-              li:last-child {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-    }
     footer{
       .copyright{
         justify-content: flex-start;

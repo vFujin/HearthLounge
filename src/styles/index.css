@@ -4360,18 +4360,6 @@ button {
       #container .container__index .home__list .home__block .home__block--body {
         display: none;
         height: 0; }
-  #container .container__page--twoSided.expansions .container__page--right .topbar .topbar__extension-navigation, #container .container__page--twoSided.adventures .container__page--right .topbar .topbar__extension-navigation {
-    width: 100%;
-    justify-content: space-between; }
-    #container .container__page--twoSided.expansions .container__page--right .topbar .topbar__extension-navigation li, #container .container__page--twoSided.adventures .container__page--right .topbar .topbar__extension-navigation li {
-      width: 100%;
-      text-align: center;
-      display: flex;
-      justify-content: center; }
-      #container .container__page--twoSided.expansions .container__page--right .topbar .topbar__extension-navigation li:last-child, #container .container__page--twoSided.adventures .container__page--right .topbar .topbar__extension-navigation li:last-child {
-        border-right: 0; }
-  #container .container__page--twoSided.expansions .container__page--right .content .container__classChallenges li:last-child, #container .container__page--twoSided.adventures .container__page--right .content .container__classChallenges li:last-child {
-    display: none; }
   #container footer .copyright {
     justify-content: flex-start; }
     #container footer .copyright:before {
@@ -5408,56 +5396,6 @@ card {
         .container__page .container__page--right .content .container__bosses table tbody tr:hover td:first-child {
           background-color: #00a99c;
           color: #E7E2DA; }
-    .container__page .container__page--right .content .container__classChallenges {
-      display: flex;
-      height: 100%; }
-      .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar {
-        border-right: 1px solid #A69E9D;
-        padding: 0 1vh; }
-        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar li {
-          margin-top: 10px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          -webkit-transition: all ease 0.4s;
-          -moz-transition: all ease 0.4s;
-          transition: all ease 0.4s; }
-          .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar li.active, .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar li:hover {
-            -webkit-box-shadow: 0 0 10px black;
-            -moz-box-shadow: 0 0 10px black;
-            box-shadow: 0 0 10px black; }
-          .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar li a {
-            display: block;
-            padding: 10px; }
-            .container__page .container__page--right .content .container__classChallenges .container__classChallenges--sidebar li a span {
-              font-size: calc(1.5em + 1vmin); }
-      .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content {
-        padding-left: 1vh;
-        height: 100%;
-        width: 100%;
-        overflow: auto; }
-        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content::-webkit-scrollbar {
-          width: 13px;
-          height: 13px; }
-        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content::-webkit-scrollbar-thumb {
-          background-color: #474143;
-          border-radius: 0;
-          border-left: 1px solid transparent; }
-        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content::-webkit-scrollbar-thumb:hover {
-          background-color: #474143; }
-        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content::-webkit-scrollbar-track {
-          background-color: #A69E9D;
-          border-left: 1px solid transparent; }
-        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content .container__blocks--block:nth-last-child(2) {
-          margin-bottom: 0; }
-        .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content .container__blocks--block:last-child {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: transparent; }
-          .container__page .container__page--right .content .container__classChallenges .container__classChallenges--content .container__blocks--block:last-child span {
-            opacity: .1;
-            font-size: 300px; }
   .container__page .edit-mode .sidebar__body .container__mana-curve .graph {
     -webkit-box-shadow: inset 0 0 20px #474143;
     -moz-box-shadow: inset 0 0 20px #474143;
