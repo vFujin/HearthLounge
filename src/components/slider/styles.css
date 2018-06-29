@@ -42,5 +42,26 @@
     letter-spacing: 1.1px;
     line-height: 25px;
     position: relative; }
+  .slider.inset img {
+    position: relative;
+    z-index: 1; }
+  .slider.inset .slider__prev,
+  .slider.inset .slider__next,
+  .slider.inset .slider__dots {
+    position: absolute;
+    z-index: 2;
+    background: white; }
+  .slider.inset .slider__prev,
+  .slider.inset .slider__next {
+    top: 50%;
+    transform: translateY(-50%); }
+  .slider.inset .slider__prev {
+    left: 0; }
+  .slider.inset .slider__next {
+    right: 0; }
+  .slider.inset .slider__dots {
+    bottom: 0;
+    padding: 0 10px;
+    opacity: .5; }
 
 /*# sourceMappingURL=styles.css.map */

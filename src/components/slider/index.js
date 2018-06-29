@@ -5,7 +5,7 @@ import './styles.css';
 class Slider extends Component {
   constructor(props){
     super(props);
-    const {dotSymbol, overlayClassName, showDots, slides} = props;
+    const {dotSymbol, overlayClassName, showDots, slides, inset} = props;
     const countSlides = slides.length;
 
     this.state = {
@@ -14,6 +14,7 @@ class Slider extends Component {
       dotSymbol: dotSymbol || "●",
       overlayClassName: overlayClassName || null,
       showDots: showDots === false ? false : true,
+      inset: inset ? "inset" : null,
       countSlides,
       slides
     };
@@ -52,10 +53,10 @@ class Slider extends Component {
   };
 
   render() {
-    const {activeSlide, slides, overlayClassName, showDots} = this.state;
+    const {activeSlide, slides, overlayClassName, showDots, inset} = this.state;
 
     return (
-      <div className={`slider ${overlayClassName}`}>
+      <div className={`slider ${overlayClassName} ${inset}`}>
         <span className="slider__prev" onClick={this.handlePrevClick}>❮</span>
         {slides[activeSlide]}
         <span className="slider__next" onClick={this.handleNextClick}>❯</span>

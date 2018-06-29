@@ -773,12 +773,15 @@ card{
           height: calc(50% - .5vh);
           background: $light-grey;
           margin-bottom: 1vh;
+
           &:not(.block-width-4):nth-last-child(-n+4){
             margin-bottom:0;
           }
+
           &:last-child{
             margin-bottom: 0;
           }
+
           .container__blocks--block-header {
             padding: 0;
             display: flex;
@@ -790,6 +793,7 @@ card{
             font-weight: normal;
             text-transform: capitalize;
           }
+
           .container__blocks--block-content {
             padding: 1vh;
             height: calc(100% - 40px);
@@ -803,7 +807,13 @@ card{
                 transform: scale(.4);
               }
             }
+            &.gameboard {
+              .slider {
+                height: 100%;
+              }
+            }
           }
+
           &.overview {
             .about {
               display: flex;
@@ -944,6 +954,7 @@ card{
               }
             }
           }
+
           &.boss {
             .overview {
               display: flex;

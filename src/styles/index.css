@@ -5156,6 +5156,8 @@ card {
               display: flex;
               margin-top: -1vh;
               transform: scale(0.4); }
+          .container__page .container__page--right .content .container__blocks li.container__blocks--block .container__blocks--block-content.gameboard .slider {
+            height: 100%; }
         .container__page .container__page--right .content .container__blocks li.container__blocks--block.overview .about {
           display: flex;
           flex-direction: column; }

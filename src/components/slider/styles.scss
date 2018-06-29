@@ -58,4 +58,39 @@
     line-height: 25px;
     position: relative;
   }
+
+  &.inset {
+    img {
+      position: relative;
+      z-index: 1;
+    }
+
+    .slider__prev,
+    .slider__next,
+    .slider__dots {
+      position: absolute;
+      z-index: 2;
+      background: white;
+    }
+
+    .slider__prev,
+    .slider__next {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .slider__prev {
+      left: 0;
+    }
+
+    .slider__next {
+      right: 0;
+    }
+
+    .slider__dots {
+      bottom: 0;
+      padding: 0 10px;
+      opacity: .5;
+    }
+  }
 }
