@@ -4945,6 +4945,8 @@ card {
           color: #474143;
           display: flex;
           height: 100%;
+          width: 100%;
+          justify-content: center;
           align-items: center; }
       .container__page .container__page--right .topbar .topbar__extension-navigation.false-view {
         display: none; }

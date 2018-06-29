@@ -1,31 +1,23 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import _ from "lodash";
 import Icon from "../../../components/icon";
 import Loader from "../../../components/loaders/diamond/loader";
 import {Link} from "react-router-dom";
 import './styles/styles.css';
+import setToIconFormat from "../../../utils/set-to-icon-format";
 
 class SelectExtension extends Component {
   mapExtensions = (extensions) => {
 
     return extensions.slice(4).map((extension, i) => {
-      const kebabCasedExtension = _.kebabCase(extension);
-
-      const fixClass = () => {
-        switch(kebabCasedExtension){
-          case 'one-night-in-karazhan': return "karazhan";
-          case "journey-to-un-goro": return "journey-to-ungoro";
-          default: return kebabCasedExtension;
-        }
-      };
+      const kebabCasedExtension = setToIconFormat(extension);
 
       return (
         <li key={extension}
             id={kebabCasedExtension}
-            className={fixClass()}
+            className={kebabCasedExtension}
             data-extensiontype={i < 4 ? "adventures" : "expansions"}>
-          <Link to={`/extensions/${kebabCasedExtension}/overview`} className={fixClass()}>
+          <Link to={`/extensions/${kebabCasedExtension}/overview`} className={kebabCasedExtension}>
             <Icon name={kebabCasedExtension}
                   className={kebabCasedExtension}
                   type="set"/>

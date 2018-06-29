@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import Tooltip from 'antd/lib/tooltip';
 import {supported_domains} from "../containers/pages/reddit/utils/posts";
+import setToIconFormat from "../utils/set-to-icon-format";
 
 const selectType = (
     iconName,
@@ -17,15 +18,6 @@ const selectType = (
     id = null
     ) => {
 
-  const validateSet = () =>{
-    switch(iconName){
-      case "classic": return "hs-logo";
-      case "curse-of-naxxramas": return "naxxramas";
-      case "one-night-in-karazhan": return "karazhan";
-      case "journey-to-un-goro": return "journey-to-ungoro";
-      default: return _.toLower(_.kebabCase(iconName));
-    }
-  };
   const validateMode = iconName === "standard" ? "mammoth" : iconName;
 
   const iconWrapper = (icon) => {
@@ -85,7 +77,7 @@ const selectType = (
   };
 
   switch(type){
-    case 'set': return icon(validateSet(iconName));
+    case 'set': return icon(setToIconFormat(iconName));
     case 'mode': return icon(validateMode);
     case 'mana': return manaIcon(iconName);
     case 'rarity': return rarityIcon(iconName);

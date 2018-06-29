@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import Icon from "../../../../components/icon";
 import {connect} from "react-redux";
 import Loader from "../../../../components/loaders/diamond/loader";
+import setToIconFormat from "../../../../utils/set-to-icon-format";
 
 const Sidebar = ({extensionPath, info}) => {
   const localStorageExtensions = localStorage.hearthloungeGameInfo && JSON.parse(localStorage.hearthloungeGameInfo).wild.slice(4);
@@ -12,10 +13,10 @@ const Sidebar = ({extensionPath, info}) => {
 
     return (
       extensions.map((extension, index) =>
-        <li key={index} className={extensionPath === _.kebabCase(extension) ? 'selected' : undefined}>
-          <Link to={`/extensions/${_.kebabCase(extension)}/overview`}
-                className={`${_.kebabCase(extension)} ${extensionPath === _.kebabCase(extension) ? 'active' : undefined}`}>
-            <Icon name={_.kebabCase(extension)} />
+        <li key={index} className={extensionPath === setToIconFormat(extension) ? 'selected' : undefined}>
+          <Link to={`/extensions/${setToIconFormat(extension)}/overview`}
+                className={`${setToIconFormat(extension)} ${extensionPath === setToIconFormat(extension) ? 'active' : undefined}`}>
+            <Icon name={setToIconFormat(extension)} />
             <p>{extension}</p>
           </Link>
         </li>
