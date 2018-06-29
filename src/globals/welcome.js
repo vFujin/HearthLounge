@@ -8,6 +8,7 @@ import CreateDeck2Img from '../images/welcome/create-deck2.jpg';
 import TournamentsImg from '../images/welcome/tournaments.jpg';
 import RedditPostsImg from '../images/welcome/reddit-posts.jpg';
 import RedditPostImg from '../images/welcome/reddit-post.jpg';
+import StreamsImg from '../images/welcome/streams.jpg';
 
 export default [
   {
@@ -198,7 +199,7 @@ export default [
     page: 'streamers',
     icon: 'twitch',
     about: 'Looking for a player who shows THE REAL gameplay? Or maybe a tournament channel that is currently broadcasting? This is the page dedicated just for that.',
-    img: [],
+    img: [StreamsImg],
     info: [
       {
         text: 'filter broadcasters by class they are playing',
