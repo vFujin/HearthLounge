@@ -329,39 +329,39 @@ export const extension_details = [
     class_challenges: [
       {
         playerClass: 'druid',
-        reward: "Mounted Raptor"
+        reward: "Poison Seeds"
       },
       {
         playerClass: 'hunter',
-        reward: "Dart Trap"
+        reward: "Webspinner"
       },
       {
         playerClass: 'mage',
-        reward: "Animated Armor"
+        reward: "Duplicate"
       },
       {
         playerClass: 'paladin',
-        reward: "Keeper of Uldaman"
+        reward: "Avenge"
       },
       {
         playerClass: 'priest',
-        reward: "Entomb"
+        reward: "Dark Cultist"
       },
       {
         playerClass: 'rogue',
-        reward: "Tomb Pillager"
+        reward: "Anub'ar Ambusher"
       },
       {
         playerClass: 'shaman',
-        reward: "Everyfin is Awesome"
+        reward: "Reincarnate"
       },
       {
         playerClass: 'warlock',
-        reward: "Dark Peddler"
+        reward: "Voidcaller"
       },
       {
         playerClass: 'warrior',
-        reward: "Obsidian Destroyer"
+        reward: "Death's Bite"
       }
     ]
   },
@@ -821,39 +821,39 @@ export const extension_details = [
     class_challenges: [
       {
         playerClass: 'druid',
-        reward: "Volcanic Lumberer"
+        reward: "Mounted Raptor"
       },
       {
         playerClass: 'hunter',
-        reward: "Quick Shot"
+        reward: "Dart Trap"
       },
       {
         playerClass: 'mage',
-        reward: "Dragon's Breath"
+        reward: "Animated Armor"
       },
       {
         playerClass: 'paladin',
-        reward: "Solemn Vigil"
+        reward: "Keeper of Uldaman"
       },
       {
         playerClass: 'priest',
-        reward: "Twilight Whelp"
+        reward: "Entomb"
       },
       {
         playerClass: 'rogue',
-        reward: "Dark Iron Skulker"
+        reward: "Tomb Pillager"
       },
       {
         playerClass: 'shaman',
-        reward: "Lava Shock"
+        reward: "Everyfin is Awesome"
       },
       {
         playerClass: 'warlock',
-        reward: "Demonwrath"
+        reward: "Dark Peddler"
       },
       {
         playerClass: 'warrior',
-        reward: "Axe Flinger"
+        reward: "Obsidian Destroyer"
       }
     ]
   },
@@ -1053,39 +1053,39 @@ export const extension_details = [
     class_challenges: [
       {
         playerClass: 'druid',
-        reward: "Volcanic Lumberer"
+        reward: "Moonglade Portal"
       },
       {
         playerClass: 'hunter',
-        reward: "Quick Shot"
+        reward: "Cat Trick"
       },
       {
         playerClass: 'mage',
-        reward: "Dragon's Breath"
+        reward: "Babbling Book"
       },
       {
         playerClass: 'paladin',
-        reward: "Solemn Vigil"
+        reward: "Silvermoon Portal"
       },
       {
         playerClass: 'priest',
-        reward: "Twilight Whelp"
+        reward: "Priest of the Feast"
       },
       {
         playerClass: 'rogue',
-        reward: "Dark Iron Skulker"
+        reward: "Ethereal Peddler"
       },
       {
         playerClass: 'shaman',
-        reward: "Lava Shock"
+        reward: "Maelstrom Portal"
       },
       {
         playerClass: 'warlock',
-        reward: "Demonwrath"
+        reward: "Kara Kazham!"
       },
       {
         playerClass: 'warrior',
-        reward: "Axe Flinger"
+        reward: "Fool's Bane"
       }
     ]
   },

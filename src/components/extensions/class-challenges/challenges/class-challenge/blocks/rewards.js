@@ -9,9 +9,8 @@ const Rewards = ({extensionCards, cardsLoading, bossReward}) => {
         return <img key={card.cardId} src={card.img} alt={card.name}/>
       }))
     } else {
-      return extensionCards.filter(card => card.name === bossReward).map(card=>
-        <img key={card.cardId} src={card.img} alt={card.name}/>
-      )
+      const card = extensionCards.find(card => card.name === bossReward);
+      return card ? <img key={card.cardId} src={card.img} alt={card.name}/> : bossReward
     }
   };
 

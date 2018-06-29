@@ -8,6 +8,7 @@ import {blockSize} from "../../../../../utils/block-size";
 
 const ClassChallenge = ({cards, cardsLoading, challenge, playerClass, windowWidth}) => {
   const {reward} = challenge;
+
   const overview = <Overview />;
   const rewards = <Rewards extensionCards={cards} cardsLoading={cardsLoading} bossReward={reward}/>;
   const strategy = <Strategy />;
