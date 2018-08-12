@@ -14,13 +14,13 @@ export const fetchHotDecks = ({payload}) => {
 
   if(!filtersLength || filtersLength === undefined){
     return collection
-      .where("created", ">=", twoWeeks)
+      .where("votes", ">=", 300)
       .limit(10)
       .get()
       .then(querySnapshot => {
         const decks = [];
         querySnapshot.forEach(deck => decks.push(deck.data()));
-        return {decks};
+        return {decks: decks.reverse()};
       })
       .catch(err => ({err: err.message}));
   }

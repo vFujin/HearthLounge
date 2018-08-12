@@ -17,7 +17,7 @@ const IntroductionSection = ({greetings}) => {
         <div className="img-wrapper">
           <img src={HomeImg} alt=""/>
         </div>
-          <a href="#decks" className="arrow"><span>❯</span></a>
+          <div className="arrow"><span>❯</span></div>
       </section>
   )
 };

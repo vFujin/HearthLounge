@@ -1,0 +1,88 @@
+.container__classChallenges {
+  display: flex;
+  height: 100%; }
+  .container__classChallenges--selection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1vh;
+    background: #474143; }
+    .container__classChallenges--selection h2, .container__classChallenges--selection .classes {
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      display: flex; }
+    .container__classChallenges--selection h2 {
+      flex-grow: 1;
+      color: #E7E2DA; }
+    .container__classChallenges--selection .classes {
+      flex-grow: 11;
+      flex-wrap: wrap;
+      padding: 0 50px;
+      align-content: center; }
+      .container__classChallenges--selection .classes li {
+        margin: 10px;
+        -webkit-transition: all ease 0.4s;
+        -moz-transition: all ease 0.4s;
+        transition: all ease 0.4s; }
+        .container__classChallenges--selection .classes li a {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          font-size: calc(1em + 1vmin);
+          justify-content: center;
+          align-items: center; }
+          .container__classChallenges--selection .classes li a span {
+            margin-bottom: 5px; }
+          .container__classChallenges--selection .classes li a p {
+            font-size: calc(.5em + .5vmin); }
+  .container__classChallenges--sidebar {
+    border-right: 1px solid #A69E9D;
+    padding: 0 1vh; }
+    .container__classChallenges--sidebar li {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      -webkit-transition: all ease 0.4s;
+      -moz-transition: all ease 0.4s;
+      transition: all ease 0.4s; }
+      .container__classChallenges--sidebar li.active, .container__classChallenges--sidebar li:hover {
+        -webkit-box-shadow: 0 0 10px black;
+        -moz-box-shadow: 0 0 10px black;
+        box-shadow: 0 0 10px black; }
+      .container__classChallenges--sidebar li a {
+        display: block;
+        padding: 10px; }
+        .container__classChallenges--sidebar li a span {
+          font-size: calc(1.5em + 1vmin); }
+  .container__classChallenges--content {
+    padding-left: 1vh;
+    height: 100%;
+    width: 100%;
+    overflow: auto; }
+    .container__classChallenges--content::-webkit-scrollbar {
+      width: 13px;
+      height: 13px; }
+    .container__classChallenges--content::-webkit-scrollbar-thumb {
+      background-color: #474143;
+      border-radius: 0;
+      border-left: 1px solid transparent; }
+    .container__classChallenges--content::-webkit-scrollbar-thumb:hover {
+      background-color: #474143; }
+    .container__classChallenges--content::-webkit-scrollbar-track {
+      background-color: #A69E9D;
+      border-left: 1px solid transparent; }
+    .container__classChallenges--content .container__blocks--block:nth-last-child(2) {
+      margin-bottom: 0; }
+    .container__classChallenges--content .container__blocks--block:last-child {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent; }
+      .container__classChallenges--content .container__blocks--block:last-child span {
+        opacity: .1;
+        font-size: 300px; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -50,8 +50,8 @@
             max-width: 600px; }
         #container .container__page.welcome .sections section.introduction .arrow {
           position: absolute;
+          cursor: default;
           bottom: 20px;
-          cursor: pointer;
           left: 50%;
           height: 40px;
           width: 40px;
