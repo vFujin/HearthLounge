@@ -7,7 +7,7 @@ import {subDays, startOfWeek} from "date-fns";
 
 export const fetchHotDecks = ({payload}) => {
   const now = +Date.now();
-  const twoWeeks = +startOfWeek(subDays(now, 14));
+  // const twoWeeks = +startOfWeek(subDays(now, 14));
   const filterKeys = _.keys(payload);
   const filtersLength = filterKeys.length;
   const collection = firestore.collection("decks");
