@@ -9,7 +9,7 @@ const TwitchIframe = props => {
     return (
         <iframe
             title="iframe"
-            src={`http://player.twitch.tv/?channel=${props.streamer}&muted=true`}
+            src={`https://player.twitch.tv/?channel=${props.streamer}&muted=true`}
             width="100%"
             height="100%"
             scrolling="no">

@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
-const Continue = ({deckMode, playerClass}) => {
+const Continue = ({deckMode, playerClass, history}) => {
+  console.log(history);
   return (
     <div className={!deckMode || !playerClass ? "not-allowed" : undefined}>
       <h4>
@@ -11,8 +12,8 @@ const Continue = ({deckMode, playerClass}) => {
       </h4>
       {deckMode && playerClass
         ? (
-          <Link className="redirect" to={`/create-deck/${playerClass}`}>
-            <span>❯</span>
+          <Link className="redirect" to={`${history.location.pathname}/${playerClass}`}>
+      <span>❯</span>
           </Link>
         )
         : <div className="redirect">
@@ -29,4 +30,4 @@ const mapStateToProps = state => {
   return { deckMode, playerClass };
 };
 
-export default connect(mapStateToProps)(Continue);
+export default withRouter(connect(mapStateToProps)(Continue));
