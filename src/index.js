@@ -7,7 +7,7 @@ import rootReducer from './redux/root-reducer';
 import rootSaga from './redux/root-saga';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
-import './styles/index.css';
+import './styles/index.scss';
 
 const sagaMiddleware = createSagaMiddleware();
 
