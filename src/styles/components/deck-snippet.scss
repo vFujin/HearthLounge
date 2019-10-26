@@ -40,7 +40,9 @@
     &--playerClass {
       display: flex;
       height: 100%;
-      span {
+      padding: 5px;
+      border: 1px solid black;
+      svg {
         font-size: xx-large !important;
         padding: 5px;
         border: 1px solid black;

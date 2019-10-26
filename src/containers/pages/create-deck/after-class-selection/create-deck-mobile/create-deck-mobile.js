@@ -1,91 +1,112 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {default as Cards} from '../../../../../components/cards/cards';
-import _ from "lodash";
+import { default as Cards } from '../../../../../components/cards/cards';
+import _ from 'lodash';
 import {
-  changeActiveCreateDeckMobileTab, editDeck,
-  toggleDeckMechanics
-} from "../../../../../redux/create-deck/actions/create-deck.action";
-import {updateDeck} from "../right-container/content-assets/utils";
-import DecklistWrapper from "./deck-list/decklist-wrapper";
+  changeActiveCreateDeckMobileTab,
+  editDeck,
+  toggleDeckMechanics,
+} from '../../../../../redux/create-deck/actions/create-deck.action';
+import { updateDeck } from '../right-container/content-assets/utils';
+import DecklistWrapper from './deck-list/decklist-wrapper';
 import CreateDeckStatsMobile from './create-deck-stats-mobile';
-import DeckOptionsMobile from "./deck-options/deck-options-mobile";
-import MobileTopbar from "../../../../../components/mobile/topbar/topbar";
+import DeckOptionsMobile from './deck-options/deck-options-mobile';
+import MobileTopbar from '../../../../../components/mobile/topbar/topbar';
 
 class CreateDeckClassSelectedMobile extends Component {
-
-  componentDidMount(){
-    const {playerClass} = this.props;
+  componentDidMount() {
+    const { playerClass } = this.props;
     document.title = `Deck Creation - ${_.startCase(playerClass)}`;
   }
 
   componentWillUnmount() {
-    const {toggleDeckMechanics} = this.props;
+    const { toggleDeckMechanics } = this.props;
     toggleDeckMechanics(false);
   }
 
-  handleTabClick = (e) => {
+  handleTabClick = e => {
     const tab = e.currentTarget.id;
     this.props.changeActiveCreateDeckMobileTab(tab);
   };
 
   handleCardClick = (e, card) => {
-    const {deck, editDeck} = this.props;
+    const { deck, editDeck } = this.props;
     e.preventDefault();
     updateDeck(e, card, deck, editDeck);
   };
 
   content = () => {
-    const {activeCreateDeckMobileTab, deck, playerClass} = this.props;
-    switch(activeCreateDeckMobileTab){
-      case "deckList": return <DecklistWrapper deck={deck} playerClass={playerClass}/>;
-      case "deckDetails": return <DeckOptionsMobile playerClass={playerClass}/>;
-      default: return <Cards inDeckCreation
-                             mode="standard"
-                             playerClass={_.startCase(playerClass)}
-                             deck={deck}
-                             handleCardClick={this.handleCardClick}/>;
+    const { activeCreateDeckMobileTab, deck, playerClass } = this.props;
+    switch (activeCreateDeckMobileTab) {
+      case 'deckList':
+        return <DecklistWrapper deck={deck} playerClass={playerClass} />;
+      case 'deckDetails':
+        return <DeckOptionsMobile playerClass={playerClass} />;
+      default:
+        return (
+          <Cards
+            inDeckCreation
+            mode="standard"
+            playerClass={_.startCase(playerClass)}
+            deck={deck}
+            handleCardClick={this.handleCardClick}
+          />
+        );
     }
   };
 
   render() {
-    const {activeCreateDeckMobileTab} = this.props;
-    const containerClassName = activeCreateDeckMobileTab === "deckList" ? "left" : "right";
-    const filterDeckDetails = activeCreateDeckMobileTab !== "deckDetails";
-    const mobileTopbarTabs = ["deckList", "cards", "deckDetails"];
+    const { activeCreateDeckMobileTab } = this.props;
+    const containerClassName =
+      activeCreateDeckMobileTab === 'deckList' ? 'left' : 'right';
+    const filterDeckDetails = activeCreateDeckMobileTab !== 'deckDetails';
+    const mobileTopbarTabs = ['deckList', 'cards', 'deckDetails'];
 
     return (
       <div className="container__page container__page--mobile create-deck">
-        <MobileTopbar tabs={mobileTopbarTabs}
-                      activeMobileTab={activeCreateDeckMobileTab}
-                      handleTabClick={this.handleTabClick}/>
-        <div className={`container__page--inner container__page--${containerClassName} afterClassSelection`}>
-         <div className={`content ${filterDeckDetails ? "contentWithStats" : undefined}`}>
+        <MobileTopbar
+          tabs={mobileTopbarTabs}
+          activeMobileTab={activeCreateDeckMobileTab}
+          handleTabClick={this.handleTabClick}
+        />
+        <div
+          className={`container__page--inner container__page--${containerClassName} afterClassSelection`}
+        >
+          <div
+            className={`content ${
+              filterDeckDetails ? 'contentWithStats' : undefined
+            }`}
+          >
             {filterDeckDetails && <CreateDeckStatsMobile />}
             {this.content()}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => {
-  const {deck, activeCreateDeckMobileTab} = state.deckCreation;
-  return {deck, activeCreateDeckMobileTab};
+  const { deck, activeCreateDeckMobileTab } = state.deckCreation;
+  return { deck, activeCreateDeckMobileTab };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     editDeck: deck => dispatch(editDeck(deck)),
-    toggleDeckMechanics: deckMechanics => dispatch(toggleDeckMechanics(deckMechanics)),
-    changeActiveCreateDeckMobileTab: tab => dispatch(changeActiveCreateDeckMobileTab(tab))
-  }
+    toggleDeckMechanics: deckMechanics =>
+      dispatch(toggleDeckMechanics(deckMechanics)),
+    changeActiveCreateDeckMobileTab: tab =>
+      dispatch(changeActiveCreateDeckMobileTab(tab)),
+  };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateDeckClassSelectedMobile);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CreateDeckClassSelectedMobile);
 
 CreateDeckClassSelectedMobile.propTypes = {
-  playerClass: PropTypes.string.isRequired
+  playerClass: PropTypes.string.isRequired,
 };

@@ -1,32 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {icon_filters} from "../../../../../globals/filters";
-import Icon from "../../../../../components/icon";
-import {updateDeckProperty} from "../../../../../redux/create-deck/actions/deck-options.action";
+import { icon_filters } from '../../../../../globals/filters';
+import Icon from '../../../../../components/icon';
+import { updateDeckProperty } from '../../../../../redux/create-deck/actions/deck-options.action';
 import '../selection-styles.css';
 
 class SelectMode extends Component {
-  handleModeSelection = (e) =>{
-    const {updateDeckProperty} = this.props;
+  handleModeSelection = e => {
+    const { updateDeckProperty } = this.props;
     let deckMode = e.currentTarget.id;
-    updateDeckProperty({deckMode})
+    updateDeckProperty({ deckMode });
   };
 
   render() {
-    const {deckMode} = this.props;
+    const { deckMode } = this.props;
     return (
       <ul className="mode-list">
-        {icon_filters.mode.map(mode =>
-          <li key={mode.url}
-              className={`${mode.icon} ${mode.url === deckMode ? "active" : undefined}`}
-              id={mode.url}
-              onClick={this.handleModeSelection}>
-              <Icon name={mode.icon}/>
-              <p>{mode.name}</p>
+        {icon_filters.mode.map(mode => (
+          <li
+            key={mode.url}
+            className={`${mode.icon} ${
+              mode.url === deckMode ? 'active' : undefined
+            }`}
+            id={mode.url}
+            onClick={this.handleModeSelection}
+          >
+            <Icon name={mode.icon} />
+            <p>{mode.name}</p>
           </li>
-        )}
+        ))}
       </ul>
-    )
+    );
   }
 }
 
@@ -35,13 +39,16 @@ const mapStateToProps = state => {
   return { deckMode };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    updateDeckProperty: deckMode => dispatch(updateDeckProperty(deckMode))
-  }
+    updateDeckProperty: deckMode => dispatch(updateDeckProperty(deckMode)),
+  };
 };
 
 SelectMode.propTypes = {};
 SelectMode.defaultProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(SelectMode);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SelectMode);

@@ -1,36 +1,47 @@
-import React, {Component} from 'react';
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LogoItem from "./logo-item";
-import ItemsList from "./items-list/items-list";
+import LogoItem from './logo-item';
+import ItemsList from './items-list/items-list';
 import EntryNode from './entry-node';
-import MobileMenuIcon from "./mobile-menu-icon/mobile-menu-icon";
+import MobileMenuIcon from './mobile-menu-icon/mobile-menu-icon';
 import './styles/navbar-styles.css';
 import './styles/navbar-mobile-styles.css';
 import './styles/navbar-media-queries.css';
-import {toggleMobileMenu} from "../../../redux/app/mobile-menu/actions";
+import { toggleMobileMenu } from '../../../redux/app/mobile-menu/actions';
 
 class NavbarMobile extends Component {
-
   handleCloseMenuClick = () => {
     this.props.closeMobileMenu(false);
   };
 
   render() {
-    const {handleSignOut, activeUser, playerClass, mobileMenuActive} = this.props;
+    const {
+      handleSignOut,
+      activeUser,
+      playerClass,
+      mobileMenuActive,
+    } = this.props;
     return (
       <nav className="nav__mobile">
         <ul className="nav__mobile--header nav__list">
-          <LogoItem/>
-          <MobileMenuIcon/>
+          <LogoItem />
+          <MobileMenuIcon />
         </ul>
         {mobileMenuActive && (
           <div onClick={this.handleCloseMenuClick}>
             <ul className="nav__mobile--pages">
-              <EntryNode handleSignOut={handleSignOut} activeUser={activeUser} mobileMenuActive={mobileMenuActive}/>
+              <EntryNode
+                handleSignOut={handleSignOut}
+                activeUser={activeUser}
+                mobileMenuActive={mobileMenuActive}
+              />
               <li className="nav__mobile--scrollWrapper">
                 <ul>
-                  <ItemsList playerClass={playerClass} mobileMenuActive={mobileMenuActive}/>
+                  <ItemsList
+                    playerClass={playerClass}
+                    mobileMenuActive={mobileMenuActive}
+                  />
                 </ul>
               </li>
             </ul>
@@ -38,17 +49,20 @@ class NavbarMobile extends Component {
         )}
       </nav>
     );
-  };
+  }
 }
 
 NavbarMobile.propTypes = {
-  activeUser: PropTypes.object
+  activeUser: PropTypes.object,
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeMobileMenu: payload => dispatch(toggleMobileMenu(payload))
-  }
+    closeMobileMenu: payload => dispatch(toggleMobileMenu(payload)),
+  };
 };
 
-export default connect(null, mapDispatchToProps)(NavbarMobile);
+export default connect(
+  null,
+  mapDispatchToProps
+)(NavbarMobile);

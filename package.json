@@ -6,20 +6,22 @@
     "babel-cli": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
     "enzyme": "^3.3.0",
+    "eslint": "^6.6.0",
     "faker": "^4.1.0",
     "gh-pages": "^1.2.0",
     "jsdom": "11.2.0",
     "jsdom-global": "3.0.2",
-    "react-scripts": "^1.1.4",
+    "prettier": "^1.18.2",
     "react-test-renderer": "^15.6.1"
   },
   "dependencies": {
     "antd": "^2.13.14",
-    "axios": "^0.17.1",
+    "axios": "^0.19.0",
     "date-fns": "^1.29.0",
     "deckstrings": "^1.1.0",
     "dom-to-image": "^2.6.0",
-    "firebase": "^4.13.1",
+    "firebase": "^7.2.1",
+    "hearthlounge-design-system": "^0.28.4",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.10",
@@ -33,6 +35,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
+    "react-scripts": "^3.2.0",
     "react-treeview": "^0.4.7",
     "redux": "^3.6.0",
     "redux-saga": "^0.15.6"
@@ -44,5 +47,17 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://sbsrnt.github.io/HearthLounge"
+  "homepage": "http://sbsrnt.github.io/HearthLounge",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

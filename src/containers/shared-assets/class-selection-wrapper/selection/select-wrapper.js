@@ -13,7 +13,7 @@ const SelectWrapper = () => {
         <Continue />
       </div>
     </div>
-  )
+  );
 };
 
 export default SelectWrapper;
