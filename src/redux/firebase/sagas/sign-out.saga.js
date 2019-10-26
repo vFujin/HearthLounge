@@ -1,24 +1,24 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
-import {firebaseAuth} from "../../../keys";
+import { call, put, takeEvery } from 'redux-saga/effects';
+import { firebaseAuth } from '../../../keys';
 import history from '../../../globals/history';
-import {error, success} from "../../../utils/messages";
-import * as types from "../types";
+import { error, success } from '../../../utils/messages';
+import * as types from '../types';
 import * as actions from '../actions/sign-out.action';
 
 export const firebaseSignOut = () => {
   return firebaseAuth()
-      .signOut()
-      .then(() => ({signedOut: true}))
-      .catch(err => ({err: err.message}))
+    .signOut()
+    .then(() => ({ signedOut: true }))
+    .catch(err => ({ err: err.message }));
 };
 
 export function* firebaseSignOutSaga() {
-  const {signedOut, err} = yield call(firebaseSignOut);
+  const { signedOut, err } = yield call(firebaseSignOut);
 
   if (signedOut) {
     yield put(actions.firebaseSignOutSuccess(signedOut));
     yield success('Signed out successfully!');
-    yield history.push("/");
+    yield history.push('/');
   } else {
     yield put(actions.firebaseSignOutError(err));
     yield error(err);

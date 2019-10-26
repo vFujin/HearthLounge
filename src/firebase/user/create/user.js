@@ -1,5 +1,5 @@
-import {ref, firebaseAuth} from '../../../keys';
-import {error} from '../../../utils/messages';
+import { ref, firebaseAuth } from '../../../keys';
+import { error } from '../../../utils/messages';
 import history from '../../../globals/history';
 
 /**
@@ -11,25 +11,26 @@ import history from '../../../globals/history';
  * @param {function} reducer - Callback function to pass data into activeUser reducer.
  * @returns {!firebase.Promise.<*>}
  */
-export default function (email, password, updateSignUpStatus, reducer){
-  firebaseAuth().createUserWithEmailAndPassword(email, password)
-      .then((user)=>{
-        updateSignUpStatus("success", null);
-        reducer(true, {
-          username: user.email,
-          email: user.email,
-          uid: user.uid,
-          updatedProfile: false,
-          rank: 1,
-          role: 'user'
-        });
-        history.push('/sign-up/update-profile');
-        saveUser(user);
-      })
-      .catch(e => {
-        updateSignUpStatus("failure", null);
-        error("Couldn't save user. " + e.message)
+export default function(email, password, updateSignUpStatus, reducer) {
+  firebaseAuth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(user => {
+      updateSignUpStatus('success', null);
+      reducer(true, {
+        username: user.email,
+        email: user.email,
+        uid: user.uid,
+        updatedProfile: false,
+        rank: 1,
+        role: 'user',
       });
+      history.push('/sign-up/update-profile');
+      saveUser(user);
+    })
+    .catch(e => {
+      updateSignUpStatus('failure', null);
+      error("Couldn't save user. " + e.message);
+    });
 }
 
 /**
@@ -37,9 +38,9 @@ export default function (email, password, updateSignUpStatus, reducer){
  *
  * @param {object} user - The user's details.
  */
-export function saveUser(user){
-  if(user){
-    const {email, uid} = user;
+export function saveUser(user) {
+  if (user) {
+    const { email, uid } = user;
 
     let newUser = {
       updatedProfile: false,
@@ -47,7 +48,7 @@ export function saveUser(user){
       role: 3,
       username: email,
       email,
-      uid
+      uid,
     };
 
     let updates = {};

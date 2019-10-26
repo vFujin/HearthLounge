@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
-import Tooltip from 'antd/lib/tooltip';
+import { Tooltip } from 'hearthlounge-design-system';
 import {supported_domains} from "../containers/pages/reddit/utils/posts";
 import setToIconFormat from "../utils/set-to-icon-format";
 

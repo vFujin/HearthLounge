@@ -6,7 +6,7 @@ const ImportDeckMobile = () => {
     <div className="content container__selection">
       <DeckImport />
     </div>
-  )
+  );
 };
 
 ImportDeckMobile.propTypes = {};

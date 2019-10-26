@@ -3,135 +3,135 @@ export const icon_filters = {
     {
       name: 'Classic',
       url: 'classic',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Basic',
       url: 'basic',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Promo',
       url: 'promo',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Missions',
       url: 'missions',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Reward',
       url: 'reward',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Hall of Fame',
       url: 'hall-of-fame',
-      isStandard: false
+      isStandard: false,
     },
     {
       name: 'Naxxramas',
       url: 'naxxramas',
-      isStandard: false
+      isStandard: false,
     },
     {
       name: 'Blackrock Mountain',
       url: 'blackrock-mountain',
-      isStandard: false
+      isStandard: false,
     },
     {
       name: 'The League of Explorers',
       url: 'the-league-of-explorers',
-      isStandard: false
+      isStandard: false,
     },
     {
       name: 'Karazhan',
       url: 'one-night-in-karazhan',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Goblins vs Gnomes',
       url: 'goblins-vs-gnomes',
-      isStandard: false
+      isStandard: false,
     },
     {
       name: 'The Grand Tournament',
       url: 'the-grand-tournament',
-      isStandard: false
+      isStandard: false,
     },
     {
       name: 'Whispers of the Old Gods',
       url: 'whispers-of-the-old-gods',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Mean Streets of Gadgetzan',
       url: 'mean-streets-of-gadgetzan',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: "Journey to Un'Goro",
       url: 'journey-to-ungoro',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Knights of the Frozen Throne',
       url: 'knights-of-the-frozen-throne',
-      isStandard: true
+      isStandard: true,
     },
     {
       name: 'Kobolds & Catacombs',
       url: 'kobolds-catacombs',
-      isStandard: true
-    }
+      isStandard: true,
+    },
   ],
   adventures: [
     {
       name: 'Curse of Naxxramas',
-      url: 'naxxramas'
+      url: 'naxxramas',
     },
     {
       name: 'Blackrock Mountain',
-      url: 'blackrock-mountain'
+      url: 'blackrock-mountain',
     },
     {
       name: 'The League of Explorers',
-      url: 'the-league-of-explorers'
+      url: 'the-league-of-explorers',
     },
     {
       name: 'One Night in Karazhan',
-      url: 'karazhan'
-    }
+      url: 'karazhan',
+    },
   ],
   playerClass: [
     {
       name: 'Neutral',
-      url: 'neutral'
+      url: 'neutral',
     },
     {
       name: 'Warlock',
-      url: 'warlock'
+      url: 'warlock',
     },
     {
       name: 'Druid',
-      url: 'druid'
+      url: 'druid',
     },
     {
       name: 'Priest',
-      url: 'priest'
+      url: 'priest',
     },
     {
       name: 'Rogue',
-      url: 'rogue'
+      url: 'rogue',
     },
     {
       name: 'Hunter',
-      url: 'hunter'
+      url: 'hunter',
     },
     {
       name: 'Mage',
-      url: 'mage'
+      url: 'mage',
     },
     {
       name: 'Paladin',
@@ -139,98 +139,98 @@ export const icon_filters = {
     },
     {
       name: 'Shaman',
-      url: 'shaman'
+      url: 'shaman',
     },
     {
       name: 'Warrior',
-      url: 'warrior'
-    }
+      url: 'warrior',
+    },
   ],
   expansions: [
     {
       name: 'Goblins vs Gnomes',
-      url: 'goblins-vs-gnomes'
+      url: 'goblins-vs-gnomes',
     },
     {
       name: 'The Grand Tournament',
-      url: 'the-grand-tournament'
+      url: 'the-grand-tournament',
     },
     {
       name: 'Whispers of the Old Gods',
-      url: 'whispers-of-the-old-gods'
+      url: 'whispers-of-the-old-gods',
     },
     {
       name: 'Mean Streets of Gadgetzan',
-      url: 'mean-streets-of-gadgetzan'
+      url: 'mean-streets-of-gadgetzan',
     },
     {
       name: "Journey to Un'Goro",
-      url: 'journey-to-ungoro'
+      url: 'journey-to-ungoro',
     },
     {
-      name: "Knights of the Frozen Throne",
-      url: 'knights-of-the-frozen-throne'
+      name: 'Knights of the Frozen Throne',
+      url: 'knights-of-the-frozen-throne',
     },
     {
-      name: "Kobolds & Catacombs",
-      url: 'kobolds-catacombs'
-    }
+      name: 'Kobolds & Catacombs',
+      url: 'kobolds-catacombs',
+    },
   ],
   cost: [
     {
       name: '0',
-      url: 0
+      url: 0,
     },
     {
       name: '1',
-      url: 1
+      url: 1,
     },
     {
       name: '2',
-      url: 2
+      url: 2,
     },
     {
       name: '3',
-      url: 3
+      url: 3,
     },
     {
       name: '4',
-      url: 4
+      url: 4,
     },
     {
       name: '5',
-      url: 5
+      url: 5,
     },
     {
       name: '6',
-      url: 6
+      url: 6,
     },
     {
       name: '7-plus',
-      url: '7-plus'
-    }
+      url: '7-plus',
+    },
   ],
   mode: [
     {
-      name: "standard",
-      url: "standard",
-      icon: "mammoth",
+      name: 'standard',
+      url: 'mammoth',
+      icon: 'mammoth',
     },
     {
-      name: "wild",
-      url: "wild",
-      icon: "wild"
+      name: 'wild',
+      url: 'wild',
+      icon: 'wild',
     },
     {
-      name: "tavern brawl",
-      url: "brawl",
-      icon: "brawl",
+      name: 'tavern brawl',
+      url: 'brawl',
+      icon: 'brawl',
     },
     {
-      name: "adventures",
-      url: "adventures",
-      icon: "adventures",
-    }
+      name: 'adventures',
+      url: 'extensions',
+      icon: 'adventures',
+    },
   ],
   archetype: [
     {
@@ -238,44 +238,44 @@ export const icon_filters = {
       url: "n'zoth",
     },
     {
-      name: "jade",
-      url: "jade",
-    }
+      name: 'jade',
+      url: 'jade',
+    },
   ],
-  multiClassGroup:[
+  multiClassGroup: [
     {
-      name: "Grimy Goons",
-      url: "grimy-goons"
+      name: 'Grimy Goons',
+      url: 'grimy-goons',
     },
     {
-      name: "Jade Lotus",
-      url: "jade-lotus"
+      name: 'Jade Lotus',
+      url: 'jade-lotus',
     },
     {
-      name: "Kabal",
-      url: "kabal"
-    }
+      name: 'Kabal',
+      url: 'kabal',
+    },
   ],
   rarity: [
     {
       name: 'rarity',
-      url: 'Free'
+      url: 'Free',
     },
     {
       name: 'rarity',
-      url: 'Common'
+      url: 'Common',
     },
     {
       name: 'rarity',
-      url: 'Rare'
+      url: 'Rare',
     },
     {
       name: 'rarity',
-      url: 'Epic'
+      url: 'Epic',
     },
     {
       name: 'rarity',
-      url: 'Legendary'
-    }
-  ]
+      url: 'Legendary',
+    },
+  ],
 };
